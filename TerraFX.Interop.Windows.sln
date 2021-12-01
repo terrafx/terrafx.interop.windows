@@ -34,6 +34,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{8793898A-6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "generation", "generation", "{D9638FEE-50A4-44FF-B1F6-72E59548490B}"
 	ProjectSection(SolutionItems) = preProject
+		generation\remap-classes.rsp = generation\remap-classes.rsp
 		generation\remap-guids.rsp = generation\remap-guids.rsp
 		generation\remap-handles.rsp = generation\remap-handles.rsp
 		generation\remap-members.rsp = generation\remap-members.rsp
@@ -2685,6 +2686,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "errhandlingapi", "errhandli
 		generation\Windows\um\errhandlingapi\um-errhandlingapi.h = generation\Windows\um\errhandlingapi\um-errhandlingapi.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "coml2api", "coml2api", "{62D8ADD9-4B4F-45FF-BAF1-C48A77A0F861}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\coml2api\generate.rsp = generation\Windows\um\coml2api\generate.rsp
+		generation\Windows\um\coml2api\header.txt = generation\Windows\um\coml2api\header.txt
+		generation\Windows\um\coml2api\um-coml2api.h = generation\Windows\um\coml2api\um-coml2api.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3100,6 +3108,7 @@ Global
 		{E861DAD6-1605-417F-9850-2CB8BDFFA53A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{73647067-4ED1-478A-BD13-8E9DB203BAC9} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{6783A12A-BC19-47EA-A006-2D856681241E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{62D8ADD9-4B4F-45FF-BAF1-C48A77A0F861} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
