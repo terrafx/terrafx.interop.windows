@@ -19,18 +19,6 @@ public static partial class Windows
     [NativeTypeName("#define UDIRTYUI (SHTDN_REASON_FLAG_DIRTY_UI)")]
     public const int UDIRTYUI = (0x08000000);
 
-    [NativeTypeName("#define POLICY_SHOWREASONUI_NEVER 0")]
-    public const int POLICY_SHOWREASONUI_NEVER = 0;
-
-    [NativeTypeName("#define POLICY_SHOWREASONUI_ALWAYS 1")]
-    public const int POLICY_SHOWREASONUI_ALWAYS = 1;
-
-    [NativeTypeName("#define POLICY_SHOWREASONUI_WORKSTATIONONLY 2")]
-    public const int POLICY_SHOWREASONUI_WORKSTATIONONLY = 2;
-
-    [NativeTypeName("#define POLICY_SHOWREASONUI_SERVERONLY 3")]
-    public const int POLICY_SHOWREASONUI_SERVERONLY = 3;
-
     [NativeTypeName("#define SNAPSHOT_POLICY_NEVER 0")]
     public const int SNAPSHOT_POLICY_NEVER = 0;
 
