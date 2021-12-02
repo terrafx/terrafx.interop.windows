@@ -245,9 +245,6 @@ public static partial class Windows
     [NativeTypeName("#define PRIVILEGE_SET_ALL_NECESSARY (1)")]
     public const int PRIVILEGE_SET_ALL_NECESSARY = (1);
 
-    [NativeTypeName("#define POLICY_AUDIT_SUBCATEGORY_COUNT (59)")]
-    public const int POLICY_AUDIT_SUBCATEGORY_COUNT = (59);
-
     [NativeTypeName("#define DISABLE_MAX_PRIVILEGE 0x1")]
     public const int DISABLE_MAX_PRIVILEGE = 0x1;
 
