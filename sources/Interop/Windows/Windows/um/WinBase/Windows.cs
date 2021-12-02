@@ -3032,15 +3032,6 @@ public static unsafe partial class Windows
     [NativeTypeName("#define LogonUserEx LogonUserExW")]
     public static delegate*<ushort*, ushort*, ushort*, uint, uint, HANDLE*, void**, void**, uint*, QUOTA_LIMITS*, BOOL> LogonUserEx => &LogonUserExW;
 
-    [NativeTypeName("#define LOGON_WITH_PROFILE 0x00000001")]
-    public const int LOGON_WITH_PROFILE = 0x00000001;
-
-    [NativeTypeName("#define LOGON_NETCREDENTIALS_ONLY 0x00000002")]
-    public const int LOGON_NETCREDENTIALS_ONLY = 0x00000002;
-
-    [NativeTypeName("#define LOGON_ZERO_PASSWORD_BUFFER 0x80000000")]
-    public const uint LOGON_ZERO_PASSWORD_BUFFER = 0x80000000;
-
     [NativeTypeName("#define CreatePrivateNamespace CreatePrivateNamespaceW")]
     public static delegate*<SECURITY_ATTRIBUTES*, void*, ushort*, HANDLE> CreatePrivateNamespace => &CreatePrivateNamespaceW;
 

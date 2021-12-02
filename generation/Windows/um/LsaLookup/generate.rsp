@@ -1,0 +1,21 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-lsalookup.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/lsalookup
+--test-output
+../../../../tests/Interop/Windows/Windows/um/lsalookup
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/LsaLookup.h
+--with-librarypath
+LsaLookupOpenLocalPolicy=sechost
+LsaLookupClose=sechost
+LsaLookupTranslateSids=sechost
+LsaLookupTranslateNames=sechost
+LsaLookupGetDomainInfo=sechost
+LsaLookupFreeMemory=sechost

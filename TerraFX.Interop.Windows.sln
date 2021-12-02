@@ -2714,6 +2714,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "coml2api", "coml2api", "{62
 		generation\Windows\um\coml2api\um-coml2api.h = generation\Windows\um\coml2api\um-coml2api.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ntsecapi", "ntsecapi", "{F311F39C-98D2-4DB0-938A-279CCF799089}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\ntsecapi\generate.rsp = generation\Windows\um\ntsecapi\generate.rsp
+		generation\Windows\um\ntsecapi\header.txt = generation\Windows\um\ntsecapi\header.txt
+		generation\Windows\um\ntsecapi\um-ntsecapi.h = generation\Windows\um\ntsecapi\um-ntsecapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LsaLookup", "LsaLookup", "{1729358D-206C-4F08-AD5F-C6F2E63ECD88}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\LsaLookup\generate.rsp = generation\Windows\um\LsaLookup\generate.rsp
+		generation\Windows\um\LsaLookup\header.txt = generation\Windows\um\LsaLookup\header.txt
+		generation\Windows\um\LsaLookup\um-lsalookup.h = generation\Windows\um\LsaLookup\um-lsalookup.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3133,6 +3147,8 @@ Global
 		{B437C529-B253-44FC-B4CD-879CBB0AA270} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{B14E16A7-6D68-4D45-A0A0-90CF9C1A79EB} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{62D8ADD9-4B4F-45FF-BAF1-C48A77A0F861} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{F311F39C-98D2-4DB0-938A-279CCF799089} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{1729358D-206C-4F08-AD5F-C6F2E63ECD88} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
