@@ -1,0 +1,59 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/accctrl.h in the Windows SDK for Windows 10.0.20348.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace TerraFX.Interop.Windows;
+
+/// <include file='ACTRL_OVERLAPPED.xml' path='doc/member[@name="ACTRL_OVERLAPPED"]/*' />
+public unsafe partial struct ACTRL_OVERLAPPED
+{
+    /// <include file='ACTRL_OVERLAPPED.xml' path='doc/member[@name="ACTRL_OVERLAPPED.Anonymous"]/*' />
+    [NativeTypeName("_ACTRL_OVERLAPPED::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/accctrl.h:658:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    /// <include file='ACTRL_OVERLAPPED.xml' path='doc/member[@name="ACTRL_OVERLAPPED.Reserved2"]/*' />
+    [NativeTypeName("ULONG")]
+    public uint Reserved2;
+
+    /// <include file='ACTRL_OVERLAPPED.xml' path='doc/member[@name="ACTRL_OVERLAPPED.hEvent"]/*' />
+    public HANDLE hEvent;
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Provider"]/*' />
+    public ref void* Provider
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.Provider;
+        }
+    }
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Reserved1"]/*' />
+    public ref uint Reserved1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Reserved1, 1));
+        }
+    }
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Provider"]/*' />
+        [FieldOffset(0)]
+        [NativeTypeName("PVOID")]
+        public void* Provider;
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Reserved1"]/*' />
+        [FieldOffset(0)]
+        [NativeTypeName("ULONG")]
+        public uint Reserved1;
+    }
+}
