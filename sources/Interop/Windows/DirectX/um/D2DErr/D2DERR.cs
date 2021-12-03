@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Windows.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +13,8 @@ public static partial class D2DERR
     public const int D2DERR_UNSUPPORTED_PIXEL_FORMAT = unchecked((int)(0x88982F80));
 
     [NativeTypeName("#define D2DERR_INSUFFICIENT_BUFFER HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)")]
-    public static HRESULT D2DERR_INSUFFICIENT_BUFFER => HRESULT_FROM_WIN32(122);
+    public const int D2DERR_INSUFFICIENT_BUFFER = -2147024774;
 
     [NativeTypeName("#define D2DERR_FILE_NOT_FOUND HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND)")]
-    public static HRESULT D2DERR_FILE_NOT_FOUND => HRESULT_FROM_WIN32(2);
+    public const int D2DERR_FILE_NOT_FOUND = -2147024894;
 }

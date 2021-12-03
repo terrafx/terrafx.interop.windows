@@ -1,5 +1,7 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+AccProvInit
 --file
 um-aclapi.h
 --methodClassName
