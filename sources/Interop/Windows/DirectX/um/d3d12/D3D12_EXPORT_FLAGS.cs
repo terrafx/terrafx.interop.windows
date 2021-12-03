@@ -7,8 +7,10 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_EXPORT_FLAGS.xml' path='doc/member[@name="D3D12_EXPORT_FLAGS"]/*' />
 [Flags]
 public enum D3D12_EXPORT_FLAGS
 {
+    /// <include file='D3D12_EXPORT_FLAGS.xml' path='doc/member[@name="D3D12_EXPORT_FLAGS.D3D12_EXPORT_FLAG_NONE"]/*' />
     D3D12_EXPORT_FLAG_NONE = 0,
 }

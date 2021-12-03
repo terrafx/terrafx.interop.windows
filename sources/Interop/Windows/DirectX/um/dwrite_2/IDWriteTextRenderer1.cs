@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteTextRenderer1.xml' path='doc/member[@name="IDWriteTextRenderer1"]/*' />
 [Guid("D3E0E934-22A0-427E-AAE4-7D9574B59DB1")]
 [NativeTypeName("struct IDWriteTextRenderer1 : IDWriteTextRenderer")]
 [NativeInheritance("IDWriteTextRenderer")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDWriteTextRenderer1 : IDWriteTextRenderer1.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDWriteTextRenderer1 : IDWriteTextRenderer1.Interfa
         return ((delegate* unmanaged<IDWriteTextRenderer1*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteTextRenderer1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDWriteTextRenderer1 : IDWriteTextRenderer1.Interfa
         return ((delegate* unmanaged<IDWriteTextRenderer1*, uint>)(lpVtbl[1]))((IDWriteTextRenderer1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDWriteTextRenderer1 : IDWriteTextRenderer1.Interfa
         return ((delegate* unmanaged<IDWriteTextRenderer1*, uint>)(lpVtbl[2]))((IDWriteTextRenderer1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDWritePixelSnapping.IsPixelSnappingDisabled" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT IsPixelSnappingDisabled(void* clientDrawingContext, BOOL* isDisabled)
@@ -49,6 +54,7 @@ public unsafe partial struct IDWriteTextRenderer1 : IDWriteTextRenderer1.Interfa
         return ((delegate* unmanaged<IDWriteTextRenderer1*, void*, BOOL*, int>)(lpVtbl[3]))((IDWriteTextRenderer1*)Unsafe.AsPointer(ref this), clientDrawingContext, isDisabled);
     }
 
+    /// <inheritdoc cref="IDWritePixelSnapping.GetCurrentTransform" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCurrentTransform(void* clientDrawingContext, DWRITE_MATRIX* transform)
@@ -56,6 +62,7 @@ public unsafe partial struct IDWriteTextRenderer1 : IDWriteTextRenderer1.Interfa
         return ((delegate* unmanaged<IDWriteTextRenderer1*, void*, DWRITE_MATRIX*, int>)(lpVtbl[4]))((IDWriteTextRenderer1*)Unsafe.AsPointer(ref this), clientDrawingContext, transform);
     }
 
+    /// <inheritdoc cref="IDWritePixelSnapping.GetPixelsPerDip" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPixelsPerDip(void* clientDrawingContext, float* pixelsPerDip)
@@ -63,6 +70,7 @@ public unsafe partial struct IDWriteTextRenderer1 : IDWriteTextRenderer1.Interfa
         return ((delegate* unmanaged<IDWriteTextRenderer1*, void*, float*, int>)(lpVtbl[5]))((IDWriteTextRenderer1*)Unsafe.AsPointer(ref this), clientDrawingContext, pixelsPerDip);
     }
 
+    /// <inheritdoc cref="IDWriteTextRenderer.DrawGlyphRun" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT DrawGlyphRun(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, DWRITE_MEASURING_MODE measuringMode, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, [NativeTypeName("const DWRITE_GLYPH_RUN_DESCRIPTION *")] DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, IUnknown* clientDrawingEffect)
@@ -70,6 +78,7 @@ public unsafe partial struct IDWriteTextRenderer1 : IDWriteTextRenderer1.Interfa
         return ((delegate* unmanaged<IDWriteTextRenderer1*, void*, float, float, DWRITE_MEASURING_MODE, DWRITE_GLYPH_RUN*, DWRITE_GLYPH_RUN_DESCRIPTION*, IUnknown*, int>)(lpVtbl[6]))((IDWriteTextRenderer1*)Unsafe.AsPointer(ref this), clientDrawingContext, baselineOriginX, baselineOriginY, measuringMode, glyphRun, glyphRunDescription, clientDrawingEffect);
     }
 
+    /// <inheritdoc cref="IDWriteTextRenderer.DrawUnderline" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT DrawUnderline(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, [NativeTypeName("const DWRITE_UNDERLINE *")] DWRITE_UNDERLINE* underline, IUnknown* clientDrawingEffect)
@@ -77,6 +86,7 @@ public unsafe partial struct IDWriteTextRenderer1 : IDWriteTextRenderer1.Interfa
         return ((delegate* unmanaged<IDWriteTextRenderer1*, void*, float, float, DWRITE_UNDERLINE*, IUnknown*, int>)(lpVtbl[7]))((IDWriteTextRenderer1*)Unsafe.AsPointer(ref this), clientDrawingContext, baselineOriginX, baselineOriginY, underline, clientDrawingEffect);
     }
 
+    /// <inheritdoc cref="IDWriteTextRenderer.DrawStrikethrough" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT DrawStrikethrough(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, [NativeTypeName("const DWRITE_STRIKETHROUGH *")] DWRITE_STRIKETHROUGH* strikethrough, IUnknown* clientDrawingEffect)
@@ -84,6 +94,7 @@ public unsafe partial struct IDWriteTextRenderer1 : IDWriteTextRenderer1.Interfa
         return ((delegate* unmanaged<IDWriteTextRenderer1*, void*, float, float, DWRITE_STRIKETHROUGH*, IUnknown*, int>)(lpVtbl[8]))((IDWriteTextRenderer1*)Unsafe.AsPointer(ref this), clientDrawingContext, baselineOriginX, baselineOriginY, strikethrough, clientDrawingEffect);
     }
 
+    /// <inheritdoc cref="IDWriteTextRenderer.DrawInlineObject" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT DrawInlineObject(void* clientDrawingContext, float originX, float originY, IDWriteInlineObject* inlineObject, BOOL isSideways, BOOL isRightToLeft, IUnknown* clientDrawingEffect)
@@ -91,6 +102,7 @@ public unsafe partial struct IDWriteTextRenderer1 : IDWriteTextRenderer1.Interfa
         return ((delegate* unmanaged<IDWriteTextRenderer1*, void*, float, float, IDWriteInlineObject*, BOOL, BOOL, IUnknown*, int>)(lpVtbl[9]))((IDWriteTextRenderer1*)Unsafe.AsPointer(ref this), clientDrawingContext, originX, originY, inlineObject, isSideways, isRightToLeft, clientDrawingEffect);
     }
 
+    /// <include file='IDWriteTextRenderer1.xml' path='doc/member[@name="IDWriteTextRenderer1.DrawGlyphRun"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT DrawGlyphRun(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, DWRITE_GLYPH_ORIENTATION_ANGLE orientationAngle, DWRITE_MEASURING_MODE measuringMode, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, [NativeTypeName("const DWRITE_GLYPH_RUN_DESCRIPTION *")] DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, IUnknown* clientDrawingEffect)
@@ -98,6 +110,7 @@ public unsafe partial struct IDWriteTextRenderer1 : IDWriteTextRenderer1.Interfa
         return ((delegate* unmanaged<IDWriteTextRenderer1*, void*, float, float, DWRITE_GLYPH_ORIENTATION_ANGLE, DWRITE_MEASURING_MODE, DWRITE_GLYPH_RUN*, DWRITE_GLYPH_RUN_DESCRIPTION*, IUnknown*, int>)(lpVtbl[10]))((IDWriteTextRenderer1*)Unsafe.AsPointer(ref this), clientDrawingContext, baselineOriginX, baselineOriginY, orientationAngle, measuringMode, glyphRun, glyphRunDescription, clientDrawingEffect);
     }
 
+    /// <include file='IDWriteTextRenderer1.xml' path='doc/member[@name="IDWriteTextRenderer1.DrawUnderline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT DrawUnderline(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, DWRITE_GLYPH_ORIENTATION_ANGLE orientationAngle, [NativeTypeName("const DWRITE_UNDERLINE *")] DWRITE_UNDERLINE* underline, IUnknown* clientDrawingEffect)
@@ -105,6 +118,7 @@ public unsafe partial struct IDWriteTextRenderer1 : IDWriteTextRenderer1.Interfa
         return ((delegate* unmanaged<IDWriteTextRenderer1*, void*, float, float, DWRITE_GLYPH_ORIENTATION_ANGLE, DWRITE_UNDERLINE*, IUnknown*, int>)(lpVtbl[11]))((IDWriteTextRenderer1*)Unsafe.AsPointer(ref this), clientDrawingContext, baselineOriginX, baselineOriginY, orientationAngle, underline, clientDrawingEffect);
     }
 
+    /// <include file='IDWriteTextRenderer1.xml' path='doc/member[@name="IDWriteTextRenderer1.DrawStrikethrough"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT DrawStrikethrough(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, DWRITE_GLYPH_ORIENTATION_ANGLE orientationAngle, [NativeTypeName("const DWRITE_STRIKETHROUGH *")] DWRITE_STRIKETHROUGH* strikethrough, IUnknown* clientDrawingEffect)
@@ -112,6 +126,7 @@ public unsafe partial struct IDWriteTextRenderer1 : IDWriteTextRenderer1.Interfa
         return ((delegate* unmanaged<IDWriteTextRenderer1*, void*, float, float, DWRITE_GLYPH_ORIENTATION_ANGLE, DWRITE_STRIKETHROUGH*, IUnknown*, int>)(lpVtbl[12]))((IDWriteTextRenderer1*)Unsafe.AsPointer(ref this), clientDrawingContext, baselineOriginX, baselineOriginY, orientationAngle, strikethrough, clientDrawingEffect);
     }
 
+    /// <include file='IDWriteTextRenderer1.xml' path='doc/member[@name="IDWriteTextRenderer1.DrawInlineObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT DrawInlineObject(void* clientDrawingContext, float originX, float originY, DWRITE_GLYPH_ORIENTATION_ANGLE orientationAngle, IDWriteInlineObject* inlineObject, BOOL isSideways, BOOL isRightToLeft, IUnknown* clientDrawingEffect)

@@ -7,15 +7,20 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXDIAG_INIT_PARAMS.xml' path='doc/member[@name="DXDIAG_INIT_PARAMS"]/*' />
 public unsafe partial struct DXDIAG_INIT_PARAMS
 {
+    /// <include file='DXDIAG_INIT_PARAMS.xml' path='doc/member[@name="DXDIAG_INIT_PARAMS.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='DXDIAG_INIT_PARAMS.xml' path='doc/member[@name="DXDIAG_INIT_PARAMS.dwDxDiagHeaderVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwDxDiagHeaderVersion;
 
+    /// <include file='DXDIAG_INIT_PARAMS.xml' path='doc/member[@name="DXDIAG_INIT_PARAMS.bAllowWHQLChecks"]/*' />
     public BOOL bAllowWHQLChecks;
 
+    /// <include file='DXDIAG_INIT_PARAMS.xml' path='doc/member[@name="DXDIAG_INIT_PARAMS.pReserved"]/*' />
     public void* pReserved;
 }

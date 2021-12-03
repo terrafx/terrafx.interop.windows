@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='BSOS_OPTIONS.xml' path='doc/member[@name="BSOS_OPTIONS"]/*' />
 public enum BSOS_OPTIONS
 {
+    /// <include file='BSOS_OPTIONS.xml' path='doc/member[@name="BSOS_OPTIONS.BSOS_DEFAULT"]/*' />
     BSOS_DEFAULT = 0,
+
+    /// <include file='BSOS_OPTIONS.xml' path='doc/member[@name="BSOS_OPTIONS.BSOS_PREFERDESTINATIONSTREAM"]/*' />
     BSOS_PREFERDESTINATIONSTREAM,
 }

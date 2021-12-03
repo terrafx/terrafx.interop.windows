@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_WAVE_MMA_DIMENSION.xml' path='doc/member[@name="D3D12_WAVE_MMA_DIMENSION"]/*' />
 public enum D3D12_WAVE_MMA_DIMENSION
 {
+    /// <include file='D3D12_WAVE_MMA_DIMENSION.xml' path='doc/member[@name="D3D12_WAVE_MMA_DIMENSION.D3D12_WAVE_MMA_DIMENSION_INVALID"]/*' />
     D3D12_WAVE_MMA_DIMENSION_INVALID = 0,
+
+    /// <include file='D3D12_WAVE_MMA_DIMENSION.xml' path='doc/member[@name="D3D12_WAVE_MMA_DIMENSION.D3D12_WAVE_MMA_DIMENSION_16"]/*' />
     D3D12_WAVE_MMA_DIMENSION_16 = (D3D12_WAVE_MMA_DIMENSION_INVALID + 1),
+
+    /// <include file='D3D12_WAVE_MMA_DIMENSION.xml' path='doc/member[@name="D3D12_WAVE_MMA_DIMENSION.D3D12_WAVE_MMA_DIMENSION_64"]/*' />
     D3D12_WAVE_MMA_DIMENSION_64 = (D3D12_WAVE_MMA_DIMENSION_16 + 1),
 }

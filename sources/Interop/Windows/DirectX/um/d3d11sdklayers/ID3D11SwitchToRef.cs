@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D11SwitchToRef.xml' path='doc/member[@name="ID3D11SwitchToRef"]/*' />
 [Guid("1EF337E3-58E7-4F83-A692-DB221F5ED47E")]
 [NativeTypeName("struct ID3D11SwitchToRef : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D11SwitchToRef : ID3D11SwitchToRef.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D11SwitchToRef : ID3D11SwitchToRef.Interface
         return ((delegate* unmanaged<ID3D11SwitchToRef*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11SwitchToRef*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D11SwitchToRef : ID3D11SwitchToRef.Interface
         return ((delegate* unmanaged<ID3D11SwitchToRef*, uint>)(lpVtbl[1]))((ID3D11SwitchToRef*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D11SwitchToRef : ID3D11SwitchToRef.Interface
         return ((delegate* unmanaged<ID3D11SwitchToRef*, uint>)(lpVtbl[2]))((ID3D11SwitchToRef*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D11SwitchToRef.xml' path='doc/member[@name="ID3D11SwitchToRef.SetUseRef"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public BOOL SetUseRef(BOOL UseRef)
@@ -47,6 +52,7 @@ public unsafe partial struct ID3D11SwitchToRef : ID3D11SwitchToRef.Interface
         return ((delegate* unmanaged<ID3D11SwitchToRef*, BOOL, int>)(lpVtbl[3]))((ID3D11SwitchToRef*)Unsafe.AsPointer(ref this), UseRef);
     }
 
+    /// <include file='ID3D11SwitchToRef.xml' path='doc/member[@name="ID3D11SwitchToRef.GetUseRef"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public BOOL GetUseRef()

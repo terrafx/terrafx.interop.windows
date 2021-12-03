@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteFontFileEnumerator.xml' path='doc/member[@name="IDWriteFontFileEnumerator"]/*' />
 [Guid("72755049-5FF7-435D-8348-4BE97CFA6C7C")]
 [NativeTypeName("struct IDWriteFontFileEnumerator : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDWriteFontFileEnumerator : IDWriteFontFileEnumerat
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDWriteFontFileEnumerator : IDWriteFontFileEnumerat
         return ((delegate* unmanaged<IDWriteFontFileEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontFileEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDWriteFontFileEnumerator : IDWriteFontFileEnumerat
         return ((delegate* unmanaged<IDWriteFontFileEnumerator*, uint>)(lpVtbl[1]))((IDWriteFontFileEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDWriteFontFileEnumerator : IDWriteFontFileEnumerat
         return ((delegate* unmanaged<IDWriteFontFileEnumerator*, uint>)(lpVtbl[2]))((IDWriteFontFileEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteFontFileEnumerator.xml' path='doc/member[@name="IDWriteFontFileEnumerator.MoveNext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT MoveNext(BOOL* hasCurrentFile)
@@ -47,6 +52,7 @@ public unsafe partial struct IDWriteFontFileEnumerator : IDWriteFontFileEnumerat
         return ((delegate* unmanaged<IDWriteFontFileEnumerator*, BOOL*, int>)(lpVtbl[3]))((IDWriteFontFileEnumerator*)Unsafe.AsPointer(ref this), hasCurrentFile);
     }
 
+    /// <include file='IDWriteFontFileEnumerator.xml' path='doc/member[@name="IDWriteFontFileEnumerator.GetCurrentFontFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCurrentFontFile(IDWriteFontFile** fontFile)

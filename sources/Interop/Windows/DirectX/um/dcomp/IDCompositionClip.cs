@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDCompositionClip.xml' path='doc/member[@name="IDCompositionClip"]/*' />
 [Guid("64AC3703-9D3F-45EC-A109-7CAC0E7A13A7")]
 [NativeTypeName("struct IDCompositionClip : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDCompositionClip : IDCompositionClip.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDCompositionClip : IDCompositionClip.Interface
         return ((delegate* unmanaged<IDCompositionClip*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionClip*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDCompositionClip : IDCompositionClip.Interface
         return ((delegate* unmanaged<IDCompositionClip*, uint>)(lpVtbl[1]))((IDCompositionClip*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]

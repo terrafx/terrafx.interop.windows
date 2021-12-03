@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_TEX2D_ARRAY_UAV.xml' path='doc/member[@name="D3D12_TEX2D_ARRAY_UAV"]/*' />
 public partial struct D3D12_TEX2D_ARRAY_UAV
 {
+    /// <include file='D3D12_TEX2D_ARRAY_UAV.xml' path='doc/member[@name="D3D12_TEX2D_ARRAY_UAV.MipSlice"]/*' />
     public uint MipSlice;
 
+    /// <include file='D3D12_TEX2D_ARRAY_UAV.xml' path='doc/member[@name="D3D12_TEX2D_ARRAY_UAV.FirstArraySlice"]/*' />
     public uint FirstArraySlice;
 
+    /// <include file='D3D12_TEX2D_ARRAY_UAV.xml' path='doc/member[@name="D3D12_TEX2D_ARRAY_UAV.ArraySize"]/*' />
     public uint ArraySize;
 
+    /// <include file='D3D12_TEX2D_ARRAY_UAV.xml' path='doc/member[@name="D3D12_TEX2D_ARRAY_UAV.PlaneSlice"]/*' />
     public uint PlaneSlice;
 }

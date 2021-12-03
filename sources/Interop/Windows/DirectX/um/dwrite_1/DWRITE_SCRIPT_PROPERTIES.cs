@@ -7,22 +7,28 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES"]/*' />
 public partial struct DWRITE_SCRIPT_PROPERTIES
 {
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isoScriptCode"]/*' />
     [NativeTypeName("UINT32")]
     public uint isoScriptCode;
 
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isoScriptNumber"]/*' />
     [NativeTypeName("UINT32")]
     public uint isoScriptNumber;
 
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.clusterLookahead"]/*' />
     [NativeTypeName("UINT32")]
     public uint clusterLookahead;
 
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.justificationCharacter"]/*' />
     [NativeTypeName("UINT32")]
     public uint justificationCharacter;
 
     public uint _bitfield;
 
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.restrictCaretToClusters"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint restrictCaretToClusters
     {
@@ -39,6 +45,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
         }
     }
 
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.usesWordDividers"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint usesWordDividers
     {
@@ -55,6 +62,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
         }
     }
 
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isDiscreteWriting"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint isDiscreteWriting
     {
@@ -71,6 +79,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
         }
     }
 
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isBlockWriting"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint isBlockWriting
     {
@@ -87,6 +96,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
         }
     }
 
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isDistributedWithinCluster"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint isDistributedWithinCluster
     {
@@ -103,6 +113,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
         }
     }
 
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isConnectedWriting"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint isConnectedWriting
     {
@@ -119,6 +130,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
         }
     }
 
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.isCursiveWriting"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint isCursiveWriting
     {
@@ -135,6 +147,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
         }
     }
 
+    /// <include file='DWRITE_SCRIPT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SCRIPT_PROPERTIES.reserved"]/*' />
     [NativeTypeName("UINT32 : 25")]
     public uint reserved
     {

@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IWeakReference.xml' path='doc/member[@name="IWeakReference"]/*' />
 [Guid("00000037-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IWeakReference : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IWeakReference : IWeakReference.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IWeakReference : IWeakReference.Interface
         return ((delegate* unmanaged<IWeakReference*, Guid*, void**, int>)(lpVtbl[0]))((IWeakReference*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IWeakReference : IWeakReference.Interface
         return ((delegate* unmanaged<IWeakReference*, uint>)(lpVtbl[1]))((IWeakReference*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IWeakReference : IWeakReference.Interface
         return ((delegate* unmanaged<IWeakReference*, uint>)(lpVtbl[2]))((IWeakReference*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWeakReference.xml' path='doc/member[@name="IWeakReference.Resolve"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Resolve([NativeTypeName("const IID &")] Guid* riid, IInspectable** objectReference)

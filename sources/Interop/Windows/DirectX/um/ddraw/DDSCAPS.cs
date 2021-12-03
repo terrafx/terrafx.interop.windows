@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public partial struct DDSCAPS
 {
+    /// <include file='DDSCAPS.xml' path='doc/member[@name="DDSCAPS.dwCaps"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCaps;
 

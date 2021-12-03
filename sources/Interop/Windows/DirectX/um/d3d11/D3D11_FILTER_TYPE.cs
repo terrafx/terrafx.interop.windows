@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_FILTER_TYPE.xml' path='doc/member[@name="D3D11_FILTER_TYPE"]/*' />
 public enum D3D11_FILTER_TYPE
 {
+    /// <include file='D3D11_FILTER_TYPE.xml' path='doc/member[@name="D3D11_FILTER_TYPE.D3D11_FILTER_TYPE_POINT"]/*' />
     D3D11_FILTER_TYPE_POINT = 0,
+
+    /// <include file='D3D11_FILTER_TYPE.xml' path='doc/member[@name="D3D11_FILTER_TYPE.D3D11_FILTER_TYPE_LINEAR"]/*' />
     D3D11_FILTER_TYPE_LINEAR = 1,
 }

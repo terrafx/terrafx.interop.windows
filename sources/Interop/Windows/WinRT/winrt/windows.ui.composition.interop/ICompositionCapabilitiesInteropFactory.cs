@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ICompositionCapabilitiesInteropFactory.xml' path='doc/member[@name="ICompositionCapabilitiesInteropFactory"]/*' />
 [Guid("2C9DB356-E70D-4642-8298-BC4AA5B4865C")]
 [NativeTypeName("struct ICompositionCapabilitiesInteropFactory : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -17,6 +18,7 @@ public unsafe partial struct ICompositionCapabilitiesInteropFactory : ICompositi
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ICompositionCapabilitiesInteropFactory : ICompositi
         return ((delegate* unmanaged<ICompositionCapabilitiesInteropFactory*, Guid*, void**, int>)(lpVtbl[0]))((ICompositionCapabilitiesInteropFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ICompositionCapabilitiesInteropFactory : ICompositi
         return ((delegate* unmanaged<ICompositionCapabilitiesInteropFactory*, uint>)(lpVtbl[1]))((ICompositionCapabilitiesInteropFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ICompositionCapabilitiesInteropFactory : ICompositi
         return ((delegate* unmanaged<ICompositionCapabilitiesInteropFactory*, uint>)(lpVtbl[2]))((ICompositionCapabilitiesInteropFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -47,6 +52,7 @@ public unsafe partial struct ICompositionCapabilitiesInteropFactory : ICompositi
         return ((delegate* unmanaged<ICompositionCapabilitiesInteropFactory*, uint*, Guid**, int>)(lpVtbl[3]))((ICompositionCapabilitiesInteropFactory*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -54,6 +60,7 @@ public unsafe partial struct ICompositionCapabilitiesInteropFactory : ICompositi
         return ((delegate* unmanaged<ICompositionCapabilitiesInteropFactory*, HSTRING*, int>)(lpVtbl[4]))((ICompositionCapabilitiesInteropFactory*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -61,6 +68,7 @@ public unsafe partial struct ICompositionCapabilitiesInteropFactory : ICompositi
         return ((delegate* unmanaged<ICompositionCapabilitiesInteropFactory*, TrustLevel*, int>)(lpVtbl[5]))((ICompositionCapabilitiesInteropFactory*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='ICompositionCapabilitiesInteropFactory.xml' path='doc/member[@name="ICompositionCapabilitiesInteropFactory.GetForWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetForWindow(HWND hwnd, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionCapabilities **")] void** result)

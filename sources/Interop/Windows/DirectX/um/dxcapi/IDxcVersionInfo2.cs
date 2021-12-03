@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDxcVersionInfo2.xml' path='doc/member[@name="IDxcVersionInfo2"]/*' />
 [Guid("FB6904C4-42F0-4B62-9C46-983AF7DA7C83")]
 [NativeTypeName("struct IDxcVersionInfo2 : IDxcVersionInfo")]
 [NativeInheritance("IDxcVersionInfo")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDxcVersionInfo2 : IDxcVersionInfo2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDxcVersionInfo2 : IDxcVersionInfo2.Interface
         return ((delegate* unmanaged<IDxcVersionInfo2*, Guid*, void**, int>)(lpVtbl[0]))((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDxcVersionInfo2 : IDxcVersionInfo2.Interface
         return ((delegate* unmanaged<IDxcVersionInfo2*, uint>)(lpVtbl[1]))((IDxcVersionInfo2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDxcVersionInfo2 : IDxcVersionInfo2.Interface
         return ((delegate* unmanaged<IDxcVersionInfo2*, uint>)(lpVtbl[2]))((IDxcVersionInfo2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDxcVersionInfo.GetVersion" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetVersion([NativeTypeName("UINT32 *")] uint* pMajor, [NativeTypeName("UINT32 *")] uint* pMinor)
@@ -47,6 +52,7 @@ public unsafe partial struct IDxcVersionInfo2 : IDxcVersionInfo2.Interface
         return ((delegate* unmanaged<IDxcVersionInfo2*, uint*, uint*, int>)(lpVtbl[3]))((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), pMajor, pMinor);
     }
 
+    /// <inheritdoc cref="IDxcVersionInfo.GetFlags" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetFlags([NativeTypeName("UINT32 *")] uint* pFlags)
@@ -54,6 +60,7 @@ public unsafe partial struct IDxcVersionInfo2 : IDxcVersionInfo2.Interface
         return ((delegate* unmanaged<IDxcVersionInfo2*, uint*, int>)(lpVtbl[4]))((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), pFlags);
     }
 
+    /// <include file='IDxcVersionInfo2.xml' path='doc/member[@name="IDxcVersionInfo2.GetCommitInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetCommitInfo([NativeTypeName("UINT32 *")] uint* pCommitCount, [NativeTypeName("char **")] sbyte** pCommitHash)

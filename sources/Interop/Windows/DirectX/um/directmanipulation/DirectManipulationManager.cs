@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DirectManipulationManager.xml' path='doc/member[@name="DirectManipulationManager"]/*' />
 [Guid("54E211B6-3650-4F75-8334-FA359598E1C5")]
 public partial struct DirectManipulationManager
 {

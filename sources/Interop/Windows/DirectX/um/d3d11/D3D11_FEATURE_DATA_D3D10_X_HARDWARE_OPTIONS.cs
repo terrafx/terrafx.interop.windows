@@ -7,7 +7,9 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS"]/*' />
 public partial struct D3D11_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS
 {
+    /// <include file='D3D11_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS.ComputeShaders_Plus_RawAndStructuredBuffers_Via_Shader_4_x"]/*' />
     public BOOL ComputeShaders_Plus_RawAndStructuredBuffers_Via_Shader_4_x;
 }

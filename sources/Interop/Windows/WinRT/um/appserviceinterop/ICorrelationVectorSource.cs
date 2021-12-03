@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ICorrelationVectorSource.xml' path='doc/member[@name="ICorrelationVectorSource"]/*' />
 [Guid("152B8A3B-B9B9-4685-B56E-974847BC7545")]
 [NativeTypeName("struct ICorrelationVectorSource : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ICorrelationVectorSource : ICorrelationVectorSource
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ICorrelationVectorSource : ICorrelationVectorSource
         return ((delegate* unmanaged<ICorrelationVectorSource*, Guid*, void**, int>)(lpVtbl[0]))((ICorrelationVectorSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ICorrelationVectorSource : ICorrelationVectorSource
         return ((delegate* unmanaged<ICorrelationVectorSource*, uint>)(lpVtbl[1]))((ICorrelationVectorSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ICorrelationVectorSource : ICorrelationVectorSource
         return ((delegate* unmanaged<ICorrelationVectorSource*, uint>)(lpVtbl[2]))((ICorrelationVectorSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICorrelationVectorSource.xml' path='doc/member[@name="ICorrelationVectorSource.get_CorrelationVector"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_CorrelationVector(HSTRING* cv)

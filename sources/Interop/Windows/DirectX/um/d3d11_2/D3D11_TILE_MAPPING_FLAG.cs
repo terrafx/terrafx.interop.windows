@@ -8,9 +8,11 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_TILE_MAPPING_FLAG.xml' path='doc/member[@name="D3D11_TILE_MAPPING_FLAG"]/*' />
 [Flags]
 [SupportedOSPlatform("windows8.1")]
 public enum D3D11_TILE_MAPPING_FLAG
 {
+    /// <include file='D3D11_TILE_MAPPING_FLAG.xml' path='doc/member[@name="D3D11_TILE_MAPPING_FLAG.D3D11_TILE_MAPPING_NO_OVERWRITE"]/*' />
     D3D11_TILE_MAPPING_NO_OVERWRITE = 0x1,
 }

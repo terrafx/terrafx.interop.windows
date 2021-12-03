@@ -10,9 +10,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.CreateAudioVolumeMeter"]/*' />
     [DllImport("xaudio2_9", ExactSpelling = true)]
     public static extern HRESULT CreateAudioVolumeMeter(IUnknown** ppApo);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.CreateAudioReverb"]/*' />
     [DllImport("xaudio2_9", ExactSpelling = true)]
     public static extern HRESULT CreateAudioReverb(IUnknown** ppApo);
 }

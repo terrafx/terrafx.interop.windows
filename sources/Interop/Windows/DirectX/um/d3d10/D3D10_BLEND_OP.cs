@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_BLEND_OP.xml' path='doc/member[@name="D3D10_BLEND_OP"]/*' />
 public enum D3D10_BLEND_OP
 {
+    /// <include file='D3D10_BLEND_OP.xml' path='doc/member[@name="D3D10_BLEND_OP.D3D10_BLEND_OP_ADD"]/*' />
     D3D10_BLEND_OP_ADD = 1,
+
+    /// <include file='D3D10_BLEND_OP.xml' path='doc/member[@name="D3D10_BLEND_OP.D3D10_BLEND_OP_SUBTRACT"]/*' />
     D3D10_BLEND_OP_SUBTRACT = 2,
+
+    /// <include file='D3D10_BLEND_OP.xml' path='doc/member[@name="D3D10_BLEND_OP.D3D10_BLEND_OP_REV_SUBTRACT"]/*' />
     D3D10_BLEND_OP_REV_SUBTRACT = 3,
+
+    /// <include file='D3D10_BLEND_OP.xml' path='doc/member[@name="D3D10_BLEND_OP.D3D10_BLEND_OP_MIN"]/*' />
     D3D10_BLEND_OP_MIN = 4,
+
+    /// <include file='D3D10_BLEND_OP.xml' path='doc/member[@name="D3D10_BLEND_OP.D3D10_BLEND_OP_MAX"]/*' />
     D3D10_BLEND_OP_MAX = 5,
 }

@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12VersionedRootSignatureDeserializer.xml' path='doc/member[@name="ID3D12VersionedRootSignatureDeserializer"]/*' />
 [Guid("7F91CE67-090C-4BB7-B78E-ED8FF2E31DA0")]
 [NativeTypeName("struct ID3D12VersionedRootSignatureDeserializer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D12VersionedRootSignatureDeserializer : ID3D12Ve
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D12VersionedRootSignatureDeserializer : ID3D12Ve
         return ((delegate* unmanaged<ID3D12VersionedRootSignatureDeserializer*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12VersionedRootSignatureDeserializer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D12VersionedRootSignatureDeserializer : ID3D12Ve
         return ((delegate* unmanaged<ID3D12VersionedRootSignatureDeserializer*, uint>)(lpVtbl[1]))((ID3D12VersionedRootSignatureDeserializer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D12VersionedRootSignatureDeserializer : ID3D12Ve
         return ((delegate* unmanaged<ID3D12VersionedRootSignatureDeserializer*, uint>)(lpVtbl[2]))((ID3D12VersionedRootSignatureDeserializer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12VersionedRootSignatureDeserializer.xml' path='doc/member[@name="ID3D12VersionedRootSignatureDeserializer.GetRootSignatureDescAtVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetRootSignatureDescAtVersion(D3D_ROOT_SIGNATURE_VERSION convertToVersion, [NativeTypeName("const D3D12_VERSIONED_ROOT_SIGNATURE_DESC **")] D3D12_VERSIONED_ROOT_SIGNATURE_DESC** ppDesc)
@@ -47,6 +52,7 @@ public unsafe partial struct ID3D12VersionedRootSignatureDeserializer : ID3D12Ve
         return ((delegate* unmanaged<ID3D12VersionedRootSignatureDeserializer*, D3D_ROOT_SIGNATURE_VERSION, D3D12_VERSIONED_ROOT_SIGNATURE_DESC**, int>)(lpVtbl[3]))((ID3D12VersionedRootSignatureDeserializer*)Unsafe.AsPointer(ref this), convertToVersion, ppDesc);
     }
 
+    /// <include file='ID3D12VersionedRootSignatureDeserializer.xml' path='doc/member[@name="ID3D12VersionedRootSignatureDeserializer.GetUnconvertedRootSignatureDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     [return: NativeTypeName("const D3D12_VERSIONED_ROOT_SIGNATURE_DESC *")]

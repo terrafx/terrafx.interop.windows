@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDCompositionArithmeticCompositeEffect.xml' path='doc/member[@name="IDCompositionArithmeticCompositeEffect"]/*' />
 [Guid("3B67DFA8-E3DD-4E61-B640-46C2F3D739DC")]
 [NativeTypeName("struct IDCompositionArithmeticCompositeEffect : IDCompositionFilterEffect")]
 [NativeInheritance("IDCompositionFilterEffect")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDCompositionArithmeticCompositeEffect : IDComposit
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDCompositionArithmeticCompositeEffect : IDComposit
         return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDCompositionArithmeticCompositeEffect : IDComposit
         return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, uint>)(lpVtbl[1]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDCompositionArithmeticCompositeEffect : IDComposit
         return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, uint>)(lpVtbl[2]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDCompositionFilterEffect.SetInput" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetInput(uint index, IUnknown* input, uint flags)
@@ -47,6 +52,7 @@ public unsafe partial struct IDCompositionArithmeticCompositeEffect : IDComposit
         return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), index, input, flags);
     }
 
+    /// <include file='IDCompositionArithmeticCompositeEffect.xml' path='doc/member[@name="IDCompositionArithmeticCompositeEffect.SetCoefficients"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetCoefficients([NativeTypeName("const D2D1_VECTOR_4F &")] D2D_VECTOR_4F* coefficients)
@@ -54,6 +60,7 @@ public unsafe partial struct IDCompositionArithmeticCompositeEffect : IDComposit
         return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, D2D_VECTOR_4F*, int>)(lpVtbl[4]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), coefficients);
     }
 
+    /// <include file='IDCompositionArithmeticCompositeEffect.xml' path='doc/member[@name="IDCompositionArithmeticCompositeEffect.SetClampOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetClampOutput(BOOL clampoutput)
@@ -61,6 +68,7 @@ public unsafe partial struct IDCompositionArithmeticCompositeEffect : IDComposit
         return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, BOOL, int>)(lpVtbl[5]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), clampoutput);
     }
 
+    /// <include file='IDCompositionArithmeticCompositeEffect.xml' path='doc/member[@name="IDCompositionArithmeticCompositeEffect.SetCoefficient1"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetCoefficient1(IDCompositionAnimation* animation)
@@ -68,6 +76,7 @@ public unsafe partial struct IDCompositionArithmeticCompositeEffect : IDComposit
         return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, IDCompositionAnimation*, int>)(lpVtbl[6]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionArithmeticCompositeEffect.xml' path='doc/member[@name="IDCompositionArithmeticCompositeEffect.SetCoefficient1"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetCoefficient1(float Coeffcient1)
@@ -75,6 +84,7 @@ public unsafe partial struct IDCompositionArithmeticCompositeEffect : IDComposit
         return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int>)(lpVtbl[7]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), Coeffcient1);
     }
 
+    /// <include file='IDCompositionArithmeticCompositeEffect.xml' path='doc/member[@name="IDCompositionArithmeticCompositeEffect.SetCoefficient2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetCoefficient2(IDCompositionAnimation* animation)
@@ -82,6 +92,7 @@ public unsafe partial struct IDCompositionArithmeticCompositeEffect : IDComposit
         return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, IDCompositionAnimation*, int>)(lpVtbl[8]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionArithmeticCompositeEffect.xml' path='doc/member[@name="IDCompositionArithmeticCompositeEffect.SetCoefficient2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetCoefficient2(float Coefficient2)
@@ -89,6 +100,7 @@ public unsafe partial struct IDCompositionArithmeticCompositeEffect : IDComposit
         return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int>)(lpVtbl[9]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), Coefficient2);
     }
 
+    /// <include file='IDCompositionArithmeticCompositeEffect.xml' path='doc/member[@name="IDCompositionArithmeticCompositeEffect.SetCoefficient3"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetCoefficient3(IDCompositionAnimation* animation)
@@ -96,6 +108,7 @@ public unsafe partial struct IDCompositionArithmeticCompositeEffect : IDComposit
         return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, IDCompositionAnimation*, int>)(lpVtbl[10]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionArithmeticCompositeEffect.xml' path='doc/member[@name="IDCompositionArithmeticCompositeEffect.SetCoefficient3"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetCoefficient3(float Coefficient3)
@@ -103,6 +116,7 @@ public unsafe partial struct IDCompositionArithmeticCompositeEffect : IDComposit
         return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int>)(lpVtbl[11]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), Coefficient3);
     }
 
+    /// <include file='IDCompositionArithmeticCompositeEffect.xml' path='doc/member[@name="IDCompositionArithmeticCompositeEffect.SetCoefficient4"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SetCoefficient4(IDCompositionAnimation* animation)
@@ -110,6 +124,7 @@ public unsafe partial struct IDCompositionArithmeticCompositeEffect : IDComposit
         return ((delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, IDCompositionAnimation*, int>)(lpVtbl[12]))((IDCompositionArithmeticCompositeEffect*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionArithmeticCompositeEffect.xml' path='doc/member[@name="IDCompositionArithmeticCompositeEffect.SetCoefficient4"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT SetCoefficient4(float Coefficient4)

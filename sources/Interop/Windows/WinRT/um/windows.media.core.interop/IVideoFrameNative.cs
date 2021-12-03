@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IVideoFrameNative.xml' path='doc/member[@name="IVideoFrameNative"]/*' />
 [Guid("26BA702B-314A-4620-AAF6-7A51AA58FA18")]
 [NativeTypeName("struct IVideoFrameNative : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -17,6 +18,7 @@ public unsafe partial struct IVideoFrameNative : IVideoFrameNative.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IVideoFrameNative : IVideoFrameNative.Interface
         return ((delegate* unmanaged<IVideoFrameNative*, Guid*, void**, int>)(lpVtbl[0]))((IVideoFrameNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IVideoFrameNative : IVideoFrameNative.Interface
         return ((delegate* unmanaged<IVideoFrameNative*, uint>)(lpVtbl[1]))((IVideoFrameNative*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IVideoFrameNative : IVideoFrameNative.Interface
         return ((delegate* unmanaged<IVideoFrameNative*, uint>)(lpVtbl[2]))((IVideoFrameNative*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -47,6 +52,7 @@ public unsafe partial struct IVideoFrameNative : IVideoFrameNative.Interface
         return ((delegate* unmanaged<IVideoFrameNative*, uint*, Guid**, int>)(lpVtbl[3]))((IVideoFrameNative*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -54,6 +60,7 @@ public unsafe partial struct IVideoFrameNative : IVideoFrameNative.Interface
         return ((delegate* unmanaged<IVideoFrameNative*, HSTRING*, int>)(lpVtbl[4]))((IVideoFrameNative*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -61,6 +68,7 @@ public unsafe partial struct IVideoFrameNative : IVideoFrameNative.Interface
         return ((delegate* unmanaged<IVideoFrameNative*, TrustLevel*, int>)(lpVtbl[5]))((IVideoFrameNative*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='IVideoFrameNative.xml' path='doc/member[@name="IVideoFrameNative.GetData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetData([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
@@ -68,6 +76,7 @@ public unsafe partial struct IVideoFrameNative : IVideoFrameNative.Interface
         return ((delegate* unmanaged<IVideoFrameNative*, Guid*, void**, int>)(lpVtbl[6]))((IVideoFrameNative*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
+    /// <include file='IVideoFrameNative.xml' path='doc/member[@name="IVideoFrameNative.GetDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)

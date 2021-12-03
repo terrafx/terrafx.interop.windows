@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_UNICODE_RANGE.xml' path='doc/member[@name="DWRITE_UNICODE_RANGE"]/*' />
 public partial struct DWRITE_UNICODE_RANGE
 {
+    /// <include file='DWRITE_UNICODE_RANGE.xml' path='doc/member[@name="DWRITE_UNICODE_RANGE.first"]/*' />
     [NativeTypeName("UINT32")]
     public uint first;
 
+    /// <include file='DWRITE_UNICODE_RANGE.xml' path='doc/member[@name="DWRITE_UNICODE_RANGE.last"]/*' />
     [NativeTypeName("UINT32")]
     public uint last;
 }

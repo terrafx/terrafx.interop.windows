@@ -10,18 +10,23 @@ namespace TerraFX.Interop.DirectX;
 
 public partial struct DDSCAPS2
 {
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.dwCaps"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCaps;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.dwCaps2"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCaps2;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.dwCaps3"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCaps3;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.Anonymous"]/*' />
     [NativeTypeName("_DDSCAPS2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:371:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwCaps4"]/*' />
     public ref uint dwCaps4
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -31,6 +36,7 @@ public partial struct DDSCAPS2
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwVolumeDepth"]/*' />
     public ref uint dwVolumeDepth
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -40,13 +46,16 @@ public partial struct DDSCAPS2
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwCaps4"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwCaps4;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwVolumeDepth"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwVolumeDepth;

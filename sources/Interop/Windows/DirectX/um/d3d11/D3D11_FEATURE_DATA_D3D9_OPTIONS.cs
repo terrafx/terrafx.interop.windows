@@ -7,7 +7,9 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_FEATURE_DATA_D3D9_OPTIONS.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D9_OPTIONS"]/*' />
 public partial struct D3D11_FEATURE_DATA_D3D9_OPTIONS
 {
+    /// <include file='D3D11_FEATURE_DATA_D3D9_OPTIONS.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D9_OPTIONS.FullNonPow2TextureSupport"]/*' />
     public BOOL FullNonPow2TextureSupport;
 }

@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_CREATION_PROPERTIES.xml' path='doc/member[@name="D2D1_CREATION_PROPERTIES"]/*' />
 public partial struct D2D1_CREATION_PROPERTIES
 {
+    /// <include file='D2D1_CREATION_PROPERTIES.xml' path='doc/member[@name="D2D1_CREATION_PROPERTIES.threadingMode"]/*' />
     public D2D1_THREADING_MODE threadingMode;
 
+    /// <include file='D2D1_CREATION_PROPERTIES.xml' path='doc/member[@name="D2D1_CREATION_PROPERTIES.debugLevel"]/*' />
     public D2D1_DEBUG_LEVEL debugLevel;
 
+    /// <include file='D2D1_CREATION_PROPERTIES.xml' path='doc/member[@name="D2D1_CREATION_PROPERTIES.options"]/*' />
     public D2D1_DEVICE_CONTEXT_OPTIONS options;
 }

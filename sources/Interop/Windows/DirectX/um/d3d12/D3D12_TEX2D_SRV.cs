@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_TEX2D_SRV.xml' path='doc/member[@name="D3D12_TEX2D_SRV"]/*' />
 public partial struct D3D12_TEX2D_SRV
 {
+    /// <include file='D3D12_TEX2D_SRV.xml' path='doc/member[@name="D3D12_TEX2D_SRV.MostDetailedMip"]/*' />
     public uint MostDetailedMip;
 
+    /// <include file='D3D12_TEX2D_SRV.xml' path='doc/member[@name="D3D12_TEX2D_SRV.MipLevels"]/*' />
     public uint MipLevels;
 
+    /// <include file='D3D12_TEX2D_SRV.xml' path='doc/member[@name="D3D12_TEX2D_SRV.PlaneSlice"]/*' />
     public uint PlaneSlice;
 
+    /// <include file='D3D12_TEX2D_SRV.xml' path='doc/member[@name="D3D12_TEX2D_SRV.ResourceMinLODClamp"]/*' />
     public float ResourceMinLODClamp;
 }

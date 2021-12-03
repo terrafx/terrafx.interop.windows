@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_WORD_WRAPPING.xml' path='doc/member[@name="DWRITE_WORD_WRAPPING"]/*' />
 public enum DWRITE_WORD_WRAPPING
 {
+    /// <include file='DWRITE_WORD_WRAPPING.xml' path='doc/member[@name="DWRITE_WORD_WRAPPING.DWRITE_WORD_WRAPPING_WRAP"]/*' />
     DWRITE_WORD_WRAPPING_WRAP = 0,
+
+    /// <include file='DWRITE_WORD_WRAPPING.xml' path='doc/member[@name="DWRITE_WORD_WRAPPING.DWRITE_WORD_WRAPPING_NO_WRAP"]/*' />
     DWRITE_WORD_WRAPPING_NO_WRAP = 1,
+
+    /// <include file='DWRITE_WORD_WRAPPING.xml' path='doc/member[@name="DWRITE_WORD_WRAPPING.DWRITE_WORD_WRAPPING_EMERGENCY_BREAK"]/*' />
     DWRITE_WORD_WRAPPING_EMERGENCY_BREAK = 2,
+
+    /// <include file='DWRITE_WORD_WRAPPING.xml' path='doc/member[@name="DWRITE_WORD_WRAPPING.DWRITE_WORD_WRAPPING_WHOLE_WORD"]/*' />
     DWRITE_WORD_WRAPPING_WHOLE_WORD = 3,
+
+    /// <include file='DWRITE_WORD_WRAPPING.xml' path='doc/member[@name="DWRITE_WORD_WRAPPING.DWRITE_WORD_WRAPPING_CHARACTER"]/*' />
     DWRITE_WORD_WRAPPING_CHARACTER = 4,
 }

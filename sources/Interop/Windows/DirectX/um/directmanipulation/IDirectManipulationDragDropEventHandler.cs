@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDirectManipulationDragDropEventHandler.xml' path='doc/member[@name="IDirectManipulationDragDropEventHandler"]/*' />
 [Guid("1FA11B10-701B-41AE-B5F2-49E36BD595AA")]
 [NativeTypeName("struct IDirectManipulationDragDropEventHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDirectManipulationDragDropEventHandler : IDirectMa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDirectManipulationDragDropEventHandler : IDirectMa
         return ((delegate* unmanaged<IDirectManipulationDragDropEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationDragDropEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDirectManipulationDragDropEventHandler : IDirectMa
         return ((delegate* unmanaged<IDirectManipulationDragDropEventHandler*, uint>)(lpVtbl[1]))((IDirectManipulationDragDropEventHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDirectManipulationDragDropEventHandler : IDirectMa
         return ((delegate* unmanaged<IDirectManipulationDragDropEventHandler*, uint>)(lpVtbl[2]))((IDirectManipulationDragDropEventHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectManipulationDragDropEventHandler.xml' path='doc/member[@name="IDirectManipulationDragDropEventHandler.OnDragDropStatusChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnDragDropStatusChange(IDirectManipulationViewport2* viewport, DIRECTMANIPULATION_DRAG_DROP_STATUS current, DIRECTMANIPULATION_DRAG_DROP_STATUS previous)

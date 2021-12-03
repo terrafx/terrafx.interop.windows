@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_RANGE.xml' path='doc/member[@name="D3D12_RANGE"]/*' />
 public partial struct D3D12_RANGE
 {
+    /// <include file='D3D12_RANGE.xml' path='doc/member[@name="D3D12_RANGE.Begin"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint Begin;
 
+    /// <include file='D3D12_RANGE.xml' path='doc/member[@name="D3D12_RANGE.End"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint End;
 }

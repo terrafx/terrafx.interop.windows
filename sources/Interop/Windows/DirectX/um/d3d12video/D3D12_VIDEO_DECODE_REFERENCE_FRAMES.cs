@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_VIDEO_DECODE_REFERENCE_FRAMES.xml' path='doc/member[@name="D3D12_VIDEO_DECODE_REFERENCE_FRAMES"]/*' />
 public unsafe partial struct D3D12_VIDEO_DECODE_REFERENCE_FRAMES
 {
+    /// <include file='D3D12_VIDEO_DECODE_REFERENCE_FRAMES.xml' path='doc/member[@name="D3D12_VIDEO_DECODE_REFERENCE_FRAMES.NumTexture2Ds"]/*' />
     public uint NumTexture2Ds;
 
+    /// <include file='D3D12_VIDEO_DECODE_REFERENCE_FRAMES.xml' path='doc/member[@name="D3D12_VIDEO_DECODE_REFERENCE_FRAMES.ppTexture2Ds"]/*' />
     public ID3D12Resource** ppTexture2Ds;
 
+    /// <include file='D3D12_VIDEO_DECODE_REFERENCE_FRAMES.xml' path='doc/member[@name="D3D12_VIDEO_DECODE_REFERENCE_FRAMES.pSubresources"]/*' />
     public uint* pSubresources;
 
+    /// <include file='D3D12_VIDEO_DECODE_REFERENCE_FRAMES.xml' path='doc/member[@name="D3D12_VIDEO_DECODE_REFERENCE_FRAMES.ppHeaps"]/*' />
     public ID3D12VideoDecoderHeap** ppHeaps;
 }

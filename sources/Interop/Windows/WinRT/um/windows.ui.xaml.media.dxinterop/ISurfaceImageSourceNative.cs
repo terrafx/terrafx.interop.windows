@@ -12,6 +12,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ISurfaceImageSourceNative.xml' path='doc/member[@name="ISurfaceImageSourceNative"]/*' />
 [Guid("F2E9EDC1-D307-4525-9886-0FAFAA44163C")]
 [NativeTypeName("struct ISurfaceImageSourceNative : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -20,6 +21,7 @@ public unsafe partial struct ISurfaceImageSourceNative : ISurfaceImageSourceNati
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -27,6 +29,7 @@ public unsafe partial struct ISurfaceImageSourceNative : ISurfaceImageSourceNati
         return ((delegate* unmanaged<ISurfaceImageSourceNative*, Guid*, void**, int>)(lpVtbl[0]))((ISurfaceImageSourceNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -35,6 +38,7 @@ public unsafe partial struct ISurfaceImageSourceNative : ISurfaceImageSourceNati
         return ((delegate* unmanaged<ISurfaceImageSourceNative*, uint>)(lpVtbl[1]))((ISurfaceImageSourceNative*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -43,6 +47,7 @@ public unsafe partial struct ISurfaceImageSourceNative : ISurfaceImageSourceNati
         return ((delegate* unmanaged<ISurfaceImageSourceNative*, uint>)(lpVtbl[2]))((ISurfaceImageSourceNative*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISurfaceImageSourceNative.xml' path='doc/member[@name="ISurfaceImageSourceNative.SetDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetDevice(IDXGIDevice* device)
@@ -50,6 +55,7 @@ public unsafe partial struct ISurfaceImageSourceNative : ISurfaceImageSourceNati
         return ((delegate* unmanaged<ISurfaceImageSourceNative*, IDXGIDevice*, int>)(lpVtbl[3]))((ISurfaceImageSourceNative*)Unsafe.AsPointer(ref this), device);
     }
 
+    /// <include file='ISurfaceImageSourceNative.xml' path='doc/member[@name="ISurfaceImageSourceNative.BeginDraw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT BeginDraw(RECT updateRect, IDXGISurface** surface, POINT* offset)
@@ -57,6 +63,7 @@ public unsafe partial struct ISurfaceImageSourceNative : ISurfaceImageSourceNati
         return ((delegate* unmanaged<ISurfaceImageSourceNative*, RECT, IDXGISurface**, POINT*, int>)(lpVtbl[4]))((ISurfaceImageSourceNative*)Unsafe.AsPointer(ref this), updateRect, surface, offset);
     }
 
+    /// <include file='ISurfaceImageSourceNative.xml' path='doc/member[@name="ISurfaceImageSourceNative.EndDraw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EndDraw()

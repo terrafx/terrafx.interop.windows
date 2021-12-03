@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_TEX2DMS_SRV.xml' path='doc/member[@name="D3D11_TEX2DMS_SRV"]/*' />
 public partial struct D3D11_TEX2DMS_SRV
 {
+    /// <include file='D3D11_TEX2DMS_SRV.xml' path='doc/member[@name="D3D11_TEX2DMS_SRV.UnusedField_NothingToDefine"]/*' />
     public uint UnusedField_NothingToDefine;
 }

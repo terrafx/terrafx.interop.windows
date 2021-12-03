@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D11On12Device.xml' path='doc/member[@name="ID3D11On12Device"]/*' />
 [Guid("85611E73-70A9-490E-9614-A9E302777904")]
 [NativeTypeName("struct ID3D11On12Device : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D11On12Device : ID3D11On12Device.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D11On12Device : ID3D11On12Device.Interface
         return ((delegate* unmanaged<ID3D11On12Device*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11On12Device*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D11On12Device : ID3D11On12Device.Interface
         return ((delegate* unmanaged<ID3D11On12Device*, uint>)(lpVtbl[1]))((ID3D11On12Device*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D11On12Device : ID3D11On12Device.Interface
         return ((delegate* unmanaged<ID3D11On12Device*, uint>)(lpVtbl[2]))((ID3D11On12Device*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D11On12Device.xml' path='doc/member[@name="ID3D11On12Device.CreateWrappedResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateWrappedResource(IUnknown* pResource12, [NativeTypeName("const D3D11_RESOURCE_FLAGS *")] D3D11_RESOURCE_FLAGS* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, [NativeTypeName("const IID &")] Guid* riid, void** ppResource11)
@@ -47,6 +52,7 @@ public unsafe partial struct ID3D11On12Device : ID3D11On12Device.Interface
         return ((delegate* unmanaged<ID3D11On12Device*, IUnknown*, D3D11_RESOURCE_FLAGS*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int>)(lpVtbl[3]))((ID3D11On12Device*)Unsafe.AsPointer(ref this), pResource12, pFlags11, InState, OutState, riid, ppResource11);
     }
 
+    /// <include file='ID3D11On12Device.xml' path='doc/member[@name="ID3D11On12Device.ReleaseWrappedResources"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void ReleaseWrappedResources([NativeTypeName("ID3D11Resource *const *")] ID3D11Resource** ppResources, uint NumResources)
@@ -54,6 +60,7 @@ public unsafe partial struct ID3D11On12Device : ID3D11On12Device.Interface
         ((delegate* unmanaged<ID3D11On12Device*, ID3D11Resource**, uint, void>)(lpVtbl[4]))((ID3D11On12Device*)Unsafe.AsPointer(ref this), ppResources, NumResources);
     }
 
+    /// <include file='ID3D11On12Device.xml' path='doc/member[@name="ID3D11On12Device.AcquireWrappedResources"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void AcquireWrappedResources([NativeTypeName("ID3D11Resource *const *")] ID3D11Resource** ppResources, uint NumResources)

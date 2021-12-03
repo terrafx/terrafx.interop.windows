@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteFontList2.xml' path='doc/member[@name="IDWriteFontList2"]/*' />
 [Guid("C0763A34-77AF-445A-B735-08C37B0A5BF5")]
 [NativeTypeName("struct IDWriteFontList2 : IDWriteFontList1")]
 [NativeInheritance("IDWriteFontList1")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDWriteFontList2 : IDWriteFontList2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDWriteFontList2 : IDWriteFontList2.Interface
         return ((delegate* unmanaged<IDWriteFontList2*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontList2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDWriteFontList2 : IDWriteFontList2.Interface
         return ((delegate* unmanaged<IDWriteFontList2*, uint>)(lpVtbl[1]))((IDWriteFontList2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDWriteFontList2 : IDWriteFontList2.Interface
         return ((delegate* unmanaged<IDWriteFontList2*, uint>)(lpVtbl[2]))((IDWriteFontList2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDWriteFontList.GetFontCollection" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetFontCollection(IDWriteFontCollection** fontCollection)
@@ -47,6 +52,7 @@ public unsafe partial struct IDWriteFontList2 : IDWriteFontList2.Interface
         return ((delegate* unmanaged<IDWriteFontList2*, IDWriteFontCollection**, int>)(lpVtbl[3]))((IDWriteFontList2*)Unsafe.AsPointer(ref this), fontCollection);
     }
 
+    /// <inheritdoc cref="IDWriteFontList.GetFontCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     [return: NativeTypeName("UINT32")]
@@ -55,6 +61,7 @@ public unsafe partial struct IDWriteFontList2 : IDWriteFontList2.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontList2*, uint>)(lpVtbl[4]))((IDWriteFontList2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDWriteFontList.GetFont" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetFont([NativeTypeName("UINT32")] uint index, IDWriteFont** font)
@@ -62,6 +69,7 @@ public unsafe partial struct IDWriteFontList2 : IDWriteFontList2.Interface
         return ((delegate* unmanaged<IDWriteFontList2*, uint, IDWriteFont**, int>)(lpVtbl[5]))((IDWriteFontList2*)Unsafe.AsPointer(ref this), index, font);
     }
 
+    /// <inheritdoc cref="IDWriteFontList1.GetFontLocality" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public DWRITE_LOCALITY GetFontLocality([NativeTypeName("UINT32")] uint listIndex)
@@ -69,6 +77,7 @@ public unsafe partial struct IDWriteFontList2 : IDWriteFontList2.Interface
         return ((delegate* unmanaged<IDWriteFontList2*, uint, DWRITE_LOCALITY>)(lpVtbl[6]))((IDWriteFontList2*)Unsafe.AsPointer(ref this), listIndex);
     }
 
+    /// <inheritdoc cref="IDWriteFontList1.GetFont" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetFont([NativeTypeName("UINT32")] uint listIndex, IDWriteFont3** font)
@@ -76,6 +85,7 @@ public unsafe partial struct IDWriteFontList2 : IDWriteFontList2.Interface
         return ((delegate* unmanaged<IDWriteFontList2*, uint, IDWriteFont3**, int>)(lpVtbl[7]))((IDWriteFontList2*)Unsafe.AsPointer(ref this), listIndex, font);
     }
 
+    /// <inheritdoc cref="IDWriteFontList1.GetFontFaceReference" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetFontFaceReference([NativeTypeName("UINT32")] uint listIndex, IDWriteFontFaceReference** fontFaceReference)
@@ -83,6 +93,7 @@ public unsafe partial struct IDWriteFontList2 : IDWriteFontList2.Interface
         return ((delegate* unmanaged<IDWriteFontList2*, uint, IDWriteFontFaceReference**, int>)(lpVtbl[8]))((IDWriteFontList2*)Unsafe.AsPointer(ref this), listIndex, fontFaceReference);
     }
 
+    /// <include file='IDWriteFontList2.xml' path='doc/member[@name="IDWriteFontList2.GetFontSet"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetFontSet(IDWriteFontSet1** fontSet)

@@ -5,17 +5,24 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_INFO_QUEUE_FILTER_DESC.xml' path='doc/member[@name="D3D11_INFO_QUEUE_FILTER_DESC"]/*' />
 public unsafe partial struct D3D11_INFO_QUEUE_FILTER_DESC
 {
+    /// <include file='D3D11_INFO_QUEUE_FILTER_DESC.xml' path='doc/member[@name="D3D11_INFO_QUEUE_FILTER_DESC.NumCategories"]/*' />
     public uint NumCategories;
 
+    /// <include file='D3D11_INFO_QUEUE_FILTER_DESC.xml' path='doc/member[@name="D3D11_INFO_QUEUE_FILTER_DESC.pCategoryList"]/*' />
     public D3D11_MESSAGE_CATEGORY* pCategoryList;
 
+    /// <include file='D3D11_INFO_QUEUE_FILTER_DESC.xml' path='doc/member[@name="D3D11_INFO_QUEUE_FILTER_DESC.NumSeverities"]/*' />
     public uint NumSeverities;
 
+    /// <include file='D3D11_INFO_QUEUE_FILTER_DESC.xml' path='doc/member[@name="D3D11_INFO_QUEUE_FILTER_DESC.pSeverityList"]/*' />
     public D3D11_MESSAGE_SEVERITY* pSeverityList;
 
+    /// <include file='D3D11_INFO_QUEUE_FILTER_DESC.xml' path='doc/member[@name="D3D11_INFO_QUEUE_FILTER_DESC.NumIDs"]/*' />
     public uint NumIDs;
 
+    /// <include file='D3D11_INFO_QUEUE_FILTER_DESC.xml' path='doc/member[@name="D3D11_INFO_QUEUE_FILTER_DESC.pIDList"]/*' />
     public D3D11_MESSAGE_ID* pIDList;
 }

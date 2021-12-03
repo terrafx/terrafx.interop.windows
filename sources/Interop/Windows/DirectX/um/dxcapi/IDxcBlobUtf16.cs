@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDxcBlobUtf16.xml' path='doc/member[@name="IDxcBlobUtf16"]/*' />
 [Guid("A3F84EAB-0FAA-497E-A39C-EE6ED60B2D84")]
 [NativeTypeName("struct IDxcBlobUtf16 : IDxcBlobEncoding")]
 [NativeInheritance("IDxcBlobEncoding")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDxcBlobUtf16 : IDxcBlobUtf16.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDxcBlobUtf16 : IDxcBlobUtf16.Interface
         return ((delegate* unmanaged<IDxcBlobUtf16*, Guid*, void**, int>)(lpVtbl[0]))((IDxcBlobUtf16*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDxcBlobUtf16 : IDxcBlobUtf16.Interface
         return ((delegate* unmanaged<IDxcBlobUtf16*, uint>)(lpVtbl[1]))((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDxcBlobUtf16 : IDxcBlobUtf16.Interface
         return ((delegate* unmanaged<IDxcBlobUtf16*, uint>)(lpVtbl[2]))((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDxcBlob.GetBufferPointer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("LPVOID")]
@@ -48,6 +53,7 @@ public unsafe partial struct IDxcBlobUtf16 : IDxcBlobUtf16.Interface
         return ((delegate* unmanaged<IDxcBlobUtf16*, void*>)(lpVtbl[3]))((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDxcBlob.GetBufferSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     [return: NativeTypeName("SIZE_T")]
@@ -56,6 +62,7 @@ public unsafe partial struct IDxcBlobUtf16 : IDxcBlobUtf16.Interface
         return ((delegate* unmanaged<IDxcBlobUtf16*, nuint>)(lpVtbl[4]))((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDxcBlobEncoding.GetEncoding" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetEncoding(BOOL* pKnown, [NativeTypeName("UINT32 *")] uint* pCodePage)
@@ -63,6 +70,7 @@ public unsafe partial struct IDxcBlobUtf16 : IDxcBlobUtf16.Interface
         return ((delegate* unmanaged<IDxcBlobUtf16*, BOOL*, uint*, int>)(lpVtbl[5]))((IDxcBlobUtf16*)Unsafe.AsPointer(ref this), pKnown, pCodePage);
     }
 
+    /// <include file='IDxcBlobUtf16.xml' path='doc/member[@name="IDxcBlobUtf16.GetStringPointer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     [return: NativeTypeName("LPCWSTR")]
@@ -71,6 +79,7 @@ public unsafe partial struct IDxcBlobUtf16 : IDxcBlobUtf16.Interface
         return ((delegate* unmanaged<IDxcBlobUtf16*, ushort*>)(lpVtbl[6]))((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDxcBlobUtf16.xml' path='doc/member[@name="IDxcBlobUtf16.GetStringLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [return: NativeTypeName("SIZE_T")]

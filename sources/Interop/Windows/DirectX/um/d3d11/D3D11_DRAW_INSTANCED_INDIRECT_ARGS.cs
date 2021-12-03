@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_DRAW_INSTANCED_INDIRECT_ARGS.xml' path='doc/member[@name="D3D11_DRAW_INSTANCED_INDIRECT_ARGS"]/*' />
 public partial struct D3D11_DRAW_INSTANCED_INDIRECT_ARGS
 {
+    /// <include file='D3D11_DRAW_INSTANCED_INDIRECT_ARGS.xml' path='doc/member[@name="D3D11_DRAW_INSTANCED_INDIRECT_ARGS.VertexCountPerInstance"]/*' />
     public uint VertexCountPerInstance;
 
+    /// <include file='D3D11_DRAW_INSTANCED_INDIRECT_ARGS.xml' path='doc/member[@name="D3D11_DRAW_INSTANCED_INDIRECT_ARGS.InstanceCount"]/*' />
     public uint InstanceCount;
 
+    /// <include file='D3D11_DRAW_INSTANCED_INDIRECT_ARGS.xml' path='doc/member[@name="D3D11_DRAW_INSTANCED_INDIRECT_ARGS.StartVertexLocation"]/*' />
     public uint StartVertexLocation;
 
+    /// <include file='D3D11_DRAW_INSTANCED_INDIRECT_ARGS.xml' path='doc/member[@name="D3D11_DRAW_INSTANCED_INDIRECT_ARGS.StartInstanceLocation"]/*' />
     public uint StartInstanceLocation;
 }

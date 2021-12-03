@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12SDKConfiguration.xml' path='doc/member[@name="ID3D12SDKConfiguration"]/*' />
 [Guid("E9EB5314-33AA-42B2-A718-D77F58B1F1C7")]
 [NativeTypeName("struct ID3D12SDKConfiguration : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D12SDKConfiguration : ID3D12SDKConfiguration.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D12SDKConfiguration : ID3D12SDKConfiguration.Int
         return ((delegate* unmanaged<ID3D12SDKConfiguration*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12SDKConfiguration*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D12SDKConfiguration : ID3D12SDKConfiguration.Int
         return ((delegate* unmanaged<ID3D12SDKConfiguration*, uint>)(lpVtbl[1]))((ID3D12SDKConfiguration*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D12SDKConfiguration : ID3D12SDKConfiguration.Int
         return ((delegate* unmanaged<ID3D12SDKConfiguration*, uint>)(lpVtbl[2]))((ID3D12SDKConfiguration*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12SDKConfiguration.xml' path='doc/member[@name="ID3D12SDKConfiguration.SetSDKVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetSDKVersion(uint SDKVersion, [NativeTypeName("LPCSTR")] sbyte* SDKPath)

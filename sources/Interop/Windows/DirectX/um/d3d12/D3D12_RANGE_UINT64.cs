@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_RANGE_UINT64.xml' path='doc/member[@name="D3D12_RANGE_UINT64"]/*' />
 public partial struct D3D12_RANGE_UINT64
 {
+    /// <include file='D3D12_RANGE_UINT64.xml' path='doc/member[@name="D3D12_RANGE_UINT64.Begin"]/*' />
     [NativeTypeName("UINT64")]
     public ulong Begin;
 
+    /// <include file='D3D12_RANGE_UINT64.xml' path='doc/member[@name="D3D12_RANGE_UINT64.End"]/*' />
     [NativeTypeName("UINT64")]
     public ulong End;
 }

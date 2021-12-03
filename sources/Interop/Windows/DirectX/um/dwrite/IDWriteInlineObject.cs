@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteInlineObject.xml' path='doc/member[@name="IDWriteInlineObject"]/*' />
 [Guid("8339FDE3-106F-47AB-8373-1C6295EB10B3")]
 [NativeTypeName("struct IDWriteInlineObject : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDWriteInlineObject : IDWriteInlineObject.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDWriteInlineObject : IDWriteInlineObject.Interface
         return ((delegate* unmanaged<IDWriteInlineObject*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteInlineObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDWriteInlineObject : IDWriteInlineObject.Interface
         return ((delegate* unmanaged<IDWriteInlineObject*, uint>)(lpVtbl[1]))((IDWriteInlineObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDWriteInlineObject : IDWriteInlineObject.Interface
         return ((delegate* unmanaged<IDWriteInlineObject*, uint>)(lpVtbl[2]))((IDWriteInlineObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteInlineObject.xml' path='doc/member[@name="IDWriteInlineObject.Draw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Draw(void* clientDrawingContext, IDWriteTextRenderer* renderer, float originX, float originY, BOOL isSideways, BOOL isRightToLeft, IUnknown* clientDrawingEffect)
@@ -47,6 +52,7 @@ public unsafe partial struct IDWriteInlineObject : IDWriteInlineObject.Interface
         return ((delegate* unmanaged<IDWriteInlineObject*, void*, IDWriteTextRenderer*, float, float, BOOL, BOOL, IUnknown*, int>)(lpVtbl[3]))((IDWriteInlineObject*)Unsafe.AsPointer(ref this), clientDrawingContext, renderer, originX, originY, isSideways, isRightToLeft, clientDrawingEffect);
     }
 
+    /// <include file='IDWriteInlineObject.xml' path='doc/member[@name="IDWriteInlineObject.GetMetrics"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMetrics(DWRITE_INLINE_OBJECT_METRICS* metrics)
@@ -54,6 +60,7 @@ public unsafe partial struct IDWriteInlineObject : IDWriteInlineObject.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<IDWriteInlineObject*, DWRITE_INLINE_OBJECT_METRICS*, int>)(lpVtbl[4]))((IDWriteInlineObject*)Unsafe.AsPointer(ref this), metrics);
     }
 
+    /// <include file='IDWriteInlineObject.xml' path='doc/member[@name="IDWriteInlineObject.GetOverhangMetrics"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetOverhangMetrics(DWRITE_OVERHANG_METRICS* overhangs)
@@ -61,6 +68,7 @@ public unsafe partial struct IDWriteInlineObject : IDWriteInlineObject.Interface
         return ((delegate* unmanaged<IDWriteInlineObject*, DWRITE_OVERHANG_METRICS*, int>)(lpVtbl[5]))((IDWriteInlineObject*)Unsafe.AsPointer(ref this), overhangs);
     }
 
+    /// <include file='IDWriteInlineObject.xml' path='doc/member[@name="IDWriteInlineObject.GetBreakConditions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetBreakConditions(DWRITE_BREAK_CONDITION* breakConditionBefore, DWRITE_BREAK_CONDITION* breakConditionAfter)

@@ -7,10 +7,14 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXCoreSegmentGroup.xml' path='doc/member[@name="DXCoreSegmentGroup"]/*' />
 [NativeTypeName("uint32_t")]
 [SupportedOSPlatform("windows10.0.19041.0")]
 public enum DXCoreSegmentGroup : uint
 {
+    /// <include file='DXCoreSegmentGroup.xml' path='doc/member[@name="DXCoreSegmentGroup.Local"]/*' />
     Local = 0,
+
+    /// <include file='DXCoreSegmentGroup.xml' path='doc/member[@name="DXCoreSegmentGroup.NonLocal"]/*' />
     NonLocal = 1,
 }

@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_PROTECTED_RESOURCE_SESSION_DESC.xml' path='doc/member[@name="D3D12_PROTECTED_RESOURCE_SESSION_DESC"]/*' />
 public partial struct D3D12_PROTECTED_RESOURCE_SESSION_DESC
 {
+    /// <include file='D3D12_PROTECTED_RESOURCE_SESSION_DESC.xml' path='doc/member[@name="D3D12_PROTECTED_RESOURCE_SESSION_DESC.NodeMask"]/*' />
     public uint NodeMask;
 
+    /// <include file='D3D12_PROTECTED_RESOURCE_SESSION_DESC.xml' path='doc/member[@name="D3D12_PROTECTED_RESOURCE_SESSION_DESC.Flags"]/*' />
     public D3D12_PROTECTED_RESOURCE_SESSION_FLAGS Flags;
 }

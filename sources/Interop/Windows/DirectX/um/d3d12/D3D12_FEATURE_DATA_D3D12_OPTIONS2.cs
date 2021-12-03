@@ -7,9 +7,12 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_FEATURE_DATA_D3D12_OPTIONS2.xml' path='doc/member[@name="D3D12_FEATURE_DATA_D3D12_OPTIONS2"]/*' />
 public partial struct D3D12_FEATURE_DATA_D3D12_OPTIONS2
 {
+    /// <include file='D3D12_FEATURE_DATA_D3D12_OPTIONS2.xml' path='doc/member[@name="D3D12_FEATURE_DATA_D3D12_OPTIONS2.DepthBoundsTestSupported"]/*' />
     public BOOL DepthBoundsTestSupported;
 
+    /// <include file='D3D12_FEATURE_DATA_D3D12_OPTIONS2.xml' path='doc/member[@name="D3D12_FEATURE_DATA_D3D12_OPTIONS2.ProgrammableSamplePositionsTier"]/*' />
     public D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER ProgrammableSamplePositionsTier;
 }

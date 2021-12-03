@@ -7,9 +7,15 @@ using static TerraFX.Interop.DirectX.D2D1_FACTORY_TYPE;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_THREADING_MODE.xml' path='doc/member[@name="D2D1_THREADING_MODE"]/*' />
 public enum D2D1_THREADING_MODE : uint
 {
+    /// <include file='D2D1_THREADING_MODE.xml' path='doc/member[@name="D2D1_THREADING_MODE.D2D1_THREADING_MODE_SINGLE_THREADED"]/*' />
     D2D1_THREADING_MODE_SINGLE_THREADED = D2D1_FACTORY_TYPE_SINGLE_THREADED,
+
+    /// <include file='D2D1_THREADING_MODE.xml' path='doc/member[@name="D2D1_THREADING_MODE.D2D1_THREADING_MODE_MULTI_THREADED"]/*' />
     D2D1_THREADING_MODE_MULTI_THREADED = D2D1_FACTORY_TYPE_MULTI_THREADED,
+
+    /// <include file='D2D1_THREADING_MODE.xml' path='doc/member[@name="D2D1_THREADING_MODE.D2D1_THREADING_MODE_FORCE_DWORD"]/*' />
     D2D1_THREADING_MODE_FORCE_DWORD = 0xffffffff,
 }

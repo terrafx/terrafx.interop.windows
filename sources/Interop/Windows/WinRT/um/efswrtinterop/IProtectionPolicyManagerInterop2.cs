@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IProtectionPolicyManagerInterop2.xml' path='doc/member[@name="IProtectionPolicyManagerInterop2"]/*' />
 [Guid("157CFBE4-A78D-4156-B384-61FDAC41E686")]
 [NativeTypeName("struct IProtectionPolicyManagerInterop2 : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -19,6 +20,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
         return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, Guid*, void**, int>)(lpVtbl[0]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
         return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, uint>)(lpVtbl[1]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
         return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, uint>)(lpVtbl[2]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -49,6 +54,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
         return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, uint*, Guid**, int>)(lpVtbl[3]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -56,6 +62,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
         return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, HSTRING*, int>)(lpVtbl[4]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -63,6 +70,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
         return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, TrustLevel*, int>)(lpVtbl[5]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='IProtectionPolicyManagerInterop2.xml' path='doc/member[@name="IProtectionPolicyManagerInterop2.RequestAccessForAppWithWindowAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT RequestAccessForAppWithWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING appPackageFamilyName, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
@@ -70,6 +78,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
         return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, Guid*, void**, int>)(lpVtbl[6]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, appPackageFamilyName, riid, asyncOperation);
     }
 
+    /// <include file='IProtectionPolicyManagerInterop2.xml' path='doc/member[@name="IProtectionPolicyManagerInterop2.RequestAccessWithAuditingInfoForWindowAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT RequestAccessWithAuditingInfoForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, IUnknown* auditInfoUnk, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
@@ -77,6 +86,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
         return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, Guid*, void**, int>)(lpVtbl[7]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, targetIdentity, auditInfoUnk, riid, asyncOperation);
     }
 
+    /// <include file='IProtectionPolicyManagerInterop2.xml' path='doc/member[@name="IProtectionPolicyManagerInterop2.RequestAccessWithMessageForWindowAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT RequestAccessWithMessageForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, IUnknown* auditInfoUnk, HSTRING messageFromApp, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
@@ -84,6 +94,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
         return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, HSTRING, Guid*, void**, int>)(lpVtbl[8]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, targetIdentity, auditInfoUnk, messageFromApp, riid, asyncOperation);
     }
 
+    /// <include file='IProtectionPolicyManagerInterop2.xml' path='doc/member[@name="IProtectionPolicyManagerInterop2.RequestAccessForAppWithAuditingInfoForWindowAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT RequestAccessForAppWithAuditingInfoForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING appPackageFamilyName, IUnknown* auditInfoUnk, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
@@ -91,6 +102,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
         return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, Guid*, void**, int>)(lpVtbl[9]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, appPackageFamilyName, auditInfoUnk, riid, asyncOperation);
     }
 
+    /// <include file='IProtectionPolicyManagerInterop2.xml' path='doc/member[@name="IProtectionPolicyManagerInterop2.RequestAccessForAppWithMessageForWindowAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT RequestAccessForAppWithMessageForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING appPackageFamilyName, IUnknown* auditInfoUnk, HSTRING messageFromApp, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)

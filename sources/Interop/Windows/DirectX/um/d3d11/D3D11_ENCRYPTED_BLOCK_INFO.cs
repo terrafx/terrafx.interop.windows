@@ -7,12 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_ENCRYPTED_BLOCK_INFO.xml' path='doc/member[@name="D3D11_ENCRYPTED_BLOCK_INFO"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_ENCRYPTED_BLOCK_INFO
 {
+    /// <include file='D3D11_ENCRYPTED_BLOCK_INFO.xml' path='doc/member[@name="D3D11_ENCRYPTED_BLOCK_INFO.NumEncryptedBytesAtBeginning"]/*' />
     public uint NumEncryptedBytesAtBeginning;
 
+    /// <include file='D3D11_ENCRYPTED_BLOCK_INFO.xml' path='doc/member[@name="D3D11_ENCRYPTED_BLOCK_INFO.NumBytesInSkipPattern"]/*' />
     public uint NumBytesInSkipPattern;
 
+    /// <include file='D3D11_ENCRYPTED_BLOCK_INFO.xml' path='doc/member[@name="D3D11_ENCRYPTED_BLOCK_INFO.NumBytesInEncryptPattern"]/*' />
     public uint NumBytesInEncryptPattern;
 }

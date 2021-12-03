@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_VIEW_INSTANCE_LOCATION.xml' path='doc/member[@name="D3D12_VIEW_INSTANCE_LOCATION"]/*' />
 public partial struct D3D12_VIEW_INSTANCE_LOCATION
 {
+    /// <include file='D3D12_VIEW_INSTANCE_LOCATION.xml' path='doc/member[@name="D3D12_VIEW_INSTANCE_LOCATION.ViewportArrayIndex"]/*' />
     public uint ViewportArrayIndex;
 
+    /// <include file='D3D12_VIEW_INSTANCE_LOCATION.xml' path='doc/member[@name="D3D12_VIEW_INSTANCE_LOCATION.RenderTargetArrayIndex"]/*' />
     public uint RenderTargetArrayIndex;
 }

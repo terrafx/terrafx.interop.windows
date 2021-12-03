@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='XAUDIO2_SEND_DESCRIPTOR.xml' path='doc/member[@name="XAUDIO2_SEND_DESCRIPTOR"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct XAUDIO2_SEND_DESCRIPTOR
 {
+    /// <include file='XAUDIO2_SEND_DESCRIPTOR.xml' path='doc/member[@name="XAUDIO2_SEND_DESCRIPTOR.Flags"]/*' />
     [NativeTypeName("UINT32")]
     public uint Flags;
 
+    /// <include file='XAUDIO2_SEND_DESCRIPTOR.xml' path='doc/member[@name="XAUDIO2_SEND_DESCRIPTOR.pOutputVoice"]/*' />
     public IXAudio2Voice* pOutputVoice;
 }

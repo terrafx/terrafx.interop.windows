@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_AXIS_DIRECTION.xml' path='doc/member[@name="DML_AXIS_DIRECTION"]/*' />
 public enum DML_AXIS_DIRECTION
 {
+    /// <include file='DML_AXIS_DIRECTION.xml' path='doc/member[@name="DML_AXIS_DIRECTION.DML_AXIS_DIRECTION_INCREASING"]/*' />
     DML_AXIS_DIRECTION_INCREASING = 0,
+
+    /// <include file='DML_AXIS_DIRECTION.xml' path='doc/member[@name="DML_AXIS_DIRECTION.DML_AXIS_DIRECTION_DECREASING"]/*' />
     DML_AXIS_DIRECTION_DECREASING = 1,
 }

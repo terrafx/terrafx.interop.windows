@@ -11,12 +11,15 @@ namespace TerraFX.Interop.WinRT;
 
 public static unsafe partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RoGetParameterizedTypeInstanceIID"]/*' />
     [DllImport("api-ms-win-core-winrt-roparameterizediid-l1-1-0", ExactSpelling = true)]
     public static extern HRESULT RoGetParameterizedTypeInstanceIID([NativeTypeName("UINT32")] uint nameElementCount, [NativeTypeName("PCWSTR *")] ushort** nameElements, [NativeTypeName("const IRoMetaDataLocator &")] IRoMetaDataLocator* metaDataLocator, Guid* iid, ROPARAMIIDHANDLE* pExtra);
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RoFreeParameterizedTypeExtra"]/*' />
     [DllImport("combase", ExactSpelling = true)]
     public static extern void RoFreeParameterizedTypeExtra(ROPARAMIIDHANDLE extra);
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RoParameterizedTypeExtraGetTypeSignature"]/*' />
     [DllImport("combase", ExactSpelling = true)]
     [return: NativeTypeName("PCSTR")]
     public static extern sbyte* RoParameterizedTypeExtraGetTypeSignature(ROPARAMIIDHANDLE extra);

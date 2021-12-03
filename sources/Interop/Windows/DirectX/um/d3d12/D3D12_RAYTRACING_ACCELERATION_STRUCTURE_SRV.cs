@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_RAYTRACING_ACCELERATION_STRUCTURE_SRV.xml' path='doc/member[@name="D3D12_RAYTRACING_ACCELERATION_STRUCTURE_SRV"]/*' />
 public partial struct D3D12_RAYTRACING_ACCELERATION_STRUCTURE_SRV
 {
+    /// <include file='D3D12_RAYTRACING_ACCELERATION_STRUCTURE_SRV.xml' path='doc/member[@name="D3D12_RAYTRACING_ACCELERATION_STRUCTURE_SRV.Location"]/*' />
     [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
     public ulong Location;
 }

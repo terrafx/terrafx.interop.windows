@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDCompositionColorMatrixEffect.xml' path='doc/member[@name="IDCompositionColorMatrixEffect"]/*' />
 [Guid("C1170A22-3CE2-4966-90D4-55408BFC84C4")]
 [NativeTypeName("struct IDCompositionColorMatrixEffect : IDCompositionFilterEffect")]
 [NativeInheritance("IDCompositionFilterEffect")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
         return ((delegate* unmanaged<IDCompositionColorMatrixEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
         return ((delegate* unmanaged<IDCompositionColorMatrixEffect*, uint>)(lpVtbl[1]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
         return ((delegate* unmanaged<IDCompositionColorMatrixEffect*, uint>)(lpVtbl[2]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDCompositionFilterEffect.SetInput" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetInput(uint index, IUnknown* input, uint flags)
@@ -47,6 +52,7 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
         return ((delegate* unmanaged<IDCompositionColorMatrixEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), index, input, flags);
     }
 
+    /// <include file='IDCompositionColorMatrixEffect.xml' path='doc/member[@name="IDCompositionColorMatrixEffect.SetMatrix"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetMatrix([NativeTypeName("const D2D1_MATRIX_5X4_F &")] D2D_MATRIX_5X4_F* matrix)
@@ -54,6 +60,7 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
         return ((delegate* unmanaged<IDCompositionColorMatrixEffect*, D2D_MATRIX_5X4_F*, int>)(lpVtbl[4]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), matrix);
     }
 
+    /// <include file='IDCompositionColorMatrixEffect.xml' path='doc/member[@name="IDCompositionColorMatrixEffect.SetMatrixElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetMatrixElement(int row, int column, IDCompositionAnimation* animation)
@@ -61,6 +68,7 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
         return ((delegate* unmanaged<IDCompositionColorMatrixEffect*, int, int, IDCompositionAnimation*, int>)(lpVtbl[5]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), row, column, animation);
     }
 
+    /// <include file='IDCompositionColorMatrixEffect.xml' path='doc/member[@name="IDCompositionColorMatrixEffect.SetMatrixElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetMatrixElement(int row, int column, float value)
@@ -68,6 +76,7 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
         return ((delegate* unmanaged<IDCompositionColorMatrixEffect*, int, int, float, int>)(lpVtbl[6]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), row, column, value);
     }
 
+    /// <include file='IDCompositionColorMatrixEffect.xml' path='doc/member[@name="IDCompositionColorMatrixEffect.SetAlphaMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetAlphaMode(D2D1_COLORMATRIX_ALPHA_MODE mode)
@@ -75,6 +84,7 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
         return ((delegate* unmanaged<IDCompositionColorMatrixEffect*, D2D1_COLORMATRIX_ALPHA_MODE, int>)(lpVtbl[7]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), mode);
     }
 
+    /// <include file='IDCompositionColorMatrixEffect.xml' path='doc/member[@name="IDCompositionColorMatrixEffect.SetClampOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetClampOutput(BOOL clamp)

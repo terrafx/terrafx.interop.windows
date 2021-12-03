@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_INK_NIB_SHAPE.xml' path='doc/member[@name="D2D1_INK_NIB_SHAPE"]/*' />
 public enum D2D1_INK_NIB_SHAPE : uint
 {
+    /// <include file='D2D1_INK_NIB_SHAPE.xml' path='doc/member[@name="D2D1_INK_NIB_SHAPE.D2D1_INK_NIB_SHAPE_ROUND"]/*' />
     D2D1_INK_NIB_SHAPE_ROUND = 0,
+
+    /// <include file='D2D1_INK_NIB_SHAPE.xml' path='doc/member[@name="D2D1_INK_NIB_SHAPE.D2D1_INK_NIB_SHAPE_SQUARE"]/*' />
     D2D1_INK_NIB_SHAPE_SQUARE = 1,
+
+    /// <include file='D2D1_INK_NIB_SHAPE.xml' path='doc/member[@name="D2D1_INK_NIB_SHAPE.D2D1_INK_NIB_SHAPE_FORCE_DWORD"]/*' />
     D2D1_INK_NIB_SHAPE_FORCE_DWORD = 0xffffffff,
 }

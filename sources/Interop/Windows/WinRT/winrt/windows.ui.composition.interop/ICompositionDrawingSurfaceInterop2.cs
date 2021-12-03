@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ICompositionDrawingSurfaceInterop2.xml' path='doc/member[@name="ICompositionDrawingSurfaceInterop2"]/*' />
 [Guid("41E64AAE-98C0-4239-8E95-A330DD6AA18B")]
 [NativeTypeName("struct ICompositionDrawingSurfaceInterop2 : ICompositionDrawingSurfaceInterop")]
 [NativeInheritance("ICompositionDrawingSurfaceInterop")]
@@ -17,6 +18,7 @@ public unsafe partial struct ICompositionDrawingSurfaceInterop2 : ICompositionDr
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ICompositionDrawingSurfaceInterop2 : ICompositionDr
         return ((delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, Guid*, void**, int>)(lpVtbl[0]))((ICompositionDrawingSurfaceInterop2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ICompositionDrawingSurfaceInterop2 : ICompositionDr
         return ((delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, uint>)(lpVtbl[1]))((ICompositionDrawingSurfaceInterop2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ICompositionDrawingSurfaceInterop2 : ICompositionDr
         return ((delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, uint>)(lpVtbl[2]))((ICompositionDrawingSurfaceInterop2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ICompositionDrawingSurfaceInterop.BeginDraw" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT BeginDraw([NativeTypeName("const RECT *")] RECT* updateRect, [NativeTypeName("const IID &")] Guid* iid, void** updateObject, POINT* updateOffset)
@@ -47,6 +52,7 @@ public unsafe partial struct ICompositionDrawingSurfaceInterop2 : ICompositionDr
         return ((delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, RECT*, Guid*, void**, POINT*, int>)(lpVtbl[3]))((ICompositionDrawingSurfaceInterop2*)Unsafe.AsPointer(ref this), updateRect, iid, updateObject, updateOffset);
     }
 
+    /// <inheritdoc cref="ICompositionDrawingSurfaceInterop.EndDraw" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EndDraw()
@@ -54,6 +60,7 @@ public unsafe partial struct ICompositionDrawingSurfaceInterop2 : ICompositionDr
         return ((delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, int>)(lpVtbl[4]))((ICompositionDrawingSurfaceInterop2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ICompositionDrawingSurfaceInterop.Resize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Resize(SIZE sizePixels)
@@ -61,6 +68,7 @@ public unsafe partial struct ICompositionDrawingSurfaceInterop2 : ICompositionDr
         return ((delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, SIZE, int>)(lpVtbl[5]))((ICompositionDrawingSurfaceInterop2*)Unsafe.AsPointer(ref this), sizePixels);
     }
 
+    /// <inheritdoc cref="ICompositionDrawingSurfaceInterop.Scroll" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Scroll([NativeTypeName("const RECT *")] RECT* scrollRect, [NativeTypeName("const RECT *")] RECT* clipRect, int offsetX, int offsetY)
@@ -68,6 +76,7 @@ public unsafe partial struct ICompositionDrawingSurfaceInterop2 : ICompositionDr
         return ((delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, RECT*, RECT*, int, int, int>)(lpVtbl[6]))((ICompositionDrawingSurfaceInterop2*)Unsafe.AsPointer(ref this), scrollRect, clipRect, offsetX, offsetY);
     }
 
+    /// <inheritdoc cref="ICompositionDrawingSurfaceInterop.ResumeDraw" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ResumeDraw()
@@ -75,6 +84,7 @@ public unsafe partial struct ICompositionDrawingSurfaceInterop2 : ICompositionDr
         return ((delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, int>)(lpVtbl[7]))((ICompositionDrawingSurfaceInterop2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ICompositionDrawingSurfaceInterop.SuspendDraw" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SuspendDraw()
@@ -82,6 +92,7 @@ public unsafe partial struct ICompositionDrawingSurfaceInterop2 : ICompositionDr
         return ((delegate* unmanaged<ICompositionDrawingSurfaceInterop2*, int>)(lpVtbl[8]))((ICompositionDrawingSurfaceInterop2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICompositionDrawingSurfaceInterop2.xml' path='doc/member[@name="ICompositionDrawingSurfaceInterop2.CopySurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT CopySurface(IUnknown* destinationResource, int destinationOffsetX, int destinationOffsetY, [NativeTypeName("const RECT *")] RECT* sourceRectangle)

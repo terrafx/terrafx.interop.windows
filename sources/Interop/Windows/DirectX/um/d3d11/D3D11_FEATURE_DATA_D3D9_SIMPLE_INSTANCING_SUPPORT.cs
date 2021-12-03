@@ -8,8 +8,10 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_FEATURE_DATA_D3D9_SIMPLE_INSTANCING_SUPPORT.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D9_SIMPLE_INSTANCING_SUPPORT"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct D3D11_FEATURE_DATA_D3D9_SIMPLE_INSTANCING_SUPPORT
 {
+    /// <include file='D3D11_FEATURE_DATA_D3D9_SIMPLE_INSTANCING_SUPPORT.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D9_SIMPLE_INSTANCING_SUPPORT.SimpleInstancingSupported"]/*' />
     public BOOL SimpleInstancingSupported;
 }

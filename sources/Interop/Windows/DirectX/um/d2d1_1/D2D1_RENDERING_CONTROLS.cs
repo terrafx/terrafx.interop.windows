@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_RENDERING_CONTROLS.xml' path='doc/member[@name="D2D1_RENDERING_CONTROLS"]/*' />
 public partial struct D2D1_RENDERING_CONTROLS
 {
+    /// <include file='D2D1_RENDERING_CONTROLS.xml' path='doc/member[@name="D2D1_RENDERING_CONTROLS.bufferPrecision"]/*' />
     public D2D1_BUFFER_PRECISION bufferPrecision;
 
+    /// <include file='D2D1_RENDERING_CONTROLS.xml' path='doc/member[@name="D2D1_RENDERING_CONTROLS.tileSize"]/*' />
     [NativeTypeName("D2D1_SIZE_U")]
     public D2D_SIZE_U tileSize;
 }

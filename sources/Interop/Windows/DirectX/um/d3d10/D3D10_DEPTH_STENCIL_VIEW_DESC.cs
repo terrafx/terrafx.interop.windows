@@ -8,15 +8,20 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_DEPTH_STENCIL_VIEW_DESC.xml' path='doc/member[@name="D3D10_DEPTH_STENCIL_VIEW_DESC"]/*' />
 public partial struct D3D10_DEPTH_STENCIL_VIEW_DESC
 {
+    /// <include file='D3D10_DEPTH_STENCIL_VIEW_DESC.xml' path='doc/member[@name="D3D10_DEPTH_STENCIL_VIEW_DESC.Format"]/*' />
     public DXGI_FORMAT Format;
 
+    /// <include file='D3D10_DEPTH_STENCIL_VIEW_DESC.xml' path='doc/member[@name="D3D10_DEPTH_STENCIL_VIEW_DESC.ViewDimension"]/*' />
     public D3D10_DSV_DIMENSION ViewDimension;
 
+    /// <include file='D3D10_DEPTH_STENCIL_VIEW_DESC.xml' path='doc/member[@name="D3D10_DEPTH_STENCIL_VIEW_DESC.Anonymous"]/*' />
     [NativeTypeName("D3D10_DEPTH_STENCIL_VIEW_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3d10.h:3331:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture1D"]/*' />
     public ref D3D10_TEX1D_DSV Texture1D
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -26,6 +31,7 @@ public partial struct D3D10_DEPTH_STENCIL_VIEW_DESC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture1DArray"]/*' />
     public ref D3D10_TEX1D_ARRAY_DSV Texture1DArray
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -35,6 +41,7 @@ public partial struct D3D10_DEPTH_STENCIL_VIEW_DESC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2D"]/*' />
     public ref D3D10_TEX2D_DSV Texture2D
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -44,6 +51,7 @@ public partial struct D3D10_DEPTH_STENCIL_VIEW_DESC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2DArray"]/*' />
     public ref D3D10_TEX2D_ARRAY_DSV Texture2DArray
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -53,6 +61,7 @@ public partial struct D3D10_DEPTH_STENCIL_VIEW_DESC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2DMS"]/*' />
     public ref D3D10_TEX2DMS_DSV Texture2DMS
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -62,6 +71,7 @@ public partial struct D3D10_DEPTH_STENCIL_VIEW_DESC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2DMSArray"]/*' />
     public ref D3D10_TEX2DMS_ARRAY_DSV Texture2DMSArray
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -71,24 +81,31 @@ public partial struct D3D10_DEPTH_STENCIL_VIEW_DESC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture1D"]/*' />
         [FieldOffset(0)]
         public D3D10_TEX1D_DSV Texture1D;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture1DArray"]/*' />
         [FieldOffset(0)]
         public D3D10_TEX1D_ARRAY_DSV Texture1DArray;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2D"]/*' />
         [FieldOffset(0)]
         public D3D10_TEX2D_DSV Texture2D;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2DArray"]/*' />
         [FieldOffset(0)]
         public D3D10_TEX2D_ARRAY_DSV Texture2DArray;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2DMS"]/*' />
         [FieldOffset(0)]
         public D3D10_TEX2DMS_DSV Texture2DMS;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2DMSArray"]/*' />
         [FieldOffset(0)]
         public D3D10_TEX2DMS_ARRAY_DSV Texture2DMSArray;
     }

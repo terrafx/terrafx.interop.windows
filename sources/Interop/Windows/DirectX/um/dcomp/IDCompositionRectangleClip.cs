@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip"]/*' />
 [Guid("9842AD7D-D9CF-4908-AED7-48B51DA5E7C2")]
 [NativeTypeName("struct IDCompositionRectangleClip : IDCompositionClip")]
 [NativeInheritance("IDCompositionClip")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, uint>)(lpVtbl[1]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, uint>)(lpVtbl[2]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetLeft"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetLeft(IDCompositionAnimation* animation)
@@ -49,6 +54,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetLeft"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetLeft(float left)
@@ -56,6 +62,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[4]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), left);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetTop(IDCompositionAnimation* animation)
@@ -63,6 +70,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[5]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetTop(float top)
@@ -70,6 +78,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[6]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), top);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetRight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetRight(IDCompositionAnimation* animation)
@@ -77,6 +86,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[7]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetRight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetRight(float right)
@@ -84,6 +94,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[8]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), right);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottom"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetBottom(IDCompositionAnimation* animation)
@@ -91,6 +102,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[9]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottom"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetBottom(float bottom)
@@ -98,6 +110,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[10]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), bottom);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTopLeftRadiusX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetTopLeftRadiusX(IDCompositionAnimation* animation)
@@ -105,6 +118,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[11]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTopLeftRadiusX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SetTopLeftRadiusX(float radius)
@@ -112,6 +126,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[12]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTopLeftRadiusY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT SetTopLeftRadiusY(IDCompositionAnimation* animation)
@@ -119,6 +134,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[13]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTopLeftRadiusY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT SetTopLeftRadiusY(float radius)
@@ -126,6 +142,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[14]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTopRightRadiusX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetTopRightRadiusX(IDCompositionAnimation* animation)
@@ -133,6 +150,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[15]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTopRightRadiusX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT SetTopRightRadiusX(float radius)
@@ -140,6 +158,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[16]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTopRightRadiusY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT SetTopRightRadiusY(IDCompositionAnimation* animation)
@@ -147,6 +166,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[17]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetTopRightRadiusY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT SetTopRightRadiusY(float radius)
@@ -154,6 +174,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[18]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottomLeftRadiusX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT SetBottomLeftRadiusX(IDCompositionAnimation* animation)
@@ -161,6 +182,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[19]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottomLeftRadiusX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT SetBottomLeftRadiusX(float radius)
@@ -168,6 +190,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[20]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottomLeftRadiusY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT SetBottomLeftRadiusY(IDCompositionAnimation* animation)
@@ -175,6 +198,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[21]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottomLeftRadiusY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT SetBottomLeftRadiusY(float radius)
@@ -182,6 +206,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[22]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottomRightRadiusX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT SetBottomRightRadiusX(IDCompositionAnimation* animation)
@@ -189,6 +214,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[23]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottomRightRadiusX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT SetBottomRightRadiusX(float radius)
@@ -196,6 +222,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, float, int>)(lpVtbl[24]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottomRightRadiusY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT SetBottomRightRadiusY(IDCompositionAnimation* animation)
@@ -203,6 +230,7 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         return ((delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int>)(lpVtbl[25]))((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionRectangleClip.xml' path='doc/member[@name="IDCompositionRectangleClip.SetBottomRightRadiusY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT SetBottomRightRadiusY(float radius)

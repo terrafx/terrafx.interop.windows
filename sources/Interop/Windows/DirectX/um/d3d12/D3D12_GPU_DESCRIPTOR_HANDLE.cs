@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_GPU_DESCRIPTOR_HANDLE.xml' path='doc/member[@name="D3D12_GPU_DESCRIPTOR_HANDLE"]/*' />
 public partial struct D3D12_GPU_DESCRIPTOR_HANDLE
 {
+    /// <include file='D3D12_GPU_DESCRIPTOR_HANDLE.xml' path='doc/member[@name="D3D12_GPU_DESCRIPTOR_HANDLE.ptr"]/*' />
     [NativeTypeName("UINT64")]
     public ulong ptr;
 }

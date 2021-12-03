@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IGraphicsCaptureItemInterop.xml' path='doc/member[@name="IGraphicsCaptureItemInterop"]/*' />
 [Guid("3628E81B-3CAC-4C60-B7F4-23CE0E0C3356")]
 [NativeTypeName("struct IGraphicsCaptureItemInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemI
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemI
         return ((delegate* unmanaged<IGraphicsCaptureItemInterop*, Guid*, void**, int>)(lpVtbl[0]))((IGraphicsCaptureItemInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemI
         return ((delegate* unmanaged<IGraphicsCaptureItemInterop*, uint>)(lpVtbl[1]))((IGraphicsCaptureItemInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemI
         return ((delegate* unmanaged<IGraphicsCaptureItemInterop*, uint>)(lpVtbl[2]))((IGraphicsCaptureItemInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IGraphicsCaptureItemInterop.xml' path='doc/member[@name="IGraphicsCaptureItemInterop.CreateForWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateForWindow(HWND window, [NativeTypeName("const IID &")] Guid* riid, void** result)
@@ -47,6 +52,7 @@ public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemI
         return ((delegate* unmanaged<IGraphicsCaptureItemInterop*, HWND, Guid*, void**, int>)(lpVtbl[3]))((IGraphicsCaptureItemInterop*)Unsafe.AsPointer(ref this), window, riid, result);
     }
 
+    /// <include file='IGraphicsCaptureItemInterop.xml' path='doc/member[@name="IGraphicsCaptureItemInterop.CreateForMonitor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreateForMonitor(HMONITOR monitor, [NativeTypeName("const IID &")] Guid* riid, void** result)

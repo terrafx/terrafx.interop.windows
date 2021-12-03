@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_PRINT_FONT_SUBSET_MODE.xml' path='doc/member[@name="D2D1_PRINT_FONT_SUBSET_MODE"]/*' />
 public enum D2D1_PRINT_FONT_SUBSET_MODE : uint
 {
+    /// <include file='D2D1_PRINT_FONT_SUBSET_MODE.xml' path='doc/member[@name="D2D1_PRINT_FONT_SUBSET_MODE.D2D1_PRINT_FONT_SUBSET_MODE_DEFAULT"]/*' />
     D2D1_PRINT_FONT_SUBSET_MODE_DEFAULT = 0,
+
+    /// <include file='D2D1_PRINT_FONT_SUBSET_MODE.xml' path='doc/member[@name="D2D1_PRINT_FONT_SUBSET_MODE.D2D1_PRINT_FONT_SUBSET_MODE_EACHPAGE"]/*' />
     D2D1_PRINT_FONT_SUBSET_MODE_EACHPAGE = 1,
+
+    /// <include file='D2D1_PRINT_FONT_SUBSET_MODE.xml' path='doc/member[@name="D2D1_PRINT_FONT_SUBSET_MODE.D2D1_PRINT_FONT_SUBSET_MODE_NONE"]/*' />
     D2D1_PRINT_FONT_SUBSET_MODE_NONE = 2,
+
+    /// <include file='D2D1_PRINT_FONT_SUBSET_MODE.xml' path='doc/member[@name="D2D1_PRINT_FONT_SUBSET_MODE.D2D1_PRINT_FONT_SUBSET_MODE_FORCE_DWORD"]/*' />
     D2D1_PRINT_FONT_SUBSET_MODE_FORCE_DWORD = 0xffffffff,
 }

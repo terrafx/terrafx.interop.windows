@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent"]/*' />
 [Guid("C12851E4-1698-4625-B9B1-7CA3EC18630B")]
 [NativeTypeName("struct IDirectManipulationPrimaryContent : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
         return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
         return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, uint>)(lpVtbl[1]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
         return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, uint>)(lpVtbl[2]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent.SetSnapInterval"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetSnapInterval(DIRECTMANIPULATION_MOTION_TYPES motion, float interval, float offset)
@@ -49,6 +54,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
         return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, float, float, int>)(lpVtbl[3]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), motion, interval, offset);
     }
 
+    /// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent.SetSnapPoints"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetSnapPoints(DIRECTMANIPULATION_MOTION_TYPES motion, [NativeTypeName("const float *")] float* points, [NativeTypeName("DWORD")] uint pointCount)
@@ -56,6 +62,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
         return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, float*, uint, int>)(lpVtbl[4]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), motion, points, pointCount);
     }
 
+    /// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent.SetSnapType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetSnapType(DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_TYPE type)
@@ -63,6 +70,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
         return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_TYPE, int>)(lpVtbl[5]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), motion, type);
     }
 
+    /// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent.SetSnapCoordinate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetSnapCoordinate(DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_COORDINATE coordinate, float origin)
@@ -70,6 +78,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
         return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_COORDINATE, float, int>)(lpVtbl[6]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), motion, coordinate, origin);
     }
 
+    /// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent.SetZoomBoundaries"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetZoomBoundaries(float zoomMinimum, float zoomMaximum)
@@ -77,6 +86,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
         return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, float, float, int>)(lpVtbl[7]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), zoomMinimum, zoomMaximum);
     }
 
+    /// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent.SetHorizontalAlignment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetHorizontalAlignment(DIRECTMANIPULATION_HORIZONTALALIGNMENT alignment)
@@ -84,6 +94,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
         return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_HORIZONTALALIGNMENT, int>)(lpVtbl[8]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), alignment);
     }
 
+    /// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent.SetVerticalAlignment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetVerticalAlignment(DIRECTMANIPULATION_VERTICALALIGNMENT alignment)
@@ -91,6 +102,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
         return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_VERTICALALIGNMENT, int>)(lpVtbl[9]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), alignment);
     }
 
+    /// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent.GetInertiaEndTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetInertiaEndTransform(float* matrix, [NativeTypeName("DWORD")] uint pointCount)
@@ -98,6 +110,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
         return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, float*, uint, int>)(lpVtbl[10]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), matrix, pointCount);
     }
 
+    /// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent.GetCenterPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetCenterPoint(float* centerX, float* centerY)

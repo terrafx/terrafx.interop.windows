@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_SVG_LENGTH.xml' path='doc/member[@name="D2D1_SVG_LENGTH"]/*' />
 public partial struct D2D1_SVG_LENGTH
 {
+    /// <include file='D2D1_SVG_LENGTH.xml' path='doc/member[@name="D2D1_SVG_LENGTH.value"]/*' />
     public float value;
 
+    /// <include file='D2D1_SVG_LENGTH.xml' path='doc/member[@name="D2D1_SVG_LENGTH.units"]/*' />
     public D2D1_SVG_LENGTH_UNITS units;
 }

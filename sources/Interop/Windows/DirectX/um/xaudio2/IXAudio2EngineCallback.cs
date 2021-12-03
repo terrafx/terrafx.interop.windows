@@ -8,10 +8,12 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IXAudio2EngineCallback.xml' path='doc/member[@name="IXAudio2EngineCallback"]/*' />
 public unsafe partial struct IXAudio2EngineCallback : IXAudio2EngineCallback.Interface
 {
     public void** lpVtbl;
 
+    /// <include file='IXAudio2EngineCallback.xml' path='doc/member[@name="IXAudio2EngineCallback.OnProcessingPassStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public void OnProcessingPassStart()
@@ -19,6 +21,7 @@ public unsafe partial struct IXAudio2EngineCallback : IXAudio2EngineCallback.Int
         ((delegate* unmanaged<IXAudio2EngineCallback*, void>)(lpVtbl[0]))((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXAudio2EngineCallback.xml' path='doc/member[@name="IXAudio2EngineCallback.OnProcessingPassEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     public void OnProcessingPassEnd()
@@ -26,6 +29,7 @@ public unsafe partial struct IXAudio2EngineCallback : IXAudio2EngineCallback.Int
         ((delegate* unmanaged<IXAudio2EngineCallback*, void>)(lpVtbl[1]))((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXAudio2EngineCallback.xml' path='doc/member[@name="IXAudio2EngineCallback.OnCriticalError"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     public void OnCriticalError(HRESULT Error)

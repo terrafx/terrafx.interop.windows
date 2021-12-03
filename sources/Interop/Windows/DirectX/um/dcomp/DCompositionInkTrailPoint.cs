@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DCompositionInkTrailPoint.xml' path='doc/member[@name="DCompositionInkTrailPoint"]/*' />
 public partial struct DCompositionInkTrailPoint
 {
+    /// <include file='DCompositionInkTrailPoint.xml' path='doc/member[@name="DCompositionInkTrailPoint.x"]/*' />
     public float x;
 
+    /// <include file='DCompositionInkTrailPoint.xml' path='doc/member[@name="DCompositionInkTrailPoint.y"]/*' />
     public float y;
 
+    /// <include file='DCompositionInkTrailPoint.xml' path='doc/member[@name="DCompositionInkTrailPoint.radius"]/*' />
     public float radius;
 }

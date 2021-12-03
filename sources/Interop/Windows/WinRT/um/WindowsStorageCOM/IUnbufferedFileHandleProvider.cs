@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IUnbufferedFileHandleProvider.xml' path='doc/member[@name="IUnbufferedFileHandleProvider"]/*' />
 [Guid("A65C9109-42AB-4B94-A7B1-DD2E4E68515E")]
 [NativeTypeName("struct IUnbufferedFileHandleProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IUnbufferedFileHandleProvider : IUnbufferedFileHand
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IUnbufferedFileHandleProvider : IUnbufferedFileHand
         return ((delegate* unmanaged<IUnbufferedFileHandleProvider*, Guid*, void**, int>)(lpVtbl[0]))((IUnbufferedFileHandleProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IUnbufferedFileHandleProvider : IUnbufferedFileHand
         return ((delegate* unmanaged<IUnbufferedFileHandleProvider*, uint>)(lpVtbl[1]))((IUnbufferedFileHandleProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IUnbufferedFileHandleProvider : IUnbufferedFileHand
         return ((delegate* unmanaged<IUnbufferedFileHandleProvider*, uint>)(lpVtbl[2]))((IUnbufferedFileHandleProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUnbufferedFileHandleProvider.xml' path='doc/member[@name="IUnbufferedFileHandleProvider.OpenUnbufferedFileHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OpenUnbufferedFileHandle(IUnbufferedFileHandleOplockCallback* oplockBreakCallback, [NativeTypeName("DWORD_PTR *")] nuint* fileHandle)
@@ -49,6 +54,7 @@ public unsafe partial struct IUnbufferedFileHandleProvider : IUnbufferedFileHand
         return ((delegate* unmanaged<IUnbufferedFileHandleProvider*, IUnbufferedFileHandleOplockCallback*, nuint*, int>)(lpVtbl[3]))((IUnbufferedFileHandleProvider*)Unsafe.AsPointer(ref this), oplockBreakCallback, fileHandle);
     }
 
+    /// <include file='IUnbufferedFileHandleProvider.xml' path='doc/member[@name="IUnbufferedFileHandleProvider.CloseUnbufferedFileHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CloseUnbufferedFileHandle()

@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IMLOperatorKernelContext.xml' path='doc/member[@name="IMLOperatorKernelContext"]/*' />
 [Guid("82536A28-F022-4769-9D3F-8B278F84C0C3")]
 [NativeTypeName("struct IMLOperatorKernelContext : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
         return ((delegate* unmanaged<IMLOperatorKernelContext*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
         return ((delegate* unmanaged<IMLOperatorKernelContext*, uint>)(lpVtbl[1]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
         return ((delegate* unmanaged<IMLOperatorKernelContext*, uint>)(lpVtbl[2]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMLOperatorKernelContext.xml' path='doc/member[@name="IMLOperatorKernelContext.GetInputTensor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetInputTensor([NativeTypeName("uint32_t")] uint inputIndex, IMLOperatorTensor** tensor)
@@ -47,6 +52,7 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
         return ((delegate* unmanaged<IMLOperatorKernelContext*, uint, IMLOperatorTensor**, int>)(lpVtbl[3]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), inputIndex, tensor);
     }
 
+    /// <include file='IMLOperatorKernelContext.xml' path='doc/member[@name="IMLOperatorKernelContext.GetOutputTensor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetOutputTensor([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("const uint32_t *")] uint* dimensionSizes, IMLOperatorTensor** tensor)
@@ -54,6 +60,7 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
         return ((delegate* unmanaged<IMLOperatorKernelContext*, uint, uint, uint*, IMLOperatorTensor**, int>)(lpVtbl[4]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), outputIndex, dimensionCount, dimensionSizes, tensor);
     }
 
+    /// <include file='IMLOperatorKernelContext.xml' path='doc/member[@name="IMLOperatorKernelContext.GetOutputTensor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetOutputTensor([NativeTypeName("uint32_t")] uint outputIndex, IMLOperatorTensor** tensor)
@@ -61,6 +68,7 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
         return ((delegate* unmanaged<IMLOperatorKernelContext*, uint, IMLOperatorTensor**, int>)(lpVtbl[5]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), outputIndex, tensor);
     }
 
+    /// <include file='IMLOperatorKernelContext.xml' path='doc/member[@name="IMLOperatorKernelContext.AllocateTemporaryData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT AllocateTemporaryData([NativeTypeName("size_t")] nuint size, IUnknown** data)
@@ -68,6 +76,7 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
         return ((delegate* unmanaged<IMLOperatorKernelContext*, nuint, IUnknown**, int>)(lpVtbl[6]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), size, data);
     }
 
+    /// <include file='IMLOperatorKernelContext.xml' path='doc/member[@name="IMLOperatorKernelContext.GetExecutionInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void GetExecutionInterface(IUnknown** executionObject)

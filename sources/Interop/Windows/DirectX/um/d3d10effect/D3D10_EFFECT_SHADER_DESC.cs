@@ -7,22 +7,30 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_EFFECT_SHADER_DESC.xml' path='doc/member[@name="D3D10_EFFECT_SHADER_DESC"]/*' />
 public unsafe partial struct D3D10_EFFECT_SHADER_DESC
 {
+    /// <include file='D3D10_EFFECT_SHADER_DESC.xml' path='doc/member[@name="D3D10_EFFECT_SHADER_DESC.pInputSignature"]/*' />
     [NativeTypeName("const BYTE *")]
     public byte* pInputSignature;
 
+    /// <include file='D3D10_EFFECT_SHADER_DESC.xml' path='doc/member[@name="D3D10_EFFECT_SHADER_DESC.IsInline"]/*' />
     public BOOL IsInline;
 
+    /// <include file='D3D10_EFFECT_SHADER_DESC.xml' path='doc/member[@name="D3D10_EFFECT_SHADER_DESC.pBytecode"]/*' />
     [NativeTypeName("const BYTE *")]
     public byte* pBytecode;
 
+    /// <include file='D3D10_EFFECT_SHADER_DESC.xml' path='doc/member[@name="D3D10_EFFECT_SHADER_DESC.BytecodeLength"]/*' />
     public uint BytecodeLength;
 
+    /// <include file='D3D10_EFFECT_SHADER_DESC.xml' path='doc/member[@name="D3D10_EFFECT_SHADER_DESC.SODecl"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* SODecl;
 
+    /// <include file='D3D10_EFFECT_SHADER_DESC.xml' path='doc/member[@name="D3D10_EFFECT_SHADER_DESC.NumInputSignatureEntries"]/*' />
     public uint NumInputSignatureEntries;
 
+    /// <include file='D3D10_EFFECT_SHADER_DESC.xml' path='doc/member[@name="D3D10_EFFECT_SHADER_DESC.NumOutputSignatureEntries"]/*' />
     public uint NumOutputSignatureEntries;
 }

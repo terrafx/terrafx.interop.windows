@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_FEATURE_DATA_D3D11_OPTIONS5.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D11_OPTIONS5"]/*' />
 public partial struct D3D11_FEATURE_DATA_D3D11_OPTIONS5
 {
+    /// <include file='D3D11_FEATURE_DATA_D3D11_OPTIONS5.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D11_OPTIONS5.SharedResourceTier"]/*' />
     public D3D11_SHARED_RESOURCE_TIER SharedResourceTier;
 }

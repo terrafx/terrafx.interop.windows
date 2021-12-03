@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12ProtectedSession.xml' path='doc/member[@name="ID3D12ProtectedSession"]/*' />
 [Guid("A1533D18-0AC1-4084-85B9-89A96116806B")]
 [NativeTypeName("struct ID3D12ProtectedSession : ID3D12DeviceChild")]
 [NativeInheritance("ID3D12DeviceChild")]
@@ -19,6 +20,7 @@ public unsafe partial struct ID3D12ProtectedSession : ID3D12ProtectedSession.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct ID3D12ProtectedSession : ID3D12ProtectedSession.Int
         return ((delegate* unmanaged<ID3D12ProtectedSession*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12ProtectedSession*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct ID3D12ProtectedSession : ID3D12ProtectedSession.Int
         return ((delegate* unmanaged<ID3D12ProtectedSession*, uint>)(lpVtbl[1]))((ID3D12ProtectedSession*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct ID3D12ProtectedSession : ID3D12ProtectedSession.Int
         return ((delegate* unmanaged<ID3D12ProtectedSession*, uint>)(lpVtbl[2]))((ID3D12ProtectedSession*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D12Object.GetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
@@ -49,6 +54,7 @@ public unsafe partial struct ID3D12ProtectedSession : ID3D12ProtectedSession.Int
         return ((delegate* unmanaged<ID3D12ProtectedSession*, Guid*, uint*, void*, int>)(lpVtbl[3]))((ID3D12ProtectedSession*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D12Object.SetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
@@ -56,6 +62,7 @@ public unsafe partial struct ID3D12ProtectedSession : ID3D12ProtectedSession.Int
         return ((delegate* unmanaged<ID3D12ProtectedSession*, Guid*, uint, void*, int>)(lpVtbl[4]))((ID3D12ProtectedSession*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D12Object.SetPrivateDataInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
@@ -63,6 +70,7 @@ public unsafe partial struct ID3D12ProtectedSession : ID3D12ProtectedSession.Int
         return ((delegate* unmanaged<ID3D12ProtectedSession*, Guid*, IUnknown*, int>)(lpVtbl[5]))((ID3D12ProtectedSession*)Unsafe.AsPointer(ref this), guid, pData);
     }
 
+    /// <inheritdoc cref="ID3D12Object.SetName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetName([NativeTypeName("LPCWSTR")] ushort* Name)
@@ -70,6 +78,7 @@ public unsafe partial struct ID3D12ProtectedSession : ID3D12ProtectedSession.Int
         return ((delegate* unmanaged<ID3D12ProtectedSession*, ushort*, int>)(lpVtbl[6]))((ID3D12ProtectedSession*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <inheritdoc cref="ID3D12DeviceChild.GetDevice" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppvDevice)
@@ -77,6 +86,7 @@ public unsafe partial struct ID3D12ProtectedSession : ID3D12ProtectedSession.Int
         return ((delegate* unmanaged<ID3D12ProtectedSession*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12ProtectedSession*)Unsafe.AsPointer(ref this), riid, ppvDevice);
     }
 
+    /// <include file='ID3D12ProtectedSession.xml' path='doc/member[@name="ID3D12ProtectedSession.GetStatusFence"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetStatusFence([NativeTypeName("const IID &")] Guid* riid, void** ppFence)
@@ -84,6 +94,7 @@ public unsafe partial struct ID3D12ProtectedSession : ID3D12ProtectedSession.Int
         return ((delegate* unmanaged<ID3D12ProtectedSession*, Guid*, void**, int>)(lpVtbl[8]))((ID3D12ProtectedSession*)Unsafe.AsPointer(ref this), riid, ppFence);
     }
 
+    /// <include file='ID3D12ProtectedSession.xml' path='doc/member[@name="ID3D12ProtectedSession.GetSessionStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public D3D12_PROTECTED_SESSION_STATUS GetSessionStatus()

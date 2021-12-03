@@ -7,27 +7,36 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC.xml' path='doc/member[@name="DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC"]/*' />
 public unsafe partial struct DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC
 {
+    /// <include file='DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC.xml' path='doc/member[@name="DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC.InputGradientTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* InputGradientTensor;
 
+    /// <include file='DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC.xml' path='doc/member[@name="DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC.OutputGradientTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* OutputGradientTensor;
 
+    /// <include file='DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC.xml' path='doc/member[@name="DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC.DimensionCount"]/*' />
     public uint DimensionCount;
 
+    /// <include file='DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC.xml' path='doc/member[@name="DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC.Strides"]/*' />
     [NativeTypeName("const UINT *")]
     public uint* Strides;
 
+    /// <include file='DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC.xml' path='doc/member[@name="DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC.WindowSize"]/*' />
     [NativeTypeName("const UINT *")]
     public uint* WindowSize;
 
+    /// <include file='DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC.xml' path='doc/member[@name="DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC.StartPadding"]/*' />
     [NativeTypeName("const UINT *")]
     public uint* StartPadding;
 
+    /// <include file='DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC.xml' path='doc/member[@name="DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC.EndPadding"]/*' />
     [NativeTypeName("const UINT *")]
     public uint* EndPadding;
 
+    /// <include file='DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC.xml' path='doc/member[@name="DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC.IncludePadding"]/*' />
     public BOOL IncludePadding;
 }

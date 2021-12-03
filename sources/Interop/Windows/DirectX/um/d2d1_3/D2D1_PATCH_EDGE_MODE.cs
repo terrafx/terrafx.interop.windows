@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_PATCH_EDGE_MODE.xml' path='doc/member[@name="D2D1_PATCH_EDGE_MODE"]/*' />
 public enum D2D1_PATCH_EDGE_MODE : uint
 {
+    /// <include file='D2D1_PATCH_EDGE_MODE.xml' path='doc/member[@name="D2D1_PATCH_EDGE_MODE.D2D1_PATCH_EDGE_MODE_ALIASED"]/*' />
     D2D1_PATCH_EDGE_MODE_ALIASED = 0,
+
+    /// <include file='D2D1_PATCH_EDGE_MODE.xml' path='doc/member[@name="D2D1_PATCH_EDGE_MODE.D2D1_PATCH_EDGE_MODE_ANTIALIASED"]/*' />
     D2D1_PATCH_EDGE_MODE_ANTIALIASED = 1,
+
+    /// <include file='D2D1_PATCH_EDGE_MODE.xml' path='doc/member[@name="D2D1_PATCH_EDGE_MODE.D2D1_PATCH_EDGE_MODE_ALIASED_INFLATED"]/*' />
     D2D1_PATCH_EDGE_MODE_ALIASED_INFLATED = 2,
+
+    /// <include file='D2D1_PATCH_EDGE_MODE.xml' path='doc/member[@name="D2D1_PATCH_EDGE_MODE.D2D1_PATCH_EDGE_MODE_FORCE_DWORD"]/*' />
     D2D1_PATCH_EDGE_MODE_FORCE_DWORD = 0xffffffff,
 }

@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12VideoDecoder1.xml' path='doc/member[@name="ID3D12VideoDecoder1"]/*' />
 [Guid("79A2E5FB-CCD2-469A-9FDE-195D10951F7E")]
 [NativeTypeName("struct ID3D12VideoDecoder1 : ID3D12VideoDecoder")]
 [NativeInheritance("ID3D12VideoDecoder")]
@@ -19,6 +20,7 @@ public unsafe partial struct ID3D12VideoDecoder1 : ID3D12VideoDecoder1.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct ID3D12VideoDecoder1 : ID3D12VideoDecoder1.Interface
         return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct ID3D12VideoDecoder1 : ID3D12VideoDecoder1.Interface
         return ((delegate* unmanaged<ID3D12VideoDecoder1*, uint>)(lpVtbl[1]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct ID3D12VideoDecoder1 : ID3D12VideoDecoder1.Interface
         return ((delegate* unmanaged<ID3D12VideoDecoder1*, uint>)(lpVtbl[2]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D12Object.GetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
@@ -49,6 +54,7 @@ public unsafe partial struct ID3D12VideoDecoder1 : ID3D12VideoDecoder1.Interface
         return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, uint*, void*, int>)(lpVtbl[3]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D12Object.SetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
@@ -56,6 +62,7 @@ public unsafe partial struct ID3D12VideoDecoder1 : ID3D12VideoDecoder1.Interface
         return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, uint, void*, int>)(lpVtbl[4]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D12Object.SetPrivateDataInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
@@ -63,6 +70,7 @@ public unsafe partial struct ID3D12VideoDecoder1 : ID3D12VideoDecoder1.Interface
         return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, IUnknown*, int>)(lpVtbl[5]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), guid, pData);
     }
 
+    /// <inheritdoc cref="ID3D12Object.SetName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetName([NativeTypeName("LPCWSTR")] ushort* Name)
@@ -70,6 +78,7 @@ public unsafe partial struct ID3D12VideoDecoder1 : ID3D12VideoDecoder1.Interface
         return ((delegate* unmanaged<ID3D12VideoDecoder1*, ushort*, int>)(lpVtbl[6]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <inheritdoc cref="ID3D12DeviceChild.GetDevice" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppvDevice)
@@ -77,6 +86,7 @@ public unsafe partial struct ID3D12VideoDecoder1 : ID3D12VideoDecoder1.Interface
         return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), riid, ppvDevice);
     }
 
+    /// <inheritdoc cref="ID3D12VideoDecoder.GetDesc" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public D3D12_VIDEO_DECODER_DESC GetDesc()
@@ -85,6 +95,7 @@ public unsafe partial struct ID3D12VideoDecoder1 : ID3D12VideoDecoder1.Interface
         return *((delegate* unmanaged<ID3D12VideoDecoder1*, D3D12_VIDEO_DECODER_DESC*, D3D12_VIDEO_DECODER_DESC*>)(lpVtbl[8]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), &result);
     }
 
+    /// <include file='ID3D12VideoDecoder1.xml' path='doc/member[@name="ID3D12VideoDecoder1.GetProtectedResourceSession"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession)

@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteTypography.xml' path='doc/member[@name="IDWriteTypography"]/*' />
 [Guid("55F1112B-1DC2-4B3C-9541-F46894ED85B6")]
 [NativeTypeName("struct IDWriteTypography : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDWriteTypography : IDWriteTypography.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDWriteTypography : IDWriteTypography.Interface
         return ((delegate* unmanaged<IDWriteTypography*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteTypography*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDWriteTypography : IDWriteTypography.Interface
         return ((delegate* unmanaged<IDWriteTypography*, uint>)(lpVtbl[1]))((IDWriteTypography*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDWriteTypography : IDWriteTypography.Interface
         return ((delegate* unmanaged<IDWriteTypography*, uint>)(lpVtbl[2]))((IDWriteTypography*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteTypography.xml' path='doc/member[@name="IDWriteTypography.AddFontFeature"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddFontFeature(DWRITE_FONT_FEATURE fontFeature)
@@ -47,6 +52,7 @@ public unsafe partial struct IDWriteTypography : IDWriteTypography.Interface
         return ((delegate* unmanaged<IDWriteTypography*, DWRITE_FONT_FEATURE, int>)(lpVtbl[3]))((IDWriteTypography*)Unsafe.AsPointer(ref this), fontFeature);
     }
 
+    /// <include file='IDWriteTypography.xml' path='doc/member[@name="IDWriteTypography.GetFontFeatureCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     [return: NativeTypeName("UINT32")]
@@ -55,6 +61,7 @@ public unsafe partial struct IDWriteTypography : IDWriteTypography.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<IDWriteTypography*, uint>)(lpVtbl[4]))((IDWriteTypography*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteTypography.xml' path='doc/member[@name="IDWriteTypography.GetFontFeature"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetFontFeature([NativeTypeName("UINT32")] uint fontFeatureIndex, DWRITE_FONT_FEATURE* fontFeature)

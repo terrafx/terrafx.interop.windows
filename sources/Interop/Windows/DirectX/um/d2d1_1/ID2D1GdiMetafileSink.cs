@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1GdiMetafileSink.xml' path='doc/member[@name="ID2D1GdiMetafileSink"]/*' />
 [Guid("82237326-8111-4F7C-BCF4-B5C1175564FE")]
 [NativeTypeName("struct ID2D1GdiMetafileSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct ID2D1GdiMetafileSink : ID2D1GdiMetafileSink.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct ID2D1GdiMetafileSink : ID2D1GdiMetafileSink.Interfa
         return ((delegate* unmanaged<ID2D1GdiMetafileSink*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1GdiMetafileSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct ID2D1GdiMetafileSink : ID2D1GdiMetafileSink.Interfa
         return ((delegate* unmanaged<ID2D1GdiMetafileSink*, uint>)(lpVtbl[1]))((ID2D1GdiMetafileSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct ID2D1GdiMetafileSink : ID2D1GdiMetafileSink.Interfa
         return ((delegate* unmanaged<ID2D1GdiMetafileSink*, uint>)(lpVtbl[2]))((ID2D1GdiMetafileSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1GdiMetafileSink.xml' path='doc/member[@name="ID2D1GdiMetafileSink.ProcessRecord"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ProcessRecord([NativeTypeName("DWORD")] uint recordType, [NativeTypeName("const void *")] void* recordData, [NativeTypeName("DWORD")] uint recordDataSize)

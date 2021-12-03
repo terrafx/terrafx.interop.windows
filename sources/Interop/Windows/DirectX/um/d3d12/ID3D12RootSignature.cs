@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12RootSignature.xml' path='doc/member[@name="ID3D12RootSignature"]/*' />
 [Guid("C54A6B66-72DF-4EE8-8BE5-A946A1429214")]
 [NativeTypeName("struct ID3D12RootSignature : ID3D12DeviceChild")]
 [NativeInheritance("ID3D12DeviceChild")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D12RootSignature : ID3D12RootSignature.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D12RootSignature : ID3D12RootSignature.Interface
         return ((delegate* unmanaged<ID3D12RootSignature*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12RootSignature*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D12RootSignature : ID3D12RootSignature.Interface
         return ((delegate* unmanaged<ID3D12RootSignature*, uint>)(lpVtbl[1]))((ID3D12RootSignature*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D12RootSignature : ID3D12RootSignature.Interface
         return ((delegate* unmanaged<ID3D12RootSignature*, uint>)(lpVtbl[2]))((ID3D12RootSignature*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D12Object.GetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
@@ -47,6 +52,7 @@ public unsafe partial struct ID3D12RootSignature : ID3D12RootSignature.Interface
         return ((delegate* unmanaged<ID3D12RootSignature*, Guid*, uint*, void*, int>)(lpVtbl[3]))((ID3D12RootSignature*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D12Object.SetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
@@ -54,6 +60,7 @@ public unsafe partial struct ID3D12RootSignature : ID3D12RootSignature.Interface
         return ((delegate* unmanaged<ID3D12RootSignature*, Guid*, uint, void*, int>)(lpVtbl[4]))((ID3D12RootSignature*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D12Object.SetPrivateDataInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
@@ -61,6 +68,7 @@ public unsafe partial struct ID3D12RootSignature : ID3D12RootSignature.Interface
         return ((delegate* unmanaged<ID3D12RootSignature*, Guid*, IUnknown*, int>)(lpVtbl[5]))((ID3D12RootSignature*)Unsafe.AsPointer(ref this), guid, pData);
     }
 
+    /// <inheritdoc cref="ID3D12Object.SetName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetName([NativeTypeName("LPCWSTR")] ushort* Name)
@@ -68,6 +76,7 @@ public unsafe partial struct ID3D12RootSignature : ID3D12RootSignature.Interface
         return ((delegate* unmanaged<ID3D12RootSignature*, ushort*, int>)(lpVtbl[6]))((ID3D12RootSignature*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <inheritdoc cref="ID3D12DeviceChild.GetDevice" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppvDevice)

@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_TEX2D_UAV.xml' path='doc/member[@name="D3D12_TEX2D_UAV"]/*' />
 public partial struct D3D12_TEX2D_UAV
 {
+    /// <include file='D3D12_TEX2D_UAV.xml' path='doc/member[@name="D3D12_TEX2D_UAV.MipSlice"]/*' />
     public uint MipSlice;
 
+    /// <include file='D3D12_TEX2D_UAV.xml' path='doc/member[@name="D3D12_TEX2D_UAV.PlaneSlice"]/*' />
     public uint PlaneSlice;
 }

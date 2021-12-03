@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IDirect3DDxgiInterfaceAccess.xml' path='doc/member[@name="IDirect3DDxgiInterfaceAccess"]/*' />
 [Guid("A9B3D012-3DF2-4EE3-B8D1-8695F457D3C1")]
 [NativeTypeName("struct IDirect3DDxgiInterfaceAccess : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDirect3DDxgiInterfaceAccess : IDirect3DDxgiInterfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDirect3DDxgiInterfaceAccess : IDirect3DDxgiInterfa
         return ((delegate* unmanaged<IDirect3DDxgiInterfaceAccess*, Guid*, void**, int>)(lpVtbl[0]))((IDirect3DDxgiInterfaceAccess*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDirect3DDxgiInterfaceAccess : IDirect3DDxgiInterfa
         return ((delegate* unmanaged<IDirect3DDxgiInterfaceAccess*, uint>)(lpVtbl[1]))((IDirect3DDxgiInterfaceAccess*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDirect3DDxgiInterfaceAccess : IDirect3DDxgiInterfa
         return ((delegate* unmanaged<IDirect3DDxgiInterfaceAccess*, uint>)(lpVtbl[2]))((IDirect3DDxgiInterfaceAccess*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirect3DDxgiInterfaceAccess.xml' path='doc/member[@name="IDirect3DDxgiInterfaceAccess.GetInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetInterface([NativeTypeName("const IID &")] Guid* iid, void** p)

@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_MAP.xml' path='doc/member[@name="D3D10_MAP"]/*' />
 public enum D3D10_MAP
 {
+    /// <include file='D3D10_MAP.xml' path='doc/member[@name="D3D10_MAP.D3D10_MAP_READ"]/*' />
     D3D10_MAP_READ = 1,
+
+    /// <include file='D3D10_MAP.xml' path='doc/member[@name="D3D10_MAP.D3D10_MAP_WRITE"]/*' />
     D3D10_MAP_WRITE = 2,
+
+    /// <include file='D3D10_MAP.xml' path='doc/member[@name="D3D10_MAP.D3D10_MAP_READ_WRITE"]/*' />
     D3D10_MAP_READ_WRITE = 3,
+
+    /// <include file='D3D10_MAP.xml' path='doc/member[@name="D3D10_MAP.D3D10_MAP_WRITE_DISCARD"]/*' />
     D3D10_MAP_WRITE_DISCARD = 4,
+
+    /// <include file='D3D10_MAP.xml' path='doc/member[@name="D3D10_MAP.D3D10_MAP_WRITE_NO_OVERWRITE"]/*' />
     D3D10_MAP_WRITE_NO_OVERWRITE = 5,
 }

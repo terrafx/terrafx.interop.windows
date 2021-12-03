@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_MAPPED_RECT.xml' path='doc/member[@name="D2D1_MAPPED_RECT"]/*' />
 public unsafe partial struct D2D1_MAPPED_RECT
 {
+    /// <include file='D2D1_MAPPED_RECT.xml' path='doc/member[@name="D2D1_MAPPED_RECT.pitch"]/*' />
     [NativeTypeName("UINT32")]
     public uint pitch;
 
+    /// <include file='D2D1_MAPPED_RECT.xml' path='doc/member[@name="D2D1_MAPPED_RECT.bits"]/*' />
     public byte* bits;
 }

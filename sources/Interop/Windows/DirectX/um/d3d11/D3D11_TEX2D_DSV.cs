@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_TEX2D_DSV.xml' path='doc/member[@name="D3D11_TEX2D_DSV"]/*' />
 public partial struct D3D11_TEX2D_DSV
 {
+    /// <include file='D3D11_TEX2D_DSV.xml' path='doc/member[@name="D3D11_TEX2D_DSV.MipSlice"]/*' />
     public uint MipSlice;
 }

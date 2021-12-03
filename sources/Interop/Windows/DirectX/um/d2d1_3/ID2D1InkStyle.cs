@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1InkStyle.xml' path='doc/member[@name="ID2D1InkStyle"]/*' />
 [Guid("BAE8B344-23FC-4071-8CB5-D05D6F073848")]
 [NativeTypeName("struct ID2D1InkStyle : ID2D1Resource")]
 [NativeInheritance("ID2D1Resource")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID2D1InkStyle : ID2D1InkStyle.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID2D1InkStyle : ID2D1InkStyle.Interface
         return ((delegate* unmanaged<ID2D1InkStyle*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1InkStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID2D1InkStyle : ID2D1InkStyle.Interface
         return ((delegate* unmanaged<ID2D1InkStyle*, uint>)(lpVtbl[1]))((ID2D1InkStyle*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID2D1InkStyle : ID2D1InkStyle.Interface
         return ((delegate* unmanaged<ID2D1InkStyle*, uint>)(lpVtbl[2]))((ID2D1InkStyle*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
@@ -47,6 +52,7 @@ public unsafe partial struct ID2D1InkStyle : ID2D1InkStyle.Interface
         ((delegate* unmanaged<ID2D1InkStyle*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1InkStyle*)Unsafe.AsPointer(ref this), factory);
     }
 
+    /// <include file='ID2D1InkStyle.xml' path='doc/member[@name="ID2D1InkStyle.SetNibTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void SetNibTransform([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
@@ -54,6 +60,7 @@ public unsafe partial struct ID2D1InkStyle : ID2D1InkStyle.Interface
         ((delegate* unmanaged<ID2D1InkStyle*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[4]))((ID2D1InkStyle*)Unsafe.AsPointer(ref this), transform);
     }
 
+    /// <include file='ID2D1InkStyle.xml' path='doc/member[@name="ID2D1InkStyle.GetNibTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void GetNibTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
@@ -61,6 +68,7 @@ public unsafe partial struct ID2D1InkStyle : ID2D1InkStyle.Interface
         ((delegate* unmanaged[SuppressGCTransition]<ID2D1InkStyle*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[5]))((ID2D1InkStyle*)Unsafe.AsPointer(ref this), transform);
     }
 
+    /// <include file='ID2D1InkStyle.xml' path='doc/member[@name="ID2D1InkStyle.SetNibShape"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public void SetNibShape(D2D1_INK_NIB_SHAPE nibShape)
@@ -68,6 +76,7 @@ public unsafe partial struct ID2D1InkStyle : ID2D1InkStyle.Interface
         ((delegate* unmanaged<ID2D1InkStyle*, D2D1_INK_NIB_SHAPE, void>)(lpVtbl[6]))((ID2D1InkStyle*)Unsafe.AsPointer(ref this), nibShape);
     }
 
+    /// <include file='ID2D1InkStyle.xml' path='doc/member[@name="ID2D1InkStyle.GetNibShape"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public D2D1_INK_NIB_SHAPE GetNibShape()

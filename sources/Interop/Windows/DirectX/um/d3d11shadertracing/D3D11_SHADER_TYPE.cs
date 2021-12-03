@@ -7,13 +7,25 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_SHADER_TYPE.xml' path='doc/member[@name="D3D11_SHADER_TYPE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum D3D11_SHADER_TYPE
 {
+    /// <include file='D3D11_SHADER_TYPE.xml' path='doc/member[@name="D3D11_SHADER_TYPE.D3D11_VERTEX_SHADER"]/*' />
     D3D11_VERTEX_SHADER = 1,
+
+    /// <include file='D3D11_SHADER_TYPE.xml' path='doc/member[@name="D3D11_SHADER_TYPE.D3D11_HULL_SHADER"]/*' />
     D3D11_HULL_SHADER = 2,
+
+    /// <include file='D3D11_SHADER_TYPE.xml' path='doc/member[@name="D3D11_SHADER_TYPE.D3D11_DOMAIN_SHADER"]/*' />
     D3D11_DOMAIN_SHADER = 3,
+
+    /// <include file='D3D11_SHADER_TYPE.xml' path='doc/member[@name="D3D11_SHADER_TYPE.D3D11_GEOMETRY_SHADER"]/*' />
     D3D11_GEOMETRY_SHADER = 4,
+
+    /// <include file='D3D11_SHADER_TYPE.xml' path='doc/member[@name="D3D11_SHADER_TYPE.D3D11_PIXEL_SHADER"]/*' />
     D3D11_PIXEL_SHADER = 5,
+
+    /// <include file='D3D11_SHADER_TYPE.xml' path='doc/member[@name="D3D11_SHADER_TYPE.D3D11_COMPUTE_SHADER"]/*' />
     D3D11_COMPUTE_SHADER = 6,
 }

@@ -7,18 +7,23 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='XAUDIO2_VOICE_DETAILS.xml' path='doc/member[@name="XAUDIO2_VOICE_DETAILS"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct XAUDIO2_VOICE_DETAILS
 {
+    /// <include file='XAUDIO2_VOICE_DETAILS.xml' path='doc/member[@name="XAUDIO2_VOICE_DETAILS.CreationFlags"]/*' />
     [NativeTypeName("UINT32")]
     public uint CreationFlags;
 
+    /// <include file='XAUDIO2_VOICE_DETAILS.xml' path='doc/member[@name="XAUDIO2_VOICE_DETAILS.ActiveFlags"]/*' />
     [NativeTypeName("UINT32")]
     public uint ActiveFlags;
 
+    /// <include file='XAUDIO2_VOICE_DETAILS.xml' path='doc/member[@name="XAUDIO2_VOICE_DETAILS.InputChannels"]/*' />
     [NativeTypeName("UINT32")]
     public uint InputChannels;
 
+    /// <include file='XAUDIO2_VOICE_DETAILS.xml' path='doc/member[@name="XAUDIO2_VOICE_DETAILS.InputSampleRate"]/*' />
     [NativeTypeName("UINT32")]
     public uint InputSampleRate;
 }

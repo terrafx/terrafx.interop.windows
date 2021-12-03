@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDCompositionSurfaceFactory.xml' path='doc/member[@name="IDCompositionSurfaceFactory"]/*' />
 [Guid("E334BC12-3937-4E02-85EB-FCF4EB30D2C8")]
 [NativeTypeName("struct IDCompositionSurfaceFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDCompositionSurfaceFactory : IDCompositionSurfaceF
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDCompositionSurfaceFactory : IDCompositionSurfaceF
         return ((delegate* unmanaged<IDCompositionSurfaceFactory*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionSurfaceFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDCompositionSurfaceFactory : IDCompositionSurfaceF
         return ((delegate* unmanaged<IDCompositionSurfaceFactory*, uint>)(lpVtbl[1]))((IDCompositionSurfaceFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDCompositionSurfaceFactory : IDCompositionSurfaceF
         return ((delegate* unmanaged<IDCompositionSurfaceFactory*, uint>)(lpVtbl[2]))((IDCompositionSurfaceFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDCompositionSurfaceFactory.xml' path='doc/member[@name="IDCompositionSurfaceFactory.CreateSurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateSurface(uint width, uint height, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, IDCompositionSurface** surface)
@@ -49,6 +54,7 @@ public unsafe partial struct IDCompositionSurfaceFactory : IDCompositionSurfaceF
         return ((delegate* unmanaged<IDCompositionSurfaceFactory*, uint, uint, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionSurface**, int>)(lpVtbl[3]))((IDCompositionSurfaceFactory*)Unsafe.AsPointer(ref this), width, height, pixelFormat, alphaMode, surface);
     }
 
+    /// <include file='IDCompositionSurfaceFactory.xml' path='doc/member[@name="IDCompositionSurfaceFactory.CreateVirtualSurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreateVirtualSurface(uint initialWidth, uint initialHeight, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, IDCompositionVirtualSurface** virtualSurface)

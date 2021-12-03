@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D11ShaderTrace.xml' path='doc/member[@name="ID3D11ShaderTrace"]/*' />
 [Guid("36B013E6-2811-4845-BAA7-D623FE0DF104")]
 [NativeTypeName("struct ID3D11ShaderTrace : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface
         return ((delegate* unmanaged<ID3D11ShaderTrace*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface
         return ((delegate* unmanaged<ID3D11ShaderTrace*, uint>)(lpVtbl[1]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface
         return ((delegate* unmanaged<ID3D11ShaderTrace*, uint>)(lpVtbl[2]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D11ShaderTrace.xml' path='doc/member[@name="ID3D11ShaderTrace.TraceReady"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT TraceReady([NativeTypeName("UINT64 *")] ulong* pTestCount)
@@ -49,6 +54,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface
         return ((delegate* unmanaged<ID3D11ShaderTrace*, ulong*, int>)(lpVtbl[3]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), pTestCount);
     }
 
+    /// <include file='ID3D11ShaderTrace.xml' path='doc/member[@name="ID3D11ShaderTrace.ResetTrace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void ResetTrace()
@@ -56,6 +62,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface
         ((delegate* unmanaged<ID3D11ShaderTrace*, void>)(lpVtbl[4]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D11ShaderTrace.xml' path='doc/member[@name="ID3D11ShaderTrace.GetTraceStats"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTraceStats(D3D11_TRACE_STATS* pTraceStats)
@@ -63,6 +70,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface
         return ((delegate* unmanaged<ID3D11ShaderTrace*, D3D11_TRACE_STATS*, int>)(lpVtbl[5]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), pTraceStats);
     }
 
+    /// <include file='ID3D11ShaderTrace.xml' path='doc/member[@name="ID3D11ShaderTrace.PSSelectStamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT PSSelectStamp(uint stampIndex)
@@ -70,6 +78,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface
         return ((delegate* unmanaged<ID3D11ShaderTrace*, uint, int>)(lpVtbl[6]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stampIndex);
     }
 
+    /// <include file='ID3D11ShaderTrace.xml' path='doc/member[@name="ID3D11ShaderTrace.GetInitialRegisterContents"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetInitialRegisterContents(D3D11_TRACE_REGISTER* pRegister, D3D11_TRACE_VALUE* pValue)
@@ -77,6 +86,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface
         return ((delegate* unmanaged<ID3D11ShaderTrace*, D3D11_TRACE_REGISTER*, D3D11_TRACE_VALUE*, int>)(lpVtbl[7]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), pRegister, pValue);
     }
 
+    /// <include file='ID3D11ShaderTrace.xml' path='doc/member[@name="ID3D11ShaderTrace.GetStep"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetStep(uint stepIndex, D3D11_TRACE_STEP* pTraceStep)
@@ -84,6 +94,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface
         return ((delegate* unmanaged<ID3D11ShaderTrace*, uint, D3D11_TRACE_STEP*, int>)(lpVtbl[8]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stepIndex, pTraceStep);
     }
 
+    /// <include file='ID3D11ShaderTrace.xml' path='doc/member[@name="ID3D11ShaderTrace.GetWrittenRegister"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetWrittenRegister(uint stepIndex, uint writtenRegisterIndex, D3D11_TRACE_REGISTER* pRegister, D3D11_TRACE_VALUE* pValue)
@@ -91,6 +102,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface
         return ((delegate* unmanaged<ID3D11ShaderTrace*, uint, uint, D3D11_TRACE_REGISTER*, D3D11_TRACE_VALUE*, int>)(lpVtbl[9]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stepIndex, writtenRegisterIndex, pRegister, pValue);
     }
 
+    /// <include file='ID3D11ShaderTrace.xml' path='doc/member[@name="ID3D11ShaderTrace.GetReadRegister"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetReadRegister(uint stepIndex, uint readRegisterIndex, D3D11_TRACE_REGISTER* pRegister, D3D11_TRACE_VALUE* pValue)

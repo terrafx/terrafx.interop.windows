@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_HIT_GROUP_TYPE.xml' path='doc/member[@name="D3D12_HIT_GROUP_TYPE"]/*' />
 public enum D3D12_HIT_GROUP_TYPE
 {
+    /// <include file='D3D12_HIT_GROUP_TYPE.xml' path='doc/member[@name="D3D12_HIT_GROUP_TYPE.D3D12_HIT_GROUP_TYPE_TRIANGLES"]/*' />
     D3D12_HIT_GROUP_TYPE_TRIANGLES = 0,
+
+    /// <include file='D3D12_HIT_GROUP_TYPE.xml' path='doc/member[@name="D3D12_HIT_GROUP_TYPE.D3D12_HIT_GROUP_TYPE_PROCEDURAL_PRIMITIVE"]/*' />
     D3D12_HIT_GROUP_TYPE_PROCEDURAL_PRIMITIVE = 0x1,
 }

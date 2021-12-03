@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_MEMCPY_DEST.xml' path='doc/member[@name="D3D12_MEMCPY_DEST"]/*' />
 public unsafe partial struct D3D12_MEMCPY_DEST
 {
+    /// <include file='D3D12_MEMCPY_DEST.xml' path='doc/member[@name="D3D12_MEMCPY_DEST.pData"]/*' />
     public void* pData;
 
+    /// <include file='D3D12_MEMCPY_DEST.xml' path='doc/member[@name="D3D12_MEMCPY_DEST.RowPitch"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint RowPitch;
 
+    /// <include file='D3D12_MEMCPY_DEST.xml' path='doc/member[@name="D3D12_MEMCPY_DEST.SlicePitch"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint SlicePitch;
 }

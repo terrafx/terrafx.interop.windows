@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_POINT_DESCRIPTION.xml' path='doc/member[@name="D2D1_POINT_DESCRIPTION"]/*' />
 public partial struct D2D1_POINT_DESCRIPTION
 {
+    /// <include file='D2D1_POINT_DESCRIPTION.xml' path='doc/member[@name="D2D1_POINT_DESCRIPTION.point"]/*' />
     [NativeTypeName("D2D1_POINT_2F")]
     public D2D_POINT_2F point;
 
+    /// <include file='D2D1_POINT_DESCRIPTION.xml' path='doc/member[@name="D2D1_POINT_DESCRIPTION.unitTangentVector"]/*' />
     [NativeTypeName("D2D1_POINT_2F")]
     public D2D_POINT_2F unitTangentVector;
 
+    /// <include file='D2D1_POINT_DESCRIPTION.xml' path='doc/member[@name="D2D1_POINT_DESCRIPTION.endSegment"]/*' />
     [NativeTypeName("UINT32")]
     public uint endSegment;
 
+    /// <include file='D2D1_POINT_DESCRIPTION.xml' path='doc/member[@name="D2D1_POINT_DESCRIPTION.endFigure"]/*' />
     [NativeTypeName("UINT32")]
     public uint endFigure;
 
+    /// <include file='D2D1_POINT_DESCRIPTION.xml' path='doc/member[@name="D2D1_POINT_DESCRIPTION.lengthToEndSegment"]/*' />
     public float lengthToEndSegment;
 }

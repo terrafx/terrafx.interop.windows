@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ISoftwareBitmapNativeFactory.xml' path='doc/member[@name="ISoftwareBitmapNativeFactory"]/*' />
 [Guid("C3C181EC-2914-4791-AF02-02D224A10B43")]
 [NativeTypeName("struct ISoftwareBitmapNativeFactory : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -17,6 +18,7 @@ public unsafe partial struct ISoftwareBitmapNativeFactory : ISoftwareBitmapNativ
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ISoftwareBitmapNativeFactory : ISoftwareBitmapNativ
         return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, Guid*, void**, int>)(lpVtbl[0]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ISoftwareBitmapNativeFactory : ISoftwareBitmapNativ
         return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, uint>)(lpVtbl[1]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ISoftwareBitmapNativeFactory : ISoftwareBitmapNativ
         return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, uint>)(lpVtbl[2]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -47,6 +52,7 @@ public unsafe partial struct ISoftwareBitmapNativeFactory : ISoftwareBitmapNativ
         return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, uint*, Guid**, int>)(lpVtbl[3]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -54,6 +60,7 @@ public unsafe partial struct ISoftwareBitmapNativeFactory : ISoftwareBitmapNativ
         return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, HSTRING*, int>)(lpVtbl[4]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -61,6 +68,7 @@ public unsafe partial struct ISoftwareBitmapNativeFactory : ISoftwareBitmapNativ
         return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, TrustLevel*, int>)(lpVtbl[5]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='ISoftwareBitmapNativeFactory.xml' path='doc/member[@name="ISoftwareBitmapNativeFactory.CreateFromWICBitmap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CreateFromWICBitmap(IWICBitmap* data, BOOL forceReadOnly, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
@@ -68,6 +76,7 @@ public unsafe partial struct ISoftwareBitmapNativeFactory : ISoftwareBitmapNativ
         return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, IWICBitmap*, BOOL, Guid*, void**, int>)(lpVtbl[6]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), data, forceReadOnly, riid, ppv);
     }
 
+    /// <include file='ISoftwareBitmapNativeFactory.xml' path='doc/member[@name="ISoftwareBitmapNativeFactory.CreateFromMF2DBuffer2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT CreateFromMF2DBuffer2(IMF2DBuffer2* data, [NativeTypeName("const GUID &")] Guid* subtype, [NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height, BOOL forceReadOnly, [NativeTypeName("const MFVideoArea *")] MFVideoArea* minDisplayAperture, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)

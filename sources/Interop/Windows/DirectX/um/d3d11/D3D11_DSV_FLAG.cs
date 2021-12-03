@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_DSV_FLAG.xml' path='doc/member[@name="D3D11_DSV_FLAG"]/*' />
 [Flags]
 public enum D3D11_DSV_FLAG
 {
+    /// <include file='D3D11_DSV_FLAG.xml' path='doc/member[@name="D3D11_DSV_FLAG.D3D11_DSV_READ_ONLY_DEPTH"]/*' />
     D3D11_DSV_READ_ONLY_DEPTH = 0x1,
+
+    /// <include file='D3D11_DSV_FLAG.xml' path='doc/member[@name="D3D11_DSV_FLAG.D3D11_DSV_READ_ONLY_STENCIL"]/*' />
     D3D11_DSV_READ_ONLY_STENCIL = 0x2,
 }

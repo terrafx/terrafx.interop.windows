@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IPrintPreviewPageCollection.xml' path='doc/member[@name="IPrintPreviewPageCollection"]/*' />
 [Guid("0B31CC62-D7EC-4747-9D6E-F2537D870F2B")]
 [NativeTypeName("struct IPrintPreviewPageCollection : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IPrintPreviewPageCollection : IPrintPreviewPageColl
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IPrintPreviewPageCollection : IPrintPreviewPageColl
         return ((delegate* unmanaged<IPrintPreviewPageCollection*, Guid*, void**, int>)(lpVtbl[0]))((IPrintPreviewPageCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IPrintPreviewPageCollection : IPrintPreviewPageColl
         return ((delegate* unmanaged<IPrintPreviewPageCollection*, uint>)(lpVtbl[1]))((IPrintPreviewPageCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IPrintPreviewPageCollection : IPrintPreviewPageColl
         return ((delegate* unmanaged<IPrintPreviewPageCollection*, uint>)(lpVtbl[2]))((IPrintPreviewPageCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPrintPreviewPageCollection.xml' path='doc/member[@name="IPrintPreviewPageCollection.Paginate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Paginate([NativeTypeName("UINT32")] uint currentJobPage, IInspectable* printTaskOptions)
@@ -47,6 +52,7 @@ public unsafe partial struct IPrintPreviewPageCollection : IPrintPreviewPageColl
         return ((delegate* unmanaged<IPrintPreviewPageCollection*, uint, IInspectable*, int>)(lpVtbl[3]))((IPrintPreviewPageCollection*)Unsafe.AsPointer(ref this), currentJobPage, printTaskOptions);
     }
 
+    /// <include file='IPrintPreviewPageCollection.xml' path='doc/member[@name="IPrintPreviewPageCollection.MakePage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT MakePage([NativeTypeName("UINT32")] uint desiredJobPage, float width, float height)

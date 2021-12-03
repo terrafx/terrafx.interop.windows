@@ -7,10 +7,13 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_QUERY_DATA_TIMESTAMP_DISJOINT.xml' path='doc/member[@name="D3D11_QUERY_DATA_TIMESTAMP_DISJOINT"]/*' />
 public partial struct D3D11_QUERY_DATA_TIMESTAMP_DISJOINT
 {
+    /// <include file='D3D11_QUERY_DATA_TIMESTAMP_DISJOINT.xml' path='doc/member[@name="D3D11_QUERY_DATA_TIMESTAMP_DISJOINT.Frequency"]/*' />
     [NativeTypeName("UINT64")]
     public ulong Frequency;
 
+    /// <include file='D3D11_QUERY_DATA_TIMESTAMP_DISJOINT.xml' path='doc/member[@name="D3D11_QUERY_DATA_TIMESTAMP_DISJOINT.Disjoint"]/*' />
     public BOOL Disjoint;
 }

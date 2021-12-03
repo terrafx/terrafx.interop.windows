@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IRandomAccessStreamFileAccessMode.xml' path='doc/member[@name="IRandomAccessStreamFileAccessMode"]/*' />
 [Guid("332E5848-2E15-458E-85C4-C911C0C3D6F4")]
 [NativeTypeName("struct IRandomAccessStreamFileAccessMode : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IRandomAccessStreamFileAccessMode : IRandomAccessSt
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IRandomAccessStreamFileAccessMode : IRandomAccessSt
         return ((delegate* unmanaged<IRandomAccessStreamFileAccessMode*, Guid*, void**, int>)(lpVtbl[0]))((IRandomAccessStreamFileAccessMode*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IRandomAccessStreamFileAccessMode : IRandomAccessSt
         return ((delegate* unmanaged<IRandomAccessStreamFileAccessMode*, uint>)(lpVtbl[1]))((IRandomAccessStreamFileAccessMode*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IRandomAccessStreamFileAccessMode : IRandomAccessSt
         return ((delegate* unmanaged<IRandomAccessStreamFileAccessMode*, uint>)(lpVtbl[2]))((IRandomAccessStreamFileAccessMode*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IRandomAccessStreamFileAccessMode.xml' path='doc/member[@name="IRandomAccessStreamFileAccessMode.GetMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetMode([NativeTypeName("DWORD *")] uint* fileAccessMode)

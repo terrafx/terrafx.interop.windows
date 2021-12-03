@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D_POINT_2U.xml' path='doc/member[@name="D2D_POINT_2U"]/*' />
 public partial struct D2D_POINT_2U
 {
+    /// <include file='D2D_POINT_2U.xml' path='doc/member[@name="D2D_POINT_2U.x"]/*' />
     [NativeTypeName("UINT32")]
     public uint x;
 
+    /// <include file='D2D_POINT_2U.xml' path='doc/member[@name="D2D_POINT_2U.y"]/*' />
     [NativeTypeName("UINT32")]
     public uint y;
 }

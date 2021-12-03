@@ -9,12 +9,14 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7"]/*' />
 [NativeTypeName("struct IDirectDrawSurface7 : IUnknown")]
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -22,6 +24,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, Guid*, void**, int>)(lpVtbl[0]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -30,6 +33,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, uint>)(lpVtbl[1]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -38,6 +42,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, uint>)(lpVtbl[2]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.AddAttachedSurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddAttachedSurface([NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* param0)
@@ -45,6 +50,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, IDirectDrawSurface7*, int>)(lpVtbl[3]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.AddOverlayDirtyRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AddOverlayDirtyRect([NativeTypeName("LPRECT")] RECT* param0)
@@ -52,6 +58,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, RECT*, int>)(lpVtbl[4]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.Blt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Blt([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* param1, [NativeTypeName("LPRECT")] RECT* param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPDDBLTFX")] DDBLTFX* param4)
@@ -59,6 +66,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, RECT*, IDirectDrawSurface7*, RECT*, uint, DDBLTFX*, int>)(lpVtbl[5]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1, param2, param3, param4);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.BltBatch"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT BltBatch([NativeTypeName("LPDDBLTBATCH")] DDBLTBATCH* param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2)
@@ -66,6 +74,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, DDBLTBATCH*, uint, uint, int>)(lpVtbl[6]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1, param2);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.BltFast"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT BltFast([NativeTypeName("DWORD")] uint param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* param2, [NativeTypeName("LPRECT")] RECT* param3, [NativeTypeName("DWORD")] uint param4)
@@ -73,6 +82,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, uint, uint, IDirectDrawSurface7*, RECT*, uint, int>)(lpVtbl[7]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1, param2, param3, param4);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.DeleteAttachedSurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT DeleteAttachedSurface([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* param1)
@@ -80,6 +90,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, uint, IDirectDrawSurface7*, int>)(lpVtbl[8]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.EnumAttachedSurfaces"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT EnumAttachedSurfaces([NativeTypeName("LPVOID")] void* param0, [NativeTypeName("LPDDENUMSURFACESCALLBACK7")] delegate* unmanaged<IDirectDrawSurface7*, DDSURFACEDESC2*, void*, HRESULT> param1)
@@ -87,6 +98,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, void*, delegate* unmanaged<IDirectDrawSurface7*, DDSURFACEDESC2*, void*, HRESULT>, int>)(lpVtbl[9]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.EnumOverlayZOrders"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT EnumOverlayZOrders([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPVOID")] void* param1, [NativeTypeName("LPDDENUMSURFACESCALLBACK7")] delegate* unmanaged<IDirectDrawSurface7*, DDSURFACEDESC2*, void*, HRESULT> param2)
@@ -94,6 +106,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, uint, void*, delegate* unmanaged<IDirectDrawSurface7*, DDSURFACEDESC2*, void*, HRESULT>, int>)(lpVtbl[10]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1, param2);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.Flip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Flip([NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* param0, [NativeTypeName("DWORD")] uint param1)
@@ -101,6 +114,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, IDirectDrawSurface7*, uint, int>)(lpVtbl[11]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.GetAttachedSurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetAttachedSurface([NativeTypeName("LPDDSCAPS2")] DDSCAPS2* param0, [NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** param1)
@@ -108,6 +122,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, DDSCAPS2*, IDirectDrawSurface7**, int>)(lpVtbl[12]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.GetBltStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetBltStatus([NativeTypeName("DWORD")] uint param0)
@@ -115,6 +130,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, uint, int>)(lpVtbl[13]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.GetCaps"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetCaps([NativeTypeName("LPDDSCAPS2")] DDSCAPS2* param0)
@@ -122,6 +138,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, DDSCAPS2*, int>)(lpVtbl[14]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.GetClipper"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetClipper([NativeTypeName("LPDIRECTDRAWCLIPPER *")] IDirectDrawClipper** param0)
@@ -129,6 +146,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, IDirectDrawClipper**, int>)(lpVtbl[15]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.GetColorKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetColorKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* param1)
@@ -136,6 +154,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, uint, DDCOLORKEY*, int>)(lpVtbl[16]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.GetDC"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetDC(HDC* param0)
@@ -143,6 +162,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, HDC*, int>)(lpVtbl[17]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.GetFlipStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT GetFlipStatus([NativeTypeName("DWORD")] uint param0)
@@ -150,6 +170,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, uint, int>)(lpVtbl[18]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.GetOverlayPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT GetOverlayPosition([NativeTypeName("LPLONG")] int* param0, [NativeTypeName("LPLONG")] int* param1)
@@ -157,6 +178,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, int*, int*, int>)(lpVtbl[19]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.GetPalette"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT GetPalette([NativeTypeName("LPDIRECTDRAWPALETTE *")] IDirectDrawPalette** param0)
@@ -164,6 +186,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, IDirectDrawPalette**, int>)(lpVtbl[20]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.GetPixelFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT GetPixelFormat([NativeTypeName("LPDDPIXELFORMAT")] DDPIXELFORMAT* param0)
@@ -171,6 +194,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, DDPIXELFORMAT*, int>)(lpVtbl[21]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.GetSurfaceDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT GetSurfaceDesc([NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param0)
@@ -178,6 +202,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, DDSURFACEDESC2*, int>)(lpVtbl[22]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT Initialize([NativeTypeName("LPDIRECTDRAW")] IDirectDraw* param0, [NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param1)
@@ -185,6 +210,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, IDirectDraw*, DDSURFACEDESC2*, int>)(lpVtbl[23]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.IsLost"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT IsLost()
@@ -192,6 +218,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, int>)(lpVtbl[24]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.Lock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT Lock([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param1, [NativeTypeName("DWORD")] uint param2, HANDLE param3)
@@ -199,6 +226,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, RECT*, DDSURFACEDESC2*, uint, HANDLE, int>)(lpVtbl[25]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.ReleaseDC"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT ReleaseDC(HDC param0)
@@ -206,6 +234,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, HDC, int>)(lpVtbl[26]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.Restore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT Restore()
@@ -213,6 +242,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, int>)(lpVtbl[27]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.SetClipper"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT SetClipper([NativeTypeName("LPDIRECTDRAWCLIPPER")] IDirectDrawClipper* param0)
@@ -220,6 +250,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, IDirectDrawClipper*, int>)(lpVtbl[28]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.SetColorKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT SetColorKey([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* param1)
@@ -227,6 +258,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, uint, DDCOLORKEY*, int>)(lpVtbl[29]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.SetOverlayPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT SetOverlayPosition([NativeTypeName("LONG")] int param0, [NativeTypeName("LONG")] int param1)
@@ -234,6 +266,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, int, int, int>)(lpVtbl[30]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.SetPalette"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT SetPalette([NativeTypeName("LPDIRECTDRAWPALETTE")] IDirectDrawPalette* param0)
@@ -241,6 +274,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, IDirectDrawPalette*, int>)(lpVtbl[31]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.Unlock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT Unlock([NativeTypeName("LPRECT")] RECT* param0)
@@ -248,6 +282,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, RECT*, int>)(lpVtbl[32]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.UpdateOverlay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT UpdateOverlay([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* param1, [NativeTypeName("LPRECT")] RECT* param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPDDOVERLAYFX")] DDOVERLAYFX* param4)
@@ -255,6 +290,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, RECT*, IDirectDrawSurface7*, RECT*, uint, DDOVERLAYFX*, int>)(lpVtbl[33]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1, param2, param3, param4);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.UpdateOverlayDisplay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT UpdateOverlayDisplay([NativeTypeName("DWORD")] uint param0)
@@ -262,6 +298,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, uint, int>)(lpVtbl[34]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.UpdateOverlayZOrder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT UpdateOverlayZOrder([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* param1)
@@ -269,6 +306,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, uint, IDirectDrawSurface7*, int>)(lpVtbl[35]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.GetDDInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT GetDDInterface([NativeTypeName("LPVOID *")] void** param0)
@@ -276,6 +314,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, void**, int>)(lpVtbl[36]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.PageLock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
     public HRESULT PageLock([NativeTypeName("DWORD")] uint param0)
@@ -283,6 +322,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, uint, int>)(lpVtbl[37]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.PageUnlock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
     public HRESULT PageUnlock([NativeTypeName("DWORD")] uint param0)
@@ -290,6 +330,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, uint, int>)(lpVtbl[38]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.SetSurfaceDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
     public HRESULT SetSurfaceDesc([NativeTypeName("LPDDSURFACEDESC2")] DDSURFACEDESC2* param0, [NativeTypeName("DWORD")] uint param1)
@@ -297,6 +338,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, DDSURFACEDESC2*, uint, int>)(lpVtbl[39]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.SetPrivateData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPVOID")] void* param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3)
@@ -304,6 +346,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, Guid*, void*, uint, uint, int>)(lpVtbl[40]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.GetPrivateData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPVOID")] void* param1, [NativeTypeName("LPDWORD")] uint* param2)
@@ -311,6 +354,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, Guid*, void*, uint*, int>)(lpVtbl[41]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0, param1, param2);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.FreePrivateData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(42)]
     public HRESULT FreePrivateData([NativeTypeName("const GUID &")] Guid* param0)
@@ -318,6 +362,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, Guid*, int>)(lpVtbl[42]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.GetUniquenessValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(43)]
     public HRESULT GetUniquenessValue([NativeTypeName("LPDWORD")] uint* param0)
@@ -325,6 +370,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, uint*, int>)(lpVtbl[43]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.ChangeUniquenessValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(44)]
     public HRESULT ChangeUniquenessValue()
@@ -332,6 +378,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, int>)(lpVtbl[44]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.SetPriority"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(45)]
     public HRESULT SetPriority([NativeTypeName("DWORD")] uint param0)
@@ -339,6 +386,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, uint, int>)(lpVtbl[45]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.GetPriority"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(46)]
     public HRESULT GetPriority([NativeTypeName("LPDWORD")] uint* param0)
@@ -346,6 +394,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, uint*, int>)(lpVtbl[46]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.SetLOD"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(47)]
     public HRESULT SetLOD([NativeTypeName("DWORD")] uint param0)
@@ -353,6 +402,7 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         return ((delegate* unmanaged<IDirectDrawSurface7*, uint, int>)(lpVtbl[47]))((IDirectDrawSurface7*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawSurface7.xml' path='doc/member[@name="IDirectDrawSurface7.GetLOD"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(48)]
     public HRESULT GetLOD([NativeTypeName("LPDWORD")] uint* param0)

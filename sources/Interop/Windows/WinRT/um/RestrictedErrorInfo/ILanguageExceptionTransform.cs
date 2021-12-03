@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ILanguageExceptionTransform.xml' path='doc/member[@name="ILanguageExceptionTransform"]/*' />
 [Guid("FEB5A271-A6CD-45CE-880A-696706BADC65")]
 [NativeTypeName("struct ILanguageExceptionTransform : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct ILanguageExceptionTransform : ILanguageExceptionTra
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct ILanguageExceptionTransform : ILanguageExceptionTra
         return ((delegate* unmanaged<ILanguageExceptionTransform*, Guid*, void**, int>)(lpVtbl[0]))((ILanguageExceptionTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct ILanguageExceptionTransform : ILanguageExceptionTra
         return ((delegate* unmanaged<ILanguageExceptionTransform*, uint>)(lpVtbl[1]))((ILanguageExceptionTransform*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct ILanguageExceptionTransform : ILanguageExceptionTra
         return ((delegate* unmanaged<ILanguageExceptionTransform*, uint>)(lpVtbl[2]))((ILanguageExceptionTransform*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ILanguageExceptionTransform.xml' path='doc/member[@name="ILanguageExceptionTransform.GetTransformedRestrictedErrorInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTransformedRestrictedErrorInfo(IRestrictedErrorInfo** restrictedErrorInfo)

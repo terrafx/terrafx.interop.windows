@@ -8,20 +8,26 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='X3DAUDIO_LISTENER.xml' path='doc/member[@name="X3DAUDIO_LISTENER"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct X3DAUDIO_LISTENER
 {
+    /// <include file='X3DAUDIO_LISTENER.xml' path='doc/member[@name="X3DAUDIO_LISTENER.OrientFront"]/*' />
     [NativeTypeName("X3DAUDIO_VECTOR")]
     public Vector3 OrientFront;
 
+    /// <include file='X3DAUDIO_LISTENER.xml' path='doc/member[@name="X3DAUDIO_LISTENER.OrientTop"]/*' />
     [NativeTypeName("X3DAUDIO_VECTOR")]
     public Vector3 OrientTop;
 
+    /// <include file='X3DAUDIO_LISTENER.xml' path='doc/member[@name="X3DAUDIO_LISTENER.Position"]/*' />
     [NativeTypeName("X3DAUDIO_VECTOR")]
     public Vector3 Position;
 
+    /// <include file='X3DAUDIO_LISTENER.xml' path='doc/member[@name="X3DAUDIO_LISTENER.Velocity"]/*' />
     [NativeTypeName("X3DAUDIO_VECTOR")]
     public Vector3 Velocity;
 
+    /// <include file='X3DAUDIO_LISTENER.xml' path='doc/member[@name="X3DAUDIO_LISTENER.pCone"]/*' />
     public X3DAUDIO_CONE* pCone;
 }

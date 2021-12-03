@@ -11,24 +11,31 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DirectDrawEnumerateW"]/*' />
     [DllImport("ddraw", ExactSpelling = true)]
     public static extern HRESULT DirectDrawEnumerateW([NativeTypeName("LPDDENUMCALLBACKW")] delegate* unmanaged<Guid*, ushort*, ushort*, void*, BOOL> lpCallback, [NativeTypeName("LPVOID")] void* lpContext);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DirectDrawEnumerateA"]/*' />
     [DllImport("ddraw", ExactSpelling = true)]
     public static extern HRESULT DirectDrawEnumerateA([NativeTypeName("LPDDENUMCALLBACKA")] delegate* unmanaged<Guid*, sbyte*, sbyte*, void*, BOOL> lpCallback, [NativeTypeName("LPVOID")] void* lpContext);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DirectDrawEnumerateExW"]/*' />
     [DllImport("ddraw", ExactSpelling = true)]
     public static extern HRESULT DirectDrawEnumerateExW([NativeTypeName("LPDDENUMCALLBACKEXW")] delegate* unmanaged<Guid*, ushort*, ushort*, void*, HMONITOR, BOOL> lpCallback, [NativeTypeName("LPVOID")] void* lpContext, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DirectDrawEnumerateExA"]/*' />
     [DllImport("ddraw", ExactSpelling = true)]
     public static extern HRESULT DirectDrawEnumerateExA([NativeTypeName("LPDDENUMCALLBACKEXA")] delegate* unmanaged<Guid*, sbyte*, sbyte*, void*, HMONITOR, BOOL> lpCallback, [NativeTypeName("LPVOID")] void* lpContext, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DirectDrawCreate"]/*' />
     [DllImport("ddraw", ExactSpelling = true)]
     public static extern HRESULT DirectDrawCreate(Guid* lpGUID, [NativeTypeName("LPDIRECTDRAW *")] IDirectDraw** lplpDD, IUnknown* pUnkOuter);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DirectDrawCreateEx"]/*' />
     [DllImport("ddraw", ExactSpelling = true)]
     public static extern HRESULT DirectDrawCreateEx(Guid* lpGuid, [NativeTypeName("LPVOID *")] void** lplpDD, [NativeTypeName("const IID &")] Guid* iid, IUnknown* pUnkOuter);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DirectDrawCreateClipper"]/*' />
     [DllImport("ddraw", ExactSpelling = true)]
     public static extern HRESULT DirectDrawCreateClipper([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPDIRECTDRAWCLIPPER *")] IDirectDrawClipper** lplpDDClipper, IUnknown* pUnkOuter);
 

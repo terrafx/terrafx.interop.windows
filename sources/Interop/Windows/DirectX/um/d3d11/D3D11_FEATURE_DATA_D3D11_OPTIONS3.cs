@@ -7,7 +7,9 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_FEATURE_DATA_D3D11_OPTIONS3.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D11_OPTIONS3"]/*' />
 public partial struct D3D11_FEATURE_DATA_D3D11_OPTIONS3
 {
+    /// <include file='D3D11_FEATURE_DATA_D3D11_OPTIONS3.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D11_OPTIONS3.VPAndRTArrayIndexFromAnyShaderFeedingRasterizer"]/*' />
     public BOOL VPAndRTArrayIndexFromAnyShaderFeedingRasterizer;
 }

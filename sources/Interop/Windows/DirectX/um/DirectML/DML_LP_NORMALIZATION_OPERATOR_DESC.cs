@@ -5,17 +5,23 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_LP_NORMALIZATION_OPERATOR_DESC.xml' path='doc/member[@name="DML_LP_NORMALIZATION_OPERATOR_DESC"]/*' />
 public unsafe partial struct DML_LP_NORMALIZATION_OPERATOR_DESC
 {
+    /// <include file='DML_LP_NORMALIZATION_OPERATOR_DESC.xml' path='doc/member[@name="DML_LP_NORMALIZATION_OPERATOR_DESC.InputTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* InputTensor;
 
+    /// <include file='DML_LP_NORMALIZATION_OPERATOR_DESC.xml' path='doc/member[@name="DML_LP_NORMALIZATION_OPERATOR_DESC.OutputTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* OutputTensor;
 
+    /// <include file='DML_LP_NORMALIZATION_OPERATOR_DESC.xml' path='doc/member[@name="DML_LP_NORMALIZATION_OPERATOR_DESC.Axis"]/*' />
     public uint Axis;
 
+    /// <include file='DML_LP_NORMALIZATION_OPERATOR_DESC.xml' path='doc/member[@name="DML_LP_NORMALIZATION_OPERATOR_DESC.Epsilon"]/*' />
     public float Epsilon;
 
+    /// <include file='DML_LP_NORMALIZATION_OPERATOR_DESC.xml' path='doc/member[@name="DML_LP_NORMALIZATION_OPERATOR_DESC.P"]/*' />
     public uint P;
 }

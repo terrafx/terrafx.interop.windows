@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ILearningModelDeviceFactoryNative.xml' path='doc/member[@name="ILearningModelDeviceFactoryNative"]/*' />
 [Guid("1E9B31A1-662E-4AE0-AF67-F63BB337E634")]
 [NativeTypeName("struct ILearningModelDeviceFactoryNative : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct ILearningModelDeviceFactoryNative : ILearningModelD
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct ILearningModelDeviceFactoryNative : ILearningModelD
         return ((delegate* unmanaged<ILearningModelDeviceFactoryNative*, Guid*, void**, int>)(lpVtbl[0]))((ILearningModelDeviceFactoryNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct ILearningModelDeviceFactoryNative : ILearningModelD
         return ((delegate* unmanaged<ILearningModelDeviceFactoryNative*, uint>)(lpVtbl[1]))((ILearningModelDeviceFactoryNative*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct ILearningModelDeviceFactoryNative : ILearningModelD
         return ((delegate* unmanaged<ILearningModelDeviceFactoryNative*, uint>)(lpVtbl[2]))((ILearningModelDeviceFactoryNative*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ILearningModelDeviceFactoryNative.xml' path='doc/member[@name="ILearningModelDeviceFactoryNative.CreateFromD3D12CommandQueue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateFromD3D12CommandQueue(ID3D12CommandQueue* value, IUnknown** result)

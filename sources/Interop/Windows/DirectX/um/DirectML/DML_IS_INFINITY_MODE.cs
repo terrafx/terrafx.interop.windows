@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_IS_INFINITY_MODE.xml' path='doc/member[@name="DML_IS_INFINITY_MODE"]/*' />
 public enum DML_IS_INFINITY_MODE
 {
+    /// <include file='DML_IS_INFINITY_MODE.xml' path='doc/member[@name="DML_IS_INFINITY_MODE.DML_IS_INFINITY_MODE_EITHER"]/*' />
     DML_IS_INFINITY_MODE_EITHER = 0,
+
+    /// <include file='DML_IS_INFINITY_MODE.xml' path='doc/member[@name="DML_IS_INFINITY_MODE.DML_IS_INFINITY_MODE_POSITIVE"]/*' />
     DML_IS_INFINITY_MODE_POSITIVE = 1,
+
+    /// <include file='DML_IS_INFINITY_MODE.xml' path='doc/member[@name="DML_IS_INFINITY_MODE.DML_IS_INFINITY_MODE_NEGATIVE"]/*' />
     DML_IS_INFINITY_MODE_NEGATIVE = 2,
 }

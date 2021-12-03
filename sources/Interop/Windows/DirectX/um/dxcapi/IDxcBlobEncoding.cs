@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDxcBlobEncoding.xml' path='doc/member[@name="IDxcBlobEncoding"]/*' />
 [Guid("7241D424-2646-4191-97C0-98E96E42FC68")]
 [NativeTypeName("struct IDxcBlobEncoding : IDxcBlob")]
 [NativeInheritance("IDxcBlob")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDxcBlobEncoding : IDxcBlobEncoding.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDxcBlobEncoding : IDxcBlobEncoding.Interface
         return ((delegate* unmanaged<IDxcBlobEncoding*, Guid*, void**, int>)(lpVtbl[0]))((IDxcBlobEncoding*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDxcBlobEncoding : IDxcBlobEncoding.Interface
         return ((delegate* unmanaged<IDxcBlobEncoding*, uint>)(lpVtbl[1]))((IDxcBlobEncoding*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDxcBlobEncoding : IDxcBlobEncoding.Interface
         return ((delegate* unmanaged<IDxcBlobEncoding*, uint>)(lpVtbl[2]))((IDxcBlobEncoding*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDxcBlob.GetBufferPointer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("LPVOID")]
@@ -48,6 +53,7 @@ public unsafe partial struct IDxcBlobEncoding : IDxcBlobEncoding.Interface
         return ((delegate* unmanaged<IDxcBlobEncoding*, void*>)(lpVtbl[3]))((IDxcBlobEncoding*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDxcBlob.GetBufferSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     [return: NativeTypeName("SIZE_T")]
@@ -56,6 +62,7 @@ public unsafe partial struct IDxcBlobEncoding : IDxcBlobEncoding.Interface
         return ((delegate* unmanaged<IDxcBlobEncoding*, nuint>)(lpVtbl[4]))((IDxcBlobEncoding*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDxcBlobEncoding.xml' path='doc/member[@name="IDxcBlobEncoding.GetEncoding"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetEncoding(BOOL* pKnown, [NativeTypeName("UINT32 *")] uint* pCodePage)

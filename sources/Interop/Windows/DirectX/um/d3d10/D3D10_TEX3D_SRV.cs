@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_TEX3D_SRV.xml' path='doc/member[@name="D3D10_TEX3D_SRV"]/*' />
 public partial struct D3D10_TEX3D_SRV
 {
+    /// <include file='D3D10_TEX3D_SRV.xml' path='doc/member[@name="D3D10_TEX3D_SRV.MostDetailedMip"]/*' />
     public uint MostDetailedMip;
 
+    /// <include file='D3D10_TEX3D_SRV.xml' path='doc/member[@name="D3D10_TEX3D_SRV.MipLevels"]/*' />
     public uint MipLevels;
 }

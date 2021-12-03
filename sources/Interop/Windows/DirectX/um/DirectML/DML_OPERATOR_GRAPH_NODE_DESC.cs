@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_OPERATOR_GRAPH_NODE_DESC.xml' path='doc/member[@name="DML_OPERATOR_GRAPH_NODE_DESC"]/*' />
 public unsafe partial struct DML_OPERATOR_GRAPH_NODE_DESC
 {
+    /// <include file='DML_OPERATOR_GRAPH_NODE_DESC.xml' path='doc/member[@name="DML_OPERATOR_GRAPH_NODE_DESC.Operator"]/*' />
     public IDMLOperator* Operator;
 
+    /// <include file='DML_OPERATOR_GRAPH_NODE_DESC.xml' path='doc/member[@name="DML_OPERATOR_GRAPH_NODE_DESC.Name"]/*' />
     [NativeTypeName("const char *")]
     public sbyte* Name;
 }

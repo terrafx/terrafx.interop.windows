@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_BITMAP_BRUSH_PROPERTIES1.xml' path='doc/member[@name="D2D1_BITMAP_BRUSH_PROPERTIES1"]/*' />
 public partial struct D2D1_BITMAP_BRUSH_PROPERTIES1
 {
+    /// <include file='D2D1_BITMAP_BRUSH_PROPERTIES1.xml' path='doc/member[@name="D2D1_BITMAP_BRUSH_PROPERTIES1.extendModeX"]/*' />
     public D2D1_EXTEND_MODE extendModeX;
 
+    /// <include file='D2D1_BITMAP_BRUSH_PROPERTIES1.xml' path='doc/member[@name="D2D1_BITMAP_BRUSH_PROPERTIES1.extendModeY"]/*' />
     public D2D1_EXTEND_MODE extendModeY;
 
+    /// <include file='D2D1_BITMAP_BRUSH_PROPERTIES1.xml' path='doc/member[@name="D2D1_BITMAP_BRUSH_PROPERTIES1.interpolationMode"]/*' />
     public D2D1_INTERPOLATION_MODE interpolationMode;
 }

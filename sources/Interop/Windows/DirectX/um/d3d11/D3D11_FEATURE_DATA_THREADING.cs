@@ -7,9 +7,12 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_FEATURE_DATA_THREADING.xml' path='doc/member[@name="D3D11_FEATURE_DATA_THREADING"]/*' />
 public partial struct D3D11_FEATURE_DATA_THREADING
 {
+    /// <include file='D3D11_FEATURE_DATA_THREADING.xml' path='doc/member[@name="D3D11_FEATURE_DATA_THREADING.DriverConcurrentCreates"]/*' />
     public BOOL DriverConcurrentCreates;
 
+    /// <include file='D3D11_FEATURE_DATA_THREADING.xml' path='doc/member[@name="D3D11_FEATURE_DATA_THREADING.DriverCommandLists"]/*' />
     public BOOL DriverCommandLists;
 }

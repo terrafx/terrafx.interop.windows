@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_DEBUG_DEVICE_GPU_SLOWDOWN_PERFORMANCE_FACTOR.xml' path='doc/member[@name="D3D12_DEBUG_DEVICE_GPU_SLOWDOWN_PERFORMANCE_FACTOR"]/*' />
 public partial struct D3D12_DEBUG_DEVICE_GPU_SLOWDOWN_PERFORMANCE_FACTOR
 {
+    /// <include file='D3D12_DEBUG_DEVICE_GPU_SLOWDOWN_PERFORMANCE_FACTOR.xml' path='doc/member[@name="D3D12_DEBUG_DEVICE_GPU_SLOWDOWN_PERFORMANCE_FACTOR.SlowdownFactor"]/*' />
     public float SlowdownFactor;
 }

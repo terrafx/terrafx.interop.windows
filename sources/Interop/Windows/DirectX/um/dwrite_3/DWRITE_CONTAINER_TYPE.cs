@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_CONTAINER_TYPE.xml' path='doc/member[@name="DWRITE_CONTAINER_TYPE"]/*' />
 public enum DWRITE_CONTAINER_TYPE
 {
+    /// <include file='DWRITE_CONTAINER_TYPE.xml' path='doc/member[@name="DWRITE_CONTAINER_TYPE.DWRITE_CONTAINER_TYPE_UNKNOWN"]/*' />
     DWRITE_CONTAINER_TYPE_UNKNOWN,
+
+    /// <include file='DWRITE_CONTAINER_TYPE.xml' path='doc/member[@name="DWRITE_CONTAINER_TYPE.DWRITE_CONTAINER_TYPE_WOFF"]/*' />
     DWRITE_CONTAINER_TYPE_WOFF,
+
+    /// <include file='DWRITE_CONTAINER_TYPE.xml' path='doc/member[@name="DWRITE_CONTAINER_TYPE.DWRITE_CONTAINER_TYPE_WOFF2"]/*' />
     DWRITE_CONTAINER_TYPE_WOFF2,
 }

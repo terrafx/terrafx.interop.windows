@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_SCRIPT_ANALYSIS.xml' path='doc/member[@name="DWRITE_SCRIPT_ANALYSIS"]/*' />
 public partial struct DWRITE_SCRIPT_ANALYSIS
 {
+    /// <include file='DWRITE_SCRIPT_ANALYSIS.xml' path='doc/member[@name="DWRITE_SCRIPT_ANALYSIS.script"]/*' />
     [NativeTypeName("UINT16")]
     public ushort script;
 
+    /// <include file='DWRITE_SCRIPT_ANALYSIS.xml' path='doc/member[@name="DWRITE_SCRIPT_ANALYSIS.shapes"]/*' />
     public DWRITE_SCRIPT_SHAPES shapes;
 }

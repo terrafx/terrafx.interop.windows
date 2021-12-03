@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC.xml' path='doc/member[@name="DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC"]/*' />
 public unsafe partial struct DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC
 {
+    /// <include file='DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC.xml' path='doc/member[@name="DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC.InputTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* InputTensor;
 
+    /// <include file='DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC.xml' path='doc/member[@name="DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC.InputGradientTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* InputGradientTensor;
 
+    /// <include file='DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC.xml' path='doc/member[@name="DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC.OutputGradientTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* OutputGradientTensor;
 }

@@ -7,15 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_ELEMENT_WISE_SINH_OPERATOR_DESC.xml' path='doc/member[@name="DML_ELEMENT_WISE_SINH_OPERATOR_DESC"]/*' />
 [SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct DML_ELEMENT_WISE_SINH_OPERATOR_DESC
 {
+    /// <include file='DML_ELEMENT_WISE_SINH_OPERATOR_DESC.xml' path='doc/member[@name="DML_ELEMENT_WISE_SINH_OPERATOR_DESC.InputTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* InputTensor;
 
+    /// <include file='DML_ELEMENT_WISE_SINH_OPERATOR_DESC.xml' path='doc/member[@name="DML_ELEMENT_WISE_SINH_OPERATOR_DESC.OutputTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* OutputTensor;
 
+    /// <include file='DML_ELEMENT_WISE_SINH_OPERATOR_DESC.xml' path='doc/member[@name="DML_ELEMENT_WISE_SINH_OPERATOR_DESC.ScaleBias"]/*' />
     [NativeTypeName("const DML_SCALE_BIAS *")]
     public DML_SCALE_BIAS* ScaleBias;
 }

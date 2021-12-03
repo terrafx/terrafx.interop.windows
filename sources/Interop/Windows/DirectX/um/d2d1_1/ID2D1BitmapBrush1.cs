@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1BitmapBrush1.xml' path='doc/member[@name="ID2D1BitmapBrush1"]/*' />
 [Guid("41343A53-E41A-49A2-91CD-21793BBB62E5")]
 [NativeTypeName("struct ID2D1BitmapBrush1 : ID2D1BitmapBrush")]
 [NativeInheritance("ID2D1BitmapBrush")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
         return ((delegate* unmanaged<ID2D1BitmapBrush1*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1BitmapBrush1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
         return ((delegate* unmanaged<ID2D1BitmapBrush1*, uint>)(lpVtbl[1]))((ID2D1BitmapBrush1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
         return ((delegate* unmanaged<ID2D1BitmapBrush1*, uint>)(lpVtbl[2]))((ID2D1BitmapBrush1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
@@ -47,6 +52,7 @@ public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
         ((delegate* unmanaged<ID2D1BitmapBrush1*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1BitmapBrush1*)Unsafe.AsPointer(ref this), factory);
     }
 
+    /// <inheritdoc cref="ID2D1Brush.SetOpacity" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void SetOpacity(float opacity)
@@ -54,6 +60,7 @@ public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
         ((delegate* unmanaged<ID2D1BitmapBrush1*, float, void>)(lpVtbl[4]))((ID2D1BitmapBrush1*)Unsafe.AsPointer(ref this), opacity);
     }
 
+    /// <inheritdoc cref="ID2D1Brush.SetTransform" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void SetTransform([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
@@ -61,6 +68,7 @@ public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
         ((delegate* unmanaged<ID2D1BitmapBrush1*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[5]))((ID2D1BitmapBrush1*)Unsafe.AsPointer(ref this), transform);
     }
 
+    /// <inheritdoc cref="ID2D1Brush.GetOpacity" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public float GetOpacity()
@@ -68,6 +76,7 @@ public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<ID2D1BitmapBrush1*, float>)(lpVtbl[6]))((ID2D1BitmapBrush1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1Brush.GetTransform" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
@@ -75,6 +84,7 @@ public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
         ((delegate* unmanaged[SuppressGCTransition]<ID2D1BitmapBrush1*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1BitmapBrush1*)Unsafe.AsPointer(ref this), transform);
     }
 
+    /// <inheritdoc cref="ID2D1BitmapBrush.SetExtendModeX" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public void SetExtendModeX(D2D1_EXTEND_MODE extendModeX)
@@ -82,6 +92,7 @@ public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
         ((delegate* unmanaged<ID2D1BitmapBrush1*, D2D1_EXTEND_MODE, void>)(lpVtbl[8]))((ID2D1BitmapBrush1*)Unsafe.AsPointer(ref this), extendModeX);
     }
 
+    /// <inheritdoc cref="ID2D1BitmapBrush.SetExtendModeY" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public void SetExtendModeY(D2D1_EXTEND_MODE extendModeY)
@@ -89,6 +100,7 @@ public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
         ((delegate* unmanaged<ID2D1BitmapBrush1*, D2D1_EXTEND_MODE, void>)(lpVtbl[9]))((ID2D1BitmapBrush1*)Unsafe.AsPointer(ref this), extendModeY);
     }
 
+    /// <inheritdoc cref="ID2D1BitmapBrush.SetInterpolationMode" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public void SetInterpolationMode(D2D1_BITMAP_INTERPOLATION_MODE interpolationMode)
@@ -96,6 +108,7 @@ public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
         ((delegate* unmanaged<ID2D1BitmapBrush1*, D2D1_BITMAP_INTERPOLATION_MODE, void>)(lpVtbl[10]))((ID2D1BitmapBrush1*)Unsafe.AsPointer(ref this), interpolationMode);
     }
 
+    /// <inheritdoc cref="ID2D1BitmapBrush.SetBitmap" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public void SetBitmap(ID2D1Bitmap* bitmap)
@@ -103,6 +116,7 @@ public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
         ((delegate* unmanaged<ID2D1BitmapBrush1*, ID2D1Bitmap*, void>)(lpVtbl[11]))((ID2D1BitmapBrush1*)Unsafe.AsPointer(ref this), bitmap);
     }
 
+    /// <inheritdoc cref="ID2D1BitmapBrush.GetExtendModeX" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public D2D1_EXTEND_MODE GetExtendModeX()
@@ -110,6 +124,7 @@ public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<ID2D1BitmapBrush1*, D2D1_EXTEND_MODE>)(lpVtbl[12]))((ID2D1BitmapBrush1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1BitmapBrush.GetExtendModeY" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public D2D1_EXTEND_MODE GetExtendModeY()
@@ -117,6 +132,7 @@ public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<ID2D1BitmapBrush1*, D2D1_EXTEND_MODE>)(lpVtbl[13]))((ID2D1BitmapBrush1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1BitmapBrush.GetInterpolationMode" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public D2D1_BITMAP_INTERPOLATION_MODE GetInterpolationMode()
@@ -124,6 +140,7 @@ public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<ID2D1BitmapBrush1*, D2D1_BITMAP_INTERPOLATION_MODE>)(lpVtbl[14]))((ID2D1BitmapBrush1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1BitmapBrush.GetBitmap" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public void GetBitmap(ID2D1Bitmap** bitmap)
@@ -131,6 +148,7 @@ public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
         ((delegate* unmanaged<ID2D1BitmapBrush1*, ID2D1Bitmap**, void>)(lpVtbl[15]))((ID2D1BitmapBrush1*)Unsafe.AsPointer(ref this), bitmap);
     }
 
+    /// <include file='ID2D1BitmapBrush1.xml' path='doc/member[@name="ID2D1BitmapBrush1.SetInterpolationMode1"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public void SetInterpolationMode1(D2D1_INTERPOLATION_MODE interpolationMode)
@@ -138,6 +156,7 @@ public unsafe partial struct ID2D1BitmapBrush1 : ID2D1BitmapBrush1.Interface
         ((delegate* unmanaged<ID2D1BitmapBrush1*, D2D1_INTERPOLATION_MODE, void>)(lpVtbl[16]))((ID2D1BitmapBrush1*)Unsafe.AsPointer(ref this), interpolationMode);
     }
 
+    /// <include file='ID2D1BitmapBrush1.xml' path='doc/member[@name="ID2D1BitmapBrush1.GetInterpolationMode1"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public D2D1_INTERPOLATION_MODE GetInterpolationMode1()

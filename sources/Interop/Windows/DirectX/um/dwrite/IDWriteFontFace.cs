@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteFontFace.xml' path='doc/member[@name="IDWriteFontFace"]/*' />
 [Guid("5F49804D-7024-4D43-BFA9-D25984F53849")]
 [NativeTypeName("struct IDWriteFontFace : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
         return ((delegate* unmanaged<IDWriteFontFace*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontFace*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
         return ((delegate* unmanaged<IDWriteFontFace*, uint>)(lpVtbl[1]))((IDWriteFontFace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
         return ((delegate* unmanaged<IDWriteFontFace*, uint>)(lpVtbl[2]))((IDWriteFontFace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteFontFace.xml' path='doc/member[@name="IDWriteFontFace.GetType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public new DWRITE_FONT_FACE_TYPE GetType()
@@ -47,6 +52,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace*, DWRITE_FONT_FACE_TYPE>)(lpVtbl[3]))((IDWriteFontFace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteFontFace.xml' path='doc/member[@name="IDWriteFontFace.GetFiles"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetFiles([NativeTypeName("UINT32 *")] uint* numberOfFiles, IDWriteFontFile** fontFiles)
@@ -54,6 +60,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
         return ((delegate* unmanaged<IDWriteFontFace*, uint*, IDWriteFontFile**, int>)(lpVtbl[4]))((IDWriteFontFace*)Unsafe.AsPointer(ref this), numberOfFiles, fontFiles);
     }
 
+    /// <include file='IDWriteFontFace.xml' path='doc/member[@name="IDWriteFontFace.GetIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     [return: NativeTypeName("UINT32")]
@@ -62,6 +69,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace*, uint>)(lpVtbl[5]))((IDWriteFontFace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteFontFace.xml' path='doc/member[@name="IDWriteFontFace.GetSimulations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public DWRITE_FONT_SIMULATIONS GetSimulations()
@@ -69,6 +77,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace*, DWRITE_FONT_SIMULATIONS>)(lpVtbl[6]))((IDWriteFontFace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteFontFace.xml' path='doc/member[@name="IDWriteFontFace.IsSymbolFont"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public BOOL IsSymbolFont()
@@ -76,6 +85,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace*, int>)(lpVtbl[7]))((IDWriteFontFace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteFontFace.xml' path='doc/member[@name="IDWriteFontFace.GetMetrics"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public void GetMetrics(DWRITE_FONT_METRICS* fontFaceMetrics)
@@ -83,6 +93,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
         ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace*, DWRITE_FONT_METRICS*, void>)(lpVtbl[8]))((IDWriteFontFace*)Unsafe.AsPointer(ref this), fontFaceMetrics);
     }
 
+    /// <include file='IDWriteFontFace.xml' path='doc/member[@name="IDWriteFontFace.GetGlyphCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     [return: NativeTypeName("UINT16")]
@@ -91,6 +102,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace*, ushort>)(lpVtbl[9]))((IDWriteFontFace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteFontFace.xml' path='doc/member[@name="IDWriteFontFace.GetDesignGlyphMetrics"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetDesignGlyphMetrics([NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("UINT32")] uint glyphCount, DWRITE_GLYPH_METRICS* glyphMetrics, [Optional] BOOL isSideways)
@@ -98,6 +110,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
         return ((delegate* unmanaged<IDWriteFontFace*, ushort*, uint, DWRITE_GLYPH_METRICS*, BOOL, int>)(lpVtbl[10]))((IDWriteFontFace*)Unsafe.AsPointer(ref this), glyphIndices, glyphCount, glyphMetrics, isSideways);
     }
 
+    /// <include file='IDWriteFontFace.xml' path='doc/member[@name="IDWriteFontFace.GetGlyphIndices"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetGlyphIndices([NativeTypeName("const UINT32 *")] uint* codePoints, [NativeTypeName("UINT32")] uint codePointCount, [NativeTypeName("UINT16 *")] ushort* glyphIndices)
@@ -105,6 +118,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
         return ((delegate* unmanaged<IDWriteFontFace*, uint*, uint, ushort*, int>)(lpVtbl[11]))((IDWriteFontFace*)Unsafe.AsPointer(ref this), codePoints, codePointCount, glyphIndices);
     }
 
+    /// <include file='IDWriteFontFace.xml' path='doc/member[@name="IDWriteFontFace.TryGetFontTable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT TryGetFontTable([NativeTypeName("UINT32")] uint openTypeTableTag, [NativeTypeName("const void **")] void** tableData, [NativeTypeName("UINT32 *")] uint* tableSize, void** tableContext, BOOL* exists)
@@ -112,6 +126,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
         return ((delegate* unmanaged<IDWriteFontFace*, uint, void**, uint*, void**, BOOL*, int>)(lpVtbl[12]))((IDWriteFontFace*)Unsafe.AsPointer(ref this), openTypeTableTag, tableData, tableSize, tableContext, exists);
     }
 
+    /// <include file='IDWriteFontFace.xml' path='doc/member[@name="IDWriteFontFace.ReleaseFontTable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public void ReleaseFontTable(void* tableContext)
@@ -119,6 +134,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
         ((delegate* unmanaged<IDWriteFontFace*, void*, void>)(lpVtbl[13]))((IDWriteFontFace*)Unsafe.AsPointer(ref this), tableContext);
     }
 
+    /// <include file='IDWriteFontFace.xml' path='doc/member[@name="IDWriteFontFace.GetGlyphRunOutline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetGlyphRunOutline(float emSize, [NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("const FLOAT *")] float* glyphAdvances, [NativeTypeName("const DWRITE_GLYPH_OFFSET *")] DWRITE_GLYPH_OFFSET* glyphOffsets, [NativeTypeName("UINT32")] uint glyphCount, BOOL isSideways, BOOL isRightToLeft, [NativeTypeName("IDWriteGeometrySink *")] ID2D1SimplifiedGeometrySink* geometrySink)
@@ -126,6 +142,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
         return ((delegate* unmanaged<IDWriteFontFace*, float, ushort*, float*, DWRITE_GLYPH_OFFSET*, uint, BOOL, BOOL, ID2D1SimplifiedGeometrySink*, int>)(lpVtbl[14]))((IDWriteFontFace*)Unsafe.AsPointer(ref this), emSize, glyphIndices, glyphAdvances, glyphOffsets, glyphCount, isSideways, isRightToLeft, geometrySink);
     }
 
+    /// <include file='IDWriteFontFace.xml' path='doc/member[@name="IDWriteFontFace.GetRecommendedRenderingMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetRecommendedRenderingMode(float emSize, float pixelsPerDip, DWRITE_MEASURING_MODE measuringMode, IDWriteRenderingParams* renderingParams, DWRITE_RENDERING_MODE* renderingMode)
@@ -133,6 +150,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
         return ((delegate* unmanaged<IDWriteFontFace*, float, float, DWRITE_MEASURING_MODE, IDWriteRenderingParams*, DWRITE_RENDERING_MODE*, int>)(lpVtbl[15]))((IDWriteFontFace*)Unsafe.AsPointer(ref this), emSize, pixelsPerDip, measuringMode, renderingParams, renderingMode);
     }
 
+    /// <include file='IDWriteFontFace.xml' path='doc/member[@name="IDWriteFontFace.GetGdiCompatibleMetrics"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetGdiCompatibleMetrics(float emSize, float pixelsPerDip, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, DWRITE_FONT_METRICS* fontFaceMetrics)
@@ -140,6 +158,7 @@ public unsafe partial struct IDWriteFontFace : IDWriteFontFace.Interface
         return ((delegate* unmanaged<IDWriteFontFace*, float, float, DWRITE_MATRIX*, DWRITE_FONT_METRICS*, int>)(lpVtbl[16]))((IDWriteFontFace*)Unsafe.AsPointer(ref this), emSize, pixelsPerDip, transform, fontFaceMetrics);
     }
 
+    /// <include file='IDWriteFontFace.xml' path='doc/member[@name="IDWriteFontFace.GetGdiCompatibleGlyphMetrics"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetGdiCompatibleGlyphMetrics(float emSize, float pixelsPerDip, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, BOOL useGdiNatural, [NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("UINT32")] uint glyphCount, DWRITE_GLYPH_METRICS* glyphMetrics, [Optional] BOOL isSideways)

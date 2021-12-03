@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_RESOURCE_ALIASING_BARRIER.xml' path='doc/member[@name="D3D12_RESOURCE_ALIASING_BARRIER"]/*' />
 public unsafe partial struct D3D12_RESOURCE_ALIASING_BARRIER
 {
+    /// <include file='D3D12_RESOURCE_ALIASING_BARRIER.xml' path='doc/member[@name="D3D12_RESOURCE_ALIASING_BARRIER.pResourceBefore"]/*' />
     public ID3D12Resource* pResourceBefore;
 
+    /// <include file='D3D12_RESOURCE_ALIASING_BARRIER.xml' path='doc/member[@name="D3D12_RESOURCE_ALIASING_BARRIER.pResourceAfter"]/*' />
     public ID3D12Resource* pResourceAfter;
 }

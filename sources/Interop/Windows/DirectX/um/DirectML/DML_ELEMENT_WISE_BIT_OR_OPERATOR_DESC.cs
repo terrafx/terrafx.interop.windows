@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC.xml' path='doc/member[@name="DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC"]/*' />
 public unsafe partial struct DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC
 {
+    /// <include file='DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC.xml' path='doc/member[@name="DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC.ATensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* ATensor;
 
+    /// <include file='DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC.xml' path='doc/member[@name="DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC.BTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* BTensor;
 
+    /// <include file='DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC.xml' path='doc/member[@name="DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC.OutputTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* OutputTensor;
 }

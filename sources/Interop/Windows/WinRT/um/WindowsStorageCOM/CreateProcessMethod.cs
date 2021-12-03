@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='CreateProcessMethod.xml' path='doc/member[@name="CreateProcessMethod"]/*' />
 public enum CreateProcessMethod
 {
+    /// <include file='CreateProcessMethod.xml' path='doc/member[@name="CreateProcessMethod.CpCreateProcess"]/*' />
     CpCreateProcess = 0,
+
+    /// <include file='CreateProcessMethod.xml' path='doc/member[@name="CreateProcessMethod.CpCreateProcessAsUser"]/*' />
     CpCreateProcessAsUser = 1,
+
+    /// <include file='CreateProcessMethod.xml' path='doc/member[@name="CreateProcessMethod.CpAicLaunchAdminProcess"]/*' />
     CpAicLaunchAdminProcess = 2,
 }

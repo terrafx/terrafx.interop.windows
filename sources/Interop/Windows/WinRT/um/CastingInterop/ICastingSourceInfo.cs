@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ICastingSourceInfo.xml' path='doc/member[@name="ICastingSourceInfo"]/*' />
 [Guid("45101AB7-7C3A-4BCE-9500-12C09024B298")]
 [NativeTypeName("struct ICastingSourceInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ICastingSourceInfo : ICastingSourceInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ICastingSourceInfo : ICastingSourceInfo.Interface
         return ((delegate* unmanaged<ICastingSourceInfo*, Guid*, void**, int>)(lpVtbl[0]))((ICastingSourceInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ICastingSourceInfo : ICastingSourceInfo.Interface
         return ((delegate* unmanaged<ICastingSourceInfo*, uint>)(lpVtbl[1]))((ICastingSourceInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ICastingSourceInfo : ICastingSourceInfo.Interface
         return ((delegate* unmanaged<ICastingSourceInfo*, uint>)(lpVtbl[2]))((ICastingSourceInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICastingSourceInfo.xml' path='doc/member[@name="ICastingSourceInfo.GetController"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetController(ICastingController** controller)
@@ -47,6 +52,7 @@ public unsafe partial struct ICastingSourceInfo : ICastingSourceInfo.Interface
         return ((delegate* unmanaged<ICastingSourceInfo*, ICastingController**, int>)(lpVtbl[3]))((ICastingSourceInfo*)Unsafe.AsPointer(ref this), controller);
     }
 
+    /// <include file='ICastingSourceInfo.xml' path='doc/member[@name="ICastingSourceInfo.GetProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetProperties(INamedPropertyStore** props)

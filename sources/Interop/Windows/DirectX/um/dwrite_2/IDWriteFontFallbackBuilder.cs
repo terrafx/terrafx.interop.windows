@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteFontFallbackBuilder.xml' path='doc/member[@name="IDWriteFontFallbackBuilder"]/*' />
 [Guid("FD882D06-8ABA-4FB8-B849-8BE8B73E14DE")]
 [NativeTypeName("struct IDWriteFontFallbackBuilder : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDWriteFontFallbackBuilder : IDWriteFontFallbackBui
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDWriteFontFallbackBuilder : IDWriteFontFallbackBui
         return ((delegate* unmanaged<IDWriteFontFallbackBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDWriteFontFallbackBuilder : IDWriteFontFallbackBui
         return ((delegate* unmanaged<IDWriteFontFallbackBuilder*, uint>)(lpVtbl[1]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDWriteFontFallbackBuilder : IDWriteFontFallbackBui
         return ((delegate* unmanaged<IDWriteFontFallbackBuilder*, uint>)(lpVtbl[2]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteFontFallbackBuilder.xml' path='doc/member[@name="IDWriteFontFallbackBuilder.AddMapping"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddMapping([NativeTypeName("const DWRITE_UNICODE_RANGE *")] DWRITE_UNICODE_RANGE* ranges, [NativeTypeName("UINT32")] uint rangesCount, [NativeTypeName("const WCHAR **")] ushort** targetFamilyNames, [NativeTypeName("UINT32")] uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection = null, [NativeTypeName("const WCHAR *")] ushort* localeName = null, [NativeTypeName("const WCHAR *")] ushort* baseFamilyName = null, float scale = 1.0f)
@@ -49,6 +54,7 @@ public unsafe partial struct IDWriteFontFallbackBuilder : IDWriteFontFallbackBui
         return ((delegate* unmanaged<IDWriteFontFallbackBuilder*, DWRITE_UNICODE_RANGE*, uint, ushort**, uint, IDWriteFontCollection*, ushort*, ushort*, float, int>)(lpVtbl[3]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this), ranges, rangesCount, targetFamilyNames, targetFamilyNamesCount, fontCollection, localeName, baseFamilyName, scale);
     }
 
+    /// <include file='IDWriteFontFallbackBuilder.xml' path='doc/member[@name="IDWriteFontFallbackBuilder.AddMappings"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AddMappings(IDWriteFontFallback* fontFallback)
@@ -56,6 +62,7 @@ public unsafe partial struct IDWriteFontFallbackBuilder : IDWriteFontFallbackBui
         return ((delegate* unmanaged<IDWriteFontFallbackBuilder*, IDWriteFontFallback*, int>)(lpVtbl[4]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this), fontFallback);
     }
 
+    /// <include file='IDWriteFontFallbackBuilder.xml' path='doc/member[@name="IDWriteFontFallbackBuilder.CreateFontFallback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CreateFontFallback(IDWriteFontFallback** fontFallback)

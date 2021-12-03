@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE.xml' path='doc/member[@name="D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE"]/*' />
 public partial struct D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE
 {
+    /// <include file='D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE.xml' path='doc/member[@name="D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE.StartAddress"]/*' />
     [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
     public ulong StartAddress;
 
+    /// <include file='D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE.xml' path='doc/member[@name="D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE.StrideInBytes"]/*' />
     [NativeTypeName("UINT64")]
     public ulong StrideInBytes;
 }

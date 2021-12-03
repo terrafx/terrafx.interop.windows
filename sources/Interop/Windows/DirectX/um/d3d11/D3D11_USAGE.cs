@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_USAGE.xml' path='doc/member[@name="D3D11_USAGE"]/*' />
 public enum D3D11_USAGE
 {
+    /// <include file='D3D11_USAGE.xml' path='doc/member[@name="D3D11_USAGE.D3D11_USAGE_DEFAULT"]/*' />
     D3D11_USAGE_DEFAULT = 0,
+
+    /// <include file='D3D11_USAGE.xml' path='doc/member[@name="D3D11_USAGE.D3D11_USAGE_IMMUTABLE"]/*' />
     D3D11_USAGE_IMMUTABLE = 1,
+
+    /// <include file='D3D11_USAGE.xml' path='doc/member[@name="D3D11_USAGE.D3D11_USAGE_DYNAMIC"]/*' />
     D3D11_USAGE_DYNAMIC = 2,
+
+    /// <include file='D3D11_USAGE.xml' path='doc/member[@name="D3D11_USAGE.D3D11_USAGE_STAGING"]/*' />
     D3D11_USAGE_STAGING = 3,
 }

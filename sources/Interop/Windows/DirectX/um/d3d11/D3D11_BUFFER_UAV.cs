@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_BUFFER_UAV.xml' path='doc/member[@name="D3D11_BUFFER_UAV"]/*' />
 public partial struct D3D11_BUFFER_UAV
 {
+    /// <include file='D3D11_BUFFER_UAV.xml' path='doc/member[@name="D3D11_BUFFER_UAV.FirstElement"]/*' />
     public uint FirstElement;
 
+    /// <include file='D3D11_BUFFER_UAV.xml' path='doc/member[@name="D3D11_BUFFER_UAV.NumElements"]/*' />
     public uint NumElements;
 
+    /// <include file='D3D11_BUFFER_UAV.xml' path='doc/member[@name="D3D11_BUFFER_UAV.Flags"]/*' />
     public uint Flags;
 }

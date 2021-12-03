@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_SAMPLE_POSITION.xml' path='doc/member[@name="D3D12_SAMPLE_POSITION"]/*' />
 public partial struct D3D12_SAMPLE_POSITION
 {
+    /// <include file='D3D12_SAMPLE_POSITION.xml' path='doc/member[@name="D3D12_SAMPLE_POSITION.X"]/*' />
     [NativeTypeName("INT8")]
     public sbyte X;
 
+    /// <include file='D3D12_SAMPLE_POSITION.xml' path='doc/member[@name="D3D12_SAMPLE_POSITION.Y"]/*' />
     [NativeTypeName("INT8")]
     public sbyte Y;
 }

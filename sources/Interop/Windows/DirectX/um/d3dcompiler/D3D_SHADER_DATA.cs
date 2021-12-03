@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D_SHADER_DATA.xml' path='doc/member[@name="D3D_SHADER_DATA"]/*' />
 public unsafe partial struct D3D_SHADER_DATA
 {
+    /// <include file='D3D_SHADER_DATA.xml' path='doc/member[@name="D3D_SHADER_DATA.pBytecode"]/*' />
     [NativeTypeName("LPCVOID")]
     public void* pBytecode;
 
+    /// <include file='D3D_SHADER_DATA.xml' path='doc/member[@name="D3D_SHADER_DATA.BytecodeLength"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint BytecodeLength;
 }

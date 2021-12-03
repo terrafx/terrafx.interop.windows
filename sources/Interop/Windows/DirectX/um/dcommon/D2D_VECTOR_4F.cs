@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D_VECTOR_4F.xml' path='doc/member[@name="D2D_VECTOR_4F"]/*' />
 public partial struct D2D_VECTOR_4F
 {
+    /// <include file='D2D_VECTOR_4F.xml' path='doc/member[@name="D2D_VECTOR_4F.x"]/*' />
     public float x;
 
+    /// <include file='D2D_VECTOR_4F.xml' path='doc/member[@name="D2D_VECTOR_4F.y"]/*' />
     public float y;
 
+    /// <include file='D2D_VECTOR_4F.xml' path='doc/member[@name="D2D_VECTOR_4F.z"]/*' />
     public float z;
 
+    /// <include file='D2D_VECTOR_4F.xml' path='doc/member[@name="D2D_VECTOR_4F.w"]/*' />
     public float w;
 }

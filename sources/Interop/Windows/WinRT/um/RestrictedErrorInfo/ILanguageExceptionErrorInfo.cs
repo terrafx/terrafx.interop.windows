@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ILanguageExceptionErrorInfo.xml' path='doc/member[@name="ILanguageExceptionErrorInfo"]/*' />
 [Guid("04A2DBF3-DF83-116C-0946-0812ABF6E07D")]
 [NativeTypeName("struct ILanguageExceptionErrorInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct ILanguageExceptionErrorInfo : ILanguageExceptionErr
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct ILanguageExceptionErrorInfo : ILanguageExceptionErr
         return ((delegate* unmanaged<ILanguageExceptionErrorInfo*, Guid*, void**, int>)(lpVtbl[0]))((ILanguageExceptionErrorInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct ILanguageExceptionErrorInfo : ILanguageExceptionErr
         return ((delegate* unmanaged<ILanguageExceptionErrorInfo*, uint>)(lpVtbl[1]))((ILanguageExceptionErrorInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct ILanguageExceptionErrorInfo : ILanguageExceptionErr
         return ((delegate* unmanaged<ILanguageExceptionErrorInfo*, uint>)(lpVtbl[2]))((ILanguageExceptionErrorInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ILanguageExceptionErrorInfo.xml' path='doc/member[@name="ILanguageExceptionErrorInfo.GetLanguageException"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetLanguageException(IUnknown** languageException)

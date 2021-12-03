@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='XAUDIO2_EFFECT_CHAIN.xml' path='doc/member[@name="XAUDIO2_EFFECT_CHAIN"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct XAUDIO2_EFFECT_CHAIN
 {
+    /// <include file='XAUDIO2_EFFECT_CHAIN.xml' path='doc/member[@name="XAUDIO2_EFFECT_CHAIN.EffectCount"]/*' />
     [NativeTypeName("UINT32")]
     public uint EffectCount;
 
+    /// <include file='XAUDIO2_EFFECT_CHAIN.xml' path='doc/member[@name="XAUDIO2_EFFECT_CHAIN.pEffectDescriptors"]/*' />
     public XAUDIO2_EFFECT_DESCRIPTOR* pEffectDescriptors;
 }

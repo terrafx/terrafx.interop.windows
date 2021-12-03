@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteFactory6.xml' path='doc/member[@name="IDWriteFactory6"]/*' />
 [Guid("F3744D80-21F7-42EB-B35D-995BC72FC223")]
 [NativeTypeName("struct IDWriteFactory6 : IDWriteFactory5")]
 [NativeInheritance("IDWriteFactory5")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, uint>)(lpVtbl[1]))((IDWriteFactory6*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, uint>)(lpVtbl[2]))((IDWriteFactory6*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDWriteFactory.GetSystemFontCollection" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSystemFontCollection(IDWriteFontCollection** fontCollection, [Optional] BOOL checkForUpdates)
@@ -47,6 +52,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontCollection**, BOOL, int>)(lpVtbl[3]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontCollection, checkForUpdates);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.CreateCustomFontCollection" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreateCustomFontCollection(IDWriteFontCollectionLoader* collectionLoader, [NativeTypeName("const void *")] void* collectionKey, [NativeTypeName("UINT32")] uint collectionKeySize, IDWriteFontCollection** fontCollection)
@@ -54,6 +60,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontCollectionLoader*, void*, uint, IDWriteFontCollection**, int>)(lpVtbl[4]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), collectionLoader, collectionKey, collectionKeySize, fontCollection);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.RegisterFontCollectionLoader" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RegisterFontCollectionLoader(IDWriteFontCollectionLoader* fontCollectionLoader)
@@ -61,6 +68,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontCollectionLoader*, int>)(lpVtbl[5]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontCollectionLoader);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.UnregisterFontCollectionLoader" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT UnregisterFontCollectionLoader(IDWriteFontCollectionLoader* fontCollectionLoader)
@@ -68,6 +76,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontCollectionLoader*, int>)(lpVtbl[6]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontCollectionLoader);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.CreateFontFileReference" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT CreateFontFileReference([NativeTypeName("const WCHAR *")] ushort* filePath, [NativeTypeName("const FILETIME *")] FILETIME* lastWriteTime, IDWriteFontFile** fontFile)
@@ -75,6 +84,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, ushort*, FILETIME*, IDWriteFontFile**, int>)(lpVtbl[7]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), filePath, lastWriteTime, fontFile);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.CreateCustomFontFileReference" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT CreateCustomFontFileReference([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, IDWriteFontFileLoader* fontFileLoader, IDWriteFontFile** fontFile)
@@ -82,6 +92,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, void*, uint, IDWriteFontFileLoader*, IDWriteFontFile**, int>)(lpVtbl[8]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, fontFileLoader, fontFile);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.CreateFontFace" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT CreateFontFace(DWRITE_FONT_FACE_TYPE fontFaceType, [NativeTypeName("UINT32")] uint numberOfFiles, [NativeTypeName("IDWriteFontFile *const *")] IDWriteFontFile** fontFiles, [NativeTypeName("UINT32")] uint faceIndex, DWRITE_FONT_SIMULATIONS fontFaceSimulationFlags, IDWriteFontFace** fontFace)
@@ -89,6 +100,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, DWRITE_FONT_FACE_TYPE, uint, IDWriteFontFile**, uint, DWRITE_FONT_SIMULATIONS, IDWriteFontFace**, int>)(lpVtbl[9]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontFaceType, numberOfFiles, fontFiles, faceIndex, fontFaceSimulationFlags, fontFace);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.CreateRenderingParams" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT CreateRenderingParams(IDWriteRenderingParams** renderingParams)
@@ -96,6 +108,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteRenderingParams**, int>)(lpVtbl[10]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), renderingParams);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.CreateMonitorRenderingParams" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT CreateMonitorRenderingParams(HMONITOR monitor, IDWriteRenderingParams** renderingParams)
@@ -103,6 +116,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, HMONITOR, IDWriteRenderingParams**, int>)(lpVtbl[11]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), monitor, renderingParams);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.CreateCustomRenderingParams" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT CreateCustomRenderingParams(float gamma, float enhancedContrast, float clearTypeLevel, DWRITE_PIXEL_GEOMETRY pixelGeometry, DWRITE_RENDERING_MODE renderingMode, IDWriteRenderingParams** renderingParams)
@@ -110,6 +124,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, float, float, float, DWRITE_PIXEL_GEOMETRY, DWRITE_RENDERING_MODE, IDWriteRenderingParams**, int>)(lpVtbl[12]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), gamma, enhancedContrast, clearTypeLevel, pixelGeometry, renderingMode, renderingParams);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.RegisterFontFileLoader" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT RegisterFontFileLoader(IDWriteFontFileLoader* fontFileLoader)
@@ -117,6 +132,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontFileLoader*, int>)(lpVtbl[13]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontFileLoader);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.UnregisterFontFileLoader" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT UnregisterFontFileLoader(IDWriteFontFileLoader* fontFileLoader)
@@ -124,6 +140,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontFileLoader*, int>)(lpVtbl[14]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontFileLoader);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.CreateTextFormat" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT CreateTextFormat([NativeTypeName("const WCHAR *")] ushort* fontFamilyName, IDWriteFontCollection* fontCollection, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STYLE fontStyle, DWRITE_FONT_STRETCH fontStretch, float fontSize, [NativeTypeName("const WCHAR *")] ushort* localeName, IDWriteTextFormat** textFormat)
@@ -131,6 +148,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, ushort*, IDWriteFontCollection*, DWRITE_FONT_WEIGHT, DWRITE_FONT_STYLE, DWRITE_FONT_STRETCH, float, ushort*, IDWriteTextFormat**, int>)(lpVtbl[15]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontFamilyName, fontCollection, fontWeight, fontStyle, fontStretch, fontSize, localeName, textFormat);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.CreateTypography" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT CreateTypography(IDWriteTypography** typography)
@@ -138,6 +156,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteTypography**, int>)(lpVtbl[16]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), typography);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.GetGdiInterop" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetGdiInterop(IDWriteGdiInterop** gdiInterop)
@@ -145,6 +164,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteGdiInterop**, int>)(lpVtbl[17]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), gdiInterop);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.CreateTextLayout" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT CreateTextLayout([NativeTypeName("const WCHAR *")] ushort* @string, [NativeTypeName("UINT32")] uint stringLength, IDWriteTextFormat* textFormat, float maxWidth, float maxHeight, IDWriteTextLayout** textLayout)
@@ -152,6 +172,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, ushort*, uint, IDWriteTextFormat*, float, float, IDWriteTextLayout**, int>)(lpVtbl[18]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), @string, stringLength, textFormat, maxWidth, maxHeight, textLayout);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.CreateGdiCompatibleTextLayout" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT CreateGdiCompatibleTextLayout([NativeTypeName("const WCHAR *")] ushort* @string, [NativeTypeName("UINT32")] uint stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, BOOL useGdiNatural, IDWriteTextLayout** textLayout)
@@ -159,6 +180,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, ushort*, uint, IDWriteTextFormat*, float, float, float, DWRITE_MATRIX*, BOOL, IDWriteTextLayout**, int>)(lpVtbl[19]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), @string, stringLength, textFormat, layoutWidth, layoutHeight, pixelsPerDip, transform, useGdiNatural, textLayout);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.CreateEllipsisTrimmingSign" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT CreateEllipsisTrimmingSign(IDWriteTextFormat* textFormat, IDWriteInlineObject** trimmingSign)
@@ -166,6 +188,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteTextFormat*, IDWriteInlineObject**, int>)(lpVtbl[20]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), textFormat, trimmingSign);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.CreateTextAnalyzer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT CreateTextAnalyzer(IDWriteTextAnalyzer** textAnalyzer)
@@ -173,6 +196,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteTextAnalyzer**, int>)(lpVtbl[21]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), textAnalyzer);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.CreateNumberSubstitution" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT CreateNumberSubstitution(DWRITE_NUMBER_SUBSTITUTION_METHOD substitutionMethod, [NativeTypeName("const WCHAR *")] ushort* localeName, BOOL ignoreUserOverride, IDWriteNumberSubstitution** numberSubstitution)
@@ -180,6 +204,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, DWRITE_NUMBER_SUBSTITUTION_METHOD, ushort*, BOOL, IDWriteNumberSubstitution**, int>)(lpVtbl[22]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), substitutionMethod, localeName, ignoreUserOverride, numberSubstitution);
     }
 
+    /// <inheritdoc cref="IDWriteFactory.CreateGlyphRunAnalysis" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT CreateGlyphRunAnalysis([NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, float pixelsPerDip, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, DWRITE_RENDERING_MODE renderingMode, DWRITE_MEASURING_MODE measuringMode, float baselineOriginX, float baselineOriginY, IDWriteGlyphRunAnalysis** glyphRunAnalysis)
@@ -187,6 +212,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, DWRITE_GLYPH_RUN*, float, DWRITE_MATRIX*, DWRITE_RENDERING_MODE, DWRITE_MEASURING_MODE, float, float, IDWriteGlyphRunAnalysis**, int>)(lpVtbl[23]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), glyphRun, pixelsPerDip, transform, renderingMode, measuringMode, baselineOriginX, baselineOriginY, glyphRunAnalysis);
     }
 
+    /// <inheritdoc cref="IDWriteFactory1.GetEudcFontCollection" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT GetEudcFontCollection(IDWriteFontCollection** fontCollection, [Optional] BOOL checkForUpdates)
@@ -194,6 +220,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontCollection**, BOOL, int>)(lpVtbl[24]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontCollection, checkForUpdates);
     }
 
+    /// <inheritdoc cref="IDWriteFactory1.CreateCustomRenderingParams" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT CreateCustomRenderingParams(float gamma, float enhancedContrast, float enhancedContrastGrayscale, float clearTypeLevel, DWRITE_PIXEL_GEOMETRY pixelGeometry, DWRITE_RENDERING_MODE renderingMode, IDWriteRenderingParams1** renderingParams)
@@ -201,6 +228,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, float, float, float, float, DWRITE_PIXEL_GEOMETRY, DWRITE_RENDERING_MODE, IDWriteRenderingParams1**, int>)(lpVtbl[25]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), gamma, enhancedContrast, enhancedContrastGrayscale, clearTypeLevel, pixelGeometry, renderingMode, renderingParams);
     }
 
+    /// <inheritdoc cref="IDWriteFactory2.GetSystemFontFallback" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT GetSystemFontFallback(IDWriteFontFallback** fontFallback)
@@ -208,6 +236,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontFallback**, int>)(lpVtbl[26]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontFallback);
     }
 
+    /// <inheritdoc cref="IDWriteFactory2.CreateFontFallbackBuilder" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT CreateFontFallbackBuilder(IDWriteFontFallbackBuilder** fontFallbackBuilder)
@@ -215,6 +244,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontFallbackBuilder**, int>)(lpVtbl[27]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontFallbackBuilder);
     }
 
+    /// <inheritdoc cref="IDWriteFactory2.TranslateColorGlyphRun" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT TranslateColorGlyphRun(float baselineOriginX, float baselineOriginY, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, [NativeTypeName("const DWRITE_GLYPH_RUN_DESCRIPTION *")] DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, DWRITE_MEASURING_MODE measuringMode, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* worldToDeviceTransform, [NativeTypeName("UINT32")] uint colorPaletteIndex, IDWriteColorGlyphRunEnumerator** colorLayers)
@@ -222,6 +252,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, float, float, DWRITE_GLYPH_RUN*, DWRITE_GLYPH_RUN_DESCRIPTION*, DWRITE_MEASURING_MODE, DWRITE_MATRIX*, uint, IDWriteColorGlyphRunEnumerator**, int>)(lpVtbl[28]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), baselineOriginX, baselineOriginY, glyphRun, glyphRunDescription, measuringMode, worldToDeviceTransform, colorPaletteIndex, colorLayers);
     }
 
+    /// <inheritdoc cref="IDWriteFactory2.CreateCustomRenderingParams" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT CreateCustomRenderingParams(float gamma, float enhancedContrast, float grayscaleEnhancedContrast, float clearTypeLevel, DWRITE_PIXEL_GEOMETRY pixelGeometry, DWRITE_RENDERING_MODE renderingMode, DWRITE_GRID_FIT_MODE gridFitMode, IDWriteRenderingParams2** renderingParams)
@@ -229,6 +260,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, float, float, float, float, DWRITE_PIXEL_GEOMETRY, DWRITE_RENDERING_MODE, DWRITE_GRID_FIT_MODE, IDWriteRenderingParams2**, int>)(lpVtbl[29]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), gamma, enhancedContrast, grayscaleEnhancedContrast, clearTypeLevel, pixelGeometry, renderingMode, gridFitMode, renderingParams);
     }
 
+    /// <inheritdoc cref="IDWriteFactory2.CreateGlyphRunAnalysis" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT CreateGlyphRunAnalysis([NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, DWRITE_RENDERING_MODE renderingMode, DWRITE_MEASURING_MODE measuringMode, DWRITE_GRID_FIT_MODE gridFitMode, DWRITE_TEXT_ANTIALIAS_MODE antialiasMode, float baselineOriginX, float baselineOriginY, IDWriteGlyphRunAnalysis** glyphRunAnalysis)
@@ -236,6 +268,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, DWRITE_GLYPH_RUN*, DWRITE_MATRIX*, DWRITE_RENDERING_MODE, DWRITE_MEASURING_MODE, DWRITE_GRID_FIT_MODE, DWRITE_TEXT_ANTIALIAS_MODE, float, float, IDWriteGlyphRunAnalysis**, int>)(lpVtbl[30]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), glyphRun, transform, renderingMode, measuringMode, gridFitMode, antialiasMode, baselineOriginX, baselineOriginY, glyphRunAnalysis);
     }
 
+    /// <inheritdoc cref="IDWriteFactory3.CreateGlyphRunAnalysis" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT CreateGlyphRunAnalysis([NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform, DWRITE_RENDERING_MODE1 renderingMode, DWRITE_MEASURING_MODE measuringMode, DWRITE_GRID_FIT_MODE gridFitMode, DWRITE_TEXT_ANTIALIAS_MODE antialiasMode, float baselineOriginX, float baselineOriginY, IDWriteGlyphRunAnalysis** glyphRunAnalysis)
@@ -243,6 +276,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, DWRITE_GLYPH_RUN*, DWRITE_MATRIX*, DWRITE_RENDERING_MODE1, DWRITE_MEASURING_MODE, DWRITE_GRID_FIT_MODE, DWRITE_TEXT_ANTIALIAS_MODE, float, float, IDWriteGlyphRunAnalysis**, int>)(lpVtbl[31]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), glyphRun, transform, renderingMode, measuringMode, gridFitMode, antialiasMode, baselineOriginX, baselineOriginY, glyphRunAnalysis);
     }
 
+    /// <inheritdoc cref="IDWriteFactory3.CreateCustomRenderingParams" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT CreateCustomRenderingParams(float gamma, float enhancedContrast, float grayscaleEnhancedContrast, float clearTypeLevel, DWRITE_PIXEL_GEOMETRY pixelGeometry, DWRITE_RENDERING_MODE1 renderingMode, DWRITE_GRID_FIT_MODE gridFitMode, IDWriteRenderingParams3** renderingParams)
@@ -250,6 +284,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, float, float, float, float, DWRITE_PIXEL_GEOMETRY, DWRITE_RENDERING_MODE1, DWRITE_GRID_FIT_MODE, IDWriteRenderingParams3**, int>)(lpVtbl[32]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), gamma, enhancedContrast, grayscaleEnhancedContrast, clearTypeLevel, pixelGeometry, renderingMode, gridFitMode, renderingParams);
     }
 
+    /// <inheritdoc cref="IDWriteFactory3.CreateFontFaceReference" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT CreateFontFaceReference(IDWriteFontFile* fontFile, [NativeTypeName("UINT32")] uint faceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, IDWriteFontFaceReference** fontFaceReference)
@@ -257,6 +292,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontFile*, uint, DWRITE_FONT_SIMULATIONS, IDWriteFontFaceReference**, int>)(lpVtbl[33]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontFile, faceIndex, fontSimulations, fontFaceReference);
     }
 
+    /// <inheritdoc cref="IDWriteFactory3.CreateFontFaceReference" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT CreateFontFaceReference([NativeTypeName("const WCHAR *")] ushort* filePath, [NativeTypeName("const FILETIME *")] FILETIME* lastWriteTime, [NativeTypeName("UINT32")] uint faceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, IDWriteFontFaceReference** fontFaceReference)
@@ -264,6 +300,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, ushort*, FILETIME*, uint, DWRITE_FONT_SIMULATIONS, IDWriteFontFaceReference**, int>)(lpVtbl[34]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), filePath, lastWriteTime, faceIndex, fontSimulations, fontFaceReference);
     }
 
+    /// <inheritdoc cref="IDWriteFactory3.GetSystemFontSet" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT GetSystemFontSet(IDWriteFontSet** fontSet)
@@ -271,6 +308,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontSet**, int>)(lpVtbl[35]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontSet);
     }
 
+    /// <inheritdoc cref="IDWriteFactory3.CreateFontSetBuilder" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT CreateFontSetBuilder(IDWriteFontSetBuilder** fontSetBuilder)
@@ -278,6 +316,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontSetBuilder**, int>)(lpVtbl[36]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontSetBuilder);
     }
 
+    /// <inheritdoc cref="IDWriteFactory3.CreateFontCollectionFromFontSet" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
     public HRESULT CreateFontCollectionFromFontSet(IDWriteFontSet* fontSet, IDWriteFontCollection1** fontCollection)
@@ -285,6 +324,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontSet*, IDWriteFontCollection1**, int>)(lpVtbl[37]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontSet, fontCollection);
     }
 
+    /// <inheritdoc cref="IDWriteFactory3.GetSystemFontCollection" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
     public HRESULT GetSystemFontCollection(BOOL includeDownloadableFonts, IDWriteFontCollection1** fontCollection, [Optional] BOOL checkForUpdates)
@@ -292,6 +332,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, BOOL, IDWriteFontCollection1**, BOOL, int>)(lpVtbl[38]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), includeDownloadableFonts, fontCollection, checkForUpdates);
     }
 
+    /// <inheritdoc cref="IDWriteFactory3.GetFontDownloadQueue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
     public HRESULT GetFontDownloadQueue(IDWriteFontDownloadQueue** fontDownloadQueue)
@@ -299,6 +340,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontDownloadQueue**, int>)(lpVtbl[39]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontDownloadQueue);
     }
 
+    /// <inheritdoc cref="IDWriteFactory4.TranslateColorGlyphRun" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
     public HRESULT TranslateColorGlyphRun([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, [NativeTypeName("const DWRITE_GLYPH_RUN_DESCRIPTION *")] DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, DWRITE_GLYPH_IMAGE_FORMATS desiredGlyphImageFormats, DWRITE_MEASURING_MODE measuringMode, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* worldAndDpiTransform, [NativeTypeName("UINT32")] uint colorPaletteIndex, IDWriteColorGlyphRunEnumerator1** colorLayers)
@@ -306,6 +348,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, D2D_POINT_2F, DWRITE_GLYPH_RUN*, DWRITE_GLYPH_RUN_DESCRIPTION*, DWRITE_GLYPH_IMAGE_FORMATS, DWRITE_MEASURING_MODE, DWRITE_MATRIX*, uint, IDWriteColorGlyphRunEnumerator1**, int>)(lpVtbl[40]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), baselineOrigin, glyphRun, glyphRunDescription, desiredGlyphImageFormats, measuringMode, worldAndDpiTransform, colorPaletteIndex, colorLayers);
     }
 
+    /// <inheritdoc cref="IDWriteFactory4.ComputeGlyphOrigins" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
     public HRESULT ComputeGlyphOrigins([NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin, [NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* glyphOrigins)
@@ -313,6 +356,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, DWRITE_GLYPH_RUN*, D2D_POINT_2F, D2D_POINT_2F*, int>)(lpVtbl[41]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), glyphRun, baselineOrigin, glyphOrigins);
     }
 
+    /// <inheritdoc cref="IDWriteFactory4.ComputeGlyphOrigins" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(42)]
     public HRESULT ComputeGlyphOrigins([NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, DWRITE_MEASURING_MODE measuringMode, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin, [NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* worldAndDpiTransform, [NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* glyphOrigins)
@@ -320,6 +364,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, DWRITE_GLYPH_RUN*, DWRITE_MEASURING_MODE, D2D_POINT_2F, DWRITE_MATRIX*, D2D_POINT_2F*, int>)(lpVtbl[42]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), glyphRun, measuringMode, baselineOrigin, worldAndDpiTransform, glyphOrigins);
     }
 
+    /// <inheritdoc cref="IDWriteFactory5.CreateFontSetBuilder" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(43)]
     public HRESULT CreateFontSetBuilder(IDWriteFontSetBuilder1** fontSetBuilder)
@@ -327,6 +372,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontSetBuilder1**, int>)(lpVtbl[43]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontSetBuilder);
     }
 
+    /// <inheritdoc cref="IDWriteFactory5.CreateInMemoryFontFileLoader" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(44)]
     public HRESULT CreateInMemoryFontFileLoader(IDWriteInMemoryFontFileLoader** newLoader)
@@ -334,6 +380,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteInMemoryFontFileLoader**, int>)(lpVtbl[44]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), newLoader);
     }
 
+    /// <inheritdoc cref="IDWriteFactory5.CreateHttpFontFileLoader" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(45)]
     public HRESULT CreateHttpFontFileLoader([NativeTypeName("const wchar_t *")] ushort* referrerUrl, [NativeTypeName("const wchar_t *")] ushort* extraHeaders, IDWriteRemoteFontFileLoader** newLoader)
@@ -341,6 +388,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, ushort*, ushort*, IDWriteRemoteFontFileLoader**, int>)(lpVtbl[45]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), referrerUrl, extraHeaders, newLoader);
     }
 
+    /// <inheritdoc cref="IDWriteFactory5.AnalyzeContainerType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(46)]
     public DWRITE_CONTAINER_TYPE AnalyzeContainerType([NativeTypeName("const void *")] void* fileData, [NativeTypeName("UINT32")] uint fileDataSize)
@@ -348,6 +396,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, void*, uint, DWRITE_CONTAINER_TYPE>)(lpVtbl[46]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fileData, fileDataSize);
     }
 
+    /// <inheritdoc cref="IDWriteFactory5.UnpackFontFile" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(47)]
     public HRESULT UnpackFontFile(DWRITE_CONTAINER_TYPE containerType, [NativeTypeName("const void *")] void* fileData, [NativeTypeName("UINT32")] uint fileDataSize, IDWriteFontFileStream** unpackedFontStream)
@@ -355,6 +404,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, DWRITE_CONTAINER_TYPE, void*, uint, IDWriteFontFileStream**, int>)(lpVtbl[47]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), containerType, fileData, fileDataSize, unpackedFontStream);
     }
 
+    /// <include file='IDWriteFactory6.xml' path='doc/member[@name="IDWriteFactory6.CreateFontFaceReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(48)]
     public HRESULT CreateFontFaceReference(IDWriteFontFile* fontFile, [NativeTypeName("UINT32")] uint faceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, IDWriteFontFaceReference1** fontFaceReference)
@@ -362,6 +412,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontFile*, uint, DWRITE_FONT_SIMULATIONS, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontFaceReference1**, int>)(lpVtbl[48]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontFile, faceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontFaceReference);
     }
 
+    /// <include file='IDWriteFactory6.xml' path='doc/member[@name="IDWriteFactory6.CreateFontResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(49)]
     public HRESULT CreateFontResource(IDWriteFontFile* fontFile, [NativeTypeName("UINT32")] uint faceIndex, IDWriteFontResource** fontResource)
@@ -369,6 +420,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontFile*, uint, IDWriteFontResource**, int>)(lpVtbl[49]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontFile, faceIndex, fontResource);
     }
 
+    /// <include file='IDWriteFactory6.xml' path='doc/member[@name="IDWriteFactory6.GetSystemFontSet"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(50)]
     public HRESULT GetSystemFontSet(BOOL includeDownloadableFonts, IDWriteFontSet1** fontSet)
@@ -376,6 +428,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, BOOL, IDWriteFontSet1**, int>)(lpVtbl[50]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), includeDownloadableFonts, fontSet);
     }
 
+    /// <include file='IDWriteFactory6.xml' path='doc/member[@name="IDWriteFactory6.GetSystemFontCollection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(51)]
     public HRESULT GetSystemFontCollection(BOOL includeDownloadableFonts, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteFontCollection2** fontCollection)
@@ -383,6 +436,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, BOOL, DWRITE_FONT_FAMILY_MODEL, IDWriteFontCollection2**, int>)(lpVtbl[51]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), includeDownloadableFonts, fontFamilyModel, fontCollection);
     }
 
+    /// <include file='IDWriteFactory6.xml' path='doc/member[@name="IDWriteFactory6.CreateFontCollectionFromFontSet"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(52)]
     public HRESULT CreateFontCollectionFromFontSet(IDWriteFontSet* fontSet, DWRITE_FONT_FAMILY_MODEL fontFamilyModel, IDWriteFontCollection2** fontCollection)
@@ -390,6 +444,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontSet*, DWRITE_FONT_FAMILY_MODEL, IDWriteFontCollection2**, int>)(lpVtbl[52]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontSet, fontFamilyModel, fontCollection);
     }
 
+    /// <include file='IDWriteFactory6.xml' path='doc/member[@name="IDWriteFactory6.CreateFontSetBuilder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(53)]
     public HRESULT CreateFontSetBuilder(IDWriteFontSetBuilder2** fontSetBuilder)
@@ -397,6 +452,7 @@ public unsafe partial struct IDWriteFactory6 : IDWriteFactory6.Interface
         return ((delegate* unmanaged<IDWriteFactory6*, IDWriteFontSetBuilder2**, int>)(lpVtbl[53]))((IDWriteFactory6*)Unsafe.AsPointer(ref this), fontSetBuilder);
     }
 
+    /// <include file='IDWriteFactory6.xml' path='doc/member[@name="IDWriteFactory6.CreateTextFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(54)]
     public HRESULT CreateTextFormat([NativeTypeName("const WCHAR *")] ushort* fontFamilyName, IDWriteFontCollection* fontCollection, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, float fontSize, [NativeTypeName("const WCHAR *")] ushort* localeName, IDWriteTextFormat3** textFormat)

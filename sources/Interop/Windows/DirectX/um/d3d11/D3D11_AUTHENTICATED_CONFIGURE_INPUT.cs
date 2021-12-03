@@ -9,14 +9,19 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_AUTHENTICATED_CONFIGURE_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_CONFIGURE_INPUT"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_AUTHENTICATED_CONFIGURE_INPUT
 {
+    /// <include file='D3D11_AUTHENTICATED_CONFIGURE_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_CONFIGURE_INPUT.omac"]/*' />
     public D3D11_OMAC omac;
 
+    /// <include file='D3D11_AUTHENTICATED_CONFIGURE_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_CONFIGURE_INPUT.ConfigureType"]/*' />
     public Guid ConfigureType;
 
+    /// <include file='D3D11_AUTHENTICATED_CONFIGURE_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_CONFIGURE_INPUT.hChannel"]/*' />
     public HANDLE hChannel;
 
+    /// <include file='D3D11_AUTHENTICATED_CONFIGURE_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_CONFIGURE_INPUT.SequenceNumber"]/*' />
     public uint SequenceNumber;
 }

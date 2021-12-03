@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteRemoteFontFileLoader.xml' path='doc/member[@name="IDWriteRemoteFontFileLoader"]/*' />
 [Guid("68648C83-6EDE-46C0-AB46-20083A887FDE")]
 [NativeTypeName("struct IDWriteRemoteFontFileLoader : IDWriteFontFileLoader")]
 [NativeInheritance("IDWriteFontFileLoader")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDWriteRemoteFontFileLoader : IDWriteRemoteFontFile
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDWriteRemoteFontFileLoader : IDWriteRemoteFontFile
         return ((delegate* unmanaged<IDWriteRemoteFontFileLoader*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDWriteRemoteFontFileLoader : IDWriteRemoteFontFile
         return ((delegate* unmanaged<IDWriteRemoteFontFileLoader*, uint>)(lpVtbl[1]))((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDWriteRemoteFontFileLoader : IDWriteRemoteFontFile
         return ((delegate* unmanaged<IDWriteRemoteFontFileLoader*, uint>)(lpVtbl[2]))((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDWriteFontFileLoader.CreateStreamFromKey" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateStreamFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, IDWriteFontFileStream** fontFileStream)
@@ -47,6 +52,7 @@ public unsafe partial struct IDWriteRemoteFontFileLoader : IDWriteRemoteFontFile
         return ((delegate* unmanaged<IDWriteRemoteFontFileLoader*, void*, uint, IDWriteFontFileStream**, int>)(lpVtbl[3]))((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, fontFileStream);
     }
 
+    /// <include file='IDWriteRemoteFontFileLoader.xml' path='doc/member[@name="IDWriteRemoteFontFileLoader.CreateRemoteStreamFromKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreateRemoteStreamFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, IDWriteRemoteFontFileStream** fontFileStream)
@@ -54,6 +60,7 @@ public unsafe partial struct IDWriteRemoteFontFileLoader : IDWriteRemoteFontFile
         return ((delegate* unmanaged<IDWriteRemoteFontFileLoader*, void*, uint, IDWriteRemoteFontFileStream**, int>)(lpVtbl[4]))((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, fontFileStream);
     }
 
+    /// <include file='IDWriteRemoteFontFileLoader.xml' path='doc/member[@name="IDWriteRemoteFontFileLoader.GetLocalityFromKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetLocalityFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, DWRITE_LOCALITY* locality)
@@ -61,6 +68,7 @@ public unsafe partial struct IDWriteRemoteFontFileLoader : IDWriteRemoteFontFile
         return ((delegate* unmanaged<IDWriteRemoteFontFileLoader*, void*, uint, DWRITE_LOCALITY*, int>)(lpVtbl[5]))((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, locality);
     }
 
+    /// <include file='IDWriteRemoteFontFileLoader.xml' path='doc/member[@name="IDWriteRemoteFontFileLoader.CreateFontFileReferenceFromUrl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CreateFontFileReferenceFromUrl(IDWriteFactory* factory, [NativeTypeName("const WCHAR *")] ushort* baseUrl, [NativeTypeName("const WCHAR *")] ushort* fontFileUrl, IDWriteFontFile** fontFile)

@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='VisualMutationType.xml' path='doc/member[@name="VisualMutationType"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public enum VisualMutationType
 {
+    /// <include file='VisualMutationType.xml' path='doc/member[@name="VisualMutationType.Add"]/*' />
     Add = 0,
+
+    /// <include file='VisualMutationType.xml' path='doc/member[@name="VisualMutationType.Remove"]/*' />
     Remove = (Add + 1),
 }

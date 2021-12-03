@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D_POINT_2F.xml' path='doc/member[@name="D2D_POINT_2F"]/*' />
 public partial struct D2D_POINT_2F
 {
+    /// <include file='D2D_POINT_2F.xml' path='doc/member[@name="D2D_POINT_2F.x"]/*' />
     public float x;
 
+    /// <include file='D2D_POINT_2F.xml' path='doc/member[@name="D2D_POINT_2F.y"]/*' />
     public float y;
 }

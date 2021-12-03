@@ -7,7 +7,9 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_FEATURE_DATA_DOUBLES.xml' path='doc/member[@name="D3D11_FEATURE_DATA_DOUBLES"]/*' />
 public partial struct D3D11_FEATURE_DATA_DOUBLES
 {
+    /// <include file='D3D11_FEATURE_DATA_DOUBLES.xml' path='doc/member[@name="D3D11_FEATURE_DATA_DOUBLES.DoublePrecisionFloatShaderOps"]/*' />
     public BOOL DoublePrecisionFloatShaderOps;
 }

@@ -7,20 +7,27 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_FEATURE_DATA_QUERY_META_COMMAND.xml' path='doc/member[@name="D3D12_FEATURE_DATA_QUERY_META_COMMAND"]/*' />
 public unsafe partial struct D3D12_FEATURE_DATA_QUERY_META_COMMAND
 {
+    /// <include file='D3D12_FEATURE_DATA_QUERY_META_COMMAND.xml' path='doc/member[@name="D3D12_FEATURE_DATA_QUERY_META_COMMAND.CommandId"]/*' />
     public Guid CommandId;
 
+    /// <include file='D3D12_FEATURE_DATA_QUERY_META_COMMAND.xml' path='doc/member[@name="D3D12_FEATURE_DATA_QUERY_META_COMMAND.NodeMask"]/*' />
     public uint NodeMask;
 
+    /// <include file='D3D12_FEATURE_DATA_QUERY_META_COMMAND.xml' path='doc/member[@name="D3D12_FEATURE_DATA_QUERY_META_COMMAND.pQueryInputData"]/*' />
     [NativeTypeName("const void *")]
     public void* pQueryInputData;
 
+    /// <include file='D3D12_FEATURE_DATA_QUERY_META_COMMAND.xml' path='doc/member[@name="D3D12_FEATURE_DATA_QUERY_META_COMMAND.QueryInputDataSizeInBytes"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint QueryInputDataSizeInBytes;
 
+    /// <include file='D3D12_FEATURE_DATA_QUERY_META_COMMAND.xml' path='doc/member[@name="D3D12_FEATURE_DATA_QUERY_META_COMMAND.pQueryOutputData"]/*' />
     public void* pQueryOutputData;
 
+    /// <include file='D3D12_FEATURE_DATA_QUERY_META_COMMAND.xml' path='doc/member[@name="D3D12_FEATURE_DATA_QUERY_META_COMMAND.QueryOutputDataSizeInBytes"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint QueryOutputDataSizeInBytes;
 }

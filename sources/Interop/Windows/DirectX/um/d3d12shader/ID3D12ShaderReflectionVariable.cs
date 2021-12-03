@@ -9,11 +9,13 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12ShaderReflectionVariable.xml' path='doc/member[@name="ID3D12ShaderReflectionVariable"]/*' />
 [Guid("8337A8A6-A216-444A-B2F4-314733A73AEA")]
 public unsafe partial struct ID3D12ShaderReflectionVariable : ID3D12ShaderReflectionVariable.Interface
 {
     public void** lpVtbl;
 
+    /// <include file='ID3D12ShaderReflectionVariable.xml' path='doc/member[@name="ID3D12ShaderReflectionVariable.GetDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT GetDesc(D3D12_SHADER_VARIABLE_DESC* pDesc)
@@ -21,6 +23,7 @@ public unsafe partial struct ID3D12ShaderReflectionVariable : ID3D12ShaderReflec
         return ((delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflectionVariable*, D3D12_SHADER_VARIABLE_DESC*, int>)(lpVtbl[0]))((ID3D12ShaderReflectionVariable*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <include file='ID3D12ShaderReflectionVariable.xml' path='doc/member[@name="ID3D12ShaderReflectionVariable.GetType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     public new ID3D12ShaderReflectionType* GetType()
@@ -28,6 +31,7 @@ public unsafe partial struct ID3D12ShaderReflectionVariable : ID3D12ShaderReflec
         return ((delegate* unmanaged<ID3D12ShaderReflectionVariable*, ID3D12ShaderReflectionType*>)(lpVtbl[1]))((ID3D12ShaderReflectionVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12ShaderReflectionVariable.xml' path='doc/member[@name="ID3D12ShaderReflectionVariable.GetBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     public ID3D12ShaderReflectionConstantBuffer* GetBuffer()
@@ -35,6 +39,7 @@ public unsafe partial struct ID3D12ShaderReflectionVariable : ID3D12ShaderReflec
         return ((delegate* unmanaged<ID3D12ShaderReflectionVariable*, ID3D12ShaderReflectionConstantBuffer*>)(lpVtbl[2]))((ID3D12ShaderReflectionVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12ShaderReflectionVariable.xml' path='doc/member[@name="ID3D12ShaderReflectionVariable.GetInterfaceSlot"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public uint GetInterfaceSlot(uint uArrayIndex)

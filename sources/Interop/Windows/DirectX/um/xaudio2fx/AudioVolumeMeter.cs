@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='AudioVolumeMeter.xml' path='doc/member[@name="AudioVolumeMeter"]/*' />
 [Guid("4FC3B166-972A-40CF-BC37-7DB03DB2FBA3")]
 public partial struct AudioVolumeMeter
 {

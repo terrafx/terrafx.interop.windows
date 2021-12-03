@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_TEXCUBE_ARRAY_SRV.xml' path='doc/member[@name="D3D11_TEXCUBE_ARRAY_SRV"]/*' />
 public partial struct D3D11_TEXCUBE_ARRAY_SRV
 {
+    /// <include file='D3D11_TEXCUBE_ARRAY_SRV.xml' path='doc/member[@name="D3D11_TEXCUBE_ARRAY_SRV.MostDetailedMip"]/*' />
     public uint MostDetailedMip;
 
+    /// <include file='D3D11_TEXCUBE_ARRAY_SRV.xml' path='doc/member[@name="D3D11_TEXCUBE_ARRAY_SRV.MipLevels"]/*' />
     public uint MipLevels;
 
+    /// <include file='D3D11_TEXCUBE_ARRAY_SRV.xml' path='doc/member[@name="D3D11_TEXCUBE_ARRAY_SRV.First2DArrayFace"]/*' />
     public uint First2DArrayFace;
 
+    /// <include file='D3D11_TEXCUBE_ARRAY_SRV.xml' path='doc/member[@name="D3D11_TEXCUBE_ARRAY_SRV.NumCubes"]/*' />
     public uint NumCubes;
 }

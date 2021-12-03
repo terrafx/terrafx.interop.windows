@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_FEATURE_DATA_VIDEO_DECODER_HISTOGRAM.xml' path='doc/member[@name="D3D11_FEATURE_DATA_VIDEO_DECODER_HISTOGRAM"]/*' />
 public partial struct D3D11_FEATURE_DATA_VIDEO_DECODER_HISTOGRAM
 {
+    /// <include file='D3D11_FEATURE_DATA_VIDEO_DECODER_HISTOGRAM.xml' path='doc/member[@name="D3D11_FEATURE_DATA_VIDEO_DECODER_HISTOGRAM.DecoderDesc"]/*' />
     public D3D11_VIDEO_DECODER_DESC DecoderDesc;
 
+    /// <include file='D3D11_FEATURE_DATA_VIDEO_DECODER_HISTOGRAM.xml' path='doc/member[@name="D3D11_FEATURE_DATA_VIDEO_DECODER_HISTOGRAM.Components"]/*' />
     public D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAGS Components;
 
+    /// <include file='D3D11_FEATURE_DATA_VIDEO_DECODER_HISTOGRAM.xml' path='doc/member[@name="D3D11_FEATURE_DATA_VIDEO_DECODER_HISTOGRAM.BinCount"]/*' />
     public uint BinCount;
 
+    /// <include file='D3D11_FEATURE_DATA_VIDEO_DECODER_HISTOGRAM.xml' path='doc/member[@name="D3D11_FEATURE_DATA_VIDEO_DECODER_HISTOGRAM.CounterBitDepth"]/*' />
     public uint CounterBitDepth;
 }

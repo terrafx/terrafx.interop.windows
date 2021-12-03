@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDCompositionScaleTransform.xml' path='doc/member[@name="IDCompositionScaleTransform"]/*' />
 [Guid("71FDE914-40EF-45EF-BD51-68B037C339F9")]
 [NativeTypeName("struct IDCompositionScaleTransform : IDCompositionTransform")]
 [NativeInheritance("IDCompositionTransform")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDCompositionScaleTransform : IDCompositionScaleTra
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDCompositionScaleTransform : IDCompositionScaleTra
         return ((delegate* unmanaged<IDCompositionScaleTransform*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDCompositionScaleTransform : IDCompositionScaleTra
         return ((delegate* unmanaged<IDCompositionScaleTransform*, uint>)(lpVtbl[1]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDCompositionScaleTransform : IDCompositionScaleTra
         return ((delegate* unmanaged<IDCompositionScaleTransform*, uint>)(lpVtbl[2]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDCompositionScaleTransform.xml' path='doc/member[@name="IDCompositionScaleTransform.SetScaleX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetScaleX(IDCompositionAnimation* animation)
@@ -49,6 +54,7 @@ public unsafe partial struct IDCompositionScaleTransform : IDCompositionScaleTra
         return ((delegate* unmanaged<IDCompositionScaleTransform*, IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionScaleTransform.xml' path='doc/member[@name="IDCompositionScaleTransform.SetScaleX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetScaleX(float scaleX)
@@ -56,6 +62,7 @@ public unsafe partial struct IDCompositionScaleTransform : IDCompositionScaleTra
         return ((delegate* unmanaged<IDCompositionScaleTransform*, float, int>)(lpVtbl[4]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), scaleX);
     }
 
+    /// <include file='IDCompositionScaleTransform.xml' path='doc/member[@name="IDCompositionScaleTransform.SetScaleY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetScaleY(IDCompositionAnimation* animation)
@@ -63,6 +70,7 @@ public unsafe partial struct IDCompositionScaleTransform : IDCompositionScaleTra
         return ((delegate* unmanaged<IDCompositionScaleTransform*, IDCompositionAnimation*, int>)(lpVtbl[5]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionScaleTransform.xml' path='doc/member[@name="IDCompositionScaleTransform.SetScaleY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetScaleY(float scaleY)
@@ -70,6 +78,7 @@ public unsafe partial struct IDCompositionScaleTransform : IDCompositionScaleTra
         return ((delegate* unmanaged<IDCompositionScaleTransform*, float, int>)(lpVtbl[6]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), scaleY);
     }
 
+    /// <include file='IDCompositionScaleTransform.xml' path='doc/member[@name="IDCompositionScaleTransform.SetCenterX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetCenterX(IDCompositionAnimation* animation)
@@ -77,6 +86,7 @@ public unsafe partial struct IDCompositionScaleTransform : IDCompositionScaleTra
         return ((delegate* unmanaged<IDCompositionScaleTransform*, IDCompositionAnimation*, int>)(lpVtbl[7]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionScaleTransform.xml' path='doc/member[@name="IDCompositionScaleTransform.SetCenterX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetCenterX(float centerX)
@@ -84,6 +94,7 @@ public unsafe partial struct IDCompositionScaleTransform : IDCompositionScaleTra
         return ((delegate* unmanaged<IDCompositionScaleTransform*, float, int>)(lpVtbl[8]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), centerX);
     }
 
+    /// <include file='IDCompositionScaleTransform.xml' path='doc/member[@name="IDCompositionScaleTransform.SetCenterY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetCenterY(IDCompositionAnimation* animation)
@@ -91,6 +102,7 @@ public unsafe partial struct IDCompositionScaleTransform : IDCompositionScaleTra
         return ((delegate* unmanaged<IDCompositionScaleTransform*, IDCompositionAnimation*, int>)(lpVtbl[9]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionScaleTransform.xml' path='doc/member[@name="IDCompositionScaleTransform.SetCenterY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetCenterY(float centerY)

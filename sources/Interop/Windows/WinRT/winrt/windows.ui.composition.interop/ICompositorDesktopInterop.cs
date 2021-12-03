@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ICompositorDesktopInterop.xml' path='doc/member[@name="ICompositorDesktopInterop"]/*' />
 [Guid("29E691FA-4567-4DCA-B319-D0F207EB6807")]
 [NativeTypeName("struct ICompositorDesktopInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ICompositorDesktopInterop : ICompositorDesktopInter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ICompositorDesktopInterop : ICompositorDesktopInter
         return ((delegate* unmanaged<ICompositorDesktopInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICompositorDesktopInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ICompositorDesktopInterop : ICompositorDesktopInter
         return ((delegate* unmanaged<ICompositorDesktopInterop*, uint>)(lpVtbl[1]))((ICompositorDesktopInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ICompositorDesktopInterop : ICompositorDesktopInter
         return ((delegate* unmanaged<ICompositorDesktopInterop*, uint>)(lpVtbl[2]))((ICompositorDesktopInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICompositorDesktopInterop.xml' path='doc/member[@name="ICompositorDesktopInterop.CreateDesktopWindowTarget"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateDesktopWindowTarget(HWND hwndTarget, BOOL isTopmost, [NativeTypeName("ABI::Windows::UI::Composition::Desktop::IDesktopWindowTarget **")] void** result)
@@ -47,6 +52,7 @@ public unsafe partial struct ICompositorDesktopInterop : ICompositorDesktopInter
         return ((delegate* unmanaged<ICompositorDesktopInterop*, HWND, BOOL, void**, int>)(lpVtbl[3]))((ICompositorDesktopInterop*)Unsafe.AsPointer(ref this), hwndTarget, isTopmost, result);
     }
 
+    /// <include file='ICompositorDesktopInterop.xml' path='doc/member[@name="ICompositorDesktopInterop.EnsureOnThread"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EnsureOnThread([NativeTypeName("DWORD")] uint threadId)

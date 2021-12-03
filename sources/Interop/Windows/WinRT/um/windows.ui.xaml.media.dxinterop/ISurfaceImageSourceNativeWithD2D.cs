@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ISurfaceImageSourceNativeWithD2D.xml' path='doc/member[@name="ISurfaceImageSourceNativeWithD2D"]/*' />
 [Guid("54298223-41E1-4A41-9C08-02E8256864A1")]
 [NativeTypeName("struct ISurfaceImageSourceNativeWithD2D : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSou
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSou
         return ((delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, Guid*, void**, int>)(lpVtbl[0]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSou
         return ((delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, uint>)(lpVtbl[1]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSou
         return ((delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, uint>)(lpVtbl[2]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISurfaceImageSourceNativeWithD2D.xml' path='doc/member[@name="ISurfaceImageSourceNativeWithD2D.SetDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetDevice(IUnknown* device)
@@ -49,6 +54,7 @@ public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSou
         return ((delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, IUnknown*, int>)(lpVtbl[3]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this), device);
     }
 
+    /// <include file='ISurfaceImageSourceNativeWithD2D.xml' path='doc/member[@name="ISurfaceImageSourceNativeWithD2D.BeginDraw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT BeginDraw([NativeTypeName("const RECT &")] RECT* updateRect, [NativeTypeName("const IID &")] Guid* iid, void** updateObject, POINT* offset)
@@ -56,6 +62,7 @@ public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSou
         return ((delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, RECT*, Guid*, void**, POINT*, int>)(lpVtbl[4]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this), updateRect, iid, updateObject, offset);
     }
 
+    /// <include file='ISurfaceImageSourceNativeWithD2D.xml' path='doc/member[@name="ISurfaceImageSourceNativeWithD2D.EndDraw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EndDraw()
@@ -63,6 +70,7 @@ public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSou
         return ((delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, int>)(lpVtbl[5]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISurfaceImageSourceNativeWithD2D.xml' path='doc/member[@name="ISurfaceImageSourceNativeWithD2D.SuspendDraw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SuspendDraw()
@@ -70,6 +78,7 @@ public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSou
         return ((delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, int>)(lpVtbl[6]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISurfaceImageSourceNativeWithD2D.xml' path='doc/member[@name="ISurfaceImageSourceNativeWithD2D.ResumeDraw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ResumeDraw()

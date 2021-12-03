@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_TEXTURE_ADDRESS_MODE.xml' path='doc/member[@name="D3D11_TEXTURE_ADDRESS_MODE"]/*' />
 public enum D3D11_TEXTURE_ADDRESS_MODE
 {
+    /// <include file='D3D11_TEXTURE_ADDRESS_MODE.xml' path='doc/member[@name="D3D11_TEXTURE_ADDRESS_MODE.D3D11_TEXTURE_ADDRESS_WRAP"]/*' />
     D3D11_TEXTURE_ADDRESS_WRAP = 1,
+
+    /// <include file='D3D11_TEXTURE_ADDRESS_MODE.xml' path='doc/member[@name="D3D11_TEXTURE_ADDRESS_MODE.D3D11_TEXTURE_ADDRESS_MIRROR"]/*' />
     D3D11_TEXTURE_ADDRESS_MIRROR = 2,
+
+    /// <include file='D3D11_TEXTURE_ADDRESS_MODE.xml' path='doc/member[@name="D3D11_TEXTURE_ADDRESS_MODE.D3D11_TEXTURE_ADDRESS_CLAMP"]/*' />
     D3D11_TEXTURE_ADDRESS_CLAMP = 3,
+
+    /// <include file='D3D11_TEXTURE_ADDRESS_MODE.xml' path='doc/member[@name="D3D11_TEXTURE_ADDRESS_MODE.D3D11_TEXTURE_ADDRESS_BORDER"]/*' />
     D3D11_TEXTURE_ADDRESS_BORDER = 4,
+
+    /// <include file='D3D11_TEXTURE_ADDRESS_MODE.xml' path='doc/member[@name="D3D11_TEXTURE_ADDRESS_MODE.D3D11_TEXTURE_ADDRESS_MIRROR_ONCE"]/*' />
     D3D11_TEXTURE_ADDRESS_MIRROR_ONCE = 5,
 }

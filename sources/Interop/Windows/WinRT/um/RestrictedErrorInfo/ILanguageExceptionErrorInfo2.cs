@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ILanguageExceptionErrorInfo2.xml' path='doc/member[@name="ILanguageExceptionErrorInfo2"]/*' />
 [Guid("5746E5C4-5B97-424C-B620-2822915734DD")]
 [NativeTypeName("struct ILanguageExceptionErrorInfo2 : ILanguageExceptionErrorInfo")]
 [NativeInheritance("ILanguageExceptionErrorInfo")]
@@ -19,6 +20,7 @@ public unsafe partial struct ILanguageExceptionErrorInfo2 : ILanguageExceptionEr
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct ILanguageExceptionErrorInfo2 : ILanguageExceptionEr
         return ((delegate* unmanaged<ILanguageExceptionErrorInfo2*, Guid*, void**, int>)(lpVtbl[0]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct ILanguageExceptionErrorInfo2 : ILanguageExceptionEr
         return ((delegate* unmanaged<ILanguageExceptionErrorInfo2*, uint>)(lpVtbl[1]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct ILanguageExceptionErrorInfo2 : ILanguageExceptionEr
         return ((delegate* unmanaged<ILanguageExceptionErrorInfo2*, uint>)(lpVtbl[2]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ILanguageExceptionErrorInfo.GetLanguageException" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetLanguageException(IUnknown** languageException)
@@ -49,6 +54,7 @@ public unsafe partial struct ILanguageExceptionErrorInfo2 : ILanguageExceptionEr
         return ((delegate* unmanaged<ILanguageExceptionErrorInfo2*, IUnknown**, int>)(lpVtbl[3]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this), languageException);
     }
 
+    /// <include file='ILanguageExceptionErrorInfo2.xml' path='doc/member[@name="ILanguageExceptionErrorInfo2.GetPreviousLanguageExceptionErrorInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPreviousLanguageExceptionErrorInfo(ILanguageExceptionErrorInfo2** previousLanguageExceptionErrorInfo)
@@ -56,6 +62,7 @@ public unsafe partial struct ILanguageExceptionErrorInfo2 : ILanguageExceptionEr
         return ((delegate* unmanaged<ILanguageExceptionErrorInfo2*, ILanguageExceptionErrorInfo2**, int>)(lpVtbl[4]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this), previousLanguageExceptionErrorInfo);
     }
 
+    /// <include file='ILanguageExceptionErrorInfo2.xml' path='doc/member[@name="ILanguageExceptionErrorInfo2.CapturePropagationContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CapturePropagationContext(IUnknown* languageException)
@@ -63,6 +70,7 @@ public unsafe partial struct ILanguageExceptionErrorInfo2 : ILanguageExceptionEr
         return ((delegate* unmanaged<ILanguageExceptionErrorInfo2*, IUnknown*, int>)(lpVtbl[5]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this), languageException);
     }
 
+    /// <include file='ILanguageExceptionErrorInfo2.xml' path='doc/member[@name="ILanguageExceptionErrorInfo2.GetPropagationContextHead"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetPropagationContextHead(ILanguageExceptionErrorInfo2** propagatedLanguageExceptionErrorInfoHead)

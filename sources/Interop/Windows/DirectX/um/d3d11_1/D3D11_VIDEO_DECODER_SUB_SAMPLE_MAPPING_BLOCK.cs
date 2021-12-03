@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK"]/*' />
 public partial struct D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK
 {
+    /// <include file='D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK.ClearSize"]/*' />
     public uint ClearSize;
 
+    /// <include file='D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK.EncryptedSize"]/*' />
     public uint EncryptedSize;
 }

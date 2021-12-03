@@ -7,20 +7,27 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DDOPTSURFACEDESC.xml' path='doc/member[@name="DDOPTSURFACEDESC"]/*' />
 public partial struct DDOPTSURFACEDESC
 {
+    /// <include file='DDOPTSURFACEDESC.xml' path='doc/member[@name="DDOPTSURFACEDESC.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='DDOPTSURFACEDESC.xml' path='doc/member[@name="DDOPTSURFACEDESC.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='DDOPTSURFACEDESC.xml' path='doc/member[@name="DDOPTSURFACEDESC.ddSCaps"]/*' />
     public DDSCAPS2 ddSCaps;
 
+    /// <include file='DDOPTSURFACEDESC.xml' path='doc/member[@name="DDOPTSURFACEDESC.ddOSCaps"]/*' />
     public DDOSCAPS ddOSCaps;
 
+    /// <include file='DDOPTSURFACEDESC.xml' path='doc/member[@name="DDOPTSURFACEDESC.guid"]/*' />
     public Guid guid;
 
+    /// <include file='DDOPTSURFACEDESC.xml' path='doc/member[@name="DDOPTSURFACEDESC.dwCompressionRatio"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCompressionRatio;
 }

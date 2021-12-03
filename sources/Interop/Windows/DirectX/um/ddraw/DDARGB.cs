@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DDARGB.xml' path='doc/member[@name="DDARGB"]/*' />
 public partial struct DDARGB
 {
+    /// <include file='DDARGB.xml' path='doc/member[@name="DDARGB.blue"]/*' />
     public byte blue;
 
+    /// <include file='DDARGB.xml' path='doc/member[@name="DDARGB.green"]/*' />
     public byte green;
 
+    /// <include file='DDARGB.xml' path='doc/member[@name="DDARGB.red"]/*' />
     public byte red;
 
+    /// <include file='DDARGB.xml' path='doc/member[@name="DDARGB.alpha"]/*' />
     public byte alpha;
 }

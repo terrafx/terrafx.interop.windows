@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_COUNTER_INFO.xml' path='doc/member[@name="D3D10_COUNTER_INFO"]/*' />
 public partial struct D3D10_COUNTER_INFO
 {
+    /// <include file='D3D10_COUNTER_INFO.xml' path='doc/member[@name="D3D10_COUNTER_INFO.LastDeviceDependentCounter"]/*' />
     public D3D10_COUNTER LastDeviceDependentCounter;
 
+    /// <include file='D3D10_COUNTER_INFO.xml' path='doc/member[@name="D3D10_COUNTER_INFO.NumSimultaneousCounters"]/*' />
     public uint NumSimultaneousCounters;
 
+    /// <include file='D3D10_COUNTER_INFO.xml' path='doc/member[@name="D3D10_COUNTER_INFO.NumDetectableParallelUnits"]/*' />
     [NativeTypeName("UINT8")]
     public byte NumDetectableParallelUnits;
 }

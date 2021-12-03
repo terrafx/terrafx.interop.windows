@@ -5,13 +5,16 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_COLOR_GLYPH_RUN1.xml' path='doc/member[@name="DWRITE_COLOR_GLYPH_RUN1"]/*' />
 [NativeTypeName("struct DWRITE_COLOR_GLYPH_RUN1 : DWRITE_COLOR_GLYPH_RUN")]
 [NativeInheritance("DWRITE_COLOR_GLYPH_RUN")]
 public partial struct DWRITE_COLOR_GLYPH_RUN1
 {
     public DWRITE_COLOR_GLYPH_RUN Base;
 
+    /// <include file='DWRITE_COLOR_GLYPH_RUN1.xml' path='doc/member[@name="DWRITE_COLOR_GLYPH_RUN1.glyphImageFormat"]/*' />
     public DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat;
 
+    /// <include file='DWRITE_COLOR_GLYPH_RUN1.xml' path='doc/member[@name="DWRITE_COLOR_GLYPH_RUN1.measuringMode"]/*' />
     public DWRITE_MEASURING_MODE measuringMode;
 }

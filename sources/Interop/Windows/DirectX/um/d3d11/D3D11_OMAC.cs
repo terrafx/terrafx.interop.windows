@@ -7,9 +7,11 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_OMAC.xml' path='doc/member[@name="D3D11_OMAC"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct D3D11_OMAC
 {
+    /// <include file='D3D11_OMAC.xml' path='doc/member[@name="D3D11_OMAC.Omac"]/*' />
     [NativeTypeName("BYTE [16]")]
     public fixed byte Omac[16];
 }

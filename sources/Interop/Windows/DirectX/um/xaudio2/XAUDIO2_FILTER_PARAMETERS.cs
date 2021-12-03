@@ -7,12 +7,16 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='XAUDIO2_FILTER_PARAMETERS.xml' path='doc/member[@name="XAUDIO2_FILTER_PARAMETERS"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct XAUDIO2_FILTER_PARAMETERS
 {
+    /// <include file='XAUDIO2_FILTER_PARAMETERS.xml' path='doc/member[@name="XAUDIO2_FILTER_PARAMETERS.Type"]/*' />
     public XAUDIO2_FILTER_TYPE Type;
 
+    /// <include file='XAUDIO2_FILTER_PARAMETERS.xml' path='doc/member[@name="XAUDIO2_FILTER_PARAMETERS.Frequency"]/*' />
     public float Frequency;
 
+    /// <include file='XAUDIO2_FILTER_PARAMETERS.xml' path='doc/member[@name="XAUDIO2_FILTER_PARAMETERS.OneOverQ"]/*' />
     public float OneOverQ;
 }

@@ -7,8 +7,10 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_ASYNC_GETDATA_FLAG.xml' path='doc/member[@name="D3D10_ASYNC_GETDATA_FLAG"]/*' />
 [Flags]
 public enum D3D10_ASYNC_GETDATA_FLAG
 {
+    /// <include file='D3D10_ASYNC_GETDATA_FLAG.xml' path='doc/member[@name="D3D10_ASYNC_GETDATA_FLAG.D3D10_ASYNC_GETDATA_DONOTFLUSH"]/*' />
     D3D10_ASYNC_GETDATA_DONOTFLUSH = 0x1,
 }

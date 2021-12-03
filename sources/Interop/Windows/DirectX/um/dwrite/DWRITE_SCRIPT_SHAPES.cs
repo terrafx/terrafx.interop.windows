@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_SCRIPT_SHAPES.xml' path='doc/member[@name="DWRITE_SCRIPT_SHAPES"]/*' />
 [Flags]
 public enum DWRITE_SCRIPT_SHAPES
 {
+    /// <include file='DWRITE_SCRIPT_SHAPES.xml' path='doc/member[@name="DWRITE_SCRIPT_SHAPES.DWRITE_SCRIPT_SHAPES_DEFAULT"]/*' />
     DWRITE_SCRIPT_SHAPES_DEFAULT = 0,
+
+    /// <include file='DWRITE_SCRIPT_SHAPES.xml' path='doc/member[@name="DWRITE_SCRIPT_SHAPES.DWRITE_SCRIPT_SHAPES_NO_VISUAL"]/*' />
     DWRITE_SCRIPT_SHAPES_NO_VISUAL = 1,
 }

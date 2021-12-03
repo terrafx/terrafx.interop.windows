@@ -8,50 +8,68 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC"]/*' />
 public unsafe partial struct DDSURFACEDESC
 {
+    /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.dwHeight"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwHeight;
 
+    /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.dwWidth"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwWidth;
 
+    /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.Anonymous1"]/*' />
     [NativeTypeName("_DDSURFACEDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:2236:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
+    /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.dwBackBufferCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBackBufferCount;
 
+    /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.Anonymous2"]/*' />
     [NativeTypeName("_DDSURFACEDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:2242:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
+    /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.dwAlphaBitDepth"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAlphaBitDepth;
 
+    /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.dwReserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved;
 
+    /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.lpSurface"]/*' />
     [NativeTypeName("LPVOID")]
     public void* lpSurface;
 
+    /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.ddckCKDestOverlay"]/*' />
     public DDCOLORKEY ddckCKDestOverlay;
 
+    /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.ddckCKDestBlt"]/*' />
     public DDCOLORKEY ddckCKDestBlt;
 
+    /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.ddckCKSrcOverlay"]/*' />
     public DDCOLORKEY ddckCKSrcOverlay;
 
+    /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.ddckCKSrcBlt"]/*' />
     public DDCOLORKEY ddckCKSrcBlt;
 
+    /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.ddpfPixelFormat"]/*' />
     public DDPIXELFORMAT ddpfPixelFormat;
 
+    /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.ddsCaps"]/*' />
     public DDSCAPS ddsCaps;
 
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.lPitch"]/*' />
     public ref int lPitch
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -61,6 +79,7 @@ public unsafe partial struct DDSURFACEDESC
         }
     }
 
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.dwLinearSize"]/*' />
     public ref uint dwLinearSize
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -70,6 +89,7 @@ public unsafe partial struct DDSURFACEDESC
         }
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dwMipMapCount"]/*' />
     public ref uint dwMipMapCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -79,6 +99,7 @@ public unsafe partial struct DDSURFACEDESC
         }
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dwZBufferBitDepth"]/*' />
     public ref uint dwZBufferBitDepth
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -88,6 +109,7 @@ public unsafe partial struct DDSURFACEDESC
         }
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dwRefreshRate"]/*' />
     public ref uint dwRefreshRate
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -97,29 +119,36 @@ public unsafe partial struct DDSURFACEDESC
         }
     }
 
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous1_e__Union
     {
+        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.lPitch"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LONG")]
         public int lPitch;
 
+        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.dwLinearSize"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwLinearSize;
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous2_e__Union
     {
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dwMipMapCount"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwMipMapCount;
 
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dwZBufferBitDepth"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwZBufferBitDepth;
 
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dwRefreshRate"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwRefreshRate;

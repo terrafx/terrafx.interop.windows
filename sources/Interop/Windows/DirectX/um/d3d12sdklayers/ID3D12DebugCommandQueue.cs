@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12DebugCommandQueue.xml' path='doc/member[@name="ID3D12DebugCommandQueue"]/*' />
 [Guid("09E0BF36-54AC-484F-8847-4BAEEAB6053A")]
 [NativeTypeName("struct ID3D12DebugCommandQueue : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D12DebugCommandQueue : ID3D12DebugCommandQueue.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D12DebugCommandQueue : ID3D12DebugCommandQueue.I
         return ((delegate* unmanaged<ID3D12DebugCommandQueue*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DebugCommandQueue*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D12DebugCommandQueue : ID3D12DebugCommandQueue.I
         return ((delegate* unmanaged<ID3D12DebugCommandQueue*, uint>)(lpVtbl[1]))((ID3D12DebugCommandQueue*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D12DebugCommandQueue : ID3D12DebugCommandQueue.I
         return ((delegate* unmanaged<ID3D12DebugCommandQueue*, uint>)(lpVtbl[2]))((ID3D12DebugCommandQueue*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12DebugCommandQueue.xml' path='doc/member[@name="ID3D12DebugCommandQueue.AssertResourceState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public BOOL AssertResourceState(ID3D12Resource* pResource, uint Subresource, uint State)

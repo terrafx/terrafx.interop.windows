@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='RenderTargetBitmapOptions.xml' path='doc/member[@name="RenderTargetBitmapOptions"]/*' />
 [SupportedOSPlatform("windows10.0.14393.0")]
 public enum RenderTargetBitmapOptions
 {
+    /// <include file='RenderTargetBitmapOptions.xml' path='doc/member[@name="RenderTargetBitmapOptions.RenderTarget"]/*' />
     RenderTarget = 0,
+
+    /// <include file='RenderTargetBitmapOptions.xml' path='doc/member[@name="RenderTargetBitmapOptions.RenderTargetAndChildren"]/*' />
     RenderTargetAndChildren = (RenderTarget + 1),
 }

@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_QUERY_HEAP_DESC.xml' path='doc/member[@name="D3D12_QUERY_HEAP_DESC"]/*' />
 public partial struct D3D12_QUERY_HEAP_DESC
 {
+    /// <include file='D3D12_QUERY_HEAP_DESC.xml' path='doc/member[@name="D3D12_QUERY_HEAP_DESC.Type"]/*' />
     public D3D12_QUERY_HEAP_TYPE Type;
 
+    /// <include file='D3D12_QUERY_HEAP_DESC.xml' path='doc/member[@name="D3D12_QUERY_HEAP_DESC.Count"]/*' />
     public uint Count;
 
+    /// <include file='D3D12_QUERY_HEAP_DESC.xml' path='doc/member[@name="D3D12_QUERY_HEAP_DESC.NodeMask"]/*' />
     public uint NodeMask;
 }

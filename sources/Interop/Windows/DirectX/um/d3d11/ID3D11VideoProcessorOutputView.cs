@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D11VideoProcessorOutputView.xml' path='doc/member[@name="ID3D11VideoProcessorOutputView"]/*' />
 [Guid("A048285E-25A9-4527-BD93-D68B68C44254")]
 [NativeTypeName("struct ID3D11VideoProcessorOutputView : ID3D11View")]
 [NativeInheritance("ID3D11View")]
@@ -19,6 +20,7 @@ public unsafe partial struct ID3D11VideoProcessorOutputView : ID3D11VideoProcess
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct ID3D11VideoProcessorOutputView : ID3D11VideoProcess
         return ((delegate* unmanaged<ID3D11VideoProcessorOutputView*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11VideoProcessorOutputView*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct ID3D11VideoProcessorOutputView : ID3D11VideoProcess
         return ((delegate* unmanaged<ID3D11VideoProcessorOutputView*, uint>)(lpVtbl[1]))((ID3D11VideoProcessorOutputView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct ID3D11VideoProcessorOutputView : ID3D11VideoProcess
         return ((delegate* unmanaged<ID3D11VideoProcessorOutputView*, uint>)(lpVtbl[2]))((ID3D11VideoProcessorOutputView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.GetDevice" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void GetDevice(ID3D11Device** ppDevice)
@@ -49,6 +54,7 @@ public unsafe partial struct ID3D11VideoProcessorOutputView : ID3D11VideoProcess
         ((delegate* unmanaged<ID3D11VideoProcessorOutputView*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11VideoProcessorOutputView*)Unsafe.AsPointer(ref this), ppDevice);
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.GetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
@@ -56,6 +62,7 @@ public unsafe partial struct ID3D11VideoProcessorOutputView : ID3D11VideoProcess
         return ((delegate* unmanaged<ID3D11VideoProcessorOutputView*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11VideoProcessorOutputView*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.SetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
@@ -63,6 +70,7 @@ public unsafe partial struct ID3D11VideoProcessorOutputView : ID3D11VideoProcess
         return ((delegate* unmanaged<ID3D11VideoProcessorOutputView*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D11VideoProcessorOutputView*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.SetPrivateDataInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
@@ -70,6 +78,7 @@ public unsafe partial struct ID3D11VideoProcessorOutputView : ID3D11VideoProcess
         return ((delegate* unmanaged<ID3D11VideoProcessorOutputView*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D11VideoProcessorOutputView*)Unsafe.AsPointer(ref this), guid, pData);
     }
 
+    /// <inheritdoc cref="ID3D11View.GetResource" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void GetResource(ID3D11Resource** ppResource)
@@ -77,6 +86,7 @@ public unsafe partial struct ID3D11VideoProcessorOutputView : ID3D11VideoProcess
         ((delegate* unmanaged<ID3D11VideoProcessorOutputView*, ID3D11Resource**, void>)(lpVtbl[7]))((ID3D11VideoProcessorOutputView*)Unsafe.AsPointer(ref this), ppResource);
     }
 
+    /// <include file='ID3D11VideoProcessorOutputView.xml' path='doc/member[@name="ID3D11VideoProcessorOutputView.GetDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public void GetDesc(D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC* pDesc)

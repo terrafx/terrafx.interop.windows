@@ -7,10 +7,12 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES"]/*' />
 public partial struct DWRITE_SHAPING_GLYPH_PROPERTIES
 {
     public ushort _bitfield;
 
+    /// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES.justification"]/*' />
     [NativeTypeName("UINT16 : 4")]
     public ushort justification
     {
@@ -27,6 +29,7 @@ public partial struct DWRITE_SHAPING_GLYPH_PROPERTIES
         }
     }
 
+    /// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES.isClusterStart"]/*' />
     [NativeTypeName("UINT16 : 1")]
     public ushort isClusterStart
     {
@@ -43,6 +46,7 @@ public partial struct DWRITE_SHAPING_GLYPH_PROPERTIES
         }
     }
 
+    /// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES.isDiacritic"]/*' />
     [NativeTypeName("UINT16 : 1")]
     public ushort isDiacritic
     {
@@ -59,6 +63,7 @@ public partial struct DWRITE_SHAPING_GLYPH_PROPERTIES
         }
     }
 
+    /// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES.isZeroWidthSpace"]/*' />
     [NativeTypeName("UINT16 : 1")]
     public ushort isZeroWidthSpace
     {
@@ -75,6 +80,7 @@ public partial struct DWRITE_SHAPING_GLYPH_PROPERTIES
         }
     }
 
+    /// <include file='DWRITE_SHAPING_GLYPH_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_GLYPH_PROPERTIES.reserved"]/*' />
     [NativeTypeName("UINT16 : 9")]
     public ushort reserved
     {

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DxcShaderHash.xml' path='doc/member[@name="DxcShaderHash"]/*' />
 public unsafe partial struct DxcShaderHash
 {
+    /// <include file='DxcShaderHash.xml' path='doc/member[@name="DxcShaderHash.Flags"]/*' />
     [NativeTypeName("UINT32")]
     public uint Flags;
 
+    /// <include file='DxcShaderHash.xml' path='doc/member[@name="DxcShaderHash.HashDigest"]/*' />
     [NativeTypeName("BYTE [16]")]
     public fixed byte HashDigest[16];
 }

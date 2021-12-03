@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteGlyphRunAnalysis.xml' path='doc/member[@name="IDWriteGlyphRunAnalysis"]/*' />
 [Guid("7D97DBF7-E085-42D4-81E3-6A883BDED118")]
 [NativeTypeName("struct IDWriteGlyphRunAnalysis : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDWriteGlyphRunAnalysis : IDWriteGlyphRunAnalysis.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDWriteGlyphRunAnalysis : IDWriteGlyphRunAnalysis.I
         return ((delegate* unmanaged<IDWriteGlyphRunAnalysis*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteGlyphRunAnalysis*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDWriteGlyphRunAnalysis : IDWriteGlyphRunAnalysis.I
         return ((delegate* unmanaged<IDWriteGlyphRunAnalysis*, uint>)(lpVtbl[1]))((IDWriteGlyphRunAnalysis*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDWriteGlyphRunAnalysis : IDWriteGlyphRunAnalysis.I
         return ((delegate* unmanaged<IDWriteGlyphRunAnalysis*, uint>)(lpVtbl[2]))((IDWriteGlyphRunAnalysis*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteGlyphRunAnalysis.xml' path='doc/member[@name="IDWriteGlyphRunAnalysis.GetAlphaTextureBounds"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetAlphaTextureBounds(DWRITE_TEXTURE_TYPE textureType, RECT* textureBounds)
@@ -47,6 +52,7 @@ public unsafe partial struct IDWriteGlyphRunAnalysis : IDWriteGlyphRunAnalysis.I
         return ((delegate* unmanaged<IDWriteGlyphRunAnalysis*, DWRITE_TEXTURE_TYPE, RECT*, int>)(lpVtbl[3]))((IDWriteGlyphRunAnalysis*)Unsafe.AsPointer(ref this), textureType, textureBounds);
     }
 
+    /// <include file='IDWriteGlyphRunAnalysis.xml' path='doc/member[@name="IDWriteGlyphRunAnalysis.CreateAlphaTexture"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreateAlphaTexture(DWRITE_TEXTURE_TYPE textureType, [NativeTypeName("const RECT *")] RECT* textureBounds, byte* alphaValues, [NativeTypeName("UINT32")] uint bufferSize)
@@ -54,6 +60,7 @@ public unsafe partial struct IDWriteGlyphRunAnalysis : IDWriteGlyphRunAnalysis.I
         return ((delegate* unmanaged<IDWriteGlyphRunAnalysis*, DWRITE_TEXTURE_TYPE, RECT*, byte*, uint, int>)(lpVtbl[4]))((IDWriteGlyphRunAnalysis*)Unsafe.AsPointer(ref this), textureType, textureBounds, alphaValues, bufferSize);
     }
 
+    /// <include file='IDWriteGlyphRunAnalysis.xml' path='doc/member[@name="IDWriteGlyphRunAnalysis.GetAlphaBlendParams"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetAlphaBlendParams(IDWriteRenderingParams* renderingParams, float* blendGamma, float* blendEnhancedContrast, float* blendClearTypeLevel)

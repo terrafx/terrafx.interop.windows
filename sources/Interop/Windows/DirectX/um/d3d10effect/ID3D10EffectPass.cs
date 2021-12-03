@@ -8,10 +8,12 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D10EffectPass.xml' path='doc/member[@name="ID3D10EffectPass"]/*' />
 public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
 {
     public void** lpVtbl;
 
+    /// <include file='ID3D10EffectPass.xml' path='doc/member[@name="ID3D10EffectPass.IsValid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public BOOL IsValid()
@@ -19,6 +21,7 @@ public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
         return ((delegate* unmanaged<ID3D10EffectPass*, int>)(lpVtbl[0]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D10EffectPass.xml' path='doc/member[@name="ID3D10EffectPass.GetDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     public HRESULT GetDesc(D3D10_PASS_DESC* pDesc)
@@ -26,6 +29,7 @@ public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
         return ((delegate* unmanaged<ID3D10EffectPass*, D3D10_PASS_DESC*, int>)(lpVtbl[1]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <include file='ID3D10EffectPass.xml' path='doc/member[@name="ID3D10EffectPass.GetVertexShaderDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     public HRESULT GetVertexShaderDesc(D3D10_PASS_SHADER_DESC* pDesc)
@@ -33,6 +37,7 @@ public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
         return ((delegate* unmanaged<ID3D10EffectPass*, D3D10_PASS_SHADER_DESC*, int>)(lpVtbl[2]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <include file='ID3D10EffectPass.xml' path='doc/member[@name="ID3D10EffectPass.GetGeometryShaderDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetGeometryShaderDesc(D3D10_PASS_SHADER_DESC* pDesc)
@@ -40,6 +45,7 @@ public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
         return ((delegate* unmanaged<ID3D10EffectPass*, D3D10_PASS_SHADER_DESC*, int>)(lpVtbl[3]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <include file='ID3D10EffectPass.xml' path='doc/member[@name="ID3D10EffectPass.GetPixelShaderDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPixelShaderDesc(D3D10_PASS_SHADER_DESC* pDesc)
@@ -47,6 +53,7 @@ public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
         return ((delegate* unmanaged<ID3D10EffectPass*, D3D10_PASS_SHADER_DESC*, int>)(lpVtbl[4]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <include file='ID3D10EffectPass.xml' path='doc/member[@name="ID3D10EffectPass.GetAnnotationByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public ID3D10EffectVariable* GetAnnotationByIndex(uint Index)
@@ -54,6 +61,7 @@ public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
         return ((delegate* unmanaged<ID3D10EffectPass*, uint, ID3D10EffectVariable*>)(lpVtbl[5]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), Index);
     }
 
+    /// <include file='ID3D10EffectPass.xml' path='doc/member[@name="ID3D10EffectPass.GetAnnotationByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public ID3D10EffectVariable* GetAnnotationByName([NativeTypeName("LPCSTR")] sbyte* Name)
@@ -61,6 +69,7 @@ public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
         return ((delegate* unmanaged<ID3D10EffectPass*, sbyte*, ID3D10EffectVariable*>)(lpVtbl[6]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <include file='ID3D10EffectPass.xml' path='doc/member[@name="ID3D10EffectPass.Apply"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Apply(uint Flags)
@@ -68,6 +77,7 @@ public unsafe partial struct ID3D10EffectPass : ID3D10EffectPass.Interface
         return ((delegate* unmanaged<ID3D10EffectPass*, uint, int>)(lpVtbl[7]))((ID3D10EffectPass*)Unsafe.AsPointer(ref this), Flags);
     }
 
+    /// <include file='ID3D10EffectPass.xml' path='doc/member[@name="ID3D10EffectPass.ComputeStateBlockMask"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT ComputeStateBlockMask(D3D10_STATE_BLOCK_MASK* pStateBlockMask)

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_OUTLINE_THRESHOLD.xml' path='doc/member[@name="DWRITE_OUTLINE_THRESHOLD"]/*' />
 public enum DWRITE_OUTLINE_THRESHOLD
 {
+    /// <include file='DWRITE_OUTLINE_THRESHOLD.xml' path='doc/member[@name="DWRITE_OUTLINE_THRESHOLD.DWRITE_OUTLINE_THRESHOLD_ANTIALIASED"]/*' />
     DWRITE_OUTLINE_THRESHOLD_ANTIALIASED,
+
+    /// <include file='DWRITE_OUTLINE_THRESHOLD.xml' path='doc/member[@name="DWRITE_OUTLINE_THRESHOLD.DWRITE_OUTLINE_THRESHOLD_ALIASED"]/*' />
     DWRITE_OUTLINE_THRESHOLD_ALIASED,
 }

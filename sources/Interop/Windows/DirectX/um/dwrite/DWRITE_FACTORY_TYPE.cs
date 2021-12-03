@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_FACTORY_TYPE.xml' path='doc/member[@name="DWRITE_FACTORY_TYPE"]/*' />
 public enum DWRITE_FACTORY_TYPE
 {
+    /// <include file='DWRITE_FACTORY_TYPE.xml' path='doc/member[@name="DWRITE_FACTORY_TYPE.DWRITE_FACTORY_TYPE_SHARED"]/*' />
     DWRITE_FACTORY_TYPE_SHARED,
+
+    /// <include file='DWRITE_FACTORY_TYPE.xml' path='doc/member[@name="DWRITE_FACTORY_TYPE.DWRITE_FACTORY_TYPE_ISOLATED"]/*' />
     DWRITE_FACTORY_TYPE_ISOLATED,
 }

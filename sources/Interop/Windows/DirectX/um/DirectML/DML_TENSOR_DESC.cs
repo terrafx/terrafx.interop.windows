@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_TENSOR_DESC.xml' path='doc/member[@name="DML_TENSOR_DESC"]/*' />
 public unsafe partial struct DML_TENSOR_DESC
 {
+    /// <include file='DML_TENSOR_DESC.xml' path='doc/member[@name="DML_TENSOR_DESC.Type"]/*' />
     public DML_TENSOR_TYPE Type;
 
+    /// <include file='DML_TENSOR_DESC.xml' path='doc/member[@name="DML_TENSOR_DESC.Desc"]/*' />
     [NativeTypeName("const void *")]
     public void* Desc;
 }

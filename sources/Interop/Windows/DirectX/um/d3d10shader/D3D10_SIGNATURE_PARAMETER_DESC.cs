@@ -5,22 +5,30 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_SIGNATURE_PARAMETER_DESC.xml' path='doc/member[@name="D3D10_SIGNATURE_PARAMETER_DESC"]/*' />
 public unsafe partial struct D3D10_SIGNATURE_PARAMETER_DESC
 {
+    /// <include file='D3D10_SIGNATURE_PARAMETER_DESC.xml' path='doc/member[@name="D3D10_SIGNATURE_PARAMETER_DESC.SemanticName"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* SemanticName;
 
+    /// <include file='D3D10_SIGNATURE_PARAMETER_DESC.xml' path='doc/member[@name="D3D10_SIGNATURE_PARAMETER_DESC.SemanticIndex"]/*' />
     public uint SemanticIndex;
 
+    /// <include file='D3D10_SIGNATURE_PARAMETER_DESC.xml' path='doc/member[@name="D3D10_SIGNATURE_PARAMETER_DESC.Register"]/*' />
     public uint Register;
 
+    /// <include file='D3D10_SIGNATURE_PARAMETER_DESC.xml' path='doc/member[@name="D3D10_SIGNATURE_PARAMETER_DESC.SystemValueType"]/*' />
     [NativeTypeName("D3D10_NAME")]
     public D3D_NAME SystemValueType;
 
+    /// <include file='D3D10_SIGNATURE_PARAMETER_DESC.xml' path='doc/member[@name="D3D10_SIGNATURE_PARAMETER_DESC.ComponentType"]/*' />
     [NativeTypeName("D3D10_REGISTER_COMPONENT_TYPE")]
     public D3D_REGISTER_COMPONENT_TYPE ComponentType;
 
+    /// <include file='D3D10_SIGNATURE_PARAMETER_DESC.xml' path='doc/member[@name="D3D10_SIGNATURE_PARAMETER_DESC.Mask"]/*' />
     public byte Mask;
 
+    /// <include file='D3D10_SIGNATURE_PARAMETER_DESC.xml' path='doc/member[@name="D3D10_SIGNATURE_PARAMETER_DESC.ReadWriteMask"]/*' />
     public byte ReadWriteMask;
 }

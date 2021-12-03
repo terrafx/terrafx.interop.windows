@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService"]/*' />
 [Guid("A593B11A-D17F-48BB-8F66-83910731C8A5")]
 [NativeTypeName("struct IVisualTreeService : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface
         return ((delegate* unmanaged<IVisualTreeService*, Guid*, void**, int>)(lpVtbl[0]))((IVisualTreeService*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface
         return ((delegate* unmanaged<IVisualTreeService*, uint>)(lpVtbl[1]))((IVisualTreeService*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface
         return ((delegate* unmanaged<IVisualTreeService*, uint>)(lpVtbl[2]))((IVisualTreeService*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.AdviseVisualTreeChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AdviseVisualTreeChange(IVisualTreeServiceCallback* pCallback)
@@ -49,6 +54,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface
         return ((delegate* unmanaged<IVisualTreeService*, IVisualTreeServiceCallback*, int>)(lpVtbl[3]))((IVisualTreeService*)Unsafe.AsPointer(ref this), pCallback);
     }
 
+    /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.UnadviseVisualTreeChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UnadviseVisualTreeChange(IVisualTreeServiceCallback* pCallback)
@@ -56,6 +62,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface
         return ((delegate* unmanaged<IVisualTreeService*, IVisualTreeServiceCallback*, int>)(lpVtbl[4]))((IVisualTreeService*)Unsafe.AsPointer(ref this), pCallback);
     }
 
+    /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.GetEnums"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetEnums([NativeTypeName("unsigned int *")] uint* pCount, EnumType** ppEnums)
@@ -63,6 +70,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface
         return ((delegate* unmanaged<IVisualTreeService*, uint*, EnumType**, int>)(lpVtbl[5]))((IVisualTreeService*)Unsafe.AsPointer(ref this), pCount, ppEnums);
     }
 
+    /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.CreateInstance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CreateInstance([NativeTypeName("BSTR")] ushort* typeName, [NativeTypeName("BSTR")] ushort* value, InstanceHandle* pInstanceHandle)
@@ -70,6 +78,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface
         return ((delegate* unmanaged<IVisualTreeService*, ushort*, ushort*, InstanceHandle*, int>)(lpVtbl[6]))((IVisualTreeService*)Unsafe.AsPointer(ref this), typeName, value, pInstanceHandle);
     }
 
+    /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.GetPropertyValuesChain"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetPropertyValuesChain(InstanceHandle instanceHandle, [NativeTypeName("unsigned int *")] uint* pSourceCount, PropertyChainSource** ppPropertySources, [NativeTypeName("unsigned int *")] uint* pPropertyCount, PropertyChainValue** ppPropertyValues)
@@ -77,6 +86,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface
         return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint*, PropertyChainSource**, uint*, PropertyChainValue**, int>)(lpVtbl[7]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, pSourceCount, ppPropertySources, pPropertyCount, ppPropertyValues);
     }
 
+    /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.SetProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetProperty(InstanceHandle instanceHandle, InstanceHandle value, [NativeTypeName("unsigned int")] uint propertyIndex)
@@ -84,6 +94,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface
         return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, InstanceHandle, uint, int>)(lpVtbl[8]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, value, propertyIndex);
     }
 
+    /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.ClearProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT ClearProperty(InstanceHandle instanceHandle, [NativeTypeName("unsigned int")] uint propertyIndex)
@@ -91,6 +102,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface
         return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint, int>)(lpVtbl[9]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, propertyIndex);
     }
 
+    /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.GetCollectionCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetCollectionCount(InstanceHandle instanceHandle, [NativeTypeName("unsigned int *")] uint* pCollectionSize)
@@ -98,6 +110,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface
         return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint*, int>)(lpVtbl[10]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, pCollectionSize);
     }
 
+    /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.GetCollectionElements"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetCollectionElements(InstanceHandle instanceHandle, [NativeTypeName("unsigned int")] uint startIndex, [NativeTypeName("unsigned int *")] uint* pElementCount, CollectionElementValue** ppElementValues)
@@ -105,6 +118,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface
         return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint, uint*, CollectionElementValue**, int>)(lpVtbl[11]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, startIndex, pElementCount, ppElementValues);
     }
 
+    /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.AddChild"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT AddChild(InstanceHandle parent, InstanceHandle child, [NativeTypeName("unsigned int")] uint index)
@@ -112,6 +126,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface
         return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, InstanceHandle, uint, int>)(lpVtbl[12]))((IVisualTreeService*)Unsafe.AsPointer(ref this), parent, child, index);
     }
 
+    /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.RemoveChild"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT RemoveChild(InstanceHandle parent, [NativeTypeName("unsigned int")] uint index)
@@ -119,6 +134,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface
         return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint, int>)(lpVtbl[13]))((IVisualTreeService*)Unsafe.AsPointer(ref this), parent, index);
     }
 
+    /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.ClearChildren"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT ClearChildren(InstanceHandle parent)

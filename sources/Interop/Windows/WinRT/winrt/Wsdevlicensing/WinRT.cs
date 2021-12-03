@@ -10,12 +10,15 @@ namespace TerraFX.Interop.WinRT;
 
 public static unsafe partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.CheckDeveloperLicense"]/*' />
     [DllImport("wsclient", ExactSpelling = true)]
     public static extern HRESULT CheckDeveloperLicense(FILETIME* pExpiration);
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.AcquireDeveloperLicense"]/*' />
     [DllImport("wsclient", ExactSpelling = true)]
     public static extern HRESULT AcquireDeveloperLicense(HWND hwndParent, FILETIME* pExpiration);
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RemoveDeveloperLicense"]/*' />
     [DllImport("wsclient", ExactSpelling = true)]
     public static extern HRESULT RemoveDeveloperLicense(HWND hwndParent);
 }

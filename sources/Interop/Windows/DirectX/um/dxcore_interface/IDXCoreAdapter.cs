@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter"]/*' />
 [Guid("F0DB4C7F-FE5A-42A2-BD62-F2A6CF6FC83E")]
 [NativeTypeName("struct IDXCoreAdapter : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
         return ((delegate* unmanaged<IDXCoreAdapter*, Guid*, void**, int>)(lpVtbl[0]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
         return ((delegate* unmanaged<IDXCoreAdapter*, uint>)(lpVtbl[1]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
         return ((delegate* unmanaged<IDXCoreAdapter*, uint>)(lpVtbl[2]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.IsValid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public bool IsValid()
@@ -49,6 +54,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapter*, byte>)(lpVtbl[3]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this)) != 0;
     }
 
+    /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.IsAttributeSupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public bool IsAttributeSupported([NativeTypeName("const GUID &")] Guid* attributeGUID)
@@ -56,6 +62,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
         return ((delegate* unmanaged<IDXCoreAdapter*, Guid*, byte>)(lpVtbl[4]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), attributeGUID) != 0;
     }
 
+    /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.IsPropertySupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public bool IsPropertySupported(DXCoreAdapterProperty property)
@@ -63,6 +70,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapter*, DXCoreAdapterProperty, byte>)(lpVtbl[5]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
     }
 
+    /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.GetProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetProperty(DXCoreAdapterProperty property, [NativeTypeName("size_t")] nuint bufferSize, void* propertyData)
@@ -70,6 +78,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
         return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, nuint, void*, int>)(lpVtbl[6]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property, bufferSize, propertyData);
     }
 
+    /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.GetPropertySize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetPropertySize(DXCoreAdapterProperty property, [NativeTypeName("size_t *")] nuint* bufferSize)
@@ -77,6 +86,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
         return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, nuint*, int>)(lpVtbl[7]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property, bufferSize);
     }
 
+    /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.IsQueryStateSupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public bool IsQueryStateSupported(DXCoreAdapterState property)
@@ -84,6 +94,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapter*, DXCoreAdapterState, byte>)(lpVtbl[8]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
     }
 
+    /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.QueryState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT QueryState(DXCoreAdapterState state, [NativeTypeName("size_t")] nuint inputStateDetailsSize, [NativeTypeName("const void *")] void* inputStateDetails, [NativeTypeName("size_t")] nuint outputBufferSize, void* outputBuffer)
@@ -91,6 +102,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
         return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, nuint, void*, nuint, void*, int>)(lpVtbl[9]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), state, inputStateDetailsSize, inputStateDetails, outputBufferSize, outputBuffer);
     }
 
+    /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.IsSetStateSupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public bool IsSetStateSupported(DXCoreAdapterState property)
@@ -98,6 +110,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapter*, DXCoreAdapterState, byte>)(lpVtbl[10]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
     }
 
+    /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.SetState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetState(DXCoreAdapterState state, [NativeTypeName("size_t")] nuint inputStateDetailsSize, [NativeTypeName("const void *")] void* inputStateDetails, [NativeTypeName("size_t")] nuint inputDataSize, [NativeTypeName("const void *")] void* inputData)
@@ -105,6 +118,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
         return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, nuint, void*, nuint, void*, int>)(lpVtbl[11]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), state, inputStateDetailsSize, inputStateDetails, inputDataSize, inputData);
     }
 
+    /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.GetFactory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetFactory([NativeTypeName("const IID &")] Guid* riid, void** ppvFactory)

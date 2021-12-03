@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_TEXTURE_LAYOUT.xml' path='doc/member[@name="D3D11_TEXTURE_LAYOUT"]/*' />
 public enum D3D11_TEXTURE_LAYOUT
 {
+    /// <include file='D3D11_TEXTURE_LAYOUT.xml' path='doc/member[@name="D3D11_TEXTURE_LAYOUT.D3D11_TEXTURE_LAYOUT_UNDEFINED"]/*' />
     D3D11_TEXTURE_LAYOUT_UNDEFINED = 0,
+
+    /// <include file='D3D11_TEXTURE_LAYOUT.xml' path='doc/member[@name="D3D11_TEXTURE_LAYOUT.D3D11_TEXTURE_LAYOUT_ROW_MAJOR"]/*' />
     D3D11_TEXTURE_LAYOUT_ROW_MAJOR = 1,
+
+    /// <include file='D3D11_TEXTURE_LAYOUT.xml' path='doc/member[@name="D3D11_TEXTURE_LAYOUT.D3D11_TEXTURE_LAYOUT_64K_STANDARD_SWIZZLE"]/*' />
     D3D11_TEXTURE_LAYOUT_64K_STANDARD_SWIZZLE = 2,
 }

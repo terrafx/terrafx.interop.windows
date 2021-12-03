@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_FEATURE.xml' path='doc/member[@name="DML_FEATURE"]/*' />
 public enum DML_FEATURE
 {
+    /// <include file='DML_FEATURE.xml' path='doc/member[@name="DML_FEATURE.DML_FEATURE_TENSOR_DATA_TYPE_SUPPORT"]/*' />
     DML_FEATURE_TENSOR_DATA_TYPE_SUPPORT,
+
+    /// <include file='DML_FEATURE.xml' path='doc/member[@name="DML_FEATURE.DML_FEATURE_FEATURE_LEVELS"]/*' />
     DML_FEATURE_FEATURE_LEVELS,
 }

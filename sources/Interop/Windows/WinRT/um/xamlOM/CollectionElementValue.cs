@@ -7,18 +7,23 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='CollectionElementValue.xml' path='doc/member[@name="CollectionElementValue"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct CollectionElementValue
 {
+    /// <include file='CollectionElementValue.xml' path='doc/member[@name="CollectionElementValue.Index"]/*' />
     [NativeTypeName("unsigned int")]
     public uint Index;
 
+    /// <include file='CollectionElementValue.xml' path='doc/member[@name="CollectionElementValue.ValueType"]/*' />
     [NativeTypeName("BSTR")]
     public ushort* ValueType;
 
+    /// <include file='CollectionElementValue.xml' path='doc/member[@name="CollectionElementValue.Value"]/*' />
     [NativeTypeName("BSTR")]
     public ushort* Value;
 
+    /// <include file='CollectionElementValue.xml' path='doc/member[@name="CollectionElementValue.MetadataBits"]/*' />
     [NativeTypeName("long long")]
     public long MetadataBits;
 }

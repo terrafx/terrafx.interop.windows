@@ -5,17 +5,24 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_DESCRIPTOR_RANGE1.xml' path='doc/member[@name="D3D12_DESCRIPTOR_RANGE1"]/*' />
 public partial struct D3D12_DESCRIPTOR_RANGE1
 {
+    /// <include file='D3D12_DESCRIPTOR_RANGE1.xml' path='doc/member[@name="D3D12_DESCRIPTOR_RANGE1.RangeType"]/*' />
     public D3D12_DESCRIPTOR_RANGE_TYPE RangeType;
 
+    /// <include file='D3D12_DESCRIPTOR_RANGE1.xml' path='doc/member[@name="D3D12_DESCRIPTOR_RANGE1.NumDescriptors"]/*' />
     public uint NumDescriptors;
 
+    /// <include file='D3D12_DESCRIPTOR_RANGE1.xml' path='doc/member[@name="D3D12_DESCRIPTOR_RANGE1.BaseShaderRegister"]/*' />
     public uint BaseShaderRegister;
 
+    /// <include file='D3D12_DESCRIPTOR_RANGE1.xml' path='doc/member[@name="D3D12_DESCRIPTOR_RANGE1.RegisterSpace"]/*' />
     public uint RegisterSpace;
 
+    /// <include file='D3D12_DESCRIPTOR_RANGE1.xml' path='doc/member[@name="D3D12_DESCRIPTOR_RANGE1.Flags"]/*' />
     public D3D12_DESCRIPTOR_RANGE_FLAGS Flags;
 
+    /// <include file='D3D12_DESCRIPTOR_RANGE1.xml' path='doc/member[@name="D3D12_DESCRIPTOR_RANGE1.OffsetInDescriptorsFromTableStart"]/*' />
     public uint OffsetInDescriptorsFromTableStart;
 }

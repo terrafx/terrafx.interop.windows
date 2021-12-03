@@ -11,6 +11,7 @@ namespace TerraFX.Interop.WinRT;
 
 public static unsafe partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.MetaDataGetDispenser"]/*' />
     [DllImport("rometadata", ExactSpelling = true)]
     public static extern HRESULT MetaDataGetDispenser([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
 }

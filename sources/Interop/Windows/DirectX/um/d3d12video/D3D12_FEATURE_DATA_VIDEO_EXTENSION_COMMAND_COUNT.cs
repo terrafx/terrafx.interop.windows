@@ -7,10 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_COUNT.xml' path='doc/member[@name="D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_COUNT"]/*' />
 [SupportedOSPlatform("windows10.0.19041.0")]
 public partial struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_COUNT
 {
+    /// <include file='D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_COUNT.xml' path='doc/member[@name="D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_COUNT.NodeIndex"]/*' />
     public uint NodeIndex;
 
+    /// <include file='D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_COUNT.xml' path='doc/member[@name="D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_COUNT.CommandCount"]/*' />
     public uint CommandCount;
 }

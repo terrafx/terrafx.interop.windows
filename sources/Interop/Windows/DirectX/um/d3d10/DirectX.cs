@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D10CalcSubresource"]/*' />
     public static uint D3D10CalcSubresource(uint MipSlice, uint ArraySlice, uint MipLevels)
     {
         return MipSlice + ArraySlice * MipLevels;

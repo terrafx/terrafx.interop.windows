@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_LIFETIME_STATE.xml' path='doc/member[@name="D3D12_LIFETIME_STATE"]/*' />
 public enum D3D12_LIFETIME_STATE
 {
+    /// <include file='D3D12_LIFETIME_STATE.xml' path='doc/member[@name="D3D12_LIFETIME_STATE.D3D12_LIFETIME_STATE_IN_USE"]/*' />
     D3D12_LIFETIME_STATE_IN_USE = 0,
+
+    /// <include file='D3D12_LIFETIME_STATE.xml' path='doc/member[@name="D3D12_LIFETIME_STATE.D3D12_LIFETIME_STATE_NOT_IN_USE"]/*' />
     D3D12_LIFETIME_STATE_NOT_IN_USE = (D3D12_LIFETIME_STATE_IN_USE + 1),
 }

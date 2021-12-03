@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D11Query1.xml' path='doc/member[@name="ID3D11Query1"]/*' />
 [Guid("631B4766-36DC-461D-8DB6-C47E13E60916")]
 [NativeTypeName("struct ID3D11Query1 : ID3D11Query")]
 [NativeInheritance("ID3D11Query")]
@@ -19,6 +20,7 @@ public unsafe partial struct ID3D11Query1 : ID3D11Query1.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct ID3D11Query1 : ID3D11Query1.Interface
         return ((delegate* unmanaged<ID3D11Query1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11Query1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct ID3D11Query1 : ID3D11Query1.Interface
         return ((delegate* unmanaged<ID3D11Query1*, uint>)(lpVtbl[1]))((ID3D11Query1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct ID3D11Query1 : ID3D11Query1.Interface
         return ((delegate* unmanaged<ID3D11Query1*, uint>)(lpVtbl[2]))((ID3D11Query1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.GetDevice" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void GetDevice(ID3D11Device** ppDevice)
@@ -49,6 +54,7 @@ public unsafe partial struct ID3D11Query1 : ID3D11Query1.Interface
         ((delegate* unmanaged<ID3D11Query1*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11Query1*)Unsafe.AsPointer(ref this), ppDevice);
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.GetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
@@ -56,6 +62,7 @@ public unsafe partial struct ID3D11Query1 : ID3D11Query1.Interface
         return ((delegate* unmanaged<ID3D11Query1*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11Query1*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.SetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
@@ -63,6 +70,7 @@ public unsafe partial struct ID3D11Query1 : ID3D11Query1.Interface
         return ((delegate* unmanaged<ID3D11Query1*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D11Query1*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.SetPrivateDataInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
@@ -70,6 +78,7 @@ public unsafe partial struct ID3D11Query1 : ID3D11Query1.Interface
         return ((delegate* unmanaged<ID3D11Query1*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D11Query1*)Unsafe.AsPointer(ref this), guid, pData);
     }
 
+    /// <inheritdoc cref="ID3D11Asynchronous.GetDataSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public uint GetDataSize()
@@ -77,6 +86,7 @@ public unsafe partial struct ID3D11Query1 : ID3D11Query1.Interface
         return ((delegate* unmanaged<ID3D11Query1*, uint>)(lpVtbl[7]))((ID3D11Query1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D11Query.GetDesc" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public void GetDesc(D3D11_QUERY_DESC* pDesc)
@@ -84,6 +94,7 @@ public unsafe partial struct ID3D11Query1 : ID3D11Query1.Interface
         ((delegate* unmanaged<ID3D11Query1*, D3D11_QUERY_DESC*, void>)(lpVtbl[8]))((ID3D11Query1*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <include file='ID3D11Query1.xml' path='doc/member[@name="ID3D11Query1.GetDesc1"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public void GetDesc1(D3D11_QUERY_DESC1* pDesc1)

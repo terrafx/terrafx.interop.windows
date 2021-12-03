@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteNumberSubstitution.xml' path='doc/member[@name="IDWriteNumberSubstitution"]/*' />
 [Guid("14885CC9-BAB0-4F90-B6ED-5C366A2CD03D")]
 [NativeTypeName("struct IDWriteNumberSubstitution : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDWriteNumberSubstitution : IDWriteNumberSubstituti
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDWriteNumberSubstitution : IDWriteNumberSubstituti
         return ((delegate* unmanaged<IDWriteNumberSubstitution*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteNumberSubstitution*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDWriteNumberSubstitution : IDWriteNumberSubstituti
         return ((delegate* unmanaged<IDWriteNumberSubstitution*, uint>)(lpVtbl[1]))((IDWriteNumberSubstitution*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]

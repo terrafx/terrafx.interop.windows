@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary"]/*' />
 [Guid("E5204DC7-D18C-4C3C-BDFB-851673980FE7")]
 [NativeTypeName("struct IDxcLibrary : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface
         return ((delegate* unmanaged<IDxcLibrary*, Guid*, void**, int>)(lpVtbl[0]))((IDxcLibrary*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface
         return ((delegate* unmanaged<IDxcLibrary*, uint>)(lpVtbl[1]))((IDxcLibrary*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface
         return ((delegate* unmanaged<IDxcLibrary*, uint>)(lpVtbl[2]))((IDxcLibrary*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.SetMalloc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetMalloc(IMalloc* pMalloc)
@@ -47,6 +52,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface
         return ((delegate* unmanaged<IDxcLibrary*, IMalloc*, int>)(lpVtbl[3]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pMalloc);
     }
 
+    /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.CreateBlobFromBlob"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreateBlobFromBlob(IDxcBlob* pBlob, [NativeTypeName("UINT32")] uint offset, [NativeTypeName("UINT32")] uint length, IDxcBlob** ppResult)
@@ -54,6 +60,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface
         return ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)(lpVtbl[4]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pBlob, offset, length, ppResult);
     }
 
+    /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.CreateBlobFromFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CreateBlobFromFile([NativeTypeName("LPCWSTR")] ushort* pFileName, [NativeTypeName("UINT32 *")] uint* codePage, IDxcBlobEncoding** pBlobEncoding)
@@ -61,6 +68,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface
         return ((delegate* unmanaged<IDxcLibrary*, ushort*, uint*, IDxcBlobEncoding**, int>)(lpVtbl[5]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pFileName, codePage, pBlobEncoding);
     }
 
+    /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.CreateBlobWithEncodingFromPinned"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CreateBlobWithEncodingFromPinned([NativeTypeName("LPCVOID")] void* pText, [NativeTypeName("UINT32")] uint size, [NativeTypeName("UINT32")] uint codePage, IDxcBlobEncoding** pBlobEncoding)
@@ -68,6 +76,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface
         return ((delegate* unmanaged<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)(lpVtbl[6]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pText, size, codePage, pBlobEncoding);
     }
 
+    /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.CreateBlobWithEncodingOnHeapCopy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT CreateBlobWithEncodingOnHeapCopy([NativeTypeName("LPCVOID")] void* pText, [NativeTypeName("UINT32")] uint size, [NativeTypeName("UINT32")] uint codePage, IDxcBlobEncoding** pBlobEncoding)
@@ -75,6 +84,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface
         return ((delegate* unmanaged<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)(lpVtbl[7]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pText, size, codePage, pBlobEncoding);
     }
 
+    /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.CreateBlobWithEncodingOnMalloc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT CreateBlobWithEncodingOnMalloc([NativeTypeName("LPCVOID")] void* pText, IMalloc* pIMalloc, [NativeTypeName("UINT32")] uint size, [NativeTypeName("UINT32")] uint codePage, IDxcBlobEncoding** pBlobEncoding)
@@ -82,6 +92,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface
         return ((delegate* unmanaged<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)(lpVtbl[8]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pText, pIMalloc, size, codePage, pBlobEncoding);
     }
 
+    /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.CreateIncludeHandler"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT CreateIncludeHandler(IDxcIncludeHandler** ppResult)
@@ -89,6 +100,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface
         return ((delegate* unmanaged<IDxcLibrary*, IDxcIncludeHandler**, int>)(lpVtbl[9]))((IDxcLibrary*)Unsafe.AsPointer(ref this), ppResult);
     }
 
+    /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.CreateStreamFromBlobReadOnly"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT CreateStreamFromBlobReadOnly(IDxcBlob* pBlob, IStream** ppStream)
@@ -96,6 +108,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface
         return ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, IStream**, int>)(lpVtbl[10]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pBlob, ppStream);
     }
 
+    /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.GetBlobAsUtf8"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetBlobAsUtf8(IDxcBlob* pBlob, IDxcBlobEncoding** pBlobEncoding)
@@ -103,6 +116,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface
         return ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)(lpVtbl[11]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pBlob, pBlobEncoding);
     }
 
+    /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.GetBlobAsUtf16"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetBlobAsUtf16(IDxcBlob* pBlob, IDxcBlobEncoding** pBlobEncoding)

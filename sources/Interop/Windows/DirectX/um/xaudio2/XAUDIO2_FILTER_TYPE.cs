@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='XAUDIO2_FILTER_TYPE.xml' path='doc/member[@name="XAUDIO2_FILTER_TYPE"]/*' />
 public enum XAUDIO2_FILTER_TYPE
 {
+    /// <include file='XAUDIO2_FILTER_TYPE.xml' path='doc/member[@name="XAUDIO2_FILTER_TYPE.LowPassFilter"]/*' />
     LowPassFilter,
+
+    /// <include file='XAUDIO2_FILTER_TYPE.xml' path='doc/member[@name="XAUDIO2_FILTER_TYPE.BandPassFilter"]/*' />
     BandPassFilter,
+
+    /// <include file='XAUDIO2_FILTER_TYPE.xml' path='doc/member[@name="XAUDIO2_FILTER_TYPE.HighPassFilter"]/*' />
     HighPassFilter,
+
+    /// <include file='XAUDIO2_FILTER_TYPE.xml' path='doc/member[@name="XAUDIO2_FILTER_TYPE.NotchFilter"]/*' />
     NotchFilter,
+
+    /// <include file='XAUDIO2_FILTER_TYPE.xml' path='doc/member[@name="XAUDIO2_FILTER_TYPE.LowPassOnePoleFilter"]/*' />
     LowPassOnePoleFilter,
+
+    /// <include file='XAUDIO2_FILTER_TYPE.xml' path='doc/member[@name="XAUDIO2_FILTER_TYPE.HighPassOnePoleFilter"]/*' />
     HighPassOnePoleFilter,
 }

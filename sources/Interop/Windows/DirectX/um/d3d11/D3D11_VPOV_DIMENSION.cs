@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_VPOV_DIMENSION.xml' path='doc/member[@name="D3D11_VPOV_DIMENSION"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum D3D11_VPOV_DIMENSION
 {
+    /// <include file='D3D11_VPOV_DIMENSION.xml' path='doc/member[@name="D3D11_VPOV_DIMENSION.D3D11_VPOV_DIMENSION_UNKNOWN"]/*' />
     D3D11_VPOV_DIMENSION_UNKNOWN = 0,
+
+    /// <include file='D3D11_VPOV_DIMENSION.xml' path='doc/member[@name="D3D11_VPOV_DIMENSION.D3D11_VPOV_DIMENSION_TEXTURE2D"]/*' />
     D3D11_VPOV_DIMENSION_TEXTURE2D = 1,
+
+    /// <include file='D3D11_VPOV_DIMENSION.xml' path='doc/member[@name="D3D11_VPOV_DIMENSION.D3D11_VPOV_DIMENSION_TEXTURE2DARRAY"]/*' />
     D3D11_VPOV_DIMENSION_TEXTURE2DARRAY = 2,
 }

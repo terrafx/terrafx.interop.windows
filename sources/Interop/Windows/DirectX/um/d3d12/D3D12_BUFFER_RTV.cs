@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_BUFFER_RTV.xml' path='doc/member[@name="D3D12_BUFFER_RTV"]/*' />
 public partial struct D3D12_BUFFER_RTV
 {
+    /// <include file='D3D12_BUFFER_RTV.xml' path='doc/member[@name="D3D12_BUFFER_RTV.FirstElement"]/*' />
     [NativeTypeName("UINT64")]
     public ulong FirstElement;
 
+    /// <include file='D3D12_BUFFER_RTV.xml' path='doc/member[@name="D3D12_BUFFER_RTV.NumElements"]/*' />
     public uint NumElements;
 }

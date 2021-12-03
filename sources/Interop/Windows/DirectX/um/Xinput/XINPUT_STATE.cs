@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='XINPUT_STATE.xml' path='doc/member[@name="XINPUT_STATE"]/*' />
 public partial struct XINPUT_STATE
 {
+    /// <include file='XINPUT_STATE.xml' path='doc/member[@name="XINPUT_STATE.dwPacketNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwPacketNumber;
 
+    /// <include file='XINPUT_STATE.xml' path='doc/member[@name="XINPUT_STATE.Gamepad"]/*' />
     public XINPUT_GAMEPAD Gamepad;
 }

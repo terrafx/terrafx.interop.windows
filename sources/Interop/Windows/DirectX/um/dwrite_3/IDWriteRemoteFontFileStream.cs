@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteRemoteFontFileStream.xml' path='doc/member[@name="IDWriteRemoteFontFileStream"]/*' />
 [Guid("4DB3757A-2C72-4ED9-B2B6-1ABABE1AFF9C")]
 [NativeTypeName("struct IDWriteRemoteFontFileStream : IDWriteFontFileStream")]
 [NativeInheritance("IDWriteFontFileStream")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
         return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
         return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, uint>)(lpVtbl[1]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
         return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, uint>)(lpVtbl[2]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDWriteFontFileStream.ReadFileFragment" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ReadFileFragment([NativeTypeName("const void **")] void** fragmentStart, [NativeTypeName("UINT64")] ulong fileOffset, [NativeTypeName("UINT64")] ulong fragmentSize, void** fragmentContext)
@@ -47,6 +52,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
         return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, void**, ulong, ulong, void**, int>)(lpVtbl[3]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), fragmentStart, fileOffset, fragmentSize, fragmentContext);
     }
 
+    /// <inheritdoc cref="IDWriteFontFileStream.ReleaseFileFragment" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void ReleaseFileFragment(void* fragmentContext)
@@ -54,6 +60,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
         ((delegate* unmanaged<IDWriteRemoteFontFileStream*, void*, void>)(lpVtbl[4]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), fragmentContext);
     }
 
+    /// <inheritdoc cref="IDWriteFontFileStream.GetFileSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetFileSize([NativeTypeName("UINT64 *")] ulong* fileSize)
@@ -61,6 +68,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
         return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, ulong*, int>)(lpVtbl[5]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), fileSize);
     }
 
+    /// <inheritdoc cref="IDWriteFontFileStream.GetLastWriteTime" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetLastWriteTime([NativeTypeName("UINT64 *")] ulong* lastWriteTime)
@@ -68,6 +76,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
         return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, ulong*, int>)(lpVtbl[6]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), lastWriteTime);
     }
 
+    /// <include file='IDWriteRemoteFontFileStream.xml' path='doc/member[@name="IDWriteRemoteFontFileStream.GetLocalFileSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetLocalFileSize([NativeTypeName("UINT64 *")] ulong* localFileSize)
@@ -75,6 +84,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
         return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, ulong*, int>)(lpVtbl[7]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), localFileSize);
     }
 
+    /// <include file='IDWriteRemoteFontFileStream.xml' path='doc/member[@name="IDWriteRemoteFontFileStream.GetFileFragmentLocality"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetFileFragmentLocality([NativeTypeName("UINT64")] ulong fileOffset, [NativeTypeName("UINT64")] ulong fragmentSize, BOOL* isLocal, [NativeTypeName("UINT64 *")] ulong* partialSize)
@@ -82,6 +92,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
         return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, ulong, ulong, BOOL*, ulong*, int>)(lpVtbl[8]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), fileOffset, fragmentSize, isLocal, partialSize);
     }
 
+    /// <include file='IDWriteRemoteFontFileStream.xml' path='doc/member[@name="IDWriteRemoteFontFileStream.GetLocality"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public DWRITE_LOCALITY GetLocality()
@@ -89,6 +100,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
         return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, DWRITE_LOCALITY>)(lpVtbl[9]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteRemoteFontFileStream.xml' path='doc/member[@name="IDWriteRemoteFontFileStream.BeginDownload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT BeginDownload([NativeTypeName("const UUID *")] Guid* downloadOperationID, [NativeTypeName("const DWRITE_FILE_FRAGMENT *")] DWRITE_FILE_FRAGMENT* fileFragments, [NativeTypeName("UINT32")] uint fragmentCount, IDWriteAsyncResult** asyncResult)

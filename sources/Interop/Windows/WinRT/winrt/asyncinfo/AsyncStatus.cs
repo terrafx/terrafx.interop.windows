@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='AsyncStatus.xml' path='doc/member[@name="AsyncStatus"]/*' />
 public enum AsyncStatus
 {
+    /// <include file='AsyncStatus.xml' path='doc/member[@name="AsyncStatus.Started"]/*' />
     Started = 0,
+
+    /// <include file='AsyncStatus.xml' path='doc/member[@name="AsyncStatus.Completed"]/*' />
     Completed,
+
+    /// <include file='AsyncStatus.xml' path='doc/member[@name="AsyncStatus.Canceled"]/*' />
     Canceled,
+
+    /// <include file='AsyncStatus.xml' path='doc/member[@name="AsyncStatus.Error"]/*' />
     Error,
 }

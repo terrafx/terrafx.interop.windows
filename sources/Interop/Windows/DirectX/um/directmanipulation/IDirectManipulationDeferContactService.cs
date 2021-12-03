@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDirectManipulationDeferContactService.xml' path='doc/member[@name="IDirectManipulationDeferContactService"]/*' />
 [Guid("652D5C71-FE60-4A98-BE70-E5F21291E7F1")]
 [NativeTypeName("struct IDirectManipulationDeferContactService : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDirectManipulationDeferContactService : IDirectMan
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDirectManipulationDeferContactService : IDirectMan
         return ((delegate* unmanaged<IDirectManipulationDeferContactService*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationDeferContactService*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDirectManipulationDeferContactService : IDirectMan
         return ((delegate* unmanaged<IDirectManipulationDeferContactService*, uint>)(lpVtbl[1]))((IDirectManipulationDeferContactService*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDirectManipulationDeferContactService : IDirectMan
         return ((delegate* unmanaged<IDirectManipulationDeferContactService*, uint>)(lpVtbl[2]))((IDirectManipulationDeferContactService*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectManipulationDeferContactService.xml' path='doc/member[@name="IDirectManipulationDeferContactService.DeferContact"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT DeferContact([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32")] uint timeout)
@@ -49,6 +54,7 @@ public unsafe partial struct IDirectManipulationDeferContactService : IDirectMan
         return ((delegate* unmanaged<IDirectManipulationDeferContactService*, uint, uint, int>)(lpVtbl[3]))((IDirectManipulationDeferContactService*)Unsafe.AsPointer(ref this), pointerId, timeout);
     }
 
+    /// <include file='IDirectManipulationDeferContactService.xml' path='doc/member[@name="IDirectManipulationDeferContactService.CancelContact"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CancelContact([NativeTypeName("UINT32")] uint pointerId)
@@ -56,6 +62,7 @@ public unsafe partial struct IDirectManipulationDeferContactService : IDirectMan
         return ((delegate* unmanaged<IDirectManipulationDeferContactService*, uint, int>)(lpVtbl[4]))((IDirectManipulationDeferContactService*)Unsafe.AsPointer(ref this), pointerId);
     }
 
+    /// <include file='IDirectManipulationDeferContactService.xml' path='doc/member[@name="IDirectManipulationDeferContactService.CancelDeferral"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CancelDeferral([NativeTypeName("UINT32")] uint pointerId)

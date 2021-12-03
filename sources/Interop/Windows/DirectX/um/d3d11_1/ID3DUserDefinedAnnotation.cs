@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3DUserDefinedAnnotation.xml' path='doc/member[@name="ID3DUserDefinedAnnotation"]/*' />
 [Guid("B2DAAD8B-03D4-4DBF-95EB-32AB4B63D0AB")]
 [NativeTypeName("struct ID3DUserDefinedAnnotation : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3DUserDefinedAnnotation : ID3DUserDefinedAnnotati
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3DUserDefinedAnnotation : ID3DUserDefinedAnnotati
         return ((delegate* unmanaged<ID3DUserDefinedAnnotation*, Guid*, void**, int>)(lpVtbl[0]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3DUserDefinedAnnotation : ID3DUserDefinedAnnotati
         return ((delegate* unmanaged<ID3DUserDefinedAnnotation*, uint>)(lpVtbl[1]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3DUserDefinedAnnotation : ID3DUserDefinedAnnotati
         return ((delegate* unmanaged<ID3DUserDefinedAnnotation*, uint>)(lpVtbl[2]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3DUserDefinedAnnotation.xml' path='doc/member[@name="ID3DUserDefinedAnnotation.BeginEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public int BeginEvent([NativeTypeName("LPCWSTR")] ushort* Name)
@@ -47,6 +52,7 @@ public unsafe partial struct ID3DUserDefinedAnnotation : ID3DUserDefinedAnnotati
         return ((delegate* unmanaged<ID3DUserDefinedAnnotation*, ushort*, int>)(lpVtbl[3]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <include file='ID3DUserDefinedAnnotation.xml' path='doc/member[@name="ID3DUserDefinedAnnotation.EndEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public int EndEvent()
@@ -54,6 +60,7 @@ public unsafe partial struct ID3DUserDefinedAnnotation : ID3DUserDefinedAnnotati
         return ((delegate* unmanaged<ID3DUserDefinedAnnotation*, int>)(lpVtbl[4]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3DUserDefinedAnnotation.xml' path='doc/member[@name="ID3DUserDefinedAnnotation.SetMarker"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void SetMarker([NativeTypeName("LPCWSTR")] ushort* Name)
@@ -61,6 +68,7 @@ public unsafe partial struct ID3DUserDefinedAnnotation : ID3DUserDefinedAnnotati
         ((delegate* unmanaged<ID3DUserDefinedAnnotation*, ushort*, void>)(lpVtbl[5]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <include file='ID3DUserDefinedAnnotation.xml' path='doc/member[@name="ID3DUserDefinedAnnotation.GetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public BOOL GetStatus()

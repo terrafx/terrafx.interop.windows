@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteBitmapRenderTarget1.xml' path='doc/member[@name="IDWriteBitmapRenderTarget1"]/*' />
 [Guid("791E8298-3EF3-4230-9880-C9BDECC42064")]
 [NativeTypeName("struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTarget")]
 [NativeInheritance("IDWriteBitmapRenderTarget")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
         return ((delegate* unmanaged<IDWriteBitmapRenderTarget1*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
         return ((delegate* unmanaged<IDWriteBitmapRenderTarget1*, uint>)(lpVtbl[1]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
         return ((delegate* unmanaged<IDWriteBitmapRenderTarget1*, uint>)(lpVtbl[2]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDWriteBitmapRenderTarget.DrawGlyphRun" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT DrawGlyphRun(float baselineOriginX, float baselineOriginY, DWRITE_MEASURING_MODE measuringMode, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, IDWriteRenderingParams* renderingParams, COLORREF textColor, RECT* blackBoxRect = null)
@@ -47,6 +52,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
         return ((delegate* unmanaged<IDWriteBitmapRenderTarget1*, float, float, DWRITE_MEASURING_MODE, DWRITE_GLYPH_RUN*, IDWriteRenderingParams*, COLORREF, RECT*, int>)(lpVtbl[3]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this), baselineOriginX, baselineOriginY, measuringMode, glyphRun, renderingParams, textColor, blackBoxRect);
     }
 
+    /// <inheritdoc cref="IDWriteBitmapRenderTarget.GetMemoryDC" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HDC GetMemoryDC()
@@ -54,6 +60,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
         return ((HDC)(((delegate* unmanaged<IDWriteBitmapRenderTarget1*, void*>)(lpVtbl[4]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this))));
     }
 
+    /// <inheritdoc cref="IDWriteBitmapRenderTarget.GetPixelsPerDip" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public float GetPixelsPerDip()
@@ -61,6 +68,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
         return ((delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget1*, float>)(lpVtbl[5]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDWriteBitmapRenderTarget.SetPixelsPerDip" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetPixelsPerDip(float pixelsPerDip)
@@ -68,6 +76,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
         return ((delegate* unmanaged<IDWriteBitmapRenderTarget1*, float, int>)(lpVtbl[6]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this), pixelsPerDip);
     }
 
+    /// <inheritdoc cref="IDWriteBitmapRenderTarget.GetCurrentTransform" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetCurrentTransform(DWRITE_MATRIX* transform)
@@ -75,6 +84,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
         return ((delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget1*, DWRITE_MATRIX*, int>)(lpVtbl[7]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this), transform);
     }
 
+    /// <inheritdoc cref="IDWriteBitmapRenderTarget.SetCurrentTransform" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetCurrentTransform([NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform)
@@ -82,6 +92,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
         return ((delegate* unmanaged<IDWriteBitmapRenderTarget1*, DWRITE_MATRIX*, int>)(lpVtbl[8]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this), transform);
     }
 
+    /// <inheritdoc cref="IDWriteBitmapRenderTarget.GetSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetSize(SIZE* size)
@@ -89,6 +100,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
         return ((delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget1*, SIZE*, int>)(lpVtbl[9]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this), size);
     }
 
+    /// <inheritdoc cref="IDWriteBitmapRenderTarget.Resize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Resize([NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height)
@@ -96,6 +108,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
         return ((delegate* unmanaged<IDWriteBitmapRenderTarget1*, uint, uint, int>)(lpVtbl[10]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this), width, height);
     }
 
+    /// <include file='IDWriteBitmapRenderTarget1.xml' path='doc/member[@name="IDWriteBitmapRenderTarget1.GetTextAntialiasMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public DWRITE_TEXT_ANTIALIAS_MODE GetTextAntialiasMode()
@@ -103,6 +116,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
         return ((delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget1*, DWRITE_TEXT_ANTIALIAS_MODE>)(lpVtbl[11]))((IDWriteBitmapRenderTarget1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteBitmapRenderTarget1.xml' path='doc/member[@name="IDWriteBitmapRenderTarget1.SetTextAntialiasMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SetTextAntialiasMode(DWRITE_TEXT_ANTIALIAS_MODE antialiasMode)

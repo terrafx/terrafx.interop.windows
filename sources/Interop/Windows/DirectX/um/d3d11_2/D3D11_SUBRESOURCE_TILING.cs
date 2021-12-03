@@ -7,16 +7,21 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_SUBRESOURCE_TILING.xml' path='doc/member[@name="D3D11_SUBRESOURCE_TILING"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct D3D11_SUBRESOURCE_TILING
 {
+    /// <include file='D3D11_SUBRESOURCE_TILING.xml' path='doc/member[@name="D3D11_SUBRESOURCE_TILING.WidthInTiles"]/*' />
     public uint WidthInTiles;
 
+    /// <include file='D3D11_SUBRESOURCE_TILING.xml' path='doc/member[@name="D3D11_SUBRESOURCE_TILING.HeightInTiles"]/*' />
     [NativeTypeName("UINT16")]
     public ushort HeightInTiles;
 
+    /// <include file='D3D11_SUBRESOURCE_TILING.xml' path='doc/member[@name="D3D11_SUBRESOURCE_TILING.DepthInTiles"]/*' />
     [NativeTypeName("UINT16")]
     public ushort DepthInTiles;
 
+    /// <include file='D3D11_SUBRESOURCE_TILING.xml' path='doc/member[@name="D3D11_SUBRESOURCE_TILING.StartTileIndexInOverallResource"]/*' />
     public uint StartTileIndexInOverallResource;
 }

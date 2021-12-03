@@ -9,12 +9,14 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D10StateBlock.xml' path='doc/member[@name="ID3D10StateBlock"]/*' />
 [NativeTypeName("struct ID3D10StateBlock : IUnknown")]
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ID3D10StateBlock : ID3D10StateBlock.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -22,6 +24,7 @@ public unsafe partial struct ID3D10StateBlock : ID3D10StateBlock.Interface
         return ((delegate* unmanaged<ID3D10StateBlock*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -30,6 +33,7 @@ public unsafe partial struct ID3D10StateBlock : ID3D10StateBlock.Interface
         return ((delegate* unmanaged<ID3D10StateBlock*, uint>)(lpVtbl[1]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -38,6 +42,7 @@ public unsafe partial struct ID3D10StateBlock : ID3D10StateBlock.Interface
         return ((delegate* unmanaged<ID3D10StateBlock*, uint>)(lpVtbl[2]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D10StateBlock.xml' path='doc/member[@name="ID3D10StateBlock.Capture"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Capture()
@@ -45,6 +50,7 @@ public unsafe partial struct ID3D10StateBlock : ID3D10StateBlock.Interface
         return ((delegate* unmanaged<ID3D10StateBlock*, int>)(lpVtbl[3]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D10StateBlock.xml' path='doc/member[@name="ID3D10StateBlock.Apply"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Apply()
@@ -52,6 +58,7 @@ public unsafe partial struct ID3D10StateBlock : ID3D10StateBlock.Interface
         return ((delegate* unmanaged<ID3D10StateBlock*, int>)(lpVtbl[4]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D10StateBlock.xml' path='doc/member[@name="ID3D10StateBlock.ReleaseAllDeviceObjects"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ReleaseAllDeviceObjects()
@@ -59,6 +66,7 @@ public unsafe partial struct ID3D10StateBlock : ID3D10StateBlock.Interface
         return ((delegate* unmanaged<ID3D10StateBlock*, int>)(lpVtbl[5]))((ID3D10StateBlock*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D10StateBlock.xml' path='doc/member[@name="ID3D10StateBlock.GetDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetDevice(ID3D10Device** ppDevice)

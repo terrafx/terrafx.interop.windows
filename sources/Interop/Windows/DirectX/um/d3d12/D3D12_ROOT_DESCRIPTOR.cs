@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_ROOT_DESCRIPTOR.xml' path='doc/member[@name="D3D12_ROOT_DESCRIPTOR"]/*' />
 public partial struct D3D12_ROOT_DESCRIPTOR
 {
+    /// <include file='D3D12_ROOT_DESCRIPTOR.xml' path='doc/member[@name="D3D12_ROOT_DESCRIPTOR.ShaderRegister"]/*' />
     public uint ShaderRegister;
 
+    /// <include file='D3D12_ROOT_DESCRIPTOR.xml' path='doc/member[@name="D3D12_ROOT_DESCRIPTOR.RegisterSpace"]/*' />
     public uint RegisterSpace;
 }

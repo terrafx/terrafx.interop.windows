@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1GdiMetafileSink1.xml' path='doc/member[@name="ID2D1GdiMetafileSink1"]/*' />
 [Guid("FD0ECB6B-91E6-411E-8655-395E760F91B4")]
 [NativeTypeName("struct ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink")]
 [NativeInheritance("ID2D1GdiMetafileSink")]
@@ -19,6 +20,7 @@ public unsafe partial struct ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink1.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink1.Inter
         return ((delegate* unmanaged<ID2D1GdiMetafileSink1*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1GdiMetafileSink1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink1.Inter
         return ((delegate* unmanaged<ID2D1GdiMetafileSink1*, uint>)(lpVtbl[1]))((ID2D1GdiMetafileSink1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink1.Inter
         return ((delegate* unmanaged<ID2D1GdiMetafileSink1*, uint>)(lpVtbl[2]))((ID2D1GdiMetafileSink1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1GdiMetafileSink.ProcessRecord" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ProcessRecord([NativeTypeName("DWORD")] uint recordType, [NativeTypeName("const void *")] void* recordData, [NativeTypeName("DWORD")] uint recordDataSize)
@@ -49,6 +54,7 @@ public unsafe partial struct ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink1.Inter
         return ((delegate* unmanaged<ID2D1GdiMetafileSink1*, uint, void*, uint, int>)(lpVtbl[3]))((ID2D1GdiMetafileSink1*)Unsafe.AsPointer(ref this), recordType, recordData, recordDataSize);
     }
 
+    /// <include file='ID2D1GdiMetafileSink1.xml' path='doc/member[@name="ID2D1GdiMetafileSink1.ProcessRecord"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ProcessRecord([NativeTypeName("DWORD")] uint recordType, [NativeTypeName("const void *")] void* recordData, [NativeTypeName("DWORD")] uint recordDataSize, [NativeTypeName("UINT32")] uint flags)

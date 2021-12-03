@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_PIXEL_GEOMETRY.xml' path='doc/member[@name="DWRITE_PIXEL_GEOMETRY"]/*' />
 public enum DWRITE_PIXEL_GEOMETRY
 {
+    /// <include file='DWRITE_PIXEL_GEOMETRY.xml' path='doc/member[@name="DWRITE_PIXEL_GEOMETRY.DWRITE_PIXEL_GEOMETRY_FLAT"]/*' />
     DWRITE_PIXEL_GEOMETRY_FLAT,
+
+    /// <include file='DWRITE_PIXEL_GEOMETRY.xml' path='doc/member[@name="DWRITE_PIXEL_GEOMETRY.DWRITE_PIXEL_GEOMETRY_RGB"]/*' />
     DWRITE_PIXEL_GEOMETRY_RGB,
+
+    /// <include file='DWRITE_PIXEL_GEOMETRY.xml' path='doc/member[@name="DWRITE_PIXEL_GEOMETRY.DWRITE_PIXEL_GEOMETRY_BGR"]/*' />
     DWRITE_PIXEL_GEOMETRY_BGR,
 }

@@ -7,13 +7,17 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='XAUDIO2FX_VOLUMEMETER_LEVELS.xml' path='doc/member[@name="XAUDIO2FX_VOLUMEMETER_LEVELS"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct XAUDIO2FX_VOLUMEMETER_LEVELS
 {
+    /// <include file='XAUDIO2FX_VOLUMEMETER_LEVELS.xml' path='doc/member[@name="XAUDIO2FX_VOLUMEMETER_LEVELS.pPeakLevels"]/*' />
     public float* pPeakLevels;
 
+    /// <include file='XAUDIO2FX_VOLUMEMETER_LEVELS.xml' path='doc/member[@name="XAUDIO2FX_VOLUMEMETER_LEVELS.pRMSLevels"]/*' />
     public float* pRMSLevels;
 
+    /// <include file='XAUDIO2FX_VOLUMEMETER_LEVELS.xml' path='doc/member[@name="XAUDIO2FX_VOLUMEMETER_LEVELS.ChannelCount"]/*' />
     [NativeTypeName("UINT32")]
     public uint ChannelCount;
 }

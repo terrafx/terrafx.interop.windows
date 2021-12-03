@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_FEATURE_DATA_FORMAT_SUPPORT2.xml' path='doc/member[@name="D3D11_FEATURE_DATA_FORMAT_SUPPORT2"]/*' />
 public partial struct D3D11_FEATURE_DATA_FORMAT_SUPPORT2
 {
+    /// <include file='D3D11_FEATURE_DATA_FORMAT_SUPPORT2.xml' path='doc/member[@name="D3D11_FEATURE_DATA_FORMAT_SUPPORT2.InFormat"]/*' />
     public DXGI_FORMAT InFormat;
 
+    /// <include file='D3D11_FEATURE_DATA_FORMAT_SUPPORT2.xml' path='doc/member[@name="D3D11_FEATURE_DATA_FORMAT_SUPPORT2.OutFormatSupport2"]/*' />
     public uint OutFormatSupport2;
 }

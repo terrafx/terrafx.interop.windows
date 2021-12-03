@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_CARET_METRICS.xml' path='doc/member[@name="DWRITE_CARET_METRICS"]/*' />
 public partial struct DWRITE_CARET_METRICS
 {
+    /// <include file='DWRITE_CARET_METRICS.xml' path='doc/member[@name="DWRITE_CARET_METRICS.slopeRise"]/*' />
     [NativeTypeName("INT16")]
     public short slopeRise;
 
+    /// <include file='DWRITE_CARET_METRICS.xml' path='doc/member[@name="DWRITE_CARET_METRICS.slopeRun"]/*' />
     [NativeTypeName("INT16")]
     public short slopeRun;
 
+    /// <include file='DWRITE_CARET_METRICS.xml' path='doc/member[@name="DWRITE_CARET_METRICS.offset"]/*' />
     [NativeTypeName("INT16")]
     public short offset;
 }

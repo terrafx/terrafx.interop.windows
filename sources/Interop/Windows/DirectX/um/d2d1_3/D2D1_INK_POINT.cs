@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_INK_POINT.xml' path='doc/member[@name="D2D1_INK_POINT"]/*' />
 public partial struct D2D1_INK_POINT
 {
+    /// <include file='D2D1_INK_POINT.xml' path='doc/member[@name="D2D1_INK_POINT.x"]/*' />
     public float x;
 
+    /// <include file='D2D1_INK_POINT.xml' path='doc/member[@name="D2D1_INK_POINT.y"]/*' />
     public float y;
 
+    /// <include file='D2D1_INK_POINT.xml' path='doc/member[@name="D2D1_INK_POINT.radius"]/*' />
     public float radius;
 }

@@ -7,15 +7,20 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_VIDEO_CONTENT_PROTECTION_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_CONTENT_PROTECTION_CAPS"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_VIDEO_CONTENT_PROTECTION_CAPS
 {
+    /// <include file='D3D11_VIDEO_CONTENT_PROTECTION_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_CONTENT_PROTECTION_CAPS.Caps"]/*' />
     public uint Caps;
 
+    /// <include file='D3D11_VIDEO_CONTENT_PROTECTION_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_CONTENT_PROTECTION_CAPS.KeyExchangeTypeCount"]/*' />
     public uint KeyExchangeTypeCount;
 
+    /// <include file='D3D11_VIDEO_CONTENT_PROTECTION_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_CONTENT_PROTECTION_CAPS.BlockAlignmentSize"]/*' />
     public uint BlockAlignmentSize;
 
+    /// <include file='D3D11_VIDEO_CONTENT_PROTECTION_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_CONTENT_PROTECTION_CAPS.ProtectedMemorySize"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong ProtectedMemorySize;
 }

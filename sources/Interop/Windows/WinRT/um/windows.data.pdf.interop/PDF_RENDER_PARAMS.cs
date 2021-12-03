@@ -8,20 +8,26 @@ using TerraFX.Interop.DirectX;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='PDF_RENDER_PARAMS.xml' path='doc/member[@name="PDF_RENDER_PARAMS"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct PDF_RENDER_PARAMS
 {
+    /// <include file='PDF_RENDER_PARAMS.xml' path='doc/member[@name="PDF_RENDER_PARAMS.SourceRect"]/*' />
     public D2D_RECT_F SourceRect;
 
+    /// <include file='PDF_RENDER_PARAMS.xml' path='doc/member[@name="PDF_RENDER_PARAMS.DestinationWidth"]/*' />
     [NativeTypeName("UINT32")]
     public uint DestinationWidth;
 
+    /// <include file='PDF_RENDER_PARAMS.xml' path='doc/member[@name="PDF_RENDER_PARAMS.DestinationHeight"]/*' />
     [NativeTypeName("UINT32")]
     public uint DestinationHeight;
 
+    /// <include file='PDF_RENDER_PARAMS.xml' path='doc/member[@name="PDF_RENDER_PARAMS.BackgroundColor"]/*' />
     [NativeTypeName("D2D_COLOR_F")]
     public DXGI_RGBA BackgroundColor;
 
+    /// <include file='PDF_RENDER_PARAMS.xml' path='doc/member[@name="PDF_RENDER_PARAMS.IgnoreHighContrast"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte IgnoreHighContrast;
 }

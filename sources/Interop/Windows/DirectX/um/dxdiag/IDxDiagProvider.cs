@@ -9,12 +9,14 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDxDiagProvider.xml' path='doc/member[@name="IDxDiagProvider"]/*' />
 [NativeTypeName("struct IDxDiagProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDxDiagProvider : IDxDiagProvider.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -22,6 +24,7 @@ public unsafe partial struct IDxDiagProvider : IDxDiagProvider.Interface
         return ((delegate* unmanaged<IDxDiagProvider*, Guid*, void**, int>)(lpVtbl[0]))((IDxDiagProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -30,6 +33,7 @@ public unsafe partial struct IDxDiagProvider : IDxDiagProvider.Interface
         return ((delegate* unmanaged<IDxDiagProvider*, uint>)(lpVtbl[1]))((IDxDiagProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -38,6 +42,7 @@ public unsafe partial struct IDxDiagProvider : IDxDiagProvider.Interface
         return ((delegate* unmanaged<IDxDiagProvider*, uint>)(lpVtbl[2]))((IDxDiagProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDxDiagProvider.xml' path='doc/member[@name="IDxDiagProvider.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Initialize(DXDIAG_INIT_PARAMS* pParams)
@@ -45,6 +50,7 @@ public unsafe partial struct IDxDiagProvider : IDxDiagProvider.Interface
         return ((delegate* unmanaged<IDxDiagProvider*, DXDIAG_INIT_PARAMS*, int>)(lpVtbl[3]))((IDxDiagProvider*)Unsafe.AsPointer(ref this), pParams);
     }
 
+    /// <include file='IDxDiagProvider.xml' path='doc/member[@name="IDxDiagProvider.GetRootContainer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRootContainer(IDxDiagContainer** ppInstance)

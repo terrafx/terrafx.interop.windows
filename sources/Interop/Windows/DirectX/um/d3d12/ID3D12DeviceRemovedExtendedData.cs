@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12DeviceRemovedExtendedData.xml' path='doc/member[@name="ID3D12DeviceRemovedExtendedData"]/*' />
 [Guid("98931D33-5AE8-4791-AA3C-1A73A2934E71")]
 [NativeTypeName("struct ID3D12DeviceRemovedExtendedData : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedData : ID3D12DeviceRemov
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedData : ID3D12DeviceRemov
         return ((delegate* unmanaged<ID3D12DeviceRemovedExtendedData*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DeviceRemovedExtendedData*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedData : ID3D12DeviceRemov
         return ((delegate* unmanaged<ID3D12DeviceRemovedExtendedData*, uint>)(lpVtbl[1]))((ID3D12DeviceRemovedExtendedData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedData : ID3D12DeviceRemov
         return ((delegate* unmanaged<ID3D12DeviceRemovedExtendedData*, uint>)(lpVtbl[2]))((ID3D12DeviceRemovedExtendedData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12DeviceRemovedExtendedData.xml' path='doc/member[@name="ID3D12DeviceRemovedExtendedData.GetAutoBreadcrumbsOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetAutoBreadcrumbsOutput(D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT* pOutput)
@@ -49,6 +54,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedData : ID3D12DeviceRemov
         return ((delegate* unmanaged<ID3D12DeviceRemovedExtendedData*, D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT*, int>)(lpVtbl[3]))((ID3D12DeviceRemovedExtendedData*)Unsafe.AsPointer(ref this), pOutput);
     }
 
+    /// <include file='ID3D12DeviceRemovedExtendedData.xml' path='doc/member[@name="ID3D12DeviceRemovedExtendedData.GetPageFaultAllocationOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPageFaultAllocationOutput(D3D12_DRED_PAGE_FAULT_OUTPUT* pOutput)

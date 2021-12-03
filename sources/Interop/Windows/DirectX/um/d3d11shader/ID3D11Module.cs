@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D11Module.xml' path='doc/member[@name="ID3D11Module"]/*' />
 [Guid("CAC701EE-80FC-4122-8242-10B39C8CEC34")]
 [NativeTypeName("struct ID3D11Module : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D11Module : ID3D11Module.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D11Module : ID3D11Module.Interface
         return ((delegate* unmanaged<ID3D11Module*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11Module*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D11Module : ID3D11Module.Interface
         return ((delegate* unmanaged<ID3D11Module*, uint>)(lpVtbl[1]))((ID3D11Module*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D11Module : ID3D11Module.Interface
         return ((delegate* unmanaged<ID3D11Module*, uint>)(lpVtbl[2]))((ID3D11Module*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D11Module.xml' path='doc/member[@name="ID3D11Module.CreateInstance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateInstance([NativeTypeName("LPCSTR")] sbyte* pNamespace, [NativeTypeName("struct ID3D11ModuleInstance **")] ID3D11ModuleInstance** ppModuleInstance)

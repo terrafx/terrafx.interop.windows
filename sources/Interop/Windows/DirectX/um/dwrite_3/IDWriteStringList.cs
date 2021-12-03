@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteStringList.xml' path='doc/member[@name="IDWriteStringList"]/*' />
 [Guid("CFEE3140-1157-47CA-8B85-31BFCF3F2D0E")]
 [NativeTypeName("struct IDWriteStringList : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDWriteStringList : IDWriteStringList.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDWriteStringList : IDWriteStringList.Interface
         return ((delegate* unmanaged<IDWriteStringList*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteStringList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDWriteStringList : IDWriteStringList.Interface
         return ((delegate* unmanaged<IDWriteStringList*, uint>)(lpVtbl[1]))((IDWriteStringList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDWriteStringList : IDWriteStringList.Interface
         return ((delegate* unmanaged<IDWriteStringList*, uint>)(lpVtbl[2]))((IDWriteStringList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteStringList.xml' path='doc/member[@name="IDWriteStringList.GetCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("UINT32")]
@@ -48,6 +53,7 @@ public unsafe partial struct IDWriteStringList : IDWriteStringList.Interface
         return ((delegate* unmanaged<IDWriteStringList*, uint>)(lpVtbl[3]))((IDWriteStringList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteStringList.xml' path='doc/member[@name="IDWriteStringList.GetLocaleNameLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetLocaleNameLength([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("UINT32 *")] uint* length)
@@ -55,6 +61,7 @@ public unsafe partial struct IDWriteStringList : IDWriteStringList.Interface
         return ((delegate* unmanaged<IDWriteStringList*, uint, uint*, int>)(lpVtbl[4]))((IDWriteStringList*)Unsafe.AsPointer(ref this), listIndex, length);
     }
 
+    /// <include file='IDWriteStringList.xml' path='doc/member[@name="IDWriteStringList.GetLocaleName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetLocaleName([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint size)
@@ -62,6 +69,7 @@ public unsafe partial struct IDWriteStringList : IDWriteStringList.Interface
         return ((delegate* unmanaged<IDWriteStringList*, uint, ushort*, uint, int>)(lpVtbl[5]))((IDWriteStringList*)Unsafe.AsPointer(ref this), listIndex, localeName, size);
     }
 
+    /// <include file='IDWriteStringList.xml' path='doc/member[@name="IDWriteStringList.GetStringLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetStringLength([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("UINT32 *")] uint* length)
@@ -69,6 +77,7 @@ public unsafe partial struct IDWriteStringList : IDWriteStringList.Interface
         return ((delegate* unmanaged<IDWriteStringList*, uint, uint*, int>)(lpVtbl[6]))((IDWriteStringList*)Unsafe.AsPointer(ref this), listIndex, length);
     }
 
+    /// <include file='IDWriteStringList.xml' path='doc/member[@name="IDWriteStringList.GetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetString([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR *")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint stringBufferSize)

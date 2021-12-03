@@ -11,6 +11,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DDisassemble11Trace"]/*' />
     [DllImport("d3dcompiler_47", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT D3DDisassemble11Trace([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSize, ID3D11ShaderTrace* pTrace, uint StartStep, uint NumSteps, uint Flags, [NativeTypeName("struct ID3D10Blob **")] ID3DBlob** ppDisassembly);

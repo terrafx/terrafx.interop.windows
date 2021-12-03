@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_QUERY_DESC.xml' path='doc/member[@name="D3D11_QUERY_DESC"]/*' />
 public partial struct D3D11_QUERY_DESC
 {
+    /// <include file='D3D11_QUERY_DESC.xml' path='doc/member[@name="D3D11_QUERY_DESC.Query"]/*' />
     public D3D11_QUERY Query;
 
+    /// <include file='D3D11_QUERY_DESC.xml' path='doc/member[@name="D3D11_QUERY_DESC.MiscFlags"]/*' />
     public uint MiscFlags;
 }

@@ -8,11 +8,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_VIDEO_PROCESSOR_COLOR_SPACE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_COLOR_SPACE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_VIDEO_PROCESSOR_COLOR_SPACE
 {
     public uint _bitfield;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_COLOR_SPACE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_COLOR_SPACE.Usage"]/*' />
     [NativeTypeName("uint : 1")]
     public uint Usage
     {
@@ -29,6 +31,7 @@ public partial struct D3D11_VIDEO_PROCESSOR_COLOR_SPACE
         }
     }
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_COLOR_SPACE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_COLOR_SPACE.RGB_Range"]/*' />
     [NativeTypeName("uint : 1")]
     public uint RGB_Range
     {
@@ -45,6 +48,7 @@ public partial struct D3D11_VIDEO_PROCESSOR_COLOR_SPACE
         }
     }
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_COLOR_SPACE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_COLOR_SPACE.YCbCr_Matrix"]/*' />
     [NativeTypeName("uint : 1")]
     public uint YCbCr_Matrix
     {
@@ -61,6 +65,7 @@ public partial struct D3D11_VIDEO_PROCESSOR_COLOR_SPACE
         }
     }
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_COLOR_SPACE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_COLOR_SPACE.YCbCr_xvYCC"]/*' />
     [NativeTypeName("uint : 1")]
     public uint YCbCr_xvYCC
     {
@@ -77,6 +82,7 @@ public partial struct D3D11_VIDEO_PROCESSOR_COLOR_SPACE
         }
     }
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_COLOR_SPACE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_COLOR_SPACE.Nominal_Range"]/*' />
     [NativeTypeName("uint : 2")]
     public uint Nominal_Range
     {
@@ -93,6 +99,7 @@ public partial struct D3D11_VIDEO_PROCESSOR_COLOR_SPACE
         }
     }
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_COLOR_SPACE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_COLOR_SPACE.Reserved"]/*' />
     [NativeTypeName("uint : 26")]
     public uint Reserved
     {

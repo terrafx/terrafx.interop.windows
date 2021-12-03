@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D_MATRIX_3X2_F.xml' path='doc/member[@name="D2D_MATRIX_3X2_F"]/*' />
 public unsafe partial struct D2D_MATRIX_3X2_F
 {
+    /// <include file='D2D_MATRIX_3X2_F.xml' path='doc/member[@name="D2D_MATRIX_3X2_F.Anonymous"]/*' />
     [NativeTypeName("D2D_MATRIX_3X2_F::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/dcommon.h:277:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.m11"]/*' />
     public ref float m11
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -23,6 +26,7 @@ public unsafe partial struct D2D_MATRIX_3X2_F
         }
     }
 
+    /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.m12"]/*' />
     public ref float m12
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -32,6 +36,7 @@ public unsafe partial struct D2D_MATRIX_3X2_F
         }
     }
 
+    /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.m21"]/*' />
     public ref float m21
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -41,6 +46,7 @@ public unsafe partial struct D2D_MATRIX_3X2_F
         }
     }
 
+    /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.m22"]/*' />
     public ref float m22
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -50,6 +56,7 @@ public unsafe partial struct D2D_MATRIX_3X2_F
         }
     }
 
+    /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.dx"]/*' />
     public ref float dx
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -59,6 +66,7 @@ public unsafe partial struct D2D_MATRIX_3X2_F
         }
     }
 
+    /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.dy"]/*' />
     public ref float dy
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -68,6 +76,7 @@ public unsafe partial struct D2D_MATRIX_3X2_F
         }
     }
 
+    /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct._11"]/*' />
     public ref float _11
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -77,6 +86,7 @@ public unsafe partial struct D2D_MATRIX_3X2_F
         }
     }
 
+    /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct._12"]/*' />
     public ref float _12
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -86,6 +96,7 @@ public unsafe partial struct D2D_MATRIX_3X2_F
         }
     }
 
+    /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct._21"]/*' />
     public ref float _21
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -95,6 +106,7 @@ public unsafe partial struct D2D_MATRIX_3X2_F
         }
     }
 
+    /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct._22"]/*' />
     public ref float _22
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -104,6 +116,7 @@ public unsafe partial struct D2D_MATRIX_3X2_F
         }
     }
 
+    /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct._31"]/*' />
     public ref float _31
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -113,6 +126,7 @@ public unsafe partial struct D2D_MATRIX_3X2_F
         }
     }
 
+    /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct._32"]/*' />
     public ref float _32
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -122,6 +136,7 @@ public unsafe partial struct D2D_MATRIX_3X2_F
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.m"]/*' />
     public Span<float> m
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -131,48 +146,66 @@ public unsafe partial struct D2D_MATRIX_3X2_F
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous1"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("D2D_MATRIX_3X2_F::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/dcommon.h:279:9)")]
         public _Anonymous1_e__Struct Anonymous1;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous2"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("D2D_MATRIX_3X2_F::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/dcommon.h:312:9)")]
         public _Anonymous2_e__Struct Anonymous2;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.m"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("FLOAT [3][2]")]
         public fixed float m[3 * 2];
 
+        /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct"]/*' />
         public partial struct _Anonymous1_e__Struct
         {
+            /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.m11"]/*' />
             public float m11;
 
+            /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.m12"]/*' />
             public float m12;
 
+            /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.m21"]/*' />
             public float m21;
 
+            /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.m22"]/*' />
             public float m22;
 
+            /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.dx"]/*' />
             public float dx;
 
+            /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.dy"]/*' />
             public float dy;
         }
 
+        /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct"]/*' />
         public partial struct _Anonymous2_e__Struct
         {
+            /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct._11"]/*' />
             public float _11;
 
+            /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct._12"]/*' />
             public float _12;
 
+            /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct._21"]/*' />
             public float _21;
 
+            /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct._22"]/*' />
             public float _22;
 
+            /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct._31"]/*' />
             public float _31;
 
+            /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct._32"]/*' />
             public float _32;
         }
     }

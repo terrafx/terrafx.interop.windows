@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument"]/*' />
 [Guid("86B88E4D-AFA4-4D7B-88E4-68A51C4A0AEC")]
 [NativeTypeName("struct ID2D1SvgDocument : ID2D1Resource")]
 [NativeInheritance("ID2D1Resource")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
         return ((delegate* unmanaged<ID2D1SvgDocument*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
         return ((delegate* unmanaged<ID2D1SvgDocument*, uint>)(lpVtbl[1]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
         return ((delegate* unmanaged<ID2D1SvgDocument*, uint>)(lpVtbl[2]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
@@ -47,6 +52,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
         ((delegate* unmanaged<ID2D1SvgDocument*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), factory);
     }
 
+    /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.SetViewportSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetViewportSize([NativeTypeName("D2D1_SIZE_F")] D2D_SIZE_F viewportSize)
@@ -54,6 +60,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
         return ((delegate* unmanaged<ID2D1SvgDocument*, D2D_SIZE_F, int>)(lpVtbl[4]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), viewportSize);
     }
 
+    /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.GetViewportSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     [return: NativeTypeName("D2D1_SIZE_F")]
@@ -63,6 +70,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
         return *((delegate* unmanaged[SuppressGCTransition]<ID2D1SvgDocument*, D2D_SIZE_F*, D2D_SIZE_F*>)(lpVtbl[5]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), &result);
     }
 
+    /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.SetRoot"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetRoot(ID2D1SvgElement* root)
@@ -70,6 +78,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
         return ((delegate* unmanaged<ID2D1SvgDocument*, ID2D1SvgElement*, int>)(lpVtbl[6]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), root);
     }
 
+    /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.GetRoot"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void GetRoot(ID2D1SvgElement** root)
@@ -77,6 +86,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
         ((delegate* unmanaged<ID2D1SvgDocument*, ID2D1SvgElement**, void>)(lpVtbl[7]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), root);
     }
 
+    /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.FindElementById"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT FindElementById([NativeTypeName("PCWSTR")] ushort* id, ID2D1SvgElement** svgElement)
@@ -84,6 +94,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
         return ((delegate* unmanaged<ID2D1SvgDocument*, ushort*, ID2D1SvgElement**, int>)(lpVtbl[8]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), id, svgElement);
     }
 
+    /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.Serialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Serialize(IStream* outputXmlStream, ID2D1SvgElement* subtree = null)
@@ -91,6 +102,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
         return ((delegate* unmanaged<ID2D1SvgDocument*, IStream*, ID2D1SvgElement*, int>)(lpVtbl[9]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), outputXmlStream, subtree);
     }
 
+    /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.Deserialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Deserialize(IStream* inputXmlStream, ID2D1SvgElement** subtree)
@@ -98,6 +110,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
         return ((delegate* unmanaged<ID2D1SvgDocument*, IStream*, ID2D1SvgElement**, int>)(lpVtbl[10]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), inputXmlStream, subtree);
     }
 
+    /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.CreatePaint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT CreatePaint(D2D1_SVG_PAINT_TYPE paintType, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color, [NativeTypeName("PCWSTR")] ushort* id, ID2D1SvgPaint** paint)
@@ -105,6 +118,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
         return ((delegate* unmanaged<ID2D1SvgDocument*, D2D1_SVG_PAINT_TYPE, DXGI_RGBA*, ushort*, ID2D1SvgPaint**, int>)(lpVtbl[11]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), paintType, color, id, paint);
     }
 
+    /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.CreateStrokeDashArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT CreateStrokeDashArray([NativeTypeName("const D2D1_SVG_LENGTH *")] D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, ID2D1SvgStrokeDashArray** strokeDashArray)
@@ -112,6 +126,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
         return ((delegate* unmanaged<ID2D1SvgDocument*, D2D1_SVG_LENGTH*, uint, ID2D1SvgStrokeDashArray**, int>)(lpVtbl[12]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), dashes, dashesCount, strokeDashArray);
     }
 
+    /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.CreatePointCollection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT CreatePointCollection([NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount, ID2D1SvgPointCollection** pointCollection)
@@ -119,6 +134,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
         return ((delegate* unmanaged<ID2D1SvgDocument*, D2D_POINT_2F*, uint, ID2D1SvgPointCollection**, int>)(lpVtbl[13]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), points, pointsCount, pointCollection);
     }
 
+    /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.CreatePathData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT CreatePathData([NativeTypeName("const FLOAT *")] float* segmentData, [NativeTypeName("UINT32")] uint segmentDataCount, [NativeTypeName("const D2D1_SVG_PATH_COMMAND *")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, ID2D1SvgPathData** pathData)

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_TEXTURE_COPY_TYPE.xml' path='doc/member[@name="D3D12_TEXTURE_COPY_TYPE"]/*' />
 public enum D3D12_TEXTURE_COPY_TYPE
 {
+    /// <include file='D3D12_TEXTURE_COPY_TYPE.xml' path='doc/member[@name="D3D12_TEXTURE_COPY_TYPE.D3D12_TEXTURE_COPY_TYPE_SUBRESOURCE_INDEX"]/*' />
     D3D12_TEXTURE_COPY_TYPE_SUBRESOURCE_INDEX = 0,
+
+    /// <include file='D3D12_TEXTURE_COPY_TYPE.xml' path='doc/member[@name="D3D12_TEXTURE_COPY_TYPE.D3D12_TEXTURE_COPY_TYPE_PLACED_FOOTPRINT"]/*' />
     D3D12_TEXTURE_COPY_TYPE_PLACED_FOOTPRINT = 1,
 }

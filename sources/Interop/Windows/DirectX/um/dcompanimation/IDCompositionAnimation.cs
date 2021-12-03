@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDCompositionAnimation.xml' path='doc/member[@name="IDCompositionAnimation"]/*' />
 [Guid("CBFD91D9-51B2-45E4-B3DE-D19CCFB863C5")]
 [NativeTypeName("struct IDCompositionAnimation : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
         return ((delegate* unmanaged<IDCompositionAnimation*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
         return ((delegate* unmanaged<IDCompositionAnimation*, uint>)(lpVtbl[1]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
         return ((delegate* unmanaged<IDCompositionAnimation*, uint>)(lpVtbl[2]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDCompositionAnimation.xml' path='doc/member[@name="IDCompositionAnimation.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Reset()
@@ -49,6 +54,7 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
         return ((delegate* unmanaged<IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDCompositionAnimation.xml' path='doc/member[@name="IDCompositionAnimation.SetAbsoluteBeginTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetAbsoluteBeginTime(LARGE_INTEGER beginTime)
@@ -56,6 +62,7 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
         return ((delegate* unmanaged<IDCompositionAnimation*, LARGE_INTEGER, int>)(lpVtbl[4]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginTime);
     }
 
+    /// <include file='IDCompositionAnimation.xml' path='doc/member[@name="IDCompositionAnimation.AddCubic"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT AddCubic(double beginOffset, float constantCoefficient, float linearCoefficient, float quadraticCoefficient, float cubicCoefficient)
@@ -63,6 +70,7 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
         return ((delegate* unmanaged<IDCompositionAnimation*, double, float, float, float, float, int>)(lpVtbl[5]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginOffset, constantCoefficient, linearCoefficient, quadraticCoefficient, cubicCoefficient);
     }
 
+    /// <include file='IDCompositionAnimation.xml' path='doc/member[@name="IDCompositionAnimation.AddSinusoidal"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT AddSinusoidal(double beginOffset, float bias, float amplitude, float frequency, float phase)
@@ -70,6 +78,7 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
         return ((delegate* unmanaged<IDCompositionAnimation*, double, float, float, float, float, int>)(lpVtbl[6]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginOffset, bias, amplitude, frequency, phase);
     }
 
+    /// <include file='IDCompositionAnimation.xml' path='doc/member[@name="IDCompositionAnimation.AddRepeat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT AddRepeat(double beginOffset, double durationToRepeat)
@@ -77,6 +86,7 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
         return ((delegate* unmanaged<IDCompositionAnimation*, double, double, int>)(lpVtbl[7]))((IDCompositionAnimation*)Unsafe.AsPointer(ref this), beginOffset, durationToRepeat);
     }
 
+    /// <include file='IDCompositionAnimation.xml' path='doc/member[@name="IDCompositionAnimation.End"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT End(double endOffset, float endValue)

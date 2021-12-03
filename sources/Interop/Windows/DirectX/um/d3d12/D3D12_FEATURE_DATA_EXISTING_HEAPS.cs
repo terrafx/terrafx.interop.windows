@@ -7,7 +7,9 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_FEATURE_DATA_EXISTING_HEAPS.xml' path='doc/member[@name="D3D12_FEATURE_DATA_EXISTING_HEAPS"]/*' />
 public partial struct D3D12_FEATURE_DATA_EXISTING_HEAPS
 {
+    /// <include file='D3D12_FEATURE_DATA_EXISTING_HEAPS.xml' path='doc/member[@name="D3D12_FEATURE_DATA_EXISTING_HEAPS.Supported"]/*' />
     public BOOL Supported;
 }

@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1PrintControl.xml' path='doc/member[@name="ID2D1PrintControl"]/*' />
 [Guid("2C1D867D-C290-41C8-AE7E-34A98702E9A5")]
 [NativeTypeName("struct ID2D1PrintControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID2D1PrintControl : ID2D1PrintControl.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID2D1PrintControl : ID2D1PrintControl.Interface
         return ((delegate* unmanaged<ID2D1PrintControl*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1PrintControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID2D1PrintControl : ID2D1PrintControl.Interface
         return ((delegate* unmanaged<ID2D1PrintControl*, uint>)(lpVtbl[1]))((ID2D1PrintControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID2D1PrintControl : ID2D1PrintControl.Interface
         return ((delegate* unmanaged<ID2D1PrintControl*, uint>)(lpVtbl[2]))((ID2D1PrintControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1PrintControl.xml' path='doc/member[@name="ID2D1PrintControl.AddPage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddPage(ID2D1CommandList* commandList, D2D_SIZE_F pageSize, IStream* pagePrintTicketStream, [NativeTypeName("D2D1_TAG *")] ulong* tag1 = null, [NativeTypeName("D2D1_TAG *")] ulong* tag2 = null)
@@ -47,6 +52,7 @@ public unsafe partial struct ID2D1PrintControl : ID2D1PrintControl.Interface
         return ((delegate* unmanaged<ID2D1PrintControl*, ID2D1CommandList*, D2D_SIZE_F, IStream*, ulong*, ulong*, int>)(lpVtbl[3]))((ID2D1PrintControl*)Unsafe.AsPointer(ref this), commandList, pageSize, pagePrintTicketStream, tag1, tag2);
     }
 
+    /// <include file='ID2D1PrintControl.xml' path='doc/member[@name="ID2D1PrintControl.Close"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Close()

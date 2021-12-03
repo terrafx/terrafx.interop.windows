@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ISystemMediaTransportControlsInterop.xml' path='doc/member[@name="ISystemMediaTransportControlsInterop"]/*' />
 [Guid("DDB0472D-C911-4A1F-86D9-DC3D71A95F5A")]
 [NativeTypeName("struct ISystemMediaTransportControlsInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -17,6 +18,7 @@ public unsafe partial struct ISystemMediaTransportControlsInterop : ISystemMedia
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ISystemMediaTransportControlsInterop : ISystemMedia
         return ((delegate* unmanaged<ISystemMediaTransportControlsInterop*, Guid*, void**, int>)(lpVtbl[0]))((ISystemMediaTransportControlsInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ISystemMediaTransportControlsInterop : ISystemMedia
         return ((delegate* unmanaged<ISystemMediaTransportControlsInterop*, uint>)(lpVtbl[1]))((ISystemMediaTransportControlsInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ISystemMediaTransportControlsInterop : ISystemMedia
         return ((delegate* unmanaged<ISystemMediaTransportControlsInterop*, uint>)(lpVtbl[2]))((ISystemMediaTransportControlsInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -47,6 +52,7 @@ public unsafe partial struct ISystemMediaTransportControlsInterop : ISystemMedia
         return ((delegate* unmanaged<ISystemMediaTransportControlsInterop*, uint*, Guid**, int>)(lpVtbl[3]))((ISystemMediaTransportControlsInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -54,6 +60,7 @@ public unsafe partial struct ISystemMediaTransportControlsInterop : ISystemMedia
         return ((delegate* unmanaged<ISystemMediaTransportControlsInterop*, HSTRING*, int>)(lpVtbl[4]))((ISystemMediaTransportControlsInterop*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -61,6 +68,7 @@ public unsafe partial struct ISystemMediaTransportControlsInterop : ISystemMedia
         return ((delegate* unmanaged<ISystemMediaTransportControlsInterop*, TrustLevel*, int>)(lpVtbl[5]))((ISystemMediaTransportControlsInterop*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='ISystemMediaTransportControlsInterop.xml' path='doc/member[@name="ISystemMediaTransportControlsInterop.GetForWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** mediaTransportControl)

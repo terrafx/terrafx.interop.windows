@@ -7,24 +7,34 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_VIDEO_PROCESSOR_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_CAPS"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_VIDEO_PROCESSOR_CAPS
 {
+    /// <include file='D3D11_VIDEO_PROCESSOR_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_CAPS.DeviceCaps"]/*' />
     public uint DeviceCaps;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_CAPS.FeatureCaps"]/*' />
     public uint FeatureCaps;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_CAPS.FilterCaps"]/*' />
     public uint FilterCaps;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_CAPS.InputFormatCaps"]/*' />
     public uint InputFormatCaps;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_CAPS.AutoStreamCaps"]/*' />
     public uint AutoStreamCaps;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_CAPS.StereoCaps"]/*' />
     public uint StereoCaps;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_CAPS.RateConversionCapsCount"]/*' />
     public uint RateConversionCapsCount;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_CAPS.MaxInputStreams"]/*' />
     public uint MaxInputStreams;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_CAPS.MaxStreamStates"]/*' />
     public uint MaxStreamStates;
 }

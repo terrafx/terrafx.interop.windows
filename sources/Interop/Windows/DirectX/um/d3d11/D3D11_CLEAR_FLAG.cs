@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_CLEAR_FLAG.xml' path='doc/member[@name="D3D11_CLEAR_FLAG"]/*' />
 [Flags]
 public enum D3D11_CLEAR_FLAG
 {
+    /// <include file='D3D11_CLEAR_FLAG.xml' path='doc/member[@name="D3D11_CLEAR_FLAG.D3D11_CLEAR_DEPTH"]/*' />
     D3D11_CLEAR_DEPTH = 0x1,
+
+    /// <include file='D3D11_CLEAR_FLAG.xml' path='doc/member[@name="D3D11_CLEAR_FLAG.D3D11_CLEAR_STENCIL"]/*' />
     D3D11_CLEAR_STENCIL = 0x2,
 }

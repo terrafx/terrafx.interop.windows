@@ -8,13 +8,23 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='HANDLE_ACCESS_OPTIONS.xml' path='doc/member[@name="HANDLE_ACCESS_OPTIONS"]/*' />
 [Flags]
 [SupportedOSPlatform("windows10.0")]
 public enum HANDLE_ACCESS_OPTIONS
 {
+    /// <include file='HANDLE_ACCESS_OPTIONS.xml' path='doc/member[@name="HANDLE_ACCESS_OPTIONS.HAO_NONE"]/*' />
     HAO_NONE = 0,
+
+    /// <include file='HANDLE_ACCESS_OPTIONS.xml' path='doc/member[@name="HANDLE_ACCESS_OPTIONS.HAO_READ_ATTRIBUTES"]/*' />
     HAO_READ_ATTRIBUTES = 0x80,
+
+    /// <include file='HANDLE_ACCESS_OPTIONS.xml' path='doc/member[@name="HANDLE_ACCESS_OPTIONS.HAO_READ"]/*' />
     HAO_READ = 0x120089,
+
+    /// <include file='HANDLE_ACCESS_OPTIONS.xml' path='doc/member[@name="HANDLE_ACCESS_OPTIONS.HAO_WRITE"]/*' />
     HAO_WRITE = 0x120116,
+
+    /// <include file='HANDLE_ACCESS_OPTIONS.xml' path='doc/member[@name="HANDLE_ACCESS_OPTIONS.HAO_DELETE"]/*' />
     HAO_DELETE = 0x10000,
 }

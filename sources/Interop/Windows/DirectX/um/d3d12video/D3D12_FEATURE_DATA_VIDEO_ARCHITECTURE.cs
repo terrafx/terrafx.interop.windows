@@ -7,7 +7,9 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_FEATURE_DATA_VIDEO_ARCHITECTURE.xml' path='doc/member[@name="D3D12_FEATURE_DATA_VIDEO_ARCHITECTURE"]/*' />
 public partial struct D3D12_FEATURE_DATA_VIDEO_ARCHITECTURE
 {
+    /// <include file='D3D12_FEATURE_DATA_VIDEO_ARCHITECTURE.xml' path='doc/member[@name="D3D12_FEATURE_DATA_VIDEO_ARCHITECTURE.IOCoherent"]/*' />
     public BOOL IOCoherent;
 }

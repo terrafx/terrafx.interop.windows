@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_MEASURING_MODE.xml' path='doc/member[@name="DWRITE_MEASURING_MODE"]/*' />
 public enum DWRITE_MEASURING_MODE
 {
+    /// <include file='DWRITE_MEASURING_MODE.xml' path='doc/member[@name="DWRITE_MEASURING_MODE.DWRITE_MEASURING_MODE_NATURAL"]/*' />
     DWRITE_MEASURING_MODE_NATURAL,
+
+    /// <include file='DWRITE_MEASURING_MODE.xml' path='doc/member[@name="DWRITE_MEASURING_MODE.DWRITE_MEASURING_MODE_GDI_CLASSIC"]/*' />
     DWRITE_MEASURING_MODE_GDI_CLASSIC,
+
+    /// <include file='DWRITE_MEASURING_MODE.xml' path='doc/member[@name="DWRITE_MEASURING_MODE.DWRITE_MEASURING_MODE_GDI_NATURAL"]/*' />
     DWRITE_MEASURING_MODE_GDI_NATURAL,
 }

@@ -12,6 +12,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DXGIGetDebugInterface"]/*' />
     [DllImport("dxgidebug", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT DXGIGetDebugInterface([NativeTypeName("const IID &")] Guid* riid, void** ppDebug);

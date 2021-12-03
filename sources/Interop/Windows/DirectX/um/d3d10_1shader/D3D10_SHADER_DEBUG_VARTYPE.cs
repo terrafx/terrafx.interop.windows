@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_SHADER_DEBUG_VARTYPE.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_VARTYPE"]/*' />
 public enum D3D10_SHADER_DEBUG_VARTYPE
 {
+    /// <include file='D3D10_SHADER_DEBUG_VARTYPE.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_VARTYPE.D3D10_SHADER_DEBUG_VAR_VARIABLE"]/*' />
     D3D10_SHADER_DEBUG_VAR_VARIABLE,
+
+    /// <include file='D3D10_SHADER_DEBUG_VARTYPE.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_VARTYPE.D3D10_SHADER_DEBUG_VAR_FUNCTION"]/*' />
     D3D10_SHADER_DEBUG_VAR_FUNCTION,
+
+    /// <include file='D3D10_SHADER_DEBUG_VARTYPE.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_VARTYPE.D3D10_SHADER_DEBUG_VAR_FORCE_DWORD"]/*' />
     D3D10_SHADER_DEBUG_VAR_FORCE_DWORD = 0x7fffffff,
 }

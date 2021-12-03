@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_TEX2DMS_ARRAY_DSV.xml' path='doc/member[@name="D3D11_TEX2DMS_ARRAY_DSV"]/*' />
 public partial struct D3D11_TEX2DMS_ARRAY_DSV
 {
+    /// <include file='D3D11_TEX2DMS_ARRAY_DSV.xml' path='doc/member[@name="D3D11_TEX2DMS_ARRAY_DSV.FirstArraySlice"]/*' />
     public uint FirstArraySlice;
 
+    /// <include file='D3D11_TEX2DMS_ARRAY_DSV.xml' path='doc/member[@name="D3D11_TEX2DMS_ARRAY_DSV.ArraySize"]/*' />
     public uint ArraySize;
 }

@@ -7,11 +7,14 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXCoreAdapterMemoryBudgetNodeSegmentGroup.xml' path='doc/member[@name="DXCoreAdapterMemoryBudgetNodeSegmentGroup"]/*' />
 [SupportedOSPlatform("windows10.0.19041.0")]
 public partial struct DXCoreAdapterMemoryBudgetNodeSegmentGroup
 {
+    /// <include file='DXCoreAdapterMemoryBudgetNodeSegmentGroup.xml' path='doc/member[@name="DXCoreAdapterMemoryBudgetNodeSegmentGroup.nodeIndex"]/*' />
     [NativeTypeName("uint32_t")]
     public uint nodeIndex;
 
+    /// <include file='DXCoreAdapterMemoryBudgetNodeSegmentGroup.xml' path='doc/member[@name="DXCoreAdapterMemoryBudgetNodeSegmentGroup.segmentGroup"]/*' />
     public DXCoreSegmentGroup segmentGroup;
 }

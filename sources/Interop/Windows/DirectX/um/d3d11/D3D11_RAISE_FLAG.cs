@@ -7,8 +7,10 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_RAISE_FLAG.xml' path='doc/member[@name="D3D11_RAISE_FLAG"]/*' />
 [Flags]
 public enum D3D11_RAISE_FLAG
 {
+    /// <include file='D3D11_RAISE_FLAG.xml' path='doc/member[@name="D3D11_RAISE_FLAG.D3D11_RAISE_FLAG_DRIVER_INTERNAL_ERROR"]/*' />
     D3D11_RAISE_FLAG_DRIVER_INTERNAL_ERROR = 0x1,
 }

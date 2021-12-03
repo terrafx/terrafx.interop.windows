@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IRadialControllerIndependentInputSourceInterop.xml' path='doc/member[@name="IRadialControllerIndependentInputSourceInterop"]/*' />
 [Guid("3D577EFF-4CEE-11E6-B535-001BDC06AB3B")]
 [NativeTypeName("struct IRadialControllerIndependentInputSourceInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -17,6 +18,7 @@ public unsafe partial struct IRadialControllerIndependentInputSourceInterop : IR
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IRadialControllerIndependentInputSourceInterop : IR
         return ((delegate* unmanaged<IRadialControllerIndependentInputSourceInterop*, Guid*, void**, int>)(lpVtbl[0]))((IRadialControllerIndependentInputSourceInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IRadialControllerIndependentInputSourceInterop : IR
         return ((delegate* unmanaged<IRadialControllerIndependentInputSourceInterop*, uint>)(lpVtbl[1]))((IRadialControllerIndependentInputSourceInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IRadialControllerIndependentInputSourceInterop : IR
         return ((delegate* unmanaged<IRadialControllerIndependentInputSourceInterop*, uint>)(lpVtbl[2]))((IRadialControllerIndependentInputSourceInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -47,6 +52,7 @@ public unsafe partial struct IRadialControllerIndependentInputSourceInterop : IR
         return ((delegate* unmanaged<IRadialControllerIndependentInputSourceInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IRadialControllerIndependentInputSourceInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -54,6 +60,7 @@ public unsafe partial struct IRadialControllerIndependentInputSourceInterop : IR
         return ((delegate* unmanaged<IRadialControllerIndependentInputSourceInterop*, HSTRING*, int>)(lpVtbl[4]))((IRadialControllerIndependentInputSourceInterop*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -61,6 +68,7 @@ public unsafe partial struct IRadialControllerIndependentInputSourceInterop : IR
         return ((delegate* unmanaged<IRadialControllerIndependentInputSourceInterop*, TrustLevel*, int>)(lpVtbl[5]))((IRadialControllerIndependentInputSourceInterop*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='IRadialControllerIndependentInputSourceInterop.xml' path='doc/member[@name="IRadialControllerIndependentInputSourceInterop.CreateForWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CreateForWindow(HWND hwnd, [NativeTypeName("const IID &")] Guid* riid, void** ppv)

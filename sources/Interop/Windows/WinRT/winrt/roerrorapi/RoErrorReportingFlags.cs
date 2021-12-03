@@ -8,12 +8,22 @@ using static TerraFX.Interop.WinRT.RO_ERROR_REPORTING_FLAGS;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='RoErrorReportingFlags.xml' path='doc/member[@name="RoErrorReportingFlags"]/*' />
 [Flags]
 public enum RoErrorReportingFlags
 {
+    /// <include file='RoErrorReportingFlags.xml' path='doc/member[@name="RoErrorReportingFlags.None"]/*' />
     None = RO_ERROR_REPORTING_NONE,
+
+    /// <include file='RoErrorReportingFlags.xml' path='doc/member[@name="RoErrorReportingFlags.SuppressExceptions"]/*' />
     SuppressExceptions = RO_ERROR_REPORTING_SUPPRESSEXCEPTIONS,
+
+    /// <include file='RoErrorReportingFlags.xml' path='doc/member[@name="RoErrorReportingFlags.ForceExceptions"]/*' />
     ForceExceptions = RO_ERROR_REPORTING_FORCEEXCEPTIONS,
+
+    /// <include file='RoErrorReportingFlags.xml' path='doc/member[@name="RoErrorReportingFlags.UseSetErrorInfo"]/*' />
     UseSetErrorInfo = RO_ERROR_REPORTING_USESETERRORINFO,
+
+    /// <include file='RoErrorReportingFlags.xml' path='doc/member[@name="RoErrorReportingFlags.SuppressSetErrorInfo"]/*' />
     SuppressSetErrorInfo = RO_ERROR_REPORTING_SUPPRESSSETERRORINFO,
 }

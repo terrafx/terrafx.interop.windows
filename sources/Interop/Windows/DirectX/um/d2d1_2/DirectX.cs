@@ -10,6 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D2D1ComputeMaximumScaleFactor"]/*' />
     [DllImport("d2d1", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.1")]
     [SuppressGCTransition]

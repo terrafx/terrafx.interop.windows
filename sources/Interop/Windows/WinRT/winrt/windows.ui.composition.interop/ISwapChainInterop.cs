@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ISwapChainInterop.xml' path='doc/member[@name="ISwapChainInterop"]/*' />
 [Guid("26F496A0-7F38-45FB-88F7-FAAABE67DD59")]
 [NativeTypeName("struct ISwapChainInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ISwapChainInterop : ISwapChainInterop.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ISwapChainInterop : ISwapChainInterop.Interface
         return ((delegate* unmanaged<ISwapChainInterop*, Guid*, void**, int>)(lpVtbl[0]))((ISwapChainInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ISwapChainInterop : ISwapChainInterop.Interface
         return ((delegate* unmanaged<ISwapChainInterop*, uint>)(lpVtbl[1]))((ISwapChainInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ISwapChainInterop : ISwapChainInterop.Interface
         return ((delegate* unmanaged<ISwapChainInterop*, uint>)(lpVtbl[2]))((ISwapChainInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISwapChainInterop.xml' path='doc/member[@name="ISwapChainInterop.SetSwapChain"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetSwapChain(IUnknown* swapChain)

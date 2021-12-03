@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12DeviceRemovedExtendedDataSettings.xml' path='doc/member[@name="ID3D12DeviceRemovedExtendedDataSettings"]/*' />
 [Guid("82BC481C-6B9B-4030-AEDB-7EE3D1DF1E63")]
 [NativeTypeName("struct ID3D12DeviceRemovedExtendedDataSettings : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings : ID3D12Dev
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings : ID3D12Dev
         return ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DeviceRemovedExtendedDataSettings*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings : ID3D12Dev
         return ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, uint>)(lpVtbl[1]))((ID3D12DeviceRemovedExtendedDataSettings*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings : ID3D12Dev
         return ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, uint>)(lpVtbl[2]))((ID3D12DeviceRemovedExtendedDataSettings*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12DeviceRemovedExtendedDataSettings.xml' path='doc/member[@name="ID3D12DeviceRemovedExtendedDataSettings.SetAutoBreadcrumbsEnablement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void SetAutoBreadcrumbsEnablement(D3D12_DRED_ENABLEMENT Enablement)
@@ -49,6 +54,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings : ID3D12Dev
         ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, D3D12_DRED_ENABLEMENT, void>)(lpVtbl[3]))((ID3D12DeviceRemovedExtendedDataSettings*)Unsafe.AsPointer(ref this), Enablement);
     }
 
+    /// <include file='ID3D12DeviceRemovedExtendedDataSettings.xml' path='doc/member[@name="ID3D12DeviceRemovedExtendedDataSettings.SetPageFaultEnablement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void SetPageFaultEnablement(D3D12_DRED_ENABLEMENT Enablement)
@@ -56,6 +62,7 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings : ID3D12Dev
         ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, D3D12_DRED_ENABLEMENT, void>)(lpVtbl[4]))((ID3D12DeviceRemovedExtendedDataSettings*)Unsafe.AsPointer(ref this), Enablement);
     }
 
+    /// <include file='ID3D12DeviceRemovedExtendedDataSettings.xml' path='doc/member[@name="ID3D12DeviceRemovedExtendedDataSettings.SetWatsonDumpEnablement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void SetWatsonDumpEnablement(D3D12_DRED_ENABLEMENT Enablement)

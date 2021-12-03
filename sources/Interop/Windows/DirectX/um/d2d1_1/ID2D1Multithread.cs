@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1Multithread.xml' path='doc/member[@name="ID2D1Multithread"]/*' />
 [Guid("31E6E7BC-E0FF-4D46-8C64-A0A8C41C15D3")]
 [NativeTypeName("struct ID2D1Multithread : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface
         return ((delegate* unmanaged<ID2D1Multithread*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1Multithread*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface
         return ((delegate* unmanaged<ID2D1Multithread*, uint>)(lpVtbl[1]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface
         return ((delegate* unmanaged<ID2D1Multithread*, uint>)(lpVtbl[2]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1Multithread.xml' path='doc/member[@name="ID2D1Multithread.GetMultithreadProtected"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public BOOL GetMultithreadProtected()
@@ -47,6 +52,7 @@ public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<ID2D1Multithread*, int>)(lpVtbl[3]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1Multithread.xml' path='doc/member[@name="ID2D1Multithread.Enter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void Enter()
@@ -54,6 +60,7 @@ public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface
         ((delegate* unmanaged<ID2D1Multithread*, void>)(lpVtbl[4]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1Multithread.xml' path='doc/member[@name="ID2D1Multithread.Leave"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void Leave()

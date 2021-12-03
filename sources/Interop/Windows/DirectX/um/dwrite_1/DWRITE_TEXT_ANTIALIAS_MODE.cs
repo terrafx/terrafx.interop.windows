@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_TEXT_ANTIALIAS_MODE.xml' path='doc/member[@name="DWRITE_TEXT_ANTIALIAS_MODE"]/*' />
 public enum DWRITE_TEXT_ANTIALIAS_MODE
 {
+    /// <include file='DWRITE_TEXT_ANTIALIAS_MODE.xml' path='doc/member[@name="DWRITE_TEXT_ANTIALIAS_MODE.DWRITE_TEXT_ANTIALIAS_MODE_CLEARTYPE"]/*' />
     DWRITE_TEXT_ANTIALIAS_MODE_CLEARTYPE,
+
+    /// <include file='DWRITE_TEXT_ANTIALIAS_MODE.xml' path='doc/member[@name="DWRITE_TEXT_ANTIALIAS_MODE.DWRITE_TEXT_ANTIALIAS_MODE_GRAYSCALE"]/*' />
     DWRITE_TEXT_ANTIALIAS_MODE_GRAYSCALE,
 }

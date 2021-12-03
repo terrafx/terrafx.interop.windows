@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3DBlob.xml' path='doc/member[@name="ID3DBlob"]/*' />
 [Guid("8BA5FB08-5195-40E2-AC58-0D989C3A0102")]
 [NativeTypeName("struct ID3D10Blob : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface
         return ((delegate* unmanaged<ID3DBlob*, Guid*, void**, int>)(lpVtbl[0]))((ID3DBlob*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface
         return ((delegate* unmanaged<ID3DBlob*, uint>)(lpVtbl[1]))((ID3DBlob*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface
         return ((delegate* unmanaged<ID3DBlob*, uint>)(lpVtbl[2]))((ID3DBlob*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3DBlob.xml' path='doc/member[@name="ID3DBlob.GetBufferPointer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("LPVOID")]
@@ -48,6 +53,7 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface
         return ((delegate* unmanaged<ID3DBlob*, void*>)(lpVtbl[3]))((ID3DBlob*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3DBlob.xml' path='doc/member[@name="ID3DBlob.GetBufferSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     [return: NativeTypeName("SIZE_T")]

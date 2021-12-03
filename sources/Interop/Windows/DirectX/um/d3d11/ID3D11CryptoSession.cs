@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D11CryptoSession.xml' path='doc/member[@name="ID3D11CryptoSession"]/*' />
 [Guid("9B32F9AD-BDCC-40A6-A39D-D5C865845720")]
 [NativeTypeName("struct ID3D11CryptoSession : ID3D11DeviceChild")]
 [NativeInheritance("ID3D11DeviceChild")]
@@ -19,6 +20,7 @@ public unsafe partial struct ID3D11CryptoSession : ID3D11CryptoSession.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct ID3D11CryptoSession : ID3D11CryptoSession.Interface
         return ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct ID3D11CryptoSession : ID3D11CryptoSession.Interface
         return ((delegate* unmanaged<ID3D11CryptoSession*, uint>)(lpVtbl[1]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct ID3D11CryptoSession : ID3D11CryptoSession.Interface
         return ((delegate* unmanaged<ID3D11CryptoSession*, uint>)(lpVtbl[2]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.GetDevice" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void GetDevice(ID3D11Device** ppDevice)
@@ -49,6 +54,7 @@ public unsafe partial struct ID3D11CryptoSession : ID3D11CryptoSession.Interface
         ((delegate* unmanaged<ID3D11CryptoSession*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), ppDevice);
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.GetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
@@ -56,6 +62,7 @@ public unsafe partial struct ID3D11CryptoSession : ID3D11CryptoSession.Interface
         return ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.SetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
@@ -63,6 +70,7 @@ public unsafe partial struct ID3D11CryptoSession : ID3D11CryptoSession.Interface
         return ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.SetPrivateDataInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
@@ -70,6 +78,7 @@ public unsafe partial struct ID3D11CryptoSession : ID3D11CryptoSession.Interface
         return ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), guid, pData);
     }
 
+    /// <include file='ID3D11CryptoSession.xml' path='doc/member[@name="ID3D11CryptoSession.GetCryptoType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void GetCryptoType(Guid* pCryptoType)
@@ -77,6 +86,7 @@ public unsafe partial struct ID3D11CryptoSession : ID3D11CryptoSession.Interface
         ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, void>)(lpVtbl[7]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), pCryptoType);
     }
 
+    /// <include file='ID3D11CryptoSession.xml' path='doc/member[@name="ID3D11CryptoSession.GetDecoderProfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public void GetDecoderProfile(Guid* pDecoderProfile)
@@ -84,6 +94,7 @@ public unsafe partial struct ID3D11CryptoSession : ID3D11CryptoSession.Interface
         ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, void>)(lpVtbl[8]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), pDecoderProfile);
     }
 
+    /// <include file='ID3D11CryptoSession.xml' path='doc/member[@name="ID3D11CryptoSession.GetCertificateSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetCertificateSize(uint* pCertificateSize)
@@ -91,6 +102,7 @@ public unsafe partial struct ID3D11CryptoSession : ID3D11CryptoSession.Interface
         return ((delegate* unmanaged<ID3D11CryptoSession*, uint*, int>)(lpVtbl[9]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), pCertificateSize);
     }
 
+    /// <include file='ID3D11CryptoSession.xml' path='doc/member[@name="ID3D11CryptoSession.GetCertificate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetCertificate(uint CertificateSize, byte* pCertificate)
@@ -98,6 +110,7 @@ public unsafe partial struct ID3D11CryptoSession : ID3D11CryptoSession.Interface
         return ((delegate* unmanaged<ID3D11CryptoSession*, uint, byte*, int>)(lpVtbl[10]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), CertificateSize, pCertificate);
     }
 
+    /// <include file='ID3D11CryptoSession.xml' path='doc/member[@name="ID3D11CryptoSession.GetCryptoSessionHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public void GetCryptoSessionHandle(HANDLE* pCryptoSessionHandle)

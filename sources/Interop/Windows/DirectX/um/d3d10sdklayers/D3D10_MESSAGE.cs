@@ -7,17 +7,23 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_MESSAGE.xml' path='doc/member[@name="D3D10_MESSAGE"]/*' />
 public unsafe partial struct D3D10_MESSAGE
 {
+    /// <include file='D3D10_MESSAGE.xml' path='doc/member[@name="D3D10_MESSAGE.Category"]/*' />
     public D3D10_MESSAGE_CATEGORY Category;
 
+    /// <include file='D3D10_MESSAGE.xml' path='doc/member[@name="D3D10_MESSAGE.Severity"]/*' />
     public D3D10_MESSAGE_SEVERITY Severity;
 
+    /// <include file='D3D10_MESSAGE.xml' path='doc/member[@name="D3D10_MESSAGE.ID"]/*' />
     public D3D10_MESSAGE_ID ID;
 
+    /// <include file='D3D10_MESSAGE.xml' path='doc/member[@name="D3D10_MESSAGE.pDescription"]/*' />
     [NativeTypeName("const char *")]
     public sbyte* pDescription;
 
+    /// <include file='D3D10_MESSAGE.xml' path='doc/member[@name="D3D10_MESSAGE.DescriptionByteLength"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint DescriptionByteLength;
 }

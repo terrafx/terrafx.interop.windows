@@ -5,17 +5,24 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_BOX.xml' path='doc/member[@name="D3D10_BOX"]/*' />
 public partial struct D3D10_BOX
 {
+    /// <include file='D3D10_BOX.xml' path='doc/member[@name="D3D10_BOX.left"]/*' />
     public uint left;
 
+    /// <include file='D3D10_BOX.xml' path='doc/member[@name="D3D10_BOX.top"]/*' />
     public uint top;
 
+    /// <include file='D3D10_BOX.xml' path='doc/member[@name="D3D10_BOX.front"]/*' />
     public uint front;
 
+    /// <include file='D3D10_BOX.xml' path='doc/member[@name="D3D10_BOX.right"]/*' />
     public uint right;
 
+    /// <include file='D3D10_BOX.xml' path='doc/member[@name="D3D10_BOX.bottom"]/*' />
     public uint bottom;
 
+    /// <include file='D3D10_BOX.xml' path='doc/member[@name="D3D10_BOX.back"]/*' />
     public uint back;
 }

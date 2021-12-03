@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_PASS_SHADER_DESC.xml' path='doc/member[@name="D3D10_PASS_SHADER_DESC"]/*' />
 public unsafe partial struct D3D10_PASS_SHADER_DESC
 {
+    /// <include file='D3D10_PASS_SHADER_DESC.xml' path='doc/member[@name="D3D10_PASS_SHADER_DESC.pShaderVariable"]/*' />
     public ID3D10EffectShaderVariable* pShaderVariable;
 
+    /// <include file='D3D10_PASS_SHADER_DESC.xml' path='doc/member[@name="D3D10_PASS_SHADER_DESC.ShaderIndex"]/*' />
     public uint ShaderIndex;
 }

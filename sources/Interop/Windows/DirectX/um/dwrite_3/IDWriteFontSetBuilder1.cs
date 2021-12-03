@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteFontSetBuilder1.xml' path='doc/member[@name="IDWriteFontSetBuilder1"]/*' />
 [Guid("3FF7715F-3CDC-4DC6-9B72-EC5621DCCAFD")]
 [NativeTypeName("struct IDWriteFontSetBuilder1 : IDWriteFontSetBuilder")]
 [NativeInheritance("IDWriteFontSetBuilder")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDWriteFontSetBuilder1 : IDWriteFontSetBuilder1.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDWriteFontSetBuilder1 : IDWriteFontSetBuilder1.Int
         return ((delegate* unmanaged<IDWriteFontSetBuilder1*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontSetBuilder1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDWriteFontSetBuilder1 : IDWriteFontSetBuilder1.Int
         return ((delegate* unmanaged<IDWriteFontSetBuilder1*, uint>)(lpVtbl[1]))((IDWriteFontSetBuilder1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDWriteFontSetBuilder1 : IDWriteFontSetBuilder1.Int
         return ((delegate* unmanaged<IDWriteFontSetBuilder1*, uint>)(lpVtbl[2]))((IDWriteFontSetBuilder1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDWriteFontSetBuilder.AddFontFaceReference" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddFontFaceReference(IDWriteFontFaceReference* fontFaceReference, [NativeTypeName("const DWRITE_FONT_PROPERTY *")] DWRITE_FONT_PROPERTY* properties, [NativeTypeName("UINT32")] uint propertyCount)
@@ -47,6 +52,7 @@ public unsafe partial struct IDWriteFontSetBuilder1 : IDWriteFontSetBuilder1.Int
         return ((delegate* unmanaged<IDWriteFontSetBuilder1*, IDWriteFontFaceReference*, DWRITE_FONT_PROPERTY*, uint, int>)(lpVtbl[3]))((IDWriteFontSetBuilder1*)Unsafe.AsPointer(ref this), fontFaceReference, properties, propertyCount);
     }
 
+    /// <inheritdoc cref="IDWriteFontSetBuilder.AddFontFaceReference" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AddFontFaceReference(IDWriteFontFaceReference* fontFaceReference)
@@ -54,6 +60,7 @@ public unsafe partial struct IDWriteFontSetBuilder1 : IDWriteFontSetBuilder1.Int
         return ((delegate* unmanaged<IDWriteFontSetBuilder1*, IDWriteFontFaceReference*, int>)(lpVtbl[4]))((IDWriteFontSetBuilder1*)Unsafe.AsPointer(ref this), fontFaceReference);
     }
 
+    /// <inheritdoc cref="IDWriteFontSetBuilder.AddFontSet" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT AddFontSet(IDWriteFontSet* fontSet)
@@ -61,6 +68,7 @@ public unsafe partial struct IDWriteFontSetBuilder1 : IDWriteFontSetBuilder1.Int
         return ((delegate* unmanaged<IDWriteFontSetBuilder1*, IDWriteFontSet*, int>)(lpVtbl[5]))((IDWriteFontSetBuilder1*)Unsafe.AsPointer(ref this), fontSet);
     }
 
+    /// <inheritdoc cref="IDWriteFontSetBuilder.CreateFontSet" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CreateFontSet(IDWriteFontSet** fontSet)
@@ -68,6 +76,7 @@ public unsafe partial struct IDWriteFontSetBuilder1 : IDWriteFontSetBuilder1.Int
         return ((delegate* unmanaged<IDWriteFontSetBuilder1*, IDWriteFontSet**, int>)(lpVtbl[6]))((IDWriteFontSetBuilder1*)Unsafe.AsPointer(ref this), fontSet);
     }
 
+    /// <include file='IDWriteFontSetBuilder1.xml' path='doc/member[@name="IDWriteFontSetBuilder1.AddFontFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT AddFontFile(IDWriteFontFile* fontFile)

@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IGraphicsEffectD2D1Interop.xml' path='doc/member[@name="IGraphicsEffectD2D1Interop"]/*' />
 [Guid("2FC57384-A068-44D7-A331-30982FCF7177")]
 [NativeTypeName("struct IGraphicsEffectD2D1Interop : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IGraphicsEffectD2D1Interop : IGraphicsEffectD2D1Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IGraphicsEffectD2D1Interop : IGraphicsEffectD2D1Int
         return ((delegate* unmanaged<IGraphicsEffectD2D1Interop*, Guid*, void**, int>)(lpVtbl[0]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IGraphicsEffectD2D1Interop : IGraphicsEffectD2D1Int
         return ((delegate* unmanaged<IGraphicsEffectD2D1Interop*, uint>)(lpVtbl[1]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IGraphicsEffectD2D1Interop : IGraphicsEffectD2D1Int
         return ((delegate* unmanaged<IGraphicsEffectD2D1Interop*, uint>)(lpVtbl[2]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IGraphicsEffectD2D1Interop.xml' path='doc/member[@name="IGraphicsEffectD2D1Interop.GetEffectId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetEffectId(Guid* id)
@@ -47,6 +52,7 @@ public unsafe partial struct IGraphicsEffectD2D1Interop : IGraphicsEffectD2D1Int
         return ((delegate* unmanaged<IGraphicsEffectD2D1Interop*, Guid*, int>)(lpVtbl[3]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this), id);
     }
 
+    /// <include file='IGraphicsEffectD2D1Interop.xml' path='doc/member[@name="IGraphicsEffectD2D1Interop.GetNamedPropertyMapping"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetNamedPropertyMapping([NativeTypeName("LPCWSTR")] ushort* name, uint* index, [NativeTypeName("ABI::Windows::Graphics::Effects::GRAPHICS_EFFECT_PROPERTY_MAPPING *")] GRAPHICS_EFFECT_PROPERTY_MAPPING* mapping)
@@ -54,6 +60,7 @@ public unsafe partial struct IGraphicsEffectD2D1Interop : IGraphicsEffectD2D1Int
         return ((delegate* unmanaged<IGraphicsEffectD2D1Interop*, ushort*, uint*, GRAPHICS_EFFECT_PROPERTY_MAPPING*, int>)(lpVtbl[4]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this), name, index, mapping);
     }
 
+    /// <include file='IGraphicsEffectD2D1Interop.xml' path='doc/member[@name="IGraphicsEffectD2D1Interop.GetPropertyCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPropertyCount(uint* count)
@@ -61,6 +68,7 @@ public unsafe partial struct IGraphicsEffectD2D1Interop : IGraphicsEffectD2D1Int
         return ((delegate* unmanaged<IGraphicsEffectD2D1Interop*, uint*, int>)(lpVtbl[5]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this), count);
     }
 
+    /// <include file='IGraphicsEffectD2D1Interop.xml' path='doc/member[@name="IGraphicsEffectD2D1Interop.GetProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetProperty(uint index, [NativeTypeName("Windows::Foundation::IPropertyValue **")] void** value)
@@ -68,6 +76,7 @@ public unsafe partial struct IGraphicsEffectD2D1Interop : IGraphicsEffectD2D1Int
         return ((delegate* unmanaged<IGraphicsEffectD2D1Interop*, uint, void**, int>)(lpVtbl[6]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this), index, value);
     }
 
+    /// <include file='IGraphicsEffectD2D1Interop.xml' path='doc/member[@name="IGraphicsEffectD2D1Interop.GetSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetSource(uint index, [NativeTypeName("ABI::Windows::Graphics::Effects::IGraphicsEffectSource **")] void** source)
@@ -75,6 +84,7 @@ public unsafe partial struct IGraphicsEffectD2D1Interop : IGraphicsEffectD2D1Int
         return ((delegate* unmanaged<IGraphicsEffectD2D1Interop*, uint, void**, int>)(lpVtbl[7]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this), index, source);
     }
 
+    /// <include file='IGraphicsEffectD2D1Interop.xml' path='doc/member[@name="IGraphicsEffectD2D1Interop.GetSourceCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetSourceCount(uint* count)

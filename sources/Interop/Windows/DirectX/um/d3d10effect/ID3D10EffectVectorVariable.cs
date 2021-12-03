@@ -8,12 +8,14 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D10EffectVectorVariable.xml' path='doc/member[@name="ID3D10EffectVectorVariable"]/*' />
 [NativeTypeName("struct ID3D10EffectVectorVariable : ID3D10EffectVariable")]
 [NativeInheritance("ID3D10EffectVariable")]
 public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVariable.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="ID3D10EffectVariable.IsValid" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public BOOL IsValid()
@@ -21,6 +23,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, int>)(lpVtbl[0]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.GetType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     public new ID3D10EffectType* GetType()
@@ -28,6 +31,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, ID3D10EffectType*>)(lpVtbl[1]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.GetDesc" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     public HRESULT GetDesc(D3D10_EFFECT_VARIABLE_DESC* pDesc)
@@ -35,6 +39,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, D3D10_EFFECT_VARIABLE_DESC*, int>)(lpVtbl[2]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.GetAnnotationByIndex" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public ID3D10EffectVariable* GetAnnotationByIndex(uint Index)
@@ -42,6 +47,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, uint, ID3D10EffectVariable*>)(lpVtbl[3]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), Index);
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.GetAnnotationByName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public ID3D10EffectVariable* GetAnnotationByName([NativeTypeName("LPCSTR")] sbyte* Name)
@@ -49,6 +55,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, sbyte*, ID3D10EffectVariable*>)(lpVtbl[4]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.GetMemberByIndex" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public ID3D10EffectVariable* GetMemberByIndex(uint Index)
@@ -56,6 +63,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, uint, ID3D10EffectVariable*>)(lpVtbl[5]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), Index);
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.GetMemberByName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public ID3D10EffectVariable* GetMemberByName([NativeTypeName("LPCSTR")] sbyte* Name)
@@ -63,6 +71,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, sbyte*, ID3D10EffectVariable*>)(lpVtbl[6]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.GetMemberBySemantic" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public ID3D10EffectVariable* GetMemberBySemantic([NativeTypeName("LPCSTR")] sbyte* Semantic)
@@ -70,6 +79,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, sbyte*, ID3D10EffectVariable*>)(lpVtbl[7]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), Semantic);
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.GetElement" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public ID3D10EffectVariable* GetElement(uint Index)
@@ -77,6 +87,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, uint, ID3D10EffectVariable*>)(lpVtbl[8]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), Index);
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.GetParentConstantBuffer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public ID3D10EffectConstantBuffer* GetParentConstantBuffer()
@@ -84,6 +95,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, ID3D10EffectConstantBuffer*>)(lpVtbl[9]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.AsScalar" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public ID3D10EffectScalarVariable* AsScalar()
@@ -91,6 +103,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, ID3D10EffectScalarVariable*>)(lpVtbl[10]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.AsVector" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public ID3D10EffectVectorVariable* AsVector()
@@ -98,6 +111,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, ID3D10EffectVectorVariable*>)(lpVtbl[11]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.AsMatrix" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public ID3D10EffectMatrixVariable* AsMatrix()
@@ -105,6 +119,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, ID3D10EffectMatrixVariable*>)(lpVtbl[12]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.AsString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public ID3D10EffectStringVariable* AsString()
@@ -112,6 +127,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, ID3D10EffectStringVariable*>)(lpVtbl[13]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.AsShaderResource" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public ID3D10EffectShaderResourceVariable* AsShaderResource()
@@ -119,6 +135,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, ID3D10EffectShaderResourceVariable*>)(lpVtbl[14]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.AsRenderTargetView" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public ID3D10EffectRenderTargetViewVariable* AsRenderTargetView()
@@ -126,6 +143,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, ID3D10EffectRenderTargetViewVariable*>)(lpVtbl[15]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.AsDepthStencilView" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public ID3D10EffectDepthStencilViewVariable* AsDepthStencilView()
@@ -133,6 +151,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, ID3D10EffectDepthStencilViewVariable*>)(lpVtbl[16]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.AsConstantBuffer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public ID3D10EffectConstantBuffer* AsConstantBuffer()
@@ -140,6 +159,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, ID3D10EffectConstantBuffer*>)(lpVtbl[17]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.AsShader" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public ID3D10EffectShaderVariable* AsShader()
@@ -147,6 +167,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, ID3D10EffectShaderVariable*>)(lpVtbl[18]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.AsBlend" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public ID3D10EffectBlendVariable* AsBlend()
@@ -154,6 +175,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, ID3D10EffectBlendVariable*>)(lpVtbl[19]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.AsDepthStencil" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public ID3D10EffectDepthStencilVariable* AsDepthStencil()
@@ -161,6 +183,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, ID3D10EffectDepthStencilVariable*>)(lpVtbl[20]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.AsRasterizer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public ID3D10EffectRasterizerVariable* AsRasterizer()
@@ -168,6 +191,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, ID3D10EffectRasterizerVariable*>)(lpVtbl[21]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.AsSampler" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public ID3D10EffectSamplerVariable* AsSampler()
@@ -175,6 +199,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, ID3D10EffectSamplerVariable*>)(lpVtbl[22]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.SetRawValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT SetRawValue(void* pData, uint Offset, uint ByteCount)
@@ -182,6 +207,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, void*, uint, uint, int>)(lpVtbl[23]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), pData, Offset, ByteCount);
     }
 
+    /// <inheritdoc cref="ID3D10EffectVariable.GetRawValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT GetRawValue(void* pData, uint Offset, uint ByteCount)
@@ -189,6 +215,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, void*, uint, uint, int>)(lpVtbl[24]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), pData, Offset, ByteCount);
     }
 
+    /// <include file='ID3D10EffectVectorVariable.xml' path='doc/member[@name="ID3D10EffectVectorVariable.SetBoolVector"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT SetBoolVector(BOOL* pData)
@@ -196,6 +223,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, BOOL*, int>)(lpVtbl[25]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), pData);
     }
 
+    /// <include file='ID3D10EffectVectorVariable.xml' path='doc/member[@name="ID3D10EffectVectorVariable.SetIntVector"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT SetIntVector(int* pData)
@@ -203,6 +231,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, int*, int>)(lpVtbl[26]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), pData);
     }
 
+    /// <include file='ID3D10EffectVectorVariable.xml' path='doc/member[@name="ID3D10EffectVectorVariable.SetFloatVector"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT SetFloatVector(float* pData)
@@ -210,6 +239,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, float*, int>)(lpVtbl[27]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), pData);
     }
 
+    /// <include file='ID3D10EffectVectorVariable.xml' path='doc/member[@name="ID3D10EffectVectorVariable.GetBoolVector"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT GetBoolVector(BOOL* pData)
@@ -217,6 +247,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, BOOL*, int>)(lpVtbl[28]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), pData);
     }
 
+    /// <include file='ID3D10EffectVectorVariable.xml' path='doc/member[@name="ID3D10EffectVectorVariable.GetIntVector"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT GetIntVector(int* pData)
@@ -224,6 +255,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, int*, int>)(lpVtbl[29]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), pData);
     }
 
+    /// <include file='ID3D10EffectVectorVariable.xml' path='doc/member[@name="ID3D10EffectVectorVariable.GetFloatVector"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT GetFloatVector(float* pData)
@@ -231,6 +263,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, float*, int>)(lpVtbl[30]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), pData);
     }
 
+    /// <include file='ID3D10EffectVectorVariable.xml' path='doc/member[@name="ID3D10EffectVectorVariable.SetBoolVectorArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT SetBoolVectorArray(BOOL* pData, uint Offset, uint Count)
@@ -238,6 +271,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, BOOL*, uint, uint, int>)(lpVtbl[31]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), pData, Offset, Count);
     }
 
+    /// <include file='ID3D10EffectVectorVariable.xml' path='doc/member[@name="ID3D10EffectVectorVariable.SetIntVectorArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT SetIntVectorArray(int* pData, uint Offset, uint Count)
@@ -245,6 +279,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, int*, uint, uint, int>)(lpVtbl[32]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), pData, Offset, Count);
     }
 
+    /// <include file='ID3D10EffectVectorVariable.xml' path='doc/member[@name="ID3D10EffectVectorVariable.SetFloatVectorArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT SetFloatVectorArray(float* pData, uint Offset, uint Count)
@@ -252,6 +287,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, float*, uint, uint, int>)(lpVtbl[33]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), pData, Offset, Count);
     }
 
+    /// <include file='ID3D10EffectVectorVariable.xml' path='doc/member[@name="ID3D10EffectVectorVariable.GetBoolVectorArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT GetBoolVectorArray(BOOL* pData, uint Offset, uint Count)
@@ -259,6 +295,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, BOOL*, uint, uint, int>)(lpVtbl[34]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), pData, Offset, Count);
     }
 
+    /// <include file='ID3D10EffectVectorVariable.xml' path='doc/member[@name="ID3D10EffectVectorVariable.GetIntVectorArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT GetIntVectorArray(int* pData, uint Offset, uint Count)
@@ -266,6 +303,7 @@ public unsafe partial struct ID3D10EffectVectorVariable : ID3D10EffectVectorVari
         return ((delegate* unmanaged<ID3D10EffectVectorVariable*, int*, uint, uint, int>)(lpVtbl[35]))((ID3D10EffectVectorVariable*)Unsafe.AsPointer(ref this), pData, Offset, Count);
     }
 
+    /// <include file='ID3D10EffectVectorVariable.xml' path='doc/member[@name="ID3D10EffectVectorVariable.GetFloatVectorArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT GetFloatVectorArray(float* pData, uint Offset, uint Count)

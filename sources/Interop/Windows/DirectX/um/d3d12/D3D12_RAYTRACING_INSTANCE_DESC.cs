@@ -7,13 +7,16 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_RAYTRACING_INSTANCE_DESC.xml' path='doc/member[@name="D3D12_RAYTRACING_INSTANCE_DESC"]/*' />
 public unsafe partial struct D3D12_RAYTRACING_INSTANCE_DESC
 {
+    /// <include file='D3D12_RAYTRACING_INSTANCE_DESC.xml' path='doc/member[@name="D3D12_RAYTRACING_INSTANCE_DESC.Transform"]/*' />
     [NativeTypeName("FLOAT [3][4]")]
     public fixed float Transform[3 * 4];
 
     public uint _bitfield1;
 
+    /// <include file='D3D12_RAYTRACING_INSTANCE_DESC.xml' path='doc/member[@name="D3D12_RAYTRACING_INSTANCE_DESC.InstanceID"]/*' />
     [NativeTypeName("uint : 24")]
     public uint InstanceID
     {
@@ -30,6 +33,7 @@ public unsafe partial struct D3D12_RAYTRACING_INSTANCE_DESC
         }
     }
 
+    /// <include file='D3D12_RAYTRACING_INSTANCE_DESC.xml' path='doc/member[@name="D3D12_RAYTRACING_INSTANCE_DESC.InstanceMask"]/*' />
     [NativeTypeName("uint : 8")]
     public uint InstanceMask
     {
@@ -48,6 +52,7 @@ public unsafe partial struct D3D12_RAYTRACING_INSTANCE_DESC
 
     public uint _bitfield2;
 
+    /// <include file='D3D12_RAYTRACING_INSTANCE_DESC.xml' path='doc/member[@name="D3D12_RAYTRACING_INSTANCE_DESC.InstanceContributionToHitGroupIndex"]/*' />
     [NativeTypeName("uint : 24")]
     public uint InstanceContributionToHitGroupIndex
     {
@@ -64,6 +69,7 @@ public unsafe partial struct D3D12_RAYTRACING_INSTANCE_DESC
         }
     }
 
+    /// <include file='D3D12_RAYTRACING_INSTANCE_DESC.xml' path='doc/member[@name="D3D12_RAYTRACING_INSTANCE_DESC.Flags"]/*' />
     [NativeTypeName("uint : 8")]
     public uint Flags
     {
@@ -80,6 +86,7 @@ public unsafe partial struct D3D12_RAYTRACING_INSTANCE_DESC
         }
     }
 
+    /// <include file='D3D12_RAYTRACING_INSTANCE_DESC.xml' path='doc/member[@name="D3D12_RAYTRACING_INSTANCE_DESC.AccelerationStructure"]/*' />
     [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
     public ulong AccelerationStructure;
 }

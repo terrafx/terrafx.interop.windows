@@ -8,14 +8,19 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_FEATURE_DATA_D3D9_OPTIONS1.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D9_OPTIONS1"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct D3D11_FEATURE_DATA_D3D9_OPTIONS1
 {
+    /// <include file='D3D11_FEATURE_DATA_D3D9_OPTIONS1.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D9_OPTIONS1.FullNonPow2TextureSupported"]/*' />
     public BOOL FullNonPow2TextureSupported;
 
+    /// <include file='D3D11_FEATURE_DATA_D3D9_OPTIONS1.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D9_OPTIONS1.DepthAsTextureWithLessEqualComparisonFilterSupported"]/*' />
     public BOOL DepthAsTextureWithLessEqualComparisonFilterSupported;
 
+    /// <include file='D3D11_FEATURE_DATA_D3D9_OPTIONS1.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D9_OPTIONS1.SimpleInstancingSupported"]/*' />
     public BOOL SimpleInstancingSupported;
 
+    /// <include file='D3D11_FEATURE_DATA_D3D9_OPTIONS1.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D9_OPTIONS1.TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported"]/*' />
     public BOOL TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported;
 }

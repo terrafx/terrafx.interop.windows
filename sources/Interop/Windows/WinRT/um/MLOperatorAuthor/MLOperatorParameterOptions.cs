@@ -7,11 +7,17 @@ using System;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='MLOperatorParameterOptions.xml' path='doc/member[@name="MLOperatorParameterOptions"]/*' />
 [NativeTypeName("uint32_t")]
 [Flags]
 public enum MLOperatorParameterOptions : uint
 {
+    /// <include file='MLOperatorParameterOptions.xml' path='doc/member[@name="MLOperatorParameterOptions.Single"]/*' />
     Single = 0,
+
+    /// <include file='MLOperatorParameterOptions.xml' path='doc/member[@name="MLOperatorParameterOptions.Optional"]/*' />
     Optional = 1,
+
+    /// <include file='MLOperatorParameterOptions.xml' path='doc/member[@name="MLOperatorParameterOptions.Variadic"]/*' />
     Variadic = 2,
 }

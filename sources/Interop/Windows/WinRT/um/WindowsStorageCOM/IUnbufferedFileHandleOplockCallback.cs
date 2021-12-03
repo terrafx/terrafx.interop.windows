@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IUnbufferedFileHandleOplockCallback.xml' path='doc/member[@name="IUnbufferedFileHandleOplockCallback"]/*' />
 [Guid("D1019A0E-6243-4329-8497-2E75894D7710")]
 [NativeTypeName("struct IUnbufferedFileHandleOplockCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IUnbufferedFileHandleOplockCallback : IUnbufferedFi
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IUnbufferedFileHandleOplockCallback : IUnbufferedFi
         return ((delegate* unmanaged<IUnbufferedFileHandleOplockCallback*, Guid*, void**, int>)(lpVtbl[0]))((IUnbufferedFileHandleOplockCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IUnbufferedFileHandleOplockCallback : IUnbufferedFi
         return ((delegate* unmanaged<IUnbufferedFileHandleOplockCallback*, uint>)(lpVtbl[1]))((IUnbufferedFileHandleOplockCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IUnbufferedFileHandleOplockCallback : IUnbufferedFi
         return ((delegate* unmanaged<IUnbufferedFileHandleOplockCallback*, uint>)(lpVtbl[2]))((IUnbufferedFileHandleOplockCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUnbufferedFileHandleOplockCallback.xml' path='doc/member[@name="IUnbufferedFileHandleOplockCallback.OnBrokenCallback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnBrokenCallback()

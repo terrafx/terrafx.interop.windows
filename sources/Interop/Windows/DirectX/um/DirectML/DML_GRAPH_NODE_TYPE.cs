@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_GRAPH_NODE_TYPE.xml' path='doc/member[@name="DML_GRAPH_NODE_TYPE"]/*' />
 public enum DML_GRAPH_NODE_TYPE
 {
+    /// <include file='DML_GRAPH_NODE_TYPE.xml' path='doc/member[@name="DML_GRAPH_NODE_TYPE.DML_GRAPH_NODE_TYPE_INVALID"]/*' />
     DML_GRAPH_NODE_TYPE_INVALID,
+
+    /// <include file='DML_GRAPH_NODE_TYPE.xml' path='doc/member[@name="DML_GRAPH_NODE_TYPE.DML_GRAPH_NODE_TYPE_OPERATOR"]/*' />
     DML_GRAPH_NODE_TYPE_OPERATOR,
 }

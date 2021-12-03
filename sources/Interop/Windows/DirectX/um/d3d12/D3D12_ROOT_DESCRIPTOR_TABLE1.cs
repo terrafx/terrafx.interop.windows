@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_ROOT_DESCRIPTOR_TABLE1.xml' path='doc/member[@name="D3D12_ROOT_DESCRIPTOR_TABLE1"]/*' />
 public unsafe partial struct D3D12_ROOT_DESCRIPTOR_TABLE1
 {
+    /// <include file='D3D12_ROOT_DESCRIPTOR_TABLE1.xml' path='doc/member[@name="D3D12_ROOT_DESCRIPTOR_TABLE1.NumDescriptorRanges"]/*' />
     public uint NumDescriptorRanges;
 
+    /// <include file='D3D12_ROOT_DESCRIPTOR_TABLE1.xml' path='doc/member[@name="D3D12_ROOT_DESCRIPTOR_TABLE1.pDescriptorRanges"]/*' />
     [NativeTypeName("const D3D12_DESCRIPTOR_RANGE1 *")]
     public D3D12_DESCRIPTOR_RANGE1* pDescriptorRanges;
 }

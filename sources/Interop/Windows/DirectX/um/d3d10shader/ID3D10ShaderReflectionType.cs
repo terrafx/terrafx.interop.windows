@@ -9,11 +9,13 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D10ShaderReflectionType.xml' path='doc/member[@name="ID3D10ShaderReflectionType"]/*' />
 [Guid("C530AD7D-9B16-4395-A979-BA2ECFF83ADD")]
 public unsafe partial struct ID3D10ShaderReflectionType : ID3D10ShaderReflectionType.Interface
 {
     public void** lpVtbl;
 
+    /// <include file='ID3D10ShaderReflectionType.xml' path='doc/member[@name="ID3D10ShaderReflectionType.GetDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT GetDesc(D3D10_SHADER_TYPE_DESC* pDesc)
@@ -21,6 +23,7 @@ public unsafe partial struct ID3D10ShaderReflectionType : ID3D10ShaderReflection
         return ((delegate* unmanaged<ID3D10ShaderReflectionType*, D3D10_SHADER_TYPE_DESC*, int>)(lpVtbl[0]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <include file='ID3D10ShaderReflectionType.xml' path='doc/member[@name="ID3D10ShaderReflectionType.GetMemberTypeByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     public ID3D10ShaderReflectionType* GetMemberTypeByIndex(uint Index)
@@ -28,6 +31,7 @@ public unsafe partial struct ID3D10ShaderReflectionType : ID3D10ShaderReflection
         return ((delegate* unmanaged<ID3D10ShaderReflectionType*, uint, ID3D10ShaderReflectionType*>)(lpVtbl[1]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
     }
 
+    /// <include file='ID3D10ShaderReflectionType.xml' path='doc/member[@name="ID3D10ShaderReflectionType.GetMemberTypeByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     public ID3D10ShaderReflectionType* GetMemberTypeByName([NativeTypeName("LPCSTR")] sbyte* Name)
@@ -35,6 +39,7 @@ public unsafe partial struct ID3D10ShaderReflectionType : ID3D10ShaderReflection
         return ((delegate* unmanaged<ID3D10ShaderReflectionType*, sbyte*, ID3D10ShaderReflectionType*>)(lpVtbl[2]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <include file='ID3D10ShaderReflectionType.xml' path='doc/member[@name="ID3D10ShaderReflectionType.GetMemberTypeName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("LPCSTR")]

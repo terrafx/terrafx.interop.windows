@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_STATE_OBJECT_TYPE.xml' path='doc/member[@name="D3D12_STATE_OBJECT_TYPE"]/*' />
 public enum D3D12_STATE_OBJECT_TYPE
 {
+    /// <include file='D3D12_STATE_OBJECT_TYPE.xml' path='doc/member[@name="D3D12_STATE_OBJECT_TYPE.D3D12_STATE_OBJECT_TYPE_COLLECTION"]/*' />
     D3D12_STATE_OBJECT_TYPE_COLLECTION = 0,
+
+    /// <include file='D3D12_STATE_OBJECT_TYPE.xml' path='doc/member[@name="D3D12_STATE_OBJECT_TYPE.D3D12_STATE_OBJECT_TYPE_RAYTRACING_PIPELINE"]/*' />
     D3D12_STATE_OBJECT_TYPE_RAYTRACING_PIPELINE = 3,
 }

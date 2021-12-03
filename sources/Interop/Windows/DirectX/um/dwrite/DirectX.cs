@@ -11,6 +11,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DWriteCreateFactory"]/*' />
     [DllImport("dwrite", ExactSpelling = true)]
     public static extern HRESULT DWriteCreateFactory(DWRITE_FACTORY_TYPE factoryType, [NativeTypeName("const IID &")] Guid* iid, IUnknown** factory);
 }

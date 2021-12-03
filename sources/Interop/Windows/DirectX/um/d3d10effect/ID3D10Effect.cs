@@ -9,12 +9,14 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect"]/*' />
 [NativeTypeName("struct ID3D10Effect : IUnknown")]
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -22,6 +24,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface
         return ((delegate* unmanaged<ID3D10Effect*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10Effect*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -30,6 +33,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface
         return ((delegate* unmanaged<ID3D10Effect*, uint>)(lpVtbl[1]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -38,6 +42,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface
         return ((delegate* unmanaged<ID3D10Effect*, uint>)(lpVtbl[2]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.IsValid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public BOOL IsValid()
@@ -45,6 +50,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface
         return ((delegate* unmanaged<ID3D10Effect*, int>)(lpVtbl[3]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.IsPool"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public BOOL IsPool()
@@ -52,6 +58,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface
         return ((delegate* unmanaged<ID3D10Effect*, int>)(lpVtbl[4]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.GetDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetDevice(ID3D10Device** ppDevice)
@@ -59,6 +66,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface
         return ((delegate* unmanaged<ID3D10Effect*, ID3D10Device**, int>)(lpVtbl[5]))((ID3D10Effect*)Unsafe.AsPointer(ref this), ppDevice);
     }
 
+    /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.GetDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetDesc(D3D10_EFFECT_DESC* pDesc)
@@ -66,6 +74,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface
         return ((delegate* unmanaged<ID3D10Effect*, D3D10_EFFECT_DESC*, int>)(lpVtbl[6]))((ID3D10Effect*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.GetConstantBufferByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public ID3D10EffectConstantBuffer* GetConstantBufferByIndex(uint Index)
@@ -73,6 +82,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface
         return ((delegate* unmanaged<ID3D10Effect*, uint, ID3D10EffectConstantBuffer*>)(lpVtbl[7]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Index);
     }
 
+    /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.GetConstantBufferByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public ID3D10EffectConstantBuffer* GetConstantBufferByName([NativeTypeName("LPCSTR")] sbyte* Name)
@@ -80,6 +90,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface
         return ((delegate* unmanaged<ID3D10Effect*, sbyte*, ID3D10EffectConstantBuffer*>)(lpVtbl[8]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.GetVariableByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public ID3D10EffectVariable* GetVariableByIndex(uint Index)
@@ -87,6 +98,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface
         return ((delegate* unmanaged<ID3D10Effect*, uint, ID3D10EffectVariable*>)(lpVtbl[9]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Index);
     }
 
+    /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.GetVariableByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public ID3D10EffectVariable* GetVariableByName([NativeTypeName("LPCSTR")] sbyte* Name)
@@ -94,6 +106,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface
         return ((delegate* unmanaged<ID3D10Effect*, sbyte*, ID3D10EffectVariable*>)(lpVtbl[10]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.GetVariableBySemantic"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public ID3D10EffectVariable* GetVariableBySemantic([NativeTypeName("LPCSTR")] sbyte* Semantic)
@@ -101,6 +114,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface
         return ((delegate* unmanaged<ID3D10Effect*, sbyte*, ID3D10EffectVariable*>)(lpVtbl[11]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Semantic);
     }
 
+    /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.GetTechniqueByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public ID3D10EffectTechnique* GetTechniqueByIndex(uint Index)
@@ -108,6 +122,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface
         return ((delegate* unmanaged<ID3D10Effect*, uint, ID3D10EffectTechnique*>)(lpVtbl[12]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Index);
     }
 
+    /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.GetTechniqueByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public ID3D10EffectTechnique* GetTechniqueByName([NativeTypeName("LPCSTR")] sbyte* Name)
@@ -115,6 +130,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface
         return ((delegate* unmanaged<ID3D10Effect*, sbyte*, ID3D10EffectTechnique*>)(lpVtbl[13]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.Optimize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT Optimize()
@@ -122,6 +138,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface
         return ((delegate* unmanaged<ID3D10Effect*, int>)(lpVtbl[14]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.IsOptimized"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public BOOL IsOptimized()

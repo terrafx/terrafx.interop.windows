@@ -7,23 +7,33 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_SHADER_DEBUG_OUTPUTVAR.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_OUTPUTVAR"]/*' />
 public partial struct D3D10_SHADER_DEBUG_OUTPUTVAR
 {
+    /// <include file='D3D10_SHADER_DEBUG_OUTPUTVAR.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_OUTPUTVAR.Var"]/*' />
     public uint Var;
 
+    /// <include file='D3D10_SHADER_DEBUG_OUTPUTVAR.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_OUTPUTVAR.uValueMin"]/*' />
     public uint uValueMin;
 
+    /// <include file='D3D10_SHADER_DEBUG_OUTPUTVAR.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_OUTPUTVAR.uValueMax"]/*' />
     public uint uValueMax;
 
+    /// <include file='D3D10_SHADER_DEBUG_OUTPUTVAR.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_OUTPUTVAR.iValueMin"]/*' />
     public int iValueMin;
 
+    /// <include file='D3D10_SHADER_DEBUG_OUTPUTVAR.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_OUTPUTVAR.iValueMax"]/*' />
     public int iValueMax;
 
+    /// <include file='D3D10_SHADER_DEBUG_OUTPUTVAR.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_OUTPUTVAR.fValueMin"]/*' />
     public float fValueMin;
 
+    /// <include file='D3D10_SHADER_DEBUG_OUTPUTVAR.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_OUTPUTVAR.fValueMax"]/*' />
     public float fValueMax;
 
+    /// <include file='D3D10_SHADER_DEBUG_OUTPUTVAR.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_OUTPUTVAR.bNaNPossible"]/*' />
     public BOOL bNaNPossible;
 
+    /// <include file='D3D10_SHADER_DEBUG_OUTPUTVAR.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_OUTPUTVAR.bInfPossible"]/*' />
     public BOOL bInfPossible;
 }

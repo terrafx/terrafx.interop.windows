@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IStorageItemHandleAccess.xml' path='doc/member[@name="IStorageItemHandleAccess"]/*' />
 [Guid("5CA296B2-2C25-4D22-B785-B885C8201E6A")]
 [NativeTypeName("struct IStorageItemHandleAccess : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IStorageItemHandleAccess : IStorageItemHandleAccess
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IStorageItemHandleAccess : IStorageItemHandleAccess
         return ((delegate* unmanaged<IStorageItemHandleAccess*, Guid*, void**, int>)(lpVtbl[0]))((IStorageItemHandleAccess*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IStorageItemHandleAccess : IStorageItemHandleAccess
         return ((delegate* unmanaged<IStorageItemHandleAccess*, uint>)(lpVtbl[1]))((IStorageItemHandleAccess*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IStorageItemHandleAccess : IStorageItemHandleAccess
         return ((delegate* unmanaged<IStorageItemHandleAccess*, uint>)(lpVtbl[2]))((IStorageItemHandleAccess*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IStorageItemHandleAccess.xml' path='doc/member[@name="IStorageItemHandleAccess.Create"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Create(HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle)

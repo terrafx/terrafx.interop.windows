@@ -7,14 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_VIDEO_SAMPLE_DESC.xml' path='doc/member[@name="D3D11_VIDEO_SAMPLE_DESC"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public partial struct D3D11_VIDEO_SAMPLE_DESC
 {
+    /// <include file='D3D11_VIDEO_SAMPLE_DESC.xml' path='doc/member[@name="D3D11_VIDEO_SAMPLE_DESC.Width"]/*' />
     public uint Width;
 
+    /// <include file='D3D11_VIDEO_SAMPLE_DESC.xml' path='doc/member[@name="D3D11_VIDEO_SAMPLE_DESC.Height"]/*' />
     public uint Height;
 
+    /// <include file='D3D11_VIDEO_SAMPLE_DESC.xml' path='doc/member[@name="D3D11_VIDEO_SAMPLE_DESC.Format"]/*' />
     public DXGI_FORMAT Format;
 
+    /// <include file='D3D11_VIDEO_SAMPLE_DESC.xml' path='doc/member[@name="D3D11_VIDEO_SAMPLE_DESC.ColorSpace"]/*' />
     public DXGI_COLOR_SPACE_TYPE ColorSpace;
 }

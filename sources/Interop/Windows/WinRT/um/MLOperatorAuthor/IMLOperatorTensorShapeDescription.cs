@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IMLOperatorTensorShapeDescription.xml' path='doc/member[@name="IMLOperatorTensorShapeDescription"]/*' />
 [Guid("F20E8CBE-3B28-4248-BE95-F96FBC6E4643")]
 [NativeTypeName("struct IMLOperatorTensorShapeDescription : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IMLOperatorTensorShapeDescription : IMLOperatorTens
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IMLOperatorTensorShapeDescription : IMLOperatorTens
         return ((delegate* unmanaged<IMLOperatorTensorShapeDescription*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IMLOperatorTensorShapeDescription : IMLOperatorTens
         return ((delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint>)(lpVtbl[1]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IMLOperatorTensorShapeDescription : IMLOperatorTens
         return ((delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint>)(lpVtbl[2]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMLOperatorTensorShapeDescription.xml' path='doc/member[@name="IMLOperatorTensorShapeDescription.GetInputTensorDimensionCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetInputTensorDimensionCount([NativeTypeName("uint32_t")] uint inputIndex, [NativeTypeName("uint32_t *")] uint* dimensionCount)
@@ -47,6 +52,7 @@ public unsafe partial struct IMLOperatorTensorShapeDescription : IMLOperatorTens
         return ((delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint, uint*, int>)(lpVtbl[3]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(ref this), inputIndex, dimensionCount);
     }
 
+    /// <include file='IMLOperatorTensorShapeDescription.xml' path='doc/member[@name="IMLOperatorTensorShapeDescription.GetInputTensorShape"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetInputTensorShape([NativeTypeName("uint32_t")] uint inputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions)
@@ -54,6 +60,7 @@ public unsafe partial struct IMLOperatorTensorShapeDescription : IMLOperatorTens
         return ((delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint, uint, uint*, int>)(lpVtbl[4]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(ref this), inputIndex, dimensionCount, dimensions);
     }
 
+    /// <include file='IMLOperatorTensorShapeDescription.xml' path='doc/member[@name="IMLOperatorTensorShapeDescription.HasOutputShapeDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public bool HasOutputShapeDescription()
@@ -61,6 +68,7 @@ public unsafe partial struct IMLOperatorTensorShapeDescription : IMLOperatorTens
         return ((delegate* unmanaged<IMLOperatorTensorShapeDescription*, byte>)(lpVtbl[5]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(ref this)) != 0;
     }
 
+    /// <include file='IMLOperatorTensorShapeDescription.xml' path='doc/member[@name="IMLOperatorTensorShapeDescription.GetOutputTensorDimensionCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetOutputTensorDimensionCount([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("uint32_t *")] uint* dimensionCount)
@@ -68,6 +76,7 @@ public unsafe partial struct IMLOperatorTensorShapeDescription : IMLOperatorTens
         return ((delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint, uint*, int>)(lpVtbl[6]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(ref this), outputIndex, dimensionCount);
     }
 
+    /// <include file='IMLOperatorTensorShapeDescription.xml' path='doc/member[@name="IMLOperatorTensorShapeDescription.GetOutputTensorShape"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetOutputTensorShape([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions)

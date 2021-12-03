@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IVisualTreeServiceCallback.xml' path='doc/member[@name="IVisualTreeServiceCallback"]/*' />
 [Guid("AA7A8931-80E4-4FEC-8F3B-553F87B4966E")]
 [NativeTypeName("struct IVisualTreeServiceCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IVisualTreeServiceCallback : IVisualTreeServiceCall
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IVisualTreeServiceCallback : IVisualTreeServiceCall
         return ((delegate* unmanaged<IVisualTreeServiceCallback*, Guid*, void**, int>)(lpVtbl[0]))((IVisualTreeServiceCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IVisualTreeServiceCallback : IVisualTreeServiceCall
         return ((delegate* unmanaged<IVisualTreeServiceCallback*, uint>)(lpVtbl[1]))((IVisualTreeServiceCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IVisualTreeServiceCallback : IVisualTreeServiceCall
         return ((delegate* unmanaged<IVisualTreeServiceCallback*, uint>)(lpVtbl[2]))((IVisualTreeServiceCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVisualTreeServiceCallback.xml' path='doc/member[@name="IVisualTreeServiceCallback.OnVisualTreeChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnVisualTreeChange(ParentChildRelation relation, VisualElement element, VisualMutationType mutationType)

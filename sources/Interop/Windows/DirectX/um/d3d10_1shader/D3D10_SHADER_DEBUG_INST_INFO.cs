@@ -9,29 +9,41 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_SHADER_DEBUG_INST_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INST_INFO"]/*' />
 public partial struct D3D10_SHADER_DEBUG_INST_INFO
 {
+    /// <include file='D3D10_SHADER_DEBUG_INST_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INST_INFO.Id"]/*' />
     public uint Id;
 
+    /// <include file='D3D10_SHADER_DEBUG_INST_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INST_INFO.Opcode"]/*' />
     public uint Opcode;
 
+    /// <include file='D3D10_SHADER_DEBUG_INST_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INST_INFO.uOutputs"]/*' />
     public uint uOutputs;
 
+    /// <include file='D3D10_SHADER_DEBUG_INST_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INST_INFO.pOutputs"]/*' />
     [NativeTypeName("D3D10_SHADER_DEBUG_OUTPUTREG_INFO [2]")]
     public _pOutputs_e__FixedBuffer pOutputs;
 
+    /// <include file='D3D10_SHADER_DEBUG_INST_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INST_INFO.TokenId"]/*' />
     public uint TokenId;
 
+    /// <include file='D3D10_SHADER_DEBUG_INST_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INST_INFO.NestingLevel"]/*' />
     public uint NestingLevel;
 
+    /// <include file='D3D10_SHADER_DEBUG_INST_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INST_INFO.Scopes"]/*' />
     public uint Scopes;
 
+    /// <include file='D3D10_SHADER_DEBUG_INST_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INST_INFO.ScopeInfo"]/*' />
     public uint ScopeInfo;
 
+    /// <include file='D3D10_SHADER_DEBUG_INST_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INST_INFO.AccessedVars"]/*' />
     public uint AccessedVars;
 
+    /// <include file='D3D10_SHADER_DEBUG_INST_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INST_INFO.AccessedVarsInfo"]/*' />
     public uint AccessedVarsInfo;
 
+    /// <include file='_pOutputs_e__FixedBuffer.xml' path='doc/member[@name="_pOutputs_e__FixedBuffer"]/*' />
     public partial struct _pOutputs_e__FixedBuffer
     {
         public D3D10_SHADER_DEBUG_OUTPUTREG_INFO e0;

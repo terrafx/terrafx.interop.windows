@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_FEATURE_DATA_SERIALIZATION.xml' path='doc/member[@name="D3D12_FEATURE_DATA_SERIALIZATION"]/*' />
 public partial struct D3D12_FEATURE_DATA_SERIALIZATION
 {
+    /// <include file='D3D12_FEATURE_DATA_SERIALIZATION.xml' path='doc/member[@name="D3D12_FEATURE_DATA_SERIALIZATION.NodeIndex"]/*' />
     public uint NodeIndex;
 
+    /// <include file='D3D12_FEATURE_DATA_SERIALIZATION.xml' path='doc/member[@name="D3D12_FEATURE_DATA_SERIALIZATION.HeapSerializationTier"]/*' />
     public D3D12_HEAP_SERIALIZATION_TIER HeapSerializationTier;
 }

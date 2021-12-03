@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IDesktopWindowXamlSourceNative2.xml' path='doc/member[@name="IDesktopWindowXamlSourceNative2"]/*' />
 [Guid("E3DCD8C7-3057-4692-99C3-7B7720AFDA31")]
 [NativeTypeName("struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXamlSourceNative")]
 [NativeInheritance("IDesktopWindowXamlSourceNative")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXam
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXam
         return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, Guid*, void**, int>)(lpVtbl[0]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXam
         return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, uint>)(lpVtbl[1]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXam
         return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, uint>)(lpVtbl[2]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDesktopWindowXamlSourceNative.AttachToWindow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AttachToWindow(HWND parentWnd)
@@ -49,6 +54,7 @@ public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXam
         return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND, int>)(lpVtbl[3]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), parentWnd);
     }
 
+    /// <inheritdoc cref="IDesktopWindowXamlSourceNative.get_WindowHandle" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_WindowHandle(HWND* hWnd)
@@ -56,6 +62,7 @@ public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXam
         return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND*, int>)(lpVtbl[4]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), hWnd);
     }
 
+    /// <include file='IDesktopWindowXamlSourceNative2.xml' path='doc/member[@name="IDesktopWindowXamlSourceNative2.PreTranslateMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT PreTranslateMessage([NativeTypeName("const MSG *")] MSG* message, BOOL* result)

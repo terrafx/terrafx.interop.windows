@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_PRINT_CONTROL_PROPERTIES.xml' path='doc/member[@name="D2D1_PRINT_CONTROL_PROPERTIES"]/*' />
 public partial struct D2D1_PRINT_CONTROL_PROPERTIES
 {
+    /// <include file='D2D1_PRINT_CONTROL_PROPERTIES.xml' path='doc/member[@name="D2D1_PRINT_CONTROL_PROPERTIES.fontSubset"]/*' />
     public D2D1_PRINT_FONT_SUBSET_MODE fontSubset;
 
+    /// <include file='D2D1_PRINT_CONTROL_PROPERTIES.xml' path='doc/member[@name="D2D1_PRINT_CONTROL_PROPERTIES.rasterDPI"]/*' />
     public float rasterDPI;
 
+    /// <include file='D2D1_PRINT_CONTROL_PROPERTIES.xml' path='doc/member[@name="D2D1_PRINT_CONTROL_PROPERTIES.colorSpace"]/*' />
     public D2D1_COLOR_SPACE colorSpace;
 }

@@ -8,20 +8,27 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='XAUDIO2_DEBUG_CONFIGURATION.xml' path='doc/member[@name="XAUDIO2_DEBUG_CONFIGURATION"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct XAUDIO2_DEBUG_CONFIGURATION
 {
+    /// <include file='XAUDIO2_DEBUG_CONFIGURATION.xml' path='doc/member[@name="XAUDIO2_DEBUG_CONFIGURATION.TraceMask"]/*' />
     [NativeTypeName("UINT32")]
     public uint TraceMask;
 
+    /// <include file='XAUDIO2_DEBUG_CONFIGURATION.xml' path='doc/member[@name="XAUDIO2_DEBUG_CONFIGURATION.BreakMask"]/*' />
     [NativeTypeName("UINT32")]
     public uint BreakMask;
 
+    /// <include file='XAUDIO2_DEBUG_CONFIGURATION.xml' path='doc/member[@name="XAUDIO2_DEBUG_CONFIGURATION.LogThreadID"]/*' />
     public BOOL LogThreadID;
 
+    /// <include file='XAUDIO2_DEBUG_CONFIGURATION.xml' path='doc/member[@name="XAUDIO2_DEBUG_CONFIGURATION.LogFileline"]/*' />
     public BOOL LogFileline;
 
+    /// <include file='XAUDIO2_DEBUG_CONFIGURATION.xml' path='doc/member[@name="XAUDIO2_DEBUG_CONFIGURATION.LogFunctionName"]/*' />
     public BOOL LogFunctionName;
 
+    /// <include file='XAUDIO2_DEBUG_CONFIGURATION.xml' path='doc/member[@name="XAUDIO2_DEBUG_CONFIGURATION.LogTiming"]/*' />
     public BOOL LogTiming;
 }

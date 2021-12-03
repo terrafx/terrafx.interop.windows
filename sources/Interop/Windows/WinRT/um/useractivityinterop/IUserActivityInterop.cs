@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IUserActivityInterop.xml' path='doc/member[@name="IUserActivityInterop"]/*' />
 [Guid("1ADE314D-0E0A-40D9-824C-9A088A50059F")]
 [NativeTypeName("struct IUserActivityInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -17,6 +18,7 @@ public unsafe partial struct IUserActivityInterop : IUserActivityInterop.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IUserActivityInterop : IUserActivityInterop.Interfa
         return ((delegate* unmanaged<IUserActivityInterop*, Guid*, void**, int>)(lpVtbl[0]))((IUserActivityInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IUserActivityInterop : IUserActivityInterop.Interfa
         return ((delegate* unmanaged<IUserActivityInterop*, uint>)(lpVtbl[1]))((IUserActivityInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IUserActivityInterop : IUserActivityInterop.Interfa
         return ((delegate* unmanaged<IUserActivityInterop*, uint>)(lpVtbl[2]))((IUserActivityInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -47,6 +52,7 @@ public unsafe partial struct IUserActivityInterop : IUserActivityInterop.Interfa
         return ((delegate* unmanaged<IUserActivityInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IUserActivityInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -54,6 +60,7 @@ public unsafe partial struct IUserActivityInterop : IUserActivityInterop.Interfa
         return ((delegate* unmanaged<IUserActivityInterop*, HSTRING*, int>)(lpVtbl[4]))((IUserActivityInterop*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -61,6 +68,7 @@ public unsafe partial struct IUserActivityInterop : IUserActivityInterop.Interfa
         return ((delegate* unmanaged<IUserActivityInterop*, TrustLevel*, int>)(lpVtbl[5]))((IUserActivityInterop*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='IUserActivityInterop.xml' path='doc/member[@name="IUserActivityInterop.CreateSessionForWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CreateSessionForWindow(HWND window, [NativeTypeName("const IID &")] Guid* iid, void** value)

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_FILL_MODE.xml' path='doc/member[@name="D3D12_FILL_MODE"]/*' />
 public enum D3D12_FILL_MODE
 {
+    /// <include file='D3D12_FILL_MODE.xml' path='doc/member[@name="D3D12_FILL_MODE.D3D12_FILL_MODE_WIREFRAME"]/*' />
     D3D12_FILL_MODE_WIREFRAME = 2,
+
+    /// <include file='D3D12_FILL_MODE.xml' path='doc/member[@name="D3D12_FILL_MODE.D3D12_FILL_MODE_SOLID"]/*' />
     D3D12_FILL_MODE_SOLID = 3,
 }

@@ -7,12 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_AUTHENTICATED_CONFIGURE_INITIALIZE_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_CONFIGURE_INITIALIZE_INPUT"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_AUTHENTICATED_CONFIGURE_INITIALIZE_INPUT
 {
+    /// <include file='D3D11_AUTHENTICATED_CONFIGURE_INITIALIZE_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_CONFIGURE_INITIALIZE_INPUT.Parameters"]/*' />
     public D3D11_AUTHENTICATED_CONFIGURE_INPUT Parameters;
 
+    /// <include file='D3D11_AUTHENTICATED_CONFIGURE_INITIALIZE_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_CONFIGURE_INITIALIZE_INPUT.StartSequenceQuery"]/*' />
     public uint StartSequenceQuery;
 
+    /// <include file='D3D11_AUTHENTICATED_CONFIGURE_INITIALIZE_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_CONFIGURE_INITIALIZE_INPUT.StartSequenceConfigure"]/*' />
     public uint StartSequenceConfigure;
 }

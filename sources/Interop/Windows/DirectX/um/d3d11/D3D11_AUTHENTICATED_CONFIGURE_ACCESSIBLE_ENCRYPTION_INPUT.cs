@@ -8,10 +8,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_AUTHENTICATED_CONFIGURE_ACCESSIBLE_ENCRYPTION_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_CONFIGURE_ACCESSIBLE_ENCRYPTION_INPUT"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_AUTHENTICATED_CONFIGURE_ACCESSIBLE_ENCRYPTION_INPUT
 {
+    /// <include file='D3D11_AUTHENTICATED_CONFIGURE_ACCESSIBLE_ENCRYPTION_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_CONFIGURE_ACCESSIBLE_ENCRYPTION_INPUT.Parameters"]/*' />
     public D3D11_AUTHENTICATED_CONFIGURE_INPUT Parameters;
 
+    /// <include file='D3D11_AUTHENTICATED_CONFIGURE_ACCESSIBLE_ENCRYPTION_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_CONFIGURE_ACCESSIBLE_ENCRYPTION_INPUT.EncryptionGuid"]/*' />
     public Guid EncryptionGuid;
 }

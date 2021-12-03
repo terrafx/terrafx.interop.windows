@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDirectManipulationFrameInfoProvider.xml' path='doc/member[@name="IDirectManipulationFrameInfoProvider"]/*' />
 [Guid("FB759DBA-6F4C-4C01-874E-19C8A05907F9")]
 [NativeTypeName("struct IDirectManipulationFrameInfoProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDirectManipulationFrameInfoProvider : IDirectManip
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDirectManipulationFrameInfoProvider : IDirectManip
         return ((delegate* unmanaged<IDirectManipulationFrameInfoProvider*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationFrameInfoProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDirectManipulationFrameInfoProvider : IDirectManip
         return ((delegate* unmanaged<IDirectManipulationFrameInfoProvider*, uint>)(lpVtbl[1]))((IDirectManipulationFrameInfoProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDirectManipulationFrameInfoProvider : IDirectManip
         return ((delegate* unmanaged<IDirectManipulationFrameInfoProvider*, uint>)(lpVtbl[2]))((IDirectManipulationFrameInfoProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectManipulationFrameInfoProvider.xml' path='doc/member[@name="IDirectManipulationFrameInfoProvider.GetNextFrameInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetNextFrameInfo([NativeTypeName("ULONGLONG *")] ulong* time, [NativeTypeName("ULONGLONG *")] ulong* processTime, [NativeTypeName("ULONGLONG *")] ulong* compositionTime)

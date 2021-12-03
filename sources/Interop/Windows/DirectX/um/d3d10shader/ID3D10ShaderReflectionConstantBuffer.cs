@@ -9,11 +9,13 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D10ShaderReflectionConstantBuffer.xml' path='doc/member[@name="ID3D10ShaderReflectionConstantBuffer"]/*' />
 [Guid("66C66A94-DDDD-4B62-A66A-F0DA33C2B4D0")]
 public unsafe partial struct ID3D10ShaderReflectionConstantBuffer : ID3D10ShaderReflectionConstantBuffer.Interface
 {
     public void** lpVtbl;
 
+    /// <include file='ID3D10ShaderReflectionConstantBuffer.xml' path='doc/member[@name="ID3D10ShaderReflectionConstantBuffer.GetDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT GetDesc(D3D10_SHADER_BUFFER_DESC* pDesc)
@@ -21,6 +23,7 @@ public unsafe partial struct ID3D10ShaderReflectionConstantBuffer : ID3D10Shader
         return ((delegate* unmanaged<ID3D10ShaderReflectionConstantBuffer*, D3D10_SHADER_BUFFER_DESC*, int>)(lpVtbl[0]))((ID3D10ShaderReflectionConstantBuffer*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <include file='ID3D10ShaderReflectionConstantBuffer.xml' path='doc/member[@name="ID3D10ShaderReflectionConstantBuffer.GetVariableByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     public ID3D10ShaderReflectionVariable* GetVariableByIndex(uint Index)
@@ -28,6 +31,7 @@ public unsafe partial struct ID3D10ShaderReflectionConstantBuffer : ID3D10Shader
         return ((delegate* unmanaged<ID3D10ShaderReflectionConstantBuffer*, uint, ID3D10ShaderReflectionVariable*>)(lpVtbl[1]))((ID3D10ShaderReflectionConstantBuffer*)Unsafe.AsPointer(ref this), Index);
     }
 
+    /// <include file='ID3D10ShaderReflectionConstantBuffer.xml' path='doc/member[@name="ID3D10ShaderReflectionConstantBuffer.GetVariableByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     public ID3D10ShaderReflectionVariable* GetVariableByName([NativeTypeName("LPCSTR")] sbyte* Name)

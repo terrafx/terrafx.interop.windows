@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_FEATURE_VIDEO.xml' path='doc/member[@name="D3D11_FEATURE_VIDEO"]/*' />
 public enum D3D11_FEATURE_VIDEO
 {
+    /// <include file='D3D11_FEATURE_VIDEO.xml' path='doc/member[@name="D3D11_FEATURE_VIDEO.D3D11_FEATURE_VIDEO_DECODER_HISTOGRAM"]/*' />
     D3D11_FEATURE_VIDEO_DECODER_HISTOGRAM = 0,
 }

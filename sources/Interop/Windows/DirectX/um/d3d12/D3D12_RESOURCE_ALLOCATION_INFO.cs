@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_RESOURCE_ALLOCATION_INFO.xml' path='doc/member[@name="D3D12_RESOURCE_ALLOCATION_INFO"]/*' />
 public partial struct D3D12_RESOURCE_ALLOCATION_INFO
 {
+    /// <include file='D3D12_RESOURCE_ALLOCATION_INFO.xml' path='doc/member[@name="D3D12_RESOURCE_ALLOCATION_INFO.SizeInBytes"]/*' />
     [NativeTypeName("UINT64")]
     public ulong SizeInBytes;
 
+    /// <include file='D3D12_RESOURCE_ALLOCATION_INFO.xml' path='doc/member[@name="D3D12_RESOURCE_ALLOCATION_INFO.Alignment"]/*' />
     [NativeTypeName("UINT64")]
     public ulong Alignment;
 }

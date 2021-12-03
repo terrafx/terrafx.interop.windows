@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_BUFFER_PRECISION.xml' path='doc/member[@name="D2D1_BUFFER_PRECISION"]/*' />
 public enum D2D1_BUFFER_PRECISION : uint
 {
+    /// <include file='D2D1_BUFFER_PRECISION.xml' path='doc/member[@name="D2D1_BUFFER_PRECISION.D2D1_BUFFER_PRECISION_UNKNOWN"]/*' />
     D2D1_BUFFER_PRECISION_UNKNOWN = 0,
+
+    /// <include file='D2D1_BUFFER_PRECISION.xml' path='doc/member[@name="D2D1_BUFFER_PRECISION.D2D1_BUFFER_PRECISION_8BPC_UNORM"]/*' />
     D2D1_BUFFER_PRECISION_8BPC_UNORM = 1,
+
+    /// <include file='D2D1_BUFFER_PRECISION.xml' path='doc/member[@name="D2D1_BUFFER_PRECISION.D2D1_BUFFER_PRECISION_8BPC_UNORM_SRGB"]/*' />
     D2D1_BUFFER_PRECISION_8BPC_UNORM_SRGB = 2,
+
+    /// <include file='D2D1_BUFFER_PRECISION.xml' path='doc/member[@name="D2D1_BUFFER_PRECISION.D2D1_BUFFER_PRECISION_16BPC_UNORM"]/*' />
     D2D1_BUFFER_PRECISION_16BPC_UNORM = 3,
+
+    /// <include file='D2D1_BUFFER_PRECISION.xml' path='doc/member[@name="D2D1_BUFFER_PRECISION.D2D1_BUFFER_PRECISION_16BPC_FLOAT"]/*' />
     D2D1_BUFFER_PRECISION_16BPC_FLOAT = 4,
+
+    /// <include file='D2D1_BUFFER_PRECISION.xml' path='doc/member[@name="D2D1_BUFFER_PRECISION.D2D1_BUFFER_PRECISION_32BPC_FLOAT"]/*' />
     D2D1_BUFFER_PRECISION_32BPC_FLOAT = 5,
+
+    /// <include file='D2D1_BUFFER_PRECISION.xml' path='doc/member[@name="D2D1_BUFFER_PRECISION.D2D1_BUFFER_PRECISION_FORCE_DWORD"]/*' />
     D2D1_BUFFER_PRECISION_FORCE_DWORD = 0xffffffff,
 }

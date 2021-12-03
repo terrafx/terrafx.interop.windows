@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D_SHADER_MACRO.xml' path='doc/member[@name="D3D_SHADER_MACRO"]/*' />
 public unsafe partial struct D3D_SHADER_MACRO
 {
+    /// <include file='D3D_SHADER_MACRO.xml' path='doc/member[@name="D3D_SHADER_MACRO.Name"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* Name;
 
+    /// <include file='D3D_SHADER_MACRO.xml' path='doc/member[@name="D3D_SHADER_MACRO.Definition"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* Definition;
 }

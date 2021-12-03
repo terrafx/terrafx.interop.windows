@@ -9,11 +9,13 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12FunctionReflection.xml' path='doc/member[@name="ID3D12FunctionReflection"]/*' />
 [Guid("1108795C-2772-4BA9-B2A8-D464DC7E2799")]
 public unsafe partial struct ID3D12FunctionReflection : ID3D12FunctionReflection.Interface
 {
     public void** lpVtbl;
 
+    /// <include file='ID3D12FunctionReflection.xml' path='doc/member[@name="ID3D12FunctionReflection.GetDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT GetDesc(D3D12_FUNCTION_DESC* pDesc)
@@ -21,6 +23,7 @@ public unsafe partial struct ID3D12FunctionReflection : ID3D12FunctionReflection
         return ((delegate* unmanaged[SuppressGCTransition]<ID3D12FunctionReflection*, D3D12_FUNCTION_DESC*, int>)(lpVtbl[0]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <include file='ID3D12FunctionReflection.xml' path='doc/member[@name="ID3D12FunctionReflection.GetConstantBufferByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     public ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint BufferIndex)
@@ -28,6 +31,7 @@ public unsafe partial struct ID3D12FunctionReflection : ID3D12FunctionReflection
         return ((delegate* unmanaged<ID3D12FunctionReflection*, uint, ID3D12ShaderReflectionConstantBuffer*>)(lpVtbl[1]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), BufferIndex);
     }
 
+    /// <include file='ID3D12FunctionReflection.xml' path='doc/member[@name="ID3D12FunctionReflection.GetConstantBufferByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     public ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByName([NativeTypeName("LPCSTR")] sbyte* Name)
@@ -35,6 +39,7 @@ public unsafe partial struct ID3D12FunctionReflection : ID3D12FunctionReflection
         return ((delegate* unmanaged<ID3D12FunctionReflection*, sbyte*, ID3D12ShaderReflectionConstantBuffer*>)(lpVtbl[2]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <include file='ID3D12FunctionReflection.xml' path='doc/member[@name="ID3D12FunctionReflection.GetResourceBindingDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetResourceBindingDesc(uint ResourceIndex, D3D12_SHADER_INPUT_BIND_DESC* pDesc)
@@ -42,6 +47,7 @@ public unsafe partial struct ID3D12FunctionReflection : ID3D12FunctionReflection
         return ((delegate* unmanaged<ID3D12FunctionReflection*, uint, D3D12_SHADER_INPUT_BIND_DESC*, int>)(lpVtbl[3]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), ResourceIndex, pDesc);
     }
 
+    /// <include file='ID3D12FunctionReflection.xml' path='doc/member[@name="ID3D12FunctionReflection.GetVariableByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public ID3D12ShaderReflectionVariable* GetVariableByName([NativeTypeName("LPCSTR")] sbyte* Name)
@@ -49,6 +55,7 @@ public unsafe partial struct ID3D12FunctionReflection : ID3D12FunctionReflection
         return ((delegate* unmanaged<ID3D12FunctionReflection*, sbyte*, ID3D12ShaderReflectionVariable*>)(lpVtbl[4]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <include file='ID3D12FunctionReflection.xml' path='doc/member[@name="ID3D12FunctionReflection.GetResourceBindingDescByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetResourceBindingDescByName([NativeTypeName("LPCSTR")] sbyte* Name, D3D12_SHADER_INPUT_BIND_DESC* pDesc)
@@ -56,6 +63,7 @@ public unsafe partial struct ID3D12FunctionReflection : ID3D12FunctionReflection
         return ((delegate* unmanaged<ID3D12FunctionReflection*, sbyte*, D3D12_SHADER_INPUT_BIND_DESC*, int>)(lpVtbl[5]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), Name, pDesc);
     }
 
+    /// <include file='ID3D12FunctionReflection.xml' path='doc/member[@name="ID3D12FunctionReflection.GetFunctionParameter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public ID3D12FunctionParameterReflection* GetFunctionParameter(int ParameterIndex)

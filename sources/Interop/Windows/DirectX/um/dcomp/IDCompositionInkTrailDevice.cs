@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDCompositionInkTrailDevice.xml' path='doc/member[@name="IDCompositionInkTrailDevice"]/*' />
 [Guid("DF0C7CEC-CDEB-4D4A-B91C-721BF22F4E6C")]
 [NativeTypeName("struct IDCompositionInkTrailDevice : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDCompositionInkTrailDevice : IDCompositionInkTrail
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDCompositionInkTrailDevice : IDCompositionInkTrail
         return ((delegate* unmanaged<IDCompositionInkTrailDevice*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionInkTrailDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDCompositionInkTrailDevice : IDCompositionInkTrail
         return ((delegate* unmanaged<IDCompositionInkTrailDevice*, uint>)(lpVtbl[1]))((IDCompositionInkTrailDevice*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDCompositionInkTrailDevice : IDCompositionInkTrail
         return ((delegate* unmanaged<IDCompositionInkTrailDevice*, uint>)(lpVtbl[2]))((IDCompositionInkTrailDevice*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDCompositionInkTrailDevice.xml' path='doc/member[@name="IDCompositionInkTrailDevice.CreateDelegatedInkTrail"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateDelegatedInkTrail(IDCompositionDelegatedInkTrail** inkTrail)
@@ -47,6 +52,7 @@ public unsafe partial struct IDCompositionInkTrailDevice : IDCompositionInkTrail
         return ((delegate* unmanaged<IDCompositionInkTrailDevice*, IDCompositionDelegatedInkTrail**, int>)(lpVtbl[3]))((IDCompositionInkTrailDevice*)Unsafe.AsPointer(ref this), inkTrail);
     }
 
+    /// <include file='IDCompositionInkTrailDevice.xml' path='doc/member[@name="IDCompositionInkTrailDevice.CreateDelegatedInkTrailForSwapChain"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreateDelegatedInkTrailForSwapChain(IUnknown* swapChain, IDCompositionDelegatedInkTrail** inkTrail)

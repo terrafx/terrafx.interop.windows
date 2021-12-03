@@ -12,6 +12,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ISwapChainPanelNative2.xml' path='doc/member[@name="ISwapChainPanelNative2"]/*' />
 [Guid("D5A2F60C-37B2-44A2-937B-8D8EB9726821")]
 [NativeTypeName("struct ISwapChainPanelNative2 : ISwapChainPanelNative")]
 [NativeInheritance("ISwapChainPanelNative")]
@@ -20,6 +21,7 @@ public unsafe partial struct ISwapChainPanelNative2 : ISwapChainPanelNative2.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -27,6 +29,7 @@ public unsafe partial struct ISwapChainPanelNative2 : ISwapChainPanelNative2.Int
         return ((delegate* unmanaged<ISwapChainPanelNative2*, Guid*, void**, int>)(lpVtbl[0]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -35,6 +38,7 @@ public unsafe partial struct ISwapChainPanelNative2 : ISwapChainPanelNative2.Int
         return ((delegate* unmanaged<ISwapChainPanelNative2*, uint>)(lpVtbl[1]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -43,6 +47,7 @@ public unsafe partial struct ISwapChainPanelNative2 : ISwapChainPanelNative2.Int
         return ((delegate* unmanaged<ISwapChainPanelNative2*, uint>)(lpVtbl[2]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISwapChainPanelNative.SetSwapChain" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetSwapChain(IDXGISwapChain* swapChain)
@@ -50,6 +55,7 @@ public unsafe partial struct ISwapChainPanelNative2 : ISwapChainPanelNative2.Int
         return ((delegate* unmanaged<ISwapChainPanelNative2*, IDXGISwapChain*, int>)(lpVtbl[3]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), swapChain);
     }
 
+    /// <include file='ISwapChainPanelNative2.xml' path='doc/member[@name="ISwapChainPanelNative2.SetSwapChainHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetSwapChainHandle(HANDLE swapChainHandle)

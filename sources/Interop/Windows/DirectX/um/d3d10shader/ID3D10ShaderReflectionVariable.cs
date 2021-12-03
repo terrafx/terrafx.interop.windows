@@ -9,11 +9,13 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D10ShaderReflectionVariable.xml' path='doc/member[@name="ID3D10ShaderReflectionVariable"]/*' />
 [Guid("1BF63C95-2650-405D-99C1-3636BD1DA0A1")]
 public unsafe partial struct ID3D10ShaderReflectionVariable : ID3D10ShaderReflectionVariable.Interface
 {
     public void** lpVtbl;
 
+    /// <include file='ID3D10ShaderReflectionVariable.xml' path='doc/member[@name="ID3D10ShaderReflectionVariable.GetDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT GetDesc(D3D10_SHADER_VARIABLE_DESC* pDesc)
@@ -21,6 +23,7 @@ public unsafe partial struct ID3D10ShaderReflectionVariable : ID3D10ShaderReflec
         return ((delegate* unmanaged<ID3D10ShaderReflectionVariable*, D3D10_SHADER_VARIABLE_DESC*, int>)(lpVtbl[0]))((ID3D10ShaderReflectionVariable*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <include file='ID3D10ShaderReflectionVariable.xml' path='doc/member[@name="ID3D10ShaderReflectionVariable.GetType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     public new ID3D10ShaderReflectionType* GetType()

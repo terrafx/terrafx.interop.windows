@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12ShaderCacheSession.xml' path='doc/member[@name="ID3D12ShaderCacheSession"]/*' />
 [Guid("28E2495D-0F64-4AE4-A6EC-129255DC49A8")]
 [NativeTypeName("struct ID3D12ShaderCacheSession : ID3D12DeviceChild")]
 [NativeInheritance("ID3D12DeviceChild")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D12ShaderCacheSession : ID3D12ShaderCacheSession
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D12ShaderCacheSession : ID3D12ShaderCacheSession
         return ((delegate* unmanaged<ID3D12ShaderCacheSession*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12ShaderCacheSession*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D12ShaderCacheSession : ID3D12ShaderCacheSession
         return ((delegate* unmanaged<ID3D12ShaderCacheSession*, uint>)(lpVtbl[1]))((ID3D12ShaderCacheSession*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D12ShaderCacheSession : ID3D12ShaderCacheSession
         return ((delegate* unmanaged<ID3D12ShaderCacheSession*, uint>)(lpVtbl[2]))((ID3D12ShaderCacheSession*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D12Object.GetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
@@ -47,6 +52,7 @@ public unsafe partial struct ID3D12ShaderCacheSession : ID3D12ShaderCacheSession
         return ((delegate* unmanaged<ID3D12ShaderCacheSession*, Guid*, uint*, void*, int>)(lpVtbl[3]))((ID3D12ShaderCacheSession*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D12Object.SetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
@@ -54,6 +60,7 @@ public unsafe partial struct ID3D12ShaderCacheSession : ID3D12ShaderCacheSession
         return ((delegate* unmanaged<ID3D12ShaderCacheSession*, Guid*, uint, void*, int>)(lpVtbl[4]))((ID3D12ShaderCacheSession*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D12Object.SetPrivateDataInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
@@ -61,6 +68,7 @@ public unsafe partial struct ID3D12ShaderCacheSession : ID3D12ShaderCacheSession
         return ((delegate* unmanaged<ID3D12ShaderCacheSession*, Guid*, IUnknown*, int>)(lpVtbl[5]))((ID3D12ShaderCacheSession*)Unsafe.AsPointer(ref this), guid, pData);
     }
 
+    /// <inheritdoc cref="ID3D12Object.SetName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetName([NativeTypeName("LPCWSTR")] ushort* Name)
@@ -68,6 +76,7 @@ public unsafe partial struct ID3D12ShaderCacheSession : ID3D12ShaderCacheSession
         return ((delegate* unmanaged<ID3D12ShaderCacheSession*, ushort*, int>)(lpVtbl[6]))((ID3D12ShaderCacheSession*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <inheritdoc cref="ID3D12DeviceChild.GetDevice" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppvDevice)
@@ -75,6 +84,7 @@ public unsafe partial struct ID3D12ShaderCacheSession : ID3D12ShaderCacheSession
         return ((delegate* unmanaged<ID3D12ShaderCacheSession*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12ShaderCacheSession*)Unsafe.AsPointer(ref this), riid, ppvDevice);
     }
 
+    /// <include file='ID3D12ShaderCacheSession.xml' path='doc/member[@name="ID3D12ShaderCacheSession.FindValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT FindValue([NativeTypeName("const void *")] void* pKey, uint KeySize, void* pValue, uint* pValueSize)
@@ -82,6 +92,7 @@ public unsafe partial struct ID3D12ShaderCacheSession : ID3D12ShaderCacheSession
         return ((delegate* unmanaged<ID3D12ShaderCacheSession*, void*, uint, void*, uint*, int>)(lpVtbl[8]))((ID3D12ShaderCacheSession*)Unsafe.AsPointer(ref this), pKey, KeySize, pValue, pValueSize);
     }
 
+    /// <include file='ID3D12ShaderCacheSession.xml' path='doc/member[@name="ID3D12ShaderCacheSession.StoreValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT StoreValue([NativeTypeName("const void *")] void* pKey, uint KeySize, [NativeTypeName("const void *")] void* pValue, uint ValueSize)
@@ -89,6 +100,7 @@ public unsafe partial struct ID3D12ShaderCacheSession : ID3D12ShaderCacheSession
         return ((delegate* unmanaged<ID3D12ShaderCacheSession*, void*, uint, void*, uint, int>)(lpVtbl[9]))((ID3D12ShaderCacheSession*)Unsafe.AsPointer(ref this), pKey, KeySize, pValue, ValueSize);
     }
 
+    /// <include file='ID3D12ShaderCacheSession.xml' path='doc/member[@name="ID3D12ShaderCacheSession.SetDeleteOnDestroy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public void SetDeleteOnDestroy()
@@ -96,6 +108,7 @@ public unsafe partial struct ID3D12ShaderCacheSession : ID3D12ShaderCacheSession
         ((delegate* unmanaged<ID3D12ShaderCacheSession*, void>)(lpVtbl[10]))((ID3D12ShaderCacheSession*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12ShaderCacheSession.xml' path='doc/member[@name="ID3D12ShaderCacheSession.GetDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public D3D12_SHADER_CACHE_SESSION_DESC GetDesc()

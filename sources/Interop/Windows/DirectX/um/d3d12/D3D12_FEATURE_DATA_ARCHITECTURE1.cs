@@ -7,15 +7,21 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_FEATURE_DATA_ARCHITECTURE1.xml' path='doc/member[@name="D3D12_FEATURE_DATA_ARCHITECTURE1"]/*' />
 public partial struct D3D12_FEATURE_DATA_ARCHITECTURE1
 {
+    /// <include file='D3D12_FEATURE_DATA_ARCHITECTURE1.xml' path='doc/member[@name="D3D12_FEATURE_DATA_ARCHITECTURE1.NodeIndex"]/*' />
     public uint NodeIndex;
 
+    /// <include file='D3D12_FEATURE_DATA_ARCHITECTURE1.xml' path='doc/member[@name="D3D12_FEATURE_DATA_ARCHITECTURE1.TileBasedRenderer"]/*' />
     public BOOL TileBasedRenderer;
 
+    /// <include file='D3D12_FEATURE_DATA_ARCHITECTURE1.xml' path='doc/member[@name="D3D12_FEATURE_DATA_ARCHITECTURE1.UMA"]/*' />
     public BOOL UMA;
 
+    /// <include file='D3D12_FEATURE_DATA_ARCHITECTURE1.xml' path='doc/member[@name="D3D12_FEATURE_DATA_ARCHITECTURE1.CacheCoherentUMA"]/*' />
     public BOOL CacheCoherentUMA;
 
+    /// <include file='D3D12_FEATURE_DATA_ARCHITECTURE1.xml' path='doc/member[@name="D3D12_FEATURE_DATA_ARCHITECTURE1.IsolatedMMU"]/*' />
     public BOOL IsolatedMMU;
 }

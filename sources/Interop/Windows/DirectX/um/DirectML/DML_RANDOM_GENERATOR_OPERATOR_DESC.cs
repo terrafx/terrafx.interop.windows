@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_RANDOM_GENERATOR_OPERATOR_DESC.xml' path='doc/member[@name="DML_RANDOM_GENERATOR_OPERATOR_DESC"]/*' />
 public unsafe partial struct DML_RANDOM_GENERATOR_OPERATOR_DESC
 {
+    /// <include file='DML_RANDOM_GENERATOR_OPERATOR_DESC.xml' path='doc/member[@name="DML_RANDOM_GENERATOR_OPERATOR_DESC.InputStateTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* InputStateTensor;
 
+    /// <include file='DML_RANDOM_GENERATOR_OPERATOR_DESC.xml' path='doc/member[@name="DML_RANDOM_GENERATOR_OPERATOR_DESC.OutputTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* OutputTensor;
 
+    /// <include file='DML_RANDOM_GENERATOR_OPERATOR_DESC.xml' path='doc/member[@name="DML_RANDOM_GENERATOR_OPERATOR_DESC.OutputStateTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* OutputStateTensor;
 
+    /// <include file='DML_RANDOM_GENERATOR_OPERATOR_DESC.xml' path='doc/member[@name="DML_RANDOM_GENERATOR_OPERATOR_DESC.Type"]/*' />
     public DML_RANDOM_GENERATOR_TYPE Type;
 }

@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDxcResult.xml' path='doc/member[@name="IDxcResult"]/*' />
 [Guid("58346CDA-DDE7-4497-9461-6F87AF5E0659")]
 [NativeTypeName("struct IDxcResult : IDxcOperationResult")]
 [NativeInheritance("IDxcOperationResult")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface
         return ((delegate* unmanaged<IDxcResult*, Guid*, void**, int>)(lpVtbl[0]))((IDxcResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface
         return ((delegate* unmanaged<IDxcResult*, uint>)(lpVtbl[1]))((IDxcResult*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface
         return ((delegate* unmanaged<IDxcResult*, uint>)(lpVtbl[2]))((IDxcResult*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDxcOperationResult.GetStatus" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetStatus(HRESULT* pStatus)
@@ -47,6 +52,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface
         return ((delegate* unmanaged<IDxcResult*, HRESULT*, int>)(lpVtbl[3]))((IDxcResult*)Unsafe.AsPointer(ref this), pStatus);
     }
 
+    /// <inheritdoc cref="IDxcOperationResult.GetResult" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetResult(IDxcBlob** ppResult)
@@ -54,6 +60,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface
         return ((delegate* unmanaged<IDxcResult*, IDxcBlob**, int>)(lpVtbl[4]))((IDxcResult*)Unsafe.AsPointer(ref this), ppResult);
     }
 
+    /// <inheritdoc cref="IDxcOperationResult.GetErrorBuffer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetErrorBuffer(IDxcBlobEncoding** ppErrors)
@@ -61,6 +68,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface
         return ((delegate* unmanaged<IDxcResult*, IDxcBlobEncoding**, int>)(lpVtbl[5]))((IDxcResult*)Unsafe.AsPointer(ref this), ppErrors);
     }
 
+    /// <include file='IDxcResult.xml' path='doc/member[@name="IDxcResult.HasOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public BOOL HasOutput(DXC_OUT_KIND dxcOutKind)
@@ -68,6 +76,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface
         return ((delegate* unmanaged<IDxcResult*, DXC_OUT_KIND, int>)(lpVtbl[6]))((IDxcResult*)Unsafe.AsPointer(ref this), dxcOutKind);
     }
 
+    /// <include file='IDxcResult.xml' path='doc/member[@name="IDxcResult.GetOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetOutput(DXC_OUT_KIND dxcOutKind, [NativeTypeName("const IID &")] Guid* iid, void** ppvObject, IDxcBlobUtf16** ppOutputName)
@@ -75,6 +84,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface
         return ((delegate* unmanaged<IDxcResult*, DXC_OUT_KIND, Guid*, void**, IDxcBlobUtf16**, int>)(lpVtbl[7]))((IDxcResult*)Unsafe.AsPointer(ref this), dxcOutKind, iid, ppvObject, ppOutputName);
     }
 
+    /// <include file='IDxcResult.xml' path='doc/member[@name="IDxcResult.GetNumOutputs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     [return: NativeTypeName("UINT32")]
@@ -83,6 +93,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface
         return ((delegate* unmanaged<IDxcResult*, uint>)(lpVtbl[8]))((IDxcResult*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDxcResult.xml' path='doc/member[@name="IDxcResult.GetOutputByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public DXC_OUT_KIND GetOutputByIndex([NativeTypeName("UINT32")] uint Index)
@@ -90,6 +101,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface
         return ((delegate* unmanaged<IDxcResult*, uint, DXC_OUT_KIND>)(lpVtbl[9]))((IDxcResult*)Unsafe.AsPointer(ref this), Index);
     }
 
+    /// <include file='IDxcResult.xml' path='doc/member[@name="IDxcResult.PrimaryOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public DXC_OUT_KIND PrimaryOutput()

@@ -11,6 +11,7 @@ using static TerraFX.Interop.DirectX.D2D1_PROPERTY_TYPE;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1Effect.xml' path='doc/member[@name="ID2D1Effect"]/*' />
 [Guid("28211A43-7D89-476F-8181-2D6159B220AD")]
 [NativeTypeName("struct ID2D1Effect : ID2D1Properties")]
 [NativeInheritance("ID2D1Properties")]
@@ -54,6 +55,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         }
     }
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -61,6 +63,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         return ((delegate* unmanaged<ID2D1Effect*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1Effect*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -69,6 +72,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         return ((delegate* unmanaged<ID2D1Effect*, uint>)(lpVtbl[1]))((ID2D1Effect*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -77,6 +81,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         return ((delegate* unmanaged<ID2D1Effect*, uint>)(lpVtbl[2]))((ID2D1Effect*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1Properties.GetPropertyCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("UINT32")]
@@ -85,6 +90,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         return ((delegate* unmanaged<ID2D1Effect*, uint>)(lpVtbl[3]))((ID2D1Effect*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1Properties.GetPropertyName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPropertyName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount)
@@ -92,6 +98,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         return ((delegate* unmanaged<ID2D1Effect*, uint, ushort*, uint, int>)(lpVtbl[4]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index, name, nameCount);
     }
 
+    /// <inheritdoc cref="ID2D1Properties.GetPropertyNameLength" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     [return: NativeTypeName("UINT32")]
@@ -100,6 +107,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         return ((delegate* unmanaged<ID2D1Effect*, uint, uint>)(lpVtbl[5]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index);
     }
 
+    /// <inheritdoc cref="ID2D1Properties.GetType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public D2D1_PROPERTY_TYPE GetType([NativeTypeName("UINT32")] uint index)
@@ -107,6 +115,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         return ((delegate* unmanaged<ID2D1Effect*, uint, D2D1_PROPERTY_TYPE>)(lpVtbl[6]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index);
     }
 
+    /// <inheritdoc cref="ID2D1Properties.GetPropertyIndex" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [return: NativeTypeName("UINT32")]
@@ -115,6 +124,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         return ((delegate* unmanaged<ID2D1Effect*, ushort*, uint>)(lpVtbl[7]))((ID2D1Effect*)Unsafe.AsPointer(ref this), name);
     }
 
+    /// <inheritdoc cref="ID2D1Properties.SetValueByName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetValueByName([NativeTypeName("PCWSTR")] ushort* name, D2D1_PROPERTY_TYPE type, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
@@ -122,6 +132,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         return ((delegate* unmanaged<ID2D1Effect*, ushort*, D2D1_PROPERTY_TYPE, byte*, uint, int>)(lpVtbl[8]))((ID2D1Effect*)Unsafe.AsPointer(ref this), name, type, data, dataSize);
     }
 
+    /// <inheritdoc cref="ID2D1Properties.SetValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetValue([NativeTypeName("UINT32")] uint index, D2D1_PROPERTY_TYPE type, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
@@ -129,6 +140,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         return ((delegate* unmanaged<ID2D1Effect*, uint, D2D1_PROPERTY_TYPE, byte*, uint, int>)(lpVtbl[9]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index, type, data, dataSize);
     }
 
+    /// <inheritdoc cref="ID2D1Properties.GetValueByName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetValueByName([NativeTypeName("PCWSTR")] ushort* name, D2D1_PROPERTY_TYPE type, byte* data, [NativeTypeName("UINT32")] uint dataSize)
@@ -136,6 +148,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         return ((delegate* unmanaged<ID2D1Effect*, ushort*, D2D1_PROPERTY_TYPE, byte*, uint, int>)(lpVtbl[10]))((ID2D1Effect*)Unsafe.AsPointer(ref this), name, type, data, dataSize);
     }
 
+    /// <inheritdoc cref="ID2D1Properties.GetValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetValue([NativeTypeName("UINT32")] uint index, D2D1_PROPERTY_TYPE type, byte* data, [NativeTypeName("UINT32")] uint dataSize)
@@ -143,6 +156,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         return ((delegate* unmanaged<ID2D1Effect*, uint, D2D1_PROPERTY_TYPE, byte*, uint, int>)(lpVtbl[11]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index, type, data, dataSize);
     }
 
+    /// <inheritdoc cref="ID2D1Properties.GetValueSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     [return: NativeTypeName("UINT32")]
@@ -151,6 +165,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         return ((delegate* unmanaged<ID2D1Effect*, uint, uint>)(lpVtbl[12]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index);
     }
 
+    /// <inheritdoc cref="ID2D1Properties.GetSubProperties" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetSubProperties([NativeTypeName("UINT32")] uint index, ID2D1Properties** subProperties)
@@ -158,6 +173,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         return ((delegate* unmanaged<ID2D1Effect*, uint, ID2D1Properties**, int>)(lpVtbl[13]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index, subProperties);
     }
 
+    /// <include file='ID2D1Effect.xml' path='doc/member[@name="ID2D1Effect.SetInput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public void SetInput([NativeTypeName("UINT32")] uint index, ID2D1Image* input, [Optional, DefaultParameterValue(1)] BOOL invalidate)
@@ -165,6 +181,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         ((delegate* unmanaged<ID2D1Effect*, uint, ID2D1Image*, BOOL, void>)(lpVtbl[14]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index, input, invalidate);
     }
 
+    /// <include file='ID2D1Effect.xml' path='doc/member[@name="ID2D1Effect.SetInputCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetInputCount([NativeTypeName("UINT32")] uint inputCount)
@@ -172,6 +189,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         return ((delegate* unmanaged<ID2D1Effect*, uint, int>)(lpVtbl[15]))((ID2D1Effect*)Unsafe.AsPointer(ref this), inputCount);
     }
 
+    /// <include file='ID2D1Effect.xml' path='doc/member[@name="ID2D1Effect.GetInput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public void GetInput([NativeTypeName("UINT32")] uint index, ID2D1Image** input)
@@ -179,6 +197,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         ((delegate* unmanaged<ID2D1Effect*, uint, ID2D1Image**, void>)(lpVtbl[16]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index, input);
     }
 
+    /// <include file='ID2D1Effect.xml' path='doc/member[@name="ID2D1Effect.GetInputCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     [return: NativeTypeName("UINT32")]
@@ -187,6 +206,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         return ((delegate* unmanaged<ID2D1Effect*, uint>)(lpVtbl[17]))((ID2D1Effect*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1Effect.xml' path='doc/member[@name="ID2D1Effect.GetOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public void GetOutput(ID2D1Image** outputImage)

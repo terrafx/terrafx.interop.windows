@@ -5,17 +5,24 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_BUFFER_DESC.xml' path='doc/member[@name="D3D11_BUFFER_DESC"]/*' />
 public partial struct D3D11_BUFFER_DESC
 {
+    /// <include file='D3D11_BUFFER_DESC.xml' path='doc/member[@name="D3D11_BUFFER_DESC.ByteWidth"]/*' />
     public uint ByteWidth;
 
+    /// <include file='D3D11_BUFFER_DESC.xml' path='doc/member[@name="D3D11_BUFFER_DESC.Usage"]/*' />
     public D3D11_USAGE Usage;
 
+    /// <include file='D3D11_BUFFER_DESC.xml' path='doc/member[@name="D3D11_BUFFER_DESC.BindFlags"]/*' />
     public uint BindFlags;
 
+    /// <include file='D3D11_BUFFER_DESC.xml' path='doc/member[@name="D3D11_BUFFER_DESC.CPUAccessFlags"]/*' />
     public uint CPUAccessFlags;
 
+    /// <include file='D3D11_BUFFER_DESC.xml' path='doc/member[@name="D3D11_BUFFER_DESC.MiscFlags"]/*' />
     public uint MiscFlags;
 
+    /// <include file='D3D11_BUFFER_DESC.xml' path='doc/member[@name="D3D11_BUFFER_DESC.StructureByteStride"]/*' />
     public uint StructureByteStride;
 }

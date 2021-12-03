@@ -8,14 +8,19 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA.xml' path='doc/member[@name="D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA
 {
+    /// <include file='D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA.xml' path='doc/member[@name="D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA.HWProtectionFunctionID"]/*' />
     public uint HWProtectionFunctionID;
 
+    /// <include file='D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA.xml' path='doc/member[@name="D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA.pInputData"]/*' />
     public D3D11_KEY_EXCHANGE_HW_PROTECTION_INPUT_DATA* pInputData;
 
+    /// <include file='D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA.xml' path='doc/member[@name="D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA.pOutputData"]/*' />
     public D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA* pOutputData;
 
+    /// <include file='D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA.xml' path='doc/member[@name="D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA.Status"]/*' />
     public HRESULT Status;
 }

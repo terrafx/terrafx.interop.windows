@@ -5,14 +5,19 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_OUTPUT_GRAPH_EDGE_DESC.xml' path='doc/member[@name="DML_OUTPUT_GRAPH_EDGE_DESC"]/*' />
 public unsafe partial struct DML_OUTPUT_GRAPH_EDGE_DESC
 {
+    /// <include file='DML_OUTPUT_GRAPH_EDGE_DESC.xml' path='doc/member[@name="DML_OUTPUT_GRAPH_EDGE_DESC.FromNodeIndex"]/*' />
     public uint FromNodeIndex;
 
+    /// <include file='DML_OUTPUT_GRAPH_EDGE_DESC.xml' path='doc/member[@name="DML_OUTPUT_GRAPH_EDGE_DESC.FromNodeOutputIndex"]/*' />
     public uint FromNodeOutputIndex;
 
+    /// <include file='DML_OUTPUT_GRAPH_EDGE_DESC.xml' path='doc/member[@name="DML_OUTPUT_GRAPH_EDGE_DESC.GraphOutputIndex"]/*' />
     public uint GraphOutputIndex;
 
+    /// <include file='DML_OUTPUT_GRAPH_EDGE_DESC.xml' path='doc/member[@name="DML_OUTPUT_GRAPH_EDGE_DESC.Name"]/*' />
     [NativeTypeName("const char *")]
     public sbyte* Name;
 }

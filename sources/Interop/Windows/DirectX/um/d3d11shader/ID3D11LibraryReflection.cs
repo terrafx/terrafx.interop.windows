@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D11LibraryReflection.xml' path='doc/member[@name="ID3D11LibraryReflection"]/*' />
 [Guid("54384F1B-5B3E-4BB7-AE01-60BA3097CBB6")]
 [NativeTypeName("struct ID3D11LibraryReflection : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D11LibraryReflection : ID3D11LibraryReflection.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D11LibraryReflection : ID3D11LibraryReflection.I
         return ((delegate* unmanaged<ID3D11LibraryReflection*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11LibraryReflection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D11LibraryReflection : ID3D11LibraryReflection.I
         return ((delegate* unmanaged<ID3D11LibraryReflection*, uint>)(lpVtbl[1]))((ID3D11LibraryReflection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D11LibraryReflection : ID3D11LibraryReflection.I
         return ((delegate* unmanaged<ID3D11LibraryReflection*, uint>)(lpVtbl[2]))((ID3D11LibraryReflection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D11LibraryReflection.xml' path='doc/member[@name="ID3D11LibraryReflection.GetDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDesc(D3D11_LIBRARY_DESC* pDesc)
@@ -47,6 +52,7 @@ public unsafe partial struct ID3D11LibraryReflection : ID3D11LibraryReflection.I
         return ((delegate* unmanaged<ID3D11LibraryReflection*, D3D11_LIBRARY_DESC*, int>)(lpVtbl[3]))((ID3D11LibraryReflection*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <include file='ID3D11LibraryReflection.xml' path='doc/member[@name="ID3D11LibraryReflection.GetFunctionByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public ID3D11FunctionReflection* GetFunctionByIndex(int FunctionIndex)

@@ -9,6 +9,7 @@ namespace TerraFX.Interop.WinRT;
 
 public static unsafe partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.Int64FromLuid"]/*' />
     [return: NativeTypeName("INT64")]
     public static long Int64FromLuid([NativeTypeName("const LUID &")] LUID* Luid)
     {
@@ -19,6 +20,7 @@ public static unsafe partial class WinRT
         return val.QuadPart;
     }
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.LuidFromInt64"]/*' />
     public static LUID LuidFromInt64([NativeTypeName("INT64")] long Int64)
     {
         LARGE_INTEGER val = new LARGE_INTEGER();

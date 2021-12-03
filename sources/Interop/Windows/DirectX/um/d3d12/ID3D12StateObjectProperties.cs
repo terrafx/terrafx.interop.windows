@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12StateObjectProperties.xml' path='doc/member[@name="ID3D12StateObjectProperties"]/*' />
 [Guid("DE5FA827-9BF9-4F26-89FF-D7F56FDE3860")]
 [NativeTypeName("struct ID3D12StateObjectProperties : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
         return ((delegate* unmanaged<ID3D12StateObjectProperties*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
         return ((delegate* unmanaged<ID3D12StateObjectProperties*, uint>)(lpVtbl[1]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
         return ((delegate* unmanaged<ID3D12StateObjectProperties*, uint>)(lpVtbl[2]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12StateObjectProperties.xml' path='doc/member[@name="ID3D12StateObjectProperties.GetShaderIdentifier"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void* GetShaderIdentifier([NativeTypeName("LPCWSTR")] ushort* pExportName)
@@ -47,6 +52,7 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
         return ((delegate* unmanaged<ID3D12StateObjectProperties*, ushort*, void*>)(lpVtbl[3]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), pExportName);
     }
 
+    /// <include file='ID3D12StateObjectProperties.xml' path='doc/member[@name="ID3D12StateObjectProperties.GetShaderStackSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     [return: NativeTypeName("UINT64")]
@@ -55,6 +61,7 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
         return ((delegate* unmanaged<ID3D12StateObjectProperties*, ushort*, ulong>)(lpVtbl[4]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), pExportName);
     }
 
+    /// <include file='ID3D12StateObjectProperties.xml' path='doc/member[@name="ID3D12StateObjectProperties.GetPipelineStackSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     [return: NativeTypeName("UINT64")]
@@ -63,6 +70,7 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
         return ((delegate* unmanaged<ID3D12StateObjectProperties*, ulong>)(lpVtbl[5]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12StateObjectProperties.xml' path='doc/member[@name="ID3D12StateObjectProperties.SetPipelineStackSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public void SetPipelineStackSize([NativeTypeName("UINT64")] ulong PipelineStackSizeInBytes)

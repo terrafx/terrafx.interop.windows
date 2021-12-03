@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDCompositionSurface.xml' path='doc/member[@name="IDCompositionSurface"]/*' />
 [Guid("BB8A4953-2C99-4F5A-96F5-4819027FA3AC")]
 [NativeTypeName("struct IDCompositionSurface : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDCompositionSurface : IDCompositionSurface.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDCompositionSurface : IDCompositionSurface.Interfa
         return ((delegate* unmanaged<IDCompositionSurface*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionSurface*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDCompositionSurface : IDCompositionSurface.Interfa
         return ((delegate* unmanaged<IDCompositionSurface*, uint>)(lpVtbl[1]))((IDCompositionSurface*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDCompositionSurface : IDCompositionSurface.Interfa
         return ((delegate* unmanaged<IDCompositionSurface*, uint>)(lpVtbl[2]))((IDCompositionSurface*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDCompositionSurface.xml' path='doc/member[@name="IDCompositionSurface.BeginDraw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT BeginDraw([NativeTypeName("const RECT *")] RECT* updateRect, [NativeTypeName("const IID &")] Guid* iid, void** updateObject, POINT* updateOffset)
@@ -49,6 +54,7 @@ public unsafe partial struct IDCompositionSurface : IDCompositionSurface.Interfa
         return ((delegate* unmanaged<IDCompositionSurface*, RECT*, Guid*, void**, POINT*, int>)(lpVtbl[3]))((IDCompositionSurface*)Unsafe.AsPointer(ref this), updateRect, iid, updateObject, updateOffset);
     }
 
+    /// <include file='IDCompositionSurface.xml' path='doc/member[@name="IDCompositionSurface.EndDraw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EndDraw()
@@ -56,6 +62,7 @@ public unsafe partial struct IDCompositionSurface : IDCompositionSurface.Interfa
         return ((delegate* unmanaged<IDCompositionSurface*, int>)(lpVtbl[4]))((IDCompositionSurface*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDCompositionSurface.xml' path='doc/member[@name="IDCompositionSurface.SuspendDraw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SuspendDraw()
@@ -63,6 +70,7 @@ public unsafe partial struct IDCompositionSurface : IDCompositionSurface.Interfa
         return ((delegate* unmanaged<IDCompositionSurface*, int>)(lpVtbl[5]))((IDCompositionSurface*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDCompositionSurface.xml' path='doc/member[@name="IDCompositionSurface.ResumeDraw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT ResumeDraw()
@@ -70,6 +78,7 @@ public unsafe partial struct IDCompositionSurface : IDCompositionSurface.Interfa
         return ((delegate* unmanaged<IDCompositionSurface*, int>)(lpVtbl[6]))((IDCompositionSurface*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDCompositionSurface.xml' path='doc/member[@name="IDCompositionSurface.Scroll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Scroll([NativeTypeName("const RECT *")] RECT* scrollRect, [NativeTypeName("const RECT *")] RECT* clipRect, int offsetX, int offsetY)

@@ -7,21 +7,30 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_CLASS_INSTANCE_DESC.xml' path='doc/member[@name="D3D11_CLASS_INSTANCE_DESC"]/*' />
 public partial struct D3D11_CLASS_INSTANCE_DESC
 {
+    /// <include file='D3D11_CLASS_INSTANCE_DESC.xml' path='doc/member[@name="D3D11_CLASS_INSTANCE_DESC.InstanceId"]/*' />
     public uint InstanceId;
 
+    /// <include file='D3D11_CLASS_INSTANCE_DESC.xml' path='doc/member[@name="D3D11_CLASS_INSTANCE_DESC.InstanceIndex"]/*' />
     public uint InstanceIndex;
 
+    /// <include file='D3D11_CLASS_INSTANCE_DESC.xml' path='doc/member[@name="D3D11_CLASS_INSTANCE_DESC.TypeId"]/*' />
     public uint TypeId;
 
+    /// <include file='D3D11_CLASS_INSTANCE_DESC.xml' path='doc/member[@name="D3D11_CLASS_INSTANCE_DESC.ConstantBuffer"]/*' />
     public uint ConstantBuffer;
 
+    /// <include file='D3D11_CLASS_INSTANCE_DESC.xml' path='doc/member[@name="D3D11_CLASS_INSTANCE_DESC.BaseConstantBufferOffset"]/*' />
     public uint BaseConstantBufferOffset;
 
+    /// <include file='D3D11_CLASS_INSTANCE_DESC.xml' path='doc/member[@name="D3D11_CLASS_INSTANCE_DESC.BaseTexture"]/*' />
     public uint BaseTexture;
 
+    /// <include file='D3D11_CLASS_INSTANCE_DESC.xml' path='doc/member[@name="D3D11_CLASS_INSTANCE_DESC.BaseSampler"]/*' />
     public uint BaseSampler;
 
+    /// <include file='D3D11_CLASS_INSTANCE_DESC.xml' path='doc/member[@name="D3D11_CLASS_INSTANCE_DESC.Created"]/*' />
     public BOOL Created;
 }

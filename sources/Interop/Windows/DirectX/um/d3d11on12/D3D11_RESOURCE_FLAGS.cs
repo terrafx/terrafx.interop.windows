@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_RESOURCE_FLAGS.xml' path='doc/member[@name="D3D11_RESOURCE_FLAGS"]/*' />
 public partial struct D3D11_RESOURCE_FLAGS
 {
+    /// <include file='D3D11_RESOURCE_FLAGS.xml' path='doc/member[@name="D3D11_RESOURCE_FLAGS.BindFlags"]/*' />
     public uint BindFlags;
 
+    /// <include file='D3D11_RESOURCE_FLAGS.xml' path='doc/member[@name="D3D11_RESOURCE_FLAGS.MiscFlags"]/*' />
     public uint MiscFlags;
 
+    /// <include file='D3D11_RESOURCE_FLAGS.xml' path='doc/member[@name="D3D11_RESOURCE_FLAGS.CPUAccessFlags"]/*' />
     public uint CPUAccessFlags;
 
+    /// <include file='D3D11_RESOURCE_FLAGS.xml' path='doc/member[@name="D3D11_RESOURCE_FLAGS.StructureByteStride"]/*' />
     public uint StructureByteStride;
 }

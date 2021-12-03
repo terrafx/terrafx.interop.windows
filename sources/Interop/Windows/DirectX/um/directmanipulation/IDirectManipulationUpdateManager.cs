@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDirectManipulationUpdateManager.xml' path='doc/member[@name="IDirectManipulationUpdateManager"]/*' />
 [Guid("B0AE62FD-BE34-46E7-9CAA-D361FACBB9CC")]
 [NativeTypeName("struct IDirectManipulationUpdateManager : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDirectManipulationUpdateManager : IDirectManipulat
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDirectManipulationUpdateManager : IDirectManipulat
         return ((delegate* unmanaged<IDirectManipulationUpdateManager*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDirectManipulationUpdateManager : IDirectManipulat
         return ((delegate* unmanaged<IDirectManipulationUpdateManager*, uint>)(lpVtbl[1]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDirectManipulationUpdateManager : IDirectManipulat
         return ((delegate* unmanaged<IDirectManipulationUpdateManager*, uint>)(lpVtbl[2]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectManipulationUpdateManager.xml' path='doc/member[@name="IDirectManipulationUpdateManager.RegisterWaitHandleCallback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RegisterWaitHandleCallback(HANDLE handle, IDirectManipulationUpdateHandler* eventHandler, [NativeTypeName("DWORD *")] uint* cookie)
@@ -49,6 +54,7 @@ public unsafe partial struct IDirectManipulationUpdateManager : IDirectManipulat
         return ((delegate* unmanaged<IDirectManipulationUpdateManager*, HANDLE, IDirectManipulationUpdateHandler*, uint*, int>)(lpVtbl[3]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this), handle, eventHandler, cookie);
     }
 
+    /// <include file='IDirectManipulationUpdateManager.xml' path='doc/member[@name="IDirectManipulationUpdateManager.UnregisterWaitHandleCallback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UnregisterWaitHandleCallback([NativeTypeName("DWORD")] uint cookie)
@@ -56,6 +62,7 @@ public unsafe partial struct IDirectManipulationUpdateManager : IDirectManipulat
         return ((delegate* unmanaged<IDirectManipulationUpdateManager*, uint, int>)(lpVtbl[4]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this), cookie);
     }
 
+    /// <include file='IDirectManipulationUpdateManager.xml' path='doc/member[@name="IDirectManipulationUpdateManager.Update"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Update(IDirectManipulationFrameInfoProvider* frameInfo)

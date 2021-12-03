@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IStorageFolderHandleAccess.xml' path='doc/member[@name="IStorageFolderHandleAccess"]/*' />
 [Guid("DF19938F-5462-48A0-BE65-D2A3271A08D6")]
 [NativeTypeName("struct IStorageFolderHandleAccess : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IStorageFolderHandleAccess : IStorageFolderHandleAc
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IStorageFolderHandleAccess : IStorageFolderHandleAc
         return ((delegate* unmanaged<IStorageFolderHandleAccess*, Guid*, void**, int>)(lpVtbl[0]))((IStorageFolderHandleAccess*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IStorageFolderHandleAccess : IStorageFolderHandleAc
         return ((delegate* unmanaged<IStorageFolderHandleAccess*, uint>)(lpVtbl[1]))((IStorageFolderHandleAccess*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IStorageFolderHandleAccess : IStorageFolderHandleAc
         return ((delegate* unmanaged<IStorageFolderHandleAccess*, uint>)(lpVtbl[2]))((IStorageFolderHandleAccess*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IStorageFolderHandleAccess.xml' path='doc/member[@name="IStorageFolderHandleAccess.Create"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Create([NativeTypeName("LPCWSTR")] ushort* fileName, HANDLE_CREATION_OPTIONS creationOptions, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle)

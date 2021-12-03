@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDCompositionFilterEffect.xml' path='doc/member[@name="IDCompositionFilterEffect"]/*' />
 [Guid("30C421D5-8CB2-4E9F-B133-37BE270D4AC2")]
 [NativeTypeName("struct IDCompositionFilterEffect : IDCompositionEffect")]
 [NativeInheritance("IDCompositionEffect")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDCompositionFilterEffect : IDCompositionFilterEffe
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDCompositionFilterEffect : IDCompositionFilterEffe
         return ((delegate* unmanaged<IDCompositionFilterEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDCompositionFilterEffect : IDCompositionFilterEffe
         return ((delegate* unmanaged<IDCompositionFilterEffect*, uint>)(lpVtbl[1]))((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDCompositionFilterEffect : IDCompositionFilterEffe
         return ((delegate* unmanaged<IDCompositionFilterEffect*, uint>)(lpVtbl[2]))((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDCompositionFilterEffect.xml' path='doc/member[@name="IDCompositionFilterEffect.SetInput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetInput(uint index, IUnknown* input, uint flags)

@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ICoreWindowInterop.xml' path='doc/member[@name="ICoreWindowInterop"]/*' />
 [Guid("45D64A29-A63E-4CB6-B498-5781D298CB4F")]
 [NativeTypeName("struct ICoreWindowInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ICoreWindowInterop : ICoreWindowInterop.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ICoreWindowInterop : ICoreWindowInterop.Interface
         return ((delegate* unmanaged<ICoreWindowInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ICoreWindowInterop : ICoreWindowInterop.Interface
         return ((delegate* unmanaged<ICoreWindowInterop*, uint>)(lpVtbl[1]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ICoreWindowInterop : ICoreWindowInterop.Interface
         return ((delegate* unmanaged<ICoreWindowInterop*, uint>)(lpVtbl[2]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICoreWindowInterop.xml' path='doc/member[@name="ICoreWindowInterop.get_WindowHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_WindowHandle(HWND* hwnd)
@@ -47,6 +52,7 @@ public unsafe partial struct ICoreWindowInterop : ICoreWindowInterop.Interface
         return ((delegate* unmanaged<ICoreWindowInterop*, HWND*, int>)(lpVtbl[3]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this), hwnd);
     }
 
+    /// <include file='ICoreWindowInterop.xml' path='doc/member[@name="ICoreWindowInterop.put_MessageHandled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT put_MessageHandled([NativeTypeName("boolean")] byte value)

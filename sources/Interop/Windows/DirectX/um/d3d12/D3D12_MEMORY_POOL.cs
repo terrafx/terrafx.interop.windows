@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_MEMORY_POOL.xml' path='doc/member[@name="D3D12_MEMORY_POOL"]/*' />
 public enum D3D12_MEMORY_POOL
 {
+    /// <include file='D3D12_MEMORY_POOL.xml' path='doc/member[@name="D3D12_MEMORY_POOL.D3D12_MEMORY_POOL_UNKNOWN"]/*' />
     D3D12_MEMORY_POOL_UNKNOWN = 0,
+
+    /// <include file='D3D12_MEMORY_POOL.xml' path='doc/member[@name="D3D12_MEMORY_POOL.D3D12_MEMORY_POOL_L0"]/*' />
     D3D12_MEMORY_POOL_L0 = 1,
+
+    /// <include file='D3D12_MEMORY_POOL.xml' path='doc/member[@name="D3D12_MEMORY_POOL.D3D12_MEMORY_POOL_L1"]/*' />
     D3D12_MEMORY_POOL_L1 = 2,
 }

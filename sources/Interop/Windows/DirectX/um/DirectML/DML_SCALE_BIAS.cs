@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_SCALE_BIAS.xml' path='doc/member[@name="DML_SCALE_BIAS"]/*' />
 public partial struct DML_SCALE_BIAS
 {
+    /// <include file='DML_SCALE_BIAS.xml' path='doc/member[@name="DML_SCALE_BIAS.Scale"]/*' />
     public float Scale;
 
+    /// <include file='DML_SCALE_BIAS.xml' path='doc/member[@name="DML_SCALE_BIAS.Bias"]/*' />
     public float Bias;
 }

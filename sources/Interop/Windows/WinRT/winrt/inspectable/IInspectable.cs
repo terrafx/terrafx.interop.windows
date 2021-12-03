@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IInspectable.xml' path='doc/member[@name="IInspectable"]/*' />
 [Guid("AF86E2E0-B12D-4C6A-9C5A-D7AA65101E90")]
 [NativeTypeName("struct IInspectable : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IInspectable : IInspectable.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IInspectable : IInspectable.Interface
         return ((delegate* unmanaged<IInspectable*, Guid*, void**, int>)(lpVtbl[0]))((IInspectable*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IInspectable : IInspectable.Interface
         return ((delegate* unmanaged<IInspectable*, uint>)(lpVtbl[1]))((IInspectable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IInspectable : IInspectable.Interface
         return ((delegate* unmanaged<IInspectable*, uint>)(lpVtbl[2]))((IInspectable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInspectable.xml' path='doc/member[@name="IInspectable.GetIids"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -47,6 +52,7 @@ public unsafe partial struct IInspectable : IInspectable.Interface
         return ((delegate* unmanaged<IInspectable*, uint*, Guid**, int>)(lpVtbl[3]))((IInspectable*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <include file='IInspectable.xml' path='doc/member[@name="IInspectable.GetRuntimeClassName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -54,6 +60,7 @@ public unsafe partial struct IInspectable : IInspectable.Interface
         return ((delegate* unmanaged<IInspectable*, HSTRING*, int>)(lpVtbl[4]))((IInspectable*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <include file='IInspectable.xml' path='doc/member[@name="IInspectable.GetTrustLevel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)

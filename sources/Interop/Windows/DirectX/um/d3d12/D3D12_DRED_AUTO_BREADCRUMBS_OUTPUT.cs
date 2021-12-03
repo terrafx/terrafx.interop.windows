@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT.xml' path='doc/member[@name="D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT"]/*' />
 public unsafe partial struct D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT
 {
+    /// <include file='D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT.xml' path='doc/member[@name="D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT.pHeadAutoBreadcrumbNode"]/*' />
     [NativeTypeName("const D3D12_AUTO_BREADCRUMB_NODE *")]
     public D3D12_AUTO_BREADCRUMB_NODE* pHeadAutoBreadcrumbNode;
 }

@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_FILL_VALUE_CONSTANT_OPERATOR_DESC.xml' path='doc/member[@name="DML_FILL_VALUE_CONSTANT_OPERATOR_DESC"]/*' />
 public unsafe partial struct DML_FILL_VALUE_CONSTANT_OPERATOR_DESC
 {
+    /// <include file='DML_FILL_VALUE_CONSTANT_OPERATOR_DESC.xml' path='doc/member[@name="DML_FILL_VALUE_CONSTANT_OPERATOR_DESC.OutputTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* OutputTensor;
 
+    /// <include file='DML_FILL_VALUE_CONSTANT_OPERATOR_DESC.xml' path='doc/member[@name="DML_FILL_VALUE_CONSTANT_OPERATOR_DESC.ValueDataType"]/*' />
     public DML_TENSOR_DATA_TYPE ValueDataType;
 
+    /// <include file='DML_FILL_VALUE_CONSTANT_OPERATOR_DESC.xml' path='doc/member[@name="DML_FILL_VALUE_CONSTANT_OPERATOR_DESC.Value"]/*' />
     public DML_SCALAR_UNION Value;
 }

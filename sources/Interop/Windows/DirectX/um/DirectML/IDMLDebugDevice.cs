@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDMLDebugDevice.xml' path='doc/member[@name="IDMLDebugDevice"]/*' />
 [Guid("7D6F3AC9-394A-4AC3-92A7-390CC57A8217")]
 [NativeTypeName("struct IDMLDebugDevice : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDMLDebugDevice : IDMLDebugDevice.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDMLDebugDevice : IDMLDebugDevice.Interface
         return ((delegate* unmanaged<IDMLDebugDevice*, Guid*, void**, int>)(lpVtbl[0]))((IDMLDebugDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDMLDebugDevice : IDMLDebugDevice.Interface
         return ((delegate* unmanaged<IDMLDebugDevice*, uint>)(lpVtbl[1]))((IDMLDebugDevice*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDMLDebugDevice : IDMLDebugDevice.Interface
         return ((delegate* unmanaged<IDMLDebugDevice*, uint>)(lpVtbl[2]))((IDMLDebugDevice*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDMLDebugDevice.xml' path='doc/member[@name="IDMLDebugDevice.SetMuteDebugOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void SetMuteDebugOutput(BOOL mute)

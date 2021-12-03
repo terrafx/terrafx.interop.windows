@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='MLOperatorSchemaEdgeTypeFormat.xml' path='doc/member[@name="MLOperatorSchemaEdgeTypeFormat"]/*' />
 public enum MLOperatorSchemaEdgeTypeFormat
 {
+    /// <include file='MLOperatorSchemaEdgeTypeFormat.xml' path='doc/member[@name="MLOperatorSchemaEdgeTypeFormat.EdgeDescription"]/*' />
     EdgeDescription = 0,
+
+    /// <include file='MLOperatorSchemaEdgeTypeFormat.xml' path='doc/member[@name="MLOperatorSchemaEdgeTypeFormat.Label"]/*' />
     Label = 1,
 }

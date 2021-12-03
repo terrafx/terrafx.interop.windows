@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteFontFileLoader.xml' path='doc/member[@name="IDWriteFontFileLoader"]/*' />
 [Guid("727CAD4E-D6AF-4C9E-8A08-D695B11CAA49")]
 [NativeTypeName("struct IDWriteFontFileLoader : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDWriteFontFileLoader : IDWriteFontFileLoader.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDWriteFontFileLoader : IDWriteFontFileLoader.Inter
         return ((delegate* unmanaged<IDWriteFontFileLoader*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontFileLoader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDWriteFontFileLoader : IDWriteFontFileLoader.Inter
         return ((delegate* unmanaged<IDWriteFontFileLoader*, uint>)(lpVtbl[1]))((IDWriteFontFileLoader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDWriteFontFileLoader : IDWriteFontFileLoader.Inter
         return ((delegate* unmanaged<IDWriteFontFileLoader*, uint>)(lpVtbl[2]))((IDWriteFontFileLoader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteFontFileLoader.xml' path='doc/member[@name="IDWriteFontFileLoader.CreateStreamFromKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateStreamFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, IDWriteFontFileStream** fontFileStream)

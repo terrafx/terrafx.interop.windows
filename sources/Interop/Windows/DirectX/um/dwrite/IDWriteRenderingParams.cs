@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteRenderingParams.xml' path='doc/member[@name="IDWriteRenderingParams"]/*' />
 [Guid("2F0DA53A-2ADD-47CD-82EE-D9EC34688E75")]
 [NativeTypeName("struct IDWriteRenderingParams : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDWriteRenderingParams : IDWriteRenderingParams.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDWriteRenderingParams : IDWriteRenderingParams.Int
         return ((delegate* unmanaged<IDWriteRenderingParams*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteRenderingParams*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDWriteRenderingParams : IDWriteRenderingParams.Int
         return ((delegate* unmanaged<IDWriteRenderingParams*, uint>)(lpVtbl[1]))((IDWriteRenderingParams*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDWriteRenderingParams : IDWriteRenderingParams.Int
         return ((delegate* unmanaged<IDWriteRenderingParams*, uint>)(lpVtbl[2]))((IDWriteRenderingParams*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteRenderingParams.xml' path='doc/member[@name="IDWriteRenderingParams.GetGamma"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public float GetGamma()
@@ -47,6 +52,7 @@ public unsafe partial struct IDWriteRenderingParams : IDWriteRenderingParams.Int
         return ((delegate* unmanaged[SuppressGCTransition]<IDWriteRenderingParams*, float>)(lpVtbl[3]))((IDWriteRenderingParams*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteRenderingParams.xml' path='doc/member[@name="IDWriteRenderingParams.GetEnhancedContrast"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public float GetEnhancedContrast()
@@ -54,6 +60,7 @@ public unsafe partial struct IDWriteRenderingParams : IDWriteRenderingParams.Int
         return ((delegate* unmanaged[SuppressGCTransition]<IDWriteRenderingParams*, float>)(lpVtbl[4]))((IDWriteRenderingParams*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteRenderingParams.xml' path='doc/member[@name="IDWriteRenderingParams.GetClearTypeLevel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public float GetClearTypeLevel()
@@ -61,6 +68,7 @@ public unsafe partial struct IDWriteRenderingParams : IDWriteRenderingParams.Int
         return ((delegate* unmanaged[SuppressGCTransition]<IDWriteRenderingParams*, float>)(lpVtbl[5]))((IDWriteRenderingParams*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteRenderingParams.xml' path='doc/member[@name="IDWriteRenderingParams.GetPixelGeometry"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public DWRITE_PIXEL_GEOMETRY GetPixelGeometry()
@@ -68,6 +76,7 @@ public unsafe partial struct IDWriteRenderingParams : IDWriteRenderingParams.Int
         return ((delegate* unmanaged[SuppressGCTransition]<IDWriteRenderingParams*, DWRITE_PIXEL_GEOMETRY>)(lpVtbl[6]))((IDWriteRenderingParams*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteRenderingParams.xml' path='doc/member[@name="IDWriteRenderingParams.GetRenderingMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public DWRITE_RENDERING_MODE GetRenderingMode()

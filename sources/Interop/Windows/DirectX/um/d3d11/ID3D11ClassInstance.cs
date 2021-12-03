@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D11ClassInstance.xml' path='doc/member[@name="ID3D11ClassInstance"]/*' />
 [Guid("A6CD7FAA-B0B7-4A2F-9436-8662A65797CB")]
 [NativeTypeName("struct ID3D11ClassInstance : ID3D11DeviceChild")]
 [NativeInheritance("ID3D11DeviceChild")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D11ClassInstance : ID3D11ClassInstance.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D11ClassInstance : ID3D11ClassInstance.Interface
         return ((delegate* unmanaged<ID3D11ClassInstance*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D11ClassInstance : ID3D11ClassInstance.Interface
         return ((delegate* unmanaged<ID3D11ClassInstance*, uint>)(lpVtbl[1]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D11ClassInstance : ID3D11ClassInstance.Interface
         return ((delegate* unmanaged<ID3D11ClassInstance*, uint>)(lpVtbl[2]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.GetDevice" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void GetDevice(ID3D11Device** ppDevice)
@@ -47,6 +52,7 @@ public unsafe partial struct ID3D11ClassInstance : ID3D11ClassInstance.Interface
         ((delegate* unmanaged<ID3D11ClassInstance*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), ppDevice);
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.GetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
@@ -54,6 +60,7 @@ public unsafe partial struct ID3D11ClassInstance : ID3D11ClassInstance.Interface
         return ((delegate* unmanaged<ID3D11ClassInstance*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.SetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
@@ -61,6 +68,7 @@ public unsafe partial struct ID3D11ClassInstance : ID3D11ClassInstance.Interface
         return ((delegate* unmanaged<ID3D11ClassInstance*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.SetPrivateDataInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
@@ -68,6 +76,7 @@ public unsafe partial struct ID3D11ClassInstance : ID3D11ClassInstance.Interface
         return ((delegate* unmanaged<ID3D11ClassInstance*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), guid, pData);
     }
 
+    /// <include file='ID3D11ClassInstance.xml' path='doc/member[@name="ID3D11ClassInstance.GetClassLinkage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void GetClassLinkage(ID3D11ClassLinkage** ppLinkage)
@@ -75,6 +84,7 @@ public unsafe partial struct ID3D11ClassInstance : ID3D11ClassInstance.Interface
         ((delegate* unmanaged<ID3D11ClassInstance*, ID3D11ClassLinkage**, void>)(lpVtbl[7]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), ppLinkage);
     }
 
+    /// <include file='ID3D11ClassInstance.xml' path='doc/member[@name="ID3D11ClassInstance.GetDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public void GetDesc(D3D11_CLASS_INSTANCE_DESC* pDesc)
@@ -82,6 +92,7 @@ public unsafe partial struct ID3D11ClassInstance : ID3D11ClassInstance.Interface
         ((delegate* unmanaged<ID3D11ClassInstance*, D3D11_CLASS_INSTANCE_DESC*, void>)(lpVtbl[8]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <include file='ID3D11ClassInstance.xml' path='doc/member[@name="ID3D11ClassInstance.GetInstanceName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public void GetInstanceName([NativeTypeName("LPSTR")] sbyte* pInstanceName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength)
@@ -89,6 +100,7 @@ public unsafe partial struct ID3D11ClassInstance : ID3D11ClassInstance.Interface
         ((delegate* unmanaged<ID3D11ClassInstance*, sbyte*, nuint*, void>)(lpVtbl[9]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), pInstanceName, pBufferLength);
     }
 
+    /// <include file='ID3D11ClassInstance.xml' path='doc/member[@name="ID3D11ClassInstance.GetTypeName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public void GetTypeName([NativeTypeName("LPSTR")] sbyte* pTypeName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength)

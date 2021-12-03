@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDMLBindingTable.xml' path='doc/member[@name="IDMLBindingTable"]/*' />
 [Guid("29C687DC-DE74-4E3B-AB00-1168F2FC3CFC")]
 [NativeTypeName("struct IDMLBindingTable : IDMLDeviceChild")]
 [NativeInheritance("IDMLDeviceChild")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface
         return ((delegate* unmanaged<IDMLBindingTable*, Guid*, void**, int>)(lpVtbl[0]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface
         return ((delegate* unmanaged<IDMLBindingTable*, uint>)(lpVtbl[1]))((IDMLBindingTable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface
         return ((delegate* unmanaged<IDMLBindingTable*, uint>)(lpVtbl[2]))((IDMLBindingTable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDMLObject.GetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* dataSize, void* data)
@@ -47,6 +52,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface
         return ((delegate* unmanaged<IDMLBindingTable*, Guid*, uint*, void*, int>)(lpVtbl[3]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), guid, dataSize, data);
     }
 
+    /// <inheritdoc cref="IDMLObject.SetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint dataSize, [NativeTypeName("const void *")] void* data)
@@ -54,6 +60,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface
         return ((delegate* unmanaged<IDMLBindingTable*, Guid*, uint, void*, int>)(lpVtbl[4]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), guid, dataSize, data);
     }
 
+    /// <inheritdoc cref="IDMLObject.SetPrivateDataInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, IUnknown* data)
@@ -61,6 +68,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface
         return ((delegate* unmanaged<IDMLBindingTable*, Guid*, IUnknown*, int>)(lpVtbl[5]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), guid, data);
     }
 
+    /// <inheritdoc cref="IDMLObject.SetName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetName([NativeTypeName("PCWSTR")] ushort* name)
@@ -68,6 +76,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface
         return ((delegate* unmanaged<IDMLBindingTable*, ushort*, int>)(lpVtbl[6]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), name);
     }
 
+    /// <inheritdoc cref="IDMLDeviceChild.GetDevice" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -75,6 +84,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface
         return ((delegate* unmanaged<IDMLBindingTable*, Guid*, void**, int>)(lpVtbl[7]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
+    /// <include file='IDMLBindingTable.xml' path='doc/member[@name="IDMLBindingTable.BindInputs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public void BindInputs(uint bindingCount, [NativeTypeName("const DML_BINDING_DESC *")] DML_BINDING_DESC* bindings)
@@ -82,6 +92,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface
         ((delegate* unmanaged<IDMLBindingTable*, uint, DML_BINDING_DESC*, void>)(lpVtbl[8]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), bindingCount, bindings);
     }
 
+    /// <include file='IDMLBindingTable.xml' path='doc/member[@name="IDMLBindingTable.BindOutputs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public void BindOutputs(uint bindingCount, [NativeTypeName("const DML_BINDING_DESC *")] DML_BINDING_DESC* bindings)
@@ -89,6 +100,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface
         ((delegate* unmanaged<IDMLBindingTable*, uint, DML_BINDING_DESC*, void>)(lpVtbl[9]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), bindingCount, bindings);
     }
 
+    /// <include file='IDMLBindingTable.xml' path='doc/member[@name="IDMLBindingTable.BindTemporaryResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public void BindTemporaryResource([NativeTypeName("const DML_BINDING_DESC *")] DML_BINDING_DESC* binding)
@@ -96,6 +108,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface
         ((delegate* unmanaged<IDMLBindingTable*, DML_BINDING_DESC*, void>)(lpVtbl[10]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), binding);
     }
 
+    /// <include file='IDMLBindingTable.xml' path='doc/member[@name="IDMLBindingTable.BindPersistentResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public void BindPersistentResource([NativeTypeName("const DML_BINDING_DESC *")] DML_BINDING_DESC* binding)
@@ -103,6 +116,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface
         ((delegate* unmanaged<IDMLBindingTable*, DML_BINDING_DESC*, void>)(lpVtbl[11]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), binding);
     }
 
+    /// <include file='IDMLBindingTable.xml' path='doc/member[@name="IDMLBindingTable.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Reset([NativeTypeName("const DML_BINDING_TABLE_DESC *")] DML_BINDING_TABLE_DESC* desc)

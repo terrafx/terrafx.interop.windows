@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_VIDEO_USAGE.xml' path='doc/member[@name="D3D11_VIDEO_USAGE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum D3D11_VIDEO_USAGE
 {
+    /// <include file='D3D11_VIDEO_USAGE.xml' path='doc/member[@name="D3D11_VIDEO_USAGE.D3D11_VIDEO_USAGE_PLAYBACK_NORMAL"]/*' />
     D3D11_VIDEO_USAGE_PLAYBACK_NORMAL = 0,
+
+    /// <include file='D3D11_VIDEO_USAGE.xml' path='doc/member[@name="D3D11_VIDEO_USAGE.D3D11_VIDEO_USAGE_OPTIMAL_SPEED"]/*' />
     D3D11_VIDEO_USAGE_OPTIMAL_SPEED = 1,
+
+    /// <include file='D3D11_VIDEO_USAGE.xml' path='doc/member[@name="D3D11_VIDEO_USAGE.D3D11_VIDEO_USAGE_OPTIMAL_QUALITY"]/*' />
     D3D11_VIDEO_USAGE_OPTIMAL_QUALITY = 2,
 }

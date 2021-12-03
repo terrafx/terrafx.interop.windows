@@ -7,15 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_COMPUTE_SHADER_TRACE_DESC.xml' path='doc/member[@name="D3D11_COMPUTE_SHADER_TRACE_DESC"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct D3D11_COMPUTE_SHADER_TRACE_DESC
 {
+    /// <include file='D3D11_COMPUTE_SHADER_TRACE_DESC.xml' path='doc/member[@name="D3D11_COMPUTE_SHADER_TRACE_DESC.Invocation"]/*' />
     [NativeTypeName("UINT64")]
     public ulong Invocation;
 
+    /// <include file='D3D11_COMPUTE_SHADER_TRACE_DESC.xml' path='doc/member[@name="D3D11_COMPUTE_SHADER_TRACE_DESC.ThreadIDInGroup"]/*' />
     [NativeTypeName("UINT [3]")]
     public fixed uint ThreadIDInGroup[3];
 
+    /// <include file='D3D11_COMPUTE_SHADER_TRACE_DESC.xml' path='doc/member[@name="D3D11_COMPUTE_SHADER_TRACE_DESC.ThreadGroupID"]/*' />
     [NativeTypeName("UINT [3]")]
     public fixed uint ThreadGroupID[3];
 }
