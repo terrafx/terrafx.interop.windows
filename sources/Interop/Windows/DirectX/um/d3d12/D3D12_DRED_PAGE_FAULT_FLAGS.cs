@@ -7,8 +7,10 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_DRED_PAGE_FAULT_FLAGS.xml' path='doc/member[@name="D3D12_DRED_PAGE_FAULT_FLAGS"]/*' />
 [Flags]
 public enum D3D12_DRED_PAGE_FAULT_FLAGS
 {
+    /// <include file='D3D12_DRED_PAGE_FAULT_FLAGS.xml' path='doc/member[@name="D3D12_DRED_PAGE_FAULT_FLAGS.D3D12_DRED_PAGE_FAULT_FLAGS_NONE"]/*' />
     D3D12_DRED_PAGE_FAULT_FLAGS_NONE = 0,
 }

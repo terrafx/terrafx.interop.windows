@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_CONVOLUTION_DIRECTION.xml' path='doc/member[@name="DML_CONVOLUTION_DIRECTION"]/*' />
 public enum DML_CONVOLUTION_DIRECTION
 {
+    /// <include file='DML_CONVOLUTION_DIRECTION.xml' path='doc/member[@name="DML_CONVOLUTION_DIRECTION.DML_CONVOLUTION_DIRECTION_FORWARD"]/*' />
     DML_CONVOLUTION_DIRECTION_FORWARD,
+
+    /// <include file='DML_CONVOLUTION_DIRECTION.xml' path='doc/member[@name="DML_CONVOLUTION_DIRECTION.DML_CONVOLUTION_DIRECTION_BACKWARD"]/*' />
     DML_CONVOLUTION_DIRECTION_BACKWARD,
 }

@@ -10,6 +10,7 @@ namespace TerraFX.Interop.WinRT;
 
 public static unsafe partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RoGetBufferMarshaler"]/*' />
     [DllImport("wintypes", ExactSpelling = true)]
     public static extern HRESULT RoGetBufferMarshaler(IMarshal** bufferMarshaler);
 }

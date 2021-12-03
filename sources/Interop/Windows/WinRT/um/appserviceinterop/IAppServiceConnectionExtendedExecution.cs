@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IAppServiceConnectionExtendedExecution.xml' path='doc/member[@name="IAppServiceConnectionExtendedExecution"]/*' />
 [Guid("65219584-F9CB-4AE3-81F9-A28A6CA450D9")]
 [NativeTypeName("struct IAppServiceConnectionExtendedExecution : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IAppServiceConnectionExtendedExecution : IAppServic
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IAppServiceConnectionExtendedExecution : IAppServic
         return ((delegate* unmanaged<IAppServiceConnectionExtendedExecution*, Guid*, void**, int>)(lpVtbl[0]))((IAppServiceConnectionExtendedExecution*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IAppServiceConnectionExtendedExecution : IAppServic
         return ((delegate* unmanaged<IAppServiceConnectionExtendedExecution*, uint>)(lpVtbl[1]))((IAppServiceConnectionExtendedExecution*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IAppServiceConnectionExtendedExecution : IAppServic
         return ((delegate* unmanaged<IAppServiceConnectionExtendedExecution*, uint>)(lpVtbl[2]))((IAppServiceConnectionExtendedExecution*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppServiceConnectionExtendedExecution.xml' path='doc/member[@name="IAppServiceConnectionExtendedExecution.OpenForExtendedExecutionAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OpenForExtendedExecutionAsync([NativeTypeName("const IID &")] Guid* riid, void** operation)

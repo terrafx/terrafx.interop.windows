@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D11Multithread.xml' path='doc/member[@name="ID3D11Multithread"]/*' />
 [Guid("9B7E4E00-342C-4106-A19F-4F2704F689F0")]
 [NativeTypeName("struct ID3D11Multithread : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D11Multithread : ID3D11Multithread.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D11Multithread : ID3D11Multithread.Interface
         return ((delegate* unmanaged<ID3D11Multithread*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11Multithread*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D11Multithread : ID3D11Multithread.Interface
         return ((delegate* unmanaged<ID3D11Multithread*, uint>)(lpVtbl[1]))((ID3D11Multithread*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D11Multithread : ID3D11Multithread.Interface
         return ((delegate* unmanaged<ID3D11Multithread*, uint>)(lpVtbl[2]))((ID3D11Multithread*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D11Multithread.xml' path='doc/member[@name="ID3D11Multithread.Enter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void Enter()
@@ -47,6 +52,7 @@ public unsafe partial struct ID3D11Multithread : ID3D11Multithread.Interface
         ((delegate* unmanaged<ID3D11Multithread*, void>)(lpVtbl[3]))((ID3D11Multithread*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D11Multithread.xml' path='doc/member[@name="ID3D11Multithread.Leave"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void Leave()
@@ -54,6 +60,7 @@ public unsafe partial struct ID3D11Multithread : ID3D11Multithread.Interface
         ((delegate* unmanaged<ID3D11Multithread*, void>)(lpVtbl[4]))((ID3D11Multithread*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D11Multithread.xml' path='doc/member[@name="ID3D11Multithread.SetMultithreadProtected"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public BOOL SetMultithreadProtected(BOOL bMTProtect)
@@ -61,6 +68,7 @@ public unsafe partial struct ID3D11Multithread : ID3D11Multithread.Interface
         return ((delegate* unmanaged<ID3D11Multithread*, BOOL, int>)(lpVtbl[5]))((ID3D11Multithread*)Unsafe.AsPointer(ref this), bMTProtect);
     }
 
+    /// <include file='ID3D11Multithread.xml' path='doc/member[@name="ID3D11Multithread.GetMultithreadProtected"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public BOOL GetMultithreadProtected()

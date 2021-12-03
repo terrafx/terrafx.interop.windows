@@ -5,17 +5,23 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_SHADER_VARIABLE_DESC.xml' path='doc/member[@name="D3D10_SHADER_VARIABLE_DESC"]/*' />
 public unsafe partial struct D3D10_SHADER_VARIABLE_DESC
 {
+    /// <include file='D3D10_SHADER_VARIABLE_DESC.xml' path='doc/member[@name="D3D10_SHADER_VARIABLE_DESC.Name"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* Name;
 
+    /// <include file='D3D10_SHADER_VARIABLE_DESC.xml' path='doc/member[@name="D3D10_SHADER_VARIABLE_DESC.StartOffset"]/*' />
     public uint StartOffset;
 
+    /// <include file='D3D10_SHADER_VARIABLE_DESC.xml' path='doc/member[@name="D3D10_SHADER_VARIABLE_DESC.Size"]/*' />
     public uint Size;
 
+    /// <include file='D3D10_SHADER_VARIABLE_DESC.xml' path='doc/member[@name="D3D10_SHADER_VARIABLE_DESC.uFlags"]/*' />
     public uint uFlags;
 
+    /// <include file='D3D10_SHADER_VARIABLE_DESC.xml' path='doc/member[@name="D3D10_SHADER_VARIABLE_DESC.DefaultValue"]/*' />
     [NativeTypeName("LPVOID")]
     public void* DefaultValue;
 }

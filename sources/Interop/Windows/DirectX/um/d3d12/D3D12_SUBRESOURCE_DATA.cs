@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_SUBRESOURCE_DATA.xml' path='doc/member[@name="D3D12_SUBRESOURCE_DATA"]/*' />
 public unsafe partial struct D3D12_SUBRESOURCE_DATA
 {
+    /// <include file='D3D12_SUBRESOURCE_DATA.xml' path='doc/member[@name="D3D12_SUBRESOURCE_DATA.pData"]/*' />
     [NativeTypeName("const void *")]
     public void* pData;
 
+    /// <include file='D3D12_SUBRESOURCE_DATA.xml' path='doc/member[@name="D3D12_SUBRESOURCE_DATA.RowPitch"]/*' />
     [NativeTypeName("LONG_PTR")]
     public nint RowPitch;
 
+    /// <include file='D3D12_SUBRESOURCE_DATA.xml' path='doc/member[@name="D3D12_SUBRESOURCE_DATA.SlicePitch"]/*' />
     [NativeTypeName("LONG_PTR")]
     public nint SlicePitch;
 }

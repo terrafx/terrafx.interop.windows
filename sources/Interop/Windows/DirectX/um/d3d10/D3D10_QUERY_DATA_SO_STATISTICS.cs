@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_QUERY_DATA_SO_STATISTICS.xml' path='doc/member[@name="D3D10_QUERY_DATA_SO_STATISTICS"]/*' />
 public partial struct D3D10_QUERY_DATA_SO_STATISTICS
 {
+    /// <include file='D3D10_QUERY_DATA_SO_STATISTICS.xml' path='doc/member[@name="D3D10_QUERY_DATA_SO_STATISTICS.NumPrimitivesWritten"]/*' />
     [NativeTypeName("UINT64")]
     public ulong NumPrimitivesWritten;
 
+    /// <include file='D3D10_QUERY_DATA_SO_STATISTICS.xml' path='doc/member[@name="D3D10_QUERY_DATA_SO_STATISTICS.PrimitivesStorageNeeded"]/*' />
     [NativeTypeName("UINT64")]
     public ulong PrimitivesStorageNeeded;
 }

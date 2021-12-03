@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_MESH_SHADER_TIER.xml' path='doc/member[@name="D3D12_MESH_SHADER_TIER"]/*' />
 public enum D3D12_MESH_SHADER_TIER
 {
+    /// <include file='D3D12_MESH_SHADER_TIER.xml' path='doc/member[@name="D3D12_MESH_SHADER_TIER.D3D12_MESH_SHADER_TIER_NOT_SUPPORTED"]/*' />
     D3D12_MESH_SHADER_TIER_NOT_SUPPORTED = 0,
+
+    /// <include file='D3D12_MESH_SHADER_TIER.xml' path='doc/member[@name="D3D12_MESH_SHADER_TIER.D3D12_MESH_SHADER_TIER_1"]/*' />
     D3D12_MESH_SHADER_TIER_1 = 10,
 }

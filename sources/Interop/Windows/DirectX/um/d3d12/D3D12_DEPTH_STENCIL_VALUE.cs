@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_DEPTH_STENCIL_VALUE.xml' path='doc/member[@name="D3D12_DEPTH_STENCIL_VALUE"]/*' />
 public partial struct D3D12_DEPTH_STENCIL_VALUE
 {
+    /// <include file='D3D12_DEPTH_STENCIL_VALUE.xml' path='doc/member[@name="D3D12_DEPTH_STENCIL_VALUE.Depth"]/*' />
     public float Depth;
 
+    /// <include file='D3D12_DEPTH_STENCIL_VALUE.xml' path='doc/member[@name="D3D12_DEPTH_STENCIL_VALUE.Stencil"]/*' />
     [NativeTypeName("UINT8")]
     public byte Stencil;
 }

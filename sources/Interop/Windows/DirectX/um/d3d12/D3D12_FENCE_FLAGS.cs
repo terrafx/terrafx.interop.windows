@@ -7,11 +7,19 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_FENCE_FLAGS.xml' path='doc/member[@name="D3D12_FENCE_FLAGS"]/*' />
 [Flags]
 public enum D3D12_FENCE_FLAGS
 {
+    /// <include file='D3D12_FENCE_FLAGS.xml' path='doc/member[@name="D3D12_FENCE_FLAGS.D3D12_FENCE_FLAG_NONE"]/*' />
     D3D12_FENCE_FLAG_NONE = 0,
+
+    /// <include file='D3D12_FENCE_FLAGS.xml' path='doc/member[@name="D3D12_FENCE_FLAGS.D3D12_FENCE_FLAG_SHARED"]/*' />
     D3D12_FENCE_FLAG_SHARED = 0x1,
+
+    /// <include file='D3D12_FENCE_FLAGS.xml' path='doc/member[@name="D3D12_FENCE_FLAGS.D3D12_FENCE_FLAG_SHARED_CROSS_ADAPTER"]/*' />
     D3D12_FENCE_FLAG_SHARED_CROSS_ADAPTER = 0x2,
+
+    /// <include file='D3D12_FENCE_FLAGS.xml' path='doc/member[@name="D3D12_FENCE_FLAGS.D3D12_FENCE_FLAG_NON_MONITORED"]/*' />
     D3D12_FENCE_FLAG_NON_MONITORED = 0x4,
 }

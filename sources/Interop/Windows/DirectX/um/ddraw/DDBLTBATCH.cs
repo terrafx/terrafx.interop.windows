@@ -7,20 +7,26 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DDBLTBATCH.xml' path='doc/member[@name="DDBLTBATCH"]/*' />
 public unsafe partial struct DDBLTBATCH
 {
+    /// <include file='DDBLTBATCH.xml' path='doc/member[@name="DDBLTBATCH.lprDest"]/*' />
     [NativeTypeName("LPRECT")]
     public RECT* lprDest;
 
+    /// <include file='DDBLTBATCH.xml' path='doc/member[@name="DDBLTBATCH.lpDDSSrc"]/*' />
     [NativeTypeName("LPDIRECTDRAWSURFACE")]
     public IDirectDrawSurface* lpDDSSrc;
 
+    /// <include file='DDBLTBATCH.xml' path='doc/member[@name="DDBLTBATCH.lprSrc"]/*' />
     [NativeTypeName("LPRECT")]
     public RECT* lprSrc;
 
+    /// <include file='DDBLTBATCH.xml' path='doc/member[@name="DDBLTBATCH.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='DDBLTBATCH.xml' path='doc/member[@name="DDBLTBATCH.lpDDBltFx"]/*' />
     [NativeTypeName("LPDDBLTFX")]
     public DDBLTFX* lpDDBltFx;
 }

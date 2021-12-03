@@ -7,14 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_VIDEO_COLOR_YCbCrA.xml' path='doc/member[@name="D3D11_VIDEO_COLOR_YCbCrA"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_VIDEO_COLOR_YCbCrA
 {
+    /// <include file='D3D11_VIDEO_COLOR_YCbCrA.xml' path='doc/member[@name="D3D11_VIDEO_COLOR_YCbCrA.Y"]/*' />
     public float Y;
 
+    /// <include file='D3D11_VIDEO_COLOR_YCbCrA.xml' path='doc/member[@name="D3D11_VIDEO_COLOR_YCbCrA.Cb"]/*' />
     public float Cb;
 
+    /// <include file='D3D11_VIDEO_COLOR_YCbCrA.xml' path='doc/member[@name="D3D11_VIDEO_COLOR_YCbCrA.Cr"]/*' />
     public float Cr;
 
+    /// <include file='D3D11_VIDEO_COLOR_YCbCrA.xml' path='doc/member[@name="D3D11_VIDEO_COLOR_YCbCrA.A"]/*' />
     public float A;
 }

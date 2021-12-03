@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_TRIMMING.xml' path='doc/member[@name="DWRITE_TRIMMING"]/*' />
 public partial struct DWRITE_TRIMMING
 {
+    /// <include file='DWRITE_TRIMMING.xml' path='doc/member[@name="DWRITE_TRIMMING.granularity"]/*' />
     public DWRITE_TRIMMING_GRANULARITY granularity;
 
+    /// <include file='DWRITE_TRIMMING.xml' path='doc/member[@name="DWRITE_TRIMMING.delimiter"]/*' />
     [NativeTypeName("UINT32")]
     public uint delimiter;
 
+    /// <include file='DWRITE_TRIMMING.xml' path='doc/member[@name="DWRITE_TRIMMING.delimiterCount"]/*' />
     [NativeTypeName("UINT32")]
     public uint delimiterCount;
 }

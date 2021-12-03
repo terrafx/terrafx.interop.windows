@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DCompManipulationCompositor.xml' path='doc/member[@name="DCompManipulationCompositor"]/*' />
 [Guid("79DEA627-A08A-43AC-8EF5-6900B9299126")]
 public partial struct DCompManipulationCompositor
 {

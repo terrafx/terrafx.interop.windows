@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop"]/*' />
 [Guid("7A5B6FD1-CD73-4B6C-9CF4-2E869EAF470A")]
 [NativeTypeName("struct ICoreWindowAdapterInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -17,6 +18,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
         return ((delegate* unmanaged<ICoreWindowAdapterInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
         return ((delegate* unmanaged<ICoreWindowAdapterInterop*, uint>)(lpVtbl[1]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
         return ((delegate* unmanaged<ICoreWindowAdapterInterop*, uint>)(lpVtbl[2]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -47,6 +52,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
         return ((delegate* unmanaged<ICoreWindowAdapterInterop*, uint*, Guid**, int>)(lpVtbl[3]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -54,6 +60,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
         return ((delegate* unmanaged<ICoreWindowAdapterInterop*, HSTRING*, int>)(lpVtbl[4]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -61,6 +68,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
         return ((delegate* unmanaged<ICoreWindowAdapterInterop*, TrustLevel*, int>)(lpVtbl[5]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.get_AppActivationClientAdapter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT get_AppActivationClientAdapter(IUnknown** value)
@@ -68,6 +76,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
         return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[6]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.get_ApplicationViewClientAdapter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_ApplicationViewClientAdapter(IUnknown** value)
@@ -75,6 +84,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
         return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[7]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.get_CoreApplicationViewClientAdapter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_CoreApplicationViewClientAdapter(IUnknown** value)
@@ -82,6 +92,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
         return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[8]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.get_HoloViewClientAdapter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_HoloViewClientAdapter(IUnknown** value)
@@ -89,6 +100,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
         return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[9]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.get_SystemNavigationClientAdapter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_SystemNavigationClientAdapter(IUnknown** value)
@@ -96,6 +108,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
         return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[10]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.get_TitleBarClientAdapter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_TitleBarClientAdapter(IUnknown** value)
@@ -103,6 +116,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
         return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[11]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.SetWindowClientAdapter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SetWindowClientAdapter(IUnknown* value)

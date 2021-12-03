@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDMLOperatorInitializer.xml' path='doc/member[@name="IDMLOperatorInitializer"]/*' />
 [Guid("427C1113-435C-469C-8676-4D5DD072F813")]
 [NativeTypeName("struct IDMLOperatorInitializer : IDMLDispatchable")]
 [NativeInheritance("IDMLDispatchable")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDMLOperatorInitializer : IDMLOperatorInitializer.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDMLOperatorInitializer : IDMLOperatorInitializer.I
         return ((delegate* unmanaged<IDMLOperatorInitializer*, Guid*, void**, int>)(lpVtbl[0]))((IDMLOperatorInitializer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDMLOperatorInitializer : IDMLOperatorInitializer.I
         return ((delegate* unmanaged<IDMLOperatorInitializer*, uint>)(lpVtbl[1]))((IDMLOperatorInitializer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDMLOperatorInitializer : IDMLOperatorInitializer.I
         return ((delegate* unmanaged<IDMLOperatorInitializer*, uint>)(lpVtbl[2]))((IDMLOperatorInitializer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDMLObject.GetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* dataSize, void* data)
@@ -47,6 +52,7 @@ public unsafe partial struct IDMLOperatorInitializer : IDMLOperatorInitializer.I
         return ((delegate* unmanaged<IDMLOperatorInitializer*, Guid*, uint*, void*, int>)(lpVtbl[3]))((IDMLOperatorInitializer*)Unsafe.AsPointer(ref this), guid, dataSize, data);
     }
 
+    /// <inheritdoc cref="IDMLObject.SetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint dataSize, [NativeTypeName("const void *")] void* data)
@@ -54,6 +60,7 @@ public unsafe partial struct IDMLOperatorInitializer : IDMLOperatorInitializer.I
         return ((delegate* unmanaged<IDMLOperatorInitializer*, Guid*, uint, void*, int>)(lpVtbl[4]))((IDMLOperatorInitializer*)Unsafe.AsPointer(ref this), guid, dataSize, data);
     }
 
+    /// <inheritdoc cref="IDMLObject.SetPrivateDataInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, IUnknown* data)
@@ -61,6 +68,7 @@ public unsafe partial struct IDMLOperatorInitializer : IDMLOperatorInitializer.I
         return ((delegate* unmanaged<IDMLOperatorInitializer*, Guid*, IUnknown*, int>)(lpVtbl[5]))((IDMLOperatorInitializer*)Unsafe.AsPointer(ref this), guid, data);
     }
 
+    /// <inheritdoc cref="IDMLObject.SetName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetName([NativeTypeName("PCWSTR")] ushort* name)
@@ -68,6 +76,7 @@ public unsafe partial struct IDMLOperatorInitializer : IDMLOperatorInitializer.I
         return ((delegate* unmanaged<IDMLOperatorInitializer*, ushort*, int>)(lpVtbl[6]))((IDMLOperatorInitializer*)Unsafe.AsPointer(ref this), name);
     }
 
+    /// <inheritdoc cref="IDMLDeviceChild.GetDevice" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -75,6 +84,7 @@ public unsafe partial struct IDMLOperatorInitializer : IDMLOperatorInitializer.I
         return ((delegate* unmanaged<IDMLOperatorInitializer*, Guid*, void**, int>)(lpVtbl[7]))((IDMLOperatorInitializer*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
+    /// <inheritdoc cref="IDMLDispatchable.GetBindingProperties" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public DML_BINDING_PROPERTIES GetBindingProperties()
@@ -83,6 +93,7 @@ public unsafe partial struct IDMLOperatorInitializer : IDMLOperatorInitializer.I
         return *((delegate* unmanaged<IDMLOperatorInitializer*, DML_BINDING_PROPERTIES*, DML_BINDING_PROPERTIES*>)(lpVtbl[8]))((IDMLOperatorInitializer*)Unsafe.AsPointer(ref this), &result);
     }
 
+    /// <include file='IDMLOperatorInitializer.xml' path='doc/member[@name="IDMLOperatorInitializer.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Reset(uint operatorCount, [NativeTypeName("IDMLCompiledOperator *const *")] IDMLCompiledOperator** operators)

@@ -9,10 +9,12 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder"]/*' />
 public unsafe partial struct IRoSimpleMetaDataBuilder : IRoSimpleMetaDataBuilder.Interface
 {
     public void** lpVtbl;
 
+    /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetWinRtInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT SetWinRtInterface(Guid iid)
@@ -20,6 +22,7 @@ public unsafe partial struct IRoSimpleMetaDataBuilder : IRoSimpleMetaDataBuilder
         return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, int>)(lpVtbl[0]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), iid);
     }
 
+    /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetDelegate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     public HRESULT SetDelegate(Guid iid)
@@ -27,6 +30,7 @@ public unsafe partial struct IRoSimpleMetaDataBuilder : IRoSimpleMetaDataBuilder
         return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, int>)(lpVtbl[1]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), iid);
     }
 
+    /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetInterfaceGroupSimpleDefault"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     public HRESULT SetInterfaceGroupSimpleDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID)
@@ -34,6 +38,7 @@ public unsafe partial struct IRoSimpleMetaDataBuilder : IRoSimpleMetaDataBuilder
         return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, ushort*, Guid*, int>)(lpVtbl[2]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, defaultInterfaceName, defaultInterfaceIID);
     }
 
+    /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetInterfaceGroupParameterizedDefault"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetInterfaceGroupParameterizedDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("PCWSTR *")] ushort** defaultInterfaceNameElements)
@@ -41,6 +46,7 @@ public unsafe partial struct IRoSimpleMetaDataBuilder : IRoSimpleMetaDataBuilder
         return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, uint, ushort**, int>)(lpVtbl[3]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, elementCount, defaultInterfaceNameElements);
     }
 
+    /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetRuntimeClassSimpleDefault"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetRuntimeClassSimpleDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID)
@@ -48,6 +54,7 @@ public unsafe partial struct IRoSimpleMetaDataBuilder : IRoSimpleMetaDataBuilder
         return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, ushort*, Guid*, int>)(lpVtbl[4]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, defaultInterfaceName, defaultInterfaceIID);
     }
 
+    /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetRuntimeClassParameterizedDefault"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetRuntimeClassParameterizedDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("const PCWSTR *")] ushort** defaultInterfaceNameElements)
@@ -55,6 +62,7 @@ public unsafe partial struct IRoSimpleMetaDataBuilder : IRoSimpleMetaDataBuilder
         return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, uint, ushort**, int>)(lpVtbl[5]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, elementCount, defaultInterfaceNameElements);
     }
 
+    /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetStruct"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetStruct([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint numFields, [NativeTypeName("const PCWSTR *")] ushort** fieldTypeNames)
@@ -62,6 +70,7 @@ public unsafe partial struct IRoSimpleMetaDataBuilder : IRoSimpleMetaDataBuilder
         return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, uint, ushort**, int>)(lpVtbl[6]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, numFields, fieldTypeNames);
     }
 
+    /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetEnum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetEnum([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* baseType)
@@ -69,6 +78,7 @@ public unsafe partial struct IRoSimpleMetaDataBuilder : IRoSimpleMetaDataBuilder
         return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, ushort*, int>)(lpVtbl[7]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, baseType);
     }
 
+    /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetParameterizedInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetParameterizedInterface(Guid piid, [NativeTypeName("UINT32")] uint numArgs)
@@ -76,6 +86,7 @@ public unsafe partial struct IRoSimpleMetaDataBuilder : IRoSimpleMetaDataBuilder
         return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, uint, int>)(lpVtbl[8]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), piid, numArgs);
     }
 
+    /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetParameterizedDelegate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetParameterizedDelegate(Guid piid, [NativeTypeName("UINT32")] uint numArgs)

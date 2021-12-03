@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_DEVICE_CONTEXT_TYPE.xml' path='doc/member[@name="D3D11_DEVICE_CONTEXT_TYPE"]/*' />
 public enum D3D11_DEVICE_CONTEXT_TYPE
 {
+    /// <include file='D3D11_DEVICE_CONTEXT_TYPE.xml' path='doc/member[@name="D3D11_DEVICE_CONTEXT_TYPE.D3D11_DEVICE_CONTEXT_IMMEDIATE"]/*' />
     D3D11_DEVICE_CONTEXT_IMMEDIATE = 0,
+
+    /// <include file='D3D11_DEVICE_CONTEXT_TYPE.xml' path='doc/member[@name="D3D11_DEVICE_CONTEXT_TYPE.D3D11_DEVICE_CONTEXT_DEFERRED"]/*' />
     D3D11_DEVICE_CONTEXT_DEFERRED = (D3D11_DEVICE_CONTEXT_IMMEDIATE + 1),
 }

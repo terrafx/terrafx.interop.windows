@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_MAPPED_SUBRESOURCE.xml' path='doc/member[@name="D3D11_MAPPED_SUBRESOURCE"]/*' />
 public unsafe partial struct D3D11_MAPPED_SUBRESOURCE
 {
+    /// <include file='D3D11_MAPPED_SUBRESOURCE.xml' path='doc/member[@name="D3D11_MAPPED_SUBRESOURCE.pData"]/*' />
     public void* pData;
 
+    /// <include file='D3D11_MAPPED_SUBRESOURCE.xml' path='doc/member[@name="D3D11_MAPPED_SUBRESOURCE.RowPitch"]/*' />
     public uint RowPitch;
 
+    /// <include file='D3D11_MAPPED_SUBRESOURCE.xml' path='doc/member[@name="D3D11_MAPPED_SUBRESOURCE.DepthPitch"]/*' />
     public uint DepthPitch;
 }

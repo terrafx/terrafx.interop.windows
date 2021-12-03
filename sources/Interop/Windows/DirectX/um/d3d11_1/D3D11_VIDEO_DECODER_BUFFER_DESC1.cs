@@ -7,20 +7,28 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_VIDEO_DECODER_BUFFER_DESC1.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_BUFFER_DESC1"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct D3D11_VIDEO_DECODER_BUFFER_DESC1
 {
+    /// <include file='D3D11_VIDEO_DECODER_BUFFER_DESC1.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_BUFFER_DESC1.BufferType"]/*' />
     public D3D11_VIDEO_DECODER_BUFFER_TYPE BufferType;
 
+    /// <include file='D3D11_VIDEO_DECODER_BUFFER_DESC1.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_BUFFER_DESC1.DataOffset"]/*' />
     public uint DataOffset;
 
+    /// <include file='D3D11_VIDEO_DECODER_BUFFER_DESC1.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_BUFFER_DESC1.DataSize"]/*' />
     public uint DataSize;
 
+    /// <include file='D3D11_VIDEO_DECODER_BUFFER_DESC1.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_BUFFER_DESC1.pIV"]/*' />
     public void* pIV;
 
+    /// <include file='D3D11_VIDEO_DECODER_BUFFER_DESC1.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_BUFFER_DESC1.IVSize"]/*' />
     public uint IVSize;
 
+    /// <include file='D3D11_VIDEO_DECODER_BUFFER_DESC1.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_BUFFER_DESC1.pSubSampleMappingBlock"]/*' />
     public D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK* pSubSampleMappingBlock;
 
+    /// <include file='D3D11_VIDEO_DECODER_BUFFER_DESC1.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_BUFFER_DESC1.SubSampleMappingCount"]/*' />
     public uint SubSampleMappingCount;
 }

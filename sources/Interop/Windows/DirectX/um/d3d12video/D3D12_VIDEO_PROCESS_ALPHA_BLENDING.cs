@@ -7,9 +7,12 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_VIDEO_PROCESS_ALPHA_BLENDING.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_ALPHA_BLENDING"]/*' />
 public partial struct D3D12_VIDEO_PROCESS_ALPHA_BLENDING
 {
+    /// <include file='D3D12_VIDEO_PROCESS_ALPHA_BLENDING.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_ALPHA_BLENDING.Enable"]/*' />
     public BOOL Enable;
 
+    /// <include file='D3D12_VIDEO_PROCESS_ALPHA_BLENDING.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_ALPHA_BLENDING.Alpha"]/*' />
     public float Alpha;
 }

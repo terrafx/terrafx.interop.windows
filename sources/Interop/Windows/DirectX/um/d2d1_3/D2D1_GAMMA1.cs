@@ -7,10 +7,18 @@ using static TerraFX.Interop.DirectX.D2D1_GAMMA;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_GAMMA1.xml' path='doc/member[@name="D2D1_GAMMA1"]/*' />
 public enum D2D1_GAMMA1 : uint
 {
+    /// <include file='D2D1_GAMMA1.xml' path='doc/member[@name="D2D1_GAMMA1.D2D1_GAMMA1_G22"]/*' />
     D2D1_GAMMA1_G22 = D2D1_GAMMA_2_2,
+
+    /// <include file='D2D1_GAMMA1.xml' path='doc/member[@name="D2D1_GAMMA1.D2D1_GAMMA1_G10"]/*' />
     D2D1_GAMMA1_G10 = D2D1_GAMMA_1_0,
+
+    /// <include file='D2D1_GAMMA1.xml' path='doc/member[@name="D2D1_GAMMA1.D2D1_GAMMA1_G2084"]/*' />
     D2D1_GAMMA1_G2084 = 2,
+
+    /// <include file='D2D1_GAMMA1.xml' path='doc/member[@name="D2D1_GAMMA1.D2D1_GAMMA1_FORCE_DWORD"]/*' />
     D2D1_GAMMA1_FORCE_DWORD = 0xffffffff,
 }

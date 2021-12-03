@@ -8,13 +8,17 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='EnumType.xml' path='doc/member[@name="EnumType"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct EnumType
 {
+    /// <include file='EnumType.xml' path='doc/member[@name="EnumType.Name"]/*' />
     [NativeTypeName("BSTR")]
     public ushort* Name;
 
+    /// <include file='EnumType.xml' path='doc/member[@name="EnumType.ValueInts"]/*' />
     public SAFEARRAY* ValueInts;
 
+    /// <include file='EnumType.xml' path='doc/member[@name="EnumType.ValueStrings"]/*' />
     public SAFEARRAY* ValueStrings;
 }

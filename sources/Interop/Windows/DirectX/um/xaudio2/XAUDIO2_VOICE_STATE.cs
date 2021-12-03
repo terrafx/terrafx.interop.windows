@@ -7,14 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='XAUDIO2_VOICE_STATE.xml' path='doc/member[@name="XAUDIO2_VOICE_STATE"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct XAUDIO2_VOICE_STATE
 {
+    /// <include file='XAUDIO2_VOICE_STATE.xml' path='doc/member[@name="XAUDIO2_VOICE_STATE.pCurrentBufferContext"]/*' />
     public void* pCurrentBufferContext;
 
+    /// <include file='XAUDIO2_VOICE_STATE.xml' path='doc/member[@name="XAUDIO2_VOICE_STATE.BuffersQueued"]/*' />
     [NativeTypeName("UINT32")]
     public uint BuffersQueued;
 
+    /// <include file='XAUDIO2_VOICE_STATE.xml' path='doc/member[@name="XAUDIO2_VOICE_STATE.SamplesPlayed"]/*' />
     [NativeTypeName("UINT64")]
     public ulong SamplesPlayed;
 }

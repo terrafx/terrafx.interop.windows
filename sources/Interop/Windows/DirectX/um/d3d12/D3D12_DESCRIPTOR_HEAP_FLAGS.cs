@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_DESCRIPTOR_HEAP_FLAGS.xml' path='doc/member[@name="D3D12_DESCRIPTOR_HEAP_FLAGS"]/*' />
 [Flags]
 public enum D3D12_DESCRIPTOR_HEAP_FLAGS
 {
+    /// <include file='D3D12_DESCRIPTOR_HEAP_FLAGS.xml' path='doc/member[@name="D3D12_DESCRIPTOR_HEAP_FLAGS.D3D12_DESCRIPTOR_HEAP_FLAG_NONE"]/*' />
     D3D12_DESCRIPTOR_HEAP_FLAG_NONE = 0,
+
+    /// <include file='D3D12_DESCRIPTOR_HEAP_FLAGS.xml' path='doc/member[@name="D3D12_DESCRIPTOR_HEAP_FLAGS.D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE"]/*' />
     D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE = 0x1,
 }

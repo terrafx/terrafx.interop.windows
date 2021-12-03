@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D_SIZE_U.xml' path='doc/member[@name="D2D_SIZE_U"]/*' />
 public partial struct D2D_SIZE_U
 {
+    /// <include file='D2D_SIZE_U.xml' path='doc/member[@name="D2D_SIZE_U.width"]/*' />
     [NativeTypeName("UINT32")]
     public uint width;
 
+    /// <include file='D2D_SIZE_U.xml' path='doc/member[@name="D2D_SIZE_U.height"]/*' />
     [NativeTypeName("UINT32")]
     public uint height;
 }

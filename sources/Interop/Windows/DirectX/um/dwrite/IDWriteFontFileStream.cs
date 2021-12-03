@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteFontFileStream.xml' path='doc/member[@name="IDWriteFontFileStream"]/*' />
 [Guid("6D4865FE-0AB8-4D91-8F62-5DD6BE34A3E0")]
 [NativeTypeName("struct IDWriteFontFileStream : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDWriteFontFileStream : IDWriteFontFileStream.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDWriteFontFileStream : IDWriteFontFileStream.Inter
         return ((delegate* unmanaged<IDWriteFontFileStream*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontFileStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDWriteFontFileStream : IDWriteFontFileStream.Inter
         return ((delegate* unmanaged<IDWriteFontFileStream*, uint>)(lpVtbl[1]))((IDWriteFontFileStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDWriteFontFileStream : IDWriteFontFileStream.Inter
         return ((delegate* unmanaged<IDWriteFontFileStream*, uint>)(lpVtbl[2]))((IDWriteFontFileStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteFontFileStream.xml' path='doc/member[@name="IDWriteFontFileStream.ReadFileFragment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ReadFileFragment([NativeTypeName("const void **")] void** fragmentStart, [NativeTypeName("UINT64")] ulong fileOffset, [NativeTypeName("UINT64")] ulong fragmentSize, void** fragmentContext)
@@ -47,6 +52,7 @@ public unsafe partial struct IDWriteFontFileStream : IDWriteFontFileStream.Inter
         return ((delegate* unmanaged<IDWriteFontFileStream*, void**, ulong, ulong, void**, int>)(lpVtbl[3]))((IDWriteFontFileStream*)Unsafe.AsPointer(ref this), fragmentStart, fileOffset, fragmentSize, fragmentContext);
     }
 
+    /// <include file='IDWriteFontFileStream.xml' path='doc/member[@name="IDWriteFontFileStream.ReleaseFileFragment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void ReleaseFileFragment(void* fragmentContext)
@@ -54,6 +60,7 @@ public unsafe partial struct IDWriteFontFileStream : IDWriteFontFileStream.Inter
         ((delegate* unmanaged<IDWriteFontFileStream*, void*, void>)(lpVtbl[4]))((IDWriteFontFileStream*)Unsafe.AsPointer(ref this), fragmentContext);
     }
 
+    /// <include file='IDWriteFontFileStream.xml' path='doc/member[@name="IDWriteFontFileStream.GetFileSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetFileSize([NativeTypeName("UINT64 *")] ulong* fileSize)
@@ -61,6 +68,7 @@ public unsafe partial struct IDWriteFontFileStream : IDWriteFontFileStream.Inter
         return ((delegate* unmanaged<IDWriteFontFileStream*, ulong*, int>)(lpVtbl[5]))((IDWriteFontFileStream*)Unsafe.AsPointer(ref this), fileSize);
     }
 
+    /// <include file='IDWriteFontFileStream.xml' path='doc/member[@name="IDWriteFontFileStream.GetLastWriteTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetLastWriteTime([NativeTypeName("UINT64 *")] ulong* lastWriteTime)

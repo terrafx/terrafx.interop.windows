@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_FEATURE_DATA_ROOT_SIGNATURE.xml' path='doc/member[@name="D3D12_FEATURE_DATA_ROOT_SIGNATURE"]/*' />
 public partial struct D3D12_FEATURE_DATA_ROOT_SIGNATURE
 {
+    /// <include file='D3D12_FEATURE_DATA_ROOT_SIGNATURE.xml' path='doc/member[@name="D3D12_FEATURE_DATA_ROOT_SIGNATURE.HighestVersion"]/*' />
     public D3D_ROOT_SIGNATURE_VERSION HighestVersion;
 }

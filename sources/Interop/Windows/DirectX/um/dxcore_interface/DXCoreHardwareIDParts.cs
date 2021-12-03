@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXCoreHardwareIDParts.xml' path='doc/member[@name="DXCoreHardwareIDParts"]/*' />
 public partial struct DXCoreHardwareIDParts
 {
+    /// <include file='DXCoreHardwareIDParts.xml' path='doc/member[@name="DXCoreHardwareIDParts.vendorID"]/*' />
     [NativeTypeName("uint32_t")]
     public uint vendorID;
 
+    /// <include file='DXCoreHardwareIDParts.xml' path='doc/member[@name="DXCoreHardwareIDParts.deviceID"]/*' />
     [NativeTypeName("uint32_t")]
     public uint deviceID;
 
+    /// <include file='DXCoreHardwareIDParts.xml' path='doc/member[@name="DXCoreHardwareIDParts.subSystemID"]/*' />
     [NativeTypeName("uint32_t")]
     public uint subSystemID;
 
+    /// <include file='DXCoreHardwareIDParts.xml' path='doc/member[@name="DXCoreHardwareIDParts.subVendorID"]/*' />
     [NativeTypeName("uint32_t")]
     public uint subVendorID;
 
+    /// <include file='DXCoreHardwareIDParts.xml' path='doc/member[@name="DXCoreHardwareIDParts.revisionID"]/*' />
     [NativeTypeName("uint32_t")]
     public uint revisionID;
 }

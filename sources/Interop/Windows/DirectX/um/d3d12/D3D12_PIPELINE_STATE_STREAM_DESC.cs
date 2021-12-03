@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_PIPELINE_STATE_STREAM_DESC.xml' path='doc/member[@name="D3D12_PIPELINE_STATE_STREAM_DESC"]/*' />
 public unsafe partial struct D3D12_PIPELINE_STATE_STREAM_DESC
 {
+    /// <include file='D3D12_PIPELINE_STATE_STREAM_DESC.xml' path='doc/member[@name="D3D12_PIPELINE_STATE_STREAM_DESC.SizeInBytes"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint SizeInBytes;
 
+    /// <include file='D3D12_PIPELINE_STATE_STREAM_DESC.xml' path='doc/member[@name="D3D12_PIPELINE_STATE_STREAM_DESC.pPipelineStateSubobjectStream"]/*' />
     public void* pPipelineStateSubobjectStream;
 }

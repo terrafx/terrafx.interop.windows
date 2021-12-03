@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDMLDeviceChild.xml' path='doc/member[@name="IDMLDeviceChild"]/*' />
 [Guid("27E83142-8165-49E3-974E-2FD66E4CB69D")]
 [NativeTypeName("struct IDMLDeviceChild : IDMLObject")]
 [NativeInheritance("IDMLObject")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDMLDeviceChild : IDMLDeviceChild.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDMLDeviceChild : IDMLDeviceChild.Interface
         return ((delegate* unmanaged<IDMLDeviceChild*, Guid*, void**, int>)(lpVtbl[0]))((IDMLDeviceChild*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDMLDeviceChild : IDMLDeviceChild.Interface
         return ((delegate* unmanaged<IDMLDeviceChild*, uint>)(lpVtbl[1]))((IDMLDeviceChild*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDMLDeviceChild : IDMLDeviceChild.Interface
         return ((delegate* unmanaged<IDMLDeviceChild*, uint>)(lpVtbl[2]))((IDMLDeviceChild*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDMLObject.GetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* dataSize, void* data)
@@ -47,6 +52,7 @@ public unsafe partial struct IDMLDeviceChild : IDMLDeviceChild.Interface
         return ((delegate* unmanaged<IDMLDeviceChild*, Guid*, uint*, void*, int>)(lpVtbl[3]))((IDMLDeviceChild*)Unsafe.AsPointer(ref this), guid, dataSize, data);
     }
 
+    /// <inheritdoc cref="IDMLObject.SetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint dataSize, [NativeTypeName("const void *")] void* data)
@@ -54,6 +60,7 @@ public unsafe partial struct IDMLDeviceChild : IDMLDeviceChild.Interface
         return ((delegate* unmanaged<IDMLDeviceChild*, Guid*, uint, void*, int>)(lpVtbl[4]))((IDMLDeviceChild*)Unsafe.AsPointer(ref this), guid, dataSize, data);
     }
 
+    /// <inheritdoc cref="IDMLObject.SetPrivateDataInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, IUnknown* data)
@@ -61,6 +68,7 @@ public unsafe partial struct IDMLDeviceChild : IDMLDeviceChild.Interface
         return ((delegate* unmanaged<IDMLDeviceChild*, Guid*, IUnknown*, int>)(lpVtbl[5]))((IDMLDeviceChild*)Unsafe.AsPointer(ref this), guid, data);
     }
 
+    /// <inheritdoc cref="IDMLObject.SetName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetName([NativeTypeName("PCWSTR")] ushort* name)
@@ -68,6 +76,7 @@ public unsafe partial struct IDMLDeviceChild : IDMLDeviceChild.Interface
         return ((delegate* unmanaged<IDMLDeviceChild*, ushort*, int>)(lpVtbl[6]))((IDMLDeviceChild*)Unsafe.AsPointer(ref this), name);
     }
 
+    /// <include file='IDMLDeviceChild.xml' path='doc/member[@name="IDMLDeviceChild.GetDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppv)

@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_BUFFER_ARRAY_BINDING.xml' path='doc/member[@name="DML_BUFFER_ARRAY_BINDING"]/*' />
 public unsafe partial struct DML_BUFFER_ARRAY_BINDING
 {
+    /// <include file='DML_BUFFER_ARRAY_BINDING.xml' path='doc/member[@name="DML_BUFFER_ARRAY_BINDING.BindingCount"]/*' />
     public uint BindingCount;
 
+    /// <include file='DML_BUFFER_ARRAY_BINDING.xml' path='doc/member[@name="DML_BUFFER_ARRAY_BINDING.Bindings"]/*' />
     [NativeTypeName("const DML_BUFFER_BINDING *")]
     public DML_BUFFER_BINDING* Bindings;
 }

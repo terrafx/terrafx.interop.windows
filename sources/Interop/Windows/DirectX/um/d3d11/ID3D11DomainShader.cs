@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D11DomainShader.xml' path='doc/member[@name="ID3D11DomainShader"]/*' />
 [Guid("F582C508-0F36-490C-9977-31EECE268CFA")]
 [NativeTypeName("struct ID3D11DomainShader : ID3D11DeviceChild")]
 [NativeInheritance("ID3D11DeviceChild")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D11DomainShader : ID3D11DomainShader.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D11DomainShader : ID3D11DomainShader.Interface
         return ((delegate* unmanaged<ID3D11DomainShader*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11DomainShader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D11DomainShader : ID3D11DomainShader.Interface
         return ((delegate* unmanaged<ID3D11DomainShader*, uint>)(lpVtbl[1]))((ID3D11DomainShader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D11DomainShader : ID3D11DomainShader.Interface
         return ((delegate* unmanaged<ID3D11DomainShader*, uint>)(lpVtbl[2]))((ID3D11DomainShader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.GetDevice" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void GetDevice(ID3D11Device** ppDevice)
@@ -47,6 +52,7 @@ public unsafe partial struct ID3D11DomainShader : ID3D11DomainShader.Interface
         ((delegate* unmanaged<ID3D11DomainShader*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11DomainShader*)Unsafe.AsPointer(ref this), ppDevice);
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.GetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
@@ -54,6 +60,7 @@ public unsafe partial struct ID3D11DomainShader : ID3D11DomainShader.Interface
         return ((delegate* unmanaged<ID3D11DomainShader*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11DomainShader*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.SetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
@@ -61,6 +68,7 @@ public unsafe partial struct ID3D11DomainShader : ID3D11DomainShader.Interface
         return ((delegate* unmanaged<ID3D11DomainShader*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D11DomainShader*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D11DeviceChild.SetPrivateDataInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)

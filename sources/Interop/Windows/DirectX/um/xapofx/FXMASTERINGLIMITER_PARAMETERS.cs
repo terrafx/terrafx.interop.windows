@@ -7,12 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='FXMASTERINGLIMITER_PARAMETERS.xml' path='doc/member[@name="FXMASTERINGLIMITER_PARAMETERS"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct FXMASTERINGLIMITER_PARAMETERS
 {
+    /// <include file='FXMASTERINGLIMITER_PARAMETERS.xml' path='doc/member[@name="FXMASTERINGLIMITER_PARAMETERS.Release"]/*' />
     [NativeTypeName("UINT32")]
     public uint Release;
 
+    /// <include file='FXMASTERINGLIMITER_PARAMETERS.xml' path='doc/member[@name="FXMASTERINGLIMITER_PARAMETERS.Loudness"]/*' />
     [NativeTypeName("UINT32")]
     public uint Loudness;
 }

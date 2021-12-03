@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_CREATE_DEVICE_FLAGS.xml' path='doc/member[@name="DML_CREATE_DEVICE_FLAGS"]/*' />
 [Flags]
 public enum DML_CREATE_DEVICE_FLAGS
 {
+    /// <include file='DML_CREATE_DEVICE_FLAGS.xml' path='doc/member[@name="DML_CREATE_DEVICE_FLAGS.DML_CREATE_DEVICE_FLAG_NONE"]/*' />
     DML_CREATE_DEVICE_FLAG_NONE = 0,
+
+    /// <include file='DML_CREATE_DEVICE_FLAGS.xml' path='doc/member[@name="DML_CREATE_DEVICE_FLAGS.DML_CREATE_DEVICE_FLAG_DEBUG"]/*' />
     DML_CREATE_DEVICE_FLAG_DEBUG = 0x1,
 }

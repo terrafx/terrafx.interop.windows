@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IRadialControllerConfigurationInterop.xml' path='doc/member[@name="IRadialControllerConfigurationInterop"]/*' />
 [Guid("787CDAAC-3186-476D-87E4-B9374A7B9970")]
 [NativeTypeName("struct IRadialControllerConfigurationInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -19,6 +20,7 @@ public unsafe partial struct IRadialControllerConfigurationInterop : IRadialCont
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IRadialControllerConfigurationInterop : IRadialCont
         return ((delegate* unmanaged<IRadialControllerConfigurationInterop*, Guid*, void**, int>)(lpVtbl[0]))((IRadialControllerConfigurationInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IRadialControllerConfigurationInterop : IRadialCont
         return ((delegate* unmanaged<IRadialControllerConfigurationInterop*, uint>)(lpVtbl[1]))((IRadialControllerConfigurationInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IRadialControllerConfigurationInterop : IRadialCont
         return ((delegate* unmanaged<IRadialControllerConfigurationInterop*, uint>)(lpVtbl[2]))((IRadialControllerConfigurationInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -49,6 +54,7 @@ public unsafe partial struct IRadialControllerConfigurationInterop : IRadialCont
         return ((delegate* unmanaged<IRadialControllerConfigurationInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IRadialControllerConfigurationInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -56,6 +62,7 @@ public unsafe partial struct IRadialControllerConfigurationInterop : IRadialCont
         return ((delegate* unmanaged<IRadialControllerConfigurationInterop*, HSTRING*, int>)(lpVtbl[4]))((IRadialControllerConfigurationInterop*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -63,6 +70,7 @@ public unsafe partial struct IRadialControllerConfigurationInterop : IRadialCont
         return ((delegate* unmanaged<IRadialControllerConfigurationInterop*, TrustLevel*, int>)(lpVtbl[5]))((IRadialControllerConfigurationInterop*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='IRadialControllerConfigurationInterop.xml' path='doc/member[@name="IRadialControllerConfigurationInterop.GetForWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetForWindow(HWND hwnd, [NativeTypeName("const IID &")] Guid* riid, void** ppv)

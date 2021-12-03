@@ -7,18 +7,24 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='PropertyChainSource.xml' path='doc/member[@name="PropertyChainSource"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct PropertyChainSource
 {
+    /// <include file='PropertyChainSource.xml' path='doc/member[@name="PropertyChainSource.Handle"]/*' />
     public InstanceHandle Handle;
 
+    /// <include file='PropertyChainSource.xml' path='doc/member[@name="PropertyChainSource.TargetType"]/*' />
     [NativeTypeName("BSTR")]
     public ushort* TargetType;
 
+    /// <include file='PropertyChainSource.xml' path='doc/member[@name="PropertyChainSource.Name"]/*' />
     [NativeTypeName("BSTR")]
     public ushort* Name;
 
+    /// <include file='PropertyChainSource.xml' path='doc/member[@name="PropertyChainSource.Source"]/*' />
     public BaseValueSource Source;
 
+    /// <include file='PropertyChainSource.xml' path='doc/member[@name="PropertyChainSource.SrcInfo"]/*' />
     public SourceInfo SrcInfo;
 }

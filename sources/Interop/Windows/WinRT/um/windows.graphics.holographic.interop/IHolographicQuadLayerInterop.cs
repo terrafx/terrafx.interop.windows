@@ -12,6 +12,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IHolographicQuadLayerInterop.xml' path='doc/member[@name="IHolographicQuadLayerInterop"]/*' />
 [Guid("CFA688F0-639E-4A47-83D7-6B7F5EBF7FED")]
 [NativeTypeName("struct IHolographicQuadLayerInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -20,6 +21,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -27,6 +29,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
         return ((delegate* unmanaged<IHolographicQuadLayerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -35,6 +38,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
         return ((delegate* unmanaged<IHolographicQuadLayerInterop*, uint>)(lpVtbl[1]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -43,6 +47,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
         return ((delegate* unmanaged<IHolographicQuadLayerInterop*, uint>)(lpVtbl[2]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -50,6 +55,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
         return ((delegate* unmanaged<IHolographicQuadLayerInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -57,6 +63,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
         return ((delegate* unmanaged<IHolographicQuadLayerInterop*, HSTRING*, int>)(lpVtbl[4]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -64,6 +71,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
         return ((delegate* unmanaged<IHolographicQuadLayerInterop*, TrustLevel*, int>)(lpVtbl[5]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='IHolographicQuadLayerInterop.xml' path='doc/member[@name="IHolographicQuadLayerInterop.CreateDirect3D12ContentBufferResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CreateDirect3D12ContentBufferResource(ID3D12Device* pDevice, D3D12_RESOURCE_DESC* pTexture2DDesc, ID3D12Resource** ppTexture2DResource)
@@ -71,6 +79,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
         return ((delegate* unmanaged<IHolographicQuadLayerInterop*, ID3D12Device*, D3D12_RESOURCE_DESC*, ID3D12Resource**, int>)(lpVtbl[6]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), pDevice, pTexture2DDesc, ppTexture2DResource);
     }
 
+    /// <include file='IHolographicQuadLayerInterop.xml' path='doc/member[@name="IHolographicQuadLayerInterop.CreateDirect3D12HardwareProtectedContentBufferResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT CreateDirect3D12HardwareProtectedContentBufferResource(ID3D12Device* pDevice, D3D12_RESOURCE_DESC* pTexture2DDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, ID3D12Resource** ppCreatedTexture2DResource)
@@ -78,6 +87,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
         return ((delegate* unmanaged<IHolographicQuadLayerInterop*, ID3D12Device*, D3D12_RESOURCE_DESC*, ID3D12ProtectedResourceSession*, ID3D12Resource**, int>)(lpVtbl[7]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), pDevice, pTexture2DDesc, pProtectedResourceSession, ppCreatedTexture2DResource);
     }
 
+    /// <include file='IHolographicQuadLayerInterop.xml' path='doc/member[@name="IHolographicQuadLayerInterop.AcquireDirect3D12BufferResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT AcquireDirect3D12BufferResource(ID3D12Resource* pResourceToAcquire, ID3D12CommandQueue* pCommandQueue)
@@ -85,6 +95,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
         return ((delegate* unmanaged<IHolographicQuadLayerInterop*, ID3D12Resource*, ID3D12CommandQueue*, int>)(lpVtbl[8]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), pResourceToAcquire, pCommandQueue);
     }
 
+    /// <include file='IHolographicQuadLayerInterop.xml' path='doc/member[@name="IHolographicQuadLayerInterop.AcquireDirect3D12BufferResourceWithTimeout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT AcquireDirect3D12BufferResourceWithTimeout(ID3D12Resource* pResourceToAcquire, ID3D12CommandQueue* pCommandQueue, [NativeTypeName("UINT64")] ulong duration)
@@ -92,6 +103,7 @@ public unsafe partial struct IHolographicQuadLayerInterop : IHolographicQuadLaye
         return ((delegate* unmanaged<IHolographicQuadLayerInterop*, ID3D12Resource*, ID3D12CommandQueue*, ulong, int>)(lpVtbl[9]))((IHolographicQuadLayerInterop*)Unsafe.AsPointer(ref this), pResourceToAcquire, pCommandQueue, duration);
     }
 
+    /// <include file='IHolographicQuadLayerInterop.xml' path='doc/member[@name="IHolographicQuadLayerInterop.UnacquireDirect3D12BufferResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT UnacquireDirect3D12BufferResource(ID3D12Resource* pResourceToUnacquire)

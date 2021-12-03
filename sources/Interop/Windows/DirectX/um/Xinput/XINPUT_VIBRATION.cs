@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='XINPUT_VIBRATION.xml' path='doc/member[@name="XINPUT_VIBRATION"]/*' />
 public partial struct XINPUT_VIBRATION
 {
+    /// <include file='XINPUT_VIBRATION.xml' path='doc/member[@name="XINPUT_VIBRATION.wLeftMotorSpeed"]/*' />
     [NativeTypeName("WORD")]
     public ushort wLeftMotorSpeed;
 
+    /// <include file='XINPUT_VIBRATION.xml' path='doc/member[@name="XINPUT_VIBRATION.wRightMotorSpeed"]/*' />
     [NativeTypeName("WORD")]
     public ushort wRightMotorSpeed;
 }

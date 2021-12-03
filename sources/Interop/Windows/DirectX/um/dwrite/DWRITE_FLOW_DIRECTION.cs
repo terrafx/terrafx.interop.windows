@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_FLOW_DIRECTION.xml' path='doc/member[@name="DWRITE_FLOW_DIRECTION"]/*' />
 public enum DWRITE_FLOW_DIRECTION
 {
+    /// <include file='DWRITE_FLOW_DIRECTION.xml' path='doc/member[@name="DWRITE_FLOW_DIRECTION.DWRITE_FLOW_DIRECTION_TOP_TO_BOTTOM"]/*' />
     DWRITE_FLOW_DIRECTION_TOP_TO_BOTTOM = 0,
+
+    /// <include file='DWRITE_FLOW_DIRECTION.xml' path='doc/member[@name="DWRITE_FLOW_DIRECTION.DWRITE_FLOW_DIRECTION_BOTTOM_TO_TOP"]/*' />
     DWRITE_FLOW_DIRECTION_BOTTOM_TO_TOP = 1,
+
+    /// <include file='DWRITE_FLOW_DIRECTION.xml' path='doc/member[@name="DWRITE_FLOW_DIRECTION.DWRITE_FLOW_DIRECTION_LEFT_TO_RIGHT"]/*' />
     DWRITE_FLOW_DIRECTION_LEFT_TO_RIGHT = 2,
+
+    /// <include file='DWRITE_FLOW_DIRECTION.xml' path='doc/member[@name="DWRITE_FLOW_DIRECTION.DWRITE_FLOW_DIRECTION_RIGHT_TO_LEFT"]/*' />
     DWRITE_FLOW_DIRECTION_RIGHT_TO_LEFT = 3,
 }

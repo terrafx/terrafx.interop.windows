@@ -7,8 +7,10 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_BUFFEREX_SRV_FLAG.xml' path='doc/member[@name="D3D11_BUFFEREX_SRV_FLAG"]/*' />
 [Flags]
 public enum D3D11_BUFFEREX_SRV_FLAG
 {
+    /// <include file='D3D11_BUFFEREX_SRV_FLAG.xml' path='doc/member[@name="D3D11_BUFFEREX_SRV_FLAG.D3D11_BUFFEREX_SRV_FLAG_RAW"]/*' />
     D3D11_BUFFEREX_SRV_FLAG_RAW = 0x1,
 }

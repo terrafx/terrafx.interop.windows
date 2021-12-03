@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IVisualTreeService2.xml' path='doc/member[@name="IVisualTreeService2"]/*' />
 [Guid("130F5136-EC43-4F61-89C7-9801A36D2E95")]
 [NativeTypeName("struct IVisualTreeService2 : IVisualTreeService")]
 [NativeInheritance("IVisualTreeService")]
@@ -19,6 +20,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         return ((delegate* unmanaged<IVisualTreeService2*, Guid*, void**, int>)(lpVtbl[0]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         return ((delegate* unmanaged<IVisualTreeService2*, uint>)(lpVtbl[1]))((IVisualTreeService2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         return ((delegate* unmanaged<IVisualTreeService2*, uint>)(lpVtbl[2]))((IVisualTreeService2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IVisualTreeService.AdviseVisualTreeChange" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AdviseVisualTreeChange(IVisualTreeServiceCallback* pCallback)
@@ -49,6 +54,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         return ((delegate* unmanaged<IVisualTreeService2*, IVisualTreeServiceCallback*, int>)(lpVtbl[3]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), pCallback);
     }
 
+    /// <inheritdoc cref="IVisualTreeService.UnadviseVisualTreeChange" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UnadviseVisualTreeChange(IVisualTreeServiceCallback* pCallback)
@@ -56,6 +62,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         return ((delegate* unmanaged<IVisualTreeService2*, IVisualTreeServiceCallback*, int>)(lpVtbl[4]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), pCallback);
     }
 
+    /// <inheritdoc cref="IVisualTreeService.GetEnums" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetEnums([NativeTypeName("unsigned int *")] uint* pCount, EnumType** ppEnums)
@@ -63,6 +70,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         return ((delegate* unmanaged<IVisualTreeService2*, uint*, EnumType**, int>)(lpVtbl[5]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), pCount, ppEnums);
     }
 
+    /// <inheritdoc cref="IVisualTreeService.CreateInstance" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CreateInstance([NativeTypeName("BSTR")] ushort* typeName, [NativeTypeName("BSTR")] ushort* value, InstanceHandle* pInstanceHandle)
@@ -70,6 +78,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         return ((delegate* unmanaged<IVisualTreeService2*, ushort*, ushort*, InstanceHandle*, int>)(lpVtbl[6]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), typeName, value, pInstanceHandle);
     }
 
+    /// <inheritdoc cref="IVisualTreeService.GetPropertyValuesChain" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetPropertyValuesChain(InstanceHandle instanceHandle, [NativeTypeName("unsigned int *")] uint* pSourceCount, PropertyChainSource** ppPropertySources, [NativeTypeName("unsigned int *")] uint* pPropertyCount, PropertyChainValue** ppPropertyValues)
@@ -77,6 +86,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         return ((delegate* unmanaged<IVisualTreeService2*, InstanceHandle, uint*, PropertyChainSource**, uint*, PropertyChainValue**, int>)(lpVtbl[7]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), instanceHandle, pSourceCount, ppPropertySources, pPropertyCount, ppPropertyValues);
     }
 
+    /// <inheritdoc cref="IVisualTreeService.SetProperty" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetProperty(InstanceHandle instanceHandle, InstanceHandle value, [NativeTypeName("unsigned int")] uint propertyIndex)
@@ -84,6 +94,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         return ((delegate* unmanaged<IVisualTreeService2*, InstanceHandle, InstanceHandle, uint, int>)(lpVtbl[8]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), instanceHandle, value, propertyIndex);
     }
 
+    /// <inheritdoc cref="IVisualTreeService.ClearProperty" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT ClearProperty(InstanceHandle instanceHandle, [NativeTypeName("unsigned int")] uint propertyIndex)
@@ -91,6 +102,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         return ((delegate* unmanaged<IVisualTreeService2*, InstanceHandle, uint, int>)(lpVtbl[9]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), instanceHandle, propertyIndex);
     }
 
+    /// <inheritdoc cref="IVisualTreeService.GetCollectionCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetCollectionCount(InstanceHandle instanceHandle, [NativeTypeName("unsigned int *")] uint* pCollectionSize)
@@ -98,6 +110,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         return ((delegate* unmanaged<IVisualTreeService2*, InstanceHandle, uint*, int>)(lpVtbl[10]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), instanceHandle, pCollectionSize);
     }
 
+    /// <inheritdoc cref="IVisualTreeService.GetCollectionElements" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetCollectionElements(InstanceHandle instanceHandle, [NativeTypeName("unsigned int")] uint startIndex, [NativeTypeName("unsigned int *")] uint* pElementCount, CollectionElementValue** ppElementValues)
@@ -105,6 +118,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         return ((delegate* unmanaged<IVisualTreeService2*, InstanceHandle, uint, uint*, CollectionElementValue**, int>)(lpVtbl[11]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), instanceHandle, startIndex, pElementCount, ppElementValues);
     }
 
+    /// <inheritdoc cref="IVisualTreeService.AddChild" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT AddChild(InstanceHandle parent, InstanceHandle child, [NativeTypeName("unsigned int")] uint index)
@@ -112,6 +126,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         return ((delegate* unmanaged<IVisualTreeService2*, InstanceHandle, InstanceHandle, uint, int>)(lpVtbl[12]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), parent, child, index);
     }
 
+    /// <inheritdoc cref="IVisualTreeService.RemoveChild" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT RemoveChild(InstanceHandle parent, [NativeTypeName("unsigned int")] uint index)
@@ -119,6 +134,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         return ((delegate* unmanaged<IVisualTreeService2*, InstanceHandle, uint, int>)(lpVtbl[13]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), parent, index);
     }
 
+    /// <inheritdoc cref="IVisualTreeService.ClearChildren" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT ClearChildren(InstanceHandle parent)
@@ -126,6 +142,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         return ((delegate* unmanaged<IVisualTreeService2*, InstanceHandle, int>)(lpVtbl[14]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), parent);
     }
 
+    /// <include file='IVisualTreeService2.xml' path='doc/member[@name="IVisualTreeService2.GetPropertyIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetPropertyIndex(InstanceHandle @object, [NativeTypeName("LPCWSTR")] ushort* propertyName, [NativeTypeName("unsigned int *")] uint* pPropertyIndex)
@@ -133,6 +150,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         return ((delegate* unmanaged<IVisualTreeService2*, InstanceHandle, ushort*, uint*, int>)(lpVtbl[15]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), @object, propertyName, pPropertyIndex);
     }
 
+    /// <include file='IVisualTreeService2.xml' path='doc/member[@name="IVisualTreeService2.GetProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetProperty(InstanceHandle @object, [NativeTypeName("unsigned int")] uint propertyIndex, InstanceHandle* pValue)
@@ -140,6 +158,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         return ((delegate* unmanaged<IVisualTreeService2*, InstanceHandle, uint, InstanceHandle*, int>)(lpVtbl[16]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), @object, propertyIndex, pValue);
     }
 
+    /// <include file='IVisualTreeService2.xml' path='doc/member[@name="IVisualTreeService2.ReplaceResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT ReplaceResource(InstanceHandle resourceDictionary, InstanceHandle key, InstanceHandle newValue)
@@ -147,6 +166,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         return ((delegate* unmanaged<IVisualTreeService2*, InstanceHandle, InstanceHandle, InstanceHandle, int>)(lpVtbl[17]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), resourceDictionary, key, newValue);
     }
 
+    /// <include file='IVisualTreeService2.xml' path='doc/member[@name="IVisualTreeService2.RenderTargetBitmap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT RenderTargetBitmap(InstanceHandle handle, RenderTargetBitmapOptions options, [NativeTypeName("unsigned int")] uint maxPixelWidth, [NativeTypeName("unsigned int")] uint maxPixelHeight, IBitmapData** ppBitmapData)

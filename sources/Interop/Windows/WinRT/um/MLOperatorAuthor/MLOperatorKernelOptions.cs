@@ -7,10 +7,14 @@ using System;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='MLOperatorKernelOptions.xml' path='doc/member[@name="MLOperatorKernelOptions"]/*' />
 [NativeTypeName("uint32_t")]
 [Flags]
 public enum MLOperatorKernelOptions : uint
 {
+    /// <include file='MLOperatorKernelOptions.xml' path='doc/member[@name="MLOperatorKernelOptions.None"]/*' />
     None = 0,
+
+    /// <include file='MLOperatorKernelOptions.xml' path='doc/member[@name="MLOperatorKernelOptions.AllowDynamicInputShapes"]/*' />
     AllowDynamicInputShapes = 1,
 }

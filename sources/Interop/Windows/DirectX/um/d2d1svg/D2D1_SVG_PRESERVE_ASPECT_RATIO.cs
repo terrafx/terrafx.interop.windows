@@ -7,11 +7,15 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_SVG_PRESERVE_ASPECT_RATIO.xml' path='doc/member[@name="D2D1_SVG_PRESERVE_ASPECT_RATIO"]/*' />
 public partial struct D2D1_SVG_PRESERVE_ASPECT_RATIO
 {
+    /// <include file='D2D1_SVG_PRESERVE_ASPECT_RATIO.xml' path='doc/member[@name="D2D1_SVG_PRESERVE_ASPECT_RATIO.defer"]/*' />
     public BOOL defer;
 
+    /// <include file='D2D1_SVG_PRESERVE_ASPECT_RATIO.xml' path='doc/member[@name="D2D1_SVG_PRESERVE_ASPECT_RATIO.align"]/*' />
     public D2D1_SVG_ASPECT_ALIGN align;
 
+    /// <include file='D2D1_SVG_PRESERVE_ASPECT_RATIO.xml' path='doc/member[@name="D2D1_SVG_PRESERVE_ASPECT_RATIO.meetOrSlice"]/*' />
     public D2D1_SVG_ASPECT_SCALING meetOrSlice;
 }

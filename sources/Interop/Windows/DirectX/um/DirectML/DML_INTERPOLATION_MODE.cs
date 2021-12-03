@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_INTERPOLATION_MODE.xml' path='doc/member[@name="DML_INTERPOLATION_MODE"]/*' />
 public enum DML_INTERPOLATION_MODE
 {
+    /// <include file='DML_INTERPOLATION_MODE.xml' path='doc/member[@name="DML_INTERPOLATION_MODE.DML_INTERPOLATION_MODE_NEAREST_NEIGHBOR"]/*' />
     DML_INTERPOLATION_MODE_NEAREST_NEIGHBOR,
+
+    /// <include file='DML_INTERPOLATION_MODE.xml' path='doc/member[@name="DML_INTERPOLATION_MODE.DML_INTERPOLATION_MODE_LINEAR"]/*' />
     DML_INTERPOLATION_MODE_LINEAR,
 }

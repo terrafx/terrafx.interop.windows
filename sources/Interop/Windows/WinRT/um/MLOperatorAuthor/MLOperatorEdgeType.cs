@@ -5,9 +5,13 @@
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='MLOperatorEdgeType.xml' path='doc/member[@name="MLOperatorEdgeType"]/*' />
 [NativeTypeName("uint32_t")]
 public enum MLOperatorEdgeType : uint
 {
+    /// <include file='MLOperatorEdgeType.xml' path='doc/member[@name="MLOperatorEdgeType.Undefined"]/*' />
     Undefined = 0,
+
+    /// <include file='MLOperatorEdgeType.xml' path='doc/member[@name="MLOperatorEdgeType.Tensor"]/*' />
     Tensor = 1,
 }

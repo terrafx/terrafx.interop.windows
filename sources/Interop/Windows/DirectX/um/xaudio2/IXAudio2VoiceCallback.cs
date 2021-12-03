@@ -8,10 +8,12 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IXAudio2VoiceCallback.xml' path='doc/member[@name="IXAudio2VoiceCallback"]/*' />
 public unsafe partial struct IXAudio2VoiceCallback : IXAudio2VoiceCallback.Interface
 {
     public void** lpVtbl;
 
+    /// <include file='IXAudio2VoiceCallback.xml' path='doc/member[@name="IXAudio2VoiceCallback.OnVoiceProcessingPassStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public void OnVoiceProcessingPassStart([NativeTypeName("UINT32")] uint BytesRequired)
@@ -19,6 +21,7 @@ public unsafe partial struct IXAudio2VoiceCallback : IXAudio2VoiceCallback.Inter
         ((delegate* unmanaged<IXAudio2VoiceCallback*, uint, void>)(lpVtbl[0]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), BytesRequired);
     }
 
+    /// <include file='IXAudio2VoiceCallback.xml' path='doc/member[@name="IXAudio2VoiceCallback.OnVoiceProcessingPassEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     public void OnVoiceProcessingPassEnd()
@@ -26,6 +29,7 @@ public unsafe partial struct IXAudio2VoiceCallback : IXAudio2VoiceCallback.Inter
         ((delegate* unmanaged<IXAudio2VoiceCallback*, void>)(lpVtbl[1]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXAudio2VoiceCallback.xml' path='doc/member[@name="IXAudio2VoiceCallback.OnStreamEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     public void OnStreamEnd()
@@ -33,6 +37,7 @@ public unsafe partial struct IXAudio2VoiceCallback : IXAudio2VoiceCallback.Inter
         ((delegate* unmanaged<IXAudio2VoiceCallback*, void>)(lpVtbl[2]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXAudio2VoiceCallback.xml' path='doc/member[@name="IXAudio2VoiceCallback.OnBufferStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void OnBufferStart(void* pBufferContext)
@@ -40,6 +45,7 @@ public unsafe partial struct IXAudio2VoiceCallback : IXAudio2VoiceCallback.Inter
         ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, void>)(lpVtbl[3]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
     }
 
+    /// <include file='IXAudio2VoiceCallback.xml' path='doc/member[@name="IXAudio2VoiceCallback.OnBufferEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void OnBufferEnd(void* pBufferContext)
@@ -47,6 +53,7 @@ public unsafe partial struct IXAudio2VoiceCallback : IXAudio2VoiceCallback.Inter
         ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, void>)(lpVtbl[4]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
     }
 
+    /// <include file='IXAudio2VoiceCallback.xml' path='doc/member[@name="IXAudio2VoiceCallback.OnLoopEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void OnLoopEnd(void* pBufferContext)
@@ -54,6 +61,7 @@ public unsafe partial struct IXAudio2VoiceCallback : IXAudio2VoiceCallback.Inter
         ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, void>)(lpVtbl[5]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
     }
 
+    /// <include file='IXAudio2VoiceCallback.xml' path='doc/member[@name="IXAudio2VoiceCallback.OnVoiceError"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public void OnVoiceError(void* pBufferContext, HRESULT Error)

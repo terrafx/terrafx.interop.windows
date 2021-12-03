@@ -8,10 +8,12 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3DInclude.xml' path='doc/member[@name="ID3DInclude"]/*' />
 public unsafe partial struct ID3DInclude : ID3DInclude.Interface
 {
     public void** lpVtbl;
 
+    /// <include file='ID3DInclude.xml' path='doc/member[@name="ID3DInclude.Open"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT Open(D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("LPCVOID")] void* pParentData, [NativeTypeName("LPCVOID *")] void** ppData, uint* pBytes)
@@ -19,6 +21,7 @@ public unsafe partial struct ID3DInclude : ID3DInclude.Interface
         return ((delegate* unmanaged<ID3DInclude*, D3D_INCLUDE_TYPE, sbyte*, void*, void**, uint*, int>)(lpVtbl[0]))((ID3DInclude*)Unsafe.AsPointer(ref this), IncludeType, pFileName, pParentData, ppData, pBytes);
     }
 
+    /// <include file='ID3DInclude.xml' path='doc/member[@name="ID3DInclude.Close"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     public HRESULT Close([NativeTypeName("LPCVOID")] void* pData)

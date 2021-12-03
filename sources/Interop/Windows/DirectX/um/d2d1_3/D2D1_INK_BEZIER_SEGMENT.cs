@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_INK_BEZIER_SEGMENT.xml' path='doc/member[@name="D2D1_INK_BEZIER_SEGMENT"]/*' />
 public partial struct D2D1_INK_BEZIER_SEGMENT
 {
+    /// <include file='D2D1_INK_BEZIER_SEGMENT.xml' path='doc/member[@name="D2D1_INK_BEZIER_SEGMENT.point1"]/*' />
     public D2D1_INK_POINT point1;
 
+    /// <include file='D2D1_INK_BEZIER_SEGMENT.xml' path='doc/member[@name="D2D1_INK_BEZIER_SEGMENT.point2"]/*' />
     public D2D1_INK_POINT point2;
 
+    /// <include file='D2D1_INK_BEZIER_SEGMENT.xml' path='doc/member[@name="D2D1_INK_BEZIER_SEGMENT.point3"]/*' />
     public D2D1_INK_POINT point3;
 }

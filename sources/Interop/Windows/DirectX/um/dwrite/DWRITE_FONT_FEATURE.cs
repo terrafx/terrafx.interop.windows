@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_FONT_FEATURE.xml' path='doc/member[@name="DWRITE_FONT_FEATURE"]/*' />
 public partial struct DWRITE_FONT_FEATURE
 {
+    /// <include file='DWRITE_FONT_FEATURE.xml' path='doc/member[@name="DWRITE_FONT_FEATURE.nameTag"]/*' />
     public DWRITE_FONT_FEATURE_TAG nameTag;
 
+    /// <include file='DWRITE_FONT_FEATURE.xml' path='doc/member[@name="DWRITE_FONT_FEATURE.parameter"]/*' />
     [NativeTypeName("UINT32")]
     public uint parameter;
 }

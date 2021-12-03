@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDXGIDebug1.xml' path='doc/member[@name="IDXGIDebug1"]/*' />
 [Guid("C5A05F0C-16F2-4ADF-9F4D-A8C4D58AC550")]
 [NativeTypeName("struct IDXGIDebug1 : IDXGIDebug")]
 [NativeInheritance("IDXGIDebug")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDXGIDebug1 : IDXGIDebug1.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDXGIDebug1 : IDXGIDebug1.Interface
         return ((delegate* unmanaged<IDXGIDebug1*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIDebug1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDXGIDebug1 : IDXGIDebug1.Interface
         return ((delegate* unmanaged<IDXGIDebug1*, uint>)(lpVtbl[1]))((IDXGIDebug1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDXGIDebug1 : IDXGIDebug1.Interface
         return ((delegate* unmanaged<IDXGIDebug1*, uint>)(lpVtbl[2]))((IDXGIDebug1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDXGIDebug.ReportLiveObjects" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ReportLiveObjects(Guid apiid, DXGI_DEBUG_RLO_FLAGS flags)
@@ -49,6 +54,7 @@ public unsafe partial struct IDXGIDebug1 : IDXGIDebug1.Interface
         return ((delegate* unmanaged<IDXGIDebug1*, Guid, DXGI_DEBUG_RLO_FLAGS, int>)(lpVtbl[3]))((IDXGIDebug1*)Unsafe.AsPointer(ref this), apiid, flags);
     }
 
+    /// <include file='IDXGIDebug1.xml' path='doc/member[@name="IDXGIDebug1.EnableLeakTrackingForThread"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void EnableLeakTrackingForThread()
@@ -56,6 +62,7 @@ public unsafe partial struct IDXGIDebug1 : IDXGIDebug1.Interface
         ((delegate* unmanaged<IDXGIDebug1*, void>)(lpVtbl[4]))((IDXGIDebug1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDXGIDebug1.xml' path='doc/member[@name="IDXGIDebug1.DisableLeakTrackingForThread"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void DisableLeakTrackingForThread()
@@ -63,6 +70,7 @@ public unsafe partial struct IDXGIDebug1 : IDXGIDebug1.Interface
         ((delegate* unmanaged<IDXGIDebug1*, void>)(lpVtbl[5]))((IDXGIDebug1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDXGIDebug1.xml' path='doc/member[@name="IDXGIDebug1.IsLeakTrackingEnabledForThread"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public BOOL IsLeakTrackingEnabledForThread()

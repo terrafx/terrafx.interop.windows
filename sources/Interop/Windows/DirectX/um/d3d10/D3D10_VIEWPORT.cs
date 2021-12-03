@@ -5,17 +5,24 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_VIEWPORT.xml' path='doc/member[@name="D3D10_VIEWPORT"]/*' />
 public partial struct D3D10_VIEWPORT
 {
+    /// <include file='D3D10_VIEWPORT.xml' path='doc/member[@name="D3D10_VIEWPORT.TopLeftX"]/*' />
     public int TopLeftX;
 
+    /// <include file='D3D10_VIEWPORT.xml' path='doc/member[@name="D3D10_VIEWPORT.TopLeftY"]/*' />
     public int TopLeftY;
 
+    /// <include file='D3D10_VIEWPORT.xml' path='doc/member[@name="D3D10_VIEWPORT.Width"]/*' />
     public uint Width;
 
+    /// <include file='D3D10_VIEWPORT.xml' path='doc/member[@name="D3D10_VIEWPORT.Height"]/*' />
     public uint Height;
 
+    /// <include file='D3D10_VIEWPORT.xml' path='doc/member[@name="D3D10_VIEWPORT.MinDepth"]/*' />
     public float MinDepth;
 
+    /// <include file='D3D10_VIEWPORT.xml' path='doc/member[@name="D3D10_VIEWPORT.MaxDepth"]/*' />
     public float MaxDepth;
 }

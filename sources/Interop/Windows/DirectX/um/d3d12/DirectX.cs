@@ -13,24 +13,31 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12SerializeRootSignature"]/*' />
     [DllImport("d3d12", ExactSpelling = true)]
     public static extern HRESULT D3D12SerializeRootSignature([NativeTypeName("const D3D12_ROOT_SIGNATURE_DESC *")] D3D12_ROOT_SIGNATURE_DESC* pRootSignature, D3D_ROOT_SIGNATURE_VERSION Version, ID3DBlob** ppBlob, ID3DBlob** ppErrorBlob);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12CreateRootSignatureDeserializer"]/*' />
     [DllImport("d3d12", ExactSpelling = true)]
     public static extern HRESULT D3D12CreateRootSignatureDeserializer([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSizeInBytes, [NativeTypeName("const IID &")] Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12SerializeVersionedRootSignature"]/*' />
     [DllImport("d3d12", ExactSpelling = true)]
     public static extern HRESULT D3D12SerializeVersionedRootSignature([NativeTypeName("const D3D12_VERSIONED_ROOT_SIGNATURE_DESC *")] D3D12_VERSIONED_ROOT_SIGNATURE_DESC* pRootSignature, ID3DBlob** ppBlob, ID3DBlob** ppErrorBlob);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12CreateVersionedRootSignatureDeserializer"]/*' />
     [DllImport("d3d12", ExactSpelling = true)]
     public static extern HRESULT D3D12CreateVersionedRootSignatureDeserializer([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSizeInBytes, [NativeTypeName("const IID &")] Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12CreateDevice"]/*' />
     [DllImport("d3d12", ExactSpelling = true)]
     public static extern HRESULT D3D12CreateDevice(IUnknown* pAdapter, D3D_FEATURE_LEVEL MinimumFeatureLevel, [NativeTypeName("const IID &")] Guid* riid, void** ppDevice);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12GetDebugInterface"]/*' />
     [DllImport("d3d12", ExactSpelling = true)]
     public static extern HRESULT D3D12GetDebugInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvDebug);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12EnableExperimentalFeatures"]/*' />
     [DllImport("d3d12", ExactSpelling = true)]
     public static extern HRESULT D3D12EnableExperimentalFeatures(uint NumFeatures, [NativeTypeName("const IID *")] Guid* pIIDs, void* pConfigurationStructs, uint* pConfigurationStructSizes);
 
@@ -109,6 +116,7 @@ public static unsafe partial class DirectX
         }
     }
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12GetInterface"]/*' />
     [DllImport("d3d12", ExactSpelling = true)]
     public static extern HRESULT D3D12GetInterface([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, void** ppvDebug);
 }

@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IInputPaneInterop.xml' path='doc/member[@name="IInputPaneInterop"]/*' />
 [Guid("75CF2C57-9195-4931-8332-F0B409E916AF")]
 [NativeTypeName("struct IInputPaneInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -19,6 +20,7 @@ public unsafe partial struct IInputPaneInterop : IInputPaneInterop.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IInputPaneInterop : IInputPaneInterop.Interface
         return ((delegate* unmanaged<IInputPaneInterop*, Guid*, void**, int>)(lpVtbl[0]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IInputPaneInterop : IInputPaneInterop.Interface
         return ((delegate* unmanaged<IInputPaneInterop*, uint>)(lpVtbl[1]))((IInputPaneInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IInputPaneInterop : IInputPaneInterop.Interface
         return ((delegate* unmanaged<IInputPaneInterop*, uint>)(lpVtbl[2]))((IInputPaneInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -49,6 +54,7 @@ public unsafe partial struct IInputPaneInterop : IInputPaneInterop.Interface
         return ((delegate* unmanaged<IInputPaneInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -56,6 +62,7 @@ public unsafe partial struct IInputPaneInterop : IInputPaneInterop.Interface
         return ((delegate* unmanaged<IInputPaneInterop*, HSTRING*, int>)(lpVtbl[4]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -63,6 +70,7 @@ public unsafe partial struct IInputPaneInterop : IInputPaneInterop.Interface
         return ((delegate* unmanaged<IInputPaneInterop*, TrustLevel*, int>)(lpVtbl[5]))((IInputPaneInterop*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='IInputPaneInterop.xml' path='doc/member[@name="IInputPaneInterop.GetForWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** inputPane)

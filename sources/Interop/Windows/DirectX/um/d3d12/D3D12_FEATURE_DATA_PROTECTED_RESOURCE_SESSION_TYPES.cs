@@ -7,11 +7,15 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPES.xml' path='doc/member[@name="D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPES"]/*' />
 public unsafe partial struct D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPES
 {
+    /// <include file='D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPES.xml' path='doc/member[@name="D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPES.NodeIndex"]/*' />
     public uint NodeIndex;
 
+    /// <include file='D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPES.xml' path='doc/member[@name="D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPES.Count"]/*' />
     public uint Count;
 
+    /// <include file='D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPES.xml' path='doc/member[@name="D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPES.pTypes"]/*' />
     public Guid* pTypes;
 }

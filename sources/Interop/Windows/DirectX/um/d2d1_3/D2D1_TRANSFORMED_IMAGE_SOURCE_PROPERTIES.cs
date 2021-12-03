@@ -5,15 +5,21 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.xml' path='doc/member[@name="D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES"]/*' />
 public partial struct D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES
 {
+    /// <include file='D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.xml' path='doc/member[@name="D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.orientation"]/*' />
     public D2D1_ORIENTATION orientation;
 
+    /// <include file='D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.xml' path='doc/member[@name="D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.scaleX"]/*' />
     public float scaleX;
 
+    /// <include file='D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.xml' path='doc/member[@name="D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.scaleY"]/*' />
     public float scaleY;
 
+    /// <include file='D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.xml' path='doc/member[@name="D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.interpolationMode"]/*' />
     public D2D1_INTERPOLATION_MODE interpolationMode;
 
+    /// <include file='D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.xml' path='doc/member[@name="D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.options"]/*' />
     public D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS options;
 }

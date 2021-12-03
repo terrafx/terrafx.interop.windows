@@ -9,11 +9,13 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType"]/*' />
 [Guid("E913C351-783D-48CA-A1D1-4F306284AD56")]
 public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflectionType.Interface
 {
     public void** lpVtbl;
 
+    /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.GetDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT GetDesc(D3D12_SHADER_TYPE_DESC* pDesc)
@@ -21,6 +23,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
         return ((delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflectionType*, D3D12_SHADER_TYPE_DESC*, int>)(lpVtbl[0]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.GetMemberTypeByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     public ID3D12ShaderReflectionType* GetMemberTypeByIndex(uint Index)
@@ -28,6 +31,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
         return ((delegate* unmanaged<ID3D12ShaderReflectionType*, uint, ID3D12ShaderReflectionType*>)(lpVtbl[1]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
     }
 
+    /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.GetMemberTypeByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     public ID3D12ShaderReflectionType* GetMemberTypeByName([NativeTypeName("LPCSTR")] sbyte* Name)
@@ -35,6 +39,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
         return ((delegate* unmanaged<ID3D12ShaderReflectionType*, sbyte*, ID3D12ShaderReflectionType*>)(lpVtbl[2]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.GetMemberTypeName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("LPCSTR")]
@@ -43,6 +48,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
         return ((delegate* unmanaged<ID3D12ShaderReflectionType*, uint, sbyte*>)(lpVtbl[3]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
     }
 
+    /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.IsEqual"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT IsEqual(ID3D12ShaderReflectionType* pType)
@@ -50,6 +56,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
         return ((delegate* unmanaged<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*, int>)(lpVtbl[4]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pType);
     }
 
+    /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.GetSubType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public ID3D12ShaderReflectionType* GetSubType()
@@ -57,6 +64,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
         return ((delegate* unmanaged<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*>)(lpVtbl[5]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.GetBaseClass"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public ID3D12ShaderReflectionType* GetBaseClass()
@@ -64,6 +72,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
         return ((delegate* unmanaged<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*>)(lpVtbl[6]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.GetNumInterfaces"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public uint GetNumInterfaces()
@@ -71,6 +80,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
         return ((delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflectionType*, uint>)(lpVtbl[7]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.GetInterfaceByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public ID3D12ShaderReflectionType* GetInterfaceByIndex(uint uIndex)
@@ -78,6 +88,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
         return ((delegate* unmanaged<ID3D12ShaderReflectionType*, uint, ID3D12ShaderReflectionType*>)(lpVtbl[8]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), uIndex);
     }
 
+    /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.IsOfType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT IsOfType(ID3D12ShaderReflectionType* pType)
@@ -85,6 +96,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
         return ((delegate* unmanaged<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*, int>)(lpVtbl[9]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pType);
     }
 
+    /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.ImplementsInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT ImplementsInterface(ID3D12ShaderReflectionType* pBase)

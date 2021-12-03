@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport"]/*' />
 [Guid("28B85A3D-60A0-48BD-9BA1-5CE8D9EA3A6D")]
 [NativeTypeName("struct IDirectManipulationViewport : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, uint>)(lpVtbl[1]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, uint>)(lpVtbl[2]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.Enable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Enable()
@@ -49,6 +54,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, int>)(lpVtbl[3]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.Disable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Disable()
@@ -56,6 +62,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, int>)(lpVtbl[4]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.SetContact"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetContact([NativeTypeName("UINT32")] uint pointerId)
@@ -63,6 +70,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, uint, int>)(lpVtbl[5]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), pointerId);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.ReleaseContact"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT ReleaseContact([NativeTypeName("UINT32")] uint pointerId)
@@ -70,6 +78,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, uint, int>)(lpVtbl[6]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), pointerId);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.ReleaseAllContacts"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ReleaseAllContacts()
@@ -77,6 +86,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, int>)(lpVtbl[7]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.GetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetStatus(DIRECTMANIPULATION_STATUS* status)
@@ -84,6 +94,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, DIRECTMANIPULATION_STATUS*, int>)(lpVtbl[8]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), status);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.GetTag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetTag([NativeTypeName("const IID &")] Guid* riid, void** @object, [NativeTypeName("UINT32 *")] uint* id)
@@ -91,6 +102,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, Guid*, void**, uint*, int>)(lpVtbl[9]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), riid, @object, id);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.SetTag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id)
@@ -98,6 +110,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, IUnknown*, uint, int>)(lpVtbl[10]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), @object, id);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.GetViewportRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetViewportRect(RECT* viewport)
@@ -105,6 +118,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, RECT*, int>)(lpVtbl[11]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), viewport);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.SetViewportRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SetViewportRect([NativeTypeName("const RECT *")] RECT* viewport)
@@ -112,6 +126,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, RECT*, int>)(lpVtbl[12]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), viewport);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.ZoomToRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT ZoomToRect([NativeTypeName("const float")] float left, [NativeTypeName("const float")] float top, [NativeTypeName("const float")] float right, [NativeTypeName("const float")] float bottom, BOOL animate)
@@ -119,6 +134,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, float, float, float, float, BOOL, int>)(lpVtbl[13]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), left, top, right, bottom, animate);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.SetViewportTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT SetViewportTransform([NativeTypeName("const float *")] float* matrix, [NativeTypeName("DWORD")] uint pointCount)
@@ -126,6 +142,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, float*, uint, int>)(lpVtbl[14]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), matrix, pointCount);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.SyncDisplayTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SyncDisplayTransform([NativeTypeName("const float *")] float* matrix, [NativeTypeName("DWORD")] uint pointCount)
@@ -133,6 +150,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, float*, uint, int>)(lpVtbl[15]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), matrix, pointCount);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.GetPrimaryContent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetPrimaryContent([NativeTypeName("const IID &")] Guid* riid, void** @object)
@@ -140,6 +158,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, Guid*, void**, int>)(lpVtbl[16]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), riid, @object);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.AddContent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT AddContent(IDirectManipulationContent* content)
@@ -147,6 +166,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, IDirectManipulationContent*, int>)(lpVtbl[17]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), content);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.RemoveContent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT RemoveContent(IDirectManipulationContent* content)
@@ -154,6 +174,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, IDirectManipulationContent*, int>)(lpVtbl[18]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), content);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.SetViewportOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT SetViewportOptions(DIRECTMANIPULATION_VIEWPORT_OPTIONS options)
@@ -161,6 +182,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, DIRECTMANIPULATION_VIEWPORT_OPTIONS, int>)(lpVtbl[19]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), options);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.AddConfiguration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT AddConfiguration(DIRECTMANIPULATION_CONFIGURATION configuration)
@@ -168,6 +190,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, DIRECTMANIPULATION_CONFIGURATION, int>)(lpVtbl[20]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), configuration);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.RemoveConfiguration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT RemoveConfiguration(DIRECTMANIPULATION_CONFIGURATION configuration)
@@ -175,6 +198,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, DIRECTMANIPULATION_CONFIGURATION, int>)(lpVtbl[21]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), configuration);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.ActivateConfiguration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT ActivateConfiguration(DIRECTMANIPULATION_CONFIGURATION configuration)
@@ -182,6 +206,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, DIRECTMANIPULATION_CONFIGURATION, int>)(lpVtbl[22]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), configuration);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.SetManualGesture"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT SetManualGesture(DIRECTMANIPULATION_GESTURE_CONFIGURATION configuration)
@@ -189,6 +214,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, DIRECTMANIPULATION_GESTURE_CONFIGURATION, int>)(lpVtbl[23]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), configuration);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.SetChaining"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT SetChaining(DIRECTMANIPULATION_MOTION_TYPES enabledTypes)
@@ -196,6 +222,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, DIRECTMANIPULATION_MOTION_TYPES, int>)(lpVtbl[24]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), enabledTypes);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.AddEventHandler"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT AddEventHandler(HWND window, IDirectManipulationViewportEventHandler* eventHandler, [NativeTypeName("DWORD *")] uint* cookie)
@@ -203,6 +230,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, HWND, IDirectManipulationViewportEventHandler*, uint*, int>)(lpVtbl[25]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), window, eventHandler, cookie);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.RemoveEventHandler"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT RemoveEventHandler([NativeTypeName("DWORD")] uint cookie)
@@ -210,6 +238,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, uint, int>)(lpVtbl[26]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), cookie);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.SetInputMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT SetInputMode(DIRECTMANIPULATION_INPUT_MODE mode)
@@ -217,6 +246,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, DIRECTMANIPULATION_INPUT_MODE, int>)(lpVtbl[27]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), mode);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.SetUpdateMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT SetUpdateMode(DIRECTMANIPULATION_INPUT_MODE mode)
@@ -224,6 +254,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, DIRECTMANIPULATION_INPUT_MODE, int>)(lpVtbl[28]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this), mode);
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.Stop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT Stop()
@@ -231,6 +262,7 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         return ((delegate* unmanaged<IDirectManipulationViewport*, int>)(lpVtbl[29]))((IDirectManipulationViewport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectManipulationViewport.xml' path='doc/member[@name="IDirectManipulationViewport.Abandon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT Abandon()

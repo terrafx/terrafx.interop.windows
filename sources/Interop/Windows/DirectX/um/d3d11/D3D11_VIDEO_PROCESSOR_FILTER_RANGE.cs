@@ -7,14 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_VIDEO_PROCESSOR_FILTER_RANGE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_FILTER_RANGE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_VIDEO_PROCESSOR_FILTER_RANGE
 {
+    /// <include file='D3D11_VIDEO_PROCESSOR_FILTER_RANGE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_FILTER_RANGE.Minimum"]/*' />
     public int Minimum;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_FILTER_RANGE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_FILTER_RANGE.Maximum"]/*' />
     public int Maximum;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_FILTER_RANGE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_FILTER_RANGE.Default"]/*' />
     public int Default;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_FILTER_RANGE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_FILTER_RANGE.Multiplier"]/*' />
     public float Multiplier;
 }

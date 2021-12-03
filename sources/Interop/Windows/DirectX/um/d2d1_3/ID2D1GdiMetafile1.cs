@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1GdiMetafile1.xml' path='doc/member[@name="ID2D1GdiMetafile1"]/*' />
 [Guid("2E69F9E8-DD3F-4BF9-95BA-C04F49D788DF")]
 [NativeTypeName("struct ID2D1GdiMetafile1 : ID2D1GdiMetafile")]
 [NativeInheritance("ID2D1GdiMetafile")]
@@ -19,6 +20,7 @@ public unsafe partial struct ID2D1GdiMetafile1 : ID2D1GdiMetafile1.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct ID2D1GdiMetafile1 : ID2D1GdiMetafile1.Interface
         return ((delegate* unmanaged<ID2D1GdiMetafile1*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1GdiMetafile1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct ID2D1GdiMetafile1 : ID2D1GdiMetafile1.Interface
         return ((delegate* unmanaged<ID2D1GdiMetafile1*, uint>)(lpVtbl[1]))((ID2D1GdiMetafile1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct ID2D1GdiMetafile1 : ID2D1GdiMetafile1.Interface
         return ((delegate* unmanaged<ID2D1GdiMetafile1*, uint>)(lpVtbl[2]))((ID2D1GdiMetafile1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
@@ -49,6 +54,7 @@ public unsafe partial struct ID2D1GdiMetafile1 : ID2D1GdiMetafile1.Interface
         ((delegate* unmanaged<ID2D1GdiMetafile1*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1GdiMetafile1*)Unsafe.AsPointer(ref this), factory);
     }
 
+    /// <inheritdoc cref="ID2D1GdiMetafile.Stream" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Stream(ID2D1GdiMetafileSink* sink)
@@ -56,6 +62,7 @@ public unsafe partial struct ID2D1GdiMetafile1 : ID2D1GdiMetafile1.Interface
         return ((delegate* unmanaged<ID2D1GdiMetafile1*, ID2D1GdiMetafileSink*, int>)(lpVtbl[4]))((ID2D1GdiMetafile1*)Unsafe.AsPointer(ref this), sink);
     }
 
+    /// <inheritdoc cref="ID2D1GdiMetafile.GetBounds" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetBounds([NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* bounds)
@@ -63,6 +70,7 @@ public unsafe partial struct ID2D1GdiMetafile1 : ID2D1GdiMetafile1.Interface
         return ((delegate* unmanaged<ID2D1GdiMetafile1*, D2D_RECT_F*, int>)(lpVtbl[5]))((ID2D1GdiMetafile1*)Unsafe.AsPointer(ref this), bounds);
     }
 
+    /// <include file='ID2D1GdiMetafile1.xml' path='doc/member[@name="ID2D1GdiMetafile1.GetDpi"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetDpi(float* dpiX, float* dpiY)
@@ -70,6 +78,7 @@ public unsafe partial struct ID2D1GdiMetafile1 : ID2D1GdiMetafile1.Interface
         return ((delegate* unmanaged<ID2D1GdiMetafile1*, float*, float*, int>)(lpVtbl[6]))((ID2D1GdiMetafile1*)Unsafe.AsPointer(ref this), dpiX, dpiY);
     }
 
+    /// <include file='ID2D1GdiMetafile1.xml' path='doc/member[@name="ID2D1GdiMetafile1.GetSourceBounds"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetSourceBounds([NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* bounds)

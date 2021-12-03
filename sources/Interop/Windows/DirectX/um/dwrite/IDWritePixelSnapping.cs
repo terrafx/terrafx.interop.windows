@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWritePixelSnapping.xml' path='doc/member[@name="IDWritePixelSnapping"]/*' />
 [Guid("EAF3A2DA-ECF4-4D24-B644-B34F6842024B")]
 [NativeTypeName("struct IDWritePixelSnapping : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDWritePixelSnapping : IDWritePixelSnapping.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDWritePixelSnapping : IDWritePixelSnapping.Interfa
         return ((delegate* unmanaged<IDWritePixelSnapping*, Guid*, void**, int>)(lpVtbl[0]))((IDWritePixelSnapping*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDWritePixelSnapping : IDWritePixelSnapping.Interfa
         return ((delegate* unmanaged<IDWritePixelSnapping*, uint>)(lpVtbl[1]))((IDWritePixelSnapping*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDWritePixelSnapping : IDWritePixelSnapping.Interfa
         return ((delegate* unmanaged<IDWritePixelSnapping*, uint>)(lpVtbl[2]))((IDWritePixelSnapping*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWritePixelSnapping.xml' path='doc/member[@name="IDWritePixelSnapping.IsPixelSnappingDisabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT IsPixelSnappingDisabled(void* clientDrawingContext, BOOL* isDisabled)
@@ -47,6 +52,7 @@ public unsafe partial struct IDWritePixelSnapping : IDWritePixelSnapping.Interfa
         return ((delegate* unmanaged<IDWritePixelSnapping*, void*, BOOL*, int>)(lpVtbl[3]))((IDWritePixelSnapping*)Unsafe.AsPointer(ref this), clientDrawingContext, isDisabled);
     }
 
+    /// <include file='IDWritePixelSnapping.xml' path='doc/member[@name="IDWritePixelSnapping.GetCurrentTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCurrentTransform(void* clientDrawingContext, DWRITE_MATRIX* transform)
@@ -54,6 +60,7 @@ public unsafe partial struct IDWritePixelSnapping : IDWritePixelSnapping.Interfa
         return ((delegate* unmanaged<IDWritePixelSnapping*, void*, DWRITE_MATRIX*, int>)(lpVtbl[4]))((IDWritePixelSnapping*)Unsafe.AsPointer(ref this), clientDrawingContext, transform);
     }
 
+    /// <include file='IDWritePixelSnapping.xml' path='doc/member[@name="IDWritePixelSnapping.GetPixelsPerDip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPixelsPerDip(void* clientDrawingContext, float* pixelsPerDip)

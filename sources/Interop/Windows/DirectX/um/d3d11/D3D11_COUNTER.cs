@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_COUNTER.xml' path='doc/member[@name="D3D11_COUNTER"]/*' />
 public enum D3D11_COUNTER
 {
+    /// <include file='D3D11_COUNTER.xml' path='doc/member[@name="D3D11_COUNTER.D3D11_COUNTER_DEVICE_DEPENDENT_0"]/*' />
     D3D11_COUNTER_DEVICE_DEPENDENT_0 = 0x40000000,
 }

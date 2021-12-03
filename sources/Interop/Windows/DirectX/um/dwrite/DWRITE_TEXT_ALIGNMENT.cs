@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_TEXT_ALIGNMENT.xml' path='doc/member[@name="DWRITE_TEXT_ALIGNMENT"]/*' />
 public enum DWRITE_TEXT_ALIGNMENT
 {
+    /// <include file='DWRITE_TEXT_ALIGNMENT.xml' path='doc/member[@name="DWRITE_TEXT_ALIGNMENT.DWRITE_TEXT_ALIGNMENT_LEADING"]/*' />
     DWRITE_TEXT_ALIGNMENT_LEADING,
+
+    /// <include file='DWRITE_TEXT_ALIGNMENT.xml' path='doc/member[@name="DWRITE_TEXT_ALIGNMENT.DWRITE_TEXT_ALIGNMENT_TRAILING"]/*' />
     DWRITE_TEXT_ALIGNMENT_TRAILING,
+
+    /// <include file='DWRITE_TEXT_ALIGNMENT.xml' path='doc/member[@name="DWRITE_TEXT_ALIGNMENT.DWRITE_TEXT_ALIGNMENT_CENTER"]/*' />
     DWRITE_TEXT_ALIGNMENT_CENTER,
+
+    /// <include file='DWRITE_TEXT_ALIGNMENT.xml' path='doc/member[@name="DWRITE_TEXT_ALIGNMENT.DWRITE_TEXT_ALIGNMENT_JUSTIFIED"]/*' />
     DWRITE_TEXT_ALIGNMENT_JUSTIFIED,
 }

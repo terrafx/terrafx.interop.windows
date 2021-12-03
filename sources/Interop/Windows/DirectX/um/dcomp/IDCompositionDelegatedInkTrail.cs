@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDCompositionDelegatedInkTrail.xml' path='doc/member[@name="IDCompositionDelegatedInkTrail"]/*' />
 [Guid("C2448E9B-547D-4057-8CF5-8144EDE1C2DA")]
 [NativeTypeName("struct IDCompositionDelegatedInkTrail : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDCompositionDelegatedInkTrail : IDCompositionDeleg
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDCompositionDelegatedInkTrail : IDCompositionDeleg
         return ((delegate* unmanaged<IDCompositionDelegatedInkTrail*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDCompositionDelegatedInkTrail : IDCompositionDeleg
         return ((delegate* unmanaged<IDCompositionDelegatedInkTrail*, uint>)(lpVtbl[1]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDCompositionDelegatedInkTrail : IDCompositionDeleg
         return ((delegate* unmanaged<IDCompositionDelegatedInkTrail*, uint>)(lpVtbl[2]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDCompositionDelegatedInkTrail.xml' path='doc/member[@name="IDCompositionDelegatedInkTrail.AddTrailPoints"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddTrailPoints([NativeTypeName("const DCompositionInkTrailPoint *")] DCompositionInkTrailPoint* inkPoints, uint inkPointsCount, uint* generationId)
@@ -47,6 +52,7 @@ public unsafe partial struct IDCompositionDelegatedInkTrail : IDCompositionDeleg
         return ((delegate* unmanaged<IDCompositionDelegatedInkTrail*, DCompositionInkTrailPoint*, uint, uint*, int>)(lpVtbl[3]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this), inkPoints, inkPointsCount, generationId);
     }
 
+    /// <include file='IDCompositionDelegatedInkTrail.xml' path='doc/member[@name="IDCompositionDelegatedInkTrail.AddTrailPointsWithPrediction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AddTrailPointsWithPrediction([NativeTypeName("const DCompositionInkTrailPoint *")] DCompositionInkTrailPoint* inkPoints, uint inkPointsCount, [NativeTypeName("const DCompositionInkTrailPoint *")] DCompositionInkTrailPoint* predictedInkPoints, uint predictedInkPointsCount, uint* generationId)
@@ -54,6 +60,7 @@ public unsafe partial struct IDCompositionDelegatedInkTrail : IDCompositionDeleg
         return ((delegate* unmanaged<IDCompositionDelegatedInkTrail*, DCompositionInkTrailPoint*, uint, DCompositionInkTrailPoint*, uint, uint*, int>)(lpVtbl[4]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this), inkPoints, inkPointsCount, predictedInkPoints, predictedInkPointsCount, generationId);
     }
 
+    /// <include file='IDCompositionDelegatedInkTrail.xml' path='doc/member[@name="IDCompositionDelegatedInkTrail.RemoveTrailPoints"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RemoveTrailPoints(uint generationId)
@@ -61,6 +68,7 @@ public unsafe partial struct IDCompositionDelegatedInkTrail : IDCompositionDeleg
         return ((delegate* unmanaged<IDCompositionDelegatedInkTrail*, uint, int>)(lpVtbl[5]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this), generationId);
     }
 
+    /// <include file='IDCompositionDelegatedInkTrail.xml' path='doc/member[@name="IDCompositionDelegatedInkTrail.StartNewTrail"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT StartNewTrail([NativeTypeName("const D2D1_COLOR_F &")] DXGI_RGBA* color)

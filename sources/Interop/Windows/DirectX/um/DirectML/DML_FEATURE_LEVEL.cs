@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_FEATURE_LEVEL.xml' path='doc/member[@name="DML_FEATURE_LEVEL"]/*' />
 public enum DML_FEATURE_LEVEL
 {
+    /// <include file='DML_FEATURE_LEVEL.xml' path='doc/member[@name="DML_FEATURE_LEVEL.DML_FEATURE_LEVEL_1_0"]/*' />
     DML_FEATURE_LEVEL_1_0 = 0x1000,
+
+    /// <include file='DML_FEATURE_LEVEL.xml' path='doc/member[@name="DML_FEATURE_LEVEL.DML_FEATURE_LEVEL_2_0"]/*' />
     DML_FEATURE_LEVEL_2_0 = 0x2000,
+
+    /// <include file='DML_FEATURE_LEVEL.xml' path='doc/member[@name="DML_FEATURE_LEVEL.DML_FEATURE_LEVEL_2_1"]/*' />
     DML_FEATURE_LEVEL_2_1 = 0x2100,
+
+    /// <include file='DML_FEATURE_LEVEL.xml' path='doc/member[@name="DML_FEATURE_LEVEL.DML_FEATURE_LEVEL_3_0"]/*' />
     DML_FEATURE_LEVEL_3_0 = 0x3000,
 }

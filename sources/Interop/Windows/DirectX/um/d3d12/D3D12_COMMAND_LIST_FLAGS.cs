@@ -7,8 +7,10 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_COMMAND_LIST_FLAGS.xml' path='doc/member[@name="D3D12_COMMAND_LIST_FLAGS"]/*' />
 [Flags]
 public enum D3D12_COMMAND_LIST_FLAGS
 {
+    /// <include file='D3D12_COMMAND_LIST_FLAGS.xml' path='doc/member[@name="D3D12_COMMAND_LIST_FLAGS.D3D12_COMMAND_LIST_FLAG_NONE"]/*' />
     D3D12_COMMAND_LIST_FLAG_NONE = 0,
 }

@@ -7,20 +7,28 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_VIDEO_DECODER_EXTENSION.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_EXTENSION"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct D3D11_VIDEO_DECODER_EXTENSION
 {
+    /// <include file='D3D11_VIDEO_DECODER_EXTENSION.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_EXTENSION.Function"]/*' />
     public uint Function;
 
+    /// <include file='D3D11_VIDEO_DECODER_EXTENSION.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_EXTENSION.pPrivateInputData"]/*' />
     public void* pPrivateInputData;
 
+    /// <include file='D3D11_VIDEO_DECODER_EXTENSION.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_EXTENSION.PrivateInputDataSize"]/*' />
     public uint PrivateInputDataSize;
 
+    /// <include file='D3D11_VIDEO_DECODER_EXTENSION.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_EXTENSION.pPrivateOutputData"]/*' />
     public void* pPrivateOutputData;
 
+    /// <include file='D3D11_VIDEO_DECODER_EXTENSION.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_EXTENSION.PrivateOutputDataSize"]/*' />
     public uint PrivateOutputDataSize;
 
+    /// <include file='D3D11_VIDEO_DECODER_EXTENSION.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_EXTENSION.ResourceCount"]/*' />
     public uint ResourceCount;
 
+    /// <include file='D3D11_VIDEO_DECODER_EXTENSION.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_EXTENSION.ppResourceList"]/*' />
     public ID3D11Resource** ppResourceList;
 }

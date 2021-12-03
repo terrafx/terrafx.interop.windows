@@ -7,10 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='FXREVERB_PARAMETERS.xml' path='doc/member[@name="FXREVERB_PARAMETERS"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct FXREVERB_PARAMETERS
 {
+    /// <include file='FXREVERB_PARAMETERS.xml' path='doc/member[@name="FXREVERB_PARAMETERS.Diffusion"]/*' />
     public float Diffusion;
 
+    /// <include file='FXREVERB_PARAMETERS.xml' path='doc/member[@name="FXREVERB_PARAMETERS.RoomSize"]/*' />
     public float RoomSize;
 }

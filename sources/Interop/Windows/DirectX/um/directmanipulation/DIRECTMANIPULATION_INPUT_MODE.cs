@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DIRECTMANIPULATION_INPUT_MODE.xml' path='doc/member[@name="DIRECTMANIPULATION_INPUT_MODE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum DIRECTMANIPULATION_INPUT_MODE
 {
+    /// <include file='DIRECTMANIPULATION_INPUT_MODE.xml' path='doc/member[@name="DIRECTMANIPULATION_INPUT_MODE.DIRECTMANIPULATION_INPUT_MODE_AUTOMATIC"]/*' />
     DIRECTMANIPULATION_INPUT_MODE_AUTOMATIC = 0,
+
+    /// <include file='DIRECTMANIPULATION_INPUT_MODE.xml' path='doc/member[@name="DIRECTMANIPULATION_INPUT_MODE.DIRECTMANIPULATION_INPUT_MODE_MANUAL"]/*' />
     DIRECTMANIPULATION_INPUT_MODE_MANUAL = 1,
 }

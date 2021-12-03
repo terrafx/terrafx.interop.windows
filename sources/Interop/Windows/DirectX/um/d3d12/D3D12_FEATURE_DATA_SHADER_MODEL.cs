@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_FEATURE_DATA_SHADER_MODEL.xml' path='doc/member[@name="D3D12_FEATURE_DATA_SHADER_MODEL"]/*' />
 public partial struct D3D12_FEATURE_DATA_SHADER_MODEL
 {
+    /// <include file='D3D12_FEATURE_DATA_SHADER_MODEL.xml' path='doc/member[@name="D3D12_FEATURE_DATA_SHADER_MODEL.HighestShaderModel"]/*' />
     public D3D_SHADER_MODEL HighestShaderModel;
 }

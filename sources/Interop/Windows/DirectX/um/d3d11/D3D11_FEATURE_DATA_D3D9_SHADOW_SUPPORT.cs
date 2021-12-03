@@ -7,7 +7,9 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT"]/*' />
 public partial struct D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT
 {
+    /// <include file='D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT.SupportsDepthAsTextureWithLessEqualComparisonFilter"]/*' />
     public BOOL SupportsDepthAsTextureWithLessEqualComparisonFilter;
 }

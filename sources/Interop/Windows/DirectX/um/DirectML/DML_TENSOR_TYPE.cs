@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_TENSOR_TYPE.xml' path='doc/member[@name="DML_TENSOR_TYPE"]/*' />
 public enum DML_TENSOR_TYPE
 {
+    /// <include file='DML_TENSOR_TYPE.xml' path='doc/member[@name="DML_TENSOR_TYPE.DML_TENSOR_TYPE_INVALID"]/*' />
     DML_TENSOR_TYPE_INVALID,
+
+    /// <include file='DML_TENSOR_TYPE.xml' path='doc/member[@name="DML_TENSOR_TYPE.DML_TENSOR_TYPE_BUFFER"]/*' />
     DML_TENSOR_TYPE_BUFFER,
 }

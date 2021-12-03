@@ -7,8 +7,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT.xml' path='doc/member[@name="D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT"]/*' />
 [SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT
 {
+    /// <include file='D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT.xml' path='doc/member[@name="D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT.pMotionVectorHeap"]/*' />
     public ID3D12VideoMotionVectorHeap* pMotionVectorHeap;
 }

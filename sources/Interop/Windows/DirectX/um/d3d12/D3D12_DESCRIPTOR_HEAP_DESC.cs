@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_DESCRIPTOR_HEAP_DESC.xml' path='doc/member[@name="D3D12_DESCRIPTOR_HEAP_DESC"]/*' />
 public partial struct D3D12_DESCRIPTOR_HEAP_DESC
 {
+    /// <include file='D3D12_DESCRIPTOR_HEAP_DESC.xml' path='doc/member[@name="D3D12_DESCRIPTOR_HEAP_DESC.Type"]/*' />
     public D3D12_DESCRIPTOR_HEAP_TYPE Type;
 
+    /// <include file='D3D12_DESCRIPTOR_HEAP_DESC.xml' path='doc/member[@name="D3D12_DESCRIPTOR_HEAP_DESC.NumDescriptors"]/*' />
     public uint NumDescriptors;
 
+    /// <include file='D3D12_DESCRIPTOR_HEAP_DESC.xml' path='doc/member[@name="D3D12_DESCRIPTOR_HEAP_DESC.Flags"]/*' />
     public D3D12_DESCRIPTOR_HEAP_FLAGS Flags;
 
+    /// <include file='D3D12_DESCRIPTOR_HEAP_DESC.xml' path='doc/member[@name="D3D12_DESCRIPTOR_HEAP_DESC.NodeMask"]/*' />
     public uint NodeMask;
 }

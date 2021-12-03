@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ICompositionGraphicsDeviceInterop.xml' path='doc/member[@name="ICompositionGraphicsDeviceInterop"]/*' />
 [Guid("A116FF71-F8BF-4C8A-9C98-70779A32A9C8")]
 [NativeTypeName("struct ICompositionGraphicsDeviceInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ICompositionGraphicsDeviceInterop : ICompositionGra
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ICompositionGraphicsDeviceInterop : ICompositionGra
         return ((delegate* unmanaged<ICompositionGraphicsDeviceInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICompositionGraphicsDeviceInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ICompositionGraphicsDeviceInterop : ICompositionGra
         return ((delegate* unmanaged<ICompositionGraphicsDeviceInterop*, uint>)(lpVtbl[1]))((ICompositionGraphicsDeviceInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ICompositionGraphicsDeviceInterop : ICompositionGra
         return ((delegate* unmanaged<ICompositionGraphicsDeviceInterop*, uint>)(lpVtbl[2]))((ICompositionGraphicsDeviceInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICompositionGraphicsDeviceInterop.xml' path='doc/member[@name="ICompositionGraphicsDeviceInterop.GetRenderingDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetRenderingDevice(IUnknown** value)
@@ -47,6 +52,7 @@ public unsafe partial struct ICompositionGraphicsDeviceInterop : ICompositionGra
         return ((delegate* unmanaged<ICompositionGraphicsDeviceInterop*, IUnknown**, int>)(lpVtbl[3]))((ICompositionGraphicsDeviceInterop*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='ICompositionGraphicsDeviceInterop.xml' path='doc/member[@name="ICompositionGraphicsDeviceInterop.SetRenderingDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetRenderingDevice(IUnknown* value)

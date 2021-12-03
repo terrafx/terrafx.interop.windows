@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_SHADER_DEBUG_FILE_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_FILE_INFO"]/*' />
 public partial struct D3D10_SHADER_DEBUG_FILE_INFO
 {
+    /// <include file='D3D10_SHADER_DEBUG_FILE_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_FILE_INFO.FileName"]/*' />
     public uint FileName;
 
+    /// <include file='D3D10_SHADER_DEBUG_FILE_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_FILE_INFO.FileNameLen"]/*' />
     public uint FileNameLen;
 
+    /// <include file='D3D10_SHADER_DEBUG_FILE_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_FILE_INFO.FileData"]/*' />
     public uint FileData;
 
+    /// <include file='D3D10_SHADER_DEBUG_FILE_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_FILE_INFO.FileLen"]/*' />
     public uint FileLen;
 }

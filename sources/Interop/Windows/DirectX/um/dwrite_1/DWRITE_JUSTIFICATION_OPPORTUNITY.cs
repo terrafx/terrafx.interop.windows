@@ -7,16 +7,21 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY"]/*' />
 public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
 {
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.expansionMinimum"]/*' />
     public float expansionMinimum;
 
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.expansionMaximum"]/*' />
     public float expansionMaximum;
 
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.compressionMaximum"]/*' />
     public float compressionMaximum;
 
     public uint _bitfield;
 
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.expansionPriority"]/*' />
     [NativeTypeName("UINT32 : 8")]
     public uint expansionPriority
     {
@@ -33,6 +38,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
         }
     }
 
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.compressionPriority"]/*' />
     [NativeTypeName("UINT32 : 8")]
     public uint compressionPriority
     {
@@ -49,6 +55,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
         }
     }
 
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.allowResidualExpansion"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint allowResidualExpansion
     {
@@ -65,6 +72,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
         }
     }
 
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.allowResidualCompression"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint allowResidualCompression
     {
@@ -81,6 +89,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
         }
     }
 
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.applyToLeadingEdge"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint applyToLeadingEdge
     {
@@ -97,6 +106,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
         }
     }
 
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.applyToTrailingEdge"]/*' />
     [NativeTypeName("UINT32 : 1")]
     public uint applyToTrailingEdge
     {
@@ -113,6 +123,7 @@ public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
         }
     }
 
+    /// <include file='DWRITE_JUSTIFICATION_OPPORTUNITY.xml' path='doc/member[@name="DWRITE_JUSTIFICATION_OPPORTUNITY.reserved"]/*' />
     [NativeTypeName("UINT32 : 12")]
     public uint reserved
     {

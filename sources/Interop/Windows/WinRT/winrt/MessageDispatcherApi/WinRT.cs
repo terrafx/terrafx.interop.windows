@@ -9,9 +9,11 @@ namespace TerraFX.Interop.WinRT;
 
 public static unsafe partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.CoSetMessageDispatcher"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
     public static extern void CoSetMessageDispatcher([NativeTypeName("PMessageDispatcher")] IMessageDispatcher* pMessageDispatcher);
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.CoHandlePriorityEventsFromMessagePump"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
     public static extern void CoHandlePriorityEventsFromMessagePump();
 }

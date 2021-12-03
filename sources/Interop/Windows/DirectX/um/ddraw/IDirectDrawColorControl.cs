@@ -9,12 +9,14 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDirectDrawColorControl.xml' path='doc/member[@name="IDirectDrawColorControl"]/*' />
 [NativeTypeName("struct IDirectDrawColorControl : IUnknown")]
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDirectDrawColorControl : IDirectDrawColorControl.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -22,6 +24,7 @@ public unsafe partial struct IDirectDrawColorControl : IDirectDrawColorControl.I
         return ((delegate* unmanaged<IDirectDrawColorControl*, Guid*, void**, int>)(lpVtbl[0]))((IDirectDrawColorControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -30,6 +33,7 @@ public unsafe partial struct IDirectDrawColorControl : IDirectDrawColorControl.I
         return ((delegate* unmanaged<IDirectDrawColorControl*, uint>)(lpVtbl[1]))((IDirectDrawColorControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -38,6 +42,7 @@ public unsafe partial struct IDirectDrawColorControl : IDirectDrawColorControl.I
         return ((delegate* unmanaged<IDirectDrawColorControl*, uint>)(lpVtbl[2]))((IDirectDrawColorControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectDrawColorControl.xml' path='doc/member[@name="IDirectDrawColorControl.GetColorControls"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetColorControls([NativeTypeName("LPDDCOLORCONTROL")] DDCOLORCONTROL* param0)
@@ -45,6 +50,7 @@ public unsafe partial struct IDirectDrawColorControl : IDirectDrawColorControl.I
         return ((delegate* unmanaged<IDirectDrawColorControl*, DDCOLORCONTROL*, int>)(lpVtbl[3]))((IDirectDrawColorControl*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawColorControl.xml' path='doc/member[@name="IDirectDrawColorControl.SetColorControls"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetColorControls([NativeTypeName("LPDDCOLORCONTROL")] DDCOLORCONTROL* param0)

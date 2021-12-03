@@ -11,9 +11,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DxcCreateInstance"]/*' />
     [DllImport("dxcompiler", ExactSpelling = true)]
     public static extern HRESULT DxcCreateInstance([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DxcCreateInstance2"]/*' />
     [DllImport("dxcompiler", ExactSpelling = true)]
     public static extern HRESULT DxcCreateInstance2(IMalloc* pMalloc, [NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
 }

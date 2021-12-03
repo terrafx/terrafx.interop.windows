@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='XINPUT_KEYSTROKE.xml' path='doc/member[@name="XINPUT_KEYSTROKE"]/*' />
 public partial struct XINPUT_KEYSTROKE
 {
+    /// <include file='XINPUT_KEYSTROKE.xml' path='doc/member[@name="XINPUT_KEYSTROKE.VirtualKey"]/*' />
     [NativeTypeName("WORD")]
     public ushort VirtualKey;
 
+    /// <include file='XINPUT_KEYSTROKE.xml' path='doc/member[@name="XINPUT_KEYSTROKE.Unicode"]/*' />
     [NativeTypeName("WCHAR")]
     public ushort Unicode;
 
+    /// <include file='XINPUT_KEYSTROKE.xml' path='doc/member[@name="XINPUT_KEYSTROKE.Flags"]/*' />
     [NativeTypeName("WORD")]
     public ushort Flags;
 
+    /// <include file='XINPUT_KEYSTROKE.xml' path='doc/member[@name="XINPUT_KEYSTROKE.UserIndex"]/*' />
     public byte UserIndex;
 
+    /// <include file='XINPUT_KEYSTROKE.xml' path='doc/member[@name="XINPUT_KEYSTROKE.HidCode"]/*' />
     public byte HidCode;
 }

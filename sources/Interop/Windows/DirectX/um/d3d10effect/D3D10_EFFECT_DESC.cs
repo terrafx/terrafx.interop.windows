@@ -7,17 +7,24 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_EFFECT_DESC.xml' path='doc/member[@name="D3D10_EFFECT_DESC"]/*' />
 public partial struct D3D10_EFFECT_DESC
 {
+    /// <include file='D3D10_EFFECT_DESC.xml' path='doc/member[@name="D3D10_EFFECT_DESC.IsChildEffect"]/*' />
     public BOOL IsChildEffect;
 
+    /// <include file='D3D10_EFFECT_DESC.xml' path='doc/member[@name="D3D10_EFFECT_DESC.ConstantBuffers"]/*' />
     public uint ConstantBuffers;
 
+    /// <include file='D3D10_EFFECT_DESC.xml' path='doc/member[@name="D3D10_EFFECT_DESC.SharedConstantBuffers"]/*' />
     public uint SharedConstantBuffers;
 
+    /// <include file='D3D10_EFFECT_DESC.xml' path='doc/member[@name="D3D10_EFFECT_DESC.GlobalVariables"]/*' />
     public uint GlobalVariables;
 
+    /// <include file='D3D10_EFFECT_DESC.xml' path='doc/member[@name="D3D10_EFFECT_DESC.SharedGlobalVariables"]/*' />
     public uint SharedGlobalVariables;
 
+    /// <include file='D3D10_EFFECT_DESC.xml' path='doc/member[@name="D3D10_EFFECT_DESC.Techniques"]/*' />
     public uint Techniques;
 }

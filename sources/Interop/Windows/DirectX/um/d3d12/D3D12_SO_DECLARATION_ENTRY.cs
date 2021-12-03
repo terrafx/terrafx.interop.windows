@@ -5,18 +5,25 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_SO_DECLARATION_ENTRY.xml' path='doc/member[@name="D3D12_SO_DECLARATION_ENTRY"]/*' />
 public unsafe partial struct D3D12_SO_DECLARATION_ENTRY
 {
+    /// <include file='D3D12_SO_DECLARATION_ENTRY.xml' path='doc/member[@name="D3D12_SO_DECLARATION_ENTRY.Stream"]/*' />
     public uint Stream;
 
+    /// <include file='D3D12_SO_DECLARATION_ENTRY.xml' path='doc/member[@name="D3D12_SO_DECLARATION_ENTRY.SemanticName"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* SemanticName;
 
+    /// <include file='D3D12_SO_DECLARATION_ENTRY.xml' path='doc/member[@name="D3D12_SO_DECLARATION_ENTRY.SemanticIndex"]/*' />
     public uint SemanticIndex;
 
+    /// <include file='D3D12_SO_DECLARATION_ENTRY.xml' path='doc/member[@name="D3D12_SO_DECLARATION_ENTRY.StartComponent"]/*' />
     public byte StartComponent;
 
+    /// <include file='D3D12_SO_DECLARATION_ENTRY.xml' path='doc/member[@name="D3D12_SO_DECLARATION_ENTRY.ComponentCount"]/*' />
     public byte ComponentCount;
 
+    /// <include file='D3D12_SO_DECLARATION_ENTRY.xml' path='doc/member[@name="D3D12_SO_DECLARATION_ENTRY.OutputSlot"]/*' />
     public byte OutputSlot;
 }

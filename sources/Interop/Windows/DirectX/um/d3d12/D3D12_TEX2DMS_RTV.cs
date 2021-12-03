@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_TEX2DMS_RTV.xml' path='doc/member[@name="D3D12_TEX2DMS_RTV"]/*' />
 public partial struct D3D12_TEX2DMS_RTV
 {
+    /// <include file='D3D12_TEX2DMS_RTV.xml' path='doc/member[@name="D3D12_TEX2DMS_RTV.UnusedField_NothingToDefine"]/*' />
     public uint UnusedField_NothingToDefine;
 }

@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_GLYPH_OFFSET.xml' path='doc/member[@name="DWRITE_GLYPH_OFFSET"]/*' />
 public partial struct DWRITE_GLYPH_OFFSET
 {
+    /// <include file='DWRITE_GLYPH_OFFSET.xml' path='doc/member[@name="DWRITE_GLYPH_OFFSET.advanceOffset"]/*' />
     public float advanceOffset;
 
+    /// <include file='DWRITE_GLYPH_OFFSET.xml' path='doc/member[@name="DWRITE_GLYPH_OFFSET.ascenderOffset"]/*' />
     public float ascenderOffset;
 }

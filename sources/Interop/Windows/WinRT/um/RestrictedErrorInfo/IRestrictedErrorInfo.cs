@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IRestrictedErrorInfo.xml' path='doc/member[@name="IRestrictedErrorInfo"]/*' />
 [Guid("82BA7092-4C88-427D-A7BC-16DD93FEB67E")]
 [NativeTypeName("struct IRestrictedErrorInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IRestrictedErrorInfo : IRestrictedErrorInfo.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IRestrictedErrorInfo : IRestrictedErrorInfo.Interfa
         return ((delegate* unmanaged<IRestrictedErrorInfo*, Guid*, void**, int>)(lpVtbl[0]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IRestrictedErrorInfo : IRestrictedErrorInfo.Interfa
         return ((delegate* unmanaged<IRestrictedErrorInfo*, uint>)(lpVtbl[1]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IRestrictedErrorInfo : IRestrictedErrorInfo.Interfa
         return ((delegate* unmanaged<IRestrictedErrorInfo*, uint>)(lpVtbl[2]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IRestrictedErrorInfo.xml' path='doc/member[@name="IRestrictedErrorInfo.GetErrorDetails"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetErrorDetails([NativeTypeName("BSTR *")] ushort** description, HRESULT* error, [NativeTypeName("BSTR *")] ushort** restrictedDescription, [NativeTypeName("BSTR *")] ushort** capabilitySid)
@@ -49,6 +54,7 @@ public unsafe partial struct IRestrictedErrorInfo : IRestrictedErrorInfo.Interfa
         return ((delegate* unmanaged<IRestrictedErrorInfo*, ushort**, HRESULT*, ushort**, ushort**, int>)(lpVtbl[3]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this), description, error, restrictedDescription, capabilitySid);
     }
 
+    /// <include file='IRestrictedErrorInfo.xml' path='doc/member[@name="IRestrictedErrorInfo.GetReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetReference([NativeTypeName("BSTR *")] ushort** reference)

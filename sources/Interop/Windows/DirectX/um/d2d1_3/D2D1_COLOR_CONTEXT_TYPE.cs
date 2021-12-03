@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_COLOR_CONTEXT_TYPE.xml' path='doc/member[@name="D2D1_COLOR_CONTEXT_TYPE"]/*' />
 public enum D2D1_COLOR_CONTEXT_TYPE : uint
 {
+    /// <include file='D2D1_COLOR_CONTEXT_TYPE.xml' path='doc/member[@name="D2D1_COLOR_CONTEXT_TYPE.D2D1_COLOR_CONTEXT_TYPE_ICC"]/*' />
     D2D1_COLOR_CONTEXT_TYPE_ICC = 0,
+
+    /// <include file='D2D1_COLOR_CONTEXT_TYPE.xml' path='doc/member[@name="D2D1_COLOR_CONTEXT_TYPE.D2D1_COLOR_CONTEXT_TYPE_SIMPLE"]/*' />
     D2D1_COLOR_CONTEXT_TYPE_SIMPLE = 1,
+
+    /// <include file='D2D1_COLOR_CONTEXT_TYPE.xml' path='doc/member[@name="D2D1_COLOR_CONTEXT_TYPE.D2D1_COLOR_CONTEXT_TYPE_DXGI"]/*' />
     D2D1_COLOR_CONTEXT_TYPE_DXGI = 2,
+
+    /// <include file='D2D1_COLOR_CONTEXT_TYPE.xml' path='doc/member[@name="D2D1_COLOR_CONTEXT_TYPE.D2D1_COLOR_CONTEXT_TYPE_FORCE_DWORD"]/*' />
     D2D1_COLOR_CONTEXT_TYPE_FORCE_DWORD = 0xffffffff,
 }

@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_FONT_AXIS_VALUE.xml' path='doc/member[@name="DWRITE_FONT_AXIS_VALUE"]/*' />
 public partial struct DWRITE_FONT_AXIS_VALUE
 {
+    /// <include file='DWRITE_FONT_AXIS_VALUE.xml' path='doc/member[@name="DWRITE_FONT_AXIS_VALUE.axisTag"]/*' />
     public DWRITE_FONT_AXIS_TAG axisTag;
 
+    /// <include file='DWRITE_FONT_AXIS_VALUE.xml' path='doc/member[@name="DWRITE_FONT_AXIS_VALUE.value"]/*' />
     public float value;
 }

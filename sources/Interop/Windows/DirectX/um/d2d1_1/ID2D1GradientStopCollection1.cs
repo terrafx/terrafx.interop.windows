@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1GradientStopCollection1.xml' path='doc/member[@name="ID2D1GradientStopCollection1"]/*' />
 [Guid("AE1572F4-5DD0-4777-998B-9279472AE63B")]
 [NativeTypeName("struct ID2D1GradientStopCollection1 : ID2D1GradientStopCollection")]
 [NativeInheritance("ID2D1GradientStopCollection")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCol
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCol
         return ((delegate* unmanaged<ID2D1GradientStopCollection1*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCol
         return ((delegate* unmanaged<ID2D1GradientStopCollection1*, uint>)(lpVtbl[1]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCol
         return ((delegate* unmanaged<ID2D1GradientStopCollection1*, uint>)(lpVtbl[2]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
@@ -47,6 +52,7 @@ public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCol
         ((delegate* unmanaged<ID2D1GradientStopCollection1*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this), factory);
     }
 
+    /// <inheritdoc cref="ID2D1GradientStopCollection.GetGradientStopCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     [return: NativeTypeName("UINT32")]
@@ -55,6 +61,7 @@ public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCol
         return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, uint>)(lpVtbl[4]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1GradientStopCollection.GetGradientStops" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void GetGradientStops(D2D1_GRADIENT_STOP* gradientStops, [NativeTypeName("UINT32")] uint gradientStopsCount)
@@ -62,6 +69,7 @@ public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCol
         ((delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_GRADIENT_STOP*, uint, void>)(lpVtbl[5]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this), gradientStops, gradientStopsCount);
     }
 
+    /// <inheritdoc cref="ID2D1GradientStopCollection.GetColorInterpolationGamma" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public D2D1_GAMMA GetColorInterpolationGamma()
@@ -69,6 +77,7 @@ public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCol
         return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, D2D1_GAMMA>)(lpVtbl[6]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1GradientStopCollection.GetExtendMode" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public D2D1_EXTEND_MODE GetExtendMode()
@@ -76,6 +85,7 @@ public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCol
         return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, D2D1_EXTEND_MODE>)(lpVtbl[7]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1GradientStopCollection1.xml' path='doc/member[@name="ID2D1GradientStopCollection1.GetGradientStops1"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public void GetGradientStops1(D2D1_GRADIENT_STOP* gradientStops, [NativeTypeName("UINT32")] uint gradientStopsCount)
@@ -83,6 +93,7 @@ public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCol
         ((delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_GRADIENT_STOP*, uint, void>)(lpVtbl[8]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this), gradientStops, gradientStopsCount);
     }
 
+    /// <include file='ID2D1GradientStopCollection1.xml' path='doc/member[@name="ID2D1GradientStopCollection1.GetPreInterpolationSpace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public D2D1_COLOR_SPACE GetPreInterpolationSpace()
@@ -90,6 +101,7 @@ public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCol
         return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, D2D1_COLOR_SPACE>)(lpVtbl[9]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1GradientStopCollection1.xml' path='doc/member[@name="ID2D1GradientStopCollection1.GetPostInterpolationSpace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public D2D1_COLOR_SPACE GetPostInterpolationSpace()
@@ -97,6 +109,7 @@ public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCol
         return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, D2D1_COLOR_SPACE>)(lpVtbl[10]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1GradientStopCollection1.xml' path='doc/member[@name="ID2D1GradientStopCollection1.GetBufferPrecision"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public D2D1_BUFFER_PRECISION GetBufferPrecision()
@@ -104,6 +117,7 @@ public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCol
         return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection1*, D2D1_BUFFER_PRECISION>)(lpVtbl[11]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1GradientStopCollection1.xml' path='doc/member[@name="ID2D1GradientStopCollection1.GetColorInterpolationMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public D2D1_COLOR_INTERPOLATION_MODE GetColorInterpolationMode()

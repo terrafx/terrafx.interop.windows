@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_COUNTER_DESC.xml' path='doc/member[@name="D3D11_COUNTER_DESC"]/*' />
 public partial struct D3D11_COUNTER_DESC
 {
+    /// <include file='D3D11_COUNTER_DESC.xml' path='doc/member[@name="D3D11_COUNTER_DESC.Counter"]/*' />
     public D3D11_COUNTER Counter;
 
+    /// <include file='D3D11_COUNTER_DESC.xml' path='doc/member[@name="D3D11_COUNTER_DESC.MiscFlags"]/*' />
     public uint MiscFlags;
 }

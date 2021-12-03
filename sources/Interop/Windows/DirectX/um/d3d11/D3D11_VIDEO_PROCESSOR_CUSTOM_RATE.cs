@@ -8,14 +8,19 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_VIDEO_PROCESSOR_CUSTOM_RATE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_CUSTOM_RATE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_VIDEO_PROCESSOR_CUSTOM_RATE
 {
+    /// <include file='D3D11_VIDEO_PROCESSOR_CUSTOM_RATE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_CUSTOM_RATE.CustomRate"]/*' />
     public DXGI_RATIONAL CustomRate;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_CUSTOM_RATE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_CUSTOM_RATE.OutputFrames"]/*' />
     public uint OutputFrames;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_CUSTOM_RATE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_CUSTOM_RATE.InputInterlaced"]/*' />
     public BOOL InputInterlaced;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_CUSTOM_RATE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_CUSTOM_RATE.InputFramesOrFields"]/*' />
     public uint InputFramesOrFields;
 }

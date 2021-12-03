@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDirectManipulationContent.xml' path='doc/member[@name="IDirectManipulationContent"]/*' />
 [Guid("B89962CB-3D89-442B-BB58-5098FA0F9F16")]
 [NativeTypeName("struct IDirectManipulationContent : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
         return ((delegate* unmanaged<IDirectManipulationContent*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
         return ((delegate* unmanaged<IDirectManipulationContent*, uint>)(lpVtbl[1]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
         return ((delegate* unmanaged<IDirectManipulationContent*, uint>)(lpVtbl[2]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectManipulationContent.xml' path='doc/member[@name="IDirectManipulationContent.GetContentRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetContentRect(RECT* contentSize)
@@ -49,6 +54,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
         return ((delegate* unmanaged<IDirectManipulationContent*, RECT*, int>)(lpVtbl[3]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), contentSize);
     }
 
+    /// <include file='IDirectManipulationContent.xml' path='doc/member[@name="IDirectManipulationContent.SetContentRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetContentRect([NativeTypeName("const RECT *")] RECT* contentSize)
@@ -56,6 +62,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
         return ((delegate* unmanaged<IDirectManipulationContent*, RECT*, int>)(lpVtbl[4]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), contentSize);
     }
 
+    /// <include file='IDirectManipulationContent.xml' path='doc/member[@name="IDirectManipulationContent.GetViewport"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetViewport([NativeTypeName("const IID &")] Guid* riid, void** @object)
@@ -63,6 +70,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
         return ((delegate* unmanaged<IDirectManipulationContent*, Guid*, void**, int>)(lpVtbl[5]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), riid, @object);
     }
 
+    /// <include file='IDirectManipulationContent.xml' path='doc/member[@name="IDirectManipulationContent.GetTag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetTag([NativeTypeName("const IID &")] Guid* riid, void** @object, [NativeTypeName("UINT32 *")] uint* id)
@@ -70,6 +78,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
         return ((delegate* unmanaged<IDirectManipulationContent*, Guid*, void**, uint*, int>)(lpVtbl[6]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), riid, @object, id);
     }
 
+    /// <include file='IDirectManipulationContent.xml' path='doc/member[@name="IDirectManipulationContent.SetTag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id)
@@ -77,6 +86,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
         return ((delegate* unmanaged<IDirectManipulationContent*, IUnknown*, uint, int>)(lpVtbl[7]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), @object, id);
     }
 
+    /// <include file='IDirectManipulationContent.xml' path='doc/member[@name="IDirectManipulationContent.GetOutputTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetOutputTransform(float* matrix, [NativeTypeName("DWORD")] uint pointCount)
@@ -84,6 +94,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
         return ((delegate* unmanaged<IDirectManipulationContent*, float*, uint, int>)(lpVtbl[8]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), matrix, pointCount);
     }
 
+    /// <include file='IDirectManipulationContent.xml' path='doc/member[@name="IDirectManipulationContent.GetContentTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetContentTransform(float* matrix, [NativeTypeName("DWORD")] uint pointCount)
@@ -91,6 +102,7 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
         return ((delegate* unmanaged<IDirectManipulationContent*, float*, uint, int>)(lpVtbl[9]))((IDirectManipulationContent*)Unsafe.AsPointer(ref this), matrix, pointCount);
     }
 
+    /// <include file='IDirectManipulationContent.xml' path='doc/member[@name="IDirectManipulationContent.SyncContentTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SyncContentTransform([NativeTypeName("const float *")] float* matrix, [NativeTypeName("DWORD")] uint pointCount)

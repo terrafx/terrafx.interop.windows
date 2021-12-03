@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_VIEW_INSTANCING_DESC.xml' path='doc/member[@name="D3D12_VIEW_INSTANCING_DESC"]/*' />
 public unsafe partial struct D3D12_VIEW_INSTANCING_DESC
 {
+    /// <include file='D3D12_VIEW_INSTANCING_DESC.xml' path='doc/member[@name="D3D12_VIEW_INSTANCING_DESC.ViewInstanceCount"]/*' />
     public uint ViewInstanceCount;
 
+    /// <include file='D3D12_VIEW_INSTANCING_DESC.xml' path='doc/member[@name="D3D12_VIEW_INSTANCING_DESC.pViewInstanceLocations"]/*' />
     [NativeTypeName("const D3D12_VIEW_INSTANCE_LOCATION *")]
     public D3D12_VIEW_INSTANCE_LOCATION* pViewInstanceLocations;
 
+    /// <include file='D3D12_VIEW_INSTANCING_DESC.xml' path='doc/member[@name="D3D12_VIEW_INSTANCING_DESC.Flags"]/*' />
     public D3D12_VIEW_INSTANCING_FLAGS Flags;
 }

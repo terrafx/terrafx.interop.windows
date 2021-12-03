@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_DEPTH_SPACE_ORDER.xml' path='doc/member[@name="DML_DEPTH_SPACE_ORDER"]/*' />
 public enum DML_DEPTH_SPACE_ORDER
 {
+    /// <include file='DML_DEPTH_SPACE_ORDER.xml' path='doc/member[@name="DML_DEPTH_SPACE_ORDER.DML_DEPTH_SPACE_ORDER_DEPTH_COLUMN_ROW"]/*' />
     DML_DEPTH_SPACE_ORDER_DEPTH_COLUMN_ROW,
+
+    /// <include file='DML_DEPTH_SPACE_ORDER.xml' path='doc/member[@name="DML_DEPTH_SPACE_ORDER.DML_DEPTH_SPACE_ORDER_COLUMN_ROW_DEPTH"]/*' />
     DML_DEPTH_SPACE_ORDER_COLUMN_ROW_DEPTH,
 }

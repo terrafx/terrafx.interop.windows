@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_DRED_PAGE_FAULT_OUTPUT1.xml' path='doc/member[@name="D3D12_DRED_PAGE_FAULT_OUTPUT1"]/*' />
 public unsafe partial struct D3D12_DRED_PAGE_FAULT_OUTPUT1
 {
+    /// <include file='D3D12_DRED_PAGE_FAULT_OUTPUT1.xml' path='doc/member[@name="D3D12_DRED_PAGE_FAULT_OUTPUT1.PageFaultVA"]/*' />
     [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
     public ulong PageFaultVA;
 
+    /// <include file='D3D12_DRED_PAGE_FAULT_OUTPUT1.xml' path='doc/member[@name="D3D12_DRED_PAGE_FAULT_OUTPUT1.pHeadExistingAllocationNode"]/*' />
     [NativeTypeName("const D3D12_DRED_ALLOCATION_NODE1 *")]
     public D3D12_DRED_ALLOCATION_NODE1* pHeadExistingAllocationNode;
 
+    /// <include file='D3D12_DRED_PAGE_FAULT_OUTPUT1.xml' path='doc/member[@name="D3D12_DRED_PAGE_FAULT_OUTPUT1.pHeadRecentFreedAllocationNode"]/*' />
     [NativeTypeName("const D3D12_DRED_ALLOCATION_NODE1 *")]
     public D3D12_DRED_ALLOCATION_NODE1* pHeadRecentFreedAllocationNode;
 }

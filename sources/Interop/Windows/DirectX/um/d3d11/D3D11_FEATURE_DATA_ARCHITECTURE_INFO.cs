@@ -7,7 +7,9 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_FEATURE_DATA_ARCHITECTURE_INFO.xml' path='doc/member[@name="D3D11_FEATURE_DATA_ARCHITECTURE_INFO"]/*' />
 public partial struct D3D11_FEATURE_DATA_ARCHITECTURE_INFO
 {
+    /// <include file='D3D11_FEATURE_DATA_ARCHITECTURE_INFO.xml' path='doc/member[@name="D3D11_FEATURE_DATA_ARCHITECTURE_INFO.TileBasedDeferredRenderer"]/*' />
     public BOOL TileBasedDeferredRenderer;
 }

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_WAVE_MMA_TIER.xml' path='doc/member[@name="D3D12_WAVE_MMA_TIER"]/*' />
 public enum D3D12_WAVE_MMA_TIER
 {
+    /// <include file='D3D12_WAVE_MMA_TIER.xml' path='doc/member[@name="D3D12_WAVE_MMA_TIER.D3D12_WAVE_MMA_TIER_NOT_SUPPORTED"]/*' />
     D3D12_WAVE_MMA_TIER_NOT_SUPPORTED = 0,
+
+    /// <include file='D3D12_WAVE_MMA_TIER.xml' path='doc/member[@name="D3D12_WAVE_MMA_TIER.D3D12_WAVE_MMA_TIER_1_0"]/*' />
     D3D12_WAVE_MMA_TIER_1_0 = 10,
 }

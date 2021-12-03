@@ -9,16 +9,22 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_AUTHENTICATED_QUERY_OUTPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_OUTPUT"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_AUTHENTICATED_QUERY_OUTPUT
 {
+    /// <include file='D3D11_AUTHENTICATED_QUERY_OUTPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_OUTPUT.omac"]/*' />
     public D3D11_OMAC omac;
 
+    /// <include file='D3D11_AUTHENTICATED_QUERY_OUTPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_OUTPUT.QueryType"]/*' />
     public Guid QueryType;
 
+    /// <include file='D3D11_AUTHENTICATED_QUERY_OUTPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_OUTPUT.hChannel"]/*' />
     public HANDLE hChannel;
 
+    /// <include file='D3D11_AUTHENTICATED_QUERY_OUTPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_OUTPUT.SequenceNumber"]/*' />
     public uint SequenceNumber;
 
+    /// <include file='D3D11_AUTHENTICATED_QUERY_OUTPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_OUTPUT.ReturnCode"]/*' />
     public HRESULT ReturnCode;
 }

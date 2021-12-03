@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_SVG_ATTRIBUTE_STRING_TYPE.xml' path='doc/member[@name="D2D1_SVG_ATTRIBUTE_STRING_TYPE"]/*' />
 public enum D2D1_SVG_ATTRIBUTE_STRING_TYPE : uint
 {
+    /// <include file='D2D1_SVG_ATTRIBUTE_STRING_TYPE.xml' path='doc/member[@name="D2D1_SVG_ATTRIBUTE_STRING_TYPE.D2D1_SVG_ATTRIBUTE_STRING_TYPE_SVG"]/*' />
     D2D1_SVG_ATTRIBUTE_STRING_TYPE_SVG = 0,
+
+    /// <include file='D2D1_SVG_ATTRIBUTE_STRING_TYPE.xml' path='doc/member[@name="D2D1_SVG_ATTRIBUTE_STRING_TYPE.D2D1_SVG_ATTRIBUTE_STRING_TYPE_ID"]/*' />
     D2D1_SVG_ATTRIBUTE_STRING_TYPE_ID = 1,
+
+    /// <include file='D2D1_SVG_ATTRIBUTE_STRING_TYPE.xml' path='doc/member[@name="D2D1_SVG_ATTRIBUTE_STRING_TYPE.D2D1_SVG_ATTRIBUTE_STRING_TYPE_FORCE_DWORD"]/*' />
     D2D1_SVG_ATTRIBUTE_STRING_TYPE_FORCE_DWORD = 0xffffffff,
 }

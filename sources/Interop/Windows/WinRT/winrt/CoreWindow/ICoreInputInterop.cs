@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ICoreInputInterop.xml' path='doc/member[@name="ICoreInputInterop"]/*' />
 [Guid("40BFE3E3-B75A-4479-AC96-475365749BB8")]
 [NativeTypeName("struct ICoreInputInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ICoreInputInterop : ICoreInputInterop.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ICoreInputInterop : ICoreInputInterop.Interface
         return ((delegate* unmanaged<ICoreInputInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICoreInputInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ICoreInputInterop : ICoreInputInterop.Interface
         return ((delegate* unmanaged<ICoreInputInterop*, uint>)(lpVtbl[1]))((ICoreInputInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ICoreInputInterop : ICoreInputInterop.Interface
         return ((delegate* unmanaged<ICoreInputInterop*, uint>)(lpVtbl[2]))((ICoreInputInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICoreInputInterop.xml' path='doc/member[@name="ICoreInputInterop.SetInputSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetInputSource(IUnknown* value)
@@ -47,6 +52,7 @@ public unsafe partial struct ICoreInputInterop : ICoreInputInterop.Interface
         return ((delegate* unmanaged<ICoreInputInterop*, IUnknown*, int>)(lpVtbl[3]))((ICoreInputInterop*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='ICoreInputInterop.xml' path='doc/member[@name="ICoreInputInterop.put_MessageHandled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT put_MessageHandled([NativeTypeName("boolean")] byte value)

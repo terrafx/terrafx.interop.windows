@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_BINDING_PROPERTIES.xml' path='doc/member[@name="DML_BINDING_PROPERTIES"]/*' />
 public partial struct DML_BINDING_PROPERTIES
 {
+    /// <include file='DML_BINDING_PROPERTIES.xml' path='doc/member[@name="DML_BINDING_PROPERTIES.RequiredDescriptorCount"]/*' />
     public uint RequiredDescriptorCount;
 
+    /// <include file='DML_BINDING_PROPERTIES.xml' path='doc/member[@name="DML_BINDING_PROPERTIES.TemporaryResourceSize"]/*' />
     [NativeTypeName("UINT64")]
     public ulong TemporaryResourceSize;
 
+    /// <include file='DML_BINDING_PROPERTIES.xml' path='doc/member[@name="DML_BINDING_PROPERTIES.PersistentResourceSize"]/*' />
     [NativeTypeName("UINT64")]
     public ulong PersistentResourceSize;
 }

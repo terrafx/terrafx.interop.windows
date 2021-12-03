@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_GRAPH_EDGE_DESC.xml' path='doc/member[@name="DML_GRAPH_EDGE_DESC"]/*' />
 public unsafe partial struct DML_GRAPH_EDGE_DESC
 {
+    /// <include file='DML_GRAPH_EDGE_DESC.xml' path='doc/member[@name="DML_GRAPH_EDGE_DESC.Type"]/*' />
     public DML_GRAPH_EDGE_TYPE Type;
 
+    /// <include file='DML_GRAPH_EDGE_DESC.xml' path='doc/member[@name="DML_GRAPH_EDGE_DESC.Desc"]/*' />
     [NativeTypeName("const void *")]
     public void* Desc;
 }

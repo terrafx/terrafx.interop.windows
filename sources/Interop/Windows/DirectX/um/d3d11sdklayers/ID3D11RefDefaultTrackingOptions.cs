@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D11RefDefaultTrackingOptions.xml' path='doc/member[@name="ID3D11RefDefaultTrackingOptions"]/*' />
 [Guid("03916615-C644-418C-9BF4-75DB5BE63CA0")]
 [NativeTypeName("struct ID3D11RefDefaultTrackingOptions : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct ID3D11RefDefaultTrackingOptions : ID3D11RefDefaultT
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct ID3D11RefDefaultTrackingOptions : ID3D11RefDefaultT
         return ((delegate* unmanaged<ID3D11RefDefaultTrackingOptions*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11RefDefaultTrackingOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct ID3D11RefDefaultTrackingOptions : ID3D11RefDefaultT
         return ((delegate* unmanaged<ID3D11RefDefaultTrackingOptions*, uint>)(lpVtbl[1]))((ID3D11RefDefaultTrackingOptions*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct ID3D11RefDefaultTrackingOptions : ID3D11RefDefaultT
         return ((delegate* unmanaged<ID3D11RefDefaultTrackingOptions*, uint>)(lpVtbl[2]))((ID3D11RefDefaultTrackingOptions*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D11RefDefaultTrackingOptions.xml' path='doc/member[@name="ID3D11RefDefaultTrackingOptions.SetTrackingOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetTrackingOptions(uint ResourceTypeFlags, uint Options)

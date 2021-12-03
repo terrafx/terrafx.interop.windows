@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_UNIT_MODE.xml' path='doc/member[@name="D2D1_UNIT_MODE"]/*' />
 public enum D2D1_UNIT_MODE : uint
 {
+    /// <include file='D2D1_UNIT_MODE.xml' path='doc/member[@name="D2D1_UNIT_MODE.D2D1_UNIT_MODE_DIPS"]/*' />
     D2D1_UNIT_MODE_DIPS = 0,
+
+    /// <include file='D2D1_UNIT_MODE.xml' path='doc/member[@name="D2D1_UNIT_MODE.D2D1_UNIT_MODE_PIXELS"]/*' />
     D2D1_UNIT_MODE_PIXELS = 1,
+
+    /// <include file='D2D1_UNIT_MODE.xml' path='doc/member[@name="D2D1_UNIT_MODE.D2D1_UNIT_MODE_FORCE_DWORD"]/*' />
     D2D1_UNIT_MODE_FORCE_DWORD = 0xffffffff,
 }

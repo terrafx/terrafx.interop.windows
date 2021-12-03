@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_TEX1D_RTV.xml' path='doc/member[@name="D3D12_TEX1D_RTV"]/*' />
 public partial struct D3D12_TEX1D_RTV
 {
+    /// <include file='D3D12_TEX1D_RTV.xml' path='doc/member[@name="D3D12_TEX1D_RTV.MipSlice"]/*' />
     public uint MipSlice;
 }

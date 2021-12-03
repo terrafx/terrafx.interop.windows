@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_OPERATOR_DESC.xml' path='doc/member[@name="DML_OPERATOR_DESC"]/*' />
 public unsafe partial struct DML_OPERATOR_DESC
 {
+    /// <include file='DML_OPERATOR_DESC.xml' path='doc/member[@name="DML_OPERATOR_DESC.Type"]/*' />
     public DML_OPERATOR_TYPE Type;
 
+    /// <include file='DML_OPERATOR_DESC.xml' path='doc/member[@name="DML_OPERATOR_DESC.Desc"]/*' />
     [NativeTypeName("const void *")]
     public void* Desc;
 }

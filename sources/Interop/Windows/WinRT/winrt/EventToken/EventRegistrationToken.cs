@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='EventRegistrationToken.xml' path='doc/member[@name="EventRegistrationToken"]/*' />
 public partial struct EventRegistrationToken
 {
+    /// <include file='EventRegistrationToken.xml' path='doc/member[@name="EventRegistrationToken.value"]/*' />
     [NativeTypeName("long long")]
     public long value;
 }

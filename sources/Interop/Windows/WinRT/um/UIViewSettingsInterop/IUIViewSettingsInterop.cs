@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IUIViewSettingsInterop.xml' path='doc/member[@name="IUIViewSettingsInterop"]/*' />
 [Guid("3694DBF9-8F68-44BE-8FF5-195C98EDE8A6")]
 [NativeTypeName("struct IUIViewSettingsInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -17,6 +18,7 @@ public unsafe partial struct IUIViewSettingsInterop : IUIViewSettingsInterop.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IUIViewSettingsInterop : IUIViewSettingsInterop.Int
         return ((delegate* unmanaged<IUIViewSettingsInterop*, Guid*, void**, int>)(lpVtbl[0]))((IUIViewSettingsInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IUIViewSettingsInterop : IUIViewSettingsInterop.Int
         return ((delegate* unmanaged<IUIViewSettingsInterop*, uint>)(lpVtbl[1]))((IUIViewSettingsInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IUIViewSettingsInterop : IUIViewSettingsInterop.Int
         return ((delegate* unmanaged<IUIViewSettingsInterop*, uint>)(lpVtbl[2]))((IUIViewSettingsInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -47,6 +52,7 @@ public unsafe partial struct IUIViewSettingsInterop : IUIViewSettingsInterop.Int
         return ((delegate* unmanaged<IUIViewSettingsInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IUIViewSettingsInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -54,6 +60,7 @@ public unsafe partial struct IUIViewSettingsInterop : IUIViewSettingsInterop.Int
         return ((delegate* unmanaged<IUIViewSettingsInterop*, HSTRING*, int>)(lpVtbl[4]))((IUIViewSettingsInterop*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -61,6 +68,7 @@ public unsafe partial struct IUIViewSettingsInterop : IUIViewSettingsInterop.Int
         return ((delegate* unmanaged<IUIViewSettingsInterop*, TrustLevel*, int>)(lpVtbl[5]))((IUIViewSettingsInterop*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='IUIViewSettingsInterop.xml' path='doc/member[@name="IUIViewSettingsInterop.GetForWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetForWindow(HWND hwnd, [NativeTypeName("const IID &")] Guid* riid, void** ppv)

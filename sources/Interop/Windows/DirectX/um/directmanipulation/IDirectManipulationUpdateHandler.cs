@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDirectManipulationUpdateHandler.xml' path='doc/member[@name="IDirectManipulationUpdateHandler"]/*' />
 [Guid("790B6337-64F8-4FF5-A269-B32BC2AF27A7")]
 [NativeTypeName("struct IDirectManipulationUpdateHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDirectManipulationUpdateHandler : IDirectManipulat
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDirectManipulationUpdateHandler : IDirectManipulat
         return ((delegate* unmanaged<IDirectManipulationUpdateHandler*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationUpdateHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDirectManipulationUpdateHandler : IDirectManipulat
         return ((delegate* unmanaged<IDirectManipulationUpdateHandler*, uint>)(lpVtbl[1]))((IDirectManipulationUpdateHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDirectManipulationUpdateHandler : IDirectManipulat
         return ((delegate* unmanaged<IDirectManipulationUpdateHandler*, uint>)(lpVtbl[2]))((IDirectManipulationUpdateHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectManipulationUpdateHandler.xml' path='doc/member[@name="IDirectManipulationUpdateHandler.Update"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Update()

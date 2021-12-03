@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_BUFFER_UAV_FLAGS.xml' path='doc/member[@name="D3D12_BUFFER_UAV_FLAGS"]/*' />
 [Flags]
 public enum D3D12_BUFFER_UAV_FLAGS
 {
+    /// <include file='D3D12_BUFFER_UAV_FLAGS.xml' path='doc/member[@name="D3D12_BUFFER_UAV_FLAGS.D3D12_BUFFER_UAV_FLAG_NONE"]/*' />
     D3D12_BUFFER_UAV_FLAG_NONE = 0,
+
+    /// <include file='D3D12_BUFFER_UAV_FLAGS.xml' path='doc/member[@name="D3D12_BUFFER_UAV_FLAGS.D3D12_BUFFER_UAV_FLAG_RAW"]/*' />
     D3D12_BUFFER_UAV_FLAG_RAW = 0x1,
 }

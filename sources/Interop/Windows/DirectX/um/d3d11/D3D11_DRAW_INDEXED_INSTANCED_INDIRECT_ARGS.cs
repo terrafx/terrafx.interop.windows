@@ -5,15 +5,21 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS.xml' path='doc/member[@name="D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS"]/*' />
 public partial struct D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS
 {
+    /// <include file='D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS.xml' path='doc/member[@name="D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS.IndexCountPerInstance"]/*' />
     public uint IndexCountPerInstance;
 
+    /// <include file='D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS.xml' path='doc/member[@name="D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS.InstanceCount"]/*' />
     public uint InstanceCount;
 
+    /// <include file='D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS.xml' path='doc/member[@name="D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS.StartIndexLocation"]/*' />
     public uint StartIndexLocation;
 
+    /// <include file='D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS.xml' path='doc/member[@name="D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS.BaseVertexLocation"]/*' />
     public int BaseVertexLocation;
 
+    /// <include file='D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS.xml' path='doc/member[@name="D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS.StartInstanceLocation"]/*' />
     public uint StartInstanceLocation;
 }

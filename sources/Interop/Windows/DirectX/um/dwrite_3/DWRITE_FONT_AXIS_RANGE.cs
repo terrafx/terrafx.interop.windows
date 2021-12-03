@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_FONT_AXIS_RANGE.xml' path='doc/member[@name="DWRITE_FONT_AXIS_RANGE"]/*' />
 public partial struct DWRITE_FONT_AXIS_RANGE
 {
+    /// <include file='DWRITE_FONT_AXIS_RANGE.xml' path='doc/member[@name="DWRITE_FONT_AXIS_RANGE.axisTag"]/*' />
     public DWRITE_FONT_AXIS_TAG axisTag;
 
+    /// <include file='DWRITE_FONT_AXIS_RANGE.xml' path='doc/member[@name="DWRITE_FONT_AXIS_RANGE.minValue"]/*' />
     public float minValue;
 
+    /// <include file='DWRITE_FONT_AXIS_RANGE.xml' path='doc/member[@name="DWRITE_FONT_AXIS_RANGE.maxValue"]/*' />
     public float maxValue;
 }

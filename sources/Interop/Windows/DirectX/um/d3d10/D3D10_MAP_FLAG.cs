@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_MAP_FLAG.xml' path='doc/member[@name="D3D10_MAP_FLAG"]/*' />
 public enum D3D10_MAP_FLAG
 {
+    /// <include file='D3D10_MAP_FLAG.xml' path='doc/member[@name="D3D10_MAP_FLAG.D3D10_MAP_FLAG_DO_NOT_WAIT"]/*' />
     D3D10_MAP_FLAG_DO_NOT_WAIT = 0x100000,
 }

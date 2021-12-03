@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='VisualElementState.xml' path='doc/member[@name="VisualElementState"]/*' />
 [SupportedOSPlatform("windows10.0.14393.0")]
 public enum VisualElementState
 {
+    /// <include file='VisualElementState.xml' path='doc/member[@name="VisualElementState.ErrorResolved"]/*' />
     ErrorResolved = 0,
+
+    /// <include file='VisualElementState.xml' path='doc/member[@name="VisualElementState.ErrorResourceNotFound"]/*' />
     ErrorResourceNotFound = (ErrorResolved + 1),
+
+    /// <include file='VisualElementState.xml' path='doc/member[@name="VisualElementState.ErrorInvalidResource"]/*' />
     ErrorInvalidResource = (ErrorResourceNotFound + 1),
 }

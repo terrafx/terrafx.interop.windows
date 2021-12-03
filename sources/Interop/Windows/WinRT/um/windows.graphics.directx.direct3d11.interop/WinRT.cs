@@ -11,9 +11,11 @@ namespace TerraFX.Interop.WinRT;
 
 public static unsafe partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.CreateDirect3D11DeviceFromDXGIDevice"]/*' />
     [DllImport("d3d11", ExactSpelling = true)]
     public static extern HRESULT CreateDirect3D11DeviceFromDXGIDevice(IDXGIDevice* dxgiDevice, IInspectable** graphicsDevice);
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.CreateDirect3D11SurfaceFromDXGISurface"]/*' />
     [DllImport("d3d11", ExactSpelling = true)]
     public static extern HRESULT CreateDirect3D11SurfaceFromDXGISurface(IDXGISurface* dgxiSurface, IInspectable** graphicsSurface);
 }

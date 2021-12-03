@@ -5,17 +5,24 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_SHADER_DEBUG_INPUT_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INPUT_INFO"]/*' />
 public partial struct D3D10_SHADER_DEBUG_INPUT_INFO
 {
+    /// <include file='D3D10_SHADER_DEBUG_INPUT_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INPUT_INFO.Var"]/*' />
     public uint Var;
 
+    /// <include file='D3D10_SHADER_DEBUG_INPUT_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INPUT_INFO.InitialRegisterSet"]/*' />
     public D3D10_SHADER_DEBUG_REGTYPE InitialRegisterSet;
 
+    /// <include file='D3D10_SHADER_DEBUG_INPUT_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INPUT_INFO.InitialBank"]/*' />
     public uint InitialBank;
 
+    /// <include file='D3D10_SHADER_DEBUG_INPUT_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INPUT_INFO.InitialRegister"]/*' />
     public uint InitialRegister;
 
+    /// <include file='D3D10_SHADER_DEBUG_INPUT_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INPUT_INFO.InitialComponent"]/*' />
     public uint InitialComponent;
 
+    /// <include file='D3D10_SHADER_DEBUG_INPUT_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INPUT_INFO.InitialValue"]/*' />
     public uint InitialValue;
 }

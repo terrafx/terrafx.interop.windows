@@ -9,11 +9,13 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12FunctionParameterReflection.xml' path='doc/member[@name="ID3D12FunctionParameterReflection"]/*' />
 [Guid("EC25F42D-7006-4F2B-B33E-02CC3375733F")]
 public unsafe partial struct ID3D12FunctionParameterReflection : ID3D12FunctionParameterReflection.Interface
 {
     public void** lpVtbl;
 
+    /// <include file='ID3D12FunctionParameterReflection.xml' path='doc/member[@name="ID3D12FunctionParameterReflection.GetDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT GetDesc(D3D12_PARAMETER_DESC* pDesc)

@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_RENDERING_PRIORITY.xml' path='doc/member[@name="D2D1_RENDERING_PRIORITY"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public enum D2D1_RENDERING_PRIORITY : uint
 {
+    /// <include file='D2D1_RENDERING_PRIORITY.xml' path='doc/member[@name="D2D1_RENDERING_PRIORITY.D2D1_RENDERING_PRIORITY_NORMAL"]/*' />
     D2D1_RENDERING_PRIORITY_NORMAL = 0,
+
+    /// <include file='D2D1_RENDERING_PRIORITY.xml' path='doc/member[@name="D2D1_RENDERING_PRIORITY.D2D1_RENDERING_PRIORITY_LOW"]/*' />
     D2D1_RENDERING_PRIORITY_LOW = 1,
+
+    /// <include file='D2D1_RENDERING_PRIORITY.xml' path='doc/member[@name="D2D1_RENDERING_PRIORITY.D2D1_RENDERING_PRIORITY_FORCE_DWORD"]/*' />
     D2D1_RENDERING_PRIORITY_FORCE_DWORD = 0xffffffff,
 }

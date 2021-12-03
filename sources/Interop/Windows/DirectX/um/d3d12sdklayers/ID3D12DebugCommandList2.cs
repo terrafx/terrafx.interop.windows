@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12DebugCommandList2.xml' path='doc/member[@name="ID3D12DebugCommandList2"]/*' />
 [Guid("AEB575CF-4E06-48BE-BA3B-C450FC96652E")]
 [NativeTypeName("struct ID3D12DebugCommandList2 : ID3D12DebugCommandList")]
 [NativeInheritance("ID3D12DebugCommandList")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D12DebugCommandList2 : ID3D12DebugCommandList2.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D12DebugCommandList2 : ID3D12DebugCommandList2.I
         return ((delegate* unmanaged<ID3D12DebugCommandList2*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DebugCommandList2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D12DebugCommandList2 : ID3D12DebugCommandList2.I
         return ((delegate* unmanaged<ID3D12DebugCommandList2*, uint>)(lpVtbl[1]))((ID3D12DebugCommandList2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D12DebugCommandList2 : ID3D12DebugCommandList2.I
         return ((delegate* unmanaged<ID3D12DebugCommandList2*, uint>)(lpVtbl[2]))((ID3D12DebugCommandList2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D12DebugCommandList.AssertResourceState" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public BOOL AssertResourceState(ID3D12Resource* pResource, uint Subresource, uint State)
@@ -47,6 +52,7 @@ public unsafe partial struct ID3D12DebugCommandList2 : ID3D12DebugCommandList2.I
         return ((delegate* unmanaged<ID3D12DebugCommandList2*, ID3D12Resource*, uint, uint, int>)(lpVtbl[3]))((ID3D12DebugCommandList2*)Unsafe.AsPointer(ref this), pResource, Subresource, State);
     }
 
+    /// <inheritdoc cref="ID3D12DebugCommandList.SetFeatureMask" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetFeatureMask(D3D12_DEBUG_FEATURE Mask)
@@ -54,6 +60,7 @@ public unsafe partial struct ID3D12DebugCommandList2 : ID3D12DebugCommandList2.I
         return ((delegate* unmanaged<ID3D12DebugCommandList2*, D3D12_DEBUG_FEATURE, int>)(lpVtbl[4]))((ID3D12DebugCommandList2*)Unsafe.AsPointer(ref this), Mask);
     }
 
+    /// <inheritdoc cref="ID3D12DebugCommandList.GetFeatureMask" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public D3D12_DEBUG_FEATURE GetFeatureMask()
@@ -61,6 +68,7 @@ public unsafe partial struct ID3D12DebugCommandList2 : ID3D12DebugCommandList2.I
         return ((delegate* unmanaged<ID3D12DebugCommandList2*, D3D12_DEBUG_FEATURE>)(lpVtbl[5]))((ID3D12DebugCommandList2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12DebugCommandList2.xml' path='doc/member[@name="ID3D12DebugCommandList2.SetDebugParameter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetDebugParameter(D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, [NativeTypeName("const void *")] void* pData, uint DataSize)
@@ -68,6 +76,7 @@ public unsafe partial struct ID3D12DebugCommandList2 : ID3D12DebugCommandList2.I
         return ((delegate* unmanaged<ID3D12DebugCommandList2*, D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE, void*, uint, int>)(lpVtbl[6]))((ID3D12DebugCommandList2*)Unsafe.AsPointer(ref this), Type, pData, DataSize);
     }
 
+    /// <include file='ID3D12DebugCommandList2.xml' path='doc/member[@name="ID3D12DebugCommandList2.GetDebugParameter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDebugParameter(D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint DataSize)

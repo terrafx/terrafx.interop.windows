@@ -9,11 +9,13 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D11ShaderReflectionVariable.xml' path='doc/member[@name="ID3D11ShaderReflectionVariable"]/*' />
 [Guid("51F23923-F3E5-4BD1-91CB-606177D8DB4C")]
 public unsafe partial struct ID3D11ShaderReflectionVariable : ID3D11ShaderReflectionVariable.Interface
 {
     public void** lpVtbl;
 
+    /// <include file='ID3D11ShaderReflectionVariable.xml' path='doc/member[@name="ID3D11ShaderReflectionVariable.GetDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT GetDesc(D3D11_SHADER_VARIABLE_DESC* pDesc)
@@ -21,6 +23,7 @@ public unsafe partial struct ID3D11ShaderReflectionVariable : ID3D11ShaderReflec
         return ((delegate* unmanaged<ID3D11ShaderReflectionVariable*, D3D11_SHADER_VARIABLE_DESC*, int>)(lpVtbl[0]))((ID3D11ShaderReflectionVariable*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <include file='ID3D11ShaderReflectionVariable.xml' path='doc/member[@name="ID3D11ShaderReflectionVariable.GetType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     public new ID3D11ShaderReflectionType* GetType()
@@ -28,6 +31,7 @@ public unsafe partial struct ID3D11ShaderReflectionVariable : ID3D11ShaderReflec
         return ((delegate* unmanaged<ID3D11ShaderReflectionVariable*, ID3D11ShaderReflectionType*>)(lpVtbl[1]))((ID3D11ShaderReflectionVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D11ShaderReflectionVariable.xml' path='doc/member[@name="ID3D11ShaderReflectionVariable.GetBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     public ID3D11ShaderReflectionConstantBuffer* GetBuffer()
@@ -35,6 +39,7 @@ public unsafe partial struct ID3D11ShaderReflectionVariable : ID3D11ShaderReflec
         return ((delegate* unmanaged<ID3D11ShaderReflectionVariable*, ID3D11ShaderReflectionConstantBuffer*>)(lpVtbl[2]))((ID3D11ShaderReflectionVariable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D11ShaderReflectionVariable.xml' path='doc/member[@name="ID3D11ShaderReflectionVariable.GetInterfaceSlot"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public uint GetInterfaceSlot(uint uArrayIndex)

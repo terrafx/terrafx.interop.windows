@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_SHADER_CACHE_MODE.xml' path='doc/member[@name="D3D12_SHADER_CACHE_MODE"]/*' />
 public enum D3D12_SHADER_CACHE_MODE
 {
+    /// <include file='D3D12_SHADER_CACHE_MODE.xml' path='doc/member[@name="D3D12_SHADER_CACHE_MODE.D3D12_SHADER_CACHE_MODE_MEMORY"]/*' />
     D3D12_SHADER_CACHE_MODE_MEMORY = 0,
+
+    /// <include file='D3D12_SHADER_CACHE_MODE.xml' path='doc/member[@name="D3D12_SHADER_CACHE_MODE.D3D12_SHADER_CACHE_MODE_DISK"]/*' />
     D3D12_SHADER_CACHE_MODE_DISK = (D3D12_SHADER_CACHE_MODE_MEMORY + 1),
 }

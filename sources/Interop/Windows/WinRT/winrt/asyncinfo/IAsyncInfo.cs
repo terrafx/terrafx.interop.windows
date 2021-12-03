@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IAsyncInfo.xml' path='doc/member[@name="IAsyncInfo"]/*' />
 [Guid("00000036-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IAsyncInfo : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -17,6 +18,7 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface
         return ((delegate* unmanaged<IAsyncInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAsyncInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface
         return ((delegate* unmanaged<IAsyncInfo*, uint>)(lpVtbl[1]))((IAsyncInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface
         return ((delegate* unmanaged<IAsyncInfo*, uint>)(lpVtbl[2]))((IAsyncInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -47,6 +52,7 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface
         return ((delegate* unmanaged<IAsyncInfo*, uint*, Guid**, int>)(lpVtbl[3]))((IAsyncInfo*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -54,6 +60,7 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface
         return ((delegate* unmanaged<IAsyncInfo*, HSTRING*, int>)(lpVtbl[4]))((IAsyncInfo*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -61,6 +68,7 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface
         return ((delegate* unmanaged<IAsyncInfo*, TrustLevel*, int>)(lpVtbl[5]))((IAsyncInfo*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='IAsyncInfo.xml' path='doc/member[@name="IAsyncInfo.get_Id"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT get_Id([NativeTypeName("unsigned int *")] uint* id)
@@ -68,6 +76,7 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface
         return ((delegate* unmanaged<IAsyncInfo*, uint*, int>)(lpVtbl[6]))((IAsyncInfo*)Unsafe.AsPointer(ref this), id);
     }
 
+    /// <include file='IAsyncInfo.xml' path='doc/member[@name="IAsyncInfo.get_Status"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_Status([NativeTypeName("ABI::Windows::Foundation::AsyncStatus *")] AsyncStatus* status)
@@ -75,6 +84,7 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface
         return ((delegate* unmanaged<IAsyncInfo*, AsyncStatus*, int>)(lpVtbl[7]))((IAsyncInfo*)Unsafe.AsPointer(ref this), status);
     }
 
+    /// <include file='IAsyncInfo.xml' path='doc/member[@name="IAsyncInfo.get_ErrorCode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_ErrorCode(HRESULT* errorCode)
@@ -82,6 +92,7 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface
         return ((delegate* unmanaged<IAsyncInfo*, HRESULT*, int>)(lpVtbl[8]))((IAsyncInfo*)Unsafe.AsPointer(ref this), errorCode);
     }
 
+    /// <include file='IAsyncInfo.xml' path='doc/member[@name="IAsyncInfo.Cancel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Cancel()
@@ -89,6 +100,7 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface
         return ((delegate* unmanaged<IAsyncInfo*, int>)(lpVtbl[9]))((IAsyncInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAsyncInfo.xml' path='doc/member[@name="IAsyncInfo.Close"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Close()

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DDCOLORKEY.xml' path='doc/member[@name="DDCOLORKEY"]/*' />
 public partial struct DDCOLORKEY
 {
+    /// <include file='DDCOLORKEY.xml' path='doc/member[@name="DDCOLORKEY.dwColorSpaceLowValue"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwColorSpaceLowValue;
 
+    /// <include file='DDCOLORKEY.xml' path='doc/member[@name="DDCOLORKEY.dwColorSpaceHighValue"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwColorSpaceHighValue;
 }

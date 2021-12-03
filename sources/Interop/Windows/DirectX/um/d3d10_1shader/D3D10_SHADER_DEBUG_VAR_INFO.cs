@@ -5,18 +5,25 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_SHADER_DEBUG_VAR_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_VAR_INFO"]/*' />
 public partial struct D3D10_SHADER_DEBUG_VAR_INFO
 {
+    /// <include file='D3D10_SHADER_DEBUG_VAR_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_VAR_INFO.TokenId"]/*' />
     public uint TokenId;
 
+    /// <include file='D3D10_SHADER_DEBUG_VAR_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_VAR_INFO.Type"]/*' />
     [NativeTypeName("D3D10_SHADER_VARIABLE_TYPE")]
     public D3D_SHADER_VARIABLE_TYPE Type;
 
+    /// <include file='D3D10_SHADER_DEBUG_VAR_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_VAR_INFO.Register"]/*' />
     public uint Register;
 
+    /// <include file='D3D10_SHADER_DEBUG_VAR_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_VAR_INFO.Component"]/*' />
     public uint Component;
 
+    /// <include file='D3D10_SHADER_DEBUG_VAR_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_VAR_INFO.ScopeVar"]/*' />
     public uint ScopeVar;
 
+    /// <include file='D3D10_SHADER_DEBUG_VAR_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_VAR_INFO.ScopeVarOffset"]/*' />
     public uint ScopeVarOffset;
 }

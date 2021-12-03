@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_SIMPLE_COLOR_PROFILE.xml' path='doc/member[@name="D2D1_SIMPLE_COLOR_PROFILE"]/*' />
 public partial struct D2D1_SIMPLE_COLOR_PROFILE
 {
+    /// <include file='D2D1_SIMPLE_COLOR_PROFILE.xml' path='doc/member[@name="D2D1_SIMPLE_COLOR_PROFILE.redPrimary"]/*' />
     [NativeTypeName("D2D1_POINT_2F")]
     public D2D_POINT_2F redPrimary;
 
+    /// <include file='D2D1_SIMPLE_COLOR_PROFILE.xml' path='doc/member[@name="D2D1_SIMPLE_COLOR_PROFILE.greenPrimary"]/*' />
     [NativeTypeName("D2D1_POINT_2F")]
     public D2D_POINT_2F greenPrimary;
 
+    /// <include file='D2D1_SIMPLE_COLOR_PROFILE.xml' path='doc/member[@name="D2D1_SIMPLE_COLOR_PROFILE.bluePrimary"]/*' />
     [NativeTypeName("D2D1_POINT_2F")]
     public D2D_POINT_2F bluePrimary;
 
+    /// <include file='D2D1_SIMPLE_COLOR_PROFILE.xml' path='doc/member[@name="D2D1_SIMPLE_COLOR_PROFILE.whitePointXZ"]/*' />
     [NativeTypeName("D2D1_POINT_2F")]
     public D2D_POINT_2F whitePointXZ;
 
+    /// <include file='D2D1_SIMPLE_COLOR_PROFILE.xml' path='doc/member[@name="D2D1_SIMPLE_COLOR_PROFILE.gamma"]/*' />
     public D2D1_GAMMA1 gamma;
 }

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_RANDOM_GENERATOR_TYPE.xml' path='doc/member[@name="DML_RANDOM_GENERATOR_TYPE"]/*' />
 public enum DML_RANDOM_GENERATOR_TYPE
 {
+    /// <include file='DML_RANDOM_GENERATOR_TYPE.xml' path='doc/member[@name="DML_RANDOM_GENERATOR_TYPE.DML_RANDOM_GENERATOR_TYPE_PHILOX_4X32_10"]/*' />
     DML_RANDOM_GENERATOR_TYPE_PHILOX_4X32_10,
 }

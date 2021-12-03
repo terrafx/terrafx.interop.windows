@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1Device2.xml' path='doc/member[@name="ID2D1Device2"]/*' />
 [Guid("A44472E1-8DFB-4E60-8492-6E2861C9CA8B")]
 [NativeTypeName("struct ID2D1Device2 : ID2D1Device1")]
 [NativeInheritance("ID2D1Device1")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID2D1Device2 : ID2D1Device2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID2D1Device2 : ID2D1Device2.Interface
         return ((delegate* unmanaged<ID2D1Device2*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1Device2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID2D1Device2 : ID2D1Device2.Interface
         return ((delegate* unmanaged<ID2D1Device2*, uint>)(lpVtbl[1]))((ID2D1Device2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID2D1Device2 : ID2D1Device2.Interface
         return ((delegate* unmanaged<ID2D1Device2*, uint>)(lpVtbl[2]))((ID2D1Device2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
@@ -47,6 +52,7 @@ public unsafe partial struct ID2D1Device2 : ID2D1Device2.Interface
         ((delegate* unmanaged<ID2D1Device2*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Device2*)Unsafe.AsPointer(ref this), factory);
     }
 
+    /// <inheritdoc cref="ID2D1Device.CreateDeviceContext" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext** deviceContext)
@@ -54,6 +60,7 @@ public unsafe partial struct ID2D1Device2 : ID2D1Device2.Interface
         return ((delegate* unmanaged<ID2D1Device2*, D2D1_DEVICE_CONTEXT_OPTIONS, ID2D1DeviceContext**, int>)(lpVtbl[4]))((ID2D1Device2*)Unsafe.AsPointer(ref this), options, deviceContext);
     }
 
+    /// <inheritdoc cref="ID2D1Device.CreatePrintControl" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CreatePrintControl(IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [NativeTypeName("const D2D1_PRINT_CONTROL_PROPERTIES *")] D2D1_PRINT_CONTROL_PROPERTIES* printControlProperties, ID2D1PrintControl** printControl)
@@ -61,6 +68,7 @@ public unsafe partial struct ID2D1Device2 : ID2D1Device2.Interface
         return ((delegate* unmanaged<ID2D1Device2*, IWICImagingFactory*, IPrintDocumentPackageTarget*, D2D1_PRINT_CONTROL_PROPERTIES*, ID2D1PrintControl**, int>)(lpVtbl[5]))((ID2D1Device2*)Unsafe.AsPointer(ref this), wicFactory, documentTarget, printControlProperties, printControl);
     }
 
+    /// <inheritdoc cref="ID2D1Device.SetMaximumTextureMemory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public void SetMaximumTextureMemory([NativeTypeName("UINT64")] ulong maximumInBytes)
@@ -68,6 +76,7 @@ public unsafe partial struct ID2D1Device2 : ID2D1Device2.Interface
         ((delegate* unmanaged<ID2D1Device2*, ulong, void>)(lpVtbl[6]))((ID2D1Device2*)Unsafe.AsPointer(ref this), maximumInBytes);
     }
 
+    /// <inheritdoc cref="ID2D1Device.GetMaximumTextureMemory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [return: NativeTypeName("UINT64")]
@@ -76,6 +85,7 @@ public unsafe partial struct ID2D1Device2 : ID2D1Device2.Interface
         return ((delegate* unmanaged<ID2D1Device2*, ulong>)(lpVtbl[7]))((ID2D1Device2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1Device.ClearResources" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public void ClearResources([NativeTypeName("UINT32")] uint millisecondsSinceUse = 0)
@@ -83,6 +93,7 @@ public unsafe partial struct ID2D1Device2 : ID2D1Device2.Interface
         ((delegate* unmanaged<ID2D1Device2*, uint, void>)(lpVtbl[8]))((ID2D1Device2*)Unsafe.AsPointer(ref this), millisecondsSinceUse);
     }
 
+    /// <inheritdoc cref="ID2D1Device1.GetRenderingPriority" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public D2D1_RENDERING_PRIORITY GetRenderingPriority()
@@ -90,6 +101,7 @@ public unsafe partial struct ID2D1Device2 : ID2D1Device2.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<ID2D1Device2*, D2D1_RENDERING_PRIORITY>)(lpVtbl[9]))((ID2D1Device2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1Device1.SetRenderingPriority" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public void SetRenderingPriority(D2D1_RENDERING_PRIORITY renderingPriority)
@@ -97,6 +109,7 @@ public unsafe partial struct ID2D1Device2 : ID2D1Device2.Interface
         ((delegate* unmanaged<ID2D1Device2*, D2D1_RENDERING_PRIORITY, void>)(lpVtbl[10]))((ID2D1Device2*)Unsafe.AsPointer(ref this), renderingPriority);
     }
 
+    /// <inheritdoc cref="ID2D1Device1.CreateDeviceContext" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext1** deviceContext1)
@@ -104,6 +117,7 @@ public unsafe partial struct ID2D1Device2 : ID2D1Device2.Interface
         return ((delegate* unmanaged<ID2D1Device2*, D2D1_DEVICE_CONTEXT_OPTIONS, ID2D1DeviceContext1**, int>)(lpVtbl[11]))((ID2D1Device2*)Unsafe.AsPointer(ref this), options, deviceContext1);
     }
 
+    /// <include file='ID2D1Device2.xml' path='doc/member[@name="ID2D1Device2.CreateDeviceContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext2** deviceContext2)
@@ -111,6 +125,7 @@ public unsafe partial struct ID2D1Device2 : ID2D1Device2.Interface
         return ((delegate* unmanaged<ID2D1Device2*, D2D1_DEVICE_CONTEXT_OPTIONS, ID2D1DeviceContext2**, int>)(lpVtbl[12]))((ID2D1Device2*)Unsafe.AsPointer(ref this), options, deviceContext2);
     }
 
+    /// <include file='ID2D1Device2.xml' path='doc/member[@name="ID2D1Device2.FlushDeviceContexts"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public void FlushDeviceContexts(ID2D1Bitmap* bitmap)
@@ -118,6 +133,7 @@ public unsafe partial struct ID2D1Device2 : ID2D1Device2.Interface
         ((delegate* unmanaged<ID2D1Device2*, ID2D1Bitmap*, void>)(lpVtbl[13]))((ID2D1Device2*)Unsafe.AsPointer(ref this), bitmap);
     }
 
+    /// <include file='ID2D1Device2.xml' path='doc/member[@name="ID2D1Device2.GetDxgiDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetDxgiDevice(IDXGIDevice** dxgiDevice)

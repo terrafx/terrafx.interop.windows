@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_AXIS_SHADING_RATE.xml' path='doc/member[@name="D3D12_AXIS_SHADING_RATE"]/*' />
 public enum D3D12_AXIS_SHADING_RATE
 {
+    /// <include file='D3D12_AXIS_SHADING_RATE.xml' path='doc/member[@name="D3D12_AXIS_SHADING_RATE.D3D12_AXIS_SHADING_RATE_1X"]/*' />
     D3D12_AXIS_SHADING_RATE_1X = 0,
+
+    /// <include file='D3D12_AXIS_SHADING_RATE.xml' path='doc/member[@name="D3D12_AXIS_SHADING_RATE.D3D12_AXIS_SHADING_RATE_2X"]/*' />
     D3D12_AXIS_SHADING_RATE_2X = 0x1,
+
+    /// <include file='D3D12_AXIS_SHADING_RATE.xml' path='doc/member[@name="D3D12_AXIS_SHADING_RATE.D3D12_AXIS_SHADING_RATE_4X"]/*' />
     D3D12_AXIS_SHADING_RATE_4X = 0x2,
 }

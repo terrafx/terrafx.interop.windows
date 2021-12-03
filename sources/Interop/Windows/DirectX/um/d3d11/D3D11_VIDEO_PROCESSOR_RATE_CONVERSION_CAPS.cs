@@ -7,16 +7,22 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS
 {
+    /// <include file='D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS.PastFrames"]/*' />
     public uint PastFrames;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS.FutureFrames"]/*' />
     public uint FutureFrames;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS.ProcessorCaps"]/*' />
     public uint ProcessorCaps;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS.ITelecineCaps"]/*' />
     public uint ITelecineCaps;
 
+    /// <include file='D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS.CustomRateCount"]/*' />
     public uint CustomRateCount;
 }

@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_TEXCUBE_SRV.xml' path='doc/member[@name="D3D12_TEXCUBE_SRV"]/*' />
 public partial struct D3D12_TEXCUBE_SRV
 {
+    /// <include file='D3D12_TEXCUBE_SRV.xml' path='doc/member[@name="D3D12_TEXCUBE_SRV.MostDetailedMip"]/*' />
     public uint MostDetailedMip;
 
+    /// <include file='D3D12_TEXCUBE_SRV.xml' path='doc/member[@name="D3D12_TEXCUBE_SRV.MipLevels"]/*' />
     public uint MipLevels;
 
+    /// <include file='D3D12_TEXCUBE_SRV.xml' path='doc/member[@name="D3D12_TEXCUBE_SRV.ResourceMinLODClamp"]/*' />
     public float ResourceMinLODClamp;
 }

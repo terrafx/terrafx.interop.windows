@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDCompositionMatrixTransform.xml' path='doc/member[@name="IDCompositionMatrixTransform"]/*' />
 [Guid("16CDFF07-C503-419C-83F2-0965C7AF1FA6")]
 [NativeTypeName("struct IDCompositionMatrixTransform : IDCompositionTransform")]
 [NativeInheritance("IDCompositionTransform")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDCompositionMatrixTransform : IDCompositionMatrixT
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDCompositionMatrixTransform : IDCompositionMatrixT
         return ((delegate* unmanaged<IDCompositionMatrixTransform*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionMatrixTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDCompositionMatrixTransform : IDCompositionMatrixT
         return ((delegate* unmanaged<IDCompositionMatrixTransform*, uint>)(lpVtbl[1]))((IDCompositionMatrixTransform*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDCompositionMatrixTransform : IDCompositionMatrixT
         return ((delegate* unmanaged<IDCompositionMatrixTransform*, uint>)(lpVtbl[2]))((IDCompositionMatrixTransform*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDCompositionMatrixTransform.xml' path='doc/member[@name="IDCompositionMatrixTransform.SetMatrix"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetMatrix([NativeTypeName("const D2D_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F* matrix)
@@ -49,6 +54,7 @@ public unsafe partial struct IDCompositionMatrixTransform : IDCompositionMatrixT
         return ((delegate* unmanaged<IDCompositionMatrixTransform*, D2D_MATRIX_3X2_F*, int>)(lpVtbl[3]))((IDCompositionMatrixTransform*)Unsafe.AsPointer(ref this), matrix);
     }
 
+    /// <include file='IDCompositionMatrixTransform.xml' path='doc/member[@name="IDCompositionMatrixTransform.SetMatrixElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetMatrixElement(int row, int column, IDCompositionAnimation* animation)
@@ -56,6 +62,7 @@ public unsafe partial struct IDCompositionMatrixTransform : IDCompositionMatrixT
         return ((delegate* unmanaged<IDCompositionMatrixTransform*, int, int, IDCompositionAnimation*, int>)(lpVtbl[4]))((IDCompositionMatrixTransform*)Unsafe.AsPointer(ref this), row, column, animation);
     }
 
+    /// <include file='IDCompositionMatrixTransform.xml' path='doc/member[@name="IDCompositionMatrixTransform.SetMatrixElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetMatrixElement(int row, int column, float value)

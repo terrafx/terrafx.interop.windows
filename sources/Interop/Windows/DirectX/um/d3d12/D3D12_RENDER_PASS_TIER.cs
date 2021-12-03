@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_RENDER_PASS_TIER.xml' path='doc/member[@name="D3D12_RENDER_PASS_TIER"]/*' />
 public enum D3D12_RENDER_PASS_TIER
 {
+    /// <include file='D3D12_RENDER_PASS_TIER.xml' path='doc/member[@name="D3D12_RENDER_PASS_TIER.D3D12_RENDER_PASS_TIER_0"]/*' />
     D3D12_RENDER_PASS_TIER_0 = 0,
+
+    /// <include file='D3D12_RENDER_PASS_TIER.xml' path='doc/member[@name="D3D12_RENDER_PASS_TIER.D3D12_RENDER_PASS_TIER_1"]/*' />
     D3D12_RENDER_PASS_TIER_1 = 1,
+
+    /// <include file='D3D12_RENDER_PASS_TIER.xml' path='doc/member[@name="D3D12_RENDER_PASS_TIER.D3D12_RENDER_PASS_TIER_2"]/*' />
     D3D12_RENDER_PASS_TIER_2 = 2,
 }

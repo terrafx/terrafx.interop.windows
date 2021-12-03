@@ -7,12 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='X3DAUDIO_DISTANCE_CURVE_POINT.xml' path='doc/member[@name="X3DAUDIO_DISTANCE_CURVE_POINT"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct X3DAUDIO_DISTANCE_CURVE_POINT
 {
+    /// <include file='X3DAUDIO_DISTANCE_CURVE_POINT.xml' path='doc/member[@name="X3DAUDIO_DISTANCE_CURVE_POINT.Distance"]/*' />
     [NativeTypeName("FLOAT32")]
     public float Distance;
 
+    /// <include file='X3DAUDIO_DISTANCE_CURVE_POINT.xml' path='doc/member[@name="X3DAUDIO_DISTANCE_CURVE_POINT.DSPSetting"]/*' />
     [NativeTypeName("FLOAT32")]
     public float DSPSetting;
 }

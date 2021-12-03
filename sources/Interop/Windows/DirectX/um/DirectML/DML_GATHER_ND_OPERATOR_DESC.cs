@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_GATHER_ND_OPERATOR_DESC.xml' path='doc/member[@name="DML_GATHER_ND_OPERATOR_DESC"]/*' />
 public unsafe partial struct DML_GATHER_ND_OPERATOR_DESC
 {
+    /// <include file='DML_GATHER_ND_OPERATOR_DESC.xml' path='doc/member[@name="DML_GATHER_ND_OPERATOR_DESC.InputTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* InputTensor;
 
+    /// <include file='DML_GATHER_ND_OPERATOR_DESC.xml' path='doc/member[@name="DML_GATHER_ND_OPERATOR_DESC.IndicesTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* IndicesTensor;
 
+    /// <include file='DML_GATHER_ND_OPERATOR_DESC.xml' path='doc/member[@name="DML_GATHER_ND_OPERATOR_DESC.OutputTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* OutputTensor;
 
+    /// <include file='DML_GATHER_ND_OPERATOR_DESC.xml' path='doc/member[@name="DML_GATHER_ND_OPERATOR_DESC.InputDimensionCount"]/*' />
     public uint InputDimensionCount;
 
+    /// <include file='DML_GATHER_ND_OPERATOR_DESC.xml' path='doc/member[@name="DML_GATHER_ND_OPERATOR_DESC.IndicesDimensionCount"]/*' />
     public uint IndicesDimensionCount;
 }

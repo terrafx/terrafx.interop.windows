@@ -8,11 +8,17 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_TILE_RANGE_FLAG.xml' path='doc/member[@name="D3D11_TILE_RANGE_FLAG"]/*' />
 [Flags]
 [SupportedOSPlatform("windows8.1")]
 public enum D3D11_TILE_RANGE_FLAG
 {
+    /// <include file='D3D11_TILE_RANGE_FLAG.xml' path='doc/member[@name="D3D11_TILE_RANGE_FLAG.D3D11_TILE_RANGE_NULL"]/*' />
     D3D11_TILE_RANGE_NULL = 0x1,
+
+    /// <include file='D3D11_TILE_RANGE_FLAG.xml' path='doc/member[@name="D3D11_TILE_RANGE_FLAG.D3D11_TILE_RANGE_SKIP"]/*' />
     D3D11_TILE_RANGE_SKIP = 0x2,
+
+    /// <include file='D3D11_TILE_RANGE_FLAG.xml' path='doc/member[@name="D3D11_TILE_RANGE_FLAG.D3D11_TILE_RANGE_REUSE_SINGLE_TILE"]/*' />
     D3D11_TILE_RANGE_REUSE_SINGLE_TILE = 0x4,
 }

@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ResourceType.xml' path='doc/member[@name="ResourceType"]/*' />
 [SupportedOSPlatform("windows10.0.14393.0")]
 public enum ResourceType
 {
+    /// <include file='ResourceType.xml' path='doc/member[@name="ResourceType.ResourceTypeStatic"]/*' />
     ResourceTypeStatic = 0,
+
+    /// <include file='ResourceType.xml' path='doc/member[@name="ResourceType.ResourceTypeTheme"]/*' />
     ResourceTypeTheme = (ResourceTypeStatic + 1),
 }

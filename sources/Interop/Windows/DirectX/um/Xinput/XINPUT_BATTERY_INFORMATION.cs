@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='XINPUT_BATTERY_INFORMATION.xml' path='doc/member[@name="XINPUT_BATTERY_INFORMATION"]/*' />
 public partial struct XINPUT_BATTERY_INFORMATION
 {
+    /// <include file='XINPUT_BATTERY_INFORMATION.xml' path='doc/member[@name="XINPUT_BATTERY_INFORMATION.BatteryType"]/*' />
     public byte BatteryType;
 
+    /// <include file='XINPUT_BATTERY_INFORMATION.xml' path='doc/member[@name="XINPUT_BATTERY_INFORMATION.BatteryLevel"]/*' />
     public byte BatteryLevel;
 }

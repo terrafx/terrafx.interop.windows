@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor"]/*' />
 [Guid("7FE41F41-F430-440E-AECE-54416DC8B9DB")]
 [NativeTypeName("struct IMLOperatorTensor : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface
         return ((delegate* unmanaged<IMLOperatorTensor*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface
         return ((delegate* unmanaged<IMLOperatorTensor*, uint>)(lpVtbl[1]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface
         return ((delegate* unmanaged<IMLOperatorTensor*, uint>)(lpVtbl[2]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.GetDimensionCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("uint32_t")]
@@ -48,6 +53,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface
         return ((delegate* unmanaged<IMLOperatorTensor*, uint>)(lpVtbl[3]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.GetShape"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetShape([NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions)
@@ -55,6 +61,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface
         return ((delegate* unmanaged<IMLOperatorTensor*, uint, uint*, int>)(lpVtbl[4]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this), dimensionCount, dimensions);
     }
 
+    /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.GetTensorDataType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public MLOperatorTensorDataType GetTensorDataType()
@@ -62,6 +69,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface
         return ((delegate* unmanaged<IMLOperatorTensor*, MLOperatorTensorDataType>)(lpVtbl[5]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.IsCpuData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public bool IsCpuData()
@@ -69,6 +77,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface
         return ((delegate* unmanaged<IMLOperatorTensor*, byte>)(lpVtbl[6]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this)) != 0;
     }
 
+    /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.IsDataInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public bool IsDataInterface()
@@ -76,6 +85,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface
         return ((delegate* unmanaged<IMLOperatorTensor*, byte>)(lpVtbl[7]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this)) != 0;
     }
 
+    /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.GetData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public void* GetData()
@@ -83,6 +93,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface
         return ((delegate* unmanaged<IMLOperatorTensor*, void*>)(lpVtbl[8]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.GetDataInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public void GetDataInterface(IUnknown** dataInterface)

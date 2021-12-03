@@ -7,19 +7,25 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='VisualElement.xml' path='doc/member[@name="VisualElement"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct VisualElement
 {
+    /// <include file='VisualElement.xml' path='doc/member[@name="VisualElement.Handle"]/*' />
     public InstanceHandle Handle;
 
+    /// <include file='VisualElement.xml' path='doc/member[@name="VisualElement.SrcInfo"]/*' />
     public SourceInfo SrcInfo;
 
+    /// <include file='VisualElement.xml' path='doc/member[@name="VisualElement.Type"]/*' />
     [NativeTypeName("BSTR")]
     public ushort* Type;
 
+    /// <include file='VisualElement.xml' path='doc/member[@name="VisualElement.Name"]/*' />
     [NativeTypeName("BSTR")]
     public ushort* Name;
 
+    /// <include file='VisualElement.xml' path='doc/member[@name="VisualElement.NumChildren"]/*' />
     [NativeTypeName("unsigned int")]
     public uint NumChildren;
 }

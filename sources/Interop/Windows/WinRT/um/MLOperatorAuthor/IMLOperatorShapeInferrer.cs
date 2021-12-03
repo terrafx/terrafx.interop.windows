@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IMLOperatorShapeInferrer.xml' path='doc/member[@name="IMLOperatorShapeInferrer"]/*' />
 [Guid("540BE5BE-A6C9-40EE-83F6-D2B8B40A7798")]
 [NativeTypeName("struct IMLOperatorShapeInferrer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IMLOperatorShapeInferrer : IMLOperatorShapeInferrer
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IMLOperatorShapeInferrer : IMLOperatorShapeInferrer
         return ((delegate* unmanaged<IMLOperatorShapeInferrer*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IMLOperatorShapeInferrer : IMLOperatorShapeInferrer
         return ((delegate* unmanaged<IMLOperatorShapeInferrer*, uint>)(lpVtbl[1]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IMLOperatorShapeInferrer : IMLOperatorShapeInferrer
         return ((delegate* unmanaged<IMLOperatorShapeInferrer*, uint>)(lpVtbl[2]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMLOperatorShapeInferrer.xml' path='doc/member[@name="IMLOperatorShapeInferrer.InferOutputShapes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT InferOutputShapes(IMLOperatorShapeInferenceContext* context)

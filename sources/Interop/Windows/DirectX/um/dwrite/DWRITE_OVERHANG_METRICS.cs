@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_OVERHANG_METRICS.xml' path='doc/member[@name="DWRITE_OVERHANG_METRICS"]/*' />
 public partial struct DWRITE_OVERHANG_METRICS
 {
+    /// <include file='DWRITE_OVERHANG_METRICS.xml' path='doc/member[@name="DWRITE_OVERHANG_METRICS.left"]/*' />
     public float left;
 
+    /// <include file='DWRITE_OVERHANG_METRICS.xml' path='doc/member[@name="DWRITE_OVERHANG_METRICS.top"]/*' />
     public float top;
 
+    /// <include file='DWRITE_OVERHANG_METRICS.xml' path='doc/member[@name="DWRITE_OVERHANG_METRICS.right"]/*' />
     public float right;
 
+    /// <include file='DWRITE_OVERHANG_METRICS.xml' path='doc/member[@name="DWRITE_OVERHANG_METRICS.bottom"]/*' />
     public float bottom;
 }

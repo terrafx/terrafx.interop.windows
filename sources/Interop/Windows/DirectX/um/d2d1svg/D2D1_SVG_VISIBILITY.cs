@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_SVG_VISIBILITY.xml' path='doc/member[@name="D2D1_SVG_VISIBILITY"]/*' />
 public enum D2D1_SVG_VISIBILITY : uint
 {
+    /// <include file='D2D1_SVG_VISIBILITY.xml' path='doc/member[@name="D2D1_SVG_VISIBILITY.D2D1_SVG_VISIBILITY_VISIBLE"]/*' />
     D2D1_SVG_VISIBILITY_VISIBLE = 0,
+
+    /// <include file='D2D1_SVG_VISIBILITY.xml' path='doc/member[@name="D2D1_SVG_VISIBILITY.D2D1_SVG_VISIBILITY_HIDDEN"]/*' />
     D2D1_SVG_VISIBILITY_HIDDEN = 1,
+
+    /// <include file='D2D1_SVG_VISIBILITY.xml' path='doc/member[@name="D2D1_SVG_VISIBILITY.D2D1_SVG_VISIBILITY_FORCE_DWORD"]/*' />
     D2D1_SVG_VISIBILITY_FORCE_DWORD = 0xffffffff,
 }

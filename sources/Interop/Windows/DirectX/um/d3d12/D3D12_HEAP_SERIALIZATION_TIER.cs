@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_HEAP_SERIALIZATION_TIER.xml' path='doc/member[@name="D3D12_HEAP_SERIALIZATION_TIER"]/*' />
 public enum D3D12_HEAP_SERIALIZATION_TIER
 {
+    /// <include file='D3D12_HEAP_SERIALIZATION_TIER.xml' path='doc/member[@name="D3D12_HEAP_SERIALIZATION_TIER.D3D12_HEAP_SERIALIZATION_TIER_0"]/*' />
     D3D12_HEAP_SERIALIZATION_TIER_0 = 0,
+
+    /// <include file='D3D12_HEAP_SERIALIZATION_TIER.xml' path='doc/member[@name="D3D12_HEAP_SERIALIZATION_TIER.D3D12_HEAP_SERIALIZATION_TIER_10"]/*' />
     D3D12_HEAP_SERIALIZATION_TIER_10 = 10,
 }

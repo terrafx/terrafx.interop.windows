@@ -7,9 +7,12 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_FEATURE_DATA_CROSS_NODE.xml' path='doc/member[@name="D3D12_FEATURE_DATA_CROSS_NODE"]/*' />
 public partial struct D3D12_FEATURE_DATA_CROSS_NODE
 {
+    /// <include file='D3D12_FEATURE_DATA_CROSS_NODE.xml' path='doc/member[@name="D3D12_FEATURE_DATA_CROSS_NODE.SharingTier"]/*' />
     public D3D12_CROSS_NODE_SHARING_TIER SharingTier;
 
+    /// <include file='D3D12_FEATURE_DATA_CROSS_NODE.xml' path='doc/member[@name="D3D12_FEATURE_DATA_CROSS_NODE.AtomicShaderInstructions"]/*' />
     public BOOL AtomicShaderInstructions;
 }

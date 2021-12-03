@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_SVG_OVERFLOW.xml' path='doc/member[@name="D2D1_SVG_OVERFLOW"]/*' />
 public enum D2D1_SVG_OVERFLOW : uint
 {
+    /// <include file='D2D1_SVG_OVERFLOW.xml' path='doc/member[@name="D2D1_SVG_OVERFLOW.D2D1_SVG_OVERFLOW_VISIBLE"]/*' />
     D2D1_SVG_OVERFLOW_VISIBLE = 0,
+
+    /// <include file='D2D1_SVG_OVERFLOW.xml' path='doc/member[@name="D2D1_SVG_OVERFLOW.D2D1_SVG_OVERFLOW_HIDDEN"]/*' />
     D2D1_SVG_OVERFLOW_HIDDEN = 1,
+
+    /// <include file='D2D1_SVG_OVERFLOW.xml' path='doc/member[@name="D2D1_SVG_OVERFLOW.D2D1_SVG_OVERFLOW_FORCE_DWORD"]/*' />
     D2D1_SVG_OVERFLOW_FORCE_DWORD = 0xffffffff,
 }

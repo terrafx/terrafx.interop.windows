@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_LOCALITY.xml' path='doc/member[@name="DWRITE_LOCALITY"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public enum DWRITE_LOCALITY
 {
+    /// <include file='DWRITE_LOCALITY.xml' path='doc/member[@name="DWRITE_LOCALITY.DWRITE_LOCALITY_REMOTE"]/*' />
     DWRITE_LOCALITY_REMOTE,
+
+    /// <include file='DWRITE_LOCALITY.xml' path='doc/member[@name="DWRITE_LOCALITY.DWRITE_LOCALITY_PARTIAL"]/*' />
     DWRITE_LOCALITY_PARTIAL,
+
+    /// <include file='DWRITE_LOCALITY.xml' path='doc/member[@name="DWRITE_LOCALITY.DWRITE_LOCALITY_LOCAL"]/*' />
     DWRITE_LOCALITY_LOCAL,
 }

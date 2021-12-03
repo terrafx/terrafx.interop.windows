@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='MLOperatorSetId.xml' path='doc/member[@name="MLOperatorSetId"]/*' />
 public unsafe partial struct MLOperatorSetId
 {
+    /// <include file='MLOperatorSetId.xml' path='doc/member[@name="MLOperatorSetId.domain"]/*' />
     [NativeTypeName("const char *")]
     public sbyte* domain;
 
+    /// <include file='MLOperatorSetId.xml' path='doc/member[@name="MLOperatorSetId.version"]/*' />
     [NativeTypeName("int32_t")]
     public int version;
 }

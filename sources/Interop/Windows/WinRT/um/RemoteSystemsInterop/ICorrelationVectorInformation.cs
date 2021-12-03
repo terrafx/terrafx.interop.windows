@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ICorrelationVectorInformation.xml' path='doc/member[@name="ICorrelationVectorInformation"]/*' />
 [Guid("83C78B3C-D88B-4950-AA6E-22B8D22AABD3")]
 [NativeTypeName("struct ICorrelationVectorInformation : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -17,6 +18,7 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
         return ((delegate* unmanaged<ICorrelationVectorInformation*, Guid*, void**, int>)(lpVtbl[0]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
         return ((delegate* unmanaged<ICorrelationVectorInformation*, uint>)(lpVtbl[1]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
         return ((delegate* unmanaged<ICorrelationVectorInformation*, uint>)(lpVtbl[2]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -47,6 +52,7 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
         return ((delegate* unmanaged<ICorrelationVectorInformation*, uint*, Guid**, int>)(lpVtbl[3]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -54,6 +60,7 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
         return ((delegate* unmanaged<ICorrelationVectorInformation*, HSTRING*, int>)(lpVtbl[4]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -61,6 +68,7 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
         return ((delegate* unmanaged<ICorrelationVectorInformation*, TrustLevel*, int>)(lpVtbl[5]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='ICorrelationVectorInformation.xml' path='doc/member[@name="ICorrelationVectorInformation.get_LastCorrelationVectorForThread"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT get_LastCorrelationVectorForThread(HSTRING* cv)
@@ -68,6 +76,7 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
         return ((delegate* unmanaged<ICorrelationVectorInformation*, HSTRING*, int>)(lpVtbl[6]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), cv);
     }
 
+    /// <include file='ICorrelationVectorInformation.xml' path='doc/member[@name="ICorrelationVectorInformation.get_NextCorrelationVectorForThread"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_NextCorrelationVectorForThread(HSTRING* cv)
@@ -75,6 +84,7 @@ public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorI
         return ((delegate* unmanaged<ICorrelationVectorInformation*, HSTRING*, int>)(lpVtbl[7]))((ICorrelationVectorInformation*)Unsafe.AsPointer(ref this), cv);
     }
 
+    /// <include file='ICorrelationVectorInformation.xml' path='doc/member[@name="ICorrelationVectorInformation.put_NextCorrelationVectorForThread"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT put_NextCorrelationVectorForThread(HSTRING cv)

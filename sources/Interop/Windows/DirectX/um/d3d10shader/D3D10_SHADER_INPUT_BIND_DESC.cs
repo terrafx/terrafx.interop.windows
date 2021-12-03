@@ -5,25 +5,34 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_SHADER_INPUT_BIND_DESC.xml' path='doc/member[@name="D3D10_SHADER_INPUT_BIND_DESC"]/*' />
 public unsafe partial struct D3D10_SHADER_INPUT_BIND_DESC
 {
+    /// <include file='D3D10_SHADER_INPUT_BIND_DESC.xml' path='doc/member[@name="D3D10_SHADER_INPUT_BIND_DESC.Name"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* Name;
 
+    /// <include file='D3D10_SHADER_INPUT_BIND_DESC.xml' path='doc/member[@name="D3D10_SHADER_INPUT_BIND_DESC.Type"]/*' />
     [NativeTypeName("D3D10_SHADER_INPUT_TYPE")]
     public D3D_SHADER_INPUT_TYPE Type;
 
+    /// <include file='D3D10_SHADER_INPUT_BIND_DESC.xml' path='doc/member[@name="D3D10_SHADER_INPUT_BIND_DESC.BindPoint"]/*' />
     public uint BindPoint;
 
+    /// <include file='D3D10_SHADER_INPUT_BIND_DESC.xml' path='doc/member[@name="D3D10_SHADER_INPUT_BIND_DESC.BindCount"]/*' />
     public uint BindCount;
 
+    /// <include file='D3D10_SHADER_INPUT_BIND_DESC.xml' path='doc/member[@name="D3D10_SHADER_INPUT_BIND_DESC.uFlags"]/*' />
     public uint uFlags;
 
+    /// <include file='D3D10_SHADER_INPUT_BIND_DESC.xml' path='doc/member[@name="D3D10_SHADER_INPUT_BIND_DESC.ReturnType"]/*' />
     [NativeTypeName("D3D10_RESOURCE_RETURN_TYPE")]
     public D3D_RESOURCE_RETURN_TYPE ReturnType;
 
+    /// <include file='D3D10_SHADER_INPUT_BIND_DESC.xml' path='doc/member[@name="D3D10_SHADER_INPUT_BIND_DESC.Dimension"]/*' />
     [NativeTypeName("D3D10_SRV_DIMENSION")]
     public D3D_SRV_DIMENSION Dimension;
 
+    /// <include file='D3D10_SHADER_INPUT_BIND_DESC.xml' path='doc/member[@name="D3D10_SHADER_INPUT_BIND_DESC.NumSamples"]/*' />
     public uint NumSamples;
 }

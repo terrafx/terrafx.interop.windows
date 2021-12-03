@@ -10,6 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D11On12CreateDevice"]/*' />
     [DllImport("d3d11", ExactSpelling = true)]
     public static extern HRESULT D3D11On12CreateDevice(IUnknown* pDevice, uint Flags, [NativeTypeName("const D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* pFeatureLevels, uint FeatureLevels, [NativeTypeName("IUnknown *const *")] IUnknown** ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, D3D_FEATURE_LEVEL* pChosenFeatureLevel);
 }

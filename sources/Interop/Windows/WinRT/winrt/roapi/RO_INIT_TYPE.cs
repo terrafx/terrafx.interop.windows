@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='RO_INIT_TYPE.xml' path='doc/member[@name="RO_INIT_TYPE"]/*' />
 public enum RO_INIT_TYPE
 {
+    /// <include file='RO_INIT_TYPE.xml' path='doc/member[@name="RO_INIT_TYPE.RO_INIT_SINGLETHREADED"]/*' />
     RO_INIT_SINGLETHREADED = 0,
+
+    /// <include file='RO_INIT_TYPE.xml' path='doc/member[@name="RO_INIT_TYPE.RO_INIT_MULTITHREADED"]/*' />
     RO_INIT_MULTITHREADED = 1,
 }

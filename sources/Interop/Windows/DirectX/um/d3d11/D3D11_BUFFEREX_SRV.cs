@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_BUFFEREX_SRV.xml' path='doc/member[@name="D3D11_BUFFEREX_SRV"]/*' />
 public partial struct D3D11_BUFFEREX_SRV
 {
+    /// <include file='D3D11_BUFFEREX_SRV.xml' path='doc/member[@name="D3D11_BUFFEREX_SRV.FirstElement"]/*' />
     public uint FirstElement;
 
+    /// <include file='D3D11_BUFFEREX_SRV.xml' path='doc/member[@name="D3D11_BUFFEREX_SRV.NumElements"]/*' />
     public uint NumElements;
 
+    /// <include file='D3D11_BUFFEREX_SRV.xml' path='doc/member[@name="D3D11_BUFFEREX_SRV.Flags"]/*' />
     public uint Flags;
 }

@@ -9,12 +9,14 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D10ShaderReflection1.xml' path='doc/member[@name="ID3D10ShaderReflection1"]/*' />
 [NativeTypeName("struct ID3D10ShaderReflection1 : IUnknown")]
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -22,6 +24,7 @@ public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.I
         return ((delegate* unmanaged<ID3D10ShaderReflection1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -30,6 +33,7 @@ public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.I
         return ((delegate* unmanaged<ID3D10ShaderReflection1*, uint>)(lpVtbl[1]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -38,6 +42,7 @@ public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.I
         return ((delegate* unmanaged<ID3D10ShaderReflection1*, uint>)(lpVtbl[2]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D10ShaderReflection1.xml' path='doc/member[@name="ID3D10ShaderReflection1.GetDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDesc(D3D10_SHADER_DESC* pDesc)
@@ -45,6 +50,7 @@ public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.I
         return ((delegate* unmanaged<ID3D10ShaderReflection1*, D3D10_SHADER_DESC*, int>)(lpVtbl[3]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <include file='ID3D10ShaderReflection1.xml' path='doc/member[@name="ID3D10ShaderReflection1.GetConstantBufferByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint Index)
@@ -52,6 +58,7 @@ public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.I
         return ((delegate* unmanaged<ID3D10ShaderReflection1*, uint, ID3D10ShaderReflectionConstantBuffer*>)(lpVtbl[4]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), Index);
     }
 
+    /// <include file='ID3D10ShaderReflection1.xml' path='doc/member[@name="ID3D10ShaderReflection1.GetConstantBufferByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByName([NativeTypeName("LPCSTR")] sbyte* Name)
@@ -59,6 +66,7 @@ public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.I
         return ((delegate* unmanaged<ID3D10ShaderReflection1*, sbyte*, ID3D10ShaderReflectionConstantBuffer*>)(lpVtbl[5]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <include file='ID3D10ShaderReflection1.xml' path='doc/member[@name="ID3D10ShaderReflection1.GetResourceBindingDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetResourceBindingDesc(uint ResourceIndex, D3D10_SHADER_INPUT_BIND_DESC* pDesc)
@@ -66,6 +74,7 @@ public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.I
         return ((delegate* unmanaged<ID3D10ShaderReflection1*, uint, D3D10_SHADER_INPUT_BIND_DESC*, int>)(lpVtbl[6]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), ResourceIndex, pDesc);
     }
 
+    /// <include file='ID3D10ShaderReflection1.xml' path='doc/member[@name="ID3D10ShaderReflection1.GetInputParameterDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetInputParameterDesc(uint ParameterIndex, D3D10_SIGNATURE_PARAMETER_DESC* pDesc)
@@ -73,6 +82,7 @@ public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.I
         return ((delegate* unmanaged<ID3D10ShaderReflection1*, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int>)(lpVtbl[7]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), ParameterIndex, pDesc);
     }
 
+    /// <include file='ID3D10ShaderReflection1.xml' path='doc/member[@name="ID3D10ShaderReflection1.GetOutputParameterDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetOutputParameterDesc(uint ParameterIndex, D3D10_SIGNATURE_PARAMETER_DESC* pDesc)
@@ -80,6 +90,7 @@ public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.I
         return ((delegate* unmanaged<ID3D10ShaderReflection1*, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int>)(lpVtbl[8]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), ParameterIndex, pDesc);
     }
 
+    /// <include file='ID3D10ShaderReflection1.xml' path='doc/member[@name="ID3D10ShaderReflection1.GetVariableByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public ID3D10ShaderReflectionVariable* GetVariableByName([NativeTypeName("LPCSTR")] sbyte* Name)
@@ -87,6 +98,7 @@ public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.I
         return ((delegate* unmanaged<ID3D10ShaderReflection1*, sbyte*, ID3D10ShaderReflectionVariable*>)(lpVtbl[9]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <include file='ID3D10ShaderReflection1.xml' path='doc/member[@name="ID3D10ShaderReflection1.GetResourceBindingDescByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetResourceBindingDescByName([NativeTypeName("LPCSTR")] sbyte* Name, D3D10_SHADER_INPUT_BIND_DESC* pDesc)
@@ -94,6 +106,7 @@ public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.I
         return ((delegate* unmanaged<ID3D10ShaderReflection1*, sbyte*, D3D10_SHADER_INPUT_BIND_DESC*, int>)(lpVtbl[10]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), Name, pDesc);
     }
 
+    /// <include file='ID3D10ShaderReflection1.xml' path='doc/member[@name="ID3D10ShaderReflection1.GetMovInstructionCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetMovInstructionCount(uint* pCount)
@@ -101,6 +114,7 @@ public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.I
         return ((delegate* unmanaged<ID3D10ShaderReflection1*, uint*, int>)(lpVtbl[11]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), pCount);
     }
 
+    /// <include file='ID3D10ShaderReflection1.xml' path='doc/member[@name="ID3D10ShaderReflection1.GetMovcInstructionCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetMovcInstructionCount(uint* pCount)
@@ -108,6 +122,7 @@ public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.I
         return ((delegate* unmanaged<ID3D10ShaderReflection1*, uint*, int>)(lpVtbl[12]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), pCount);
     }
 
+    /// <include file='ID3D10ShaderReflection1.xml' path='doc/member[@name="ID3D10ShaderReflection1.GetConversionInstructionCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetConversionInstructionCount(uint* pCount)
@@ -115,6 +130,7 @@ public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.I
         return ((delegate* unmanaged<ID3D10ShaderReflection1*, uint*, int>)(lpVtbl[13]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), pCount);
     }
 
+    /// <include file='ID3D10ShaderReflection1.xml' path='doc/member[@name="ID3D10ShaderReflection1.GetBitwiseInstructionCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetBitwiseInstructionCount(uint* pCount)
@@ -122,6 +138,7 @@ public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.I
         return ((delegate* unmanaged<ID3D10ShaderReflection1*, uint*, int>)(lpVtbl[14]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), pCount);
     }
 
+    /// <include file='ID3D10ShaderReflection1.xml' path='doc/member[@name="ID3D10ShaderReflection1.GetGSInputPrimitive"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetGSInputPrimitive([NativeTypeName("D3D10_PRIMITIVE *")] D3D_PRIMITIVE* pPrim)
@@ -129,6 +146,7 @@ public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.I
         return ((delegate* unmanaged<ID3D10ShaderReflection1*, D3D_PRIMITIVE*, int>)(lpVtbl[15]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), pPrim);
     }
 
+    /// <include file='ID3D10ShaderReflection1.xml' path='doc/member[@name="ID3D10ShaderReflection1.IsLevel9Shader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT IsLevel9Shader(BOOL* pbLevel9Shader)
@@ -136,6 +154,7 @@ public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.I
         return ((delegate* unmanaged<ID3D10ShaderReflection1*, BOOL*, int>)(lpVtbl[16]))((ID3D10ShaderReflection1*)Unsafe.AsPointer(ref this), pbLevel9Shader);
     }
 
+    /// <include file='ID3D10ShaderReflection1.xml' path='doc/member[@name="ID3D10ShaderReflection1.IsSampleFrequencyShader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT IsSampleFrequencyShader(BOOL* pbSampleFrequency)

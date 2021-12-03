@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_QUERY_MISC_FLAG.xml' path='doc/member[@name="D3D10_QUERY_MISC_FLAG"]/*' />
 public enum D3D10_QUERY_MISC_FLAG
 {
+    /// <include file='D3D10_QUERY_MISC_FLAG.xml' path='doc/member[@name="D3D10_QUERY_MISC_FLAG.D3D10_QUERY_MISC_PREDICATEHINT"]/*' />
     D3D10_QUERY_MISC_PREDICATEHINT = 0x1,
 }

@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_PLACED_SUBRESOURCE_FOOTPRINT.xml' path='doc/member[@name="D3D12_PLACED_SUBRESOURCE_FOOTPRINT"]/*' />
 public partial struct D3D12_PLACED_SUBRESOURCE_FOOTPRINT
 {
+    /// <include file='D3D12_PLACED_SUBRESOURCE_FOOTPRINT.xml' path='doc/member[@name="D3D12_PLACED_SUBRESOURCE_FOOTPRINT.Offset"]/*' />
     [NativeTypeName("UINT64")]
     public ulong Offset;
 
+    /// <include file='D3D12_PLACED_SUBRESOURCE_FOOTPRINT.xml' path='doc/member[@name="D3D12_PLACED_SUBRESOURCE_FOOTPRINT.Footprint"]/*' />
     public D3D12_SUBRESOURCE_FOOTPRINT Footprint;
 }

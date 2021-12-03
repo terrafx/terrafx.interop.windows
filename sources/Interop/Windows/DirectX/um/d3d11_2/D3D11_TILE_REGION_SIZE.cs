@@ -8,18 +8,24 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_TILE_REGION_SIZE.xml' path='doc/member[@name="D3D11_TILE_REGION_SIZE"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct D3D11_TILE_REGION_SIZE
 {
+    /// <include file='D3D11_TILE_REGION_SIZE.xml' path='doc/member[@name="D3D11_TILE_REGION_SIZE.NumTiles"]/*' />
     public uint NumTiles;
 
+    /// <include file='D3D11_TILE_REGION_SIZE.xml' path='doc/member[@name="D3D11_TILE_REGION_SIZE.bUseBox"]/*' />
     public BOOL bUseBox;
 
+    /// <include file='D3D11_TILE_REGION_SIZE.xml' path='doc/member[@name="D3D11_TILE_REGION_SIZE.Width"]/*' />
     public uint Width;
 
+    /// <include file='D3D11_TILE_REGION_SIZE.xml' path='doc/member[@name="D3D11_TILE_REGION_SIZE.Height"]/*' />
     [NativeTypeName("UINT16")]
     public ushort Height;
 
+    /// <include file='D3D11_TILE_REGION_SIZE.xml' path='doc/member[@name="D3D11_TILE_REGION_SIZE.Depth"]/*' />
     [NativeTypeName("UINT16")]
     public ushort Depth;
 }

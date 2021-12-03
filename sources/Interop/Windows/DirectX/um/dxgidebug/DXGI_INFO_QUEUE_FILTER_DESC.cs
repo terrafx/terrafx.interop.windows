@@ -7,19 +7,26 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_INFO_QUEUE_FILTER_DESC.xml' path='doc/member[@name="DXGI_INFO_QUEUE_FILTER_DESC"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct DXGI_INFO_QUEUE_FILTER_DESC
 {
+    /// <include file='DXGI_INFO_QUEUE_FILTER_DESC.xml' path='doc/member[@name="DXGI_INFO_QUEUE_FILTER_DESC.NumCategories"]/*' />
     public uint NumCategories;
 
+    /// <include file='DXGI_INFO_QUEUE_FILTER_DESC.xml' path='doc/member[@name="DXGI_INFO_QUEUE_FILTER_DESC.pCategoryList"]/*' />
     public DXGI_INFO_QUEUE_MESSAGE_CATEGORY* pCategoryList;
 
+    /// <include file='DXGI_INFO_QUEUE_FILTER_DESC.xml' path='doc/member[@name="DXGI_INFO_QUEUE_FILTER_DESC.NumSeverities"]/*' />
     public uint NumSeverities;
 
+    /// <include file='DXGI_INFO_QUEUE_FILTER_DESC.xml' path='doc/member[@name="DXGI_INFO_QUEUE_FILTER_DESC.pSeverityList"]/*' />
     public DXGI_INFO_QUEUE_MESSAGE_SEVERITY* pSeverityList;
 
+    /// <include file='DXGI_INFO_QUEUE_FILTER_DESC.xml' path='doc/member[@name="DXGI_INFO_QUEUE_FILTER_DESC.NumIDs"]/*' />
     public uint NumIDs;
 
+    /// <include file='DXGI_INFO_QUEUE_FILTER_DESC.xml' path='doc/member[@name="DXGI_INFO_QUEUE_FILTER_DESC.pIDList"]/*' />
     [NativeTypeName("DXGI_INFO_QUEUE_MESSAGE_ID *")]
     public int* pIDList;
 }

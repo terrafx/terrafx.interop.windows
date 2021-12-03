@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12Fence1.xml' path='doc/member[@name="ID3D12Fence1"]/*' />
 [Guid("433685FE-E22B-4CA0-A8DB-B5B4F4DD0E4A")]
 [NativeTypeName("struct ID3D12Fence1 : ID3D12Fence")]
 [NativeInheritance("ID3D12Fence")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D12Fence1 : ID3D12Fence1.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D12Fence1 : ID3D12Fence1.Interface
         return ((delegate* unmanaged<ID3D12Fence1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12Fence1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D12Fence1 : ID3D12Fence1.Interface
         return ((delegate* unmanaged<ID3D12Fence1*, uint>)(lpVtbl[1]))((ID3D12Fence1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D12Fence1 : ID3D12Fence1.Interface
         return ((delegate* unmanaged<ID3D12Fence1*, uint>)(lpVtbl[2]))((ID3D12Fence1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D12Object.GetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
@@ -47,6 +52,7 @@ public unsafe partial struct ID3D12Fence1 : ID3D12Fence1.Interface
         return ((delegate* unmanaged<ID3D12Fence1*, Guid*, uint*, void*, int>)(lpVtbl[3]))((ID3D12Fence1*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D12Object.SetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
@@ -54,6 +60,7 @@ public unsafe partial struct ID3D12Fence1 : ID3D12Fence1.Interface
         return ((delegate* unmanaged<ID3D12Fence1*, Guid*, uint, void*, int>)(lpVtbl[4]))((ID3D12Fence1*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
     }
 
+    /// <inheritdoc cref="ID3D12Object.SetPrivateDataInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
@@ -61,6 +68,7 @@ public unsafe partial struct ID3D12Fence1 : ID3D12Fence1.Interface
         return ((delegate* unmanaged<ID3D12Fence1*, Guid*, IUnknown*, int>)(lpVtbl[5]))((ID3D12Fence1*)Unsafe.AsPointer(ref this), guid, pData);
     }
 
+    /// <inheritdoc cref="ID3D12Object.SetName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetName([NativeTypeName("LPCWSTR")] ushort* Name)
@@ -68,6 +76,7 @@ public unsafe partial struct ID3D12Fence1 : ID3D12Fence1.Interface
         return ((delegate* unmanaged<ID3D12Fence1*, ushort*, int>)(lpVtbl[6]))((ID3D12Fence1*)Unsafe.AsPointer(ref this), Name);
     }
 
+    /// <inheritdoc cref="ID3D12DeviceChild.GetDevice" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppvDevice)
@@ -75,6 +84,7 @@ public unsafe partial struct ID3D12Fence1 : ID3D12Fence1.Interface
         return ((delegate* unmanaged<ID3D12Fence1*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12Fence1*)Unsafe.AsPointer(ref this), riid, ppvDevice);
     }
 
+    /// <inheritdoc cref="ID3D12Fence.GetCompletedValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     [return: NativeTypeName("UINT64")]
@@ -83,6 +93,7 @@ public unsafe partial struct ID3D12Fence1 : ID3D12Fence1.Interface
         return ((delegate* unmanaged<ID3D12Fence1*, ulong>)(lpVtbl[8]))((ID3D12Fence1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID3D12Fence.SetEventOnCompletion" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetEventOnCompletion([NativeTypeName("UINT64")] ulong Value, HANDLE hEvent)
@@ -90,6 +101,7 @@ public unsafe partial struct ID3D12Fence1 : ID3D12Fence1.Interface
         return ((delegate* unmanaged<ID3D12Fence1*, ulong, HANDLE, int>)(lpVtbl[9]))((ID3D12Fence1*)Unsafe.AsPointer(ref this), Value, hEvent);
     }
 
+    /// <inheritdoc cref="ID3D12Fence.Signal" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Signal([NativeTypeName("UINT64")] ulong Value)
@@ -97,6 +109,7 @@ public unsafe partial struct ID3D12Fence1 : ID3D12Fence1.Interface
         return ((delegate* unmanaged<ID3D12Fence1*, ulong, int>)(lpVtbl[10]))((ID3D12Fence1*)Unsafe.AsPointer(ref this), Value);
     }
 
+    /// <include file='ID3D12Fence1.xml' path='doc/member[@name="ID3D12Fence1.GetCreationFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public D3D12_FENCE_FLAGS GetCreationFlags()

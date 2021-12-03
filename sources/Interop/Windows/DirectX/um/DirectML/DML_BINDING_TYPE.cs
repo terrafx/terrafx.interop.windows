@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_BINDING_TYPE.xml' path='doc/member[@name="DML_BINDING_TYPE"]/*' />
 public enum DML_BINDING_TYPE
 {
+    /// <include file='DML_BINDING_TYPE.xml' path='doc/member[@name="DML_BINDING_TYPE.DML_BINDING_TYPE_NONE"]/*' />
     DML_BINDING_TYPE_NONE,
+
+    /// <include file='DML_BINDING_TYPE.xml' path='doc/member[@name="DML_BINDING_TYPE.DML_BINDING_TYPE_BUFFER"]/*' />
     DML_BINDING_TYPE_BUFFER,
+
+    /// <include file='DML_BINDING_TYPE.xml' path='doc/member[@name="DML_BINDING_TYPE.DML_BINDING_TYPE_BUFFER_ARRAY"]/*' />
     DML_BINDING_TYPE_BUFFER_ARRAY,
 }

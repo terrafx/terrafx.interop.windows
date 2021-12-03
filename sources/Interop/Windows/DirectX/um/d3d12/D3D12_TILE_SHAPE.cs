@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_TILE_SHAPE.xml' path='doc/member[@name="D3D12_TILE_SHAPE"]/*' />
 public partial struct D3D12_TILE_SHAPE
 {
+    /// <include file='D3D12_TILE_SHAPE.xml' path='doc/member[@name="D3D12_TILE_SHAPE.WidthInTexels"]/*' />
     public uint WidthInTexels;
 
+    /// <include file='D3D12_TILE_SHAPE.xml' path='doc/member[@name="D3D12_TILE_SHAPE.HeightInTexels"]/*' />
     public uint HeightInTexels;
 
+    /// <include file='D3D12_TILE_SHAPE.xml' path='doc/member[@name="D3D12_TILE_SHAPE.DepthInTexels"]/*' />
     public uint DepthInTexels;
 }

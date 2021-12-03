@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_FONT_STYLE.xml' path='doc/member[@name="DWRITE_FONT_STYLE"]/*' />
 public enum DWRITE_FONT_STYLE
 {
+    /// <include file='DWRITE_FONT_STYLE.xml' path='doc/member[@name="DWRITE_FONT_STYLE.DWRITE_FONT_STYLE_NORMAL"]/*' />
     DWRITE_FONT_STYLE_NORMAL,
+
+    /// <include file='DWRITE_FONT_STYLE.xml' path='doc/member[@name="DWRITE_FONT_STYLE.DWRITE_FONT_STYLE_OBLIQUE"]/*' />
     DWRITE_FONT_STYLE_OBLIQUE,
+
+    /// <include file='DWRITE_FONT_STYLE.xml' path='doc/member[@name="DWRITE_FONT_STYLE.DWRITE_FONT_STYLE_ITALIC"]/*' />
     DWRITE_FONT_STYLE_ITALIC,
 }

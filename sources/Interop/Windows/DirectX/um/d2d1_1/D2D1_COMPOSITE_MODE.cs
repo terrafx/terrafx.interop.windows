@@ -5,20 +5,48 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_COMPOSITE_MODE.xml' path='doc/member[@name="D2D1_COMPOSITE_MODE"]/*' />
 public enum D2D1_COMPOSITE_MODE : uint
 {
+    /// <include file='D2D1_COMPOSITE_MODE.xml' path='doc/member[@name="D2D1_COMPOSITE_MODE.D2D1_COMPOSITE_MODE_SOURCE_OVER"]/*' />
     D2D1_COMPOSITE_MODE_SOURCE_OVER = 0,
+
+    /// <include file='D2D1_COMPOSITE_MODE.xml' path='doc/member[@name="D2D1_COMPOSITE_MODE.D2D1_COMPOSITE_MODE_DESTINATION_OVER"]/*' />
     D2D1_COMPOSITE_MODE_DESTINATION_OVER = 1,
+
+    /// <include file='D2D1_COMPOSITE_MODE.xml' path='doc/member[@name="D2D1_COMPOSITE_MODE.D2D1_COMPOSITE_MODE_SOURCE_IN"]/*' />
     D2D1_COMPOSITE_MODE_SOURCE_IN = 2,
+
+    /// <include file='D2D1_COMPOSITE_MODE.xml' path='doc/member[@name="D2D1_COMPOSITE_MODE.D2D1_COMPOSITE_MODE_DESTINATION_IN"]/*' />
     D2D1_COMPOSITE_MODE_DESTINATION_IN = 3,
+
+    /// <include file='D2D1_COMPOSITE_MODE.xml' path='doc/member[@name="D2D1_COMPOSITE_MODE.D2D1_COMPOSITE_MODE_SOURCE_OUT"]/*' />
     D2D1_COMPOSITE_MODE_SOURCE_OUT = 4,
+
+    /// <include file='D2D1_COMPOSITE_MODE.xml' path='doc/member[@name="D2D1_COMPOSITE_MODE.D2D1_COMPOSITE_MODE_DESTINATION_OUT"]/*' />
     D2D1_COMPOSITE_MODE_DESTINATION_OUT = 5,
+
+    /// <include file='D2D1_COMPOSITE_MODE.xml' path='doc/member[@name="D2D1_COMPOSITE_MODE.D2D1_COMPOSITE_MODE_SOURCE_ATOP"]/*' />
     D2D1_COMPOSITE_MODE_SOURCE_ATOP = 6,
+
+    /// <include file='D2D1_COMPOSITE_MODE.xml' path='doc/member[@name="D2D1_COMPOSITE_MODE.D2D1_COMPOSITE_MODE_DESTINATION_ATOP"]/*' />
     D2D1_COMPOSITE_MODE_DESTINATION_ATOP = 7,
+
+    /// <include file='D2D1_COMPOSITE_MODE.xml' path='doc/member[@name="D2D1_COMPOSITE_MODE.D2D1_COMPOSITE_MODE_XOR"]/*' />
     D2D1_COMPOSITE_MODE_XOR = 8,
+
+    /// <include file='D2D1_COMPOSITE_MODE.xml' path='doc/member[@name="D2D1_COMPOSITE_MODE.D2D1_COMPOSITE_MODE_PLUS"]/*' />
     D2D1_COMPOSITE_MODE_PLUS = 9,
+
+    /// <include file='D2D1_COMPOSITE_MODE.xml' path='doc/member[@name="D2D1_COMPOSITE_MODE.D2D1_COMPOSITE_MODE_SOURCE_COPY"]/*' />
     D2D1_COMPOSITE_MODE_SOURCE_COPY = 10,
+
+    /// <include file='D2D1_COMPOSITE_MODE.xml' path='doc/member[@name="D2D1_COMPOSITE_MODE.D2D1_COMPOSITE_MODE_BOUNDED_SOURCE_COPY"]/*' />
     D2D1_COMPOSITE_MODE_BOUNDED_SOURCE_COPY = 11,
+
+    /// <include file='D2D1_COMPOSITE_MODE.xml' path='doc/member[@name="D2D1_COMPOSITE_MODE.D2D1_COMPOSITE_MODE_MASK_INVERT"]/*' />
     D2D1_COMPOSITE_MODE_MASK_INVERT = 12,
+
+    /// <include file='D2D1_COMPOSITE_MODE.xml' path='doc/member[@name="D2D1_COMPOSITE_MODE.D2D1_COMPOSITE_MODE_FORCE_DWORD"]/*' />
     D2D1_COMPOSITE_MODE_FORCE_DWORD = 0xffffffff,
 }

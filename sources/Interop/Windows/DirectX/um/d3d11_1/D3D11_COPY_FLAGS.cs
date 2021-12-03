@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_COPY_FLAGS.xml' path='doc/member[@name="D3D11_COPY_FLAGS"]/*' />
 [Flags]
 public enum D3D11_COPY_FLAGS
 {
+    /// <include file='D3D11_COPY_FLAGS.xml' path='doc/member[@name="D3D11_COPY_FLAGS.D3D11_COPY_NO_OVERWRITE"]/*' />
     D3D11_COPY_NO_OVERWRITE = 0x1,
+
+    /// <include file='D3D11_COPY_FLAGS.xml' path='doc/member[@name="D3D11_COPY_FLAGS.D3D11_COPY_DISCARD"]/*' />
     D3D11_COPY_DISCARD = 0x2,
 }

@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_MAPPED_TEXTURE2D.xml' path='doc/member[@name="D3D10_MAPPED_TEXTURE2D"]/*' />
 public unsafe partial struct D3D10_MAPPED_TEXTURE2D
 {
+    /// <include file='D3D10_MAPPED_TEXTURE2D.xml' path='doc/member[@name="D3D10_MAPPED_TEXTURE2D.pData"]/*' />
     public void* pData;
 
+    /// <include file='D3D10_MAPPED_TEXTURE2D.xml' path='doc/member[@name="D3D10_MAPPED_TEXTURE2D.RowPitch"]/*' />
     public uint RowPitch;
 }

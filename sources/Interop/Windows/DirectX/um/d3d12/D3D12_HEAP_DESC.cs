@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_HEAP_DESC.xml' path='doc/member[@name="D3D12_HEAP_DESC"]/*' />
 public partial struct D3D12_HEAP_DESC
 {
+    /// <include file='D3D12_HEAP_DESC.xml' path='doc/member[@name="D3D12_HEAP_DESC.SizeInBytes"]/*' />
     [NativeTypeName("UINT64")]
     public ulong SizeInBytes;
 
+    /// <include file='D3D12_HEAP_DESC.xml' path='doc/member[@name="D3D12_HEAP_DESC.Properties"]/*' />
     public D3D12_HEAP_PROPERTIES Properties;
 
+    /// <include file='D3D12_HEAP_DESC.xml' path='doc/member[@name="D3D12_HEAP_DESC.Alignment"]/*' />
     [NativeTypeName("UINT64")]
     public ulong Alignment;
 
+    /// <include file='D3D12_HEAP_DESC.xml' path='doc/member[@name="D3D12_HEAP_DESC.Flags"]/*' />
     public D3D12_HEAP_FLAGS Flags;
 }

@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDWriteFontFallback.xml' path='doc/member[@name="IDWriteFontFallback"]/*' />
 [Guid("EFA008F9-F7A1-48BF-B05C-F224713CC0FF")]
 [NativeTypeName("struct IDWriteFontFallback : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDWriteFontFallback : IDWriteFontFallback.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDWriteFontFallback : IDWriteFontFallback.Interface
         return ((delegate* unmanaged<IDWriteFontFallback*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontFallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDWriteFontFallback : IDWriteFontFallback.Interface
         return ((delegate* unmanaged<IDWriteFontFallback*, uint>)(lpVtbl[1]))((IDWriteFontFallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDWriteFontFallback : IDWriteFontFallback.Interface
         return ((delegate* unmanaged<IDWriteFontFallback*, uint>)(lpVtbl[2]))((IDWriteFontFallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDWriteFontFallback.xml' path='doc/member[@name="IDWriteFontFallback.MapCharacters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT MapCharacters(IDWriteTextAnalysisSource* analysisSource, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, IDWriteFontCollection* baseFontCollection, [NativeTypeName("const wchar_t *")] ushort* baseFamilyName, DWRITE_FONT_WEIGHT baseWeight, DWRITE_FONT_STYLE baseStyle, DWRITE_FONT_STRETCH baseStretch, [NativeTypeName("UINT32 *")] uint* mappedLength, IDWriteFont** mappedFont, float* scale)

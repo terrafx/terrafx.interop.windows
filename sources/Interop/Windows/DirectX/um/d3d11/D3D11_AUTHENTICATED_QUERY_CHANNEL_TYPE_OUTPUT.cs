@@ -7,10 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_AUTHENTICATED_QUERY_CHANNEL_TYPE_OUTPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_CHANNEL_TYPE_OUTPUT"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_AUTHENTICATED_QUERY_CHANNEL_TYPE_OUTPUT
 {
+    /// <include file='D3D11_AUTHENTICATED_QUERY_CHANNEL_TYPE_OUTPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_CHANNEL_TYPE_OUTPUT.Output"]/*' />
     public D3D11_AUTHENTICATED_QUERY_OUTPUT Output;
 
+    /// <include file='D3D11_AUTHENTICATED_QUERY_CHANNEL_TYPE_OUTPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_CHANNEL_TYPE_OUTPUT.ChannelType"]/*' />
     public D3D11_AUTHENTICATED_CHANNEL_TYPE ChannelType;
 }

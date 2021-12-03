@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_AUTOMATIC_FONT_AXES.xml' path='doc/member[@name="DWRITE_AUTOMATIC_FONT_AXES"]/*' />
 [Flags]
 public enum DWRITE_AUTOMATIC_FONT_AXES
 {
+    /// <include file='DWRITE_AUTOMATIC_FONT_AXES.xml' path='doc/member[@name="DWRITE_AUTOMATIC_FONT_AXES.DWRITE_AUTOMATIC_FONT_AXES_NONE"]/*' />
     DWRITE_AUTOMATIC_FONT_AXES_NONE = 0x0000,
+
+    /// <include file='DWRITE_AUTOMATIC_FONT_AXES.xml' path='doc/member[@name="DWRITE_AUTOMATIC_FONT_AXES.DWRITE_AUTOMATIC_FONT_AXES_OPTICAL_SIZE"]/*' />
     DWRITE_AUTOMATIC_FONT_AXES_OPTICAL_SIZE = 0x0001,
 }

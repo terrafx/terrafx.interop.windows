@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IDisplayPathInterop.xml' path='doc/member[@name="IDisplayPathInterop"]/*' />
 [Guid("A6BA4205-E59E-4E71-B25B-4E436D21EE3D")]
 [NativeTypeName("struct IDisplayPathInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDisplayPathInterop : IDisplayPathInterop.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDisplayPathInterop : IDisplayPathInterop.Interface
         return ((delegate* unmanaged<IDisplayPathInterop*, Guid*, void**, int>)(lpVtbl[0]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDisplayPathInterop : IDisplayPathInterop.Interface
         return ((delegate* unmanaged<IDisplayPathInterop*, uint>)(lpVtbl[1]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDisplayPathInterop : IDisplayPathInterop.Interface
         return ((delegate* unmanaged<IDisplayPathInterop*, uint>)(lpVtbl[2]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDisplayPathInterop.xml' path='doc/member[@name="IDisplayPathInterop.CreateSourcePresentationHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateSourcePresentationHandle(HANDLE* pValue)
@@ -47,6 +52,7 @@ public unsafe partial struct IDisplayPathInterop : IDisplayPathInterop.Interface
         return ((delegate* unmanaged<IDisplayPathInterop*, HANDLE*, int>)(lpVtbl[3]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), pValue);
     }
 
+    /// <include file='IDisplayPathInterop.xml' path='doc/member[@name="IDisplayPathInterop.GetSourceId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSourceId(uint* pSourceId)

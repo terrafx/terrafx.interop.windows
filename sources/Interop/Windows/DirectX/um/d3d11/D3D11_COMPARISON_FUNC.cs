@@ -5,14 +5,30 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_COMPARISON_FUNC.xml' path='doc/member[@name="D3D11_COMPARISON_FUNC"]/*' />
 public enum D3D11_COMPARISON_FUNC
 {
+    /// <include file='D3D11_COMPARISON_FUNC.xml' path='doc/member[@name="D3D11_COMPARISON_FUNC.D3D11_COMPARISON_NEVER"]/*' />
     D3D11_COMPARISON_NEVER = 1,
+
+    /// <include file='D3D11_COMPARISON_FUNC.xml' path='doc/member[@name="D3D11_COMPARISON_FUNC.D3D11_COMPARISON_LESS"]/*' />
     D3D11_COMPARISON_LESS = 2,
+
+    /// <include file='D3D11_COMPARISON_FUNC.xml' path='doc/member[@name="D3D11_COMPARISON_FUNC.D3D11_COMPARISON_EQUAL"]/*' />
     D3D11_COMPARISON_EQUAL = 3,
+
+    /// <include file='D3D11_COMPARISON_FUNC.xml' path='doc/member[@name="D3D11_COMPARISON_FUNC.D3D11_COMPARISON_LESS_EQUAL"]/*' />
     D3D11_COMPARISON_LESS_EQUAL = 4,
+
+    /// <include file='D3D11_COMPARISON_FUNC.xml' path='doc/member[@name="D3D11_COMPARISON_FUNC.D3D11_COMPARISON_GREATER"]/*' />
     D3D11_COMPARISON_GREATER = 5,
+
+    /// <include file='D3D11_COMPARISON_FUNC.xml' path='doc/member[@name="D3D11_COMPARISON_FUNC.D3D11_COMPARISON_NOT_EQUAL"]/*' />
     D3D11_COMPARISON_NOT_EQUAL = 6,
+
+    /// <include file='D3D11_COMPARISON_FUNC.xml' path='doc/member[@name="D3D11_COMPARISON_FUNC.D3D11_COMPARISON_GREATER_EQUAL"]/*' />
     D3D11_COMPARISON_GREATER_EQUAL = 7,
+
+    /// <include file='D3D11_COMPARISON_FUNC.xml' path='doc/member[@name="D3D11_COMPARISON_FUNC.D3D11_COMPARISON_ALWAYS"]/*' />
     D3D11_COMPARISON_ALWAYS = 8,
 }

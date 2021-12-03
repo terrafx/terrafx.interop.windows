@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_SPACE_TO_DEPTH1_OPERATOR_DESC.xml' path='doc/member[@name="DML_SPACE_TO_DEPTH1_OPERATOR_DESC"]/*' />
 public unsafe partial struct DML_SPACE_TO_DEPTH1_OPERATOR_DESC
 {
+    /// <include file='DML_SPACE_TO_DEPTH1_OPERATOR_DESC.xml' path='doc/member[@name="DML_SPACE_TO_DEPTH1_OPERATOR_DESC.InputTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* InputTensor;
 
+    /// <include file='DML_SPACE_TO_DEPTH1_OPERATOR_DESC.xml' path='doc/member[@name="DML_SPACE_TO_DEPTH1_OPERATOR_DESC.OutputTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* OutputTensor;
 
+    /// <include file='DML_SPACE_TO_DEPTH1_OPERATOR_DESC.xml' path='doc/member[@name="DML_SPACE_TO_DEPTH1_OPERATOR_DESC.BlockSize"]/*' />
     public uint BlockSize;
 
+    /// <include file='DML_SPACE_TO_DEPTH1_OPERATOR_DESC.xml' path='doc/member[@name="DML_SPACE_TO_DEPTH1_OPERATOR_DESC.Order"]/*' />
     public DML_DEPTH_SPACE_ORDER Order;
 }

@@ -10,24 +10,30 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D2D1CreateDevice"]/*' />
     [DllImport("d2d1", ExactSpelling = true)]
     public static extern HRESULT D2D1CreateDevice(IDXGIDevice* dxgiDevice, [NativeTypeName("const D2D1_CREATION_PROPERTIES *")] D2D1_CREATION_PROPERTIES* creationProperties, ID2D1Device** d2dDevice);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D2D1CreateDeviceContext"]/*' />
     [DllImport("d2d1", ExactSpelling = true)]
     public static extern HRESULT D2D1CreateDeviceContext(IDXGISurface* dxgiSurface, [NativeTypeName("const D2D1_CREATION_PROPERTIES *")] D2D1_CREATION_PROPERTIES* creationProperties, ID2D1DeviceContext** d2dDeviceContext);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D2D1ConvertColorSpace"]/*' />
     [DllImport("d2d1", ExactSpelling = true)]
     [return: NativeTypeName("D2D1_COLOR_F")]
     public static extern DXGI_RGBA D2D1ConvertColorSpace(D2D1_COLOR_SPACE sourceColorSpace, D2D1_COLOR_SPACE destinationColorSpace, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D2D1SinCos"]/*' />
     [DllImport("d2d1", ExactSpelling = true)]
     [SuppressGCTransition]
     public static extern void D2D1SinCos(float angle, float* s, float* c);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D2D1Tan"]/*' />
     [DllImport("d2d1", ExactSpelling = true)]
     [SuppressGCTransition]
     public static extern float D2D1Tan(float angle);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D2D1Vec3Length"]/*' />
     [DllImport("d2d1", ExactSpelling = true)]
     [SuppressGCTransition]
     public static extern float D2D1Vec3Length(float x, float y, float z);

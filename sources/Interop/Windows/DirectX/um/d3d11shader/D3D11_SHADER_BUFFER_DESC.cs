@@ -5,16 +5,22 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_SHADER_BUFFER_DESC.xml' path='doc/member[@name="D3D11_SHADER_BUFFER_DESC"]/*' />
 public unsafe partial struct D3D11_SHADER_BUFFER_DESC
 {
+    /// <include file='D3D11_SHADER_BUFFER_DESC.xml' path='doc/member[@name="D3D11_SHADER_BUFFER_DESC.Name"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* Name;
 
+    /// <include file='D3D11_SHADER_BUFFER_DESC.xml' path='doc/member[@name="D3D11_SHADER_BUFFER_DESC.Type"]/*' />
     public D3D_CBUFFER_TYPE Type;
 
+    /// <include file='D3D11_SHADER_BUFFER_DESC.xml' path='doc/member[@name="D3D11_SHADER_BUFFER_DESC.Variables"]/*' />
     public uint Variables;
 
+    /// <include file='D3D11_SHADER_BUFFER_DESC.xml' path='doc/member[@name="D3D11_SHADER_BUFFER_DESC.Size"]/*' />
     public uint Size;
 
+    /// <include file='D3D11_SHADER_BUFFER_DESC.xml' path='doc/member[@name="D3D11_SHADER_BUFFER_DESC.uFlags"]/*' />
     public uint uFlags;
 }

@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDirectManipulationCompositor2.xml' path='doc/member[@name="IDirectManipulationCompositor2"]/*' />
 [Guid("D38C7822-F1CB-43CB-B4B9-AC0C767A412E")]
 [NativeTypeName("struct IDirectManipulationCompositor2 : IDirectManipulationCompositor")]
 [NativeInheritance("IDirectManipulationCompositor")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulatio
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulatio
         return ((delegate* unmanaged<IDirectManipulationCompositor2*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulatio
         return ((delegate* unmanaged<IDirectManipulationCompositor2*, uint>)(lpVtbl[1]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulatio
         return ((delegate* unmanaged<IDirectManipulationCompositor2*, uint>)(lpVtbl[2]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDirectManipulationCompositor.AddContent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddContent(IDirectManipulationContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual)
@@ -49,6 +54,7 @@ public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulatio
         return ((delegate* unmanaged<IDirectManipulationCompositor2*, IDirectManipulationContent*, IUnknown*, IUnknown*, IUnknown*, int>)(lpVtbl[3]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this), content, device, parentVisual, childVisual);
     }
 
+    /// <inheritdoc cref="IDirectManipulationCompositor.RemoveContent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT RemoveContent(IDirectManipulationContent* content)
@@ -56,6 +62,7 @@ public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulatio
         return ((delegate* unmanaged<IDirectManipulationCompositor2*, IDirectManipulationContent*, int>)(lpVtbl[4]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this), content);
     }
 
+    /// <inheritdoc cref="IDirectManipulationCompositor.SetUpdateManager" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetUpdateManager(IDirectManipulationUpdateManager* updateManager)
@@ -63,6 +70,7 @@ public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulatio
         return ((delegate* unmanaged<IDirectManipulationCompositor2*, IDirectManipulationUpdateManager*, int>)(lpVtbl[5]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this), updateManager);
     }
 
+    /// <inheritdoc cref="IDirectManipulationCompositor.Flush" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Flush()
@@ -70,6 +78,7 @@ public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulatio
         return ((delegate* unmanaged<IDirectManipulationCompositor2*, int>)(lpVtbl[6]))((IDirectManipulationCompositor2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectManipulationCompositor2.xml' path='doc/member[@name="IDirectManipulationCompositor2.AddContentWithCrossProcessChaining"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT AddContentWithCrossProcessChaining(IDirectManipulationPrimaryContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual)

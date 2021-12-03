@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DDGAMMARAMP.xml' path='doc/member[@name="DDGAMMARAMP"]/*' />
 public unsafe partial struct DDGAMMARAMP
 {
+    /// <include file='DDGAMMARAMP.xml' path='doc/member[@name="DDGAMMARAMP.red"]/*' />
     [NativeTypeName("WORD [256]")]
     public fixed ushort red[256];
 
+    /// <include file='DDGAMMARAMP.xml' path='doc/member[@name="DDGAMMARAMP.green"]/*' />
     [NativeTypeName("WORD [256]")]
     public fixed ushort green[256];
 
+    /// <include file='DDGAMMARAMP.xml' path='doc/member[@name="DDGAMMARAMP.blue"]/*' />
     [NativeTypeName("WORD [256]")]
     public fixed ushort blue[256];
 }

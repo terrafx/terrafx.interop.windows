@@ -7,11 +7,19 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_TILE_COPY_FLAGS.xml' path='doc/member[@name="D3D12_TILE_COPY_FLAGS"]/*' />
 [Flags]
 public enum D3D12_TILE_COPY_FLAGS
 {
+    /// <include file='D3D12_TILE_COPY_FLAGS.xml' path='doc/member[@name="D3D12_TILE_COPY_FLAGS.D3D12_TILE_COPY_FLAG_NONE"]/*' />
     D3D12_TILE_COPY_FLAG_NONE = 0,
+
+    /// <include file='D3D12_TILE_COPY_FLAGS.xml' path='doc/member[@name="D3D12_TILE_COPY_FLAGS.D3D12_TILE_COPY_FLAG_NO_HAZARD"]/*' />
     D3D12_TILE_COPY_FLAG_NO_HAZARD = 0x1,
+
+    /// <include file='D3D12_TILE_COPY_FLAGS.xml' path='doc/member[@name="D3D12_TILE_COPY_FLAGS.D3D12_TILE_COPY_FLAG_LINEAR_BUFFER_TO_SWIZZLED_TILED_RESOURCE"]/*' />
     D3D12_TILE_COPY_FLAG_LINEAR_BUFFER_TO_SWIZZLED_TILED_RESOURCE = 0x2,
+
+    /// <include file='D3D12_TILE_COPY_FLAGS.xml' path='doc/member[@name="D3D12_TILE_COPY_FLAGS.D3D12_TILE_COPY_FLAG_SWIZZLED_TILED_RESOURCE_TO_LINEAR_BUFFER"]/*' />
     D3D12_TILE_COPY_FLAG_SWIZZLED_TILED_RESOURCE_TO_LINEAR_BUFFER = 0x4,
 }

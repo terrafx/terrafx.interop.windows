@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM.xml' path='doc/member[@name="D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM"]/*' />
 public unsafe partial struct D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM
 {
+    /// <include file='D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM.xml' path='doc/member[@name="D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM.Offset"]/*' />
     [NativeTypeName("UINT64")]
     public ulong Offset;
 
+    /// <include file='D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM.xml' path='doc/member[@name="D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM.pBuffer"]/*' />
     public ID3D12Resource* pBuffer;
 }

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_CULL_MODE.xml' path='doc/member[@name="D3D12_CULL_MODE"]/*' />
 public enum D3D12_CULL_MODE
 {
+    /// <include file='D3D12_CULL_MODE.xml' path='doc/member[@name="D3D12_CULL_MODE.D3D12_CULL_MODE_NONE"]/*' />
     D3D12_CULL_MODE_NONE = 1,
+
+    /// <include file='D3D12_CULL_MODE.xml' path='doc/member[@name="D3D12_CULL_MODE.D3D12_CULL_MODE_FRONT"]/*' />
     D3D12_CULL_MODE_FRONT = 2,
+
+    /// <include file='D3D12_CULL_MODE.xml' path='doc/member[@name="D3D12_CULL_MODE.D3D12_CULL_MODE_BACK"]/*' />
     D3D12_CULL_MODE_BACK = 3,
 }

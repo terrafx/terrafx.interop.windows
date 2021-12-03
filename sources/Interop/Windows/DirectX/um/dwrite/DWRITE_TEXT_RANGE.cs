@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_TEXT_RANGE.xml' path='doc/member[@name="DWRITE_TEXT_RANGE"]/*' />
 public partial struct DWRITE_TEXT_RANGE
 {
+    /// <include file='DWRITE_TEXT_RANGE.xml' path='doc/member[@name="DWRITE_TEXT_RANGE.startPosition"]/*' />
     [NativeTypeName("UINT32")]
     public uint startPosition;
 
+    /// <include file='DWRITE_TEXT_RANGE.xml' path='doc/member[@name="DWRITE_TEXT_RANGE.length"]/*' />
     [NativeTypeName("UINT32")]
     public uint length;
 }

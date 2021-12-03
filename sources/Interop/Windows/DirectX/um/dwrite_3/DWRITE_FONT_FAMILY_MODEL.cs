@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_FONT_FAMILY_MODEL.xml' path='doc/member[@name="DWRITE_FONT_FAMILY_MODEL"]/*' />
 public enum DWRITE_FONT_FAMILY_MODEL
 {
+    /// <include file='DWRITE_FONT_FAMILY_MODEL.xml' path='doc/member[@name="DWRITE_FONT_FAMILY_MODEL.DWRITE_FONT_FAMILY_MODEL_TYPOGRAPHIC"]/*' />
     DWRITE_FONT_FAMILY_MODEL_TYPOGRAPHIC,
+
+    /// <include file='DWRITE_FONT_FAMILY_MODEL.xml' path='doc/member[@name="DWRITE_FONT_FAMILY_MODEL.DWRITE_FONT_FAMILY_MODEL_WEIGHT_STRETCH_STYLE"]/*' />
     DWRITE_FONT_FAMILY_MODEL_WEIGHT_STRETCH_STYLE,
 }

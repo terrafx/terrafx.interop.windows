@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_FONT_LINE_GAP_USAGE.xml' path='doc/member[@name="DWRITE_FONT_LINE_GAP_USAGE"]/*' />
 public enum DWRITE_FONT_LINE_GAP_USAGE
 {
+    /// <include file='DWRITE_FONT_LINE_GAP_USAGE.xml' path='doc/member[@name="DWRITE_FONT_LINE_GAP_USAGE.DWRITE_FONT_LINE_GAP_USAGE_DEFAULT"]/*' />
     DWRITE_FONT_LINE_GAP_USAGE_DEFAULT,
+
+    /// <include file='DWRITE_FONT_LINE_GAP_USAGE.xml' path='doc/member[@name="DWRITE_FONT_LINE_GAP_USAGE.DWRITE_FONT_LINE_GAP_USAGE_DISABLED"]/*' />
     DWRITE_FONT_LINE_GAP_USAGE_DISABLED,
+
+    /// <include file='DWRITE_FONT_LINE_GAP_USAGE.xml' path='doc/member[@name="DWRITE_FONT_LINE_GAP_USAGE.DWRITE_FONT_LINE_GAP_USAGE_ENABLED"]/*' />
     DWRITE_FONT_LINE_GAP_USAGE_ENABLED,
 }

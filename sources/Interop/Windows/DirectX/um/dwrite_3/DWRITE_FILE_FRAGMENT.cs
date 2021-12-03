@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_FILE_FRAGMENT.xml' path='doc/member[@name="DWRITE_FILE_FRAGMENT"]/*' />
 public partial struct DWRITE_FILE_FRAGMENT
 {
+    /// <include file='DWRITE_FILE_FRAGMENT.xml' path='doc/member[@name="DWRITE_FILE_FRAGMENT.fileOffset"]/*' />
     [NativeTypeName("UINT64")]
     public ulong fileOffset;
 
+    /// <include file='DWRITE_FILE_FRAGMENT.xml' path='doc/member[@name="DWRITE_FILE_FRAGMENT.fragmentSize"]/*' />
     [NativeTypeName("UINT64")]
     public ulong fragmentSize;
 }

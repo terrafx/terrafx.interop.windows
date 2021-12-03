@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IMessageDispatcher.xml' path='doc/member[@name="IMessageDispatcher"]/*' />
 [Guid("F5F84C8F-CFD0-4CD6-B66B-C5D26FF1689D")]
 [NativeTypeName("struct IMessageDispatcher : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -17,6 +18,7 @@ public unsafe partial struct IMessageDispatcher : IMessageDispatcher.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IMessageDispatcher : IMessageDispatcher.Interface
         return ((delegate* unmanaged<IMessageDispatcher*, Guid*, void**, int>)(lpVtbl[0]))((IMessageDispatcher*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IMessageDispatcher : IMessageDispatcher.Interface
         return ((delegate* unmanaged<IMessageDispatcher*, uint>)(lpVtbl[1]))((IMessageDispatcher*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IMessageDispatcher : IMessageDispatcher.Interface
         return ((delegate* unmanaged<IMessageDispatcher*, uint>)(lpVtbl[2]))((IMessageDispatcher*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -47,6 +52,7 @@ public unsafe partial struct IMessageDispatcher : IMessageDispatcher.Interface
         return ((delegate* unmanaged<IMessageDispatcher*, uint*, Guid**, int>)(lpVtbl[3]))((IMessageDispatcher*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -54,6 +60,7 @@ public unsafe partial struct IMessageDispatcher : IMessageDispatcher.Interface
         return ((delegate* unmanaged<IMessageDispatcher*, HSTRING*, int>)(lpVtbl[4]))((IMessageDispatcher*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -61,6 +68,7 @@ public unsafe partial struct IMessageDispatcher : IMessageDispatcher.Interface
         return ((delegate* unmanaged<IMessageDispatcher*, TrustLevel*, int>)(lpVtbl[5]))((IMessageDispatcher*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='IMessageDispatcher.xml' path='doc/member[@name="IMessageDispatcher.PumpMessages"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT PumpMessages()

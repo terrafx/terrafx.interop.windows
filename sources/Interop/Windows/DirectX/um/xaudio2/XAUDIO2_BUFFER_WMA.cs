@@ -7,12 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='XAUDIO2_BUFFER_WMA.xml' path='doc/member[@name="XAUDIO2_BUFFER_WMA"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct XAUDIO2_BUFFER_WMA
 {
+    /// <include file='XAUDIO2_BUFFER_WMA.xml' path='doc/member[@name="XAUDIO2_BUFFER_WMA.pDecodedPacketCumulativeBytes"]/*' />
     [NativeTypeName("const UINT32 *")]
     public uint* pDecodedPacketCumulativeBytes;
 
+    /// <include file='XAUDIO2_BUFFER_WMA.xml' path='doc/member[@name="XAUDIO2_BUFFER_WMA.PacketCount"]/*' />
     [NativeTypeName("UINT32")]
     public uint PacketCount;
 }

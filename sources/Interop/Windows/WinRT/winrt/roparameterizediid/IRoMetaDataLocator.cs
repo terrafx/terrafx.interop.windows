@@ -8,10 +8,12 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IRoMetaDataLocator.xml' path='doc/member[@name="IRoMetaDataLocator"]/*' />
 public unsafe partial struct IRoMetaDataLocator : IRoMetaDataLocator.Interface
 {
     public void** lpVtbl;
 
+    /// <include file='IRoMetaDataLocator.xml' path='doc/member[@name="IRoMetaDataLocator.Locate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT Locate([NativeTypeName("PCWSTR")] ushort* nameElement, [NativeTypeName("IRoSimpleMetaDataBuilder &")] IRoSimpleMetaDataBuilder* metaDataDestination)

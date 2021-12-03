@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IAccountsSettingsPaneInterop.xml' path='doc/member[@name="IAccountsSettingsPaneInterop"]/*' />
 [Guid("D3EE12AD-3865-4362-9746-B75A682DF0E6")]
 [NativeTypeName("struct IAccountsSettingsPaneInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -17,6 +18,7 @@ public unsafe partial struct IAccountsSettingsPaneInterop : IAccountsSettingsPan
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IAccountsSettingsPaneInterop : IAccountsSettingsPan
         return ((delegate* unmanaged<IAccountsSettingsPaneInterop*, Guid*, void**, int>)(lpVtbl[0]))((IAccountsSettingsPaneInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IAccountsSettingsPaneInterop : IAccountsSettingsPan
         return ((delegate* unmanaged<IAccountsSettingsPaneInterop*, uint>)(lpVtbl[1]))((IAccountsSettingsPaneInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IAccountsSettingsPaneInterop : IAccountsSettingsPan
         return ((delegate* unmanaged<IAccountsSettingsPaneInterop*, uint>)(lpVtbl[2]))((IAccountsSettingsPaneInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -47,6 +52,7 @@ public unsafe partial struct IAccountsSettingsPaneInterop : IAccountsSettingsPan
         return ((delegate* unmanaged<IAccountsSettingsPaneInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IAccountsSettingsPaneInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -54,6 +60,7 @@ public unsafe partial struct IAccountsSettingsPaneInterop : IAccountsSettingsPan
         return ((delegate* unmanaged<IAccountsSettingsPaneInterop*, HSTRING*, int>)(lpVtbl[4]))((IAccountsSettingsPaneInterop*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -61,6 +68,7 @@ public unsafe partial struct IAccountsSettingsPaneInterop : IAccountsSettingsPan
         return ((delegate* unmanaged<IAccountsSettingsPaneInterop*, TrustLevel*, int>)(lpVtbl[5]))((IAccountsSettingsPaneInterop*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='IAccountsSettingsPaneInterop.xml' path='doc/member[@name="IAccountsSettingsPaneInterop.GetForWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** accountsSettingsPane)
@@ -68,6 +76,7 @@ public unsafe partial struct IAccountsSettingsPaneInterop : IAccountsSettingsPan
         return ((delegate* unmanaged<IAccountsSettingsPaneInterop*, HWND, Guid*, void**, int>)(lpVtbl[6]))((IAccountsSettingsPaneInterop*)Unsafe.AsPointer(ref this), appWindow, riid, accountsSettingsPane);
     }
 
+    /// <include file='IAccountsSettingsPaneInterop.xml' path='doc/member[@name="IAccountsSettingsPaneInterop.ShowManageAccountsForWindowAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ShowManageAccountsForWindowAsync(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** asyncAction)
@@ -75,6 +84,7 @@ public unsafe partial struct IAccountsSettingsPaneInterop : IAccountsSettingsPan
         return ((delegate* unmanaged<IAccountsSettingsPaneInterop*, HWND, Guid*, void**, int>)(lpVtbl[7]))((IAccountsSettingsPaneInterop*)Unsafe.AsPointer(ref this), appWindow, riid, asyncAction);
     }
 
+    /// <include file='IAccountsSettingsPaneInterop.xml' path='doc/member[@name="IAccountsSettingsPaneInterop.ShowAddAccountForWindowAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT ShowAddAccountForWindowAsync(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** asyncAction)

@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IBitmapData.xml' path='doc/member[@name="IBitmapData"]/*' />
 [Guid("D1A34EF2-CAD8-4635-A3D2-FCDA8D3F3CAF")]
 [NativeTypeName("struct IBitmapData : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IBitmapData : IBitmapData.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IBitmapData : IBitmapData.Interface
         return ((delegate* unmanaged<IBitmapData*, Guid*, void**, int>)(lpVtbl[0]))((IBitmapData*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IBitmapData : IBitmapData.Interface
         return ((delegate* unmanaged<IBitmapData*, uint>)(lpVtbl[1]))((IBitmapData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IBitmapData : IBitmapData.Interface
         return ((delegate* unmanaged<IBitmapData*, uint>)(lpVtbl[2]))((IBitmapData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IBitmapData.xml' path='doc/member[@name="IBitmapData.CopyBytesTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CopyBytesTo([NativeTypeName("unsigned int")] uint sourceOffsetInBytes, [NativeTypeName("unsigned int")] uint maxBytesToCopy, byte* pvBytes, [NativeTypeName("unsigned int *")] uint* numberOfBytesCopied)
@@ -49,6 +54,7 @@ public unsafe partial struct IBitmapData : IBitmapData.Interface
         return ((delegate* unmanaged<IBitmapData*, uint, uint, byte*, uint*, int>)(lpVtbl[3]))((IBitmapData*)Unsafe.AsPointer(ref this), sourceOffsetInBytes, maxBytesToCopy, pvBytes, numberOfBytesCopied);
     }
 
+    /// <include file='IBitmapData.xml' path='doc/member[@name="IBitmapData.GetStride"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetStride([NativeTypeName("unsigned int *")] uint* pStride)
@@ -56,6 +62,7 @@ public unsafe partial struct IBitmapData : IBitmapData.Interface
         return ((delegate* unmanaged<IBitmapData*, uint*, int>)(lpVtbl[4]))((IBitmapData*)Unsafe.AsPointer(ref this), pStride);
     }
 
+    /// <include file='IBitmapData.xml' path='doc/member[@name="IBitmapData.GetBitmapDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetBitmapDescription(BitmapDescription* pBitmapDescription)
@@ -63,6 +70,7 @@ public unsafe partial struct IBitmapData : IBitmapData.Interface
         return ((delegate* unmanaged<IBitmapData*, BitmapDescription*, int>)(lpVtbl[5]))((IBitmapData*)Unsafe.AsPointer(ref this), pBitmapDescription);
     }
 
+    /// <include file='IBitmapData.xml' path='doc/member[@name="IBitmapData.GetSourceBitmapDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetSourceBitmapDescription(BitmapDescription* pBitmapDescription)

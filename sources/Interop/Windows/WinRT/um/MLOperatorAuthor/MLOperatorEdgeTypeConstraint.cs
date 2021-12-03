@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='MLOperatorEdgeTypeConstraint.xml' path='doc/member[@name="MLOperatorEdgeTypeConstraint"]/*' />
 public unsafe partial struct MLOperatorEdgeTypeConstraint
 {
+    /// <include file='MLOperatorEdgeTypeConstraint.xml' path='doc/member[@name="MLOperatorEdgeTypeConstraint.typeLabel"]/*' />
     [NativeTypeName("const char *")]
     public sbyte* typeLabel;
 
+    /// <include file='MLOperatorEdgeTypeConstraint.xml' path='doc/member[@name="MLOperatorEdgeTypeConstraint.allowedTypes"]/*' />
     [NativeTypeName("const MLOperatorEdgeDescription *")]
     public MLOperatorEdgeDescription* allowedTypes;
 
+    /// <include file='MLOperatorEdgeTypeConstraint.xml' path='doc/member[@name="MLOperatorEdgeTypeConstraint.allowedTypeCount"]/*' />
     [NativeTypeName("uint32_t")]
     public uint allowedTypeCount;
 }

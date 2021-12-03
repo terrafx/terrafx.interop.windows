@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D_SIZE_F.xml' path='doc/member[@name="D2D_SIZE_F"]/*' />
 public partial struct D2D_SIZE_F
 {
+    /// <include file='D2D_SIZE_F.xml' path='doc/member[@name="D2D_SIZE_F.width"]/*' />
     public float width;
 
+    /// <include file='D2D_SIZE_F.xml' path='doc/member[@name="D2D_SIZE_F.height"]/*' />
     public float height;
 }

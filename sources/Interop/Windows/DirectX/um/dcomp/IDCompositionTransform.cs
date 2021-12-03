@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDCompositionTransform.xml' path='doc/member[@name="IDCompositionTransform"]/*' />
 [Guid("FD55FAA7-37E0-4C20-95D2-9BE45BC33F55")]
 [NativeTypeName("struct IDCompositionTransform : IDCompositionTransform3D")]
 [NativeInheritance("IDCompositionTransform3D")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDCompositionTransform : IDCompositionTransform.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDCompositionTransform : IDCompositionTransform.Int
         return ((delegate* unmanaged<IDCompositionTransform*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDCompositionTransform : IDCompositionTransform.Int
         return ((delegate* unmanaged<IDCompositionTransform*, uint>)(lpVtbl[1]))((IDCompositionTransform*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]

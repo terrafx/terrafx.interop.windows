@@ -5,27 +5,39 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_TEXTURE2D_DESC1.xml' path='doc/member[@name="D3D11_TEXTURE2D_DESC1"]/*' />
 public partial struct D3D11_TEXTURE2D_DESC1
 {
+    /// <include file='D3D11_TEXTURE2D_DESC1.xml' path='doc/member[@name="D3D11_TEXTURE2D_DESC1.Width"]/*' />
     public uint Width;
 
+    /// <include file='D3D11_TEXTURE2D_DESC1.xml' path='doc/member[@name="D3D11_TEXTURE2D_DESC1.Height"]/*' />
     public uint Height;
 
+    /// <include file='D3D11_TEXTURE2D_DESC1.xml' path='doc/member[@name="D3D11_TEXTURE2D_DESC1.MipLevels"]/*' />
     public uint MipLevels;
 
+    /// <include file='D3D11_TEXTURE2D_DESC1.xml' path='doc/member[@name="D3D11_TEXTURE2D_DESC1.ArraySize"]/*' />
     public uint ArraySize;
 
+    /// <include file='D3D11_TEXTURE2D_DESC1.xml' path='doc/member[@name="D3D11_TEXTURE2D_DESC1.Format"]/*' />
     public DXGI_FORMAT Format;
 
+    /// <include file='D3D11_TEXTURE2D_DESC1.xml' path='doc/member[@name="D3D11_TEXTURE2D_DESC1.SampleDesc"]/*' />
     public DXGI_SAMPLE_DESC SampleDesc;
 
+    /// <include file='D3D11_TEXTURE2D_DESC1.xml' path='doc/member[@name="D3D11_TEXTURE2D_DESC1.Usage"]/*' />
     public D3D11_USAGE Usage;
 
+    /// <include file='D3D11_TEXTURE2D_DESC1.xml' path='doc/member[@name="D3D11_TEXTURE2D_DESC1.BindFlags"]/*' />
     public uint BindFlags;
 
+    /// <include file='D3D11_TEXTURE2D_DESC1.xml' path='doc/member[@name="D3D11_TEXTURE2D_DESC1.CPUAccessFlags"]/*' />
     public uint CPUAccessFlags;
 
+    /// <include file='D3D11_TEXTURE2D_DESC1.xml' path='doc/member[@name="D3D11_TEXTURE2D_DESC1.MiscFlags"]/*' />
     public uint MiscFlags;
 
+    /// <include file='D3D11_TEXTURE2D_DESC1.xml' path='doc/member[@name="D3D11_TEXTURE2D_DESC1.TextureLayout"]/*' />
     public D3D11_TEXTURE_LAYOUT TextureLayout;
 }

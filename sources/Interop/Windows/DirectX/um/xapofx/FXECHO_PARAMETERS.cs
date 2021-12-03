@@ -7,12 +7,16 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='FXECHO_PARAMETERS.xml' path='doc/member[@name="FXECHO_PARAMETERS"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct FXECHO_PARAMETERS
 {
+    /// <include file='FXECHO_PARAMETERS.xml' path='doc/member[@name="FXECHO_PARAMETERS.WetDryMix"]/*' />
     public float WetDryMix;
 
+    /// <include file='FXECHO_PARAMETERS.xml' path='doc/member[@name="FXECHO_PARAMETERS.Feedback"]/*' />
     public float Feedback;
 
+    /// <include file='FXECHO_PARAMETERS.xml' path='doc/member[@name="FXECHO_PARAMETERS.Delay"]/*' />
     public float Delay;
 }

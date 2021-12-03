@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_BITSTREAM_ENCRYPTION_TYPE.xml' path='doc/member[@name="D3D12_BITSTREAM_ENCRYPTION_TYPE"]/*' />
 public enum D3D12_BITSTREAM_ENCRYPTION_TYPE
 {
+    /// <include file='D3D12_BITSTREAM_ENCRYPTION_TYPE.xml' path='doc/member[@name="D3D12_BITSTREAM_ENCRYPTION_TYPE.D3D12_BITSTREAM_ENCRYPTION_TYPE_NONE"]/*' />
     D3D12_BITSTREAM_ENCRYPTION_TYPE_NONE = 0,
 }

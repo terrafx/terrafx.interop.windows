@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12Debug1.xml' path='doc/member[@name="ID3D12Debug1"]/*' />
 [Guid("AFFAA4CA-63FE-4D8E-B8AD-159000AF4304")]
 [NativeTypeName("struct ID3D12Debug1 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D12Debug1 : ID3D12Debug1.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D12Debug1 : ID3D12Debug1.Interface
         return ((delegate* unmanaged<ID3D12Debug1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12Debug1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D12Debug1 : ID3D12Debug1.Interface
         return ((delegate* unmanaged<ID3D12Debug1*, uint>)(lpVtbl[1]))((ID3D12Debug1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D12Debug1 : ID3D12Debug1.Interface
         return ((delegate* unmanaged<ID3D12Debug1*, uint>)(lpVtbl[2]))((ID3D12Debug1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12Debug1.xml' path='doc/member[@name="ID3D12Debug1.EnableDebugLayer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void EnableDebugLayer()
@@ -47,6 +52,7 @@ public unsafe partial struct ID3D12Debug1 : ID3D12Debug1.Interface
         ((delegate* unmanaged<ID3D12Debug1*, void>)(lpVtbl[3]))((ID3D12Debug1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12Debug1.xml' path='doc/member[@name="ID3D12Debug1.SetEnableGPUBasedValidation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void SetEnableGPUBasedValidation(BOOL Enable)
@@ -54,6 +60,7 @@ public unsafe partial struct ID3D12Debug1 : ID3D12Debug1.Interface
         ((delegate* unmanaged<ID3D12Debug1*, BOOL, void>)(lpVtbl[4]))((ID3D12Debug1*)Unsafe.AsPointer(ref this), Enable);
     }
 
+    /// <include file='ID3D12Debug1.xml' path='doc/member[@name="ID3D12Debug1.SetEnableSynchronizedCommandQueueValidation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void SetEnableSynchronizedCommandQueueValidation(BOOL Enable)

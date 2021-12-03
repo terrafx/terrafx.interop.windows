@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_DISPATCH_MESH_ARGUMENTS.xml' path='doc/member[@name="D3D12_DISPATCH_MESH_ARGUMENTS"]/*' />
 public partial struct D3D12_DISPATCH_MESH_ARGUMENTS
 {
+    /// <include file='D3D12_DISPATCH_MESH_ARGUMENTS.xml' path='doc/member[@name="D3D12_DISPATCH_MESH_ARGUMENTS.ThreadGroupCountX"]/*' />
     public uint ThreadGroupCountX;
 
+    /// <include file='D3D12_DISPATCH_MESH_ARGUMENTS.xml' path='doc/member[@name="D3D12_DISPATCH_MESH_ARGUMENTS.ThreadGroupCountY"]/*' />
     public uint ThreadGroupCountY;
 
+    /// <include file='D3D12_DISPATCH_MESH_ARGUMENTS.xml' path='doc/member[@name="D3D12_DISPATCH_MESH_ARGUMENTS.ThreadGroupCountZ"]/*' />
     public uint ThreadGroupCountZ;
 }

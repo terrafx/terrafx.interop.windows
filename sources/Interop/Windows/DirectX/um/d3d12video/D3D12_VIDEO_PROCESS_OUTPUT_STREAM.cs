@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_VIDEO_PROCESS_OUTPUT_STREAM.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_OUTPUT_STREAM"]/*' />
 public unsafe partial struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM
 {
+    /// <include file='D3D12_VIDEO_PROCESS_OUTPUT_STREAM.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_OUTPUT_STREAM.pTexture2D"]/*' />
     public ID3D12Resource* pTexture2D;
 
+    /// <include file='D3D12_VIDEO_PROCESS_OUTPUT_STREAM.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_OUTPUT_STREAM.Subresource"]/*' />
     public uint Subresource;
 }

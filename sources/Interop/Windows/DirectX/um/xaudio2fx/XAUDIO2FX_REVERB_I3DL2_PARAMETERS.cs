@@ -7,36 +7,50 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='XAUDIO2FX_REVERB_I3DL2_PARAMETERS.xml' path='doc/member[@name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct XAUDIO2FX_REVERB_I3DL2_PARAMETERS
 {
+    /// <include file='XAUDIO2FX_REVERB_I3DL2_PARAMETERS.xml' path='doc/member[@name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.WetDryMix"]/*' />
     public float WetDryMix;
 
+    /// <include file='XAUDIO2FX_REVERB_I3DL2_PARAMETERS.xml' path='doc/member[@name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.Room"]/*' />
     [NativeTypeName("INT32")]
     public int Room;
 
+    /// <include file='XAUDIO2FX_REVERB_I3DL2_PARAMETERS.xml' path='doc/member[@name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.RoomHF"]/*' />
     [NativeTypeName("INT32")]
     public int RoomHF;
 
+    /// <include file='XAUDIO2FX_REVERB_I3DL2_PARAMETERS.xml' path='doc/member[@name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.RoomRolloffFactor"]/*' />
     public float RoomRolloffFactor;
 
+    /// <include file='XAUDIO2FX_REVERB_I3DL2_PARAMETERS.xml' path='doc/member[@name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.DecayTime"]/*' />
     public float DecayTime;
 
+    /// <include file='XAUDIO2FX_REVERB_I3DL2_PARAMETERS.xml' path='doc/member[@name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.DecayHFRatio"]/*' />
     public float DecayHFRatio;
 
+    /// <include file='XAUDIO2FX_REVERB_I3DL2_PARAMETERS.xml' path='doc/member[@name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.Reflections"]/*' />
     [NativeTypeName("INT32")]
     public int Reflections;
 
+    /// <include file='XAUDIO2FX_REVERB_I3DL2_PARAMETERS.xml' path='doc/member[@name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.ReflectionsDelay"]/*' />
     public float ReflectionsDelay;
 
+    /// <include file='XAUDIO2FX_REVERB_I3DL2_PARAMETERS.xml' path='doc/member[@name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.Reverb"]/*' />
     [NativeTypeName("INT32")]
     public int Reverb;
 
+    /// <include file='XAUDIO2FX_REVERB_I3DL2_PARAMETERS.xml' path='doc/member[@name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.ReverbDelay"]/*' />
     public float ReverbDelay;
 
+    /// <include file='XAUDIO2FX_REVERB_I3DL2_PARAMETERS.xml' path='doc/member[@name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.Diffusion"]/*' />
     public float Diffusion;
 
+    /// <include file='XAUDIO2FX_REVERB_I3DL2_PARAMETERS.xml' path='doc/member[@name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.Density"]/*' />
     public float Density;
 
+    /// <include file='XAUDIO2FX_REVERB_I3DL2_PARAMETERS.xml' path='doc/member[@name="XAUDIO2FX_REVERB_I3DL2_PARAMETERS.HFReference"]/*' />
     public float HFReference;
 }

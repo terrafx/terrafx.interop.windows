@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ICastingController.xml' path='doc/member[@name="ICastingController"]/*' />
 [Guid("F0A56423-A664-4FBD-8B43-409A45E8D9A1")]
 [NativeTypeName("struct ICastingController : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ICastingController : ICastingController.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ICastingController : ICastingController.Interface
         return ((delegate* unmanaged<ICastingController*, Guid*, void**, int>)(lpVtbl[0]))((ICastingController*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ICastingController : ICastingController.Interface
         return ((delegate* unmanaged<ICastingController*, uint>)(lpVtbl[1]))((ICastingController*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ICastingController : ICastingController.Interface
         return ((delegate* unmanaged<ICastingController*, uint>)(lpVtbl[2]))((ICastingController*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICastingController.xml' path='doc/member[@name="ICastingController.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Initialize(IUnknown* castingEngine, IUnknown* castingSource)
@@ -47,6 +52,7 @@ public unsafe partial struct ICastingController : ICastingController.Interface
         return ((delegate* unmanaged<ICastingController*, IUnknown*, IUnknown*, int>)(lpVtbl[3]))((ICastingController*)Unsafe.AsPointer(ref this), castingEngine, castingSource);
     }
 
+    /// <include file='ICastingController.xml' path='doc/member[@name="ICastingController.Connect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Connect()
@@ -54,6 +60,7 @@ public unsafe partial struct ICastingController : ICastingController.Interface
         return ((delegate* unmanaged<ICastingController*, int>)(lpVtbl[4]))((ICastingController*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICastingController.xml' path='doc/member[@name="ICastingController.Disconnect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Disconnect()
@@ -61,6 +68,7 @@ public unsafe partial struct ICastingController : ICastingController.Interface
         return ((delegate* unmanaged<ICastingController*, int>)(lpVtbl[5]))((ICastingController*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICastingController.xml' path='doc/member[@name="ICastingController.Advise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Advise(ICastingEventHandler* eventHandler, [NativeTypeName("DWORD *")] uint* cookie)
@@ -68,6 +76,7 @@ public unsafe partial struct ICastingController : ICastingController.Interface
         return ((delegate* unmanaged<ICastingController*, ICastingEventHandler*, uint*, int>)(lpVtbl[6]))((ICastingController*)Unsafe.AsPointer(ref this), eventHandler, cookie);
     }
 
+    /// <include file='ICastingController.xml' path='doc/member[@name="ICastingController.UnAdvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT UnAdvise([NativeTypeName("DWORD")] uint cookie)

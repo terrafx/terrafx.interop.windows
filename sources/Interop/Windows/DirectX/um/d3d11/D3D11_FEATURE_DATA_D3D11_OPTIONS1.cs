@@ -8,14 +8,19 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_FEATURE_DATA_D3D11_OPTIONS1.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D11_OPTIONS1"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct D3D11_FEATURE_DATA_D3D11_OPTIONS1
 {
+    /// <include file='D3D11_FEATURE_DATA_D3D11_OPTIONS1.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D11_OPTIONS1.TiledResourcesTier"]/*' />
     public D3D11_TILED_RESOURCES_TIER TiledResourcesTier;
 
+    /// <include file='D3D11_FEATURE_DATA_D3D11_OPTIONS1.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D11_OPTIONS1.MinMaxFiltering"]/*' />
     public BOOL MinMaxFiltering;
 
+    /// <include file='D3D11_FEATURE_DATA_D3D11_OPTIONS1.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D11_OPTIONS1.ClearViewAlsoSupportsDepthOnlyFormats"]/*' />
     public BOOL ClearViewAlsoSupportsDepthOnlyFormats;
 
+    /// <include file='D3D11_FEATURE_DATA_D3D11_OPTIONS1.xml' path='doc/member[@name="D3D11_FEATURE_DATA_D3D11_OPTIONS1.MapOnDefaultBuffers"]/*' />
     public BOOL MapOnDefaultBuffers;
 }

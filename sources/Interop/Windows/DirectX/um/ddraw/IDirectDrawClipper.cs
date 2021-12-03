@@ -9,12 +9,14 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDirectDrawClipper.xml' path='doc/member[@name="IDirectDrawClipper"]/*' />
 [NativeTypeName("struct IDirectDrawClipper : IUnknown")]
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDirectDrawClipper : IDirectDrawClipper.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -22,6 +24,7 @@ public unsafe partial struct IDirectDrawClipper : IDirectDrawClipper.Interface
         return ((delegate* unmanaged<IDirectDrawClipper*, Guid*, void**, int>)(lpVtbl[0]))((IDirectDrawClipper*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -30,6 +33,7 @@ public unsafe partial struct IDirectDrawClipper : IDirectDrawClipper.Interface
         return ((delegate* unmanaged<IDirectDrawClipper*, uint>)(lpVtbl[1]))((IDirectDrawClipper*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -38,6 +42,7 @@ public unsafe partial struct IDirectDrawClipper : IDirectDrawClipper.Interface
         return ((delegate* unmanaged<IDirectDrawClipper*, uint>)(lpVtbl[2]))((IDirectDrawClipper*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectDrawClipper.xml' path='doc/member[@name="IDirectDrawClipper.GetClipList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClipList([NativeTypeName("LPRECT")] RECT* param0, [NativeTypeName("LPRGNDATA")] RGNDATA* param1, [NativeTypeName("LPDWORD")] uint* param2)
@@ -45,6 +50,7 @@ public unsafe partial struct IDirectDrawClipper : IDirectDrawClipper.Interface
         return ((delegate* unmanaged<IDirectDrawClipper*, RECT*, RGNDATA*, uint*, int>)(lpVtbl[3]))((IDirectDrawClipper*)Unsafe.AsPointer(ref this), param0, param1, param2);
     }
 
+    /// <include file='IDirectDrawClipper.xml' path='doc/member[@name="IDirectDrawClipper.GetHWnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetHWnd(HWND* param0)
@@ -52,6 +58,7 @@ public unsafe partial struct IDirectDrawClipper : IDirectDrawClipper.Interface
         return ((delegate* unmanaged<IDirectDrawClipper*, HWND*, int>)(lpVtbl[4]))((IDirectDrawClipper*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawClipper.xml' path='doc/member[@name="IDirectDrawClipper.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Initialize([NativeTypeName("LPDIRECTDRAW")] IDirectDraw* param0, [NativeTypeName("DWORD")] uint param1)
@@ -59,6 +66,7 @@ public unsafe partial struct IDirectDrawClipper : IDirectDrawClipper.Interface
         return ((delegate* unmanaged<IDirectDrawClipper*, IDirectDraw*, uint, int>)(lpVtbl[5]))((IDirectDrawClipper*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
+    /// <include file='IDirectDrawClipper.xml' path='doc/member[@name="IDirectDrawClipper.IsClipListChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT IsClipListChanged(BOOL* param0)
@@ -66,6 +74,7 @@ public unsafe partial struct IDirectDrawClipper : IDirectDrawClipper.Interface
         return ((delegate* unmanaged<IDirectDrawClipper*, BOOL*, int>)(lpVtbl[6]))((IDirectDrawClipper*)Unsafe.AsPointer(ref this), param0);
     }
 
+    /// <include file='IDirectDrawClipper.xml' path='doc/member[@name="IDirectDrawClipper.SetClipList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetClipList([NativeTypeName("LPRGNDATA")] RGNDATA* param0, [NativeTypeName("DWORD")] uint param1)
@@ -73,6 +82,7 @@ public unsafe partial struct IDirectDrawClipper : IDirectDrawClipper.Interface
         return ((delegate* unmanaged<IDirectDrawClipper*, RGNDATA*, uint, int>)(lpVtbl[7]))((IDirectDrawClipper*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
+    /// <include file='IDirectDrawClipper.xml' path='doc/member[@name="IDirectDrawClipper.SetHWnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetHWnd([NativeTypeName("DWORD")] uint param0, HWND param1)

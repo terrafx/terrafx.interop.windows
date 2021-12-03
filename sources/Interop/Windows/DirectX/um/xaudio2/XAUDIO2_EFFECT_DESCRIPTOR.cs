@@ -8,13 +8,17 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='XAUDIO2_EFFECT_DESCRIPTOR.xml' path='doc/member[@name="XAUDIO2_EFFECT_DESCRIPTOR"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct XAUDIO2_EFFECT_DESCRIPTOR
 {
+    /// <include file='XAUDIO2_EFFECT_DESCRIPTOR.xml' path='doc/member[@name="XAUDIO2_EFFECT_DESCRIPTOR.pEffect"]/*' />
     public IUnknown* pEffect;
 
+    /// <include file='XAUDIO2_EFFECT_DESCRIPTOR.xml' path='doc/member[@name="XAUDIO2_EFFECT_DESCRIPTOR.InitialState"]/*' />
     public BOOL InitialState;
 
+    /// <include file='XAUDIO2_EFFECT_DESCRIPTOR.xml' path='doc/member[@name="XAUDIO2_EFFECT_DESCRIPTOR.OutputChannels"]/*' />
     [NativeTypeName("UINT32")]
     public uint OutputChannels;
 }

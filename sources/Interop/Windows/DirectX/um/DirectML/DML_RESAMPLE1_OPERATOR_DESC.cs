@@ -5,24 +5,32 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_RESAMPLE1_OPERATOR_DESC.xml' path='doc/member[@name="DML_RESAMPLE1_OPERATOR_DESC"]/*' />
 public unsafe partial struct DML_RESAMPLE1_OPERATOR_DESC
 {
+    /// <include file='DML_RESAMPLE1_OPERATOR_DESC.xml' path='doc/member[@name="DML_RESAMPLE1_OPERATOR_DESC.InputTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* InputTensor;
 
+    /// <include file='DML_RESAMPLE1_OPERATOR_DESC.xml' path='doc/member[@name="DML_RESAMPLE1_OPERATOR_DESC.OutputTensor"]/*' />
     [NativeTypeName("const DML_TENSOR_DESC *")]
     public DML_TENSOR_DESC* OutputTensor;
 
+    /// <include file='DML_RESAMPLE1_OPERATOR_DESC.xml' path='doc/member[@name="DML_RESAMPLE1_OPERATOR_DESC.InterpolationMode"]/*' />
     public DML_INTERPOLATION_MODE InterpolationMode;
 
+    /// <include file='DML_RESAMPLE1_OPERATOR_DESC.xml' path='doc/member[@name="DML_RESAMPLE1_OPERATOR_DESC.DimensionCount"]/*' />
     public uint DimensionCount;
 
+    /// <include file='DML_RESAMPLE1_OPERATOR_DESC.xml' path='doc/member[@name="DML_RESAMPLE1_OPERATOR_DESC.Scales"]/*' />
     [NativeTypeName("const FLOAT *")]
     public float* Scales;
 
+    /// <include file='DML_RESAMPLE1_OPERATOR_DESC.xml' path='doc/member[@name="DML_RESAMPLE1_OPERATOR_DESC.InputPixelOffsets"]/*' />
     [NativeTypeName("const FLOAT *")]
     public float* InputPixelOffsets;
 
+    /// <include file='DML_RESAMPLE1_OPERATOR_DESC.xml' path='doc/member[@name="DML_RESAMPLE1_OPERATOR_DESC.OutputPixelOffsets"]/*' />
     [NativeTypeName("const FLOAT *")]
     public float* OutputPixelOffsets;
 }

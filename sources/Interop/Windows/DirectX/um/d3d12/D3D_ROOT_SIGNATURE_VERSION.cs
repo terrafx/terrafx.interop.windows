@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D_ROOT_SIGNATURE_VERSION.xml' path='doc/member[@name="D3D_ROOT_SIGNATURE_VERSION"]/*' />
 public enum D3D_ROOT_SIGNATURE_VERSION
 {
+    /// <include file='D3D_ROOT_SIGNATURE_VERSION.xml' path='doc/member[@name="D3D_ROOT_SIGNATURE_VERSION.D3D_ROOT_SIGNATURE_VERSION_1"]/*' />
     D3D_ROOT_SIGNATURE_VERSION_1 = 0x1,
+
+    /// <include file='D3D_ROOT_SIGNATURE_VERSION.xml' path='doc/member[@name="D3D_ROOT_SIGNATURE_VERSION.D3D_ROOT_SIGNATURE_VERSION_1_0"]/*' />
     D3D_ROOT_SIGNATURE_VERSION_1_0 = 0x1,
+
+    /// <include file='D3D_ROOT_SIGNATURE_VERSION.xml' path='doc/member[@name="D3D_ROOT_SIGNATURE_VERSION.D3D_ROOT_SIGNATURE_VERSION_1_1"]/*' />
     D3D_ROOT_SIGNATURE_VERSION_1_1 = 0x2,
 }

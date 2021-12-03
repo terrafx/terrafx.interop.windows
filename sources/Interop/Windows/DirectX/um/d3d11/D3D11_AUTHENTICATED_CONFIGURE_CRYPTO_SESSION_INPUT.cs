@@ -8,14 +8,19 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_AUTHENTICATED_CONFIGURE_CRYPTO_SESSION_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_CONFIGURE_CRYPTO_SESSION_INPUT"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_AUTHENTICATED_CONFIGURE_CRYPTO_SESSION_INPUT
 {
+    /// <include file='D3D11_AUTHENTICATED_CONFIGURE_CRYPTO_SESSION_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_CONFIGURE_CRYPTO_SESSION_INPUT.Parameters"]/*' />
     public D3D11_AUTHENTICATED_CONFIGURE_INPUT Parameters;
 
+    /// <include file='D3D11_AUTHENTICATED_CONFIGURE_CRYPTO_SESSION_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_CONFIGURE_CRYPTO_SESSION_INPUT.DecoderHandle"]/*' />
     public HANDLE DecoderHandle;
 
+    /// <include file='D3D11_AUTHENTICATED_CONFIGURE_CRYPTO_SESSION_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_CONFIGURE_CRYPTO_SESSION_INPUT.CryptoSessionHandle"]/*' />
     public HANDLE CryptoSessionHandle;
 
+    /// <include file='D3D11_AUTHENTICATED_CONFIGURE_CRYPTO_SESSION_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_CONFIGURE_CRYPTO_SESSION_INPUT.DeviceHandle"]/*' />
     public HANDLE DeviceHandle;
 }

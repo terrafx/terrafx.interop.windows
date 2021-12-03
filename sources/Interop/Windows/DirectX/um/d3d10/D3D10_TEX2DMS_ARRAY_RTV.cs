@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_TEX2DMS_ARRAY_RTV.xml' path='doc/member[@name="D3D10_TEX2DMS_ARRAY_RTV"]/*' />
 public partial struct D3D10_TEX2DMS_ARRAY_RTV
 {
+    /// <include file='D3D10_TEX2DMS_ARRAY_RTV.xml' path='doc/member[@name="D3D10_TEX2DMS_ARRAY_RTV.FirstArraySlice"]/*' />
     public uint FirstArraySlice;
 
+    /// <include file='D3D10_TEX2DMS_ARRAY_RTV.xml' path='doc/member[@name="D3D10_TEX2DMS_ARRAY_RTV.ArraySize"]/*' />
     public uint ArraySize;
 }

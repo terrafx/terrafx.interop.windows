@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IContentPrefetcherTaskTrigger.xml' path='doc/member[@name="IContentPrefetcherTaskTrigger"]/*' />
 [Guid("1B35A14A-6094-4799-A60E-E474E15D4DC9")]
 [NativeTypeName("struct IContentPrefetcherTaskTrigger : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -19,6 +20,7 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
         return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, Guid*, void**, int>)(lpVtbl[0]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
         return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, uint>)(lpVtbl[1]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
         return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, uint>)(lpVtbl[2]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -49,6 +54,7 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
         return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, uint*, Guid**, int>)(lpVtbl[3]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -56,6 +62,7 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
         return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, HSTRING*, int>)(lpVtbl[4]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -63,6 +70,7 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
         return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, TrustLevel*, int>)(lpVtbl[5]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='IContentPrefetcherTaskTrigger.xml' path='doc/member[@name="IContentPrefetcherTaskTrigger.TriggerContentPrefetcherTask"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT TriggerContentPrefetcherTask([NativeTypeName("LPCWSTR")] ushort* packageFullName)
@@ -70,6 +78,7 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
         return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, ushort*, int>)(lpVtbl[6]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
+    /// <include file='IContentPrefetcherTaskTrigger.xml' path='doc/member[@name="IContentPrefetcherTaskTrigger.IsRegisteredForContentPrefetch"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT IsRegisteredForContentPrefetch([NativeTypeName("LPCWSTR")] ushort* packageFullName, [NativeTypeName("boolean *")] byte* isRegistered)

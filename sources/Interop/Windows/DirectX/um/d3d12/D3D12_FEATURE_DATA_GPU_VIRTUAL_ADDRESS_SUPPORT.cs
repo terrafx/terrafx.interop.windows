@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_FEATURE_DATA_GPU_VIRTUAL_ADDRESS_SUPPORT.xml' path='doc/member[@name="D3D12_FEATURE_DATA_GPU_VIRTUAL_ADDRESS_SUPPORT"]/*' />
 public partial struct D3D12_FEATURE_DATA_GPU_VIRTUAL_ADDRESS_SUPPORT
 {
+    /// <include file='D3D12_FEATURE_DATA_GPU_VIRTUAL_ADDRESS_SUPPORT.xml' path='doc/member[@name="D3D12_FEATURE_DATA_GPU_VIRTUAL_ADDRESS_SUPPORT.MaxGPUVirtualAddressBitsPerResource"]/*' />
     public uint MaxGPUVirtualAddressBitsPerResource;
 
+    /// <include file='D3D12_FEATURE_DATA_GPU_VIRTUAL_ADDRESS_SUPPORT.xml' path='doc/member[@name="D3D12_FEATURE_DATA_GPU_VIRTUAL_ADDRESS_SUPPORT.MaxGPUVirtualAddressBitsPerProcess"]/*' />
     public uint MaxGPUVirtualAddressBitsPerProcess;
 }

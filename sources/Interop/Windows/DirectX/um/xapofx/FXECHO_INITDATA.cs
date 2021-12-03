@@ -7,8 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='FXECHO_INITDATA.xml' path='doc/member[@name="FXECHO_INITDATA"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct FXECHO_INITDATA
 {
+    /// <include file='FXECHO_INITDATA.xml' path='doc/member[@name="FXECHO_INITDATA.MaxDelay"]/*' />
     public float MaxDelay;
 }

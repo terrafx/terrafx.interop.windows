@@ -10,6 +10,7 @@ namespace TerraFX.Interop.WinRT;
 
 public static unsafe partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.MLCreateOperatorRegistry"]/*' />
     [DllImport("windows.ai.machinelearning.dll", ExactSpelling = true)]
     public static extern HRESULT MLCreateOperatorRegistry(IMLOperatorRegistry** registry);
 }

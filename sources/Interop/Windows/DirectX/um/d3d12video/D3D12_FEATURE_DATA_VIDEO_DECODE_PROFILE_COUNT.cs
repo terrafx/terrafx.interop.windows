@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT.xml' path='doc/member[@name="D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT"]/*' />
 public partial struct D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT
 {
+    /// <include file='D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT.xml' path='doc/member[@name="D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT.NodeIndex"]/*' />
     public uint NodeIndex;
 
+    /// <include file='D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT.xml' path='doc/member[@name="D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT.ProfileCount"]/*' />
     public uint ProfileCount;
 }

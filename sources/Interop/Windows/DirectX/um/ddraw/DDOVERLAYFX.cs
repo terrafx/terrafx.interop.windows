@@ -8,42 +8,56 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX"]/*' />
 public unsafe partial struct DDOVERLAYFX
 {
+    /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.dwAlphaEdgeBlendBitDepth"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAlphaEdgeBlendBitDepth;
 
+    /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.dwAlphaEdgeBlend"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAlphaEdgeBlend;
 
+    /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.dwReserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved;
 
+    /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.dwAlphaDestConstBitDepth"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAlphaDestConstBitDepth;
 
+    /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.Anonymous1"]/*' />
     [NativeTypeName("_DDOVERLAYFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:775:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
+    /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.dwAlphaSrcConstBitDepth"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAlphaSrcConstBitDepth;
 
+    /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.Anonymous2"]/*' />
     [NativeTypeName("_DDOVERLAYFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:781:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
+    /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.dckDestColorkey"]/*' />
     public DDCOLORKEY dckDestColorkey;
 
+    /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.dckSrcColorkey"]/*' />
     public DDCOLORKEY dckSrcColorkey;
 
+    /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.dwDDFX"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwDDFX;
 
+    /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.dwAlphaDestConst"]/*' />
     public ref uint dwAlphaDestConst
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -53,6 +67,7 @@ public unsafe partial struct DDOVERLAYFX
         }
     }
 
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.lpDDSAlphaDest"]/*' />
     public ref IDirectDrawSurface* lpDDSAlphaDest
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -62,6 +77,7 @@ public unsafe partial struct DDOVERLAYFX
         }
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dwAlphaSrcConst"]/*' />
     public ref uint dwAlphaSrcConst
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -71,6 +87,7 @@ public unsafe partial struct DDOVERLAYFX
         }
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.lpDDSAlphaSrc"]/*' />
     public ref IDirectDrawSurface* lpDDSAlphaSrc
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -80,25 +97,31 @@ public unsafe partial struct DDOVERLAYFX
         }
     }
 
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous1_e__Union
     {
+        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.dwAlphaDestConst"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwAlphaDestConst;
 
+        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.lpDDSAlphaDest"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPDIRECTDRAWSURFACE")]
         public IDirectDrawSurface* lpDDSAlphaDest;
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous2_e__Union
     {
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dwAlphaSrcConst"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwAlphaSrcConst;
 
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.lpDDSAlphaSrc"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPDIRECTDRAWSURFACE")]
         public IDirectDrawSurface* lpDDSAlphaSrc;

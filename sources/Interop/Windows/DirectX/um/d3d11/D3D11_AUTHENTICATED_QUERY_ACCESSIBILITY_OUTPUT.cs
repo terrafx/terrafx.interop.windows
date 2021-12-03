@@ -8,14 +8,19 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_OUTPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_OUTPUT"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_OUTPUT
 {
+    /// <include file='D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_OUTPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_OUTPUT.Output"]/*' />
     public D3D11_AUTHENTICATED_QUERY_OUTPUT Output;
 
+    /// <include file='D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_OUTPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_OUTPUT.BusType"]/*' />
     public D3D11_BUS_TYPE BusType;
 
+    /// <include file='D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_OUTPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_OUTPUT.AccessibleInContiguousBlocks"]/*' />
     public BOOL AccessibleInContiguousBlocks;
 
+    /// <include file='D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_OUTPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_OUTPUT.AccessibleInNonContiguousBlocks"]/*' />
     public BOOL AccessibleInNonContiguousBlocks;
 }

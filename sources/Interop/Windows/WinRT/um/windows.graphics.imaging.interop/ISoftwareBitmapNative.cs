@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ISoftwareBitmapNative.xml' path='doc/member[@name="ISoftwareBitmapNative"]/*' />
 [Guid("94BC8415-04EA-4B2E-AF13-4DE95AA898EB")]
 [NativeTypeName("struct ISoftwareBitmapNative : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -17,6 +18,7 @@ public unsafe partial struct ISoftwareBitmapNative : ISoftwareBitmapNative.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ISoftwareBitmapNative : ISoftwareBitmapNative.Inter
         return ((delegate* unmanaged<ISoftwareBitmapNative*, Guid*, void**, int>)(lpVtbl[0]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ISoftwareBitmapNative : ISoftwareBitmapNative.Inter
         return ((delegate* unmanaged<ISoftwareBitmapNative*, uint>)(lpVtbl[1]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ISoftwareBitmapNative : ISoftwareBitmapNative.Inter
         return ((delegate* unmanaged<ISoftwareBitmapNative*, uint>)(lpVtbl[2]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -47,6 +52,7 @@ public unsafe partial struct ISoftwareBitmapNative : ISoftwareBitmapNative.Inter
         return ((delegate* unmanaged<ISoftwareBitmapNative*, uint*, Guid**, int>)(lpVtbl[3]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -54,6 +60,7 @@ public unsafe partial struct ISoftwareBitmapNative : ISoftwareBitmapNative.Inter
         return ((delegate* unmanaged<ISoftwareBitmapNative*, HSTRING*, int>)(lpVtbl[4]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -61,6 +68,7 @@ public unsafe partial struct ISoftwareBitmapNative : ISoftwareBitmapNative.Inter
         return ((delegate* unmanaged<ISoftwareBitmapNative*, TrustLevel*, int>)(lpVtbl[5]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='ISoftwareBitmapNative.xml' path='doc/member[@name="ISoftwareBitmapNative.GetData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetData([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)

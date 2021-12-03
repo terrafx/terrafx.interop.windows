@@ -7,16 +7,21 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_PIXEL_SHADER_TRACE_DESC.xml' path='doc/member[@name="D3D11_PIXEL_SHADER_TRACE_DESC"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_PIXEL_SHADER_TRACE_DESC
 {
+    /// <include file='D3D11_PIXEL_SHADER_TRACE_DESC.xml' path='doc/member[@name="D3D11_PIXEL_SHADER_TRACE_DESC.Invocation"]/*' />
     [NativeTypeName("UINT64")]
     public ulong Invocation;
 
+    /// <include file='D3D11_PIXEL_SHADER_TRACE_DESC.xml' path='doc/member[@name="D3D11_PIXEL_SHADER_TRACE_DESC.X"]/*' />
     public int X;
 
+    /// <include file='D3D11_PIXEL_SHADER_TRACE_DESC.xml' path='doc/member[@name="D3D11_PIXEL_SHADER_TRACE_DESC.Y"]/*' />
     public int Y;
 
+    /// <include file='D3D11_PIXEL_SHADER_TRACE_DESC.xml' path='doc/member[@name="D3D11_PIXEL_SHADER_TRACE_DESC.SampleMask"]/*' />
     [NativeTypeName("UINT64")]
     public ulong SampleMask;
 }

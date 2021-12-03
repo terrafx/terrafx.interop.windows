@@ -5,15 +5,21 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_SHADER_DEBUG_SCOPE_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_SCOPE_INFO"]/*' />
 public partial struct D3D10_SHADER_DEBUG_SCOPE_INFO
 {
+    /// <include file='D3D10_SHADER_DEBUG_SCOPE_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_SCOPE_INFO.ScopeType"]/*' />
     public D3D10_SHADER_DEBUG_SCOPETYPE ScopeType;
 
+    /// <include file='D3D10_SHADER_DEBUG_SCOPE_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_SCOPE_INFO.Name"]/*' />
     public uint Name;
 
+    /// <include file='D3D10_SHADER_DEBUG_SCOPE_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_SCOPE_INFO.uNameLen"]/*' />
     public uint uNameLen;
 
+    /// <include file='D3D10_SHADER_DEBUG_SCOPE_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_SCOPE_INFO.uVariables"]/*' />
     public uint uVariables;
 
+    /// <include file='D3D10_SHADER_DEBUG_SCOPE_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_SCOPE_INFO.VariableData"]/*' />
     public uint VariableData;
 }

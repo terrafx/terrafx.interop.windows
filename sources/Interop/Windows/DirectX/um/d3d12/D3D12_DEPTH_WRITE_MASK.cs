@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_DEPTH_WRITE_MASK.xml' path='doc/member[@name="D3D12_DEPTH_WRITE_MASK"]/*' />
 public enum D3D12_DEPTH_WRITE_MASK
 {
+    /// <include file='D3D12_DEPTH_WRITE_MASK.xml' path='doc/member[@name="D3D12_DEPTH_WRITE_MASK.D3D12_DEPTH_WRITE_MASK_ZERO"]/*' />
     D3D12_DEPTH_WRITE_MASK_ZERO = 0,
+
+    /// <include file='D3D12_DEPTH_WRITE_MASK.xml' path='doc/member[@name="D3D12_DEPTH_WRITE_MASK.D3D12_DEPTH_WRITE_MASK_ALL"]/*' />
     D3D12_DEPTH_WRITE_MASK_ALL = 1,
 }

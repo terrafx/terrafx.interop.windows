@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics"]/*' />
 [Guid("18C9E2B6-3F43-4116-9F2B-FF935D7770D2")]
 [NativeTypeName("struct IXamlDiagnostics : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface
         return ((delegate* unmanaged<IXamlDiagnostics*, Guid*, void**, int>)(lpVtbl[0]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface
         return ((delegate* unmanaged<IXamlDiagnostics*, uint>)(lpVtbl[1]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface
         return ((delegate* unmanaged<IXamlDiagnostics*, uint>)(lpVtbl[2]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics.GetDispatcher"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDispatcher(IInspectable** ppDispatcher)
@@ -49,6 +54,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface
         return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int>)(lpVtbl[3]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), ppDispatcher);
     }
 
+    /// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics.GetUiLayer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetUiLayer(IInspectable** ppLayer)
@@ -56,6 +62,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface
         return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int>)(lpVtbl[4]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), ppLayer);
     }
 
+    /// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics.GetApplication"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetApplication(IInspectable** ppApplication)
@@ -63,6 +70,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface
         return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int>)(lpVtbl[5]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), ppApplication);
     }
 
+    /// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics.GetIInspectableFromHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetIInspectableFromHandle(InstanceHandle instanceHandle, IInspectable** ppInstance)
@@ -70,6 +78,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface
         return ((delegate* unmanaged<IXamlDiagnostics*, InstanceHandle, IInspectable**, int>)(lpVtbl[6]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), instanceHandle, ppInstance);
     }
 
+    /// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics.GetHandleFromIInspectable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetHandleFromIInspectable(IInspectable* pInstance, InstanceHandle* pHandle)
@@ -77,6 +86,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface
         return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable*, InstanceHandle*, int>)(lpVtbl[7]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInstance, pHandle);
     }
 
+    /// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics.HitTest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT HitTest(RECT rect, [NativeTypeName("unsigned int *")] uint* pCount, InstanceHandle** ppInstanceHandles)
@@ -84,6 +94,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface
         return ((delegate* unmanaged<IXamlDiagnostics*, RECT, uint*, InstanceHandle**, int>)(lpVtbl[8]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), rect, pCount, ppInstanceHandles);
     }
 
+    /// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics.RegisterInstance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT RegisterInstance(IInspectable* pInstance, InstanceHandle* pInstanceHandle)
@@ -91,6 +102,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface
         return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable*, InstanceHandle*, int>)(lpVtbl[9]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInstance, pInstanceHandle);
     }
 
+    /// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics.GetInitializationData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetInitializationData([NativeTypeName("BSTR *")] ushort** pInitializationData)

@@ -11,9 +11,11 @@ namespace TerraFX.Interop.WinRT;
 
 public static unsafe partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.CreateControlInput"]/*' />
     [DllImport("windows.ui.dll", ExactSpelling = true)]
     public static extern HRESULT CreateControlInput([NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.CreateControlInputEx"]/*' />
     [DllImport("windows.ui.dll", ExactSpelling = true)]
     public static extern HRESULT CreateControlInputEx(IUnknown* pCoreWindow, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 }

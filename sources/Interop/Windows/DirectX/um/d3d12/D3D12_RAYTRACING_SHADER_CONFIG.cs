@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_RAYTRACING_SHADER_CONFIG.xml' path='doc/member[@name="D3D12_RAYTRACING_SHADER_CONFIG"]/*' />
 public partial struct D3D12_RAYTRACING_SHADER_CONFIG
 {
+    /// <include file='D3D12_RAYTRACING_SHADER_CONFIG.xml' path='doc/member[@name="D3D12_RAYTRACING_SHADER_CONFIG.MaxPayloadSizeInBytes"]/*' />
     public uint MaxPayloadSizeInBytes;
 
+    /// <include file='D3D12_RAYTRACING_SHADER_CONFIG.xml' path='doc/member[@name="D3D12_RAYTRACING_SHADER_CONFIG.MaxAttributeSizeInBytes"]/*' />
     public uint MaxAttributeSizeInBytes;
 }

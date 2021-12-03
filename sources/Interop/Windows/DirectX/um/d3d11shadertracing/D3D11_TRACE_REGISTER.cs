@@ -10,20 +10,26 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_TRACE_REGISTER.xml' path='doc/member[@name="D3D11_TRACE_REGISTER"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct D3D11_TRACE_REGISTER
 {
+    /// <include file='D3D11_TRACE_REGISTER.xml' path='doc/member[@name="D3D11_TRACE_REGISTER.RegType"]/*' />
     public D3D11_TRACE_REGISTER_TYPE RegType;
 
+    /// <include file='D3D11_TRACE_REGISTER.xml' path='doc/member[@name="D3D11_TRACE_REGISTER.Anonymous"]/*' />
     [NativeTypeName("D3D11_TRACE_REGISTER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3d11shadertracing.h:234:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='D3D11_TRACE_REGISTER.xml' path='doc/member[@name="D3D11_TRACE_REGISTER.OperandIndex"]/*' />
     [NativeTypeName("UINT8")]
     public byte OperandIndex;
 
+    /// <include file='D3D11_TRACE_REGISTER.xml' path='doc/member[@name="D3D11_TRACE_REGISTER.Flags"]/*' />
     [NativeTypeName("UINT8")]
     public byte Flags;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Index1D"]/*' />
     public ref ushort Index1D
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +39,7 @@ public unsafe partial struct D3D11_TRACE_REGISTER
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Index2D"]/*' />
     public Span<ushort> Index2D
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,13 +49,16 @@ public unsafe partial struct D3D11_TRACE_REGISTER
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Index1D"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("UINT16")]
         public ushort Index1D;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Index2D"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("UINT16 [2]")]
         public fixed ushort Index2D[2];

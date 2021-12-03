@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12DebugCommandList.xml' path='doc/member[@name="ID3D12DebugCommandList"]/*' />
 [Guid("09E0BF36-54AC-484F-8847-4BAEEAB6053F")]
 [NativeTypeName("struct ID3D12DebugCommandList : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D12DebugCommandList : ID3D12DebugCommandList.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D12DebugCommandList : ID3D12DebugCommandList.Int
         return ((delegate* unmanaged<ID3D12DebugCommandList*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DebugCommandList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D12DebugCommandList : ID3D12DebugCommandList.Int
         return ((delegate* unmanaged<ID3D12DebugCommandList*, uint>)(lpVtbl[1]))((ID3D12DebugCommandList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D12DebugCommandList : ID3D12DebugCommandList.Int
         return ((delegate* unmanaged<ID3D12DebugCommandList*, uint>)(lpVtbl[2]))((ID3D12DebugCommandList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12DebugCommandList.xml' path='doc/member[@name="ID3D12DebugCommandList.AssertResourceState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public BOOL AssertResourceState(ID3D12Resource* pResource, uint Subresource, uint State)
@@ -47,6 +52,7 @@ public unsafe partial struct ID3D12DebugCommandList : ID3D12DebugCommandList.Int
         return ((delegate* unmanaged<ID3D12DebugCommandList*, ID3D12Resource*, uint, uint, int>)(lpVtbl[3]))((ID3D12DebugCommandList*)Unsafe.AsPointer(ref this), pResource, Subresource, State);
     }
 
+    /// <include file='ID3D12DebugCommandList.xml' path='doc/member[@name="ID3D12DebugCommandList.SetFeatureMask"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetFeatureMask(D3D12_DEBUG_FEATURE Mask)
@@ -54,6 +60,7 @@ public unsafe partial struct ID3D12DebugCommandList : ID3D12DebugCommandList.Int
         return ((delegate* unmanaged<ID3D12DebugCommandList*, D3D12_DEBUG_FEATURE, int>)(lpVtbl[4]))((ID3D12DebugCommandList*)Unsafe.AsPointer(ref this), Mask);
     }
 
+    /// <include file='ID3D12DebugCommandList.xml' path='doc/member[@name="ID3D12DebugCommandList.GetFeatureMask"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public D3D12_DEBUG_FEATURE GetFeatureMask()

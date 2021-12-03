@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='ISurfaceImageSourceManagerNative.xml' path='doc/member[@name="ISurfaceImageSourceManagerNative"]/*' />
 [Guid("4C8798B7-1D88-4A0F-B59B-B93F600DE8C8")]
 [NativeTypeName("struct ISurfaceImageSourceManagerNative : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct ISurfaceImageSourceManagerNative : ISurfaceImageSou
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct ISurfaceImageSourceManagerNative : ISurfaceImageSou
         return ((delegate* unmanaged<ISurfaceImageSourceManagerNative*, Guid*, void**, int>)(lpVtbl[0]))((ISurfaceImageSourceManagerNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct ISurfaceImageSourceManagerNative : ISurfaceImageSou
         return ((delegate* unmanaged<ISurfaceImageSourceManagerNative*, uint>)(lpVtbl[1]))((ISurfaceImageSourceManagerNative*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct ISurfaceImageSourceManagerNative : ISurfaceImageSou
         return ((delegate* unmanaged<ISurfaceImageSourceManagerNative*, uint>)(lpVtbl[2]))((ISurfaceImageSourceManagerNative*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISurfaceImageSourceManagerNative.xml' path='doc/member[@name="ISurfaceImageSourceManagerNative.FlushAllSurfacesWithDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT FlushAllSurfacesWithDevice(IUnknown* device)

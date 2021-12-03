@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_GLOBAL_ROOT_SIGNATURE.xml' path='doc/member[@name="D3D12_GLOBAL_ROOT_SIGNATURE"]/*' />
 public unsafe partial struct D3D12_GLOBAL_ROOT_SIGNATURE
 {
+    /// <include file='D3D12_GLOBAL_ROOT_SIGNATURE.xml' path='doc/member[@name="D3D12_GLOBAL_ROOT_SIGNATURE.pGlobalRootSignature"]/*' />
     public ID3D12RootSignature* pGlobalRootSignature;
 }

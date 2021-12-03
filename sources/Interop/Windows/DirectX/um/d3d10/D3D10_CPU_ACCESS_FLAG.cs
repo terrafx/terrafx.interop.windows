@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_CPU_ACCESS_FLAG.xml' path='doc/member[@name="D3D10_CPU_ACCESS_FLAG"]/*' />
 [Flags]
 public enum D3D10_CPU_ACCESS_FLAG
 {
+    /// <include file='D3D10_CPU_ACCESS_FLAG.xml' path='doc/member[@name="D3D10_CPU_ACCESS_FLAG.D3D10_CPU_ACCESS_WRITE"]/*' />
     D3D10_CPU_ACCESS_WRITE = 0x10000,
+
+    /// <include file='D3D10_CPU_ACCESS_FLAG.xml' path='doc/member[@name="D3D10_CPU_ACCESS_FLAG.D3D10_CPU_ACCESS_READ"]/*' />
     D3D10_CPU_ACCESS_READ = 0x20000,
 }

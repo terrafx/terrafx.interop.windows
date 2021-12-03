@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='X3DAUDIO_DISTANCE_CURVE.xml' path='doc/member[@name="X3DAUDIO_DISTANCE_CURVE"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct X3DAUDIO_DISTANCE_CURVE
 {
+    /// <include file='X3DAUDIO_DISTANCE_CURVE.xml' path='doc/member[@name="X3DAUDIO_DISTANCE_CURVE.pPoints"]/*' />
     public X3DAUDIO_DISTANCE_CURVE_POINT* pPoints;
 
+    /// <include file='X3DAUDIO_DISTANCE_CURVE.xml' path='doc/member[@name="X3DAUDIO_DISTANCE_CURVE.PointCount"]/*' />
     [NativeTypeName("UINT32")]
     public uint PointCount;
 }

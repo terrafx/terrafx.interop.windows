@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_NODE_MASK.xml' path='doc/member[@name="D3D12_NODE_MASK"]/*' />
 public partial struct D3D12_NODE_MASK
 {
+    /// <include file='D3D12_NODE_MASK.xml' path='doc/member[@name="D3D12_NODE_MASK.NodeMask"]/*' />
     public uint NodeMask;
 }

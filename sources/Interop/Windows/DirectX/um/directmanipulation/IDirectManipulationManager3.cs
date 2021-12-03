@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDirectManipulationManager3.xml' path='doc/member[@name="IDirectManipulationManager3"]/*' />
 [Guid("2CB6B33D-FFE8-488C-B750-FBDFE88DCA8C")]
 [NativeTypeName("struct IDirectManipulationManager3 : IDirectManipulationManager2")]
 [NativeInheritance("IDirectManipulationManager2")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDirectManipulationManager3 : IDirectManipulationMa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDirectManipulationManager3 : IDirectManipulationMa
         return ((delegate* unmanaged<IDirectManipulationManager3*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDirectManipulationManager3 : IDirectManipulationMa
         return ((delegate* unmanaged<IDirectManipulationManager3*, uint>)(lpVtbl[1]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDirectManipulationManager3 : IDirectManipulationMa
         return ((delegate* unmanaged<IDirectManipulationManager3*, uint>)(lpVtbl[2]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDirectManipulationManager.Activate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Activate(HWND window)
@@ -49,6 +54,7 @@ public unsafe partial struct IDirectManipulationManager3 : IDirectManipulationMa
         return ((delegate* unmanaged<IDirectManipulationManager3*, HWND, int>)(lpVtbl[3]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), window);
     }
 
+    /// <inheritdoc cref="IDirectManipulationManager.Deactivate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Deactivate(HWND window)
@@ -56,6 +62,7 @@ public unsafe partial struct IDirectManipulationManager3 : IDirectManipulationMa
         return ((delegate* unmanaged<IDirectManipulationManager3*, HWND, int>)(lpVtbl[4]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), window);
     }
 
+    /// <inheritdoc cref="IDirectManipulationManager.RegisterHitTestTarget" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RegisterHitTestTarget(HWND window, HWND hitTestWindow, DIRECTMANIPULATION_HITTEST_TYPE type)
@@ -63,6 +70,7 @@ public unsafe partial struct IDirectManipulationManager3 : IDirectManipulationMa
         return ((delegate* unmanaged<IDirectManipulationManager3*, HWND, HWND, DIRECTMANIPULATION_HITTEST_TYPE, int>)(lpVtbl[5]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), window, hitTestWindow, type);
     }
 
+    /// <inheritdoc cref="IDirectManipulationManager.ProcessInput" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT ProcessInput([NativeTypeName("const MSG *")] MSG* message, BOOL* handled)
@@ -70,6 +78,7 @@ public unsafe partial struct IDirectManipulationManager3 : IDirectManipulationMa
         return ((delegate* unmanaged<IDirectManipulationManager3*, MSG*, BOOL*, int>)(lpVtbl[6]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), message, handled);
     }
 
+    /// <inheritdoc cref="IDirectManipulationManager.GetUpdateManager" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetUpdateManager([NativeTypeName("const IID &")] Guid* riid, void** @object)
@@ -77,6 +86,7 @@ public unsafe partial struct IDirectManipulationManager3 : IDirectManipulationMa
         return ((delegate* unmanaged<IDirectManipulationManager3*, Guid*, void**, int>)(lpVtbl[7]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), riid, @object);
     }
 
+    /// <inheritdoc cref="IDirectManipulationManager.CreateViewport" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT CreateViewport(IDirectManipulationFrameInfoProvider* frameInfo, HWND window, [NativeTypeName("const IID &")] Guid* riid, void** @object)
@@ -84,6 +94,7 @@ public unsafe partial struct IDirectManipulationManager3 : IDirectManipulationMa
         return ((delegate* unmanaged<IDirectManipulationManager3*, IDirectManipulationFrameInfoProvider*, HWND, Guid*, void**, int>)(lpVtbl[8]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), frameInfo, window, riid, @object);
     }
 
+    /// <inheritdoc cref="IDirectManipulationManager.CreateContent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT CreateContent(IDirectManipulationFrameInfoProvider* frameInfo, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, void** @object)
@@ -91,6 +102,7 @@ public unsafe partial struct IDirectManipulationManager3 : IDirectManipulationMa
         return ((delegate* unmanaged<IDirectManipulationManager3*, IDirectManipulationFrameInfoProvider*, Guid*, Guid*, void**, int>)(lpVtbl[9]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), frameInfo, clsid, riid, @object);
     }
 
+    /// <inheritdoc cref="IDirectManipulationManager2.CreateBehavior" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT CreateBehavior([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, void** @object)
@@ -98,6 +110,7 @@ public unsafe partial struct IDirectManipulationManager3 : IDirectManipulationMa
         return ((delegate* unmanaged<IDirectManipulationManager3*, Guid*, Guid*, void**, int>)(lpVtbl[10]))((IDirectManipulationManager3*)Unsafe.AsPointer(ref this), clsid, riid, @object);
     }
 
+    /// <include file='IDirectManipulationManager3.xml' path='doc/member[@name="IDirectManipulationManager3.GetService"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetService([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, void** @object)

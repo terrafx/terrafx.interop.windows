@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_SUBRESOURCE_DATA.xml' path='doc/member[@name="D3D11_SUBRESOURCE_DATA"]/*' />
 public unsafe partial struct D3D11_SUBRESOURCE_DATA
 {
+    /// <include file='D3D11_SUBRESOURCE_DATA.xml' path='doc/member[@name="D3D11_SUBRESOURCE_DATA.pSysMem"]/*' />
     [NativeTypeName("const void *")]
     public void* pSysMem;
 
+    /// <include file='D3D11_SUBRESOURCE_DATA.xml' path='doc/member[@name="D3D11_SUBRESOURCE_DATA.SysMemPitch"]/*' />
     public uint SysMemPitch;
 
+    /// <include file='D3D11_SUBRESOURCE_DATA.xml' path='doc/member[@name="D3D11_SUBRESOURCE_DATA.SysMemSlicePitch"]/*' />
     public uint SysMemSlicePitch;
 }

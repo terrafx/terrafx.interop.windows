@@ -7,12 +7,15 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_AES_CTR_IV.xml' path='doc/member[@name="D3D11_AES_CTR_IV"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_AES_CTR_IV
 {
+    /// <include file='D3D11_AES_CTR_IV.xml' path='doc/member[@name="D3D11_AES_CTR_IV.IV"]/*' />
     [NativeTypeName("UINT64")]
     public ulong IV;
 
+    /// <include file='D3D11_AES_CTR_IV.xml' path='doc/member[@name="D3D11_AES_CTR_IV.Count"]/*' />
     [NativeTypeName("UINT64")]
     public ulong Count;
 }

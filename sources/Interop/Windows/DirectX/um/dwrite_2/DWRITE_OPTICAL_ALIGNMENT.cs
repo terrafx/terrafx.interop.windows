@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_OPTICAL_ALIGNMENT.xml' path='doc/member[@name="DWRITE_OPTICAL_ALIGNMENT"]/*' />
 public enum DWRITE_OPTICAL_ALIGNMENT
 {
+    /// <include file='DWRITE_OPTICAL_ALIGNMENT.xml' path='doc/member[@name="DWRITE_OPTICAL_ALIGNMENT.DWRITE_OPTICAL_ALIGNMENT_NONE"]/*' />
     DWRITE_OPTICAL_ALIGNMENT_NONE,
+
+    /// <include file='DWRITE_OPTICAL_ALIGNMENT.xml' path='doc/member[@name="DWRITE_OPTICAL_ALIGNMENT.DWRITE_OPTICAL_ALIGNMENT_NO_SIDE_BEARINGS"]/*' />
     DWRITE_OPTICAL_ALIGNMENT_NO_SIDE_BEARINGS,
 }

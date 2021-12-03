@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_PACKED_MIP_INFO.xml' path='doc/member[@name="D3D12_PACKED_MIP_INFO"]/*' />
 public partial struct D3D12_PACKED_MIP_INFO
 {
+    /// <include file='D3D12_PACKED_MIP_INFO.xml' path='doc/member[@name="D3D12_PACKED_MIP_INFO.NumStandardMips"]/*' />
     [NativeTypeName("UINT8")]
     public byte NumStandardMips;
 
+    /// <include file='D3D12_PACKED_MIP_INFO.xml' path='doc/member[@name="D3D12_PACKED_MIP_INFO.NumPackedMips"]/*' />
     [NativeTypeName("UINT8")]
     public byte NumPackedMips;
 
+    /// <include file='D3D12_PACKED_MIP_INFO.xml' path='doc/member[@name="D3D12_PACKED_MIP_INFO.NumTilesForPackedMips"]/*' />
     public uint NumTilesForPackedMips;
 
+    /// <include file='D3D12_PACKED_MIP_INFO.xml' path='doc/member[@name="D3D12_PACKED_MIP_INFO.StartTileIndexInOverallResource"]/*' />
     public uint StartTileIndexInOverallResource;
 }

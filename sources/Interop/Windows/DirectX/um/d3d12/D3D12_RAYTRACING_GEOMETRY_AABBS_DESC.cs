@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_RAYTRACING_GEOMETRY_AABBS_DESC.xml' path='doc/member[@name="D3D12_RAYTRACING_GEOMETRY_AABBS_DESC"]/*' />
 public partial struct D3D12_RAYTRACING_GEOMETRY_AABBS_DESC
 {
+    /// <include file='D3D12_RAYTRACING_GEOMETRY_AABBS_DESC.xml' path='doc/member[@name="D3D12_RAYTRACING_GEOMETRY_AABBS_DESC.AABBCount"]/*' />
     [NativeTypeName("UINT64")]
     public ulong AABBCount;
 
+    /// <include file='D3D12_RAYTRACING_GEOMETRY_AABBS_DESC.xml' path='doc/member[@name="D3D12_RAYTRACING_GEOMETRY_AABBS_DESC.AABBs"]/*' />
     public D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE AABBs;
 }

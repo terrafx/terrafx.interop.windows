@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_STATE_SUBOBJECT.xml' path='doc/member[@name="D3D12_STATE_SUBOBJECT"]/*' />
 public unsafe partial struct D3D12_STATE_SUBOBJECT
 {
+    /// <include file='D3D12_STATE_SUBOBJECT.xml' path='doc/member[@name="D3D12_STATE_SUBOBJECT.Type"]/*' />
     public D3D12_STATE_SUBOBJECT_TYPE Type;
 
+    /// <include file='D3D12_STATE_SUBOBJECT.xml' path='doc/member[@name="D3D12_STATE_SUBOBJECT.pDesc"]/*' />
     [NativeTypeName("const void *")]
     public void* pDesc;
 }

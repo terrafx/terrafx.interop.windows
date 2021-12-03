@@ -7,10 +7,12 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DWRITE_SHAPING_TEXT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_TEXT_PROPERTIES"]/*' />
 public partial struct DWRITE_SHAPING_TEXT_PROPERTIES
 {
     public ushort _bitfield;
 
+    /// <include file='DWRITE_SHAPING_TEXT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_TEXT_PROPERTIES.isShapedAlone"]/*' />
     [NativeTypeName("UINT16 : 1")]
     public ushort isShapedAlone
     {
@@ -27,6 +29,7 @@ public partial struct DWRITE_SHAPING_TEXT_PROPERTIES
         }
     }
 
+    /// <include file='DWRITE_SHAPING_TEXT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_TEXT_PROPERTIES.reserved1"]/*' />
     [NativeTypeName("UINT16 : 1")]
     public ushort reserved1
     {
@@ -43,6 +46,7 @@ public partial struct DWRITE_SHAPING_TEXT_PROPERTIES
         }
     }
 
+    /// <include file='DWRITE_SHAPING_TEXT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_TEXT_PROPERTIES.canBreakShapingAfter"]/*' />
     [NativeTypeName("UINT16 : 1")]
     public ushort canBreakShapingAfter
     {
@@ -59,6 +63,7 @@ public partial struct DWRITE_SHAPING_TEXT_PROPERTIES
         }
     }
 
+    /// <include file='DWRITE_SHAPING_TEXT_PROPERTIES.xml' path='doc/member[@name="DWRITE_SHAPING_TEXT_PROPERTIES.reserved"]/*' />
     [NativeTypeName("UINT16 : 13")]
     public ushort reserved
     {

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_FEATURE_DATA_SHADER_CACHE.xml' path='doc/member[@name="D3D11_FEATURE_DATA_SHADER_CACHE"]/*' />
 public partial struct D3D11_FEATURE_DATA_SHADER_CACHE
 {
+    /// <include file='D3D11_FEATURE_DATA_SHADER_CACHE.xml' path='doc/member[@name="D3D11_FEATURE_DATA_SHADER_CACHE.SupportFlags"]/*' />
     public uint SupportFlags;
 }

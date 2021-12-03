@@ -8,12 +8,16 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_INPUT"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_INPUT
 {
+    /// <include file='D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_INPUT.Input"]/*' />
     public D3D11_AUTHENTICATED_QUERY_INPUT Input;
 
+    /// <include file='D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_INPUT.DeviceHandle"]/*' />
     public HANDLE DeviceHandle;
 
+    /// <include file='D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_INPUT.CryptoSessionHandle"]/*' />
     public HANDLE CryptoSessionHandle;
 }

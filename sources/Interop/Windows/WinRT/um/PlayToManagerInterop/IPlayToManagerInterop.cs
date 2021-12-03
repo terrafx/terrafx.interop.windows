@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IPlayToManagerInterop.xml' path='doc/member[@name="IPlayToManagerInterop"]/*' />
 [Guid("24394699-1F2C-4EB3-8CD7-0EC1DA42A540")]
 [NativeTypeName("struct IPlayToManagerInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
@@ -19,6 +20,7 @@ public unsafe partial struct IPlayToManagerInterop : IPlayToManagerInterop.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IPlayToManagerInterop : IPlayToManagerInterop.Inter
         return ((delegate* unmanaged<IPlayToManagerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IPlayToManagerInterop : IPlayToManagerInterop.Inter
         return ((delegate* unmanaged<IPlayToManagerInterop*, uint>)(lpVtbl[1]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IPlayToManagerInterop : IPlayToManagerInterop.Inter
         return ((delegate* unmanaged<IPlayToManagerInterop*, uint>)(lpVtbl[2]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInspectable.GetIids" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
@@ -49,6 +54,7 @@ public unsafe partial struct IPlayToManagerInterop : IPlayToManagerInterop.Inter
         return ((delegate* unmanaged<IPlayToManagerInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
@@ -56,6 +62,7 @@ public unsafe partial struct IPlayToManagerInterop : IPlayToManagerInterop.Inter
         return ((delegate* unmanaged<IPlayToManagerInterop*, HSTRING*, int>)(lpVtbl[4]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), className);
     }
 
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
@@ -63,6 +70,7 @@ public unsafe partial struct IPlayToManagerInterop : IPlayToManagerInterop.Inter
         return ((delegate* unmanaged<IPlayToManagerInterop*, TrustLevel*, int>)(lpVtbl[5]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
+    /// <include file='IPlayToManagerInterop.xml' path='doc/member[@name="IPlayToManagerInterop.GetForWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** playToManager)
@@ -70,6 +78,7 @@ public unsafe partial struct IPlayToManagerInterop : IPlayToManagerInterop.Inter
         return ((delegate* unmanaged<IPlayToManagerInterop*, HWND, Guid*, void**, int>)(lpVtbl[6]))((IPlayToManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, playToManager);
     }
 
+    /// <include file='IPlayToManagerInterop.xml' path='doc/member[@name="IPlayToManagerInterop.ShowPlayToUIForWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ShowPlayToUIForWindow(HWND appWindow)

@@ -7,10 +7,16 @@ using TerraFX.Interop.DirectX;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='MLOperatorExecutionType.xml' path='doc/member[@name="MLOperatorExecutionType"]/*' />
 [NativeTypeName("uint32_t")]
 public enum MLOperatorExecutionType : uint
 {
+    /// <include file='MLOperatorExecutionType.xml' path='doc/member[@name="MLOperatorExecutionType.Undefined"]/*' />
     Undefined = 0,
+
+    /// <include file='MLOperatorExecutionType.xml' path='doc/member[@name="MLOperatorExecutionType.Cpu"]/*' />
     Cpu = 1,
+
+    /// <include file='MLOperatorExecutionType.xml' path='doc/member[@name="MLOperatorExecutionType.D3D12"]/*' />
     D3D12 = 2,
 }

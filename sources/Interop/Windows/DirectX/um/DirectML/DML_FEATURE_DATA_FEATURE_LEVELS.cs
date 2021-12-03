@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_FEATURE_DATA_FEATURE_LEVELS.xml' path='doc/member[@name="DML_FEATURE_DATA_FEATURE_LEVELS"]/*' />
 public partial struct DML_FEATURE_DATA_FEATURE_LEVELS
 {
+    /// <include file='DML_FEATURE_DATA_FEATURE_LEVELS.xml' path='doc/member[@name="DML_FEATURE_DATA_FEATURE_LEVELS.MaxSupportedFeatureLevel"]/*' />
     public DML_FEATURE_LEVEL MaxSupportedFeatureLevel;
 }

@@ -12,6 +12,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IVirtualSurfaceImageSourceNative.xml' path='doc/member[@name="IVirtualSurfaceImageSourceNative"]/*' />
 [Guid("E9550983-360B-4F53-B391-AFD695078691")]
 [NativeTypeName("struct IVirtualSurfaceImageSourceNative : ISurfaceImageSourceNative")]
 [NativeInheritance("ISurfaceImageSourceNative")]
@@ -20,6 +21,7 @@ public unsafe partial struct IVirtualSurfaceImageSourceNative : IVirtualSurfaceI
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -27,6 +29,7 @@ public unsafe partial struct IVirtualSurfaceImageSourceNative : IVirtualSurfaceI
         return ((delegate* unmanaged<IVirtualSurfaceImageSourceNative*, Guid*, void**, int>)(lpVtbl[0]))((IVirtualSurfaceImageSourceNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -35,6 +38,7 @@ public unsafe partial struct IVirtualSurfaceImageSourceNative : IVirtualSurfaceI
         return ((delegate* unmanaged<IVirtualSurfaceImageSourceNative*, uint>)(lpVtbl[1]))((IVirtualSurfaceImageSourceNative*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -43,6 +47,7 @@ public unsafe partial struct IVirtualSurfaceImageSourceNative : IVirtualSurfaceI
         return ((delegate* unmanaged<IVirtualSurfaceImageSourceNative*, uint>)(lpVtbl[2]))((IVirtualSurfaceImageSourceNative*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISurfaceImageSourceNative.SetDevice" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetDevice(IDXGIDevice* device)
@@ -50,6 +55,7 @@ public unsafe partial struct IVirtualSurfaceImageSourceNative : IVirtualSurfaceI
         return ((delegate* unmanaged<IVirtualSurfaceImageSourceNative*, IDXGIDevice*, int>)(lpVtbl[3]))((IVirtualSurfaceImageSourceNative*)Unsafe.AsPointer(ref this), device);
     }
 
+    /// <inheritdoc cref="ISurfaceImageSourceNative.BeginDraw" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT BeginDraw(RECT updateRect, IDXGISurface** surface, POINT* offset)
@@ -57,6 +63,7 @@ public unsafe partial struct IVirtualSurfaceImageSourceNative : IVirtualSurfaceI
         return ((delegate* unmanaged<IVirtualSurfaceImageSourceNative*, RECT, IDXGISurface**, POINT*, int>)(lpVtbl[4]))((IVirtualSurfaceImageSourceNative*)Unsafe.AsPointer(ref this), updateRect, surface, offset);
     }
 
+    /// <inheritdoc cref="ISurfaceImageSourceNative.EndDraw" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EndDraw()
@@ -64,6 +71,7 @@ public unsafe partial struct IVirtualSurfaceImageSourceNative : IVirtualSurfaceI
         return ((delegate* unmanaged<IVirtualSurfaceImageSourceNative*, int>)(lpVtbl[5]))((IVirtualSurfaceImageSourceNative*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVirtualSurfaceImageSourceNative.xml' path='doc/member[@name="IVirtualSurfaceImageSourceNative.Invalidate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invalidate(RECT updateRect)
@@ -71,6 +79,7 @@ public unsafe partial struct IVirtualSurfaceImageSourceNative : IVirtualSurfaceI
         return ((delegate* unmanaged<IVirtualSurfaceImageSourceNative*, RECT, int>)(lpVtbl[6]))((IVirtualSurfaceImageSourceNative*)Unsafe.AsPointer(ref this), updateRect);
     }
 
+    /// <include file='IVirtualSurfaceImageSourceNative.xml' path='doc/member[@name="IVirtualSurfaceImageSourceNative.GetUpdateRectCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetUpdateRectCount([NativeTypeName("DWORD *")] uint* count)
@@ -78,6 +87,7 @@ public unsafe partial struct IVirtualSurfaceImageSourceNative : IVirtualSurfaceI
         return ((delegate* unmanaged<IVirtualSurfaceImageSourceNative*, uint*, int>)(lpVtbl[7]))((IVirtualSurfaceImageSourceNative*)Unsafe.AsPointer(ref this), count);
     }
 
+    /// <include file='IVirtualSurfaceImageSourceNative.xml' path='doc/member[@name="IVirtualSurfaceImageSourceNative.GetUpdateRects"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetUpdateRects(RECT* updates, [NativeTypeName("DWORD")] uint count)
@@ -85,6 +95,7 @@ public unsafe partial struct IVirtualSurfaceImageSourceNative : IVirtualSurfaceI
         return ((delegate* unmanaged<IVirtualSurfaceImageSourceNative*, RECT*, uint, int>)(lpVtbl[8]))((IVirtualSurfaceImageSourceNative*)Unsafe.AsPointer(ref this), updates, count);
     }
 
+    /// <include file='IVirtualSurfaceImageSourceNative.xml' path='doc/member[@name="IVirtualSurfaceImageSourceNative.GetVisibleBounds"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetVisibleBounds(RECT* bounds)
@@ -92,6 +103,7 @@ public unsafe partial struct IVirtualSurfaceImageSourceNative : IVirtualSurfaceI
         return ((delegate* unmanaged<IVirtualSurfaceImageSourceNative*, RECT*, int>)(lpVtbl[9]))((IVirtualSurfaceImageSourceNative*)Unsafe.AsPointer(ref this), bounds);
     }
 
+    /// <include file='IVirtualSurfaceImageSourceNative.xml' path='doc/member[@name="IVirtualSurfaceImageSourceNative.RegisterForUpdatesNeeded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT RegisterForUpdatesNeeded(IVirtualSurfaceUpdatesCallbackNative* callback)
@@ -99,6 +111,7 @@ public unsafe partial struct IVirtualSurfaceImageSourceNative : IVirtualSurfaceI
         return ((delegate* unmanaged<IVirtualSurfaceImageSourceNative*, IVirtualSurfaceUpdatesCallbackNative*, int>)(lpVtbl[10]))((IVirtualSurfaceImageSourceNative*)Unsafe.AsPointer(ref this), callback);
     }
 
+    /// <include file='IVirtualSurfaceImageSourceNative.xml' path='doc/member[@name="IVirtualSurfaceImageSourceNative.Resize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Resize(int newWidth, int newHeight)

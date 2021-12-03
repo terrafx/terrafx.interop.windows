@@ -15,6 +15,7 @@ namespace TerraFX.Interop.WinRT;
 
 public static unsafe partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.PdfCreateRenderer"]/*' />
     [DllImport("windows.data.pdf.dll", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.1")]
     public static extern HRESULT PdfCreateRenderer(IDXGIDevice* pDevice, IPdfRendererNative** ppRenderer);

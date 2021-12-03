@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_INPUT_CLASSIFICATION.xml' path='doc/member[@name="D3D10_INPUT_CLASSIFICATION"]/*' />
 public enum D3D10_INPUT_CLASSIFICATION
 {
+    /// <include file='D3D10_INPUT_CLASSIFICATION.xml' path='doc/member[@name="D3D10_INPUT_CLASSIFICATION.D3D10_INPUT_PER_VERTEX_DATA"]/*' />
     D3D10_INPUT_PER_VERTEX_DATA = 0,
+
+    /// <include file='D3D10_INPUT_CLASSIFICATION.xml' path='doc/member[@name="D3D10_INPUT_CLASSIFICATION.D3D10_INPUT_PER_INSTANCE_DATA"]/*' />
     D3D10_INPUT_PER_INSTANCE_DATA = 1,
 }

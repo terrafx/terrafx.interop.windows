@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_HIT_KIND.xml' path='doc/member[@name="D3D12_HIT_KIND"]/*' />
 public enum D3D12_HIT_KIND
 {
+    /// <include file='D3D12_HIT_KIND.xml' path='doc/member[@name="D3D12_HIT_KIND.D3D12_HIT_KIND_TRIANGLE_FRONT_FACE"]/*' />
     D3D12_HIT_KIND_TRIANGLE_FRONT_FACE = 0xfe,
+
+    /// <include file='D3D12_HIT_KIND.xml' path='doc/member[@name="D3D12_HIT_KIND.D3D12_HIT_KIND_TRIANGLE_BACK_FACE"]/*' />
     D3D12_HIT_KIND_TRIANGLE_BACK_FACE = 0xff,
 }

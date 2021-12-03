@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D10_TECHNIQUE_DESC.xml' path='doc/member[@name="D3D10_TECHNIQUE_DESC"]/*' />
 public unsafe partial struct D3D10_TECHNIQUE_DESC
 {
+    /// <include file='D3D10_TECHNIQUE_DESC.xml' path='doc/member[@name="D3D10_TECHNIQUE_DESC.Name"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* Name;
 
+    /// <include file='D3D10_TECHNIQUE_DESC.xml' path='doc/member[@name="D3D10_TECHNIQUE_DESC.Passes"]/*' />
     public uint Passes;
 
+    /// <include file='D3D10_TECHNIQUE_DESC.xml' path='doc/member[@name="D3D10_TECHNIQUE_DESC.Annotations"]/*' />
     public uint Annotations;
 }

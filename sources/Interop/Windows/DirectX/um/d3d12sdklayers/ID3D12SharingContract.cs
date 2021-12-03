@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12SharingContract.xml' path='doc/member[@name="ID3D12SharingContract"]/*' />
 [Guid("0ADF7D52-929C-4E61-ADDB-FFED30DE66EF")]
 [NativeTypeName("struct ID3D12SharingContract : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D12SharingContract : ID3D12SharingContract.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D12SharingContract : ID3D12SharingContract.Inter
         return ((delegate* unmanaged<ID3D12SharingContract*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D12SharingContract : ID3D12SharingContract.Inter
         return ((delegate* unmanaged<ID3D12SharingContract*, uint>)(lpVtbl[1]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D12SharingContract : ID3D12SharingContract.Inter
         return ((delegate* unmanaged<ID3D12SharingContract*, uint>)(lpVtbl[2]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12SharingContract.xml' path='doc/member[@name="ID3D12SharingContract.Present"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void Present(ID3D12Resource* pResource, uint Subresource, HWND window)
@@ -47,6 +52,7 @@ public unsafe partial struct ID3D12SharingContract : ID3D12SharingContract.Inter
         ((delegate* unmanaged<ID3D12SharingContract*, ID3D12Resource*, uint, HWND, void>)(lpVtbl[3]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), pResource, Subresource, window);
     }
 
+    /// <include file='ID3D12SharingContract.xml' path='doc/member[@name="ID3D12SharingContract.SharedFenceSignal"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void SharedFenceSignal(ID3D12Fence* pFence, [NativeTypeName("UINT64")] ulong FenceValue)
@@ -54,6 +60,7 @@ public unsafe partial struct ID3D12SharingContract : ID3D12SharingContract.Inter
         ((delegate* unmanaged<ID3D12SharingContract*, ID3D12Fence*, ulong, void>)(lpVtbl[4]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), pFence, FenceValue);
     }
 
+    /// <include file='ID3D12SharingContract.xml' path='doc/member[@name="ID3D12SharingContract.BeginCapturableWork"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void BeginCapturableWork([NativeTypeName("const GUID &")] Guid* guid)
@@ -61,6 +68,7 @@ public unsafe partial struct ID3D12SharingContract : ID3D12SharingContract.Inter
         ((delegate* unmanaged<ID3D12SharingContract*, Guid*, void>)(lpVtbl[5]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), guid);
     }
 
+    /// <include file='ID3D12SharingContract.xml' path='doc/member[@name="ID3D12SharingContract.EndCapturableWork"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public void EndCapturableWork([NativeTypeName("const GUID &")] Guid* guid)

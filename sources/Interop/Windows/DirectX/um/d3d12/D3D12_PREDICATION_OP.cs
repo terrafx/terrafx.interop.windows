@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_PREDICATION_OP.xml' path='doc/member[@name="D3D12_PREDICATION_OP"]/*' />
 public enum D3D12_PREDICATION_OP
 {
+    /// <include file='D3D12_PREDICATION_OP.xml' path='doc/member[@name="D3D12_PREDICATION_OP.D3D12_PREDICATION_OP_EQUAL_ZERO"]/*' />
     D3D12_PREDICATION_OP_EQUAL_ZERO = 0,
+
+    /// <include file='D3D12_PREDICATION_OP.xml' path='doc/member[@name="D3D12_PREDICATION_OP.D3D12_PREDICATION_OP_NOT_EQUAL_ZERO"]/*' />
     D3D12_PREDICATION_OP_NOT_EQUAL_ZERO = 1,
 }

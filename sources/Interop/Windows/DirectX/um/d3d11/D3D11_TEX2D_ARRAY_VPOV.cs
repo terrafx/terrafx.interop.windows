@@ -7,12 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_TEX2D_ARRAY_VPOV.xml' path='doc/member[@name="D3D11_TEX2D_ARRAY_VPOV"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct D3D11_TEX2D_ARRAY_VPOV
 {
+    /// <include file='D3D11_TEX2D_ARRAY_VPOV.xml' path='doc/member[@name="D3D11_TEX2D_ARRAY_VPOV.MipSlice"]/*' />
     public uint MipSlice;
 
+    /// <include file='D3D11_TEX2D_ARRAY_VPOV.xml' path='doc/member[@name="D3D11_TEX2D_ARRAY_VPOV.FirstArraySlice"]/*' />
     public uint FirstArraySlice;
 
+    /// <include file='D3D11_TEX2D_ARRAY_VPOV.xml' path='doc/member[@name="D3D11_TEX2D_ARRAY_VPOV.ArraySize"]/*' />
     public uint ArraySize;
 }

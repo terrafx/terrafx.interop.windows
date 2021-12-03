@@ -7,10 +7,14 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXCoreAdapterState.xml' path='doc/member[@name="DXCoreAdapterState"]/*' />
 [NativeTypeName("uint32_t")]
 [SupportedOSPlatform("windows10.0.19041.0")]
 public enum DXCoreAdapterState : uint
 {
+    /// <include file='DXCoreAdapterState.xml' path='doc/member[@name="DXCoreAdapterState.IsDriverUpdateInProgress"]/*' />
     IsDriverUpdateInProgress = 0,
+
+    /// <include file='DXCoreAdapterState.xml' path='doc/member[@name="DXCoreAdapterState.AdapterMemoryBudget"]/*' />
     AdapterMemoryBudget = 1,
 }

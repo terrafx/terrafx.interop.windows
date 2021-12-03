@@ -9,12 +9,14 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDxDiagContainer.xml' path='doc/member[@name="IDxDiagContainer"]/*' />
 [NativeTypeName("struct IDxDiagContainer : IUnknown")]
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDxDiagContainer : IDxDiagContainer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -22,6 +24,7 @@ public unsafe partial struct IDxDiagContainer : IDxDiagContainer.Interface
         return ((delegate* unmanaged<IDxDiagContainer*, Guid*, void**, int>)(lpVtbl[0]))((IDxDiagContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -30,6 +33,7 @@ public unsafe partial struct IDxDiagContainer : IDxDiagContainer.Interface
         return ((delegate* unmanaged<IDxDiagContainer*, uint>)(lpVtbl[1]))((IDxDiagContainer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -38,6 +42,7 @@ public unsafe partial struct IDxDiagContainer : IDxDiagContainer.Interface
         return ((delegate* unmanaged<IDxDiagContainer*, uint>)(lpVtbl[2]))((IDxDiagContainer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDxDiagContainer.xml' path='doc/member[@name="IDxDiagContainer.GetNumberOfChildContainers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetNumberOfChildContainers([NativeTypeName("DWORD *")] uint* pdwCount)
@@ -45,6 +50,7 @@ public unsafe partial struct IDxDiagContainer : IDxDiagContainer.Interface
         return ((delegate* unmanaged<IDxDiagContainer*, uint*, int>)(lpVtbl[3]))((IDxDiagContainer*)Unsafe.AsPointer(ref this), pdwCount);
     }
 
+    /// <include file='IDxDiagContainer.xml' path='doc/member[@name="IDxDiagContainer.EnumChildContainerNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EnumChildContainerNames([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pwszContainer, [NativeTypeName("DWORD")] uint cchContainer)
@@ -52,6 +58,7 @@ public unsafe partial struct IDxDiagContainer : IDxDiagContainer.Interface
         return ((delegate* unmanaged<IDxDiagContainer*, uint, ushort*, uint, int>)(lpVtbl[4]))((IDxDiagContainer*)Unsafe.AsPointer(ref this), dwIndex, pwszContainer, cchContainer);
     }
 
+    /// <include file='IDxDiagContainer.xml' path='doc/member[@name="IDxDiagContainer.GetChildContainer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetChildContainer([NativeTypeName("LPCWSTR")] ushort* pwszContainer, IDxDiagContainer** ppInstance)
@@ -59,6 +66,7 @@ public unsafe partial struct IDxDiagContainer : IDxDiagContainer.Interface
         return ((delegate* unmanaged<IDxDiagContainer*, ushort*, IDxDiagContainer**, int>)(lpVtbl[5]))((IDxDiagContainer*)Unsafe.AsPointer(ref this), pwszContainer, ppInstance);
     }
 
+    /// <include file='IDxDiagContainer.xml' path='doc/member[@name="IDxDiagContainer.GetNumberOfProps"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetNumberOfProps([NativeTypeName("DWORD *")] uint* pdwCount)
@@ -66,6 +74,7 @@ public unsafe partial struct IDxDiagContainer : IDxDiagContainer.Interface
         return ((delegate* unmanaged<IDxDiagContainer*, uint*, int>)(lpVtbl[6]))((IDxDiagContainer*)Unsafe.AsPointer(ref this), pdwCount);
     }
 
+    /// <include file='IDxDiagContainer.xml' path='doc/member[@name="IDxDiagContainer.EnumPropNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT EnumPropNames([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pwszPropName, [NativeTypeName("DWORD")] uint cchPropName)
@@ -73,6 +82,7 @@ public unsafe partial struct IDxDiagContainer : IDxDiagContainer.Interface
         return ((delegate* unmanaged<IDxDiagContainer*, uint, ushort*, uint, int>)(lpVtbl[7]))((IDxDiagContainer*)Unsafe.AsPointer(ref this), dwIndex, pwszPropName, cchPropName);
     }
 
+    /// <include file='IDxDiagContainer.xml' path='doc/member[@name="IDxDiagContainer.GetProp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetProp([NativeTypeName("LPCWSTR")] ushort* pwszPropName, VARIANT* pvarProp)

@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDirectManipulationAutoScrollBehavior.xml' path='doc/member[@name="IDirectManipulationAutoScrollBehavior"]/*' />
 [Guid("6D5954D4-2003-4356-9B31-D051C9FF0AF7")]
 [NativeTypeName("struct IDirectManipulationAutoScrollBehavior : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDirectManipulationAutoScrollBehavior : IDirectMani
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDirectManipulationAutoScrollBehavior : IDirectMani
         return ((delegate* unmanaged<IDirectManipulationAutoScrollBehavior*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationAutoScrollBehavior*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDirectManipulationAutoScrollBehavior : IDirectMani
         return ((delegate* unmanaged<IDirectManipulationAutoScrollBehavior*, uint>)(lpVtbl[1]))((IDirectManipulationAutoScrollBehavior*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDirectManipulationAutoScrollBehavior : IDirectMani
         return ((delegate* unmanaged<IDirectManipulationAutoScrollBehavior*, uint>)(lpVtbl[2]))((IDirectManipulationAutoScrollBehavior*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDirectManipulationAutoScrollBehavior.xml' path='doc/member[@name="IDirectManipulationAutoScrollBehavior.SetConfiguration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetConfiguration(DIRECTMANIPULATION_MOTION_TYPES motionTypes, DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION scrollMotion)

@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
+/// <include file='IVisualTreeServiceCallback2.xml' path='doc/member[@name="IVisualTreeServiceCallback2"]/*' />
 [Guid("BAD9EB88-AE77-4397-B948-5FA2DB0A19EA")]
 [NativeTypeName("struct IVisualTreeServiceCallback2 : IVisualTreeServiceCallback")]
 [NativeInheritance("IVisualTreeServiceCallback")]
@@ -19,6 +20,7 @@ public unsafe partial struct IVisualTreeServiceCallback2 : IVisualTreeServiceCal
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IVisualTreeServiceCallback2 : IVisualTreeServiceCal
         return ((delegate* unmanaged<IVisualTreeServiceCallback2*, Guid*, void**, int>)(lpVtbl[0]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IVisualTreeServiceCallback2 : IVisualTreeServiceCal
         return ((delegate* unmanaged<IVisualTreeServiceCallback2*, uint>)(lpVtbl[1]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IVisualTreeServiceCallback2 : IVisualTreeServiceCal
         return ((delegate* unmanaged<IVisualTreeServiceCallback2*, uint>)(lpVtbl[2]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IVisualTreeServiceCallback.OnVisualTreeChange" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnVisualTreeChange(ParentChildRelation relation, VisualElement element, VisualMutationType mutationType)
@@ -49,6 +54,7 @@ public unsafe partial struct IVisualTreeServiceCallback2 : IVisualTreeServiceCal
         return ((delegate* unmanaged<IVisualTreeServiceCallback2*, ParentChildRelation, VisualElement, VisualMutationType, int>)(lpVtbl[3]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this), relation, element, mutationType);
     }
 
+    /// <include file='IVisualTreeServiceCallback2.xml' path='doc/member[@name="IVisualTreeServiceCallback2.OnElementStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnElementStateChanged(InstanceHandle element, VisualElementState elementState, [NativeTypeName("LPCWSTR")] ushort* context)

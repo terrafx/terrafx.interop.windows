@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDCompositionEffectGroup.xml' path='doc/member[@name="IDCompositionEffectGroup"]/*' />
 [Guid("A7929A74-E6B2-4BD6-8B95-4040119CA34D")]
 [NativeTypeName("struct IDCompositionEffectGroup : IDCompositionEffect")]
 [NativeInheritance("IDCompositionEffect")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDCompositionEffectGroup : IDCompositionEffectGroup
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDCompositionEffectGroup : IDCompositionEffectGroup
         return ((delegate* unmanaged<IDCompositionEffectGroup*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDCompositionEffectGroup : IDCompositionEffectGroup
         return ((delegate* unmanaged<IDCompositionEffectGroup*, uint>)(lpVtbl[1]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDCompositionEffectGroup : IDCompositionEffectGroup
         return ((delegate* unmanaged<IDCompositionEffectGroup*, uint>)(lpVtbl[2]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDCompositionEffectGroup.xml' path='doc/member[@name="IDCompositionEffectGroup.SetOpacity"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetOpacity(IDCompositionAnimation* animation)
@@ -49,6 +54,7 @@ public unsafe partial struct IDCompositionEffectGroup : IDCompositionEffectGroup
         return ((delegate* unmanaged<IDCompositionEffectGroup*, IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this), animation);
     }
 
+    /// <include file='IDCompositionEffectGroup.xml' path='doc/member[@name="IDCompositionEffectGroup.SetOpacity"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetOpacity(float opacity)
@@ -56,6 +62,7 @@ public unsafe partial struct IDCompositionEffectGroup : IDCompositionEffectGroup
         return ((delegate* unmanaged<IDCompositionEffectGroup*, float, int>)(lpVtbl[4]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this), opacity);
     }
 
+    /// <include file='IDCompositionEffectGroup.xml' path='doc/member[@name="IDCompositionEffectGroup.SetTransform3D"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetTransform3D(IDCompositionTransform3D* transform3D)

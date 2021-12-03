@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='AudioReverb.xml' path='doc/member[@name="AudioReverb"]/*' />
 [Guid("C2633B16-471B-4498-B8C5-4F0959E2EC09")]
 public partial struct AudioReverb
 {

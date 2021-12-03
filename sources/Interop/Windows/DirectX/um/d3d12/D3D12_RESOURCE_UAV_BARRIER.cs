@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_RESOURCE_UAV_BARRIER.xml' path='doc/member[@name="D3D12_RESOURCE_UAV_BARRIER"]/*' />
 public unsafe partial struct D3D12_RESOURCE_UAV_BARRIER
 {
+    /// <include file='D3D12_RESOURCE_UAV_BARRIER.xml' path='doc/member[@name="D3D12_RESOURCE_UAV_BARRIER.pResource"]/*' />
     public ID3D12Resource* pResource;
 }

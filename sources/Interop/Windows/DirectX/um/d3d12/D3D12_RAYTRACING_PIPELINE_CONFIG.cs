@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D12_RAYTRACING_PIPELINE_CONFIG.xml' path='doc/member[@name="D3D12_RAYTRACING_PIPELINE_CONFIG"]/*' />
 public partial struct D3D12_RAYTRACING_PIPELINE_CONFIG
 {
+    /// <include file='D3D12_RAYTRACING_PIPELINE_CONFIG.xml' path='doc/member[@name="D3D12_RAYTRACING_PIPELINE_CONFIG.MaxTraceRecursionDepth"]/*' />
     public uint MaxTraceRecursionDepth;
 }

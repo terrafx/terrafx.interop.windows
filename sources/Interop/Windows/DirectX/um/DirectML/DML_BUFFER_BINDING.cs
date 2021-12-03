@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DML_BUFFER_BINDING.xml' path='doc/member[@name="DML_BUFFER_BINDING"]/*' />
 public unsafe partial struct DML_BUFFER_BINDING
 {
+    /// <include file='DML_BUFFER_BINDING.xml' path='doc/member[@name="DML_BUFFER_BINDING.Buffer"]/*' />
     public ID3D12Resource* Buffer;
 
+    /// <include file='DML_BUFFER_BINDING.xml' path='doc/member[@name="DML_BUFFER_BINDING.Offset"]/*' />
     [NativeTypeName("UINT64")]
     public ulong Offset;
 
+    /// <include file='DML_BUFFER_BINDING.xml' path='doc/member[@name="DML_BUFFER_BINDING.SizeInBytes"]/*' />
     [NativeTypeName("UINT64")]
     public ulong SizeInBytes;
 }

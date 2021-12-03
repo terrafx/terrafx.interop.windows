@@ -5,15 +5,21 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D3D11_TEX2D_ARRAY_SRV1.xml' path='doc/member[@name="D3D11_TEX2D_ARRAY_SRV1"]/*' />
 public partial struct D3D11_TEX2D_ARRAY_SRV1
 {
+    /// <include file='D3D11_TEX2D_ARRAY_SRV1.xml' path='doc/member[@name="D3D11_TEX2D_ARRAY_SRV1.MostDetailedMip"]/*' />
     public uint MostDetailedMip;
 
+    /// <include file='D3D11_TEX2D_ARRAY_SRV1.xml' path='doc/member[@name="D3D11_TEX2D_ARRAY_SRV1.MipLevels"]/*' />
     public uint MipLevels;
 
+    /// <include file='D3D11_TEX2D_ARRAY_SRV1.xml' path='doc/member[@name="D3D11_TEX2D_ARRAY_SRV1.FirstArraySlice"]/*' />
     public uint FirstArraySlice;
 
+    /// <include file='D3D11_TEX2D_ARRAY_SRV1.xml' path='doc/member[@name="D3D11_TEX2D_ARRAY_SRV1.ArraySize"]/*' />
     public uint ArraySize;
 
+    /// <include file='D3D11_TEX2D_ARRAY_SRV1.xml' path='doc/member[@name="D3D11_TEX2D_ARRAY_SRV1.PlaneSlice"]/*' />
     public uint PlaneSlice;
 }

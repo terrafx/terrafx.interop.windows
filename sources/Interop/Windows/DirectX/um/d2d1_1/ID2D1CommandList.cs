@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1CommandList.xml' path='doc/member[@name="ID2D1CommandList"]/*' />
 [Guid("B4F34A19-2383-4D76-94F6-EC343657C3DC")]
 [NativeTypeName("struct ID2D1CommandList : ID2D1Image")]
 [NativeInheritance("ID2D1Image")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID2D1CommandList : ID2D1CommandList.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID2D1CommandList : ID2D1CommandList.Interface
         return ((delegate* unmanaged<ID2D1CommandList*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1CommandList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID2D1CommandList : ID2D1CommandList.Interface
         return ((delegate* unmanaged<ID2D1CommandList*, uint>)(lpVtbl[1]))((ID2D1CommandList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID2D1CommandList : ID2D1CommandList.Interface
         return ((delegate* unmanaged<ID2D1CommandList*, uint>)(lpVtbl[2]))((ID2D1CommandList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
@@ -47,6 +52,7 @@ public unsafe partial struct ID2D1CommandList : ID2D1CommandList.Interface
         ((delegate* unmanaged<ID2D1CommandList*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1CommandList*)Unsafe.AsPointer(ref this), factory);
     }
 
+    /// <include file='ID2D1CommandList.xml' path='doc/member[@name="ID2D1CommandList.Stream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Stream(ID2D1CommandSink* sink)
@@ -54,6 +60,7 @@ public unsafe partial struct ID2D1CommandList : ID2D1CommandList.Interface
         return ((delegate* unmanaged<ID2D1CommandList*, ID2D1CommandSink*, int>)(lpVtbl[4]))((ID2D1CommandList*)Unsafe.AsPointer(ref this), sink);
     }
 
+    /// <include file='ID2D1CommandList.xml' path='doc/member[@name="ID2D1CommandList.Close"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Close()
