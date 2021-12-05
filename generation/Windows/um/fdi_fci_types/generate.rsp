@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-fdi_fci_types.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/fdi_fci_types
+--test-output
+../../../../tests/Interop/Windows/Windows/um/fdi_fci_types
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/fdi_fci_types.h
