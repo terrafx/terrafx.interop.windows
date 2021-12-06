@@ -1,0 +1,27 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-lzexpand.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/lzexpand
+--test-output
+../../../../tests/Interop/Windows/Windows/um/lzexpand
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/lzexpand.h
+--with-librarypath
+CopyLZFile=lz32
+GetExpandedNameA=lz32
+GetExpandedNameW=lz32
+LZClose=lz32
+LZCopy=lz32
+LZInit=lz32
+LZOpenFileA=lz32
+LZOpenFileW=lz32
+LZRead=lz32
+LZSeek=lz32
+LZStart=lz32
+LZDone=lz32

@@ -2756,6 +2756,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fdi_fci_types", "fdi_fci_ty
 		generation\Windows\um\fdi_fci_types\um-fdi_fci_types.h = generation\Windows\um\fdi_fci_types\um-fdi_fci_types.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lzexpand", "lzexpand", "{CC539B27-F7D6-44F9-9CB4-6CA9486D824D}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\lzexpand\generate.rsp = generation\Windows\um\lzexpand\generate.rsp
+		generation\Windows\um\lzexpand\header.txt = generation\Windows\um\lzexpand\header.txt
+		generation\Windows\um\lzexpand\um-lzexpand.h = generation\Windows\um\lzexpand\um-lzexpand.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3181,6 +3188,7 @@ Global
 		{37AEBE29-9D61-4D84-A0D1-F7B748103D97} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{CBC62B75-03A4-470D-A52A-D84161773CB7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{5FC51DA5-FF47-4100-BE74-2F3DE11EF163} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{CC539B27-F7D6-44F9-9CB4-6CA9486D824D} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
