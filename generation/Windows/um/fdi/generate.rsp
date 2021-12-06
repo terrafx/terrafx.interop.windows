@@ -1,0 +1,23 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+_A_NAME_IS_UTF
+_A_EXEC
+--file
+um-fdi.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/fdi
+--test-output
+../../../../tests/Interop/Windows/Windows/um/fid
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/fdi.h
+--with-librarypath
+FDICopy=cabinet
+FDICreate=cabinet
+FDIDestroy=cabinet
+FDIIsCabinet=cabinet
+FDITruncateCabinet=cabinet
