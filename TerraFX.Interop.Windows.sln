@@ -2735,6 +2735,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LsaLookup", "LsaLookup", "{
 		generation\Windows\um\LsaLookup\um-lsalookup.h = generation\Windows\um\LsaLookup\um-lsalookup.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "winternl", "winternl", "{C6D41109-BC96-4D1B-83BA-C6A00361FB6E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\winternl\generate.rsp = generation\Windows\um\winternl\generate.rsp
+		generation\Windows\um\winternl\header.txt = generation\Windows\um\winternl\header.txt
+		generation\Windows\um\winternl\um-winternl.h = generation\Windows\um\winternl\um-winternl.h
+	EndProjectSection
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fdi", "fdi", "{37AEBE29-9D61-4D84-A0D1-F7B748103D97}"
 	ProjectSection(SolutionItems) = preProject
 		generation\Windows\um\fdi\generate.rsp = generation\Windows\um\fdi\generate.rsp
@@ -3185,6 +3192,7 @@ Global
 		{27F2C115-00D5-4152-BF08-0674EA9EF59B} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{F311F39C-98D2-4DB0-938A-279CCF799089} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{1729358D-206C-4F08-AD5F-C6F2E63ECD88} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{C6D41109-BC96-4D1B-83BA-C6A00361FB6E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{37AEBE29-9D61-4D84-A0D1-F7B748103D97} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{CBC62B75-03A4-470D-A52A-D84161773CB7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{5FC51DA5-FF47-4100-BE74-2F3DE11EF163} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
