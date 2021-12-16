@@ -11,7 +11,7 @@ public static unsafe partial class UI
     public const int UI_ANIMATION_SECONDS_EVENTUALLY = (-1);
 
     [NativeTypeName("#define UI_ANIMATION_KEYFRAME_STORYBOARD_START ( ( UI_ANIMATION_KEYFRAME  )-1 )")]
-    public static UI_ANIMATION_KEYFRAME* UI_ANIMATION_KEYFRAME_STORYBOARD_START => unchecked((UI_ANIMATION_KEYFRAME*)(-1));
+    public static UI_ANIMATION_KEYFRAME UI_ANIMATION_KEYFRAME_STORYBOARD_START => (UI_ANIMATION_KEYFRAME)unchecked((int*)(-1));
 
     [NativeTypeName("#define UI_ANIMATION_REPEAT_INDEFINITELY ( -1 )")]
     public const int UI_ANIMATION_REPEAT_INDEFINITELY = (-1);
