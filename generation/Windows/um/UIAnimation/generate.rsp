@@ -14,3 +14,5 @@ TerraFX.Interop.Windows
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/UIAnimation.h
 --with-attribute
 UI_ANIMATION_DEPENDENCIES=Flags
+--exclude
+__MIDL___MIDL_itf_UIAnimation_0000_0002_0003

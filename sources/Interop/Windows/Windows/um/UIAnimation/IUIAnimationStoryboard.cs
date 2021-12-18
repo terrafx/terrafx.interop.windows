@@ -54,41 +54,41 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.AddKeyframeAtOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT AddKeyframeAtOffset([NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* existingKeyframe, [NativeTypeName("UI_ANIMATION_SECONDS")] double offset, [NativeTypeName("UI_ANIMATION_KEYFRAME *")] UI_ANIMATION_KEYFRAME** keyframe)
+    public HRESULT AddKeyframeAtOffset(UI_ANIMATION_KEYFRAME existingKeyframe, [NativeTypeName("UI_ANIMATION_SECONDS")] double offset, UI_ANIMATION_KEYFRAME* keyframe)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, UI_ANIMATION_KEYFRAME*, double, UI_ANIMATION_KEYFRAME**, int>)(lpVtbl[4]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), existingKeyframe, offset, keyframe);
+        return ((delegate* unmanaged<IUIAnimationStoryboard*, UI_ANIMATION_KEYFRAME, double, UI_ANIMATION_KEYFRAME*, int>)(lpVtbl[4]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), existingKeyframe, offset, keyframe);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.AddKeyframeAfterTransition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT AddKeyframeAfterTransition(IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME *")] UI_ANIMATION_KEYFRAME** keyframe)
+    public HRESULT AddKeyframeAfterTransition(IUIAnimationTransition* transition, UI_ANIMATION_KEYFRAME* keyframe)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME**, int>)(lpVtbl[5]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), transition, keyframe);
+        return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME*, int>)(lpVtbl[5]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), transition, keyframe);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.AddTransitionAtKeyframe"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT AddTransitionAtKeyframe(IUIAnimationVariable* variable, IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe)
+    public HRESULT AddTransitionAtKeyframe(IUIAnimationVariable* variable, IUIAnimationTransition* transition, UI_ANIMATION_KEYFRAME startKeyframe)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME*, int>)(lpVtbl[6]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), variable, transition, startKeyframe);
+        return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME, int>)(lpVtbl[6]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), variable, transition, startKeyframe);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.AddTransitionBetweenKeyframes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT AddTransitionBetweenKeyframes(IUIAnimationVariable* variable, IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* endKeyframe)
+    public HRESULT AddTransitionBetweenKeyframes(IUIAnimationVariable* variable, IUIAnimationTransition* transition, UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME*, UI_ANIMATION_KEYFRAME*, int>)(lpVtbl[7]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), variable, transition, startKeyframe, endKeyframe);
+        return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME, int>)(lpVtbl[7]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), variable, transition, startKeyframe, endKeyframe);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.RepeatBetweenKeyframes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT RepeatBetweenKeyframes([NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* endKeyframe, [NativeTypeName("INT32")] int repetitionCount)
+    public HRESULT RepeatBetweenKeyframes(UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe, [NativeTypeName("INT32")] int repetitionCount)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, UI_ANIMATION_KEYFRAME*, UI_ANIMATION_KEYFRAME*, int, int>)(lpVtbl[8]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), startKeyframe, endKeyframe, repetitionCount);
+        return ((delegate* unmanaged<IUIAnimationStoryboard*, UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME, int, int>)(lpVtbl[8]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), startKeyframe, endKeyframe, repetitionCount);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.HoldVariable"]/*' />
@@ -185,19 +185,19 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
         HRESULT AddTransition(IUIAnimationVariable* variable, IUIAnimationTransition* transition);
 
         [VtblIndex(4)]
-        HRESULT AddKeyframeAtOffset([NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* existingKeyframe, [NativeTypeName("UI_ANIMATION_SECONDS")] double offset, [NativeTypeName("UI_ANIMATION_KEYFRAME *")] UI_ANIMATION_KEYFRAME** keyframe);
+        HRESULT AddKeyframeAtOffset(UI_ANIMATION_KEYFRAME existingKeyframe, [NativeTypeName("UI_ANIMATION_SECONDS")] double offset, UI_ANIMATION_KEYFRAME* keyframe);
 
         [VtblIndex(5)]
-        HRESULT AddKeyframeAfterTransition(IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME *")] UI_ANIMATION_KEYFRAME** keyframe);
+        HRESULT AddKeyframeAfterTransition(IUIAnimationTransition* transition, UI_ANIMATION_KEYFRAME* keyframe);
 
         [VtblIndex(6)]
-        HRESULT AddTransitionAtKeyframe(IUIAnimationVariable* variable, IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe);
+        HRESULT AddTransitionAtKeyframe(IUIAnimationVariable* variable, IUIAnimationTransition* transition, UI_ANIMATION_KEYFRAME startKeyframe);
 
         [VtblIndex(7)]
-        HRESULT AddTransitionBetweenKeyframes(IUIAnimationVariable* variable, IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* endKeyframe);
+        HRESULT AddTransitionBetweenKeyframes(IUIAnimationVariable* variable, IUIAnimationTransition* transition, UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe);
 
         [VtblIndex(8)]
-        HRESULT RepeatBetweenKeyframes([NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* endKeyframe, [NativeTypeName("INT32")] int repetitionCount);
+        HRESULT RepeatBetweenKeyframes(UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe, [NativeTypeName("INT32")] int repetitionCount);
 
         [VtblIndex(9)]
         HRESULT HoldVariable(IUIAnimationVariable* variable);
@@ -249,19 +249,19 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
         public delegate* unmanaged<TSelf*, IUIAnimationVariable*, IUIAnimationTransition*, int> AddTransition;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_KEYFRAME, UI_ANIMATION_SECONDS, UI_ANIMATION_KEYFRAME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, UI_ANIMATION_KEYFRAME*, double, UI_ANIMATION_KEYFRAME**, int> AddKeyframeAtOffset;
+        public delegate* unmanaged<TSelf*, UI_ANIMATION_KEYFRAME, double, UI_ANIMATION_KEYFRAME*, int> AddKeyframeAtOffset;
 
         [NativeTypeName("HRESULT (IUIAnimationTransition *, UI_ANIMATION_KEYFRAME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME**, int> AddKeyframeAfterTransition;
+        public delegate* unmanaged<TSelf*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME*, int> AddKeyframeAfterTransition;
 
         [NativeTypeName("HRESULT (IUIAnimationVariable *, IUIAnimationTransition *, UI_ANIMATION_KEYFRAME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME*, int> AddTransitionAtKeyframe;
+        public delegate* unmanaged<TSelf*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME, int> AddTransitionAtKeyframe;
 
         [NativeTypeName("HRESULT (IUIAnimationVariable *, IUIAnimationTransition *, UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME*, UI_ANIMATION_KEYFRAME*, int> AddTransitionBetweenKeyframes;
+        public delegate* unmanaged<TSelf*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME, int> AddTransitionBetweenKeyframes;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME, INT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, UI_ANIMATION_KEYFRAME*, UI_ANIMATION_KEYFRAME*, int, int> RepeatBetweenKeyframes;
+        public delegate* unmanaged<TSelf*, UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME, int, int> RepeatBetweenKeyframes;
 
         [NativeTypeName("HRESULT (IUIAnimationVariable *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IUIAnimationVariable*, int> HoldVariable;
