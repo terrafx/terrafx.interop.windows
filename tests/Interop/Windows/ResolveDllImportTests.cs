@@ -48,21 +48,86 @@ namespace TerraFX.Interop.Windows.UnitTests
             {
                 switch (method.Name)
                 {
-                    case "LoadIconWithScaleDown":
+                    case "DavCancelConnectionsToServer":
+                    case "DavInvalidateCache":
+                    case "DavRegisterAuthCallback":
+                    case "DavUnregisterAuthCallback":
+                    {
+                        if (Environment.GetEnvironmentVariable("GITHUB_RUN_ID") is not null)
+                        {
+                            // This isn't good practice, but current CI runs Windows Server and 'davclnt' isn't available
+                            Assert.Warn(exception.Message);
+                        }
+                        else
+                        {
+                            goto default;
+                        }
+                        break;
+                    }
+
                     case "DrawShadowText":
-                    case "ImageList_CoCreateInstance":
-                    case "TaskDialogIndirect":
-                    case "TaskDialog":
                     case "GetWindowSubclass":
-                    case "LoadIconMetric":
+                    case "HIMAGELIST_QueryInterface":
+                    case "ImageList_CoCreateInstance":
                     case "ImageList_ReadEx":
                     case "ImageList_WriteEx":
-                    case "HIMAGELIST_QueryInterface":
+                    case "LoadIconMetric":
+                    case "LoadIconWithScaleDown":
+                    case "TaskDialog":
+                    case "TaskDialogIndirect":
                     {
                         // These methods come from 'comctl32' but require a manifest file for the app
                         // to see them as visible. Mark them with a warning rather than failing them
 
                         Assert.Warn(exception.Message);
+                        break;
+                    }
+
+                    case "DxcCreateInstance":
+                    case "DxcCreateInstance2":
+                    {
+                        if (Environment.GetEnvironmentVariable("GITHUB_RUN_ID") is not null)
+                        {
+                            // This isn't good practice, but current CI runs Windows Server and 'dxcompiler' isn't available
+                            Assert.Warn(exception.Message);
+                        }
+                        else
+                        {
+                            goto default;
+                        }
+                        break;
+                    }
+
+                    case "SRRemoveRestorePoint":
+                    case "SRSetRestorePoint":
+                    case "SRSetRestorePointA":
+                    case "SRSetRestorePointInternal":
+                    case "SRSetRestorePointW":
+                    {
+                        if (Environment.GetEnvironmentVariable("GITHUB_RUN_ID") is not null)
+                        {
+                            // This isn't good practice, but current CI runs Windows Server and 'srclient' isn't available
+                            Assert.Warn(exception.Message);
+                        }
+                        else
+                        {
+                            goto default;
+                        }
+                        break;
+                    }
+
+                    case "X3DAudioInitialize":
+                    case "X3DAudioCalculate":
+                    {
+                        if (Environment.GetEnvironmentVariable("GITHUB_RUN_ID") is not null)
+                        {
+                            // This isn't good practice, but current CI runs Windows Server and 'X3DAudio1_7' isn't available
+                            Assert.Warn(exception.Message);
+                        }
+                        else
+                        {
+                            goto default;
+                        }
                         break;
                     }
 
