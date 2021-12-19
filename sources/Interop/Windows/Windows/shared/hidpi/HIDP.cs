@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -69,6 +69,9 @@ public static partial class HIDP
 
     [NativeTypeName("#define HIDP_STATUS_NOT_IMPLEMENTED (HIDP_ERROR_CODES(0xC,0x20))")]
     public const int HIDP_STATUS_NOT_IMPLEMENTED = (((int)(((0xC) << 28) | (0x11 << 16) | (0x20))));
+
+    [NativeTypeName("#define HIDP_STATUS_NOT_BUTTON_ARRAY (HIDP_ERROR_CODES(0xC,0x21))")]
+    public const int HIDP_STATUS_NOT_BUTTON_ARRAY = (((int)(((0xC) << 28) | (0x11 << 16) | (0x21))));
 
     [NativeTypeName("#define HIDP_STATUS_I8242_TRANS_UNKNOWN HIDP_STATUS_I8042_TRANS_UNKNOWN")]
     public const int HIDP_STATUS_I8242_TRANS_UNKNOWN = (((int)(((0xC) << 28) | (0x11 << 16) | (9))));

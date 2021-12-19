@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ntsecapi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/ntsecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -21,7 +21,7 @@ public partial struct LSA_FOREST_TRUST_RECORD
     public LARGE_INTEGER Time;
 
     /// <include file='LSA_FOREST_TRUST_RECORD.xml' path='doc/member[@name="LSA_FOREST_TRUST_RECORD.ForestTrustData"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ntsecapi.h:2662:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ntsecapi.h:2662:5)")]
     public _ForestTrustData_e__Union ForestTrustData;
 
     /// <include file='_ForestTrustData_e__Union.xml' path='doc/member[@name="_ForestTrustData_e__Union"]/*' />

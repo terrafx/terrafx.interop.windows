@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfidl.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/mfidl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -850,6 +850,10 @@ public static unsafe partial class Windows
     [DllImport("mfsensorgroup", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.19041.0")]
     public static extern HRESULT MFCreateRelativePanelWatcher([NativeTypeName("PCWSTR")] ushort* videoDeviceId, [NativeTypeName("PCWSTR")] ushort* displayMonitorDeviceId, IMFRelativePanelWatcher** ppRelativePanelWatcher);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateCameraOcclusionStateMonitor"]/*' />
+    [DllImport("mfsensorgroup", ExactSpelling = true)]
+    public static extern HRESULT MFCreateCameraOcclusionStateMonitor([NativeTypeName("LPCWSTR")] ushort* symbolicLink, IMFCameraOcclusionStateReportCallback* callback, IMFCameraOcclusionStateMonitor** occlusionStateMonitor);
 
     [NativeTypeName("#define MEDIASINK_FIXED_STREAMS 0x00000001")]
     public const int MEDIASINK_FIXED_STREAMS = 0x00000001;

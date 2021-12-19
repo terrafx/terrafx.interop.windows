@@ -22,7 +22,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/dxcore_interface
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/dxcore_interface.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/dxcore_interface.h
 --with-attribute
 DXCoreAdapterMemoryBudget=SupportedOSPlatform("windows10.0.19041.0")
 DXCoreAdapterMemoryBudgetNodeSegmentGroup=SupportedOSPlatform("windows10.0.19041.0")

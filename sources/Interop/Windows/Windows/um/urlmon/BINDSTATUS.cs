@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/urlmon.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/urlmon.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -239,6 +239,9 @@ public enum BINDSTATUS
     /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_13"]/*' />
     BINDSTATUS_RESERVED_13 = (BINDSTATUS_RESERVED_12 + 1),
 
+    /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_RESERVED_14"]/*' />
+    BINDSTATUS_RESERVED_14 = (BINDSTATUS_RESERVED_13 + 1),
+
     /// <include file='BINDSTATUS.xml' path='doc/member[@name="BINDSTATUS.BINDSTATUS_LAST_PRIVATE"]/*' />
-    BINDSTATUS_LAST_PRIVATE = BINDSTATUS_RESERVED_13,
+    BINDSTATUS_LAST_PRIVATE = BINDSTATUS_RESERVED_14,
 }

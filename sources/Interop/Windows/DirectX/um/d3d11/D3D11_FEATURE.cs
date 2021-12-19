@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.DirectX;
@@ -67,4 +67,7 @@ public enum D3D11_FEATURE
 
     /// <include file='D3D11_FEATURE.xml' path='doc/member[@name="D3D11_FEATURE.D3D11_FEATURE_D3D11_OPTIONS5"]/*' />
     D3D11_FEATURE_D3D11_OPTIONS5 = (D3D11_FEATURE_SHADER_CACHE + 1),
+
+    /// <include file='D3D11_FEATURE.xml' path='doc/member[@name="D3D11_FEATURE.D3D11_FEATURE_DISPLAYABLE"]/*' />
+    D3D11_FEATURE_DISPLAYABLE = (D3D11_FEATURE_D3D11_OPTIONS5 + 1),
 }

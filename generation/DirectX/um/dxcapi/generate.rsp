@@ -1,6 +1,7 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+CROSS_PLATFORM_UUIDOF
 DECLARE_CROSS_PLATFORM_UUIDOF
 DEFINE_CROSS_PLATFORM_UUIDOF
 DXC_FOURCC
@@ -15,6 +16,6 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/dxcapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/dxcapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/dxcapi.h
 --with-librarypath
 *=dxcompiler

@@ -11,7 +11,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/d3d11_2
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3d11_2.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3d11_2.h
 --with-attribute
 D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG=Flags
 D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG=SupportedOSPlatform("windows8.1")

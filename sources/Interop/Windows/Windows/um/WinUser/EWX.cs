@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -42,4 +42,7 @@ public static partial class EWX
 
     [NativeTypeName("#define EWX_CHECK_SAFE_FOR_SERVER 0x08000000")]
     public const int EWX_CHECK_SAFE_FOR_SERVER = 0x08000000;
+
+    [NativeTypeName("#define EWX_SYSTEM_INITIATED 0x10000000")]
+    public const int EWX_SYSTEM_INITIATED = 0x10000000;
 }

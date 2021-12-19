@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -25,7 +25,7 @@ public partial struct PROCESSOR_PERFSTATE_POLICY
     public byte BusyAdjThreshold;
 
     /// <include file='PROCESSOR_PERFSTATE_POLICY.xml' path='doc/member[@name="PROCESSOR_PERFSTATE_POLICY.Anonymous"]/*' />
-    [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:17974:5)")]
+    [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:18108:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='PROCESSOR_PERFSTATE_POLICY.xml' path='doc/member[@name="PROCESSOR_PERFSTATE_POLICY.TimeCheck"]/*' />
@@ -78,7 +78,7 @@ public partial struct PROCESSOR_PERFSTATE_POLICY
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:17976:9)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:18110:9)")]
         public _Flags_e__Union Flags;
 
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union"]/*' />
@@ -91,7 +91,7 @@ public partial struct PROCESSOR_PERFSTATE_POLICY
 
             /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.Anonymous"]/*' />
             [FieldOffset(0)]
-            [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:17978:13)")]
+            [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:18112:13)")]
             public _Anonymous_e__Struct Anonymous;
 
             /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NoDomainAccounting"]/*' />

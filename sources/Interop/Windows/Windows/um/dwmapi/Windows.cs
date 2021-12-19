@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/dwmapi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/dwmapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -148,4 +148,10 @@ public static unsafe partial class Windows
     [DllImport("dwmapi", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.17134.0")]
     public static extern HRESULT DwmGetUnmetTabRequirements(HWND appWindow, [NativeTypeName("enum DWM_TAB_WINDOW_REQUIREMENTS *")] DWM_TAB_WINDOW_REQUIREMENTS* value);
+
+    [NativeTypeName("#define DWMWA_COLOR_DEFAULT 0xFFFFFFFF")]
+    public const uint DWMWA_COLOR_DEFAULT = 0xFFFFFFFF;
+
+    [NativeTypeName("#define DWMWA_COLOR_NONE 0xFFFFFFFE")]
+    public const uint DWMWA_COLOR_NONE = 0xFFFFFFFE;
 }

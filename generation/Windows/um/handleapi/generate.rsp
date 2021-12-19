@@ -13,7 +13,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/handleapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/handleapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/handleapi.h
 --with-attribute
 CompareObjectHandles=SupportedOSPlatform("windows10.0")
 --with-librarypath

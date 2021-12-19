@@ -11,7 +11,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/shared/tbs
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/tbs.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/tbs.h
 --with-attribute
 Tbsi_GetDeviceInfo=SupportedOSPlatform("windows8.0")
 Tbsi_Get_OwnerAuth=SupportedOSPlatform("windows8.0")

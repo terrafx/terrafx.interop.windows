@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -210,6 +210,9 @@ public static partial class FILE
 
     [NativeTypeName("#define FILE_SUPPORTS_POSIX_UNLINK_RENAME 0x00000400")]
     public const int FILE_SUPPORTS_POSIX_UNLINK_RENAME = 0x00000400;
+
+    [NativeTypeName("#define FILE_SUPPORTS_BYPASS_IO 0x00000800")]
+    public const int FILE_SUPPORTS_BYPASS_IO = 0x00000800;
 
     [NativeTypeName("#define FILE_VOLUME_IS_COMPRESSED 0x00008000")]
     public const int FILE_VOLUME_IS_COMPRESSED = 0x00008000;

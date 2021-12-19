@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -15,6 +15,9 @@ public static partial class SMART
 
     [NativeTypeName("#define SMART_RCV_DRIVE_DATA CTL_CODE(IOCTL_DISK_BASE, 0x0022, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)")]
     public const int SMART_RCV_DRIVE_DATA = (((0x00000007) << 16) | (((0x0001) | (0x0002)) << 14) | ((0x0022) << 2) | (0));
+
+    [NativeTypeName("#define SMART_RCV_DRIVE_DATA_EX CTL_CODE(IOCTL_DISK_BASE, 0x0023, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int SMART_RCV_DRIVE_DATA_EX = (((0x00000007) << 16) | ((0) << 14) | ((0x0023) << 2) | (0));
 
     [NativeTypeName("#define SMART_CMD 0xB0")]
     public const int SMART_CMD = 0xB0;

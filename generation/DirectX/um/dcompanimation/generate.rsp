@@ -11,6 +11,6 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/dcompanimation
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/dcompanimation.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/dcompanimation.h
 --with-attribute
 IDCompositionAnimation=SupportedOSPlatform("windows8.0")

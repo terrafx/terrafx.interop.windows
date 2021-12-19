@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mmeapi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/mmeapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -41,11 +41,11 @@ public unsafe partial struct MIXERCONTROLA
     public fixed sbyte szName[64];
 
     /// <include file='MIXERCONTROLA.xml' path='doc/member[@name="MIXERCONTROLA.Bounds"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mmeapi.h:2056:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/mmeapi.h:2056:5)")]
     public _Bounds_e__Union Bounds;
 
     /// <include file='MIXERCONTROLA.xml' path='doc/member[@name="MIXERCONTROLA.Metrics"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mmeapi.h:2067:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/mmeapi.h:2067:5)")]
     public _Metrics_e__Union Metrics;
 
     /// <include file='_Bounds_e__Union.xml' path='doc/member[@name="_Bounds_e__Union"]/*' />
@@ -54,12 +54,12 @@ public unsafe partial struct MIXERCONTROLA
     {
         /// <include file='_Bounds_e__Union.xml' path='doc/member[@name="_Bounds_e__Union.Anonymous1"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("tagMIXERCONTROLA::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mmeapi.h:2057:9)")]
+        [NativeTypeName("tagMIXERCONTROLA::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/mmeapi.h:2057:9)")]
         public _Anonymous1_e__Struct Anonymous1;
 
         /// <include file='_Bounds_e__Union.xml' path='doc/member[@name="_Bounds_e__Union.Anonymous2"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("tagMIXERCONTROLA::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mmeapi.h:2061:9)")]
+        [NativeTypeName("tagMIXERCONTROLA::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/mmeapi.h:2061:9)")]
         public _Anonymous2_e__Struct Anonymous2;
 
         /// <include file='_Bounds_e__Union.xml' path='doc/member[@name="_Bounds_e__Union.dwReserved"]/*' />

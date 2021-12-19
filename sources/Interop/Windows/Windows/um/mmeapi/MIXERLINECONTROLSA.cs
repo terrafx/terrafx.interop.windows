@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mmeapi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/mmeapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -21,7 +21,7 @@ public unsafe partial struct MIXERLINECONTROLSA
     public uint dwLineID;
 
     /// <include file='MIXERLINECONTROLSA.xml' path='doc/member[@name="MIXERLINECONTROLSA.Anonymous"]/*' />
-    [NativeTypeName("tagMIXERLINECONTROLSA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mmeapi.h:2223:5)")]
+    [NativeTypeName("tagMIXERLINECONTROLSA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/mmeapi.h:2223:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='MIXERLINECONTROLSA.xml' path='doc/member[@name="MIXERLINECONTROLSA.cControls"]/*' />

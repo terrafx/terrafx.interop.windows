@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -15,27 +15,27 @@ public unsafe partial struct IMAGE_AUX_SYMBOL_EX
 {
     /// <include file='IMAGE_AUX_SYMBOL_EX.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_EX.Sym"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:18879:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19013:5)")]
     public _Sym_e__Struct Sym;
 
     /// <include file='IMAGE_AUX_SYMBOL_EX.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_EX.File"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:18884:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19018:5)")]
     public _File_e__Struct File;
 
     /// <include file='IMAGE_AUX_SYMBOL_EX.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_EX.Section"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:18887:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19021:5)")]
     public _Section_e__Struct Section;
 
     /// <include file='IMAGE_AUX_SYMBOL_EX.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_EX.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("_IMAGE_AUX_SYMBOL_EX::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:18898:5)")]
+    [NativeTypeName("_IMAGE_AUX_SYMBOL_EX::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19032:5)")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='IMAGE_AUX_SYMBOL_EX.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_EX.CRC"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:18902:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19036:5)")]
     public _CRC_e__Struct CRC;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.TokenDef"]/*' />

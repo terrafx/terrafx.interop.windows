@@ -27,7 +27,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/appmodel
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/appmodel.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/appmodel.h
 --with-attribute
 AddPackageDependency=SupportedOSPlatform("windows10.0.22000.0")
 AddPackageDependencyOptions=SupportedOSPlatform("windows10.0.22000.0")
@@ -86,7 +86,9 @@ AppPolicyGetShowDeveloperDiagnostic=api-ms-win-appmodel-runtime-l1-1-2
 AppPolicyGetThreadInitializationType=api-ms-win-appmodel-runtime-l1-1-2
 AppPolicyGetWindowingModel=api-ms-win-appmodel-runtime-l1-1-2
 --with-librarypath
+AddPackageDependency=kernelbase
 ClosePackageInfo=kernel32
+DeletePackageDependency=kernelbase
 FindPackagesByPackageFamily=kernel32
 FormatApplicationUserModelId=kernel32
 GetApplicationUserModelId=kernel32
@@ -97,6 +99,7 @@ GetCurrentPackageFullName=kernel32
 GetCurrentPackageId=kernel32
 GetCurrentPackageInfo=kernel32
 GetCurrentPackagePath=kernel32
+GetIdForPackageDependencyContext=kernelbase
 GetPackageApplicationIds=kernel32
 GetPackageFamilyName=kernel32
 GetPackageFamilyNameFromToken=kernelbase
@@ -107,6 +110,7 @@ GetPackageInfo=kernel32
 GetPackagePath=kernel32
 GetPackagePathByFullName=kernel32
 GetPackagesByPackageFamily=kernel32
+GetResolvedPackageFullNameForPackageDependency=kernelbase
 GetStagedPackageOrigin=kernelbase
 GetStagedPackagePathByFullName=kernel32
 OpenPackageInfoByFullName=kernel32
@@ -116,3 +120,5 @@ PackageFullNameFromId=kernel32
 PackageIdFromFullName=kernel32
 PackageNameAndPublisherIdFromFamilyName=kernel32
 ParseApplicationUserModelId=kernel32
+RemovePackageDependency=kernelbase
+TryCreatePackageDependency=kernelbase

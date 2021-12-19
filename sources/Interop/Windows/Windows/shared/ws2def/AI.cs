@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/ws2def.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from shared/ws2def.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -61,6 +61,12 @@ public static partial class AI
     [NativeTypeName("#define AI_SECURE_WITH_FALLBACK 0x00100000")]
     public const int AI_SECURE_WITH_FALLBACK = 0x00100000;
 
+    [NativeTypeName("#define AI_EXCLUSIVE_CUSTOM_SERVERS 0x00200000")]
+    public const int AI_EXCLUSIVE_CUSTOM_SERVERS = 0x00200000;
+
+    [NativeTypeName("#define AI_RETURN_RESPONSE_FLAGS 0x10000000")]
+    public const int AI_RETURN_RESPONSE_FLAGS = 0x10000000;
+
     [NativeTypeName("#define AI_REQUIRE_SECURE 0x20000000")]
     public const int AI_REQUIRE_SECURE = 0x20000000;
 
@@ -69,4 +75,19 @@ public static partial class AI
 
     [NativeTypeName("#define AI_EXTENDED 0x80000000")]
     public const uint AI_EXTENDED = 0x80000000;
+
+    [NativeTypeName("#define AI_DNS_SERVER_TYPE_UDP 0x1")]
+    public const int AI_DNS_SERVER_TYPE_UDP = 0x1;
+
+    [NativeTypeName("#define AI_DNS_SERVER_TYPE_DOH 0x2")]
+    public const int AI_DNS_SERVER_TYPE_DOH = 0x2;
+
+    [NativeTypeName("#define AI_DNS_SERVER_UDP_FALLBACK 0x1")]
+    public const int AI_DNS_SERVER_UDP_FALLBACK = 0x1;
+
+    [NativeTypeName("#define AI_DNS_RESPONSE_SECURE 0x1")]
+    public const int AI_DNS_RESPONSE_SECURE = 0x1;
+
+    [NativeTypeName("#define AI_DNS_RESPONSE_HOSTFILE 0x2")]
+    public const int AI_DNS_RESPONSE_HOSTFILE = 0x2;
 }

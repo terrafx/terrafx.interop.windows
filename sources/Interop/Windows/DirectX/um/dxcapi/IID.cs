@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the University of Illinois Open Source License.
 
 using System;
@@ -311,6 +311,29 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IDxcExtraOutputs
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xA2, 0x37, 0x9B, 0x31,
+                0xC2, 0xA5,
+                0x4A, 0x49,
+                0xA5,
+                0xDE,
+                0x48,
+                0x01,
+                0xB2,
+                0xFA,
+                0xF9,
+                0x89
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IDxcCompiler3
     {
         get
@@ -350,6 +373,29 @@ public static partial class IID
                 0x97,
                 0xF4,
                 0x9A
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IDxcValidator2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xD1, 0x1F, 0x8E, 0x45,
+                0xB2, 0xB1,
+                0x50, 0x47,
+                0xA6,
+                0xE1,
+                0x9C,
+                0x10,
+                0xF0,
+                0x3B,
+                0xED,
+                0x92
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -511,6 +557,52 @@ public static partial class IID
                 0xDA,
                 0x7C,
                 0x83
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IDxcVersionInfo3
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x43, 0xE8, 0x13, 0x5E,
+                0x25, 0x9D,
+                0x3C, 0x47,
+                0x9A,
+                0xD2,
+                0x03,
+                0xB2,
+                0xD0,
+                0xB4,
+                0x4B,
+                0x1E
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IDxcPdbUtils
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x7E, 0x64, 0xC9, 0xE6,
+                0x6A, 0x9D,
+                0x3B, 0x4C,
+                0xB9,
+                0x4C,
+                0x52,
+                0x4B,
+                0x5A,
+                0x6C,
+                0x34,
+                0x3D
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

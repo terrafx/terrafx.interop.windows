@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -14,7 +14,7 @@ public partial struct CY
 {
     /// <include file='CY.xml' path='doc/member[@name="CY.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("tagCY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/wtypes.h:679:5)")]
+    [NativeTypeName("tagCY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/wtypes.h:679:5)")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='CY.xml' path='doc/member[@name="CY.int64"]/*' />

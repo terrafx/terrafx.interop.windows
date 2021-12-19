@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/Audioclient.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/Audioclient.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -235,6 +235,52 @@ public static partial class IID
                 0x92,
                 0x4D,
                 0xC3
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IAudioEffectsChangedNotificationClient
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x4F, 0xD4, 0xDE, 0xA5,
+                0x5D, 0x3C,
+                0x2B, 0x4B,
+                0xBD,
+                0x1E,
+                0x5D,
+                0xC1,
+                0xEE,
+                0x20,
+                0xBB,
+                0xF6
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IAudioEffectsManager
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xAE, 0xB3, 0x60, 0x44,
+                0x44, 0x4B,
+                0x27, 0x45,
+                0x86,
+                0x76,
+                0x75,
+                0x48,
+                0xA8,
+                0xAC,
+                0xD2,
+                0x60
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

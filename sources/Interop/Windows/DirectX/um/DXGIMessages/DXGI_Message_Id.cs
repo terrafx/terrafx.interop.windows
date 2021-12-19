@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/DXGIMessages.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/DXGIMessages.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.DirectX;
@@ -901,6 +901,9 @@ public enum DXGI_Message_Id
 
     /// <include file='DXGI_Message_Id.xml' path='doc/member[@name="DXGI_Message_Id.DXGI_MSG_IDXGIFactory_CreateSwapChain_MultipleSwapchainRefToSurface_DeferredDtr"]/*' />
     DXGI_MSG_IDXGIFactory_CreateSwapChain_MultipleSwapchainRefToSurface_DeferredDtr,
+
+    /// <include file='DXGI_Message_Id.xml' path='doc/member[@name="DXGI_Message_Id.DXGI_MSG_IDXGIFactory_MakeWindowAssociation_NoOpBehavior"]/*' />
+    DXGI_MSG_IDXGIFactory_MakeWindowAssociation_NoOpBehavior,
 
     /// <include file='DXGI_Message_Id.xml' path='doc/member[@name="DXGI_Message_Id.DXGI_MSG_Phone_IDXGIFactory_CreateSwapChain_NotForegroundWindow"]/*' />
     DXGI_MSG_Phone_IDXGIFactory_CreateSwapChain_NotForegroundWindow = 1000,

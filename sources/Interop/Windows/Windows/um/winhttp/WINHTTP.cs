@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winhttp.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winhttp.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -109,6 +109,12 @@ public static partial class WINHTTP
     [NativeTypeName("#define WINHTTP_REQUEST_STAT_FLAG_FIRST_REQUEST 0x00000020")]
     public const int WINHTTP_REQUEST_STAT_FLAG_FIRST_REQUEST = 0x00000020;
 
+    [NativeTypeName("#define WINHTTP_MATCH_CONNECTION_GUID_FLAG_REQUIRE_MARKED_CONNECTION 0x00000001")]
+    public const int WINHTTP_MATCH_CONNECTION_GUID_FLAG_REQUIRE_MARKED_CONNECTION = 0x00000001;
+
+    [NativeTypeName("#define WINHTTP_MATCH_CONNECTION_GUID_FLAGS_MASK WINHTTP_MATCH_CONNECTION_GUID_FLAG_REQUIRE_MARKED_CONNECTION")]
+    public const int WINHTTP_MATCH_CONNECTION_GUID_FLAGS_MASK = 0x00000001;
+
     [NativeTypeName("#define WINHTTP_RESOLVER_CACHE_CONFIG_FLAG_SOFT_LIMIT 0x00000001")]
     public const int WINHTTP_RESOLVER_CACHE_CONFIG_FLAG_SOFT_LIMIT = 0x00000001;
 
@@ -120,6 +126,9 @@ public static partial class WINHTTP
 
     [NativeTypeName("#define WINHTTP_RESOLVER_CACHE_CONFIG_FLAG_CONN_USE_TTL 0x00000008")]
     public const int WINHTTP_RESOLVER_CACHE_CONFIG_FLAG_CONN_USE_TTL = 0x00000008;
+
+    [NativeTypeName("#define WINHTTP_QUERY_CONNECTION_GROUP_FLAG_INSECURE 0x0000000000000001ull")]
+    public const ulong WINHTTP_QUERY_CONNECTION_GROUP_FLAG_INSECURE = 0x0000000000000001UL;
 
     [NativeTypeName("#define WINHTTP_TIME_FORMAT_BUFSIZE 62")]
     public const int WINHTTP_TIME_FORMAT_BUFSIZE = 62;
@@ -448,8 +457,29 @@ public static partial class WINHTTP
     [NativeTypeName("#define WINHTTP_OPTION_DISABLE_PROXY_LINK_LOCAL_NAME_RESOLUTION 176")]
     public const int WINHTTP_OPTION_DISABLE_PROXY_LINK_LOCAL_NAME_RESOLUTION = 176;
 
-    [NativeTypeName("#define WINHTTP_LAST_OPTION WINHTTP_OPTION_FIRST_AVAILABLE_CONNECTION")]
-    public const int WINHTTP_LAST_OPTION = 173;
+    [NativeTypeName("#define WINHTTP_OPTION_TCP_PRIORITY_STATUS 177")]
+    public const int WINHTTP_OPTION_TCP_PRIORITY_STATUS = 177;
+
+    [NativeTypeName("#define WINHTTP_OPTION_CONNECTION_GUID 178")]
+    public const int WINHTTP_OPTION_CONNECTION_GUID = 178;
+
+    [NativeTypeName("#define WINHTTP_OPTION_MATCH_CONNECTION_GUID 179")]
+    public const int WINHTTP_OPTION_MATCH_CONNECTION_GUID = 179;
+
+    [NativeTypeName("#define WINHTTP_OPTION_PROXY_CONFIG_INFO 180")]
+    public const int WINHTTP_OPTION_PROXY_CONFIG_INFO = 180;
+
+    [NativeTypeName("#define WINHTTP_OPTION_AGGREGATE_PROXY_CONFIG 181")]
+    public const int WINHTTP_OPTION_AGGREGATE_PROXY_CONFIG = 181;
+
+    [NativeTypeName("#define WINHTTP_OPTION_SELECTED_PROXY_CONFIG_INFO 182")]
+    public const int WINHTTP_OPTION_SELECTED_PROXY_CONFIG_INFO = 182;
+
+    [NativeTypeName("#define WINHTTP_OPTION_HTTP2_RECEIVE_WINDOW 183")]
+    public const int WINHTTP_OPTION_HTTP2_RECEIVE_WINDOW = 183;
+
+    [NativeTypeName("#define WINHTTP_LAST_OPTION WINHTTP_OPTION_HTTP2_RECEIVE_WINDOW")]
+    public const int WINHTTP_LAST_OPTION = 183;
 
     [NativeTypeName("#define WINHTTP_OPTION_USERNAME 0x1000")]
     public const int WINHTTP_OPTION_USERNAME = 0x1000;

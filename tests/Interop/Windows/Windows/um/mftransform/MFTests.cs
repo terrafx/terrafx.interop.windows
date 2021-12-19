@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mftransform.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/mftransform.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
@@ -122,6 +122,13 @@ public static partial class MFTests
     public static void MF_SA_BUFFERS_PER_SAMPLETest()
     {
         Assert.That(MF_SA_BUFFERS_PER_SAMPLE, Is.EqualTo(new Guid(0x873c5171, 0x1e3d, 0x4e25, 0x98, 0x8d, 0xb4, 0x33, 0xce, 0x04, 0x19, 0x83)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MF_SA_D3D11_ALLOCATE_DISPLAYABLE_RESOURCES" /> property is correct.</summary>
+    [Test]
+    public static void MF_SA_D3D11_ALLOCATE_DISPLAYABLE_RESOURCESTest()
+    {
+        Assert.That(MF_SA_D3D11_ALLOCATE_DISPLAYABLE_RESOURCES, Is.EqualTo(new Guid(0xeeface6d, 0x2ea9, 0x4adf, 0xbb, 0xdf, 0x7b, 0xbc, 0x48, 0x2a, 0x1b, 0x6d)));
     }
 
     /// <summary>Validates that the value of the <see cref="MF_TRANSFORM_ASYNC" /> property is correct.</summary>

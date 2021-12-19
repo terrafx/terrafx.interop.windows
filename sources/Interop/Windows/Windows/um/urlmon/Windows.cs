@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/urlmon.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/urlmon.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -379,6 +379,9 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define FMFD_RESERVED_1 0x00000040")]
     public const int FMFD_RESERVED_1 = 0x00000040;
+
+    [NativeTypeName("#define FMFD_RESERVED_2 0x00000080")]
+    public const int FMFD_RESERVED_2 = 0x00000080;
 
     [NativeTypeName("#define UAS_EXACTLEGACY 0x00001000")]
     public const int UAS_EXACTLEGACY = 0x00001000;

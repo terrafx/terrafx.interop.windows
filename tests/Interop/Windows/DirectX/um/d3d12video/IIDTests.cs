@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d12video.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/d3d12video.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
@@ -150,5 +150,33 @@ public static partial class IIDTests
     public static void IID_ID3D12VideoEncodeCommandList1Test()
     {
         Assert.That(IID_ID3D12VideoEncodeCommandList1, Is.EqualTo(new Guid(0x94971eca, 0x2bdb, 0x4769, 0x88, 0xcf, 0x36, 0x75, 0xea, 0x75, 0x7e, 0xbc)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoEncoder" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12VideoEncoderTest()
+    {
+        Assert.That(IID_ID3D12VideoEncoder, Is.EqualTo(new Guid(0x2E0D212D, 0x8DF9, 0x44A6, 0xA7, 0x70, 0xBB, 0x28, 0x9B, 0x18, 0x27, 0x37)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoEncoderHeap" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12VideoEncoderHeapTest()
+    {
+        Assert.That(IID_ID3D12VideoEncoderHeap, Is.EqualTo(new Guid(0x22B35D96, 0x876A, 0x44C0, 0xB2, 0x5E, 0xFB, 0x8C, 0x9C, 0x7F, 0x1C, 0x4A)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoDevice3" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12VideoDevice3Test()
+    {
+        Assert.That(IID_ID3D12VideoDevice3, Is.EqualTo(new Guid(0x4243ADB4, 0x3A32, 0x4666, 0x97, 0x3C, 0x0C, 0xCC, 0x56, 0x25, 0xDC, 0x44)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoEncodeCommandList2" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12VideoEncodeCommandList2Test()
+    {
+        Assert.That(IID_ID3D12VideoEncodeCommandList2, Is.EqualTo(new Guid(0x895491e2, 0xe701, 0x46a9, 0x9a, 0x1f, 0x8d, 0x34, 0x80, 0xed, 0x86, 0x7a)));
     }
 }

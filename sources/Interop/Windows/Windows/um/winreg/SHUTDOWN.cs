@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winreg.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winreg.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -54,4 +54,7 @@ public static partial class SHUTDOWN
 
     [NativeTypeName("#define SHUTDOWN_VAIL_CONTAINER 0x00008000")]
     public const int SHUTDOWN_VAIL_CONTAINER = 0x00008000;
+
+    [NativeTypeName("#define SHUTDOWN_SYSTEM_INITIATED 0x00010000")]
+    public const int SHUTDOWN_SYSTEM_INITIATED = 0x00010000;
 }

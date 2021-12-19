@@ -1,9 +1,9 @@
 @../../../settings.rsp
 @../../../remap.rsp
---include-directory
-C:/Program Files/Microsoft Visual Studio/2022/Preview/DIA SDK/include
 --file
 other-cvconst.h
+--include-directory
+C:/Program Files/Microsoft Visual Studio/2022/Community/DIA SDK/include/
 --methodClassName
 Windows
 --namespace
@@ -13,4 +13,4 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/other/cvconst
 --traverse
-C:/Program Files/Microsoft Visual Studio/2022/Preview/DIA SDK/include/cvconst.h
+C:/Program Files/Microsoft Visual Studio/2022/Community/DIA SDK/include/cvconst.h

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -61,4 +61,10 @@ public enum D3D11_RESOURCE_MISC_FLAG
 
     /// <include file='D3D11_RESOURCE_MISC_FLAG.xml' path='doc/member[@name="D3D11_RESOURCE_MISC_FLAG.D3D11_RESOURCE_MISC_HW_PROTECTED"]/*' />
     D3D11_RESOURCE_MISC_HW_PROTECTED = 0x80000,
+
+    /// <include file='D3D11_RESOURCE_MISC_FLAG.xml' path='doc/member[@name="D3D11_RESOURCE_MISC_FLAG.D3D11_RESOURCE_MISC_SHARED_DISPLAYABLE"]/*' />
+    D3D11_RESOURCE_MISC_SHARED_DISPLAYABLE = 0x100000,
+
+    /// <include file='D3D11_RESOURCE_MISC_FLAG.xml' path='doc/member[@name="D3D11_RESOURCE_MISC_FLAG.D3D11_RESOURCE_MISC_SHARED_EXCLUSIVE_WRITER"]/*' />
+    D3D11_RESOURCE_MISC_SHARED_EXCLUSIVE_WRITER = 0x200000,
 }

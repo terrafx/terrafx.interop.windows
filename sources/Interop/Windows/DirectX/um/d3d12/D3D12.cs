@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/d3d12.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -1057,8 +1057,8 @@ public static partial class D3D12
     [NativeTypeName("#define D3D12_RS_SET_SHADING_RATE_COMBINER_COUNT ( 2 )")]
     public const int D3D12_RS_SET_SHADING_RATE_COMBINER_COUNT = (2);
 
-    [NativeTypeName("#define D3D12_SDK_VERSION ( 3 )")]
-    public const int D3D12_SDK_VERSION = (3);
+    [NativeTypeName("#define D3D12_SDK_VERSION ( 5 )")]
+    public const int D3D12_SDK_VERSION = (5);
 
     [NativeTypeName("#define D3D12_SHADER_IDENTIFIER_SIZE_IN_BYTES ( 32 )")]
     public const int D3D12_SHADER_IDENTIFIER_SIZE_IN_BYTES = (32);

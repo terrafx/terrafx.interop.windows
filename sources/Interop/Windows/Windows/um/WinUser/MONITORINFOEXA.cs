@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("tagMONITORINFO")]
 public unsafe partial struct MONITORINFOEXA
 {
-    public MONITORINFO Base;
+    public MONITORINFO __AnonymousBase_WinUser_L13567_C43;
 
     /// <include file='MONITORINFOEXA.xml' path='doc/member[@name="MONITORINFOEXA.szDevice"]/*' />
     [NativeTypeName("CHAR [32]")]

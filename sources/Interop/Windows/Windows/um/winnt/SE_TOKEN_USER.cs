@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -13,11 +13,11 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct SE_TOKEN_USER
 {
     /// <include file='SE_TOKEN_USER.xml' path='doc/member[@name="SE_TOKEN_USER.Anonymous1"]/*' />
-    [NativeTypeName("_SE_TOKEN_USER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:11830:5)")]
+    [NativeTypeName("_SE_TOKEN_USER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:11861:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='SE_TOKEN_USER.xml' path='doc/member[@name="SE_TOKEN_USER.Anonymous2"]/*' />
-    [NativeTypeName("_SE_TOKEN_USER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:11835:5)")]
+    [NativeTypeName("_SE_TOKEN_USER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:11866:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.TokenUser"]/*' />

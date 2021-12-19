@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -55,4 +55,10 @@ public enum CSV_CONTROL_OP
 
     /// <include file='CSV_CONTROL_OP.xml' path='doc/member[@name="CSV_CONTROL_OP.CsvControlQueryMdsPathNoPause"]/*' />
     CsvControlQueryMdsPathNoPause = 0x17,
+
+    /// <include file='CSV_CONTROL_OP.xml' path='doc/member[@name="CSV_CONTROL_OP.CsvControlSetVolumeId"]/*' />
+    CsvControlSetVolumeId = 0x18,
+
+    /// <include file='CSV_CONTROL_OP.xml' path='doc/member[@name="CSV_CONTROL_OP.CsvControlQueryVolumeId"]/*' />
+    CsvControlQueryVolumeId = 0x19,
 }

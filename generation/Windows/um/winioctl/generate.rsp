@@ -15,6 +15,14 @@ DiskGeometryGetPartition
 FILE_REGION_USAGE_HUGE_PAGE_ALIGNMENT
 FILE_REGION_USAGE_QUERY_ALIGNMENT
 FSCTL_ENABLE_PER_IO_FLAGS
+FS_BPIO_OUTPUT_DISABLE_SIZE
+FS_BPIO_OUTPUT_ENABLE_SIZE
+FS_BPIO_OUTPUT_GET_INFO_SIZE
+FS_BPIO_OUTPUT_QUERY_SIZE
+FS_BPIO_OUTPUT_STREAM_PAUSE_SIZE
+FS_BPIO_OUTPUT_STREAM_RESUME_SIZE
+FS_BPIO_OUTPUT_VOLUME_STACK_PAUSE_SIZE
+FS_BPIO_OUTPUT_VOLUME_STACK_RESUME_SIZE
 GET_REPAIR_TOPOLOGY_ID
 IsContainerPartition
 IsDsmActionNonDestructive
@@ -45,7 +53,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/winioctl
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h
 --with-attribute
 DeviceDsmInitializeOutput=SupportedOSPlatform("windows8.0")
 DeviceDsmOutputBlock=SupportedOSPlatform("windows8.0")

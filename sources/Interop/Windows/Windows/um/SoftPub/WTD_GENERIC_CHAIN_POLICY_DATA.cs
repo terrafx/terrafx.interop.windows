@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/SoftPub.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/SoftPub.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -12,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct WTD_GENERIC_CHAIN_POLICY_DATA
 {
     /// <include file='WTD_GENERIC_CHAIN_POLICY_DATA.xml' path='doc/member[@name="WTD_GENERIC_CHAIN_POLICY_DATA.Anonymous"]/*' />
-    [NativeTypeName("_WTD_GENERIC_CHAIN_POLICY_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/SoftPub.h:172:5)")]
+    [NativeTypeName("_WTD_GENERIC_CHAIN_POLICY_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/SoftPub.h:172:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='WTD_GENERIC_CHAIN_POLICY_DATA.xml' path='doc/member[@name="WTD_GENERIC_CHAIN_POLICY_DATA.pSignerChainInfo"]/*' />

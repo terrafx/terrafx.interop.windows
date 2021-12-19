@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the University of Illinois Open Source License.
 
 using NUnit.Framework;
@@ -80,5 +80,12 @@ public static partial class CLSIDTests
     public static void CLSID_DxcContainerBuilderTest()
     {
         Assert.That(CLSID_DxcContainerBuilder, Is.EqualTo(new Guid(0x94134294, 0x411f, 0x4574, 0xb4, 0xd0, 0x87, 0x41, 0xe2, 0x52, 0x40, 0xd2)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_DxcPdbUtils" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_DxcPdbUtilsTest()
+    {
+        Assert.That(CLSID_DxcPdbUtils, Is.EqualTo(new Guid(0x54621dfb, 0xf2ce, 0x457e, 0xae, 0x8c, 0xec, 0x35, 0x5f, 0xae, 0xec, 0x7c)));
     }
 }

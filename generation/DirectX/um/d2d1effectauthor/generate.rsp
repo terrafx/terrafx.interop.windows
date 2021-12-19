@@ -11,7 +11,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/d2d1effectauthor
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d2d1effectauthor.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d2d1effectauthor.h
 --with-attribute
 D2D1_CHANGE_TYPE=Flags
 D2D1_PIXEL_OPTIONS=Flags

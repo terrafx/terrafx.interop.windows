@@ -87,7 +87,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/oleauto
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/oleauto.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/oleauto.h
 --with-librarypath
 BstrFromVector=oleaut32
 ClearCustData=oleaut32

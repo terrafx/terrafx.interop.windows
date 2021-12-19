@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mftransform.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/mftransform.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -405,6 +405,31 @@ public static partial class MF
                 0x04,
                 0x19,
                 0x83
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MF_SA_D3D11_ALLOCATE_DISPLAYABLE_RESOURCES
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x6D, 0xCE, 0xFA, 0xEE,
+                0xA9, 0x2E,
+                0xDF, 0x4A,
+                0xBB,
+                0xDF,
+                0x7B,
+                0xBC,
+                0x48,
+                0x2A,
+                0x1B,
+                0x6D
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

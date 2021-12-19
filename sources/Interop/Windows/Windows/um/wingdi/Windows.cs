@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -2011,6 +2011,12 @@ public static unsafe partial class Windows
     [NativeTypeName("#define GDI_OBJ_LAST OBJ_COLORSPACE")]
     public const int GDI_OBJ_LAST = 14;
 
+    [NativeTypeName("#define GDI_MIN_OBJ_TYPE OBJ_PEN")]
+    public const int GDI_MIN_OBJ_TYPE = 1;
+
+    [NativeTypeName("#define GDI_MAX_OBJ_TYPE GDI_OBJ_LAST")]
+    public const int GDI_MAX_OBJ_TYPE = 14;
+
     [NativeTypeName("#define MWT_IDENTITY 1")]
     public const int MWT_IDENTITY = 1;
 
@@ -2691,6 +2697,9 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define QDC_INCLUDE_HMD 0x00000020")]
     public const int QDC_INCLUDE_HMD = 0x00000020;
+
+    [NativeTypeName("#define QDC_VIRTUAL_REFRESH_RATE_AWARE 0x00000040")]
+    public const int QDC_VIRTUAL_REFRESH_RATE_AWARE = 0x00000040;
 
     [NativeTypeName("#define RDH_RECTANGLES 1")]
     public const int RDH_RECTANGLES = 1;

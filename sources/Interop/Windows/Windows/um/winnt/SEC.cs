@@ -1,12 +1,15 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
 
 public static partial class SEC
 {
+    [NativeTypeName("#define SEC_HUGE_PAGES 0x00020000")]
+    public const int SEC_HUGE_PAGES = 0x00020000;
+
     [NativeTypeName("#define SEC_PARTITION_OWNER_HANDLE 0x00040000")]
     public const int SEC_PARTITION_OWNER_HANDLE = 0x00040000;
 

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/DirectML.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/DirectML.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.DirectX;
@@ -433,4 +433,31 @@ public enum DML_OPERATOR_TYPE
 
     /// <include file='DML_OPERATOR_TYPE.xml' path='doc/member[@name="DML_OPERATOR_TYPE.DML_OPERATOR_GATHER_ND1"]/*' />
     DML_OPERATOR_GATHER_ND1,
+
+    /// <include file='DML_OPERATOR_TYPE.xml' path='doc/member[@name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_ATAN_YX"]/*' />
+    DML_OPERATOR_ELEMENT_WISE_ATAN_YX,
+
+    /// <include file='DML_OPERATOR_TYPE.xml' path='doc/member[@name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_CLIP_GRAD"]/*' />
+    DML_OPERATOR_ELEMENT_WISE_CLIP_GRAD,
+
+    /// <include file='DML_OPERATOR_TYPE.xml' path='doc/member[@name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_DIFFERENCE_SQUARE"]/*' />
+    DML_OPERATOR_ELEMENT_WISE_DIFFERENCE_SQUARE,
+
+    /// <include file='DML_OPERATOR_TYPE.xml' path='doc/member[@name="DML_OPERATOR_TYPE.DML_OPERATOR_LOCAL_RESPONSE_NORMALIZATION_GRAD"]/*' />
+    DML_OPERATOR_LOCAL_RESPONSE_NORMALIZATION_GRAD,
+
+    /// <include file='DML_OPERATOR_TYPE.xml' path='doc/member[@name="DML_OPERATOR_TYPE.DML_OPERATOR_CUMULATIVE_PRODUCT"]/*' />
+    DML_OPERATOR_CUMULATIVE_PRODUCT,
+
+    /// <include file='DML_OPERATOR_TYPE.xml' path='doc/member[@name="DML_OPERATOR_TYPE.DML_OPERATOR_BATCH_NORMALIZATION_GRAD"]/*' />
+    DML_OPERATOR_BATCH_NORMALIZATION_GRAD,
+
+    /// <include file='DML_OPERATOR_TYPE.xml' path='doc/member[@name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_QUANTIZED_LINEAR_ADD"]/*' />
+    DML_OPERATOR_ELEMENT_WISE_QUANTIZED_LINEAR_ADD,
+
+    /// <include file='DML_OPERATOR_TYPE.xml' path='doc/member[@name="DML_OPERATOR_TYPE.DML_OPERATOR_DYNAMIC_QUANTIZE_LINEAR"]/*' />
+    DML_OPERATOR_DYNAMIC_QUANTIZE_LINEAR,
+
+    /// <include file='DML_OPERATOR_TYPE.xml' path='doc/member[@name="DML_OPERATOR_TYPE.DML_OPERATOR_ROI_ALIGN1"]/*' />
+    DML_OPERATOR_ROI_ALIGN1,
 }

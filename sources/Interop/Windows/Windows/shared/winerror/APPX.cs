@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -78,4 +78,7 @@ public static partial class APPX
 
     [NativeTypeName("#define APPX_E_INVALID_PACKAGE_FOLDER_ACLS _HRESULT_TYPEDEF_(0x80080217L)")]
     public const int APPX_E_INVALID_PACKAGE_FOLDER_ACLS = unchecked((int)(0x80080217));
+
+    [NativeTypeName("#define APPX_E_INVALID_PUBLISHER_BRIDGING _HRESULT_TYPEDEF_(0x80080218L)")]
+    public const int APPX_E_INVALID_PUBLISHER_BRIDGING = unchecked((int)(0x80080218));
 }

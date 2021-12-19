@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -28,6 +28,9 @@ public enum LOGICAL_PROCESSOR_RELATIONSHIP
 
     /// <include file='LOGICAL_PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="LOGICAL_PROCESSOR_RELATIONSHIP.RelationNumaNodeEx"]/*' />
     RelationNumaNodeEx,
+
+    /// <include file='LOGICAL_PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="LOGICAL_PROCESSOR_RELATIONSHIP.RelationProcessorModule"]/*' />
+    RelationProcessorModule,
 
     /// <include file='LOGICAL_PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="LOGICAL_PROCESSOR_RELATIONSHIP.RelationAll"]/*' />
     RelationAll = 0xffff,

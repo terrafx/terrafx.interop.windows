@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/SpatialAudioClient.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/SpatialAudioClient.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -166,6 +166,29 @@ public static partial class IID
                 0x8E,
                 0xA2,
                 0x7F
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ISpatialAudioClient2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x52, 0xE4, 0xAB, 0xCA,
+                0x6A, 0xA6,
+                0xEE, 0x4B,
+                0xA9,
+                0x3E,
+                0xE3,
+                0x20,
+                0x46,
+                0x3F,
+                0x6A,
+                0x53
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -36,6 +36,9 @@ public static partial class XSTATE
 
     [NativeTypeName("#define XSTATE_IPT (8)")]
     public const int XSTATE_IPT = (8);
+
+    [NativeTypeName("#define XSTATE_PASID (10)")]
+    public const int XSTATE_PASID = (10);
 
     [NativeTypeName("#define XSTATE_CET_U (11)")]
     public const int XSTATE_CET_U = (11);
@@ -75,6 +78,9 @@ public static partial class XSTATE
 
     [NativeTypeName("#define XSTATE_MASK_IPT (1ui64 << (XSTATE_IPT))")]
     public const ulong XSTATE_MASK_IPT = (1UL << ((8)));
+
+    [NativeTypeName("#define XSTATE_MASK_PASID (1ui64 << (XSTATE_PASID))")]
+    public const ulong XSTATE_MASK_PASID = (1UL << ((10)));
 
     [NativeTypeName("#define XSTATE_MASK_CET_U (1ui64 << (XSTATE_CET_U))")]
     public const ulong XSTATE_MASK_CET_U = (1UL << ((11)));

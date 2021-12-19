@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/ntstatus.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from shared/ntstatus.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -129,6 +129,9 @@ public static partial class FACILITY
 
     [NativeTypeName("#define FACILITY_VSM 0x45")]
     public const int FACILITY_VSM = 0x45;
+
+    [NativeTypeName("#define FACILITY_NT_IORING 0x46")]
+    public const int FACILITY_NT_IORING = 0x46;
 
     [NativeTypeName("#define FACILITY_VOLSNAP 0x50")]
     public const int FACILITY_VOLSNAP = 0x50;

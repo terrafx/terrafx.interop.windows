@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/d3d12.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.DirectX;
@@ -71,6 +71,9 @@ public enum D3D12_FEATURE
     /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS5"]/*' />
     D3D12_FEATURE_D3D12_OPTIONS5 = 27,
 
+    /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_DISPLAYABLE"]/*' />
+    D3D12_FEATURE_DISPLAYABLE = 28,
+
     /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS6"]/*' />
     D3D12_FEATURE_D3D12_OPTIONS6 = 30,
 
@@ -92,6 +95,9 @@ public enum D3D12_FEATURE
     /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS9"]/*' />
     D3D12_FEATURE_D3D12_OPTIONS9 = 37,
 
-    /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_WAVE_MMA"]/*' />
-    D3D12_FEATURE_WAVE_MMA = 38,
+    /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS10"]/*' />
+    D3D12_FEATURE_D3D12_OPTIONS10 = 39,
+
+    /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS11"]/*' />
+    D3D12_FEATURE_D3D12_OPTIONS11 = 40,
 }

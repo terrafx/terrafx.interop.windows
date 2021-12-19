@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -40,6 +40,12 @@ public enum DISPLAYCONFIG_DEVICE_INFO_TYPE
 
     /// <include file='DISPLAYCONFIG_DEVICE_INFO_TYPE.xml' path='doc/member[@name="DISPLAYCONFIG_DEVICE_INFO_TYPE.DISPLAYCONFIG_DEVICE_INFO_GET_SDR_WHITE_LEVEL"]/*' />
     DISPLAYCONFIG_DEVICE_INFO_GET_SDR_WHITE_LEVEL = 11,
+
+    /// <include file='DISPLAYCONFIG_DEVICE_INFO_TYPE.xml' path='doc/member[@name="DISPLAYCONFIG_DEVICE_INFO_TYPE.DISPLAYCONFIG_DEVICE_INFO_GET_MONITOR_SPECIALIZATION"]/*' />
+    DISPLAYCONFIG_DEVICE_INFO_GET_MONITOR_SPECIALIZATION = 12,
+
+    /// <include file='DISPLAYCONFIG_DEVICE_INFO_TYPE.xml' path='doc/member[@name="DISPLAYCONFIG_DEVICE_INFO_TYPE.DISPLAYCONFIG_DEVICE_INFO_SET_MONITOR_SPECIALIZATION"]/*' />
+    DISPLAYCONFIG_DEVICE_INFO_SET_MONITOR_SPECIALIZATION = 13,
 
     /// <include file='DISPLAYCONFIG_DEVICE_INFO_TYPE.xml' path='doc/member[@name="DISPLAYCONFIG_DEVICE_INFO_TYPE.DISPLAYCONFIG_DEVICE_INFO_FORCE_UINT32"]/*' />
     DISPLAYCONFIG_DEVICE_INFO_FORCE_UINT32 = unchecked((int)(0xFFFFFFFF)),

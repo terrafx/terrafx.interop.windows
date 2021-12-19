@@ -11,7 +11,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/SpatialAudioMetadata
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/SpatialAudioMetadata.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/SpatialAudioMetadata.h
 --with-attribute
 ISpatialAudioMetadataClient=SupportedOSPlatform("windows10.0.15063.0")
 ISpatialAudioMetadataCopier=SupportedOSPlatform("windows10.0.15063.0")

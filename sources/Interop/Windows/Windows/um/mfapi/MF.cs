@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfapi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/mfapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -1205,6 +1205,31 @@ public static partial class MF
                 0x0E,
                 0xC0,
                 0x44
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MF_CAPTURE_METADATA_FRAME_BACKGROUND_MASK
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xD3, 0x4D, 0xF1, 0x03,
+                0xDD, 0x75,
+                0x3A, 0x43,
+                0xA8,
+                0xE2,
+                0x1E,
+                0x3F,
+                0x5F,
+                0x2A,
+                0x50,
+                0xA0
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

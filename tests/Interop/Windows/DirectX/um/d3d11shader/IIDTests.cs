@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d11shader.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/d3d11shader.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
@@ -61,18 +61,18 @@ public static partial class IIDTests
         Assert.That(IID_ID3D11FunctionParameterReflection, Is.EqualTo(new Guid(0x42757488, 0x334f, 0x47fe, 0x98, 0x2e, 0x1a, 0x65, 0xd0, 0x8c, 0xc4, 0x62)));
     }
 
-    /// <summary>Validates that the value of the <see cref="IID_ID3D11Module" /> property is correct.</summary>
-    [Test]
-    public static void IID_ID3D11ModuleTest()
-    {
-        Assert.That(IID_ID3D11Module, Is.EqualTo(new Guid(0xcac701ee, 0x80fc, 0x4122, 0x82, 0x42, 0x10, 0xb3, 0x9c, 0x8c, 0xec, 0x34)));
-    }
-
     /// <summary>Validates that the value of the <see cref="IID_ID3D11ModuleInstance" /> property is correct.</summary>
     [Test]
     public static void IID_ID3D11ModuleInstanceTest()
     {
         Assert.That(IID_ID3D11ModuleInstance, Is.EqualTo(new Guid(0x469e07f7, 0x45a, 0x48d5, 0xaa, 0x12, 0x68, 0xa4, 0x78, 0xcd, 0xf7, 0x5d)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D11Module" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D11ModuleTest()
+    {
+        Assert.That(IID_ID3D11Module, Is.EqualTo(new Guid(0xcac701ee, 0x80fc, 0x4122, 0x82, 0x42, 0x10, 0xb3, 0x9c, 0x8c, 0xec, 0x34)));
     }
 
     /// <summary>Validates that the value of the <see cref="IID_ID3D11Linker" /> property is correct.</summary>

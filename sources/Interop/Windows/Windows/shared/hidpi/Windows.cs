@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -123,6 +123,16 @@ public static unsafe partial class Windows
     [DllImport("hid", ExactSpelling = true)]
     [return: NativeTypeName("NTSTATUS")]
     public static extern int HidP_UsageListDifference([NativeTypeName("PUSAGE")] ushort* PreviousUsageList, [NativeTypeName("PUSAGE")] ushort* CurrentUsageList, [NativeTypeName("PUSAGE")] ushort* BreakUsageList, [NativeTypeName("PUSAGE")] ushort* MakeUsageList, [NativeTypeName("ULONG")] uint UsageListLength);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HidP_GetButtonArray"]/*' />
+    [DllImport("hid", ExactSpelling = true)]
+    [return: NativeTypeName("NTSTATUS")]
+    public static extern int HidP_GetButtonArray(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("PHIDP_BUTTON_ARRAY_DATA")] HIDP_BUTTON_ARRAY_DATA* ButtonData, [NativeTypeName("PUSHORT")] ushort* ButtonDataLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HidP_SetButtonArray"]/*' />
+    [DllImport("hid", ExactSpelling = true)]
+    [return: NativeTypeName("NTSTATUS")]
+    public static extern int HidP_SetButtonArray(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("PHIDP_BUTTON_ARRAY_DATA")] HIDP_BUTTON_ARRAY_DATA* ButtonData, ushort ButtonDataLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.HidP_TranslateUsagesToI8042ScanCodes"]/*' />
     [DllImport("hid", ExactSpelling = true)]

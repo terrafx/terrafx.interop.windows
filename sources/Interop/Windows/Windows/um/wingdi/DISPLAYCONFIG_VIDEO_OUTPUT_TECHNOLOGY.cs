@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -61,6 +61,9 @@ public enum DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY
 
     /// <include file='DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.xml' path='doc/member[@name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_INDIRECT_VIRTUAL"]/*' />
     DISPLAYCONFIG_OUTPUT_TECHNOLOGY_INDIRECT_VIRTUAL = 17,
+
+    /// <include file='DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.xml' path='doc/member[@name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_DISPLAYPORT_USB_TUNNEL"]/*' />
+    DISPLAYCONFIG_OUTPUT_TECHNOLOGY_DISPLAYPORT_USB_TUNNEL = 18,
 
     /// <include file='DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.xml' path='doc/member[@name="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY.DISPLAYCONFIG_OUTPUT_TECHNOLOGY_INTERNAL"]/*' />
     DISPLAYCONFIG_OUTPUT_TECHNOLOGY_INTERNAL = unchecked((int)(0x80000000)),

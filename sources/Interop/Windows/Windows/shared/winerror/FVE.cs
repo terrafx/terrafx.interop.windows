@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -651,4 +651,16 @@ public static partial class FVE
 
     [NativeTypeName("#define FVE_E_EDRIVE_BAND_ENUMERATION_FAILED _HRESULT_TYPEDEF_(0x803100E3L)")]
     public const int FVE_E_EDRIVE_BAND_ENUMERATION_FAILED = unchecked((int)(0x803100E3));
+
+    [NativeTypeName("#define FVE_E_POLICY_ON_RDV_EXCLUSION_LIST _HRESULT_TYPEDEF_(0x803100E4L)")]
+    public const int FVE_E_POLICY_ON_RDV_EXCLUSION_LIST = unchecked((int)(0x803100E4));
+
+    [NativeTypeName("#define FVE_E_PREDICTED_TPM_PROTECTOR_NOT_SUPPORTED _HRESULT_TYPEDEF_(0x803100E5L)")]
+    public const int FVE_E_PREDICTED_TPM_PROTECTOR_NOT_SUPPORTED = unchecked((int)(0x803100E5));
+
+    [NativeTypeName("#define FVE_E_SETUP_TPM_CALLBACK_NOT_SUPPORTED _HRESULT_TYPEDEF_(0x803100E6L)")]
+    public const int FVE_E_SETUP_TPM_CALLBACK_NOT_SUPPORTED = unchecked((int)(0x803100E6));
+
+    [NativeTypeName("#define FVE_E_TPM_CONTEXT_SETUP_NOT_SUPPORTED _HRESULT_TYPEDEF_(0x803100E7L)")]
+    public const int FVE_E_TPM_CONTEXT_SETUP_NOT_SUPPORTED = unchecked((int)(0x803100E7));
 }

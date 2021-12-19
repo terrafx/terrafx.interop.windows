@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -64,6 +64,12 @@ public static partial class Windows
 
     [NativeTypeName("#define ANYSIZE_ARRAY 1")]
     public const int ANYSIZE_ARRAY = 1;
+
+    [NativeTypeName("#define X86_CACHE_ALIGNMENT_SIZE 64")]
+    public const int X86_CACHE_ALIGNMENT_SIZE = 64;
+
+    [NativeTypeName("#define ARM_CACHE_ALIGNMENT_SIZE 128")]
+    public const int ARM_CACHE_ALIGNMENT_SIZE = 128;
 
     [NativeTypeName("#define PRAGMA_DEPRECATED_DDK 0")]
     public const int PRAGMA_DEPRECATED_DDK = 0;

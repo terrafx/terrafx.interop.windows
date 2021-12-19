@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mssip.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/mssip.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -73,7 +73,7 @@ public unsafe partial struct SIP_SUBJECTINFO
     public uint dwUnionChoice;
 
     /// <include file='SIP_SUBJECTINFO.xml' path='doc/member[@name="SIP_SUBJECTINFO.Anonymous"]/*' />
-    [NativeTypeName("SIP_SUBJECTINFO_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mssip.h:114:5)")]
+    [NativeTypeName("SIP_SUBJECTINFO_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/mssip.h:114:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='SIP_SUBJECTINFO.xml' path='doc/member[@name="SIP_SUBJECTINFO.pClientData"]/*' />

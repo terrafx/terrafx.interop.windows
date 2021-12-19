@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -37,4 +37,7 @@ public enum DEFAULT_FOLDER_MENU_RESTRICTIONS
 
     /// <include file='DEFAULT_FOLDER_MENU_RESTRICTIONS.xml' path='doc/member[@name="DEFAULT_FOLDER_MENU_RESTRICTIONS.DFMR_NO_NATIVECPU_VERBS"]/*' />
     DFMR_NO_NATIVECPU_VERBS = 0x800,
+
+    /// <include file='DEFAULT_FOLDER_MENU_RESTRICTIONS.xml' path='doc/member[@name="DEFAULT_FOLDER_MENU_RESTRICTIONS.DFMR_NO_NONWOW_VERBS"]/*' />
+    DFMR_NO_NONWOW_VERBS = 0x1000,
 }

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the University of Illinois Open Source License.
 
 namespace TerraFX.Interop.DirectX;
@@ -105,4 +105,10 @@ public static partial class DXC
 
     [NativeTypeName("#define DXC_ARG_DEBUG_NAME_FOR_BINARY L\"-Zsb\"")]
     public const string DXC_ARG_DEBUG_NAME_FOR_BINARY = "-Zsb";
+
+    [NativeTypeName("#define DXC_EXTRA_OUTPUT_NAME_STDOUT L\"*stdout*\"")]
+    public const string DXC_EXTRA_OUTPUT_NAME_STDOUT = "*stdout*";
+
+    [NativeTypeName("#define DXC_EXTRA_OUTPUT_NAME_STDERR L\"*stderr*\"")]
+    public const string DXC_EXTRA_OUTPUT_NAME_STDERR = "*stderr*";
 }

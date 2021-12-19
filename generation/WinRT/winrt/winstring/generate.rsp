@@ -11,7 +11,7 @@ TerraFX.Interop.WinRT
 --test-output
 ../../../../tests/Interop/Windows/WinRT/winrt/winstring
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/winstring.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/winrt/winstring.h
 --with-librarypath
 HSTRING_UserFree=combase
 HSTRING_UserMarshal=combase

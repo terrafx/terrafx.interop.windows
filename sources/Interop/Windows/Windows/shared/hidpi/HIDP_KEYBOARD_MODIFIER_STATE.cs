@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -12,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct HIDP_KEYBOARD_MODIFIER_STATE
 {
     /// <include file='HIDP_KEYBOARD_MODIFIER_STATE.xml' path='doc/member[@name="HIDP_KEYBOARD_MODIFIER_STATE.Anonymous"]/*' />
-    [NativeTypeName("_HIDP_KEYBOARD_MODIFIER_STATE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/hidpi.h:1728:4)")]
+    [NativeTypeName("_HIDP_KEYBOARD_MODIFIER_STATE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/hidpi.h:1937:4)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftControl"]/*' />
@@ -223,7 +223,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_HIDP_KEYBOARD_MODIFIER_STATE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/hidpi.h:1729:7)")]
+        [NativeTypeName("_HIDP_KEYBOARD_MODIFIER_STATE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/hidpi.h:1938:7)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ul"]/*' />

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ProcessSnapshot.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/ProcessSnapshot.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -68,7 +68,7 @@ public unsafe partial struct PSS_HANDLE_ENTRY
     public ushort* ObjectName;
 
     /// <include file='PSS_HANDLE_ENTRY.xml' path='doc/member[@name="PSS_HANDLE_ENTRY.TypeSpecificInformation"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:258:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ProcessSnapshot.h:258:5)")]
     public _TypeSpecificInformation_e__Union TypeSpecificInformation;
 
     /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union"]/*' />
@@ -77,32 +77,32 @@ public unsafe partial struct PSS_HANDLE_ENTRY
     {
         /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union.Process"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:261:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ProcessSnapshot.h:261:9)")]
         public _Process_e__Struct Process;
 
         /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union.Thread"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:272:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ProcessSnapshot.h:272:9)")]
         public _Thread_e__Struct Thread;
 
         /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union.Mutant"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:284:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ProcessSnapshot.h:284:9)")]
         public _Mutant_e__Struct Mutant;
 
         /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union.Event"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:292:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ProcessSnapshot.h:292:9)")]
         public _Event_e__Struct Event;
 
         /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union.Section"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:298:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ProcessSnapshot.h:298:9)")]
         public _Section_e__Struct Section;
 
         /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union.Semaphore"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ProcessSnapshot.h:306:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ProcessSnapshot.h:306:9)")]
         public _Semaphore_e__Struct Semaphore;
 
         /// <include file='_Process_e__Struct.xml' path='doc/member[@name="_Process_e__Struct"]/*' />

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/processthreadsapi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/processthreadsapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -464,6 +464,11 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetThreadSelectedCpuSetMasks(HANDLE Thread, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, ushort CpuSetMaskCount);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMachineTypeAttributes"]/*' />
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22000.0")]
+    public static extern HRESULT GetMachineTypeAttributes(ushort Machine, MACHINE_ATTRIBUTES* MachineTypeAttributes);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetThreadDescription"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]

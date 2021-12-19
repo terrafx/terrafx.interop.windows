@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the University of Illinois Open Source License.
 
 using System;
@@ -259,6 +259,31 @@ public static partial class CLSID
                 0x52,
                 0x40,
                 0xD2
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_DxcPdbUtils
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xFB, 0x1D, 0x62, 0x54,
+                0xCE, 0xF2,
+                0x7E, 0x45,
+                0xAE,
+                0x8C,
+                0xEC,
+                0x35,
+                0x5F,
+                0xAE,
+                0xEC,
+                0x7C
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

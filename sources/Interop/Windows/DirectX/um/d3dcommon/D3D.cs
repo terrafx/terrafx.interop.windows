@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3dcommon.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/d3dcommon.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -172,6 +172,27 @@ public static partial class D3D
 
     [NativeTypeName("#define D3D_SHADER_FEATURE_SAMPLER_FEEDBACK 0x200000")]
     public const int D3D_SHADER_FEATURE_SAMPLER_FEEDBACK = 0x200000;
+
+    [NativeTypeName("#define D3D_SHADER_FEATURE_ATOMIC_INT64_ON_TYPED_RESOURCE 0x400000")]
+    public const int D3D_SHADER_FEATURE_ATOMIC_INT64_ON_TYPED_RESOURCE = 0x400000;
+
+    [NativeTypeName("#define D3D_SHADER_FEATURE_ATOMIC_INT64_ON_GROUP_SHARED 0x800000")]
+    public const int D3D_SHADER_FEATURE_ATOMIC_INT64_ON_GROUP_SHARED = 0x800000;
+
+    [NativeTypeName("#define D3D_SHADER_FEATURE_DERIVATIVES_IN_MESH_AND_AMPLIFICATION_SHADERS 0x1000000")]
+    public const int D3D_SHADER_FEATURE_DERIVATIVES_IN_MESH_AND_AMPLIFICATION_SHADERS = 0x1000000;
+
+    [NativeTypeName("#define D3D_SHADER_FEATURE_RESOURCE_DESCRIPTOR_HEAP_INDEXING 0x2000000")]
+    public const int D3D_SHADER_FEATURE_RESOURCE_DESCRIPTOR_HEAP_INDEXING = 0x2000000;
+
+    [NativeTypeName("#define D3D_SHADER_FEATURE_SAMPLER_DESCRIPTOR_HEAP_INDEXING 0x4000000")]
+    public const int D3D_SHADER_FEATURE_SAMPLER_DESCRIPTOR_HEAP_INDEXING = 0x4000000;
+
+    [NativeTypeName("#define D3D_SHADER_FEATURE_WAVE_MMA 0x8000000")]
+    public const int D3D_SHADER_FEATURE_WAVE_MMA = 0x8000000;
+
+    [NativeTypeName("#define D3D_SHADER_FEATURE_ATOMIC_INT64_ON_DESCRIPTOR_HEAP_RESOURCE 0x10000000")]
+    public const int D3D_SHADER_FEATURE_ATOMIC_INT64_ON_DESCRIPTOR_HEAP_RESOURCE = 0x10000000;
 
     [NativeTypeName("#define D3D_COMPONENT_MASK_X 1")]
     public const int D3D_COMPONENT_MASK_X = 1;

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfapi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/mfapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -445,6 +445,31 @@ public static partial class MFVideoFormat
         {
             ReadOnlySpan<byte> data = new byte[] {
                 0x4E, 0x56, 0x31, 0x32,
+                0x00, 0x00,
+                0x10, 0x00,
+                0x80,
+                0x00,
+                0x00,
+                0xAA,
+                0x00,
+                0x38,
+                0x9B,
+                0x71
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFVideoFormat_NV21
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x4E, 0x56, 0x32, 0x31,
                 0x00, 0x00,
                 0x10, 0x00,
                 0x80,

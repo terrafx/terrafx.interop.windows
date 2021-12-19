@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -48,15 +48,15 @@ public partial struct JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2
     public ulong JobMemory;
 
     /// <include file='JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.Anonymous1"]/*' />
-    [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:13126:5)")]
+    [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:13188:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.Anonymous2"]/*' />
-    [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:13131:5)")]
+    [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:13193:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.Anonymous3"]/*' />
-    [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:13136:5)")]
+    [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:13198:5)")]
     public _Anonymous3_e__Union Anonymous3;
 
     /// <include file='JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.JobLowMemoryLimit"]/*' />

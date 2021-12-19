@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/PathCch.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/PathCch.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -28,4 +28,7 @@ public enum PATHCCH_OPTIONS
 
     /// <include file='PATHCCH_OPTIONS.xml' path='doc/member[@name="PATHCCH_OPTIONS.PATHCCH_ENSURE_TRAILING_SLASH"]/*' />
     PATHCCH_ENSURE_TRAILING_SLASH = 0x020,
+
+    /// <include file='PATHCCH_OPTIONS.xml' path='doc/member[@name="PATHCCH_OPTIONS.PATHCCH_CANONICALIZE_SLASHES"]/*' />
+    PATHCCH_CANONICALIZE_SLASHES = 0x040,
 }

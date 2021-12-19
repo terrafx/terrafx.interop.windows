@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -21,7 +21,7 @@ public partial struct D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC
     public D3D11_VDOV_DIMENSION ViewDimension;
 
     /// <include file='D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC.Anonymous"]/*' />
-    [NativeTypeName("D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3d11.h:11640:5)")]
+    [NativeTypeName("D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3d11.h:11649:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2D"]/*' />

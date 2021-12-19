@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -1280,6 +1280,31 @@ public static partial class GUID
                 0x72,
                 0xE2,
                 0x1B
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_HUPR_ADAPTIVE_DISPLAY_TIMEOUT
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xB6, 0x6A, 0x7D, 0x0A,
+                0x83, 0xAC,
+                0xD1, 0x4A,
+                0x82,
+                0x82,
+                0xEC,
+                0xA5,
+                0xB5,
+                0x83,
+                0x08,
+                0xF3
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -4013,6 +4038,31 @@ public static partial class GUID
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_PROCESSOR_SHORT_THREAD_RUNTIME_THRESHOLD
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xC2, 0x98, 0x29, 0xD9,
+                0x48, 0x6A,
+                0xCA, 0x49,
+                0x85,
+                0xD4,
+                0x8C,
+                0xCE,
+                0xEC,
+                0x29,
+                0x45,
+                0x70
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_SYSTEM_COOLING_POLICY
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -4480,6 +4530,31 @@ public static partial class GUID
                 0xE6,
                 0xA0,
                 0xF3
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_LIDSWITCH_STATE_RELIABILITY
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xF1, 0x4F, 0x4C, 0xAE,
+                0x61, 0xD3,
+                0xF4, 0x43,
+                0x80,
+                0xAA,
+                0xBB,
+                0xB6,
+                0xEB,
+                0x03,
+                0xDE,
+                0x94
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -38,7 +38,7 @@ public partial struct DISK_CACHE_INFORMATION
     public byte PrefetchScalar;
 
     /// <include file='DISK_CACHE_INFORMATION.xml' path='doc/member[@name="DISK_CACHE_INFORMATION.Anonymous"]/*' />
-    [NativeTypeName("_DISK_CACHE_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:9441:5)")]
+    [NativeTypeName("_DISK_CACHE_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:9472:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ScalarPrefetch"]/*' />
@@ -67,12 +67,12 @@ public partial struct DISK_CACHE_INFORMATION
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ScalarPrefetch"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:9442:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:9473:9)")]
         public _ScalarPrefetch_e__Struct ScalarPrefetch;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BlockPrefetch"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:9454:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:9485:9)")]
         public _BlockPrefetch_e__Struct BlockPrefetch;
 
         /// <include file='_ScalarPrefetch_e__Struct.xml' path='doc/member[@name="_ScalarPrefetch_e__Struct"]/*' />

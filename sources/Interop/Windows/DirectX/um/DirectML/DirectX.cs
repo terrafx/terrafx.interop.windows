@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/DirectML.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/DirectML.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -36,6 +36,6 @@ public static unsafe partial class DirectX
     [DllImport("directml", ExactSpelling = true)]
     public static extern HRESULT DMLCreateDevice1(ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, DML_FEATURE_LEVEL minimumFeatureLevel, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
-    [NativeTypeName("#define DML_TARGET_VERSION 0x3000")]
-    public const int DML_TARGET_VERSION = 0x3000;
+    [NativeTypeName("#define DML_TARGET_VERSION 0x4000")]
+    public const int DML_TARGET_VERSION = 0x4000;
 }

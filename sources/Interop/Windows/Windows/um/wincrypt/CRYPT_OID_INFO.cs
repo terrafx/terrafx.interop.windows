@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -28,7 +28,7 @@ public unsafe partial struct CRYPT_OID_INFO
     public uint dwGroupId;
 
     /// <include file='CRYPT_OID_INFO.xml' path='doc/member[@name="CRYPT_OID_INFO.Anonymous"]/*' />
-    [NativeTypeName("_CRYPT_OID_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:6206:5)")]
+    [NativeTypeName("_CRYPT_OID_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:6206:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='CRYPT_OID_INFO.xml' path='doc/member[@name="CRYPT_OID_INFO.ExtraInfo"]/*' />

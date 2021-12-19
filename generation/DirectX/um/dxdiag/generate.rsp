@@ -26,6 +26,6 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/dxdiag
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/dxdiag.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/dxdiag.h
 --with-librarypath
 *=dxdiag

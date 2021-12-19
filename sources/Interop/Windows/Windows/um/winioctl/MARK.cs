@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -45,6 +45,9 @@ public static partial class MARK
 
     [NativeTypeName("#define MARK_HANDLE_SKIP_COHERENCY_SYNC_DISALLOW_WRITES (0x00004000)")]
     public const int MARK_HANDLE_SKIP_COHERENCY_SYNC_DISALLOW_WRITES = (0x00004000);
+
+    [NativeTypeName("#define MARK_HANDLE_SUPPRESS_VOLUME_OPEN_FLUSH (0x00008000)")]
+    public const int MARK_HANDLE_SUPPRESS_VOLUME_OPEN_FLUSH = (0x00008000);
 
     [NativeTypeName("#define MARK_HANDLE_ENABLE_CPU_CACHE (0x10000000)")]
     public const int MARK_HANDLE_ENABLE_CPU_CACHE = (0x10000000);

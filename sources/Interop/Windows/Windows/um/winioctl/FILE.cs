@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -267,6 +267,12 @@ public static partial class FILE
 
     [NativeTypeName("#define FILE_DEVICE_EVENT_COLLECTOR 0x0000005f")]
     public const int FILE_DEVICE_EVENT_COLLECTOR = 0x0000005f;
+
+    [NativeTypeName("#define FILE_DEVICE_USB4 0x00000060")]
+    public const int FILE_DEVICE_USB4 = 0x00000060;
+
+    [NativeTypeName("#define FILE_DEVICE_SOUNDWIRE 0x00000061")]
+    public const int FILE_DEVICE_SOUNDWIRE = 0x00000061;
 
     [NativeTypeName("#define FILE_ANY_ACCESS 0")]
     public const int FILE_ANY_ACCESS = 0;

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/intsafe.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from shared/intsafe.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -19,14 +19,8 @@ public static partial class Windows
     [NativeTypeName("#define INT16_MIN (-32767i16 - 1)")]
     public const int INT16_MIN = (-32767 - 1);
 
-    [NativeTypeName("#define INT_MIN (-2147483647 - 1)")]
-    public const int INT_MIN = (-2147483647 - 1);
-
     [NativeTypeName("#define INT32_MIN (-2147483647i32 - 1)")]
     public const int INT32_MIN = (-2147483647 - 1);
-
-    [NativeTypeName("#define LONG_MIN (-2147483647L - 1)")]
-    public const int LONG_MIN = (-2147483647 - 1);
 
     [NativeTypeName("#define LONGLONG_MIN (-9223372036854775807i64 - 1)")]
     public const long LONGLONG_MIN = (-9223372036854775807L - 1);
@@ -61,23 +55,11 @@ public static partial class Windows
     [NativeTypeName("#define WORD_MAX 0xffff")]
     public const int WORD_MAX = 0xffff;
 
-    [NativeTypeName("#define INT_MAX 2147483647")]
-    public const int INT_MAX = 2147483647;
-
     [NativeTypeName("#define INT32_MAX 2147483647i32")]
     public const int INT32_MAX = 2147483647;
 
-    [NativeTypeName("#define UINT_MAX 0xffffffff")]
-    public const uint UINT_MAX = 0xffffffff;
-
     [NativeTypeName("#define UINT32_MAX 0xffffffffui32")]
     public const uint UINT32_MAX = 0xffffffffU;
-
-    [NativeTypeName("#define LONG_MAX 2147483647L")]
-    public const int LONG_MAX = 2147483647;
-
-    [NativeTypeName("#define ULONG_MAX 0xffffffffUL")]
-    public const uint ULONG_MAX = 0xffffffffU;
 
     [NativeTypeName("#define DWORD_MAX 0xffffffffUL")]
     public const uint DWORD_MAX = 0xffffffffU;

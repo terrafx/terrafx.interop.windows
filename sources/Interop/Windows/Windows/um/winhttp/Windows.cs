@@ -1,8 +1,9 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winhttp.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winhttp.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -144,6 +145,15 @@ public static unsafe partial class Windows
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WinHttpQueryHeadersEx(HINTERNET hRequest, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("ULONGLONG")] ulong ullFlags, uint uiCodePage, [NativeTypeName("PDWORD")] uint* pdwIndex, [NativeTypeName("PWINHTTP_HEADER_NAME")] WINHTTP_HEADER_NAME* pHeaderName, [NativeTypeName("PVOID")] void* pBuffer, [NativeTypeName("PDWORD")] uint* pdwBufferLength, [NativeTypeName("PWINHTTP_EXTENDED_HEADER *")] WINHTTP_EXTENDED_HEADER** ppHeaders, [NativeTypeName("PDWORD")] uint* pdwHeadersCount);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpQueryConnectionGroup"]/*' />
+    [DllImport("winhttp", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    public static extern uint WinHttpQueryConnectionGroup(HINTERNET hInternet, [NativeTypeName("const GUID *")] Guid* pGuidConnection, [NativeTypeName("ULONGLONG")] ulong ullFlags, [NativeTypeName("PWINHTTP_QUERY_CONNECTION_GROUP_RESULT *")] WINHTTP_QUERY_CONNECTION_GROUP_RESULT** ppResult);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpFreeQueryConnectionGroupResult"]/*' />
+    [DllImport("winhttp", ExactSpelling = true)]
+    public static extern void WinHttpFreeQueryConnectionGroupResult(WINHTTP_QUERY_CONNECTION_GROUP_RESULT* pResult);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpDetectAutoProxyConfigUrl"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]

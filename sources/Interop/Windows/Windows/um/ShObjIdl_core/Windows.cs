@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -83,7 +83,7 @@ public static unsafe partial class Windows
 
         for (i = 0; i < cItems; i++)
         {
-            CoTaskMemFree(ppidls[i]);
+            CoTaskMemFree(unchecked((void*)(ppidls[i])));
         }
 
         CoTaskMemFree(ppidls);

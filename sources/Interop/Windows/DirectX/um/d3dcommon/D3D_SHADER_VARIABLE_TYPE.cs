@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3dcommon.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/d3dcommon.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.DirectX;
@@ -181,6 +181,21 @@ public enum D3D_SHADER_VARIABLE_TYPE
 
     /// <include file='D3D_SHADER_VARIABLE_TYPE.xml' path='doc/member[@name="D3D_SHADER_VARIABLE_TYPE.D3D_SVT_MIN16UINT"]/*' />
     D3D_SVT_MIN16UINT = 57,
+
+    /// <include file='D3D_SHADER_VARIABLE_TYPE.xml' path='doc/member[@name="D3D_SHADER_VARIABLE_TYPE.D3D_SVT_INT16"]/*' />
+    D3D_SVT_INT16 = 58,
+
+    /// <include file='D3D_SHADER_VARIABLE_TYPE.xml' path='doc/member[@name="D3D_SHADER_VARIABLE_TYPE.D3D_SVT_UINT16"]/*' />
+    D3D_SVT_UINT16 = 59,
+
+    /// <include file='D3D_SHADER_VARIABLE_TYPE.xml' path='doc/member[@name="D3D_SHADER_VARIABLE_TYPE.D3D_SVT_FLOAT16"]/*' />
+    D3D_SVT_FLOAT16 = 60,
+
+    /// <include file='D3D_SHADER_VARIABLE_TYPE.xml' path='doc/member[@name="D3D_SHADER_VARIABLE_TYPE.D3D_SVT_INT64"]/*' />
+    D3D_SVT_INT64 = 61,
+
+    /// <include file='D3D_SHADER_VARIABLE_TYPE.xml' path='doc/member[@name="D3D_SHADER_VARIABLE_TYPE.D3D_SVT_UINT64"]/*' />
+    D3D_SVT_UINT64 = 62,
 
     /// <include file='D3D_SHADER_VARIABLE_TYPE.xml' path='doc/member[@name="D3D_SHADER_VARIABLE_TYPE.D3D10_SVT_VOID"]/*' />
     D3D10_SVT_VOID = D3D_SVT_VOID,

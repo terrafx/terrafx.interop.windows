@@ -11,6 +11,6 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/DispatcherQueue
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/DispatcherQueue.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/DispatcherQueue.h
 --with-librarypath
 CreateDispatcherQueueController=coremessaging

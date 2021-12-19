@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mmdeviceapi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/mmdeviceapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -189,6 +189,52 @@ public static partial class IID
                 0x19,
                 0x9B,
                 0x6D
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IAudioSystemEffectsPropertyChangeNotificationClient
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x40, 0x9D, 0x04, 0x20,
+                0xD5, 0x56,
+                0x0E, 0x40,
+                0xA2,
+                0xEF,
+                0x38,
+                0x55,
+                0x99,
+                0xFE,
+                0xED,
+                0x49
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IAudioSystemEffectsPropertyStore
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xF9, 0xE7, 0x2A, 0x30,
+                0xE0, 0xD7,
+                0xE4, 0x43,
+                0x97,
+                0x1B,
+                0x1F,
+                0x82,
+                0x93,
+                0x61,
+                0x3D,
+                0x2A
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

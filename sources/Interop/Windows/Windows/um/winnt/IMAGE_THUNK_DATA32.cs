@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -11,7 +11,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_THUNK_DATA32
 {
     /// <include file='IMAGE_THUNK_DATA32.xml' path='doc/member[@name="IMAGE_THUNK_DATA32.u1"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19477:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19611:5)")]
     public _u1_e__Union u1;
 
     /// <include file='_u1_e__Union.xml' path='doc/member[@name="_u1_e__Union"]/*' />
