@@ -47,6 +47,7 @@ public static unsafe partial class ResolveDllImportTests
             switch (method.Name)
             {
                 case "DavCancelConnectionsToServer":
+                case "DavGetTheLockOwnerOfTheFile":
                 case "DavInvalidateCache":
                 case "DavRegisterAuthCallback":
                 case "DavUnregisterAuthCallback":
