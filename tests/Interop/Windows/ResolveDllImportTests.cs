@@ -54,7 +54,7 @@ public static unsafe partial class ResolveDllImportTests
                     if (Environment.GetEnvironmentVariable("GITHUB_RUN_ID") is not null)
                     {
                         // This isn't good practice, but current CI runs Windows Server and 'davclnt' isn't available
-                        Assert.Warn(exception.Message);
+                        Assert.Warn($"Warn: {exception.Message}");
                     }
                     else
                     {
@@ -77,7 +77,7 @@ public static unsafe partial class ResolveDllImportTests
                     // These methods come from 'comctl32' but require a manifest file for the app
                     // to see them as visible. Mark them with a warning rather than failing them
 
-                    Assert.Warn(exception.Message);
+                    Assert.Warn($"Warn: {exception.Message}");
                     break;
                 }
 
@@ -87,7 +87,7 @@ public static unsafe partial class ResolveDllImportTests
                     if (Environment.GetEnvironmentVariable("GITHUB_RUN_ID") is not null)
                     {
                         // This isn't good practice, but current CI runs Windows Server and 'dxcompiler' isn't available
-                        Assert.Warn(exception.Message);
+                        Assert.Warn($"Warn: {exception.Message}");
                     }
                     else
                     {
@@ -105,7 +105,7 @@ public static unsafe partial class ResolveDllImportTests
                     if (Environment.GetEnvironmentVariable("GITHUB_RUN_ID") is not null)
                     {
                         // This isn't good practice, but current CI runs Windows Server and 'srclient' isn't available
-                        Assert.Warn(exception.Message);
+                        Assert.Warn($"Warn: {exception.Message}");
                     }
                     else
                     {
@@ -120,7 +120,7 @@ public static unsafe partial class ResolveDllImportTests
                     if (Environment.GetEnvironmentVariable("GITHUB_RUN_ID") is not null)
                     {
                         // This isn't good practice, but current CI runs Windows Server and 'X3DAudio1_7' isn't available
-                        Assert.Warn(exception.Message);
+                        Assert.Warn($"Warn: {exception.Message}");
                     }
                     else
                     {
@@ -131,7 +131,7 @@ public static unsafe partial class ResolveDllImportTests
 
                 default:
                 {
-                    Assert.Fail(exception.Message);
+                    Assert.Fail($"Fail: {exception.Message}");
                     break;
                 }
             }
