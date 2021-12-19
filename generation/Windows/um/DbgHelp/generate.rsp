@@ -2,6 +2,15 @@
 @../../../remap.rsp
 --define-macro
 _IMAGEHLP_SOURCE_
+--exclude
+GetCheckUserInterruptShared
+SymGetLineFromAddrW
+SymGetLineNextW
+SymGetLinePrevW
+SymGetSymNextW
+SymGetSymNextW64
+SymGetSymPrevW
+SymGetSymPrevW64
 --file
 um-DbgHelp.h
 --methodClassName
@@ -34,7 +43,6 @@ FindExecutableImageEx=DbgHelp
 FindExecutableImageExW=DbgHelp
 FindFileInPath=DbgHelp
 FindFileInSearchPath=DbgHelp
-GetCheckUserInterruptShared=DbgHelp
 GetSymLoadError=DbgHelp
 GetTimestampForLoadedLibrary=DbgHelp
 ImageDirectoryEntryToData=DbgHelp
@@ -123,7 +131,6 @@ SymGetHomeDirectoryW=DbgHelp
 SymGetLineFromAddr64=DbgHelp
 SymGetLineFromAddr=DbgHelp
 SymGetLineFromAddrW64=DbgHelp
-SymGetLineFromAddrW=DbgHelp
 SymGetLineFromInlineContext=DbgHelp
 SymGetLineFromInlineContextW=DbgHelp
 SymGetLineFromName64=DbgHelp
@@ -132,11 +139,9 @@ SymGetLineFromNameW64=DbgHelp
 SymGetLineNext64=DbgHelp
 SymGetLineNext=DbgHelp
 SymGetLineNextW64=DbgHelp
-SymGetLineNextW=DbgHelp
 SymGetLinePrev64=DbgHelp
 SymGetLinePrev=DbgHelp
 SymGetLinePrevW64=DbgHelp
-SymGetLinePrevW=DbgHelp
 SymGetModuleBase64=DbgHelp
 SymGetModuleBase=DbgHelp
 SymGetModuleInfo64=DbgHelp
@@ -167,12 +172,8 @@ SymGetSymFromName64=DbgHelp
 SymGetSymFromName=DbgHelp
 SymGetSymNext64=DbgHelp
 SymGetSymNext=DbgHelp
-SymGetSymNextW64=DbgHelp
-SymGetSymNextW=DbgHelp
 SymGetSymPrev64=DbgHelp
 SymGetSymPrev=DbgHelp
-SymGetSymPrevW64=DbgHelp
-SymGetSymPrevW=DbgHelp
 SymGetTypeFromName=DbgHelp
 SymGetTypeFromNameW=DbgHelp
 SymGetTypeInfo=DbgHelp

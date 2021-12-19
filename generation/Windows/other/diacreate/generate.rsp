@@ -1,5 +1,8 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+NoRegCoCreate
+NoOleCoCreate
 --include-directory
 C:/Program Files/Microsoft Visual Studio/2022/Preview/DIA SDK/include
 --file
@@ -14,6 +17,3 @@ TerraFX.Interop.Windows
 ../../../../tests/Interop/Windows/Windows/other/diacreate
 --traverse
 C:/Program Files/Microsoft Visual Studio/2022/Preview/DIA SDK/include/diacreate.h
---with-librarypath
-NoRegCoCreate=msdia140
-NoOleCoCreate=msdia140

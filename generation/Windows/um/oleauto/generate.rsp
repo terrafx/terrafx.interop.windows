@@ -8,6 +8,7 @@ VarI4FromI8
 VarI4FromUI8
 VarI8FromI8
 VarUI4FromUI4
+VarUI8FromI4
 VarUI8FromUI8
 V_ARRAY
 V_ARRAYREF
@@ -448,7 +449,6 @@ VarUI8FromDec=oleaut32
 VarUI8FromDisp=oleaut32
 VarUI8FromI1=oleaut32
 VarUI8FromI2=oleaut32
-VarUI8FromI4=oleaut32
 VarUI8FromI8=oleaut32
 VarUI8FromR4=oleaut32
 VarUI8FromR8=oleaut32

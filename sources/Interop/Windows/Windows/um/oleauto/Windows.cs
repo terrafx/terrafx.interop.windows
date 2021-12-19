@@ -1006,10 +1006,6 @@ public static unsafe partial class Windows
     [DllImport("oleaut32", ExactSpelling = true)]
     public static extern HRESULT VarUI8FromI2(short sIn, [NativeTypeName("ULONG64 *")] ulong* pi64Out);
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUI8FromI4"]/*' />
-    [DllImport("oleaut32", ExactSpelling = true)]
-    public static extern HRESULT VarUI8FromI4([NativeTypeName("LONG")] int lIn, [NativeTypeName("ULONG64 *")] ulong* pi64Out);
-
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUI8FromI8"]/*' />
     [DllImport("oleaut32", ExactSpelling = true)]
     public static extern HRESULT VarUI8FromI8([NativeTypeName("LONG64")] long ui64In, [NativeTypeName("ULONG64 *")] ulong* pi64Out);

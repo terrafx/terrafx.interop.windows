@@ -439,10 +439,6 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern BOOL SymGetLineFromAddr(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwAddr, [NativeTypeName("PDWORD")] uint* pdwDisplacement, [NativeTypeName("PIMAGEHLP_LINE")] IMAGEHLP_LINE* Line);
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLineFromAddrW"]/*' />
-    [DllImport("DbgHelp", ExactSpelling = true)]
-    public static extern BOOL SymGetLineFromAddrW(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwAddr, [NativeTypeName("PDWORD")] uint* pdwDisplacement, [NativeTypeName("PIMAGEHLP_LINEW")] IMAGEHLP_LINEW* Line);
-
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLineFromName64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
@@ -473,10 +469,6 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern BOOL SymGetLineNext(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINE")] IMAGEHLP_LINE* Line);
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLineNextW"]/*' />
-    [DllImport("DbgHelp", ExactSpelling = true)]
-    public static extern BOOL SymGetLineNextW(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINEW")] IMAGEHLP_LINEW* Line);
-
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLinePrev64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
@@ -491,10 +483,6 @@ public static unsafe partial class Windows
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetLinePrev(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINE")] IMAGEHLP_LINE* Line);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetLinePrevW"]/*' />
-    [DllImport("DbgHelp", ExactSpelling = true)]
-    public static extern BOOL SymGetLinePrevW(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_LINEW")] IMAGEHLP_LINEW* Line);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetFileLineOffsets64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
@@ -1056,45 +1044,24 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern BOOL SymGetSymNext64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOL64")] IMAGEHLP_SYMBOL64* Symbol);
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymNextW64"]/*' />
-    [DllImport("DbgHelp", ExactSpelling = true)]
-    public static extern BOOL SymGetSymNextW64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOLW64")] IMAGEHLP_SYMBOLW64* Symbol);
-
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymNext"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSymNext(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOL")] IMAGEHLP_SYMBOL* Symbol);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymNextW"]/*' />
-    [DllImport("DbgHelp", ExactSpelling = true)]
-    public static extern BOOL SymGetSymNextW(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOLW")] IMAGEHLP_SYMBOLW* Symbol);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymPrev64"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSymPrev64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOL64")] IMAGEHLP_SYMBOL64* Symbol);
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymPrevW64"]/*' />
-    [DllImport("DbgHelp", ExactSpelling = true)]
-    public static extern BOOL SymGetSymPrevW64(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOLW64")] IMAGEHLP_SYMBOLW64* Symbol);
-
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymPrev"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSymPrev(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOL")] IMAGEHLP_SYMBOL* Symbol);
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSymPrevW"]/*' />
-    [DllImport("DbgHelp", ExactSpelling = true)]
-    public static extern BOOL SymGetSymPrevW(HANDLE hProcess, [NativeTypeName("PIMAGEHLP_SYMBOLW")] IMAGEHLP_SYMBOLW* Symbol);
-
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetCheckUserInterruptShared"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern void SetCheckUserInterruptShared([NativeTypeName("LPCALL_BACK_USER_INTERRUPT_ROUTINE")] delegate* unmanaged<uint> lpStartAddress);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCheckUserInterruptShared"]/*' />
-    [DllImport("DbgHelp", ExactSpelling = true)]
-    [return: NativeTypeName("LPCALL_BACK_USER_INTERRUPT_ROUTINE")]
-    public static extern delegate* unmanaged<uint> GetCheckUserInterruptShared();
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSymLoadError"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
