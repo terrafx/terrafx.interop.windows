@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/InteractionContext.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/InteractionContext.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -35,7 +35,7 @@ public partial struct INTERACTION_CONTEXT_OUTPUT2
     public float y;
 
     /// <include file='INTERACTION_CONTEXT_OUTPUT2.xml' path='doc/member[@name="INTERACTION_CONTEXT_OUTPUT2.arguments"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/InteractionContext.h:252:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/InteractionContext.h:252:5)")]
     public _arguments_e__Union arguments;
 
     /// <include file='_arguments_e__Union.xml' path='doc/member[@name="_arguments_e__Union"]/*' />

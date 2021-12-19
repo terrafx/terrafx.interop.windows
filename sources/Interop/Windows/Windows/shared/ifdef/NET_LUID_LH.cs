@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/ifdef.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from shared/ifdef.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -19,7 +19,7 @@ public partial struct NET_LUID_LH
 
     /// <include file='NET_LUID_LH.xml' path='doc/member[@name="NET_LUID_LH.Info"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ifdef.h:121:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/ifdef.h:121:5)")]
     public _Info_e__Struct Info;
 
     /// <include file='_Info_e__Struct.xml' path='doc/member[@name="_Info_e__Struct"]/*' />

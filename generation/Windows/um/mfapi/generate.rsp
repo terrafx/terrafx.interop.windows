@@ -15,7 +15,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/mfapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mfapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/mfapi.h
 --with-attribute
 MFAllocateSerialWorkQueue=SupportedOSPlatform("windows8.0")
 MFBeginRegisterWorkQueueWithMMCSSEx=SupportedOSPlatform("windows8.0")

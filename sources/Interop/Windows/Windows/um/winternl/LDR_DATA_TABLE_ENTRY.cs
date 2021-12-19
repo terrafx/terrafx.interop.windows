@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winternl.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winternl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -42,7 +42,7 @@ public unsafe partial struct LDR_DATA_TABLE_ENTRY
     public _Reserved5_e__FixedBuffer Reserved5;
 
     /// <include file='LDR_DATA_TABLE_ENTRY.xml' path='doc/member[@name="LDR_DATA_TABLE_ENTRY.Anonymous"]/*' />
-    [NativeTypeName("_LDR_DATA_TABLE_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winternl.h:157:5)")]
+    [NativeTypeName("_LDR_DATA_TABLE_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winternl.h:157:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='LDR_DATA_TABLE_ENTRY.xml' path='doc/member[@name="LDR_DATA_TABLE_ENTRY.TimeDateStamp"]/*' />

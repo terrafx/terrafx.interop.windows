@@ -32,7 +32,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/shared/ws2def
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ws2def.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/ws2def.h
 --with-attribute
 ADDRINFOEX2A=SupportedOSPlatform("windows8.0")
 ADDRINFOEX2W=SupportedOSPlatform("windows8.0")

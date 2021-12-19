@@ -36,7 +36,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/wingdi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wingdi.h
 --with-attribute
 DISPLAYCONFIG_DESKTOP_IMAGE_INFO=SupportedOSPlatform("windows10.0.17763.0")
 DISPLAYCONFIG_MODE_INFO.__AnonymousRecord_wingdi_L2932_C5.desktopImageInfo=SupportedOSPlatform("windows10.0.17763.0")

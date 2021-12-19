@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -28,7 +28,7 @@ public partial struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
     public DISPLAYCONFIG_2DREGION totalSize;
 
     /// <include file='DISPLAYCONFIG_VIDEO_SIGNAL_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_VIDEO_SIGNAL_INFO.Anonymous"]/*' />
-    [NativeTypeName("DISPLAYCONFIG_VIDEO_SIGNAL_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:2850:5)")]
+    [NativeTypeName("DISPLAYCONFIG_VIDEO_SIGNAL_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wingdi.h:2850:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='DISPLAYCONFIG_VIDEO_SIGNAL_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_VIDEO_SIGNAL_INFO.scanLineOrdering"]/*' />
@@ -60,7 +60,7 @@ public partial struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AdditionalSignalInfo"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:2852:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wingdi.h:2852:9)")]
         public _AdditionalSignalInfo_e__Struct AdditionalSignalInfo;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.videoStandard"]/*' />

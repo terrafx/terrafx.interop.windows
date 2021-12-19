@@ -34,8 +34,8 @@ UNICODE
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/winrt
 --with-callconv
 *=Winapi

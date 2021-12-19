@@ -15,7 +15,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/wintrust
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinTrust.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/WinTrust.h
 --with-attribute
 CRYPT_PROVIDER_SIGSTATE=SupportedOSPlatform("windows8.0")
 WINTRUST_SIGNATURE_SETTINGS=SupportedOSPlatform("windows8.0")

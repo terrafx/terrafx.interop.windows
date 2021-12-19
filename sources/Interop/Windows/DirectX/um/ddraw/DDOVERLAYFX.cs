@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ddraw.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/ddraw.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -32,7 +32,7 @@ public unsafe partial struct DDOVERLAYFX
     public uint dwAlphaDestConstBitDepth;
 
     /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.Anonymous1"]/*' />
-    [NativeTypeName("_DDOVERLAYFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:775:5)")]
+    [NativeTypeName("_DDOVERLAYFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ddraw.h:775:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.dwAlphaSrcConstBitDepth"]/*' />
@@ -40,7 +40,7 @@ public unsafe partial struct DDOVERLAYFX
     public uint dwAlphaSrcConstBitDepth;
 
     /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.Anonymous2"]/*' />
-    [NativeTypeName("_DDOVERLAYFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:781:5)")]
+    [NativeTypeName("_DDOVERLAYFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ddraw.h:781:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.dckDestColorkey"]/*' />

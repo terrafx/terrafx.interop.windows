@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -20,7 +20,7 @@ public unsafe partial struct OVERLAPPED
     public nuint InternalHigh;
 
     /// <include file='OVERLAPPED.xml' path='doc/member[@name="OVERLAPPED.Anonymous"]/*' />
-    [NativeTypeName("_OVERLAPPED::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/minwinbase.h:55:5)")]
+    [NativeTypeName("_OVERLAPPED::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/minwinbase.h:55:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='OVERLAPPED.xml' path='doc/member[@name="OVERLAPPED.hEvent"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct OVERLAPPED
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_OVERLAPPED::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/minwinbase.h:56:9)")]
+        [NativeTypeName("_OVERLAPPED::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/minwinbase.h:56:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Pointer"]/*' />

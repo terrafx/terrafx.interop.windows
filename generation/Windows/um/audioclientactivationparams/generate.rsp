@@ -11,7 +11,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/audioclientactivationparams
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/audioclientactivationparams.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/audioclientactivationparams.h
 --with-attribute
 AUDIOCLIENT_ACTIVATION_PARAMS=SupportedOSPlatform("windows10.0.19043.0")
 AUDIOCLIENT_ACTIVATION_TYPE=SupportedOSPlatform("windows10.0.19043.0")

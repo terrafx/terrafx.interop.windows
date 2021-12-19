@@ -13,7 +13,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/d3d10effect
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3d10effect.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3d10effect.h
 --with-librarypath
 D3D10CompileEffectFromMemory=d3d10
 D3D10CreateEffectFromMemory=d3d10

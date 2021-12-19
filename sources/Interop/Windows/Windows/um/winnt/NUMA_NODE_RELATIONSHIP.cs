@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -25,7 +25,7 @@ public unsafe partial struct NUMA_NODE_RELATIONSHIP
     public ushort GroupCount;
 
     /// <include file='NUMA_NODE_RELATIONSHIP.xml' path='doc/member[@name="NUMA_NODE_RELATIONSHIP.Anonymous"]/*' />
-    [NativeTypeName("_NUMA_NODE_RELATIONSHIP::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:13606:5)")]
+    [NativeTypeName("_NUMA_NODE_RELATIONSHIP::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:13606:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.GroupMask"]/*' />

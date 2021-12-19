@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/immdev.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/immdev.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -33,7 +33,7 @@ public unsafe partial struct INPUTCONTEXT
     public uint fdwSentence;
 
     /// <include file='INPUTCONTEXT.xml' path='doc/member[@name="INPUTCONTEXT.lfFont"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/immdev.h:873:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/immdev.h:873:5)")]
     public _lfFont_e__Union lfFont;
 
     /// <include file='INPUTCONTEXT.xml' path='doc/member[@name="INPUTCONTEXT.cfCompForm"]/*' />

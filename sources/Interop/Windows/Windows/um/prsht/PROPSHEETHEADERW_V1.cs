@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/prsht.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/prsht.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -26,7 +26,7 @@ public unsafe partial struct PROPSHEETHEADERW_V1
     public HINSTANCE hInstance;
 
     /// <include file='PROPSHEETHEADERW_V1.xml' path='doc/member[@name="PROPSHEETHEADERW_V1.Anonymous1"]/*' />
-    [NativeTypeName("_PROPSHEETHEADERW_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/prsht.h:520:5)")]
+    [NativeTypeName("_PROPSHEETHEADERW_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/prsht.h:520:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='PROPSHEETHEADERW_V1.xml' path='doc/member[@name="PROPSHEETHEADERW_V1.pszCaption"]/*' />
@@ -37,11 +37,11 @@ public unsafe partial struct PROPSHEETHEADERW_V1
     public uint nPages;
 
     /// <include file='PROPSHEETHEADERW_V1.xml' path='doc/member[@name="PROPSHEETHEADERW_V1.Anonymous2"]/*' />
-    [NativeTypeName("_PROPSHEETHEADERW_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/prsht.h:520:5)")]
+    [NativeTypeName("_PROPSHEETHEADERW_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/prsht.h:520:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='PROPSHEETHEADERW_V1.xml' path='doc/member[@name="PROPSHEETHEADERW_V1.Anonymous3"]/*' />
-    [NativeTypeName("_PROPSHEETHEADERW_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/prsht.h:520:5)")]
+    [NativeTypeName("_PROPSHEETHEADERW_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/prsht.h:520:5)")]
     public _Anonymous3_e__Union Anonymous3;
 
     /// <include file='PROPSHEETHEADERW_V1.xml' path='doc/member[@name="PROPSHEETHEADERW_V1.pfnCallback"]/*' />

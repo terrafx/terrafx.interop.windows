@@ -27,7 +27,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/immdev
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/immdev.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/immdev.h
 --with-librarypath
 ImmAssociateContext=imm32
 ImmAssociateContextEx=imm32

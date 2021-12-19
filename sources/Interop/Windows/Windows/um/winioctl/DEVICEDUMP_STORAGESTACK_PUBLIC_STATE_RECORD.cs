@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -36,7 +36,7 @@ public unsafe partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD
     public uint OperationError;
 
     /// <include file='DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.xml' path='doc/member[@name="DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.StackSpecific"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:6109:9)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:6109:9)")]
     public _StackSpecific_e__Union StackSpecific;
 
     /// <include file='_StackSpecific_e__Union.xml' path='doc/member[@name="_StackSpecific_e__Union"]/*' />
@@ -45,17 +45,17 @@ public unsafe partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD
     {
         /// <include file='_StackSpecific_e__Union.xml' path='doc/member[@name="_StackSpecific_e__Union.ExternalStack"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:6110:10)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:6110:10)")]
         public _ExternalStack_e__Struct ExternalStack;
 
         /// <include file='_StackSpecific_e__Union.xml' path='doc/member[@name="_StackSpecific_e__Union.AtaPort"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:6114:10)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:6114:10)")]
         public _AtaPort_e__Struct AtaPort;
 
         /// <include file='_StackSpecific_e__Union.xml' path='doc/member[@name="_StackSpecific_e__Union.StorPort"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:6118:10)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:6118:10)")]
         public _StorPort_e__Struct StorPort;
 
         /// <include file='_ExternalStack_e__Struct.xml' path='doc/member[@name="_ExternalStack_e__Struct"]/*' />

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -28,7 +28,7 @@ public partial struct STORAGE_ZONED_DEVICE_DESCRIPTOR
     public uint ZoneCount;
 
     /// <include file='STORAGE_ZONED_DEVICE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_DESCRIPTOR.ZoneAttributes"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2909:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:2909:5)")]
     public _ZoneAttributes_e__Union ZoneAttributes;
 
     /// <include file='STORAGE_ZONED_DEVICE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_DESCRIPTOR.ZoneGroupCount"]/*' />
@@ -45,12 +45,12 @@ public partial struct STORAGE_ZONED_DEVICE_DESCRIPTOR
     {
         /// <include file='_ZoneAttributes_e__Union.xml' path='doc/member[@name="_ZoneAttributes_e__Union.SequentialRequiredZone"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2910:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:2910:9)")]
         public _SequentialRequiredZone_e__Struct SequentialRequiredZone;
 
         /// <include file='_ZoneAttributes_e__Union.xml' path='doc/member[@name="_ZoneAttributes_e__Union.SequentialPreferredZone"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2920:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:2920:9)")]
         public _SequentialPreferredZone_e__Struct SequentialPreferredZone;
 
         /// <include file='_SequentialRequiredZone_e__Struct.xml' path='doc/member[@name="_SequentialRequiredZone_e__Struct"]/*' />

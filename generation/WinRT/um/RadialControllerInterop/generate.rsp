@@ -11,7 +11,7 @@ TerraFX.Interop.WinRT
 --test-output
 ../../../../tests/Interop/Windows/WinRT/um/RadialControllerInterop
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/RadialControllerInterop.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/RadialControllerInterop.h
 --with-attribute
 IRadialControllerConfigurationInterop=SupportedOSPlatform("windows10.0.14393.0")
 IRadialControllerInterop=SupportedOSPlatform("windows10.0.14393.0")

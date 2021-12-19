@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/appmgmt.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/appmgmt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -14,7 +14,7 @@ public unsafe partial struct INSTALLSPEC
 {
     /// <include file='INSTALLSPEC.xml' path='doc/member[@name="INSTALLSPEC.AppName"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/appmgmt.h:39:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/appmgmt.h:39:5)")]
     public _AppName_e__Struct AppName;
 
     /// <include file='INSTALLSPEC.xml' path='doc/member[@name="INSTALLSPEC.FileExt"]/*' />
@@ -29,7 +29,7 @@ public unsafe partial struct INSTALLSPEC
 
     /// <include file='INSTALLSPEC.xml' path='doc/member[@name="INSTALLSPEC.COMClass"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/appmgmt.h:46:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/appmgmt.h:46:5)")]
     public _COMClass_e__Struct COMClass;
 
     /// <include file='_AppName_e__Struct.xml' path='doc/member[@name="_AppName_e__Struct"]/*' />

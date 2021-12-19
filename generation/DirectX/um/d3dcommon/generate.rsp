@@ -16,7 +16,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/d3dcommon
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3dcommon.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3dcommon.h
 --with-attribute
 D3D_PARAMETER_FLAGS=Flags
 D3D_SHADER_CBUFFER_FLAGS=Flags

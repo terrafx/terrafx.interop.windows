@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -15,7 +15,7 @@ public partial struct DECIMAL
     public ushort wReserved;
 
     /// <include file='DECIMAL.xml' path='doc/member[@name="DECIMAL.Anonymous1"]/*' />
-    [NativeTypeName("tagDEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/wtypes.h:705:5)")]
+    [NativeTypeName("tagDEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/wtypes.h:705:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='DECIMAL.xml' path='doc/member[@name="DECIMAL.Hi32"]/*' />
@@ -23,7 +23,7 @@ public partial struct DECIMAL
     public uint Hi32;
 
     /// <include file='DECIMAL.xml' path='doc/member[@name="DECIMAL.Anonymous2"]/*' />
-    [NativeTypeName("tagDEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/wtypes.h:713:5)")]
+    [NativeTypeName("tagDEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/wtypes.h:713:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.scale"]/*' />
@@ -92,7 +92,7 @@ public partial struct DECIMAL
     {
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("tagDEC::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/wtypes.h:706:9)")]
+        [NativeTypeName("tagDEC::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/wtypes.h:706:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.signscale"]/*' />
@@ -116,7 +116,7 @@ public partial struct DECIMAL
     {
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("tagDEC::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/wtypes.h:714:9)")]
+        [NativeTypeName("tagDEC::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/wtypes.h:714:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Lo64"]/*' />

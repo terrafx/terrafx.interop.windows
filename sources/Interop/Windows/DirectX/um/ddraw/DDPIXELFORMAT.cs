@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ddraw.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/ddraw.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -24,23 +24,23 @@ public partial struct DDPIXELFORMAT
     public uint dwFourCC;
 
     /// <include file='DDPIXELFORMAT.xml' path='doc/member[@name="DDPIXELFORMAT.Anonymous1"]/*' />
-    [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:712:5)")]
+    [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ddraw.h:712:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='DDPIXELFORMAT.xml' path='doc/member[@name="DDPIXELFORMAT.Anonymous2"]/*' />
-    [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:723:5)")]
+    [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ddraw.h:723:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='DDPIXELFORMAT.xml' path='doc/member[@name="DDPIXELFORMAT.Anonymous3"]/*' />
-    [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:732:5)")]
+    [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ddraw.h:732:5)")]
     public _Anonymous3_e__Union Anonymous3;
 
     /// <include file='DDPIXELFORMAT.xml' path='doc/member[@name="DDPIXELFORMAT.Anonymous4"]/*' />
-    [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:745:5)")]
+    [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ddraw.h:745:5)")]
     public _Anonymous4_e__Union Anonymous4;
 
     /// <include file='DDPIXELFORMAT.xml' path='doc/member[@name="DDPIXELFORMAT.Anonymous5"]/*' />
-    [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:752:5)")]
+    [NativeTypeName("_DDPIXELFORMAT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ddraw.h:752:5)")]
     public _Anonymous5_e__Union Anonymous5;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.dwRGBBitCount"]/*' />
@@ -414,7 +414,7 @@ public partial struct DDPIXELFORMAT
 
         /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union.MultiSampleCaps"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ddraw.h:738:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ddraw.h:738:9)")]
         public _MultiSampleCaps_e__Struct MultiSampleCaps;
 
         /// <include file='_MultiSampleCaps_e__Struct.xml' path='doc/member[@name="_MultiSampleCaps_e__Struct"]/*' />

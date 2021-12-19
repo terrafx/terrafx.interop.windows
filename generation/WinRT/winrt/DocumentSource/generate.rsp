@@ -11,4 +11,4 @@ TerraFX.Interop.WinRT
 --test-output
 ../../../../tests/Interop/Windows/WinRT/winrt/DocumentSource
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/winrt/DocumentSource.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/winrt/DocumentSource.h

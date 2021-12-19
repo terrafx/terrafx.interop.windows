@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/shellapi.h in the Windows SDK for Windows 10.0.20348.0
+// Ported from um/shellapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -36,7 +36,7 @@ public unsafe partial struct NOTIFYICONDATA64W
     [NativeTypeName("WCHAR [256]")]
     public fixed ushort szInfo[256];
 
-    [NativeTypeName("_NOTIFYICONDATAW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/shellapi.h:1057:5)")]
+    [NativeTypeName("_NOTIFYICONDATAW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/shellapi.h:1057:5)")]
     public _Anonymous_e__Union Anonymous;
 
     [NativeTypeName("WCHAR [64]")]
