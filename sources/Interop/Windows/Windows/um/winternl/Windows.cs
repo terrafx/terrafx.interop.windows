@@ -185,5 +185,5 @@ public static unsafe partial class Windows
     public const uint LOGONID_CURRENT = unchecked((uint)(-1));
 
     [NativeTypeName("#define SERVERNAME_CURRENT ((HANDLE)NULL)")]
-    public static void* SERVERNAME_CURRENT => unchecked((void*)(0));
+    public static void* SERVERNAME_CURRENT => unchecked((HANDLE)(0));
 }

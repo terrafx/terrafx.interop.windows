@@ -1,5 +1,12 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+CompressionLevelFromTCOMP
+CompressionMemoryFromTCOMP
+CompressionTypeFromTCOMP
+LZXCompressionWindowFromTCOMP
+TCOMPfromLZXWindow
+TCOMPfromTypeLevelMemory
 --file
 um-fdi_fci_types.h
 --methodClassName
