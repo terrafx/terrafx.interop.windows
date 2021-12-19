@@ -5,6 +5,7 @@ FACILITY_HID_ERROR_CODE
 HIDP_ERROR_CODES
 HidP_GetButtons
 HidP_GetButtonsEx
+HidP_GetVersion
 HidP_IsSameUsageAndPage
 HidP_SetButtons
 HidP_TranslateUsageAndPagesToI8042ScanCodes

@@ -1,5 +1,8 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+tagCOMPOSITION_TARGET_ID.operator==(const tagCOMPOSITION_TARGET_ID &):bool
+tagCOMPOSITION_TARGET_ID.operator!=(const tagCOMPOSITION_TARGET_ID &):bool
 --file
 shared-dcomptypes.h
 --methodClassName

@@ -182,6 +182,9 @@ ReadAcquire16
 ReadAcquire64
 ReadBooleanAcquire
 ReadBooleanNoFence
+ReadInt32Acquire
+ReadInt32NoFence
+ReadInt32Raw
 ReadForWriteAccess
 ReadLongPtrAcquire
 ReadLongPtrNoFence
@@ -205,6 +208,9 @@ ReadTimeStampCounter
 ReadUCharAcquire
 ReadUCharNoFence
 ReadUCharRaw
+ReadUInt32Acquire
+ReadUInt32NoFence
+ReadUInt32Raw
 ReadULong64Acquire
 ReadULong64NoFence
 ReadULong64Raw
@@ -353,6 +359,9 @@ VerSetConditionMask
 VER_SET_CONDITION
 WriteBooleanNoFence
 WriteBooleanRelease
+WriteInt32NoFence
+WriteInt32Raw
+WriteInt32Release
 WriteLongPtrNoFence
 WriteLongPtrRaw
 WriteLongPtrRelease
@@ -377,6 +386,9 @@ WriteSizeTRelease
 WriteUCharNoFence
 WriteUCharRaw
 WriteUCharRelease
+WriteUInt32NoFence
+WriteUInt32Release
+WriteUInt32Raw
 WriteULong64NoFence
 WriteULong64Raw
 WriteULong64Release

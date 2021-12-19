@@ -47,12 +47,15 @@ IDCompositionVisualDebug=SupportedOSPlatform("windows8.1")
 --with-librarypath
 DCompositionAttachMouseDragToHwnd=dcomp
 DCompositionAttachMouseWheelToHwnd=dcomp
+DCompositionBoostCompositorClock=dcomp
 DCompositionCreateDevice=dcomp
 DCompositionCreateDevice2=dcomp
 DCompositionCreateDevice3=dcomp
 DCompositionCreateSurfaceHandle=dcomp
 DCompositionGetFrameId=dcomp
 DCompositionGetStatistics=dcomp
+DCompositionGetTargetStatistics=dcomp
+DCompositionWaitForCompositorClock=dcomp
 IDCompositionRectangleClip::SetBottomLeftRadiusX=dcomp
 IDCompositionRectangleClip::SetBottomLeftRadiusY=dcomp
 IDCompositionRectangleClip::SetBottomRightRadiusX=dcomp
