@@ -310,6 +310,9 @@ public static partial class KERB
     [NativeTypeName("#define KERB_REFRESH_POLICY_KDC 0x2")]
     public const int KERB_REFRESH_POLICY_KDC = 0x2;
 
+    [NativeTypeName("#define KERB_CLOUD_KERBEROS_DEBUG_DATA_VERSION 0")]
+    public const int KERB_CLOUD_KERBEROS_DEBUG_DATA_VERSION = 0;
+
     [NativeTypeName("#define KERB_SETPASS_USE_LOGONID 1")]
     public const int KERB_SETPASS_USE_LOGONID = 1;
 

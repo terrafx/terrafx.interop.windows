@@ -96,7 +96,7 @@ public unsafe partial struct HIDP_VALUE_CAPS
     public int PhysicalMax;
 
     /// <include file='HIDP_VALUE_CAPS.xml' path='doc/member[@name="HIDP_VALUE_CAPS.Anonymous"]/*' />
-    [NativeTypeName("_HIDP_VALUE_CAPS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/hidpi.h:134:5)")]
+    [NativeTypeName("_HIDP_VALUE_CAPS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/hidpi.h:138:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Range"]/*' />
@@ -125,12 +125,12 @@ public unsafe partial struct HIDP_VALUE_CAPS
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Range"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/hidpi.h:135:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/hidpi.h:139:9)")]
         public _Range_e__Struct Range;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.NotRange"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/hidpi.h:142:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/hidpi.h:146:9)")]
         public _NotRange_e__Struct NotRange;
 
         /// <include file='_Range_e__Struct.xml' path='doc/member[@name="_Range_e__Struct"]/*' />

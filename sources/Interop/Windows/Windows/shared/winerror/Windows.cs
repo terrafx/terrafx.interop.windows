@@ -529,6 +529,9 @@ public static partial class Windows
     [NativeTypeName("#define DXCORE_ERROR_EVENT_NOT_UNREGISTERED _HRESULT_TYPEDEF_(0x88800001L)")]
     public const int DXCORE_ERROR_EVENT_NOT_UNREGISTERED = unchecked((int)(0x88800001));
 
+    [NativeTypeName("#define PRESENTATION_ERROR_LOST _HRESULT_TYPEDEF_(0x88810001L)")]
+    public const int PRESENTATION_ERROR_LOST = unchecked((int)(0x88810001));
+
     [NativeTypeName("#define DWMERR_STATE_TRANSITION_FAILED _HRESULT_TYPEDEF_(0x88980700L)")]
     public const int DWMERR_STATE_TRANSITION_FAILED = unchecked((int)(0x88980700));
 
@@ -571,6 +574,90 @@ public static partial class Windows
     [NativeTypeName("#define WEB_E_JSON_VALUE_NOT_FOUND _HRESULT_TYPEDEF_(0x83750009L)")]
     public const int WEB_E_JSON_VALUE_NOT_FOUND = unchecked((int)(0x83750009));
 
+    [NativeTypeName("#define HSP_E_ERROR_MASK _HRESULT_TYPEDEF_(0x81280000L)")]
+    public const int HSP_E_ERROR_MASK = unchecked((int)(0x81280000));
+
+    [NativeTypeName("#define HSP_E_INTERNAL_ERROR _HRESULT_TYPEDEF_(0x81280FFFL)")]
+    public const int HSP_E_INTERNAL_ERROR = unchecked((int)(0x81280FFF));
+
+    [NativeTypeName("#define HSP_BS_ERROR_MASK _HRESULT_TYPEDEF_(0x81281000L)")]
+    public const int HSP_BS_ERROR_MASK = unchecked((int)(0x81281000));
+
+    [NativeTypeName("#define HSP_BS_INTERNAL_ERROR _HRESULT_TYPEDEF_(0x812810FFL)")]
+    public const int HSP_BS_INTERNAL_ERROR = unchecked((int)(0x812810FF));
+
+    [NativeTypeName("#define HSP_DRV_ERROR_MASK _HRESULT_TYPEDEF_(0x81290000L)")]
+    public const int HSP_DRV_ERROR_MASK = unchecked((int)(0x81290000));
+
+    [NativeTypeName("#define HSP_DRV_INTERNAL_ERROR _HRESULT_TYPEDEF_(0x812900FFL)")]
+    public const int HSP_DRV_INTERNAL_ERROR = unchecked((int)(0x812900FF));
+
+    [NativeTypeName("#define HSP_BASE_ERROR_MASK _HRESULT_TYPEDEF_(0x81290100L)")]
+    public const int HSP_BASE_ERROR_MASK = unchecked((int)(0x81290100));
+
+    [NativeTypeName("#define HSP_BASE_INTERNAL_ERROR _HRESULT_TYPEDEF_(0x812901FFL)")]
+    public const int HSP_BASE_INTERNAL_ERROR = unchecked((int)(0x812901FF));
+
+    [NativeTypeName("#define HSP_KSP_ERROR_MASK _HRESULT_TYPEDEF_(0x81290200L)")]
+    public const int HSP_KSP_ERROR_MASK = unchecked((int)(0x81290200));
+
+    [NativeTypeName("#define HSP_KSP_DEVICE_NOT_READY _HRESULT_TYPEDEF_(0x81290201L)")]
+    public const int HSP_KSP_DEVICE_NOT_READY = unchecked((int)(0x81290201));
+
+    [NativeTypeName("#define HSP_KSP_INVALID_PROVIDER_HANDLE _HRESULT_TYPEDEF_(0x81290202L)")]
+    public const int HSP_KSP_INVALID_PROVIDER_HANDLE = unchecked((int)(0x81290202));
+
+    [NativeTypeName("#define HSP_KSP_INVALID_KEY_HANDLE _HRESULT_TYPEDEF_(0x81290203L)")]
+    public const int HSP_KSP_INVALID_KEY_HANDLE = unchecked((int)(0x81290203));
+
+    [NativeTypeName("#define HSP_KSP_INVALID_PARAMETER _HRESULT_TYPEDEF_(0x81290204L)")]
+    public const int HSP_KSP_INVALID_PARAMETER = unchecked((int)(0x81290204));
+
+    [NativeTypeName("#define HSP_KSP_BUFFER_TOO_SMALL _HRESULT_TYPEDEF_(0x81290205L)")]
+    public const int HSP_KSP_BUFFER_TOO_SMALL = unchecked((int)(0x81290205));
+
+    [NativeTypeName("#define HSP_KSP_NOT_SUPPORTED _HRESULT_TYPEDEF_(0x81290206L)")]
+    public const int HSP_KSP_NOT_SUPPORTED = unchecked((int)(0x81290206));
+
+    [NativeTypeName("#define HSP_KSP_INVALID_DATA _HRESULT_TYPEDEF_(0x81290207L)")]
+    public const int HSP_KSP_INVALID_DATA = unchecked((int)(0x81290207));
+
+    [NativeTypeName("#define HSP_KSP_INVALID_FLAGS _HRESULT_TYPEDEF_(0x81290208L)")]
+    public const int HSP_KSP_INVALID_FLAGS = unchecked((int)(0x81290208));
+
+    [NativeTypeName("#define HSP_KSP_ALGORITHM_NOT_SUPPORTED _HRESULT_TYPEDEF_(0x81290209L)")]
+    public const int HSP_KSP_ALGORITHM_NOT_SUPPORTED = unchecked((int)(0x81290209));
+
+    [NativeTypeName("#define HSP_KSP_KEY_ALREADY_FINALIZED _HRESULT_TYPEDEF_(0x8129020AL)")]
+    public const int HSP_KSP_KEY_ALREADY_FINALIZED = unchecked((int)(0x8129020A));
+
+    [NativeTypeName("#define HSP_KSP_KEY_NOT_FINALIZED _HRESULT_TYPEDEF_(0x8129020BL)")]
+    public const int HSP_KSP_KEY_NOT_FINALIZED = unchecked((int)(0x8129020B));
+
+    [NativeTypeName("#define HSP_KSP_INVALID_KEY_TYPE _HRESULT_TYPEDEF_(0x8129020CL)")]
+    public const int HSP_KSP_INVALID_KEY_TYPE = unchecked((int)(0x8129020C));
+
+    [NativeTypeName("#define HSP_KSP_NO_MEMORY _HRESULT_TYPEDEF_(0x81290210L)")]
+    public const int HSP_KSP_NO_MEMORY = unchecked((int)(0x81290210));
+
+    [NativeTypeName("#define HSP_KSP_PARAMETER_NOT_SET _HRESULT_TYPEDEF_(0x81290211L)")]
+    public const int HSP_KSP_PARAMETER_NOT_SET = unchecked((int)(0x81290211));
+
+    [NativeTypeName("#define HSP_KSP_KEY_EXISTS _HRESULT_TYPEDEF_(0x81290215L)")]
+    public const int HSP_KSP_KEY_EXISTS = unchecked((int)(0x81290215));
+
+    [NativeTypeName("#define HSP_KSP_KEY_MISSING _HRESULT_TYPEDEF_(0x81290216L)")]
+    public const int HSP_KSP_KEY_MISSING = unchecked((int)(0x81290216));
+
+    [NativeTypeName("#define HSP_KSP_KEY_LOAD_FAIL _HRESULT_TYPEDEF_(0x81290217L)")]
+    public const int HSP_KSP_KEY_LOAD_FAIL = unchecked((int)(0x81290217));
+
+    [NativeTypeName("#define HSP_KSP_NO_MORE_ITEMS _HRESULT_TYPEDEF_(0x81290218L)")]
+    public const int HSP_KSP_NO_MORE_ITEMS = unchecked((int)(0x81290218));
+
+    [NativeTypeName("#define HSP_KSP_INTERNAL_ERROR _HRESULT_TYPEDEF_(0x812902FFL)")]
+    public const int HSP_KSP_INTERNAL_ERROR = unchecked((int)(0x812902FF));
+
     [NativeTypeName("#define JSCRIPT_E_CANTEXECUTE _HRESULT_TYPEDEF_(0x89020001L)")]
     public const int JSCRIPT_E_CANTEXECUTE = unchecked((int)(0x89020001));
 
@@ -612,4 +699,25 @@ public static partial class Windows
 
     [NativeTypeName("#define WINML_ERR_SIZE_MISMATCH _HRESULT_TYPEDEF_(0x88900004L)")]
     public const int WINML_ERR_SIZE_MISMATCH = unchecked((int)(0x88900004));
+
+    [NativeTypeName("#define IORING_E_REQUIRED_FLAG_NOT_SUPPORTED _HRESULT_TYPEDEF_(0x80460001L)")]
+    public const int IORING_E_REQUIRED_FLAG_NOT_SUPPORTED = unchecked((int)(0x80460001));
+
+    [NativeTypeName("#define IORING_E_SUBMISSION_QUEUE_FULL _HRESULT_TYPEDEF_(0x80460002L)")]
+    public const int IORING_E_SUBMISSION_QUEUE_FULL = unchecked((int)(0x80460002));
+
+    [NativeTypeName("#define IORING_E_VERSION_NOT_SUPPORTED _HRESULT_TYPEDEF_(0x80460003L)")]
+    public const int IORING_E_VERSION_NOT_SUPPORTED = unchecked((int)(0x80460003));
+
+    [NativeTypeName("#define IORING_E_SUBMISSION_QUEUE_TOO_BIG _HRESULT_TYPEDEF_(0x80460004L)")]
+    public const int IORING_E_SUBMISSION_QUEUE_TOO_BIG = unchecked((int)(0x80460004));
+
+    [NativeTypeName("#define IORING_E_COMPLETION_QUEUE_TOO_BIG _HRESULT_TYPEDEF_(0x80460005L)")]
+    public const int IORING_E_COMPLETION_QUEUE_TOO_BIG = unchecked((int)(0x80460005));
+
+    [NativeTypeName("#define IORING_E_SUBMIT_IN_PROGRESS _HRESULT_TYPEDEF_(0x80460006L)")]
+    public const int IORING_E_SUBMIT_IN_PROGRESS = unchecked((int)(0x80460006));
+
+    [NativeTypeName("#define IORING_E_CORRUPT _HRESULT_TYPEDEF_(0x80460007L)")]
+    public const int IORING_E_CORRUPT = unchecked((int)(0x80460007));
 }

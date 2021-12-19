@@ -15,4 +15,7 @@ public static partial class DirectX
 
     [NativeTypeName("#define COMPOSITIONOBJECT_ALL_ACCESS (COMPOSITIONOBJECT_READ | COMPOSITIONOBJECT_WRITE)")]
     public const int COMPOSITIONOBJECT_ALL_ACCESS = (0x0001 | 0x0002);
+
+    [NativeTypeName("#define COMPOSITION_STATS_MAX_TARGETS 256")]
+    public const int COMPOSITION_STATS_MAX_TARGETS = 256;
 }

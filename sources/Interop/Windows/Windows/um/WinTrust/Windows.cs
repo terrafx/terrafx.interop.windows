@@ -17,7 +17,8 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinVerifyTrustEx"]/*' />
     [DllImport("wintrust", ExactSpelling = true)]
-    public static extern HRESULT WinVerifyTrustEx(HWND hwnd, Guid* pgActionID, WINTRUST_DATA* pWinTrustData);
+    [return: NativeTypeName("long")]
+    public static extern int WinVerifyTrustEx(HWND hwnd, Guid* pgActionID, WINTRUST_DATA* pWinTrustData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WintrustGetRegPolicyFlags"]/*' />
     [DllImport("wintrust", ExactSpelling = true)]

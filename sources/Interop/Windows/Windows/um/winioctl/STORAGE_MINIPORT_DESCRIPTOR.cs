@@ -3,6 +3,9 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='STORAGE_MINIPORT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MINIPORT_DESCRIPTOR"]/*' />
@@ -35,11 +38,101 @@ public unsafe partial struct STORAGE_MINIPORT_DESCRIPTOR
     [NativeTypeName("BOOLEAN")]
     public byte ExtraIoInfoSupported;
 
+    /// <include file='STORAGE_MINIPORT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MINIPORT_DESCRIPTOR.Flags"]/*' />
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:1538:5)")]
+    public _Flags_e__Union Flags;
+
     /// <include file='STORAGE_MINIPORT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MINIPORT_DESCRIPTOR.Reserved0"]/*' />
-    [NativeTypeName("BYTE [3]")]
-    public fixed byte Reserved0[3];
+    [NativeTypeName("BYTE [2]")]
+    public fixed byte Reserved0[2];
 
     /// <include file='STORAGE_MINIPORT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MINIPORT_DESCRIPTOR.Reserved1"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved1;
+
+    /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union"]/*' />
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Flags_e__Union
+    {
+        /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.Anonymous"]/*' />
+        [FieldOffset(0)]
+        [NativeTypeName("_STORAGE_MINIPORT_DESCRIPTOR::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:1539:9)")]
+        public _Anonymous_e__Struct Anonymous;
+
+        /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.AsBYTE"]/*' />
+        [FieldOffset(0)]
+        public byte AsBYTE;
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LogicalPoFxForDisk"]/*' />
+        public byte LogicalPoFxForDisk
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return Anonymous.LogicalPoFxForDisk;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                Anonymous.LogicalPoFxForDisk = value;
+            }
+        }
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
+        public byte Reserved
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return Anonymous.Reserved;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                Anonymous.Reserved = value;
+            }
+        }
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
+        public partial struct _Anonymous_e__Struct
+        {
+            public byte _bitfield;
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LogicalPoFxForDisk"]/*' />
+            [NativeTypeName("byte : 1")]
+            public byte LogicalPoFxForDisk
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (byte)(_bitfield & 0x1u);
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (byte)((_bitfield & ~0x1u) | (value & 0x1u));
+                }
+            }
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
+            [NativeTypeName("byte : 7")]
+            public byte Reserved
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (byte)((_bitfield >> 1) & 0x7Fu);
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (byte)((_bitfield & ~(0x7Fu << 1)) | ((value & 0x7Fu) << 1));
+                }
+            }
+        }
+    }
 }

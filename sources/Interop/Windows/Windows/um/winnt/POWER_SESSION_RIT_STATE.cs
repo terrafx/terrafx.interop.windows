@@ -13,6 +13,6 @@ public partial struct POWER_SESSION_RIT_STATE
     public byte Active;
 
     /// <include file='POWER_SESSION_RIT_STATE.xml' path='doc/member[@name="POWER_SESSION_RIT_STATE.LastInputTime"]/*' />
-    [NativeTypeName("DWORD")]
-    public uint LastInputTime;
+    [NativeTypeName("DWORD64")]
+    public ulong LastInputTime;
 }

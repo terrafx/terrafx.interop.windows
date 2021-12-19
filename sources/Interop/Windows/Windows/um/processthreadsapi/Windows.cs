@@ -465,6 +465,11 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern BOOL SetThreadSelectedCpuSetMasks(HANDLE Thread, [NativeTypeName("PGROUP_AFFINITY")] GROUP_AFFINITY* CpuSetMasks, ushort CpuSetMaskCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMachineTypeAttributes"]/*' />
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22000.0")]
+    public static extern HRESULT GetMachineTypeAttributes(ushort Machine, MACHINE_ATTRIBUTES* MachineTypeAttributes);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetThreadDescription"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.14393.0")]

@@ -490,6 +490,18 @@ public static partial class PRODUCT
     [NativeTypeName("#define PRODUCT_XBOX_SCARLETTHOSTOS 0x000000C5")]
     public const int PRODUCT_XBOX_SCARLETTHOSTOS = 0x000000C5;
 
+    [NativeTypeName("#define PRODUCT_AZURE_SERVER_CLOUDHOST 0x000000C7")]
+    public const int PRODUCT_AZURE_SERVER_CLOUDHOST = 0x000000C7;
+
+    [NativeTypeName("#define PRODUCT_AZURE_SERVER_CLOUDMOS 0x000000C8")]
+    public const int PRODUCT_AZURE_SERVER_CLOUDMOS = 0x000000C8;
+
+    [NativeTypeName("#define PRODUCT_CLOUDEDITIONN 0x000000CA")]
+    public const int PRODUCT_CLOUDEDITIONN = 0x000000CA;
+
+    [NativeTypeName("#define PRODUCT_CLOUDEDITION 0x000000CB")]
+    public const int PRODUCT_CLOUDEDITION = 0x000000CB;
+
     [NativeTypeName("#define PRODUCT_AZURESTACKHCI_SERVER_CORE 0x00000196")]
     public const int PRODUCT_AZURESTACKHCI_SERVER_CORE = 0x00000196;
 

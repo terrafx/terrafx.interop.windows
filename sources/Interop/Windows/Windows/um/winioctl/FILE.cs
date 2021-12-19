@@ -268,6 +268,12 @@ public static partial class FILE
     [NativeTypeName("#define FILE_DEVICE_EVENT_COLLECTOR 0x0000005f")]
     public const int FILE_DEVICE_EVENT_COLLECTOR = 0x0000005f;
 
+    [NativeTypeName("#define FILE_DEVICE_USB4 0x00000060")]
+    public const int FILE_DEVICE_USB4 = 0x00000060;
+
+    [NativeTypeName("#define FILE_DEVICE_SOUNDWIRE 0x00000061")]
+    public const int FILE_DEVICE_SOUNDWIRE = 0x00000061;
+
     [NativeTypeName("#define FILE_ANY_ACCESS 0")]
     public const int FILE_ANY_ACCESS = 0;
 

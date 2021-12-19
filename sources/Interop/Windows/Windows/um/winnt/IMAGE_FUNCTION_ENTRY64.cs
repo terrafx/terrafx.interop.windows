@@ -21,7 +21,7 @@ public partial struct IMAGE_FUNCTION_ENTRY64
     public ulong EndingAddress;
 
     /// <include file='IMAGE_FUNCTION_ENTRY64.xml' path='doc/member[@name="IMAGE_FUNCTION_ENTRY64.Anonymous"]/*' />
-    [NativeTypeName("_IMAGE_FUNCTION_ENTRY64::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:20344:5)")]
+    [NativeTypeName("_IMAGE_FUNCTION_ENTRY64::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:20478:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.EndOfPrologue"]/*' />

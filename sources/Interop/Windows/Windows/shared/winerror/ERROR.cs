@@ -1093,6 +1093,9 @@ public static partial class ERROR
     [NativeTypeName("#define ERROR_INSUFFICIENT_VIRTUAL_ADDR_RESOURCES 473L")]
     public const int ERROR_INSUFFICIENT_VIRTUAL_ADDR_RESOURCES = 473;
 
+    [NativeTypeName("#define ERROR_INDEX_OUT_OF_BOUNDS 474L")]
+    public const int ERROR_INDEX_OUT_OF_BOUNDS = 474;
+
     [NativeTypeName("#define ERROR_PNP_QUERY_REMOVE_DEVICE_TIMEOUT 480L")]
     public const int ERROR_PNP_QUERY_REMOVE_DEVICE_TIMEOUT = 480;
 
@@ -1111,14 +1114,65 @@ public static partial class ERROR
     [NativeTypeName("#define ERROR_HAS_SYSTEM_CRITICAL_FILES 488L")]
     public const int ERROR_HAS_SYSTEM_CRITICAL_FILES = 488;
 
-    [NativeTypeName("#define ERROR_PARTITION_TERMINATING 1184L")]
-    public const int ERROR_PARTITION_TERMINATING = 1184;
+    [NativeTypeName("#define ERROR_ENCRYPTED_FILE_NOT_SUPPORTED 489L")]
+    public const int ERROR_ENCRYPTED_FILE_NOT_SUPPORTED = 489;
+
+    [NativeTypeName("#define ERROR_SPARSE_FILE_NOT_SUPPORTED 490L")]
+    public const int ERROR_SPARSE_FILE_NOT_SUPPORTED = 490;
+
+    [NativeTypeName("#define ERROR_PAGEFILE_NOT_SUPPORTED 491L")]
+    public const int ERROR_PAGEFILE_NOT_SUPPORTED = 491;
+
+    [NativeTypeName("#define ERROR_VOLUME_NOT_SUPPORTED 492L")]
+    public const int ERROR_VOLUME_NOT_SUPPORTED = 492;
+
+    [NativeTypeName("#define ERROR_NOT_SUPPORTED_WITH_BYPASSIO 493L")]
+    public const int ERROR_NOT_SUPPORTED_WITH_BYPASSIO = 493;
+
+    [NativeTypeName("#define ERROR_NO_BYPASSIO_DRIVER_SUPPORT 494L")]
+    public const int ERROR_NO_BYPASSIO_DRIVER_SUPPORT = 494;
+
+    [NativeTypeName("#define ERROR_NOT_SUPPORTED_WITH_ENCRYPTION 495L")]
+    public const int ERROR_NOT_SUPPORTED_WITH_ENCRYPTION = 495;
+
+    [NativeTypeName("#define ERROR_NOT_SUPPORTED_WITH_COMPRESSION 496L")]
+    public const int ERROR_NOT_SUPPORTED_WITH_COMPRESSION = 496;
+
+    [NativeTypeName("#define ERROR_NOT_SUPPORTED_WITH_REPLICATION 497L")]
+    public const int ERROR_NOT_SUPPORTED_WITH_REPLICATION = 497;
+
+    [NativeTypeName("#define ERROR_NOT_SUPPORTED_WITH_DEDUPLICATION 498L")]
+    public const int ERROR_NOT_SUPPORTED_WITH_DEDUPLICATION = 498;
+
+    [NativeTypeName("#define ERROR_NOT_SUPPORTED_WITH_AUDITING 499L")]
+    public const int ERROR_NOT_SUPPORTED_WITH_AUDITING = 499;
 
     [NativeTypeName("#define ERROR_USER_PROFILE_LOAD 500L")]
     public const int ERROR_USER_PROFILE_LOAD = 500;
 
     [NativeTypeName("#define ERROR_SESSION_KEY_TOO_SHORT 501L")]
     public const int ERROR_SESSION_KEY_TOO_SHORT = 501;
+
+    [NativeTypeName("#define ERROR_ACCESS_DENIED_APPDATA 502L")]
+    public const int ERROR_ACCESS_DENIED_APPDATA = 502;
+
+    [NativeTypeName("#define ERROR_NOT_SUPPORTED_WITH_MONITORING 503L")]
+    public const int ERROR_NOT_SUPPORTED_WITH_MONITORING = 503;
+
+    [NativeTypeName("#define ERROR_NOT_SUPPORTED_WITH_SNAPSHOT 504L")]
+    public const int ERROR_NOT_SUPPORTED_WITH_SNAPSHOT = 504;
+
+    [NativeTypeName("#define ERROR_NOT_SUPPORTED_WITH_VIRTUALIZATION 505L")]
+    public const int ERROR_NOT_SUPPORTED_WITH_VIRTUALIZATION = 505;
+
+    [NativeTypeName("#define ERROR_BYPASSIO_FLT_NOT_SUPPORTED 506L")]
+    public const int ERROR_BYPASSIO_FLT_NOT_SUPPORTED = 506;
+
+    [NativeTypeName("#define ERROR_DEVICE_RESET_REQUIRED 507L")]
+    public const int ERROR_DEVICE_RESET_REQUIRED = 507;
+
+    [NativeTypeName("#define ERROR_VOLUME_WRITE_ACCESS_DENIED 508L")]
+    public const int ERROR_VOLUME_WRITE_ACCESS_DENIED = 508;
 
     [NativeTypeName("#define ERROR_ARITHMETIC_OVERFLOW 534L")]
     public const int ERROR_ARITHMETIC_OVERFLOW = 534;
@@ -2331,6 +2385,9 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_JOURNAL_ENTRY_DELETED 1181L")]
     public const int ERROR_JOURNAL_ENTRY_DELETED = 1181;
+
+    [NativeTypeName("#define ERROR_PARTITION_TERMINATING 1184L")]
+    public const int ERROR_PARTITION_TERMINATING = 1184;
 
     [NativeTypeName("#define ERROR_SHUTDOWN_IS_SCHEDULED 1190L")]
     public const int ERROR_SHUTDOWN_IS_SCHEDULED = 1190;
@@ -3720,6 +3777,9 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_VRF_VOLATILE_SETTINGS_CONFLICT 3087L")]
     public const int ERROR_VRF_VOLATILE_SETTINGS_CONFLICT = 3087;
+
+    [NativeTypeName("#define ERROR_DIF_IOCALLBACK_NOT_REPLACED 3190L")]
+    public const int ERROR_DIF_IOCALLBACK_NOT_REPLACED = 3190;
 
     [NativeTypeName("#define ERROR_DIF_LIVEDUMP_LIMIT_EXCEEDED 3191L")]
     public const int ERROR_DIF_LIVEDUMP_LIMIT_EXCEEDED = 3191;
@@ -9813,6 +9873,9 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_VOLSNAP_ACTIVATION_TIMEOUT _HRESULT_TYPEDEF_(0x80820002L)")]
     public const int ERROR_VOLSNAP_ACTIVATION_TIMEOUT = unchecked((int)(0x80820002));
+
+    [NativeTypeName("#define ERROR_VOLSNAP_NO_BYPASSIO_WITH_SNAPSHOT _HRESULT_TYPEDEF_(0x80820003L)")]
+    public const int ERROR_VOLSNAP_NO_BYPASSIO_WITH_SNAPSHOT = unchecked((int)(0x80820003));
 
     [NativeTypeName("#define ERROR_TIERING_NOT_SUPPORTED_ON_VOLUME _HRESULT_TYPEDEF_(0x80830001L)")]
     public const int ERROR_TIERING_NOT_SUPPORTED_ON_VOLUME = unchecked((int)(0x80830001));

@@ -38,4 +38,25 @@ public static unsafe partial class DirectX
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DCompositionAttachMouseDragToHwnd"]/*' />
     [DllImport("dcomp", ExactSpelling = true)]
     public static extern HRESULT DCompositionAttachMouseDragToHwnd(IDCompositionVisual* visual, HWND hwnd, BOOL enable);
+
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DCompositionGetFrameId"]/*' />
+    [DllImport("dcomp", ExactSpelling = true)]
+    public static extern HRESULT DCompositionGetFrameId(COMPOSITION_FRAME_ID_TYPE frameIdType, [NativeTypeName("COMPOSITION_FRAME_ID *")] ulong* frameId);
+
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DCompositionGetStatistics"]/*' />
+    [DllImport("dcomp", ExactSpelling = true)]
+    public static extern HRESULT DCompositionGetStatistics([NativeTypeName("COMPOSITION_FRAME_ID")] ulong frameId, COMPOSITION_FRAME_STATS* frameStats, uint targetIdCount, COMPOSITION_TARGET_ID* targetIds, uint* actualTargetIdCount);
+
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DCompositionGetTargetStatistics"]/*' />
+    [DllImport("dcomp", ExactSpelling = true)]
+    public static extern HRESULT DCompositionGetTargetStatistics([NativeTypeName("COMPOSITION_FRAME_ID")] ulong frameId, [NativeTypeName("const COMPOSITION_TARGET_ID *")] COMPOSITION_TARGET_ID* targetId, COMPOSITION_TARGET_STATS* targetStats);
+
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DCompositionBoostCompositorClock"]/*' />
+    [DllImport("dcomp", ExactSpelling = true)]
+    public static extern HRESULT DCompositionBoostCompositorClock(BOOL enable);
+
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DCompositionWaitForCompositorClock"]/*' />
+    [DllImport("dcomp", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    public static extern uint DCompositionWaitForCompositorClock(uint count, [NativeTypeName("const HANDLE *")] HANDLE* handles, [NativeTypeName("DWORD")] uint timeoutInMs);
 }

@@ -100,28 +100,36 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
         return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[9]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
     }
 
-    /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.get_SystemNavigationClientAdapter"]/*' />
+    /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.get_PositionerClientAdapter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_SystemNavigationClientAdapter(IUnknown** value)
+    public HRESULT get_PositionerClientAdapter(IUnknown** value)
     {
         return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[10]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
     }
 
-    /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.get_TitleBarClientAdapter"]/*' />
+    /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.get_SystemNavigationClientAdapter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_TitleBarClientAdapter(IUnknown** value)
+    public HRESULT get_SystemNavigationClientAdapter(IUnknown** value)
     {
         return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[11]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
     }
 
-    /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.SetWindowClientAdapter"]/*' />
+    /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.get_TitleBarClientAdapter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
+    public HRESULT get_TitleBarClientAdapter(IUnknown** value)
+    {
+        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[12]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+    }
+
+    /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.SetWindowClientAdapter"]/*' />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
     public HRESULT SetWindowClientAdapter(IUnknown* value)
     {
-        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown*, int>)(lpVtbl[12]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown*, int>)(lpVtbl[13]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -139,12 +147,15 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
         HRESULT get_HoloViewClientAdapter(IUnknown** value);
 
         [VtblIndex(10)]
-        HRESULT get_SystemNavigationClientAdapter(IUnknown** value);
+        HRESULT get_PositionerClientAdapter(IUnknown** value);
 
         [VtblIndex(11)]
-        HRESULT get_TitleBarClientAdapter(IUnknown** value);
+        HRESULT get_SystemNavigationClientAdapter(IUnknown** value);
 
         [VtblIndex(12)]
+        HRESULT get_TitleBarClientAdapter(IUnknown** value);
+
+        [VtblIndex(13)]
         HRESULT SetWindowClientAdapter(IUnknown* value);
     }
 
@@ -180,6 +191,9 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IUnknown**, int> get_HoloViewClientAdapter;
+
+        [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
+        public delegate* unmanaged<TSelf*, IUnknown**, int> get_PositionerClientAdapter;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IUnknown**, int> get_SystemNavigationClientAdapter;

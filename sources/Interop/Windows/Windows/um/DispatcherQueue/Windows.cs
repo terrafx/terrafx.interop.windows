@@ -11,5 +11,5 @@ public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDispatcherQueueController"]/*' />
     [DllImport("coremessaging", ExactSpelling = true)]
-    public static extern HRESULT CreateDispatcherQueueController(DispatcherQueueOptions options, [NativeTypeName("ABI::Windows::System::IDispatcherQueueController **")] void** dispatcherQueueController);
+    public static extern HRESULT CreateDispatcherQueueController(DispatcherQueueOptions options, [NativeTypeName("PDISPATCHERQUEUECONTROLLER *")] void** dispatcherQueueController);
 }

@@ -70,6 +70,9 @@ public static partial class HIDP
     [NativeTypeName("#define HIDP_STATUS_NOT_IMPLEMENTED (HIDP_ERROR_CODES(0xC,0x20))")]
     public const int HIDP_STATUS_NOT_IMPLEMENTED = (((int)(((0xC) << 28) | (0x11 << 16) | (0x20))));
 
+    [NativeTypeName("#define HIDP_STATUS_NOT_BUTTON_ARRAY (HIDP_ERROR_CODES(0xC,0x21))")]
+    public const int HIDP_STATUS_NOT_BUTTON_ARRAY = (((int)(((0xC) << 28) | (0x11 << 16) | (0x21))));
+
     [NativeTypeName("#define HIDP_STATUS_I8242_TRANS_UNKNOWN HIDP_STATUS_I8042_TRANS_UNKNOWN")]
     public const int HIDP_STATUS_I8242_TRANS_UNKNOWN = (((int)(((0xC) << 28) | (0x11 << 16) | (9))));
 }

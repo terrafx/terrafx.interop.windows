@@ -1057,8 +1057,8 @@ public static partial class D3D12
     [NativeTypeName("#define D3D12_RS_SET_SHADING_RATE_COMBINER_COUNT ( 2 )")]
     public const int D3D12_RS_SET_SHADING_RATE_COMBINER_COUNT = (2);
 
-    [NativeTypeName("#define D3D12_SDK_VERSION ( 3 )")]
-    public const int D3D12_SDK_VERSION = (3);
+    [NativeTypeName("#define D3D12_SDK_VERSION ( 5 )")]
+    public const int D3D12_SDK_VERSION = (5);
 
     [NativeTypeName("#define D3D12_SHADER_IDENTIFIER_SIZE_IN_BYTES ( 32 )")]
     public const int D3D12_SHADER_IDENTIFIER_SIZE_IN_BYTES = (32);

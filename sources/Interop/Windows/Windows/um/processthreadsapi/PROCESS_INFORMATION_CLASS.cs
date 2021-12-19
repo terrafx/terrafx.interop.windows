@@ -35,6 +35,9 @@ public enum PROCESS_INFORMATION_CLASS
     /// <include file='PROCESS_INFORMATION_CLASS.xml' path='doc/member[@name="PROCESS_INFORMATION_CLASS.ProcessLeapSecondInfo"]/*' />
     ProcessLeapSecondInfo,
 
+    /// <include file='PROCESS_INFORMATION_CLASS.xml' path='doc/member[@name="PROCESS_INFORMATION_CLASS.ProcessMachineTypeInfo"]/*' />
+    ProcessMachineTypeInfo,
+
     /// <include file='PROCESS_INFORMATION_CLASS.xml' path='doc/member[@name="PROCESS_INFORMATION_CLASS.ProcessInformationClassMax"]/*' />
     ProcessInformationClassMax,
 }

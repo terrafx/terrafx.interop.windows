@@ -208,6 +208,9 @@ public static partial class FAST
     [NativeTypeName("#define FAST_FAIL_NTDLL_PATCH_FAILED 69")]
     public const int FAST_FAIL_NTDLL_PATCH_FAILED = 69;
 
+    [NativeTypeName("#define FAST_FAIL_INVALID_FLS_DATA 70")]
+    public const int FAST_FAIL_INVALID_FLS_DATA = 70;
+
     [NativeTypeName("#define FAST_FAIL_INVALID_FAST_FAIL_CODE 0xFFFFFFFF")]
     public const uint FAST_FAIL_INVALID_FAST_FAIL_CODE = 0xFFFFFFFF;
 }

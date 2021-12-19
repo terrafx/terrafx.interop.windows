@@ -369,6 +369,13 @@ public static partial class GUIDTests
         Assert.That(GUID_STANDBY_RESET_PERCENT, Is.EqualTo(new Guid(0x49cb11a5, 0x56e2, 0x4afb, 0x9d, 0x38, 0x3d, 0xf4, 0x78, 0x72, 0xe2, 0x1b)));
     }
 
+    /// <summary>Validates that the value of the <see cref="GUID_HUPR_ADAPTIVE_DISPLAY_TIMEOUT" /> property is correct.</summary>
+    [Test]
+    public static void GUID_HUPR_ADAPTIVE_DISPLAY_TIMEOUTTest()
+    {
+        Assert.That(GUID_HUPR_ADAPTIVE_DISPLAY_TIMEOUT, Is.EqualTo(new Guid(0x0A7D6AB6, 0xAC83, 0x4AD1, 0x82, 0x82, 0xEC, 0xA5, 0xB5, 0x83, 0x08, 0xF3)));
+    }
+
     /// <summary>Validates that the value of the <see cref="GUID_ALLOW_STANDBY_STATES" /> property is correct.</summary>
     [Test]
     public static void GUID_ALLOW_STANDBY_STATESTest()
@@ -1132,6 +1139,13 @@ public static partial class GUIDTests
         Assert.That(GUID_PROCESSOR_SHORT_THREAD_SCHEDULING_POLICY, Is.EqualTo(new Guid(0xbae08b81, 0x2d5e, 0x4688, 0xad, 0x6a, 0x13, 0x24, 0x33, 0x56, 0x65, 0x4b)));
     }
 
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_SHORT_THREAD_RUNTIME_THRESHOLD" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_SHORT_THREAD_RUNTIME_THRESHOLDTest()
+    {
+        Assert.That(GUID_PROCESSOR_SHORT_THREAD_RUNTIME_THRESHOLD, Is.EqualTo(new Guid(0xd92998c2, 0x6a48, 0x49ca, 0x85, 0xd4, 0x8c, 0xce, 0xec, 0x29, 0x45, 0x70)));
+    }
+
     /// <summary>Validates that the value of the <see cref="GUID_SYSTEM_COOLING_POLICY" /> property is correct.</summary>
     [Test]
     public static void GUID_SYSTEM_COOLING_POLICYTest()
@@ -1263,6 +1277,13 @@ public static partial class GUIDTests
     public static void GUID_LIDSWITCH_STATE_CHANGETest()
     {
         Assert.That(GUID_LIDSWITCH_STATE_CHANGE, Is.EqualTo(new Guid(0xBA3E0F4D, 0xB817, 0x4094, 0xA2, 0xD1, 0xD5, 0x63, 0x79, 0xE6, 0xA0, 0xF3)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_LIDSWITCH_STATE_RELIABILITY" /> property is correct.</summary>
+    [Test]
+    public static void GUID_LIDSWITCH_STATE_RELIABILITYTest()
+    {
+        Assert.That(GUID_LIDSWITCH_STATE_RELIABILITY, Is.EqualTo(new Guid(0xAE4C4FF1, 0xD361, 0x43F4, 0x80, 0xAA, 0xBB, 0xB6, 0xEB, 0x03, 0xDE, 0x94)));
     }
 
     /// <summary>Validates that the value of the <see cref="GUID_BATTERY_PERCENTAGE_REMAINING" /> property is correct.</summary>

@@ -54,4 +54,7 @@ public static partial class SDC
 
     [NativeTypeName("#define SDC_VIRTUAL_MODE_AWARE 0x00008000")]
     public const int SDC_VIRTUAL_MODE_AWARE = 0x00008000;
+
+    [NativeTypeName("#define SDC_VIRTUAL_REFRESH_RATE_AWARE 0x00020000")]
+    public const int SDC_VIRTUAL_REFRESH_RATE_AWARE = 0x00020000;
 }

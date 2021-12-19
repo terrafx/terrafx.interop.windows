@@ -28,4 +28,7 @@ public enum PATHCCH_OPTIONS
 
     /// <include file='PATHCCH_OPTIONS.xml' path='doc/member[@name="PATHCCH_OPTIONS.PATHCCH_ENSURE_TRAILING_SLASH"]/*' />
     PATHCCH_ENSURE_TRAILING_SLASH = 0x020,
+
+    /// <include file='PATHCCH_OPTIONS.xml' path='doc/member[@name="PATHCCH_OPTIONS.PATHCCH_CANONICALIZE_SLASHES"]/*' />
+    PATHCCH_CANONICALIZE_SLASHES = 0x040,
 }

@@ -23,7 +23,7 @@ public partial struct DISPLAYCONFIG_MODE_INFO
     public LUID adapterId;
 
     /// <include file='DISPLAYCONFIG_MODE_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_MODE_INFO.Anonymous"]/*' />
-    [NativeTypeName("DISPLAYCONFIG_MODE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wingdi.h:2932:5)")]
+    [NativeTypeName("DISPLAYCONFIG_MODE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wingdi.h:2936:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.targetMode"]/*' />

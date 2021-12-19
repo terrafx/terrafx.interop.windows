@@ -195,4 +195,50 @@ public static partial class IID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    public static ref readonly Guid IID_IAudioSystemEffectsPropertyChangeNotificationClient
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x40, 0x9D, 0x04, 0x20,
+                0xD5, 0x56,
+                0x0E, 0x40,
+                0xA2,
+                0xEF,
+                0x38,
+                0x55,
+                0x99,
+                0xFE,
+                0xED,
+                0x49
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IAudioSystemEffectsPropertyStore
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xF9, 0xE7, 0x2A, 0x30,
+                0xE0, 0xD7,
+                0xE4, 0x43,
+                0x97,
+                0x1B,
+                0x1F,
+                0x82,
+                0x93,
+                0x61,
+                0x3D,
+                0x2A
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

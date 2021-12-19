@@ -7,6 +7,9 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SEC
 {
+    [NativeTypeName("#define SEC_HUGE_PAGES 0x00020000")]
+    public const int SEC_HUGE_PAGES = 0x00020000;
+
     [NativeTypeName("#define SEC_PARTITION_OWNER_HANDLE 0x00040000")]
     public const int SEC_PARTITION_OWNER_HANDLE = 0x00040000;
 

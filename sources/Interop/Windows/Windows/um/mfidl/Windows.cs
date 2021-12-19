@@ -851,6 +851,10 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.19041.0")]
     public static extern HRESULT MFCreateRelativePanelWatcher([NativeTypeName("PCWSTR")] ushort* videoDeviceId, [NativeTypeName("PCWSTR")] ushort* displayMonitorDeviceId, IMFRelativePanelWatcher** ppRelativePanelWatcher);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateCameraOcclusionStateMonitor"]/*' />
+    [DllImport("mfsensorgroup", ExactSpelling = true)]
+    public static extern HRESULT MFCreateCameraOcclusionStateMonitor([NativeTypeName("LPCWSTR")] ushort* symbolicLink, IMFCameraOcclusionStateReportCallback* callback, IMFCameraOcclusionStateMonitor** occlusionStateMonitor);
+
     [NativeTypeName("#define MEDIASINK_FIXED_STREAMS 0x00000001")]
     public const int MEDIASINK_FIXED_STREAMS = 0x00000001;
 

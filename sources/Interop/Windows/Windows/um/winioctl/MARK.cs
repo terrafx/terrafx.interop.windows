@@ -46,6 +46,9 @@ public static partial class MARK
     [NativeTypeName("#define MARK_HANDLE_SKIP_COHERENCY_SYNC_DISALLOW_WRITES (0x00004000)")]
     public const int MARK_HANDLE_SKIP_COHERENCY_SYNC_DISALLOW_WRITES = (0x00004000);
 
+    [NativeTypeName("#define MARK_HANDLE_SUPPRESS_VOLUME_OPEN_FLUSH (0x00008000)")]
+    public const int MARK_HANDLE_SUPPRESS_VOLUME_OPEN_FLUSH = (0x00008000);
+
     [NativeTypeName("#define MARK_HANDLE_ENABLE_CPU_CACHE (0x10000000)")]
     public const int MARK_HANDLE_ENABLE_CPU_CACHE = (0x10000000);
 }

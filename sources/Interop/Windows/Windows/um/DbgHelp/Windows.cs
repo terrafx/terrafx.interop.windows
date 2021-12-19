@@ -515,6 +515,10 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern BOOL SymGetSourceFileToken(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCSTR")] sbyte* FileSpec, [NativeTypeName("PVOID *")] void** Token, [NativeTypeName("DWORD *")] uint* Size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSourceFileTokenByTokenName"]/*' />
+    [DllImport("DbgHelp", ExactSpelling = true)]
+    public static extern BOOL SymGetSourceFileTokenByTokenName(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCSTR")] sbyte* FileSpec, [NativeTypeName("PCSTR")] sbyte* TokenName, [NativeTypeName("PCSTR")] sbyte* TokenParameters, [NativeTypeName("PVOID *")] void** Token, [NativeTypeName("DWORD *")] uint* Size);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSourceFileChecksumW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
@@ -530,15 +534,27 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern BOOL SymGetSourceFileTokenW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCWSTR")] ushort* FileSpec, [NativeTypeName("PVOID *")] void** Token, [NativeTypeName("DWORD *")] uint* Size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSourceFileTokenByTokenNameW"]/*' />
+    [DllImport("DbgHelp", ExactSpelling = true)]
+    public static extern BOOL SymGetSourceFileTokenByTokenNameW(HANDLE hProcess, [NativeTypeName("ULONG64")] ulong Base, [NativeTypeName("PCWSTR")] ushort* FileSpec, [NativeTypeName("PCWSTR")] ushort* TokenName, [NativeTypeName("PCWSTR")] ushort* TokenParameters, [NativeTypeName("PVOID *")] void** Token, [NativeTypeName("DWORD *")] uint* Size);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSourceFileFromToken"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSourceFileFromToken(HANDLE hProcess, [NativeTypeName("PVOID")] void* Token, [NativeTypeName("PCSTR")] sbyte* Params, [NativeTypeName("PSTR")] sbyte* FilePath, [NativeTypeName("DWORD")] uint Size);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSourceFileFromTokenByTokenName"]/*' />
+    [DllImport("DbgHelp", ExactSpelling = true)]
+    public static extern BOOL SymGetSourceFileFromTokenByTokenName(HANDLE hProcess, [NativeTypeName("PVOID")] void* Token, [NativeTypeName("PCSTR")] sbyte* TokenName, [NativeTypeName("PCSTR")] sbyte* Params, [NativeTypeName("PSTR")] sbyte* FilePath, [NativeTypeName("DWORD")] uint Size);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSourceFileFromTokenW"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SymGetSourceFileFromTokenW(HANDLE hProcess, [NativeTypeName("PVOID")] void* Token, [NativeTypeName("PCWSTR")] ushort* Params, [NativeTypeName("PWSTR")] ushort* FilePath, [NativeTypeName("DWORD")] uint Size);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSourceFileFromTokenByTokenNameW"]/*' />
+    [DllImport("DbgHelp", ExactSpelling = true)]
+    public static extern BOOL SymGetSourceFileFromTokenByTokenNameW(HANDLE hProcess, [NativeTypeName("PVOID")] void* Token, [NativeTypeName("PCWSTR")] ushort* TokenName, [NativeTypeName("PCWSTR")] ushort* Params, [NativeTypeName("PWSTR")] ushort* FilePath, [NativeTypeName("DWORD")] uint Size);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetSourceVarFromToken"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
@@ -1257,6 +1273,21 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define SYMFLAG_RESET 0x80000000")]
     public const uint SYMFLAG_RESET = 0x80000000;
+
+    [NativeTypeName("#define IMAGEHLP_MODULE_REGION_DLLBASE 0x01")]
+    public const int IMAGEHLP_MODULE_REGION_DLLBASE = 0x01;
+
+    [NativeTypeName("#define IMAGEHLP_MODULE_REGION_DLLRANGE 0x02")]
+    public const int IMAGEHLP_MODULE_REGION_DLLRANGE = 0x02;
+
+    [NativeTypeName("#define IMAGEHLP_MODULE_REGION_ADDITIONAL 0x04")]
+    public const int IMAGEHLP_MODULE_REGION_ADDITIONAL = 0x04;
+
+    [NativeTypeName("#define IMAGEHLP_MODULE_REGION_JIT 0x08")]
+    public const int IMAGEHLP_MODULE_REGION_JIT = 0x08;
+
+    [NativeTypeName("#define IMAGEHLP_MODULE_REGION_ALL 0xFF")]
+    public const int IMAGEHLP_MODULE_REGION_ALL = 0xFF;
 
     [NativeTypeName("#define CBA_DEFERRED_SYMBOL_LOAD_START 0x00000001")]
     public const int CBA_DEFERRED_SYMBOL_LOAD_START = 0x00000001;

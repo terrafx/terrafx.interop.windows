@@ -54,4 +54,7 @@ public static partial class SHUTDOWN
 
     [NativeTypeName("#define SHUTDOWN_VAIL_CONTAINER 0x00008000")]
     public const int SHUTDOWN_VAIL_CONTAINER = 0x00008000;
+
+    [NativeTypeName("#define SHUTDOWN_SYSTEM_INITIATED 0x00010000")]
+    public const int SHUTDOWN_SYSTEM_INITIATED = 0x00010000;
 }

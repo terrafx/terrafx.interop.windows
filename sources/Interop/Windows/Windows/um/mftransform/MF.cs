@@ -413,6 +413,31 @@ public static partial class MF
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid MF_SA_D3D11_ALLOCATE_DISPLAYABLE_RESOURCES
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x6D, 0xCE, 0xFA, 0xEE,
+                0xA9, 0x2E,
+                0xDF, 0x4A,
+                0xBB,
+                0xDF,
+                0x7B,
+                0xBC,
+                0x48,
+                0x2A,
+                0x1B,
+                0x6D
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_TRANSFORM_ASYNC
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

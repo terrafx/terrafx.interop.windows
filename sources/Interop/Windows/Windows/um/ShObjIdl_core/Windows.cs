@@ -83,7 +83,7 @@ public static unsafe partial class Windows
 
         for (i = 0; i < cItems; i++)
         {
-            CoTaskMemFree(ppidls[i]);
+            CoTaskMemFree(unchecked((void*)(ppidls[i])));
         }
 
         CoTaskMemFree(ppidls);

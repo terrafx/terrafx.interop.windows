@@ -348,6 +348,13 @@ public static partial class MFTests
         Assert.That(MF_CAPTURE_METADATA_DIGITALWINDOW, Is.EqualTo(new Guid(0x276f72a2, 0x59c8, 0x4f69, 0x97, 0xb4, 0x6, 0x8b, 0x8c, 0xe, 0xc0, 0x44)));
     }
 
+    /// <summary>Validates that the value of the <see cref="MF_CAPTURE_METADATA_FRAME_BACKGROUND_MASK" /> property is correct.</summary>
+    [Test]
+    public static void MF_CAPTURE_METADATA_FRAME_BACKGROUND_MASKTest()
+    {
+        Assert.That(MF_CAPTURE_METADATA_FRAME_BACKGROUND_MASK, Is.EqualTo(new Guid(0x3f14dd3, 0x75dd, 0x433a, 0xa8, 0xe2, 0x1e, 0x3f, 0x5f, 0x2a, 0x50, 0xa0)));
+    }
+
     /// <summary>Validates that the value of the <see cref="MF_MT_MAJOR_TYPE" /> property is correct.</summary>
     [Test]
     public static void MF_MT_MAJOR_TYPETest()

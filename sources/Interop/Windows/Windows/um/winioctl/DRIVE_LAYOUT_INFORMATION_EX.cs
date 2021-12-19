@@ -21,7 +21,7 @@ public partial struct DRIVE_LAYOUT_INFORMATION_EX
     public uint PartitionCount;
 
     /// <include file='DRIVE_LAYOUT_INFORMATION_EX.xml' path='doc/member[@name="DRIVE_LAYOUT_INFORMATION_EX.Anonymous"]/*' />
-    [NativeTypeName("_DRIVE_LAYOUT_INFORMATION_EX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:9213:5)")]
+    [NativeTypeName("_DRIVE_LAYOUT_INFORMATION_EX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:9244:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='DRIVE_LAYOUT_INFORMATION_EX.xml' path='doc/member[@name="DRIVE_LAYOUT_INFORMATION_EX.PartitionEntry"]/*' />

@@ -182,6 +182,21 @@ public enum D3D_SHADER_VARIABLE_TYPE
     /// <include file='D3D_SHADER_VARIABLE_TYPE.xml' path='doc/member[@name="D3D_SHADER_VARIABLE_TYPE.D3D_SVT_MIN16UINT"]/*' />
     D3D_SVT_MIN16UINT = 57,
 
+    /// <include file='D3D_SHADER_VARIABLE_TYPE.xml' path='doc/member[@name="D3D_SHADER_VARIABLE_TYPE.D3D_SVT_INT16"]/*' />
+    D3D_SVT_INT16 = 58,
+
+    /// <include file='D3D_SHADER_VARIABLE_TYPE.xml' path='doc/member[@name="D3D_SHADER_VARIABLE_TYPE.D3D_SVT_UINT16"]/*' />
+    D3D_SVT_UINT16 = 59,
+
+    /// <include file='D3D_SHADER_VARIABLE_TYPE.xml' path='doc/member[@name="D3D_SHADER_VARIABLE_TYPE.D3D_SVT_FLOAT16"]/*' />
+    D3D_SVT_FLOAT16 = 60,
+
+    /// <include file='D3D_SHADER_VARIABLE_TYPE.xml' path='doc/member[@name="D3D_SHADER_VARIABLE_TYPE.D3D_SVT_INT64"]/*' />
+    D3D_SVT_INT64 = 61,
+
+    /// <include file='D3D_SHADER_VARIABLE_TYPE.xml' path='doc/member[@name="D3D_SHADER_VARIABLE_TYPE.D3D_SVT_UINT64"]/*' />
+    D3D_SVT_UINT64 = 62,
+
     /// <include file='D3D_SHADER_VARIABLE_TYPE.xml' path='doc/member[@name="D3D_SHADER_VARIABLE_TYPE.D3D10_SVT_VOID"]/*' />
     D3D10_SVT_VOID = D3D_SVT_VOID,
 

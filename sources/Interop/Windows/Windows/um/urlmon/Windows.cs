@@ -380,6 +380,9 @@ public static unsafe partial class Windows
     [NativeTypeName("#define FMFD_RESERVED_1 0x00000040")]
     public const int FMFD_RESERVED_1 = 0x00000040;
 
+    [NativeTypeName("#define FMFD_RESERVED_2 0x00000080")]
+    public const int FMFD_RESERVED_2 = 0x00000080;
+
     [NativeTypeName("#define UAS_EXACTLEGACY 0x00001000")]
     public const int UAS_EXACTLEGACY = 0x00001000;
 

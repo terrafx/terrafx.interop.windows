@@ -17,6 +17,9 @@ public enum MEM_SECTION_EXTENDED_PARAMETER_TYPE
     /// <include file='MEM_SECTION_EXTENDED_PARAMETER_TYPE.xml' path='doc/member[@name="MEM_SECTION_EXTENDED_PARAMETER_TYPE.MemSectionExtendedParameterNumaNode"]/*' />
     MemSectionExtendedParameterNumaNode,
 
+    /// <include file='MEM_SECTION_EXTENDED_PARAMETER_TYPE.xml' path='doc/member[@name="MEM_SECTION_EXTENDED_PARAMETER_TYPE.MemSectionExtendedParameterSigningLevel"]/*' />
+    MemSectionExtendedParameterSigningLevel,
+
     /// <include file='MEM_SECTION_EXTENDED_PARAMETER_TYPE.xml' path='doc/member[@name="MEM_SECTION_EXTENDED_PARAMETER_TYPE.MemSectionExtendedParameterMax"]/*' />
     MemSectionExtendedParameterMax,
 }

@@ -42,4 +42,7 @@ public static partial class EWX
 
     [NativeTypeName("#define EWX_CHECK_SAFE_FOR_SERVER 0x08000000")]
     public const int EWX_CHECK_SAFE_FOR_SERVER = 0x08000000;
+
+    [NativeTypeName("#define EWX_SYSTEM_INITIATED 0x10000000")]
+    public const int EWX_SYSTEM_INITIATED = 0x10000000;
 }

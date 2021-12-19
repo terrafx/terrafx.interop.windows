@@ -81,4 +81,11 @@ public static partial class CLSIDTests
     {
         Assert.That(CLSID_DxcContainerBuilder, Is.EqualTo(new Guid(0x94134294, 0x411f, 0x4574, 0xb4, 0xd0, 0x87, 0x41, 0xe2, 0x52, 0x40, 0xd2)));
     }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_DxcPdbUtils" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_DxcPdbUtilsTest()
+    {
+        Assert.That(CLSID_DxcPdbUtils, Is.EqualTo(new Guid(0x54621dfb, 0xf2ce, 0x457e, 0xae, 0x8c, 0xec, 0x35, 0x5f, 0xae, 0xec, 0x7c)));
+    }
 }

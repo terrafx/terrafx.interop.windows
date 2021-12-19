@@ -22,17 +22,11 @@ public static partial class VM
     [NativeTypeName("#define VM_SAVED_STATE_DUMP_E_WINDOWS_KERNEL_IMAGE_NOT_FOUND _HRESULT_TYPEDEF_(0xC0370504L)")]
     public const int VM_SAVED_STATE_DUMP_E_WINDOWS_KERNEL_IMAGE_NOT_FOUND = unchecked((int)(0xC0370504));
 
-    [NativeTypeName("#define VM_SAVED_STATE_DUMP_E_PXE_NOT_PRESENT _HRESULT_TYPEDEF_(0xC0370505L)")]
-    public const int VM_SAVED_STATE_DUMP_E_PXE_NOT_PRESENT = unchecked((int)(0xC0370505));
+    [NativeTypeName("#define VM_SAVED_STATE_DUMP_E_VA_NOT_MAPPED _HRESULT_TYPEDEF_(0xC0370505L)")]
+    public const int VM_SAVED_STATE_DUMP_E_VA_NOT_MAPPED = unchecked((int)(0xC0370505));
 
-    [NativeTypeName("#define VM_SAVED_STATE_DUMP_E_PDPTE_NOT_PRESENT _HRESULT_TYPEDEF_(0xC0370506L)")]
-    public const int VM_SAVED_STATE_DUMP_E_PDPTE_NOT_PRESENT = unchecked((int)(0xC0370506));
-
-    [NativeTypeName("#define VM_SAVED_STATE_DUMP_E_PDE_NOT_PRESENT _HRESULT_TYPEDEF_(0xC0370507L)")]
-    public const int VM_SAVED_STATE_DUMP_E_PDE_NOT_PRESENT = unchecked((int)(0xC0370507));
-
-    [NativeTypeName("#define VM_SAVED_STATE_DUMP_E_PTE_NOT_PRESENT _HRESULT_TYPEDEF_(0xC0370508L)")]
-    public const int VM_SAVED_STATE_DUMP_E_PTE_NOT_PRESENT = unchecked((int)(0xC0370508));
+    [NativeTypeName("#define VM_SAVED_STATE_DUMP_E_INVALID_VP_STATE _HRESULT_TYPEDEF_(0xC0370506L)")]
+    public const int VM_SAVED_STATE_DUMP_E_INVALID_VP_STATE = unchecked((int)(0xC0370506));
 
     [NativeTypeName("#define VM_SAVED_STATE_DUMP_E_VP_VTL_NOT_ENABLED _HRESULT_TYPEDEF_(0xC0370509L)")]
     public const int VM_SAVED_STATE_DUMP_E_VP_VTL_NOT_ENABLED = unchecked((int)(0xC0370509));

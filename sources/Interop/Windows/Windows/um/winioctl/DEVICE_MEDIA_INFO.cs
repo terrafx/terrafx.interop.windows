@@ -11,7 +11,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct DEVICE_MEDIA_INFO
 {
     /// <include file='DEVICE_MEDIA_INFO.xml' path='doc/member[@name="DEVICE_MEDIA_INFO.DeviceSpecific"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:951:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:954:5)")]
     public _DeviceSpecific_e__Union DeviceSpecific;
 
     /// <include file='_DeviceSpecific_e__Union.xml' path='doc/member[@name="_DeviceSpecific_e__Union"]/*' />
@@ -20,17 +20,17 @@ public partial struct DEVICE_MEDIA_INFO
     {
         /// <include file='_DeviceSpecific_e__Union.xml' path='doc/member[@name="_DeviceSpecific_e__Union.DiskInfo"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:952:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:955:9)")]
         public _DiskInfo_e__Struct DiskInfo;
 
         /// <include file='_DeviceSpecific_e__Union.xml' path='doc/member[@name="_DeviceSpecific_e__Union.RemovableDiskInfo"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:962:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:965:9)")]
         public _RemovableDiskInfo_e__Struct RemovableDiskInfo;
 
         /// <include file='_DeviceSpecific_e__Union.xml' path='doc/member[@name="_DeviceSpecific_e__Union.TapeInfo"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:972:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:975:9)")]
         public _TapeInfo_e__Struct TapeInfo;
 
         /// <include file='_DiskInfo_e__Struct.xml' path='doc/member[@name="_DiskInfo_e__Struct"]/*' />
@@ -111,7 +111,7 @@ public partial struct DEVICE_MEDIA_INFO
             public STORAGE_BUS_TYPE BusType;
 
             /// <include file='_TapeInfo_e__Struct.xml' path='doc/member[@name="_TapeInfo_e__Struct.BusSpecificData"]/*' />
-            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:982:13)")]
+            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:985:13)")]
             public _BusSpecificData_e__Union BusSpecificData;
 
             /// <include file='_BusSpecificData_e__Union.xml' path='doc/member[@name="_BusSpecificData_e__Union"]/*' />
@@ -120,7 +120,7 @@ public partial struct DEVICE_MEDIA_INFO
             {
                 /// <include file='_BusSpecificData_e__Union.xml' path='doc/member[@name="_BusSpecificData_e__Union.ScsiInformation"]/*' />
                 [FieldOffset(0)]
-                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:983:17)")]
+                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:986:17)")]
                 public _ScsiInformation_e__Struct ScsiInformation;
 
                 /// <include file='_ScsiInformation_e__Struct.xml' path='doc/member[@name="_ScsiInformation_e__Struct"]/*' />

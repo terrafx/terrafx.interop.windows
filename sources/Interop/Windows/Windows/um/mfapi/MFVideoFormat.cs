@@ -463,6 +463,31 @@ public static partial class MFVideoFormat
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFVideoFormat_NV21
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x4E, 0x56, 0x32, 0x31,
+                0x00, 0x00,
+                0x10, 0x00,
+                0x80,
+                0x00,
+                0x00,
+                0xAA,
+                0x00,
+                0x38,
+                0x9B,
+                0x71
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_YV12
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

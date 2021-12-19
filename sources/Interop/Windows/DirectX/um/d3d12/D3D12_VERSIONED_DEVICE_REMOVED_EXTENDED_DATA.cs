@@ -15,7 +15,7 @@ public partial struct D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA
     public D3D12_DRED_VERSION Version;
 
     /// <include file='D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA.xml' path='doc/member[@name="D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA.Anonymous"]/*' />
-    [NativeTypeName("D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3d12.h:14400:5)")]
+    [NativeTypeName("D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3d12.h:14383:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Dred_1_0"]/*' />

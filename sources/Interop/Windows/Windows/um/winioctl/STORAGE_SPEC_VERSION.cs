@@ -16,7 +16,7 @@ public partial struct STORAGE_SPEC_VERSION
 {
     /// <include file='STORAGE_SPEC_VERSION.xml' path='doc/member[@name="STORAGE_SPEC_VERSION.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("_STORAGE_SPEC_VERSION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:2503:5)")]
+    [NativeTypeName("_STORAGE_SPEC_VERSION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:2530:5)")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='STORAGE_SPEC_VERSION.xml' path='doc/member[@name="STORAGE_SPEC_VERSION.AsUlong"]/*' />
@@ -48,7 +48,7 @@ public partial struct STORAGE_SPEC_VERSION
     public partial struct _Anonymous_e__Struct
     {
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MinorVersion"]/*' />
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:2504:9)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:2531:9)")]
         public _MinorVersion_e__Union MinorVersion;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MajorVersion"]/*' />
@@ -61,7 +61,7 @@ public partial struct STORAGE_SPEC_VERSION
         {
             /// <include file='_MinorVersion_e__Union.xml' path='doc/member[@name="_MinorVersion_e__Union.Anonymous"]/*' />
             [FieldOffset(0)]
-            [NativeTypeName("_STORAGE_SPEC_VERSION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:2505:13)")]
+            [NativeTypeName("_STORAGE_SPEC_VERSION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:2532:13)")]
             public _Anonymous_e__Struct Anonymous;
 
             /// <include file='_MinorVersion_e__Union.xml' path='doc/member[@name="_MinorVersion_e__Union.AsUshort"]/*' />

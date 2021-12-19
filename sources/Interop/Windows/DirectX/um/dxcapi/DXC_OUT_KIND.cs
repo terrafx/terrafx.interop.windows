@@ -38,6 +38,9 @@ public enum DXC_OUT_KIND
     /// <include file='DXC_OUT_KIND.xml' path='doc/member[@name="DXC_OUT_KIND.DXC_OUT_ROOT_SIGNATURE"]/*' />
     DXC_OUT_ROOT_SIGNATURE = 9,
 
+    /// <include file='DXC_OUT_KIND.xml' path='doc/member[@name="DXC_OUT_KIND.DXC_OUT_EXTRA_OUTPUTS"]/*' />
+    DXC_OUT_EXTRA_OUTPUTS = 10,
+
     /// <include file='DXC_OUT_KIND.xml' path='doc/member[@name="DXC_OUT_KIND.DXC_OUT_FORCE_DWORD"]/*' />
     DXC_OUT_FORCE_DWORD = unchecked((int)(0xFFFFFFFF)),
 }

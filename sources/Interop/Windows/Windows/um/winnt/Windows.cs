@@ -65,6 +65,12 @@ public static partial class Windows
     [NativeTypeName("#define ANYSIZE_ARRAY 1")]
     public const int ANYSIZE_ARRAY = 1;
 
+    [NativeTypeName("#define X86_CACHE_ALIGNMENT_SIZE 64")]
+    public const int X86_CACHE_ALIGNMENT_SIZE = 64;
+
+    [NativeTypeName("#define ARM_CACHE_ALIGNMENT_SIZE 128")]
+    public const int ARM_CACHE_ALIGNMENT_SIZE = 128;
+
     [NativeTypeName("#define PRAGMA_DEPRECATED_DDK 0")]
     public const int PRAGMA_DEPRECATED_DDK = 0;
 

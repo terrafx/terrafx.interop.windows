@@ -187,6 +187,36 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows8.1")]
     public static extern int GetPackageApplicationIds(PACKAGE_INFO_REFERENCE packageInfoReference, [NativeTypeName("UINT32 *")] uint* bufferLength, byte* buffer, [NativeTypeName("UINT32 *")] uint* count);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TryCreatePackageDependency"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22000.0")]
+    public static extern HRESULT TryCreatePackageDependency([NativeTypeName("PSID")] void* user, [NativeTypeName("PCWSTR")] ushort* packageFamilyName, PACKAGE_VERSION minVersion, PackageDependencyProcessorArchitectures packageDependencyProcessorArchitectures, PackageDependencyLifetimeKind lifetimeKind, [NativeTypeName("PCWSTR")] ushort* lifetimeArtifact, CreatePackageDependencyOptions options, [NativeTypeName("PWSTR *")] ushort** packageDependencyId);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeletePackageDependency"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22000.0")]
+    public static extern HRESULT DeletePackageDependency([NativeTypeName("PCWSTR")] ushort* packageDependencyId);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AddPackageDependency"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22000.0")]
+    public static extern HRESULT AddPackageDependency([NativeTypeName("PCWSTR")] ushort* packageDependencyId, [NativeTypeName("INT32")] int rank, AddPackageDependencyOptions options, PACKAGEDEPENDENCY_CONTEXT* packageDependencyContext, [NativeTypeName("PWSTR *")] ushort** packageFullName);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemovePackageDependency"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22000.0")]
+    public static extern HRESULT RemovePackageDependency(PACKAGEDEPENDENCY_CONTEXT packageDependencyContext);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetResolvedPackageFullNameForPackageDependency"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22000.0")]
+    public static extern HRESULT GetResolvedPackageFullNameForPackageDependency([NativeTypeName("PCWSTR")] ushort* packageDependencyId, [NativeTypeName("PWSTR *")] ushort** packageFullName);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetIdForPackageDependencyContext"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22000.0")]
+    public static extern HRESULT GetIdForPackageDependencyContext(PACKAGEDEPENDENCY_CONTEXT packageDependencyContext, [NativeTypeName("PWSTR *")] ushort** packageDependencyId);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AppPolicyGetLifecycleManagement"]/*' />
     [DllImport("api-ms-win-appmodel-runtime-l1-1-2", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]

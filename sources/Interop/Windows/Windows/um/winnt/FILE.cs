@@ -211,6 +211,9 @@ public static partial class FILE
     [NativeTypeName("#define FILE_SUPPORTS_POSIX_UNLINK_RENAME 0x00000400")]
     public const int FILE_SUPPORTS_POSIX_UNLINK_RENAME = 0x00000400;
 
+    [NativeTypeName("#define FILE_SUPPORTS_BYPASS_IO 0x00000800")]
+    public const int FILE_SUPPORTS_BYPASS_IO = 0x00000800;
+
     [NativeTypeName("#define FILE_VOLUME_IS_COMPRESSED 0x00008000")]
     public const int FILE_VOLUME_IS_COMPRESSED = 0x00008000;
 

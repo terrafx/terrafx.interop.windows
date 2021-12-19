@@ -199,6 +199,9 @@ public static partial class FACILITY
     [NativeTypeName("#define FACILITY_EAP 66")]
     public const int FACILITY_EAP = 66;
 
+    [NativeTypeName("#define FACILITY_IORING 70")]
+    public const int FACILITY_IORING = 70;
+
     [NativeTypeName("#define FACILITY_WINDOWS_DEFENDER 80")]
     public const int FACILITY_WINDOWS_DEFENDER = 80;
 
@@ -346,6 +349,12 @@ public static partial class FACILITY
     [NativeTypeName("#define FACILITY_DEPLOYMENT_SERVICES_CONTENT_PROVIDER 293")]
     public const int FACILITY_DEPLOYMENT_SERVICES_CONTENT_PROVIDER = 293;
 
+    [NativeTypeName("#define FACILITY_HSP_SERVICES 296")]
+    public const int FACILITY_HSP_SERVICES = 296;
+
+    [NativeTypeName("#define FACILITY_HSP_SOFTWARE 297")]
+    public const int FACILITY_HSP_SOFTWARE = 297;
+
     [NativeTypeName("#define FACILITY_LINGUISTIC_SERVICES 305")]
     public const int FACILITY_LINGUISTIC_SERVICES = 305;
 
@@ -388,6 +397,9 @@ public static partial class FACILITY
     [NativeTypeName("#define FACILITY_DXCORE 2176")]
     public const int FACILITY_DXCORE = 2176;
 
+    [NativeTypeName("#define FACILITY_PRESENTATION 2177")]
+    public const int FACILITY_PRESENTATION = 2177;
+
     [NativeTypeName("#define FACILITY_LEAP 2184")]
     public const int FACILITY_LEAP = 2184;
 
@@ -429,6 +441,9 @@ public static partial class FACILITY
 
     [NativeTypeName("#define FACILITY_SQLITE 1967")]
     public const int FACILITY_SQLITE = 1967;
+
+    [NativeTypeName("#define FACILITY_SERVICE_FABRIC 1968")]
+    public const int FACILITY_SERVICE_FABRIC = 1968;
 
     [NativeTypeName("#define FACILITY_UTC 1989")]
     public const int FACILITY_UTC = 1989;

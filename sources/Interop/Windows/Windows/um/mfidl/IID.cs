@@ -2979,6 +2979,75 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IMFCameraOcclusionStateReport
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xCF, 0xB2, 0x40, 0x16,
+                0xDA, 0x74,
+                0x62, 0x44,
+                0xA4,
+                0x3B,
+                0xB7,
+                0x6D,
+                0x3B,
+                0xDC,
+                0x14,
+                0x34
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IMFCameraOcclusionStateReportCallback
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xC7, 0x41, 0x58, 0x6E,
+                0x89, 0x38,
+                0x19, 0x40,
+                0x90,
+                0x35,
+                0x78,
+                0x3F,
+                0xB1,
+                0x9B,
+                0x59,
+                0x48
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IMFCameraOcclusionStateMonitor
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x46, 0x2F, 0x69, 0xCC,
+                0x97, 0xC6,
+                0xE2, 0x47,
+                0xA7,
+                0x2D,
+                0x7B,
+                0x06,
+                0x46,
+                0x17,
+                0x74,
+                0x9B
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IMFVideoCaptureSampleAllocator
     {
         get

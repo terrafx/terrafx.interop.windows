@@ -29,6 +29,6 @@ public static unsafe partial class POWER_SESSION_RIT_STATETests
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(POWER_SESSION_RIT_STATE), Is.EqualTo(8));
+        Assert.That(sizeof(POWER_SESSION_RIT_STATE), Is.EqualTo(16));
     }
 }

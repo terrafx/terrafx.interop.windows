@@ -105,4 +105,10 @@ public static partial class DXC
 
     [NativeTypeName("#define DXC_ARG_DEBUG_NAME_FOR_BINARY L\"-Zsb\"")]
     public const string DXC_ARG_DEBUG_NAME_FOR_BINARY = "-Zsb";
+
+    [NativeTypeName("#define DXC_EXTRA_OUTPUT_NAME_STDOUT L\"*stdout*\"")]
+    public const string DXC_EXTRA_OUTPUT_NAME_STDOUT = "*stdout*";
+
+    [NativeTypeName("#define DXC_EXTRA_OUTPUT_NAME_STDERR L\"*stderr*\"")]
+    public const string DXC_EXTRA_OUTPUT_NAME_STDERR = "*stderr*";
 }

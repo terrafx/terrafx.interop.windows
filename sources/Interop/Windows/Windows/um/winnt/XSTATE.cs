@@ -37,6 +37,9 @@ public static partial class XSTATE
     [NativeTypeName("#define XSTATE_IPT (8)")]
     public const int XSTATE_IPT = (8);
 
+    [NativeTypeName("#define XSTATE_PASID (10)")]
+    public const int XSTATE_PASID = (10);
+
     [NativeTypeName("#define XSTATE_CET_U (11)")]
     public const int XSTATE_CET_U = (11);
 
@@ -75,6 +78,9 @@ public static partial class XSTATE
 
     [NativeTypeName("#define XSTATE_MASK_IPT (1ui64 << (XSTATE_IPT))")]
     public const ulong XSTATE_MASK_IPT = (1UL << ((8)));
+
+    [NativeTypeName("#define XSTATE_MASK_PASID (1ui64 << (XSTATE_PASID))")]
+    public const ulong XSTATE_MASK_PASID = (1UL << ((10)));
 
     [NativeTypeName("#define XSTATE_MASK_CET_U (1ui64 << (XSTATE_CET_U))")]
     public const ulong XSTATE_MASK_CET_U = (1UL << ((11)));

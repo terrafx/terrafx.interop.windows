@@ -69,4 +69,7 @@ public static partial class PACKAGE
 
     [NativeTypeName("#define PACKAGE_FILTER_ALL_LOADED 0")]
     public const int PACKAGE_FILTER_ALL_LOADED = 0;
+
+    [NativeTypeName("#define PACKAGE_DEPENDENCY_RANK_DEFAULT 0")]
+    public const int PACKAGE_DEPENDENCY_RANK_DEFAULT = 0;
 }

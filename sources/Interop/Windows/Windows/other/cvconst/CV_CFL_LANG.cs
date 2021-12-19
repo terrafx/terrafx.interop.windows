@@ -67,7 +67,4 @@ public enum CV_CFL_LANG
 
     /// <include file='CV_CFL_LANG.xml' path='doc/member[@name="CV_CFL_LANG.CV_CFL_SWIFT"]/*' />
     CV_CFL_SWIFT = 0x13,
-
-    /// <include file='CV_CFL_LANG.xml' path='doc/member[@name="CV_CFL_LANG.CV_CFL_ALIASOBJ"]/*' />
-    CV_CFL_ALIASOBJ = 0x14,
 }

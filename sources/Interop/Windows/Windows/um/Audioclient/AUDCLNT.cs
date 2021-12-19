@@ -115,6 +115,12 @@ public static partial class AUDCLNT
     [NativeTypeName("#define AUDCLNT_E_HEADTRACKING_UNSUPPORTED AUDCLNT_ERR(0x040)")]
     public const int AUDCLNT_E_HEADTRACKING_UNSUPPORTED = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x040))));
 
+    [NativeTypeName("#define AUDCLNT_E_EFFECT_NOT_AVAILABLE AUDCLNT_ERR(0x041)")]
+    public const int AUDCLNT_E_EFFECT_NOT_AVAILABLE = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x041))));
+
+    [NativeTypeName("#define AUDCLNT_E_EFFECT_STATE_READ_ONLY AUDCLNT_ERR(0x042)")]
+    public const int AUDCLNT_E_EFFECT_STATE_READ_ONLY = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x042))));
+
     [NativeTypeName("#define AUDCLNT_S_BUFFER_EMPTY AUDCLNT_SUCCESS(0x001)")]
     public const int AUDCLNT_S_BUFFER_EMPTY = unchecked((int)(((uint)(0) << 31) | ((uint)(2185) << 16) | ((uint)(0x001))));
 

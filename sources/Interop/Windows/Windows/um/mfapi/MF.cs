@@ -1213,6 +1213,31 @@ public static partial class MF
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid MF_CAPTURE_METADATA_FRAME_BACKGROUND_MASK
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xD3, 0x4D, 0xF1, 0x03,
+                0xDD, 0x75,
+                0x3A, 0x43,
+                0xA8,
+                0xE2,
+                0x1E,
+                0x3F,
+                0x5F,
+                0x2A,
+                0x50,
+                0xA0
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MAJOR_TYPE
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

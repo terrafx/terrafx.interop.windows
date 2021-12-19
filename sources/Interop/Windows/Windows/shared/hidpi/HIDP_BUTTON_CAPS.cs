@@ -53,12 +53,18 @@ public unsafe partial struct HIDP_BUTTON_CAPS
     [NativeTypeName("BOOLEAN")]
     public byte IsAbsolute;
 
+    /// <include file='HIDP_BUTTON_CAPS.xml' path='doc/member[@name="HIDP_BUTTON_CAPS.ReportCount"]/*' />
+    public ushort ReportCount;
+
+    /// <include file='HIDP_BUTTON_CAPS.xml' path='doc/member[@name="HIDP_BUTTON_CAPS.Reserved2"]/*' />
+    public ushort Reserved2;
+
     /// <include file='HIDP_BUTTON_CAPS.xml' path='doc/member[@name="HIDP_BUTTON_CAPS.Reserved"]/*' />
-    [NativeTypeName("ULONG [10]")]
-    public fixed uint Reserved[10];
+    [NativeTypeName("ULONG [9]")]
+    public fixed uint Reserved[9];
 
     /// <include file='HIDP_BUTTON_CAPS.xml' path='doc/member[@name="HIDP_BUTTON_CAPS.Anonymous"]/*' />
-    [NativeTypeName("_HIDP_BUTTON_CAPS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/hidpi.h:86:5)")]
+    [NativeTypeName("_HIDP_BUTTON_CAPS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/hidpi.h:90:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Range"]/*' />
@@ -87,12 +93,12 @@ public unsafe partial struct HIDP_BUTTON_CAPS
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Range"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/hidpi.h:87:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/hidpi.h:91:9)")]
         public _Range_e__Struct Range;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.NotRange"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/hidpi.h:93:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/hidpi.h:97:9)")]
         public _NotRange_e__Struct NotRange;
 
         /// <include file='_Range_e__Struct.xml' path='doc/member[@name="_Range_e__Struct"]/*' />

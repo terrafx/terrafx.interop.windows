@@ -130,6 +130,9 @@ public static partial class FACILITY
     [NativeTypeName("#define FACILITY_VSM 0x45")]
     public const int FACILITY_VSM = 0x45;
 
+    [NativeTypeName("#define FACILITY_NT_IORING 0x46")]
+    public const int FACILITY_NT_IORING = 0x46;
+
     [NativeTypeName("#define FACILITY_VOLSNAP 0x50")]
     public const int FACILITY_VOLSNAP = 0x50;
 

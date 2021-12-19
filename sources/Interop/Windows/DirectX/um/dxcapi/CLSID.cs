@@ -265,4 +265,29 @@ public static partial class CLSID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_DxcPdbUtils
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xFB, 0x1D, 0x62, 0x54,
+                0xCE, 0xF2,
+                0x7E, 0x45,
+                0xAE,
+                0x8C,
+                0xEC,
+                0x35,
+                0x5F,
+                0xAE,
+                0xEC,
+                0x7C
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

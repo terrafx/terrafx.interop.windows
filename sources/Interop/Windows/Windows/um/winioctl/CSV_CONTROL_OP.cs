@@ -55,4 +55,10 @@ public enum CSV_CONTROL_OP
 
     /// <include file='CSV_CONTROL_OP.xml' path='doc/member[@name="CSV_CONTROL_OP.CsvControlQueryMdsPathNoPause"]/*' />
     CsvControlQueryMdsPathNoPause = 0x17,
+
+    /// <include file='CSV_CONTROL_OP.xml' path='doc/member[@name="CSV_CONTROL_OP.CsvControlSetVolumeId"]/*' />
+    CsvControlSetVolumeId = 0x18,
+
+    /// <include file='CSV_CONTROL_OP.xml' path='doc/member[@name="CSV_CONTROL_OP.CsvControlQueryVolumeId"]/*' />
+    CsvControlQueryVolumeId = 0x19,
 }

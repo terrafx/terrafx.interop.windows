@@ -78,4 +78,7 @@ public static partial class APPX
 
     [NativeTypeName("#define APPX_E_INVALID_PACKAGE_FOLDER_ACLS _HRESULT_TYPEDEF_(0x80080217L)")]
     public const int APPX_E_INVALID_PACKAGE_FOLDER_ACLS = unchecked((int)(0x80080217));
+
+    [NativeTypeName("#define APPX_E_INVALID_PUBLISHER_BRIDGING _HRESULT_TYPEDEF_(0x80080218L)")]
+    public const int APPX_E_INVALID_PUBLISHER_BRIDGING = unchecked((int)(0x80080218));
 }

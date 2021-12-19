@@ -32,7 +32,7 @@ public partial struct IMAGE_TLS_DIRECTORY32
     public uint SizeOfZeroFill;
 
     /// <include file='IMAGE_TLS_DIRECTORY32.xml' path='doc/member[@name="IMAGE_TLS_DIRECTORY32.Anonymous"]/*' />
-    [NativeTypeName("_IMAGE_TLS_DIRECTORY32::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19529:5)")]
+    [NativeTypeName("_IMAGE_TLS_DIRECTORY32::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19663:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Characteristics"]/*' />
@@ -104,7 +104,7 @@ public partial struct IMAGE_TLS_DIRECTORY32
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_IMAGE_TLS_DIRECTORY32::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19531:9)")]
+        [NativeTypeName("_IMAGE_TLS_DIRECTORY32::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19665:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

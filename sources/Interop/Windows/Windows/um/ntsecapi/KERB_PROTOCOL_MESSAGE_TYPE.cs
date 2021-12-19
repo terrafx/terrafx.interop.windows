@@ -115,4 +115,7 @@ public enum KERB_PROTOCOL_MESSAGE_TYPE
 
     /// <include file='KERB_PROTOCOL_MESSAGE_TYPE.xml' path='doc/member[@name="KERB_PROTOCOL_MESSAGE_TYPE.KerbRefreshPolicyMessage"]/*' />
     KerbRefreshPolicyMessage,
+
+    /// <include file='KERB_PROTOCOL_MESSAGE_TYPE.xml' path='doc/member[@name="KERB_PROTOCOL_MESSAGE_TYPE.KerbPrintCloudKerberosDebugMessage"]/*' />
+    KerbPrintCloudKerberosDebugMessage,
 }

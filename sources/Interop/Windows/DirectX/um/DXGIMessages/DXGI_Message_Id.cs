@@ -902,6 +902,9 @@ public enum DXGI_Message_Id
     /// <include file='DXGI_Message_Id.xml' path='doc/member[@name="DXGI_Message_Id.DXGI_MSG_IDXGIFactory_CreateSwapChain_MultipleSwapchainRefToSurface_DeferredDtr"]/*' />
     DXGI_MSG_IDXGIFactory_CreateSwapChain_MultipleSwapchainRefToSurface_DeferredDtr,
 
+    /// <include file='DXGI_Message_Id.xml' path='doc/member[@name="DXGI_Message_Id.DXGI_MSG_IDXGIFactory_MakeWindowAssociation_NoOpBehavior"]/*' />
+    DXGI_MSG_IDXGIFactory_MakeWindowAssociation_NoOpBehavior,
+
     /// <include file='DXGI_Message_Id.xml' path='doc/member[@name="DXGI_Message_Id.DXGI_MSG_Phone_IDXGIFactory_CreateSwapChain_NotForegroundWindow"]/*' />
     DXGI_MSG_Phone_IDXGIFactory_CreateSwapChain_NotForegroundWindow = 1000,
 

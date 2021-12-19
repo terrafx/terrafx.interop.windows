@@ -2700,6 +2700,10 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern HICON CreateIconFromResourceEx([NativeTypeName("PBYTE")] byte* presbits, [NativeTypeName("DWORD")] uint dwResSize, BOOL fIcon, [NativeTypeName("DWORD")] uint dwVer, int cxDesired, int cyDesired, uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetThreadCursorCreationScaling"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    public static extern uint SetThreadCursorCreationScaling(uint cursorDpi);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadImageA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
@@ -4768,6 +4772,12 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define PrivateExtractIcons PrivateExtractIconsW")]
     public static delegate*<ushort*, int, int, int, HICON*, uint*, uint, uint, uint> PrivateExtractIcons => &PrivateExtractIconsW;
+
+    [NativeTypeName("#define CURSOR_CREATION_SCALING_NONE 1")]
+    public const int CURSOR_CREATION_SCALING_NONE = 1;
+
+    [NativeTypeName("#define CURSOR_CREATION_SCALING_DEFAULT 2")]
+    public const int CURSOR_CREATION_SCALING_DEFAULT = 2;
 
     [NativeTypeName("#define LoadImage LoadImageW")]
     public static delegate*<HINSTANCE, ushort*, uint, int, int, uint, HANDLE> LoadImage => &LoadImageW;

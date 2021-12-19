@@ -12,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct FILE_RENAME_INFO
 {
     /// <include file='FILE_RENAME_INFO.xml' path='doc/member[@name="FILE_RENAME_INFO.Anonymous"]/*' />
-    [NativeTypeName("_FILE_RENAME_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/WinBase.h:8878:5)")]
+    [NativeTypeName("_FILE_RENAME_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/WinBase.h:8897:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='FILE_RENAME_INFO.xml' path='doc/member[@name="FILE_RENAME_INFO.RootDirectory"]/*' />
