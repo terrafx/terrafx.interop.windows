@@ -1,5 +1,14 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+InitializeObjectAttributes
+NT_ERROR
+NT_INFORMATION
+NT_SUCCESS
+NT_WARNING
+RtlFillMemory
+RtlMoveMemory
+RtlZeroMemory
 --file
 um-winternl.h
 --methodClassName
