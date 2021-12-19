@@ -51,10 +51,52 @@ public static unsafe partial class ResolveDllImportTests
                 case "DavInvalidateCache":
                 case "DavRegisterAuthCallback":
                 case "DavUnregisterAuthCallback":
+                case "DxcCreateInstance":
+                case "DxcCreateInstance2":
+                case "SRRemoveRestorePoint":
+                case "SRSetRestorePoint":
+                case "SRSetRestorePointA":
+                case "SRSetRestorePointInternal":
+                case "SRSetRestorePointW":
+                case "X3DAudioInitialize":
+                case "X3DAudioCalculate":
                 {
                     if (Environment.GetEnvironmentVariable("GITHUB_RUN_ID") is not null)
                     {
-                        // This isn't good practice, but current CI runs Windows Server and 'davclnt' isn't available
+                        // This isn't good practice, but current CI runs Windows Server and these APIs aren't available
+                        // due to being in a library that isn't present on the Windows Server machines
+                        Assert.Warn($"Warn: {exception.Message}");
+                    }
+                    else
+                    {
+                        goto default;
+                    }
+                    break;
+                }
+
+                case "DCompositionBoostCompositorClock":
+                case "DCompositionGetFrameId":
+                case "DCompositionGetStatistics":
+                case "DCompositionGetTargetStatistics":
+                case "DCompositionWaitForCompositorClock":
+                case "GetIdForPackageDependencyContext":
+                case "GetMachineTypeAttributes":
+                case "HidP_GetButtonArray":
+                case "HidP_SetButtonArray":
+                case "MFCreateCameraOcclusionStateMonitor":
+                case "SymGetSourceFileFromTokenByTokenName":
+                case "SymGetSourceFileFromTokenByTokenNameW":
+                case "SymGetSourceFileTokenByTokenName":
+                case "SymGetSourceFileTokenByTokenNameW":
+                case "SetThreadCursorCreationScaling":
+                case "TryCreatePackageDependency":
+                case "WinHttpQueryConnectionGroup":
+                case "WinHttpFreeQueryConnectionGroupResult":
+                {
+                    if (!OperatingSystem.IsWindowsVersionAtLeast(10, 0, 22000, 0))
+                    {
+                        // This isn't good practice, but current CI runs Windows Server and these APIs aren't available
+                        // due to only being in a newer version of Windows.
                         Assert.Warn($"Warn: {exception.Message}");
                     }
                     else
@@ -79,54 +121,6 @@ public static unsafe partial class ResolveDllImportTests
                     // to see them as visible. Mark them with a warning rather than failing them
 
                     Assert.Warn($"Warn: {exception.Message}");
-                    break;
-                }
-
-                case "DxcCreateInstance":
-                case "DxcCreateInstance2":
-                {
-                    if (Environment.GetEnvironmentVariable("GITHUB_RUN_ID") is not null)
-                    {
-                        // This isn't good practice, but current CI runs Windows Server and 'dxcompiler' isn't available
-                        Assert.Warn($"Warn: {exception.Message}");
-                    }
-                    else
-                    {
-                        goto default;
-                    }
-                    break;
-                }
-
-                case "SRRemoveRestorePoint":
-                case "SRSetRestorePoint":
-                case "SRSetRestorePointA":
-                case "SRSetRestorePointInternal":
-                case "SRSetRestorePointW":
-                {
-                    if (Environment.GetEnvironmentVariable("GITHUB_RUN_ID") is not null)
-                    {
-                        // This isn't good practice, but current CI runs Windows Server and 'srclient' isn't available
-                        Assert.Warn($"Warn: {exception.Message}");
-                    }
-                    else
-                    {
-                        goto default;
-                    }
-                    break;
-                }
-
-                case "X3DAudioInitialize":
-                case "X3DAudioCalculate":
-                {
-                    if (Environment.GetEnvironmentVariable("GITHUB_RUN_ID") is not null)
-                    {
-                        // This isn't good practice, but current CI runs Windows Server and 'X3DAudio1_7' isn't available
-                        Assert.Warn($"Warn: {exception.Message}");
-                    }
-                    else
-                    {
-                        goto default;
-                    }
                     break;
                 }
 
