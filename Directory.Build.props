@@ -44,7 +44,7 @@
     <Product>TerraFX.Interop.Windows</Product>
     <RootNamespace>TerraFX.Interop</RootNamespace>
     <VersionPrefix>10.0.22000.0</VersionPrefix>
-    <VersionSuffix Condition="'$(EXCLUDE_SUFFIX_FROM_VERSION)' != 'true'">rc3</VersionSuffix>
+    <VersionSuffix Condition="'$(EXCLUDE_SUFFIX_FROM_VERSION)' != 'true'">rc1</VersionSuffix>
     <VersionSuffix Condition="'$(GITHUB_EVENT_NAME)' == 'pull_request'">pr</VersionSuffix>
   </PropertyGroup>
 
