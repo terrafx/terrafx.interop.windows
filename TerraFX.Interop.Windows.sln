@@ -2770,6 +2770,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lzexpand", "lzexpand", "{CC
 		generation\Windows\um\lzexpand\um-lzexpand.h = generation\Windows\um\lzexpand\um-lzexpand.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "objbase", "objbase", "{B31F49C6-C263-4674-86D9-3E890348AF4B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\objbase\generate.rsp = generation\Windows\um\objbase\generate.rsp
+		generation\Windows\um\objbase\header.txt = generation\Windows\um\objbase\header.txt
+		generation\Windows\um\objbase\um-objbase.h = generation\Windows\um\objbase\um-objbase.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3197,6 +3204,7 @@ Global
 		{CBC62B75-03A4-470D-A52A-D84161773CB7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{5FC51DA5-FF47-4100-BE74-2F3DE11EF163} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{CC539B27-F7D6-44F9-9CB4-6CA9486D824D} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{B31F49C6-C263-4674-86D9-3E890348AF4B} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
