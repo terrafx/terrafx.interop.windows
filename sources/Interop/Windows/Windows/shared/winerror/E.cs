@@ -7,6 +7,21 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class E
 {
+    [NativeTypeName("#define E_NOT_SET HRESULT_FROM_WIN32(ERROR_NOT_FOUND)")]
+    public const int E_NOT_SET = -2147023728;
+
+    [NativeTypeName("#define E_NOT_VALID_STATE HRESULT_FROM_WIN32(ERROR_INVALID_STATE)")]
+    public const int E_NOT_VALID_STATE = -2147019873;
+
+    [NativeTypeName("#define E_NOT_SUFFICIENT_BUFFER HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)")]
+    public const int E_NOT_SUFFICIENT_BUFFER = -2147024774;
+
+    [NativeTypeName("#define E_TIME_SENSITIVE_THREAD HRESULT_FROM_WIN32(ERROR_TIME_SENSITIVE_THREAD)")]
+    public const int E_TIME_SENSITIVE_THREAD = -2147024474;
+
+    [NativeTypeName("#define E_NO_TASK_QUEUE HRESULT_FROM_WIN32(ERROR_NO_TASK_QUEUE)")]
+    public const int E_NO_TASK_QUEUE = -2147024469;
+
     [NativeTypeName("#define E_UNEXPECTED _HRESULT_TYPEDEF_(0x8000FFFFL)")]
     public const int E_UNEXPECTED = unchecked((int)(0x8000FFFF));
 
