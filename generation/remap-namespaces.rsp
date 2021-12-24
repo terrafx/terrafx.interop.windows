@@ -239,6 +239,7 @@ GCL=TerraFX.Interop.Windows
 GCP=TerraFX.Interop.Windows
 GCPCLASS=TerraFX.Interop.Windows
 GCS=TerraFX.Interop.Windows
+Gdiplus=TerraFX.Interop.Gdiplus
 GET=TerraFX.Interop.Windows
 GID=TerraFX.Interop.Windows
 GIL=TerraFX.Interop.Windows

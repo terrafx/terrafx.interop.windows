@@ -1,5 +1,18 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+Gdiplus.Blur.Blur():void
+Gdiplus.BrightnessContrast.BrightnessContrast():void
+Gdiplus.ColorBalance.ColorBalance():void
+Gdiplus.ColorCurve.ColorCurve():void
+Gdiplus.ColorLUT.ColorLUT():void
+Gdiplus.ColorMatrixEffect.ColorMatrixEffect():void
+Gdiplus.Effect.Effect():void
+Gdiplus.HueSaturationLightness.HueSaturationLightness():void
+Gdiplus.Levels.Levels():void
+Gdiplus.RedEyeCorrection.RedEyeCorrection():void
+Gdiplus.Sharpen.Sharpen():void
+Gdiplus.Tint.Tint():void
 --file
 um-gdipluseffects.h
 --methodClassName
@@ -12,3 +25,9 @@ TerraFX.Interop.Gdiplus
 ../../../../tests/Interop/Windows/Gdiplus/um/gdipluseffects
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/gdipluseffects.h
+--with-librarypath
+GdipCreateEffect=gdiplus
+GdipDeleteEffect=gdiplus
+GdipGetEffectParameters=gdiplus
+GdipGetEffectParameterSize=gdiplus
+GdipSetEffectParameters=gdiplus
