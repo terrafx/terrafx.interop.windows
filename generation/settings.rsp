@@ -29,6 +29,7 @@ log-potential-typedef-remappings
 multi-file
 trimmable-vtbls
 --define-macro
+GDIPVER=0x0110
 INITGUID
 UNICODE
 --headerFile
