@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-gdiplusimageattributes.h
+--methodClassName
+Gdiplus
+--namespace
+TerraFX.Interop.Gdiplus
+--output
+../../../../sources/Interop/Windows/Gdiplus/um/gdiplusimageattributes
+--test-output
+../../../../tests/Interop/Windows/Gdiplus/um/gdiplusimageattributes
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/gdiplusimageattributes.h
