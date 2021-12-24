@@ -1,5 +1,10 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+Gdiplus.MetafileHeader.GetEmfHeader():const Gdiplus.ENHMETAHEADER3 *
+Gdiplus.MetafileHeader.GetWmfHeader():const METAHEADER *
+Gdiplus.MetafileHeader.IsEmfOrEmfPlus():BOOL
+Gdiplus.MetafileHeader.IsEmfPlus():BOOL
 --file
 um-gdiplusmetaheader.h
 --methodClassName
@@ -12,3 +17,4 @@ TerraFX.Interop.Gdiplus
 ../../../../tests/Interop/Windows/Gdiplus/um/gdiplusmetaheader
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/gdiplusmetaheader.h
+
