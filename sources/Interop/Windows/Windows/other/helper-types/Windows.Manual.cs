@@ -16,7 +16,7 @@ public static partial class Windows
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static void ThrowIfFailed(this HRESULT value, [CallerArgumentExpression("value")] string? valueExpression = null)
+    public static void ThrowIfFailed(HRESULT value, [CallerArgumentExpression("value")] string? valueExpression = null)
     {
         if (value.FAILED)
         {
