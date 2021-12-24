@@ -9,6 +9,7 @@ using static TerraFX.Interop.DirectX.D3D11_INPUT_CLASSIFICATION;
 using static TerraFX.Interop.DirectX.D3D11_USAGE;
 using static TerraFX.Interop.DirectX.DirectX;
 using static TerraFX.Interop.DirectX.DXGI_FORMAT;
+using static TerraFX.Interop.Windows.Windows;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D11;

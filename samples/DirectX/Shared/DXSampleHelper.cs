@@ -15,14 +15,6 @@ namespace TerraFX.Samples.DirectX;
 
 public static unsafe class DXSampleHelper
 {
-    public static void ThrowIfFailed(HRESULT hr, [CallerArgumentExpression("hr")] string methodName = "")
-    {
-        if (hr.FAILED)
-        {
-            throw new ExternalException($"'{methodName}' failed with an error code of '{hr}'", hr);
-        }
-    }
-
     public static string GetAssetsPath()
     {
         var entryAssembly = Assembly.GetEntryAssembly()!;
