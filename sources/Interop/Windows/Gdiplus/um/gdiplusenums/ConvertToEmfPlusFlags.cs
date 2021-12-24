@@ -3,9 +3,12 @@
 // Ported from um/gdiplusenums.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='ConvertToEmfPlusFlags.xml' path='doc/member[@name="ConvertToEmfPlusFlags"]/*' />
+[Flags]
 public enum ConvertToEmfPlusFlags
 {
     /// <include file='ConvertToEmfPlusFlags.xml' path='doc/member[@name="ConvertToEmfPlusFlags.ConvertToEmfPlusFlagsDefault"]/*' />

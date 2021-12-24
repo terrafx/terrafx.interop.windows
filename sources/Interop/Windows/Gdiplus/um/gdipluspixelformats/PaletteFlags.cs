@@ -3,9 +3,12 @@
 // Ported from um/gdipluspixelformats.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='PaletteFlags.xml' path='doc/member[@name="PaletteFlags"]/*' />
+[Flags]
 public enum PaletteFlags
 {
     /// <include file='PaletteFlags.xml' path='doc/member[@name="PaletteFlags.PaletteFlagsHasAlpha"]/*' />

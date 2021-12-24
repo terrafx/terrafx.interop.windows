@@ -3,9 +3,12 @@
 // Ported from um/gdiplusenums.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='EmfToWmfBitsFlags.xml' path='doc/member[@name="EmfToWmfBitsFlags"]/*' />
+[Flags]
 public enum EmfToWmfBitsFlags
 {
     /// <include file='EmfToWmfBitsFlags.xml' path='doc/member[@name="EmfToWmfBitsFlags.EmfToWmfBitsFlagsDefault"]/*' />

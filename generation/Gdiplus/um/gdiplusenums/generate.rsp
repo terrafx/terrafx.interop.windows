@@ -17,3 +17,8 @@ TerraFX.Interop.Gdiplus
 ../../../../tests/Interop/Windows/Gdiplus/um/gdiplusenums
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/gdiplusenums.h
+--with-attribute
+Gdiplus.ConvertToEmfPlusFlags=Flags
+Gdiplus.DriverStringOptions=Flags
+Gdiplus.EmfToWmfBitsFlags=Flags
+Gdiplus.StringFormatFlags=Flags

@@ -14,3 +14,5 @@ TerraFX.Interop.Gdiplus
 ../../../../tests/Interop/Windows/Gdiplus/um/gdipluspixelformats
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/gdipluspixelformats.h
+--with-attribute
+Gdiplus.PaletteFlags=Flags

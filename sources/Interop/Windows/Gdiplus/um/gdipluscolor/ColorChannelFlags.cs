@@ -3,9 +3,12 @@
 // Ported from um/gdipluscolor.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='ColorChannelFlags.xml' path='doc/member[@name="ColorChannelFlags"]/*' />
+[Flags]
 public enum ColorChannelFlags
 {
     /// <include file='ColorChannelFlags.xml' path='doc/member[@name="ColorChannelFlags.ColorChannelFlagsC"]/*' />
