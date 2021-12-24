@@ -1,5 +1,7 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+GetPixelFormatSize
 --file
 um-gdipluspixelformats.h
 --methodClassName
