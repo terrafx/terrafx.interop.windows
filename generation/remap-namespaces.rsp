@@ -66,6 +66,7 @@ CMIC=TerraFX.Interop.Windows
 CMSG=TerraFX.Interop.Windows
 CO=TerraFX.Interop.Windows
 COLOR=TerraFX.Interop.Windows
+COLORREF=TerraFX.Interop.Windows
 COMADMIN=TerraFX.Interop.Windows
 CONNECT=TerraFX.Interop.Windows
 CONSOLE=TerraFX.Interop.Windows

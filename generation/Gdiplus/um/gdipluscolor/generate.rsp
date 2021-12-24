@@ -1,5 +1,7 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+Gdiplus.Color.ToCOLORREF():COLORREF
 --file
 um-gdipluscolor.h
 --methodClassName
@@ -12,3 +14,6 @@ TerraFX.Interop.Gdiplus
 ../../../../tests/Interop/Windows/Gdiplus/um/gdipluscolor
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/gdipluscolor.h
+--with-type
+__AnonymousEnum_GdiplusColor_L148_C5=uint
+__AnonymousEnum_GdiplusColor_L303_C5=uint
