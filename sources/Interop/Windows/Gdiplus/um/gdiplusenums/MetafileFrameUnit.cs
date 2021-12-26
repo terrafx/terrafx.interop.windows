@@ -3,7 +3,7 @@
 // Ported from um/gdiplusenums.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using static TerraFX.Interop.Gdiplus.Unit;
+using static TerraFX.Interop.Gdiplus.GpUnit;
 
 namespace TerraFX.Interop.Gdiplus;
 

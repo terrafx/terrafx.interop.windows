@@ -5,12 +5,12 @@
 
 namespace TerraFX.Interop.Gdiplus;
 
-/// <include file='FlushIntention.xml' path='doc/member[@name="FlushIntention"]/*' />
-public enum FlushIntention
+/// <include file='GpFlushIntention.xml' path='doc/member[@name="GpFlushIntention"]/*' />
+public enum GpFlushIntention
 {
-    /// <include file='FlushIntention.xml' path='doc/member[@name="FlushIntention.FlushIntentionFlush"]/*' />
+    /// <include file='GpFlushIntention.xml' path='doc/member[@name="GpFlushIntention.FlushIntentionFlush"]/*' />
     FlushIntentionFlush = 0,
 
-    /// <include file='FlushIntention.xml' path='doc/member[@name="FlushIntention.FlushIntentionSync"]/*' />
+    /// <include file='GpFlushIntention.xml' path='doc/member[@name="GpFlushIntention.FlushIntentionSync"]/*' />
     FlushIntentionSync = 1,
 }

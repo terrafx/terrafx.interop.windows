@@ -5,21 +5,21 @@
 
 namespace TerraFX.Interop.Gdiplus;
 
-public partial struct Point
+public partial struct GpSizeF
 {
-    public static Point operator+(in Point self, in Point point)
+    public static GpSizeF operator+(in GpSizeF self, in GpSizeF sz)
     {
-        return new Point(
-            self.X + point.X,
-            self.Y + point.Y
+        return new GpSizeF(
+            self.Width + sz.Width,
+            self.Height + sz.Height
         );
     }
 
-    public static Point operator -(in Point self, in Point point)
+    public static GpSizeF operator -(in GpSizeF self, in GpSizeF sz)
     {
-        return new Point(
-            self.X - point.X,
-            self.Y - point.Y
+        return new GpSizeF(
+            self.Width - sz.Width,
+            self.Height - sz.Height
         );
     }
 }

@@ -5,12 +5,12 @@
 
 namespace TerraFX.Interop.Gdiplus;
 
-/// <include file='MatrixOrder.xml' path='doc/member[@name="MatrixOrder"]/*' />
-public enum MatrixOrder
+/// <include file='GpMatrixOrder.xml' path='doc/member[@name="GpMatrixOrder"]/*' />
+public enum GpMatrixOrder
 {
-    /// <include file='MatrixOrder.xml' path='doc/member[@name="MatrixOrder.MatrixOrderPrepend"]/*' />
+    /// <include file='GpMatrixOrder.xml' path='doc/member[@name="GpMatrixOrder.MatrixOrderPrepend"]/*' />
     MatrixOrderPrepend = 0,
 
-    /// <include file='MatrixOrder.xml' path='doc/member[@name="MatrixOrder.MatrixOrderAppend"]/*' />
+    /// <include file='GpMatrixOrder.xml' path='doc/member[@name="GpMatrixOrder.MatrixOrderAppend"]/*' />
     MatrixOrderAppend = 1,
 }

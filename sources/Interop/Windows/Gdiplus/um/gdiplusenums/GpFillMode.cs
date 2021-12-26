@@ -5,12 +5,12 @@
 
 namespace TerraFX.Interop.Gdiplus;
 
-/// <include file='FillMode.xml' path='doc/member[@name="FillMode"]/*' />
-public enum FillMode
+/// <include file='GpFillMode.xml' path='doc/member[@name="GpFillMode"]/*' />
+public enum GpFillMode
 {
-    /// <include file='FillMode.xml' path='doc/member[@name="FillMode.FillModeAlternate"]/*' />
+    /// <include file='GpFillMode.xml' path='doc/member[@name="GpFillMode.FillModeAlternate"]/*' />
     FillModeAlternate,
 
-    /// <include file='FillMode.xml' path='doc/member[@name="FillMode.FillModeWinding"]/*' />
+    /// <include file='GpFillMode.xml' path='doc/member[@name="GpFillMode.FillModeWinding"]/*' />
     FillModeWinding,
 }

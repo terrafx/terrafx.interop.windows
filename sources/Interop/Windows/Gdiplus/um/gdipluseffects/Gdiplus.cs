@@ -290,25 +290,25 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateEffect"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::Status")]
-    public static extern Status GdipCreateEffect([NativeTypeName("const GUID")] Guid guid, [NativeTypeName("Gdiplus::CGpEffect **")] CGpEffect** effect);
+    public static extern GpStatus GdipCreateEffect([NativeTypeName("const GUID")] Guid guid, [NativeTypeName("Gdiplus::CGpEffect **")] CGpEffect** effect);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDeleteEffect"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::Status")]
-    public static extern Status GdipDeleteEffect([NativeTypeName("Gdiplus::CGpEffect *")] CGpEffect* effect);
+    public static extern GpStatus GdipDeleteEffect([NativeTypeName("Gdiplus::CGpEffect *")] CGpEffect* effect);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetEffectParameterSize"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::Status")]
-    public static extern Status GdipGetEffectParameterSize([NativeTypeName("Gdiplus::CGpEffect *")] CGpEffect* effect, uint* size);
+    public static extern GpStatus GdipGetEffectParameterSize([NativeTypeName("Gdiplus::CGpEffect *")] CGpEffect* effect, uint* size);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetEffectParameters"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::Status")]
-    public static extern Status GdipSetEffectParameters([NativeTypeName("Gdiplus::CGpEffect *")] CGpEffect* effect, [NativeTypeName("const void *")] void* @params, [NativeTypeName("const UINT")] uint size);
+    public static extern GpStatus GdipSetEffectParameters([NativeTypeName("Gdiplus::CGpEffect *")] CGpEffect* effect, [NativeTypeName("const void *")] void* @params, [NativeTypeName("const UINT")] uint size);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetEffectParameters"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::Status")]
-    public static extern Status GdipGetEffectParameters([NativeTypeName("Gdiplus::CGpEffect *")] CGpEffect* effect, uint* size, void* @params);
+    public static extern GpStatus GdipGetEffectParameters([NativeTypeName("Gdiplus::CGpEffect *")] CGpEffect* effect, uint* size, void* @params);
 }

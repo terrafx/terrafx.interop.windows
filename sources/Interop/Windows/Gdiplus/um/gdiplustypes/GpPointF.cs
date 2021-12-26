@@ -7,41 +7,41 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.Gdiplus;
 
-/// <include file='PointF.xml' path='doc/member[@name="PointF"]/*' />
-public partial struct PointF
+/// <include file='GpPointF.xml' path='doc/member[@name="GpPointF"]/*' />
+public unsafe partial struct GpPointF
 {
-    /// <include file='PointF.xml' path='doc/member[@name="PointF.X"]/*' />
+    /// <include file='GpPointF.xml' path='doc/member[@name="GpPointF.X"]/*' />
     [NativeTypeName("Gdiplus::REAL")]
     public float X;
 
-    /// <include file='PointF.xml' path='doc/member[@name="PointF.Y"]/*' />
+    /// <include file='GpPointF.xml' path='doc/member[@name="GpPointF.Y"]/*' />
     [NativeTypeName("Gdiplus::REAL")]
     public float Y;
 
-    public PointF()
+    public GpPointF()
     {
         X = Y = 0.0f;
     }
 
-    public unsafe PointF([NativeTypeName("const Gdiplus::PointF &")] PointF* point)
+    public GpPointF([NativeTypeName("const Gdiplus::PointF &")] GpPointF* point)
     {
         X = point->X;
         Y = point->Y;
     }
 
-    public unsafe PointF([NativeTypeName("const Gdiplus::SizeF &")] SizeF* size)
+    public GpPointF([NativeTypeName("const Gdiplus::SizeF &")] GpSizeF* size)
     {
         X = size->Width;
         Y = size->Height;
     }
 
-    public PointF([NativeTypeName("Gdiplus::REAL")] float x, [NativeTypeName("Gdiplus::REAL")] float y)
+    public GpPointF([NativeTypeName("Gdiplus::REAL")] float x, [NativeTypeName("Gdiplus::REAL")] float y)
     {
         X = x;
         Y = y;
     }
 
-    public unsafe BOOL Equals([NativeTypeName("const Gdiplus::PointF &")] PointF* point)
+    public BOOL Equals([NativeTypeName("const Gdiplus::PointF &")] GpPointF* point)
     {
         return ((X == point->X) && (Y == point->Y)) ? 1 : 0;
     }

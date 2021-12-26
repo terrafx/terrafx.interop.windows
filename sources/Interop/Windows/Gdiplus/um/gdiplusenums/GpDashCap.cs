@@ -5,15 +5,15 @@
 
 namespace TerraFX.Interop.Gdiplus;
 
-/// <include file='DashCap.xml' path='doc/member[@name="DashCap"]/*' />
-public enum DashCap
+/// <include file='GpDashCap.xml' path='doc/member[@name="GpDashCap"]/*' />
+public enum GpDashCap
 {
-    /// <include file='DashCap.xml' path='doc/member[@name="DashCap.DashCapFlat"]/*' />
+    /// <include file='GpDashCap.xml' path='doc/member[@name="GpDashCap.DashCapFlat"]/*' />
     DashCapFlat = 0,
 
-    /// <include file='DashCap.xml' path='doc/member[@name="DashCap.DashCapRound"]/*' />
+    /// <include file='GpDashCap.xml' path='doc/member[@name="GpDashCap.DashCapRound"]/*' />
     DashCapRound = 2,
 
-    /// <include file='DashCap.xml' path='doc/member[@name="DashCap.DashCapTriangle"]/*' />
+    /// <include file='GpDashCap.xml' path='doc/member[@name="GpDashCap.DashCapTriangle"]/*' />
     DashCapTriangle = 3,
 }

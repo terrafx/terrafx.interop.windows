@@ -8,7 +8,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='Size.xml' path='doc/member[@name="Size"]/*' />
-public partial struct Size
+public unsafe partial struct Size
 {
     /// <include file='Size.xml' path='doc/member[@name="Size.Width"]/*' />
     public int Width;
@@ -21,7 +21,7 @@ public partial struct Size
         Width = Height = 0;
     }
 
-    public unsafe Size([NativeTypeName("const Gdiplus::Size &")] Size* size)
+    public Size([NativeTypeName("const Gdiplus::Size &")] Size* size)
     {
         Width = size->Width;
         Height = size->Height;
@@ -33,7 +33,7 @@ public partial struct Size
         Height = height;
     }
 
-    public unsafe BOOL Equals([NativeTypeName("const Gdiplus::Size &")] Size* sz)
+    public BOOL Equals([NativeTypeName("const Gdiplus::Size &")] Size* sz)
     {
         return ((Width == sz->Width) && (Height == sz->Height)) ? 1 : 0;
     }

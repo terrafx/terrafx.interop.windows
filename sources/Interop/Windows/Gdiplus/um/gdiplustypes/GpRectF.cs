@@ -7,31 +7,31 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.Gdiplus;
 
-/// <include file='RectF.xml' path='doc/member[@name="RectF"]/*' />
-public partial struct RectF
+/// <include file='GpRectF.xml' path='doc/member[@name="GpRectF"]/*' />
+public unsafe partial struct GpRectF
 {
-    /// <include file='RectF.xml' path='doc/member[@name="RectF.X"]/*' />
+    /// <include file='GpRectF.xml' path='doc/member[@name="GpRectF.X"]/*' />
     [NativeTypeName("Gdiplus::REAL")]
     public float X;
 
-    /// <include file='RectF.xml' path='doc/member[@name="RectF.Y"]/*' />
+    /// <include file='GpRectF.xml' path='doc/member[@name="GpRectF.Y"]/*' />
     [NativeTypeName("Gdiplus::REAL")]
     public float Y;
 
-    /// <include file='RectF.xml' path='doc/member[@name="RectF.Width"]/*' />
+    /// <include file='GpRectF.xml' path='doc/member[@name="GpRectF.Width"]/*' />
     [NativeTypeName("Gdiplus::REAL")]
     public float Width;
 
-    /// <include file='RectF.xml' path='doc/member[@name="RectF.Height"]/*' />
+    /// <include file='GpRectF.xml' path='doc/member[@name="GpRectF.Height"]/*' />
     [NativeTypeName("Gdiplus::REAL")]
     public float Height;
 
-    public RectF()
+    public GpRectF()
     {
         X = Y = Width = Height = 0.0f;
     }
 
-    public RectF([NativeTypeName("Gdiplus::REAL")] float x, [NativeTypeName("Gdiplus::REAL")] float y, [NativeTypeName("Gdiplus::REAL")] float width, [NativeTypeName("Gdiplus::REAL")] float height)
+    public GpRectF([NativeTypeName("Gdiplus::REAL")] float x, [NativeTypeName("Gdiplus::REAL")] float y, [NativeTypeName("Gdiplus::REAL")] float width, [NativeTypeName("Gdiplus::REAL")] float height)
     {
         X = x;
         Y = y;
@@ -39,7 +39,7 @@ public partial struct RectF
         Height = height;
     }
 
-    public unsafe RectF([NativeTypeName("const Gdiplus::PointF &")] PointF* location, [NativeTypeName("const Gdiplus::SizeF &")] SizeF* size)
+    public GpRectF([NativeTypeName("const Gdiplus::PointF &")] GpPointF* location, [NativeTypeName("const Gdiplus::SizeF &")] GpSizeF* size)
     {
         X = location->X;
         Y = location->Y;
@@ -47,19 +47,19 @@ public partial struct RectF
         Height = size->Height;
     }
 
-    public unsafe void GetLocation([NativeTypeName("Gdiplus::PointF *")] PointF* point)
+    public void GetLocation([NativeTypeName("Gdiplus::PointF *")] GpPointF* point)
     {
         point->X = X;
         point->Y = Y;
     }
 
-    public unsafe void GetSize([NativeTypeName("Gdiplus::SizeF *")] SizeF* size)
+    public void GetSize([NativeTypeName("Gdiplus::SizeF *")] GpSizeF* size)
     {
         size->Width = Width;
         size->Height = Height;
     }
 
-    public unsafe void GetBounds([NativeTypeName("Gdiplus::RectF *")] RectF* rect)
+    public void GetBounds([NativeTypeName("Gdiplus::RectF *")] GpRectF* rect)
     {
         rect->X = X;
         rect->Y = Y;
@@ -96,7 +96,7 @@ public partial struct RectF
         return ((Width <= 1.192092896e-07F) || (Height <= 1.192092896e-07F)) ? 1 : 0;
     }
 
-    public unsafe BOOL Equals([NativeTypeName("const Gdiplus::RectF &")] RectF* rect)
+    public BOOL Equals([NativeTypeName("const Gdiplus::RectF &")] GpRectF* rect)
     {
         return (X == rect->X && Y == rect->Y && Width == rect->Width && Height == rect->Height) ? 1 : 0;
     }
@@ -106,12 +106,12 @@ public partial struct RectF
         return (x >= X && x < X + Width && y >= Y && y < Y + Height) ? 1 : 0;
     }
 
-    public unsafe BOOL Contains([NativeTypeName("const Gdiplus::PointF &")] PointF* pt)
+    public BOOL Contains([NativeTypeName("const Gdiplus::PointF &")] GpPointF* pt)
     {
         return Contains(pt->X, pt->Y);
     }
 
-    public unsafe BOOL Contains([NativeTypeName("const Gdiplus::RectF &")] RectF* rect)
+    public BOOL Contains([NativeTypeName("const Gdiplus::RectF &")] GpRectF* rect)
     {
         return ((X <= rect->X) && (rect->GetRight() <= GetRight()) && (Y <= rect->Y) && (rect->GetBottom() <= GetBottom())) ? 1 : 0;
     }
@@ -124,12 +124,12 @@ public partial struct RectF
         Height += 2 * dy;
     }
 
-    public unsafe void Inflate([NativeTypeName("const Gdiplus::PointF &")] PointF* point)
+    public void Inflate([NativeTypeName("const Gdiplus::PointF &")] GpPointF* point)
     {
         Inflate(point->X, point->Y);
     }
 
-    public static unsafe BOOL Intersect([NativeTypeName("Gdiplus::RectF &")] RectF* c, [NativeTypeName("const Gdiplus::RectF &")] RectF* a, [NativeTypeName("const Gdiplus::RectF &")] RectF* b)
+    public static BOOL Intersect([NativeTypeName("Gdiplus::RectF &")] GpRectF* c, [NativeTypeName("const Gdiplus::RectF &")] GpRectF* a, [NativeTypeName("const Gdiplus::RectF &")] GpRectF* b)
     {
         float right = (((a->GetRight()) < (b->GetRight())) ? (a->GetRight()) : (b->GetRight()));
         float bottom = (((a->GetBottom()) < (b->GetBottom())) ? (a->GetBottom()) : (b->GetBottom()));
@@ -143,12 +143,12 @@ public partial struct RectF
         return (c->IsEmptyArea() == 0) ? 1 : 0;
     }
 
-    public unsafe BOOL IntersectsWith([NativeTypeName("const Gdiplus::RectF &")] RectF* rect)
+    public BOOL IntersectsWith([NativeTypeName("const Gdiplus::RectF &")] GpRectF* rect)
     {
         return (GetLeft() < rect->GetRight() && GetTop() < rect->GetBottom() && GetRight() > rect->GetLeft() && GetBottom() > rect->GetTop()) ? 1 : 0;
     }
 
-    public static unsafe BOOL Union([NativeTypeName("Gdiplus::RectF &")] RectF* c, [NativeTypeName("const Gdiplus::RectF &")] RectF* a, [NativeTypeName("const Gdiplus::RectF &")] RectF* b)
+    public static BOOL Union([NativeTypeName("Gdiplus::RectF &")] GpRectF* c, [NativeTypeName("const Gdiplus::RectF &")] GpRectF* a, [NativeTypeName("const Gdiplus::RectF &")] GpRectF* b)
     {
         float right = (((a->GetRight()) > (b->GetRight())) ? (a->GetRight()) : (b->GetRight()));
         float bottom = (((a->GetBottom()) > (b->GetBottom())) ? (a->GetBottom()) : (b->GetBottom()));
@@ -162,7 +162,7 @@ public partial struct RectF
         return (c->IsEmptyArea() == 0) ? 1 : 0;
     }
 
-    public unsafe void Offset([NativeTypeName("const Gdiplus::PointF &")] PointF* point)
+    public void Offset([NativeTypeName("const Gdiplus::PointF &")] GpPointF* point)
     {
         Offset(point->X, point->Y);
     }

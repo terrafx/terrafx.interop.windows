@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='CharacterRange.xml' path='doc/member[@name="CharacterRange"]/*' />
-public partial struct CharacterRange
+public unsafe partial struct CharacterRange
 {
     /// <include file='CharacterRange.xml' path='doc/member[@name="CharacterRange.First"]/*' />
     public int First;

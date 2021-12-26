@@ -7,27 +7,27 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.Gdiplus;
 
-/// <include file='Rect.xml' path='doc/member[@name="Rect"]/*' />
-public partial struct Rect
+/// <include file='GpRect.xml' path='doc/member[@name="GpRect"]/*' />
+public unsafe partial struct GpRect
 {
-    /// <include file='Rect.xml' path='doc/member[@name="Rect.X"]/*' />
+    /// <include file='GpRect.xml' path='doc/member[@name="GpRect.X"]/*' />
     public int X;
 
-    /// <include file='Rect.xml' path='doc/member[@name="Rect.Y"]/*' />
+    /// <include file='GpRect.xml' path='doc/member[@name="GpRect.Y"]/*' />
     public int Y;
 
-    /// <include file='Rect.xml' path='doc/member[@name="Rect.Width"]/*' />
+    /// <include file='GpRect.xml' path='doc/member[@name="GpRect.Width"]/*' />
     public int Width;
 
-    /// <include file='Rect.xml' path='doc/member[@name="Rect.Height"]/*' />
+    /// <include file='GpRect.xml' path='doc/member[@name="GpRect.Height"]/*' />
     public int Height;
 
-    public Rect()
+    public GpRect()
     {
         X = Y = Width = Height = 0;
     }
 
-    public Rect(int x, int y, int width, int height)
+    public GpRect(int x, int y, int width, int height)
     {
         X = x;
         Y = y;
@@ -35,7 +35,7 @@ public partial struct Rect
         Height = height;
     }
 
-    public unsafe Rect([NativeTypeName("const Gdiplus::Point &")] Point* location, [NativeTypeName("const Gdiplus::Size &")] Size* size)
+    public GpRect([NativeTypeName("const Gdiplus::Point &")] GpPoint* location, [NativeTypeName("const Gdiplus::Size &")] Size* size)
     {
         X = location->X;
         Y = location->Y;
@@ -43,19 +43,19 @@ public partial struct Rect
         Height = size->Height;
     }
 
-    public unsafe void GetLocation([NativeTypeName("Gdiplus::Point *")] Point* point)
+    public void GetLocation([NativeTypeName("Gdiplus::Point *")] GpPoint* point)
     {
         point->X = X;
         point->Y = Y;
     }
 
-    public unsafe void GetSize([NativeTypeName("Gdiplus::Size *")] Size* size)
+    public void GetSize([NativeTypeName("Gdiplus::Size *")] Size* size)
     {
         size->Width = Width;
         size->Height = Height;
     }
 
-    public unsafe void GetBounds([NativeTypeName("Gdiplus::Rect *")] Rect* rect)
+    public void GetBounds([NativeTypeName("Gdiplus::Rect *")] GpRect* rect)
     {
         rect->X = X;
         rect->Y = Y;
@@ -88,7 +88,7 @@ public partial struct Rect
         return ((Width <= 0) || (Height <= 0)) ? 1 : 0;
     }
 
-    public unsafe BOOL Equals([NativeTypeName("const Gdiplus::Rect &")] Rect* rect)
+    public BOOL Equals([NativeTypeName("const Gdiplus::Rect &")] GpRect* rect)
     {
         return (X == rect->X && Y == rect->Y && Width == rect->Width && Height == rect->Height) ? 1 : 0;
     }
@@ -98,12 +98,12 @@ public partial struct Rect
         return (x >= X && x < X + Width && y >= Y && y < Y + Height) ? 1 : 0;
     }
 
-    public unsafe BOOL Contains([NativeTypeName("const Gdiplus::Point &")] Point* pt)
+    public BOOL Contains([NativeTypeName("const Gdiplus::Point &")] GpPoint* pt)
     {
         return Contains(pt->X, pt->Y);
     }
 
-    public unsafe BOOL Contains([NativeTypeName("Gdiplus::Rect &")] Rect* rect)
+    public BOOL Contains([NativeTypeName("Gdiplus::Rect &")] GpRect* rect)
     {
         return ((X <= rect->X) && (rect->GetRight() <= GetRight()) && (Y <= rect->Y) && (rect->GetBottom() <= GetBottom())) ? 1 : 0;
     }
@@ -116,12 +116,12 @@ public partial struct Rect
         Height += 2 * dy;
     }
 
-    public unsafe void Inflate([NativeTypeName("const Gdiplus::Point &")] Point* point)
+    public void Inflate([NativeTypeName("const Gdiplus::Point &")] GpPoint* point)
     {
         Inflate(point->X, point->Y);
     }
 
-    public static unsafe BOOL Intersect([NativeTypeName("Gdiplus::Rect &")] Rect* c, [NativeTypeName("const Gdiplus::Rect &")] Rect* a, [NativeTypeName("const Gdiplus::Rect &")] Rect* b)
+    public static BOOL Intersect([NativeTypeName("Gdiplus::Rect &")] GpRect* c, [NativeTypeName("const Gdiplus::Rect &")] GpRect* a, [NativeTypeName("const Gdiplus::Rect &")] GpRect* b)
     {
         int right = (((a->GetRight()) < (b->GetRight())) ? (a->GetRight()) : (b->GetRight()));
         int bottom = (((a->GetBottom()) < (b->GetBottom())) ? (a->GetBottom()) : (b->GetBottom()));
@@ -135,12 +135,12 @@ public partial struct Rect
         return (c->IsEmptyArea() == 0) ? 1 : 0;
     }
 
-    public unsafe BOOL IntersectsWith([NativeTypeName("const Gdiplus::Rect &")] Rect* rect)
+    public BOOL IntersectsWith([NativeTypeName("const Gdiplus::Rect &")] GpRect* rect)
     {
         return (GetLeft() < rect->GetRight() && GetTop() < rect->GetBottom() && GetRight() > rect->GetLeft() && GetBottom() > rect->GetTop()) ? 1 : 0;
     }
 
-    public static unsafe BOOL Union([NativeTypeName("Gdiplus::Rect &")] Rect* c, [NativeTypeName("const Gdiplus::Rect &")] Rect* a, [NativeTypeName("const Gdiplus::Rect &")] Rect* b)
+    public static BOOL Union([NativeTypeName("Gdiplus::Rect &")] GpRect* c, [NativeTypeName("const Gdiplus::Rect &")] GpRect* a, [NativeTypeName("const Gdiplus::Rect &")] GpRect* b)
     {
         int right = (((a->GetRight()) > (b->GetRight())) ? (a->GetRight()) : (b->GetRight()));
         int bottom = (((a->GetBottom()) > (b->GetBottom())) ? (a->GetBottom()) : (b->GetBottom()));
@@ -154,7 +154,7 @@ public partial struct Rect
         return (c->IsEmptyArea() == 0) ? 1 : 0;
     }
 
-    public unsafe void Offset([NativeTypeName("const Gdiplus::Point &")] Point* point)
+    public void Offset([NativeTypeName("const Gdiplus::Point &")] GpPoint* point)
     {
         Offset(point->X, point->Y);
     }

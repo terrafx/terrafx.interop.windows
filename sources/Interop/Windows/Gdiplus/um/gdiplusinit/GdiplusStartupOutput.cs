@@ -10,7 +10,7 @@ public unsafe partial struct GdiplusStartupOutput
 {
     /// <include file='GdiplusStartupOutput.xml' path='doc/member[@name="GdiplusStartupOutput.NotificationHook"]/*' />
     [NativeTypeName("Gdiplus::NotificationHookProc")]
-    public delegate* unmanaged<nuint*, Status> NotificationHook;
+    public delegate* unmanaged<nuint*, GpStatus> NotificationHook;
 
     /// <include file='GdiplusStartupOutput.xml' path='doc/member[@name="GdiplusStartupOutput.NotificationUnhook"]/*' />
     [NativeTypeName("Gdiplus::NotificationUnhookProc")]

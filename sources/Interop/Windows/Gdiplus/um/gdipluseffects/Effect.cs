@@ -43,19 +43,19 @@ public unsafe partial struct Effect : Effect.Interface
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public Status GetParameterSize(uint* size)
+    public GpStatus GetParameterSize(uint* size)
     {
         return GdipGetEffectParameterSize(nativeEffect, size);
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public Status SetParameters([NativeTypeName("const void *")] void* @params, [NativeTypeName("const UINT")] uint size)
+    public GpStatus SetParameters([NativeTypeName("const void *")] void* @params, [NativeTypeName("const UINT")] uint size)
     {
         return GdipSetEffectParameters(nativeEffect, @params, size);
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public Status GetParameters(uint* size, void* @params)
+    public GpStatus GetParameters(uint* size, void* @params)
     {
         return GdipGetEffectParameters(nativeEffect, size, @params);
     }

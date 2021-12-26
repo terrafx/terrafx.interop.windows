@@ -5,12 +5,12 @@
 
 namespace TerraFX.Interop.Gdiplus;
 
-/// <include file='PenAlignment.xml' path='doc/member[@name="PenAlignment"]/*' />
-public enum PenAlignment
+/// <include file='GpPenAlignment.xml' path='doc/member[@name="GpPenAlignment"]/*' />
+public enum GpPenAlignment
 {
-    /// <include file='PenAlignment.xml' path='doc/member[@name="PenAlignment.PenAlignmentCenter"]/*' />
+    /// <include file='GpPenAlignment.xml' path='doc/member[@name="GpPenAlignment.PenAlignmentCenter"]/*' />
     PenAlignmentCenter = 0,
 
-    /// <include file='PenAlignment.xml' path='doc/member[@name="PenAlignment.PenAlignmentInset"]/*' />
+    /// <include file='GpPenAlignment.xml' path='doc/member[@name="GpPenAlignment.PenAlignmentInset"]/*' />
     PenAlignmentInset = 1,
 }

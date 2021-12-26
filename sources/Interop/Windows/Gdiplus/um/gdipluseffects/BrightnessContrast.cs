@@ -30,25 +30,25 @@ public unsafe partial struct BrightnessContrast
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public Status GetParameterSize(uint* size)
+    public GpStatus GetParameterSize(uint* size)
     {
         return Base.GetParameterSize(size);
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public Status SetParameters([NativeTypeName("const void *")] void* @params, [NativeTypeName("const UINT")] uint size)
+    public GpStatus SetParameters([NativeTypeName("const void *")] void* @params, [NativeTypeName("const UINT")] uint size)
     {
         return Base.SetParameters(@params, size);
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public Status GetParameters(uint* size, void* @params)
+    public GpStatus GetParameters(uint* size, void* @params)
     {
         return Base.GetParameters(size, @params);
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public Status SetParameters([NativeTypeName("const Gdiplus::BrightnessContrastParams *")] BrightnessContrastParams* parameters)
+    public GpStatus SetParameters([NativeTypeName("const Gdiplus::BrightnessContrastParams *")] BrightnessContrastParams* parameters)
     {
         uint size = 8;
 
@@ -56,7 +56,7 @@ public unsafe partial struct BrightnessContrast
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public Status GetParameters(uint* size, [NativeTypeName("Gdiplus::BrightnessContrastParams *")] BrightnessContrastParams* parameters)
+    public GpStatus GetParameters(uint* size, [NativeTypeName("Gdiplus::BrightnessContrastParams *")] BrightnessContrastParams* parameters)
     {
         return Base.GetParameters(size, unchecked((void*)(parameters)));
     }

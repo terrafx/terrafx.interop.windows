@@ -11,7 +11,7 @@ using static TerraFX.Interop.Gdiplus.MetafileType;
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader"]/*' />
-public partial struct MetafileHeader
+public unsafe partial struct MetafileHeader
 {
     /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.Type"]/*' />
     [NativeTypeName("Gdiplus::MetafileType")]
@@ -112,7 +112,7 @@ public partial struct MetafileHeader
         return DpiY;
     }
 
-    public unsafe void GetBounds([NativeTypeName("Gdiplus::Rect *")] Rect* rect)
+    public void GetBounds([NativeTypeName("Gdiplus::Rect *")] GpRect* rect)
     {
         rect->X = X;
         rect->Y = Y;

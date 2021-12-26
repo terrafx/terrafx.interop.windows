@@ -7,35 +7,35 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.Gdiplus;
 
-/// <include file='SizeF.xml' path='doc/member[@name="SizeF"]/*' />
-public partial struct SizeF
+/// <include file='GpSizeF.xml' path='doc/member[@name="GpSizeF"]/*' />
+public unsafe partial struct GpSizeF
 {
-    /// <include file='SizeF.xml' path='doc/member[@name="SizeF.Width"]/*' />
+    /// <include file='GpSizeF.xml' path='doc/member[@name="GpSizeF.Width"]/*' />
     [NativeTypeName("Gdiplus::REAL")]
     public float Width;
 
-    /// <include file='SizeF.xml' path='doc/member[@name="SizeF.Height"]/*' />
+    /// <include file='GpSizeF.xml' path='doc/member[@name="GpSizeF.Height"]/*' />
     [NativeTypeName("Gdiplus::REAL")]
     public float Height;
 
-    public SizeF()
+    public GpSizeF()
     {
         Width = Height = 0.0f;
     }
 
-    public unsafe SizeF([NativeTypeName("const Gdiplus::SizeF &")] SizeF* size)
+    public GpSizeF([NativeTypeName("const Gdiplus::SizeF &")] GpSizeF* size)
     {
         Width = size->Width;
         Height = size->Height;
     }
 
-    public SizeF([NativeTypeName("Gdiplus::REAL")] float width, [NativeTypeName("Gdiplus::REAL")] float height)
+    public GpSizeF([NativeTypeName("Gdiplus::REAL")] float width, [NativeTypeName("Gdiplus::REAL")] float height)
     {
         Width = width;
         Height = height;
     }
 
-    public unsafe BOOL Equals([NativeTypeName("const Gdiplus::SizeF &")] SizeF* sz)
+    public BOOL Equals([NativeTypeName("const Gdiplus::SizeF &")] GpSizeF* sz)
     {
         return ((Width == sz->Width) && (Height == sz->Height)) ? 1 : 0;
     }

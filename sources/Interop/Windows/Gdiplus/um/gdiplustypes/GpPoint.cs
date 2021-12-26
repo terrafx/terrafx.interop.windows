@@ -7,39 +7,39 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.Gdiplus;
 
-/// <include file='Point.xml' path='doc/member[@name="Point"]/*' />
-public partial struct Point
+/// <include file='GpPoint.xml' path='doc/member[@name="GpPoint"]/*' />
+public unsafe partial struct GpPoint
 {
-    /// <include file='Point.xml' path='doc/member[@name="Point.X"]/*' />
+    /// <include file='GpPoint.xml' path='doc/member[@name="GpPoint.X"]/*' />
     public int X;
 
-    /// <include file='Point.xml' path='doc/member[@name="Point.Y"]/*' />
+    /// <include file='GpPoint.xml' path='doc/member[@name="GpPoint.Y"]/*' />
     public int Y;
 
-    public Point()
+    public GpPoint()
     {
         X = Y = 0;
     }
 
-    public unsafe Point([NativeTypeName("const Gdiplus::Point &")] Point* point)
+    public GpPoint([NativeTypeName("const Gdiplus::Point &")] GpPoint* point)
     {
         X = point->X;
         Y = point->Y;
     }
 
-    public unsafe Point([NativeTypeName("const Gdiplus::Size &")] Size* size)
+    public GpPoint([NativeTypeName("const Gdiplus::Size &")] Size* size)
     {
         X = size->Width;
         Y = size->Height;
     }
 
-    public Point(int x, int y)
+    public GpPoint(int x, int y)
     {
         X = x;
         Y = y;
     }
 
-    public unsafe BOOL Equals([NativeTypeName("const Gdiplus::Point &")] Point* point)
+    public BOOL Equals([NativeTypeName("const Gdiplus::Point &")] GpPoint* point)
     {
         return ((X == point->X) && (Y == point->Y)) ? 1 : 0;
     }

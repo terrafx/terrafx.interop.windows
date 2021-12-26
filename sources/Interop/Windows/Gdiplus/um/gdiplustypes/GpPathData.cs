@@ -5,20 +5,20 @@
 
 namespace TerraFX.Interop.Gdiplus;
 
-/// <include file='PathData.xml' path='doc/member[@name="PathData"]/*' />
-public unsafe partial struct PathData
+/// <include file='GpPathData.xml' path='doc/member[@name="GpPathData"]/*' />
+public unsafe partial struct GpPathData
 {
-    /// <include file='PathData.xml' path='doc/member[@name="PathData.Count"]/*' />
+    /// <include file='GpPathData.xml' path='doc/member[@name="GpPathData.Count"]/*' />
     public int Count;
 
-    /// <include file='PathData.xml' path='doc/member[@name="PathData.Points"]/*' />
+    /// <include file='GpPathData.xml' path='doc/member[@name="GpPathData.Points"]/*' />
     [NativeTypeName("Gdiplus::PointF *")]
-    public PointF* Points;
+    public GpPointF* Points;
 
-    /// <include file='PathData.xml' path='doc/member[@name="PathData.Types"]/*' />
+    /// <include file='GpPathData.xml' path='doc/member[@name="GpPathData.Types"]/*' />
     public byte* Types;
 
-    public PathData()
+    public GpPathData()
     {
         Count = 0;
         Points = null;
