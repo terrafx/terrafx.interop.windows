@@ -1907,11 +1907,6 @@ public static unsafe partial class Gdiplus
     [return: NativeTypeName("Gdiplus::GpStatus")]
     public static extern GpStatus GdipSetImageAttributesWrapMode([NativeTypeName("Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttr, [NativeTypeName("Gdiplus::WrapMode")] GpWrapMode wrap, [NativeTypeName("Gdiplus::ARGB")] uint argb, BOOL clamp);
 
-    /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetImageAttributesICMMode"]/*' />
-    [DllImport("gdiplus", ExactSpelling = true)]
-    [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetImageAttributesICMMode([NativeTypeName("Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttr, BOOL on);
-
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetImageAttributesAdjustedPalette"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
@@ -2800,16 +2795,6 @@ public static unsafe partial class Gdiplus
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
     public static extern GpStatus GdipIsStyleAvailable([NativeTypeName("const Gdiplus::GpFontFamily *")] GpFontFamily* family, int style, BOOL* IsStyleAvailable);
-
-    /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipFontCollectionEnumerable"]/*' />
-    [DllImport("gdiplus", ExactSpelling = true)]
-    [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipFontCollectionEnumerable([NativeTypeName("Gdiplus::GpFontCollection *")] GpFontCollection* fontCollection, [NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, int* numFound);
-
-    /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipFontCollectionEnumerate"]/*' />
-    [DllImport("gdiplus", ExactSpelling = true)]
-    [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipFontCollectionEnumerate([NativeTypeName("Gdiplus::GpFontCollection *")] GpFontCollection* fontCollection, int numSought, [NativeTypeName("Gdiplus::GpFontFamily *[]")] GpFontFamily** gpfamilies, int* numFound, [NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetEmHeight"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]

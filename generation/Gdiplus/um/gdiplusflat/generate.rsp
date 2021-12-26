@@ -1,5 +1,9 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+GdipFontCollectionEnumerable
+GdipFontCollectionEnumerate
+GdipSetImageAttributesICMMode
 --file
 um-gdiplusflat.h
 --methodClassName
