@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("tagMONITORINFO")]
 public unsafe partial struct MONITORINFOEXA
 {
-    public MONITORINFO __AnonymousBase_WinUser_L13567_C43;
+    public MONITORINFO Base;
 
     /// <include file='MONITORINFOEXA.xml' path='doc/member[@name="MONITORINFOEXA.szDevice"]/*' />
     [NativeTypeName("CHAR [32]")]
