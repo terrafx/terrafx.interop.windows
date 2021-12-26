@@ -1,5 +1,27 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+Gdiplus.Bitmap
+Gdiplus.CachedBitmap
+Gdiplus.CustomLineCap
+Gdiplus.Font
+Gdiplus.FontCollection
+Gdiplus.FontFamily
+Gdiplus.GenericSansSerifFontFamily
+Gdiplus.GenericSansSerifFontFamilyBuffer
+Gdiplus.GenericSerifFontFamily
+Gdiplus.GenericSerifFontFamilyBuffer
+Gdiplus.GenericMonospaceFontFamily
+Gdiplus.GenericMonospaceFontFamilyBuffer
+Gdiplus.Image
+Gdiplus.InstalledFontCollection
+Gdiplus.Metafile
+Gdiplus.PrivateFontCollection
+Gdiplus.Region
+operator new
+operator new[]
+operator delete
+operator delete[]
 --file
 um-gdiplusheaders.h
 --methodClassName

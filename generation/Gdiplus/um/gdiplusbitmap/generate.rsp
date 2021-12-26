@@ -1,5 +1,12 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+Gdiplus.Bitmap
+Gdiplus.Image
+operator new
+operator new[]
+operator delete
+operator delete[]
 --file
 um-gdiplusbitmap.h
 --methodClassName

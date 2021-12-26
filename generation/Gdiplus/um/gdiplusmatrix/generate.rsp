@@ -1,5 +1,11 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+Gdiplus.Matrix
+operator new
+operator new[]
+operator delete
+operator delete[]
 --file
 um-gdiplusmatrix.h
 --methodClassName

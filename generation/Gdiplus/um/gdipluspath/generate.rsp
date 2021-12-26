@@ -1,5 +1,13 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+Gdiplus.GraphicsPath
+Gdiplus.GraphicsPathIterator
+Gdiplus.PathGradientBrush
+operator new
+operator new[]
+operator delete
+operator delete[]
 --file
 um-gdipluspath.h
 --methodClassName

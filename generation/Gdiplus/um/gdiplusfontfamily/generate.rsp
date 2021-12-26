@@ -1,5 +1,11 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+Gdiplus.FontFamily
+operator new
+operator new[]
+operator delete
+operator delete[]
 --file
 um-gdiplusfontfamily.h
 --methodClassName

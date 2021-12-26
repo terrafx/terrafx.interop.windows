@@ -1,5 +1,12 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+Gdiplus.AdjustableArrowCap
+Gdiplus.CustomLineCap
+operator new
+operator new[]
+operator delete
+operator delete[]
 --file
 um-gdipluslinecaps.h
 --methodClassName

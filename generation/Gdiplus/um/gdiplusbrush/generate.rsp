@@ -1,5 +1,15 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+Gdiplus.Brush
+Gdiplus.HatchBrush
+Gdiplus.LinearGradientBrush
+Gdiplus.SolidBrush
+Gdiplus.TextureBrush
+operator new
+operator new[]
+operator delete
+operator delete[]
 --file
 um-gdiplusbrush.h
 --methodClassName
