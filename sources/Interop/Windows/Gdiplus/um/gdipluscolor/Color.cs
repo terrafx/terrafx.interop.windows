@@ -9,7 +9,7 @@ using static TerraFX.Interop.Gdiplus.Gdiplus;
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='Color.xml' path='doc/member[@name="Color"]/*' />
-public unsafe partial struct Color
+public partial struct Color
 {
     /// <include file='Color.xml' path='doc/member[@name="Color.Argb"]/*' />
     [NativeTypeName("Gdiplus::ARGB")]
