@@ -2,6 +2,8 @@
 
 namespace TerraFX.Interop.Gdiplus;
 
-public partial struct CGpEffect
+[NativeTypeName("struct GpBitmap : GpImage")]
+[NativeInheritance("GpImage")]
+public partial struct GpBitmap : GpBrush.Interface
 {
 }

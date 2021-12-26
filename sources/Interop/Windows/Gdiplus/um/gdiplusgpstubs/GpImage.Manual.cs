@@ -2,6 +2,9 @@
 
 namespace TerraFX.Interop.Gdiplus;
 
-public partial struct CGpEffect
+public partial struct GpImage : GpImage.Interface
 {
+    public interface Interface
+    {
+    }
 }

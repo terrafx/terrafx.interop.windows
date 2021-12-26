@@ -2,6 +2,8 @@
 
 namespace TerraFX.Interop.Gdiplus;
 
-public partial struct CGpEffect
+[NativeTypeName("struct GpPathGradient : GpBrush")]
+[NativeInheritance("GpBrush")]
+public partial struct GpPathGradient : GpBrush.Interface
 {
 }

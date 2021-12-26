@@ -2,6 +2,8 @@
 
 namespace TerraFX.Interop.Gdiplus;
 
-public partial struct CGpEffect
+[NativeTypeName("struct GpHatch : GpBrush")]
+[NativeInheritance("GpBrush")]
+public partial struct GpHatch : GpBrush.Interface
 {
 }

@@ -2,6 +2,9 @@
 
 namespace TerraFX.Interop.Gdiplus;
 
-public partial struct CGpEffect
+public partial struct GpFontCollection : GpFontCollection.Interface
 {
+    public interface Interface
+    {
+    }
 }

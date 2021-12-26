@@ -2,6 +2,8 @@
 
 namespace TerraFX.Interop.Gdiplus;
 
-public partial struct CGpEffect
+[NativeTypeName("struct GpMetafile : GpImage")]
+[NativeInheritance("GpImage")]
+public partial struct GpMetafile : GpImage.Interface
 {
 }
