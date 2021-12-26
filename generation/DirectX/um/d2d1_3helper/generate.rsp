@@ -1,7 +1,13 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
-D2D1
+D2D1.GradientMeshPatch
+D2D1.GradientMeshPatchFromCoonsPatch
+D2D1.InfiniteRectU
+D2D1.InkBezierSegment
+D2D1.InkPoint
+D2D1.InkStyleProperties
+D2D1.SimpleColorProfile
 --file
 um-d2d1_3helper.h
 --methodClassName

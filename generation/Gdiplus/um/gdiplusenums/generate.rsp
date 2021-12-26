@@ -1,0 +1,24 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+GDIP_EMFPLUS_RECORD_TO_WMF
+GDIP_IS_WMF_RECORDTYPE
+GDIP_WMF_RECORD_TO_EMFPLUS
+ObjectTypeIsValid
+--file
+um-gdiplusenums.h
+--methodClassName
+Gdiplus
+--namespace
+TerraFX.Interop.Gdiplus
+--output
+../../../../sources/Interop/Windows/Gdiplus/um/gdiplusenums
+--test-output
+../../../../tests/Interop/Windows/Gdiplus/um/gdiplusenums
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/gdiplusenums.h
+--with-attribute
+Gdiplus.ConvertToEmfPlusFlags=Flags
+Gdiplus.DriverStringOptions=Flags
+Gdiplus.EmfToWmfBitsFlags=Flags
+Gdiplus.StringFormatFlags=Flags

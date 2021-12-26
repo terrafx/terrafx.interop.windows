@@ -99,5 +99,5 @@ public static unsafe partial class Windows
     public const int IMMGWLP_IMC = 0;
 
     [NativeTypeName("#define IMMGWLP_PRIVATE (sizeof(LONG_PTR))")]
-    public static uint IMMGWLP_PRIVATE => unchecked((uint)(sizeof(nint)));
+    public static uint IMMGWLP_PRIVATE => unchecked((uint)((uint)(sizeof(nint))));
 }
