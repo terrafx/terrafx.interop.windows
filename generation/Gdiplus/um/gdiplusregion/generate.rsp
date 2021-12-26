@@ -1,0 +1,20 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+Gdiplus.Region
+operator new
+operator new[]
+operator delete
+operator delete[]
+--file
+um-gdiplusregion.h
+--methodClassName
+Gdiplus
+--namespace
+TerraFX.Interop.Gdiplus
+--output
+../../../../sources/Interop/Windows/Gdiplus/um/gdiplusregion
+--test-output
+../../../../tests/Interop/Windows/Gdiplus/um/gdiplusregion
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/gdiplusregion.h

@@ -1,0 +1,22 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+Gdiplus.GenericDefaultStringFormatBuffer
+Gdiplus.GenericTypographicStringFormatBuffer
+Gdiplus.StringFormat
+operator new
+operator new[]
+operator delete
+operator delete[]
+--file
+um-gdiplusstringformat.h
+--methodClassName
+Gdiplus
+--namespace
+TerraFX.Interop.Gdiplus
+--output
+../../../../sources/Interop/Windows/Gdiplus/um/gdiplusstringformat
+--test-output
+../../../../tests/Interop/Windows/Gdiplus/um/gdiplusstringformat
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/gdiplusstringformat.h

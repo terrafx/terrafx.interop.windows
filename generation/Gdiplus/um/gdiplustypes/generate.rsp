@@ -1,0 +1,27 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+Gdiplus.PathData.PathData(const Gdiplus.PathData &):void
+Gdiplus.PathData.Dispose():void
+Gdiplus.Rect.Clone():Gdiplus.Rect *
+Gdiplus.Rect.Intersect(const Gdiplus.Rect &):BOOL
+Gdiplus.RectF.Clone():Gdiplus.RectF *
+Gdiplus.RectF.Intersect(const Gdiplus.RectF &):BOOL
+GDIPLUS_MAX
+GDIPLUS_MIN
+operator+
+operator-
+operator=
+operator==
+--file
+um-gdiplustypes.h
+--methodClassName
+Gdiplus
+--namespace
+TerraFX.Interop.Gdiplus
+--output
+../../../../sources/Interop/Windows/Gdiplus/um/gdiplustypes
+--test-output
+../../../../tests/Interop/Windows/Gdiplus/um/gdiplustypes
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/gdiplustypes.h
