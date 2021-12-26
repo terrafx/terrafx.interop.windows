@@ -1,7 +1,35 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
-D2D1
+D2D1.ArcSegment
+D2D1.BezierSegment
+D2D1.BitmapBrushProperties
+D2D1.BitmapProperties
+D2D1.BrushProperties
+D2D1.ColorF
+D2D1.DrawingStateDescription
+D2D1.Ellipse
+D2D1.FloatMax
+D2D1.GradientStop
+D2D1.HwndRenderTargetProperties
+D2D1.IdentityMatrix
+D2D1.InfiniteRect
+D2D1.LayerParameters
+D2D1.LinearGradientBrushProperties
+D2D1.Matrix3x2F
+D2D1.operator*
+D2D1.PixelFormat
+D2D1.Point2F
+D2D1.Point2U
+D2D1.QuadraticBezierSegment
+D2D1.RadialGradientBrushProperties
+D2D1.RectF
+D2D1.RectU
+D2D1.RenderTargetProperties
+D2D1.RoundedRect
+D2D1.SizeF
+D2D1.SizeU
+D2D1.StrokeStyleProperties
 operator*(const D2D1_MATRIX_3X2_F &, const D2D1_MATRIX_3X2_F &):D2D1_MATRIX_3X2_F nothrow
 operator==(const D2D1_SIZE_U &, const D2D1_SIZE_U &):bool nothrow
 operator==(const D2D1_RECT_U &, const D2D1_RECT_U &):bool nothrow

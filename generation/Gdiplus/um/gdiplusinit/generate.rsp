@@ -1,0 +1,17 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-gdiplusinit.h
+--methodClassName
+Gdiplus
+--namespace
+TerraFX.Interop.Gdiplus
+--output
+../../../../sources/Interop/Windows/Gdiplus/um/gdiplusinit
+--test-output
+../../../../tests/Interop/Windows/Gdiplus/um/gdiplusinit
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/gdiplusinit.h
+--with-librarypath
+GdiplusShutdown=gdiplus
+GdiplusStartup=gdiplus

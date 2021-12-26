@@ -427,7 +427,7 @@ public static unsafe partial class SECURITY
     public const int SECURITY_DESCRIPTOR_REVISION1 = (1);
 
     [NativeTypeName("#define SECURITY_DESCRIPTOR_MIN_LENGTH (sizeof(SECURITY_DESCRIPTOR))")]
-    public static uint SECURITY_DESCRIPTOR_MIN_LENGTH => unchecked((uint)(sizeof(SECURITY_DESCRIPTOR)));
+    public static uint SECURITY_DESCRIPTOR_MIN_LENGTH => unchecked((uint)((uint)(sizeof(SECURITY_DESCRIPTOR))));
 
     [NativeTypeName("#define SECURITY_MAX_IMPERSONATION_LEVEL SecurityDelegation")]
     public const SECURITY_IMPERSONATION_LEVEL SECURITY_MAX_IMPERSONATION_LEVEL = SecurityDelegation;

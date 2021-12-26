@@ -1,0 +1,22 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+Gdiplus.GraphicsPath
+Gdiplus.GraphicsPathIterator
+Gdiplus.PathGradientBrush
+operator new
+operator new[]
+operator delete
+operator delete[]
+--file
+um-gdipluspath.h
+--methodClassName
+Gdiplus
+--namespace
+TerraFX.Interop.Gdiplus
+--output
+../../../../sources/Interop/Windows/Gdiplus/um/gdipluspath
+--test-output
+../../../../tests/Interop/Windows/Gdiplus/um/gdipluspath
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/gdipluspath.h

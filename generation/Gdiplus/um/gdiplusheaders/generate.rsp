@@ -1,0 +1,36 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+Gdiplus.Bitmap
+Gdiplus.CachedBitmap
+Gdiplus.CustomLineCap
+Gdiplus.Font
+Gdiplus.FontCollection
+Gdiplus.FontFamily
+Gdiplus.GenericSansSerifFontFamily
+Gdiplus.GenericSansSerifFontFamilyBuffer
+Gdiplus.GenericSerifFontFamily
+Gdiplus.GenericSerifFontFamilyBuffer
+Gdiplus.GenericMonospaceFontFamily
+Gdiplus.GenericMonospaceFontFamilyBuffer
+Gdiplus.Image
+Gdiplus.InstalledFontCollection
+Gdiplus.Metafile
+Gdiplus.PrivateFontCollection
+Gdiplus.Region
+operator new
+operator new[]
+operator delete
+operator delete[]
+--file
+um-gdiplusheaders.h
+--methodClassName
+Gdiplus
+--namespace
+TerraFX.Interop.Gdiplus
+--output
+../../../../sources/Interop/Windows/Gdiplus/um/gdiplusheaders
+--test-output
+../../../../tests/Interop/Windows/Gdiplus/um/gdiplusheaders
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/gdiplusheaders.h

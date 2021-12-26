@@ -2770,6 +2770,234 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lzexpand", "lzexpand", "{CC
 		generation\Windows\um\lzexpand\um-lzexpand.h = generation\Windows\um\lzexpand\um-lzexpand.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "objbase", "objbase", "{B31F49C6-C263-4674-86D9-3E890348AF4B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\objbase\generate.rsp = generation\Windows\um\objbase\generate.rsp
+		generation\Windows\um\objbase\header.txt = generation\Windows\um\objbase\header.txt
+		generation\Windows\um\objbase\um-objbase.h = generation\Windows\um\objbase\um-objbase.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gdiplus", "Gdiplus", "{B579212A-A972-4999-B56D-DE6860C013AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "um", "um", "{7C1DE5D1-1575-4443-8415-E7F70A687F4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplus", "gdiplus", "{E9DA3685-E1A5-4EDA-9953-3FF493AC1CBA}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplus\generate.rsp = generation\Gdiplus\um\gdiplus\generate.rsp
+		generation\Gdiplus\um\gdiplus\header.txt = generation\Gdiplus\um\gdiplus\header.txt
+		generation\Gdiplus\um\gdiplus\um-gdiplus.h = generation\Gdiplus\um\gdiplus\um-gdiplus.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusbase", "gdiplusbase", "{E9075819-8716-4D47-A248-77B3FCF2FEBA}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusbase\generate.rsp = generation\Gdiplus\um\gdiplusbase\generate.rsp
+		generation\Gdiplus\um\gdiplusbase\header.txt = generation\Gdiplus\um\gdiplusbase\header.txt
+		generation\Gdiplus\um\gdiplusbase\um-gdiplusbase.h = generation\Gdiplus\um\gdiplusbase\um-gdiplusbase.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusbitmap", "gdiplusbitmap", "{37EAB2B3-26A1-4AA5-932C-D1E6065805E6}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusbitmap\generate.rsp = generation\Gdiplus\um\gdiplusbitmap\generate.rsp
+		generation\Gdiplus\um\gdiplusbitmap\header.txt = generation\Gdiplus\um\gdiplusbitmap\header.txt
+		generation\Gdiplus\um\gdiplusbitmap\um-gdiplusbitmap.h = generation\Gdiplus\um\gdiplusbitmap\um-gdiplusbitmap.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusbrush", "gdiplusbrush", "{8D9F90B8-6778-4893-96B1-4DD9CA180740}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusbrush\generate.rsp = generation\Gdiplus\um\gdiplusbrush\generate.rsp
+		generation\Gdiplus\um\gdiplusbrush\header.txt = generation\Gdiplus\um\gdiplusbrush\header.txt
+		generation\Gdiplus\um\gdiplusbrush\um-gdiplusbrush.h = generation\Gdiplus\um\gdiplusbrush\um-gdiplusbrush.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdipluscachedbitmap", "gdipluscachedbitmap", "{25234A6F-5C23-41B5-90B1-9076CEBE04CA}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdipluscachedbitmap\generate.rsp = generation\Gdiplus\um\gdipluscachedbitmap\generate.rsp
+		generation\Gdiplus\um\gdipluscachedbitmap\header.txt = generation\Gdiplus\um\gdipluscachedbitmap\header.txt
+		generation\Gdiplus\um\gdipluscachedbitmap\um-gdipluscachedbitmap.h = generation\Gdiplus\um\gdipluscachedbitmap\um-gdipluscachedbitmap.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdipluscolor", "gdipluscolor", "{08702C32-EF98-4782-A73A-5251E22B3C61}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdipluscolor\generate.rsp = generation\Gdiplus\um\gdipluscolor\generate.rsp
+		generation\Gdiplus\um\gdipluscolor\header.txt = generation\Gdiplus\um\gdipluscolor\header.txt
+		generation\Gdiplus\um\gdipluscolor\um-gdipluscolor.h = generation\Gdiplus\um\gdipluscolor\um-gdipluscolor.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdipluscolormatrix", "gdipluscolormatrix", "{9E023A9B-2C31-4360-ABAC-7C2C615F3A20}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdipluscolormatrix\generate.rsp = generation\Gdiplus\um\gdipluscolormatrix\generate.rsp
+		generation\Gdiplus\um\gdipluscolormatrix\header.txt = generation\Gdiplus\um\gdipluscolormatrix\header.txt
+		generation\Gdiplus\um\gdipluscolormatrix\um-gdipluscolormatrix.h = generation\Gdiplus\um\gdipluscolormatrix\um-gdipluscolormatrix.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdipluseffects", "gdipluseffects", "{C30B9B6A-A3F6-4A74-B102-A5531FE00187}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdipluseffects\generate.rsp = generation\Gdiplus\um\gdipluseffects\generate.rsp
+		generation\Gdiplus\um\gdipluseffects\header.txt = generation\Gdiplus\um\gdipluseffects\header.txt
+		generation\Gdiplus\um\gdipluseffects\um-gdipluseffects.h = generation\Gdiplus\um\gdipluseffects\um-gdipluseffects.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusenums", "gdiplusenums", "{7C0519CB-020B-437C-A1F1-BDDEA832844F}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusenums\generate.rsp = generation\Gdiplus\um\gdiplusenums\generate.rsp
+		generation\Gdiplus\um\gdiplusenums\header.txt = generation\Gdiplus\um\gdiplusenums\header.txt
+		generation\Gdiplus\um\gdiplusenums\um-gdiplusenums.h = generation\Gdiplus\um\gdiplusenums\um-gdiplusenums.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusflat", "gdiplusflat", "{15AD9AAF-0CA0-4F13-A864-E2C20E15BBB3}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusflat\generate.rsp = generation\Gdiplus\um\gdiplusflat\generate.rsp
+		generation\Gdiplus\um\gdiplusflat\header.txt = generation\Gdiplus\um\gdiplusflat\header.txt
+		generation\Gdiplus\um\gdiplusflat\um-gdiplusflat.h = generation\Gdiplus\um\gdiplusflat\um-gdiplusflat.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusfont", "gdiplusfont", "{ADFCFE4A-25D2-4F29-A688-640C5A3FD52B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusfont\generate.rsp = generation\Gdiplus\um\gdiplusfont\generate.rsp
+		generation\Gdiplus\um\gdiplusfont\header.txt = generation\Gdiplus\um\gdiplusfont\header.txt
+		generation\Gdiplus\um\gdiplusfont\um-gdiplusfont.h = generation\Gdiplus\um\gdiplusfont\um-gdiplusfont.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusfontcollection", "gdiplusfontcollection", "{54A761F0-DFEA-4ECC-917E-1B813602A182}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusfontcollection\generate.rsp = generation\Gdiplus\um\gdiplusfontcollection\generate.rsp
+		generation\Gdiplus\um\gdiplusfontcollection\header.txt = generation\Gdiplus\um\gdiplusfontcollection\header.txt
+		generation\Gdiplus\um\gdiplusfontcollection\um-gdiplusfontcollection.h = generation\Gdiplus\um\gdiplusfontcollection\um-gdiplusfontcollection.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusfontfamily", "gdiplusfontfamily", "{50BC1831-0186-491D-ABC0-733906E49127}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusfontfamily\generate.rsp = generation\Gdiplus\um\gdiplusfontfamily\generate.rsp
+		generation\Gdiplus\um\gdiplusfontfamily\header.txt = generation\Gdiplus\um\gdiplusfontfamily\header.txt
+		generation\Gdiplus\um\gdiplusfontfamily\um-gdiplusfontfamily.h = generation\Gdiplus\um\gdiplusfontfamily\um-gdiplusfontfamily.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusgpstubs", "gdiplusgpstubs", "{5D749E36-B1AC-4515-AFBD-7CB8E5238135}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusgpstubs\generate.rsp = generation\Gdiplus\um\gdiplusgpstubs\generate.rsp
+		generation\Gdiplus\um\gdiplusgpstubs\header.txt = generation\Gdiplus\um\gdiplusgpstubs\header.txt
+		generation\Gdiplus\um\gdiplusgpstubs\um-gdiplusgpstubs.h = generation\Gdiplus\um\gdiplusgpstubs\um-gdiplusgpstubs.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusgraphics", "gdiplusgraphics", "{BC8C927C-ABB5-43F5-B7E0-1DE7F6121E35}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusgraphics\generate.rsp = generation\Gdiplus\um\gdiplusgraphics\generate.rsp
+		generation\Gdiplus\um\gdiplusgraphics\header.txt = generation\Gdiplus\um\gdiplusgraphics\header.txt
+		generation\Gdiplus\um\gdiplusgraphics\um-gdiplusgraphics.h = generation\Gdiplus\um\gdiplusgraphics\um-gdiplusgraphics.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusheaders", "gdiplusheaders", "{CFDDBBFE-6121-4CAA-8510-155609335ABF}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusheaders\generate.rsp = generation\Gdiplus\um\gdiplusheaders\generate.rsp
+		generation\Gdiplus\um\gdiplusheaders\header.txt = generation\Gdiplus\um\gdiplusheaders\header.txt
+		generation\Gdiplus\um\gdiplusheaders\um-gdiplusheaders.h = generation\Gdiplus\um\gdiplusheaders\um-gdiplusheaders.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusimageattributes", "gdiplusimageattributes", "{5F60742C-7069-4E24-A6A5-481588B8ACED}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusimageattributes\generate.rsp = generation\Gdiplus\um\gdiplusimageattributes\generate.rsp
+		generation\Gdiplus\um\gdiplusimageattributes\header.txt = generation\Gdiplus\um\gdiplusimageattributes\header.txt
+		generation\Gdiplus\um\gdiplusimageattributes\um-gdiplusimageattributes.h = generation\Gdiplus\um\gdiplusimageattributes\um-gdiplusimageattributes.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusimagecodec", "gdiplusimagecodec", "{4E9AA2C9-1DED-49FD-9951-5B27CBA25FAA}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusimagecodec\generate.rsp = generation\Gdiplus\um\gdiplusimagecodec\generate.rsp
+		generation\Gdiplus\um\gdiplusimagecodec\header.txt = generation\Gdiplus\um\gdiplusimagecodec\header.txt
+		generation\Gdiplus\um\gdiplusimagecodec\um-gdiplusimagecodec.h = generation\Gdiplus\um\gdiplusimagecodec\um-gdiplusimagecodec.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusimaging", "gdiplusimaging", "{46838B25-C0A7-4467-9D01-512A9D91D24E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusimaging\generate.rsp = generation\Gdiplus\um\gdiplusimaging\generate.rsp
+		generation\Gdiplus\um\gdiplusimaging\header.txt = generation\Gdiplus\um\gdiplusimaging\header.txt
+		generation\Gdiplus\um\gdiplusimaging\um-gdiplusimaging.h = generation\Gdiplus\um\gdiplusimaging\um-gdiplusimaging.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusinit", "gdiplusinit", "{899FB729-C4B5-4AD6-A787-1D299B15D474}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusinit\generate.rsp = generation\Gdiplus\um\gdiplusinit\generate.rsp
+		generation\Gdiplus\um\gdiplusinit\header.txt = generation\Gdiplus\um\gdiplusinit\header.txt
+		generation\Gdiplus\um\gdiplusinit\um-gdiplusinit.h = generation\Gdiplus\um\gdiplusinit\um-gdiplusinit.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdipluslinecaps", "gdipluslinecaps", "{D5A675B1-5329-4482-A73E-3EF25305E0AB}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdipluslinecaps\generate.rsp = generation\Gdiplus\um\gdipluslinecaps\generate.rsp
+		generation\Gdiplus\um\gdipluslinecaps\header.txt = generation\Gdiplus\um\gdipluslinecaps\header.txt
+		generation\Gdiplus\um\gdipluslinecaps\um-gdipluslinecaps.h = generation\Gdiplus\um\gdipluslinecaps\um-gdipluslinecaps.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusmatrix", "gdiplusmatrix", "{5AC8B0A2-6454-48C6-A8C9-C536BF60E49D}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusmatrix\generate.rsp = generation\Gdiplus\um\gdiplusmatrix\generate.rsp
+		generation\Gdiplus\um\gdiplusmatrix\header.txt = generation\Gdiplus\um\gdiplusmatrix\header.txt
+		generation\Gdiplus\um\gdiplusmatrix\um-gdiplusmatrix.h = generation\Gdiplus\um\gdiplusmatrix\um-gdiplusmatrix.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusmem", "gdiplusmem", "{3B701E5E-D650-4FAC-96BD-D7C401E0B7D2}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusmem\generate.rsp = generation\Gdiplus\um\gdiplusmem\generate.rsp
+		generation\Gdiplus\um\gdiplusmem\header.txt = generation\Gdiplus\um\gdiplusmem\header.txt
+		generation\Gdiplus\um\gdiplusmem\um-gdiplusmem.h = generation\Gdiplus\um\gdiplusmem\um-gdiplusmem.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusmetafile", "gdiplusmetafile", "{E2CF04EF-0DE1-40E7-A1AB-EB1C7A46FDDA}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusmetafile\generate.rsp = generation\Gdiplus\um\gdiplusmetafile\generate.rsp
+		generation\Gdiplus\um\gdiplusmetafile\header.txt = generation\Gdiplus\um\gdiplusmetafile\header.txt
+		generation\Gdiplus\um\gdiplusmetafile\um-gdiplusmetafile.h = generation\Gdiplus\um\gdiplusmetafile\um-gdiplusmetafile.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusmetaheader", "gdiplusmetaheader", "{1C2D3EF3-1B4E-4FEC-B937-9512CED90369}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusmetaheader\generate.rsp = generation\Gdiplus\um\gdiplusmetaheader\generate.rsp
+		generation\Gdiplus\um\gdiplusmetaheader\header.txt = generation\Gdiplus\um\gdiplusmetaheader\header.txt
+		generation\Gdiplus\um\gdiplusmetaheader\um-gdiplusmetaheader.h = generation\Gdiplus\um\gdiplusmetaheader\um-gdiplusmetaheader.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdipluspath", "gdipluspath", "{A143D3FC-87A1-4102-99D8-C211F5F3433C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdipluspath\generate.rsp = generation\Gdiplus\um\gdipluspath\generate.rsp
+		generation\Gdiplus\um\gdipluspath\header.txt = generation\Gdiplus\um\gdipluspath\header.txt
+		generation\Gdiplus\um\gdipluspath\um-gdipluspath.h = generation\Gdiplus\um\gdipluspath\um-gdipluspath.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdipluspen", "gdipluspen", "{17E8A332-75CD-4874-9FAE-CD353EE82308}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdipluspen\generate.rsp = generation\Gdiplus\um\gdipluspen\generate.rsp
+		generation\Gdiplus\um\gdipluspen\header.txt = generation\Gdiplus\um\gdipluspen\header.txt
+		generation\Gdiplus\um\gdipluspen\um-gdipluspen.h = generation\Gdiplus\um\gdipluspen\um-gdipluspen.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdipluspixelformats", "gdipluspixelformats", "{3359374D-9530-4AC3-91F6-E178072A5E83}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdipluspixelformats\generate.rsp = generation\Gdiplus\um\gdipluspixelformats\generate.rsp
+		generation\Gdiplus\um\gdipluspixelformats\header.txt = generation\Gdiplus\um\gdipluspixelformats\header.txt
+		generation\Gdiplus\um\gdipluspixelformats\um-gdipluspixelformats.h = generation\Gdiplus\um\gdipluspixelformats\um-gdipluspixelformats.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusregion", "gdiplusregion", "{55FB5A64-9A0B-4294-87F0-D8F81BE30692}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusregion\generate.rsp = generation\Gdiplus\um\gdiplusregion\generate.rsp
+		generation\Gdiplus\um\gdiplusregion\header.txt = generation\Gdiplus\um\gdiplusregion\header.txt
+		generation\Gdiplus\um\gdiplusregion\um-gdiplusregion.h = generation\Gdiplus\um\gdiplusregion\um-gdiplusregion.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplusstringformat", "gdiplusstringformat", "{B281558F-E194-4AC3-BE1B-C7C2A748947E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplusstringformat\generate.rsp = generation\Gdiplus\um\gdiplusstringformat\generate.rsp
+		generation\Gdiplus\um\gdiplusstringformat\header.txt = generation\Gdiplus\um\gdiplusstringformat\header.txt
+		generation\Gdiplus\um\gdiplusstringformat\um-gdiplusstringformat.h = generation\Gdiplus\um\gdiplusstringformat\um-gdiplusstringformat.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplustypes", "gdiplustypes", "{9C6E88A3-997E-4F11-AF25-18A54B110404}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Gdiplus\um\gdiplustypes\generate.rsp = generation\Gdiplus\um\gdiplustypes\generate.rsp
+		generation\Gdiplus\um\gdiplustypes\header.txt = generation\Gdiplus\um\gdiplustypes\header.txt
+		generation\Gdiplus\um\gdiplustypes\um-gdiplustypes.h = generation\Gdiplus\um\gdiplustypes\um-gdiplustypes.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3197,6 +3425,40 @@ Global
 		{CBC62B75-03A4-470D-A52A-D84161773CB7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{5FC51DA5-FF47-4100-BE74-2F3DE11EF163} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{CC539B27-F7D6-44F9-9CB4-6CA9486D824D} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{B31F49C6-C263-4674-86D9-3E890348AF4B} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{B579212A-A972-4999-B56D-DE6860C013AE} = {D9638FEE-50A4-44FF-B1F6-72E59548490B}
+		{7C1DE5D1-1575-4443-8415-E7F70A687F4F} = {B579212A-A972-4999-B56D-DE6860C013AE}
+		{E9DA3685-E1A5-4EDA-9953-3FF493AC1CBA} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{E9075819-8716-4D47-A248-77B3FCF2FEBA} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{37EAB2B3-26A1-4AA5-932C-D1E6065805E6} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{8D9F90B8-6778-4893-96B1-4DD9CA180740} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{25234A6F-5C23-41B5-90B1-9076CEBE04CA} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{08702C32-EF98-4782-A73A-5251E22B3C61} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{9E023A9B-2C31-4360-ABAC-7C2C615F3A20} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{C30B9B6A-A3F6-4A74-B102-A5531FE00187} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{7C0519CB-020B-437C-A1F1-BDDEA832844F} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{15AD9AAF-0CA0-4F13-A864-E2C20E15BBB3} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{ADFCFE4A-25D2-4F29-A688-640C5A3FD52B} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{54A761F0-DFEA-4ECC-917E-1B813602A182} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{50BC1831-0186-491D-ABC0-733906E49127} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{5D749E36-B1AC-4515-AFBD-7CB8E5238135} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{BC8C927C-ABB5-43F5-B7E0-1DE7F6121E35} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{CFDDBBFE-6121-4CAA-8510-155609335ABF} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{5F60742C-7069-4E24-A6A5-481588B8ACED} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{4E9AA2C9-1DED-49FD-9951-5B27CBA25FAA} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{46838B25-C0A7-4467-9D01-512A9D91D24E} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{899FB729-C4B5-4AD6-A787-1D299B15D474} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{D5A675B1-5329-4482-A73E-3EF25305E0AB} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{5AC8B0A2-6454-48C6-A8C9-C536BF60E49D} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{3B701E5E-D650-4FAC-96BD-D7C401E0B7D2} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{E2CF04EF-0DE1-40E7-A1AB-EB1C7A46FDDA} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{1C2D3EF3-1B4E-4FEC-B937-9512CED90369} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{A143D3FC-87A1-4102-99D8-C211F5F3433C} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{17E8A332-75CD-4874-9FAE-CD353EE82308} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{3359374D-9530-4AC3-91F6-E178072A5E83} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{55FB5A64-9A0B-4294-87F0-D8F81BE30692} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{B281558F-E194-4AC3-BE1B-C7C2A748947E} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{9C6E88A3-997E-4F11-AF25-18A54B110404} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

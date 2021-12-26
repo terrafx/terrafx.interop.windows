@@ -1,0 +1,21 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+Gdiplus.Color.ToCOLORREF():COLORREF
+--file
+um-gdipluscolor.h
+--methodClassName
+Gdiplus
+--namespace
+TerraFX.Interop.Gdiplus
+--output
+../../../../sources/Interop/Windows/Gdiplus/um/gdipluscolor
+--test-output
+../../../../tests/Interop/Windows/Gdiplus/um/gdipluscolor
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/gdipluscolor.h
+--with-attribute
+Gdiplus.ColorChannelFlags=Flags
+--with-type
+__AnonymousEnum_GdiplusColor_L148_C5=uint
+__AnonymousEnum_GdiplusColor_L303_C5=uint

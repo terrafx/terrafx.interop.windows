@@ -1,0 +1,20 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+Gdiplus.Font
+operator new
+operator new[]
+operator delete
+operator delete[]
+--file
+um-gdiplusfont.h
+--methodClassName
+Gdiplus
+--namespace
+TerraFX.Interop.Gdiplus
+--output
+../../../../sources/Interop/Windows/Gdiplus/um/gdiplusfont
+--test-output
+../../../../tests/Interop/Windows/Gdiplus/um/gdiplusfont
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/gdiplusfont.h

@@ -15,6 +15,6 @@ public unsafe partial struct D3D12_RT_FORMAT_ARRAY
         Unsafe.SkipInit(out this);
 
         NumRenderTargets = NumFormats;
-        Buffer.MemoryCopy(Unsafe.AsPointer(ref RTFormats), pFormats, sizeof(_RTFormats_e__FixedBuffer), sizeof(_RTFormats_e__FixedBuffer));
+        Buffer.MemoryCopy(pFormats, Unsafe.AsPointer(ref RTFormats), sizeof(_RTFormats_e__FixedBuffer), sizeof(_RTFormats_e__FixedBuffer));
     }
 }
