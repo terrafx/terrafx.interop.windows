@@ -4,6 +4,9 @@ namespace TerraFX.Interop.Gdiplus;
 
 [NativeTypeName("struct GpPrivateFontCollection : GpFontCollection")]
 [NativeInheritance("GpFontCollection")]
-public partial struct GpPrivateFontCollection : GpFontCollection.Interface
+public partial struct GpPrivateFontCollection : GpPrivateFontCollection.Interface
 {
+    public interface Interface : GpFontCollection.Interface
+    {
+    }
 }

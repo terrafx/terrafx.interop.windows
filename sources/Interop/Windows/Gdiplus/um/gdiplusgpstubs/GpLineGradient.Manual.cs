@@ -4,6 +4,9 @@ namespace TerraFX.Interop.Gdiplus;
 
 [NativeTypeName("struct GpLineGradient : GpBrush")]
 [NativeInheritance("GpBrush")]
-public partial struct GpLineGradient : GpBrush.Interface
+public partial struct GpLineGradient : GpLineGradient.Interface
 {
+    public interface Interface : GpBrush.Interface
+    {
+    }
 }

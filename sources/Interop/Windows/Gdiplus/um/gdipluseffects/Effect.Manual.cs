@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Gdiplus;
 
 public unsafe partial struct Effect : Effect.Interface
 {
-    private static void** s_vtbl = InitVtbl();
+    private static readonly void** s_vtbl = InitVtbl();
 
     private static void** InitVtbl()
     {

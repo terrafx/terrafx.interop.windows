@@ -4,6 +4,9 @@ namespace TerraFX.Interop.Gdiplus;
 
 [NativeTypeName("struct GpMetafile : GpImage")]
 [NativeInheritance("GpImage")]
-public partial struct GpMetafile : GpImage.Interface
+public partial struct GpMetafile : GpMetafile.Interface
 {
+    public interface Interface : GpImage.Interface
+    {
+    }
 }
