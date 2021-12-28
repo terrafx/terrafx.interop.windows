@@ -3,11 +3,12 @@
 // Ported from um/gdipluseffects.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using static TerraFX.Interop.Gdiplus.Gdiplus;
 
 namespace TerraFX.Interop.Gdiplus;
 
-public unsafe partial struct BrightnessContrast
+public unsafe partial struct BrightnessContrast : BrightnessContrast.Interface
 {
     public BrightnessContrast()
     {
@@ -16,5 +17,16 @@ public unsafe partial struct BrightnessContrast
         CGpEffect* nativeEffect;
         _ = GdipCreateEffect(BrightnessContrastEffectGuid, &nativeEffect);
         Base.nativeEffect = nativeEffect;
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public void Dispose()
+    {
+        ((delegate* unmanaged<BrightnessContrast*, void>)(Base.lpVtbl[0]))((BrightnessContrast*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : Effect.Interface
+    {
     }
 }
