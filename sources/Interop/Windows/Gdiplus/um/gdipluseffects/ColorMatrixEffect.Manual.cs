@@ -8,7 +8,7 @@ using static TerraFX.Interop.Gdiplus.Gdiplus;
 
 namespace TerraFX.Interop.Gdiplus;
 
-public unsafe partial struct ColorMatrixEffect
+public unsafe partial struct ColorMatrixEffect : ColorMatrixEffect.Interface
 {
     public ColorMatrixEffect()
     {

@@ -8,7 +8,7 @@ using static TerraFX.Interop.Gdiplus.Gdiplus;
 
 namespace TerraFX.Interop.Gdiplus;
 
-public unsafe partial struct ColorCurve
+public unsafe partial struct ColorCurve : ColorCurve.Interface
 {
     public ColorCurve()
     {
