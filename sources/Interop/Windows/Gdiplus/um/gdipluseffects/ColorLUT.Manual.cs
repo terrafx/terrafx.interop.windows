@@ -8,7 +8,7 @@ using static TerraFX.Interop.Gdiplus.Gdiplus;
 
 namespace TerraFX.Interop.Gdiplus;
 
-public unsafe partial struct ColorLUT
+public unsafe partial struct ColorLUT : ColorLUT.Interface
 {
     public ColorLUT()
     {
