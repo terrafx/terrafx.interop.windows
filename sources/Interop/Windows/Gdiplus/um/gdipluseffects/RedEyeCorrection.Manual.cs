@@ -8,7 +8,7 @@ using static TerraFX.Interop.Gdiplus.Gdiplus;
 
 namespace TerraFX.Interop.Gdiplus;
 
-public unsafe partial struct RedEyeCorrection
+public unsafe partial struct RedEyeCorrection : RedEyeCorrection.Interface
 {
     public RedEyeCorrection()
     {

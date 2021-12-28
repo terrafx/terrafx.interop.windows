@@ -8,7 +8,7 @@ using static TerraFX.Interop.Gdiplus.Gdiplus;
 
 namespace TerraFX.Interop.Gdiplus;
 
-public unsafe partial struct HueSaturationLightness
+public unsafe partial struct HueSaturationLightness : HueSaturationLightness.Interface
 {
     public HueSaturationLightness()
     {

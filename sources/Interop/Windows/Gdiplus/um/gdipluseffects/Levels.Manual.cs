@@ -8,7 +8,7 @@ using static TerraFX.Interop.Gdiplus.Gdiplus;
 
 namespace TerraFX.Interop.Gdiplus;
 
-public unsafe partial struct Levels
+public unsafe partial struct Levels : Levels.Interface
 {
     public Levels()
     {

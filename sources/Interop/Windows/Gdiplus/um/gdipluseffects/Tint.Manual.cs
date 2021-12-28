@@ -8,7 +8,7 @@ using static TerraFX.Interop.Gdiplus.Gdiplus;
 
 namespace TerraFX.Interop.Gdiplus;
 
-public unsafe partial struct Tint
+public unsafe partial struct Tint : Tint.Interface
 {
     public Tint()
     {
