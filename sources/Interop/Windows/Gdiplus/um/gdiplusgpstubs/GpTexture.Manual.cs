@@ -4,6 +4,9 @@ namespace TerraFX.Interop.Gdiplus;
 
 [NativeTypeName("struct GpTexture : GpBrush")]
 [NativeInheritance("GpBrush")]
-public partial struct GpTexture : GpBrush.Interface
+public partial struct GpTexture : GpTexture.Interface
 {
+    public interface Interface : GpBrush.Interface
+    {
+    }
 }

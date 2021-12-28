@@ -4,6 +4,9 @@ namespace TerraFX.Interop.Gdiplus;
 
 [NativeTypeName("struct GpAdjustableArrowCap : GpCustomLineCap")]
 [NativeInheritance("GpCustomLineCap")]
-public partial struct GpAdjustableArrowCap : GpCustomLineCap.Interface
+public partial struct GpAdjustableArrowCap : GpAdjustableArrowCap.Interface
 {
+    public interface Interface : GpCustomLineCap.Interface
+    {
+    }
 }
