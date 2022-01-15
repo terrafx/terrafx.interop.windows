@@ -5,6 +5,5 @@
 @../../../remap-namespaces.rsp
 @../../../remap-nints.rsp
 @../../../remap-structs.rsp
-@../../../remap-suppressgctransition.rsp
 @../../../remap-transparent.rsp
 @../../../remap-types.rsp

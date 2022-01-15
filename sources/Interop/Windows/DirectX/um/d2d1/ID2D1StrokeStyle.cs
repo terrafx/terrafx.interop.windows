@@ -57,7 +57,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface
     [VtblIndex(4)]
     public D2D1_CAP_STYLE GetStartCap()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1StrokeStyle*, D2D1_CAP_STYLE>)(lpVtbl[4]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1StrokeStyle*, D2D1_CAP_STYLE>)(lpVtbl[4]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetEndCap"]/*' />
@@ -65,7 +65,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface
     [VtblIndex(5)]
     public D2D1_CAP_STYLE GetEndCap()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1StrokeStyle*, D2D1_CAP_STYLE>)(lpVtbl[5]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1StrokeStyle*, D2D1_CAP_STYLE>)(lpVtbl[5]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetDashCap"]/*' />
@@ -73,7 +73,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface
     [VtblIndex(6)]
     public D2D1_CAP_STYLE GetDashCap()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1StrokeStyle*, D2D1_CAP_STYLE>)(lpVtbl[6]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1StrokeStyle*, D2D1_CAP_STYLE>)(lpVtbl[6]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetMiterLimit"]/*' />
@@ -81,7 +81,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface
     [VtblIndex(7)]
     public float GetMiterLimit()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1StrokeStyle*, float>)(lpVtbl[7]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1StrokeStyle*, float>)(lpVtbl[7]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetLineJoin"]/*' />
@@ -89,7 +89,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface
     [VtblIndex(8)]
     public D2D1_LINE_JOIN GetLineJoin()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1StrokeStyle*, D2D1_LINE_JOIN>)(lpVtbl[8]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1StrokeStyle*, D2D1_LINE_JOIN>)(lpVtbl[8]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetDashOffset"]/*' />
@@ -97,7 +97,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface
     [VtblIndex(9)]
     public float GetDashOffset()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1StrokeStyle*, float>)(lpVtbl[9]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1StrokeStyle*, float>)(lpVtbl[9]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetDashStyle"]/*' />
@@ -105,7 +105,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface
     [VtblIndex(10)]
     public D2D1_DASH_STYLE GetDashStyle()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1StrokeStyle*, D2D1_DASH_STYLE>)(lpVtbl[10]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1StrokeStyle*, D2D1_DASH_STYLE>)(lpVtbl[10]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetDashesCount"]/*' />
@@ -172,25 +172,25 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface
         public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("D2D1_CAP_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_CAP_STYLE> GetStartCap;
+        public delegate* unmanaged<TSelf*, D2D1_CAP_STYLE> GetStartCap;
 
         [NativeTypeName("D2D1_CAP_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_CAP_STYLE> GetEndCap;
+        public delegate* unmanaged<TSelf*, D2D1_CAP_STYLE> GetEndCap;
 
         [NativeTypeName("D2D1_CAP_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_CAP_STYLE> GetDashCap;
+        public delegate* unmanaged<TSelf*, D2D1_CAP_STYLE> GetDashCap;
 
         [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float> GetMiterLimit;
+        public delegate* unmanaged<TSelf*, float> GetMiterLimit;
 
         [NativeTypeName("D2D1_LINE_JOIN () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_LINE_JOIN> GetLineJoin;
+        public delegate* unmanaged<TSelf*, D2D1_LINE_JOIN> GetLineJoin;
 
         [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float> GetDashOffset;
+        public delegate* unmanaged<TSelf*, float> GetDashOffset;
 
         [NativeTypeName("D2D1_DASH_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_DASH_STYLE> GetDashStyle;
+        public delegate* unmanaged<TSelf*, D2D1_DASH_STYLE> GetDashStyle;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint> GetDashesCount;

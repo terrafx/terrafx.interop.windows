@@ -221,7 +221,7 @@ public unsafe partial struct ID2D1RoundedRectangleGeometry : ID2D1RoundedRectang
     [VtblIndex(17)]
     public void GetRoundedRect(D2D1_ROUNDED_RECT* roundedRect)
     {
-        ((delegate* unmanaged[SuppressGCTransition]<ID2D1RoundedRectangleGeometry*, D2D1_ROUNDED_RECT*, void>)(lpVtbl[17]))((ID2D1RoundedRectangleGeometry*)Unsafe.AsPointer(ref this), roundedRect);
+        ((delegate* unmanaged<ID2D1RoundedRectangleGeometry*, D2D1_ROUNDED_RECT*, void>)(lpVtbl[17]))((ID2D1RoundedRectangleGeometry*)Unsafe.AsPointer(ref this), roundedRect);
     }
 
     public interface Interface : ID2D1Geometry.Interface
@@ -285,6 +285,6 @@ public unsafe partial struct ID2D1RoundedRectangleGeometry : ID2D1RoundedRectang
         public delegate* unmanaged<TSelf*, float, ID2D1StrokeStyle*, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int> Widen1;
 
         [NativeTypeName("void (D2D1_ROUNDED_RECT *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_ROUNDED_RECT*, void> GetRoundedRect;
+        public delegate* unmanaged<TSelf*, D2D1_ROUNDED_RECT*, void> GetRoundedRect;
     }
 }

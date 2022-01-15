@@ -67,7 +67,7 @@ public unsafe partial struct IDXCoreAdapterFactory : IDXCoreAdapterFactory.Inter
     [VtblIndex(5)]
     public bool IsNotificationTypeSupported(DXCoreNotificationType notificationType)
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapterFactory*, DXCoreNotificationType, byte>)(lpVtbl[5]))((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this), notificationType) != 0;
+        return ((delegate* unmanaged<IDXCoreAdapterFactory*, DXCoreNotificationType, byte>)(lpVtbl[5]))((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this), notificationType) != 0;
     }
 
     /// <include file='IDXCoreAdapterFactory.xml' path='doc/member[@name="IDXCoreAdapterFactory.RegisterEventNotification"]/*' />
@@ -120,7 +120,7 @@ public unsafe partial struct IDXCoreAdapterFactory : IDXCoreAdapterFactory.Inter
         public delegate* unmanaged<TSelf*, LUID*, Guid*, void**, int> GetAdapterByLuid;
 
         [NativeTypeName("bool (DXCoreNotificationType) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXCoreNotificationType, byte> IsNotificationTypeSupported;
+        public delegate* unmanaged<TSelf*, DXCoreNotificationType, byte> IsNotificationTypeSupported;
 
         [NativeTypeName("HRESULT (IUnknown *, DXCoreNotificationType, PFN_DXCORE_NOTIFICATION_CALLBACK, void *, uint32_t *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IUnknown*, DXCoreNotificationType, delegate* unmanaged<DXCoreNotificationType, IUnknown*, void*, void>, void*, uint*, int> RegisterEventNotification;

@@ -81,7 +81,7 @@ public unsafe partial struct ID3D12Device7 : ID3D12Device7.Interface
     [VtblIndex(7)]
     public uint GetNodeCount()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12Device7*, uint>)(lpVtbl[7]))((ID3D12Device7*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID3D12Device7*, uint>)(lpVtbl[7]))((ID3D12Device7*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID3D12Device.CreateCommandQueue" />
@@ -372,7 +372,7 @@ public unsafe partial struct ID3D12Device7 : ID3D12Device7.Interface
     public LUID GetAdapterLuid()
     {
         LUID result;
-        return *((delegate* unmanaged[SuppressGCTransition]<ID3D12Device7*, LUID*, LUID*>)(lpVtbl[43]))((ID3D12Device7*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged<ID3D12Device7*, LUID*, LUID*>)(lpVtbl[43]))((ID3D12Device7*)Unsafe.AsPointer(ref this), &result);
     }
 
     /// <inheritdoc cref="ID3D12Device1.CreatePipelineLibrary" />
@@ -602,7 +602,7 @@ public unsafe partial struct ID3D12Device7 : ID3D12Device7.Interface
         public delegate* unmanaged<TSelf*, ushort*, int> SetName;
 
         [NativeTypeName("UINT () __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetNodeCount;
+        public delegate* unmanaged<TSelf*, uint> GetNodeCount;
 
         [NativeTypeName("HRESULT (const D3D12_COMMAND_QUEUE_DESC *, const IID &, void **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, D3D12_COMMAND_QUEUE_DESC*, Guid*, void**, int> CreateCommandQueue;
@@ -710,7 +710,7 @@ public unsafe partial struct ID3D12Device7 : ID3D12Device7.Interface
         public delegate* unmanaged<TSelf*, ID3D12Resource*, uint*, D3D12_PACKED_MIP_INFO*, D3D12_TILE_SHAPE*, uint*, uint, D3D12_SUBRESOURCE_TILING*, void> GetResourceTiling;
 
         [NativeTypeName("LUID () __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, LUID*, LUID*> GetAdapterLuid;
+        public delegate* unmanaged<TSelf*, LUID*, LUID*> GetAdapterLuid;
 
         [NativeTypeName("HRESULT (const void *, SIZE_T, const IID &, void **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, void*, nuint, Guid*, void**, int> CreatePipelineLibrary;

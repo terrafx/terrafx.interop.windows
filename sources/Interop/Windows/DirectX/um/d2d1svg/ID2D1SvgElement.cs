@@ -213,7 +213,7 @@ public unsafe partial struct ID2D1SvgElement : ID2D1SvgElement.Interface
     [VtblIndex(7)]
     public BOOL IsTextContent()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1SvgElement*, int>)(lpVtbl[7]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1SvgElement*, int>)(lpVtbl[7]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.GetParent"]/*' />
@@ -229,7 +229,7 @@ public unsafe partial struct ID2D1SvgElement : ID2D1SvgElement.Interface
     [VtblIndex(9)]
     public BOOL HasChildren()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1SvgElement*, int>)(lpVtbl[9]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1SvgElement*, int>)(lpVtbl[9]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.GetFirstChild"]/*' />
@@ -547,13 +547,13 @@ public unsafe partial struct ID2D1SvgElement : ID2D1SvgElement.Interface
         public delegate* unmanaged<TSelf*, uint> GetTagNameLength;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, int> IsTextContent;
+        public delegate* unmanaged<TSelf*, int> IsTextContent;
 
         [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ID2D1SvgElement**, void> GetParent;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, int> HasChildren;
+        public delegate* unmanaged<TSelf*, int> HasChildren;
 
         [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ID2D1SvgElement**, void> GetFirstChild;

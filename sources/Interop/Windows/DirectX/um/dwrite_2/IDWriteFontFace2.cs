@@ -51,7 +51,7 @@ public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
     [VtblIndex(3)]
     public new DWRITE_FONT_FACE_TYPE GetType()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace2*, DWRITE_FONT_FACE_TYPE>)(lpVtbl[3]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteFontFace2*, DWRITE_FONT_FACE_TYPE>)(lpVtbl[3]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteFontFace.GetFiles" />
@@ -68,7 +68,7 @@ public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetIndex()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace2*, uint>)(lpVtbl[5]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteFontFace2*, uint>)(lpVtbl[5]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteFontFace.GetSimulations" />
@@ -76,7 +76,7 @@ public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
     [VtblIndex(6)]
     public DWRITE_FONT_SIMULATIONS GetSimulations()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace2*, DWRITE_FONT_SIMULATIONS>)(lpVtbl[6]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteFontFace2*, DWRITE_FONT_SIMULATIONS>)(lpVtbl[6]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteFontFace.IsSymbolFont" />
@@ -84,7 +84,7 @@ public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
     [VtblIndex(7)]
     public BOOL IsSymbolFont()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace2*, int>)(lpVtbl[7]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteFontFace2*, int>)(lpVtbl[7]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteFontFace.GetMetrics" />
@@ -92,7 +92,7 @@ public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
     [VtblIndex(8)]
     public void GetMetrics(DWRITE_FONT_METRICS* fontFaceMetrics)
     {
-        ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace2*, DWRITE_FONT_METRICS*, void>)(lpVtbl[8]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this), fontFaceMetrics);
+        ((delegate* unmanaged<IDWriteFontFace2*, DWRITE_FONT_METRICS*, void>)(lpVtbl[8]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this), fontFaceMetrics);
     }
 
     /// <inheritdoc cref="IDWriteFontFace.GetGlyphCount" />
@@ -101,7 +101,7 @@ public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
     [return: NativeTypeName("UINT16")]
     public ushort GetGlyphCount()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace2*, ushort>)(lpVtbl[9]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteFontFace2*, ushort>)(lpVtbl[9]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteFontFace.GetDesignGlyphMetrics" />
@@ -173,7 +173,7 @@ public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
     [VtblIndex(18)]
     public void GetMetrics(DWRITE_FONT_METRICS1* fontMetrics)
     {
-        ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace2*, DWRITE_FONT_METRICS1*, void>)(lpVtbl[18]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this), fontMetrics);
+        ((delegate* unmanaged<IDWriteFontFace2*, DWRITE_FONT_METRICS1*, void>)(lpVtbl[18]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this), fontMetrics);
     }
 
     /// <inheritdoc cref="IDWriteFontFace1.GetGdiCompatibleMetrics" />
@@ -189,7 +189,7 @@ public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
     [VtblIndex(20)]
     public void GetCaretMetrics(DWRITE_CARET_METRICS* caretMetrics)
     {
-        ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace2*, DWRITE_CARET_METRICS*, void>)(lpVtbl[20]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this), caretMetrics);
+        ((delegate* unmanaged<IDWriteFontFace2*, DWRITE_CARET_METRICS*, void>)(lpVtbl[20]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this), caretMetrics);
     }
 
     /// <inheritdoc cref="IDWriteFontFace1.GetUnicodeRanges" />
@@ -205,7 +205,7 @@ public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
     [VtblIndex(22)]
     public BOOL IsMonospacedFont()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace2*, int>)(lpVtbl[22]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteFontFace2*, int>)(lpVtbl[22]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteFontFace1.GetDesignGlyphAdvances" />
@@ -237,7 +237,7 @@ public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
     [VtblIndex(26)]
     public BOOL HasKerningPairs()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace2*, int>)(lpVtbl[26]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteFontFace2*, int>)(lpVtbl[26]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteFontFace1.GetRecommendedRenderingMode" />
@@ -261,7 +261,7 @@ public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
     [VtblIndex(29)]
     public BOOL HasVerticalGlyphVariants()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace2*, int>)(lpVtbl[29]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteFontFace2*, int>)(lpVtbl[29]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteFontFace2.xml' path='doc/member[@name="IDWriteFontFace2.IsColorFont"]/*' />
@@ -269,7 +269,7 @@ public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
     [VtblIndex(30)]
     public BOOL IsColorFont()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace2*, int>)(lpVtbl[30]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteFontFace2*, int>)(lpVtbl[30]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteFontFace2.xml' path='doc/member[@name="IDWriteFontFace2.GetColorPaletteCount"]/*' />
@@ -278,7 +278,7 @@ public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetColorPaletteCount()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace2*, uint>)(lpVtbl[31]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteFontFace2*, uint>)(lpVtbl[31]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteFontFace2.xml' path='doc/member[@name="IDWriteFontFace2.GetPaletteEntryCount"]/*' />
@@ -287,7 +287,7 @@ public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetPaletteEntryCount()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontFace2*, uint>)(lpVtbl[32]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteFontFace2*, uint>)(lpVtbl[32]))((IDWriteFontFace2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteFontFace2.xml' path='doc/member[@name="IDWriteFontFace2.GetPaletteEntries"]/*' />
@@ -339,25 +339,25 @@ public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("DWRITE_FONT_FACE_TYPE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public new delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_FONT_FACE_TYPE> GetType;
+        public new delegate* unmanaged<TSelf*, DWRITE_FONT_FACE_TYPE> GetType;
 
         [NativeTypeName("HRESULT (UINT32 *, IDWriteFontFile **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, IDWriteFontFile**, int> GetFiles;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetIndex;
+        public delegate* unmanaged<TSelf*, uint> GetIndex;
 
         [NativeTypeName("DWRITE_FONT_SIMULATIONS () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_FONT_SIMULATIONS> GetSimulations;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_SIMULATIONS> GetSimulations;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, int> IsSymbolFont;
+        public delegate* unmanaged<TSelf*, int> IsSymbolFont;
 
         [NativeTypeName("void (DWRITE_FONT_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_FONT_METRICS*, void> GetMetrics;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_METRICS*, void> GetMetrics;
 
         [NativeTypeName("UINT16 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, ushort> GetGlyphCount;
+        public delegate* unmanaged<TSelf*, ushort> GetGlyphCount;
 
         [NativeTypeName("HRESULT (const UINT16 *, UINT32, DWRITE_GLYPH_METRICS *, BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ushort*, uint, DWRITE_GLYPH_METRICS*, BOOL, int> GetDesignGlyphMetrics;
@@ -384,19 +384,19 @@ public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
         public delegate* unmanaged<TSelf*, float, float, DWRITE_MATRIX*, BOOL, ushort*, uint, DWRITE_GLYPH_METRICS*, BOOL, int> GetGdiCompatibleGlyphMetrics;
 
         [NativeTypeName("void (DWRITE_FONT_METRICS1 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_FONT_METRICS1*, void> GetMetrics1;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_METRICS1*, void> GetMetrics1;
 
         [NativeTypeName("HRESULT (FLOAT, FLOAT, const DWRITE_MATRIX *, DWRITE_FONT_METRICS1 *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, float, float, DWRITE_MATRIX*, DWRITE_FONT_METRICS1*, int> GetGdiCompatibleMetrics1;
 
         [NativeTypeName("void (DWRITE_CARET_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_CARET_METRICS*, void> GetCaretMetrics;
+        public delegate* unmanaged<TSelf*, DWRITE_CARET_METRICS*, void> GetCaretMetrics;
 
         [NativeTypeName("HRESULT (UINT32, DWRITE_UNICODE_RANGE *, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, DWRITE_UNICODE_RANGE*, uint*, int> GetUnicodeRanges;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, int> IsMonospacedFont;
+        public delegate* unmanaged<TSelf*, int> IsMonospacedFont;
 
         [NativeTypeName("HRESULT (UINT32, const UINT16 *, INT32 *, BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, ushort*, int*, BOOL, int> GetDesignGlyphAdvances;
@@ -408,7 +408,7 @@ public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
         public delegate* unmanaged<TSelf*, uint, ushort*, int*, int> GetKerningPairAdjustments;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, int> HasKerningPairs;
+        public delegate* unmanaged<TSelf*, int> HasKerningPairs;
 
         [NativeTypeName("HRESULT (FLOAT, FLOAT, FLOAT, const DWRITE_MATRIX *, BOOL, DWRITE_OUTLINE_THRESHOLD, DWRITE_MEASURING_MODE, DWRITE_RENDERING_MODE *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, float, float, float, DWRITE_MATRIX*, BOOL, DWRITE_OUTLINE_THRESHOLD, DWRITE_MEASURING_MODE, DWRITE_RENDERING_MODE*, int> GetRecommendedRenderingMode1;
@@ -417,16 +417,16 @@ public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface
         public delegate* unmanaged<TSelf*, uint, ushort*, ushort*, int> GetVerticalGlyphVariants;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, int> HasVerticalGlyphVariants;
+        public delegate* unmanaged<TSelf*, int> HasVerticalGlyphVariants;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, int> IsColorFont;
+        public delegate* unmanaged<TSelf*, int> IsColorFont;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetColorPaletteCount;
+        public delegate* unmanaged<TSelf*, uint> GetColorPaletteCount;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetPaletteEntryCount;
+        public delegate* unmanaged<TSelf*, uint> GetPaletteEntryCount;
 
         [NativeTypeName("HRESULT (UINT32, UINT32, UINT32, DWRITE_COLOR_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint, uint, DXGI_RGBA*, int> GetPaletteEntries;

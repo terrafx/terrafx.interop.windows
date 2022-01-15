@@ -73,7 +73,7 @@ public unsafe partial struct ID2D1ImageBrush : ID2D1ImageBrush.Interface
     [VtblIndex(6)]
     public float GetOpacity()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1ImageBrush*, float>)(lpVtbl[6]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1ImageBrush*, float>)(lpVtbl[6]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Brush.GetTransform" />
@@ -81,7 +81,7 @@ public unsafe partial struct ID2D1ImageBrush : ID2D1ImageBrush.Interface
     [VtblIndex(7)]
     public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
     {
-        ((delegate* unmanaged[SuppressGCTransition]<ID2D1ImageBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), transform);
+        ((delegate* unmanaged<ID2D1ImageBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), transform);
     }
 
     /// <include file='ID2D1ImageBrush.xml' path='doc/member[@name="ID2D1ImageBrush.SetImage"]/*' />
@@ -137,7 +137,7 @@ public unsafe partial struct ID2D1ImageBrush : ID2D1ImageBrush.Interface
     [VtblIndex(14)]
     public D2D1_EXTEND_MODE GetExtendModeX()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1ImageBrush*, D2D1_EXTEND_MODE>)(lpVtbl[14]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1ImageBrush*, D2D1_EXTEND_MODE>)(lpVtbl[14]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1ImageBrush.xml' path='doc/member[@name="ID2D1ImageBrush.GetExtendModeY"]/*' />
@@ -145,7 +145,7 @@ public unsafe partial struct ID2D1ImageBrush : ID2D1ImageBrush.Interface
     [VtblIndex(15)]
     public D2D1_EXTEND_MODE GetExtendModeY()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1ImageBrush*, D2D1_EXTEND_MODE>)(lpVtbl[15]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1ImageBrush*, D2D1_EXTEND_MODE>)(lpVtbl[15]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1ImageBrush.xml' path='doc/member[@name="ID2D1ImageBrush.GetInterpolationMode"]/*' />
@@ -153,7 +153,7 @@ public unsafe partial struct ID2D1ImageBrush : ID2D1ImageBrush.Interface
     [VtblIndex(16)]
     public D2D1_INTERPOLATION_MODE GetInterpolationMode()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1ImageBrush*, D2D1_INTERPOLATION_MODE>)(lpVtbl[16]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1ImageBrush*, D2D1_INTERPOLATION_MODE>)(lpVtbl[16]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1ImageBrush.xml' path='doc/member[@name="ID2D1ImageBrush.GetSourceRectangle"]/*' />
@@ -161,7 +161,7 @@ public unsafe partial struct ID2D1ImageBrush : ID2D1ImageBrush.Interface
     [VtblIndex(17)]
     public void GetSourceRectangle([NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle)
     {
-        ((delegate* unmanaged[SuppressGCTransition]<ID2D1ImageBrush*, D2D_RECT_F*, void>)(lpVtbl[17]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), sourceRectangle);
+        ((delegate* unmanaged<ID2D1ImageBrush*, D2D_RECT_F*, void>)(lpVtbl[17]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), sourceRectangle);
     }
 
     public interface Interface : ID2D1Brush.Interface
@@ -219,10 +219,10 @@ public unsafe partial struct ID2D1ImageBrush : ID2D1ImageBrush.Interface
         public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, void> SetTransform;
 
         [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float> GetOpacity;
+        public delegate* unmanaged<TSelf*, float> GetOpacity;
 
         [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D_MATRIX_3X2_F*, void> GetTransform;
+        public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, void> GetTransform;
 
         [NativeTypeName("void (ID2D1Image *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ID2D1Image*, void> SetImage;
@@ -243,15 +243,15 @@ public unsafe partial struct ID2D1ImageBrush : ID2D1ImageBrush.Interface
         public delegate* unmanaged<TSelf*, ID2D1Image**, void> GetImage;
 
         [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_EXTEND_MODE> GetExtendModeX;
+        public delegate* unmanaged<TSelf*, D2D1_EXTEND_MODE> GetExtendModeX;
 
         [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_EXTEND_MODE> GetExtendModeY;
+        public delegate* unmanaged<TSelf*, D2D1_EXTEND_MODE> GetExtendModeY;
 
         [NativeTypeName("D2D1_INTERPOLATION_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_INTERPOLATION_MODE> GetInterpolationMode;
+        public delegate* unmanaged<TSelf*, D2D1_INTERPOLATION_MODE> GetInterpolationMode;
 
         [NativeTypeName("void (D2D1_RECT_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D_RECT_F*, void> GetSourceRectangle;
+        public delegate* unmanaged<TSelf*, D2D_RECT_F*, void> GetSourceRectangle;
     }
 }

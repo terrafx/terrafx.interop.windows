@@ -90,7 +90,7 @@ public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interfa
     [VtblIndex(8)]
     public D2D1_EXTEND_MODE GetExtendModeX()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1BorderTransform*, D2D1_EXTEND_MODE>)(lpVtbl[8]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE>)(lpVtbl[8]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1BorderTransform.xml' path='doc/member[@name="ID2D1BorderTransform.GetExtendModeY"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interfa
     [VtblIndex(9)]
     public D2D1_EXTEND_MODE GetExtendModeY()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1BorderTransform*, D2D1_EXTEND_MODE>)(lpVtbl[9]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1BorderTransform*, D2D1_EXTEND_MODE>)(lpVtbl[9]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : ID2D1ConcreteTransform.Interface
@@ -144,9 +144,9 @@ public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interfa
         public delegate* unmanaged<TSelf*, D2D1_EXTEND_MODE, void> SetExtendModeY;
 
         [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_EXTEND_MODE> GetExtendModeX;
+        public delegate* unmanaged<TSelf*, D2D1_EXTEND_MODE> GetExtendModeX;
 
         [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_EXTEND_MODE> GetExtendModeY;
+        public delegate* unmanaged<TSelf*, D2D1_EXTEND_MODE> GetExtendModeY;
     }
 }

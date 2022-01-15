@@ -98,7 +98,7 @@ public unsafe partial struct ID2D1SvgPointCollection : ID2D1SvgPointCollection.I
     [return: NativeTypeName("UINT32")]
     public uint GetPointsCount()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1SvgPointCollection*, uint>)(lpVtbl[9]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1SvgPointCollection*, uint>)(lpVtbl[9]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : ID2D1SvgAttribute.Interface
@@ -148,6 +148,6 @@ public unsafe partial struct ID2D1SvgPointCollection : ID2D1SvgPointCollection.I
         public delegate* unmanaged<TSelf*, D2D_POINT_2F*, uint, uint, int> GetPoints;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetPointsCount;
+        public delegate* unmanaged<TSelf*, uint> GetPointsCount;
     }
 }

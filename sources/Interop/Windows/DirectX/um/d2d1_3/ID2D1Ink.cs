@@ -71,7 +71,7 @@ public unsafe partial struct ID2D1Ink : ID2D1Ink.Interface
     public D2D1_INK_POINT GetStartPoint()
     {
         D2D1_INK_POINT result;
-        return *((delegate* unmanaged[SuppressGCTransition]<ID2D1Ink*, D2D1_INK_POINT*, D2D1_INK_POINT*>)(lpVtbl[5]))((ID2D1Ink*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged<ID2D1Ink*, D2D1_INK_POINT*, D2D1_INK_POINT*>)(lpVtbl[5]))((ID2D1Ink*)Unsafe.AsPointer(ref this), &result);
     }
 
     /// <include file='ID2D1Ink.xml' path='doc/member[@name="ID2D1Ink.AddSegments"]/*' />
@@ -112,7 +112,7 @@ public unsafe partial struct ID2D1Ink : ID2D1Ink.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetSegmentCount()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1Ink*, uint>)(lpVtbl[10]))((ID2D1Ink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1Ink*, uint>)(lpVtbl[10]))((ID2D1Ink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1Ink.xml' path='doc/member[@name="ID2D1Ink.GetSegments"]/*' />
@@ -192,7 +192,7 @@ public unsafe partial struct ID2D1Ink : ID2D1Ink.Interface
         public delegate* unmanaged<TSelf*, D2D1_INK_POINT*, void> SetStartPoint;
 
         [NativeTypeName("D2D1_INK_POINT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_INK_POINT*, D2D1_INK_POINT*> GetStartPoint;
+        public delegate* unmanaged<TSelf*, D2D1_INK_POINT*, D2D1_INK_POINT*> GetStartPoint;
 
         [NativeTypeName("HRESULT (const D2D1_INK_BEZIER_SEGMENT *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, D2D1_INK_BEZIER_SEGMENT*, uint, int> AddSegments;
@@ -207,7 +207,7 @@ public unsafe partial struct ID2D1Ink : ID2D1Ink.Interface
         public delegate* unmanaged<TSelf*, D2D1_INK_BEZIER_SEGMENT*, int> SetSegmentAtEnd;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetSegmentCount;
+        public delegate* unmanaged<TSelf*, uint> GetSegmentCount;
 
         [NativeTypeName("HRESULT (UINT32, D2D1_INK_BEZIER_SEGMENT *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, D2D1_INK_BEZIER_SEGMENT*, uint, int> GetSegments;

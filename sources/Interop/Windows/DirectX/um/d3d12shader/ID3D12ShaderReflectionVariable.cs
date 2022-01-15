@@ -20,7 +20,7 @@ public unsafe partial struct ID3D12ShaderReflectionVariable : ID3D12ShaderReflec
     [VtblIndex(0)]
     public HRESULT GetDesc(D3D12_SHADER_VARIABLE_DESC* pDesc)
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflectionVariable*, D3D12_SHADER_VARIABLE_DESC*, int>)(lpVtbl[0]))((ID3D12ShaderReflectionVariable*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged<ID3D12ShaderReflectionVariable*, D3D12_SHADER_VARIABLE_DESC*, int>)(lpVtbl[0]))((ID3D12ShaderReflectionVariable*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='ID3D12ShaderReflectionVariable.xml' path='doc/member[@name="ID3D12ShaderReflectionVariable.GetType"]/*' />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D12ShaderReflectionVariable : ID3D12ShaderReflec
     [VtblIndex(3)]
     public uint GetInterfaceSlot(uint uArrayIndex)
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflectionVariable*, uint, uint>)(lpVtbl[3]))((ID3D12ShaderReflectionVariable*)Unsafe.AsPointer(ref this), uArrayIndex);
+        return ((delegate* unmanaged<ID3D12ShaderReflectionVariable*, uint, uint>)(lpVtbl[3]))((ID3D12ShaderReflectionVariable*)Unsafe.AsPointer(ref this), uArrayIndex);
     }
 
     public interface Interface
@@ -66,7 +66,7 @@ public unsafe partial struct ID3D12ShaderReflectionVariable : ID3D12ShaderReflec
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (D3D12_SHADER_VARIABLE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D3D12_SHADER_VARIABLE_DESC*, int> GetDesc;
+        public delegate* unmanaged<TSelf*, D3D12_SHADER_VARIABLE_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D12ShaderReflectionType *() __attribute__((nothrow)) __attribute__((stdcall))")]
         public new delegate* unmanaged<TSelf*, ID3D12ShaderReflectionType*> GetType;
@@ -75,6 +75,6 @@ public unsafe partial struct ID3D12ShaderReflectionVariable : ID3D12ShaderReflec
         public delegate* unmanaged<TSelf*, ID3D12ShaderReflectionConstantBuffer*> GetBuffer;
 
         [NativeTypeName("UINT (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint, uint> GetInterfaceSlot;
+        public delegate* unmanaged<TSelf*, uint, uint> GetInterfaceSlot;
     }
 }
