@@ -98,7 +98,7 @@ public unsafe partial struct ID2D1Device2 : ID2D1Device2.Interface
     [VtblIndex(9)]
     public D2D1_RENDERING_PRIORITY GetRenderingPriority()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1Device2*, D2D1_RENDERING_PRIORITY>)(lpVtbl[9]))((ID2D1Device2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1Device2*, D2D1_RENDERING_PRIORITY>)(lpVtbl[9]))((ID2D1Device2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Device1.SetRenderingPriority" />
@@ -184,7 +184,7 @@ public unsafe partial struct ID2D1Device2 : ID2D1Device2.Interface
         public delegate* unmanaged<TSelf*, uint, void> ClearResources;
 
         [NativeTypeName("D2D1_RENDERING_PRIORITY () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_RENDERING_PRIORITY> GetRenderingPriority;
+        public delegate* unmanaged<TSelf*, D2D1_RENDERING_PRIORITY> GetRenderingPriority;
 
         [NativeTypeName("void (D2D1_RENDERING_PRIORITY) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, D2D1_RENDERING_PRIORITY, void> SetRenderingPriority;

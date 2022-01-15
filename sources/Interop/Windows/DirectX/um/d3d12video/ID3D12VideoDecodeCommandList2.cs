@@ -91,7 +91,7 @@ public unsafe partial struct ID3D12VideoDecodeCommandList2 : ID3D12VideoDecodeCo
     [VtblIndex(8)]
     public new D3D12_COMMAND_LIST_TYPE GetType()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12VideoDecodeCommandList2*, D3D12_COMMAND_LIST_TYPE>)(lpVtbl[8]))((ID3D12VideoDecodeCommandList2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID3D12VideoDecodeCommandList2*, D3D12_COMMAND_LIST_TYPE>)(lpVtbl[8]))((ID3D12VideoDecodeCommandList2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID3D12VideoDecodeCommandList.Close" />
@@ -278,7 +278,7 @@ public unsafe partial struct ID3D12VideoDecodeCommandList2 : ID3D12VideoDecodeCo
         public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDevice;
 
         [NativeTypeName("D3D12_COMMAND_LIST_TYPE () __attribute__((stdcall))")]
-        public new delegate* unmanaged[SuppressGCTransition]<TSelf*, D3D12_COMMAND_LIST_TYPE> GetType;
+        public new delegate* unmanaged<TSelf*, D3D12_COMMAND_LIST_TYPE> GetType;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> Close;

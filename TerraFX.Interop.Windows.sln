@@ -41,7 +41,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "generation", "generation", 
 		generation\remap-namespaces.rsp = generation\remap-namespaces.rsp
 		generation\remap-nints.rsp = generation\remap-nints.rsp
 		generation\remap-structs.rsp = generation\remap-structs.rsp
-		generation\remap-suppressgctransition.rsp = generation\remap-suppressgctransition.rsp
 		generation\remap-transparent.rsp = generation\remap-transparent.rsp
 		generation\remap-types.rsp = generation\remap-types.rsp
 		generation\remap.rsp = generation\remap.rsp

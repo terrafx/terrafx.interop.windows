@@ -49,7 +49,7 @@ public unsafe partial struct IDWriteRenderingParams : IDWriteRenderingParams.Int
     [VtblIndex(3)]
     public float GetGamma()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteRenderingParams*, float>)(lpVtbl[3]))((IDWriteRenderingParams*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteRenderingParams*, float>)(lpVtbl[3]))((IDWriteRenderingParams*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteRenderingParams.xml' path='doc/member[@name="IDWriteRenderingParams.GetEnhancedContrast"]/*' />
@@ -57,7 +57,7 @@ public unsafe partial struct IDWriteRenderingParams : IDWriteRenderingParams.Int
     [VtblIndex(4)]
     public float GetEnhancedContrast()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteRenderingParams*, float>)(lpVtbl[4]))((IDWriteRenderingParams*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteRenderingParams*, float>)(lpVtbl[4]))((IDWriteRenderingParams*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteRenderingParams.xml' path='doc/member[@name="IDWriteRenderingParams.GetClearTypeLevel"]/*' />
@@ -65,7 +65,7 @@ public unsafe partial struct IDWriteRenderingParams : IDWriteRenderingParams.Int
     [VtblIndex(5)]
     public float GetClearTypeLevel()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteRenderingParams*, float>)(lpVtbl[5]))((IDWriteRenderingParams*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteRenderingParams*, float>)(lpVtbl[5]))((IDWriteRenderingParams*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteRenderingParams.xml' path='doc/member[@name="IDWriteRenderingParams.GetPixelGeometry"]/*' />
@@ -73,7 +73,7 @@ public unsafe partial struct IDWriteRenderingParams : IDWriteRenderingParams.Int
     [VtblIndex(6)]
     public DWRITE_PIXEL_GEOMETRY GetPixelGeometry()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteRenderingParams*, DWRITE_PIXEL_GEOMETRY>)(lpVtbl[6]))((IDWriteRenderingParams*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteRenderingParams*, DWRITE_PIXEL_GEOMETRY>)(lpVtbl[6]))((IDWriteRenderingParams*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteRenderingParams.xml' path='doc/member[@name="IDWriteRenderingParams.GetRenderingMode"]/*' />
@@ -81,7 +81,7 @@ public unsafe partial struct IDWriteRenderingParams : IDWriteRenderingParams.Int
     [VtblIndex(7)]
     public DWRITE_RENDERING_MODE GetRenderingMode()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteRenderingParams*, DWRITE_RENDERING_MODE>)(lpVtbl[7]))((IDWriteRenderingParams*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteRenderingParams*, DWRITE_RENDERING_MODE>)(lpVtbl[7]))((IDWriteRenderingParams*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -115,18 +115,18 @@ public unsafe partial struct IDWriteRenderingParams : IDWriteRenderingParams.Int
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float> GetGamma;
+        public delegate* unmanaged<TSelf*, float> GetGamma;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float> GetEnhancedContrast;
+        public delegate* unmanaged<TSelf*, float> GetEnhancedContrast;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float> GetClearTypeLevel;
+        public delegate* unmanaged<TSelf*, float> GetClearTypeLevel;
 
         [NativeTypeName("DWRITE_PIXEL_GEOMETRY () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_PIXEL_GEOMETRY> GetPixelGeometry;
+        public delegate* unmanaged<TSelf*, DWRITE_PIXEL_GEOMETRY> GetPixelGeometry;
 
         [NativeTypeName("DWRITE_RENDERING_MODE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_RENDERING_MODE> GetRenderingMode;
+        public delegate* unmanaged<TSelf*, DWRITE_RENDERING_MODE> GetRenderingMode;
     }
 }

@@ -17,22 +17,18 @@ public static unsafe partial class DirectX
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D2D1MakeRotateMatrix"]/*' />
     [DllImport("d2d1", ExactSpelling = true)]
-    [SuppressGCTransition]
     public static extern void D2D1MakeRotateMatrix(float angle, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F center, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* matrix);
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D2D1MakeSkewMatrix"]/*' />
     [DllImport("d2d1", ExactSpelling = true)]
-    [SuppressGCTransition]
     public static extern void D2D1MakeSkewMatrix(float angleX, float angleY, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F center, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* matrix);
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D2D1IsMatrixInvertible"]/*' />
     [DllImport("d2d1", ExactSpelling = true)]
-    [SuppressGCTransition]
     public static extern BOOL D2D1IsMatrixInvertible([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* matrix);
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D2D1InvertMatrix"]/*' />
     [DllImport("d2d1", ExactSpelling = true)]
-    [SuppressGCTransition]
     public static extern BOOL D2D1InvertMatrix([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* matrix);
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D2D1CreateFactory"]/*' />

@@ -100,7 +100,7 @@ public unsafe partial struct ID2D1Device1 : ID2D1Device1.Interface
     [VtblIndex(9)]
     public D2D1_RENDERING_PRIORITY GetRenderingPriority()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1Device1*, D2D1_RENDERING_PRIORITY>)(lpVtbl[9]))((ID2D1Device1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1Device1*, D2D1_RENDERING_PRIORITY>)(lpVtbl[9]))((ID2D1Device1*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1Device1.xml' path='doc/member[@name="ID2D1Device1.SetRenderingPriority"]/*' />
@@ -162,7 +162,7 @@ public unsafe partial struct ID2D1Device1 : ID2D1Device1.Interface
         public delegate* unmanaged<TSelf*, uint, void> ClearResources;
 
         [NativeTypeName("D2D1_RENDERING_PRIORITY () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_RENDERING_PRIORITY> GetRenderingPriority;
+        public delegate* unmanaged<TSelf*, D2D1_RENDERING_PRIORITY> GetRenderingPriority;
 
         [NativeTypeName("void (D2D1_RENDERING_PRIORITY) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, D2D1_RENDERING_PRIORITY, void> SetRenderingPriority;

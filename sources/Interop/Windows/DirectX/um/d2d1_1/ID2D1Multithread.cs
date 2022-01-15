@@ -49,7 +49,7 @@ public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface
     [VtblIndex(3)]
     public BOOL GetMultithreadProtected()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1Multithread*, int>)(lpVtbl[3]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1Multithread*, int>)(lpVtbl[3]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1Multithread.xml' path='doc/member[@name="ID2D1Multithread.Enter"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("BOOL () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, int> GetMultithreadProtected;
+        public delegate* unmanaged<TSelf*, int> GetMultithreadProtected;
 
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, void> Enter;

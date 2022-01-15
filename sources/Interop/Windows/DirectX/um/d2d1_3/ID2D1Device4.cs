@@ -98,7 +98,7 @@ public unsafe partial struct ID2D1Device4 : ID2D1Device4.Interface
     [VtblIndex(9)]
     public D2D1_RENDERING_PRIORITY GetRenderingPriority()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1Device4*, D2D1_RENDERING_PRIORITY>)(lpVtbl[9]))((ID2D1Device4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1Device4*, D2D1_RENDERING_PRIORITY>)(lpVtbl[9]))((ID2D1Device4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Device1.SetRenderingPriority" />
@@ -171,7 +171,7 @@ public unsafe partial struct ID2D1Device4 : ID2D1Device4.Interface
     [return: NativeTypeName("UINT64")]
     public ulong GetMaximumColorGlyphCacheMemory()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1Device4*, ulong>)(lpVtbl[18]))((ID2D1Device4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1Device4*, ulong>)(lpVtbl[18]))((ID2D1Device4*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : ID2D1Device3.Interface
@@ -218,7 +218,7 @@ public unsafe partial struct ID2D1Device4 : ID2D1Device4.Interface
         public delegate* unmanaged<TSelf*, uint, void> ClearResources;
 
         [NativeTypeName("D2D1_RENDERING_PRIORITY () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_RENDERING_PRIORITY> GetRenderingPriority;
+        public delegate* unmanaged<TSelf*, D2D1_RENDERING_PRIORITY> GetRenderingPriority;
 
         [NativeTypeName("void (D2D1_RENDERING_PRIORITY) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, D2D1_RENDERING_PRIORITY, void> SetRenderingPriority;
@@ -245,6 +245,6 @@ public unsafe partial struct ID2D1Device4 : ID2D1Device4.Interface
         public delegate* unmanaged<TSelf*, ulong, void> SetMaximumColorGlyphCacheMemory;
 
         [NativeTypeName("UINT64 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, ulong> GetMaximumColorGlyphCacheMemory;
+        public delegate* unmanaged<TSelf*, ulong> GetMaximumColorGlyphCacheMemory;
     }
 }

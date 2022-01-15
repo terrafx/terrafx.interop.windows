@@ -81,7 +81,7 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface
     [VtblIndex(7)]
     public D2D1_SVG_PAINT_TYPE GetPaintType()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1SvgPaint*, D2D1_SVG_PAINT_TYPE>)(lpVtbl[7]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1SvgPaint*, D2D1_SVG_PAINT_TYPE>)(lpVtbl[7]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1SvgPaint.xml' path='doc/member[@name="ID2D1SvgPaint.SetColor"]/*' />
@@ -97,7 +97,7 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface
     [VtblIndex(9)]
     public void GetColor([NativeTypeName("D2D1_COLOR_F *")] DXGI_RGBA* color)
     {
-        ((delegate* unmanaged[SuppressGCTransition]<ID2D1SvgPaint*, DXGI_RGBA*, void>)(lpVtbl[9]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), color);
+        ((delegate* unmanaged<ID2D1SvgPaint*, DXGI_RGBA*, void>)(lpVtbl[9]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), color);
     }
 
     /// <include file='ID2D1SvgPaint.xml' path='doc/member[@name="ID2D1SvgPaint.SetId"]/*' />
@@ -175,13 +175,13 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface
         public delegate* unmanaged<TSelf*, D2D1_SVG_PAINT_TYPE, int> SetPaintType;
 
         [NativeTypeName("D2D1_SVG_PAINT_TYPE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_SVG_PAINT_TYPE> GetPaintType;
+        public delegate* unmanaged<TSelf*, D2D1_SVG_PAINT_TYPE> GetPaintType;
 
         [NativeTypeName("HRESULT (const D2D1_COLOR_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, DXGI_RGBA*, int> SetColor;
 
         [NativeTypeName("void (D2D1_COLOR_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXGI_RGBA*, void> GetColor;
+        public delegate* unmanaged<TSelf*, DXGI_RGBA*, void> GetColor;
 
         [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ushort*, int> SetId;

@@ -65,7 +65,7 @@ public unsafe partial struct ID2D1InkStyle : ID2D1InkStyle.Interface
     [VtblIndex(5)]
     public void GetNibTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
     {
-        ((delegate* unmanaged[SuppressGCTransition]<ID2D1InkStyle*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[5]))((ID2D1InkStyle*)Unsafe.AsPointer(ref this), transform);
+        ((delegate* unmanaged<ID2D1InkStyle*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[5]))((ID2D1InkStyle*)Unsafe.AsPointer(ref this), transform);
     }
 
     /// <include file='ID2D1InkStyle.xml' path='doc/member[@name="ID2D1InkStyle.SetNibShape"]/*' />
@@ -81,7 +81,7 @@ public unsafe partial struct ID2D1InkStyle : ID2D1InkStyle.Interface
     [VtblIndex(7)]
     public D2D1_INK_NIB_SHAPE GetNibShape()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1InkStyle*, D2D1_INK_NIB_SHAPE>)(lpVtbl[7]))((ID2D1InkStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1InkStyle*, D2D1_INK_NIB_SHAPE>)(lpVtbl[7]))((ID2D1InkStyle*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : ID2D1Resource.Interface
@@ -118,12 +118,12 @@ public unsafe partial struct ID2D1InkStyle : ID2D1InkStyle.Interface
         public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, void> SetNibTransform;
 
         [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D_MATRIX_3X2_F*, void> GetNibTransform;
+        public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, void> GetNibTransform;
 
         [NativeTypeName("void (D2D1_INK_NIB_SHAPE) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, D2D1_INK_NIB_SHAPE, void> SetNibShape;
 
         [NativeTypeName("D2D1_INK_NIB_SHAPE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_INK_NIB_SHAPE> GetNibShape;
+        public delegate* unmanaged<TSelf*, D2D1_INK_NIB_SHAPE> GetNibShape;
     }
 }

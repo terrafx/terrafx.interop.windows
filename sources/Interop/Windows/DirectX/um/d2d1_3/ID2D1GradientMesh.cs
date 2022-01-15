@@ -60,7 +60,7 @@ public unsafe partial struct ID2D1GradientMesh : ID2D1GradientMesh.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetPatchCount()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GradientMesh*, uint>)(lpVtbl[4]))((ID2D1GradientMesh*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1GradientMesh*, uint>)(lpVtbl[4]))((ID2D1GradientMesh*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1GradientMesh.xml' path='doc/member[@name="ID2D1GradientMesh.GetPatches"]/*' />
@@ -97,7 +97,7 @@ public unsafe partial struct ID2D1GradientMesh : ID2D1GradientMesh.Interface
         public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetPatchCount;
+        public delegate* unmanaged<TSelf*, uint> GetPatchCount;
 
         [NativeTypeName("HRESULT (UINT32, D2D1_GRADIENT_MESH_PATCH *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, D2D1_GRADIENT_MESH_PATCH*, uint, int> GetPatches;

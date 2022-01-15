@@ -60,7 +60,7 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface
     [return: NativeTypeName("uint32_t")]
     public uint GetAdapterCount()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapterList*, uint>)(lpVtbl[4]))((IDXCoreAdapterList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDXCoreAdapterList*, uint>)(lpVtbl[4]))((IDXCoreAdapterList*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDXCoreAdapterList.xml' path='doc/member[@name="IDXCoreAdapterList.IsStale"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface
     [VtblIndex(8)]
     public bool IsAdapterPreferenceSupported(DXCoreAdapterPreference preference)
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapterList*, DXCoreAdapterPreference, byte>)(lpVtbl[8]))((IDXCoreAdapterList*)Unsafe.AsPointer(ref this), preference) != 0;
+        return ((delegate* unmanaged<IDXCoreAdapterList*, DXCoreAdapterPreference, byte>)(lpVtbl[8]))((IDXCoreAdapterList*)Unsafe.AsPointer(ref this), preference) != 0;
     }
 
     public interface Interface : IUnknown.Interface
@@ -133,7 +133,7 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface
         public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetAdapter;
 
         [NativeTypeName("uint32_t () __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetAdapterCount;
+        public delegate* unmanaged<TSelf*, uint> GetAdapterCount;
 
         [NativeTypeName("bool () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, byte> IsStale;
@@ -145,6 +145,6 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface
         public delegate* unmanaged<TSelf*, uint, DXCoreAdapterPreference*, int> Sort;
 
         [NativeTypeName("bool (DXCoreAdapterPreference) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXCoreAdapterPreference, byte> IsAdapterPreferenceSupported;
+        public delegate* unmanaged<TSelf*, DXCoreAdapterPreference, byte> IsAdapterPreferenceSupported;
     }
 }

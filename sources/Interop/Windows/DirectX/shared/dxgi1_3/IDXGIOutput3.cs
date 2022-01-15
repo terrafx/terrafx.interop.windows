@@ -83,7 +83,7 @@ public unsafe partial struct IDXGIOutput3 : IDXGIOutput3.Interface
     [VtblIndex(7)]
     public HRESULT GetDesc(DXGI_OUTPUT_DESC* pDesc)
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDXGIOutput3*, DXGI_OUTPUT_DESC*, int>)(lpVtbl[7]))((IDXGIOutput3*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged<IDXGIOutput3*, DXGI_OUTPUT_DESC*, int>)(lpVtbl[7]))((IDXGIOutput3*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <inheritdoc cref="IDXGIOutput.GetDisplayModeList" />
@@ -253,7 +253,7 @@ public unsafe partial struct IDXGIOutput3 : IDXGIOutput3.Interface
         public delegate* unmanaged<TSelf*, Guid*, void**, int> GetParent;
 
         [NativeTypeName("HRESULT (DXGI_OUTPUT_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXGI_OUTPUT_DESC*, int> GetDesc;
+        public delegate* unmanaged<TSelf*, DXGI_OUTPUT_DESC*, int> GetDesc;
 
         [NativeTypeName("HRESULT (DXGI_FORMAT, UINT, UINT *, DXGI_MODE_DESC *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, DXGI_FORMAT, uint, uint*, DXGI_MODE_DESC*, int> GetDisplayModeList;

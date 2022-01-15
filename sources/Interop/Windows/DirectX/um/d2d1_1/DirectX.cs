@@ -25,16 +25,13 @@ public static unsafe partial class DirectX
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D2D1SinCos"]/*' />
     [DllImport("d2d1", ExactSpelling = true)]
-    [SuppressGCTransition]
     public static extern void D2D1SinCos(float angle, float* s, float* c);
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D2D1Tan"]/*' />
     [DllImport("d2d1", ExactSpelling = true)]
-    [SuppressGCTransition]
     public static extern float D2D1Tan(float angle);
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D2D1Vec3Length"]/*' />
     [DllImport("d2d1", ExactSpelling = true)]
-    [SuppressGCTransition]
     public static extern float D2D1Vec3Length(float x, float y, float z);
 }

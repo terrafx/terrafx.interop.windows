@@ -65,7 +65,7 @@ public unsafe partial struct IDWriteTextAnalysisSource : IDWriteTextAnalysisSour
     [VtblIndex(5)]
     public DWRITE_READING_DIRECTION GetParagraphReadingDirection()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteTextAnalysisSource*, DWRITE_READING_DIRECTION>)(lpVtbl[5]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteTextAnalysisSource*, DWRITE_READING_DIRECTION>)(lpVtbl[5]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteTextAnalysisSource.xml' path='doc/member[@name="IDWriteTextAnalysisSource.GetLocaleName"]/*' />
@@ -121,7 +121,7 @@ public unsafe partial struct IDWriteTextAnalysisSource : IDWriteTextAnalysisSour
         public delegate* unmanaged<TSelf*, uint, ushort**, uint*, int> GetTextBeforePosition;
 
         [NativeTypeName("DWRITE_READING_DIRECTION () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_READING_DIRECTION> GetParagraphReadingDirection;
+        public delegate* unmanaged<TSelf*, DWRITE_READING_DIRECTION> GetParagraphReadingDirection;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *, const WCHAR **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint*, ushort**, int> GetLocaleName;

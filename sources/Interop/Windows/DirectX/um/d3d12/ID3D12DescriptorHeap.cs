@@ -90,7 +90,7 @@ public unsafe partial struct ID3D12DescriptorHeap : ID3D12DescriptorHeap.Interfa
     public D3D12_DESCRIPTOR_HEAP_DESC GetDesc()
     {
         D3D12_DESCRIPTOR_HEAP_DESC result;
-        return *((delegate* unmanaged[SuppressGCTransition]<ID3D12DescriptorHeap*, D3D12_DESCRIPTOR_HEAP_DESC*, D3D12_DESCRIPTOR_HEAP_DESC*>)(lpVtbl[8]))((ID3D12DescriptorHeap*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged<ID3D12DescriptorHeap*, D3D12_DESCRIPTOR_HEAP_DESC*, D3D12_DESCRIPTOR_HEAP_DESC*>)(lpVtbl[8]))((ID3D12DescriptorHeap*)Unsafe.AsPointer(ref this), &result);
     }
 
     /// <include file='ID3D12DescriptorHeap.xml' path='doc/member[@name="ID3D12DescriptorHeap.GetCPUDescriptorHandleForHeapStart"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ID3D12DescriptorHeap : ID3D12DescriptorHeap.Interfa
     public D3D12_CPU_DESCRIPTOR_HANDLE GetCPUDescriptorHandleForHeapStart()
     {
         D3D12_CPU_DESCRIPTOR_HANDLE result;
-        return *((delegate* unmanaged[SuppressGCTransition]<ID3D12DescriptorHeap*, D3D12_CPU_DESCRIPTOR_HANDLE*, D3D12_CPU_DESCRIPTOR_HANDLE*>)(lpVtbl[9]))((ID3D12DescriptorHeap*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged<ID3D12DescriptorHeap*, D3D12_CPU_DESCRIPTOR_HANDLE*, D3D12_CPU_DESCRIPTOR_HANDLE*>)(lpVtbl[9]))((ID3D12DescriptorHeap*)Unsafe.AsPointer(ref this), &result);
     }
 
     /// <include file='ID3D12DescriptorHeap.xml' path='doc/member[@name="ID3D12DescriptorHeap.GetGPUDescriptorHandleForHeapStart"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct ID3D12DescriptorHeap : ID3D12DescriptorHeap.Interfa
     public D3D12_GPU_DESCRIPTOR_HANDLE GetGPUDescriptorHandleForHeapStart()
     {
         D3D12_GPU_DESCRIPTOR_HANDLE result;
-        return *((delegate* unmanaged[SuppressGCTransition]<ID3D12DescriptorHeap*, D3D12_GPU_DESCRIPTOR_HANDLE*, D3D12_GPU_DESCRIPTOR_HANDLE*>)(lpVtbl[10]))((ID3D12DescriptorHeap*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged<ID3D12DescriptorHeap*, D3D12_GPU_DESCRIPTOR_HANDLE*, D3D12_GPU_DESCRIPTOR_HANDLE*>)(lpVtbl[10]))((ID3D12DescriptorHeap*)Unsafe.AsPointer(ref this), &result);
     }
 
     public interface Interface : ID3D12Pageable.Interface
@@ -151,12 +151,12 @@ public unsafe partial struct ID3D12DescriptorHeap : ID3D12DescriptorHeap.Interfa
         public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDevice;
 
         [NativeTypeName("D3D12_DESCRIPTOR_HEAP_DESC () __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D3D12_DESCRIPTOR_HEAP_DESC*, D3D12_DESCRIPTOR_HEAP_DESC*> GetDesc;
+        public delegate* unmanaged<TSelf*, D3D12_DESCRIPTOR_HEAP_DESC*, D3D12_DESCRIPTOR_HEAP_DESC*> GetDesc;
 
         [NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE () __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D3D12_CPU_DESCRIPTOR_HANDLE*, D3D12_CPU_DESCRIPTOR_HANDLE*> GetCPUDescriptorHandleForHeapStart;
+        public delegate* unmanaged<TSelf*, D3D12_CPU_DESCRIPTOR_HANDLE*, D3D12_CPU_DESCRIPTOR_HANDLE*> GetCPUDescriptorHandleForHeapStart;
 
         [NativeTypeName("D3D12_GPU_DESCRIPTOR_HANDLE () __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D3D12_GPU_DESCRIPTOR_HANDLE*, D3D12_GPU_DESCRIPTOR_HANDLE*> GetGPUDescriptorHandleForHeapStart;
+        public delegate* unmanaged<TSelf*, D3D12_GPU_DESCRIPTOR_HANDLE*, D3D12_GPU_DESCRIPTOR_HANDLE*> GetGPUDescriptorHandleForHeapStart;
     }
 }
