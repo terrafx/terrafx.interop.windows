@@ -12,52 +12,52 @@ namespace TerraFX.Interop.Windows;
 public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EventRegister"]/*' />
-    [DllImport("", ExactSpelling = true)]
+    [DllImport("Advapi32", ExactSpelling = true)]
     [return: NativeTypeName("ULONG")]
     public static extern uint EventRegister([NativeTypeName("LPCGUID")] Guid* ProviderId, [NativeTypeName("PENABLECALLBACK")] delegate* unmanaged<Guid*, uint, byte, ulong, ulong, EVENT_FILTER_DESCRIPTOR*, void*, void> EnableCallback, [NativeTypeName("PVOID")] void* CallbackContext, [NativeTypeName("PREGHANDLE")] ulong* RegHandle);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EventUnregister"]/*' />
-    [DllImport("", ExactSpelling = true)]
+    [DllImport("Advapi32", ExactSpelling = true)]
     [return: NativeTypeName("ULONG")]
     public static extern uint EventUnregister([NativeTypeName("REGHANDLE")] ulong RegHandle);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EventSetInformation"]/*' />
-    [DllImport("", ExactSpelling = true)]
+    [DllImport("Advapi32", ExactSpelling = true)]
     [return: NativeTypeName("ULONG")]
     public static extern uint EventSetInformation([NativeTypeName("REGHANDLE")] ulong RegHandle, EVENT_INFO_CLASS InformationClass, [NativeTypeName("PVOID")] void* EventInformation, [NativeTypeName("ULONG")] uint InformationLength);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EventEnabled"]/*' />
-    [DllImport("", ExactSpelling = true)]
+    [DllImport("Advapi32", ExactSpelling = true)]
     [return: NativeTypeName("BOOLEAN")]
     public static extern byte EventEnabled([NativeTypeName("REGHANDLE")] ulong RegHandle, [NativeTypeName("PCEVENT_DESCRIPTOR")] EVENT_DESCRIPTOR* EventDescriptor);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EventProviderEnabled"]/*' />
-    [DllImport("", ExactSpelling = true)]
+    [DllImport("Advapi32", ExactSpelling = true)]
     [return: NativeTypeName("BOOLEAN")]
     public static extern byte EventProviderEnabled([NativeTypeName("REGHANDLE")] ulong RegHandle, [NativeTypeName("UCHAR")] byte Level, [NativeTypeName("ULONGLONG")] ulong Keyword);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EventWrite"]/*' />
-    [DllImport("", ExactSpelling = true)]
+    [DllImport("Advapi32", ExactSpelling = true)]
     [return: NativeTypeName("ULONG")]
     public static extern uint EventWrite([NativeTypeName("REGHANDLE")] ulong RegHandle, [NativeTypeName("PCEVENT_DESCRIPTOR")] EVENT_DESCRIPTOR* EventDescriptor, [NativeTypeName("ULONG")] uint UserDataCount, [NativeTypeName("PEVENT_DATA_DESCRIPTOR")] EVENT_DATA_DESCRIPTOR* UserData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EventWriteTransfer"]/*' />
-    [DllImport("", ExactSpelling = true)]
+    [DllImport("Advapi32", ExactSpelling = true)]
     [return: NativeTypeName("ULONG")]
     public static extern uint EventWriteTransfer([NativeTypeName("REGHANDLE")] ulong RegHandle, [NativeTypeName("PCEVENT_DESCRIPTOR")] EVENT_DESCRIPTOR* EventDescriptor, [NativeTypeName("LPCGUID")] Guid* ActivityId, [NativeTypeName("LPCGUID")] Guid* RelatedActivityId, [NativeTypeName("ULONG")] uint UserDataCount, [NativeTypeName("PEVENT_DATA_DESCRIPTOR")] EVENT_DATA_DESCRIPTOR* UserData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EventWriteEx"]/*' />
-    [DllImport("", ExactSpelling = true)]
+    [DllImport("Advapi32", ExactSpelling = true)]
     [return: NativeTypeName("ULONG")]
     public static extern uint EventWriteEx([NativeTypeName("REGHANDLE")] ulong RegHandle, [NativeTypeName("PCEVENT_DESCRIPTOR")] EVENT_DESCRIPTOR* EventDescriptor, [NativeTypeName("ULONG64")] ulong Filter, [NativeTypeName("ULONG")] uint Flags, [NativeTypeName("LPCGUID")] Guid* ActivityId, [NativeTypeName("LPCGUID")] Guid* RelatedActivityId, [NativeTypeName("ULONG")] uint UserDataCount, [NativeTypeName("PEVENT_DATA_DESCRIPTOR")] EVENT_DATA_DESCRIPTOR* UserData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EventWriteString"]/*' />
-    [DllImport("", ExactSpelling = true)]
+    [DllImport("Advapi32", ExactSpelling = true)]
     [return: NativeTypeName("ULONG")]
     public static extern uint EventWriteString([NativeTypeName("REGHANDLE")] ulong RegHandle, [NativeTypeName("UCHAR")] byte Level, [NativeTypeName("ULONGLONG")] ulong Keyword, [NativeTypeName("PCWSTR")] ushort* String);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EventActivityIdControl"]/*' />
-    [DllImport("", ExactSpelling = true)]
+    [DllImport("Advapi32", ExactSpelling = true)]
     [return: NativeTypeName("ULONG")]
     public static extern uint EventActivityIdControl([NativeTypeName("ULONG")] uint ControlCode, [NativeTypeName("LPGUID")] Guid* ActivityId);
 
