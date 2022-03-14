@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+shared-evntprov.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/shared/evntprov
+--test-output
+../../../../tests/Interop/Windows/Windows/shared/evntprov
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/evntprov.h

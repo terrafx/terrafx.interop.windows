@@ -2997,6 +2997,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplustypes", "gdiplustype
 		generation\Gdiplus\um\gdiplustypes\um-gdiplustypes.h = generation\Gdiplus\um\gdiplustypes\um-gdiplustypes.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "evntprov", "evntprov", "{ECCEAECE-9019-4EB6-A44A-244BCC77A624}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\shared\evntprov\generate.rsp = generation\Windows\shared\evntprov\generate.rsp
+		generation\Windows\shared\evntprov\header.txt = generation\Windows\shared\evntprov\header.txt
+		generation\Windows\shared\evntprov\shared-evntprov.h = generation\Windows\shared\evntprov\shared-evntprov.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3458,6 +3465,7 @@ Global
 		{55FB5A64-9A0B-4294-87F0-D8F81BE30692} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
 		{B281558F-E194-4AC3-BE1B-C7C2A748947E} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
 		{9C6E88A3-997E-4F11-AF25-18A54B110404} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{ECCEAECE-9019-4EB6-A44A-244BCC77A624} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
