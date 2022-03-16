@@ -1,0 +1,25 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+shared-evntprov.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/shared/evntprov
+--test-output
+../../../../tests/Interop/Windows/Windows/shared/evntprov
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/evntprov.h
+--with-librarypath
+EventRegister=Advapi32
+EventUnregister=Advapi32
+EventEnabled=Advapi32
+EventProviderEnabled=Advapi32
+EventWrite=Advapi32
+EventWriteTransfer=Advapi32
+EventWriteEx=Advapi32
+EventWriteString=Advapi32
+EventActivityIdControl=Advapi32
+EventSetInformation=Advapi32
