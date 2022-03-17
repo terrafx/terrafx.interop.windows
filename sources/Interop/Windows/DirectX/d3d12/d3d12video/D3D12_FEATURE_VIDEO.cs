@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d12video.h in the Windows SDK for Windows 10.0.22000.0
-// Original source is Copyright © Microsoft. All rights reserved.
+// Ported from d3d12video.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
 
@@ -88,4 +88,43 @@ public enum D3D12_FEATURE_VIDEO
 
     /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_PROCESSOR_SIZE1"]/*' />
     D3D12_FEATURE_VIDEO_PROCESSOR_SIZE1 = 32,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_CODEC"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_CODEC = 33,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_PROFILE_LEVEL"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_PROFILE_LEVEL = 34,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_OUTPUT_RESOLUTION_RATIOS_COUNT"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_OUTPUT_RESOLUTION_RATIOS_COUNT = 35,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_OUTPUT_RESOLUTION"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_OUTPUT_RESOLUTION = 36,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_INPUT_FORMAT"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_INPUT_FORMAT = 37,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_RATE_CONTROL_MODE"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_RATE_CONTROL_MODE = 38,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_INTRA_REFRESH_MODE"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_INTRA_REFRESH_MODE = 39,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE = 40,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_HEAP_SIZE"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_HEAP_SIZE = 41,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT = 42,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_SUPPORT"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_SUPPORT = 43,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_CODEC_PICTURE_CONTROL_SUPPORT"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_CODEC_PICTURE_CONTROL_SUPPORT = 44,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_RESOURCE_REQUIREMENTS"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_RESOURCE_REQUIREMENTS = 45,
 }

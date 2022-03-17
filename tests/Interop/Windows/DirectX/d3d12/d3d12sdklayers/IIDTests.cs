@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d12sdklayers.h in the Windows SDK for Windows 10.0.22000.0
-// Original source is Copyright © Microsoft. All rights reserved.
+// Ported from d3d12sdklayers.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
 using System;
@@ -52,6 +52,13 @@ public static partial class IIDTests
     public static void IID_ID3D12Debug5Test()
     {
         Assert.That(IID_ID3D12Debug5, Is.EqualTo(new Guid(0x548d6b12, 0x09fa, 0x40e0, 0x90, 0x69, 0x5d, 0xcd, 0x58, 0x9a, 0x52, 0xc9)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12Debug6" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12Debug6Test()
+    {
+        Assert.That(IID_ID3D12Debug6, Is.EqualTo(new Guid(0x82a816d6, 0x5d01, 0x4157, 0x97, 0xd0, 0x49, 0x75, 0x46, 0x3f, 0xd1, 0xed)));
     }
 
     /// <summary>Validates that the value of the <see cref="IID_ID3D12DebugDevice1" /> property is correct.</summary>

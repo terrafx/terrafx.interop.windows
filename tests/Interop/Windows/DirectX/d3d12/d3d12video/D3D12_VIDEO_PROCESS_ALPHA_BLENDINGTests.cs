@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d12video.h in the Windows SDK for Windows 10.0.22000.0
-// Original source is Copyright © Microsoft. All rights reserved.
+// Ported from d3d12video.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
 using System.Runtime.InteropServices;

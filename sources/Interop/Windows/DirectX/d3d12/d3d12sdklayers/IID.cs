@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d12sdklayers.h in the Windows SDK for Windows 10.0.22000.0
-// Original source is Copyright © Microsoft. All rights reserved.
+// Ported from d3d12sdklayers.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
 using System.Diagnostics;
@@ -156,6 +156,31 @@ public static partial class IID
                 0x9A,
                 0x52,
                 0xC9
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12Debug6
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xD6, 0x16, 0xA8, 0x82,
+                0x01, 0x5D,
+                0x57, 0x41,
+                0x97,
+                0xD0,
+                0x49,
+                0x75,
+                0x46,
+                0x3F,
+                0xD1,
+                0xED
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

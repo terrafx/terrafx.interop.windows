@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d12.h in the Windows SDK for Windows 10.0.22000.0
-// Original source is Copyright © Microsoft. All rights reserved.
+// Ported from d3d12.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -15,7 +15,7 @@ public partial struct D3D12_INDIRECT_ARGUMENT_DESC
     public D3D12_INDIRECT_ARGUMENT_TYPE Type;
 
     /// <include file='D3D12_INDIRECT_ARGUMENT_DESC.xml' path='doc/member[@name="D3D12_INDIRECT_ARGUMENT_DESC.Anonymous"]/*' />
-    [NativeTypeName("D3D12_INDIRECT_ARGUMENT_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3d12.h:4094:5)")]
+    [NativeTypeName("D3D12_INDIRECT_ARGUMENT_DESC::(anonymous union at ./d3d12.h:4135:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.VertexBuffer"]/*' />
@@ -74,27 +74,27 @@ public partial struct D3D12_INDIRECT_ARGUMENT_DESC
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.VertexBuffer"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3d12.h:4096:9)")]
+        [NativeTypeName("struct (anonymous struct at ./d3d12.h:4137:9)")]
         public _VertexBuffer_e__Struct VertexBuffer;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Constant"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3d12.h:4100:9)")]
+        [NativeTypeName("struct (anonymous struct at ./d3d12.h:4141:9)")]
         public _Constant_e__Struct Constant;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ConstantBufferView"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3d12.h:4106:9)")]
+        [NativeTypeName("struct (anonymous struct at ./d3d12.h:4147:9)")]
         public _ConstantBufferView_e__Struct ConstantBufferView;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ShaderResourceView"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3d12.h:4110:9)")]
+        [NativeTypeName("struct (anonymous struct at ./d3d12.h:4151:9)")]
         public _ShaderResourceView_e__Struct ShaderResourceView;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.UnorderedAccessView"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3d12.h:4114:9)")]
+        [NativeTypeName("struct (anonymous struct at ./d3d12.h:4155:9)")]
         public _UnorderedAccessView_e__Struct UnorderedAccessView;
 
         /// <include file='_VertexBuffer_e__Struct.xml' path='doc/member[@name="_VertexBuffer_e__Struct"]/*' />

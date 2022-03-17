@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d12.h in the Windows SDK for Windows 10.0.22000.0
-// Original source is Copyright © Microsoft. All rights reserved.
+// Ported from d3d12.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
 using System;
@@ -376,6 +376,20 @@ public static partial class IIDTests
         Assert.That(IID_ID3D12Device9, Is.EqualTo(new Guid(0x4c80e962, 0xf032, 0x4f60, 0xbc, 0x9e, 0xeb, 0xc2, 0xcf, 0xa1, 0xd8, 0x3c)));
     }
 
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12Device10" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12Device10Test()
+    {
+        Assert.That(IID_ID3D12Device10, Is.EqualTo(new Guid(0x517f8718, 0xaa66, 0x49f9, 0xb0, 0x2b, 0xa7, 0xab, 0x89, 0xc0, 0x60, 0x31)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12VirtualizationGuestDevice" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12VirtualizationGuestDeviceTest()
+    {
+        Assert.That(IID_ID3D12VirtualizationGuestDevice, Is.EqualTo(new Guid(0xbc66d368, 0x7373, 0x4943, 0x87, 0x57, 0xfc, 0x87, 0xdc, 0x79, 0xe4, 0x76)));
+    }
+
     /// <summary>Validates that the value of the <see cref="IID_ID3D12Tools" /> property is correct.</summary>
     [Test]
     public static void IID_ID3D12ToolsTest()
@@ -402,5 +416,12 @@ public static partial class IIDTests
     public static void IID_ID3D12GraphicsCommandList6Test()
     {
         Assert.That(IID_ID3D12GraphicsCommandList6, Is.EqualTo(new Guid(0xc3827890, 0xe548, 0x4cfa, 0x96, 0xcf, 0x56, 0x89, 0xa9, 0x37, 0x0f, 0x80)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12GraphicsCommandList7" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12GraphicsCommandList7Test()
+    {
+        Assert.That(IID_ID3D12GraphicsCommandList7, Is.EqualTo(new Guid(0xdd171223, 0x8b61, 0x4769, 0x90, 0xe3, 0x16, 0x0c, 0xcd, 0xe4, 0xe2, 0xc1)));
     }
 }

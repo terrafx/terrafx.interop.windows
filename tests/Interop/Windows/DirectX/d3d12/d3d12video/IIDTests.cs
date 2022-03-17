@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d12video.h in the Windows SDK for Windows 10.0.22000.0
-// Original source is Copyright © Microsoft. All rights reserved.
+// Ported from d3d12video.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
 using System;
@@ -138,11 +138,25 @@ public static partial class IIDTests
         Assert.That(IID_ID3D12VideoDecodeCommandList2, Is.EqualTo(new Guid(0x6e120880, 0xc114, 0x4153, 0x80, 0x36, 0xd2, 0x47, 0x05, 0x1e, 0x17, 0x29)));
     }
 
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoDecodeCommandList3" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12VideoDecodeCommandList3Test()
+    {
+        Assert.That(IID_ID3D12VideoDecodeCommandList3, Is.EqualTo(new Guid(0x2aee8c37, 0x9562, 0x42da, 0x8a, 0xbf, 0x61, 0xef, 0xeb, 0x2e, 0x45, 0x13)));
+    }
+
     /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoProcessCommandList2" /> property is correct.</summary>
     [Test]
     public static void IID_ID3D12VideoProcessCommandList2Test()
     {
         Assert.That(IID_ID3D12VideoProcessCommandList2, Is.EqualTo(new Guid(0xdb525ae4, 0x6ad6, 0x473c, 0xba, 0xa7, 0x59, 0xb2, 0xe3, 0x70, 0x82, 0xe4)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoProcessCommandList3" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12VideoProcessCommandList3Test()
+    {
+        Assert.That(IID_ID3D12VideoProcessCommandList3, Is.EqualTo(new Guid(0x1a0a4ca4, 0x9f08, 0x40ce, 0x95, 0x58, 0xb4, 0x11, 0xfd, 0x26, 0x66, 0xff)));
     }
 
     /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoEncodeCommandList1" /> property is correct.</summary>
@@ -178,5 +192,12 @@ public static partial class IIDTests
     public static void IID_ID3D12VideoEncodeCommandList2Test()
     {
         Assert.That(IID_ID3D12VideoEncodeCommandList2, Is.EqualTo(new Guid(0x895491e2, 0xe701, 0x46a9, 0x9a, 0x1f, 0x8d, 0x34, 0x80, 0xed, 0x86, 0x7a)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoEncodeCommandList3" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12VideoEncodeCommandList3Test()
+    {
+        Assert.That(IID_ID3D12VideoEncodeCommandList3, Is.EqualTo(new Guid(0x7f027b22, 0x1515, 0x4e85, 0xaa, 0x0d, 0x02, 0x64, 0x86, 0x58, 0x05, 0x76)));
     }
 }
