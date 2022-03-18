@@ -99,13 +99,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxgicommon", "dxgicommon", 
 		generation\DirectX\shared\dxgicommon\shared-dxgicommon.h = generation\DirectX\shared\dxgicommon\shared-dxgicommon.h
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxgiformat", "dxgiformat", "{79C044F1-E0EB-42EC-A4ED-1F086089853A}"
-	ProjectSection(SolutionItems) = preProject
-		generation\DirectX\shared\dxgiformat\generate.rsp = generation\DirectX\shared\dxgiformat\generate.rsp
-		generation\DirectX\shared\dxgiformat\header.txt = generation\DirectX\shared\dxgiformat\header.txt
-		generation\DirectX\shared\dxgiformat\shared-dxgiformat.h = generation\DirectX\shared\dxgiformat\shared-dxgiformat.h
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxgitype", "dxgitype", "{133D4A58-8AD4-4D46-9847-3C12F24A775E}"
 	ProjectSection(SolutionItems) = preProject
 		generation\DirectX\shared\dxgitype\generate.rsp = generation\DirectX\shared\dxgitype\generate.rsp
@@ -253,41 +246,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d11shadertracing", "d3d11
 		generation\DirectX\um\d3d11shadertracing\generate.rsp = generation\DirectX\um\d3d11shadertracing\generate.rsp
 		generation\DirectX\um\d3d11shadertracing\header.txt = generation\DirectX\um\d3d11shadertracing\header.txt
 		generation\DirectX\um\d3d11shadertracing\um-d3d11shadertracing.h = generation\DirectX\um\d3d11shadertracing\um-d3d11shadertracing.h
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12", "d3d12", "{E39DBBA1-F5E9-453E-9475-EE95300CE502}"
-	ProjectSection(SolutionItems) = preProject
-		generation\DirectX\um\d3d12\generate.rsp = generation\DirectX\um\d3d12\generate.rsp
-		generation\DirectX\um\d3d12\header.txt = generation\DirectX\um\d3d12\header.txt
-		generation\DirectX\um\d3d12\um-d3d12.h = generation\DirectX\um\d3d12\um-d3d12.h
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12sdklayers", "d3d12sdklayers", "{6F7520F0-9CA7-4A23-A17E-77762DA10BA7}"
-	ProjectSection(SolutionItems) = preProject
-		generation\DirectX\um\d3d12sdklayers\generate.rsp = generation\DirectX\um\d3d12sdklayers\generate.rsp
-		generation\DirectX\um\d3d12sdklayers\header.txt = generation\DirectX\um\d3d12sdklayers\header.txt
-		generation\DirectX\um\d3d12sdklayers\um-d3d12sdklayers.h = generation\DirectX\um\d3d12sdklayers\um-d3d12sdklayers.h
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12shader", "d3d12shader", "{2463B9AF-56DB-4871-AEA5-19B3A30BFD1F}"
-	ProjectSection(SolutionItems) = preProject
-		generation\DirectX\um\d3d12shader\generate.rsp = generation\DirectX\um\d3d12shader\generate.rsp
-		generation\DirectX\um\d3d12shader\header.txt = generation\DirectX\um\d3d12shader\header.txt
-		generation\DirectX\um\d3d12shader\um-d3d12shader.h = generation\DirectX\um\d3d12shader\um-d3d12shader.h
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12video", "d3d12video", "{52B605C1-A287-4414-BA82-13A9BC64D644}"
-	ProjectSection(SolutionItems) = preProject
-		generation\DirectX\um\d3d12video\generate.rsp = generation\DirectX\um\d3d12video\generate.rsp
-		generation\DirectX\um\d3d12video\header.txt = generation\DirectX\um\d3d12video\header.txt
-		generation\DirectX\um\d3d12video\um-d3d12video.h = generation\DirectX\um\d3d12video\um-d3d12video.h
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3dcommon", "d3dcommon", "{E3186B8B-0517-439C-9BE5-61BF82800E5E}"
-	ProjectSection(SolutionItems) = preProject
-		generation\DirectX\um\d3dcommon\generate.rsp = generation\DirectX\um\d3dcommon\generate.rsp
-		generation\DirectX\um\d3dcommon\header.txt = generation\DirectX\um\d3dcommon\header.txt
-		generation\DirectX\um\d3dcommon\um-d3dcommon.h = generation\DirectX\um\d3dcommon\um-d3dcommon.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3dcompiler", "d3dcompiler", "{DE030AE1-665D-41D9-A64A-D9D9BC4E3484}"
@@ -3004,6 +2962,56 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "evntprov", "evntprov", "{EC
 		generation\Windows\shared\evntprov\shared-evntprov.h = generation\Windows\shared\evntprov\shared-evntprov.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12", "d3d12", "{65954CB3-F28F-4CF0-BC77-0FFD6E858BCE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12", "d3d12", "{F0F69CE3-AA7D-4673-AC07-F54578A75A91}"
+	ProjectSection(SolutionItems) = preProject
+		generation\DirectX\d3d12\d3d12\d3d12.h = generation\DirectX\d3d12\d3d12\d3d12.h
+		generation\DirectX\d3d12\d3d12\generate.rsp = generation\DirectX\d3d12\d3d12\generate.rsp
+		generation\DirectX\d3d12\d3d12\header.txt = generation\DirectX\d3d12\d3d12\header.txt
+		generation\DirectX\d3d12\d3d12\um-d3d12.h = generation\DirectX\d3d12\d3d12\um-d3d12.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12sdklayers", "d3d12sdklayers", "{7B7A7155-59EC-410E-850A-C089E604F2E4}"
+	ProjectSection(SolutionItems) = preProject
+		generation\DirectX\d3d12\d3d12sdklayers\d3d12sdklayers.h = generation\DirectX\d3d12\d3d12sdklayers\d3d12sdklayers.h
+		generation\DirectX\d3d12\d3d12sdklayers\generate.rsp = generation\DirectX\d3d12\d3d12sdklayers\generate.rsp
+		generation\DirectX\d3d12\d3d12sdklayers\header.txt = generation\DirectX\d3d12\d3d12sdklayers\header.txt
+		generation\DirectX\d3d12\d3d12sdklayers\um-d3d12sdklayers.h = generation\DirectX\d3d12\d3d12sdklayers\um-d3d12sdklayers.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12shader", "d3d12shader", "{4291B3E3-68E4-4254-947F-5A8A3523C991}"
+	ProjectSection(SolutionItems) = preProject
+		generation\DirectX\d3d12\d3d12shader\d3d12shader.h = generation\DirectX\d3d12\d3d12shader\d3d12shader.h
+		generation\DirectX\d3d12\d3d12shader\generate.rsp = generation\DirectX\d3d12\d3d12shader\generate.rsp
+		generation\DirectX\d3d12\d3d12shader\header.txt = generation\DirectX\d3d12\d3d12shader\header.txt
+		generation\DirectX\d3d12\d3d12shader\um-d3d12shader.h = generation\DirectX\d3d12\d3d12shader\um-d3d12shader.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12video", "d3d12video", "{5911A131-AE94-40E8-B501-3C088C5252CE}"
+	ProjectSection(SolutionItems) = preProject
+		generation\DirectX\d3d12\d3d12video\d3d12video.h = generation\DirectX\d3d12\d3d12video\d3d12video.h
+		generation\DirectX\d3d12\d3d12video\generate.rsp = generation\DirectX\d3d12\d3d12video\generate.rsp
+		generation\DirectX\d3d12\d3d12video\header.txt = generation\DirectX\d3d12\d3d12video\header.txt
+		generation\DirectX\d3d12\d3d12video\um-d3d12video.h = generation\DirectX\d3d12\d3d12video\um-d3d12video.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3dcommon", "d3dcommon", "{19D7C317-C032-44BE-BBF7-D1D912585FE0}"
+	ProjectSection(SolutionItems) = preProject
+		generation\DirectX\d3d12\d3dcommon\d3dcommon.h = generation\DirectX\d3d12\d3dcommon\d3dcommon.h
+		generation\DirectX\d3d12\d3dcommon\generate.rsp = generation\DirectX\d3d12\d3dcommon\generate.rsp
+		generation\DirectX\d3d12\d3dcommon\header.txt = generation\DirectX\d3d12\d3dcommon\header.txt
+		generation\DirectX\d3d12\d3dcommon\um-d3dcommon.h = generation\DirectX\d3d12\d3dcommon\um-d3dcommon.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxgiformat", "dxgiformat", "{2BE4B04C-FB90-4A79-9161-3D1CA5E34825}"
+	ProjectSection(SolutionItems) = preProject
+		generation\DirectX\d3d12\dxgiformat\dxgiformat.h = generation\DirectX\d3d12\dxgiformat\dxgiformat.h
+		generation\DirectX\d3d12\dxgiformat\generate.rsp = generation\DirectX\d3d12\dxgiformat\generate.rsp
+		generation\DirectX\d3d12\dxgiformat\header.txt = generation\DirectX\d3d12\dxgiformat\header.txt
+		generation\DirectX\d3d12\dxgiformat\shared-dxgiformat.h = generation\DirectX\d3d12\dxgiformat\shared-dxgiformat.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3039,7 +3047,6 @@ Global
 		{88D06B2F-FAA9-4B0A-8E50-63AC28AC4464} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
 		{C46C3D04-D9B6-440F-8644-3DA27525198B} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
 		{4D5B32E6-D5DA-4D2E-B87E-389DF3066B0C} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
-		{79C044F1-E0EB-42EC-A4ED-1F086089853A} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
 		{133D4A58-8AD4-4D46-9847-3C12F24A775E} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
 		{6B586C09-33B0-4E3E-9EBE-36152E748B42} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{67311E5E-FA9C-43A6-B431-9EF10047A0CE} = {F8483D3C-EAD8-48CA-86A2-FEA0A9B22C71}
@@ -3062,11 +3069,6 @@ Global
 		{9B109AFE-7566-44CC-BABB-E91EC6BA3EB0} = {849C4129-3383-468E-9CFA-B709015C0BE2}
 		{A871F4B8-AC38-4393-B724-422654496AF0} = {849C4129-3383-468E-9CFA-B709015C0BE2}
 		{1B60B7F5-0CAD-4A13-85C2-2BE7FD06665A} = {849C4129-3383-468E-9CFA-B709015C0BE2}
-		{E39DBBA1-F5E9-453E-9475-EE95300CE502} = {849C4129-3383-468E-9CFA-B709015C0BE2}
-		{6F7520F0-9CA7-4A23-A17E-77762DA10BA7} = {849C4129-3383-468E-9CFA-B709015C0BE2}
-		{2463B9AF-56DB-4871-AEA5-19B3A30BFD1F} = {849C4129-3383-468E-9CFA-B709015C0BE2}
-		{52B605C1-A287-4414-BA82-13A9BC64D644} = {849C4129-3383-468E-9CFA-B709015C0BE2}
-		{E3186B8B-0517-439C-9BE5-61BF82800E5E} = {849C4129-3383-468E-9CFA-B709015C0BE2}
 		{DE030AE1-665D-41D9-A64A-D9D9BC4E3484} = {849C4129-3383-468E-9CFA-B709015C0BE2}
 		{67458011-CEA9-4383-87BC-60AF489D695F} = {849C4129-3383-468E-9CFA-B709015C0BE2}
 		{76F117AB-8B46-4614-99A5-5D64AF304973} = {849C4129-3383-468E-9CFA-B709015C0BE2}
@@ -3466,6 +3468,13 @@ Global
 		{B281558F-E194-4AC3-BE1B-C7C2A748947E} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
 		{9C6E88A3-997E-4F11-AF25-18A54B110404} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
 		{ECCEAECE-9019-4EB6-A44A-244BCC77A624} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{65954CB3-F28F-4CF0-BC77-0FFD6E858BCE} = {93FF551D-EF97-4703-810F-13299940A464}
+		{F0F69CE3-AA7D-4673-AC07-F54578A75A91} = {65954CB3-F28F-4CF0-BC77-0FFD6E858BCE}
+		{7B7A7155-59EC-410E-850A-C089E604F2E4} = {65954CB3-F28F-4CF0-BC77-0FFD6E858BCE}
+		{4291B3E3-68E4-4254-947F-5A8A3523C991} = {65954CB3-F28F-4CF0-BC77-0FFD6E858BCE}
+		{5911A131-AE94-40E8-B501-3C088C5252CE} = {65954CB3-F28F-4CF0-BC77-0FFD6E858BCE}
+		{19D7C317-C032-44BE-BBF7-D1D912585FE0} = {65954CB3-F28F-4CF0-BC77-0FFD6E858BCE}
+		{2BE4B04C-FB90-4A79-9161-3D1CA5E34825} = {65954CB3-F28F-4CF0-BC77-0FFD6E858BCE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
