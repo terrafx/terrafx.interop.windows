@@ -27,46 +27,6 @@ jobs:
           ./artifacts/pkg/**/*
           ./artifacts/tst/**/*
         if-no-files-found: error
-  linux-x64:
-    runs-on: ${{ matrix.os }}-latest
-    strategy:
-      matrix:
-        architecture: [ x64 ]
-        configuration: [ debug, release ]
-        os: [ ubuntu ]
-    steps:
-    - uses: actions/checkout@v2
-    - run: ./scripts/cibuild.sh --configuration ${{ matrix.configuration }} --architecture ${{ matrix.architecture }}
-      shell: bash
-    - uses: actions/upload-artifact@v2
-      with:
-        name: ${{ matrix.os }}_${{ matrix.configuration }}_${{ matrix.architecture }}
-        path: |
-          ./artifacts/bin/**/*
-          ./artifacts/log/**/*
-          ./artifacts/pkg/**/*
-          ./artifacts/tst/**/*
-        if-no-files-found: error
-  macos-x64:
-    runs-on: ${{ matrix.os }}-latest
-    strategy:
-      matrix:
-        architecture: [ x64 ]
-        configuration: [ debug, release ]
-        os: [ macos ]
-    steps:
-    - uses: actions/checkout@v2
-    - run: ./scripts/cibuild.sh --configuration ${{ matrix.configuration }} --architecture ${{ matrix.architecture }}
-      shell: bash
-    - uses: actions/upload-artifact@v2
-      with:
-        name: ${{ matrix.os }}_${{ matrix.configuration }}_${{ matrix.architecture }}
-        path: |
-          ./artifacts/bin/**/*
-          ./artifacts/log/**/*
-          ./artifacts/pkg/**/*
-          ./artifacts/tst/**/*
-        if-no-files-found: error
   build-nuget-preview:
     runs-on: windows-2022
     steps:
@@ -104,9 +64,9 @@ jobs:
           ./artifacts/tst/**/*
         if-no-files-found: error
   publish-nightlies-azure:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     if: ${{ github.event_name == 'push' }}
-    needs: [ windows-x64, linux-x64, macos-x64, build-nuget-preview, build-nuget-release ]
+    needs: [ windows-x64, build-nuget-preview, build-nuget-release ]
     steps:
     - uses: actions/download-artifact@v2
       with:
@@ -120,9 +80,9 @@ jobs:
         NUGET_AUTH_TOKEN: ${{ secrets.AZURE_DEVOPS_PAT }}
     - run: dotnet nuget push "./artifacts/pkg/Release/*.nupkg" --api-key AzureDevOps --skip-duplicate
   publish-nightlies-github:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     if: ${{ github.event_name == 'push' }}
-    needs: [ windows-x64, linux-x64, macos-x64, build-nuget-preview, build-nuget-release ]
+    needs: [ windows-x64, build-nuget-preview, build-nuget-release ]
     steps:
     - uses: actions/download-artifact@v2
       with:
