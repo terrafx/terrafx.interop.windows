@@ -17,7 +17,7 @@ public unsafe partial struct SID
     public SID_IDENTIFIER_AUTHORITY IdentifierAuthority;
 
     /// <include file='SID.xml' path='doc/member[@name="SID.SubAuthority"]/*' />
-    [NativeTypeName("DWORD [1]")]
+    [NativeTypeName("DWORD[1]")]
     public fixed uint SubAuthority[1];
 
     [NativeTypeName("#define SID_REVISION (1)")]

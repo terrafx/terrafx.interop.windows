@@ -17,7 +17,7 @@ public partial struct IP_INTERFACE_INFO
     public int NumAdapters;
 
     /// <include file='IP_INTERFACE_INFO.xml' path='doc/member[@name="IP_INTERFACE_INFO.Adapter"]/*' />
-    [NativeTypeName("IP_ADAPTER_INDEX_MAP [1]")]
+    [NativeTypeName("IP_ADAPTER_INDEX_MAP[1]")]
     public _Adapter_e__FixedBuffer Adapter;
 
     /// <include file='_Adapter_e__FixedBuffer.xml' path='doc/member[@name="_Adapter_e__FixedBuffer"]/*' />

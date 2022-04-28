@@ -9,7 +9,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct SCM_PD_DEVICE_SPECIFIC_PROPERTY
 {
     /// <include file='SCM_PD_DEVICE_SPECIFIC_PROPERTY.xml' path='doc/member[@name="SCM_PD_DEVICE_SPECIFIC_PROPERTY.Name"]/*' />
-    [NativeTypeName("WCHAR [128]")]
+    [NativeTypeName("WCHAR[128]")]
     public fixed ushort Name[128];
 
     /// <include file='SCM_PD_DEVICE_SPECIFIC_PROPERTY.xml' path='doc/member[@name="SCM_PD_DEVICE_SPECIFIC_PROPERTY.Value"]/*' />

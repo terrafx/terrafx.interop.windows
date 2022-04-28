@@ -41,7 +41,7 @@ public partial struct PPM_IDLE_STATE_ACCOUNTING_EX
     public uint CancelledTransitions;
 
     /// <include file='PPM_IDLE_STATE_ACCOUNTING_EX.xml' path='doc/member[@name="PPM_IDLE_STATE_ACCOUNTING_EX.IdleTimeBuckets"]/*' />
-    [NativeTypeName("PPM_IDLE_STATE_BUCKET_EX [16]")]
+    [NativeTypeName("PPM_IDLE_STATE_BUCKET_EX[16]")]
     public _IdleTimeBuckets_e__FixedBuffer IdleTimeBuckets;
 
     /// <include file='_IdleTimeBuckets_e__FixedBuffer.xml' path='doc/member[@name="_IdleTimeBuckets_e__FixedBuffer"]/*' />

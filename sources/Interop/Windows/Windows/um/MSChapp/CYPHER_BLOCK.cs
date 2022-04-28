@@ -9,6 +9,6 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct CYPHER_BLOCK
 {
     /// <include file='CYPHER_BLOCK.xml' path='doc/member[@name="CYPHER_BLOCK.data"]/*' />
-    [NativeTypeName("CHAR [8]")]
+    [NativeTypeName("CHAR[8]")]
     public fixed sbyte data[8];
 }

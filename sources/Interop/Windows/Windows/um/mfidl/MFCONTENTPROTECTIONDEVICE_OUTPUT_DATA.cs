@@ -35,6 +35,6 @@ public unsafe partial struct MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA
     public long ExecutionTimeInHundredsOfNanoseconds;
 
     /// <include file='MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA.xml' path='doc/member[@name="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA.OutputData"]/*' />
-    [NativeTypeName("BYTE [4]")]
+    [NativeTypeName("BYTE[4]")]
     public fixed byte OutputData[4];
 }

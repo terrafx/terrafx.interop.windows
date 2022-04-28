@@ -17,7 +17,7 @@ public partial struct MIB_TCPTABLE
     public uint dwNumEntries;
 
     /// <include file='MIB_TCPTABLE.xml' path='doc/member[@name="MIB_TCPTABLE.table"]/*' />
-    [NativeTypeName("MIB_TCPROW [1]")]
+    [NativeTypeName("MIB_TCPROW[1]")]
     public _table_e__FixedBuffer table;
 
     /// <include file='_table_e__FixedBuffer.xml' path='doc/member[@name="_table_e__FixedBuffer"]/*' />

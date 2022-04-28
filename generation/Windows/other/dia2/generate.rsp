@@ -2,7 +2,7 @@
 @../../../remap.rsp
 --exclude
 __MIDL___MIDL_itf_dia2_0000_0000_0001
-__MIDL___MIDL_itf_dia2_0000_0034_0001
+__MIDL___MIDL_itf_dia2_0000_0035_0001
 --include-directory
 C:/Program Files/Microsoft Visual Studio/2022/Community/DIA SDK/include/
 --file

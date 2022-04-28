@@ -16,6 +16,6 @@ public unsafe partial struct CRYPT_RC2_CBC_PARAMETERS
     public BOOL fIV;
 
     /// <include file='CRYPT_RC2_CBC_PARAMETERS.xml' path='doc/member[@name="CRYPT_RC2_CBC_PARAMETERS.rgbIV"]/*' />
-    [NativeTypeName("BYTE [8]")]
+    [NativeTypeName("BYTE[8]")]
     public fixed byte rgbIV[8];
 }

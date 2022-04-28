@@ -26,7 +26,7 @@ public partial struct IP_MSFILTER
     public uint imsf_numsrc;
 
     /// <include file='IP_MSFILTER.xml' path='doc/member[@name="IP_MSFILTER.imsf_slist"]/*' />
-    [NativeTypeName("IN_ADDR [1]")]
+    [NativeTypeName("IN_ADDR[1]")]
     public _imsf_slist_e__FixedBuffer imsf_slist;
 
     /// <include file='_imsf_slist_e__FixedBuffer.xml' path='doc/member[@name="_imsf_slist_e__FixedBuffer"]/*' />

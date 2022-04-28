@@ -19,6 +19,6 @@ public unsafe partial struct CATEGORYINFO
     public uint lcid;
 
     /// <include file='CATEGORYINFO.xml' path='doc/member[@name="CATEGORYINFO.szDescription"]/*' />
-    [NativeTypeName("OLECHAR [128]")]
+    [NativeTypeName("OLECHAR[128]")]
     public fixed ushort szDescription[128];
 }

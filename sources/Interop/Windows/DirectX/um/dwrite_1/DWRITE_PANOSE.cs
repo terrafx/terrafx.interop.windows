@@ -13,7 +13,7 @@ public unsafe partial struct DWRITE_PANOSE
 {
     /// <include file='DWRITE_PANOSE.xml' path='doc/member[@name="DWRITE_PANOSE.values"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("UINT8 [10]")]
+    [NativeTypeName("UINT8[10]")]
     public fixed byte values[10];
 
     /// <include file='DWRITE_PANOSE.xml' path='doc/member[@name="DWRITE_PANOSE.familyKind"]/*' />

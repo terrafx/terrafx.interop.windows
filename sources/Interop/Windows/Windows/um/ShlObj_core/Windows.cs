@@ -307,7 +307,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateStdEnumFmtEtc"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHCreateStdEnumFmtEtc(uint cfmt, [NativeTypeName("const FORMATETC []")] FORMATETC* afmt, IEnumFORMATETC** ppenumFormatEtc);
+    public static extern HRESULT SHCreateStdEnumFmtEtc(uint cfmt, [NativeTypeName("const FORMATETC[]")] FORMATETC* afmt, IEnumFORMATETC** ppenumFormatEtc);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHDoDragDrop"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -576,11 +576,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHPropStgReadMultiple"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHPropStgReadMultiple(IPropertyStorage* pps, uint uCodePage, [NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec, [NativeTypeName("PROPVARIANT []")] PROPVARIANT* rgvar);
+    public static extern HRESULT SHPropStgReadMultiple(IPropertyStorage* pps, uint uCodePage, [NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC[]")] PROPSPEC* rgpspec, [NativeTypeName("PROPVARIANT[]")] PROPVARIANT* rgvar);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHPropStgWriteMultiple"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHPropStgWriteMultiple(IPropertyStorage* pps, uint* puCodePage, [NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec, [NativeTypeName("PROPVARIANT []")] PROPVARIANT* rgvar, [NativeTypeName("PROPID")] uint propidNameFirst);
+    public static extern HRESULT SHPropStgWriteMultiple(IPropertyStorage* pps, uint* puCodePage, [NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC[]")] PROPSPEC* rgpspec, [NativeTypeName("PROPVARIANT[]")] PROPVARIANT* rgvar, [NativeTypeName("PROPID")] uint propidNameFirst);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateFileExtractIconW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]

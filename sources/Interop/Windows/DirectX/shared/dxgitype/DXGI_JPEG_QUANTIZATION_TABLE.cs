@@ -9,6 +9,6 @@ namespace TerraFX.Interop.DirectX;
 public unsafe partial struct DXGI_JPEG_QUANTIZATION_TABLE
 {
     /// <include file='DXGI_JPEG_QUANTIZATION_TABLE.xml' path='doc/member[@name="DXGI_JPEG_QUANTIZATION_TABLE.Elements"]/*' />
-    [NativeTypeName("BYTE [64]")]
+    [NativeTypeName("BYTE[64]")]
     public fixed byte Elements[64];
 }

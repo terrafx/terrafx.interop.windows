@@ -23,6 +23,6 @@ public unsafe partial struct FILE_ATTRIBUTES_ARRAY
     public uint dwProductFileAttributes;
 
     /// <include file='FILE_ATTRIBUTES_ARRAY.xml' path='doc/member[@name="FILE_ATTRIBUTES_ARRAY.rgdwFileAttributes"]/*' />
-    [NativeTypeName("DWORD [1]")]
+    [NativeTypeName("DWORD[1]")]
     public fixed uint rgdwFileAttributes[1];
 }

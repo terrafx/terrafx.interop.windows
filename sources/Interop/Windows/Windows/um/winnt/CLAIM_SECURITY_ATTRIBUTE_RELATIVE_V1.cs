@@ -42,27 +42,27 @@ public partial struct CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1
     {
         /// <include file='_Values_e__Union.xml' path='doc/member[@name="_Values_e__Union.pInt64"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("DWORD [1]")]
+        [NativeTypeName("DWORD[1]")]
         public fixed uint pInt64[1];
 
         /// <include file='_Values_e__Union.xml' path='doc/member[@name="_Values_e__Union.pUint64"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("DWORD [1]")]
+        [NativeTypeName("DWORD[1]")]
         public fixed uint pUint64[1];
 
         /// <include file='_Values_e__Union.xml' path='doc/member[@name="_Values_e__Union.ppString"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("DWORD [1]")]
+        [NativeTypeName("DWORD[1]")]
         public fixed uint ppString[1];
 
         /// <include file='_Values_e__Union.xml' path='doc/member[@name="_Values_e__Union.pFqbn"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("DWORD [1]")]
+        [NativeTypeName("DWORD[1]")]
         public fixed uint pFqbn[1];
 
         /// <include file='_Values_e__Union.xml' path='doc/member[@name="_Values_e__Union.pOctetString"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("DWORD [1]")]
+        [NativeTypeName("DWORD[1]")]
         public fixed uint pOctetString[1];
     }
 }

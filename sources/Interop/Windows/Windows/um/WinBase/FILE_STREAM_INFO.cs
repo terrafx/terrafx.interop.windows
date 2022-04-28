@@ -23,6 +23,6 @@ public unsafe partial struct FILE_STREAM_INFO
     public LARGE_INTEGER StreamAllocationSize;
 
     /// <include file='FILE_STREAM_INFO.xml' path='doc/member[@name="FILE_STREAM_INFO.StreamName"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort StreamName[1];
 }

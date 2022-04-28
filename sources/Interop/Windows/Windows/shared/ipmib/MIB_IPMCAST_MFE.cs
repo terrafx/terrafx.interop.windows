@@ -73,7 +73,7 @@ public partial struct MIB_IPMCAST_MFE
     public uint dwReserved;
 
     /// <include file='MIB_IPMCAST_MFE.xml' path='doc/member[@name="MIB_IPMCAST_MFE.rgmioOutInfo"]/*' />
-    [NativeTypeName("MIB_IPMCAST_OIF [1]")]
+    [NativeTypeName("MIB_IPMCAST_OIF[1]")]
     public _rgmioOutInfo_e__FixedBuffer rgmioOutInfo;
 
     /// <include file='_rgmioOutInfo_e__FixedBuffer.xml' path='doc/member[@name="_rgmioOutInfo_e__FixedBuffer"]/*' />

@@ -21,7 +21,7 @@ public unsafe partial struct THUMBBUTTON
     public HICON hIcon;
 
     /// <include file='THUMBBUTTON.xml' path='doc/member[@name="THUMBBUTTON.szTip"]/*' />
-    [NativeTypeName("WCHAR [260]")]
+    [NativeTypeName("WCHAR[260]")]
     public fixed ushort szTip[260];
 
     /// <include file='THUMBBUTTON.xml' path='doc/member[@name="THUMBBUTTON.dwFlags"]/*' />

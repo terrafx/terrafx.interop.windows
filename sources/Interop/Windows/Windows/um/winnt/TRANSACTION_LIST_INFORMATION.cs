@@ -17,7 +17,7 @@ public partial struct TRANSACTION_LIST_INFORMATION
     public uint NumberOfTransactions;
 
     /// <include file='TRANSACTION_LIST_INFORMATION.xml' path='doc/member[@name="TRANSACTION_LIST_INFORMATION.TransactionInformation"]/*' />
-    [NativeTypeName("TRANSACTION_LIST_ENTRY [1]")]
+    [NativeTypeName("TRANSACTION_LIST_ENTRY[1]")]
     public _TransactionInformation_e__FixedBuffer TransactionInformation;
 
     /// <include file='_TransactionInformation_e__FixedBuffer.xml' path='doc/member[@name="_TransactionInformation_e__FixedBuffer"]/*' />

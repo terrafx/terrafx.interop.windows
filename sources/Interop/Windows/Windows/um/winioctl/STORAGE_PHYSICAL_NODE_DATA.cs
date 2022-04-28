@@ -37,6 +37,6 @@ public unsafe partial struct STORAGE_PHYSICAL_NODE_DATA
     public uint DeviceDataOffset;
 
     /// <include file='STORAGE_PHYSICAL_NODE_DATA.xml' path='doc/member[@name="STORAGE_PHYSICAL_NODE_DATA.Reserved"]/*' />
-    [NativeTypeName("DWORD [3]")]
+    [NativeTypeName("DWORD[3]")]
     public fixed uint Reserved[3];
 }

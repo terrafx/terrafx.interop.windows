@@ -24,7 +24,7 @@ public unsafe partial struct MIDIOUTCAPSW
     public uint vDriverVersion;
 
     /// <include file='MIDIOUTCAPSW.xml' path='doc/member[@name="MIDIOUTCAPSW.szPname"]/*' />
-    [NativeTypeName("WCHAR [32]")]
+    [NativeTypeName("WCHAR[32]")]
     public fixed ushort szPname[32];
 
     /// <include file='MIDIOUTCAPSW.xml' path='doc/member[@name="MIDIOUTCAPSW.wTechnology"]/*' />

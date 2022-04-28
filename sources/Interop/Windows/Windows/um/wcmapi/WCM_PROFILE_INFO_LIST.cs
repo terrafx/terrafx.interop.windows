@@ -19,7 +19,7 @@ public partial struct WCM_PROFILE_INFO_LIST
     public uint dwNumberOfItems;
 
     /// <include file='WCM_PROFILE_INFO_LIST.xml' path='doc/member[@name="WCM_PROFILE_INFO_LIST.ProfileInfo"]/*' />
-    [NativeTypeName("WCM_PROFILE_INFO [1]")]
+    [NativeTypeName("WCM_PROFILE_INFO[1]")]
     public _ProfileInfo_e__FixedBuffer ProfileInfo;
 
     /// <include file='_ProfileInfo_e__FixedBuffer.xml' path='doc/member[@name="_ProfileInfo_e__FixedBuffer"]/*' />

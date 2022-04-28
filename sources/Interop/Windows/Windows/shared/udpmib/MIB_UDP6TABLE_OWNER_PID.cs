@@ -17,7 +17,7 @@ public partial struct MIB_UDP6TABLE_OWNER_PID
     public uint dwNumEntries;
 
     /// <include file='MIB_UDP6TABLE_OWNER_PID.xml' path='doc/member[@name="MIB_UDP6TABLE_OWNER_PID.table"]/*' />
-    [NativeTypeName("MIB_UDP6ROW_OWNER_PID [1]")]
+    [NativeTypeName("MIB_UDP6ROW_OWNER_PID[1]")]
     public _table_e__FixedBuffer table;
 
     /// <include file='_table_e__FixedBuffer.xml' path='doc/member[@name="_table_e__FixedBuffer"]/*' />

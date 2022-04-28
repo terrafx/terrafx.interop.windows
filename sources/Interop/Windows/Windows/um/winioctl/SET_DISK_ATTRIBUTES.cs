@@ -17,7 +17,7 @@ public unsafe partial struct SET_DISK_ATTRIBUTES
     public byte Persist;
 
     /// <include file='SET_DISK_ATTRIBUTES.xml' path='doc/member[@name="SET_DISK_ATTRIBUTES.Reserved1"]/*' />
-    [NativeTypeName("BYTE [3]")]
+    [NativeTypeName("BYTE[3]")]
     public fixed byte Reserved1[3];
 
     /// <include file='SET_DISK_ATTRIBUTES.xml' path='doc/member[@name="SET_DISK_ATTRIBUTES.Attributes"]/*' />
@@ -29,6 +29,6 @@ public unsafe partial struct SET_DISK_ATTRIBUTES
     public ulong AttributesMask;
 
     /// <include file='SET_DISK_ATTRIBUTES.xml' path='doc/member[@name="SET_DISK_ATTRIBUTES.Reserved2"]/*' />
-    [NativeTypeName("DWORD [4]")]
+    [NativeTypeName("DWORD[4]")]
     public fixed uint Reserved2[4];
 }

@@ -46,7 +46,7 @@ public unsafe partial struct SYSTEM_POWER_POLICY
     public byte DynamicThrottle;
 
     /// <include file='SYSTEM_POWER_POLICY.xml' path='doc/member[@name="SYSTEM_POWER_POLICY.Spare2"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte Spare2[2];
 
     /// <include file='SYSTEM_POWER_POLICY.xml' path='doc/member[@name="SYSTEM_POWER_POLICY.MinSleep"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct SYSTEM_POWER_POLICY
     public uint BroadcastCapacityResolution;
 
     /// <include file='SYSTEM_POWER_POLICY.xml' path='doc/member[@name="SYSTEM_POWER_POLICY.DischargePolicy"]/*' />
-    [NativeTypeName("SYSTEM_POWER_LEVEL [4]")]
+    [NativeTypeName("SYSTEM_POWER_LEVEL[4]")]
     public _DischargePolicy_e__FixedBuffer DischargePolicy;
 
     /// <include file='SYSTEM_POWER_POLICY.xml' path='doc/member[@name="SYSTEM_POWER_POLICY.VideoTimeout"]/*' />
@@ -87,7 +87,7 @@ public unsafe partial struct SYSTEM_POWER_POLICY
     public byte VideoDimDisplay;
 
     /// <include file='SYSTEM_POWER_POLICY.xml' path='doc/member[@name="SYSTEM_POWER_POLICY.VideoReserved"]/*' />
-    [NativeTypeName("DWORD [3]")]
+    [NativeTypeName("DWORD[3]")]
     public fixed uint VideoReserved[3];
 
     /// <include file='SYSTEM_POWER_POLICY.xml' path='doc/member[@name="SYSTEM_POWER_POLICY.SpindownTimeout"]/*' />

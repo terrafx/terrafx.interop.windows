@@ -29,7 +29,7 @@ public unsafe partial struct GROUP_POLICY_OBJECTW
     public ushort* lpDisplayName;
 
     /// <include file='GROUP_POLICY_OBJECTW.xml' path='doc/member[@name="GROUP_POLICY_OBJECTW.szGPOName"]/*' />
-    [NativeTypeName("WCHAR [50]")]
+    [NativeTypeName("WCHAR[50]")]
     public fixed ushort szGPOName[50];
 
     /// <include file='GROUP_POLICY_OBJECTW.xml' path='doc/member[@name="GROUP_POLICY_OBJECTW.GPOLink"]/*' />

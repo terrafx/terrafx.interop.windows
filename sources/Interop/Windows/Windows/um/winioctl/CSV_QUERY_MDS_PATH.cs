@@ -21,6 +21,6 @@ public unsafe partial struct CSV_QUERY_MDS_PATH
     public uint PathLength;
 
     /// <include file='CSV_QUERY_MDS_PATH.xml' path='doc/member[@name="CSV_QUERY_MDS_PATH.Path"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort Path[1];
 }

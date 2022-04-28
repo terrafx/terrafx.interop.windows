@@ -19,7 +19,7 @@ public partial struct EMRPLGBLT
     public RECTL rclBounds;
 
     /// <include file='EMRPLGBLT.xml' path='doc/member[@name="EMRPLGBLT.aptlDest"]/*' />
-    [NativeTypeName("POINTL [3]")]
+    [NativeTypeName("POINTL[3]")]
     public _aptlDest_e__FixedBuffer aptlDest;
 
     /// <include file='EMRPLGBLT.xml' path='doc/member[@name="EMRPLGBLT.xSrc"]/*' />

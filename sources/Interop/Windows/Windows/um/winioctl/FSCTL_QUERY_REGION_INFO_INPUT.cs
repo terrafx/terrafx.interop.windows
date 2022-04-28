@@ -29,7 +29,7 @@ public partial struct FSCTL_QUERY_REGION_INFO_INPUT
     public uint NumberOfTierIds;
 
     /// <include file='FSCTL_QUERY_REGION_INFO_INPUT.xml' path='doc/member[@name="FSCTL_QUERY_REGION_INFO_INPUT.TierIds"]/*' />
-    [NativeTypeName("GUID [1]")]
+    [NativeTypeName("GUID[1]")]
     public _TierIds_e__FixedBuffer TierIds;
 
     /// <include file='_TierIds_e__FixedBuffer.xml' path='doc/member[@name="_TierIds_e__FixedBuffer"]/*' />

@@ -26,6 +26,6 @@ public unsafe partial struct FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX
     public byte Version;
 
     /// <include file='FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX.xml' path='doc/member[@name="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX.Reserved2"]/*' />
-    [NativeTypeName("BYTE [7]")]
+    [NativeTypeName("BYTE[7]")]
     public fixed byte Reserved2[7];
 }

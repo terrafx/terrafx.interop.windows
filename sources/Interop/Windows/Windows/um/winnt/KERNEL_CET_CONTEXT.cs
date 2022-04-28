@@ -28,7 +28,7 @@ public unsafe partial struct KERNEL_CET_CONTEXT
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='KERNEL_CET_CONTEXT.xml' path='doc/member[@name="KERNEL_CET_CONTEXT.Fill"]/*' />
-    [NativeTypeName("WORD [2]")]
+    [NativeTypeName("WORD[2]")]
     public fixed ushort Fill[2];
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AllFlags"]/*' />

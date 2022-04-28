@@ -19,7 +19,7 @@ public unsafe partial struct PROCESSOR_RELATIONSHIP
     public byte EfficiencyClass;
 
     /// <include file='PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="PROCESSOR_RELATIONSHIP.Reserved"]/*' />
-    [NativeTypeName("BYTE [20]")]
+    [NativeTypeName("BYTE[20]")]
     public fixed byte Reserved[20];
 
     /// <include file='PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="PROCESSOR_RELATIONSHIP.GroupCount"]/*' />
@@ -27,7 +27,7 @@ public unsafe partial struct PROCESSOR_RELATIONSHIP
     public ushort GroupCount;
 
     /// <include file='PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="PROCESSOR_RELATIONSHIP.GroupMask"]/*' />
-    [NativeTypeName("GROUP_AFFINITY [1]")]
+    [NativeTypeName("GROUP_AFFINITY[1]")]
     public _GroupMask_e__FixedBuffer GroupMask;
 
     /// <include file='_GroupMask_e__FixedBuffer.xml' path='doc/member[@name="_GroupMask_e__FixedBuffer"]/*' />

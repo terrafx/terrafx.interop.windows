@@ -16,6 +16,6 @@ public unsafe partial struct TITLEBARINFO
     public RECT rcTitleBar;
 
     /// <include file='TITLEBARINFO.xml' path='doc/member[@name="TITLEBARINFO.rgstate"]/*' />
-    [NativeTypeName("DWORD [6]")]
+    [NativeTypeName("DWORD[6]")]
     public fixed uint rgstate[6];
 }

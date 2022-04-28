@@ -9,7 +9,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct MIB_IFROW
 {
     /// <include file='MIB_IFROW.xml' path='doc/member[@name="MIB_IFROW.wszName"]/*' />
-    [NativeTypeName("WCHAR [256]")]
+    [NativeTypeName("WCHAR[256]")]
     public fixed ushort wszName[256];
 
     /// <include file='MIB_IFROW.xml' path='doc/member[@name="MIB_IFROW.dwIndex"]/*' />
@@ -33,7 +33,7 @@ public unsafe partial struct MIB_IFROW
     public uint dwPhysAddrLen;
 
     /// <include file='MIB_IFROW.xml' path='doc/member[@name="MIB_IFROW.bPhysAddr"]/*' />
-    [NativeTypeName("UCHAR [8]")]
+    [NativeTypeName("UCHAR[8]")]
     public fixed byte bPhysAddr[8];
 
     /// <include file='MIB_IFROW.xml' path='doc/member[@name="MIB_IFROW.dwAdminStatus"]/*' />
@@ -100,6 +100,6 @@ public unsafe partial struct MIB_IFROW
     public uint dwDescrLen;
 
     /// <include file='MIB_IFROW.xml' path='doc/member[@name="MIB_IFROW.bDescr"]/*' />
-    [NativeTypeName("UCHAR [256]")]
+    [NativeTypeName("UCHAR[256]")]
     public fixed byte bDescr[256];
 }

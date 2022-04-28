@@ -23,7 +23,7 @@ public unsafe partial struct STORAGE_ZONE_DESCRIPTOR
     public byte ResetWritePointerRecommend;
 
     /// <include file='STORAGE_ZONE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONE_DESCRIPTOR.Reserved0"]/*' />
-    [NativeTypeName("BYTE [3]")]
+    [NativeTypeName("BYTE[3]")]
     public fixed byte Reserved0[3];
 
     /// <include file='STORAGE_ZONE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONE_DESCRIPTOR.ZoneSize"]/*' />

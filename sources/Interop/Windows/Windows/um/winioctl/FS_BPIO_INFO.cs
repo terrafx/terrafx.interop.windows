@@ -17,6 +17,6 @@ public unsafe partial struct FS_BPIO_INFO
     public ushort StorageDriverNameLen;
 
     /// <include file='FS_BPIO_INFO.xml' path='doc/member[@name="FS_BPIO_INFO.StorageDriverName"]/*' />
-    [NativeTypeName("WCHAR [32]")]
+    [NativeTypeName("WCHAR[32]")]
     public fixed ushort StorageDriverName[32];
 }

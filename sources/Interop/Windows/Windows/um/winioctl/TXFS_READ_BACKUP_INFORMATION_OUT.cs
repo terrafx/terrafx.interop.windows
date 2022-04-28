@@ -47,7 +47,7 @@ public unsafe partial struct TXFS_READ_BACKUP_INFORMATION_OUT
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Buffer"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("BYTE [1]")]
+        [NativeTypeName("BYTE[1]")]
         public fixed byte Buffer[1];
     }
 }

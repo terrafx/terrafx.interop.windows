@@ -16,7 +16,7 @@ public unsafe partial struct DEVICEDUMP_SECTION_HEADER
     public Guid guidDeviceDataId;
 
     /// <include file='DEVICEDUMP_SECTION_HEADER.xml' path='doc/member[@name="DEVICEDUMP_SECTION_HEADER.sOrganizationID"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte sOrganizationID[16];
 
     /// <include file='DEVICEDUMP_SECTION_HEADER.xml' path='doc/member[@name="DEVICEDUMP_SECTION_HEADER.dwFirmwareRevision"]/*' />
@@ -24,11 +24,11 @@ public unsafe partial struct DEVICEDUMP_SECTION_HEADER
     public uint dwFirmwareRevision;
 
     /// <include file='DEVICEDUMP_SECTION_HEADER.xml' path='doc/member[@name="DEVICEDUMP_SECTION_HEADER.sModelNumber"]/*' />
-    [NativeTypeName("BYTE [32]")]
+    [NativeTypeName("BYTE[32]")]
     public fixed byte sModelNumber[32];
 
     /// <include file='DEVICEDUMP_SECTION_HEADER.xml' path='doc/member[@name="DEVICEDUMP_SECTION_HEADER.szDeviceManufacturingID"]/*' />
-    [NativeTypeName("BYTE [32]")]
+    [NativeTypeName("BYTE[32]")]
     public fixed byte szDeviceManufacturingID[32];
 
     /// <include file='DEVICEDUMP_SECTION_HEADER.xml' path='doc/member[@name="DEVICEDUMP_SECTION_HEADER.dwFlags"]/*' />
@@ -44,6 +44,6 @@ public unsafe partial struct DEVICEDUMP_SECTION_HEADER
     public uint dwFirmwareIssueId;
 
     /// <include file='DEVICEDUMP_SECTION_HEADER.xml' path='doc/member[@name="DEVICEDUMP_SECTION_HEADER.szIssueDescriptionString"]/*' />
-    [NativeTypeName("BYTE [132]")]
+    [NativeTypeName("BYTE[132]")]
     public fixed byte szIssueDescriptionString[132];
 }

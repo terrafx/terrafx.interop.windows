@@ -19,7 +19,7 @@ public partial struct MFPinholeCameraIntrinsics
     public uint IntrinsicModelCount;
 
     /// <include file='MFPinholeCameraIntrinsics.xml' path='doc/member[@name="MFPinholeCameraIntrinsics.IntrinsicModels"]/*' />
-    [NativeTypeName("MFPinholeCameraIntrinsic_IntrinsicModel [1]")]
+    [NativeTypeName("MFPinholeCameraIntrinsic_IntrinsicModel[1]")]
     public _IntrinsicModels_e__FixedBuffer IntrinsicModels;
 
     /// <include file='_IntrinsicModels_e__FixedBuffer.xml' path='doc/member[@name="_IntrinsicModels_e__FixedBuffer"]/*' />

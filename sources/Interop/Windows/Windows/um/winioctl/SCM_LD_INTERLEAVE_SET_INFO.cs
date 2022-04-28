@@ -25,7 +25,7 @@ public partial struct SCM_LD_INTERLEAVE_SET_INFO
     public uint InterleaveSetSize;
 
     /// <include file='SCM_LD_INTERLEAVE_SET_INFO.xml' path='doc/member[@name="SCM_LD_INTERLEAVE_SET_INFO.InterleaveSet"]/*' />
-    [NativeTypeName("SCM_INTERLEAVED_PD_INFO [1]")]
+    [NativeTypeName("SCM_INTERLEAVED_PD_INFO[1]")]
     public _InterleaveSet_e__FixedBuffer InterleaveSet;
 
     /// <include file='_InterleaveSet_e__FixedBuffer.xml' path='doc/member[@name="_InterleaveSet_e__FixedBuffer"]/*' />

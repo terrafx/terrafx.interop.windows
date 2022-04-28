@@ -17,6 +17,6 @@ public unsafe partial struct FLAGGED_WORD_BLOB
     public uint clSize;
 
     /// <include file='FLAGGED_WORD_BLOB.xml' path='doc/member[@name="FLAGGED_WORD_BLOB.asData"]/*' />
-    [NativeTypeName("unsigned short [1]")]
+    [NativeTypeName("unsigned short[1]")]
     public fixed ushort asData[1];
 }

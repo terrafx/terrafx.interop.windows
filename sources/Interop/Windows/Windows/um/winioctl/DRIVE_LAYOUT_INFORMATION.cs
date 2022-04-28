@@ -21,7 +21,7 @@ public partial struct DRIVE_LAYOUT_INFORMATION
     public uint Signature;
 
     /// <include file='DRIVE_LAYOUT_INFORMATION.xml' path='doc/member[@name="DRIVE_LAYOUT_INFORMATION.PartitionEntry"]/*' />
-    [NativeTypeName("PARTITION_INFORMATION [1]")]
+    [NativeTypeName("PARTITION_INFORMATION[1]")]
     public _PartitionEntry_e__FixedBuffer PartitionEntry;
 
     /// <include file='_PartitionEntry_e__FixedBuffer.xml' path='doc/member[@name="_PartitionEntry_e__FixedBuffer"]/*' />

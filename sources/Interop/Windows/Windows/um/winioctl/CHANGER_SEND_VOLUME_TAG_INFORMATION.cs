@@ -16,6 +16,6 @@ public unsafe partial struct CHANGER_SEND_VOLUME_TAG_INFORMATION
     public uint ActionCode;
 
     /// <include file='CHANGER_SEND_VOLUME_TAG_INFORMATION.xml' path='doc/member[@name="CHANGER_SEND_VOLUME_TAG_INFORMATION.VolumeIDTemplate"]/*' />
-    [NativeTypeName("BYTE [40]")]
+    [NativeTypeName("BYTE[40]")]
     public fixed byte VolumeIDTemplate[40];
 }

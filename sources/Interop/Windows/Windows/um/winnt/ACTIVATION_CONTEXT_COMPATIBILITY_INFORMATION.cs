@@ -13,6 +13,6 @@ public partial struct ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION
     public uint ElementCount;
 
     /// <include file='ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION.Elements"]/*' />
-    [NativeTypeName("COMPATIBILITY_CONTEXT_ELEMENT []")]
+    [NativeTypeName("COMPATIBILITY_CONTEXT_ELEMENT[]")]
     public COMPATIBILITY_CONTEXT_ELEMENT Elements;
 }

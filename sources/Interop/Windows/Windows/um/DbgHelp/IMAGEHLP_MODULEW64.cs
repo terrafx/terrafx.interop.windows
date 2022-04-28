@@ -38,19 +38,19 @@ public unsafe partial struct IMAGEHLP_MODULEW64
     public SYM_TYPE SymType;
 
     /// <include file='IMAGEHLP_MODULEW64.xml' path='doc/member[@name="IMAGEHLP_MODULEW64.ModuleName"]/*' />
-    [NativeTypeName("WCHAR [32]")]
+    [NativeTypeName("WCHAR[32]")]
     public fixed ushort ModuleName[32];
 
     /// <include file='IMAGEHLP_MODULEW64.xml' path='doc/member[@name="IMAGEHLP_MODULEW64.ImageName"]/*' />
-    [NativeTypeName("WCHAR [256]")]
+    [NativeTypeName("WCHAR[256]")]
     public fixed ushort ImageName[256];
 
     /// <include file='IMAGEHLP_MODULEW64.xml' path='doc/member[@name="IMAGEHLP_MODULEW64.LoadedImageName"]/*' />
-    [NativeTypeName("WCHAR [256]")]
+    [NativeTypeName("WCHAR[256]")]
     public fixed ushort LoadedImageName[256];
 
     /// <include file='IMAGEHLP_MODULEW64.xml' path='doc/member[@name="IMAGEHLP_MODULEW64.LoadedPdbName"]/*' />
-    [NativeTypeName("WCHAR [256]")]
+    [NativeTypeName("WCHAR[256]")]
     public fixed ushort LoadedPdbName[256];
 
     /// <include file='IMAGEHLP_MODULEW64.xml' path='doc/member[@name="IMAGEHLP_MODULEW64.CVSig"]/*' />
@@ -58,7 +58,7 @@ public unsafe partial struct IMAGEHLP_MODULEW64
     public uint CVSig;
 
     /// <include file='IMAGEHLP_MODULEW64.xml' path='doc/member[@name="IMAGEHLP_MODULEW64.CVData"]/*' />
-    [NativeTypeName("WCHAR [780]")]
+    [NativeTypeName("WCHAR[780]")]
     public fixed ushort CVData[780];
 
     /// <include file='IMAGEHLP_MODULEW64.xml' path='doc/member[@name="IMAGEHLP_MODULEW64.PdbSig"]/*' />

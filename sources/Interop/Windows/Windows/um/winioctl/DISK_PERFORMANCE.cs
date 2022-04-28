@@ -47,6 +47,6 @@ public unsafe partial struct DISK_PERFORMANCE
     public uint StorageDeviceNumber;
 
     /// <include file='DISK_PERFORMANCE.xml' path='doc/member[@name="DISK_PERFORMANCE.StorageManagerName"]/*' />
-    [NativeTypeName("WCHAR [8]")]
+    [NativeTypeName("WCHAR[8]")]
     public fixed ushort StorageManagerName[8];
 }

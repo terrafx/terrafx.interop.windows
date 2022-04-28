@@ -17,7 +17,7 @@ public unsafe partial struct CANDIDATEINFO
     public uint dwCount;
 
     /// <include file='CANDIDATEINFO.xml' path='doc/member[@name="CANDIDATEINFO.dwOffset"]/*' />
-    [NativeTypeName("DWORD [32]")]
+    [NativeTypeName("DWORD[32]")]
     public fixed uint dwOffset[32];
 
     /// <include file='CANDIDATEINFO.xml' path='doc/member[@name="CANDIDATEINFO.dwPrivateSize"]/*' />

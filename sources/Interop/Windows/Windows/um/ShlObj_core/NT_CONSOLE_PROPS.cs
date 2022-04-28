@@ -51,7 +51,7 @@ public unsafe partial struct NT_CONSOLE_PROPS
     public uint uFontWeight;
 
     /// <include file='NT_CONSOLE_PROPS.xml' path='doc/member[@name="NT_CONSOLE_PROPS.FaceName"]/*' />
-    [NativeTypeName("WCHAR [32]")]
+    [NativeTypeName("WCHAR[32]")]
     public fixed ushort FaceName[32];
 
     /// <include file='NT_CONSOLE_PROPS.xml' path='doc/member[@name="NT_CONSOLE_PROPS.uCursorSize"]/*' />
@@ -79,7 +79,7 @@ public unsafe partial struct NT_CONSOLE_PROPS
     public BOOL bHistoryNoDup;
 
     /// <include file='NT_CONSOLE_PROPS.xml' path='doc/member[@name="NT_CONSOLE_PROPS.ColorTable"]/*' />
-    [NativeTypeName("COLORREF [16]")]
+    [NativeTypeName("COLORREF[16]")]
     public _ColorTable_e__FixedBuffer ColorTable;
 
     /// <include file='_ColorTable_e__FixedBuffer.xml' path='doc/member[@name="_ColorTable_e__FixedBuffer"]/*' />

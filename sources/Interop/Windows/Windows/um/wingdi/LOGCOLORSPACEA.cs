@@ -44,6 +44,6 @@ public unsafe partial struct LOGCOLORSPACEA
     public uint lcsGammaBlue;
 
     /// <include file='LOGCOLORSPACEA.xml' path='doc/member[@name="LOGCOLORSPACEA.lcsFilename"]/*' />
-    [NativeTypeName("CHAR [260]")]
+    [NativeTypeName("CHAR[260]")]
     public fixed sbyte lcsFilename[260];
 }

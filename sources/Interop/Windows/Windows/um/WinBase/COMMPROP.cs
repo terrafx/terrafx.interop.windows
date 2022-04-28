@@ -77,6 +77,6 @@ public unsafe partial struct COMMPROP
     public uint dwProvSpec2;
 
     /// <include file='COMMPROP.xml' path='doc/member[@name="COMMPROP.wcProvChar"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort wcProvChar[1];
 }

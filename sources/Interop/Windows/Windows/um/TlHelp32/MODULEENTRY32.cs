@@ -39,10 +39,10 @@ public unsafe partial struct MODULEENTRY32
     public HMODULE hModule;
 
     /// <include file='MODULEENTRY32.xml' path='doc/member[@name="MODULEENTRY32.szModule"]/*' />
-    [NativeTypeName("char [256]")]
+    [NativeTypeName("char[256]")]
     public fixed sbyte szModule[256];
 
     /// <include file='MODULEENTRY32.xml' path='doc/member[@name="MODULEENTRY32.szExePath"]/*' />
-    [NativeTypeName("char [260]")]
+    [NativeTypeName("char[260]")]
     public fixed sbyte szExePath[260];
 }

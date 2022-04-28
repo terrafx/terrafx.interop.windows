@@ -29,7 +29,7 @@ public partial struct FILE_REGION_OUTPUT
     public uint Reserved;
 
     /// <include file='FILE_REGION_OUTPUT.xml' path='doc/member[@name="FILE_REGION_OUTPUT.Region"]/*' />
-    [NativeTypeName("FILE_REGION_INFO [1]")]
+    [NativeTypeName("FILE_REGION_INFO[1]")]
     public _Region_e__FixedBuffer Region;
 
     /// <include file='_Region_e__FixedBuffer.xml' path='doc/member[@name="_Region_e__FixedBuffer"]/*' />

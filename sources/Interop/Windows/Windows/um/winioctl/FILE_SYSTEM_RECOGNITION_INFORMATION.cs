@@ -9,6 +9,6 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct FILE_SYSTEM_RECOGNITION_INFORMATION
 {
     /// <include file='FILE_SYSTEM_RECOGNITION_INFORMATION.xml' path='doc/member[@name="FILE_SYSTEM_RECOGNITION_INFORMATION.FileSystem"]/*' />
-    [NativeTypeName("CHAR [9]")]
+    [NativeTypeName("CHAR[9]")]
     public fixed sbyte FileSystem[9];
 }

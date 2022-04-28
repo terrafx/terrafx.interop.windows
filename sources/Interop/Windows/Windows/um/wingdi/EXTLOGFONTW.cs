@@ -12,11 +12,11 @@ public unsafe partial struct EXTLOGFONTW
     public LOGFONTW elfLogFont;
 
     /// <include file='EXTLOGFONTW.xml' path='doc/member[@name="EXTLOGFONTW.elfFullName"]/*' />
-    [NativeTypeName("WCHAR [64]")]
+    [NativeTypeName("WCHAR[64]")]
     public fixed ushort elfFullName[64];
 
     /// <include file='EXTLOGFONTW.xml' path='doc/member[@name="EXTLOGFONTW.elfStyle"]/*' />
-    [NativeTypeName("WCHAR [32]")]
+    [NativeTypeName("WCHAR[32]")]
     public fixed ushort elfStyle[32];
 
     /// <include file='EXTLOGFONTW.xml' path='doc/member[@name="EXTLOGFONTW.elfVersion"]/*' />
@@ -36,7 +36,7 @@ public unsafe partial struct EXTLOGFONTW
     public uint elfReserved;
 
     /// <include file='EXTLOGFONTW.xml' path='doc/member[@name="EXTLOGFONTW.elfVendorId"]/*' />
-    [NativeTypeName("BYTE [4]")]
+    [NativeTypeName("BYTE[4]")]
     public fixed byte elfVendorId[4];
 
     /// <include file='EXTLOGFONTW.xml' path='doc/member[@name="EXTLOGFONTW.elfCulture"]/*' />

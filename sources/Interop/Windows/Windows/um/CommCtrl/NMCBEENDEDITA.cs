@@ -18,7 +18,7 @@ public unsafe partial struct NMCBEENDEDITA
     public int iNewSelection;
 
     /// <include file='NMCBEENDEDITA.xml' path='doc/member[@name="NMCBEENDEDITA.szText"]/*' />
-    [NativeTypeName("char [260]")]
+    [NativeTypeName("char[260]")]
     public fixed sbyte szText[260];
 
     /// <include file='NMCBEENDEDITA.xml' path='doc/member[@name="NMCBEENDEDITA.iWhy"]/*' />

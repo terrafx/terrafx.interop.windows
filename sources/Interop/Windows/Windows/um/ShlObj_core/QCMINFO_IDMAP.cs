@@ -16,7 +16,7 @@ public partial struct QCMINFO_IDMAP
     public uint nMaxIds;
 
     /// <include file='QCMINFO_IDMAP.xml' path='doc/member[@name="QCMINFO_IDMAP.pIdList"]/*' />
-    [NativeTypeName("QCMINFO_IDMAP_PLACEMENT [1]")]
+    [NativeTypeName("QCMINFO_IDMAP_PLACEMENT[1]")]
     public _pIdList_e__FixedBuffer pIdList;
 
     /// <include file='_pIdList_e__FixedBuffer.xml' path='doc/member[@name="_pIdList_e__FixedBuffer"]/*' />

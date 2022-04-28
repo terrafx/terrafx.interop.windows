@@ -16,10 +16,10 @@ public unsafe partial struct D3D11_COMPUTE_SHADER_TRACE_DESC
     public ulong Invocation;
 
     /// <include file='D3D11_COMPUTE_SHADER_TRACE_DESC.xml' path='doc/member[@name="D3D11_COMPUTE_SHADER_TRACE_DESC.ThreadIDInGroup"]/*' />
-    [NativeTypeName("UINT [3]")]
+    [NativeTypeName("UINT[3]")]
     public fixed uint ThreadIDInGroup[3];
 
     /// <include file='D3D11_COMPUTE_SHADER_TRACE_DESC.xml' path='doc/member[@name="D3D11_COMPUTE_SHADER_TRACE_DESC.ThreadGroupID"]/*' />
-    [NativeTypeName("UINT [3]")]
+    [NativeTypeName("UINT[3]")]
     public fixed uint ThreadGroupID[3];
 }

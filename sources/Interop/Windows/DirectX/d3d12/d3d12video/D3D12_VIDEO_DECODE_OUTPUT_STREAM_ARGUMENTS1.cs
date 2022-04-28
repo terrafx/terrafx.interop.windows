@@ -22,7 +22,7 @@ public unsafe partial struct D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1
     public D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS1 ConversionArguments;
 
     /// <include file='D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1.xml' path='doc/member[@name="D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1.Histograms"]/*' />
-    [NativeTypeName("D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM [4]")]
+    [NativeTypeName("D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM[4]")]
     public _Histograms_e__FixedBuffer Histograms;
 
     /// <include file='_Histograms_e__FixedBuffer.xml' path='doc/member[@name="_Histograms_e__FixedBuffer"]/*' />

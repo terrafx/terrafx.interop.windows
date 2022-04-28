@@ -19,7 +19,7 @@ public partial struct MFCameraExtrinsics
     public uint TransformCount;
 
     /// <include file='MFCameraExtrinsics.xml' path='doc/member[@name="MFCameraExtrinsics.CalibratedTransforms"]/*' />
-    [NativeTypeName("MFCameraExtrinsic_CalibratedTransform [1]")]
+    [NativeTypeName("MFCameraExtrinsic_CalibratedTransform[1]")]
     public _CalibratedTransforms_e__FixedBuffer CalibratedTransforms;
 
     /// <include file='_CalibratedTransforms_e__FixedBuffer.xml' path='doc/member[@name="_CalibratedTransforms_e__FixedBuffer"]/*' />

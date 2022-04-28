@@ -17,6 +17,6 @@ public unsafe partial struct SHCOLUMNINIT
     public uint dwReserved;
 
     /// <include file='SHCOLUMNINIT.xml' path='doc/member[@name="SHCOLUMNINIT.wszFolder"]/*' />
-    [NativeTypeName("WCHAR [260]")]
+    [NativeTypeName("WCHAR[260]")]
     public fixed ushort wszFolder[260];
 }

@@ -16,7 +16,7 @@ public partial struct TRANSMSGLIST
     public uint uMsgCount;
 
     /// <include file='TRANSMSGLIST.xml' path='doc/member[@name="TRANSMSGLIST.TransMsg"]/*' />
-    [NativeTypeName("TRANSMSG [1]")]
+    [NativeTypeName("TRANSMSG[1]")]
     public _TransMsg_e__FixedBuffer TransMsg;
 
     /// <include file='_TransMsg_e__FixedBuffer.xml' path='doc/member[@name="_TransMsg_e__FixedBuffer"]/*' />

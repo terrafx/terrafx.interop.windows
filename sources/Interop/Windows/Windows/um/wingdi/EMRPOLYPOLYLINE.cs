@@ -27,11 +27,11 @@ public unsafe partial struct EMRPOLYPOLYLINE
     public uint cptl;
 
     /// <include file='EMRPOLYPOLYLINE.xml' path='doc/member[@name="EMRPOLYPOLYLINE.aPolyCounts"]/*' />
-    [NativeTypeName("DWORD [1]")]
+    [NativeTypeName("DWORD[1]")]
     public fixed uint aPolyCounts[1];
 
     /// <include file='EMRPOLYPOLYLINE.xml' path='doc/member[@name="EMRPOLYPOLYLINE.aptl"]/*' />
-    [NativeTypeName("POINTL [1]")]
+    [NativeTypeName("POINTL[1]")]
     public _aptl_e__FixedBuffer aptl;
 
     /// <include file='_aptl_e__FixedBuffer.xml' path='doc/member[@name="_aptl_e__FixedBuffer"]/*' />

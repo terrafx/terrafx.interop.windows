@@ -68,7 +68,7 @@ public unsafe partial struct HIDP_VALUE_CAPS
     public ushort ReportCount;
 
     /// <include file='HIDP_VALUE_CAPS.xml' path='doc/member[@name="HIDP_VALUE_CAPS.Reserved2"]/*' />
-    [NativeTypeName("USHORT [5]")]
+    [NativeTypeName("USHORT[5]")]
     public fixed ushort Reserved2[5];
 
     /// <include file='HIDP_VALUE_CAPS.xml' path='doc/member[@name="HIDP_VALUE_CAPS.UnitsExp"]/*' />

@@ -9,14 +9,14 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct CRYPT_3DES_KEY_STATE
 {
     /// <include file='CRYPT_3DES_KEY_STATE.xml' path='doc/member[@name="CRYPT_3DES_KEY_STATE.Key"]/*' />
-    [NativeTypeName("unsigned char [24]")]
+    [NativeTypeName("unsigned char[24]")]
     public fixed byte Key[24];
 
     /// <include file='CRYPT_3DES_KEY_STATE.xml' path='doc/member[@name="CRYPT_3DES_KEY_STATE.IV"]/*' />
-    [NativeTypeName("unsigned char [8]")]
+    [NativeTypeName("unsigned char[8]")]
     public fixed byte IV[8];
 
     /// <include file='CRYPT_3DES_KEY_STATE.xml' path='doc/member[@name="CRYPT_3DES_KEY_STATE.Feedback"]/*' />
-    [NativeTypeName("unsigned char [8]")]
+    [NativeTypeName("unsigned char[8]")]
     public fixed byte Feedback[8];
 }

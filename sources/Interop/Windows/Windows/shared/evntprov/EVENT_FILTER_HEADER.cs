@@ -16,7 +16,7 @@ public unsafe partial struct EVENT_FILTER_HEADER
     public byte Version;
 
     /// <include file='EVENT_FILTER_HEADER.xml' path='doc/member[@name="EVENT_FILTER_HEADER.Reserved"]/*' />
-    [NativeTypeName("UCHAR [5]")]
+    [NativeTypeName("UCHAR[5]")]
     public fixed byte Reserved[5];
 
     /// <include file='EVENT_FILTER_HEADER.xml' path='doc/member[@name="EVENT_FILTER_HEADER.InstanceId"]/*' />

@@ -11,7 +11,7 @@ namespace TerraFX.Interop.DirectX;
 public unsafe partial struct D3D12_RAYTRACING_INSTANCE_DESC
 {
     /// <include file='D3D12_RAYTRACING_INSTANCE_DESC.xml' path='doc/member[@name="D3D12_RAYTRACING_INSTANCE_DESC.Transform"]/*' />
-    [NativeTypeName("FLOAT [3][4]")]
+    [NativeTypeName("FLOAT[3][4]")]
     public fixed float Transform[3 * 4];
 
     public uint _bitfield1;

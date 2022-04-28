@@ -18,6 +18,6 @@ public unsafe partial struct RESOURCEMANAGER_BASIC_INFORMATION
     public uint DescriptionLength;
 
     /// <include file='RESOURCEMANAGER_BASIC_INFORMATION.xml' path='doc/member[@name="RESOURCEMANAGER_BASIC_INFORMATION.Description"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort Description[1];
 }

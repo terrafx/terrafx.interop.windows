@@ -13,6 +13,6 @@ public unsafe partial struct IMAGE_RESOURCE_DIR_STRING_U
     public ushort Length;
 
     /// <include file='IMAGE_RESOURCE_DIR_STRING_U.xml' path='doc/member[@name="IMAGE_RESOURCE_DIR_STRING_U.NameString"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort NameString[1];
 }

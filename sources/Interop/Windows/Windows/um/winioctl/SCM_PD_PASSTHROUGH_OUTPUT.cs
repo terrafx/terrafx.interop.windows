@@ -26,6 +26,6 @@ public unsafe partial struct SCM_PD_PASSTHROUGH_OUTPUT
     public uint DataSize;
 
     /// <include file='SCM_PD_PASSTHROUGH_OUTPUT.xml' path='doc/member[@name="SCM_PD_PASSTHROUGH_OUTPUT.Data"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Data[1];
 }

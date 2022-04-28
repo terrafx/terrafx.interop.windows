@@ -23,6 +23,6 @@ public partial struct ADPCMWAVEFORMAT
     public ushort wNumCoef;
 
     /// <include file='ADPCMWAVEFORMAT.xml' path='doc/member[@name="ADPCMWAVEFORMAT.aCoef"]/*' />
-    [NativeTypeName("ADPCMCOEFSET []")]
+    [NativeTypeName("ADPCMCOEFSET[]")]
     public ADPCMCOEFSET aCoef;
 }

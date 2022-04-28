@@ -33,11 +33,11 @@ public unsafe partial struct MIXERCONTROLA
     public uint cMultipleItems;
 
     /// <include file='MIXERCONTROLA.xml' path='doc/member[@name="MIXERCONTROLA.szShortName"]/*' />
-    [NativeTypeName("CHAR [16]")]
+    [NativeTypeName("CHAR[16]")]
     public fixed sbyte szShortName[16];
 
     /// <include file='MIXERCONTROLA.xml' path='doc/member[@name="MIXERCONTROLA.szName"]/*' />
-    [NativeTypeName("CHAR [64]")]
+    [NativeTypeName("CHAR[64]")]
     public fixed sbyte szName[64];
 
     /// <include file='MIXERCONTROLA.xml' path='doc/member[@name="MIXERCONTROLA.Bounds"]/*' />
@@ -64,7 +64,7 @@ public unsafe partial struct MIXERCONTROLA
 
         /// <include file='_Bounds_e__Union.xml' path='doc/member[@name="_Bounds_e__Union.dwReserved"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("DWORD [6]")]
+        [NativeTypeName("DWORD[6]")]
         public fixed uint dwReserved[6];
 
         /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.lMinimum"]/*' />
@@ -150,7 +150,7 @@ public unsafe partial struct MIXERCONTROLA
 
         /// <include file='_Metrics_e__Union.xml' path='doc/member[@name="_Metrics_e__Union.dwReserved"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("DWORD [6]")]
+        [NativeTypeName("DWORD[6]")]
         public fixed uint dwReserved[6];
     }
 }

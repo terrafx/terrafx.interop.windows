@@ -33,7 +33,7 @@ public partial struct STORAGE_DEVICE_TIERING_DESCRIPTOR
     public uint NumberOfTiersReturned;
 
     /// <include file='STORAGE_DEVICE_TIERING_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_TIERING_DESCRIPTOR.Tiers"]/*' />
-    [NativeTypeName("STORAGE_TIER [1]")]
+    [NativeTypeName("STORAGE_TIER[1]")]
     public _Tiers_e__FixedBuffer Tiers;
 
     /// <include file='_Tiers_e__FixedBuffer.xml' path='doc/member[@name="_Tiers_e__FixedBuffer"]/*' />

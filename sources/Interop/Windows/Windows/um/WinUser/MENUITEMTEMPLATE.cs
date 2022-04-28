@@ -17,6 +17,6 @@ public unsafe partial struct MENUITEMTEMPLATE
     public ushort mtID;
 
     /// <include file='MENUITEMTEMPLATE.xml' path='doc/member[@name="MENUITEMTEMPLATE.mtString"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort mtString[1];
 }

@@ -24,7 +24,7 @@ public unsafe partial struct MIXERCAPSW
     public uint vDriverVersion;
 
     /// <include file='MIXERCAPSW.xml' path='doc/member[@name="MIXERCAPSW.szPname"]/*' />
-    [NativeTypeName("WCHAR [32]")]
+    [NativeTypeName("WCHAR[32]")]
     public fixed ushort szPname[32];
 
     /// <include file='MIXERCAPSW.xml' path='doc/member[@name="MIXERCAPSW.fdwSupport"]/*' />

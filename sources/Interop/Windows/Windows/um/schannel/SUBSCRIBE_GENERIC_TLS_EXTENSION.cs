@@ -21,7 +21,7 @@ public partial struct SUBSCRIBE_GENERIC_TLS_EXTENSION
     public uint SubscriptionsCount;
 
     /// <include file='SUBSCRIBE_GENERIC_TLS_EXTENSION.xml' path='doc/member[@name="SUBSCRIBE_GENERIC_TLS_EXTENSION.Subscriptions"]/*' />
-    [NativeTypeName("TLS_EXTENSION_SUBSCRIPTION [1]")]
+    [NativeTypeName("TLS_EXTENSION_SUBSCRIPTION[1]")]
     public _Subscriptions_e__FixedBuffer Subscriptions;
 
     /// <include file='_Subscriptions_e__FixedBuffer.xml' path='doc/member[@name="_Subscriptions_e__FixedBuffer"]/*' />

@@ -13,7 +13,7 @@ namespace TerraFX.Interop.DirectX;
 public partial struct D3D12_RT_FORMAT_ARRAY
 {
     /// <include file='D3D12_RT_FORMAT_ARRAY.xml' path='doc/member[@name="D3D12_RT_FORMAT_ARRAY.RTFormats"]/*' />
-    [NativeTypeName("DXGI_FORMAT [8]")]
+    [NativeTypeName("DXGI_FORMAT[8]")]
     public _RTFormats_e__FixedBuffer RTFormats;
 
     /// <include file='D3D12_RT_FORMAT_ARRAY.xml' path='doc/member[@name="D3D12_RT_FORMAT_ARRAY.NumRenderTargets"]/*' />

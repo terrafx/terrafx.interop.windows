@@ -29,7 +29,7 @@ public unsafe partial struct SYNCMGRITEM
     public HICON hIcon;
 
     /// <include file='SYNCMGRITEM.xml' path='doc/member[@name="SYNCMGRITEM.wszItemName"]/*' />
-    [NativeTypeName("WCHAR [128]")]
+    [NativeTypeName("WCHAR[128]")]
     public fixed ushort wszItemName[128];
 
     /// <include file='SYNCMGRITEM.xml' path='doc/member[@name="SYNCMGRITEM.ftLastUpdate"]/*' />

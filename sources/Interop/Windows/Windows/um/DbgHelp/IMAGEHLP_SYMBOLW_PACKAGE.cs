@@ -12,6 +12,6 @@ public unsafe partial struct IMAGEHLP_SYMBOLW_PACKAGE
     public IMAGEHLP_SYMBOLW sym;
 
     /// <include file='IMAGEHLP_SYMBOLW_PACKAGE.xml' path='doc/member[@name="IMAGEHLP_SYMBOLW_PACKAGE.name"]/*' />
-    [NativeTypeName("WCHAR [2001]")]
+    [NativeTypeName("WCHAR[2001]")]
     public fixed ushort name[2001];
 }

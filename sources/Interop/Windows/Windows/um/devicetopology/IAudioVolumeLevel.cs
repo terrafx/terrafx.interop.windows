@@ -86,7 +86,7 @@ public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface
     /// <inheritdoc cref="IPerChannelDbLevel.SetLevelAllChannels" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SetLevelAllChannels([NativeTypeName("float []")] float* aLevelsDB, [NativeTypeName("ULONG")] uint cChannels, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
+    public HRESULT SetLevelAllChannels([NativeTypeName("float[]")] float* aLevelsDB, [NativeTypeName("ULONG")] uint cChannels, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
     {
         return ((delegate* unmanaged<IAudioVolumeLevel*, float*, uint, Guid*, int>)(lpVtbl[8]))((IAudioVolumeLevel*)Unsafe.AsPointer(ref this), aLevelsDB, cChannels, pguidEventContext);
     }

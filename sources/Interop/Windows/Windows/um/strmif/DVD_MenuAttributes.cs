@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct DVD_MenuAttributes
 {
     /// <include file='DVD_MenuAttributes.xml' path='doc/member[@name="DVD_MenuAttributes.fCompatibleRegion"]/*' />
-    [NativeTypeName("BOOL [8]")]
+    [NativeTypeName("BOOL[8]")]
     public _fCompatibleRegion_e__FixedBuffer fCompatibleRegion;
 
     /// <include file='DVD_MenuAttributes.xml' path='doc/member[@name="DVD_MenuAttributes.VideoAttributes"]/*' />

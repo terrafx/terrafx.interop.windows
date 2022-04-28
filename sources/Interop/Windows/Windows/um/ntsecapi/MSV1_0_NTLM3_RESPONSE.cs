@@ -9,7 +9,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct MSV1_0_NTLM3_RESPONSE
 {
     /// <include file='MSV1_0_NTLM3_RESPONSE.xml' path='doc/member[@name="MSV1_0_NTLM3_RESPONSE.Response"]/*' />
-    [NativeTypeName("UCHAR [16]")]
+    [NativeTypeName("UCHAR[16]")]
     public fixed byte Response[16];
 
     /// <include file='MSV1_0_NTLM3_RESPONSE.xml' path='doc/member[@name="MSV1_0_NTLM3_RESPONSE.RespType"]/*' />
@@ -32,7 +32,7 @@ public unsafe partial struct MSV1_0_NTLM3_RESPONSE
     public ulong TimeStamp;
 
     /// <include file='MSV1_0_NTLM3_RESPONSE.xml' path='doc/member[@name="MSV1_0_NTLM3_RESPONSE.ChallengeFromClient"]/*' />
-    [NativeTypeName("UCHAR [8]")]
+    [NativeTypeName("UCHAR[8]")]
     public fixed byte ChallengeFromClient[8];
 
     /// <include file='MSV1_0_NTLM3_RESPONSE.xml' path='doc/member[@name="MSV1_0_NTLM3_RESPONSE.AvPairsOff"]/*' />
@@ -40,6 +40,6 @@ public unsafe partial struct MSV1_0_NTLM3_RESPONSE
     public uint AvPairsOff;
 
     /// <include file='MSV1_0_NTLM3_RESPONSE.xml' path='doc/member[@name="MSV1_0_NTLM3_RESPONSE.Buffer"]/*' />
-    [NativeTypeName("UCHAR [1]")]
+    [NativeTypeName("UCHAR[1]")]
     public fixed byte Buffer[1];
 }

@@ -12,7 +12,7 @@ public unsafe partial struct SOCKADDR_STORAGE_XP
     public short ss_family;
 
     /// <include file='SOCKADDR_STORAGE_XP.xml' path='doc/member[@name="SOCKADDR_STORAGE_XP.__ss_pad1"]/*' />
-    [NativeTypeName("CHAR [6]")]
+    [NativeTypeName("CHAR[6]")]
     public fixed sbyte __ss_pad1[6];
 
     /// <include file='SOCKADDR_STORAGE_XP.xml' path='doc/member[@name="SOCKADDR_STORAGE_XP.__ss_align"]/*' />
@@ -20,6 +20,6 @@ public unsafe partial struct SOCKADDR_STORAGE_XP
     public long __ss_align;
 
     /// <include file='SOCKADDR_STORAGE_XP.xml' path='doc/member[@name="SOCKADDR_STORAGE_XP.__ss_pad2"]/*' />
-    [NativeTypeName("CHAR [112]")]
+    [NativeTypeName("CHAR[112]")]
     public fixed sbyte __ss_pad2[112];
 }

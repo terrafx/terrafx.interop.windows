@@ -21,6 +21,6 @@ public unsafe partial struct SCM_PD_FRU_ID_STRING
     public uint IdentifierSize;
 
     /// <include file='SCM_PD_FRU_ID_STRING.xml' path='doc/member[@name="SCM_PD_FRU_ID_STRING.Identifier"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Identifier[1];
 }

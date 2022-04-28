@@ -17,10 +17,10 @@ public unsafe partial struct MSV1_0_SUPPLEMENTAL_CREDENTIAL
     public uint Flags;
 
     /// <include file='MSV1_0_SUPPLEMENTAL_CREDENTIAL.xml' path='doc/member[@name="MSV1_0_SUPPLEMENTAL_CREDENTIAL.LmPassword"]/*' />
-    [NativeTypeName("UCHAR [16]")]
+    [NativeTypeName("UCHAR[16]")]
     public fixed byte LmPassword[16];
 
     /// <include file='MSV1_0_SUPPLEMENTAL_CREDENTIAL.xml' path='doc/member[@name="MSV1_0_SUPPLEMENTAL_CREDENTIAL.NtPassword"]/*' />
-    [NativeTypeName("UCHAR [16]")]
+    [NativeTypeName("UCHAR[16]")]
     public fixed byte NtPassword[16];
 }

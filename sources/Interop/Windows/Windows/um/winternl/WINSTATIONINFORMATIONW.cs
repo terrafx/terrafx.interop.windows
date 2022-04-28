@@ -9,7 +9,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct WINSTATIONINFORMATIONW
 {
     /// <include file='WINSTATIONINFORMATIONW.xml' path='doc/member[@name="WINSTATIONINFORMATIONW.Reserved2"]/*' />
-    [NativeTypeName("BYTE [70]")]
+    [NativeTypeName("BYTE[70]")]
     public fixed byte Reserved2[70];
 
     /// <include file='WINSTATIONINFORMATIONW.xml' path='doc/member[@name="WINSTATIONINFORMATIONW.LogonId"]/*' />
@@ -17,6 +17,6 @@ public unsafe partial struct WINSTATIONINFORMATIONW
     public uint LogonId;
 
     /// <include file='WINSTATIONINFORMATIONW.xml' path='doc/member[@name="WINSTATIONINFORMATIONW.Reserved3"]/*' />
-    [NativeTypeName("BYTE [1140]")]
+    [NativeTypeName("BYTE[1140]")]
     public fixed byte Reserved3[1140];
 }

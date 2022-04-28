@@ -25,7 +25,7 @@ public unsafe partial struct SYSTEM_BATTERY_STATE
     public byte Discharging;
 
     /// <include file='SYSTEM_BATTERY_STATE.xml' path='doc/member[@name="SYSTEM_BATTERY_STATE.Spare1"]/*' />
-    [NativeTypeName("BOOLEAN [3]")]
+    [NativeTypeName("BOOLEAN[3]")]
     public fixed byte Spare1[3];
 
     /// <include file='SYSTEM_BATTERY_STATE.xml' path='doc/member[@name="SYSTEM_BATTERY_STATE.Tag"]/*' />

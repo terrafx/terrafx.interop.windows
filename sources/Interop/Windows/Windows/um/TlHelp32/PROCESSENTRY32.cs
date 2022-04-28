@@ -45,6 +45,6 @@ public unsafe partial struct PROCESSENTRY32
     public uint dwFlags;
 
     /// <include file='PROCESSENTRY32.xml' path='doc/member[@name="PROCESSENTRY32.szExeFile"]/*' />
-    [NativeTypeName("CHAR [260]")]
+    [NativeTypeName("CHAR[260]")]
     public fixed sbyte szExeFile[260];
 }

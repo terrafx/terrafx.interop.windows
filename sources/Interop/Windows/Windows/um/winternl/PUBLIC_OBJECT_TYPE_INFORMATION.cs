@@ -12,6 +12,6 @@ public unsafe partial struct PUBLIC_OBJECT_TYPE_INFORMATION
     public UNICODE_STRING TypeName;
 
     /// <include file='PUBLIC_OBJECT_TYPE_INFORMATION.xml' path='doc/member[@name="PUBLIC_OBJECT_TYPE_INFORMATION.Reserved"]/*' />
-    [NativeTypeName("ULONG [22]")]
+    [NativeTypeName("ULONG[22]")]
     public fixed uint Reserved[22];
 }

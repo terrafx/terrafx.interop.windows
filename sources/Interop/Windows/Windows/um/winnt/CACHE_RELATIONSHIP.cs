@@ -30,7 +30,7 @@ public unsafe partial struct CACHE_RELATIONSHIP
     public PROCESSOR_CACHE_TYPE Type;
 
     /// <include file='CACHE_RELATIONSHIP.xml' path='doc/member[@name="CACHE_RELATIONSHIP.Reserved"]/*' />
-    [NativeTypeName("BYTE [18]")]
+    [NativeTypeName("BYTE[18]")]
     public fixed byte Reserved[18];
 
     /// <include file='CACHE_RELATIONSHIP.xml' path='doc/member[@name="CACHE_RELATIONSHIP.GroupCount"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct CACHE_RELATIONSHIP
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.GroupMasks"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("GROUP_AFFINITY [1]")]
+        [NativeTypeName("GROUP_AFFINITY[1]")]
         public _GroupMasks_e__FixedBuffer GroupMasks;
 
         /// <include file='_GroupMasks_e__FixedBuffer.xml' path='doc/member[@name="_GroupMasks_e__FixedBuffer"]/*' />

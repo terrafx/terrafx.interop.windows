@@ -30,6 +30,6 @@ public unsafe partial struct STORAGE_DIAGNOSTIC_DATA
     public uint Reserved;
 
     /// <include file='STORAGE_DIAGNOSTIC_DATA.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_DATA.DiagnosticDataBuffer"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte DiagnosticDataBuffer[1];
 }

@@ -17,7 +17,7 @@ public partial struct BIN_RESULTS
     public uint NumberOfBins;
 
     /// <include file='BIN_RESULTS.xml' path='doc/member[@name="BIN_RESULTS.BinCounts"]/*' />
-    [NativeTypeName("BIN_COUNT [1]")]
+    [NativeTypeName("BIN_COUNT[1]")]
     public _BinCounts_e__FixedBuffer BinCounts;
 
     /// <include file='_BinCounts_e__FixedBuffer.xml' path='doc/member[@name="_BinCounts_e__FixedBuffer"]/*' />

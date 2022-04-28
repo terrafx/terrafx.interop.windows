@@ -15,6 +15,6 @@ public unsafe partial struct STORAGE_PROPERTY_SET
     public STORAGE_SET_TYPE SetType;
 
     /// <include file='STORAGE_PROPERTY_SET.xml' path='doc/member[@name="STORAGE_PROPERTY_SET.AdditionalParameters"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte AdditionalParameters[1];
 }

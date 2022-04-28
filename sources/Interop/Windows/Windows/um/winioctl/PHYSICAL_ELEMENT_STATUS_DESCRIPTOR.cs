@@ -27,7 +27,7 @@ public unsafe partial struct PHYSICAL_ELEMENT_STATUS_DESCRIPTOR
     public byte PhysicalElementHealth;
 
     /// <include file='PHYSICAL_ELEMENT_STATUS_DESCRIPTOR.xml' path='doc/member[@name="PHYSICAL_ELEMENT_STATUS_DESCRIPTOR.Reserved1"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte Reserved1[2];
 
     /// <include file='PHYSICAL_ELEMENT_STATUS_DESCRIPTOR.xml' path='doc/member[@name="PHYSICAL_ELEMENT_STATUS_DESCRIPTOR.AssociatedCapacity"]/*' />
@@ -35,6 +35,6 @@ public unsafe partial struct PHYSICAL_ELEMENT_STATUS_DESCRIPTOR
     public ulong AssociatedCapacity;
 
     /// <include file='PHYSICAL_ELEMENT_STATUS_DESCRIPTOR.xml' path='doc/member[@name="PHYSICAL_ELEMENT_STATUS_DESCRIPTOR.Reserved2"]/*' />
-    [NativeTypeName("DWORD [4]")]
+    [NativeTypeName("DWORD[4]")]
     public fixed uint Reserved2[4];
 }

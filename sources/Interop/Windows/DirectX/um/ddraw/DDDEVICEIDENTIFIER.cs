@@ -12,11 +12,11 @@ namespace TerraFX.Interop.DirectX;
 public unsafe partial struct DDDEVICEIDENTIFIER
 {
     /// <include file='DDDEVICEIDENTIFIER.xml' path='doc/member[@name="DDDEVICEIDENTIFIER.szDriver"]/*' />
-    [NativeTypeName("char [512]")]
+    [NativeTypeName("char[512]")]
     public fixed sbyte szDriver[512];
 
     /// <include file='DDDEVICEIDENTIFIER.xml' path='doc/member[@name="DDDEVICEIDENTIFIER.szDescription"]/*' />
-    [NativeTypeName("char [512]")]
+    [NativeTypeName("char[512]")]
     public fixed sbyte szDescription[512];
 
     /// <include file='DDDEVICEIDENTIFIER.xml' path='doc/member[@name="DDDEVICEIDENTIFIER.liDriverVersion"]/*' />

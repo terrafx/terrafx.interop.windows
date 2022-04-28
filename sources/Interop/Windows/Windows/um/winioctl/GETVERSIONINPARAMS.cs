@@ -28,6 +28,6 @@ public unsafe partial struct GETVERSIONINPARAMS
     public uint fCapabilities;
 
     /// <include file='GETVERSIONINPARAMS.xml' path='doc/member[@name="GETVERSIONINPARAMS.dwReserved"]/*' />
-    [NativeTypeName("DWORD [4]")]
+    [NativeTypeName("DWORD[4]")]
     public fixed uint dwReserved[4];
 }

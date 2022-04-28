@@ -24,6 +24,6 @@ public unsafe partial struct PAINTSTRUCT
     public BOOL fIncUpdate;
 
     /// <include file='PAINTSTRUCT.xml' path='doc/member[@name="PAINTSTRUCT.rgbReserved"]/*' />
-    [NativeTypeName("BYTE [32]")]
+    [NativeTypeName("BYTE[32]")]
     public fixed byte rgbReserved[32];
 }

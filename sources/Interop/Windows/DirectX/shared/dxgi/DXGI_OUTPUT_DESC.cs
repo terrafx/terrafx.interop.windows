@@ -11,7 +11,7 @@ namespace TerraFX.Interop.DirectX;
 public unsafe partial struct DXGI_OUTPUT_DESC
 {
     /// <include file='DXGI_OUTPUT_DESC.xml' path='doc/member[@name="DXGI_OUTPUT_DESC.DeviceName"]/*' />
-    [NativeTypeName("WCHAR [32]")]
+    [NativeTypeName("WCHAR[32]")]
     public fixed ushort DeviceName[32];
 
     /// <include file='DXGI_OUTPUT_DESC.xml' path='doc/member[@name="DXGI_OUTPUT_DESC.DesktopCoordinates"]/*' />

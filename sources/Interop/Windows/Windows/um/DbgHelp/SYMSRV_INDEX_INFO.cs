@@ -15,7 +15,7 @@ public unsafe partial struct SYMSRV_INDEX_INFO
     public uint sizeofstruct;
 
     /// <include file='SYMSRV_INDEX_INFO.xml' path='doc/member[@name="SYMSRV_INDEX_INFO.file"]/*' />
-    [NativeTypeName("char [261]")]
+    [NativeTypeName("char[261]")]
     public fixed sbyte file[261];
 
     /// <include file='SYMSRV_INDEX_INFO.xml' path='doc/member[@name="SYMSRV_INDEX_INFO.stripped"]/*' />
@@ -30,11 +30,11 @@ public unsafe partial struct SYMSRV_INDEX_INFO
     public uint size;
 
     /// <include file='SYMSRV_INDEX_INFO.xml' path='doc/member[@name="SYMSRV_INDEX_INFO.dbgfile"]/*' />
-    [NativeTypeName("char [261]")]
+    [NativeTypeName("char[261]")]
     public fixed sbyte dbgfile[261];
 
     /// <include file='SYMSRV_INDEX_INFO.xml' path='doc/member[@name="SYMSRV_INDEX_INFO.pdbfile"]/*' />
-    [NativeTypeName("char [261]")]
+    [NativeTypeName("char[261]")]
     public fixed sbyte pdbfile[261];
 
     /// <include file='SYMSRV_INDEX_INFO.xml' path='doc/member[@name="SYMSRV_INDEX_INFO.guid"]/*' />

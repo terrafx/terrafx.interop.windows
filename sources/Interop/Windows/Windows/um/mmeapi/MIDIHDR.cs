@@ -46,7 +46,7 @@ public unsafe partial struct MIDIHDR
     public uint dwOffset;
 
     /// <include file='MIDIHDR.xml' path='doc/member[@name="MIDIHDR.dwReserved"]/*' />
-    [NativeTypeName("DWORD_PTR [8]")]
+    [NativeTypeName("DWORD_PTR[8]")]
     public _dwReserved_e__FixedBuffer dwReserved;
 
     /// <include file='_dwReserved_e__FixedBuffer.xml' path='doc/member[@name="_dwReserved_e__FixedBuffer"]/*' />

@@ -30,7 +30,7 @@ public partial struct SCM_PD_FIRMWARE_INFO
     public byte SlotCount;
 
     /// <include file='SCM_PD_FIRMWARE_INFO.xml' path='doc/member[@name="SCM_PD_FIRMWARE_INFO.Slots"]/*' />
-    [NativeTypeName("SCM_PD_FIRMWARE_SLOT_INFO [1]")]
+    [NativeTypeName("SCM_PD_FIRMWARE_SLOT_INFO[1]")]
     public _Slots_e__FixedBuffer Slots;
 
     /// <include file='_Slots_e__FixedBuffer.xml' path='doc/member[@name="_Slots_e__FixedBuffer"]/*' />

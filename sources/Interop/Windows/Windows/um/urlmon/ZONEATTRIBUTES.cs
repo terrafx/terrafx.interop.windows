@@ -13,15 +13,15 @@ public unsafe partial struct ZONEATTRIBUTES
     public uint cbSize;
 
     /// <include file='ZONEATTRIBUTES.xml' path='doc/member[@name="ZONEATTRIBUTES.szDisplayName"]/*' />
-    [NativeTypeName("WCHAR [260]")]
+    [NativeTypeName("WCHAR[260]")]
     public fixed ushort szDisplayName[260];
 
     /// <include file='ZONEATTRIBUTES.xml' path='doc/member[@name="ZONEATTRIBUTES.szDescription"]/*' />
-    [NativeTypeName("WCHAR [200]")]
+    [NativeTypeName("WCHAR[200]")]
     public fixed ushort szDescription[200];
 
     /// <include file='ZONEATTRIBUTES.xml' path='doc/member[@name="ZONEATTRIBUTES.szIconPath"]/*' />
-    [NativeTypeName("WCHAR [260]")]
+    [NativeTypeName("WCHAR[260]")]
     public fixed ushort szIconPath[260];
 
     /// <include file='ZONEATTRIBUTES.xml' path='doc/member[@name="ZONEATTRIBUTES.dwTemplateMinLevel"]/*' />

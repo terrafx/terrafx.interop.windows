@@ -13,6 +13,6 @@ public unsafe partial struct DEVICE_DATA_SET_TOPOLOGY_ID_QUERY_OUTPUT
     public ulong TopologyRangeBytes;
 
     /// <include file='DEVICE_DATA_SET_TOPOLOGY_ID_QUERY_OUTPUT.xml' path='doc/member[@name="DEVICE_DATA_SET_TOPOLOGY_ID_QUERY_OUTPUT.TopologyId"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte TopologyId[16];
 }

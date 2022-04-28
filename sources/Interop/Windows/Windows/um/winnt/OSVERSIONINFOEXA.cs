@@ -29,7 +29,7 @@ public unsafe partial struct OSVERSIONINFOEXA
     public uint dwPlatformId;
 
     /// <include file='OSVERSIONINFOEXA.xml' path='doc/member[@name="OSVERSIONINFOEXA.szCSDVersion"]/*' />
-    [NativeTypeName("CHAR [128]")]
+    [NativeTypeName("CHAR[128]")]
     public fixed sbyte szCSDVersion[128];
 
     /// <include file='OSVERSIONINFOEXA.xml' path='doc/member[@name="OSVERSIONINFOEXA.wServicePackMajor"]/*' />

@@ -36,7 +36,7 @@ public partial struct STORAGE_ZONED_DEVICE_DESCRIPTOR
     public uint ZoneGroupCount;
 
     /// <include file='STORAGE_ZONED_DEVICE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_DESCRIPTOR.ZoneGroup"]/*' />
-    [NativeTypeName("STORAGE_ZONE_GROUP [1]")]
+    [NativeTypeName("STORAGE_ZONE_GROUP[1]")]
     public _ZoneGroup_e__FixedBuffer ZoneGroup;
 
     /// <include file='_ZoneAttributes_e__Union.xml' path='doc/member[@name="_ZoneAttributes_e__Union"]/*' />
@@ -65,7 +65,7 @@ public partial struct STORAGE_ZONED_DEVICE_DESCRIPTOR
             public byte UnrestrictedRead;
 
             /// <include file='_SequentialRequiredZone_e__Struct.xml' path='doc/member[@name="_SequentialRequiredZone_e__Struct.Reserved"]/*' />
-            [NativeTypeName("BYTE [3]")]
+            [NativeTypeName("BYTE[3]")]
             public fixed byte Reserved[3];
         }
 

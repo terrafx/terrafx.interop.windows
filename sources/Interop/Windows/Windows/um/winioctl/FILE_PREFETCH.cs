@@ -17,6 +17,6 @@ public unsafe partial struct FILE_PREFETCH
     public uint Count;
 
     /// <include file='FILE_PREFETCH.xml' path='doc/member[@name="FILE_PREFETCH.Prefetch"]/*' />
-    [NativeTypeName("DWORDLONG [1]")]
+    [NativeTypeName("DWORDLONG[1]")]
     public fixed ulong Prefetch[1];
 }

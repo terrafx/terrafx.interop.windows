@@ -22,6 +22,6 @@ public unsafe partial struct IMAGE_AUX_SYMBOL_TOKEN_DEF
     public uint SymbolTableIndex;
 
     /// <include file='IMAGE_AUX_SYMBOL_TOKEN_DEF.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_TOKEN_DEF.rgbReserved"]/*' />
-    [NativeTypeName("BYTE [12]")]
+    [NativeTypeName("BYTE[12]")]
     public fixed byte rgbReserved[12];
 }

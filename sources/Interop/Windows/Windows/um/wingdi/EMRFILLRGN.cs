@@ -23,6 +23,6 @@ public unsafe partial struct EMRFILLRGN
     public uint ihBrush;
 
     /// <include file='EMRFILLRGN.xml' path='doc/member[@name="EMRFILLRGN.RgnData"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte RgnData[1];
 }

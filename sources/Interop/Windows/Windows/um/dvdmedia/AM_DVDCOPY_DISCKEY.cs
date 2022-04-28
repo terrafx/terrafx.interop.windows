@@ -9,6 +9,6 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct AM_DVDCOPY_DISCKEY
 {
     /// <include file='AM_DVDCOPY_DISCKEY.xml' path='doc/member[@name="AM_DVDCOPY_DISCKEY.DiscKey"]/*' />
-    [NativeTypeName("BYTE [2048]")]
+    [NativeTypeName("BYTE[2048]")]
     public fixed byte DiscKey[2048];
 }

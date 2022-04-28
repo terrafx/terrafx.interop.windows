@@ -9,11 +9,11 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct FIXED_INFO
 {
     /// <include file='FIXED_INFO.xml' path='doc/member[@name="FIXED_INFO.HostName"]/*' />
-    [NativeTypeName("char [132]")]
+    [NativeTypeName("char[132]")]
     public fixed sbyte HostName[132];
 
     /// <include file='FIXED_INFO.xml' path='doc/member[@name="FIXED_INFO.DomainName"]/*' />
-    [NativeTypeName("char [132]")]
+    [NativeTypeName("char[132]")]
     public fixed sbyte DomainName[132];
 
     /// <include file='FIXED_INFO.xml' path='doc/member[@name="FIXED_INFO.CurrentDnsServer"]/*' />
@@ -27,7 +27,7 @@ public unsafe partial struct FIXED_INFO
     public uint NodeType;
 
     /// <include file='FIXED_INFO.xml' path='doc/member[@name="FIXED_INFO.ScopeId"]/*' />
-    [NativeTypeName("char [260]")]
+    [NativeTypeName("char[260]")]
     public fixed sbyte ScopeId[260];
 
     /// <include file='FIXED_INFO.xml' path='doc/member[@name="FIXED_INFO.EnableRouting"]/*' />

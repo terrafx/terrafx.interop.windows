@@ -13,7 +13,7 @@ public unsafe partial struct X509Certificate
     public uint Version;
 
     /// <include file='X509Certificate.xml' path='doc/member[@name="X509Certificate.SerialNumber"]/*' />
-    [NativeTypeName("DWORD [4]")]
+    [NativeTypeName("DWORD[4]")]
     public fixed uint SerialNumber[4];
 
     /// <include file='X509Certificate.xml' path='doc/member[@name="X509Certificate.SignatureAlgorithm"]/*' />

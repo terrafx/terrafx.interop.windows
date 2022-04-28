@@ -28,7 +28,7 @@ public partial struct DEVICE_DSM_REPORT_ZONES_DATA
     public uint Reserved0;
 
     /// <include file='DEVICE_DSM_REPORT_ZONES_DATA.xml' path='doc/member[@name="DEVICE_DSM_REPORT_ZONES_DATA.ZoneDescriptors"]/*' />
-    [NativeTypeName("STORAGE_ZONE_DESCRIPTOR [1]")]
+    [NativeTypeName("STORAGE_ZONE_DESCRIPTOR[1]")]
     public _ZoneDescriptors_e__FixedBuffer ZoneDescriptors;
 
     /// <include file='_ZoneDescriptors_e__FixedBuffer.xml' path='doc/member[@name="_ZoneDescriptors_e__FixedBuffer"]/*' />

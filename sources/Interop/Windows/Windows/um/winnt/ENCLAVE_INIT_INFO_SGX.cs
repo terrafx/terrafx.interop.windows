@@ -12,18 +12,18 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct ENCLAVE_INIT_INFO_SGX
 {
     /// <include file='ENCLAVE_INIT_INFO_SGX.xml' path='doc/member[@name="ENCLAVE_INIT_INFO_SGX.SigStruct"]/*' />
-    [NativeTypeName("BYTE [1808]")]
+    [NativeTypeName("BYTE[1808]")]
     public fixed byte SigStruct[1808];
 
     /// <include file='ENCLAVE_INIT_INFO_SGX.xml' path='doc/member[@name="ENCLAVE_INIT_INFO_SGX.Reserved1"]/*' />
-    [NativeTypeName("BYTE [240]")]
+    [NativeTypeName("BYTE[240]")]
     public fixed byte Reserved1[240];
 
     /// <include file='ENCLAVE_INIT_INFO_SGX.xml' path='doc/member[@name="ENCLAVE_INIT_INFO_SGX.EInitToken"]/*' />
-    [NativeTypeName("BYTE [304]")]
+    [NativeTypeName("BYTE[304]")]
     public fixed byte EInitToken[304];
 
     /// <include file='ENCLAVE_INIT_INFO_SGX.xml' path='doc/member[@name="ENCLAVE_INIT_INFO_SGX.Reserved2"]/*' />
-    [NativeTypeName("BYTE [1744]")]
+    [NativeTypeName("BYTE[1744]")]
     public fixed byte Reserved2[1744];
 }

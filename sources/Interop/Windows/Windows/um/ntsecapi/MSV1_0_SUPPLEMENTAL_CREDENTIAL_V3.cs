@@ -20,13 +20,13 @@ public unsafe partial struct MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3
     public MSV1_0_CREDENTIAL_KEY_TYPE CredentialKeyType;
 
     /// <include file='MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3.xml' path='doc/member[@name="MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3.NtPassword"]/*' />
-    [NativeTypeName("UCHAR [16]")]
+    [NativeTypeName("UCHAR[16]")]
     public fixed byte NtPassword[16];
 
     /// <include file='MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3.xml' path='doc/member[@name="MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3.CredentialKey"]/*' />
     public MSV1_0_CREDENTIAL_KEY CredentialKey;
 
     /// <include file='MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3.xml' path='doc/member[@name="MSV1_0_SUPPLEMENTAL_CREDENTIAL_V3.ShaPassword"]/*' />
-    [NativeTypeName("UCHAR [20]")]
+    [NativeTypeName("UCHAR[20]")]
     public fixed byte ShaPassword[20];
 }

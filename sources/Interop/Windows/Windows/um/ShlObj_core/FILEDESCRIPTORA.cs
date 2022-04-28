@@ -49,6 +49,6 @@ public unsafe partial struct FILEDESCRIPTORA
     public uint nFileSizeLow;
 
     /// <include file='FILEDESCRIPTORA.xml' path='doc/member[@name="FILEDESCRIPTORA.cFileName"]/*' />
-    [NativeTypeName("CHAR [260]")]
+    [NativeTypeName("CHAR[260]")]
     public fixed sbyte cFileName[260];
 }

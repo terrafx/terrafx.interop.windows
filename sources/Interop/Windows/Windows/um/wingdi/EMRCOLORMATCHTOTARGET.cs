@@ -28,6 +28,6 @@ public unsafe partial struct EMRCOLORMATCHTOTARGET
     public uint cbData;
 
     /// <include file='EMRCOLORMATCHTOTARGET.xml' path='doc/member[@name="EMRCOLORMATCHTOTARGET.Data"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Data[1];
 }

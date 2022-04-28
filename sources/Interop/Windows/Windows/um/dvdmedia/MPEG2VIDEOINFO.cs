@@ -32,6 +32,6 @@ public unsafe partial struct MPEG2VIDEOINFO
     public uint dwFlags;
 
     /// <include file='MPEG2VIDEOINFO.xml' path='doc/member[@name="MPEG2VIDEOINFO.dwSequenceHeader"]/*' />
-    [NativeTypeName("DWORD [1]")]
+    [NativeTypeName("DWORD[1]")]
     public fixed uint dwSequenceHeader[1];
 }

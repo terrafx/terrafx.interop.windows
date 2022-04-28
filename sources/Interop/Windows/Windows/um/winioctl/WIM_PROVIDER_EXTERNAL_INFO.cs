@@ -20,6 +20,6 @@ public unsafe partial struct WIM_PROVIDER_EXTERNAL_INFO
     public LARGE_INTEGER DataSourceId;
 
     /// <include file='WIM_PROVIDER_EXTERNAL_INFO.xml' path='doc/member[@name="WIM_PROVIDER_EXTERNAL_INFO.ResourceHash"]/*' />
-    [NativeTypeName("BYTE [20]")]
+    [NativeTypeName("BYTE[20]")]
     public fixed byte ResourceHash[20];
 }

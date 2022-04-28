@@ -13,6 +13,6 @@ public unsafe partial struct CERT_CREDENTIAL_INFO
     public uint cbSize;
 
     /// <include file='CERT_CREDENTIAL_INFO.xml' path='doc/member[@name="CERT_CREDENTIAL_INFO.rgbHashOfCert"]/*' />
-    [NativeTypeName("UCHAR [20]")]
+    [NativeTypeName("UCHAR[20]")]
     public fixed byte rgbHashOfCert[20];
 }

@@ -21,7 +21,7 @@ public partial struct QUERY_BAD_RANGES_INPUT
     public uint NumRanges;
 
     /// <include file='QUERY_BAD_RANGES_INPUT.xml' path='doc/member[@name="QUERY_BAD_RANGES_INPUT.Ranges"]/*' />
-    [NativeTypeName("QUERY_BAD_RANGES_INPUT_RANGE [1]")]
+    [NativeTypeName("QUERY_BAD_RANGES_INPUT_RANGE[1]")]
     public _Ranges_e__FixedBuffer Ranges;
 
     /// <include file='_Ranges_e__FixedBuffer.xml' path='doc/member[@name="_Ranges_e__FixedBuffer"]/*' />

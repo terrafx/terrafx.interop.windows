@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct ENCRYPTED_LM_OWF_PASSWORD
 {
     /// <include file='ENCRYPTED_LM_OWF_PASSWORD.xml' path='doc/member[@name="ENCRYPTED_LM_OWF_PASSWORD.data"]/*' />
-    [NativeTypeName("CYPHER_BLOCK [2]")]
+    [NativeTypeName("CYPHER_BLOCK[2]")]
     public _data_e__FixedBuffer data;
 
     /// <include file='_data_e__FixedBuffer.xml' path='doc/member[@name="_data_e__FixedBuffer"]/*' />

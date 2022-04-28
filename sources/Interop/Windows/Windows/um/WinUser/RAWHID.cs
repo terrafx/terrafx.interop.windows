@@ -17,6 +17,6 @@ public unsafe partial struct RAWHID
     public uint dwCount;
 
     /// <include file='RAWHID.xml' path='doc/member[@name="RAWHID.bRawData"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte bRawData[1];
 }

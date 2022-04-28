@@ -11,11 +11,11 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct PEB_LDR_DATA
 {
     /// <include file='PEB_LDR_DATA.xml' path='doc/member[@name="PEB_LDR_DATA.Reserved1"]/*' />
-    [NativeTypeName("BYTE [8]")]
+    [NativeTypeName("BYTE[8]")]
     public fixed byte Reserved1[8];
 
     /// <include file='PEB_LDR_DATA.xml' path='doc/member[@name="PEB_LDR_DATA.Reserved2"]/*' />
-    [NativeTypeName("PVOID [3]")]
+    [NativeTypeName("PVOID[3]")]
     public _Reserved2_e__FixedBuffer Reserved2;
 
     /// <include file='PEB_LDR_DATA.xml' path='doc/member[@name="PEB_LDR_DATA.InMemoryOrderModuleList"]/*' />

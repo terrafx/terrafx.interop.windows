@@ -26,6 +26,6 @@ public unsafe partial struct STORAGE_IDENTIFIER
     public STORAGE_ASSOCIATION_TYPE Association;
 
     /// <include file='STORAGE_IDENTIFIER.xml' path='doc/member[@name="STORAGE_IDENTIFIER.Identifier"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Identifier[1];
 }

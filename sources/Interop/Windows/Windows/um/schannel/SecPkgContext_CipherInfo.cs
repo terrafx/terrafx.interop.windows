@@ -25,11 +25,11 @@ public unsafe partial struct SecPkgContext_CipherInfo
     public uint dwBaseCipherSuite;
 
     /// <include file='SecPkgContext_CipherInfo.xml' path='doc/member[@name="SecPkgContext_CipherInfo.szCipherSuite"]/*' />
-    [NativeTypeName("WCHAR [64]")]
+    [NativeTypeName("WCHAR[64]")]
     public fixed ushort szCipherSuite[64];
 
     /// <include file='SecPkgContext_CipherInfo.xml' path='doc/member[@name="SecPkgContext_CipherInfo.szCipher"]/*' />
-    [NativeTypeName("WCHAR [64]")]
+    [NativeTypeName("WCHAR[64]")]
     public fixed ushort szCipher[64];
 
     /// <include file='SecPkgContext_CipherInfo.xml' path='doc/member[@name="SecPkgContext_CipherInfo.dwCipherLen"]/*' />
@@ -41,7 +41,7 @@ public unsafe partial struct SecPkgContext_CipherInfo
     public uint dwCipherBlockLen;
 
     /// <include file='SecPkgContext_CipherInfo.xml' path='doc/member[@name="SecPkgContext_CipherInfo.szHash"]/*' />
-    [NativeTypeName("WCHAR [64]")]
+    [NativeTypeName("WCHAR[64]")]
     public fixed ushort szHash[64];
 
     /// <include file='SecPkgContext_CipherInfo.xml' path='doc/member[@name="SecPkgContext_CipherInfo.dwHashLen"]/*' />
@@ -49,7 +49,7 @@ public unsafe partial struct SecPkgContext_CipherInfo
     public uint dwHashLen;
 
     /// <include file='SecPkgContext_CipherInfo.xml' path='doc/member[@name="SecPkgContext_CipherInfo.szExchange"]/*' />
-    [NativeTypeName("WCHAR [64]")]
+    [NativeTypeName("WCHAR[64]")]
     public fixed ushort szExchange[64];
 
     /// <include file='SecPkgContext_CipherInfo.xml' path='doc/member[@name="SecPkgContext_CipherInfo.dwMinExchangeLen"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct SecPkgContext_CipherInfo
     public uint dwMaxExchangeLen;
 
     /// <include file='SecPkgContext_CipherInfo.xml' path='doc/member[@name="SecPkgContext_CipherInfo.szCertificate"]/*' />
-    [NativeTypeName("WCHAR [64]")]
+    [NativeTypeName("WCHAR[64]")]
     public fixed ushort szCertificate[64];
 
     /// <include file='SecPkgContext_CipherInfo.xml' path='doc/member[@name="SecPkgContext_CipherInfo.dwKeyType"]/*' />

@@ -18,6 +18,6 @@ public unsafe partial struct D3D11_KEY_EXCHANGE_HW_PROTECTION_INPUT_DATA
     public uint HWProtectionDataSize;
 
     /// <include file='D3D11_KEY_EXCHANGE_HW_PROTECTION_INPUT_DATA.xml' path='doc/member[@name="D3D11_KEY_EXCHANGE_HW_PROTECTION_INPUT_DATA.pbInput"]/*' />
-    [NativeTypeName("BYTE [4]")]
+    [NativeTypeName("BYTE[4]")]
     public fixed byte pbInput[4];
 }

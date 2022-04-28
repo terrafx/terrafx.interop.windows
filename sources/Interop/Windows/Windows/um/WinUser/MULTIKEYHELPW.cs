@@ -17,6 +17,6 @@ public unsafe partial struct MULTIKEYHELPW
     public ushort mkKeylist;
 
     /// <include file='MULTIKEYHELPW.xml' path='doc/member[@name="MULTIKEYHELPW.szKeyphrase"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort szKeyphrase[1];
 }

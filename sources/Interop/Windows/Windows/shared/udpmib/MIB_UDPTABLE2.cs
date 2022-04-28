@@ -17,7 +17,7 @@ public partial struct MIB_UDPTABLE2
     public uint dwNumEntries;
 
     /// <include file='MIB_UDPTABLE2.xml' path='doc/member[@name="MIB_UDPTABLE2.table"]/*' />
-    [NativeTypeName("MIB_UDPROW2 [1]")]
+    [NativeTypeName("MIB_UDPROW2[1]")]
     public _table_e__FixedBuffer table;
 
     /// <include file='_table_e__FixedBuffer.xml' path='doc/member[@name="_table_e__FixedBuffer"]/*' />

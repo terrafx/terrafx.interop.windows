@@ -46,7 +46,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.SendCommandNoData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SendCommandNoData(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE [18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout)
+    public HRESULT SendCommandNoData(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE[18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout)
     {
         return ((delegate* unmanaged<IDiscRecorder2Ex*, byte*, uint, byte*, uint, int>)(lpVtbl[3]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), Cdb, CdbSize, SenseBuffer, Timeout);
     }
@@ -54,7 +54,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.SendCommandSendDataToDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SendCommandSendDataToDevice(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE [18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout, byte* Buffer, [NativeTypeName("ULONG_IMAPI2_NONZERO")] uint BufferSize)
+    public HRESULT SendCommandSendDataToDevice(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE[18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout, byte* Buffer, [NativeTypeName("ULONG_IMAPI2_NONZERO")] uint BufferSize)
     {
         return ((delegate* unmanaged<IDiscRecorder2Ex*, byte*, uint, byte*, uint, byte*, uint, int>)(lpVtbl[4]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), Cdb, CdbSize, SenseBuffer, Timeout, Buffer, BufferSize);
     }
@@ -62,7 +62,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.SendCommandGetDataFromDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SendCommandGetDataFromDevice(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE [18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout, byte* Buffer, [NativeTypeName("ULONG_IMAPI2_NONZERO")] uint BufferSize, [NativeTypeName("ULONG_IMAPI2_NOT_NEGATIVE *")] uint* BufferFetched)
+    public HRESULT SendCommandGetDataFromDevice(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE[18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout, byte* Buffer, [NativeTypeName("ULONG_IMAPI2_NONZERO")] uint BufferSize, [NativeTypeName("ULONG_IMAPI2_NOT_NEGATIVE *")] uint* BufferFetched)
     {
         return ((delegate* unmanaged<IDiscRecorder2Ex*, byte*, uint, byte*, uint, byte*, uint, uint*, int>)(lpVtbl[5]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), Cdb, CdbSize, SenseBuffer, Timeout, Buffer, BufferSize, BufferFetched);
     }
@@ -190,13 +190,13 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SendCommandNoData(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE [18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout);
+        HRESULT SendCommandNoData(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE[18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout);
 
         [VtblIndex(4)]
-        HRESULT SendCommandSendDataToDevice(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE [18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout, byte* Buffer, [NativeTypeName("ULONG_IMAPI2_NONZERO")] uint BufferSize);
+        HRESULT SendCommandSendDataToDevice(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE[18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout, byte* Buffer, [NativeTypeName("ULONG_IMAPI2_NONZERO")] uint BufferSize);
 
         [VtblIndex(5)]
-        HRESULT SendCommandGetDataFromDevice(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE [18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout, byte* Buffer, [NativeTypeName("ULONG_IMAPI2_NONZERO")] uint BufferSize, [NativeTypeName("ULONG_IMAPI2_NOT_NEGATIVE *")] uint* BufferFetched);
+        HRESULT SendCommandGetDataFromDevice(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE[18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout, byte* Buffer, [NativeTypeName("ULONG_IMAPI2_NONZERO")] uint BufferSize, [NativeTypeName("ULONG_IMAPI2_NOT_NEGATIVE *")] uint* BufferFetched);
 
         [VtblIndex(6)]
         HRESULT ReadDvdStructure([NativeTypeName("ULONG")] uint format, [NativeTypeName("ULONG")] uint address, [NativeTypeName("ULONG")] uint layer, [NativeTypeName("ULONG")] uint agid, byte** data, [NativeTypeName("ULONG_IMAPI2_DVD_STRUCTURE *")] uint* count);

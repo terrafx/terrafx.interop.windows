@@ -24,6 +24,6 @@ public unsafe partial struct DELEGATEITEMID
     public ushort cbInner;
 
     /// <include file='DELEGATEITEMID.xml' path='doc/member[@name="DELEGATEITEMID.rgb"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte rgb[1];
 }

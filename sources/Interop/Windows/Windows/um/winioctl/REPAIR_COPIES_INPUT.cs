@@ -35,6 +35,6 @@ public unsafe partial struct REPAIR_COPIES_INPUT
     public uint NumberOfRepairCopies;
 
     /// <include file='REPAIR_COPIES_INPUT.xml' path='doc/member[@name="REPAIR_COPIES_INPUT.RepairCopies"]/*' />
-    [NativeTypeName("DWORD [1]")]
+    [NativeTypeName("DWORD[1]")]
     public fixed uint RepairCopies[1];
 }

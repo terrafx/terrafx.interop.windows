@@ -21,7 +21,7 @@ public partial struct FILE_TYPE_NOTIFICATION_INPUT
     public uint NumFileTypeIDs;
 
     /// <include file='FILE_TYPE_NOTIFICATION_INPUT.xml' path='doc/member[@name="FILE_TYPE_NOTIFICATION_INPUT.FileTypeID"]/*' />
-    [NativeTypeName("GUID [1]")]
+    [NativeTypeName("GUID[1]")]
     public _FileTypeID_e__FixedBuffer FileTypeID;
 
     /// <include file='_FileTypeID_e__FixedBuffer.xml' path='doc/member[@name="_FileTypeID_e__FixedBuffer"]/*' />

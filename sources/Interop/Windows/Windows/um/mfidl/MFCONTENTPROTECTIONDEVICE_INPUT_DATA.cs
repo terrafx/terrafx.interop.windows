@@ -28,6 +28,6 @@ public unsafe partial struct MFCONTENTPROTECTIONDEVICE_INPUT_DATA
     public uint Reserved;
 
     /// <include file='MFCONTENTPROTECTIONDEVICE_INPUT_DATA.xml' path='doc/member[@name="MFCONTENTPROTECTIONDEVICE_INPUT_DATA.InputData"]/*' />
-    [NativeTypeName("BYTE [4]")]
+    [NativeTypeName("BYTE[4]")]
     public fixed byte InputData[4];
 }

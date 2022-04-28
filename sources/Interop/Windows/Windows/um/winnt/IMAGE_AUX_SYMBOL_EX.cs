@@ -71,7 +71,7 @@ public unsafe partial struct IMAGE_AUX_SYMBOL_EX
         public uint WeakSearchType;
 
         /// <include file='_Sym_e__Struct.xml' path='doc/member[@name="_Sym_e__Struct.rgbReserved"]/*' />
-        [NativeTypeName("BYTE [12]")]
+        [NativeTypeName("BYTE[12]")]
         public fixed byte rgbReserved[12];
     }
 
@@ -79,7 +79,7 @@ public unsafe partial struct IMAGE_AUX_SYMBOL_EX
     public unsafe partial struct _File_e__Struct
     {
         /// <include file='_File_e__Struct.xml' path='doc/member[@name="_File_e__Struct.Name"]/*' />
-        [NativeTypeName("BYTE [20]")]
+        [NativeTypeName("BYTE[20]")]
         public fixed byte Name[20];
     }
 
@@ -116,7 +116,7 @@ public unsafe partial struct IMAGE_AUX_SYMBOL_EX
         public short HighNumber;
 
         /// <include file='_Section_e__Struct.xml' path='doc/member[@name="_Section_e__Struct.rgbReserved"]/*' />
-        [NativeTypeName("BYTE [2]")]
+        [NativeTypeName("BYTE[2]")]
         public fixed byte rgbReserved[2];
     }
 
@@ -127,7 +127,7 @@ public unsafe partial struct IMAGE_AUX_SYMBOL_EX
         public IMAGE_AUX_SYMBOL_TOKEN_DEF TokenDef;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.rgbReserved"]/*' />
-        [NativeTypeName("BYTE [2]")]
+        [NativeTypeName("BYTE[2]")]
         public fixed byte rgbReserved[2];
     }
 
@@ -140,7 +140,7 @@ public unsafe partial struct IMAGE_AUX_SYMBOL_EX
         public uint crc;
 
         /// <include file='_CRC_e__Struct.xml' path='doc/member[@name="_CRC_e__Struct.rgbReserved"]/*' />
-        [NativeTypeName("BYTE [16]")]
+        [NativeTypeName("BYTE[16]")]
         public fixed byte rgbReserved[16];
     }
 }

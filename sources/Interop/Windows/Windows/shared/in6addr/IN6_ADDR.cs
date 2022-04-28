@@ -20,12 +20,12 @@ public partial struct IN6_ADDR
     {
         /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union.Byte"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("UCHAR [16]")]
+        [NativeTypeName("UCHAR[16]")]
         public fixed byte Byte[16];
 
         /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union.Word"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("USHORT [8]")]
+        [NativeTypeName("USHORT[8]")]
         public fixed ushort Word[8];
     }
 }

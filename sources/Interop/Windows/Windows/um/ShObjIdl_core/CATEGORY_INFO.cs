@@ -12,6 +12,6 @@ public unsafe partial struct CATEGORY_INFO
     public CATEGORYINFO_FLAGS cif;
 
     /// <include file='CATEGORY_INFO.xml' path='doc/member[@name="CATEGORY_INFO.wszName"]/*' />
-    [NativeTypeName("WCHAR [260]")]
+    [NativeTypeName("WCHAR[260]")]
     public fixed ushort wszName[260];
 }

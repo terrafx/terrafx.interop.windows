@@ -13,7 +13,7 @@ public unsafe partial struct SE_ADT_ACCESS_REASON
     public uint AccessMask;
 
     /// <include file='SE_ADT_ACCESS_REASON.xml' path='doc/member[@name="SE_ADT_ACCESS_REASON.AccessReasons"]/*' />
-    [NativeTypeName("ULONG [32]")]
+    [NativeTypeName("ULONG[32]")]
     public fixed uint AccessReasons[32];
 
     /// <include file='SE_ADT_ACCESS_REASON.xml' path='doc/member[@name="SE_ADT_ACCESS_REASON.ObjectTypeIndex"]/*' />

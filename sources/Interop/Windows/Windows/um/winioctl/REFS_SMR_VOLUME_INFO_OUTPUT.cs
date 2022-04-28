@@ -43,6 +43,6 @@ public unsafe partial struct REFS_SMR_VOLUME_INFO_OUTPUT
     public uint CurrentGcBandFillPercentage;
 
     /// <include file='REFS_SMR_VOLUME_INFO_OUTPUT.xml' path='doc/member[@name="REFS_SMR_VOLUME_INFO_OUTPUT.Unused"]/*' />
-    [NativeTypeName("DWORDLONG [6]")]
+    [NativeTypeName("DWORDLONG[6]")]
     public fixed ulong Unused[6];
 }

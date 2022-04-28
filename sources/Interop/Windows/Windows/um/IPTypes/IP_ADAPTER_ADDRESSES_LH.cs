@@ -53,7 +53,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public ushort* FriendlyName;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.PhysicalAddress"]/*' />
-    [NativeTypeName("BYTE [8]")]
+    [NativeTypeName("BYTE[8]")]
     public fixed byte PhysicalAddress[8];
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.PhysicalAddressLength"]/*' />
@@ -80,7 +80,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint Ipv6IfIndex;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.ZoneIndices"]/*' />
-    [NativeTypeName("ULONG [16]")]
+    [NativeTypeName("ULONG[16]")]
     public fixed uint ZoneIndices[16];
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.FirstPrefix"]/*' />
@@ -136,7 +136,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public SOCKET_ADDRESS Dhcpv6Server;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.Dhcpv6ClientDuid"]/*' />
-    [NativeTypeName("BYTE [130]")]
+    [NativeTypeName("BYTE[130]")]
     public fixed byte Dhcpv6ClientDuid[130];
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.Dhcpv6ClientDuidLength"]/*' />

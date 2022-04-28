@@ -17,6 +17,6 @@ public unsafe partial struct STORAGE_MEDIA_SERIAL_NUMBER_DATA
     public ushort SerialNumberLength;
 
     /// <include file='STORAGE_MEDIA_SERIAL_NUMBER_DATA.xml' path='doc/member[@name="STORAGE_MEDIA_SERIAL_NUMBER_DATA.SerialNumber"]/*' />
-    [NativeTypeName("BYTE [0]")]
+    [NativeTypeName("BYTE[0]")]
     public fixed byte SerialNumber[1];
 }

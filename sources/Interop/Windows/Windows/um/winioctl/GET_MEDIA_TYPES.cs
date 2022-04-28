@@ -21,7 +21,7 @@ public partial struct GET_MEDIA_TYPES
     public uint MediaInfoCount;
 
     /// <include file='GET_MEDIA_TYPES.xml' path='doc/member[@name="GET_MEDIA_TYPES.MediaInfo"]/*' />
-    [NativeTypeName("DEVICE_MEDIA_INFO [1]")]
+    [NativeTypeName("DEVICE_MEDIA_INFO[1]")]
     public _MediaInfo_e__FixedBuffer MediaInfo;
 
     /// <include file='_MediaInfo_e__FixedBuffer.xml' path='doc/member[@name="_MediaInfo_e__FixedBuffer"]/*' />

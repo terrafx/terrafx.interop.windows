@@ -72,17 +72,17 @@ public partial struct QUERY_FILE_LAYOUT_INPUT
     {
         /// <include file='_Filter_e__Union.xml' path='doc/member[@name="_Filter_e__Union.ClusterRanges"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("CLUSTER_RANGE [1]")]
+        [NativeTypeName("CLUSTER_RANGE[1]")]
         public _ClusterRanges_e__FixedBuffer ClusterRanges;
 
         /// <include file='_Filter_e__Union.xml' path='doc/member[@name="_Filter_e__Union.FileReferenceRanges"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("FILE_REFERENCE_RANGE [1]")]
+        [NativeTypeName("FILE_REFERENCE_RANGE[1]")]
         public _FileReferenceRanges_e__FixedBuffer FileReferenceRanges;
 
         /// <include file='_Filter_e__Union.xml' path='doc/member[@name="_Filter_e__Union.StorageReserveIds"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("STORAGE_RESERVE_ID [1]")]
+        [NativeTypeName("STORAGE_RESERVE_ID[1]")]
         public _StorageReserveIds_e__FixedBuffer StorageReserveIds;
 
         /// <include file='_ClusterRanges_e__FixedBuffer.xml' path='doc/member[@name="_ClusterRanges_e__FixedBuffer"]/*' />

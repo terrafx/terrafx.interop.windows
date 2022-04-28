@@ -13,6 +13,6 @@ public unsafe partial struct IP_ADAPTER_INDEX_MAP
     public uint Index;
 
     /// <include file='IP_ADAPTER_INDEX_MAP.xml' path='doc/member[@name="IP_ADAPTER_INDEX_MAP.Name"]/*' />
-    [NativeTypeName("WCHAR [128]")]
+    [NativeTypeName("WCHAR[128]")]
     public fixed ushort Name[128];
 }

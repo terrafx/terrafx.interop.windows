@@ -19,6 +19,6 @@ public unsafe partial struct EMRGLSBOUNDEDRECORD
     public uint cbData;
 
     /// <include file='EMRGLSBOUNDEDRECORD.xml' path='doc/member[@name="EMRGLSBOUNDEDRECORD.Data"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Data[1];
 }

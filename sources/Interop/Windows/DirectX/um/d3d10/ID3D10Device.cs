@@ -223,7 +223,7 @@ public unsafe partial struct ID3D10Device : ID3D10Device.Interface
     /// <include file='ID3D10Device.xml' path='doc/member[@name="ID3D10Device.OMSetBlendState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
-    public void OMSetBlendState(ID3D10BlendState* pBlendState, [NativeTypeName("const FLOAT [4]")] float* BlendFactor, uint SampleMask)
+    public void OMSetBlendState(ID3D10BlendState* pBlendState, [NativeTypeName("const FLOAT[4]")] float* BlendFactor, uint SampleMask)
     {
         ((delegate* unmanaged<ID3D10Device*, ID3D10BlendState*, float*, uint, void>)(lpVtbl[25]))((ID3D10Device*)Unsafe.AsPointer(ref this), pBlendState, BlendFactor, SampleMask);
     }
@@ -303,7 +303,7 @@ public unsafe partial struct ID3D10Device : ID3D10Device.Interface
     /// <include file='ID3D10Device.xml' path='doc/member[@name="ID3D10Device.ClearRenderTargetView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
-    public void ClearRenderTargetView(ID3D10RenderTargetView* pRenderTargetView, [NativeTypeName("const FLOAT [4]")] float* ColorRGBA)
+    public void ClearRenderTargetView(ID3D10RenderTargetView* pRenderTargetView, [NativeTypeName("const FLOAT[4]")] float* ColorRGBA)
     {
         ((delegate* unmanaged<ID3D10Device*, ID3D10RenderTargetView*, float*, void>)(lpVtbl[35]))((ID3D10Device*)Unsafe.AsPointer(ref this), pRenderTargetView, ColorRGBA);
     }
@@ -479,7 +479,7 @@ public unsafe partial struct ID3D10Device : ID3D10Device.Interface
     /// <include file='ID3D10Device.xml' path='doc/member[@name="ID3D10Device.OMGetBlendState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(57)]
-    public void OMGetBlendState(ID3D10BlendState** ppBlendState, [NativeTypeName("FLOAT [4]")] float* BlendFactor, uint* pSampleMask)
+    public void OMGetBlendState(ID3D10BlendState** ppBlendState, [NativeTypeName("FLOAT[4]")] float* BlendFactor, uint* pSampleMask)
     {
         ((delegate* unmanaged<ID3D10Device*, ID3D10BlendState**, float*, uint*, void>)(lpVtbl[57]))((ID3D10Device*)Unsafe.AsPointer(ref this), ppBlendState, BlendFactor, pSampleMask);
     }
@@ -873,7 +873,7 @@ public unsafe partial struct ID3D10Device : ID3D10Device.Interface
         void OMSetRenderTargets(uint NumViews, [NativeTypeName("ID3D10RenderTargetView *const *")] ID3D10RenderTargetView** ppRenderTargetViews, ID3D10DepthStencilView* pDepthStencilView);
 
         [VtblIndex(25)]
-        void OMSetBlendState(ID3D10BlendState* pBlendState, [NativeTypeName("const FLOAT [4]")] float* BlendFactor, uint SampleMask);
+        void OMSetBlendState(ID3D10BlendState* pBlendState, [NativeTypeName("const FLOAT[4]")] float* BlendFactor, uint SampleMask);
 
         [VtblIndex(26)]
         void OMSetDepthStencilState(ID3D10DepthStencilState* pDepthStencilState, uint StencilRef);
@@ -903,7 +903,7 @@ public unsafe partial struct ID3D10Device : ID3D10Device.Interface
         void UpdateSubresource(ID3D10Resource* pDstResource, uint DstSubresource, [NativeTypeName("const D3D10_BOX *")] D3D10_BOX* pDstBox, [NativeTypeName("const void *")] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch);
 
         [VtblIndex(35)]
-        void ClearRenderTargetView(ID3D10RenderTargetView* pRenderTargetView, [NativeTypeName("const FLOAT [4]")] float* ColorRGBA);
+        void ClearRenderTargetView(ID3D10RenderTargetView* pRenderTargetView, [NativeTypeName("const FLOAT[4]")] float* ColorRGBA);
 
         [VtblIndex(36)]
         void ClearDepthStencilView(ID3D10DepthStencilView* pDepthStencilView, uint ClearFlags, float Depth, [NativeTypeName("UINT8")] byte Stencil);
@@ -969,7 +969,7 @@ public unsafe partial struct ID3D10Device : ID3D10Device.Interface
         void OMGetRenderTargets(uint NumViews, ID3D10RenderTargetView** ppRenderTargetViews, ID3D10DepthStencilView** ppDepthStencilView);
 
         [VtblIndex(57)]
-        void OMGetBlendState(ID3D10BlendState** ppBlendState, [NativeTypeName("FLOAT [4]")] float* BlendFactor, uint* pSampleMask);
+        void OMGetBlendState(ID3D10BlendState** ppBlendState, [NativeTypeName("FLOAT[4]")] float* BlendFactor, uint* pSampleMask);
 
         [VtblIndex(58)]
         void OMGetDepthStencilState(ID3D10DepthStencilState** ppDepthStencilState, uint* pStencilRef);

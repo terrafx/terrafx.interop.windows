@@ -17,7 +17,7 @@ public partial struct KERB_NET_ADDRESSES
     public uint Number;
 
     /// <include file='KERB_NET_ADDRESSES.xml' path='doc/member[@name="KERB_NET_ADDRESSES.Addresses"]/*' />
-    [NativeTypeName("KERB_NET_ADDRESS [1]")]
+    [NativeTypeName("KERB_NET_ADDRESS[1]")]
     public _Addresses_e__FixedBuffer Addresses;
 
     /// <include file='_Addresses_e__FixedBuffer.xml' path='doc/member[@name="_Addresses_e__FixedBuffer"]/*' />

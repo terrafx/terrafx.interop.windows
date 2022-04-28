@@ -17,7 +17,7 @@ public unsafe partial struct HID_COLLECTION_INFORMATION
     public byte Polled;
 
     /// <include file='HID_COLLECTION_INFORMATION.xml' path='doc/member[@name="HID_COLLECTION_INFORMATION.Reserved1"]/*' />
-    [NativeTypeName("UCHAR [1]")]
+    [NativeTypeName("UCHAR[1]")]
     public fixed byte Reserved1[1];
 
     /// <include file='HID_COLLECTION_INFORMATION.xml' path='doc/member[@name="HID_COLLECTION_INFORMATION.VendorID"]/*' />

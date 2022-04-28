@@ -16,6 +16,6 @@ public unsafe partial struct EMRGDICOMMENT
     public uint cbData;
 
     /// <include file='EMRGDICOMMENT.xml' path='doc/member[@name="EMRGDICOMMENT.Data"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Data[1];
 }

@@ -197,7 +197,7 @@ public unsafe partial struct INPUT_TRANSFORM
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.m"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("float [4][4]")]
+        [NativeTypeName("float[4][4]")]
         public fixed float m[4 * 4];
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

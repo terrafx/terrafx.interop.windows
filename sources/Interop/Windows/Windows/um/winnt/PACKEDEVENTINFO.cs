@@ -17,6 +17,6 @@ public partial struct PACKEDEVENTINFO
     public uint ulNumEventsForLogFile;
 
     /// <include file='PACKEDEVENTINFO.xml' path='doc/member[@name="PACKEDEVENTINFO.ulOffsets"]/*' />
-    [NativeTypeName("DWORD []")]
+    [NativeTypeName("DWORD[]")]
     public uint ulOffsets;
 }

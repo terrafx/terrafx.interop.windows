@@ -13,6 +13,6 @@ public unsafe partial struct DSSSEED
     public uint counter;
 
     /// <include file='DSSSEED.xml' path='doc/member[@name="DSSSEED.seed"]/*' />
-    [NativeTypeName("BYTE [20]")]
+    [NativeTypeName("BYTE[20]")]
     public fixed byte seed[20];
 }
