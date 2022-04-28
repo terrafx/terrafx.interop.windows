@@ -25,7 +25,7 @@ public partial struct SCM_PD_DEVICE_SPECIFIC_INFO
     public uint NumberOfProperties;
 
     /// <include file='SCM_PD_DEVICE_SPECIFIC_INFO.xml' path='doc/member[@name="SCM_PD_DEVICE_SPECIFIC_INFO.DeviceSpecificProperties"]/*' />
-    [NativeTypeName("SCM_PD_DEVICE_SPECIFIC_PROPERTY [1]")]
+    [NativeTypeName("SCM_PD_DEVICE_SPECIFIC_PROPERTY[1]")]
     public _DeviceSpecificProperties_e__FixedBuffer DeviceSpecificProperties;
 
     /// <include file='_DeviceSpecificProperties_e__FixedBuffer.xml' path='doc/member[@name="_DeviceSpecificProperties_e__FixedBuffer"]/*' />

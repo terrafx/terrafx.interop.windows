@@ -86,7 +86,7 @@ public unsafe partial struct IPerChannelDbLevel : IPerChannelDbLevel.Interface
     /// <include file='IPerChannelDbLevel.xml' path='doc/member[@name="IPerChannelDbLevel.SetLevelAllChannels"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SetLevelAllChannels([NativeTypeName("float []")] float* aLevelsDB, [NativeTypeName("ULONG")] uint cChannels, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
+    public HRESULT SetLevelAllChannels([NativeTypeName("float[]")] float* aLevelsDB, [NativeTypeName("ULONG")] uint cChannels, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
     {
         return ((delegate* unmanaged<IPerChannelDbLevel*, float*, uint, Guid*, int>)(lpVtbl[8]))((IPerChannelDbLevel*)Unsafe.AsPointer(ref this), aLevelsDB, cChannels, pguidEventContext);
     }
@@ -109,7 +109,7 @@ public unsafe partial struct IPerChannelDbLevel : IPerChannelDbLevel.Interface
         HRESULT SetLevelUniform(float fLevelDB, [NativeTypeName("LPCGUID")] Guid* pguidEventContext);
 
         [VtblIndex(8)]
-        HRESULT SetLevelAllChannels([NativeTypeName("float []")] float* aLevelsDB, [NativeTypeName("ULONG")] uint cChannels, [NativeTypeName("LPCGUID")] Guid* pguidEventContext);
+        HRESULT SetLevelAllChannels([NativeTypeName("float[]")] float* aLevelsDB, [NativeTypeName("ULONG")] uint cChannels, [NativeTypeName("LPCGUID")] Guid* pguidEventContext);
     }
 
     public partial struct Vtbl<TSelf>

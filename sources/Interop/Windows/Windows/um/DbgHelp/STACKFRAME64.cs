@@ -28,7 +28,7 @@ public unsafe partial struct STACKFRAME64
     public void* FuncTableEntry;
 
     /// <include file='STACKFRAME64.xml' path='doc/member[@name="STACKFRAME64.Params"]/*' />
-    [NativeTypeName("DWORD64 [4]")]
+    [NativeTypeName("DWORD64[4]")]
     public fixed ulong Params[4];
 
     /// <include file='STACKFRAME64.xml' path='doc/member[@name="STACKFRAME64.Far"]/*' />
@@ -38,7 +38,7 @@ public unsafe partial struct STACKFRAME64
     public BOOL Virtual;
 
     /// <include file='STACKFRAME64.xml' path='doc/member[@name="STACKFRAME64.Reserved"]/*' />
-    [NativeTypeName("DWORD64 [3]")]
+    [NativeTypeName("DWORD64[3]")]
     public fixed ulong Reserved[3];
 
     /// <include file='STACKFRAME64.xml' path='doc/member[@name="STACKFRAME64.KdHelp"]/*' />

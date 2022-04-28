@@ -79,7 +79,7 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface
     /// <include file='IAsyncInfo.xml' path='doc/member[@name="IAsyncInfo.get_Status"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Status([NativeTypeName("ABI::Windows::Foundation::AsyncStatus *")] AsyncStatus* status)
+    public HRESULT get_Status(AsyncStatus* status)
     {
         return ((delegate* unmanaged<IAsyncInfo*, AsyncStatus*, int>)(lpVtbl[7]))((IAsyncInfo*)Unsafe.AsPointer(ref this), status);
     }
@@ -114,7 +114,7 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface
         HRESULT get_Id([NativeTypeName("unsigned int *")] uint* id);
 
         [VtblIndex(7)]
-        HRESULT get_Status([NativeTypeName("ABI::Windows::Foundation::AsyncStatus *")] AsyncStatus* status);
+        HRESULT get_Status(AsyncStatus* status);
 
         [VtblIndex(8)]
         HRESULT get_ErrorCode(HRESULT* errorCode);

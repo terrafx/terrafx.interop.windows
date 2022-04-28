@@ -38,10 +38,10 @@ public unsafe partial struct WIN32_FIND_DATAW
     public uint dwReserved1;
 
     /// <include file='WIN32_FIND_DATAW.xml' path='doc/member[@name="WIN32_FIND_DATAW.cFileName"]/*' />
-    [NativeTypeName("WCHAR [260]")]
+    [NativeTypeName("WCHAR[260]")]
     public fixed ushort cFileName[260];
 
     /// <include file='WIN32_FIND_DATAW.xml' path='doc/member[@name="WIN32_FIND_DATAW.cAlternateFileName"]/*' />
-    [NativeTypeName("WCHAR [14]")]
+    [NativeTypeName("WCHAR[14]")]
     public fixed ushort cAlternateFileName[14];
 }

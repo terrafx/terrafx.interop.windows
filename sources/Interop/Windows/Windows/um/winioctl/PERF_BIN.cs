@@ -21,7 +21,7 @@ public partial struct PERF_BIN
     public uint TypeOfBin;
 
     /// <include file='PERF_BIN.xml' path='doc/member[@name="PERF_BIN.BinsRanges"]/*' />
-    [NativeTypeName("BIN_RANGE [1]")]
+    [NativeTypeName("BIN_RANGE[1]")]
     public _BinsRanges_e__FixedBuffer BinsRanges;
 
     /// <include file='_BinsRanges_e__FixedBuffer.xml' path='doc/member[@name="_BinsRanges_e__FixedBuffer"]/*' />

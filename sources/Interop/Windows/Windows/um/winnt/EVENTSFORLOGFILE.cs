@@ -13,7 +13,7 @@ public unsafe partial struct EVENTSFORLOGFILE
     public uint ulSize;
 
     /// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE.szLogicalLogFile"]/*' />
-    [NativeTypeName("WCHAR [256]")]
+    [NativeTypeName("WCHAR[256]")]
     public fixed ushort szLogicalLogFile[256];
 
     /// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE.ulNumRecords"]/*' />
@@ -21,6 +21,6 @@ public unsafe partial struct EVENTSFORLOGFILE
     public uint ulNumRecords;
 
     /// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE.pEventLogRecords"]/*' />
-    [NativeTypeName("EVENTLOGRECORD []")]
+    [NativeTypeName("EVENTLOGRECORD[]")]
     public EVENTLOGRECORD pEventLogRecords;
 }

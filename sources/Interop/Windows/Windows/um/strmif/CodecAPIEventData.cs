@@ -18,6 +18,6 @@ public unsafe partial struct CodecAPIEventData
     public uint dataLength;
 
     /// <include file='CodecAPIEventData.xml' path='doc/member[@name="CodecAPIEventData.reserved"]/*' />
-    [NativeTypeName("DWORD [3]")]
+    [NativeTypeName("DWORD[3]")]
     public fixed uint reserved[3];
 }

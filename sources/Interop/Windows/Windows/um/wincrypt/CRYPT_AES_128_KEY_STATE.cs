@@ -9,22 +9,22 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct CRYPT_AES_128_KEY_STATE
 {
     /// <include file='CRYPT_AES_128_KEY_STATE.xml' path='doc/member[@name="CRYPT_AES_128_KEY_STATE.Key"]/*' />
-    [NativeTypeName("unsigned char [16]")]
+    [NativeTypeName("unsigned char[16]")]
     public fixed byte Key[16];
 
     /// <include file='CRYPT_AES_128_KEY_STATE.xml' path='doc/member[@name="CRYPT_AES_128_KEY_STATE.IV"]/*' />
-    [NativeTypeName("unsigned char [16]")]
+    [NativeTypeName("unsigned char[16]")]
     public fixed byte IV[16];
 
     /// <include file='CRYPT_AES_128_KEY_STATE.xml' path='doc/member[@name="CRYPT_AES_128_KEY_STATE.EncryptionState"]/*' />
-    [NativeTypeName("unsigned char [11][16]")]
+    [NativeTypeName("unsigned char[11][16]")]
     public fixed byte EncryptionState[11 * 16];
 
     /// <include file='CRYPT_AES_128_KEY_STATE.xml' path='doc/member[@name="CRYPT_AES_128_KEY_STATE.DecryptionState"]/*' />
-    [NativeTypeName("unsigned char [11][16]")]
+    [NativeTypeName("unsigned char[11][16]")]
     public fixed byte DecryptionState[11 * 16];
 
     /// <include file='CRYPT_AES_128_KEY_STATE.xml' path='doc/member[@name="CRYPT_AES_128_KEY_STATE.Feedback"]/*' />
-    [NativeTypeName("unsigned char [16]")]
+    [NativeTypeName("unsigned char[16]")]
     public fixed byte Feedback[16];
 }

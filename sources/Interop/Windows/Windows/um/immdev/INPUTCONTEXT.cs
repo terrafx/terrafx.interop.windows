@@ -40,7 +40,7 @@ public unsafe partial struct INPUTCONTEXT
     public COMPOSITIONFORM cfCompForm;
 
     /// <include file='INPUTCONTEXT.xml' path='doc/member[@name="INPUTCONTEXT.cfCandForm"]/*' />
-    [NativeTypeName("CANDIDATEFORM [4]")]
+    [NativeTypeName("CANDIDATEFORM[4]")]
     public _cfCandForm_e__FixedBuffer cfCandForm;
 
     /// <include file='INPUTCONTEXT.xml' path='doc/member[@name="INPUTCONTEXT.hCompStr"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct INPUTCONTEXT
     public uint fdwInit;
 
     /// <include file='INPUTCONTEXT.xml' path='doc/member[@name="INPUTCONTEXT.dwReserve"]/*' />
-    [NativeTypeName("DWORD [3]")]
+    [NativeTypeName("DWORD[3]")]
     public fixed uint dwReserve[3];
 
     /// <include file='_lfFont_e__Union.xml' path='doc/member[@name="_lfFont_e__Union"]/*' />

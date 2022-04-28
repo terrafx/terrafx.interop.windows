@@ -29,7 +29,7 @@ public unsafe partial struct STORAGE_ALLOCATE_BC_STREAM_INPUT
     public byte Discardable;
 
     /// <include file='STORAGE_ALLOCATE_BC_STREAM_INPUT.xml' path='doc/member[@name="STORAGE_ALLOCATE_BC_STREAM_INPUT.Reserved1"]/*' />
-    [NativeTypeName("BOOLEAN [2]")]
+    [NativeTypeName("BOOLEAN[2]")]
     public fixed byte Reserved1[2];
 
     /// <include file='STORAGE_ALLOCATE_BC_STREAM_INPUT.xml' path='doc/member[@name="STORAGE_ALLOCATE_BC_STREAM_INPUT.AccessType"]/*' />

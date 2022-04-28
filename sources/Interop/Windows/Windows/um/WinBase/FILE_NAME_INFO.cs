@@ -13,6 +13,6 @@ public unsafe partial struct FILE_NAME_INFO
     public uint FileNameLength;
 
     /// <include file='FILE_NAME_INFO.xml' path='doc/member[@name="FILE_NAME_INFO.FileName"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort FileName[1];
 }

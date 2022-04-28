@@ -15,7 +15,7 @@ public unsafe partial struct DIBSECTION
     public BITMAPINFOHEADER dsBmih;
 
     /// <include file='DIBSECTION.xml' path='doc/member[@name="DIBSECTION.dsBitfields"]/*' />
-    [NativeTypeName("DWORD [3]")]
+    [NativeTypeName("DWORD[3]")]
     public fixed uint dsBitfields[3];
 
     /// <include file='DIBSECTION.xml' path='doc/member[@name="DIBSECTION.dshSection"]/*' />

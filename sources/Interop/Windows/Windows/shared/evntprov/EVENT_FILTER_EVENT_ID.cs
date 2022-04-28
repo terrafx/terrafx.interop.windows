@@ -20,6 +20,6 @@ public unsafe partial struct EVENT_FILTER_EVENT_ID
     public ushort Count;
 
     /// <include file='EVENT_FILTER_EVENT_ID.xml' path='doc/member[@name="EVENT_FILTER_EVENT_ID.Events"]/*' />
-    [NativeTypeName("USHORT [1]")]
+    [NativeTypeName("USHORT[1]")]
     public fixed ushort Events[1];
 }

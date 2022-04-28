@@ -18,10 +18,10 @@ public unsafe partial struct DRIVERSTATUS
     public byte bIDEError;
 
     /// <include file='DRIVERSTATUS.xml' path='doc/member[@name="DRIVERSTATUS.bReserved"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte bReserved[2];
 
     /// <include file='DRIVERSTATUS.xml' path='doc/member[@name="DRIVERSTATUS.dwReserved"]/*' />
-    [NativeTypeName("DWORD [2]")]
+    [NativeTypeName("DWORD[2]")]
     public fixed uint dwReserved[2];
 }

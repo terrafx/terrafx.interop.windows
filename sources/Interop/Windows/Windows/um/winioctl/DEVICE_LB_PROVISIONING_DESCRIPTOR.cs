@@ -125,7 +125,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
     }
 
     /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.Reserved1"]/*' />
-    [NativeTypeName("BYTE [7]")]
+    [NativeTypeName("BYTE[7]")]
     public fixed byte Reserved1[7];
 
     /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.OptimalUnmapGranularity"]/*' />

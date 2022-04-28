@@ -20,6 +20,6 @@ public unsafe partial struct DEVICE_DATA_SET_REPAIR_PARAMETERS
     public uint SourceCopy;
 
     /// <include file='DEVICE_DATA_SET_REPAIR_PARAMETERS.xml' path='doc/member[@name="DEVICE_DATA_SET_REPAIR_PARAMETERS.RepairCopies"]/*' />
-    [NativeTypeName("DWORD [1]")]
+    [NativeTypeName("DWORD[1]")]
     public fixed uint RepairCopies[1];
 }

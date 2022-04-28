@@ -60,7 +60,7 @@ public unsafe partial struct HIDP_BUTTON_CAPS
     public ushort Reserved2;
 
     /// <include file='HIDP_BUTTON_CAPS.xml' path='doc/member[@name="HIDP_BUTTON_CAPS.Reserved"]/*' />
-    [NativeTypeName("ULONG [9]")]
+    [NativeTypeName("ULONG[9]")]
     public fixed uint Reserved[9];
 
     /// <include file='HIDP_BUTTON_CAPS.xml' path='doc/member[@name="HIDP_BUTTON_CAPS.Anonymous"]/*' />

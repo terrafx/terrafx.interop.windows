@@ -45,7 +45,7 @@ public unsafe partial struct D3D12_CLEAR_VALUE
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Color"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("FLOAT [4]")]
+        [NativeTypeName("FLOAT[4]")]
         public fixed float Color[4];
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.DepthStencil"]/*' />

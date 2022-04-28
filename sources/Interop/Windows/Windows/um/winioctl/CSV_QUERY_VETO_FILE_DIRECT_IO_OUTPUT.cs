@@ -17,6 +17,6 @@ public unsafe partial struct CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT
     public ulong VetoedFromAltitudeDecimal;
 
     /// <include file='CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT.xml' path='doc/member[@name="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT.Reason"]/*' />
-    [NativeTypeName("WCHAR [256]")]
+    [NativeTypeName("WCHAR[256]")]
     public fixed ushort Reason[256];
 }

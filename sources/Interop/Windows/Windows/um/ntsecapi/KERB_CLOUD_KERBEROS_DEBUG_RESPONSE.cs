@@ -20,6 +20,6 @@ public unsafe partial struct KERB_CLOUD_KERBEROS_DEBUG_RESPONSE
     public uint Length;
 
     /// <include file='KERB_CLOUD_KERBEROS_DEBUG_RESPONSE.xml' path='doc/member[@name="KERB_CLOUD_KERBEROS_DEBUG_RESPONSE.Data"]/*' />
-    [NativeTypeName("ULONG [1]")]
+    [NativeTypeName("ULONG[1]")]
     public fixed uint Data[1];
 }

@@ -16,6 +16,6 @@ public unsafe partial struct DEVICE_DSM_NVCACHE_CHANGE_PRIORITY_PARAMETERS
     public byte TargetPriority;
 
     /// <include file='DEVICE_DSM_NVCACHE_CHANGE_PRIORITY_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_NVCACHE_CHANGE_PRIORITY_PARAMETERS.Reserved"]/*' />
-    [NativeTypeName("BYTE [3]")]
+    [NativeTypeName("BYTE[3]")]
     public fixed byte Reserved[3];
 }

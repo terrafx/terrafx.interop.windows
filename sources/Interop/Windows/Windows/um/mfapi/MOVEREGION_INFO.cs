@@ -19,7 +19,7 @@ public partial struct MOVEREGION_INFO
     public uint NumMoveRegions;
 
     /// <include file='MOVEREGION_INFO.xml' path='doc/member[@name="MOVEREGION_INFO.MoveRegions"]/*' />
-    [NativeTypeName("MOVE_RECT [1]")]
+    [NativeTypeName("MOVE_RECT[1]")]
     public _MoveRegions_e__FixedBuffer MoveRegions;
 
     /// <include file='_MoveRegions_e__FixedBuffer.xml' path='doc/member[@name="_MoveRegions_e__FixedBuffer"]/*' />

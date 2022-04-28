@@ -12,12 +12,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RmStartSession"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint RmStartSession([NativeTypeName("DWORD *")] uint* pSessionHandle, [NativeTypeName("DWORD")] uint dwSessionFlags, [NativeTypeName("WCHAR []")] ushort* strSessionKey);
+    public static extern uint RmStartSession([NativeTypeName("DWORD *")] uint* pSessionHandle, [NativeTypeName("DWORD")] uint dwSessionFlags, [NativeTypeName("WCHAR[]")] ushort* strSessionKey);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RmJoinSession"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint RmJoinSession([NativeTypeName("DWORD *")] uint* pSessionHandle, [NativeTypeName("const WCHAR []")] ushort* strSessionKey);
+    public static extern uint RmJoinSession([NativeTypeName("DWORD *")] uint* pSessionHandle, [NativeTypeName("const WCHAR[]")] ushort* strSessionKey);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RmEndSession"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
@@ -27,12 +27,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RmRegisterResources"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint RmRegisterResources([NativeTypeName("DWORD")] uint dwSessionHandle, uint nFiles, [NativeTypeName("LPCWSTR []")] ushort** rgsFileNames, uint nApplications, [NativeTypeName("RM_UNIQUE_PROCESS []")] RM_UNIQUE_PROCESS* rgApplications, uint nServices, [NativeTypeName("LPCWSTR []")] ushort** rgsServiceNames);
+    public static extern uint RmRegisterResources([NativeTypeName("DWORD")] uint dwSessionHandle, uint nFiles, [NativeTypeName("LPCWSTR[]")] ushort** rgsFileNames, uint nApplications, [NativeTypeName("RM_UNIQUE_PROCESS[]")] RM_UNIQUE_PROCESS* rgApplications, uint nServices, [NativeTypeName("LPCWSTR[]")] ushort** rgsServiceNames);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RmGetList"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint RmGetList([NativeTypeName("DWORD")] uint dwSessionHandle, uint* pnProcInfoNeeded, uint* pnProcInfo, [NativeTypeName("RM_PROCESS_INFO []")] RM_PROCESS_INFO* rgAffectedApps, [NativeTypeName("LPDWORD")] uint* lpdwRebootReasons);
+    public static extern uint RmGetList([NativeTypeName("DWORD")] uint dwSessionHandle, uint* pnProcInfoNeeded, uint* pnProcInfo, [NativeTypeName("RM_PROCESS_INFO[]")] RM_PROCESS_INFO* rgAffectedApps, [NativeTypeName("LPDWORD")] uint* lpdwRebootReasons);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RmShutdown"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]

@@ -31,7 +31,7 @@ public partial struct STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR
     public uint Reserved;
 
     /// <include file='STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR.Node"]/*' />
-    [NativeTypeName("STORAGE_PHYSICAL_NODE_DATA [1]")]
+    [NativeTypeName("STORAGE_PHYSICAL_NODE_DATA[1]")]
     public _Node_e__FixedBuffer Node;
 
     /// <include file='_Node_e__FixedBuffer.xml' path='doc/member[@name="_Node_e__FixedBuffer"]/*' />

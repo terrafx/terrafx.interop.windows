@@ -17,7 +17,7 @@ public partial struct PSAPI_WORKING_SET_INFORMATION
     public nuint NumberOfEntries;
 
     /// <include file='PSAPI_WORKING_SET_INFORMATION.xml' path='doc/member[@name="PSAPI_WORKING_SET_INFORMATION.WorkingSetInfo"]/*' />
-    [NativeTypeName("PSAPI_WORKING_SET_BLOCK [1]")]
+    [NativeTypeName("PSAPI_WORKING_SET_BLOCK[1]")]
     public _WorkingSetInfo_e__FixedBuffer WorkingSetInfo;
 
     /// <include file='_WorkingSetInfo_e__FixedBuffer.xml' path='doc/member[@name="_WorkingSetInfo_e__FixedBuffer"]/*' />

@@ -33,7 +33,7 @@ public partial struct EMRPOLYTEXTOUTA
     public int cStrings;
 
     /// <include file='EMRPOLYTEXTOUTA.xml' path='doc/member[@name="EMRPOLYTEXTOUTA.aemrtext"]/*' />
-    [NativeTypeName("EMRTEXT [1]")]
+    [NativeTypeName("EMRTEXT[1]")]
     public _aemrtext_e__FixedBuffer aemrtext;
 
     /// <include file='_aemrtext_e__FixedBuffer.xml' path='doc/member[@name="_aemrtext_e__FixedBuffer"]/*' />

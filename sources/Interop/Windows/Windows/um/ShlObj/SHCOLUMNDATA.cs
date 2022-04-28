@@ -25,6 +25,6 @@ public unsafe partial struct SHCOLUMNDATA
     public ushort* pwszExt;
 
     /// <include file='SHCOLUMNDATA.xml' path='doc/member[@name="SHCOLUMNDATA.wszFile"]/*' />
-    [NativeTypeName("WCHAR [260]")]
+    [NativeTypeName("WCHAR[260]")]
     public fixed ushort wszFile[260];
 }

@@ -17,7 +17,7 @@ public unsafe partial struct SYMBOL_INFOW
     public uint TypeIndex;
 
     /// <include file='SYMBOL_INFOW.xml' path='doc/member[@name="SYMBOL_INFOW.Reserved"]/*' />
-    [NativeTypeName("ULONG64 [2]")]
+    [NativeTypeName("ULONG64[2]")]
     public fixed ulong Reserved[2];
 
     /// <include file='SYMBOL_INFOW.xml' path='doc/member[@name="SYMBOL_INFOW.Index"]/*' />
@@ -65,6 +65,6 @@ public unsafe partial struct SYMBOL_INFOW
     public uint MaxNameLen;
 
     /// <include file='SYMBOL_INFOW.xml' path='doc/member[@name="SYMBOL_INFOW.Name"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort Name[1];
 }

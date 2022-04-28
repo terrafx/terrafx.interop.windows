@@ -27,7 +27,7 @@ public partial struct PAGESET
     public uint cPageRange;
 
     /// <include file='PAGESET.xml' path='doc/member[@name="PAGESET.rgPages"]/*' />
-    [NativeTypeName("PAGERANGE [1]")]
+    [NativeTypeName("PAGERANGE[1]")]
     public _rgPages_e__FixedBuffer rgPages;
 
     /// <include file='_rgPages_e__FixedBuffer.xml' path='doc/member[@name="_rgPages_e__FixedBuffer"]/*' />

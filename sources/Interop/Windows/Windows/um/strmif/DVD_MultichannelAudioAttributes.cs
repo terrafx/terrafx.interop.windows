@@ -13,11 +13,11 @@ namespace TerraFX.Interop.Windows;
 public partial struct DVD_MultichannelAudioAttributes
 {
     /// <include file='DVD_MultichannelAudioAttributes.xml' path='doc/member[@name="DVD_MultichannelAudioAttributes.Info"]/*' />
-    [NativeTypeName("DVD_MUA_MixingInfo [8]")]
+    [NativeTypeName("DVD_MUA_MixingInfo[8]")]
     public _Info_e__FixedBuffer Info;
 
     /// <include file='DVD_MultichannelAudioAttributes.xml' path='doc/member[@name="DVD_MultichannelAudioAttributes.Coeff"]/*' />
-    [NativeTypeName("DVD_MUA_Coeff [8]")]
+    [NativeTypeName("DVD_MUA_Coeff[8]")]
     public _Coeff_e__FixedBuffer Coeff;
 
     /// <include file='_Info_e__FixedBuffer.xml' path='doc/member[@name="_Info_e__FixedBuffer"]/*' />

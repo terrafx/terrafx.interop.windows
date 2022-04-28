@@ -33,7 +33,7 @@ public partial struct REPARSE_GUID_DATA_BUFFER
     public unsafe partial struct _GenericReparseBuffer_e__Struct
     {
         /// <include file='_GenericReparseBuffer_e__Struct.xml' path='doc/member[@name="_GenericReparseBuffer_e__Struct.DataBuffer"]/*' />
-        [NativeTypeName("BYTE [1]")]
+        [NativeTypeName("BYTE[1]")]
         public fixed byte DataBuffer[1];
     }
 }

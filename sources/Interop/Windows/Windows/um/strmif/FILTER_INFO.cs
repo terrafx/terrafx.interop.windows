@@ -9,7 +9,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct FILTER_INFO
 {
     /// <include file='FILTER_INFO.xml' path='doc/member[@name="FILTER_INFO.achName"]/*' />
-    [NativeTypeName("WCHAR [128]")]
+    [NativeTypeName("WCHAR[128]")]
     public fixed ushort achName[128];
 
     /// <include file='FILTER_INFO.xml' path='doc/member[@name="FILTER_INFO.pGraph"]/*' />

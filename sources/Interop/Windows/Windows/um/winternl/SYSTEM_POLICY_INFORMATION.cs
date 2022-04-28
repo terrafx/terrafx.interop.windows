@@ -11,11 +11,11 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct SYSTEM_POLICY_INFORMATION
 {
     /// <include file='SYSTEM_POLICY_INFORMATION.xml' path='doc/member[@name="SYSTEM_POLICY_INFORMATION.Reserved1"]/*' />
-    [NativeTypeName("PVOID [2]")]
+    [NativeTypeName("PVOID[2]")]
     public _Reserved1_e__FixedBuffer Reserved1;
 
     /// <include file='SYSTEM_POLICY_INFORMATION.xml' path='doc/member[@name="SYSTEM_POLICY_INFORMATION.Reserved2"]/*' />
-    [NativeTypeName("ULONG [3]")]
+    [NativeTypeName("ULONG[3]")]
     public fixed uint Reserved2[3];
 
     /// <include file='_Reserved1_e__FixedBuffer.xml' path='doc/member[@name="_Reserved1_e__FixedBuffer"]/*' />

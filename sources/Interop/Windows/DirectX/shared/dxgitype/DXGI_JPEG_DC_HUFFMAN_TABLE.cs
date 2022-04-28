@@ -9,10 +9,10 @@ namespace TerraFX.Interop.DirectX;
 public unsafe partial struct DXGI_JPEG_DC_HUFFMAN_TABLE
 {
     /// <include file='DXGI_JPEG_DC_HUFFMAN_TABLE.xml' path='doc/member[@name="DXGI_JPEG_DC_HUFFMAN_TABLE.CodeCounts"]/*' />
-    [NativeTypeName("BYTE [12]")]
+    [NativeTypeName("BYTE[12]")]
     public fixed byte CodeCounts[12];
 
     /// <include file='DXGI_JPEG_DC_HUFFMAN_TABLE.xml' path='doc/member[@name="DXGI_JPEG_DC_HUFFMAN_TABLE.CodeValues"]/*' />
-    [NativeTypeName("BYTE [12]")]
+    [NativeTypeName("BYTE[12]")]
     public fixed byte CodeValues[12];
 }

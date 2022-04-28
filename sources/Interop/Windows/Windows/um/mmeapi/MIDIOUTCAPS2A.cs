@@ -25,7 +25,7 @@ public unsafe partial struct MIDIOUTCAPS2A
     public uint vDriverVersion;
 
     /// <include file='MIDIOUTCAPS2A.xml' path='doc/member[@name="MIDIOUTCAPS2A.szPname"]/*' />
-    [NativeTypeName("CHAR [32]")]
+    [NativeTypeName("CHAR[32]")]
     public fixed sbyte szPname[32];
 
     /// <include file='MIDIOUTCAPS2A.xml' path='doc/member[@name="MIDIOUTCAPS2A.wTechnology"]/*' />

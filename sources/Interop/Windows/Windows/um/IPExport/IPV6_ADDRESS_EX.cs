@@ -19,7 +19,7 @@ public unsafe partial struct IPV6_ADDRESS_EX
     public uint sin6_flowinfo;
 
     /// <include file='IPV6_ADDRESS_EX.xml' path='doc/member[@name="IPV6_ADDRESS_EX.sin6_addr"]/*' />
-    [NativeTypeName("USHORT [8]")]
+    [NativeTypeName("USHORT[8]")]
     public fixed ushort sin6_addr[8];
 
     /// <include file='IPV6_ADDRESS_EX.xml' path='doc/member[@name="IPV6_ADDRESS_EX.sin6_scope_id"]/*' />

@@ -17,7 +17,7 @@ public partial struct TRANSACTION_ENLISTMENTS_INFORMATION
     public uint NumberOfEnlistments;
 
     /// <include file='TRANSACTION_ENLISTMENTS_INFORMATION.xml' path='doc/member[@name="TRANSACTION_ENLISTMENTS_INFORMATION.EnlistmentPair"]/*' />
-    [NativeTypeName("TRANSACTION_ENLISTMENT_PAIR [1]")]
+    [NativeTypeName("TRANSACTION_ENLISTMENT_PAIR[1]")]
     public _EnlistmentPair_e__FixedBuffer EnlistmentPair;
 
     /// <include file='_EnlistmentPair_e__FixedBuffer.xml' path='doc/member[@name="_EnlistmentPair_e__FixedBuffer"]/*' />

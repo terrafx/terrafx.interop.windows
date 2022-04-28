@@ -32,6 +32,6 @@ public unsafe partial struct POINTER_DEVICE_INFO
     public ushort maxActiveContacts;
 
     /// <include file='POINTER_DEVICE_INFO.xml' path='doc/member[@name="POINTER_DEVICE_INFO.productString"]/*' />
-    [NativeTypeName("WCHAR [520]")]
+    [NativeTypeName("WCHAR[520]")]
     public fixed ushort productString[520];
 }

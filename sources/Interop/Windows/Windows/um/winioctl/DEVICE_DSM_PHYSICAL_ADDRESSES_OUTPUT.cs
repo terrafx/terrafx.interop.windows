@@ -29,7 +29,7 @@ public partial struct DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT
     public uint NumberOfRangesReturned;
 
     /// <include file='DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT.xml' path='doc/member[@name="DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT.Ranges"]/*' />
-    [NativeTypeName("DEVICE_STORAGE_ADDRESS_RANGE [1]")]
+    [NativeTypeName("DEVICE_STORAGE_ADDRESS_RANGE[1]")]
     public _Ranges_e__FixedBuffer Ranges;
 
     /// <include file='_Ranges_e__FixedBuffer.xml' path='doc/member[@name="_Ranges_e__FixedBuffer"]/*' />

@@ -29,7 +29,7 @@ public unsafe partial struct GROUP_POLICY_OBJECTA
     public sbyte* lpDisplayName;
 
     /// <include file='GROUP_POLICY_OBJECTA.xml' path='doc/member[@name="GROUP_POLICY_OBJECTA.szGPOName"]/*' />
-    [NativeTypeName("CHAR [50]")]
+    [NativeTypeName("CHAR[50]")]
     public fixed sbyte szGPOName[50];
 
     /// <include file='GROUP_POLICY_OBJECTA.xml' path='doc/member[@name="GROUP_POLICY_OBJECTA.GPOLink"]/*' />

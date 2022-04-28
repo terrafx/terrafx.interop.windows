@@ -22,14 +22,14 @@ public unsafe partial struct SENDCMDINPARAMS
     public byte bDriveNumber;
 
     /// <include file='SENDCMDINPARAMS.xml' path='doc/member[@name="SENDCMDINPARAMS.bReserved"]/*' />
-    [NativeTypeName("BYTE [3]")]
+    [NativeTypeName("BYTE[3]")]
     public fixed byte bReserved[3];
 
     /// <include file='SENDCMDINPARAMS.xml' path='doc/member[@name="SENDCMDINPARAMS.dwReserved"]/*' />
-    [NativeTypeName("DWORD [4]")]
+    [NativeTypeName("DWORD[4]")]
     public fixed uint dwReserved[4];
 
     /// <include file='SENDCMDINPARAMS.xml' path='doc/member[@name="SENDCMDINPARAMS.bBuffer"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte bBuffer[1];
 }

@@ -27,6 +27,6 @@ public unsafe partial struct EMRFRAMERGN
     public SIZE szlStroke;
 
     /// <include file='EMRFRAMERGN.xml' path='doc/member[@name="EMRFRAMERGN.RgnData"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte RgnData[1];
 }

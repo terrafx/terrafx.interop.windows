@@ -17,7 +17,7 @@ public partial struct MIB_IPMCAST_BOUNDARY_TABLE
     public uint dwNumEntries;
 
     /// <include file='MIB_IPMCAST_BOUNDARY_TABLE.xml' path='doc/member[@name="MIB_IPMCAST_BOUNDARY_TABLE.table"]/*' />
-    [NativeTypeName("MIB_IPMCAST_BOUNDARY [1]")]
+    [NativeTypeName("MIB_IPMCAST_BOUNDARY[1]")]
     public _table_e__FixedBuffer table;
 
     /// <include file='_table_e__FixedBuffer.xml' path='doc/member[@name="_table_e__FixedBuffer"]/*' />

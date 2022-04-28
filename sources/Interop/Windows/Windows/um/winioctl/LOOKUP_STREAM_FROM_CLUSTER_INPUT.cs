@@ -21,7 +21,7 @@ public partial struct LOOKUP_STREAM_FROM_CLUSTER_INPUT
     public uint NumberOfClusters;
 
     /// <include file='LOOKUP_STREAM_FROM_CLUSTER_INPUT.xml' path='doc/member[@name="LOOKUP_STREAM_FROM_CLUSTER_INPUT.Cluster"]/*' />
-    [NativeTypeName("LARGE_INTEGER [1]")]
+    [NativeTypeName("LARGE_INTEGER[1]")]
     public _Cluster_e__FixedBuffer Cluster;
 
     /// <include file='_Cluster_e__FixedBuffer.xml' path='doc/member[@name="_Cluster_e__FixedBuffer"]/*' />

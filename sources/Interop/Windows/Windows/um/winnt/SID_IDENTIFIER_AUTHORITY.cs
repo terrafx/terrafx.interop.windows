@@ -9,6 +9,6 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct SID_IDENTIFIER_AUTHORITY
 {
     /// <include file='SID_IDENTIFIER_AUTHORITY.xml' path='doc/member[@name="SID_IDENTIFIER_AUTHORITY.Value"]/*' />
-    [NativeTypeName("BYTE [6]")]
+    [NativeTypeName("BYTE[6]")]
     public fixed byte Value[6];
 }

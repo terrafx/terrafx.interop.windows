@@ -36,6 +36,6 @@ public unsafe partial struct FORMAT_EX_PARAMETERS
     public ushort SectorsPerTrack;
 
     /// <include file='FORMAT_EX_PARAMETERS.xml' path='doc/member[@name="FORMAT_EX_PARAMETERS.SectorNumber"]/*' />
-    [NativeTypeName("WORD [1]")]
+    [NativeTypeName("WORD[1]")]
     public fixed ushort SectorNumber[1];
 }

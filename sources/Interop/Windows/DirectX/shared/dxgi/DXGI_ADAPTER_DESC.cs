@@ -11,7 +11,7 @@ namespace TerraFX.Interop.DirectX;
 public unsafe partial struct DXGI_ADAPTER_DESC
 {
     /// <include file='DXGI_ADAPTER_DESC.xml' path='doc/member[@name="DXGI_ADAPTER_DESC.Description"]/*' />
-    [NativeTypeName("WCHAR [128]")]
+    [NativeTypeName("WCHAR[128]")]
     public fixed ushort Description[128];
 
     /// <include file='DXGI_ADAPTER_DESC.xml' path='doc/member[@name="DXGI_ADAPTER_DESC.VendorId"]/*' />

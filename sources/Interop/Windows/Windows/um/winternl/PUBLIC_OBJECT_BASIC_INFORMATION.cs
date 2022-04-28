@@ -25,6 +25,6 @@ public unsafe partial struct PUBLIC_OBJECT_BASIC_INFORMATION
     public uint PointerCount;
 
     /// <include file='PUBLIC_OBJECT_BASIC_INFORMATION.xml' path='doc/member[@name="PUBLIC_OBJECT_BASIC_INFORMATION.Reserved"]/*' />
-    [NativeTypeName("ULONG [10]")]
+    [NativeTypeName("ULONG[10]")]
     public fixed uint Reserved[10];
 }

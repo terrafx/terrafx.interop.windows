@@ -22,7 +22,7 @@ public partial struct SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION
     public LARGE_INTEGER UserTime;
 
     /// <include file='SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION.xml' path='doc/member[@name="SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION.Reserved1"]/*' />
-    [NativeTypeName("LARGE_INTEGER [2]")]
+    [NativeTypeName("LARGE_INTEGER[2]")]
     public _Reserved1_e__FixedBuffer Reserved1;
 
     /// <include file='SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION.xml' path='doc/member[@name="SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION.Reserved2"]/*' />

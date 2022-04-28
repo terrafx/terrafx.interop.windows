@@ -8,17 +8,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".root", ".root", "{2F337CB6
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		build.cmd = build.cmd
-		build.sh = build.sh
 		Directory.Build.props = Directory.Build.props
 		Directory.Build.targets = Directory.Build.targets
+		Directory.Packages.props = Directory.Packages.props
 		LICENSE.md = LICENSE.md
 		pack.cmd = pack.cmd
-		pack.sh = pack.sh
 		restore.cmd = restore.cmd
-		restore.sh = restore.sh
 		TerraFX.snk = TerraFX.snk
 		test.cmd = test.cmd
-		test.sh = test.sh
 		THIRD-PARTY-NOTICES.md = THIRD-PARTY-NOTICES.md
 	EndProjectSection
 EndProject
@@ -410,9 +407,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{48E1F49D-7103-4DE6-9F69-915183B85095}"
 	ProjectSection(SolutionItems) = preProject
 		scripts\build.ps1 = scripts\build.ps1
-		scripts\build.sh = scripts\build.sh
 		scripts\cibuild.cmd = scripts\cibuild.cmd
-		scripts\cibuild.sh = scripts\cibuild.sh
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xinput", "Xinput", "{F54C5855-9C8D-4EDF-BFC8-41F2E46DBE3C}"

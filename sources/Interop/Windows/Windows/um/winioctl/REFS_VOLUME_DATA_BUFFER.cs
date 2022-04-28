@@ -67,7 +67,7 @@ public partial struct REFS_VOLUME_DATA_BUFFER
     public uint DestagesFastTierToSlowTierRate;
 
     /// <include file='REFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="REFS_VOLUME_DATA_BUFFER.Reserved"]/*' />
-    [NativeTypeName("LARGE_INTEGER [9]")]
+    [NativeTypeName("LARGE_INTEGER[9]")]
     public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />

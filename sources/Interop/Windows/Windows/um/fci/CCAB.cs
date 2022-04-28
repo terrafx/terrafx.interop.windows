@@ -38,14 +38,14 @@ public unsafe partial struct CCAB
     public ushort setID;
 
     /// <include file='CCAB.xml' path='doc/member[@name="CCAB.szDisk"]/*' />
-    [NativeTypeName("char [256]")]
+    [NativeTypeName("char[256]")]
     public fixed sbyte szDisk[256];
 
     /// <include file='CCAB.xml' path='doc/member[@name="CCAB.szCab"]/*' />
-    [NativeTypeName("char [256]")]
+    [NativeTypeName("char[256]")]
     public fixed sbyte szCab[256];
 
     /// <include file='CCAB.xml' path='doc/member[@name="CCAB.szCabPath"]/*' />
-    [NativeTypeName("char [256]")]
+    [NativeTypeName("char[256]")]
     public fixed sbyte szCabPath[256];
 }

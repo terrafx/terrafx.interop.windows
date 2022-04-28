@@ -21,6 +21,6 @@ public unsafe partial struct SI_COPYFILE
     public uint Flags;
 
     /// <include file='SI_COPYFILE.xml' path='doc/member[@name="SI_COPYFILE.FileNameBuffer"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort FileNameBuffer[1];
 }

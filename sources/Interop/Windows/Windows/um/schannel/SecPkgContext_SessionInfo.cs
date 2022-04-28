@@ -17,6 +17,6 @@ public unsafe partial struct SecPkgContext_SessionInfo
     public uint cbSessionId;
 
     /// <include file='SecPkgContext_SessionInfo.xml' path='doc/member[@name="SecPkgContext_SessionInfo.rgbSessionId"]/*' />
-    [NativeTypeName("BYTE [32]")]
+    [NativeTypeName("BYTE[32]")]
     public fixed byte rgbSessionId[32];
 }

@@ -29,7 +29,7 @@ public unsafe partial struct XSTATE_CONFIGURATION
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Features"]/*' />
-    [NativeTypeName("XSTATE_FEATURE [64]")]
+    [NativeTypeName("XSTATE_FEATURE[64]")]
     public _Features_e__FixedBuffer Features;
 
     /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.EnabledSupervisorFeatures"]/*' />
@@ -45,7 +45,7 @@ public unsafe partial struct XSTATE_CONFIGURATION
     public uint AllFeatureSize;
 
     /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.AllFeatures"]/*' />
-    [NativeTypeName("DWORD [64]")]
+    [NativeTypeName("DWORD[64]")]
     public fixed uint AllFeatures[64];
 
     /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.EnabledUserVisibleSupervisorFeatures"]/*' />

@@ -20,7 +20,7 @@ public unsafe partial struct SE_ADT_PARAMETER_ARRAY_ENTRY
     public uint Length;
 
     /// <include file='SE_ADT_PARAMETER_ARRAY_ENTRY.xml' path='doc/member[@name="SE_ADT_PARAMETER_ARRAY_ENTRY.Data"]/*' />
-    [NativeTypeName("ULONG_PTR [2]")]
+    [NativeTypeName("ULONG_PTR[2]")]
     public _Data_e__FixedBuffer Data;
 
     /// <include file='SE_ADT_PARAMETER_ARRAY_ENTRY.xml' path='doc/member[@name="SE_ADT_PARAMETER_ARRAY_ENTRY.Address"]/*' />

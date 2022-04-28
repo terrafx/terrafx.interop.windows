@@ -31,7 +31,7 @@ public unsafe partial struct SAFEARRAY
     public void* pvData;
 
     /// <include file='SAFEARRAY.xml' path='doc/member[@name="SAFEARRAY.rgsabound"]/*' />
-    [NativeTypeName("SAFEARRAYBOUND [1]")]
+    [NativeTypeName("SAFEARRAYBOUND[1]")]
     public _rgsabound_e__FixedBuffer rgsabound;
 
     /// <include file='_rgsabound_e__FixedBuffer.xml' path='doc/member[@name="_rgsabound_e__FixedBuffer"]/*' />

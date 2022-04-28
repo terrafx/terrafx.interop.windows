@@ -20,7 +20,7 @@ public partial struct D3D10_BLEND_DESC1
     public BOOL IndependentBlendEnable;
 
     /// <include file='D3D10_BLEND_DESC1.xml' path='doc/member[@name="D3D10_BLEND_DESC1.RenderTarget"]/*' />
-    [NativeTypeName("D3D10_RENDER_TARGET_BLEND_DESC1 [8]")]
+    [NativeTypeName("D3D10_RENDER_TARGET_BLEND_DESC1[8]")]
     public _RenderTarget_e__FixedBuffer RenderTarget;
 
     /// <include file='_RenderTarget_e__FixedBuffer.xml' path='doc/member[@name="_RenderTarget_e__FixedBuffer"]/*' />

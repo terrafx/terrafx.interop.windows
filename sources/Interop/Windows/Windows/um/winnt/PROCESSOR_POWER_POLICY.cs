@@ -20,7 +20,7 @@ public unsafe partial struct PROCESSOR_POWER_POLICY
     public byte DynamicThrottle;
 
     /// <include file='PROCESSOR_POWER_POLICY.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY.Spare"]/*' />
-    [NativeTypeName("BYTE [3]")]
+    [NativeTypeName("BYTE[3]")]
     public fixed byte Spare[3];
 
     public uint _bitfield;
@@ -64,7 +64,7 @@ public unsafe partial struct PROCESSOR_POWER_POLICY
     public uint PolicyCount;
 
     /// <include file='PROCESSOR_POWER_POLICY.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY.Policy"]/*' />
-    [NativeTypeName("PROCESSOR_POWER_POLICY_INFO [3]")]
+    [NativeTypeName("PROCESSOR_POWER_POLICY_INFO[3]")]
     public _Policy_e__FixedBuffer Policy;
 
     /// <include file='_Policy_e__FixedBuffer.xml' path='doc/member[@name="_Policy_e__FixedBuffer"]/*' />

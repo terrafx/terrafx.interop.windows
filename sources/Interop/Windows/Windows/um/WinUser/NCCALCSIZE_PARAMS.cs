@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct NCCALCSIZE_PARAMS
 {
     /// <include file='NCCALCSIZE_PARAMS.xml' path='doc/member[@name="NCCALCSIZE_PARAMS.rgrc"]/*' />
-    [NativeTypeName("RECT [3]")]
+    [NativeTypeName("RECT[3]")]
     public _rgrc_e__FixedBuffer rgrc;
 
     /// <include file='NCCALCSIZE_PARAMS.xml' path='doc/member[@name="NCCALCSIZE_PARAMS.lppos"]/*' />

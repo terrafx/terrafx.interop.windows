@@ -9,6 +9,6 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct SYSTEM_PERFORMANCE_INFORMATION
 {
     /// <include file='SYSTEM_PERFORMANCE_INFORMATION.xml' path='doc/member[@name="SYSTEM_PERFORMANCE_INFORMATION.Reserved1"]/*' />
-    [NativeTypeName("BYTE [312]")]
+    [NativeTypeName("BYTE[312]")]
     public fixed byte Reserved1[312];
 }

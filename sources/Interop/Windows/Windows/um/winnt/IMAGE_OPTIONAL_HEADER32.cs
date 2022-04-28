@@ -131,7 +131,7 @@ public partial struct IMAGE_OPTIONAL_HEADER32
     public uint NumberOfRvaAndSizes;
 
     /// <include file='IMAGE_OPTIONAL_HEADER32.xml' path='doc/member[@name="IMAGE_OPTIONAL_HEADER32.DataDirectory"]/*' />
-    [NativeTypeName("IMAGE_DATA_DIRECTORY [16]")]
+    [NativeTypeName("IMAGE_DATA_DIRECTORY[16]")]
     public _DataDirectory_e__FixedBuffer DataDirectory;
 
     /// <include file='_DataDirectory_e__FixedBuffer.xml' path='doc/member[@name="_DataDirectory_e__FixedBuffer"]/*' />

@@ -33,22 +33,22 @@ public unsafe partial struct CHANGER_ELEMENT_STATUS_EX
     public ushort Reserved;
 
     /// <include file='CHANGER_ELEMENT_STATUS_EX.xml' path='doc/member[@name="CHANGER_ELEMENT_STATUS_EX.PrimaryVolumeID"]/*' />
-    [NativeTypeName("BYTE [36]")]
+    [NativeTypeName("BYTE[36]")]
     public fixed byte PrimaryVolumeID[36];
 
     /// <include file='CHANGER_ELEMENT_STATUS_EX.xml' path='doc/member[@name="CHANGER_ELEMENT_STATUS_EX.AlternateVolumeID"]/*' />
-    [NativeTypeName("BYTE [36]")]
+    [NativeTypeName("BYTE[36]")]
     public fixed byte AlternateVolumeID[36];
 
     /// <include file='CHANGER_ELEMENT_STATUS_EX.xml' path='doc/member[@name="CHANGER_ELEMENT_STATUS_EX.VendorIdentification"]/*' />
-    [NativeTypeName("BYTE [8]")]
+    [NativeTypeName("BYTE[8]")]
     public fixed byte VendorIdentification[8];
 
     /// <include file='CHANGER_ELEMENT_STATUS_EX.xml' path='doc/member[@name="CHANGER_ELEMENT_STATUS_EX.ProductIdentification"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte ProductIdentification[16];
 
     /// <include file='CHANGER_ELEMENT_STATUS_EX.xml' path='doc/member[@name="CHANGER_ELEMENT_STATUS_EX.SerialNumber"]/*' />
-    [NativeTypeName("BYTE [32]")]
+    [NativeTypeName("BYTE[32]")]
     public fixed byte SerialNumber[32];
 }

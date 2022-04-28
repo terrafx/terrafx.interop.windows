@@ -23,6 +23,6 @@ public unsafe partial struct AUDIO_VOLUME_NOTIFICATION_DATA
     public uint nChannels;
 
     /// <include file='AUDIO_VOLUME_NOTIFICATION_DATA.xml' path='doc/member[@name="AUDIO_VOLUME_NOTIFICATION_DATA.afChannelVolumes"]/*' />
-    [NativeTypeName("float [1]")]
+    [NativeTypeName("float[1]")]
     public fixed float afChannelVolumes[1];
 }

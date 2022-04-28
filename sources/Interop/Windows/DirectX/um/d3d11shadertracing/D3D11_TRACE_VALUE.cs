@@ -12,7 +12,7 @@ namespace TerraFX.Interop.DirectX;
 public unsafe partial struct D3D11_TRACE_VALUE
 {
     /// <include file='D3D11_TRACE_VALUE.xml' path='doc/member[@name="D3D11_TRACE_VALUE.Bits"]/*' />
-    [NativeTypeName("UINT [4]")]
+    [NativeTypeName("UINT[4]")]
     public fixed uint Bits[4];
 
     /// <include file='D3D11_TRACE_VALUE.xml' path='doc/member[@name="D3D11_TRACE_VALUE.ValidMask"]/*' />

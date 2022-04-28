@@ -11,7 +11,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct IMAGE_SECTION_HEADER
 {
     /// <include file='IMAGE_SECTION_HEADER.xml' path='doc/member[@name="IMAGE_SECTION_HEADER.Name"]/*' />
-    [NativeTypeName("BYTE [8]")]
+    [NativeTypeName("BYTE[8]")]
     public fixed byte Name[8];
 
     /// <include file='IMAGE_SECTION_HEADER.xml' path='doc/member[@name="IMAGE_SECTION_HEADER.Misc"]/*' />

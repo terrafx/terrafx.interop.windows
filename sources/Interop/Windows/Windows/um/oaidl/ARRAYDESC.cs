@@ -19,7 +19,7 @@ public partial struct ARRAYDESC
     public ushort cDims;
 
     /// <include file='ARRAYDESC.xml' path='doc/member[@name="ARRAYDESC.rgbounds"]/*' />
-    [NativeTypeName("SAFEARRAYBOUND [1]")]
+    [NativeTypeName("SAFEARRAYBOUND[1]")]
     public _rgbounds_e__FixedBuffer rgbounds;
 
     /// <include file='_rgbounds_e__FixedBuffer.xml' path='doc/member[@name="_rgbounds_e__FixedBuffer"]/*' />

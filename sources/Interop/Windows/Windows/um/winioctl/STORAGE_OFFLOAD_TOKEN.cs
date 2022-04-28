@@ -15,15 +15,15 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct STORAGE_OFFLOAD_TOKEN
 {
     /// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN.TokenType"]/*' />
-    [NativeTypeName("BYTE [4]")]
+    [NativeTypeName("BYTE[4]")]
     public fixed byte TokenType[4];
 
     /// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN.Reserved"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte Reserved[2];
 
     /// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN.TokenIdLength"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte TokenIdLength[2];
 
     /// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN.Anonymous"]/*' />
@@ -61,14 +61,14 @@ public unsafe partial struct STORAGE_OFFLOAD_TOKEN
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Token"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("BYTE [504]")]
+        [NativeTypeName("BYTE[504]")]
         public fixed byte Token[504];
 
         /// <include file='_StorageOffloadZeroDataToken_e__Struct.xml' path='doc/member[@name="_StorageOffloadZeroDataToken_e__Struct"]/*' />
         public unsafe partial struct _StorageOffloadZeroDataToken_e__Struct
         {
             /// <include file='_StorageOffloadZeroDataToken_e__Struct.xml' path='doc/member[@name="_StorageOffloadZeroDataToken_e__Struct.Reserved2"]/*' />
-            [NativeTypeName("BYTE [504]")]
+            [NativeTypeName("BYTE[504]")]
             public fixed byte Reserved2[504];
         }
     }

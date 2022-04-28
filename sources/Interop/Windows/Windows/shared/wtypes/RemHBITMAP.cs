@@ -13,6 +13,6 @@ public unsafe partial struct RemHBITMAP
     public uint cbData;
 
     /// <include file='RemHBITMAP.xml' path='doc/member[@name="RemHBITMAP.data"]/*' />
-    [NativeTypeName("byte [1]")]
+    [NativeTypeName("byte[1]")]
     public fixed byte data[1];
 }

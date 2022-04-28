@@ -53,7 +53,7 @@ public unsafe partial struct SCM_PD_DEVICE_INFO
     public byte NumberOfFormatInterfaceCodes;
 
     /// <include file='SCM_PD_DEVICE_INFO.xml' path='doc/member[@name="SCM_PD_DEVICE_INFO.FormatInterfaceCodes"]/*' />
-    [NativeTypeName("WORD [8]")]
+    [NativeTypeName("WORD[8]")]
     public fixed ushort FormatInterfaceCodes[8];
 
     /// <include file='SCM_PD_DEVICE_INFO.xml' path='doc/member[@name="SCM_PD_DEVICE_INFO.VendorId"]/*' />
@@ -90,6 +90,6 @@ public unsafe partial struct SCM_PD_DEVICE_INFO
     public uint SerialNumberLengthInChars;
 
     /// <include file='SCM_PD_DEVICE_INFO.xml' path='doc/member[@name="SCM_PD_DEVICE_INFO.SerialNumber"]/*' />
-    [NativeTypeName("CHAR [1]")]
+    [NativeTypeName("CHAR[1]")]
     public fixed sbyte SerialNumber[1];
 }

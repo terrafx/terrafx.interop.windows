@@ -12,6 +12,6 @@ public unsafe partial struct HEAACWAVEFORMAT
     public HEAACWAVEINFO wfInfo;
 
     /// <include file='HEAACWAVEFORMAT.xml' path='doc/member[@name="HEAACWAVEFORMAT.pbAudioSpecificConfig"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte pbAudioSpecificConfig[1];
 }

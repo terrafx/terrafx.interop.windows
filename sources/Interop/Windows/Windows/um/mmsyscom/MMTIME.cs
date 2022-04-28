@@ -74,7 +74,7 @@ public partial struct MMTIME
             public byte dummy;
 
             /// <include file='_smpte_e__Struct.xml' path='doc/member[@name="_smpte_e__Struct.pad"]/*' />
-            [NativeTypeName("BYTE [2]")]
+            [NativeTypeName("BYTE[2]")]
             public fixed byte pad[2];
         }
 

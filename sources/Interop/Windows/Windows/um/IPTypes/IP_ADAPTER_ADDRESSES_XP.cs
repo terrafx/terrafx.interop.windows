@@ -52,7 +52,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_XP
     public ushort* FriendlyName;
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.PhysicalAddress"]/*' />
-    [NativeTypeName("BYTE [8]")]
+    [NativeTypeName("BYTE[8]")]
     public fixed byte PhysicalAddress[8];
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.PhysicalAddressLength"]/*' />
@@ -79,7 +79,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_XP
     public uint Ipv6IfIndex;
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.ZoneIndices"]/*' />
-    [NativeTypeName("DWORD [16]")]
+    [NativeTypeName("DWORD[16]")]
     public fixed uint ZoneIndices[16];
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.FirstPrefix"]/*' />

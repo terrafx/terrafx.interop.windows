@@ -15,6 +15,6 @@ public unsafe partial struct VOLUME_BITMAP_BUFFER
     public LARGE_INTEGER BitmapSize;
 
     /// <include file='VOLUME_BITMAP_BUFFER.xml' path='doc/member[@name="VOLUME_BITMAP_BUFFER.Buffer"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Buffer[1];
 }

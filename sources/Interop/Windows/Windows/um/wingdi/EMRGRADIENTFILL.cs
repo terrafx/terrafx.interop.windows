@@ -31,7 +31,7 @@ public partial struct EMRGRADIENTFILL
     public uint ulMode;
 
     /// <include file='EMRGRADIENTFILL.xml' path='doc/member[@name="EMRGRADIENTFILL.Ver"]/*' />
-    [NativeTypeName("TRIVERTEX [1]")]
+    [NativeTypeName("TRIVERTEX[1]")]
     public _Ver_e__FixedBuffer Ver;
 
     /// <include file='_Ver_e__FixedBuffer.xml' path='doc/member[@name="_Ver_e__FixedBuffer"]/*' />

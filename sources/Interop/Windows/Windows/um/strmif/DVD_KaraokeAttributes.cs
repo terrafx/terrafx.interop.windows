@@ -21,6 +21,6 @@ public unsafe partial struct DVD_KaraokeAttributes
     public DVD_KARAOKE_ASSIGNMENT ChannelAssignment;
 
     /// <include file='DVD_KaraokeAttributes.xml' path='doc/member[@name="DVD_KaraokeAttributes.wChannelContents"]/*' />
-    [NativeTypeName("WORD [8]")]
+    [NativeTypeName("WORD[8]")]
     public fixed ushort wChannelContents[8];
 }

@@ -31,7 +31,7 @@ public unsafe partial struct IMEMENUITEMINFOW
     public uint dwItemData;
 
     /// <include file='IMEMENUITEMINFOW.xml' path='doc/member[@name="IMEMENUITEMINFOW.szString"]/*' />
-    [NativeTypeName("WCHAR [80]")]
+    [NativeTypeName("WCHAR[80]")]
     public fixed ushort szString[80];
 
     /// <include file='IMEMENUITEMINFOW.xml' path='doc/member[@name="IMEMENUITEMINFOW.hbmpItem"]/*' />

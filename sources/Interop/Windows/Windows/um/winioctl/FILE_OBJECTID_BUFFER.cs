@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct FILE_OBJECTID_BUFFER
 {
     /// <include file='FILE_OBJECTID_BUFFER.xml' path='doc/member[@name="FILE_OBJECTID_BUFFER.ObjectId"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte ObjectId[16];
 
     /// <include file='FILE_OBJECTID_BUFFER.xml' path='doc/member[@name="FILE_OBJECTID_BUFFER.Anonymous"]/*' />
@@ -71,22 +71,22 @@ public unsafe partial struct FILE_OBJECTID_BUFFER
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ExtendedInfo"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("BYTE [48]")]
+        [NativeTypeName("BYTE[48]")]
         public fixed byte ExtendedInfo[48];
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public unsafe partial struct _Anonymous_e__Struct
         {
             /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BirthVolumeId"]/*' />
-            [NativeTypeName("BYTE [16]")]
+            [NativeTypeName("BYTE[16]")]
             public fixed byte BirthVolumeId[16];
 
             /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BirthObjectId"]/*' />
-            [NativeTypeName("BYTE [16]")]
+            [NativeTypeName("BYTE[16]")]
             public fixed byte BirthObjectId[16];
 
             /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DomainId"]/*' />
-            [NativeTypeName("BYTE [16]")]
+            [NativeTypeName("BYTE[16]")]
             public fixed byte DomainId[16];
         }
     }

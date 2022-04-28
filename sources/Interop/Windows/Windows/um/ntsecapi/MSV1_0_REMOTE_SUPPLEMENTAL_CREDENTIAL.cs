@@ -30,6 +30,6 @@ public unsafe partial struct MSV1_0_REMOTE_SUPPLEMENTAL_CREDENTIAL
     public uint EncryptedCredsSize;
 
     /// <include file='MSV1_0_REMOTE_SUPPLEMENTAL_CREDENTIAL.xml' path='doc/member[@name="MSV1_0_REMOTE_SUPPLEMENTAL_CREDENTIAL.EncryptedCreds"]/*' />
-    [NativeTypeName("UCHAR [1]")]
+    [NativeTypeName("UCHAR[1]")]
     public fixed byte EncryptedCreds[1];
 }

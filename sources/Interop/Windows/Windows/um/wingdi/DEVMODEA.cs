@@ -12,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct DEVMODEA
 {
     /// <include file='DEVMODEA.xml' path='doc/member[@name="DEVMODEA.dmDeviceName"]/*' />
-    [NativeTypeName("BYTE [32]")]
+    [NativeTypeName("BYTE[32]")]
     public fixed byte dmDeviceName[32];
 
     /// <include file='DEVMODEA.xml' path='doc/member[@name="DEVMODEA.dmSpecVersion"]/*' />
@@ -55,7 +55,7 @@ public unsafe partial struct DEVMODEA
     public short dmCollate;
 
     /// <include file='DEVMODEA.xml' path='doc/member[@name="DEVMODEA.dmFormName"]/*' />
-    [NativeTypeName("BYTE [32]")]
+    [NativeTypeName("BYTE[32]")]
     public fixed byte dmFormName[32];
 
     /// <include file='DEVMODEA.xml' path='doc/member[@name="DEVMODEA.dmLogPixels"]/*' />

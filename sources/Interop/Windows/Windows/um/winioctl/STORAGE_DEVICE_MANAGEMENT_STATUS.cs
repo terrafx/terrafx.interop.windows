@@ -32,11 +32,11 @@ public partial struct STORAGE_DEVICE_MANAGEMENT_STATUS
     public uint NumberOfAdditionalReasons;
 
     /// <include file='STORAGE_DEVICE_MANAGEMENT_STATUS.xml' path='doc/member[@name="STORAGE_DEVICE_MANAGEMENT_STATUS.OperationalStatus"]/*' />
-    [NativeTypeName("STORAGE_DISK_OPERATIONAL_STATUS [16]")]
+    [NativeTypeName("STORAGE_DISK_OPERATIONAL_STATUS[16]")]
     public _OperationalStatus_e__FixedBuffer OperationalStatus;
 
     /// <include file='STORAGE_DEVICE_MANAGEMENT_STATUS.xml' path='doc/member[@name="STORAGE_DEVICE_MANAGEMENT_STATUS.AdditionalReasons"]/*' />
-    [NativeTypeName("STORAGE_OPERATIONAL_REASON [1]")]
+    [NativeTypeName("STORAGE_OPERATIONAL_REASON[1]")]
     public _AdditionalReasons_e__FixedBuffer AdditionalReasons;
 
     /// <include file='_OperationalStatus_e__FixedBuffer.xml' path='doc/member[@name="_OperationalStatus_e__FixedBuffer"]/*' />

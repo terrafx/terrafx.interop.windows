@@ -41,7 +41,7 @@ public partial struct DEVICE_DSM_TIERING_QUERY_OUTPUT
     public uint NumberOfRegionsReturned;
 
     /// <include file='DEVICE_DSM_TIERING_QUERY_OUTPUT.xml' path='doc/member[@name="DEVICE_DSM_TIERING_QUERY_OUTPUT.Regions"]/*' />
-    [NativeTypeName("STORAGE_TIER_REGION [1]")]
+    [NativeTypeName("STORAGE_TIER_REGION[1]")]
     public _Regions_e__FixedBuffer Regions;
 
     /// <include file='_Regions_e__FixedBuffer.xml' path='doc/member[@name="_Regions_e__FixedBuffer"]/*' />

@@ -12,14 +12,14 @@ public unsafe partial struct ENUMLOGFONTEXA
     public LOGFONTA elfLogFont;
 
     /// <include file='ENUMLOGFONTEXA.xml' path='doc/member[@name="ENUMLOGFONTEXA.elfFullName"]/*' />
-    [NativeTypeName("BYTE [64]")]
+    [NativeTypeName("BYTE[64]")]
     public fixed byte elfFullName[64];
 
     /// <include file='ENUMLOGFONTEXA.xml' path='doc/member[@name="ENUMLOGFONTEXA.elfStyle"]/*' />
-    [NativeTypeName("BYTE [32]")]
+    [NativeTypeName("BYTE[32]")]
     public fixed byte elfStyle[32];
 
     /// <include file='ENUMLOGFONTEXA.xml' path='doc/member[@name="ENUMLOGFONTEXA.elfScript"]/*' />
-    [NativeTypeName("BYTE [32]")]
+    [NativeTypeName("BYTE[32]")]
     public fixed byte elfScript[32];
 }

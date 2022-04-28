@@ -25,6 +25,6 @@ public unsafe partial struct SILOOBJECT_BASIC_INFORMATION
     public byte IsInServerSilo;
 
     /// <include file='SILOOBJECT_BASIC_INFORMATION.xml' path='doc/member[@name="SILOOBJECT_BASIC_INFORMATION.Reserved"]/*' />
-    [NativeTypeName("BYTE [3]")]
+    [NativeTypeName("BYTE[3]")]
     public fixed byte Reserved[3];
 }

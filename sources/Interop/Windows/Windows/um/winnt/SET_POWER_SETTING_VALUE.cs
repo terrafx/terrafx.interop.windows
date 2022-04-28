@@ -25,6 +25,6 @@ public unsafe partial struct SET_POWER_SETTING_VALUE
     public uint DataLength;
 
     /// <include file='SET_POWER_SETTING_VALUE.xml' path='doc/member[@name="SET_POWER_SETTING_VALUE.Data"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Data[1];
 }

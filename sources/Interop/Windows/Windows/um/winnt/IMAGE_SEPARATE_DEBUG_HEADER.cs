@@ -57,6 +57,6 @@ public unsafe partial struct IMAGE_SEPARATE_DEBUG_HEADER
     public uint SectionAlignment;
 
     /// <include file='IMAGE_SEPARATE_DEBUG_HEADER.xml' path='doc/member[@name="IMAGE_SEPARATE_DEBUG_HEADER.Reserved"]/*' />
-    [NativeTypeName("DWORD [2]")]
+    [NativeTypeName("DWORD[2]")]
     public fixed uint Reserved[2];
 }

@@ -12,6 +12,6 @@ public unsafe partial struct IF_PHYSICAL_ADDRESS_LH
     public ushort Length;
 
     /// <include file='IF_PHYSICAL_ADDRESS_LH.xml' path='doc/member[@name="IF_PHYSICAL_ADDRESS_LH.Address"]/*' />
-    [NativeTypeName("UCHAR [32]")]
+    [NativeTypeName("UCHAR[32]")]
     public fixed byte Address[32];
 }

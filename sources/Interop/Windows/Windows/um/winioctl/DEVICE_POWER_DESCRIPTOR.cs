@@ -44,7 +44,7 @@ public unsafe partial struct DEVICE_POWER_DESCRIPTOR
     public byte NoVerifyDuringIdlePower;
 
     /// <include file='DEVICE_POWER_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_POWER_DESCRIPTOR.Reserved"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte Reserved[2];
 
     /// <include file='DEVICE_POWER_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_POWER_DESCRIPTOR.IdleTimeoutInMS"]/*' />

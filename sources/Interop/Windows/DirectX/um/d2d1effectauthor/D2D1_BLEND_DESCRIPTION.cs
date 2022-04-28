@@ -27,6 +27,6 @@ public unsafe partial struct D2D1_BLEND_DESCRIPTION
     public D2D1_BLEND_OPERATION blendOperationAlpha;
 
     /// <include file='D2D1_BLEND_DESCRIPTION.xml' path='doc/member[@name="D2D1_BLEND_DESCRIPTION.blendFactor"]/*' />
-    [NativeTypeName("FLOAT [4]")]
+    [NativeTypeName("FLOAT[4]")]
     public fixed float blendFactor[4];
 }

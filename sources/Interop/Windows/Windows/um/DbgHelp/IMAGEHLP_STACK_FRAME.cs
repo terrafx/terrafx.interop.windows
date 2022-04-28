@@ -33,11 +33,11 @@ public unsafe partial struct IMAGEHLP_STACK_FRAME
     public ulong FuncTableEntry;
 
     /// <include file='IMAGEHLP_STACK_FRAME.xml' path='doc/member[@name="IMAGEHLP_STACK_FRAME.Params"]/*' />
-    [NativeTypeName("ULONG64 [4]")]
+    [NativeTypeName("ULONG64[4]")]
     public fixed ulong Params[4];
 
     /// <include file='IMAGEHLP_STACK_FRAME.xml' path='doc/member[@name="IMAGEHLP_STACK_FRAME.Reserved"]/*' />
-    [NativeTypeName("ULONG64 [5]")]
+    [NativeTypeName("ULONG64[5]")]
     public fixed ulong Reserved[5];
 
     /// <include file='IMAGEHLP_STACK_FRAME.xml' path='doc/member[@name="IMAGEHLP_STACK_FRAME.Virtual"]/*' />

@@ -22,7 +22,7 @@ public partial struct REASSIGN_BLOCKS_EX
     public ushort Count;
 
     /// <include file='REASSIGN_BLOCKS_EX.xml' path='doc/member[@name="REASSIGN_BLOCKS_EX.BlockNumber"]/*' />
-    [NativeTypeName("LARGE_INTEGER [1]")]
+    [NativeTypeName("LARGE_INTEGER[1]")]
     public _BlockNumber_e__FixedBuffer BlockNumber;
 
     /// <include file='_BlockNumber_e__FixedBuffer.xml' path='doc/member[@name="_BlockNumber_e__FixedBuffer"]/*' />

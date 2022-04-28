@@ -24,11 +24,11 @@ public unsafe partial struct AUTO_SCROLL_DATA
     public BOOL bFull;
 
     /// <include file='AUTO_SCROLL_DATA.xml' path='doc/member[@name="AUTO_SCROLL_DATA.pts"]/*' />
-    [NativeTypeName("POINT [3]")]
+    [NativeTypeName("POINT[3]")]
     public _pts_e__FixedBuffer pts;
 
     /// <include file='AUTO_SCROLL_DATA.xml' path='doc/member[@name="AUTO_SCROLL_DATA.dwTimes"]/*' />
-    [NativeTypeName("DWORD [3]")]
+    [NativeTypeName("DWORD[3]")]
     public fixed uint dwTimes[3];
 
     /// <include file='_pts_e__FixedBuffer.xml' path='doc/member[@name="_pts_e__FixedBuffer"]/*' />

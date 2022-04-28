@@ -43,7 +43,7 @@ public partial struct PERFORMANCE_DATA
     public uint Reserved;
 
     /// <include file='PERFORMANCE_DATA.xml' path='doc/member[@name="PERFORMANCE_DATA.HwCounters"]/*' />
-    [NativeTypeName("HARDWARE_COUNTER_DATA [16]")]
+    [NativeTypeName("HARDWARE_COUNTER_DATA[16]")]
     public _HwCounters_e__FixedBuffer HwCounters;
 
     /// <include file='_HwCounters_e__FixedBuffer.xml' path='doc/member[@name="_HwCounters_e__FixedBuffer"]/*' />

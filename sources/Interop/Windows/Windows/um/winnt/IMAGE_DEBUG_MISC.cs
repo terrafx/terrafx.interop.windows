@@ -21,10 +21,10 @@ public unsafe partial struct IMAGE_DEBUG_MISC
     public byte Unicode;
 
     /// <include file='IMAGE_DEBUG_MISC.xml' path='doc/member[@name="IMAGE_DEBUG_MISC.Reserved"]/*' />
-    [NativeTypeName("BYTE [3]")]
+    [NativeTypeName("BYTE[3]")]
     public fixed byte Reserved[3];
 
     /// <include file='IMAGE_DEBUG_MISC.xml' path='doc/member[@name="IMAGE_DEBUG_MISC.Data"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Data[1];
 }

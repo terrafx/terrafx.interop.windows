@@ -24,6 +24,6 @@ public unsafe partial struct RESTOREPOINTINFOA
     public long llSequenceNumber;
 
     /// <include file='RESTOREPOINTINFOA.xml' path='doc/member[@name="RESTOREPOINTINFOA.szDescription"]/*' />
-    [NativeTypeName("CHAR [64]")]
+    [NativeTypeName("CHAR[64]")]
     public fixed sbyte szDescription[64];
 }

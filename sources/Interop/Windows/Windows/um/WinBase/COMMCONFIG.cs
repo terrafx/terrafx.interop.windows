@@ -36,6 +36,6 @@ public unsafe partial struct COMMCONFIG
     public uint dwProviderSize;
 
     /// <include file='COMMCONFIG.xml' path='doc/member[@name="COMMCONFIG.wcProviderData"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort wcProviderData[1];
 }

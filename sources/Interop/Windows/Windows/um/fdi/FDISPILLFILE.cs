@@ -9,7 +9,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct FDISPILLFILE
 {
     /// <include file='FDISPILLFILE.xml' path='doc/member[@name="FDISPILLFILE.ach"]/*' />
-    [NativeTypeName("char [2]")]
+    [NativeTypeName("char[2]")]
     public fixed sbyte ach[2];
 
     /// <include file='FDISPILLFILE.xml' path='doc/member[@name="FDISPILLFILE.cbFile"]/*' />

@@ -17,6 +17,6 @@ public unsafe partial struct FLAGGED_BYTE_BLOB
     public uint clSize;
 
     /// <include file='FLAGGED_BYTE_BLOB.xml' path='doc/member[@name="FLAGGED_BYTE_BLOB.abData"]/*' />
-    [NativeTypeName("byte [1]")]
+    [NativeTypeName("byte[1]")]
     public fixed byte abData[1];
 }

@@ -230,7 +230,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
     /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetPlayerParentalLevel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
-    public HRESULT GetPlayerParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel, [NativeTypeName("BYTE [2]")] byte* pbCountryCode)
+    public HRESULT GetPlayerParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel, [NativeTypeName("BYTE[2]")] byte* pbCountryCode)
     {
         return ((delegate* unmanaged<IDvdInfo2*, uint*, byte*, int>)(lpVtbl[26]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pulParentalLevel, pbCountryCode);
     }
@@ -427,7 +427,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface
         HRESULT GetDVDTextStringAsUnicode([NativeTypeName("ULONG")] uint ulLangIndex, [NativeTypeName("ULONG")] uint ulStringIndex, [NativeTypeName("WCHAR *")] ushort* pchwBuffer, [NativeTypeName("ULONG")] uint ulMaxBufferSize, [NativeTypeName("ULONG *")] uint* pulActualSize, [NativeTypeName("enum DVD_TextStringType *")] DVD_TextStringType* pType);
 
         [VtblIndex(26)]
-        HRESULT GetPlayerParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel, [NativeTypeName("BYTE [2]")] byte* pbCountryCode);
+        HRESULT GetPlayerParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel, [NativeTypeName("BYTE[2]")] byte* pbCountryCode);
 
         [VtblIndex(27)]
         HRESULT GetNumberOfChapters([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG *")] uint* pulNumOfChapters);

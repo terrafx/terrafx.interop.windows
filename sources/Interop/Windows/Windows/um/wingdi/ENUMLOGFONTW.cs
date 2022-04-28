@@ -12,10 +12,10 @@ public unsafe partial struct ENUMLOGFONTW
     public LOGFONTW elfLogFont;
 
     /// <include file='ENUMLOGFONTW.xml' path='doc/member[@name="ENUMLOGFONTW.elfFullName"]/*' />
-    [NativeTypeName("WCHAR [64]")]
+    [NativeTypeName("WCHAR[64]")]
     public fixed ushort elfFullName[64];
 
     /// <include file='ENUMLOGFONTW.xml' path='doc/member[@name="ENUMLOGFONTW.elfStyle"]/*' />
-    [NativeTypeName("WCHAR [32]")]
+    [NativeTypeName("WCHAR[32]")]
     public fixed ushort elfStyle[32];
 }

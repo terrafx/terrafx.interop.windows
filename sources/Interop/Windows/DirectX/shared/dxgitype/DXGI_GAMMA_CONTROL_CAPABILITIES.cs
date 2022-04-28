@@ -23,6 +23,6 @@ public unsafe partial struct DXGI_GAMMA_CONTROL_CAPABILITIES
     public uint NumGammaControlPoints;
 
     /// <include file='DXGI_GAMMA_CONTROL_CAPABILITIES.xml' path='doc/member[@name="DXGI_GAMMA_CONTROL_CAPABILITIES.ControlPointPositions"]/*' />
-    [NativeTypeName("float [1025]")]
+    [NativeTypeName("float[1025]")]
     public fixed float ControlPointPositions[1025];
 }

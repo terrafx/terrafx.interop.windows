@@ -33,7 +33,7 @@ public unsafe partial struct PROV_ENUMALGS_EX
     public uint dwNameLen;
 
     /// <include file='PROV_ENUMALGS_EX.xml' path='doc/member[@name="PROV_ENUMALGS_EX.szName"]/*' />
-    [NativeTypeName("CHAR [20]")]
+    [NativeTypeName("CHAR[20]")]
     public fixed sbyte szName[20];
 
     /// <include file='PROV_ENUMALGS_EX.xml' path='doc/member[@name="PROV_ENUMALGS_EX.dwLongNameLen"]/*' />
@@ -41,6 +41,6 @@ public unsafe partial struct PROV_ENUMALGS_EX
     public uint dwLongNameLen;
 
     /// <include file='PROV_ENUMALGS_EX.xml' path='doc/member[@name="PROV_ENUMALGS_EX.szLongName"]/*' />
-    [NativeTypeName("CHAR [40]")]
+    [NativeTypeName("CHAR[40]")]
     public fixed sbyte szLongName[40];
 }

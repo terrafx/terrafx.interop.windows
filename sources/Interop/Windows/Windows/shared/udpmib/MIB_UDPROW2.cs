@@ -31,7 +31,7 @@ public unsafe partial struct MIB_UDPROW2
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='MIB_UDPROW2.xml' path='doc/member[@name="MIB_UDPROW2.OwningModuleInfo"]/*' />
-    [NativeTypeName("ULONGLONG [16]")]
+    [NativeTypeName("ULONGLONG[16]")]
     public fixed ulong OwningModuleInfo[16];
 
     /// <include file='MIB_UDPROW2.xml' path='doc/member[@name="MIB_UDPROW2.dwRemoteAddr"]/*' />

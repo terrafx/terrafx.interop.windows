@@ -15,6 +15,6 @@ public unsafe partial struct STORAGE_PROPERTY_QUERY
     public STORAGE_QUERY_TYPE QueryType;
 
     /// <include file='STORAGE_PROPERTY_QUERY.xml' path='doc/member[@name="STORAGE_PROPERTY_QUERY.AdditionalParameters"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte AdditionalParameters[1];
 }

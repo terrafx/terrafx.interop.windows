@@ -16,7 +16,7 @@ public unsafe partial struct NMTTDISPINFOW
     public ushort* lpszText;
 
     /// <include file='NMTTDISPINFOW.xml' path='doc/member[@name="NMTTDISPINFOW.szText"]/*' />
-    [NativeTypeName("WCHAR [80]")]
+    [NativeTypeName("WCHAR[80]")]
     public fixed ushort szText[80];
 
     /// <include file='NMTTDISPINFOW.xml' path='doc/member[@name="NMTTDISPINFOW.hinst"]/*' />

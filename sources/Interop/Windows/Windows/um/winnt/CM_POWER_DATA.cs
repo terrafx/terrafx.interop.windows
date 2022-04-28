@@ -36,7 +36,7 @@ public partial struct CM_POWER_DATA
     public uint PD_D3Latency;
 
     /// <include file='CM_POWER_DATA.xml' path='doc/member[@name="CM_POWER_DATA.PD_PowerStateMapping"]/*' />
-    [NativeTypeName("DEVICE_POWER_STATE [7]")]
+    [NativeTypeName("DEVICE_POWER_STATE[7]")]
     public _PD_PowerStateMapping_e__FixedBuffer PD_PowerStateMapping;
 
     /// <include file='CM_POWER_DATA.xml' path='doc/member[@name="CM_POWER_DATA.PD_DeepestSystemWake"]/*' />

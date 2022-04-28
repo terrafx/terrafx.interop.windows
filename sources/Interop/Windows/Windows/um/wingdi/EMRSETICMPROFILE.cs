@@ -24,6 +24,6 @@ public unsafe partial struct EMRSETICMPROFILE
     public uint cbData;
 
     /// <include file='EMRSETICMPROFILE.xml' path='doc/member[@name="EMRSETICMPROFILE.Data"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Data[1];
 }

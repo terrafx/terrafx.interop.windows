@@ -13,7 +13,7 @@ public unsafe partial struct SYSTEM_POWER_LEVEL
     public byte Enable;
 
     /// <include file='SYSTEM_POWER_LEVEL.xml' path='doc/member[@name="SYSTEM_POWER_LEVEL.Spare"]/*' />
-    [NativeTypeName("BYTE [3]")]
+    [NativeTypeName("BYTE[3]")]
     public fixed byte Spare[3];
 
     /// <include file='SYSTEM_POWER_LEVEL.xml' path='doc/member[@name="SYSTEM_POWER_LEVEL.BatteryLevel"]/*' />

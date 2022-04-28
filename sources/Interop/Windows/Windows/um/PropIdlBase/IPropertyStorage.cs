@@ -46,7 +46,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.ReadMultiple"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT ReadMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec, [NativeTypeName("PROPVARIANT []")] PROPVARIANT* rgpropvar)
+    public HRESULT ReadMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC[]")] PROPSPEC* rgpspec, [NativeTypeName("PROPVARIANT[]")] PROPVARIANT* rgpropvar)
     {
         return ((delegate* unmanaged<IPropertyStorage*, uint, PROPSPEC*, PROPVARIANT*, int>)(lpVtbl[3]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpspec, rgpspec, rgpropvar);
     }
@@ -54,7 +54,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.WriteMultiple"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT WriteMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec, [NativeTypeName("const PROPVARIANT []")] PROPVARIANT* rgpropvar, [NativeTypeName("PROPID")] uint propidNameFirst)
+    public HRESULT WriteMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC[]")] PROPSPEC* rgpspec, [NativeTypeName("const PROPVARIANT[]")] PROPVARIANT* rgpropvar, [NativeTypeName("PROPID")] uint propidNameFirst)
     {
         return ((delegate* unmanaged<IPropertyStorage*, uint, PROPSPEC*, PROPVARIANT*, uint, int>)(lpVtbl[4]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpspec, rgpspec, rgpropvar, propidNameFirst);
     }
@@ -62,7 +62,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.DeleteMultiple"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT DeleteMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec)
+    public HRESULT DeleteMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC[]")] PROPSPEC* rgpspec)
     {
         return ((delegate* unmanaged<IPropertyStorage*, uint, PROPSPEC*, int>)(lpVtbl[5]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpspec, rgpspec);
     }
@@ -70,7 +70,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.ReadPropertyNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID []")] uint* rgpropid, [NativeTypeName("LPOLESTR []")] ushort** rglpwstrName)
+    public HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID[]")] uint* rgpropid, [NativeTypeName("LPOLESTR[]")] ushort** rglpwstrName)
     {
         return ((delegate* unmanaged<IPropertyStorage*, uint, uint*, ushort**, int>)(lpVtbl[6]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid, rglpwstrName);
     }
@@ -78,7 +78,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.WritePropertyNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT WritePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID []")] uint* rgpropid, [NativeTypeName("const LPOLESTR []")] ushort** rglpwstrName)
+    public HRESULT WritePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID[]")] uint* rgpropid, [NativeTypeName("const LPOLESTR[]")] ushort** rglpwstrName)
     {
         return ((delegate* unmanaged<IPropertyStorage*, uint, uint*, ushort**, int>)(lpVtbl[7]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid, rglpwstrName);
     }
@@ -86,7 +86,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.DeletePropertyNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT DeletePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID []")] uint* rgpropid)
+    public HRESULT DeletePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID[]")] uint* rgpropid)
     {
         return ((delegate* unmanaged<IPropertyStorage*, uint, uint*, int>)(lpVtbl[8]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid);
     }
@@ -142,22 +142,22 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT ReadMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec, [NativeTypeName("PROPVARIANT []")] PROPVARIANT* rgpropvar);
+        HRESULT ReadMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC[]")] PROPSPEC* rgpspec, [NativeTypeName("PROPVARIANT[]")] PROPVARIANT* rgpropvar);
 
         [VtblIndex(4)]
-        HRESULT WriteMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec, [NativeTypeName("const PROPVARIANT []")] PROPVARIANT* rgpropvar, [NativeTypeName("PROPID")] uint propidNameFirst);
+        HRESULT WriteMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC[]")] PROPSPEC* rgpspec, [NativeTypeName("const PROPVARIANT[]")] PROPVARIANT* rgpropvar, [NativeTypeName("PROPID")] uint propidNameFirst);
 
         [VtblIndex(5)]
-        HRESULT DeleteMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC []")] PROPSPEC* rgpspec);
+        HRESULT DeleteMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC[]")] PROPSPEC* rgpspec);
 
         [VtblIndex(6)]
-        HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID []")] uint* rgpropid, [NativeTypeName("LPOLESTR []")] ushort** rglpwstrName);
+        HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID[]")] uint* rgpropid, [NativeTypeName("LPOLESTR[]")] ushort** rglpwstrName);
 
         [VtblIndex(7)]
-        HRESULT WritePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID []")] uint* rgpropid, [NativeTypeName("const LPOLESTR []")] ushort** rglpwstrName);
+        HRESULT WritePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID[]")] uint* rgpropid, [NativeTypeName("const LPOLESTR[]")] ushort** rglpwstrName);
 
         [VtblIndex(8)]
-        HRESULT DeletePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID []")] uint* rgpropid);
+        HRESULT DeletePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID[]")] uint* rgpropid);
 
         [VtblIndex(9)]
         HRESULT Commit([NativeTypeName("DWORD")] uint grfCommitFlags);

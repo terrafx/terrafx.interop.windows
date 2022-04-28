@@ -29,6 +29,6 @@ public unsafe partial struct IMAGEHLP_SYMBOL64
     public uint MaxNameLength;
 
     /// <include file='IMAGEHLP_SYMBOL64.xml' path='doc/member[@name="IMAGEHLP_SYMBOL64.Name"]/*' />
-    [NativeTypeName("CHAR [1]")]
+    [NativeTypeName("CHAR[1]")]
     public fixed sbyte Name[1];
 }

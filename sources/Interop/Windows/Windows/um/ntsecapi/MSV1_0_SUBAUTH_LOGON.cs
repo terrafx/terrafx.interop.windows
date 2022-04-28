@@ -24,7 +24,7 @@ public unsafe partial struct MSV1_0_SUBAUTH_LOGON
     public LSA_UNICODE_STRING Workstation;
 
     /// <include file='MSV1_0_SUBAUTH_LOGON.xml' path='doc/member[@name="MSV1_0_SUBAUTH_LOGON.ChallengeToClient"]/*' />
-    [NativeTypeName("UCHAR [8]")]
+    [NativeTypeName("UCHAR[8]")]
     public fixed byte ChallengeToClient[8];
 
     /// <include file='MSV1_0_SUBAUTH_LOGON.xml' path='doc/member[@name="MSV1_0_SUBAUTH_LOGON.AuthenticationInfo1"]/*' />

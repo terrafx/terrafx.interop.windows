@@ -18,15 +18,15 @@ public unsafe partial struct DEVICEDUMP_PUBLIC_SUBSECTION
     public uint dwFlags;
 
     /// <include file='DEVICEDUMP_PUBLIC_SUBSECTION.xml' path='doc/member[@name="DEVICEDUMP_PUBLIC_SUBSECTION.GPLogTable"]/*' />
-    [NativeTypeName("GP_LOG_PAGE_DESCRIPTOR [16]")]
+    [NativeTypeName("GP_LOG_PAGE_DESCRIPTOR[16]")]
     public _GPLogTable_e__FixedBuffer GPLogTable;
 
     /// <include file='DEVICEDUMP_PUBLIC_SUBSECTION.xml' path='doc/member[@name="DEVICEDUMP_PUBLIC_SUBSECTION.szDescription"]/*' />
-    [NativeTypeName("CHAR [16]")]
+    [NativeTypeName("CHAR[16]")]
     public fixed sbyte szDescription[16];
 
     /// <include file='DEVICEDUMP_PUBLIC_SUBSECTION.xml' path='doc/member[@name="DEVICEDUMP_PUBLIC_SUBSECTION.bData"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte bData[1];
 
     /// <include file='_GPLogTable_e__FixedBuffer.xml' path='doc/member[@name="_GPLogTable_e__FixedBuffer"]/*' />

@@ -24,7 +24,7 @@ public unsafe partial struct AUXCAPSW
     public uint vDriverVersion;
 
     /// <include file='AUXCAPSW.xml' path='doc/member[@name="AUXCAPSW.szPname"]/*' />
-    [NativeTypeName("WCHAR [32]")]
+    [NativeTypeName("WCHAR[32]")]
     public fixed ushort szPname[32];
 
     /// <include file='AUXCAPSW.xml' path='doc/member[@name="AUXCAPSW.wTechnology"]/*' />

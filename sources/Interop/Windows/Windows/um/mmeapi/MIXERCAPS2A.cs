@@ -25,7 +25,7 @@ public unsafe partial struct MIXERCAPS2A
     public uint vDriverVersion;
 
     /// <include file='MIXERCAPS2A.xml' path='doc/member[@name="MIXERCAPS2A.szPname"]/*' />
-    [NativeTypeName("CHAR [32]")]
+    [NativeTypeName("CHAR[32]")]
     public fixed sbyte szPname[32];
 
     /// <include file='MIXERCAPS2A.xml' path='doc/member[@name="MIXERCAPS2A.fdwSupport"]/*' />

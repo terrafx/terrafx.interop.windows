@@ -19,6 +19,6 @@ public unsafe partial struct PROCESSOR_IDLESTATE_INFO
     public byte PromotePercent;
 
     /// <include file='PROCESSOR_IDLESTATE_INFO.xml' path='doc/member[@name="PROCESSOR_IDLESTATE_INFO.Spare"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte Spare[2];
 }

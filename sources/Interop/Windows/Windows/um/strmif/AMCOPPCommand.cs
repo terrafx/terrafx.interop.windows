@@ -25,6 +25,6 @@ public unsafe partial struct AMCOPPCommand
     public uint cbSizeData;
 
     /// <include file='AMCOPPCommand.xml' path='doc/member[@name="AMCOPPCommand.CommandData"]/*' />
-    [NativeTypeName("BYTE [4056]")]
+    [NativeTypeName("BYTE[4056]")]
     public fixed byte CommandData[4056];
 }

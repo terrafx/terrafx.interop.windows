@@ -41,7 +41,7 @@ public partial struct MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS
     public uint cActions;
 
     /// <include file='MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.xml' path='doc/member[@name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.rgOutputActions"]/*' />
-    [NativeTypeName("MFINPUTTRUSTAUTHORITY_ACCESS_ACTION [1]")]
+    [NativeTypeName("MFINPUTTRUSTAUTHORITY_ACCESS_ACTION[1]")]
     public _rgOutputActions_e__FixedBuffer rgOutputActions;
 
     /// <include file='_rgOutputActions_e__FixedBuffer.xml' path='doc/member[@name="_rgOutputActions_e__FixedBuffer"]/*' />

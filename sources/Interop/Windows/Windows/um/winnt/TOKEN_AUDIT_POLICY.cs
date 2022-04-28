@@ -9,6 +9,6 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct TOKEN_AUDIT_POLICY
 {
     /// <include file='TOKEN_AUDIT_POLICY.xml' path='doc/member[@name="TOKEN_AUDIT_POLICY.PerUserPolicy"]/*' />
-    [NativeTypeName("BYTE [30]")]
+    [NativeTypeName("BYTE[30]")]
     public fixed byte PerUserPolicy[30];
 }

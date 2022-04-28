@@ -25,7 +25,7 @@ public partial struct SD_ENUM_SDS_OUTPUT
     public ulong NumSDBytesReturned;
 
     /// <include file='SD_ENUM_SDS_OUTPUT.xml' path='doc/member[@name="SD_ENUM_SDS_OUTPUT.SDEntry"]/*' />
-    [NativeTypeName("SD_ENUM_SDS_ENTRY [1]")]
+    [NativeTypeName("SD_ENUM_SDS_ENTRY[1]")]
     public _SDEntry_e__FixedBuffer SDEntry;
 
     /// <include file='_SDEntry_e__FixedBuffer.xml' path='doc/member[@name="_SDEntry_e__FixedBuffer"]/*' />

@@ -17,7 +17,7 @@ public unsafe partial struct D3D10_BLEND_DESC
     public BOOL AlphaToCoverageEnable;
 
     /// <include file='D3D10_BLEND_DESC.xml' path='doc/member[@name="D3D10_BLEND_DESC.BlendEnable"]/*' />
-    [NativeTypeName("BOOL [8]")]
+    [NativeTypeName("BOOL[8]")]
     public _BlendEnable_e__FixedBuffer BlendEnable;
 
     /// <include file='D3D10_BLEND_DESC.xml' path='doc/member[@name="D3D10_BLEND_DESC.SrcBlend"]/*' />
@@ -39,7 +39,7 @@ public unsafe partial struct D3D10_BLEND_DESC
     public D3D10_BLEND_OP BlendOpAlpha;
 
     /// <include file='D3D10_BLEND_DESC.xml' path='doc/member[@name="D3D10_BLEND_DESC.RenderTargetWriteMask"]/*' />
-    [NativeTypeName("UINT8 [8]")]
+    [NativeTypeName("UINT8[8]")]
     public fixed byte RenderTargetWriteMask[8];
 
     /// <include file='_BlendEnable_e__FixedBuffer.xml' path='doc/member[@name="_BlendEnable_e__FixedBuffer"]/*' />

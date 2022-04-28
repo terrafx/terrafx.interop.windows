@@ -15,6 +15,6 @@ public unsafe partial struct MODULE_TYPE_INFO
     public ushort leaf;
 
     /// <include file='MODULE_TYPE_INFO.xml' path='doc/member[@name="MODULE_TYPE_INFO.data"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte data[1];
 }

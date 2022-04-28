@@ -12,6 +12,6 @@ public unsafe partial struct IMAGEHLP_SYMBOL_PACKAGE
     public IMAGEHLP_SYMBOL sym;
 
     /// <include file='IMAGEHLP_SYMBOL_PACKAGE.xml' path='doc/member[@name="IMAGEHLP_SYMBOL_PACKAGE.name"]/*' />
-    [NativeTypeName("CHAR [2001]")]
+    [NativeTypeName("CHAR[2001]")]
     public fixed sbyte name[2001];
 }

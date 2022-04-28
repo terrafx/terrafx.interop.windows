@@ -209,6 +209,9 @@ public enum CV_CPU_TYPE_e
     /// <include file='CV_CPU_TYPE_e.xml' path='doc/member[@name="CV_CPU_TYPE_e.CV_CFL_ARM64X"]/*' />
     CV_CFL_ARM64X = 0xF9,
 
+    /// <include file='CV_CPU_TYPE_e.xml' path='doc/member[@name="CV_CPU_TYPE_e.CV_CFL_UNKNOWN"]/*' />
+    CV_CFL_UNKNOWN = 0xFF,
+
     /// <include file='CV_CPU_TYPE_e.xml' path='doc/member[@name="CV_CPU_TYPE_e.CV_CFL_D3D11_SHADER"]/*' />
     CV_CFL_D3D11_SHADER = 0x100,
 }

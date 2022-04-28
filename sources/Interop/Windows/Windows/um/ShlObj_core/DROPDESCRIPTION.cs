@@ -15,10 +15,10 @@ public unsafe partial struct DROPDESCRIPTION
     public DROPIMAGETYPE type;
 
     /// <include file='DROPDESCRIPTION.xml' path='doc/member[@name="DROPDESCRIPTION.szMessage"]/*' />
-    [NativeTypeName("WCHAR [260]")]
+    [NativeTypeName("WCHAR[260]")]
     public fixed ushort szMessage[260];
 
     /// <include file='DROPDESCRIPTION.xml' path='doc/member[@name="DROPDESCRIPTION.szInsert"]/*' />
-    [NativeTypeName("WCHAR [260]")]
+    [NativeTypeName("WCHAR[260]")]
     public fixed ushort szInsert[260];
 }

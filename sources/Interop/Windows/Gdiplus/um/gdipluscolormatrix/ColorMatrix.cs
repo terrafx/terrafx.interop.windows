@@ -9,6 +9,6 @@ namespace TerraFX.Interop.Gdiplus;
 public unsafe partial struct ColorMatrix
 {
     /// <include file='ColorMatrix.xml' path='doc/member[@name="ColorMatrix.m"]/*' />
-    [NativeTypeName("Gdiplus::REAL [5][5]")]
+    [NativeTypeName("Gdiplus::REAL[5][5]")]
     public fixed float m[5 * 5];
 }

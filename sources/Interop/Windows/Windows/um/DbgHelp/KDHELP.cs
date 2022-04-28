@@ -53,6 +53,6 @@ public unsafe partial struct KDHELP
     public uint StackLimit;
 
     /// <include file='KDHELP.xml' path='doc/member[@name="KDHELP.Reserved"]/*' />
-    [NativeTypeName("DWORD [5]")]
+    [NativeTypeName("DWORD[5]")]
     public fixed uint Reserved[5];
 }

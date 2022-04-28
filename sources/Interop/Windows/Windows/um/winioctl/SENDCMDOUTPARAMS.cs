@@ -19,6 +19,6 @@ public unsafe partial struct SENDCMDOUTPARAMS
     public DRIVERSTATUS DriverStatus;
 
     /// <include file='SENDCMDOUTPARAMS.xml' path='doc/member[@name="SENDCMDOUTPARAMS.bBuffer"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte bBuffer[1];
 }

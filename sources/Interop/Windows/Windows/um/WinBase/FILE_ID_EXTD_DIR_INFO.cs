@@ -54,6 +54,6 @@ public unsafe partial struct FILE_ID_EXTD_DIR_INFO
     public FILE_ID_128 FileId;
 
     /// <include file='FILE_ID_EXTD_DIR_INFO.xml' path='doc/member[@name="FILE_ID_EXTD_DIR_INFO.FileName"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort FileName[1];
 }

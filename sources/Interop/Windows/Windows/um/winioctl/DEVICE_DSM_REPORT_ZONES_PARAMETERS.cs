@@ -19,6 +19,6 @@ public unsafe partial struct DEVICE_DSM_REPORT_ZONES_PARAMETERS
     public byte Partial;
 
     /// <include file='DEVICE_DSM_REPORT_ZONES_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_REPORT_ZONES_PARAMETERS.Reserved"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte Reserved[2];
 }

@@ -13,6 +13,6 @@ public unsafe partial struct IP_ADAPTER_ORDER_MAP
     public uint NumAdapters;
 
     /// <include file='IP_ADAPTER_ORDER_MAP.xml' path='doc/member[@name="IP_ADAPTER_ORDER_MAP.AdapterOrder"]/*' />
-    [NativeTypeName("ULONG [1]")]
+    [NativeTypeName("ULONG[1]")]
     public fixed uint AdapterOrder[1];
 }

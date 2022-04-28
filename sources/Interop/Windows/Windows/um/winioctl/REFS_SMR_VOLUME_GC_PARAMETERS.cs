@@ -31,6 +31,6 @@ public unsafe partial struct REFS_SMR_VOLUME_GC_PARAMETERS
     public uint CompressionFormat;
 
     /// <include file='REFS_SMR_VOLUME_GC_PARAMETERS.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_PARAMETERS.Unused"]/*' />
-    [NativeTypeName("DWORDLONG [8]")]
+    [NativeTypeName("DWORDLONG[8]")]
     public fixed ulong Unused[8];
 }

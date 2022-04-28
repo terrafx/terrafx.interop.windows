@@ -20,6 +20,6 @@ public unsafe partial struct SYNCMGRHANDLERINFO
     public uint SyncMgrHandlerFlags;
 
     /// <include file='SYNCMGRHANDLERINFO.xml' path='doc/member[@name="SYNCMGRHANDLERINFO.wszHandlerName"]/*' />
-    [NativeTypeName("WCHAR [32]")]
+    [NativeTypeName("WCHAR[32]")]
     public fixed ushort wszHandlerName[32];
 }

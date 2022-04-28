@@ -53,6 +53,6 @@ public unsafe partial struct LOGFONTW
     public byte lfPitchAndFamily;
 
     /// <include file='LOGFONTW.xml' path='doc/member[@name="LOGFONTW.lfFaceName"]/*' />
-    [NativeTypeName("WCHAR [32]")]
+    [NativeTypeName("WCHAR[32]")]
     public fixed ushort lfFaceName[32];
 }

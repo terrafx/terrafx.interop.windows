@@ -19,22 +19,22 @@ public unsafe partial struct ARM64_NT_NEON128
 
     /// <include file='ARM64_NT_NEON128.xml' path='doc/member[@name="ARM64_NT_NEON128.D"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("double [2]")]
+    [NativeTypeName("double[2]")]
     public fixed double D[2];
 
     /// <include file='ARM64_NT_NEON128.xml' path='doc/member[@name="ARM64_NT_NEON128.S"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("float [4]")]
+    [NativeTypeName("float[4]")]
     public fixed float S[4];
 
     /// <include file='ARM64_NT_NEON128.xml' path='doc/member[@name="ARM64_NT_NEON128.H"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("WORD [8]")]
+    [NativeTypeName("WORD[8]")]
     public fixed ushort H[8];
 
     /// <include file='ARM64_NT_NEON128.xml' path='doc/member[@name="ARM64_NT_NEON128.B"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte B[16];
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Low"]/*' />

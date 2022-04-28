@@ -29,7 +29,7 @@ public partial struct STORAGE_CRYPTO_DESCRIPTOR
     public uint NumCryptoCapabilities;
 
     /// <include file='STORAGE_CRYPTO_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_CRYPTO_DESCRIPTOR.CryptoCapabilities"]/*' />
-    [NativeTypeName("STORAGE_CRYPTO_CAPABILITY [1]")]
+    [NativeTypeName("STORAGE_CRYPTO_CAPABILITY[1]")]
     public _CryptoCapabilities_e__FixedBuffer CryptoCapabilities;
 
     /// <include file='_CryptoCapabilities_e__FixedBuffer.xml' path='doc/member[@name="_CryptoCapabilities_e__FixedBuffer"]/*' />

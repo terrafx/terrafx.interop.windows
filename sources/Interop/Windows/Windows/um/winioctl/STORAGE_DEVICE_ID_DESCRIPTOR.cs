@@ -21,6 +21,6 @@ public unsafe partial struct STORAGE_DEVICE_ID_DESCRIPTOR
     public uint NumberOfIdentifiers;
 
     /// <include file='STORAGE_DEVICE_ID_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_ID_DESCRIPTOR.Identifiers"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Identifiers[1];
 }

@@ -14,6 +14,6 @@ public unsafe partial struct SHELL_ITEM_RESOURCE
     public Guid guidType;
 
     /// <include file='SHELL_ITEM_RESOURCE.xml' path='doc/member[@name="SHELL_ITEM_RESOURCE.szName"]/*' />
-    [NativeTypeName("WCHAR [260]")]
+    [NativeTypeName("WCHAR[260]")]
     public fixed ushort szName[260];
 }

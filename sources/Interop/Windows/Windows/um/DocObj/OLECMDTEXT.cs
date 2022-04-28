@@ -21,6 +21,6 @@ public unsafe partial struct OLECMDTEXT
     public uint cwBuf;
 
     /// <include file='OLECMDTEXT.xml' path='doc/member[@name="OLECMDTEXT.rgwz"]/*' />
-    [NativeTypeName("wchar_t [1]")]
+    [NativeTypeName("wchar_t[1]")]
     public fixed ushort rgwz[1];
 }

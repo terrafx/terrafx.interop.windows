@@ -17,6 +17,6 @@ public unsafe partial struct REASSIGN_BLOCKS
     public ushort Count;
 
     /// <include file='REASSIGN_BLOCKS.xml' path='doc/member[@name="REASSIGN_BLOCKS.BlockNumber"]/*' />
-    [NativeTypeName("DWORD [1]")]
+    [NativeTypeName("DWORD[1]")]
     public fixed uint BlockNumber[1];
 }

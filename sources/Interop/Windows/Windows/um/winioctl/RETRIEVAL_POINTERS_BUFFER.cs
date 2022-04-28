@@ -20,7 +20,7 @@ public partial struct RETRIEVAL_POINTERS_BUFFER
     public LARGE_INTEGER StartingVcn;
 
     /// <include file='RETRIEVAL_POINTERS_BUFFER.xml' path='doc/member[@name="RETRIEVAL_POINTERS_BUFFER.Extents"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:11281:5) [1]")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:11281:5)[1]")]
     public _Extents_e__FixedBuffer Extents;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

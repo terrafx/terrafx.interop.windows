@@ -9,6 +9,6 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct MSV1_0_CREDENTIAL_KEY
 {
     /// <include file='MSV1_0_CREDENTIAL_KEY.xml' path='doc/member[@name="MSV1_0_CREDENTIAL_KEY.Data"]/*' />
-    [NativeTypeName("UCHAR [20]")]
+    [NativeTypeName("UCHAR[20]")]
     public fixed byte Data[20];
 }

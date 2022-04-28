@@ -25,7 +25,7 @@ public partial struct STORAGE_COUNTERS
     public uint NumberOfCounters;
 
     /// <include file='STORAGE_COUNTERS.xml' path='doc/member[@name="STORAGE_COUNTERS.Counters"]/*' />
-    [NativeTypeName("STORAGE_COUNTER [1]")]
+    [NativeTypeName("STORAGE_COUNTER[1]")]
     public _Counters_e__FixedBuffer Counters;
 
     /// <include file='_Counters_e__FixedBuffer.xml' path='doc/member[@name="_Counters_e__FixedBuffer"]/*' />

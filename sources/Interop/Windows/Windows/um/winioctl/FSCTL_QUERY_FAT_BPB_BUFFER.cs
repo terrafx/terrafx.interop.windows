@@ -9,6 +9,6 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct FSCTL_QUERY_FAT_BPB_BUFFER
 {
     /// <include file='FSCTL_QUERY_FAT_BPB_BUFFER.xml' path='doc/member[@name="FSCTL_QUERY_FAT_BPB_BUFFER.First0x24BytesOfBootSector"]/*' />
-    [NativeTypeName("BYTE [36]")]
+    [NativeTypeName("BYTE[36]")]
     public fixed byte First0x24BytesOfBootSector[36];
 }

@@ -13,6 +13,6 @@ public unsafe partial struct DxcShaderHash
     public uint Flags;
 
     /// <include file='DxcShaderHash.xml' path='doc/member[@name="DxcShaderHash.HashDigest"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte HashDigest[16];
 }
