@@ -10,13 +10,13 @@ namespace TerraFX.Interop.Windows;
 public static unsafe partial class CAT
 {
     [NativeTypeName("#define CAT_NAMEVALUE_OBJID \"1.3.6.1.4.1.311.12.2.1\"")]
-    public static ReadOnlySpan<byte> CAT_NAMEVALUE_OBJID => new byte[] { 0x31, 0x2E, 0x33, 0x2E, 0x36, 0x2E, 0x31, 0x2E, 0x34, 0x2E, 0x31, 0x2E, 0x33, 0x31, 0x31, 0x2E, 0x31, 0x32, 0x2E, 0x32, 0x2E, 0x31, 0x00 };
+    public static ReadOnlySpan<byte> CAT_NAMEVALUE_OBJID => "1.3.6.1.4.1.311.12.2.1\0"u8;
 
     [NativeTypeName("#define CAT_MEMBERINFO_OBJID \"1.3.6.1.4.1.311.12.2.2\"")]
-    public static ReadOnlySpan<byte> CAT_MEMBERINFO_OBJID => new byte[] { 0x31, 0x2E, 0x33, 0x2E, 0x36, 0x2E, 0x31, 0x2E, 0x34, 0x2E, 0x31, 0x2E, 0x33, 0x31, 0x31, 0x2E, 0x31, 0x32, 0x2E, 0x32, 0x2E, 0x32, 0x00 };
+    public static ReadOnlySpan<byte> CAT_MEMBERINFO_OBJID => "1.3.6.1.4.1.311.12.2.2\0"u8;
 
     [NativeTypeName("#define CAT_MEMBERINFO2_OBJID \"1.3.6.1.4.1.311.12.2.3\"")]
-    public static ReadOnlySpan<byte> CAT_MEMBERINFO2_OBJID => new byte[] { 0x31, 0x2E, 0x33, 0x2E, 0x36, 0x2E, 0x31, 0x2E, 0x34, 0x2E, 0x31, 0x2E, 0x33, 0x31, 0x31, 0x2E, 0x31, 0x32, 0x2E, 0x32, 0x2E, 0x33, 0x00 };
+    public static ReadOnlySpan<byte> CAT_MEMBERINFO2_OBJID => "1.3.6.1.4.1.311.12.2.3\0"u8;
 
     [NativeTypeName("#define CAT_NAMEVALUE_STRUCT ((LPCSTR) 2221)")]
     public static sbyte* CAT_NAMEVALUE_STRUCT => ((sbyte*)(2221));

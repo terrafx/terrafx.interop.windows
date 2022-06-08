@@ -67,13 +67,13 @@ public static unsafe partial class DirectX
     public static delegate*<delegate* unmanaged<Guid*, ushort*, ushort*, void*, HMONITOR, BOOL>, void*, uint, HRESULT> DirectDrawEnumerateEx => &DirectDrawEnumerateExW;
 
     [NativeTypeName("#define REGSTR_KEY_DDHW_DESCRIPTION \"Description\"")]
-    public static ReadOnlySpan<byte> REGSTR_KEY_DDHW_DESCRIPTION => new byte[] { 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6F, 0x6E, 0x00 };
+    public static ReadOnlySpan<byte> REGSTR_KEY_DDHW_DESCRIPTION => "Description\0"u8;
 
     [NativeTypeName("#define REGSTR_KEY_DDHW_DRIVERNAME \"DriverName\"")]
-    public static ReadOnlySpan<byte> REGSTR_KEY_DDHW_DRIVERNAME => new byte[] { 0x44, 0x72, 0x69, 0x76, 0x65, 0x72, 0x4E, 0x61, 0x6D, 0x65, 0x00 };
+    public static ReadOnlySpan<byte> REGSTR_KEY_DDHW_DRIVERNAME => "DriverName\0"u8;
 
     [NativeTypeName("#define REGSTR_PATH_DDHW \"Hardware\\\\DirectDrawDrivers\"")]
-    public static ReadOnlySpan<byte> REGSTR_PATH_DDHW => new byte[] { 0x48, 0x61, 0x72, 0x64, 0x77, 0x61, 0x72, 0x65, 0x5C, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x44, 0x72, 0x61, 0x77, 0x44, 0x72, 0x69, 0x76, 0x65, 0x72, 0x73, 0x00 };
+    public static ReadOnlySpan<byte> REGSTR_PATH_DDHW => "Hardware\\DirectDrawDrivers\0"u8;
 
     [NativeTypeName("#define DD_ROP_SPACE (256/32)")]
     public const int DD_ROP_SPACE = (256 / 32);
