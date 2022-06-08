@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("AEB575CF-4E06-48BE-BA3B-C450FC96652E")]
 [NativeTypeName("struct ID3D12DebugCommandList2 : ID3D12DebugCommandList")]
 [NativeInheritance("ID3D12DebugCommandList")]
-public unsafe partial struct ID3D12DebugCommandList2 : ID3D12DebugCommandList2.Interface
+public unsafe partial struct ID3D12DebugCommandList2 : ID3D12DebugCommandList2.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D12DebugCommandList2;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

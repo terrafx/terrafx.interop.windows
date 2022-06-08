@@ -3,12 +3,15 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SpCustomStream.xml' path='doc/member[@name="SpCustomStream"]/*' />
 [Guid("8DBEF13F-1948-4AA8-8CF0-048EEBED95D8")]
-public partial struct SpCustomStream
+public partial struct SpCustomStream : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_SpCustomStream;
 }

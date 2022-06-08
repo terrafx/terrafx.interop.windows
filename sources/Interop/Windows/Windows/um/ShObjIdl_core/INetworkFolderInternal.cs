@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("CEB38218-C971-47BB-A703-F0BC99CCDB81")]
 [NativeTypeName("struct INetworkFolderInternal : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct INetworkFolderInternal : INetworkFolderInternal.Interface
+public unsafe partial struct INetworkFolderInternal : INetworkFolderInternal.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_INetworkFolderInternal;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

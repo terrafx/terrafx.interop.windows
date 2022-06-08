@@ -3,12 +3,15 @@
 // Ported from um/ShObjIdl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='VirtualDesktopManager.xml' path='doc/member[@name="VirtualDesktopManager"]/*' />
 [Guid("AA509086-5CA9-4C25-8F95-589D3C07B48A")]
-public partial struct VirtualDesktopManager
+public partial struct VirtualDesktopManager : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_VirtualDesktopManager;
 }

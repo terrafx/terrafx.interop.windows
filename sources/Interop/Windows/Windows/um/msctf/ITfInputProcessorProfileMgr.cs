@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("71C6E74C-0F28-11D8-A82A-00065B84435C")]
 [NativeTypeName("struct ITfInputProcessorProfileMgr : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProfileMgr.Interface
+public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProfileMgr.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfInputProcessorProfileMgr;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

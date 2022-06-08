@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("C1960960-17F5-11D1-ABE1-00A0C905F375")]
 [NativeTypeName("struct IAMStreamSelect : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMStreamSelect : IAMStreamSelect.Interface
+public unsafe partial struct IAMStreamSelect : IAMStreamSelect.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMStreamSelect;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

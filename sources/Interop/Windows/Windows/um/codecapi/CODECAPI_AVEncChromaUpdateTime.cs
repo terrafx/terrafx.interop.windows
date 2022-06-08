@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncChromaUpdateTime.xml' path='doc/member[@name="CODECAPI_AVEncChromaUpdateTime"]/*' />
 [Guid("4B4FD998-4274-40BB-8EE4-07553E7E2D3A")]
-public partial struct CODECAPI_AVEncChromaUpdateTime
+public partial struct CODECAPI_AVEncChromaUpdateTime : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncChromaUpdateTime;
 }

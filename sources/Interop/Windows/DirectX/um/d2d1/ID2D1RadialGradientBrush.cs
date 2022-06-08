@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("2CD906AC-12E2-11DC-9FED-001143A055F9")]
 [NativeTypeName("struct ID2D1RadialGradientBrush : ID2D1Brush")]
 [NativeInheritance("ID2D1Brush")]
-public unsafe partial struct ID2D1RadialGradientBrush : ID2D1RadialGradientBrush.Interface
+public unsafe partial struct ID2D1RadialGradientBrush : ID2D1RadialGradientBrush.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1RadialGradientBrush;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

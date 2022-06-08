@@ -3,13 +3,17 @@
 // Ported from um/xapofx.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.DirectX;
 
 [Guid("7D9ACA56-CB68-4807-B632-B137352E8596")]
-public partial struct FXReverb
+public partial struct FXReverb : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_FXReverb;
+
     [NativeTypeName("#define FXREVERB_MIN_DIFFUSION 0.0f")]
     public const float FXREVERB_MIN_DIFFUSION = 0.0f;
 

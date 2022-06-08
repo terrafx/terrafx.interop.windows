@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncMP12MuxPacketOverhead.xml' path='doc/member[@name="CODECAPI_AVEncMP12MuxPacketOverhead"]/*' />
 [Guid("E40BD720-3955-4453-ACF9-B79132A38FA0")]
-public partial struct CODECAPI_AVEncMP12MuxPacketOverhead
+public partial struct CODECAPI_AVEncMP12MuxPacketOverhead : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncMP12MuxPacketOverhead;
 }

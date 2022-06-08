@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("45101AB7-7C3A-4BCE-9500-12C09024B298")]
 [NativeTypeName("struct ICastingSourceInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ICastingSourceInfo : ICastingSourceInfo.Interface
+public unsafe partial struct ICastingSourceInfo : ICastingSourceInfo.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICastingSourceInfo;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("26F496A0-7F38-45FB-88F7-FAAABE67DD59")]
 [NativeTypeName("struct ISwapChainInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ISwapChainInterop : ISwapChainInterop.Interface
+public unsafe partial struct ISwapChainInterop : ISwapChainInterop.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISwapChainInterop;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("62BAA2D2-AB54-41B7-B872-787E0106A421")]
 [NativeTypeName("struct ID2D1PathGeometry1 : ID2D1PathGeometry")]
 [NativeInheritance("ID2D1PathGeometry")]
-public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface
+public unsafe partial struct ID2D1PathGeometry1 : ID2D1PathGeometry1.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1PathGeometry1;
+
     public void** lpVtbl;
 
     public HRESULT GetWidenedBounds(float strokeWidth, ID2D1StrokeStyle* strokeStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* bounds)

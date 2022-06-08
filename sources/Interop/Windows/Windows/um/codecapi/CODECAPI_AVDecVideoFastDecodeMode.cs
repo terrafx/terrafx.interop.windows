@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVDecVideoFastDecodeMode.xml' path='doc/member[@name="CODECAPI_AVDecVideoFastDecodeMode"]/*' />
 [Guid("6B529F7D-D3B1-49C6-A999-9EC6911BEDBF")]
-public partial struct CODECAPI_AVDecVideoFastDecodeMode
+public partial struct CODECAPI_AVDecVideoFastDecodeMode : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVDecVideoFastDecodeMode;
 }

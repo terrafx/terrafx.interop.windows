@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("C031BEE4-BBCC-48EA-A237-C34045C80A07")]
 [NativeTypeName("struct IAppxManifestDriverConstraint : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAppxManifestDriverConstraint : IAppxManifestDriverConstraint.Interface
+public unsafe partial struct IAppxManifestDriverConstraint : IAppxManifestDriverConstraint.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAppxManifestDriverConstraint;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

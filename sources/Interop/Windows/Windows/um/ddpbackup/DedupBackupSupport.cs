@@ -3,12 +3,15 @@
 // Ported from um/ddpbackup.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DedupBackupSupport.xml' path='doc/member[@name="DedupBackupSupport"]/*' />
 [Guid("73D6B2AD-2984-4715-B2E3-924C149744DD")]
-public partial struct DedupBackupSupport
+public partial struct DedupBackupSupport : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_DedupBackupSupport;
 }

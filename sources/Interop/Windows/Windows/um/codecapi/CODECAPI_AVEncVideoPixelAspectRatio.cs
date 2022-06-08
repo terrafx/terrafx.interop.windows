@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncVideoPixelAspectRatio.xml' path='doc/member[@name="CODECAPI_AVEncVideoPixelAspectRatio"]/*' />
 [Guid("3CDC718F-B3E9-4EB6-A57F-CF1F1B321B87")]
-public partial struct CODECAPI_AVEncVideoPixelAspectRatio
+public partial struct CODECAPI_AVEncVideoPixelAspectRatio : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncVideoPixelAspectRatio;
 }

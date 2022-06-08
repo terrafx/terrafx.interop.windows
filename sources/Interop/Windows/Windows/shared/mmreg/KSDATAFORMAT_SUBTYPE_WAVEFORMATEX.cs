@@ -3,12 +3,15 @@
 // Ported from shared/mmreg.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='KSDATAFORMAT_SUBTYPE_WAVEFORMATEX.xml' path='doc/member[@name="KSDATAFORMAT_SUBTYPE_WAVEFORMATEX"]/*' />
 [Guid("00000000-0000-0010-8000-00AA00389B71")]
-public partial struct KSDATAFORMAT_SUBTYPE_WAVEFORMATEX
+public partial struct KSDATAFORMAT_SUBTYPE_WAVEFORMATEX : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_KSDATAFORMAT_SUBTYPE_WAVEFORMATEX;
 }

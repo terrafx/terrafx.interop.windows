@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("3D577EFF-4CEE-11E6-B535-001BDC06AB3B")]
 [NativeTypeName("struct IRadialControllerIndependentInputSourceInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IRadialControllerIndependentInputSourceInterop : IRadialControllerIndependentInputSourceInterop.Interface
+public unsafe partial struct IRadialControllerIndependentInputSourceInterop : IRadialControllerIndependentInputSourceInterop.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IRadialControllerIndependentInputSourceInterop;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

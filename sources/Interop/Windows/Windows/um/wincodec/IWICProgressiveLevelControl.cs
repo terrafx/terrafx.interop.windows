@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("DAAC296F-7AA5-4DBF-8D15-225C5976F891")]
 [NativeTypeName("struct IWICProgressiveLevelControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelControl.Interface
+public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelControl.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWICProgressiveLevelControl;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

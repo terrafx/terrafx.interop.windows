@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("5009834F-2D6A-41CE-9E1B-17C5AFF7A782")]
 [NativeTypeName("struct IWICBitmapFlipRotator : IWICBitmapSource")]
 [NativeInheritance("IWICBitmapSource")]
-public unsafe partial struct IWICBitmapFlipRotator : IWICBitmapFlipRotator.Interface
+public unsafe partial struct IWICBitmapFlipRotator : IWICBitmapFlipRotator.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWICBitmapFlipRotator;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

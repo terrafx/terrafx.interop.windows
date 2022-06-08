@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("11C81BC2-121E-4ED5-B9C4-B430BD54F2C0")]
 [NativeTypeName("struct IBindCallbackRedirect : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IBindCallbackRedirect : IBindCallbackRedirect.Interface
+public unsafe partial struct IBindCallbackRedirect : IBindCallbackRedirect.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IBindCallbackRedirect;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("604D33D7-CF23-41D5-8224-5BBBB1A87475")]
 [NativeTypeName("struct IMFVideoRendererEffectControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFVideoRendererEffectControl : IMFVideoRendererEffectControl.Interface
+public unsafe partial struct IMFVideoRendererEffectControl : IMFVideoRendererEffectControl.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFVideoRendererEffectControl;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVDecVideoMaxCodedHeight.xml' path='doc/member[@name="CODECAPI_AVDecVideoMaxCodedHeight"]/*' />
 [Guid("7262A16A-D2DC-4E75-9BA8-65C0C6D32B13")]
-public partial struct CODECAPI_AVDecVideoMaxCodedHeight
+public partial struct CODECAPI_AVDecVideoMaxCodedHeight : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVDecVideoMaxCodedHeight;
 }

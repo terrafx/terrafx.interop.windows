@@ -3,12 +3,15 @@
 // Ported from um/directmanipulation.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DirectManipulationManager.xml' path='doc/member[@name="DirectManipulationManager"]/*' />
 [Guid("54E211B6-3650-4F75-8334-FA359598E1C5")]
-public partial struct DirectManipulationManager
+public partial struct DirectManipulationManager : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_DirectManipulationManager;
 }

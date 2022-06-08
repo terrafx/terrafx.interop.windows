@@ -3,12 +3,15 @@
 // Ported from um/Dimm.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CActiveIMM.xml' path='doc/member[@name="CActiveIMM"]/*' />
 [Guid("4955DD33-B159-11D0-8FCF-00AA006BCC59")]
-public partial struct CActiveIMM
+public partial struct CActiveIMM : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CActiveIMM;
 }

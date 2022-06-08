@@ -3,12 +3,15 @@
 // Ported from um/imapi2fs.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='FsiFileItem.xml' path='doc/member[@name="FsiFileItem"]/*' />
 [Guid("2C941FC7-975B-59BE-A960-9A2A262853A5")]
-public partial struct FsiFileItem
+public partial struct FsiFileItem : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_FsiFileItem;
 }

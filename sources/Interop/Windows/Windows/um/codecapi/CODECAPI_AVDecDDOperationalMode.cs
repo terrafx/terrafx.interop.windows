@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVDecDDOperationalMode.xml' path='doc/member[@name="CODECAPI_AVDecDDOperationalMode"]/*' />
 [Guid("D6D6C6D1-064E-4FDD-A40E-3ECBFCB7EBD0")]
-public partial struct CODECAPI_AVDecDDOperationalMode
+public partial struct CODECAPI_AVDecDDOperationalMode : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVDecDDOperationalMode;
 }

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("2D91EEA1-9932-11D2-BE86-00A0C9A83DA1")]
 [NativeTypeName("struct IFileSearchBand : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IFileSearchBand : IFileSearchBand.Interface
+public unsafe partial struct IFileSearchBand : IFileSearchBand.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IFileSearchBand;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

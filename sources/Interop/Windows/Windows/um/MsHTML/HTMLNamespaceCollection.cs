@@ -3,12 +3,15 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='HTMLNamespaceCollection.xml' path='doc/member[@name="HTMLNamespaceCollection"]/*' />
 [Guid("3050F6B9-98B5-11CF-BB82-00AA00BDCE0B")]
-public partial struct HTMLNamespaceCollection
+public partial struct HTMLNamespaceCollection : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_HTMLNamespaceCollection;
 }

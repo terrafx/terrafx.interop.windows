@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.DirectX;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -16,8 +17,10 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IWICImagingFactory2 : IWICImagingFactory")]
 [NativeInheritance("IWICImagingFactory")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IWICImagingFactory2 : IWICImagingFactory2.Interface
+public unsafe partial struct IWICImagingFactory2 : IWICImagingFactory2.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWICImagingFactory2;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -3,12 +3,15 @@
 // Ported from um/ShObjIdl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='TrayBandSiteService.xml' path='doc/member[@name="TrayBandSiteService"]/*' />
 [Guid("F60AD0A0-E5E1-45CB-B51A-E15B9F8B2934")]
-public partial struct TrayBandSiteService
+public partial struct TrayBandSiteService : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_TrayBandSiteService;
 }

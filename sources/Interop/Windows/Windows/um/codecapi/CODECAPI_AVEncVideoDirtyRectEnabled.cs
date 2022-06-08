@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncVideoDirtyRectEnabled.xml' path='doc/member[@name="CODECAPI_AVEncVideoDirtyRectEnabled"]/*' />
 [Guid("8ACB8FDD-5E0C-4C66-8729-B8F629AB04FB")]
-public partial struct CODECAPI_AVEncVideoDirtyRectEnabled
+public partial struct CODECAPI_AVEncVideoDirtyRectEnabled : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncVideoDirtyRectEnabled;
 }

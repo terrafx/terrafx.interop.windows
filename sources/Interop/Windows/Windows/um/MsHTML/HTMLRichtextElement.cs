@@ -3,12 +3,15 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='HTMLRichtextElement.xml' path='doc/member[@name="HTMLRichtextElement"]/*' />
 [Guid("3050F2DF-98B5-11CF-BB82-00AA00BDCE0B")]
-public partial struct HTMLRichtextElement
+public partial struct HTMLRichtextElement : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_HTMLRichtextElement;
 }

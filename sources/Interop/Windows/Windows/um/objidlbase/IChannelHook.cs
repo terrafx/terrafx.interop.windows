@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("1008C4A0-7613-11CF-9AF1-0020AF6E72F4")]
 [NativeTypeName("struct IChannelHook : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IChannelHook : IChannelHook.Interface
+public unsafe partial struct IChannelHook : IChannelHook.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IChannelHook;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

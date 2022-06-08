@@ -3,12 +3,15 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='HTMLSpanElement.xml' path='doc/member[@name="HTMLSpanElement"]/*' />
 [Guid("3050F3F5-98B4-11CF-BB82-00AA00BDCE0B")]
-public partial struct HTMLSpanElement
+public partial struct HTMLSpanElement : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_HTMLSpanElement;
 }

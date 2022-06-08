@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncWMVKeyFrameDistance.xml' path='doc/member[@name="CODECAPI_AVEncWMVKeyFrameDistance"]/*' />
 [Guid("5569055E-E268-4771-B83E-9555EA28AED3")]
-public partial struct CODECAPI_AVEncWMVKeyFrameDistance
+public partial struct CODECAPI_AVEncWMVKeyFrameDistance : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncWMVKeyFrameDistance;
 }

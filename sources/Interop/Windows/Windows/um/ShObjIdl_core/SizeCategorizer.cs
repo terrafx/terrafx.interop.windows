@@ -3,12 +3,15 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SizeCategorizer.xml' path='doc/member[@name="SizeCategorizer"]/*' />
 [Guid("55D7B852-F6D1-42F2-AA75-8728A1B2D264")]
-public partial struct SizeCategorizer
+public partial struct SizeCategorizer : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_SizeCategorizer;
 }

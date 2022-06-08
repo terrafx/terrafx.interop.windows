@@ -2,8 +2,7 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct LPPROC_THREAD_ATTRIBUTE_LIST : IComparable, IComparable<LPPROC_THREAD_ATTRIBUTE_LIST>, IEquatable<LPPROC_THREAD_ATTRIBUTE_LIST>, IFormattable
 {

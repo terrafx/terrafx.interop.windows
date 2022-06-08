@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("98EFF3A5-B667-479A-B145-E2FA5B9FDC29")]
 [NativeTypeName("struct IDWriteFontFace5 : IDWriteFontFace4")]
 [NativeInheritance("IDWriteFontFace4")]
-public unsafe partial struct IDWriteFontFace5 : IDWriteFontFace5.Interface
+public unsafe partial struct IDWriteFontFace5 : IDWriteFontFace5.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDWriteFontFace5;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

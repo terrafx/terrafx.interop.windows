@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("361BBDC7-E6EE-4E13-BE58-58E2240C810F")]
 [NativeTypeName("struct IExplorerBrowserEvents : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Interface
+public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IExplorerBrowserEvents;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

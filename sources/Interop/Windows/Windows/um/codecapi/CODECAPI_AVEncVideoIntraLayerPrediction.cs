@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncVideoIntraLayerPrediction.xml' path='doc/member[@name="CODECAPI_AVEncVideoIntraLayerPrediction"]/*' />
 [Guid("D3AF46B8-BF47-44BB-A283-69F0B0228FF9")]
-public partial struct CODECAPI_AVEncVideoIntraLayerPrediction
+public partial struct CODECAPI_AVEncVideoIntraLayerPrediction : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncVideoIntraLayerPrediction;
 }

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("305107FF-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IDOMCloseEvent : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IDOMCloseEvent : IDOMCloseEvent.Interface
+public unsafe partial struct IDOMCloseEvent : IDOMCloseEvent.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDOMCloseEvent;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

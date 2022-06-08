@@ -2,8 +2,7 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct RO_REGISTRATION_COOKIE : IComparable, IComparable<RO_REGISTRATION_COOKIE>, IEquatable<RO_REGISTRATION_COOKIE>, IFormattable
 {

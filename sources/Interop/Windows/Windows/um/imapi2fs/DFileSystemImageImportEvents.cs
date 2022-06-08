@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("D25C30F9-4087-4366-9E24-E55BE286424B")]
 [NativeTypeName("struct DFileSystemImageImportEvents : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct DFileSystemImageImportEvents : DFileSystemImageImportEvents.Interface
+public unsafe partial struct DFileSystemImageImportEvents : DFileSystemImageImportEvents.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_DFileSystemImageImportEvents;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

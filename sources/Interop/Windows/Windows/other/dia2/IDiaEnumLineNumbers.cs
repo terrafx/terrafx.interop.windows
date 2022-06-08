@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("FE30E878-54AC-44F1-81BA-39DE940F6052")]
 [NativeTypeName("struct IDiaEnumLineNumbers : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDiaEnumLineNumbers : IDiaEnumLineNumbers.Interface
+public unsafe partial struct IDiaEnumLineNumbers : IDiaEnumLineNumbers.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDiaEnumLineNumbers;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

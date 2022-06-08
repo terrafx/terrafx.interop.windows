@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("EB0CB9E8-7996-11D2-872E-0000F8080859")]
 [NativeTypeName("struct IReleaseMarshalBuffers : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IReleaseMarshalBuffers : IReleaseMarshalBuffers.Interface
+public unsafe partial struct IReleaseMarshalBuffers : IReleaseMarshalBuffers.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IReleaseMarshalBuffers;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -3,12 +3,15 @@
 // Ported from um/ShObjIdl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IENamespaceTreeControl.xml' path='doc/member[@name="IENamespaceTreeControl"]/*' />
 [Guid("ACE52D03-E5CD-4B20-82FF-E71B11BEAE1D")]
-public partial struct IENamespaceTreeControl
+public partial struct IENamespaceTreeControl : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IENamespaceTreeControl;
 }

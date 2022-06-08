@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F565-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct DispHTMLDOMTextNode : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct DispHTMLDOMTextNode : DispHTMLDOMTextNode.Interface
+public unsafe partial struct DispHTMLDOMTextNode : DispHTMLDOMTextNode.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_DispHTMLDOMTextNode;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

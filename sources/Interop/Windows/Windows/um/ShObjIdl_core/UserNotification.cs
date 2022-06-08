@@ -3,12 +3,15 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='UserNotification.xml' path='doc/member[@name="UserNotification"]/*' />
 [Guid("0010890E-8789-413C-ADBC-48F5B511B3AF")]
-public partial struct UserNotification
+public partial struct UserNotification : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_UserNotification;
 }

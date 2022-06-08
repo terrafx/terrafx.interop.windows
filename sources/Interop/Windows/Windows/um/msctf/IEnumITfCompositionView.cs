@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("5EFD22BA-7838-46CB-88E2-CADB14124F8F")]
 [NativeTypeName("struct IEnumITfCompositionView : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.Interface
+public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IEnumITfCompositionView;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

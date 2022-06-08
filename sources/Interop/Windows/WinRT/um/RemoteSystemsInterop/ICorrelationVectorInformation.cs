@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("83C78B3C-D88B-4950-AA6E-22B8D22AABD3")]
 [NativeTypeName("struct ICorrelationVectorInformation : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorInformation.Interface
+public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorInformation.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICorrelationVectorInformation;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

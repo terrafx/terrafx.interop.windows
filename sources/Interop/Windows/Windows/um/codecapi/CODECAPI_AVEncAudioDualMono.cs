@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncAudioDualMono.xml' path='doc/member[@name="CODECAPI_AVEncAudioDualMono"]/*' />
 [Guid("3648126B-A3E8-4329-9B3A-5CE566A43BD3")]
-public partial struct CODECAPI_AVEncAudioDualMono
+public partial struct CODECAPI_AVEncAudioDualMono : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncAudioDualMono;
 }

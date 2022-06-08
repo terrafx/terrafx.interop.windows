@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("30F3D47A-6447-11D1-8E3C-00C04FB9386D")]
 [NativeTypeName("struct IBlockingLock : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IBlockingLock : IBlockingLock.Interface
+public unsafe partial struct IBlockingLock : IBlockingLock.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IBlockingLock;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

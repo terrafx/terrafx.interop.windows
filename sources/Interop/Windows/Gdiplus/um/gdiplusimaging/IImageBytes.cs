@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Gdiplus;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.Gdiplus;
 [Guid("025D1823-6C7D-447B-BBDB-A3CBC3DFA2FC")]
 [NativeTypeName("struct IImageBytes : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IImageBytes : IImageBytes.Interface
+public unsafe partial struct IImageBytes : IImageBytes.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IImageBytes;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

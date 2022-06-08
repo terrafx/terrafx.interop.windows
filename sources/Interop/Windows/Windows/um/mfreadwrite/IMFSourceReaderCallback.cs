@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("DEEC8D99-FA1D-4D82-84C2-2C8969944867")]
 [NativeTypeName("struct IMFSourceReaderCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFSourceReaderCallback : IMFSourceReaderCallback.Interface
+public unsafe partial struct IMFSourceReaderCallback : IMFSourceReaderCallback.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFSourceReaderCallback;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

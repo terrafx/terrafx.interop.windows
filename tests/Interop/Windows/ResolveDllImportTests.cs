@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 
 #pragma warning disable IL2026
+#pragma warning disable IL2072
 
 namespace TerraFX.Interop.Windows.UnitTests;
 

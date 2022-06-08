@@ -18,6 +18,7 @@ generate-aggressive-inlining
 generate-cpp-attributes
 generate-doc-includes
 generate-file-scoped-namespaces
+generate-guid-member
 generate-macro-bindings
 generate-marker-interfaces
 generate-native-inheritance-attribute

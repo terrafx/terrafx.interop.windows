@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("0B31CC62-D7EC-4747-9D6E-F2537D870F2B")]
 [NativeTypeName("struct IPrintPreviewPageCollection : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IPrintPreviewPageCollection : IPrintPreviewPageCollection.Interface
+public unsafe partial struct IPrintPreviewPageCollection : IPrintPreviewPageCollection.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPrintPreviewPageCollection;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

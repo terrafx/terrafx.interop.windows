@@ -2,8 +2,7 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct HGLRC : IComparable, IComparable<HGLRC>, IEquatable<HGLRC>, IFormattable
 {

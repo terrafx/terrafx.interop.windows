@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("F52E2B61-18A1-11D1-B105-00805F49916B")]
 [NativeTypeName("struct IXMLDocument : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IXMLDocument : IXMLDocument.Interface
+public unsafe partial struct IXMLDocument : IXMLDocument.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IXMLDocument;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

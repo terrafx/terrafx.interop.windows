@@ -3,12 +3,15 @@
 // Ported from um/UIAnimation.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='UIAnimationTransitionLibrary2.xml' path='doc/member[@name="UIAnimationTransitionLibrary2"]/*' />
 [Guid("812F944A-C5C8-4CD9-B0A6-B3DA802F228D")]
-public partial struct UIAnimationTransitionLibrary2
+public partial struct UIAnimationTransitionLibrary2 : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_UIAnimationTransitionLibrary2;
 }

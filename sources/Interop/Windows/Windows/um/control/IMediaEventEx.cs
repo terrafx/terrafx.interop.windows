@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("56A868C0-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IMediaEventEx : IMediaEvent")]
 [NativeInheritance("IMediaEvent")]
-public unsafe partial struct IMediaEventEx : IMediaEventEx.Interface
+public unsafe partial struct IMediaEventEx : IMediaEventEx.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMediaEventEx;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

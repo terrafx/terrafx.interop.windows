@@ -3,12 +3,15 @@
 // Ported from um/ShObjIdl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PublishDropTarget.xml' path='doc/member[@name="PublishDropTarget"]/*' />
 [Guid("CC6EEFFB-43F6-46C5-9619-51D571967F7D")]
-public partial struct PublishDropTarget
+public partial struct PublishDropTarget : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_PublishDropTarget;
 }

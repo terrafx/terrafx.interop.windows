@@ -2,8 +2,7 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct PAPPCONSTRAIN_REGISTRATION : IComparable, IComparable<PAPPCONSTRAIN_REGISTRATION>, IEquatable<PAPPCONSTRAIN_REGISTRATION>, IFormattable
 {

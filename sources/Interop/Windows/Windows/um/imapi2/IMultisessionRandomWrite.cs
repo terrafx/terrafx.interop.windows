@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("B507CA23-2204-11DD-966A-001AA01BBC58")]
 [NativeTypeName("struct IMultisessionRandomWrite : IMultisession")]
 [NativeInheritance("IMultisession")]
-public unsafe partial struct IMultisessionRandomWrite : IMultisessionRandomWrite.Interface
+public unsafe partial struct IMultisessionRandomWrite : IMultisessionRandomWrite.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMultisessionRandomWrite;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

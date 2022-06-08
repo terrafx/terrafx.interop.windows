@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("575933DF-34FE-4480-AF15-07691F3D5D9B")]
 [NativeTypeName("struct IVectorChangedEventArgs : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IVectorChangedEventArgs : IVectorChangedEventArgs.Interface
+public unsafe partial struct IVectorChangedEventArgs : IVectorChangedEventArgs.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVectorChangedEventArgs;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.DirectX.D2D1_SVG_ATTRIBUTE_POD_TYPE;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -15,8 +16,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("AC7B67A6-183E-49C1-A823-0EBE40B0DB29")]
 [NativeTypeName("struct ID2D1SvgElement : ID2D1Resource")]
 [NativeInheritance("ID2D1Resource")]
-public unsafe partial struct ID2D1SvgElement : ID2D1SvgElement.Interface
+public unsafe partial struct ID2D1SvgElement : ID2D1SvgElement.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1SvgElement;
+
     public void** lpVtbl;
 
     public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, float value)

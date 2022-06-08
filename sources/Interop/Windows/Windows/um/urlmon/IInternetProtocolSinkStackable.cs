@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("79EAC9F0-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IInternetProtocolSinkStackable : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolSinkStackable.Interface
+public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolSinkStackable.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IInternetProtocolSinkStackable;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("3628E81B-3CAC-4C60-B7F4-23CE0E0C3356")]
 [NativeTypeName("struct IGraphicsCaptureItemInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemInterop.Interface
+public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemInterop.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IGraphicsCaptureItemInterop;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

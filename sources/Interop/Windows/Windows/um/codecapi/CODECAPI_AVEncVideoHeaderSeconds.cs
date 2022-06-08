@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncVideoHeaderSeconds.xml' path='doc/member[@name="CODECAPI_AVEncVideoHeaderSeconds"]/*' />
 [Guid("4A2E1A05-A780-4F58-8120-9A449D69656B")]
-public partial struct CODECAPI_AVEncVideoHeaderSeconds
+public partial struct CODECAPI_AVEncVideoHeaderSeconds : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncVideoHeaderSeconds;
 }

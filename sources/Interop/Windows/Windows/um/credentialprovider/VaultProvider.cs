@@ -3,12 +3,15 @@
 // Ported from um/credentialprovider.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='VaultProvider.xml' path='doc/member[@name="VaultProvider"]/*' />
 [Guid("503739D0-4C5E-4CFD-B3BA-D881334F0DF2")]
-public partial struct VaultProvider
+public partial struct VaultProvider : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_VaultProvider;
 }

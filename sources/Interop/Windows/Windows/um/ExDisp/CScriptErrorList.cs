@@ -3,12 +3,15 @@
 // Ported from um/ExDisp.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CScriptErrorList.xml' path='doc/member[@name="CScriptErrorList"]/*' />
 [Guid("EFD01300-160F-11D2-BB2E-00805FF7EFCA")]
-public partial struct CScriptErrorList
+public partial struct CScriptErrorList : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CScriptErrorList;
 }

@@ -3,12 +3,15 @@
 // Ported from um/IContact.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='ContactManager.xml' path='doc/member[@name="ContactManager"]/*' />
 [Guid("7165C8AB-AF88-42BD-86FD-5310B4285A02")]
-public partial struct ContactManager
+public partial struct ContactManager : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_ContactManager;
 }

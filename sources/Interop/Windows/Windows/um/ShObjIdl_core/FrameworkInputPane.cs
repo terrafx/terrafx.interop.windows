@@ -3,12 +3,15 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='FrameworkInputPane.xml' path='doc/member[@name="FrameworkInputPane"]/*' />
 [Guid("D5120AA3-46BA-44C5-822D-CA8092C1FC72")]
-public partial struct FrameworkInputPane
+public partial struct FrameworkInputPane : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_FrameworkInputPane;
 }

@@ -3,12 +3,15 @@
 // Ported from um/imapi2.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MsftMultisessionRandomWrite.xml' path='doc/member[@name="MsftMultisessionRandomWrite"]/*' />
 [Guid("B507CA24-2204-11DD-966A-001AA01BBC58")]
-public partial struct MsftMultisessionRandomWrite
+public partial struct MsftMultisessionRandomWrite : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_MsftMultisessionRandomWrite;
 }

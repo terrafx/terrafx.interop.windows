@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("829B6CF1-4F3A-4412-AE09-B243EB4C6B58")]
 [NativeTypeName("struct IUIAnimationVariableIntegerChangeHandler2 : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IUIAnimationVariableIntegerChangeHandler2 : IUIAnimationVariableIntegerChangeHandler2.Interface
+public unsafe partial struct IUIAnimationVariableIntegerChangeHandler2 : IUIAnimationVariableIntegerChangeHandler2.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IUIAnimationVariableIntegerChangeHandler2;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

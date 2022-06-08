@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F675-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IMarkupPointer2 : IMarkupPointer")]
 [NativeInheritance("IMarkupPointer")]
-public unsafe partial struct IMarkupPointer2 : IMarkupPointer2.Interface
+public unsafe partial struct IMarkupPointer2 : IMarkupPointer2.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMarkupPointer2;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -3,12 +3,15 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='TaskbarList.xml' path='doc/member[@name="TaskbarList"]/*' />
 [Guid("56FDF344-FD6D-11D0-958A-006097C9A090")]
-public partial struct TaskbarList
+public partial struct TaskbarList : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_TaskbarList;
 }

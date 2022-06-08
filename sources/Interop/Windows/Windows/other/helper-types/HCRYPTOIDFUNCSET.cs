@@ -2,8 +2,7 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct HCRYPTOIDFUNCSET : IComparable, IComparable<HCRYPTOIDFUNCSET>, IEquatable<HCRYPTOIDFUNCSET>, IFormattable
 {

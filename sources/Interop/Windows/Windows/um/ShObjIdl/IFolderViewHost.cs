@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("1EA58F02-D55A-411D-B09E-9E65AC21605B")]
 [NativeTypeName("struct IFolderViewHost : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IFolderViewHost : IFolderViewHost.Interface
+public unsafe partial struct IFolderViewHost : IFolderViewHost.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IFolderViewHost;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

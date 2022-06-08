@@ -3,16 +3,20 @@
 // Ported from d3d12shader.h in Microsoft.Direct3D.D3D12 v1.600.10
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='ID3D12ShaderReflectionConstantBuffer.xml' path='doc/member[@name="ID3D12ShaderReflectionConstantBuffer"]/*' />
 [Guid("C59598B4-48B3-4869-B9B1-B1618B14A8B7")]
-public unsafe partial struct ID3D12ShaderReflectionConstantBuffer : ID3D12ShaderReflectionConstantBuffer.Interface
+public unsafe partial struct ID3D12ShaderReflectionConstantBuffer : ID3D12ShaderReflectionConstantBuffer.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D12ShaderReflectionConstantBuffer;
+
     public void** lpVtbl;
 
     /// <include file='ID3D12ShaderReflectionConstantBuffer.xml' path='doc/member[@name="ID3D12ShaderReflectionConstantBuffer.GetDesc"]/*' />

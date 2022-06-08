@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("D001F200-EF97-11CE-9BC9-00AA00608E01")]
 [NativeTypeName("struct IOleUndoManager : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface
+public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IOleUndoManager;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("D3EE12AD-3865-4362-9746-B75A682DF0E6")]
 [NativeTypeName("struct IAccountsSettingsPaneInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IAccountsSettingsPaneInterop : IAccountsSettingsPaneInterop.Interface
+public unsafe partial struct IAccountsSettingsPaneInterop : IAccountsSettingsPaneInterop.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAccountsSettingsPaneInterop;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

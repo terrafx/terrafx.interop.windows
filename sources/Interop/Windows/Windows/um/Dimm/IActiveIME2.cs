@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("E1C4BF0E-2D53-11D2-93E1-0060B067B86E")]
 [NativeTypeName("struct IActiveIME2 : IActiveIME")]
 [NativeInheritance("IActiveIME")]
-public unsafe partial struct IActiveIME2 : IActiveIME2.Interface
+public unsafe partial struct IActiveIME2 : IActiveIME2.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IActiveIME2;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -3,8 +3,7 @@
 using System;
 using TerraFX.Interop.Windows;
 
-namespace 
-TerraFX.Interop.WinRT;
+namespace TerraFX.Interop.WinRT;
 
 public unsafe partial struct HSTRING : IComparable, IComparable<HSTRING>, IEquatable<HSTRING>, IFormattable
 {

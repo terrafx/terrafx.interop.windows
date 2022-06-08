@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("F3470F24-15FD-11D2-BB2E-00805FF7EFCA")]
 [NativeTypeName("struct IScriptErrorList : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IScriptErrorList : IScriptErrorList.Interface
+public unsafe partial struct IScriptErrorList : IScriptErrorList.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IScriptErrorList;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

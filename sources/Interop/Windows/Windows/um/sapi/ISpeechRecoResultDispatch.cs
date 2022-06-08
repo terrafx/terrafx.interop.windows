@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("6D60EB64-ACED-40A6-BBF3-4E557F71DEE2")]
 [NativeTypeName("struct ISpeechRecoResultDispatch : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispatch.Interface
+public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispatch.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpeechRecoResultDispatch;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

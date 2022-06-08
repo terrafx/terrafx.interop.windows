@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("4A3DF050-23BD-11D2-939F-00A0C91EEDBA")]
 [NativeTypeName("struct DFConstraint : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct DFConstraint : DFConstraint.Interface
+public unsafe partial struct DFConstraint : DFConstraint.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_DFConstraint;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

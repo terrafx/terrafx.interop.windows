@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("508E71D3-EC66-4FC3-8775-B4B9ED6BA847")]
 [NativeTypeName("struct IMFFieldOfUseMFTUnlock : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFFieldOfUseMFTUnlock : IMFFieldOfUseMFTUnlock.Interface
+public unsafe partial struct IMFFieldOfUseMFTUnlock : IMFFieldOfUseMFTUnlock.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFFieldOfUseMFTUnlock;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("39E050C3-4E74-441A-8DC0-B81104DF949C")]
 [NativeTypeName("struct IUserConsentVerifierInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IUserConsentVerifierInterop : IUserConsentVerifierInterop.Interface
+public unsafe partial struct IUserConsentVerifierInterop : IUserConsentVerifierInterop.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IUserConsentVerifierInterop;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

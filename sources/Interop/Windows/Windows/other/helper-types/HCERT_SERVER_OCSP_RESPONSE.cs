@@ -2,8 +2,7 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct HCERT_SERVER_OCSP_RESPONSE : IComparable, IComparable<HCERT_SERVER_OCSP_RESPONSE>, IEquatable<HCERT_SERVER_OCSP_RESPONSE>, IFormattable
 {

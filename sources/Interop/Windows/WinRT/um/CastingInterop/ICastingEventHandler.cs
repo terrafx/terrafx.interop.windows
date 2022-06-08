@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("C79A6CB7-BEBD-47A6-A2AD-4D45AD79C7BC")]
 [NativeTypeName("struct ICastingEventHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ICastingEventHandler : ICastingEventHandler.Interface
+public unsafe partial struct ICastingEventHandler : ICastingEventHandler.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICastingEventHandler;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

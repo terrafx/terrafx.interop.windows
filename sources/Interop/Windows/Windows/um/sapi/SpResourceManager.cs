@@ -3,12 +3,15 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SpResourceManager.xml' path='doc/member[@name="SpResourceManager"]/*' />
 [Guid("96749373-3391-11D2-9EE3-00C04F797396")]
-public partial struct SpResourceManager
+public partial struct SpResourceManager : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_SpResourceManager;
 }

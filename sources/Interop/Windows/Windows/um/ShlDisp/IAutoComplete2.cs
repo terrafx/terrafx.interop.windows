@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("EAC04BC0-3791-11D2-BB95-0060977B464C")]
 [NativeTypeName("struct IAutoComplete2 : IAutoComplete")]
 [NativeInheritance("IAutoComplete")]
-public unsafe partial struct IAutoComplete2 : IAutoComplete2.Interface
+public unsafe partial struct IAutoComplete2 : IAutoComplete2.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAutoComplete2;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

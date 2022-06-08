@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("1A9E9F4F-104F-4DB8-A115-EFD7FD0C97AE")]
 [NativeTypeName("struct ISpeechCustomStream : ISpeechBaseStream")]
 [NativeInheritance("ISpeechBaseStream")]
-public unsafe partial struct ISpeechCustomStream : ISpeechCustomStream.Interface
+public unsafe partial struct ISpeechCustomStream : ISpeechCustomStream.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpeechCustomStream;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

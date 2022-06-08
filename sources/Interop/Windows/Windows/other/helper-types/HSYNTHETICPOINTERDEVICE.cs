@@ -2,8 +2,7 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct HSYNTHETICPOINTERDEVICE : IComparable, IComparable<HSYNTHETICPOINTERDEVICE>, IEquatable<HSYNTHETICPOINTERDEVICE>, IFormattable
 {

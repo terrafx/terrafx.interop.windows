@@ -6,13 +6,16 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IUnknown.xml' path='doc/member[@name="IUnknown"]/*' />
 [Guid("00000000-0000-0000-C000-000000000046")]
-public unsafe partial struct IUnknown : IUnknown.Interface
+public unsafe partial struct IUnknown : IUnknown.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IUnknown;
+
     public void** lpVtbl;
 
     /// <include file='IUnknown.xml' path='doc/member[@name="IUnknown.QueryInterface"]/*' />

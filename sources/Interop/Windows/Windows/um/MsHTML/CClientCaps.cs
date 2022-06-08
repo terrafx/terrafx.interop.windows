@@ -3,12 +3,15 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CClientCaps.xml' path='doc/member[@name="CClientCaps"]/*' />
 [Guid("7E8BC44E-AEFF-11D1-89C2-00C04FB6BFC4")]
-public partial struct CClientCaps
+public partial struct CClientCaps : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CClientCaps;
 }

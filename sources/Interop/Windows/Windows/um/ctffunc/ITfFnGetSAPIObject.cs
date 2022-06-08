@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("5C0AB7EA-167D-4F59-BFB5-4693755E90CA")]
 [NativeTypeName("struct ITfFnGetSAPIObject : ITfFunction")]
 [NativeInheritance("ITfFunction")]
-public unsafe partial struct ITfFnGetSAPIObject : ITfFnGetSAPIObject.Interface
+public unsafe partial struct ITfFnGetSAPIObject : ITfFnGetSAPIObject.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfFnGetSAPIObject;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

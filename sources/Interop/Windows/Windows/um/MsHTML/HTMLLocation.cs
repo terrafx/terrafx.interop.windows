@@ -3,12 +3,15 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='HTMLLocation.xml' path='doc/member[@name="HTMLLocation"]/*' />
 [Guid("163BB1E1-6E00-11CF-837A-48DC04C10000")]
-public partial struct HTMLLocation
+public partial struct HTMLLocation : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_HTMLLocation;
 }

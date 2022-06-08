@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("A7E025DD-5303-4A62-89D6-E747E1EFAC73")]
 [NativeTypeName("struct IMFSAMIStyle : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface
+public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFSAMIStyle;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

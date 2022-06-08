@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("76C6A6F5-4955-4DE5-B27B-14B734CC14B4")]
 [NativeTypeName("struct IMFTimedTextRuby : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFTimedTextRuby : IMFTimedTextRuby.Interface
+public unsafe partial struct IMFTimedTextRuby : IMFTimedTextRuby.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFTimedTextRuby;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

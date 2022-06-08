@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("1ADAA23A-EB67-41F3-AAD8-5D984E9BACD4")]
 [NativeTypeName("struct ILearningModelOperatorProviderNative : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ILearningModelOperatorProviderNative : ILearningModelOperatorProviderNative.Interface
+public unsafe partial struct ILearningModelOperatorProviderNative : ILearningModelOperatorProviderNative.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ILearningModelOperatorProviderNative;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

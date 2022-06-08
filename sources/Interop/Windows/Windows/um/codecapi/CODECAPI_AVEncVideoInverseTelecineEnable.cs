@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncVideoInverseTelecineEnable.xml' path='doc/member[@name="CODECAPI_AVEncVideoInverseTelecineEnable"]/*' />
 [Guid("2EA9098B-E76D-4CCD-A030-D3B889C1B64C")]
-public partial struct CODECAPI_AVEncVideoInverseTelecineEnable
+public partial struct CODECAPI_AVEncVideoInverseTelecineEnable : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncVideoInverseTelecineEnable;
 }

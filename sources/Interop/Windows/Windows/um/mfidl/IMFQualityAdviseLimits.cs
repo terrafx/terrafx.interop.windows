@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("DFCD8E4D-30B5-4567-ACAA-8EB5B7853DC9")]
 [NativeTypeName("struct IMFQualityAdviseLimits : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFQualityAdviseLimits : IMFQualityAdviseLimits.Interface
+public unsafe partial struct IMFQualityAdviseLimits : IMFQualityAdviseLimits.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFQualityAdviseLimits;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -3,12 +3,15 @@
 // Ported from um/msxml.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='XMLDSOControl.xml' path='doc/member[@name="XMLDSOControl"]/*' />
 [Guid("550DDA30-0541-11D2-9CA9-0060B0EC3D39")]
-public partial struct XMLDSOControl
+public partial struct XMLDSOControl : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_XMLDSOControl;
 }

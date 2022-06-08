@@ -3,12 +3,15 @@
 // Ported from um/thumbcache.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='LocalThumbnailCache.xml' path='doc/member[@name="LocalThumbnailCache"]/*' />
 [Guid("50EF4544-AC9F-4A8E-B21B-8A26180DB13F")]
-public partial struct LocalThumbnailCache
+public partial struct LocalThumbnailCache : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_LocalThumbnailCache;
 }

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("37E412F9-016E-44C2-81FF-DB3ADD774266")]
 [NativeTypeName("struct ISyncMgrEventStore : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface
+public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISyncMgrEventStore;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

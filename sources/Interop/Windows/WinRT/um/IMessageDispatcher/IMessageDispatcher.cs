@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("F5F84C8F-CFD0-4CD6-B66B-C5D26FF1689D")]
 [NativeTypeName("struct IMessageDispatcher : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IMessageDispatcher : IMessageDispatcher.Interface
+public unsafe partial struct IMessageDispatcher : IMessageDispatcher.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMessageDispatcher;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

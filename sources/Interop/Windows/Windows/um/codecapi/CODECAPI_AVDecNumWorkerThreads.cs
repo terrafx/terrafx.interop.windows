@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVDecNumWorkerThreads.xml' path='doc/member[@name="CODECAPI_AVDecNumWorkerThreads"]/*' />
 [Guid("9561C3E8-EA9E-4435-9B1E-A93E691894D8")]
-public partial struct CODECAPI_AVDecNumWorkerThreads
+public partial struct CODECAPI_AVDecNumWorkerThreads : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVDecNumWorkerThreads;
 }

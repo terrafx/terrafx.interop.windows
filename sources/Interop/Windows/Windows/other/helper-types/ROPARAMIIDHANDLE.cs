@@ -2,8 +2,7 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct ROPARAMIIDHANDLE : IComparable, IComparable<ROPARAMIIDHANDLE>, IEquatable<ROPARAMIIDHANDLE>, IFormattable
 {

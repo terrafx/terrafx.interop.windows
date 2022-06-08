@@ -2,8 +2,7 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct CO_MTA_USAGE_COOKIE : IComparable, IComparable<CO_MTA_USAGE_COOKIE>, IEquatable<CO_MTA_USAGE_COOKIE>, IFormattable
 {

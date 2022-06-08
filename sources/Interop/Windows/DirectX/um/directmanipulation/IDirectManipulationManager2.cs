@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -16,8 +17,10 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct IDirectManipulationManager2 : IDirectManipulationManager")]
 [NativeInheritance("IDirectManipulationManager")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct IDirectManipulationManager2 : IDirectManipulationManager2.Interface
+public unsafe partial struct IDirectManipulationManager2 : IDirectManipulationManager2.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDirectManipulationManager2;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

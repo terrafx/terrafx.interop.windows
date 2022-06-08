@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("6584CE6B-7D82-49C2-89C9-C6BC02BA8C38")]
 [NativeTypeName("struct IAppVisibilityEvents : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAppVisibilityEvents : IAppVisibilityEvents.Interface
+public unsafe partial struct IAppVisibilityEvents : IAppVisibilityEvents.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAppVisibilityEvents;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("5B6D7A37-4621-467C-8B05-70131DE62DDB")]
 [NativeTypeName("struct IUIAnimationPriorityComparison2 : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IUIAnimationPriorityComparison2 : IUIAnimationPriorityComparison2.Interface
+public unsafe partial struct IUIAnimationPriorityComparison2 : IUIAnimationPriorityComparison2.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IUIAnimationPriorityComparison2;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />
