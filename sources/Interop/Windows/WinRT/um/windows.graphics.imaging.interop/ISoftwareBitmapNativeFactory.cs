@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("C3C181EC-2914-4791-AF02-02D224A10B43")]
 [NativeTypeName("struct ISoftwareBitmapNativeFactory : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct ISoftwareBitmapNativeFactory : ISoftwareBitmapNativeFactory.Interface
+public unsafe partial struct ISoftwareBitmapNativeFactory : ISoftwareBitmapNativeFactory.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISoftwareBitmapNativeFactory;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

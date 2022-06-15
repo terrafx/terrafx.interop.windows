@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -15,8 +16,10 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IPlayToControlWithCapabilities : IPlayToControl")]
 [NativeInheritance("IPlayToControl")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWithCapabilities.Interface
+public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWithCapabilities.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPlayToControlWithCapabilities;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

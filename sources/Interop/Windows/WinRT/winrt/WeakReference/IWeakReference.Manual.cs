@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using static TerraFX.Interop.Windows.Windows;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -12,7 +13,6 @@ public unsafe partial struct IWeakReference
     public int Resolve<T>(T** objectReference)
         where T : unmanaged, IInspectable.Interface
     {
-        Guid iid = typeof(T).GUID;
-        return Resolve(&iid, (IInspectable**)objectReference);
+        return Resolve(__uuidof<T>(), (IInspectable**)objectReference);
     }
 }

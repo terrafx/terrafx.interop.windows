@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("DB2F3ACD-2F86-11D1-8E04-00C04FB9989A")]
 [NativeTypeName("struct AsyncIPipeLong : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct AsyncIPipeLong : AsyncIPipeLong.Interface
+public unsafe partial struct AsyncIPipeLong : AsyncIPipeLong.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_AsyncIPipeLong;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("AE39362B-45A8-4074-9B9E-CCF49AA2D0B6")]
 [NativeTypeName("struct ISpXMLRecoResult : ISpRecoResult")]
 [NativeInheritance("ISpRecoResult")]
-public unsafe partial struct ISpXMLRecoResult : ISpXMLRecoResult.Interface
+public unsafe partial struct ISpXMLRecoResult : ISpXMLRecoResult.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpXMLRecoResult;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

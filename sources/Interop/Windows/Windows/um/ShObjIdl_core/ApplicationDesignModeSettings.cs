@@ -3,12 +3,15 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='ApplicationDesignModeSettings.xml' path='doc/member[@name="ApplicationDesignModeSettings"]/*' />
 [Guid("958A6FB5-DCB2-4FAF-AAFD-7FB054AD1A3B")]
-public partial struct ApplicationDesignModeSettings
+public partial struct ApplicationDesignModeSettings : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ApplicationDesignModeSettings;
 }

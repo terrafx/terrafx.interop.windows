@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("48EFB120-AB49-11D2-AED2-00A0C995E8D5")]
 [NativeTypeName("struct IDrawVideoImage : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDrawVideoImage : IDrawVideoImage.Interface
+public unsafe partial struct IDrawVideoImage : IDrawVideoImage.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDrawVideoImage;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

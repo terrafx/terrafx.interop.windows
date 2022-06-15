@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("70BDDE00-C18E-11D0-A9CE-006097942311")]
 [NativeTypeName("struct IEncodingFilterFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IEncodingFilterFactory : IEncodingFilterFactory.Interface
+public unsafe partial struct IEncodingFilterFactory : IEncodingFilterFactory.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IEncodingFilterFactory;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

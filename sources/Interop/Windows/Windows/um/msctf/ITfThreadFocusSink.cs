@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("C0F1DB0C-3A20-405C-A303-96B6010A885F")]
 [NativeTypeName("struct ITfThreadFocusSink : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITfThreadFocusSink : ITfThreadFocusSink.Interface
+public unsafe partial struct ITfThreadFocusSink : ITfThreadFocusSink.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfThreadFocusSink;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

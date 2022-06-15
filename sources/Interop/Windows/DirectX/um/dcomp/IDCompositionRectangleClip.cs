@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -16,8 +17,10 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct IDCompositionRectangleClip : IDCompositionClip")]
 [NativeInheritance("IDCompositionClip")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangleClip.Interface
+public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangleClip.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDCompositionRectangleClip;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("A3A416A4-0F64-11D3-B5B7-00C04FC324A1")]
 [NativeTypeName("struct ITfFnPlayBack : ITfFunction")]
 [NativeInheritance("ITfFunction")]
-public unsafe partial struct ITfFnPlayBack : ITfFnPlayBack.Interface
+public unsafe partial struct ITfFnPlayBack : ITfFnPlayBack.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfFnPlayBack;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

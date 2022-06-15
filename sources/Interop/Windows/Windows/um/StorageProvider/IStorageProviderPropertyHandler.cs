@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("301DFBE5-524C-4B0F-8B2D-21C40B3A2988")]
 [NativeTypeName("struct IStorageProviderPropertyHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IStorageProviderPropertyHandler : IStorageProviderPropertyHandler.Interface
+public unsafe partial struct IStorageProviderPropertyHandler : IStorageProviderPropertyHandler.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IStorageProviderPropertyHandler;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

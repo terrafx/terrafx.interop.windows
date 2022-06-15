@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("63AC0B32-BA44-450F-8806-7F4CA1FF2F1B")]
 [NativeTypeName("struct ID2D1BlendTransform : ID2D1ConcreteTransform")]
 [NativeInheritance("ID2D1ConcreteTransform")]
-public unsafe partial struct ID2D1BlendTransform : ID2D1BlendTransform.Interface
+public unsafe partial struct ID2D1BlendTransform : ID2D1BlendTransform.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1BlendTransform;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

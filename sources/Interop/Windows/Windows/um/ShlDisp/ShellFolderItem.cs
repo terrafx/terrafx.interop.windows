@@ -3,12 +3,15 @@
 // Ported from um/ShlDisp.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='ShellFolderItem.xml' path='doc/member[@name="ShellFolderItem"]/*' />
 [Guid("2FE352EA-FD1F-11D2-B1F4-00C04F8EEB3E")]
-public partial struct ShellFolderItem
+public partial struct ShellFolderItem : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ShellFolderItem;
 }

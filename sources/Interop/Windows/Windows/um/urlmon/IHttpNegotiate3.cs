@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("57B6C80A-34C2-4602-BC26-66A02FC57153")]
 [NativeTypeName("struct IHttpNegotiate3 : IHttpNegotiate2")]
 [NativeInheritance("IHttpNegotiate2")]
-public unsafe partial struct IHttpNegotiate3 : IHttpNegotiate3.Interface
+public unsafe partial struct IHttpNegotiate3 : IHttpNegotiate3.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IHttpNegotiate3;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

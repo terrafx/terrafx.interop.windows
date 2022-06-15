@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("8445C581-0CAC-4A38-ABFE-9B2CE2826455")]
 [NativeTypeName("struct ISpPhoneConverter : ISpObjectWithToken")]
 [NativeInheritance("ISpObjectWithToken")]
-public unsafe partial struct ISpPhoneConverter : ISpPhoneConverter.Interface
+public unsafe partial struct ISpPhoneConverter : ISpPhoneConverter.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpPhoneConverter;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

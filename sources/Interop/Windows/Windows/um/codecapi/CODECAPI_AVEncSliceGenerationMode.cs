@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncSliceGenerationMode.xml' path='doc/member[@name="CODECAPI_AVEncSliceGenerationMode"]/*' />
 [Guid("8A6BC67F-9497-4286-B46B-02DB8D60EDBC")]
-public partial struct CODECAPI_AVEncSliceGenerationMode
+public partial struct CODECAPI_AVEncSliceGenerationMode : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncSliceGenerationMode;
 }

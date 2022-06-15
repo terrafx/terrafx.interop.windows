@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("F1DF64B6-57FD-49CD-8807-C0EB88B45C8F")]
 [NativeTypeName("struct ID3D12SwapChainAssistant : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ID3D12SwapChainAssistant : ID3D12SwapChainAssistant.Interface
+public unsafe partial struct ID3D12SwapChainAssistant : ID3D12SwapChainAssistant.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D12SwapChainAssistant;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

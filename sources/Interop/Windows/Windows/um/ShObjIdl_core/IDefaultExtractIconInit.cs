@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("41DED17D-D6B3-4261-997D-88C60E4B1D58")]
 [NativeTypeName("struct IDefaultExtractIconInit : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.Interface
+public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDefaultExtractIconInit;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

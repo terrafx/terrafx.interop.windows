@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncCommonMinBitRate.xml' path='doc/member[@name="CODECAPI_AVEncCommonMinBitRate"]/*' />
 [Guid("101405B2-2083-4034-A806-EFBEDDD7C9FF")]
-public partial struct CODECAPI_AVEncCommonMinBitRate
+public partial struct CODECAPI_AVEncCommonMinBitRate : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncCommonMinBitRate;
 }

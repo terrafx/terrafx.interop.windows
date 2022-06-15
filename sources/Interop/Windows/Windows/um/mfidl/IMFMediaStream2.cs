@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("C5BC37D6-75C7-46A1-A132-81B5F723C20F")]
 [NativeTypeName("struct IMFMediaStream2 : IMFMediaStream")]
 [NativeInheritance("IMFMediaStream")]
-public unsafe partial struct IMFMediaStream2 : IMFMediaStream2.Interface
+public unsafe partial struct IMFMediaStream2 : IMFMediaStream2.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFMediaStream2;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

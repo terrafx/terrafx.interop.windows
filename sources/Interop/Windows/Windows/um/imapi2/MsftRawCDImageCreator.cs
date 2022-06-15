@@ -3,12 +3,15 @@
 // Ported from um/imapi2.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MsftRawCDImageCreator.xml' path='doc/member[@name="MsftRawCDImageCreator"]/*' />
 [Guid("25983561-9D65-49CE-B335-40630D901227")]
-public partial struct MsftRawCDImageCreator
+public partial struct MsftRawCDImageCreator : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_MsftRawCDImageCreator;
 }

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("9B496CE0-811B-11CF-8C77-00AA006B6814")]
 [NativeTypeName("struct IAMTimecodeGenerator : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interface
+public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMTimecodeGenerator;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

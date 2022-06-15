@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("7241D424-2646-4191-97C0-98E96E42FC68")]
 [NativeTypeName("struct IDxcBlobEncoding : IDxcBlob")]
 [NativeInheritance("IDxcBlob")]
-public unsafe partial struct IDxcBlobEncoding : IDxcBlobEncoding.Interface
+public unsafe partial struct IDxcBlobEncoding : IDxcBlobEncoding.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDxcBlobEncoding;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

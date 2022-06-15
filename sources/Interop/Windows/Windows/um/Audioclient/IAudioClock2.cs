@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("6F49FF73-6727-49AC-A008-D98CF5E70048")]
 [NativeTypeName("struct IAudioClock2 : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAudioClock2 : IAudioClock2.Interface
+public unsafe partial struct IAudioClock2 : IAudioClock2.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAudioClock2;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

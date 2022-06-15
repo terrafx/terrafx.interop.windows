@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("27354155-8F64-5B0F-8F00-5D77AFBE261E")]
 [NativeTypeName("struct IDiscFormat2RawCD : IDiscFormat2")]
 [NativeInheritance("IDiscFormat2")]
-public unsafe partial struct IDiscFormat2RawCD : IDiscFormat2RawCD.Interface
+public unsafe partial struct IDiscFormat2RawCD : IDiscFormat2RawCD.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDiscFormat2RawCD;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("458E1FD1-B1B2-4750-A6E1-9C10F03BED92")]
 [NativeTypeName("struct IDxcValidator2 : IDxcValidator")]
 [NativeInheritance("IDxcValidator")]
-public unsafe partial struct IDxcValidator2 : IDxcValidator2.Interface
+public unsafe partial struct IDxcValidator2 : IDxcValidator2.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDxcValidator2;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -2,8 +2,7 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct PTP_CLEANUP_GROUP : IComparable, IComparable<PTP_CLEANUP_GROUP>, IEquatable<PTP_CLEANUP_GROUP>, IFormattable
 {

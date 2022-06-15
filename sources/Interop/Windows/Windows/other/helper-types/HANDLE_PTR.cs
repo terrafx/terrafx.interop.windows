@@ -2,8 +2,7 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct HANDLE_PTR : IComparable, IComparable<HANDLE_PTR>, IEquatable<HANDLE_PTR>, IFormattable
 {

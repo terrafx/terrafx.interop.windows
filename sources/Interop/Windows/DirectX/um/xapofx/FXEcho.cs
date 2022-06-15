@@ -3,13 +3,17 @@
 // Ported from um/xapofx.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.DirectX;
 
 [Guid("5039D740-F736-449A-84D3-A56202557B87")]
-public partial struct FXEcho
+public partial struct FXEcho : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_FXEcho;
+
     [NativeTypeName("#define FXECHO_MIN_WETDRYMIX 0.0f")]
     public const float FXECHO_MIN_WETDRYMIX = 0.0f;
 

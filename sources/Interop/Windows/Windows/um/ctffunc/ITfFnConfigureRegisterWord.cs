@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("BB95808A-6D8F-4BCA-8400-5390B586AEDF")]
 [NativeTypeName("struct ITfFnConfigureRegisterWord : ITfFunction")]
 [NativeInheritance("ITfFunction")]
-public unsafe partial struct ITfFnConfigureRegisterWord : ITfFnConfigureRegisterWord.Interface
+public unsafe partial struct ITfFnConfigureRegisterWord : ITfFnConfigureRegisterWord.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfFnConfigureRegisterWord;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

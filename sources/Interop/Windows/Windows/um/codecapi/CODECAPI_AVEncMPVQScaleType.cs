@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncMPVQScaleType.xml' path='doc/member[@name="CODECAPI_AVEncMPVQScaleType"]/*' />
 [Guid("2B79EBB7-F484-4AF7-BB58-A2A188C5CBBE")]
-public partial struct CODECAPI_AVEncMPVQScaleType
+public partial struct CODECAPI_AVEncMPVQScaleType : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncMPVQScaleType;
 }

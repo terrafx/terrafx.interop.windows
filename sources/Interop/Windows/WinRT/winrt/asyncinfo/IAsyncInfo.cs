@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("00000036-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IAsyncInfo : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface
+public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAsyncInfo;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />
@@ -150,7 +153,7 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface
         [NativeTypeName("HRESULT (unsigned int *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> get_Id;
 
-        [NativeTypeName("HRESULT (ABI::Windows::Foundation::AsyncStatus *) __attribute__((stdcall))")]
+        [NativeTypeName("HRESULT (AsyncStatus *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, AsyncStatus*, int> get_Status;
 
         [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]

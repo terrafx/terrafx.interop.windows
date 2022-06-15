@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("F6696E82-74F7-4F3D-A178-8A5E09C3659F")]
 [NativeTypeName("struct IMFClockStateSink : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface
+public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFClockStateSink;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

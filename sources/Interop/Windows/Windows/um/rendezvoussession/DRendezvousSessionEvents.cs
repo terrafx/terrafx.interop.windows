@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.Windows;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("3FA19CF8-64C4-4F53-AE60-635B3806ECA6")]
 [NativeTypeName("struct DRendezvousSessionEvents : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct DRendezvousSessionEvents : DRendezvousSessionEvents.Interface
+public unsafe partial struct DRendezvousSessionEvents : DRendezvousSessionEvents.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref DIID_DRendezvousSessionEvents;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -3,12 +3,15 @@
 // Ported from um/XblIdpAuthManager.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='XblIdpAuthManager.xml' path='doc/member[@name="XblIdpAuthManager"]/*' />
 [Guid("CE23534B-56D8-4978-86A2-7EE570640468")]
-public partial struct XblIdpAuthManager
+public partial struct XblIdpAuthManager : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_XblIdpAuthManager;
 }

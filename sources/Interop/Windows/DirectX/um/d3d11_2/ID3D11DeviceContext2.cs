@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -16,8 +17,10 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct ID3D11DeviceContext2 : ID3D11DeviceContext1")]
 [NativeInheritance("ID3D11DeviceContext1")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct ID3D11DeviceContext2 : ID3D11DeviceContext2.Interface
+public unsafe partial struct ID3D11DeviceContext2 : ID3D11DeviceContext2.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D11DeviceContext2;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

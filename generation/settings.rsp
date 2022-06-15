@@ -18,6 +18,7 @@ generate-aggressive-inlining
 generate-cpp-attributes
 generate-doc-includes
 generate-file-scoped-namespaces
+generate-guid-member
 generate-macro-bindings
 generate-marker-interfaces
 generate-native-inheritance-attribute
@@ -27,6 +28,7 @@ generate-unmanaged-constants
 generate-vtbl-index-attribute
 log-potential-typedef-remappings
 multi-file
+preview-codegen
 trimmable-vtbls
 --define-macro
 GDIPVER=0x0110

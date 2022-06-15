@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.DirectX;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("AADA05A8-5A4E-4729-AF0B-CEA27AED51E2")]
 [NativeTypeName("struct IVMRSurfaceAllocatorNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IVMRSurfaceAllocatorNotify : IVMRSurfaceAllocatorNotify.Interface
+public unsafe partial struct IVMRSurfaceAllocatorNotify : IVMRSurfaceAllocatorNotify.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVMRSurfaceAllocatorNotify;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

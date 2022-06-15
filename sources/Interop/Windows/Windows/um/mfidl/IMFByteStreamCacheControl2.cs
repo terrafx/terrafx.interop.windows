@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -15,8 +16,10 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFByteStreamCacheControl2 : IMFByteStreamCacheControl")]
 [NativeInheritance("IMFByteStreamCacheControl")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IMFByteStreamCacheControl2 : IMFByteStreamCacheControl2.Interface
+public unsafe partial struct IMFByteStreamCacheControl2 : IMFByteStreamCacheControl2.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFByteStreamCacheControl2;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

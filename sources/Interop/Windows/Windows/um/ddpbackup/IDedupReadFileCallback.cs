@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("7BACC67A-2F1D-42D0-897E-6FF62DD533BB")]
 [NativeTypeName("struct IDedupReadFileCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDedupReadFileCallback : IDedupReadFileCallback.Interface
+public unsafe partial struct IDedupReadFileCallback : IDedupReadFileCallback.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDedupReadFileCallback;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

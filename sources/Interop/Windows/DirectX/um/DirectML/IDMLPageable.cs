@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("B1AB0825-4542-4A4B-8617-6DDE6E8F6201")]
 [NativeTypeName("struct IDMLPageable : IDMLDeviceChild")]
 [NativeInheritance("IDMLDeviceChild")]
-public unsafe partial struct IDMLPageable : IDMLPageable.Interface
+public unsafe partial struct IDMLPageable : IDMLPageable.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDMLPageable;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

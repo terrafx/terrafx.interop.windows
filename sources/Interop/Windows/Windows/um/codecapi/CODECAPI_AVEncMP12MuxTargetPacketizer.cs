@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncMP12MuxTargetPacketizer.xml' path='doc/member[@name="CODECAPI_AVEncMP12MuxTargetPacketizer"]/*' />
 [Guid("D862212A-2015-45DD-9A32-1B3AA88205A0")]
-public partial struct CODECAPI_AVEncMP12MuxTargetPacketizer
+public partial struct CODECAPI_AVEncMP12MuxTargetPacketizer : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncMP12MuxTargetPacketizer;
 }

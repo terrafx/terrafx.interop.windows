@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("9169896C-AC8D-4E7D-94E5-67FA4DC2F2E8")]
 [NativeTypeName("struct IUIAnimationManager : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IUIAnimationManager : IUIAnimationManager.Interface
+public unsafe partial struct IUIAnimationManager : IUIAnimationManager.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IUIAnimationManager;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

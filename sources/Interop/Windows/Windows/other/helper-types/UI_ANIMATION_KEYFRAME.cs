@@ -2,8 +2,7 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct UI_ANIMATION_KEYFRAME : IComparable, IComparable<UI_ANIMATION_KEYFRAME>, IEquatable<UI_ANIMATION_KEYFRAME>, IFormattable
 {

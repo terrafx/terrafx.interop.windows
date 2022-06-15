@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncStatAudioAveragePCMValue.xml' path='doc/member[@name="CODECAPI_AVEncStatAudioAveragePCMValue"]/*' />
 [Guid("979272F8-D17F-4E32-BB73-4E731C68BA2D")]
-public partial struct CODECAPI_AVEncStatAudioAveragePCMValue
+public partial struct CODECAPI_AVEncStatAudioAveragePCMValue : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncStatAudioAveragePCMValue;
 }

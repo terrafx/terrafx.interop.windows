@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("657804FA-D6AD-4496-8A60-352752AF4F89")]
 [NativeTypeName("struct IAudioEndpointVolumeCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAudioEndpointVolumeCallback : IAudioEndpointVolumeCallback.Interface
+public unsafe partial struct IAudioEndpointVolumeCallback : IAudioEndpointVolumeCallback.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAudioEndpointVolumeCallback;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

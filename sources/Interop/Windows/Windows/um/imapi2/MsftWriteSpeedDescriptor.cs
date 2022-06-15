@@ -3,12 +3,15 @@
 // Ported from um/imapi2.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MsftWriteSpeedDescriptor.xml' path='doc/member[@name="MsftWriteSpeedDescriptor"]/*' />
 [Guid("27354123-7F64-5B0F-8F00-5D77AFBE261E")]
-public partial struct MsftWriteSpeedDescriptor
+public partial struct MsftWriteSpeedDescriptor : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_MsftWriteSpeedDescriptor;
 }

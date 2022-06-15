@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -16,8 +17,10 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct ID2D1ImageSource : ID2D1Image")]
 [NativeInheritance("ID2D1Image")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct ID2D1ImageSource : ID2D1ImageSource.Interface
+public unsafe partial struct ID2D1ImageSource : ID2D1ImageSource.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1ImageSource;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

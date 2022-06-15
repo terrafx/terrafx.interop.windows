@@ -3,12 +3,15 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='ShellFSFolder.xml' path='doc/member[@name="ShellFSFolder"]/*' />
 [Guid("F3364BA0-65B9-11CE-A9BA-00AA004AE837")]
-public partial struct ShellFSFolder
+public partial struct ShellFSFolder : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ShellFSFolder;
 }

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("F5B0BF81-8CB5-4B1B-9449-1A159E0C733C")]
 [NativeTypeName("struct IIOCancelInformation : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IIOCancelInformation : IIOCancelInformation.Interface
+public unsafe partial struct IIOCancelInformation : IIOCancelInformation.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IIOCancelInformation;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.DirectX;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("153ACC21-D83B-11D1-82BF-00A0C9696C8F")]
 [NativeTypeName("struct IDDrawExclModeVideo : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
+public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDDrawExclModeVideo;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

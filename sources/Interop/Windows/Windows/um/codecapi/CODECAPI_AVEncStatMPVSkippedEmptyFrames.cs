@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncStatMPVSkippedEmptyFrames.xml' path='doc/member[@name="CODECAPI_AVEncStatMPVSkippedEmptyFrames"]/*' />
 [Guid("32195FD3-590D-4812-A7ED-6D639A1F9711")]
-public partial struct CODECAPI_AVEncStatMPVSkippedEmptyFrames
+public partial struct CODECAPI_AVEncStatMPVSkippedEmptyFrames : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncStatMPVSkippedEmptyFrames;
 }

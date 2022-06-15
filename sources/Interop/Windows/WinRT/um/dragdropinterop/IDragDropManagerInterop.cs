@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("5AD8CBA7-4C01-4DAC-9074-827894292D63")]
 [NativeTypeName("struct IDragDropManagerInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IDragDropManagerInterop : IDragDropManagerInterop.Interface
+public unsafe partial struct IDragDropManagerInterop : IDragDropManagerInterop.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDragDropManagerInterop;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

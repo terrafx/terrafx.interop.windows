@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("04B0F1A7-9490-44BC-96E1-4296A31252E2")]
 [NativeTypeName("struct IFileOperationProgressSink : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IFileOperationProgressSink : IFileOperationProgressSink.Interface
+public unsafe partial struct IFileOperationProgressSink : IFileOperationProgressSink.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IFileOperationProgressSink;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

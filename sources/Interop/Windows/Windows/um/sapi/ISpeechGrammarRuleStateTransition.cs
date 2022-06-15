@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("CAFD1DB1-41D1-4A06-9863-E2E81DA17A9A")]
 [NativeTypeName("struct ISpeechGrammarRuleStateTransition : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct ISpeechGrammarRuleStateTransition : ISpeechGrammarRuleStateTransition.Interface
+public unsafe partial struct ISpeechGrammarRuleStateTransition : ISpeechGrammarRuleStateTransition.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpeechGrammarRuleStateTransition;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

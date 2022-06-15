@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncStatCommonCompletedPasses.xml' path='doc/member[@name="CODECAPI_AVEncStatCommonCompletedPasses"]/*' />
 [Guid("3E5DE533-9DF7-438C-854F-9F7DD3683D34")]
-public partial struct CODECAPI_AVEncStatCommonCompletedPasses
+public partial struct CODECAPI_AVEncStatCommonCompletedPasses : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncStatCommonCompletedPasses;
 }

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("091162A4-BC96-411F-AAE8-C5122CD03363")]
 [NativeTypeName("struct ISharedBitmap : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface
+public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISharedBitmap;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

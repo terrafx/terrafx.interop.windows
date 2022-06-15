@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("1640B2CF-74DA-4462-A43B-B76D3BDC1434")]
 [NativeTypeName("struct IMFCameraOcclusionStateReport : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFCameraOcclusionStateReport : IMFCameraOcclusionStateReport.Interface
+public unsafe partial struct IMFCameraOcclusionStateReport : IMFCameraOcclusionStateReport.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFCameraOcclusionStateReport;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("305104BC-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IDocumentEvent : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IDocumentEvent : IDocumentEvent.Interface
+public unsafe partial struct IDocumentEvent : IDocumentEvent.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDocumentEvent;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

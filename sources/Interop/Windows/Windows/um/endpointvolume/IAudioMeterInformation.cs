@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("C02216F6-8C67-4B5B-9D00-D008E73E0064")]
 [NativeTypeName("struct IAudioMeterInformation : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Interface
+public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAudioMeterInformation;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

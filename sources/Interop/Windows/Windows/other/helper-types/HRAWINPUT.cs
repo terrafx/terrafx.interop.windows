@@ -2,8 +2,7 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct HRAWINPUT : IComparable, IComparable<HRAWINPUT>, IEquatable<HRAWINPUT>, IFormattable
 {

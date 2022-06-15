@@ -13,6 +13,7 @@ using static TerraFX.Interop.DirectX.D2D1_DRAW_TEXT_OPTIONS;
 using static TerraFX.Interop.DirectX.D2D1_EXTEND_MODE;
 using static TerraFX.Interop.DirectX.D2D1_GAMMA;
 using static TerraFX.Interop.DirectX.DWRITE_MEASURING_MODE;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -20,8 +21,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("1C51BC64-DE61-46FD-9899-63A5D8F03950")]
 [NativeTypeName("struct ID2D1DCRenderTarget : ID2D1RenderTarget")]
 [NativeInheritance("ID2D1RenderTarget")]
-public unsafe partial struct ID2D1DCRenderTarget : ID2D1DCRenderTarget.Interface
+public unsafe partial struct ID2D1DCRenderTarget : ID2D1DCRenderTarget.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1DCRenderTarget;
+
     public void** lpVtbl;
 
     public HRESULT CreateBitmap([NativeTypeName("D2D1_SIZE_U")] D2D_SIZE_U size, [NativeTypeName("const D2D1_BITMAP_PROPERTIES &")] D2D1_BITMAP_PROPERTIES* bitmapProperties, ID2D1Bitmap** bitmap)

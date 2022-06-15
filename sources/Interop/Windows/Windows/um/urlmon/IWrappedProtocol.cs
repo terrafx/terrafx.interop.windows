@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("53C84785-8425-4DC5-971B-E58D9C19F9B6")]
 [NativeTypeName("struct IWrappedProtocol : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IWrappedProtocol : IWrappedProtocol.Interface
+public unsafe partial struct IWrappedProtocol : IWrappedProtocol.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWrappedProtocol;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

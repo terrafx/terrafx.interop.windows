@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_GetOPMContext.xml' path='doc/member[@name="CODECAPI_GetOPMContext"]/*' />
 [Guid("2F036C05-4C14-4689-8839-294C6D73E053")]
-public partial struct CODECAPI_GetOPMContext
+public partial struct CODECAPI_GetOPMContext : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_GetOPMContext;
 }

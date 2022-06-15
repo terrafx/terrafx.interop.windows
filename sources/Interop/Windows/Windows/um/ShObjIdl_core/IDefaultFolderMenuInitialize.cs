@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("7690AA79-F8FC-4615-A327-36F7D18F5D91")]
 [NativeTypeName("struct IDefaultFolderMenuInitialize : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuInitialize.Interface
+public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuInitialize.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDefaultFolderMenuInitialize;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

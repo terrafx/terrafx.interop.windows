@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("3D73A659-E5D0-4D42-AFC0-5121BA425C8D")]
 [NativeTypeName("struct ICDBurn : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ICDBurn : ICDBurn.Interface
+public unsafe partial struct ICDBurn : ICDBurn.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICDBurn;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

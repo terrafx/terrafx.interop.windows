@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("E35B4B2E-00DA-4BC1-9F13-38BC11F5D417")]
 [NativeTypeName("struct IThumbnailHandlerFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IThumbnailHandlerFactory : IThumbnailHandlerFactory.Interface
+public unsafe partial struct IThumbnailHandlerFactory : IThumbnailHandlerFactory.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IThumbnailHandlerFactory;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

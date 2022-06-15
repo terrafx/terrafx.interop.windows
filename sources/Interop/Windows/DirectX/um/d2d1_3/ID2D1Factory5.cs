@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("C4349994-838E-4B0F-8CAB-44997D9EEACC")]
 [NativeTypeName("struct ID2D1Factory5 : ID2D1Factory4")]
 [NativeInheritance("ID2D1Factory4")]
-public unsafe partial struct ID2D1Factory5 : ID2D1Factory5.Interface
+public unsafe partial struct ID2D1Factory5 : ID2D1Factory5.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1Factory5;
+
     public void** lpVtbl;
 
     public HRESULT CreateDrawingStateBlock([NativeTypeName("const D2D1_DRAWING_STATE_DESCRIPTION &")] D2D1_DRAWING_STATE_DESCRIPTION* drawingStateDescription, ID2D1DrawingStateBlock** drawingStateBlock)

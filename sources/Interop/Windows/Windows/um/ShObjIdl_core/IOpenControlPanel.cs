@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("D11AD862-66DE-4DF4-BF6C-1F5621996AF1")]
 [NativeTypeName("struct IOpenControlPanel : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IOpenControlPanel : IOpenControlPanel.Interface
+public unsafe partial struct IOpenControlPanel : IOpenControlPanel.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IOpenControlPanel;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

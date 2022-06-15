@@ -3,12 +3,15 @@
 // Ported from um/imapi2fs.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MsftIsoImageManager.xml' path='doc/member[@name="MsftIsoImageManager"]/*' />
 [Guid("CEEE3B62-8F56-4056-869B-EF16917E3EFC")]
-public partial struct MsftIsoImageManager
+public partial struct MsftIsoImageManager : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_MsftIsoImageManager;
 }

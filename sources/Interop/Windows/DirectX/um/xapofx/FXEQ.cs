@@ -3,13 +3,17 @@
 // Ported from um/xapofx.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.DirectX;
 
 [Guid("F5E01117-D6C4-485A-A3F5-695196F3DBFA")]
-public partial struct FXEQ
+public partial struct FXEQ : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_FXEQ;
+
     [NativeTypeName("#define FXEQ_MIN_FRAMERATE 22000")]
     public const int FXEQ_MIN_FRAMERATE = 22000;
 

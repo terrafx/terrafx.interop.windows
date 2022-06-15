@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncWMVProduceDummyFrames.xml' path='doc/member[@name="CODECAPI_AVEncWMVProduceDummyFrames"]/*' />
 [Guid("D669D001-183C-42E3-A3CA-2F4586D2396C")]
-public partial struct CODECAPI_AVEncWMVProduceDummyFrames
+public partial struct CODECAPI_AVEncWMVProduceDummyFrames : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncWMVProduceDummyFrames;
 }

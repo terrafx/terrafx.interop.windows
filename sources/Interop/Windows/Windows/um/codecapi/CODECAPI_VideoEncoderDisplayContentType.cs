@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_VideoEncoderDisplayContentType.xml' path='doc/member[@name="CODECAPI_VideoEncoderDisplayContentType"]/*' />
 [Guid("79B90B27-F4B1-42DC-9DD7-CDAF8135C400")]
-public partial struct CODECAPI_VideoEncoderDisplayContentType
+public partial struct CODECAPI_VideoEncoderDisplayContentType : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_VideoEncoderDisplayContentType;
 }

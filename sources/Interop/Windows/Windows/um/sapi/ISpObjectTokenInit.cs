@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("B8AAB0CF-346F-49D8-9499-C8B03F161D51")]
 [NativeTypeName("struct ISpObjectTokenInit : ISpObjectToken")]
 [NativeInheritance("ISpObjectToken")]
-public unsafe partial struct ISpObjectTokenInit : ISpObjectTokenInit.Interface
+public unsafe partial struct ISpObjectTokenInit : ISpObjectTokenInit.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpObjectTokenInit;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

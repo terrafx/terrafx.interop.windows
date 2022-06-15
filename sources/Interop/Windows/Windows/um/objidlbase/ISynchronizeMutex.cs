@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("00000025-0000-0000-C000-000000000046")]
 [NativeTypeName("struct ISynchronizeMutex : ISynchronize")]
 [NativeInheritance("ISynchronize")]
-public unsafe partial struct ISynchronizeMutex : ISynchronizeMutex.Interface
+public unsafe partial struct ISynchronizeMutex : ISynchronizeMutex.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISynchronizeMutex;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

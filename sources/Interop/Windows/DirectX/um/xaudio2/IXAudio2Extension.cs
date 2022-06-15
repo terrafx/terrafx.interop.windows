@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("84AC29BB-D619-44D2-B197-E4ACF7DF3ED6")]
 [NativeTypeName("struct IXAudio2Extension : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IXAudio2Extension : IXAudio2Extension.Interface
+public unsafe partial struct IXAudio2Extension : IXAudio2Extension.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IXAudio2Extension;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

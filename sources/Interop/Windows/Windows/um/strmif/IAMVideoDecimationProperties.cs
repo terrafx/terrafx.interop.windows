@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("60D32930-13DA-11D3-9EC6-C4FCAEF5C7BE")]
 [NativeTypeName("struct IAMVideoDecimationProperties : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMVideoDecimationProperties : IAMVideoDecimationProperties.Interface
+public unsafe partial struct IAMVideoDecimationProperties : IAMVideoDecimationProperties.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMVideoDecimationProperties;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

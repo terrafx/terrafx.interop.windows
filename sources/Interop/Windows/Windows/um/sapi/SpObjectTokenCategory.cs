@@ -3,12 +3,15 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SpObjectTokenCategory.xml' path='doc/member[@name="SpObjectTokenCategory"]/*' />
 [Guid("A910187F-0C7A-45AC-92CC-59EDAFB77B53")]
-public partial struct SpObjectTokenCategory
+public partial struct SpObjectTokenCategory : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_SpObjectTokenCategory;
 }

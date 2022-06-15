@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("E46A9787-2B71-444D-A4B5-1FAB7B708D6A")]
 [NativeTypeName("struct IVideoFrameStep : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface
+public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVideoFrameStep;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

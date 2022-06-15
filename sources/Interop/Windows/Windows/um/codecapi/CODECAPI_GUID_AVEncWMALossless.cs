@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_GUID_AVEncWMALossless.xml' path='doc/member[@name="CODECAPI_GUID_AVEncWMALossless"]/*' />
 [Guid("55CA7265-23D8-4761-9031-B74FBE12F4C1")]
-public partial struct CODECAPI_GUID_AVEncWMALossless
+public partial struct CODECAPI_GUID_AVEncWMALossless : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_GUID_AVEncWMALossless;
 }

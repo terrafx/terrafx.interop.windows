@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("5B0D3235-4DBA-4D44-865E-8F1D0E4FD04D")]
 [NativeTypeName("struct IMemoryBufferByteAccess : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMemoryBufferByteAccess : IMemoryBufferByteAccess.Interface
+public unsafe partial struct IMemoryBufferByteAccess : IMemoryBufferByteAccess.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMemoryBufferByteAccess;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

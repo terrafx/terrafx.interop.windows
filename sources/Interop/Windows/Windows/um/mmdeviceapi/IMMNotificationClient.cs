@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("7991EEC9-7E89-4D85-8390-6C703CEC60C0")]
 [NativeTypeName("struct IMMNotificationClient : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Interface
+public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMMNotificationClient;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("2AD1EDAF-D83D-48B5-9ADF-03DBE19F53BD")]
 [NativeTypeName("struct IAuthenticateEx : IAuthenticate")]
 [NativeInheritance("IAuthenticate")]
-public unsafe partial struct IAuthenticateEx : IAuthenticateEx.Interface
+public unsafe partial struct IAuthenticateEx : IAuthenticateEx.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAuthenticateEx;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

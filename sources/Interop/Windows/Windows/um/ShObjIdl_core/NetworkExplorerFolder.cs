@@ -3,12 +3,15 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='NetworkExplorerFolder.xml' path='doc/member[@name="NetworkExplorerFolder"]/*' />
 [Guid("F02C1A0D-BE21-4350-88B0-7367FC96EF3C")]
-public partial struct NetworkExplorerFolder
+public partial struct NetworkExplorerFolder : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_NetworkExplorerFolder;
 }

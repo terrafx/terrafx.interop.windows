@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("1CDE6309-CAE0-4940-907E-C1EC9C3D1D4A")]
 [NativeTypeName("struct IMFRemoteDesktopPlugin : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFRemoteDesktopPlugin : IMFRemoteDesktopPlugin.Interface
+public unsafe partial struct IMFRemoteDesktopPlugin : IMFRemoteDesktopPlugin.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFRemoteDesktopPlugin;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

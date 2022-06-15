@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("F0A56423-A664-4FBD-8B43-409A45E8D9A1")]
 [NativeTypeName("struct ICastingController : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ICastingController : ICastingController.Interface
+public unsafe partial struct ICastingController : ICastingController.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICastingController;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

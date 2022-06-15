@@ -3,12 +3,15 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='EnumerableObjectCollection.xml' path='doc/member[@name="EnumerableObjectCollection"]/*' />
 [Guid("2D3468C1-36A7-43B6-AC24-D3F02FD9607A")]
-public partial struct EnumerableObjectCollection
+public partial struct EnumerableObjectCollection : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_EnumerableObjectCollection;
 }

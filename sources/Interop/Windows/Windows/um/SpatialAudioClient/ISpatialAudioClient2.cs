@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("CAABE452-A66A-4BEE-A93E-E320463F6A53")]
 [NativeTypeName("struct ISpatialAudioClient2 : ISpatialAudioClient")]
 [NativeInheritance("ISpatialAudioClient")]
-public unsafe partial struct ISpatialAudioClient2 : ISpatialAudioClient2.Interface
+public unsafe partial struct ISpatialAudioClient2 : ISpatialAudioClient2.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpatialAudioClient2;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

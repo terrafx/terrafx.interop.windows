@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.DirectX;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -17,8 +18,10 @@ namespace TerraFX.Interop.WinRT;
 [NativeTypeName("struct ISwapChainPanelNative2 : ISwapChainPanelNative")]
 [NativeInheritance("ISwapChainPanelNative")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct ISwapChainPanelNative2 : ISwapChainPanelNative2.Interface
+public unsafe partial struct ISwapChainPanelNative2 : ISwapChainPanelNative2.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISwapChainPanelNative2;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

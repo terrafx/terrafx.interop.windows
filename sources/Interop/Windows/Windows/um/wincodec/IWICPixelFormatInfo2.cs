@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("A9DB33A2-AF5F-43C7-B679-74F5984B5AA4")]
 [NativeTypeName("struct IWICPixelFormatInfo2 : IWICPixelFormatInfo")]
 [NativeInheritance("IWICPixelFormatInfo")]
-public unsafe partial struct IWICPixelFormatInfo2 : IWICPixelFormatInfo2.Interface
+public unsafe partial struct IWICPixelFormatInfo2 : IWICPixelFormatInfo2.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWICPixelFormatInfo2;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

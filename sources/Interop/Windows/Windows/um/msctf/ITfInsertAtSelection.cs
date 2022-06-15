@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("55CE16BA-3014-41C1-9CEB-FADE1446AC6C")]
 [NativeTypeName("struct ITfInsertAtSelection : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITfInsertAtSelection : ITfInsertAtSelection.Interface
+public unsafe partial struct ITfInsertAtSelection : ITfInsertAtSelection.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfInsertAtSelection;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

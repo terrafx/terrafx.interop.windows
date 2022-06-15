@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("ADD8BA80-002B-11D0-8F0F-00C04FD7D062")]
 [NativeTypeName("struct IDelegateFolder : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDelegateFolder : IDelegateFolder.Interface
+public unsafe partial struct IDelegateFolder : IDelegateFolder.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDelegateFolder;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

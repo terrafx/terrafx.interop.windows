@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncAudioMeanBitRate.xml' path='doc/member[@name="CODECAPI_AVEncAudioMeanBitRate"]/*' />
 [Guid("921295BB-4FCA-4679-AAB8-9E2A1D753384")]
-public partial struct CODECAPI_AVEncAudioMeanBitRate
+public partial struct CODECAPI_AVEncAudioMeanBitRate : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncAudioMeanBitRate;
 }

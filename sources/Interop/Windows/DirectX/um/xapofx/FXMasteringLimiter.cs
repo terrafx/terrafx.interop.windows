@@ -3,13 +3,17 @@
 // Ported from um/xapofx.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.DirectX;
 
 [Guid("C4137916-2BE1-46FD-8599-441536F49856")]
-public partial struct FXMasteringLimiter
+public partial struct FXMasteringLimiter : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_FXMasteringLimiter;
+
     [NativeTypeName("#define FXMASTERINGLIMITER_MIN_RELEASE 1")]
     public const int FXMASTERINGLIMITER_MIN_RELEASE = 1;
 

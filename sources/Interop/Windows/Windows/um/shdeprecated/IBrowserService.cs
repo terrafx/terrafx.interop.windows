@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("02BA3B52-0547-11D1-B833-00C04FC9B31F")]
 [NativeTypeName("struct IBrowserService : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IBrowserService : IBrowserService.Interface
+public unsafe partial struct IBrowserService : IBrowserService.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IBrowserService;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

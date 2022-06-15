@@ -3,12 +3,15 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncMPVQuantMatrixChromaIntra.xml' path='doc/member[@name="CODECAPI_AVEncMPVQuantMatrixChromaIntra"]/*' />
 [Guid("9EB9ECD4-018D-4FFD-8F2D-39E49F07B17A")]
-public partial struct CODECAPI_AVEncMPVQuantMatrixChromaIntra
+public partial struct CODECAPI_AVEncMPVQuantMatrixChromaIntra : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncMPVQuantMatrixChromaIntra;
 }

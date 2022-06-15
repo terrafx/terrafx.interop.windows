@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -15,8 +16,10 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFVideoProcessorControl2 : IMFVideoProcessorControl")]
 [NativeInheritance("IMFVideoProcessorControl")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct IMFVideoProcessorControl2 : IMFVideoProcessorControl2.Interface
+public unsafe partial struct IMFVideoProcessorControl2 : IMFVideoProcessorControl2.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFVideoProcessorControl2;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

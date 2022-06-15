@@ -40,7 +40,7 @@ public static unsafe partial class Windows
     public const int INHERITED_GRANDPARENT = 0x20000000;
 
     [NativeTypeName("#define ACCCTRL_DEFAULT_PROVIDERA \"Windows NT Access Provider\"")]
-    public static ReadOnlySpan<byte> ACCCTRL_DEFAULT_PROVIDERA => new byte[] { 0x57, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x73, 0x20, 0x4E, 0x54, 0x20, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x20, 0x50, 0x72, 0x6F, 0x76, 0x69, 0x64, 0x65, 0x72, 0x00 };
+    public static ReadOnlySpan<byte> ACCCTRL_DEFAULT_PROVIDERA => "Windows NT Access Provider\0"u8;
 
     [NativeTypeName("#define ACCCTRL_DEFAULT_PROVIDERW L\"Windows NT Access Provider\"")]
     public const string ACCCTRL_DEFAULT_PROVIDERW = "Windows NT Access Provider";

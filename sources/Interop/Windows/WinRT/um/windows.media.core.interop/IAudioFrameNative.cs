@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("20BE1E2E-930F-4746-9335-3C332F255093")]
 [NativeTypeName("struct IAudioFrameNative : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IAudioFrameNative : IAudioFrameNative.Interface
+public unsafe partial struct IAudioFrameNative : IAudioFrameNative.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAudioFrameNative;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

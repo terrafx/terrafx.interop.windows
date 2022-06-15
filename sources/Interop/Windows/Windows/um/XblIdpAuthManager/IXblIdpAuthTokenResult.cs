@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("46CE0225-F267-4D68-B299-B2762552DEC1")]
 [NativeTypeName("struct IXblIdpAuthTokenResult : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Interface
+public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IXblIdpAuthTokenResult;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

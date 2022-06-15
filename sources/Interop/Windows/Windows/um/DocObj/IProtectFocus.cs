@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("D81F90A3-8156-44F7-AD28-5ABB87003274")]
 [NativeTypeName("struct IProtectFocus : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IProtectFocus : IProtectFocus.Interface
+public unsafe partial struct IProtectFocus : IProtectFocus.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IProtectFocus;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -134,7 +134,7 @@ try {
     Create-Directory -Path $DotNetInstallDirectory
 
     & $DotNetInstallScript -Channel 6.0 -Version latest -InstallDir $DotNetInstallDirectory -Architecture $architecture
-    & $DotNetInstallScript -Channel 7.0 -Version 7.0.100-preview.3.22179.4 -InstallDir $DotNetInstallDirectory -Architecture $architecture
+    & $DotNetInstallScript -Channel 7.0 -Version latest -InstallDir $DotNetInstallDirectory -Architecture $architecture -Quality preview
 
     $env:PATH="$DotNetInstallDirectory;$env:PATH"
   }

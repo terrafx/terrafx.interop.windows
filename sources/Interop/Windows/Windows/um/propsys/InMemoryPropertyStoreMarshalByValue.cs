@@ -3,12 +3,15 @@
 // Ported from um/propsys.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='InMemoryPropertyStoreMarshalByValue.xml' path='doc/member[@name="InMemoryPropertyStoreMarshalByValue"]/*' />
 [Guid("D4CA0E2D-6DA7-4B75-A97C-5F306F0EAEDC")]
-public partial struct InMemoryPropertyStoreMarshalByValue
+public partial struct InMemoryPropertyStoreMarshalByValue : IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_InMemoryPropertyStoreMarshalByValue;
 }

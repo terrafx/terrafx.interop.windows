@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("AE1572F4-5DD0-4777-998B-9279472AE63B")]
 [NativeTypeName("struct ID2D1GradientStopCollection1 : ID2D1GradientStopCollection")]
 [NativeInheritance("ID2D1GradientStopCollection")]
-public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCollection1.Interface
+public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCollection1.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1GradientStopCollection1;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

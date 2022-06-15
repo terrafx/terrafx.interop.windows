@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -16,8 +17,10 @@ namespace TerraFX.Interop.WinRT;
 [NativeTypeName("struct IVisualTreeServiceCallback2 : IVisualTreeServiceCallback")]
 [NativeInheritance("IVisualTreeServiceCallback")]
 [SupportedOSPlatform("windows10.0.14393.0")]
-public unsafe partial struct IVisualTreeServiceCallback2 : IVisualTreeServiceCallback2.Interface
+public unsafe partial struct IVisualTreeServiceCallback2 : IVisualTreeServiceCallback2.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVisualTreeServiceCallback2;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

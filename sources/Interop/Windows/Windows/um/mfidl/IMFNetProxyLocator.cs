@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("E9CD0383-A268-4BB4-82DE-658D53574D41")]
 [NativeTypeName("struct IMFNetProxyLocator : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface
+public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFNetProxyLocator;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

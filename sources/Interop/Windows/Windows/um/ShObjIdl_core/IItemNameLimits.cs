@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("1DF0D7F1-B267-4D28-8B10-12E23202A5C4")]
 [NativeTypeName("struct IItemNameLimits : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IItemNameLimits : IItemNameLimits.Interface
+public unsafe partial struct IItemNameLimits : IItemNameLimits.Interface, IHaveNativeGuid
 {
+    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IItemNameLimits;
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />
