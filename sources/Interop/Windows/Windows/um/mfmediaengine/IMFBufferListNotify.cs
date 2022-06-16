@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFBufferListNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct IMFBufferListNotify : IMFBufferListNotify.Interface, IHaveNativeGuid
+public unsafe partial struct IMFBufferListNotify : IMFBufferListNotify.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFBufferListNotify;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFBufferListNotify));
 
     public void** lpVtbl;
 

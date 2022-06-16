@@ -17,9 +17,9 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct ID3D11VideoProcessorInputView : ID3D11View")]
 [NativeInheritance("ID3D11View")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct ID3D11VideoProcessorInputView : ID3D11VideoProcessorInputView.Interface, IHaveNativeGuid
+public unsafe partial struct ID3D11VideoProcessorInputView : ID3D11VideoProcessorInputView.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D11VideoProcessorInputView;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D11VideoProcessorInputView));
 
     public void** lpVtbl;
 

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SpPhoneticAlphabetConverter.xml' path='doc/member[@name="SpPhoneticAlphabetConverter"]/*' />
 [Guid("4F414126-DFE3-4629-99EE-797978317EAD")]
-public partial struct SpPhoneticAlphabetConverter : IHaveNativeGuid
+public unsafe partial struct SpPhoneticAlphabetConverter : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_SpPhoneticAlphabetConverter;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_SpPhoneticAlphabetConverter));
 }

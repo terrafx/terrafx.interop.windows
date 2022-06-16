@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("5AB1D30C-094D-4C29-8EA5-0BF59BE87BF3")]
 [NativeTypeName("struct ITfFnShowHelp : ITfFunction")]
 [NativeInheritance("ITfFunction")]
-public unsafe partial struct ITfFnShowHelp : ITfFnShowHelp.Interface, IHaveNativeGuid
+public unsafe partial struct ITfFnShowHelp : ITfFnShowHelp.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfFnShowHelp;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfFnShowHelp));
 
     public void** lpVtbl;
 

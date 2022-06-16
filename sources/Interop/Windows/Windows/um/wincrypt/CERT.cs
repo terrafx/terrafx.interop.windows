@@ -88,13 +88,13 @@ public static unsafe partial class CERT
     public const int CERT_RDN_ENABLE_PUNYCODE_FLAG = 0x02000000;
 
     [NativeTypeName("#define CERT_RSA_PUBLIC_KEY_OBJID szOID_RSA_RSA")]
-    public static ReadOnlySpan<byte> CERT_RSA_PUBLIC_KEY_OBJID => "1.2.840.113549.1.1.1\0"u8;
+    public static ReadOnlySpan<byte> CERT_RSA_PUBLIC_KEY_OBJID => "1.2.840.113549.1.1.1"u8;
 
     [NativeTypeName("#define CERT_DEFAULT_OID_PUBLIC_KEY_SIGN szOID_RSA_RSA")]
-    public static ReadOnlySpan<byte> CERT_DEFAULT_OID_PUBLIC_KEY_SIGN => "1.2.840.113549.1.1.1\0"u8;
+    public static ReadOnlySpan<byte> CERT_DEFAULT_OID_PUBLIC_KEY_SIGN => "1.2.840.113549.1.1.1"u8;
 
     [NativeTypeName("#define CERT_DEFAULT_OID_PUBLIC_KEY_XCHG szOID_RSA_RSA")]
-    public static ReadOnlySpan<byte> CERT_DEFAULT_OID_PUBLIC_KEY_XCHG => "1.2.840.113549.1.1.1\0"u8;
+    public static ReadOnlySpan<byte> CERT_DEFAULT_OID_PUBLIC_KEY_XCHG => "1.2.840.113549.1.1.1"u8;
 
     [NativeTypeName("#define CERT_V1 0")]
     public const int CERT_V1 = 0;
@@ -904,10 +904,10 @@ public static unsafe partial class CERT
     public const string CERT_PROT_ROOT_PEER_USAGES_VALUE_NAME = "PeerUsages";
 
     [NativeTypeName("#define CERT_PROT_ROOT_PEER_USAGES_VALUE_NAME_A \"PeerUsages\"")]
-    public static ReadOnlySpan<byte> CERT_PROT_ROOT_PEER_USAGES_VALUE_NAME_A => "PeerUsages\0"u8;
+    public static ReadOnlySpan<byte> CERT_PROT_ROOT_PEER_USAGES_VALUE_NAME_A => "PeerUsages"u8;
 
     [NativeTypeName("#define CERT_PROT_ROOT_PEER_USAGES_DEFAULT_A szOID_PKIX_KP_CLIENT_AUTH \"\\0\"                  \\\r\n    szOID_PKIX_KP_EMAIL_PROTECTION \"\\0\"             \\\r\n    szOID_KP_EFS \"\\0\"")]
-    public static ReadOnlySpan<byte> CERT_PROT_ROOT_PEER_USAGES_DEFAULT_A => "1.3.6.1.5.5.7.3.2 1.3.6.1.5.5.7.3.4 1.3.6.1.4.1.311.10.3.4 \0"u8;
+    public static ReadOnlySpan<byte> CERT_PROT_ROOT_PEER_USAGES_DEFAULT_A => "1.3.6.1.5.5.7.3.2 1.3.6.1.5.5.7.3.4 1.3.6.1.4.1.311.10.3.4 "u8;
 
     [NativeTypeName("#define CERT_TRUST_PUB_SAFER_GROUP_POLICY_REGPATH CERT_GROUP_POLICY_SYSTEM_STORE_REGPATH L\"\\\\TrustedPublisher\\\\Safer\"")]
     public const string CERT_TRUST_PUB_SAFER_GROUP_POLICY_REGPATH = "Software\\Policies\\Microsoft\\SystemCertificates\\TrustedPublisher\\Safer";
@@ -997,7 +997,7 @@ public static unsafe partial class CERT
     public const string CERT_AUTH_ROOT_CTL_FILENAME = "authroot.stl";
 
     [NativeTypeName("#define CERT_AUTH_ROOT_CTL_FILENAME_A \"authroot.stl\"")]
-    public static ReadOnlySpan<byte> CERT_AUTH_ROOT_CTL_FILENAME_A => "authroot.stl\0"u8;
+    public static ReadOnlySpan<byte> CERT_AUTH_ROOT_CTL_FILENAME_A => "authroot.stl"u8;
 
     [NativeTypeName("#define CERT_AUTH_ROOT_CAB_FILENAME L\"authrootstl.cab\"")]
     public const string CERT_AUTH_ROOT_CAB_FILENAME = "authrootstl.cab";
@@ -1021,7 +1021,7 @@ public static unsafe partial class CERT
     public const string CERT_DISALLOWED_CERT_CTL_FILENAME = "disallowedcert.stl";
 
     [NativeTypeName("#define CERT_DISALLOWED_CERT_CTL_FILENAME_A \"disallowedcert.stl\"")]
-    public static ReadOnlySpan<byte> CERT_DISALLOWED_CERT_CTL_FILENAME_A => "disallowedcert.stl\0"u8;
+    public static ReadOnlySpan<byte> CERT_DISALLOWED_CERT_CTL_FILENAME_A => "disallowedcert.stl"u8;
 
     [NativeTypeName("#define CERT_DISALLOWED_CERT_CAB_FILENAME L\"disallowedcertstl.cab\"")]
     public const string CERT_DISALLOWED_CERT_CAB_FILENAME = "disallowedcertstl.cab";
@@ -1042,7 +1042,7 @@ public static unsafe partial class CERT
     public const string CERT_PIN_RULES_CTL_FILENAME = "pinrules.stl";
 
     [NativeTypeName("#define CERT_PIN_RULES_CTL_FILENAME_A \"pinrules.stl\"")]
-    public static ReadOnlySpan<byte> CERT_PIN_RULES_CTL_FILENAME_A => "pinrules.stl\0"u8;
+    public static ReadOnlySpan<byte> CERT_PIN_RULES_CTL_FILENAME_A => "pinrules.stl"u8;
 
     [NativeTypeName("#define CERT_PIN_RULES_CAB_FILENAME L\"pinrulesstl.cab\"")]
     public const string CERT_PIN_RULES_CAB_FILENAME = "pinrulesstl.cab";

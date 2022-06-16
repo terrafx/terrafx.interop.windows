@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("3628E81B-3CAC-4C60-B7F4-23CE0E0C3356")]
 [NativeTypeName("struct IGraphicsCaptureItemInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemInterop.Interface, IHaveNativeGuid
+public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemInterop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IGraphicsCaptureItemInterop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IGraphicsCaptureItemInterop));
 
     public void** lpVtbl;
 

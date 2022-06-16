@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3051080D-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLMSCSSKeyframesRule : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IHTMLMSCSSKeyframesRule : IHTMLMSCSSKeyframesRule.Interface, IHaveNativeGuid
+public unsafe partial struct IHTMLMSCSSKeyframesRule : IHTMLMSCSSKeyframesRule.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IHTMLMSCSSKeyframesRule;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHTMLMSCSSKeyframesRule));
 
     public void** lpVtbl;
 

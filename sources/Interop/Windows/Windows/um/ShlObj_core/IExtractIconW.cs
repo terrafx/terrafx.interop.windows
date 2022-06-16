@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("000214FA-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IExtractIconW : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IExtractIconW : IExtractIconW.Interface, IHaveNativeGuid
+public unsafe partial struct IExtractIconW : IExtractIconW.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IExtractIconW;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IExtractIconW));
 
     public void** lpVtbl;
 

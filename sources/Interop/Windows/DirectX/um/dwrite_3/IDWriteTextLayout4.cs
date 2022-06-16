@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("05A9BF42-223F-4441-B5FB-8263685F55E9")]
 [NativeTypeName("struct IDWriteTextLayout4 : IDWriteTextLayout3")]
 [NativeInheritance("IDWriteTextLayout3")]
-public unsafe partial struct IDWriteTextLayout4 : IDWriteTextLayout4.Interface, IHaveNativeGuid
+public unsafe partial struct IDWriteTextLayout4 : IDWriteTextLayout4.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDWriteTextLayout4;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWriteTextLayout4));
 
     public void** lpVtbl;
 

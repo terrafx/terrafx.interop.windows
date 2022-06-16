@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='InternetExplorerMedium.xml' path='doc/member[@name="InternetExplorerMedium"]/*' />
 [Guid("D5E8041D-920F-45E9-B8FB-B1DEB82C6E5E")]
-public partial struct InternetExplorerMedium : IHaveNativeGuid
+public unsafe partial struct InternetExplorerMedium : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_InternetExplorerMedium;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_InternetExplorerMedium));
 }

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("30590017-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct DispSVGPathSegCurvetoCubicRel : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct DispSVGPathSegCurvetoCubicRel : DispSVGPathSegCurvetoCubicRel.Interface, IHaveNativeGuid
+public unsafe partial struct DispSVGPathSegCurvetoCubicRel : DispSVGPathSegCurvetoCubicRel.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_DispSVGPathSegCurvetoCubicRel;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_DispSVGPathSegCurvetoCubicRel));
 
     public void** lpVtbl;
 

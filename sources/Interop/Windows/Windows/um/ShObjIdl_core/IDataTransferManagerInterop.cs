@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3A3DCD6C-3EAB-43DC-BCDE-45671CE800C8")]
 [NativeTypeName("struct IDataTransferManagerInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDataTransferManagerInterop : IDataTransferManagerInterop.Interface, IHaveNativeGuid
+public unsafe partial struct IDataTransferManagerInterop : IDataTransferManagerInterop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDataTransferManagerInterop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDataTransferManagerInterop));
 
     public void** lpVtbl;
 

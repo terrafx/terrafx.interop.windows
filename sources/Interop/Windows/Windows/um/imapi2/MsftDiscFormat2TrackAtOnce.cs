@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='MsftDiscFormat2TrackAtOnce.xml' path='doc/member[@name="MsftDiscFormat2TrackAtOnce"]/*' />
 [Guid("27354129-7F64-5B0F-8F00-5D77AFBE261E")]
-public partial struct MsftDiscFormat2TrackAtOnce : IHaveNativeGuid
+public unsafe partial struct MsftDiscFormat2TrackAtOnce : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_MsftDiscFormat2TrackAtOnce;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_MsftDiscFormat2TrackAtOnce));
 }

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("994E23AD-1CC2-493C-B9FA-46F1CB040FA4")]
 [NativeTypeName("struct IMFRemoteProxy : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFRemoteProxy : IMFRemoteProxy.Interface, IHaveNativeGuid
+public unsafe partial struct IMFRemoteProxy : IMFRemoteProxy.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFRemoteProxy;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFRemoteProxy));
 
     public void** lpVtbl;
 

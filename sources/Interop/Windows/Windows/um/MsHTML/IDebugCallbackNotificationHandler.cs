@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("30510842-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IDebugCallbackNotificationHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDebugCallbackNotificationHandler : IDebugCallbackNotificationHandler.Interface, IHaveNativeGuid
+public unsafe partial struct IDebugCallbackNotificationHandler : IDebugCallbackNotificationHandler.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDebugCallbackNotificationHandler;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDebugCallbackNotificationHandler));
 
     public void** lpVtbl;
 

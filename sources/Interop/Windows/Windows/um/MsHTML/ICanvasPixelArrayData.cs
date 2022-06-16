@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("305107F9-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ICanvasPixelArrayData : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ICanvasPixelArrayData : ICanvasPixelArrayData.Interface, IHaveNativeGuid
+public unsafe partial struct ICanvasPixelArrayData : ICanvasPixelArrayData.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICanvasPixelArrayData;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICanvasPixelArrayData));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("ED6A8A2A-B160-4E77-8F73-AA7435CD5C27")]
 [NativeTypeName("struct ITypeLibRegistrationReader : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITypeLibRegistrationReader : ITypeLibRegistrationReader.Interface, IHaveNativeGuid
+public unsafe partial struct ITypeLibRegistrationReader : ITypeLibRegistrationReader.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITypeLibRegistrationReader;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITypeLibRegistrationReader));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("812D5F95-B572-45DC-BAFC-AE24199DDDA8")]
 [NativeTypeName("struct IMFExtendedCameraIntrinsicsDistortionModelArcTan : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFExtendedCameraIntrinsicsDistortionModelArcTan : IMFExtendedCameraIntrinsicsDistortionModelArcTan.Interface, IHaveNativeGuid
+public unsafe partial struct IMFExtendedCameraIntrinsicsDistortionModelArcTan : IMFExtendedCameraIntrinsicsDistortionModelArcTan.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFExtendedCameraIntrinsicsDistortionModelArcTan;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFExtendedCameraIntrinsicsDistortionModelArcTan));
 
     public void** lpVtbl;
 

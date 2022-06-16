@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F684-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ISelectionServices : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ISelectionServices : ISelectionServices.Interface, IHaveNativeGuid
+public unsafe partial struct ISelectionServices : ISelectionServices.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISelectionServices;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISelectionServices));
 
     public void** lpVtbl;
 

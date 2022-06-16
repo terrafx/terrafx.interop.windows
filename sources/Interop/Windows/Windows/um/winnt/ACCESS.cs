@@ -76,13 +76,13 @@ public static partial class ACCESS
     public const int ACCESS_MAX_LEVEL = 4;
 
     [NativeTypeName("#define ACCESS_DS_SOURCE_A \"DS\"")]
-    public static ReadOnlySpan<byte> ACCESS_DS_SOURCE_A => "DS\0"u8;
+    public static ReadOnlySpan<byte> ACCESS_DS_SOURCE_A => "DS"u8;
 
     [NativeTypeName("#define ACCESS_DS_SOURCE_W L\"DS\"")]
     public const string ACCESS_DS_SOURCE_W = "DS";
 
     [NativeTypeName("#define ACCESS_DS_OBJECT_TYPE_NAME_A \"Directory Service Object\"")]
-    public static ReadOnlySpan<byte> ACCESS_DS_OBJECT_TYPE_NAME_A => "Directory Service Object\0"u8;
+    public static ReadOnlySpan<byte> ACCESS_DS_OBJECT_TYPE_NAME_A => "Directory Service Object"u8;
 
     [NativeTypeName("#define ACCESS_DS_OBJECT_TYPE_NAME_W L\"Directory Service Object\"")]
     public const string ACCESS_DS_OBJECT_TYPE_NAME_W = "Directory Service Object";

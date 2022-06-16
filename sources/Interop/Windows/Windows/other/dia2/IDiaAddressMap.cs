@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("B62A2E7A-067A-4EA3-B598-04C09717502C")]
 [NativeTypeName("struct IDiaAddressMap : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDiaAddressMap : IDiaAddressMap.Interface, IHaveNativeGuid
+public unsafe partial struct IDiaAddressMap : IDiaAddressMap.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDiaAddressMap;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDiaAddressMap));
 
     public void** lpVtbl;
 

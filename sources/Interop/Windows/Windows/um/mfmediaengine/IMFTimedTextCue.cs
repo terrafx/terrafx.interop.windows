@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFTimedTextCue : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface, IHaveNativeGuid
+public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFTimedTextCue;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFTimedTextCue));
 
     public void** lpVtbl;
 

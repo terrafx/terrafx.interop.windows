@@ -15,9 +15,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("153ACC21-D83B-11D1-82BF-00A0C9696C8F")]
 [NativeTypeName("struct IDDrawExclModeVideo : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface, IHaveNativeGuid
+public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDDrawExclModeVideo;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDDrawExclModeVideo));
 
     public void** lpVtbl;
 

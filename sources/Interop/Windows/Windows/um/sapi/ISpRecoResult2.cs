@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("27CAC6C4-88F2-41F2-8817-0C95E59F1E6E")]
 [NativeTypeName("struct ISpRecoResult2 : ISpRecoResult")]
 [NativeInheritance("ISpRecoResult")]
-public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface, IHaveNativeGuid
+public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpRecoResult2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpRecoResult2));
 
     public void** lpVtbl;
 

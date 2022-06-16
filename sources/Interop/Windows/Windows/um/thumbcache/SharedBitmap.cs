@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SharedBitmap.xml' path='doc/member[@name="SharedBitmap"]/*' />
 [Guid("4DB26476-6787-4046-B836-E8412A9E8A27")]
-public partial struct SharedBitmap : IHaveNativeGuid
+public unsafe partial struct SharedBitmap : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_SharedBitmap;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_SharedBitmap));
 }

@@ -385,40 +385,40 @@ public static unsafe partial class CRYPT
     public const int CRYPT_RC2_128BIT_VERSION = 58;
 
     [NativeTypeName("#define CRYPT_OID_ENCODE_OBJECT_FUNC \"CryptDllEncodeObject\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_ENCODE_OBJECT_FUNC => "CryptDllEncodeObject\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_ENCODE_OBJECT_FUNC => "CryptDllEncodeObject"u8;
 
     [NativeTypeName("#define CRYPT_OID_DECODE_OBJECT_FUNC \"CryptDllDecodeObject\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_DECODE_OBJECT_FUNC => "CryptDllDecodeObject\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_DECODE_OBJECT_FUNC => "CryptDllDecodeObject"u8;
 
     [NativeTypeName("#define CRYPT_OID_ENCODE_OBJECT_EX_FUNC \"CryptDllEncodeObjectEx\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_ENCODE_OBJECT_EX_FUNC => "CryptDllEncodeObjectEx\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_ENCODE_OBJECT_EX_FUNC => "CryptDllEncodeObjectEx"u8;
 
     [NativeTypeName("#define CRYPT_OID_DECODE_OBJECT_EX_FUNC \"CryptDllDecodeObjectEx\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_DECODE_OBJECT_EX_FUNC => "CryptDllDecodeObjectEx\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_DECODE_OBJECT_EX_FUNC => "CryptDllDecodeObjectEx"u8;
 
     [NativeTypeName("#define CRYPT_OID_CREATE_COM_OBJECT_FUNC \"CryptDllCreateCOMObject\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_CREATE_COM_OBJECT_FUNC => "CryptDllCreateCOMObject\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_CREATE_COM_OBJECT_FUNC => "CryptDllCreateCOMObject"u8;
 
     [NativeTypeName("#define CRYPT_OID_VERIFY_REVOCATION_FUNC \"CertDllVerifyRevocation\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_VERIFY_REVOCATION_FUNC => "CertDllVerifyRevocation\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_VERIFY_REVOCATION_FUNC => "CertDllVerifyRevocation"u8;
 
     [NativeTypeName("#define CRYPT_OID_VERIFY_CTL_USAGE_FUNC \"CertDllVerifyCTLUsage\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_VERIFY_CTL_USAGE_FUNC => "CertDllVerifyCTLUsage\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_VERIFY_CTL_USAGE_FUNC => "CertDllVerifyCTLUsage"u8;
 
     [NativeTypeName("#define CRYPT_OID_FORMAT_OBJECT_FUNC \"CryptDllFormatObject\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_FORMAT_OBJECT_FUNC => "CryptDllFormatObject\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_FORMAT_OBJECT_FUNC => "CryptDllFormatObject"u8;
 
     [NativeTypeName("#define CRYPT_OID_FIND_OID_INFO_FUNC \"CryptDllFindOIDInfo\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_FIND_OID_INFO_FUNC => "CryptDllFindOIDInfo\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_FIND_OID_INFO_FUNC => "CryptDllFindOIDInfo"u8;
 
     [NativeTypeName("#define CRYPT_OID_FIND_LOCALIZED_NAME_FUNC \"CryptDllFindLocalizedName\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_FIND_LOCALIZED_NAME_FUNC => "CryptDllFindLocalizedName\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_FIND_LOCALIZED_NAME_FUNC => "CryptDllFindLocalizedName"u8;
 
     [NativeTypeName("#define CRYPT_OID_REGPATH \"Software\\\\Microsoft\\\\Cryptography\\\\OID\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_REGPATH => "Software\\Microsoft\\Cryptography\\OID\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_REGPATH => "Software\\Microsoft\\Cryptography\\OID"u8;
 
     [NativeTypeName("#define CRYPT_OID_REG_ENCODING_TYPE_PREFIX \"EncodingType \"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_REG_ENCODING_TYPE_PREFIX => "EncodingType \0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_REG_ENCODING_TYPE_PREFIX => "EncodingType "u8;
 
     [NativeTypeName("#define CRYPT_OID_REG_DLL_VALUE_NAME L\"Dll\"")]
     public const string CRYPT_OID_REG_DLL_VALUE_NAME = "Dll";
@@ -427,13 +427,13 @@ public static unsafe partial class CRYPT
     public const string CRYPT_OID_REG_FUNC_NAME_VALUE_NAME = "FuncName";
 
     [NativeTypeName("#define CRYPT_OID_REG_FUNC_NAME_VALUE_NAME_A \"FuncName\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_REG_FUNC_NAME_VALUE_NAME_A => "FuncName\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_REG_FUNC_NAME_VALUE_NAME_A => "FuncName"u8;
 
     [NativeTypeName("#define CRYPT_OID_REG_FLAGS_VALUE_NAME L\"CryptFlags\"")]
     public const string CRYPT_OID_REG_FLAGS_VALUE_NAME = "CryptFlags";
 
     [NativeTypeName("#define CRYPT_DEFAULT_OID \"DEFAULT\"")]
-    public static ReadOnlySpan<byte> CRYPT_DEFAULT_OID => "DEFAULT\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_DEFAULT_OID => "DEFAULT"u8;
 
     [NativeTypeName("#define CRYPT_INSTALL_OID_FUNC_BEFORE_FLAG 1")]
     public const int CRYPT_INSTALL_OID_FUNC_BEFORE_FLAG = 1;
@@ -574,31 +574,31 @@ public static unsafe partial class CRYPT
     public const int CRYPT_LOCALIZED_NAME_ENCODING_TYPE = 0;
 
     [NativeTypeName("#define CRYPT_LOCALIZED_NAME_OID \"LocalizedNames\"")]
-    public static ReadOnlySpan<byte> CRYPT_LOCALIZED_NAME_OID => "LocalizedNames\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_LOCALIZED_NAME_OID => "LocalizedNames"u8;
 
     [NativeTypeName("#define CRYPT_OID_OPEN_STORE_PROV_FUNC \"CertDllOpenStoreProv\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_OPEN_STORE_PROV_FUNC => "CertDllOpenStoreProv\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_OPEN_STORE_PROV_FUNC => "CertDllOpenStoreProv"u8;
 
     [NativeTypeName("#define CRYPT_OID_OPEN_SYSTEM_STORE_PROV_FUNC \"CertDllOpenSystemStoreProv\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_OPEN_SYSTEM_STORE_PROV_FUNC => "CertDllOpenSystemStoreProv\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_OPEN_SYSTEM_STORE_PROV_FUNC => "CertDllOpenSystemStoreProv"u8;
 
     [NativeTypeName("#define CRYPT_OID_REGISTER_SYSTEM_STORE_FUNC \"CertDllRegisterSystemStore\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_REGISTER_SYSTEM_STORE_FUNC => "CertDllRegisterSystemStore\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_REGISTER_SYSTEM_STORE_FUNC => "CertDllRegisterSystemStore"u8;
 
     [NativeTypeName("#define CRYPT_OID_UNREGISTER_SYSTEM_STORE_FUNC \"CertDllUnregisterSystemStore\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_UNREGISTER_SYSTEM_STORE_FUNC => "CertDllUnregisterSystemStore\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_UNREGISTER_SYSTEM_STORE_FUNC => "CertDllUnregisterSystemStore"u8;
 
     [NativeTypeName("#define CRYPT_OID_ENUM_SYSTEM_STORE_FUNC \"CertDllEnumSystemStore\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_ENUM_SYSTEM_STORE_FUNC => "CertDllEnumSystemStore\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_ENUM_SYSTEM_STORE_FUNC => "CertDllEnumSystemStore"u8;
 
     [NativeTypeName("#define CRYPT_OID_REGISTER_PHYSICAL_STORE_FUNC \"CertDllRegisterPhysicalStore\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_REGISTER_PHYSICAL_STORE_FUNC => "CertDllRegisterPhysicalStore\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_REGISTER_PHYSICAL_STORE_FUNC => "CertDllRegisterPhysicalStore"u8;
 
     [NativeTypeName("#define CRYPT_OID_UNREGISTER_PHYSICAL_STORE_FUNC \"CertDllUnregisterPhysicalStore\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_UNREGISTER_PHYSICAL_STORE_FUNC => "CertDllUnregisterPhysicalStore\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_UNREGISTER_PHYSICAL_STORE_FUNC => "CertDllUnregisterPhysicalStore"u8;
 
     [NativeTypeName("#define CRYPT_OID_ENUM_PHYSICAL_STORE_FUNC \"CertDllEnumPhysicalStore\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_ENUM_PHYSICAL_STORE_FUNC => "CertDllEnumPhysicalStore\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_ENUM_PHYSICAL_STORE_FUNC => "CertDllEnumPhysicalStore"u8;
 
     [NativeTypeName("#define CRYPT_OID_SYSTEM_STORE_LOCATION_VALUE_NAME L\"SystemStoreLocation\"")]
     public const string CRYPT_OID_SYSTEM_STORE_LOCATION_VALUE_NAME = "SystemStoreLocation";
@@ -640,13 +640,13 @@ public static unsafe partial class CRYPT
     public const int CRYPT_VERIFY_CERT_SIGN_CHECK_WEAK_HASH_FLAG = 0x00000008;
 
     [NativeTypeName("#define CRYPT_OID_EXTRACT_ENCODED_SIGNATURE_PARAMETERS_FUNC \"CryptDllExtractEncodedSignatureParameters\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_EXTRACT_ENCODED_SIGNATURE_PARAMETERS_FUNC => "CryptDllExtractEncodedSignatureParameters\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_EXTRACT_ENCODED_SIGNATURE_PARAMETERS_FUNC => "CryptDllExtractEncodedSignatureParameters"u8;
 
     [NativeTypeName("#define CRYPT_OID_SIGN_AND_ENCODE_HASH_FUNC \"CryptDllSignAndEncodeHash\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_SIGN_AND_ENCODE_HASH_FUNC => "CryptDllSignAndEncodeHash\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_SIGN_AND_ENCODE_HASH_FUNC => "CryptDllSignAndEncodeHash"u8;
 
     [NativeTypeName("#define CRYPT_OID_VERIFY_ENCODED_SIGNATURE_FUNC \"CryptDllVerifyEncodedSignature\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_VERIFY_ENCODED_SIGNATURE_FUNC => "CryptDllVerifyEncodedSignature\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_VERIFY_ENCODED_SIGNATURE_FUNC => "CryptDllVerifyEncodedSignature"u8;
 
     [NativeTypeName("#define CRYPT_DEFAULT_CONTEXT_AUTO_RELEASE_FLAG 0x00000001")]
     public const int CRYPT_DEFAULT_CONTEXT_AUTO_RELEASE_FLAG = 0x00000001;
@@ -661,19 +661,19 @@ public static unsafe partial class CRYPT
     public const int CRYPT_DEFAULT_CONTEXT_MULTI_CERT_SIGN_OID = 2;
 
     [NativeTypeName("#define CRYPT_OID_EXPORT_PUBLIC_KEY_INFO_FUNC \"CryptDllExportPublicKeyInfoEx\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_EXPORT_PUBLIC_KEY_INFO_FUNC => "CryptDllExportPublicKeyInfoEx\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_EXPORT_PUBLIC_KEY_INFO_FUNC => "CryptDllExportPublicKeyInfoEx"u8;
 
     [NativeTypeName("#define CRYPT_OID_EXPORT_PUBLIC_KEY_INFO_EX2_FUNC \"CryptDllExportPublicKeyInfoEx2\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_EXPORT_PUBLIC_KEY_INFO_EX2_FUNC => "CryptDllExportPublicKeyInfoEx2\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_EXPORT_PUBLIC_KEY_INFO_EX2_FUNC => "CryptDllExportPublicKeyInfoEx2"u8;
 
     [NativeTypeName("#define CRYPT_OID_EXPORT_PUBLIC_KEY_INFO_FROM_BCRYPT_HANDLE_FUNC \"CryptDllExportPublicKeyInfoFromBCryptKeyHandle\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_EXPORT_PUBLIC_KEY_INFO_FROM_BCRYPT_HANDLE_FUNC => "CryptDllExportPublicKeyInfoFromBCryptKeyHandle\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_EXPORT_PUBLIC_KEY_INFO_FROM_BCRYPT_HANDLE_FUNC => "CryptDllExportPublicKeyInfoFromBCryptKeyHandle"u8;
 
     [NativeTypeName("#define CRYPT_OID_IMPORT_PUBLIC_KEY_INFO_FUNC \"CryptDllImportPublicKeyInfoEx\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_IMPORT_PUBLIC_KEY_INFO_FUNC => "CryptDllImportPublicKeyInfoEx\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_IMPORT_PUBLIC_KEY_INFO_FUNC => "CryptDllImportPublicKeyInfoEx"u8;
 
     [NativeTypeName("#define CRYPT_OID_IMPORT_PUBLIC_KEY_INFO_EX2_FUNC \"CryptDllImportPublicKeyInfoEx2\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_IMPORT_PUBLIC_KEY_INFO_EX2_FUNC => "CryptDllImportPublicKeyInfoEx2\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_IMPORT_PUBLIC_KEY_INFO_EX2_FUNC => "CryptDllImportPublicKeyInfoEx2"u8;
 
     [NativeTypeName("#define CRYPT_ACQUIRE_CACHE_FLAG 0x00000001")]
     public const int CRYPT_ACQUIRE_CACHE_FLAG = 0x00000001;
@@ -715,10 +715,10 @@ public static unsafe partial class CRYPT
     public const int CRYPT_FIND_SILENT_KEYSET_FLAG = 0x00000040;
 
     [NativeTypeName("#define CRYPT_OID_IMPORT_PRIVATE_KEY_INFO_FUNC \"CryptDllImportPrivateKeyInfoEx\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_IMPORT_PRIVATE_KEY_INFO_FUNC => "CryptDllImportPrivateKeyInfoEx\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_IMPORT_PRIVATE_KEY_INFO_FUNC => "CryptDllImportPrivateKeyInfoEx"u8;
 
     [NativeTypeName("#define CRYPT_OID_EXPORT_PRIVATE_KEY_INFO_FUNC \"CryptDllExportPrivateKeyInfoEx\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_EXPORT_PRIVATE_KEY_INFO_FUNC => "CryptDllExportPrivateKeyInfoEx\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_EXPORT_PRIVATE_KEY_INFO_FUNC => "CryptDllExportPrivateKeyInfoEx"u8;
 
     [NativeTypeName("#define CRYPT_DELETE_KEYSET CRYPT_DELETEKEYSET")]
     public const int CRYPT_DELETE_KEYSET = 0x00000010;
@@ -859,7 +859,7 @@ public static unsafe partial class CRYPT
     public const int CRYPT_KEYID_SET_NEW_FLAG = 0x00002000;
 
     [NativeTypeName("#define CRYPT_OID_VERIFY_CERTIFICATE_CHAIN_POLICY_FUNC \"CertDllVerifyCertificateChainPolicy\"")]
-    public static ReadOnlySpan<byte> CRYPT_OID_VERIFY_CERTIFICATE_CHAIN_POLICY_FUNC => "CertDllVerifyCertificateChainPolicy\0"u8;
+    public static ReadOnlySpan<byte> CRYPT_OID_VERIFY_CERTIFICATE_CHAIN_POLICY_FUNC => "CertDllVerifyCertificateChainPolicy"u8;
 
     [NativeTypeName("#define CRYPT_STRING_BASE64HEADER 0x00000000")]
     public const int CRYPT_STRING_BASE64HEADER = 0x00000000;

@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 public static unsafe partial class CONTEXT
 {
     [NativeTypeName("#define CONTEXT_OID_CREATE_OBJECT_CONTEXT_FUNC \"ContextDllCreateObjectContext\"")]
-    public static ReadOnlySpan<byte> CONTEXT_OID_CREATE_OBJECT_CONTEXT_FUNC => "ContextDllCreateObjectContext\0"u8;
+    public static ReadOnlySpan<byte> CONTEXT_OID_CREATE_OBJECT_CONTEXT_FUNC => "ContextDllCreateObjectContext"u8;
 
     [NativeTypeName("#define CONTEXT_OID_CERTIFICATE ((LPCSTR)1)")]
     public static sbyte* CONTEXT_OID_CERTIFICATE => ((sbyte*)(1));

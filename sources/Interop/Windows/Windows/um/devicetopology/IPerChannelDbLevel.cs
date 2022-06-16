@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("C2F8E001-F205-4BC9-99BC-C13B1E048CCB")]
 [NativeTypeName("struct IPerChannelDbLevel : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IPerChannelDbLevel : IPerChannelDbLevel.Interface, IHaveNativeGuid
+public unsafe partial struct IPerChannelDbLevel : IPerChannelDbLevel.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPerChannelDbLevel;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPerChannelDbLevel));
 
     public void** lpVtbl;
 

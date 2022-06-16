@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("3D9F916B-27DC-4AD7-B4F1-64945340F563")]
 [NativeTypeName("struct ID2D1EffectContext : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ID2D1EffectContext : ID2D1EffectContext.Interface, IHaveNativeGuid
+public unsafe partial struct ID2D1EffectContext : ID2D1EffectContext.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1EffectContext;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1EffectContext));
 
     public void** lpVtbl;
 

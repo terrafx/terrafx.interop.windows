@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("B84E2C09-78C9-4AC4-8BD3-524AE1663A2F")]
 [NativeTypeName("struct IWICFastMetadataEncoder : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IWICFastMetadataEncoder : IWICFastMetadataEncoder.Interface, IHaveNativeGuid
+public unsafe partial struct IWICFastMetadataEncoder : IWICFastMetadataEncoder.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWICFastMetadataEncoder;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWICFastMetadataEncoder));
 
     public void** lpVtbl;
 

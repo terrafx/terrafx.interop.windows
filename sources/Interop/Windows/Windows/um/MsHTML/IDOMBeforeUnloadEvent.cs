@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("30510763-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IDOMBeforeUnloadEvent : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IDOMBeforeUnloadEvent : IDOMBeforeUnloadEvent.Interface, IHaveNativeGuid
+public unsafe partial struct IDOMBeforeUnloadEvent : IDOMBeforeUnloadEvent.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDOMBeforeUnloadEvent;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDOMBeforeUnloadEvent));
 
     public void** lpVtbl;
 

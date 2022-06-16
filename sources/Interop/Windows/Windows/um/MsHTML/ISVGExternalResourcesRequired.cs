@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("305104DF-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ISVGExternalResourcesRequired : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct ISVGExternalResourcesRequired : ISVGExternalResourcesRequired.Interface, IHaveNativeGuid
+public unsafe partial struct ISVGExternalResourcesRequired : ISVGExternalResourcesRequired.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISVGExternalResourcesRequired;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISVGExternalResourcesRequired));
 
     public void** lpVtbl;
 

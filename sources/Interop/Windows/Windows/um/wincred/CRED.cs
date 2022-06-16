@@ -37,7 +37,7 @@ public static partial class CRED
     public const string CRED_SESSION_WILDCARD_NAME_W = "*Session";
 
     [NativeTypeName("#define CRED_SESSION_WILDCARD_NAME_A \"*Session\"")]
-    public static ReadOnlySpan<byte> CRED_SESSION_WILDCARD_NAME_A => "*Session\0"u8;
+    public static ReadOnlySpan<byte> CRED_SESSION_WILDCARD_NAME_A => "*Session"u8;
 
     [NativeTypeName("#define CRED_UNIVERSAL_WILDCARD_W L'*'")]
     public const ushort CRED_UNIVERSAL_WILDCARD_W = '*';
@@ -52,7 +52,7 @@ public static partial class CRED
     public const string CRED_TARGETNAME_DOMAIN_NAMESPACE_W = "Domain";
 
     [NativeTypeName("#define CRED_TARGETNAME_DOMAIN_NAMESPACE_A \"Domain\"")]
-    public static ReadOnlySpan<byte> CRED_TARGETNAME_DOMAIN_NAMESPACE_A => "Domain\0"u8;
+    public static ReadOnlySpan<byte> CRED_TARGETNAME_DOMAIN_NAMESPACE_A => "Domain"u8;
 
     [NativeTypeName("#define CRED_TARGETNAME_DOMAIN_NAMESPACE_LENGTH (sizeof(CRED_TARGETNAME_DOMAIN_NAMESPACE_A)-1)")]
     public const uint CRED_TARGETNAME_DOMAIN_NAMESPACE_LENGTH = (7 - 1);
@@ -61,7 +61,7 @@ public static partial class CRED
     public const string CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_W = "LegacyGeneric";
 
     [NativeTypeName("#define CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_A \"LegacyGeneric\"")]
-    public static ReadOnlySpan<byte> CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_A => "LegacyGeneric\0"u8;
+    public static ReadOnlySpan<byte> CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_A => "LegacyGeneric"u8;
 
     [NativeTypeName("#define CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_LENGTH (sizeof(CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_A)-1)")]
     public const uint CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_LENGTH = (14 - 1);
@@ -88,7 +88,7 @@ public static partial class CRED
     public const string CRED_TARGETNAME_ATTRIBUTE_TARGET_W = "target";
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_TARGET_A \"target\"")]
-    public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_TARGET_A => "target\0"u8;
+    public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_TARGET_A => "target"u8;
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_TARGET_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_TARGET_A)-1)")]
     public const uint CRED_TARGETNAME_ATTRIBUTE_TARGET_LENGTH = (7 - 1);
@@ -97,7 +97,7 @@ public static partial class CRED
     public const string CRED_TARGETNAME_ATTRIBUTE_NAME_W = "name";
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NAME_A \"name\"")]
-    public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_NAME_A => "name\0"u8;
+    public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_NAME_A => "name"u8;
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NAME_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_NAME_A)-1)")]
     public const uint CRED_TARGETNAME_ATTRIBUTE_NAME_LENGTH = (5 - 1);
@@ -106,7 +106,7 @@ public static partial class CRED
     public const string CRED_TARGETNAME_ATTRIBUTE_BATCH_W = "batch";
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_BATCH_A \"batch\"")]
-    public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_BATCH_A => "batch\0"u8;
+    public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_BATCH_A => "batch"u8;
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_BATCH_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_BATCH_A)-1)")]
     public const uint CRED_TARGETNAME_ATTRIBUTE_BATCH_LENGTH = (6 - 1);
@@ -115,7 +115,7 @@ public static partial class CRED
     public const string CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_W = "interactive";
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_A \"interactive\"")]
-    public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_A => "interactive\0"u8;
+    public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_A => "interactive"u8;
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_A)-1)")]
     public const uint CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_LENGTH = (12 - 1);
@@ -124,7 +124,7 @@ public static partial class CRED
     public const string CRED_TARGETNAME_ATTRIBUTE_SERVICE_W = "service";
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_SERVICE_A \"service\"")]
-    public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_SERVICE_A => "service\0"u8;
+    public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_SERVICE_A => "service"u8;
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_SERVICE_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_SERVICE_A)-1)")]
     public const uint CRED_TARGETNAME_ATTRIBUTE_SERVICE_LENGTH = (8 - 1);
@@ -133,7 +133,7 @@ public static partial class CRED
     public const string CRED_TARGETNAME_ATTRIBUTE_NETWORK_W = "network";
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NETWORK_A \"network\"")]
-    public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_NETWORK_A => "network\0"u8;
+    public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_NETWORK_A => "network"u8;
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NETWORK_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_NETWORK_A)-1)")]
     public const uint CRED_TARGETNAME_ATTRIBUTE_NETWORK_LENGTH = (8 - 1);
@@ -142,7 +142,7 @@ public static partial class CRED
     public const string CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_W = "networkcleartext";
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_A \"networkcleartext\"")]
-    public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_A => "networkcleartext\0"u8;
+    public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_A => "networkcleartext"u8;
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_A)-1)")]
     public const uint CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_LENGTH = (17 - 1);
@@ -151,7 +151,7 @@ public static partial class CRED
     public const string CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_W = "remoteinteractive";
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_A \"remoteinteractive\"")]
-    public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_A => "remoteinteractive\0"u8;
+    public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_A => "remoteinteractive"u8;
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_A)-1)")]
     public const uint CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_LENGTH = (18 - 1);
@@ -160,7 +160,7 @@ public static partial class CRED
     public const string CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_W = "cachedinteractive";
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_A \"cachedinteractive\"")]
-    public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_A => "cachedinteractive\0"u8;
+    public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_A => "cachedinteractive"u8;
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_A)-1)")]
     public const uint CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_LENGTH = (18 - 1);

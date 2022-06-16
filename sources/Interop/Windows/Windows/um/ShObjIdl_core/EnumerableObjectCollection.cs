@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='EnumerableObjectCollection.xml' path='doc/member[@name="EnumerableObjectCollection"]/*' />
 [Guid("2D3468C1-36A7-43B6-AC24-D3F02FD9607A")]
-public partial struct EnumerableObjectCollection : IHaveNativeGuid
+public unsafe partial struct EnumerableObjectCollection : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_EnumerableObjectCollection;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_EnumerableObjectCollection));
 }

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("92980B30-C1DE-11D2-ABF5-00A0C905F375")]
 [NativeTypeName("struct IMemAllocatorNotifyCallbackTemp : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMemAllocatorNotifyCallbackTemp : IMemAllocatorNotifyCallbackTemp.Interface, IHaveNativeGuid
+public unsafe partial struct IMemAllocatorNotifyCallbackTemp : IMemAllocatorNotifyCallbackTemp.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMemAllocatorNotifyCallbackTemp;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMemAllocatorNotifyCallbackTemp));
 
     public void** lpVtbl;
 

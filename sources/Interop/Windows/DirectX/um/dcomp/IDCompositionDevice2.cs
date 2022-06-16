@@ -17,9 +17,9 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct IDCompositionDevice2 : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct IDCompositionDevice2 : IDCompositionDevice2.Interface, IHaveNativeGuid
+public unsafe partial struct IDCompositionDevice2 : IDCompositionDevice2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDCompositionDevice2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDCompositionDevice2));
 
     public void** lpVtbl;
 

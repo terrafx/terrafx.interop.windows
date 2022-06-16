@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("B859EE5A-D838-4B5B-A2E8-1ADC7D93DB48")]
 [NativeTypeName("struct IDWriteFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDWriteFactory : IDWriteFactory.Interface, IHaveNativeGuid
+public unsafe partial struct IDWriteFactory : IDWriteFactory.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDWriteFactory;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWriteFactory));
 
     public void** lpVtbl;
 

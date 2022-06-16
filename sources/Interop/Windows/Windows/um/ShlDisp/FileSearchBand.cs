@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='FileSearchBand.xml' path='doc/member[@name="FileSearchBand"]/*' />
 [Guid("C4EE31F3-4768-11D2-BE5C-00A0C9A83DA1")]
-public partial struct FileSearchBand : IHaveNativeGuid
+public unsafe partial struct FileSearchBand : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_FileSearchBand;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_FileSearchBand));
 }

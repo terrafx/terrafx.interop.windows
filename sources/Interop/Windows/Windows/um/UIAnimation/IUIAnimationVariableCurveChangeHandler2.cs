@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("72895E91-0145-4C21-9192-5AAB40EDDF80")]
 [NativeTypeName("struct IUIAnimationVariableCurveChangeHandler2 : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IUIAnimationVariableCurveChangeHandler2 : IUIAnimationVariableCurveChangeHandler2.Interface, IHaveNativeGuid
+public unsafe partial struct IUIAnimationVariableCurveChangeHandler2 : IUIAnimationVariableCurveChangeHandler2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IUIAnimationVariableCurveChangeHandler2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUIAnimationVariableCurveChangeHandler2));
 
     public void** lpVtbl;
 

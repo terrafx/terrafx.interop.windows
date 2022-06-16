@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncMPAEmphasisType.xml' path='doc/member[@name="CODECAPI_AVEncMPAEmphasisType"]/*' />
 [Guid("2D59FCDA-BF4E-4ED6-B5DF-5B03B36B0A1F")]
-public partial struct CODECAPI_AVEncMPAEmphasisType : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncMPAEmphasisType : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncMPAEmphasisType;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncMPAEmphasisType));
 }

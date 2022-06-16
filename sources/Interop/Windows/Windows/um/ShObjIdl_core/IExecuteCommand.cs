@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("7F9185B0-CB92-43C5-80A9-92277A4F7B54")]
 [NativeTypeName("struct IExecuteCommand : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, IHaveNativeGuid
+public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IExecuteCommand;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IExecuteCommand));
 
     public void** lpVtbl;
 

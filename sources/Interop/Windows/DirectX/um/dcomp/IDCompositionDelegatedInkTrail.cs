@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("C2448E9B-547D-4057-8CF5-8144EDE1C2DA")]
 [NativeTypeName("struct IDCompositionDelegatedInkTrail : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDCompositionDelegatedInkTrail : IDCompositionDelegatedInkTrail.Interface, IHaveNativeGuid
+public unsafe partial struct IDCompositionDelegatedInkTrail : IDCompositionDelegatedInkTrail.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDCompositionDelegatedInkTrail;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDCompositionDelegatedInkTrail));
 
     public void** lpVtbl;
 

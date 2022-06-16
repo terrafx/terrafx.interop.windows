@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IPrintDocumentPackageTargetFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IPrintDocumentPackageTargetFactory : IPrintDocumentPackageTargetFactory.Interface, IHaveNativeGuid
+public unsafe partial struct IPrintDocumentPackageTargetFactory : IPrintDocumentPackageTargetFactory.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPrintDocumentPackageTargetFactory;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPrintDocumentPackageTargetFactory));
 
     public void** lpVtbl;
 

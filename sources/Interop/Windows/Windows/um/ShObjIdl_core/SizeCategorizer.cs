@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SizeCategorizer.xml' path='doc/member[@name="SizeCategorizer"]/*' />
 [Guid("55D7B852-F6D1-42F2-AA75-8728A1B2D264")]
-public partial struct SizeCategorizer : IHaveNativeGuid
+public unsafe partial struct SizeCategorizer : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_SizeCategorizer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_SizeCategorizer));
 }

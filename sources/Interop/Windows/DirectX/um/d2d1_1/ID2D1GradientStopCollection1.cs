@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("AE1572F4-5DD0-4777-998B-9279472AE63B")]
 [NativeTypeName("struct ID2D1GradientStopCollection1 : ID2D1GradientStopCollection")]
 [NativeInheritance("ID2D1GradientStopCollection")]
-public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCollection1.Interface, IHaveNativeGuid
+public unsafe partial struct ID2D1GradientStopCollection1 : ID2D1GradientStopCollection1.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1GradientStopCollection1;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1GradientStopCollection1));
 
     public void** lpVtbl;
 

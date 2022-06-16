@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("A5CD92FF-29BE-454C-8D04-D82879FB3F1B")]
 [NativeTypeName("struct IVirtualDesktopManager : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IVirtualDesktopManager : IVirtualDesktopManager.Interface, IHaveNativeGuid
+public unsafe partial struct IVirtualDesktopManager : IVirtualDesktopManager.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVirtualDesktopManager;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVirtualDesktopManager));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3059009D-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct DispTreeWalker : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct DispTreeWalker : DispTreeWalker.Interface, IHaveNativeGuid
+public unsafe partial struct DispTreeWalker : DispTreeWalker.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_DispTreeWalker;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_DispTreeWalker));
 
     public void** lpVtbl;
 

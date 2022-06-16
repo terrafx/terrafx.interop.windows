@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IAudioClientDuckingControl : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0.19043.0")]
-public unsafe partial struct IAudioClientDuckingControl : IAudioClientDuckingControl.Interface, IHaveNativeGuid
+public unsafe partial struct IAudioClientDuckingControl : IAudioClientDuckingControl.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAudioClientDuckingControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAudioClientDuckingControl));
 
     public void** lpVtbl;
 

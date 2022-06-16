@@ -191,6 +191,8 @@ MFUnregisterPlatformFromMMCSS=mfplat
 MFUnwrapMediaType=mfplat
 MFValidateMediaTypeSize=mfplat
 MFWrapMediaType=mfplat
+--with-guid
+MFASYNCRESULT=00000000-0000-0000-0000-000000000000
 --with-librarypath
 MFCreateDXSurfaceBuffer=evr
 MFIsFormatYUV=evr

@@ -5,15 +5,20 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='ID3D11On12On7.xml' path='doc/member[@name="ID3D11On12On7"]/*' />
+[Guid("00000000-0000-0000-0000-000000000000")]
 [NativeTypeName("struct ID3D11On12On7 : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ID3D11On12On7 : ID3D11On12On7.Interface
+public unsafe partial struct ID3D11On12On7 : ID3D11On12On7.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D11On12On7));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

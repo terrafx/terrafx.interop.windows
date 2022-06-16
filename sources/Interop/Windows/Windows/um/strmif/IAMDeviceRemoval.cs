@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("F90A6130-B658-11D2-AE49-0000F8754B99")]
 [NativeTypeName("struct IAMDeviceRemoval : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMDeviceRemoval : IAMDeviceRemoval.Interface, IHaveNativeGuid
+public unsafe partial struct IAMDeviceRemoval : IAMDeviceRemoval.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMDeviceRemoval;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMDeviceRemoval));
 
     public void** lpVtbl;
 

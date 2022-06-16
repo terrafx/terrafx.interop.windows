@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 public static partial class DEFAULT
 {
     [NativeTypeName("#define DEFAULT_TLS_SSP_NAME_A \"Default TLS SSP\"")]
-    public static ReadOnlySpan<byte> DEFAULT_TLS_SSP_NAME_A => "Default TLS SSP\0"u8;
+    public static ReadOnlySpan<byte> DEFAULT_TLS_SSP_NAME_A => "Default TLS SSP"u8;
 
     [NativeTypeName("#define DEFAULT_TLS_SSP_NAME_W L\"Default TLS SSP\"")]
     public const string DEFAULT_TLS_SSP_NAME_W = "Default TLS SSP";

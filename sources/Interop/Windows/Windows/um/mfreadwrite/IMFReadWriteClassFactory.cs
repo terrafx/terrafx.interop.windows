@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("E7FE2E12-661C-40DA-92F9-4F002AB67627")]
 [NativeTypeName("struct IMFReadWriteClassFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFReadWriteClassFactory : IMFReadWriteClassFactory.Interface, IHaveNativeGuid
+public unsafe partial struct IMFReadWriteClassFactory : IMFReadWriteClassFactory.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFReadWriteClassFactory;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFReadWriteClassFactory));
 
     public void** lpVtbl;
 

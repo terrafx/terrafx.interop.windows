@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("9090BE5B-502B-41FB-BCCC-0049A6C7254B")]
 [NativeTypeName("struct IQueryContinueWithStatus : IQueryContinue")]
 [NativeInheritance("IQueryContinue")]
-public unsafe partial struct IQueryContinueWithStatus : IQueryContinueWithStatus.Interface, IHaveNativeGuid
+public unsafe partial struct IQueryContinueWithStatus : IQueryContinueWithStatus.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IQueryContinueWithStatus;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IQueryContinueWithStatus));
 
     public void** lpVtbl;
 

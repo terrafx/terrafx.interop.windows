@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("4C896039-7B6D-49E6-A8C1-45116A98292B")]
 [NativeTypeName("struct IAccClientDocMgr : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface, IHaveNativeGuid
+public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAccClientDocMgr;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAccClientDocMgr));
 
     public void** lpVtbl;
 

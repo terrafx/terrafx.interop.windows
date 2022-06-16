@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("000214F1-0000-0000-C000-000000000046")]
 [NativeTypeName("struct ICommDlgBrowser : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ICommDlgBrowser : ICommDlgBrowser.Interface, IHaveNativeGuid
+public unsafe partial struct ICommDlgBrowser : ICommDlgBrowser.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICommDlgBrowser;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICommDlgBrowser));
 
     public void** lpVtbl;
 

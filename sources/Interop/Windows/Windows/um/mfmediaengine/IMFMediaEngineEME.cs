@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFMediaEngineEME : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct IMFMediaEngineEME : IMFMediaEngineEME.Interface, IHaveNativeGuid
+public unsafe partial struct IMFMediaEngineEME : IMFMediaEngineEME.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFMediaEngineEME;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFMediaEngineEME));
 
     public void** lpVtbl;
 

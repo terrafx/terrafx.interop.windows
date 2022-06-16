@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("9B7E82E2-69C5-4EB4-A5F5-A7033F5132CD")]
 [NativeTypeName("struct IDCompositionTableTransferEffect : IDCompositionFilterEffect")]
 [NativeInheritance("IDCompositionFilterEffect")]
-public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTableTransferEffect.Interface, IHaveNativeGuid
+public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTableTransferEffect.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDCompositionTableTransferEffect;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDCompositionTableTransferEffect));
 
     public void** lpVtbl;
 

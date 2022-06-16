@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='MsftWriteEngine2.xml' path='doc/member[@name="MsftWriteEngine2"]/*' />
 [Guid("2735412C-7F64-5B0F-8F00-5D77AFBE261E")]
-public partial struct MsftWriteEngine2 : IHaveNativeGuid
+public unsafe partial struct MsftWriteEngine2 : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_MsftWriteEngine2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_MsftWriteEngine2));
 }

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("D97B5AAC-C792-433C-975D-35C4EADC7A9D")]
 [NativeTypeName("struct IFileSyncMergeHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IFileSyncMergeHandler : IFileSyncMergeHandler.Interface, IHaveNativeGuid
+public unsafe partial struct IFileSyncMergeHandler : IFileSyncMergeHandler.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IFileSyncMergeHandler;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFileSyncMergeHandler));
 
     public void** lpVtbl;
 

@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("F20E8CBE-3B28-4248-BE95-F96FBC6E4643")]
 [NativeTypeName("struct IMLOperatorTensorShapeDescription : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMLOperatorTensorShapeDescription : IMLOperatorTensorShapeDescription.Interface, IHaveNativeGuid
+public unsafe partial struct IMLOperatorTensorShapeDescription : IMLOperatorTensorShapeDescription.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMLOperatorTensorShapeDescription;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMLOperatorTensorShapeDescription));
 
     public void** lpVtbl;
 

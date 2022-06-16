@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("DCD285FE-0BE0-43BD-99C9-AAAEC513C555")]
 [NativeTypeName("struct IDocWrap : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDocWrap : IDocWrap.Interface, IHaveNativeGuid
+public unsafe partial struct IDocWrap : IDocWrap.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDocWrap;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDocWrap));
 
     public void** lpVtbl;
 

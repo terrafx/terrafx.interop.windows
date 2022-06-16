@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("53DD9855-A3B0-4D5B-82E1-26E25C5E5797")]
 [NativeTypeName("struct ID2D1LookupTable3D : ID2D1Resource")]
 [NativeInheritance("ID2D1Resource")]
-public unsafe partial struct ID2D1LookupTable3D : ID2D1LookupTable3D.Interface, IHaveNativeGuid
+public unsafe partial struct ID2D1LookupTable3D : ID2D1LookupTable3D.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1LookupTable3D;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1LookupTable3D));
 
     public void** lpVtbl;
 

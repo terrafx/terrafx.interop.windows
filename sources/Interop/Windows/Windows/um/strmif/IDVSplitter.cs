@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("92A3A302-DA7C-4A1F-BA7E-1802BB5D2D02")]
 [NativeTypeName("struct IDVSplitter : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDVSplitter : IDVSplitter.Interface, IHaveNativeGuid
+public unsafe partial struct IDVSplitter : IDVSplitter.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDVSplitter;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDVSplitter));
 
     public void** lpVtbl;
 

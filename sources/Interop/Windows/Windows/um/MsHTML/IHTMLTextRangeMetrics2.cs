@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F4A6-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLTextRangeMetrics2 : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IHTMLTextRangeMetrics2 : IHTMLTextRangeMetrics2.Interface, IHaveNativeGuid
+public unsafe partial struct IHTMLTextRangeMetrics2 : IHTMLTextRangeMetrics2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IHTMLTextRangeMetrics2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHTMLTextRangeMetrics2));
 
     public void** lpVtbl;
 

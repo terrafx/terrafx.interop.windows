@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncCommonLowLatency.xml' path='doc/member[@name="CODECAPI_AVEncCommonLowLatency"]/*' />
 [Guid("9D3ECD55-89E8-490A-970A-0C9548D5A56E")]
-public partial struct CODECAPI_AVEncCommonLowLatency : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncCommonLowLatency : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncCommonLowLatency;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncCommonLowLatency));
 }

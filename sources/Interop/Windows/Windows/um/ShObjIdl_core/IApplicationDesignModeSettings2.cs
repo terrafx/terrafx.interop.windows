@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("490514E1-675A-4D6E-A58D-E54901B4CA2F")]
 [NativeTypeName("struct IApplicationDesignModeSettings2 : IApplicationDesignModeSettings")]
 [NativeInheritance("IApplicationDesignModeSettings")]
-public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesignModeSettings2.Interface, IHaveNativeGuid
+public unsafe partial struct IApplicationDesignModeSettings2 : IApplicationDesignModeSettings2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IApplicationDesignModeSettings2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IApplicationDesignModeSettings2));
 
     public void** lpVtbl;
 

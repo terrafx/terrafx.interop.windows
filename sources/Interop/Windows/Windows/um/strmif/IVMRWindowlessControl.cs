@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("0EB1088C-4DCD-46F0-878F-39DAE86A51B7")]
 [NativeTypeName("struct IVMRWindowlessControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Interface, IHaveNativeGuid
+public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVMRWindowlessControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVMRWindowlessControl));
 
     public void** lpVtbl;
 

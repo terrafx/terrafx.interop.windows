@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("CAFD1DB1-41D1-4A06-9863-E2E81DA17A9A")]
 [NativeTypeName("struct ISpeechGrammarRuleStateTransition : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct ISpeechGrammarRuleStateTransition : ISpeechGrammarRuleStateTransition.Interface, IHaveNativeGuid
+public unsafe partial struct ISpeechGrammarRuleStateTransition : ISpeechGrammarRuleStateTransition.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpeechGrammarRuleStateTransition;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpeechGrammarRuleStateTransition));
 
     public void** lpVtbl;
 

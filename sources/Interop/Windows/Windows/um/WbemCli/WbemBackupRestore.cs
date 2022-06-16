@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='WbemBackupRestore.xml' path='doc/member[@name="WbemBackupRestore"]/*' />
 [Guid("C49E32C6-BC8B-11D2-85D4-00105A1F8304")]
-public partial struct WbemBackupRestore : IHaveNativeGuid
+public unsafe partial struct WbemBackupRestore : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_WbemBackupRestore;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_WbemBackupRestore));
 }

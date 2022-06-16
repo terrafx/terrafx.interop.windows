@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 public static unsafe partial class TIME
 {
     [NativeTypeName("#define TIME_VALID_OID_GET_OBJECT_FUNC \"TimeValidDllGetObject\"")]
-    public static ReadOnlySpan<byte> TIME_VALID_OID_GET_OBJECT_FUNC => "TimeValidDllGetObject\0"u8;
+    public static ReadOnlySpan<byte> TIME_VALID_OID_GET_OBJECT_FUNC => "TimeValidDllGetObject"u8;
 
     [NativeTypeName("#define TIME_VALID_OID_GET_CTL ((LPCSTR)1)")]
     public static sbyte* TIME_VALID_OID_GET_CTL => ((sbyte*)(1));
@@ -28,7 +28,7 @@ public static unsafe partial class TIME
     public static sbyte* TIME_VALID_OID_GET_FRESHEST_CRL_FROM_CRL => ((sbyte*)(5));
 
     [NativeTypeName("#define TIME_VALID_OID_FLUSH_OBJECT_FUNC \"TimeValidDllFlushObject\"")]
-    public static ReadOnlySpan<byte> TIME_VALID_OID_FLUSH_OBJECT_FUNC => "TimeValidDllFlushObject\0"u8;
+    public static ReadOnlySpan<byte> TIME_VALID_OID_FLUSH_OBJECT_FUNC => "TimeValidDllFlushObject"u8;
 
     [NativeTypeName("#define TIME_VALID_OID_FLUSH_CTL ((LPCSTR)1)")]
     public static sbyte* TIME_VALID_OID_FLUSH_CTL => ((sbyte*)(1));

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("7991EEC9-7E89-4D85-8390-6C703CEC60C0")]
 [NativeTypeName("struct IMMNotificationClient : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Interface, IHaveNativeGuid
+public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMMNotificationClient;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMMNotificationClient));
 
     public void** lpVtbl;
 

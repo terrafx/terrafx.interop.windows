@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='FSCopyHandler.xml' path='doc/member[@name="FSCopyHandler"]/*' />
 [Guid("D197380A-0A79-4DC8-A033-ED882C2FA14B")]
-public partial struct FSCopyHandler : IHaveNativeGuid
+public unsafe partial struct FSCopyHandler : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_FSCopyHandler;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_FSCopyHandler));
 }

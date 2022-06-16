@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("133ADCD4-19B4-4020-9FDC-842E78253B17")]
 [NativeTypeName("struct ISpPhoneticAlphabetConverter : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetConverter.Interface, IHaveNativeGuid
+public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetConverter.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpPhoneticAlphabetConverter;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpPhoneticAlphabetConverter));
 
     public void** lpVtbl;
 

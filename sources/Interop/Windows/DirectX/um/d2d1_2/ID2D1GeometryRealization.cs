@@ -17,9 +17,9 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct ID2D1GeometryRealization : ID2D1Resource")]
 [NativeInheritance("ID2D1Resource")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct ID2D1GeometryRealization : ID2D1GeometryRealization.Interface, IHaveNativeGuid
+public unsafe partial struct ID2D1GeometryRealization : ID2D1GeometryRealization.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1GeometryRealization;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1GeometryRealization));
 
     public void** lpVtbl;
 

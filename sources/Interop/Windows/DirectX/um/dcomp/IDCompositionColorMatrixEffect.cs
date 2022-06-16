@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("C1170A22-3CE2-4966-90D4-55408BFC84C4")]
 [NativeTypeName("struct IDCompositionColorMatrixEffect : IDCompositionFilterEffect")]
 [NativeInheritance("IDCompositionFilterEffect")]
-public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColorMatrixEffect.Interface, IHaveNativeGuid
+public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColorMatrixEffect.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDCompositionColorMatrixEffect;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDCompositionColorMatrixEffect));
 
     public void** lpVtbl;
 

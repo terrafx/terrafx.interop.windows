@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("EA76AFF8-EA22-4A23-A0EF-A6A966703518")]
 [NativeTypeName("struct IUIAnimationInterpolator2 : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IUIAnimationInterpolator2 : IUIAnimationInterpolator2.Interface, IHaveNativeGuid
+public unsafe partial struct IUIAnimationInterpolator2 : IUIAnimationInterpolator2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IUIAnimationInterpolator2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUIAnimationInterpolator2));
 
     public void** lpVtbl;
 

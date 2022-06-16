@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("26D95C66-80F2-499A-AD54-5AE7F01C6D98")]
 [NativeTypeName("struct IXAPOParameters : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IXAPOParameters : IXAPOParameters.Interface, IHaveNativeGuid
+public unsafe partial struct IXAPOParameters : IXAPOParameters.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IXAPOParameters;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IXAPOParameters));
 
     public void** lpVtbl;
 

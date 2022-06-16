@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("DB2F3ACC-2F86-11D1-8E04-00C04FB9989A")]
 [NativeTypeName("struct IPipeLong : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IPipeLong : IPipeLong.Interface, IHaveNativeGuid
+public unsafe partial struct IPipeLong : IPipeLong.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPipeLong;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPipeLong));
 
     public void** lpVtbl;
 

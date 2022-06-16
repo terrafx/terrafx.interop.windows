@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("D0E04C47-25B8-4369-925A-362A01D95444")]
 [NativeTypeName("struct IMPEG2StreamIdMap : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMPEG2StreamIdMap : IMPEG2StreamIdMap.Interface, IHaveNativeGuid
+public unsafe partial struct IMPEG2StreamIdMap : IMPEG2StreamIdMap.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMPEG2StreamIdMap;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMPEG2StreamIdMap));
 
     public void** lpVtbl;
 

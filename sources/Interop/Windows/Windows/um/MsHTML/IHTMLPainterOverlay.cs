@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F7E3-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLPainterOverlay : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IHTMLPainterOverlay : IHTMLPainterOverlay.Interface, IHaveNativeGuid
+public unsafe partial struct IHTMLPainterOverlay : IHTMLPainterOverlay.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IHTMLPainterOverlay;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHTMLPainterOverlay));
 
     public void** lpVtbl;
 

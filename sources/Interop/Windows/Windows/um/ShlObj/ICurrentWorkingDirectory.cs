@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("91956D21-9276-11D1-921A-006097DF5BD4")]
 [NativeTypeName("struct ICurrentWorkingDirectory : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ICurrentWorkingDirectory : ICurrentWorkingDirectory.Interface, IHaveNativeGuid
+public unsafe partial struct ICurrentWorkingDirectory : ICurrentWorkingDirectory.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICurrentWorkingDirectory;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICurrentWorkingDirectory));
 
     public void** lpVtbl;
 

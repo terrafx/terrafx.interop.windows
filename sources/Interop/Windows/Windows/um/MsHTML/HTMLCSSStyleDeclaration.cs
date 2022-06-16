@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='HTMLCSSStyleDeclaration.xml' path='doc/member[@name="HTMLCSSStyleDeclaration"]/*' />
 [Guid("30510741-98B5-11CF-BB82-00AA00BDCE0B")]
-public partial struct HTMLCSSStyleDeclaration : IHaveNativeGuid
+public unsafe partial struct HTMLCSSStyleDeclaration : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_HTMLCSSStyleDeclaration;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_HTMLCSSStyleDeclaration));
 }

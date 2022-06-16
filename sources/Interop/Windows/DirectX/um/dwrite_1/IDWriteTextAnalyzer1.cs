@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("80DAD800-E21F-4E83-96CE-BFCCE500DB7C")]
 [NativeTypeName("struct IDWriteTextAnalyzer1 : IDWriteTextAnalyzer")]
 [NativeInheritance("IDWriteTextAnalyzer")]
-public unsafe partial struct IDWriteTextAnalyzer1 : IDWriteTextAnalyzer1.Interface, IHaveNativeGuid
+public unsafe partial struct IDWriteTextAnalyzer1 : IDWriteTextAnalyzer1.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDWriteTextAnalyzer1;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWriteTextAnalyzer1));
 
     public void** lpVtbl;
 

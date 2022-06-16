@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMarshalingStream : IStream")]
 [NativeInheritance("IStream")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IMarshalingStream : IMarshalingStream.Interface, IHaveNativeGuid
+public unsafe partial struct IMarshalingStream : IMarshalingStream.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMarshalingStream;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMarshalingStream));
 
     public void** lpVtbl;
 

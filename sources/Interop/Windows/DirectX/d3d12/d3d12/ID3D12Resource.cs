@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("696442BE-A72E-4059-BC79-5B5C98040FAD")]
 [NativeTypeName("struct ID3D12Resource : ID3D12Pageable")]
 [NativeInheritance("ID3D12Pageable")]
-public unsafe partial struct ID3D12Resource : ID3D12Resource.Interface, IHaveNativeGuid
+public unsafe partial struct ID3D12Resource : ID3D12Resource.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D12Resource;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D12Resource));
 
     public void** lpVtbl;
 

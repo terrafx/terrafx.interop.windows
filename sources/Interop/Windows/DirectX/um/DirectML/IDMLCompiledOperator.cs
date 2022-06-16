@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("6B15E56A-BF5C-4902-92D8-DA3A650AFEA4")]
 [NativeTypeName("struct IDMLCompiledOperator : IDMLDispatchable")]
 [NativeInheritance("IDMLDispatchable")]
-public unsafe partial struct IDMLCompiledOperator : IDMLCompiledOperator.Interface, IHaveNativeGuid
+public unsafe partial struct IDMLCompiledOperator : IDMLCompiledOperator.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDMLCompiledOperator;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDMLCompiledOperator));
 
     public void** lpVtbl;
 

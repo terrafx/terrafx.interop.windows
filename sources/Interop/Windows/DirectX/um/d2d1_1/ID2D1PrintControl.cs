@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("2C1D867D-C290-41C8-AE7E-34A98702E9A5")]
 [NativeTypeName("struct ID2D1PrintControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ID2D1PrintControl : ID2D1PrintControl.Interface, IHaveNativeGuid
+public unsafe partial struct ID2D1PrintControl : ID2D1PrintControl.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1PrintControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1PrintControl));
 
     public void** lpVtbl;
 

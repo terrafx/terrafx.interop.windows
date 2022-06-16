@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("84AC29BB-D619-44D2-B197-E4ACF7DF3ED6")]
 [NativeTypeName("struct IXAudio2Extension : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IXAudio2Extension : IXAudio2Extension.Interface, IHaveNativeGuid
+public unsafe partial struct IXAudio2Extension : IXAudio2Extension.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IXAudio2Extension;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IXAudio2Extension));
 
     public void** lpVtbl;
 

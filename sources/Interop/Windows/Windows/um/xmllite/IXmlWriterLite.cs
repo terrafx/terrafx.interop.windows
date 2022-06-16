@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("862494C6-1310-4AAD-B3CD-2DBEEBF670D3")]
 [NativeTypeName("struct IXmlWriterLite : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IXmlWriterLite : IXmlWriterLite.Interface, IHaveNativeGuid
+public unsafe partial struct IXmlWriterLite : IXmlWriterLite.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IXmlWriterLite;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IXmlWriterLite));
 
     public void** lpVtbl;
 

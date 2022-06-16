@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SpTextSelectionInformation.xml' path='doc/member[@name="SpTextSelectionInformation"]/*' />
 [Guid("0F92030A-CBFD-4AB8-A164-FF5985547FF6")]
-public partial struct SpTextSelectionInformation : IHaveNativeGuid
+public unsafe partial struct SpTextSelectionInformation : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_SpTextSelectionInformation;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_SpTextSelectionInformation));
 }

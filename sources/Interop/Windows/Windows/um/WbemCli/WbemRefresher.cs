@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='WbemRefresher.xml' path='doc/member[@name="WbemRefresher"]/*' />
 [Guid("C71566F2-561E-11D1-AD87-00C04FD8FDFF")]
-public partial struct WbemRefresher : IHaveNativeGuid
+public unsafe partial struct WbemRefresher : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_WbemRefresher;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_WbemRefresher));
 }

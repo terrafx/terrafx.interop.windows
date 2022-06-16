@@ -13,9 +13,9 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='ID3D11FunctionParameterReflection.xml' path='doc/member[@name="ID3D11FunctionParameterReflection"]/*' />
 [Guid("42757488-334F-47FE-982E-1A65D08CC462")]
-public unsafe partial struct ID3D11FunctionParameterReflection : ID3D11FunctionParameterReflection.Interface, IHaveNativeGuid
+public unsafe partial struct ID3D11FunctionParameterReflection : ID3D11FunctionParameterReflection.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D11FunctionParameterReflection;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D11FunctionParameterReflection));
 
     public void** lpVtbl;
 

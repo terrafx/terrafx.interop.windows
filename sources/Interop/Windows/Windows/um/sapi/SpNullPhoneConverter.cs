@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SpNullPhoneConverter.xml' path='doc/member[@name="SpNullPhoneConverter"]/*' />
 [Guid("455F24E9-7396-4A16-9715-7C0FDBE3EFE3")]
-public partial struct SpNullPhoneConverter : IHaveNativeGuid
+public unsafe partial struct SpNullPhoneConverter : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_SpNullPhoneConverter;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_SpNullPhoneConverter));
 }

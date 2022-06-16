@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("B507CA29-2204-11DD-966A-001AA01BBC58")]
 [NativeTypeName("struct IFileSystemImageResult2 : IFileSystemImageResult")]
 [NativeInheritance("IFileSystemImageResult")]
-public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.Interface, IHaveNativeGuid
+public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IFileSystemImageResult2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFileSystemImageResult2));
 
     public void** lpVtbl;
 

@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFDXGIBuffer : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IMFDXGIBuffer : IMFDXGIBuffer.Interface, IHaveNativeGuid
+public unsafe partial struct IMFDXGIBuffer : IMFDXGIBuffer.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFDXGIBuffer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFDXGIBuffer));
 
     public void** lpVtbl;
 

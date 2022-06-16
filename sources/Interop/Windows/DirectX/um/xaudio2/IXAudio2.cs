@@ -18,9 +18,9 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct IXAudio2 : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IXAudio2 : IXAudio2.Interface, IHaveNativeGuid
+public unsafe partial struct IXAudio2 : IXAudio2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IXAudio2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IXAudio2));
 
     public void** lpVtbl;
 

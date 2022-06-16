@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("505F1513-6B3E-4892-A272-59F8889A4D3E")]
 [NativeTypeName("struct IImageRecompress : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IImageRecompress : IImageRecompress.Interface, IHaveNativeGuid
+public unsafe partial struct IImageRecompress : IImageRecompress.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IImageRecompress;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IImageRecompress));
 
     public void** lpVtbl;
 

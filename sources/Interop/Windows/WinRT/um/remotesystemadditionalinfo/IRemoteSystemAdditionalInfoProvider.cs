@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("EEAA3D5F-EC63-4D27-AF38-E86B1D7292CB")]
 [NativeTypeName("struct IRemoteSystemAdditionalInfoProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IRemoteSystemAdditionalInfoProvider : IRemoteSystemAdditionalInfoProvider.Interface, IHaveNativeGuid
+public unsafe partial struct IRemoteSystemAdditionalInfoProvider : IRemoteSystemAdditionalInfoProvider.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IRemoteSystemAdditionalInfoProvider;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IRemoteSystemAdditionalInfoProvider));
 
     public void** lpVtbl;
 

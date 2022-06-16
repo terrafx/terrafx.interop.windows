@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("A714590A-58AF-430A-85BF-44F5EC838D85")]
 [NativeTypeName("struct IMFPMediaPlayer : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, IHaveNativeGuid
+public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFPMediaPlayer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFPMediaPlayer));
 
     public void** lpVtbl;
 

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='PublishingWizard.xml' path='doc/member[@name="PublishingWizard"]/*' />
 [Guid("6B33163C-76A5-4B6C-BF21-45DE9CD503A1")]
-public partial struct PublishingWizard : IHaveNativeGuid
+public unsafe partial struct PublishingWizard : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_PublishingWizard;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_PublishingWizard));
 }

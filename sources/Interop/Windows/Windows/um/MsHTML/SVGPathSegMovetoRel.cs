@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SVGPathSegMovetoRel.xml' path='doc/member[@name="SVGPathSegMovetoRel"]/*' />
 [Guid("305105CD-98B5-11CF-BB82-00AA00BDCE0B")]
-public partial struct SVGPathSegMovetoRel : IHaveNativeGuid
+public unsafe partial struct SVGPathSegMovetoRel : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_SVGPathSegMovetoRel;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_SVGPathSegMovetoRel));
 }

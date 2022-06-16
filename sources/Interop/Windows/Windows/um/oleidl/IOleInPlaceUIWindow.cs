@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("00000115-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IOleInPlaceUIWindow : IOleWindow")]
 [NativeInheritance("IOleWindow")]
-public unsafe partial struct IOleInPlaceUIWindow : IOleInPlaceUIWindow.Interface, IHaveNativeGuid
+public unsafe partial struct IOleInPlaceUIWindow : IOleInPlaceUIWindow.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IOleInPlaceUIWindow;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IOleInPlaceUIWindow));
 
     public void** lpVtbl;
 

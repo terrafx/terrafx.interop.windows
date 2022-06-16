@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("B22E3FBA-3925-4323-B5C1-9EBFC430F236")]
 [NativeTypeName("struct IWICMetadataWriterInfo : IWICMetadataHandlerInfo")]
 [NativeInheritance("IWICMetadataHandlerInfo")]
-public unsafe partial struct IWICMetadataWriterInfo : IWICMetadataWriterInfo.Interface, IHaveNativeGuid
+public unsafe partial struct IWICMetadataWriterInfo : IWICMetadataWriterInfo.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWICMetadataWriterInfo;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWICMetadataWriterInfo));
 
     public void** lpVtbl;
 

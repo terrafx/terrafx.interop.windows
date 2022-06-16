@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("27354135-7F64-5B0F-8F00-5D77AFBE261E")]
 [NativeTypeName("struct IWriteEngine2 : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, IHaveNativeGuid
+public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWriteEngine2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWriteEngine2));
 
     public void** lpVtbl;
 

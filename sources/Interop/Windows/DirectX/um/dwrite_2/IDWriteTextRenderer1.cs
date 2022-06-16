@@ -17,9 +17,9 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct IDWriteTextRenderer1 : IDWriteTextRenderer")]
 [NativeInheritance("IDWriteTextRenderer")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct IDWriteTextRenderer1 : IDWriteTextRenderer1.Interface, IHaveNativeGuid
+public unsafe partial struct IDWriteTextRenderer1 : IDWriteTextRenderer1.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDWriteTextRenderer1;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWriteTextRenderer1));
 
     public void** lpVtbl;
 

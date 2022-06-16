@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("317EE249-F12E-11D2-B1E4-00C04F8EEB3E")]
 [NativeTypeName("struct IShellLinkDual2 : IShellLinkDual")]
 [NativeInheritance("IShellLinkDual")]
-public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface, IHaveNativeGuid
+public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IShellLinkDual2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IShellLinkDual2));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("6A2E0670-28E4-11D0-A18C-00A0C9118956")]
 [NativeTypeName("struct IAMVideoControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface, IHaveNativeGuid
+public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMVideoControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMVideoControl));
 
     public void** lpVtbl;
 

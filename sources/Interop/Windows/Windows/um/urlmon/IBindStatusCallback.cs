@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("79EAC9C1-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IBindStatusCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface, IHaveNativeGuid
+public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IBindStatusCallback;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IBindStatusCallback));
 
     public void** lpVtbl;
 

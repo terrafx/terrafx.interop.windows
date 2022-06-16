@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("9FDAC92A-1876-48C3-AFAD-25B94F84A9B6")]
 [NativeTypeName("struct ID3D11DepthStencilView : ID3D11View")]
 [NativeInheritance("ID3D11View")]
-public unsafe partial struct ID3D11DepthStencilView : ID3D11DepthStencilView.Interface, IHaveNativeGuid
+public unsafe partial struct ID3D11DepthStencilView : ID3D11DepthStencilView.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D11DepthStencilView;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D11DepthStencilView));
 
     public void** lpVtbl;
 

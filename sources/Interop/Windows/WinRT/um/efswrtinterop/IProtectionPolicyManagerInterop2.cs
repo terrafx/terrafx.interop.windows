@@ -17,9 +17,9 @@ namespace TerraFX.Interop.WinRT;
 [NativeTypeName("struct IProtectionPolicyManagerInterop2 : IInspectable")]
 [NativeInheritance("IInspectable")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolicyManagerInterop2.Interface, IHaveNativeGuid
+public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolicyManagerInterop2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IProtectionPolicyManagerInterop2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IProtectionPolicyManagerInterop2));
 
     public void** lpVtbl;
 

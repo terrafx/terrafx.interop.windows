@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='HTMLCSSMediaList.xml' path='doc/member[@name="HTMLCSSMediaList"]/*' />
 [Guid("30510732-98B5-11CF-BB82-00AA00BDCE0B")]
-public partial struct HTMLCSSMediaList : IHaveNativeGuid
+public unsafe partial struct HTMLCSSMediaList : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_HTMLCSSMediaList;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_HTMLCSSMediaList));
 }

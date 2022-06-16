@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("7BACC67A-2F1D-42D0-897E-6FF62DD533BB")]
 [NativeTypeName("struct IDedupReadFileCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDedupReadFileCallback : IDedupReadFileCallback.Interface, IHaveNativeGuid
+public unsafe partial struct IDedupReadFileCallback : IDedupReadFileCallback.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDedupReadFileCallback;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDedupReadFileCallback));
 
     public void** lpVtbl;
 

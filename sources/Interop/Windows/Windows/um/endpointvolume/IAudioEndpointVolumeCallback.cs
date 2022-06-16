@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("657804FA-D6AD-4496-8A60-352752AF4F89")]
 [NativeTypeName("struct IAudioEndpointVolumeCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAudioEndpointVolumeCallback : IAudioEndpointVolumeCallback.Interface, IHaveNativeGuid
+public unsafe partial struct IAudioEndpointVolumeCallback : IAudioEndpointVolumeCallback.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAudioEndpointVolumeCallback;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAudioEndpointVolumeCallback));
 
     public void** lpVtbl;
 

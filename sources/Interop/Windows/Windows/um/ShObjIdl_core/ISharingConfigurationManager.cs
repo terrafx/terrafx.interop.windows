@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("B4CD448A-9C86-4466-9201-2E62105B87AE")]
 [NativeTypeName("struct ISharingConfigurationManager : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ISharingConfigurationManager : ISharingConfigurationManager.Interface, IHaveNativeGuid
+public unsafe partial struct ISharingConfigurationManager : ISharingConfigurationManager.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISharingConfigurationManager;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISharingConfigurationManager));
 
     public void** lpVtbl;
 

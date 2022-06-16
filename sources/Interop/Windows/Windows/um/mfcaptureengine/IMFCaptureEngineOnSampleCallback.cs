@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFCaptureEngineOnSampleCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IMFCaptureEngineOnSampleCallback : IMFCaptureEngineOnSampleCallback.Interface, IHaveNativeGuid
+public unsafe partial struct IMFCaptureEngineOnSampleCallback : IMFCaptureEngineOnSampleCallback.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFCaptureEngineOnSampleCallback;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFCaptureEngineOnSampleCallback));
 
     public void** lpVtbl;
 

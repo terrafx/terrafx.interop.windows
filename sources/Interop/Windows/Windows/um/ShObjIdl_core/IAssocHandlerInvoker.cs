@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("92218CAB-ECAA-4335-8133-807FD234C2EE")]
 [NativeTypeName("struct IAssocHandlerInvoker : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAssocHandlerInvoker : IAssocHandlerInvoker.Interface, IHaveNativeGuid
+public unsafe partial struct IAssocHandlerInvoker : IAssocHandlerInvoker.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAssocHandlerInvoker;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAssocHandlerInvoker));
 
     public void** lpVtbl;
 

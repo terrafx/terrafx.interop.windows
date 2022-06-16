@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("DAAC296F-7AA5-4DBF-8D15-225C5976F891")]
 [NativeTypeName("struct IWICProgressiveLevelControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelControl.Interface, IHaveNativeGuid
+public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelControl.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWICProgressiveLevelControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWICProgressiveLevelControl));
 
     public void** lpVtbl;
 

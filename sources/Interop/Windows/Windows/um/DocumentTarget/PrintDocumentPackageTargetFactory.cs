@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='PrintDocumentPackageTargetFactory.xml' path='doc/member[@name="PrintDocumentPackageTargetFactory"]/*' />
 [Guid("348EF17D-6C81-4982-92B4-EE188A43867A")]
-public partial struct PrintDocumentPackageTargetFactory : IHaveNativeGuid
+public unsafe partial struct PrintDocumentPackageTargetFactory : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_PrintDocumentPackageTargetFactory;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_PrintDocumentPackageTargetFactory));
 }

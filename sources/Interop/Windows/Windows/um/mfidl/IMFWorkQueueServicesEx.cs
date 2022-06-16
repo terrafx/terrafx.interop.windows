@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFWorkQueueServicesEx : IMFWorkQueueServices")]
 [NativeInheritance("IMFWorkQueueServices")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IMFWorkQueueServicesEx : IMFWorkQueueServicesEx.Interface, IHaveNativeGuid
+public unsafe partial struct IMFWorkQueueServicesEx : IMFWorkQueueServicesEx.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFWorkQueueServicesEx;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFWorkQueueServicesEx));
 
     public void** lpVtbl;
 

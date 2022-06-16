@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("C8E40ED2-A1D9-4221-8692-3CE661184B44")]
 [NativeTypeName("struct IDiaImageData : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDiaImageData : IDiaImageData.Interface, IHaveNativeGuid
+public unsafe partial struct IDiaImageData : IDiaImageData.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDiaImageData;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDiaImageData));
 
     public void** lpVtbl;
 

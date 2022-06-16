@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("B8AAB0CF-346F-49D8-9499-C8B03F161D51")]
 [NativeTypeName("struct ISpObjectTokenInit : ISpObjectToken")]
 [NativeInheritance("ISpObjectToken")]
-public unsafe partial struct ISpObjectTokenInit : ISpObjectTokenInit.Interface, IHaveNativeGuid
+public unsafe partial struct ISpObjectTokenInit : ISpObjectTokenInit.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpObjectTokenInit;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpObjectTokenInit));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("EB5DDB08-8BBF-449B-AC21-B02DDEB3B136")]
 [NativeTypeName("struct IXblIdpAuthManager : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface, IHaveNativeGuid
+public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IXblIdpAuthManager;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IXblIdpAuthManager));
 
     public void** lpVtbl;
 

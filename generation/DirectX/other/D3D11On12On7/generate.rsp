@@ -14,5 +14,7 @@ TerraFX.Interop.DirectX
 ../../../../tests/Interop/Windows/DirectX/other/D3D11On12On7
 --traverse
 ./D3D11On12On7.h
+--with-guid
+ID3D11On12On7=00000000-0000-0000-0000-000000000000
 --with-librarypath
 *=d3d11on12

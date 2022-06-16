@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("4688A074-5A4D-4486-AEA8-7B90711D9F7C")]
 [NativeTypeName("struct IDiaLoadCallback2 : IDiaLoadCallback")]
 [NativeInheritance("IDiaLoadCallback")]
-public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface, IHaveNativeGuid
+public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDiaLoadCallback2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDiaLoadCallback2));
 
     public void** lpVtbl;
 

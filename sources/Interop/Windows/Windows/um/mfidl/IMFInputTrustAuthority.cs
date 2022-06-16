@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("D19F8E98-B126-4446-890C-5DCB7AD71453")]
 [NativeTypeName("struct IMFInputTrustAuthority : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Interface, IHaveNativeGuid
+public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFInputTrustAuthority;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFInputTrustAuthority));
 
     public void** lpVtbl;
 

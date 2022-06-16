@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3FA19CF8-64C4-4F53-AE60-635B3806ECA6")]
 [NativeTypeName("struct DRendezvousSessionEvents : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct DRendezvousSessionEvents : DRendezvousSessionEvents.Interface, IHaveNativeGuid
+public unsafe partial struct DRendezvousSessionEvents : DRendezvousSessionEvents.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref DIID_DRendezvousSessionEvents;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in DIID_DRendezvousSessionEvents));
 
     public void** lpVtbl;
 

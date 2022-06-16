@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8D7B2BA7-DB05-46A8-823C-D2B6DE08EE91")]
 [NativeTypeName("struct IBannerNotificationHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IBannerNotificationHandler : IBannerNotificationHandler.Interface, IHaveNativeGuid
+public unsafe partial struct IBannerNotificationHandler : IBannerNotificationHandler.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IBannerNotificationHandler;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IBannerNotificationHandler));
 
     public void** lpVtbl;
 

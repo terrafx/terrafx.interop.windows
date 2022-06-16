@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("4DB3757A-2C72-4ED9-B2B6-1ABABE1AFF9C")]
 [NativeTypeName("struct IDWriteRemoteFontFileStream : IDWriteFontFileStream")]
 [NativeInheritance("IDWriteFontFileStream")]
-public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFileStream.Interface, IHaveNativeGuid
+public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFileStream.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDWriteRemoteFontFileStream;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWriteRemoteFontFileStream));
 
     public void** lpVtbl;
 

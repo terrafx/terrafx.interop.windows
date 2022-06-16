@@ -17,9 +17,9 @@ namespace TerraFX.Interop.WinRT;
 [NativeTypeName("struct IOplockBreakingHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct IOplockBreakingHandler : IOplockBreakingHandler.Interface, IHaveNativeGuid
+public unsafe partial struct IOplockBreakingHandler : IOplockBreakingHandler.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IOplockBreakingHandler;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IOplockBreakingHandler));
 
     public void** lpVtbl;
 

@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("5E5A32A3-8DFF-4773-9FF6-0696EAB77267")]
 [NativeTypeName("struct IDWriteBitmapRenderTarget : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarget.Interface, IHaveNativeGuid
+public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarget.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDWriteBitmapRenderTarget;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWriteBitmapRenderTarget));
 
     public void** lpVtbl;
 

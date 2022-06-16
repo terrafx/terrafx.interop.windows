@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("5D1ABFD6-450A-4D92-9EFC-D6B6CBC1F4DA")]
 [NativeTypeName("struct IMFMediaSourceExtensionLiveSeekableRange : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange : IMFMediaSourceExtensionLiveSeekableRange.Interface, IHaveNativeGuid
+public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange : IMFMediaSourceExtensionLiveSeekableRange.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFMediaSourceExtensionLiveSeekableRange;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFMediaSourceExtensionLiveSeekableRange));
 
     public void** lpVtbl;
 

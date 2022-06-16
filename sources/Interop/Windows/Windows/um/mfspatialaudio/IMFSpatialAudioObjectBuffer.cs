@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFSpatialAudioObjectBuffer : IMFMediaBuffer")]
 [NativeInheritance("IMFMediaBuffer")]
 [SupportedOSPlatform("windows10.0.15063.0")]
-public unsafe partial struct IMFSpatialAudioObjectBuffer : IMFSpatialAudioObjectBuffer.Interface, IHaveNativeGuid
+public unsafe partial struct IMFSpatialAudioObjectBuffer : IMFSpatialAudioObjectBuffer.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFSpatialAudioObjectBuffer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFSpatialAudioObjectBuffer));
 
     public void** lpVtbl;
 

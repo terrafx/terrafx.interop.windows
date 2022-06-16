@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("30510803-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ITrackingProtection : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface, IHaveNativeGuid
+public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITrackingProtection;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITrackingProtection));
 
     public void** lpVtbl;
 

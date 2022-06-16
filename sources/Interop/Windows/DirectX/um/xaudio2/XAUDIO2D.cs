@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 public static partial class XAUDIO2D
 {
     [NativeTypeName("#define XAUDIO2D_DLL_A \"xaudio2_9d.dll\"")]
-    public static ReadOnlySpan<byte> XAUDIO2D_DLL_A => "xaudio2_9d.dll\0"u8;
+    public static ReadOnlySpan<byte> XAUDIO2D_DLL_A => "xaudio2_9d.dll"u8;
 
     [NativeTypeName("#define XAUDIO2D_DLL_W L\"xaudio2_9d.dll\"")]
     public const string XAUDIO2D_DLL_W = "xaudio2_9d.dll";

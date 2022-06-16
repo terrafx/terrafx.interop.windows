@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("6E3194BB-AB82-4D22-93F5-FABDA40E7B16")]
 [NativeTypeName("struct IPackageDebugSettings2 : IPackageDebugSettings")]
 [NativeInheritance("IPackageDebugSettings")]
-public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Interface, IHaveNativeGuid
+public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPackageDebugSettings2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPackageDebugSettings2));
 
     public void** lpVtbl;
 

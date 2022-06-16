@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8E36395F-C7B9-43C4-A54D-512B4AF63C95")]
 [NativeTypeName("struct IMFSampleProtection : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFSampleProtection : IMFSampleProtection.Interface, IHaveNativeGuid
+public unsafe partial struct IMFSampleProtection : IMFSampleProtection.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFSampleProtection;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFSampleProtection));
 
     public void** lpVtbl;
 

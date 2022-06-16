@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("A9B3D012-3DF2-4EE3-B8D1-8695F457D3C1")]
 [NativeTypeName("struct IDirect3DDxgiInterfaceAccess : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDirect3DDxgiInterfaceAccess : IDirect3DDxgiInterfaceAccess.Interface, IHaveNativeGuid
+public unsafe partial struct IDirect3DDxgiInterfaceAccess : IDirect3DDxgiInterfaceAccess.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDirect3DDxgiInterfaceAccess;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDirect3DDxgiInterfaceAccess));
 
     public void** lpVtbl;
 

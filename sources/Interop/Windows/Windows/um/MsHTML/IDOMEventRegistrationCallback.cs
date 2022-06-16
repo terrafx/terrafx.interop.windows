@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3051083B-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IDOMEventRegistrationCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDOMEventRegistrationCallback : IDOMEventRegistrationCallback.Interface, IHaveNativeGuid
+public unsafe partial struct IDOMEventRegistrationCallback : IDOMEventRegistrationCallback.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDOMEventRegistrationCallback;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDOMEventRegistrationCallback));
 
     public void** lpVtbl;
 

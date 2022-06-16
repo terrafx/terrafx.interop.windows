@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='Contact.xml' path='doc/member[@name="Contact"]/*' />
 [Guid("61B68808-8EEE-4FD1-ACB8-3D804C8DB056")]
-public partial struct Contact : IHaveNativeGuid
+public unsafe partial struct Contact : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_Contact;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_Contact));
 }

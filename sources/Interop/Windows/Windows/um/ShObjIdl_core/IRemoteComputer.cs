@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("000214FE-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IRemoteComputer : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IRemoteComputer : IRemoteComputer.Interface, IHaveNativeGuid
+public unsafe partial struct IRemoteComputer : IRemoteComputer.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IRemoteComputer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IRemoteComputer));
 
     public void** lpVtbl;
 

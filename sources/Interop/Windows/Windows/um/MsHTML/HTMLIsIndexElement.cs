@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='HTMLIsIndexElement.xml' path='doc/member[@name="HTMLIsIndexElement"]/*' />
 [Guid("3050F278-98B5-11CF-BB82-00AA00BDCE0B")]
-public partial struct HTMLIsIndexElement : IHaveNativeGuid
+public unsafe partial struct HTMLIsIndexElement : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_HTMLIsIndexElement;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_HTMLIsIndexElement));
 }

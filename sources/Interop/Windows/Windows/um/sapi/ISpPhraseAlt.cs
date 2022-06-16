@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8FCEBC98-4E49-4067-9C6C-D86A0E092E3D")]
 [NativeTypeName("struct ISpPhraseAlt : ISpPhrase")]
 [NativeInheritance("ISpPhrase")]
-public unsafe partial struct ISpPhraseAlt : ISpPhraseAlt.Interface, IHaveNativeGuid
+public unsafe partial struct ISpPhraseAlt : ISpPhraseAlt.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpPhraseAlt;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpPhraseAlt));
 
     public void** lpVtbl;
 

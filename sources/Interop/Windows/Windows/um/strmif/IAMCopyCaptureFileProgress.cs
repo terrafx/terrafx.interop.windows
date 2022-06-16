@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("670D1D20-A068-11D0-B3F0-00AA003761C5")]
 [NativeTypeName("struct IAMCopyCaptureFileProgress : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMCopyCaptureFileProgress : IAMCopyCaptureFileProgress.Interface, IHaveNativeGuid
+public unsafe partial struct IAMCopyCaptureFileProgress : IAMCopyCaptureFileProgress.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMCopyCaptureFileProgress;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMCopyCaptureFileProgress));
 
     public void** lpVtbl;
 

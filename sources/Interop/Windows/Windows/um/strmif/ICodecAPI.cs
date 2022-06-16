@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("901DB4C7-31CE-41A2-85DC-8FA0BF41B8DA")]
 [NativeTypeName("struct ICodecAPI : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ICodecAPI : ICodecAPI.Interface, IHaveNativeGuid
+public unsafe partial struct ICodecAPI : ICodecAPI.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICodecAPI;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICodecAPI));
 
     public void** lpVtbl;
 

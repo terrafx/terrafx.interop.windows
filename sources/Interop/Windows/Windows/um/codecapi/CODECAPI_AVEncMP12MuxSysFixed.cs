@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncMP12MuxSysFixed.xml' path='doc/member[@name="CODECAPI_AVEncMP12MuxSysFixed"]/*' />
 [Guid("CEFB987E-894F-452E-8F89-A4EF8CEC063A")]
-public partial struct CODECAPI_AVEncMP12MuxSysFixed : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncMP12MuxSysFixed : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncMP12MuxSysFixed;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncMP12MuxSysFixed));
 }

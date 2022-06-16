@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("B2DAAD8B-03D4-4DBF-95EB-32AB4B63D0AB")]
 [NativeTypeName("struct ID3DUserDefinedAnnotation : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ID3DUserDefinedAnnotation : ID3DUserDefinedAnnotation.Interface, IHaveNativeGuid
+public unsafe partial struct ID3DUserDefinedAnnotation : ID3DUserDefinedAnnotation.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3DUserDefinedAnnotation;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3DUserDefinedAnnotation));
 
     public void** lpVtbl;
 

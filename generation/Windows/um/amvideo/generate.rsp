@@ -7,6 +7,11 @@ COLORS
 DIBSIZE
 DIBWIDTHBYTES
 HEADER
+IID_IBaseVideoMixer
+IID_IDirectDrawVideo
+IID_IFullScreenVideo
+IID_IFullScreenVideoEx
+IID_IQualProp
 MPEG1_SEQUENCE_INFO
 PALETTE_ENTRIES
 PALETTISED
@@ -35,6 +40,12 @@ TerraFX.Interop.Windows
 ../../../../tests/Interop/Windows/Windows/um/amvideo
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/amvideo.h
+--with-guid
+IBaseVideoMixer=61DED640-E912-11CE-A099-00AA00479A58
+IDirectDrawVideo=36D39EB0-DD75-11CE-BF0E-00AA0055595A
+IFullScreenVideo=DD1D7110-7836-11CF-BF47-00AA0055595A
+IFullScreenVideoEx=53479470-F1DD-11CF-BC42-00AA00AC74F6
+IQualProp=1BD0ECB0-F8E2-11CE-AAC6-0020AF0B99A3
 --with-type
 SIZE_EGA_PALETTE=uint
 SIZE_MASKS=uint

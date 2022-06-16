@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CClientCaps.xml' path='doc/member[@name="CClientCaps"]/*' />
 [Guid("7E8BC44E-AEFF-11D1-89C2-00C04FB6BFC4")]
-public partial struct CClientCaps : IHaveNativeGuid
+public unsafe partial struct CClientCaps : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CClientCaps;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CClientCaps));
 }

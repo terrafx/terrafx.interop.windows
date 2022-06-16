@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("DE400F54-5BF1-40CF-8964-0BEA136B1E3D")]
 [NativeTypeName("struct IMFHDCPStatus : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFHDCPStatus : IMFHDCPStatus.Interface, IHaveNativeGuid
+public unsafe partial struct IMFHDCPStatus : IMFHDCPStatus.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFHDCPStatus;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFHDCPStatus));
 
     public void** lpVtbl;
 

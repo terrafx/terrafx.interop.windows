@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("F1DF64B6-57FD-49CD-8807-C0EB88B45C8F")]
 [NativeTypeName("struct ID3D12SwapChainAssistant : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ID3D12SwapChainAssistant : ID3D12SwapChainAssistant.Interface, IHaveNativeGuid
+public unsafe partial struct ID3D12SwapChainAssistant : ID3D12SwapChainAssistant.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D12SwapChainAssistant;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D12SwapChainAssistant));
 
     public void** lpVtbl;
 

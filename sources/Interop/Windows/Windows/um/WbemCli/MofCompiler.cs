@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='MofCompiler.xml' path='doc/member[@name="MofCompiler"]/*' />
 [Guid("6DAF9757-2E37-11D2-AEC9-00C04FB68820")]
-public partial struct MofCompiler : IHaveNativeGuid
+public unsafe partial struct MofCompiler : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_MofCompiler;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_MofCompiler));
 }

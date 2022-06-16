@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("C0DFF467-D499-4986-972B-E1D9090FA941")]
 [NativeTypeName("struct IAMDecoderCaps : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMDecoderCaps : IAMDecoderCaps.Interface, IHaveNativeGuid
+public unsafe partial struct IAMDecoderCaps : IAMDecoderCaps.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMDecoderCaps;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMDecoderCaps));
 
     public void** lpVtbl;
 

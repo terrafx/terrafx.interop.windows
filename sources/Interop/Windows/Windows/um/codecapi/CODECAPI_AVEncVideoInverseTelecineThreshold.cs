@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncVideoInverseTelecineThreshold.xml' path='doc/member[@name="CODECAPI_AVEncVideoInverseTelecineThreshold"]/*' />
 [Guid("40247D84-E895-497F-B44C-B74560ACFE27")]
-public partial struct CODECAPI_AVEncVideoInverseTelecineThreshold : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncVideoInverseTelecineThreshold : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncVideoInverseTelecineThreshold;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncVideoInverseTelecineThreshold));
 }

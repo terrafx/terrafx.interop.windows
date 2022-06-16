@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("BED530BE-2606-4F4D-A1C0-54C5CDA5566F")]
 [NativeTypeName("struct ISpStreamFormat : IStream")]
 [NativeInheritance("IStream")]
-public unsafe partial struct ISpStreamFormat : ISpStreamFormat.Interface, IHaveNativeGuid
+public unsafe partial struct ISpStreamFormat : ISpStreamFormat.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpStreamFormat;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpStreamFormat));
 
     public void** lpVtbl;
 

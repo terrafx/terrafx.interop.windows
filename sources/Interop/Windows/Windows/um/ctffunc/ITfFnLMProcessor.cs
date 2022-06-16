@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("7AFBF8E7-AC4B-4082-B058-890899D3A010")]
 [NativeTypeName("struct ITfFnLMProcessor : ITfFunction")]
 [NativeInheritance("ITfFunction")]
-public unsafe partial struct ITfFnLMProcessor : ITfFnLMProcessor.Interface, IHaveNativeGuid
+public unsafe partial struct ITfFnLMProcessor : ITfFnLMProcessor.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfFnLMProcessor;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfFnLMProcessor));
 
     public void** lpVtbl;
 

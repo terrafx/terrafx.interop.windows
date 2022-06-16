@@ -17,9 +17,9 @@ namespace TerraFX.Interop.WinRT;
 [NativeTypeName("struct IHolographicSpaceInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
 [SupportedOSPlatform("windows10.0.15063.0")]
-public unsafe partial struct IHolographicSpaceInterop : IHolographicSpaceInterop.Interface, IHaveNativeGuid
+public unsafe partial struct IHolographicSpaceInterop : IHolographicSpaceInterop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IHolographicSpaceInterop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHolographicSpaceInterop));
 
     public void** lpVtbl;
 

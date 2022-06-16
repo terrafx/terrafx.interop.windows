@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("305104D6-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IICCSVGColor : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IICCSVGColor : IICCSVGColor.Interface, IHaveNativeGuid
+public unsafe partial struct IICCSVGColor : IICCSVGColor.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IICCSVGColor;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IICCSVGColor));
 
     public void** lpVtbl;
 

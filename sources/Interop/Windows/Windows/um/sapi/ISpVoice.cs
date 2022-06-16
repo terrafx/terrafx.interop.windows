@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("6C44DF74-72B9-4992-A1EC-EF996E0422D4")]
 [NativeTypeName("struct ISpVoice : ISpEventSource")]
 [NativeInheritance("ISpEventSource")]
-public unsafe partial struct ISpVoice : ISpVoice.Interface, IHaveNativeGuid
+public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpVoice;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpVoice));
 
     public void** lpVtbl;
 

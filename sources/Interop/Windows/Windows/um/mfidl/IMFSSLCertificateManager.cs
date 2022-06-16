@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("61F7D887-1230-4A8B-AEBA-8AD434D1A64D")]
 [NativeTypeName("struct IMFSSLCertificateManager : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager.Interface, IHaveNativeGuid
+public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFSSLCertificateManager;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFSSLCertificateManager));
 
     public void** lpVtbl;
 

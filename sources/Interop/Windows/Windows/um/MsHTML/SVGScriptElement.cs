@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SVGScriptElement.xml' path='doc/member[@name="SVGScriptElement"]/*' />
 [Guid("305105E1-98B5-11CF-BB82-00AA00BDCE0B")]
-public partial struct SVGScriptElement : IHaveNativeGuid
+public unsafe partial struct SVGScriptElement : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_SVGScriptElement;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_SVGScriptElement));
 }

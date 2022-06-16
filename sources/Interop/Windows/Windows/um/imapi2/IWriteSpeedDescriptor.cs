@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("27354144-7F64-5B0F-8F00-5D77AFBE261E")]
 [NativeTypeName("struct IWriteSpeedDescriptor : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IWriteSpeedDescriptor : IWriteSpeedDescriptor.Interface, IHaveNativeGuid
+public unsafe partial struct IWriteSpeedDescriptor : IWriteSpeedDescriptor.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWriteSpeedDescriptor;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWriteSpeedDescriptor));
 
     public void** lpVtbl;
 

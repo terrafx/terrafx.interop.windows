@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("00000022-0000-0000-C000-000000000046")]
 [NativeTypeName("struct ISurrogate : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ISurrogate : ISurrogate.Interface, IHaveNativeGuid
+public unsafe partial struct ISurrogate : ISurrogate.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISurrogate;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISurrogate));
 
     public void** lpVtbl;
 

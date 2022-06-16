@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("56ED71A0-AF5F-11D0-B3F0-00AA003761C5")]
 [NativeTypeName("struct IAMBufferNegotiation : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMBufferNegotiation : IAMBufferNegotiation.Interface, IHaveNativeGuid
+public unsafe partial struct IAMBufferNegotiation : IAMBufferNegotiation.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMBufferNegotiation;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMBufferNegotiation));
 
     public void** lpVtbl;
 

@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IActivateAudioInterfaceCompletionHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IActivateAudioInterfaceCompletionHandler : IActivateAudioInterfaceCompletionHandler.Interface, IHaveNativeGuid
+public unsafe partial struct IActivateAudioInterfaceCompletionHandler : IActivateAudioInterfaceCompletionHandler.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IActivateAudioInterfaceCompletionHandler;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IActivateAudioInterfaceCompletionHandler));
 
     public void** lpVtbl;
 

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='AppVisibility.xml' path='doc/member[@name="AppVisibility"]/*' />
 [Guid("7E5FE3D9-985F-4908-91F9-EE19F9FD1514")]
-public partial struct AppVisibility : IHaveNativeGuid
+public unsafe partial struct AppVisibility : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_AppVisibility;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_AppVisibility));
 }

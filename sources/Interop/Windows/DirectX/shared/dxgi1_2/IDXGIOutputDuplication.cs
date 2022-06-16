@@ -17,9 +17,9 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct IDXGIOutputDuplication : IDXGIObject")]
 [NativeInheritance("IDXGIObject")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Interface, IHaveNativeGuid
+public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDXGIOutputDuplication;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDXGIOutputDuplication));
 
     public void** lpVtbl;
 

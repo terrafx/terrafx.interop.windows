@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("994E23AF-1CC2-493C-B9FA-46F1CB040FA4")]
 [NativeTypeName("struct IMFPMPServer : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFPMPServer : IMFPMPServer.Interface, IHaveNativeGuid
+public unsafe partial struct IMFPMPServer : IMFPMPServer.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFPMPServer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFPMPServer));
 
     public void** lpVtbl;
 

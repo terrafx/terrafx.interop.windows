@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("4F9F9FCB-E0F4-48EB-B7AB-FA2EA9365CB4")]
 [NativeTypeName("struct IHttpNegotiate2 : IHttpNegotiate")]
 [NativeInheritance("IHttpNegotiate")]
-public unsafe partial struct IHttpNegotiate2 : IHttpNegotiate2.Interface, IHaveNativeGuid
+public unsafe partial struct IHttpNegotiate2 : IHttpNegotiate2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IHttpNegotiate2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpNegotiate2));
 
     public void** lpVtbl;
 

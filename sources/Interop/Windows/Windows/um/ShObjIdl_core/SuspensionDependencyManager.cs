@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SuspensionDependencyManager.xml' path='doc/member[@name="SuspensionDependencyManager"]/*' />
 [Guid("6B273FC5-61FD-4918-95A2-C3B5E9D7F581")]
-public partial struct SuspensionDependencyManager : IHaveNativeGuid
+public unsafe partial struct SuspensionDependencyManager : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_SuspensionDependencyManager;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_SuspensionDependencyManager));
 }

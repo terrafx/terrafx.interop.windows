@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("436EEE9C-264F-4242-90E1-4E330C107512")]
 [NativeTypeName("struct IMpeg2Demultiplexer : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMpeg2Demultiplexer : IMpeg2Demultiplexer.Interface, IHaveNativeGuid
+public unsafe partial struct IMpeg2Demultiplexer : IMpeg2Demultiplexer.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMpeg2Demultiplexer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMpeg2Demultiplexer));
 
     public void** lpVtbl;
 

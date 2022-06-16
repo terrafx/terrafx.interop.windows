@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='PINLogonCredentialProvider.xml' path='doc/member[@name="PINLogonCredentialProvider"]/*' />
 [Guid("CB82EA12-9F71-446D-89E1-8D0924E1256E")]
-public partial struct PINLogonCredentialProvider : IHaveNativeGuid
+public unsafe partial struct PINLogonCredentialProvider : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_PINLogonCredentialProvider;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_PINLogonCredentialProvider));
 }

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("30590020-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct DispSVGPathSegLinetoHorizontalRel : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct DispSVGPathSegLinetoHorizontalRel : DispSVGPathSegLinetoHorizontalRel.Interface, IHaveNativeGuid
+public unsafe partial struct DispSVGPathSegLinetoHorizontalRel : DispSVGPathSegLinetoHorizontalRel.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_DispSVGPathSegLinetoHorizontalRel;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_DispSVGPathSegLinetoHorizontalRel));
 
     public void** lpVtbl;
 

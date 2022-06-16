@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='GenericCredentialProvider.xml' path='doc/member[@name="GenericCredentialProvider"]/*' />
 [Guid("25CBB996-92ED-457E-B28C-4774084BD562")]
-public partial struct GenericCredentialProvider : IHaveNativeGuid
+public unsafe partial struct GenericCredentialProvider : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_GenericCredentialProvider;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_GenericCredentialProvider));
 }

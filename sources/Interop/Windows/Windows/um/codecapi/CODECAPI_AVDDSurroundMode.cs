@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVDDSurroundMode.xml' path='doc/member[@name="CODECAPI_AVDDSurroundMode"]/*' />
 [Guid("99F2F386-98D1-4452-A163-ABC78A6EB770")]
-public partial struct CODECAPI_AVDDSurroundMode : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVDDSurroundMode : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVDDSurroundMode;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVDDSurroundMode));
 }

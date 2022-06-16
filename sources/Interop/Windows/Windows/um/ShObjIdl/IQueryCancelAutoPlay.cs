@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("DDEFE873-6997-4E68-BE26-39B633ADBE12")]
 [NativeTypeName("struct IQueryCancelAutoPlay : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IQueryCancelAutoPlay : IQueryCancelAutoPlay.Interface, IHaveNativeGuid
+public unsafe partial struct IQueryCancelAutoPlay : IQueryCancelAutoPlay.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IQueryCancelAutoPlay;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IQueryCancelAutoPlay));
 
     public void** lpVtbl;
 

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='ImageTranscode.xml' path='doc/member[@name="ImageTranscode"]/*' />
 [Guid("17B75166-928F-417D-9685-64AA135565C1")]
-public partial struct ImageTranscode : IHaveNativeGuid
+public unsafe partial struct ImageTranscode : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ImageTranscode;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ImageTranscode));
 }

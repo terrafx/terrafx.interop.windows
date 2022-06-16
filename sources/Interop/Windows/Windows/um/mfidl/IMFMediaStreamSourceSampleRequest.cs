@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFMediaStreamSourceSampleRequest : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct IMFMediaStreamSourceSampleRequest : IMFMediaStreamSourceSampleRequest.Interface, IHaveNativeGuid
+public unsafe partial struct IMFMediaStreamSourceSampleRequest : IMFMediaStreamSourceSampleRequest.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFMediaStreamSourceSampleRequest;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFMediaStreamSourceSampleRequest));
 
     public void** lpVtbl;
 

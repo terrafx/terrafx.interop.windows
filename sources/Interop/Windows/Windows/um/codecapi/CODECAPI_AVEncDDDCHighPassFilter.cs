@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncDDDCHighPassFilter.xml' path='doc/member[@name="CODECAPI_AVEncDDDCHighPassFilter"]/*' />
 [Guid("9565239F-861C-4AC8-BFDA-E00CB4DB8548")]
-public partial struct CODECAPI_AVEncDDDCHighPassFilter : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncDDDCHighPassFilter : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncDDDCHighPassFilter;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncDDDCHighPassFilter));
 }

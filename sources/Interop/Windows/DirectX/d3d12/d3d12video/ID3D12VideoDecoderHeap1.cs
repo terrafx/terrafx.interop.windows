@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("DA1D98C5-539F-41B2-BF6B-1198A03B6D26")]
 [NativeTypeName("struct ID3D12VideoDecoderHeap1 : ID3D12VideoDecoderHeap")]
 [NativeInheritance("ID3D12VideoDecoderHeap")]
-public unsafe partial struct ID3D12VideoDecoderHeap1 : ID3D12VideoDecoderHeap1.Interface, IHaveNativeGuid
+public unsafe partial struct ID3D12VideoDecoderHeap1 : ID3D12VideoDecoderHeap1.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D12VideoDecoderHeap1;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D12VideoDecoderHeap1));
 
     public void** lpVtbl;
 

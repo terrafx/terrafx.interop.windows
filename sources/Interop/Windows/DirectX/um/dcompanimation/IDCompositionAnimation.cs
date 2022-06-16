@@ -17,9 +17,9 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct IDCompositionAnimation : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Interface, IHaveNativeGuid
+public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDCompositionAnimation;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDCompositionAnimation));
 
     public void** lpVtbl;
 

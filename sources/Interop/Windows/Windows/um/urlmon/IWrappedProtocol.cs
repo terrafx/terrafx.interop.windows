@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("53C84785-8425-4DC5-971B-E58D9C19F9B6")]
 [NativeTypeName("struct IWrappedProtocol : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IWrappedProtocol : IWrappedProtocol.Interface, IHaveNativeGuid
+public unsafe partial struct IWrappedProtocol : IWrappedProtocol.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWrappedProtocol;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWrappedProtocol));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("B91EBFEE-CA03-4AF4-8A82-A31752F4A0FC")]
 [NativeTypeName("struct IMFExtendedCameraController : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFExtendedCameraController : IMFExtendedCameraController.Interface, IHaveNativeGuid
+public unsafe partial struct IMFExtendedCameraController : IMFExtendedCameraController.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFExtendedCameraController;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFExtendedCameraController));
 
     public void** lpVtbl;
 

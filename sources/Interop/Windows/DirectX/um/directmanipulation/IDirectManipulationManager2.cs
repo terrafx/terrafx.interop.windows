@@ -17,9 +17,9 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct IDirectManipulationManager2 : IDirectManipulationManager")]
 [NativeInheritance("IDirectManipulationManager")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct IDirectManipulationManager2 : IDirectManipulationManager2.Interface, IHaveNativeGuid
+public unsafe partial struct IDirectManipulationManager2 : IDirectManipulationManager2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDirectManipulationManager2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDirectManipulationManager2));
 
     public void** lpVtbl;
 

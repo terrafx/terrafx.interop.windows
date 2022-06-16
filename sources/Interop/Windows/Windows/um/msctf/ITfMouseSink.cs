@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("A1ADAAA2-3A24-449D-AC96-5183E7F5C217")]
 [NativeTypeName("struct ITfMouseSink : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITfMouseSink : ITfMouseSink.Interface, IHaveNativeGuid
+public unsafe partial struct ITfMouseSink : ITfMouseSink.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfMouseSink;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfMouseSink));
 
     public void** lpVtbl;
 

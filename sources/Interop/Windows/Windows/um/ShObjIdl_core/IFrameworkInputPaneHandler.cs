@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("226C537B-1E76-4D9E-A760-33DB29922F18")]
 [NativeTypeName("struct IFrameworkInputPaneHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IFrameworkInputPaneHandler : IFrameworkInputPaneHandler.Interface, IHaveNativeGuid
+public unsafe partial struct IFrameworkInputPaneHandler : IFrameworkInputPaneHandler.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IFrameworkInputPaneHandler;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFrameworkInputPaneHandler));
 
     public void** lpVtbl;
 

@@ -17,9 +17,9 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct IDCompositionRectangleClip : IDCompositionClip")]
 [NativeInheritance("IDCompositionClip")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangleClip.Interface, IHaveNativeGuid
+public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangleClip.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDCompositionRectangleClip;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDCompositionRectangleClip));
 
     public void** lpVtbl;
 

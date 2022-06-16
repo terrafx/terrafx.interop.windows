@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("86462810-593B-4916-9764-19C08E9CE110")]
 [NativeTypeName("struct ITfContextOwnerCompositionServices : ITfContextComposition")]
 [NativeInheritance("ITfContextComposition")]
-public unsafe partial struct ITfContextOwnerCompositionServices : ITfContextOwnerCompositionServices.Interface, IHaveNativeGuid
+public unsafe partial struct ITfContextOwnerCompositionServices : ITfContextOwnerCompositionServices.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfContextOwnerCompositionServices;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfContextOwnerCompositionServices));
 
     public void** lpVtbl;
 

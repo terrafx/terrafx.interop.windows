@@ -4,15 +4,16 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.DirectX;
 
 [Guid("5039D740-F736-449A-84D3-A56202557B87")]
-public partial struct FXEcho : IHaveNativeGuid
+public unsafe partial struct FXEcho : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_FXEcho;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_FXEcho));
 
     [NativeTypeName("#define FXECHO_MIN_WETDRYMIX 0.0f")]
     public const float FXECHO_MIN_WETDRYMIX = 0.0f;

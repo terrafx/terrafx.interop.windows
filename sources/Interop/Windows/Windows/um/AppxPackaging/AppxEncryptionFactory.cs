@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='AppxEncryptionFactory.xml' path='doc/member[@name="AppxEncryptionFactory"]/*' />
 [Guid("DC664FDD-D868-46EE-8780-8D196CB739F7")]
-public partial struct AppxEncryptionFactory : IHaveNativeGuid
+public unsafe partial struct AppxEncryptionFactory : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_AppxEncryptionFactory;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_AppxEncryptionFactory));
 }

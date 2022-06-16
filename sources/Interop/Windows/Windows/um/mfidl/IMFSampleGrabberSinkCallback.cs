@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8C7B80BF-EE42-4B59-B1DF-55668E1BDCA8")]
 [NativeTypeName("struct IMFSampleGrabberSinkCallback : IMFClockStateSink")]
 [NativeInheritance("IMFClockStateSink")]
-public unsafe partial struct IMFSampleGrabberSinkCallback : IMFSampleGrabberSinkCallback.Interface, IHaveNativeGuid
+public unsafe partial struct IMFSampleGrabberSinkCallback : IMFSampleGrabberSinkCallback.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFSampleGrabberSinkCallback;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFSampleGrabberSinkCallback));
 
     public void** lpVtbl;
 

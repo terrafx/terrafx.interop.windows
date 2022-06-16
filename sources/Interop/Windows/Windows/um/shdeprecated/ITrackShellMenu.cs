@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8278F932-2A3E-11D2-838F-00C04FD918D0")]
 [NativeTypeName("struct ITrackShellMenu : IShellMenu")]
 [NativeInheritance("IShellMenu")]
-public unsafe partial struct ITrackShellMenu : ITrackShellMenu.Interface, IHaveNativeGuid
+public unsafe partial struct ITrackShellMenu : ITrackShellMenu.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITrackShellMenu;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITrackShellMenu));
 
     public void** lpVtbl;
 

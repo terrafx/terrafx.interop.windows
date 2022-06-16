@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("54C39221-8380-11D0-B3F0-00AA003761C5")]
 [NativeTypeName("struct IAMAudioInputMixer : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, IHaveNativeGuid
+public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMAudioInputMixer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMAudioInputMixer));
 
     public void** lpVtbl;
 

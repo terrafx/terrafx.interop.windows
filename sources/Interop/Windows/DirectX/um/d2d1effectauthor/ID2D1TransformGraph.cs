@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("13D29038-C3E6-4034-9081-13B53A417992")]
 [NativeTypeName("struct ID2D1TransformGraph : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface, IHaveNativeGuid
+public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1TransformGraph;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1TransformGraph));
 
     public void** lpVtbl;
 

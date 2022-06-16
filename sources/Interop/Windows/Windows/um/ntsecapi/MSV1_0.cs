@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 public static partial class MSV1_0
 {
     [NativeTypeName("#define MSV1_0_PACKAGE_NAME \"MICROSOFT_AUTHENTICATION_PACKAGE_V1_0\"")]
-    public static ReadOnlySpan<byte> MSV1_0_PACKAGE_NAME => "MICROSOFT_AUTHENTICATION_PACKAGE_V1_0\0"u8;
+    public static ReadOnlySpan<byte> MSV1_0_PACKAGE_NAME => "MICROSOFT_AUTHENTICATION_PACKAGE_V1_0"u8;
 
     [NativeTypeName("#define MSV1_0_PACKAGE_NAMEW L\"MICROSOFT_AUTHENTICATION_PACKAGE_V1_0\"")]
     public const string MSV1_0_PACKAGE_NAMEW = "MICROSOFT_AUTHENTICATION_PACKAGE_V1_0";
@@ -19,10 +19,10 @@ public static partial class MSV1_0
     public const ulong MSV1_0_PACKAGE_NAMEW_LENGTH = 76 - 2;
 
     [NativeTypeName("#define MSV1_0_SUBAUTHENTICATION_KEY \"SYSTEM\\\\CurrentControlSet\\\\Control\\\\Lsa\\\\MSV1_0\"")]
-    public static ReadOnlySpan<byte> MSV1_0_SUBAUTHENTICATION_KEY => "SYSTEM\\CurrentControlSet\\Control\\Lsa\\MSV1_0\0"u8;
+    public static ReadOnlySpan<byte> MSV1_0_SUBAUTHENTICATION_KEY => "SYSTEM\\CurrentControlSet\\Control\\Lsa\\MSV1_0"u8;
 
     [NativeTypeName("#define MSV1_0_SUBAUTHENTICATION_VALUE \"Auth\"")]
-    public static ReadOnlySpan<byte> MSV1_0_SUBAUTHENTICATION_VALUE => "Auth\0"u8;
+    public static ReadOnlySpan<byte> MSV1_0_SUBAUTHENTICATION_VALUE => "Auth"u8;
 
     [NativeTypeName("#define MSV1_0_CHALLENGE_LENGTH 8")]
     public const int MSV1_0_CHALLENGE_LENGTH = 8;

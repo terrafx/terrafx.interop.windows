@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 public static partial class SCHANNEL
 {
     [NativeTypeName("#define SCHANNEL_NAME_A \"Schannel\"")]
-    public static ReadOnlySpan<byte> SCHANNEL_NAME_A => "Schannel\0"u8;
+    public static ReadOnlySpan<byte> SCHANNEL_NAME_A => "Schannel"u8;
 
     [NativeTypeName("#define SCHANNEL_NAME_W L\"Schannel\"")]
     public const string SCHANNEL_NAME_W = "Schannel";

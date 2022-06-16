@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("52B83A42-2543-416A-81D9-C0DE7969C8B3")]
 [NativeTypeName("struct ISuspensionDependencyManager : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ISuspensionDependencyManager : ISuspensionDependencyManager.Interface, IHaveNativeGuid
+public unsafe partial struct ISuspensionDependencyManager : ISuspensionDependencyManager.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISuspensionDependencyManager;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISuspensionDependencyManager));
 
     public void** lpVtbl;
 

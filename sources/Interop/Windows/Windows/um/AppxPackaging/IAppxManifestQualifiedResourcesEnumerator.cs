@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8EF6ADFE-3762-4A8F-9373-2FC5D444C8D2")]
 [NativeTypeName("struct IAppxManifestQualifiedResourcesEnumerator : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAppxManifestQualifiedResourcesEnumerator : IAppxManifestQualifiedResourcesEnumerator.Interface, IHaveNativeGuid
+public unsafe partial struct IAppxManifestQualifiedResourcesEnumerator : IAppxManifestQualifiedResourcesEnumerator.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAppxManifestQualifiedResourcesEnumerator;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAppxManifestQualifiedResourcesEnumerator));
 
     public void** lpVtbl;
 

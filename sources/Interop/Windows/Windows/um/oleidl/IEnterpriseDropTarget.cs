@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IEnterpriseDropTarget : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct IEnterpriseDropTarget : IEnterpriseDropTarget.Interface, IHaveNativeGuid
+public unsafe partial struct IEnterpriseDropTarget : IEnterpriseDropTarget.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IEnterpriseDropTarget;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IEnterpriseDropTarget));
 
     public void** lpVtbl;
 

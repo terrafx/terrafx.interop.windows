@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("E9701183-E6B3-4FF2-8568-813615FEC7BE")]
 [NativeTypeName("struct INameSpaceTreeControlFolderCapabilities : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct INameSpaceTreeControlFolderCapabilities : INameSpaceTreeControlFolderCapabilities.Interface, IHaveNativeGuid
+public unsafe partial struct INameSpaceTreeControlFolderCapabilities : INameSpaceTreeControlFolderCapabilities.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_INameSpaceTreeControlFolderCapabilities;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_INameSpaceTreeControlFolderCapabilities));
 
     public void** lpVtbl;
 

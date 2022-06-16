@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3B0D0EA4-D0A9-4B0E-935B-09516746FAC0")]
 [NativeTypeName("struct IMMDeviceActivator : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMMDeviceActivator : IMMDeviceActivator.Interface, IHaveNativeGuid
+public unsafe partial struct IMMDeviceActivator : IMMDeviceActivator.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMMDeviceActivator;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMMDeviceActivator));
 
     public void** lpVtbl;
 

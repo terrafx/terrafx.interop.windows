@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("2177DB29-7F45-47D0-8554-067E91C80502")]
 [NativeTypeName("struct ISpRecoGrammar : ISpGrammarBuilder")]
 [NativeInheritance("ISpGrammarBuilder")]
-public unsafe partial struct ISpRecoGrammar : ISpRecoGrammar.Interface, IHaveNativeGuid
+public unsafe partial struct ISpRecoGrammar : ISpRecoGrammar.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpRecoGrammar;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpRecoGrammar));
 
     public void** lpVtbl;
 

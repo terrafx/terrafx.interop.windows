@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("0C6C4200-C589-11D0-999A-00C04FD655E1")]
 [NativeTypeName("struct IShellIconOverlayIdentifier : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IShellIconOverlayIdentifier : IShellIconOverlayIdentifier.Interface, IHaveNativeGuid
+public unsafe partial struct IShellIconOverlayIdentifier : IShellIconOverlayIdentifier.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IShellIconOverlayIdentifier;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IShellIconOverlayIdentifier));
 
     public void** lpVtbl;
 

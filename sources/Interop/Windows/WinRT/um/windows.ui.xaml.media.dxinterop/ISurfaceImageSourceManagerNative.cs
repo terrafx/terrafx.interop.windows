@@ -17,9 +17,9 @@ namespace TerraFX.Interop.WinRT;
 [NativeTypeName("struct ISurfaceImageSourceManagerNative : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct ISurfaceImageSourceManagerNative : ISurfaceImageSourceManagerNative.Interface, IHaveNativeGuid
+public unsafe partial struct ISurfaceImageSourceManagerNative : ISurfaceImageSourceManagerNative.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISurfaceImageSourceManagerNative;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISurfaceImageSourceManagerNative));
 
     public void** lpVtbl;
 

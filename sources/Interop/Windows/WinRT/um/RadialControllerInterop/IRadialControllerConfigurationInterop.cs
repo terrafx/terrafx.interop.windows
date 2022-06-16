@@ -17,9 +17,9 @@ namespace TerraFX.Interop.WinRT;
 [NativeTypeName("struct IRadialControllerConfigurationInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
 [SupportedOSPlatform("windows10.0.14393.0")]
-public unsafe partial struct IRadialControllerConfigurationInterop : IRadialControllerConfigurationInterop.Interface, IHaveNativeGuid
+public unsafe partial struct IRadialControllerConfigurationInterop : IRadialControllerConfigurationInterop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IRadialControllerConfigurationInterop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IRadialControllerConfigurationInterop));
 
     public void** lpVtbl;
 

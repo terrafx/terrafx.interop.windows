@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("77395441-1C8F-4555-8683-F50DAB0FE792")]
 [NativeTypeName("struct ID2D1ImageSourceFromWic : ID2D1ImageSource")]
 [NativeInheritance("ID2D1ImageSource")]
-public unsafe partial struct ID2D1ImageSourceFromWic : ID2D1ImageSourceFromWic.Interface, IHaveNativeGuid
+public unsafe partial struct ID2D1ImageSourceFromWic : ID2D1ImageSourceFromWic.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1ImageSourceFromWic;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1ImageSourceFromWic));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("DB639199-C809-4C89-BFCA-D0BBB9729D6E")]
 [NativeTypeName("struct IMFTimedTextStyle2 : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface, IHaveNativeGuid
+public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFTimedTextStyle2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFTimedTextStyle2));
 
     public void** lpVtbl;
 

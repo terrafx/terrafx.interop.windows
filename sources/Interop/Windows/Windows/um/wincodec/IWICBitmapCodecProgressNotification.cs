@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("64C1024E-C3CF-4462-8078-88C2B11C46D9")]
 [NativeTypeName("struct IWICBitmapCodecProgressNotification : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IWICBitmapCodecProgressNotification : IWICBitmapCodecProgressNotification.Interface, IHaveNativeGuid
+public unsafe partial struct IWICBitmapCodecProgressNotification : IWICBitmapCodecProgressNotification.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWICBitmapCodecProgressNotification;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWICBitmapCodecProgressNotification));
 
     public void** lpVtbl;
 

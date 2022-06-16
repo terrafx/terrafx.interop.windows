@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("305900BD-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct DispWebGeolocation : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct DispWebGeolocation : DispWebGeolocation.Interface, IHaveNativeGuid
+public unsafe partial struct DispWebGeolocation : DispWebGeolocation.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_DispWebGeolocation;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_DispWebGeolocation));
 
     public void** lpVtbl;
 

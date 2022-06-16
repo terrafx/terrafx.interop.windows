@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("E9CD0384-A268-4BB4-82DE-658D53574D41")]
 [NativeTypeName("struct IMFNetProxyLocatorFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFNetProxyLocatorFactory : IMFNetProxyLocatorFactory.Interface, IHaveNativeGuid
+public unsafe partial struct IMFNetProxyLocatorFactory : IMFNetProxyLocatorFactory.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFNetProxyLocatorFactory;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFNetProxyLocatorFactory));
 
     public void** lpVtbl;
 

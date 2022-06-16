@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='ShellFolderItem.xml' path='doc/member[@name="ShellFolderItem"]/*' />
 [Guid("2FE352EA-FD1F-11D2-B1F4-00C04F8EEB3E")]
-public partial struct ShellFolderItem : IHaveNativeGuid
+public unsafe partial struct ShellFolderItem : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ShellFolderItem;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ShellFolderItem));
 }

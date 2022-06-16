@@ -17,9 +17,9 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct IDWriteFontFace2 : IDWriteFontFace1")]
 [NativeInheritance("IDWriteFontFace1")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface, IHaveNativeGuid
+public unsafe partial struct IDWriteFontFace2 : IDWriteFontFace2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDWriteFontFace2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWriteFontFace2));
 
     public void** lpVtbl;
 

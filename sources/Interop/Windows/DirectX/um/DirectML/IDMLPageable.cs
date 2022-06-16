@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("B1AB0825-4542-4A4B-8617-6DDE6E8F6201")]
 [NativeTypeName("struct IDMLPageable : IDMLDeviceChild")]
 [NativeInheritance("IDMLDeviceChild")]
-public unsafe partial struct IDMLPageable : IDMLPageable.Interface, IHaveNativeGuid
+public unsafe partial struct IDMLPageable : IDMLPageable.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDMLPageable;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDMLPageable));
 
     public void** lpVtbl;
 

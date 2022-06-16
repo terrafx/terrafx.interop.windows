@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='KSDATAFORMAT_SUBTYPE_IEEE_FLOAT.xml' path='doc/member[@name="KSDATAFORMAT_SUBTYPE_IEEE_FLOAT"]/*' />
 [Guid("00000003-0000-0010-8000-00AA00389B71")]
-public partial struct KSDATAFORMAT_SUBTYPE_IEEE_FLOAT : IHaveNativeGuid
+public unsafe partial struct KSDATAFORMAT_SUBTYPE_IEEE_FLOAT : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_KSDATAFORMAT_SUBTYPE_IEEE_FLOAT;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_KSDATAFORMAT_SUBTYPE_IEEE_FLOAT));
 }

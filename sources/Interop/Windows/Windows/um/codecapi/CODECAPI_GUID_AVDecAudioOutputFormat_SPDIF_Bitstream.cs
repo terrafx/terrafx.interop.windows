@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_Bitstream.xml' path='doc/member[@name="CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_Bitstream"]/*' />
 [Guid("696E1D33-548F-4036-825F-7026C60011BD")]
-public partial struct CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_Bitstream : IHaveNativeGuid
+public unsafe partial struct CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_Bitstream : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_Bitstream;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_Bitstream));
 }

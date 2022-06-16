@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("7E8BC44D-AEFF-11D1-89C2-00C04FB6BFC4")]
 [NativeTypeName("struct IClientCaps : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IClientCaps : IClientCaps.Interface, IHaveNativeGuid
+public unsafe partial struct IClientCaps : IClientCaps.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IClientCaps;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IClientCaps));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("83E07D0D-0C5F-4163-BF1A-60B274051E40")]
 [NativeTypeName("struct IDragSourceHelper2 : IDragSourceHelper")]
 [NativeInheritance("IDragSourceHelper")]
-public unsafe partial struct IDragSourceHelper2 : IDragSourceHelper2.Interface, IHaveNativeGuid
+public unsafe partial struct IDragSourceHelper2 : IDragSourceHelper2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDragSourceHelper2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDragSourceHelper2));
 
     public void** lpVtbl;
 

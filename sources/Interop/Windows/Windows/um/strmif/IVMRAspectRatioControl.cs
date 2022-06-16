@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("EDE80B5C-BAD6-4623-B537-65586C9F8DFD")]
 [NativeTypeName("struct IVMRAspectRatioControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IVMRAspectRatioControl : IVMRAspectRatioControl.Interface, IHaveNativeGuid
+public unsafe partial struct IVMRAspectRatioControl : IVMRAspectRatioControl.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVMRAspectRatioControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVMRAspectRatioControl));
 
     public void** lpVtbl;
 

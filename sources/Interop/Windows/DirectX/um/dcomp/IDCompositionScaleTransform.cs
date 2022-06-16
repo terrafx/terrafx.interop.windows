@@ -17,9 +17,9 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct IDCompositionScaleTransform : IDCompositionTransform")]
 [NativeInheritance("IDCompositionTransform")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IDCompositionScaleTransform : IDCompositionScaleTransform.Interface, IHaveNativeGuid
+public unsafe partial struct IDCompositionScaleTransform : IDCompositionScaleTransform.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDCompositionScaleTransform;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDCompositionScaleTransform));
 
     public void** lpVtbl;
 

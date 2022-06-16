@@ -29,9 +29,9 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct ID2D1DeviceContext4 : ID2D1DeviceContext3")]
 [NativeInheritance("ID2D1DeviceContext3")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct ID2D1DeviceContext4 : ID2D1DeviceContext4.Interface, IHaveNativeGuid
+public unsafe partial struct ID2D1DeviceContext4 : ID2D1DeviceContext4.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1DeviceContext4;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1DeviceContext4));
 
     public void** lpVtbl;
 

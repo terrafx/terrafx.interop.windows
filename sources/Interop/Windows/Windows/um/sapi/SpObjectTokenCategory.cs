@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SpObjectTokenCategory.xml' path='doc/member[@name="SpObjectTokenCategory"]/*' />
 [Guid("A910187F-0C7A-45AC-92CC-59EDAFB77B53")]
-public partial struct SpObjectTokenCategory : IHaveNativeGuid
+public unsafe partial struct SpObjectTokenCategory : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_SpObjectTokenCategory;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_SpObjectTokenCategory));
 }

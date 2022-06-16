@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("56A8689D-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IMemInputPin : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMemInputPin : IMemInputPin.Interface, IHaveNativeGuid
+public unsafe partial struct IMemInputPin : IMemInputPin.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMemInputPin;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMemInputPin));
 
     public void** lpVtbl;
 

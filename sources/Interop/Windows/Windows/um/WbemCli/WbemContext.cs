@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='WbemContext.xml' path='doc/member[@name="WbemContext"]/*' />
 [Guid("674B6698-EE92-11D0-AD71-00C04FD8FDFF")]
-public partial struct WbemContext : IHaveNativeGuid
+public unsafe partial struct WbemContext : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_WbemContext;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_WbemContext));
 }

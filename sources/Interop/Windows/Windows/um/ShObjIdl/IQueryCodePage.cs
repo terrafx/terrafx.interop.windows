@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("C7B236CE-EE80-11D0-985F-006008059382")]
 [NativeTypeName("struct IQueryCodePage : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IQueryCodePage : IQueryCodePage.Interface, IHaveNativeGuid
+public unsafe partial struct IQueryCodePage : IQueryCodePage.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IQueryCodePage;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IQueryCodePage));
 
     public void** lpVtbl;
 

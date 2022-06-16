@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVDSPLoudnessEqualization.xml' path='doc/member[@name="CODECAPI_AVDSPLoudnessEqualization"]/*' />
 [Guid("8AFD1A15-1812-4CBF-9319-433A5B2A3B27")]
-public partial struct CODECAPI_AVDSPLoudnessEqualization : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVDSPLoudnessEqualization : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVDSPLoudnessEqualization;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVDSPLoudnessEqualization));
 }

@@ -15,9 +15,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("7A4FB5AF-479F-4074-BB40-CE6722E43C82")]
 [NativeTypeName("struct IVMRImageCompositor : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IVMRImageCompositor : IVMRImageCompositor.Interface, IHaveNativeGuid
+public unsafe partial struct IVMRImageCompositor : IVMRImageCompositor.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVMRImageCompositor;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVMRImageCompositor));
 
     public void** lpVtbl;
 

@@ -17,9 +17,9 @@ namespace TerraFX.Interop.WinRT;
 [NativeTypeName("struct IRestrictedErrorInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IRestrictedErrorInfo : IRestrictedErrorInfo.Interface, IHaveNativeGuid
+public unsafe partial struct IRestrictedErrorInfo : IRestrictedErrorInfo.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IRestrictedErrorInfo;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IRestrictedErrorInfo));
 
     public void** lpVtbl;
 

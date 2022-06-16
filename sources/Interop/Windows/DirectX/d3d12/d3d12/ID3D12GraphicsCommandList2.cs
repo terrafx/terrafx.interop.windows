@@ -17,9 +17,9 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct ID3D12GraphicsCommandList2 : ID3D12GraphicsCommandList1")]
 [NativeInheritance("ID3D12GraphicsCommandList1")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct ID3D12GraphicsCommandList2 : ID3D12GraphicsCommandList2.Interface, IHaveNativeGuid
+public unsafe partial struct ID3D12GraphicsCommandList2 : ID3D12GraphicsCommandList2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D12GraphicsCommandList2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D12GraphicsCommandList2));
 
     public void** lpVtbl;
 

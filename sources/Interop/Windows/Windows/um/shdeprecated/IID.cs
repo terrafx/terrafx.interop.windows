@@ -58,6 +58,29 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_CIE4ConnectionPoint
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00,
+                0x00, 0x00,
+                0x00,
+                0x00,
+                0x00,
+                0x00,
+                0x00,
+                0x00,
+                0x00,
+                0x00
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IExpDispSupportXP
     {
         get

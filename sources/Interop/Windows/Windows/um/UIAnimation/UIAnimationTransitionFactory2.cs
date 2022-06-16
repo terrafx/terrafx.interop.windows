@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='UIAnimationTransitionFactory2.xml' path='doc/member[@name="UIAnimationTransitionFactory2"]/*' />
 [Guid("84302F97-7F7B-4040-B190-72AC9D18E420")]
-public partial struct UIAnimationTransitionFactory2 : IHaveNativeGuid
+public unsafe partial struct UIAnimationTransitionFactory2 : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_UIAnimationTransitionFactory2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_UIAnimationTransitionFactory2));
 }

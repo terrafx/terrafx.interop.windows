@@ -15,9 +15,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("31CE832E-4484-458B-8CCA-F4D7E3DB0B52")]
 [NativeTypeName("struct IVMRSurfaceAllocator : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interface, IHaveNativeGuid
+public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVMRSurfaceAllocator;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVMRSurfaceAllocator));
 
     public void** lpVtbl;
 

@@ -15,9 +15,9 @@ namespace TerraFX.Interop.Gdiplus;
 [Guid("025D1823-6C7D-447B-BBDB-A3CBC3DFA2FC")]
 [NativeTypeName("struct IImageBytes : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IImageBytes : IImageBytes.Interface, IHaveNativeGuid
+public unsafe partial struct IImageBytes : IImageBytes.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IImageBytes;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IImageBytes));
 
     public void** lpVtbl;
 

@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("90F732E2-5092-4606-A819-8651970BACCD")]
 [NativeTypeName("struct ID2D1BoundsAdjustmentTransform : ID2D1TransformNode")]
 [NativeInheritance("ID2D1TransformNode")]
-public unsafe partial struct ID2D1BoundsAdjustmentTransform : ID2D1BoundsAdjustmentTransform.Interface, IHaveNativeGuid
+public unsafe partial struct ID2D1BoundsAdjustmentTransform : ID2D1BoundsAdjustmentTransform.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1BoundsAdjustmentTransform;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1BoundsAdjustmentTransform));
 
     public void** lpVtbl;
 

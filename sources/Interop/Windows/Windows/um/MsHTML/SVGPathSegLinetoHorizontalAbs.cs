@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SVGPathSegLinetoHorizontalAbs.xml' path='doc/member[@name="SVGPathSegLinetoHorizontalAbs"]/*' />
 [Guid("305105C7-98B5-11CF-BB82-00AA00BDCE0B")]
-public partial struct SVGPathSegLinetoHorizontalAbs : IHaveNativeGuid
+public unsafe partial struct SVGPathSegLinetoHorizontalAbs : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_SVGPathSegLinetoHorizontalAbs;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_SVGPathSegLinetoHorizontalAbs));
 }

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVDecDDDynamicRangeScaleLow.xml' path='doc/member[@name="CODECAPI_AVDecDDDynamicRangeScaleLow"]/*' />
 [Guid("044E62E4-11A5-42D5-A3B2-3BB2C7C2D7CF")]
-public partial struct CODECAPI_AVDecDDDynamicRangeScaleLow : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVDecDDDynamicRangeScaleLow : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVDecDDDynamicRangeScaleLow;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVDecDDDynamicRangeScaleLow));
 }

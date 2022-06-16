@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F50F-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct DispHTMLDivPosition : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct DispHTMLDivPosition : DispHTMLDivPosition.Interface, IHaveNativeGuid
+public unsafe partial struct DispHTMLDivPosition : DispHTMLDivPosition.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_DispHTMLDivPosition;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_DispHTMLDivPosition));
 
     public void** lpVtbl;
 

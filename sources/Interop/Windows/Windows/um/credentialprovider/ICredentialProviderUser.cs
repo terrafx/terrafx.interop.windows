@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct ICredentialProviderUser : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct ICredentialProviderUser : ICredentialProviderUser.Interface, IHaveNativeGuid
+public unsafe partial struct ICredentialProviderUser : ICredentialProviderUser.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICredentialProviderUser;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICredentialProviderUser));
 
     public void** lpVtbl;
 

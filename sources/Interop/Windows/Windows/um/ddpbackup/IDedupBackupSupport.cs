@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("C719D963-2B2D-415E-ACF7-7EB7CA596FF4")]
 [NativeTypeName("struct IDedupBackupSupport : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDedupBackupSupport : IDedupBackupSupport.Interface, IHaveNativeGuid
+public unsafe partial struct IDedupBackupSupport : IDedupBackupSupport.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDedupBackupSupport;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDedupBackupSupport));
 
     public void** lpVtbl;
 

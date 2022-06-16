@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F61B-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct HTMLInputImageEvents2 : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct HTMLInputImageEvents2 : HTMLInputImageEvents2.Interface, IHaveNativeGuid
+public unsafe partial struct HTMLInputImageEvents2 : HTMLInputImageEvents2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_HTMLInputImageEvents2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_HTMLInputImageEvents2));
 
     public void** lpVtbl;
 

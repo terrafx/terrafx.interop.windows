@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("EC9E51C1-4E5D-11D3-9144-00104BA11C5E")]
 [NativeTypeName("struct IDiscMasterProgressEvents : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEvents.Interface, IHaveNativeGuid
+public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEvents.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDiscMasterProgressEvents;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDiscMasterProgressEvents));
 
     public void** lpVtbl;
 

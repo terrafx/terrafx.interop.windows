@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("7BD67CF8-BF7D-43E6-AF8D-B170EE0C0110")]
 [NativeTypeName("struct IAudioFrameNativeFactory : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IAudioFrameNativeFactory : IAudioFrameNativeFactory.Interface, IHaveNativeGuid
+public unsafe partial struct IAudioFrameNativeFactory : IAudioFrameNativeFactory.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAudioFrameNativeFactory;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAudioFrameNativeFactory));
 
     public void** lpVtbl;
 

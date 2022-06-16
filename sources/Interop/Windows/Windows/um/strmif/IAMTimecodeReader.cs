@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("9B496CE1-811B-11CF-8C77-00AA006B6814")]
 [NativeTypeName("struct IAMTimecodeReader : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMTimecodeReader : IAMTimecodeReader.Interface, IHaveNativeGuid
+public unsafe partial struct IAMTimecodeReader : IAMTimecodeReader.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMTimecodeReader;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMTimecodeReader));
 
     public void** lpVtbl;
 

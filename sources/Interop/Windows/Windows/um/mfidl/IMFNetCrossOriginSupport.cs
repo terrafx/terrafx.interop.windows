@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFNetCrossOriginSupport : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport.Interface, IHaveNativeGuid
+public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFNetCrossOriginSupport;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFNetCrossOriginSupport));
 
     public void** lpVtbl;
 

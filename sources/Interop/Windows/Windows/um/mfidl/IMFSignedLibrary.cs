@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFSignedLibrary : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IMFSignedLibrary : IMFSignedLibrary.Interface, IHaveNativeGuid
+public unsafe partial struct IMFSignedLibrary : IMFSignedLibrary.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFSignedLibrary;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFSignedLibrary));
 
     public void** lpVtbl;
 

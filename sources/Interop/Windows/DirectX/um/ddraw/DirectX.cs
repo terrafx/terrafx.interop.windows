@@ -67,13 +67,13 @@ public static unsafe partial class DirectX
     public static delegate*<delegate* unmanaged<Guid*, ushort*, ushort*, void*, HMONITOR, BOOL>, void*, uint, HRESULT> DirectDrawEnumerateEx => &DirectDrawEnumerateExW;
 
     [NativeTypeName("#define REGSTR_KEY_DDHW_DESCRIPTION \"Description\"")]
-    public static ReadOnlySpan<byte> REGSTR_KEY_DDHW_DESCRIPTION => "Description\0"u8;
+    public static ReadOnlySpan<byte> REGSTR_KEY_DDHW_DESCRIPTION => "Description"u8;
 
     [NativeTypeName("#define REGSTR_KEY_DDHW_DRIVERNAME \"DriverName\"")]
-    public static ReadOnlySpan<byte> REGSTR_KEY_DDHW_DRIVERNAME => "DriverName\0"u8;
+    public static ReadOnlySpan<byte> REGSTR_KEY_DDHW_DRIVERNAME => "DriverName"u8;
 
     [NativeTypeName("#define REGSTR_PATH_DDHW \"Hardware\\\\DirectDrawDrivers\"")]
-    public static ReadOnlySpan<byte> REGSTR_PATH_DDHW => "Hardware\\DirectDrawDrivers\0"u8;
+    public static ReadOnlySpan<byte> REGSTR_PATH_DDHW => "Hardware\\DirectDrawDrivers"u8;
 
     [NativeTypeName("#define DD_ROP_SPACE (256/32)")]
     public const int DD_ROP_SPACE = (256 / 32);

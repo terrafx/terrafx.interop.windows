@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("F9C013DC-3C23-4041-8E39-CFB402F7EA59")]
 [NativeTypeName("struct IWebWizardHost2 : IWebWizardHost")]
 [NativeInheritance("IWebWizardHost")]
-public unsafe partial struct IWebWizardHost2 : IWebWizardHost2.Interface, IHaveNativeGuid
+public unsafe partial struct IWebWizardHost2 : IWebWizardHost2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWebWizardHost2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWebWizardHost2));
 
     public void** lpVtbl;
 

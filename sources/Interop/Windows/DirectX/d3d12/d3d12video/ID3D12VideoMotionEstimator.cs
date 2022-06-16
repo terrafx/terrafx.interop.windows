@@ -17,9 +17,9 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct ID3D12VideoMotionEstimator : ID3D12Pageable")]
 [NativeInheritance("ID3D12Pageable")]
 [SupportedOSPlatform("windows10.0.19041.0")]
-public unsafe partial struct ID3D12VideoMotionEstimator : ID3D12VideoMotionEstimator.Interface, IHaveNativeGuid
+public unsafe partial struct ID3D12VideoMotionEstimator : ID3D12VideoMotionEstimator.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D12VideoMotionEstimator;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D12VideoMotionEstimator));
 
     public void** lpVtbl;
 

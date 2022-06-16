@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("25740E2E-9CBA-401B-9119-4FB42F39F270")]
 [NativeTypeName("struct IDxcOptimizer : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDxcOptimizer : IDxcOptimizer.Interface, IHaveNativeGuid
+public unsafe partial struct IDxcOptimizer : IDxcOptimizer.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDxcOptimizer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDxcOptimizer));
 
     public void** lpVtbl;
 

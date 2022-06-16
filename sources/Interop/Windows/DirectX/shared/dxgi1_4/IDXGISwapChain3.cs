@@ -17,9 +17,9 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct IDXGISwapChain3 : IDXGISwapChain2")]
 [NativeInheritance("IDXGISwapChain2")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct IDXGISwapChain3 : IDXGISwapChain3.Interface, IHaveNativeGuid
+public unsafe partial struct IDXGISwapChain3 : IDXGISwapChain3.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDXGISwapChain3;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDXGISwapChain3));
 
     public void** lpVtbl;
 

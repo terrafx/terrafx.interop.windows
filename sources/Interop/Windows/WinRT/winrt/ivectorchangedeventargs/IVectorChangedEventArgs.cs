@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("575933DF-34FE-4480-AF15-07691F3D5D9B")]
 [NativeTypeName("struct IVectorChangedEventArgs : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IVectorChangedEventArgs : IVectorChangedEventArgs.Interface, IHaveNativeGuid
+public unsafe partial struct IVectorChangedEventArgs : IVectorChangedEventArgs.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVectorChangedEventArgs;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVectorChangedEventArgs));
 
     public void** lpVtbl;
 

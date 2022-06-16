@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("36B73884-C2C8-11CF-8B46-00805F6CEF60")]
 [NativeTypeName("struct IMediaSample2 : IMediaSample")]
 [NativeInheritance("IMediaSample")]
-public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, IHaveNativeGuid
+public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMediaSample2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMediaSample2));
 
     public void** lpVtbl;
 

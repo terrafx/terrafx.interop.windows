@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("83CF873A-F6DA-4BC8-823F-BACFD55DC430")]
 [NativeTypeName("struct IMFTopologyNode : IMFAttributes")]
 [NativeInheritance("IMFAttributes")]
-public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface, IHaveNativeGuid
+public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFTopologyNode;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFTopologyNode));
 
     public void** lpVtbl;
 

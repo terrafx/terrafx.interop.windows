@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVDecNumWorkerThreads.xml' path='doc/member[@name="CODECAPI_AVDecNumWorkerThreads"]/*' />
 [Guid("9561C3E8-EA9E-4435-9B1E-A93E691894D8")]
-public partial struct CODECAPI_AVDecNumWorkerThreads : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVDecNumWorkerThreads : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVDecNumWorkerThreads;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVDecNumWorkerThreads));
 }

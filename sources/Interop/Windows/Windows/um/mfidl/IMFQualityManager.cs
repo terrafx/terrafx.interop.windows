@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8D009D86-5B9F-4115-B1FC-9F80D52AB8AB")]
 [NativeTypeName("struct IMFQualityManager : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface, IHaveNativeGuid
+public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFQualityManager;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFQualityManager));
 
     public void** lpVtbl;
 

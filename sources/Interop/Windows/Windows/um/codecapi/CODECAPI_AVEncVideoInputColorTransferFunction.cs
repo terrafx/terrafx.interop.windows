@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncVideoInputColorTransferFunction.xml' path='doc/member[@name="CODECAPI_AVEncVideoInputColorTransferFunction"]/*' />
 [Guid("8C056111-A9C3-4B08-A0A0-CE13F8A27C75")]
-public partial struct CODECAPI_AVEncVideoInputColorTransferFunction : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncVideoInputColorTransferFunction : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncVideoInputColorTransferFunction;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncVideoInputColorTransferFunction));
 }

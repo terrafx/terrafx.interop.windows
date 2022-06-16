@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("DDE28967-521B-46E5-8F00-BD6F2BC8AB1D")]
 [NativeTypeName("struct ISpatialAudioObject : ISpatialAudioObjectBase")]
 [NativeInheritance("ISpatialAudioObjectBase")]
-public unsafe partial struct ISpatialAudioObject : ISpatialAudioObject.Interface, IHaveNativeGuid
+public unsafe partial struct ISpatialAudioObject : ISpatialAudioObject.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpatialAudioObject;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpatialAudioObject));
 
     public void** lpVtbl;
 

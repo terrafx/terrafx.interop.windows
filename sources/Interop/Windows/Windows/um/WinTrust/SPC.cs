@@ -10,79 +10,79 @@ namespace TerraFX.Interop.Windows;
 public static unsafe partial class SPC
 {
     [NativeTypeName("#define SPC_COMMON_NAME_OBJID szOID_COMMON_NAME")]
-    public static ReadOnlySpan<byte> SPC_COMMON_NAME_OBJID => "2.5.4.3\0"u8;
+    public static ReadOnlySpan<byte> SPC_COMMON_NAME_OBJID => "2.5.4.3"u8;
 
     [NativeTypeName("#define SPC_TIME_STAMP_REQUEST_OBJID \"1.3.6.1.4.1.311.3.2.1\"")]
-    public static ReadOnlySpan<byte> SPC_TIME_STAMP_REQUEST_OBJID => "1.3.6.1.4.1.311.3.2.1\0"u8;
+    public static ReadOnlySpan<byte> SPC_TIME_STAMP_REQUEST_OBJID => "1.3.6.1.4.1.311.3.2.1"u8;
 
     [NativeTypeName("#define SPC_INDIRECT_DATA_OBJID \"1.3.6.1.4.1.311.2.1.4\"")]
-    public static ReadOnlySpan<byte> SPC_INDIRECT_DATA_OBJID => "1.3.6.1.4.1.311.2.1.4\0"u8;
+    public static ReadOnlySpan<byte> SPC_INDIRECT_DATA_OBJID => "1.3.6.1.4.1.311.2.1.4"u8;
 
     [NativeTypeName("#define SPC_SP_AGENCY_INFO_OBJID \"1.3.6.1.4.1.311.2.1.10\"")]
-    public static ReadOnlySpan<byte> SPC_SP_AGENCY_INFO_OBJID => "1.3.6.1.4.1.311.2.1.10\0"u8;
+    public static ReadOnlySpan<byte> SPC_SP_AGENCY_INFO_OBJID => "1.3.6.1.4.1.311.2.1.10"u8;
 
     [NativeTypeName("#define SPC_STATEMENT_TYPE_OBJID \"1.3.6.1.4.1.311.2.1.11\"")]
-    public static ReadOnlySpan<byte> SPC_STATEMENT_TYPE_OBJID => "1.3.6.1.4.1.311.2.1.11\0"u8;
+    public static ReadOnlySpan<byte> SPC_STATEMENT_TYPE_OBJID => "1.3.6.1.4.1.311.2.1.11"u8;
 
     [NativeTypeName("#define SPC_SP_OPUS_INFO_OBJID \"1.3.6.1.4.1.311.2.1.12\"")]
-    public static ReadOnlySpan<byte> SPC_SP_OPUS_INFO_OBJID => "1.3.6.1.4.1.311.2.1.12\0"u8;
+    public static ReadOnlySpan<byte> SPC_SP_OPUS_INFO_OBJID => "1.3.6.1.4.1.311.2.1.12"u8;
 
     [NativeTypeName("#define SPC_CERT_EXTENSIONS_OBJID \"1.3.6.1.4.1.311.2.1.14\"")]
-    public static ReadOnlySpan<byte> SPC_CERT_EXTENSIONS_OBJID => "1.3.6.1.4.1.311.2.1.14\0"u8;
+    public static ReadOnlySpan<byte> SPC_CERT_EXTENSIONS_OBJID => "1.3.6.1.4.1.311.2.1.14"u8;
 
     [NativeTypeName("#define SPC_PE_IMAGE_DATA_OBJID \"1.3.6.1.4.1.311.2.1.15\"")]
-    public static ReadOnlySpan<byte> SPC_PE_IMAGE_DATA_OBJID => "1.3.6.1.4.1.311.2.1.15\0"u8;
+    public static ReadOnlySpan<byte> SPC_PE_IMAGE_DATA_OBJID => "1.3.6.1.4.1.311.2.1.15"u8;
 
     [NativeTypeName("#define SPC_RAW_FILE_DATA_OBJID \"1.3.6.1.4.1.311.2.1.18\"")]
-    public static ReadOnlySpan<byte> SPC_RAW_FILE_DATA_OBJID => "1.3.6.1.4.1.311.2.1.18\0"u8;
+    public static ReadOnlySpan<byte> SPC_RAW_FILE_DATA_OBJID => "1.3.6.1.4.1.311.2.1.18"u8;
 
     [NativeTypeName("#define SPC_STRUCTURED_STORAGE_DATA_OBJID \"1.3.6.1.4.1.311.2.1.19\"")]
-    public static ReadOnlySpan<byte> SPC_STRUCTURED_STORAGE_DATA_OBJID => "1.3.6.1.4.1.311.2.1.19\0"u8;
+    public static ReadOnlySpan<byte> SPC_STRUCTURED_STORAGE_DATA_OBJID => "1.3.6.1.4.1.311.2.1.19"u8;
 
     [NativeTypeName("#define SPC_JAVA_CLASS_DATA_OBJID \"1.3.6.1.4.1.311.2.1.20\"")]
-    public static ReadOnlySpan<byte> SPC_JAVA_CLASS_DATA_OBJID => "1.3.6.1.4.1.311.2.1.20\0"u8;
+    public static ReadOnlySpan<byte> SPC_JAVA_CLASS_DATA_OBJID => "1.3.6.1.4.1.311.2.1.20"u8;
 
     [NativeTypeName("#define SPC_INDIVIDUAL_SP_KEY_PURPOSE_OBJID \"1.3.6.1.4.1.311.2.1.21\"")]
-    public static ReadOnlySpan<byte> SPC_INDIVIDUAL_SP_KEY_PURPOSE_OBJID => "1.3.6.1.4.1.311.2.1.21\0"u8;
+    public static ReadOnlySpan<byte> SPC_INDIVIDUAL_SP_KEY_PURPOSE_OBJID => "1.3.6.1.4.1.311.2.1.21"u8;
 
     [NativeTypeName("#define SPC_COMMERCIAL_SP_KEY_PURPOSE_OBJID \"1.3.6.1.4.1.311.2.1.22\"")]
-    public static ReadOnlySpan<byte> SPC_COMMERCIAL_SP_KEY_PURPOSE_OBJID => "1.3.6.1.4.1.311.2.1.22\0"u8;
+    public static ReadOnlySpan<byte> SPC_COMMERCIAL_SP_KEY_PURPOSE_OBJID => "1.3.6.1.4.1.311.2.1.22"u8;
 
     [NativeTypeName("#define SPC_CAB_DATA_OBJID \"1.3.6.1.4.1.311.2.1.25\"")]
-    public static ReadOnlySpan<byte> SPC_CAB_DATA_OBJID => "1.3.6.1.4.1.311.2.1.25\0"u8;
+    public static ReadOnlySpan<byte> SPC_CAB_DATA_OBJID => "1.3.6.1.4.1.311.2.1.25"u8;
 
     [NativeTypeName("#define SPC_GLUE_RDN_OBJID \"1.3.6.1.4.1.311.2.1.25\"")]
-    public static ReadOnlySpan<byte> SPC_GLUE_RDN_OBJID => "1.3.6.1.4.1.311.2.1.25\0"u8;
+    public static ReadOnlySpan<byte> SPC_GLUE_RDN_OBJID => "1.3.6.1.4.1.311.2.1.25"u8;
 
     [NativeTypeName("#define SPC_MINIMAL_CRITERIA_OBJID \"1.3.6.1.4.1.311.2.1.26\"")]
-    public static ReadOnlySpan<byte> SPC_MINIMAL_CRITERIA_OBJID => "1.3.6.1.4.1.311.2.1.26\0"u8;
+    public static ReadOnlySpan<byte> SPC_MINIMAL_CRITERIA_OBJID => "1.3.6.1.4.1.311.2.1.26"u8;
 
     [NativeTypeName("#define SPC_FINANCIAL_CRITERIA_OBJID \"1.3.6.1.4.1.311.2.1.27\"")]
-    public static ReadOnlySpan<byte> SPC_FINANCIAL_CRITERIA_OBJID => "1.3.6.1.4.1.311.2.1.27\0"u8;
+    public static ReadOnlySpan<byte> SPC_FINANCIAL_CRITERIA_OBJID => "1.3.6.1.4.1.311.2.1.27"u8;
 
     [NativeTypeName("#define SPC_LINK_OBJID \"1.3.6.1.4.1.311.2.1.28\"")]
-    public static ReadOnlySpan<byte> SPC_LINK_OBJID => "1.3.6.1.4.1.311.2.1.28\0"u8;
+    public static ReadOnlySpan<byte> SPC_LINK_OBJID => "1.3.6.1.4.1.311.2.1.28"u8;
 
     [NativeTypeName("#define SPC_SIGINFO_OBJID \"1.3.6.1.4.1.311.2.1.30\"")]
-    public static ReadOnlySpan<byte> SPC_SIGINFO_OBJID => "1.3.6.1.4.1.311.2.1.30\0"u8;
+    public static ReadOnlySpan<byte> SPC_SIGINFO_OBJID => "1.3.6.1.4.1.311.2.1.30"u8;
 
     [NativeTypeName("#define SPC_PE_IMAGE_PAGE_HASHES_V1_OBJID \"1.3.6.1.4.1.311.2.3.1\"")]
-    public static ReadOnlySpan<byte> SPC_PE_IMAGE_PAGE_HASHES_V1_OBJID => "1.3.6.1.4.1.311.2.3.1\0"u8;
+    public static ReadOnlySpan<byte> SPC_PE_IMAGE_PAGE_HASHES_V1_OBJID => "1.3.6.1.4.1.311.2.3.1"u8;
 
     [NativeTypeName("#define SPC_PE_IMAGE_PAGE_HASHES_V2_OBJID \"1.3.6.1.4.1.311.2.3.2\"")]
-    public static ReadOnlySpan<byte> SPC_PE_IMAGE_PAGE_HASHES_V2_OBJID => "1.3.6.1.4.1.311.2.3.2\0"u8;
+    public static ReadOnlySpan<byte> SPC_PE_IMAGE_PAGE_HASHES_V2_OBJID => "1.3.6.1.4.1.311.2.3.2"u8;
 
     [NativeTypeName("#define SPC_RELAXED_PE_MARKER_CHECK_OBJID \"1.3.6.1.4.1.311.2.6.1\"")]
-    public static ReadOnlySpan<byte> SPC_RELAXED_PE_MARKER_CHECK_OBJID => "1.3.6.1.4.1.311.2.6.1\0"u8;
+    public static ReadOnlySpan<byte> SPC_RELAXED_PE_MARKER_CHECK_OBJID => "1.3.6.1.4.1.311.2.6.1"u8;
 
     [NativeTypeName("#define SPC_ENCRYPTED_DIGEST_RETRY_COUNT_OBJID \"1.3.6.1.4.1.311.2.6.2\"")]
-    public static ReadOnlySpan<byte> SPC_ENCRYPTED_DIGEST_RETRY_COUNT_OBJID => "1.3.6.1.4.1.311.2.6.2\0"u8;
+    public static ReadOnlySpan<byte> SPC_ENCRYPTED_DIGEST_RETRY_COUNT_OBJID => "1.3.6.1.4.1.311.2.6.2"u8;
 
     [NativeTypeName("#define SPC_WINDOWS_HELLO_COMPATIBILITY_OBJID \"1.3.6.1.4.1.311.10.41.1\"")]
-    public static ReadOnlySpan<byte> SPC_WINDOWS_HELLO_COMPATIBILITY_OBJID => "1.3.6.1.4.1.311.10.41.1\0"u8;
+    public static ReadOnlySpan<byte> SPC_WINDOWS_HELLO_COMPATIBILITY_OBJID => "1.3.6.1.4.1.311.10.41.1"u8;
 
     [NativeTypeName("#define SPC_NATURAL_AUTH_PLUGIN_OBJID \"1.3.6.1.4.1.311.96.1.1\"")]
-    public static ReadOnlySpan<byte> SPC_NATURAL_AUTH_PLUGIN_OBJID => "1.3.6.1.4.1.311.96.1.1\0"u8;
+    public static ReadOnlySpan<byte> SPC_NATURAL_AUTH_PLUGIN_OBJID => "1.3.6.1.4.1.311.96.1.1"u8;
 
     [NativeTypeName("#define SPC_SP_AGENCY_INFO_STRUCT ((LPCSTR) 2000)")]
     public static sbyte* SPC_SP_AGENCY_INFO_STRUCT => ((sbyte*)(2000));

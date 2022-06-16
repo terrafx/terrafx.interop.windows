@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CDBurn.xml' path='doc/member[@name="CDBurn"]/*' />
 [Guid("FBEB8A05-BEEE-4442-804E-409D6C4515E9")]
-public partial struct CDBurn : IHaveNativeGuid
+public unsafe partial struct CDBurn : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CDBurn;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CDBurn));
 }

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncDDPreferredStereoDownMixMode.xml' path='doc/member[@name="CODECAPI_AVEncDDPreferredStereoDownMixMode"]/*' />
 [Guid("7F4E6B31-9185-403D-B0A2-763743E6F063")]
-public partial struct CODECAPI_AVEncDDPreferredStereoDownMixMode : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncDDPreferredStereoDownMixMode : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncDDPreferredStereoDownMixMode;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncDDPreferredStereoDownMixMode));
 }

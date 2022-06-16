@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("1E45BD02-BE45-4D71-BA32-0E576CFCD59F")]
 [NativeTypeName("struct IDiaEnumSymbolsByAddr2 : IDiaEnumSymbolsByAddr")]
 [NativeInheritance("IDiaEnumSymbolsByAddr")]
-public unsafe partial struct IDiaEnumSymbolsByAddr2 : IDiaEnumSymbolsByAddr2.Interface, IHaveNativeGuid
+public unsafe partial struct IDiaEnumSymbolsByAddr2 : IDiaEnumSymbolsByAddr2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDiaEnumSymbolsByAddr2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDiaEnumSymbolsByAddr2));
 
     public void** lpVtbl;
 

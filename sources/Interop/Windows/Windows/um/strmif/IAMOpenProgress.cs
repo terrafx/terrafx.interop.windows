@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8E1C39A1-DE53-11CF-AA63-0080C744528D")]
 [NativeTypeName("struct IAMOpenProgress : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMOpenProgress : IAMOpenProgress.Interface, IHaveNativeGuid
+public unsafe partial struct IAMOpenProgress : IAMOpenProgress.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMOpenProgress;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMOpenProgress));
 
     public void** lpVtbl;
 

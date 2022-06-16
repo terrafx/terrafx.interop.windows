@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("18B00C6D-C5EE-41B1-90A9-9D4A929095AD")]
 [NativeTypeName("struct IInertiaProcessor : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IInertiaProcessor : IInertiaProcessor.Interface, IHaveNativeGuid
+public unsafe partial struct IInertiaProcessor : IInertiaProcessor.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IInertiaProcessor;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IInertiaProcessor));
 
     public void** lpVtbl;
 

@@ -361,13 +361,13 @@ public static unsafe partial class CMSG
     public const int CMSG_VERIFY_COUNTER_SIGN_ENABLE_STRONG_FLAG = 0x00000001;
 
     [NativeTypeName("#define CMSG_OID_GEN_ENCRYPT_KEY_FUNC \"CryptMsgDllGenEncryptKey\"")]
-    public static ReadOnlySpan<byte> CMSG_OID_GEN_ENCRYPT_KEY_FUNC => "CryptMsgDllGenEncryptKey\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_GEN_ENCRYPT_KEY_FUNC => "CryptMsgDllGenEncryptKey"u8;
 
     [NativeTypeName("#define CMSG_OID_EXPORT_ENCRYPT_KEY_FUNC \"CryptMsgDllExportEncryptKey\"")]
-    public static ReadOnlySpan<byte> CMSG_OID_EXPORT_ENCRYPT_KEY_FUNC => "CryptMsgDllExportEncryptKey\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_EXPORT_ENCRYPT_KEY_FUNC => "CryptMsgDllExportEncryptKey"u8;
 
     [NativeTypeName("#define CMSG_OID_IMPORT_ENCRYPT_KEY_FUNC \"CryptMsgDllImportEncryptKey\"")]
-    public static ReadOnlySpan<byte> CMSG_OID_IMPORT_ENCRYPT_KEY_FUNC => "CryptMsgDllImportEncryptKey\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_IMPORT_ENCRYPT_KEY_FUNC => "CryptMsgDllImportEncryptKey"u8;
 
     [NativeTypeName("#define CMSG_DEFAULT_INSTALLABLE_FUNC_OID ((LPCSTR) 1)")]
     public static sbyte* CMSG_DEFAULT_INSTALLABLE_FUNC_OID => ((sbyte*)(1));
@@ -385,13 +385,13 @@ public static unsafe partial class CMSG
     public const int CMSG_CONTENT_ENCRYPT_RELEASE_CONTEXT_FLAG = 0x00008000;
 
     [NativeTypeName("#define CMSG_OID_GEN_CONTENT_ENCRYPT_KEY_FUNC \"CryptMsgDllGenContentEncryptKey\"")]
-    public static ReadOnlySpan<byte> CMSG_OID_GEN_CONTENT_ENCRYPT_KEY_FUNC => "CryptMsgDllGenContentEncryptKey\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_GEN_CONTENT_ENCRYPT_KEY_FUNC => "CryptMsgDllGenContentEncryptKey"u8;
 
     [NativeTypeName("#define CMSG_OID_CAPI1_GEN_CONTENT_ENCRYPT_KEY_FUNC CMSG_OID_GEN_CONTENT_ENCRYPT_KEY_FUNC")]
-    public static ReadOnlySpan<byte> CMSG_OID_CAPI1_GEN_CONTENT_ENCRYPT_KEY_FUNC => "CryptMsgDllGenContentEncryptKey\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_CAPI1_GEN_CONTENT_ENCRYPT_KEY_FUNC => "CryptMsgDllGenContentEncryptKey"u8;
 
     [NativeTypeName("#define CMSG_OID_CNG_GEN_CONTENT_ENCRYPT_KEY_FUNC \"CryptMsgDllCNGGenContentEncryptKey\"")]
-    public static ReadOnlySpan<byte> CMSG_OID_CNG_GEN_CONTENT_ENCRYPT_KEY_FUNC => "CryptMsgDllCNGGenContentEncryptKey\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_CNG_GEN_CONTENT_ENCRYPT_KEY_FUNC => "CryptMsgDllCNGGenContentEncryptKey"u8;
 
     [NativeTypeName("#define CMSG_KEY_TRANS_ENCRYPT_FREE_PARA_FLAG 0x00000001")]
     public const int CMSG_KEY_TRANS_ENCRYPT_FREE_PARA_FLAG = 0x00000001;
@@ -400,13 +400,13 @@ public static unsafe partial class CMSG
     public const int CMSG_KEY_TRANS_ENCRYPT_FREE_OBJID_FLAG = 0x00000002;
 
     [NativeTypeName("#define CMSG_OID_EXPORT_KEY_TRANS_FUNC \"CryptMsgDllExportKeyTrans\"")]
-    public static ReadOnlySpan<byte> CMSG_OID_EXPORT_KEY_TRANS_FUNC => "CryptMsgDllExportKeyTrans\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_EXPORT_KEY_TRANS_FUNC => "CryptMsgDllExportKeyTrans"u8;
 
     [NativeTypeName("#define CMSG_OID_CAPI1_EXPORT_KEY_TRANS_FUNC CMSG_OID_EXPORT_KEY_TRANS_FUNC")]
-    public static ReadOnlySpan<byte> CMSG_OID_CAPI1_EXPORT_KEY_TRANS_FUNC => "CryptMsgDllExportKeyTrans\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_CAPI1_EXPORT_KEY_TRANS_FUNC => "CryptMsgDllExportKeyTrans"u8;
 
     [NativeTypeName("#define CMSG_OID_CNG_EXPORT_KEY_TRANS_FUNC \"CryptMsgDllCNGExportKeyTrans\"")]
-    public static ReadOnlySpan<byte> CMSG_OID_CNG_EXPORT_KEY_TRANS_FUNC => "CryptMsgDllCNGExportKeyTrans\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_CNG_EXPORT_KEY_TRANS_FUNC => "CryptMsgDllCNGExportKeyTrans"u8;
 
     [NativeTypeName("#define CMSG_KEY_AGREE_ENCRYPT_FREE_PARA_FLAG 0x00000001")]
     public const int CMSG_KEY_AGREE_ENCRYPT_FREE_PARA_FLAG = 0x00000001;
@@ -427,13 +427,13 @@ public static unsafe partial class CMSG
     public const int CMSG_KEY_AGREE_ENCRYPT_FREE_OBJID_FLAG = 0x00000020;
 
     [NativeTypeName("#define CMSG_OID_EXPORT_KEY_AGREE_FUNC \"CryptMsgDllExportKeyAgree\"")]
-    public static ReadOnlySpan<byte> CMSG_OID_EXPORT_KEY_AGREE_FUNC => "CryptMsgDllExportKeyAgree\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_EXPORT_KEY_AGREE_FUNC => "CryptMsgDllExportKeyAgree"u8;
 
     [NativeTypeName("#define CMSG_OID_CAPI1_EXPORT_KEY_AGREE_FUNC CMSG_OID_EXPORT_KEY_AGREE_FUNC")]
-    public static ReadOnlySpan<byte> CMSG_OID_CAPI1_EXPORT_KEY_AGREE_FUNC => "CryptMsgDllExportKeyAgree\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_CAPI1_EXPORT_KEY_AGREE_FUNC => "CryptMsgDllExportKeyAgree"u8;
 
     [NativeTypeName("#define CMSG_OID_CNG_EXPORT_KEY_AGREE_FUNC \"CryptMsgDllCNGExportKeyAgree\"")]
-    public static ReadOnlySpan<byte> CMSG_OID_CNG_EXPORT_KEY_AGREE_FUNC => "CryptMsgDllCNGExportKeyAgree\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_CNG_EXPORT_KEY_AGREE_FUNC => "CryptMsgDllCNGExportKeyAgree"u8;
 
     [NativeTypeName("#define CMSG_MAIL_LIST_ENCRYPT_FREE_PARA_FLAG 0x00000001")]
     public const int CMSG_MAIL_LIST_ENCRYPT_FREE_PARA_FLAG = 0x00000001;
@@ -442,37 +442,37 @@ public static unsafe partial class CMSG
     public const int CMSG_MAIL_LIST_ENCRYPT_FREE_OBJID_FLAG = 0x00000002;
 
     [NativeTypeName("#define CMSG_OID_EXPORT_MAIL_LIST_FUNC \"CryptMsgDllExportMailList\"")]
-    public static ReadOnlySpan<byte> CMSG_OID_EXPORT_MAIL_LIST_FUNC => "CryptMsgDllExportMailList\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_EXPORT_MAIL_LIST_FUNC => "CryptMsgDllExportMailList"u8;
 
     [NativeTypeName("#define CMSG_OID_CAPI1_EXPORT_MAIL_LIST_FUNC CMSG_OID_EXPORT_MAIL_LIST_FUNC")]
-    public static ReadOnlySpan<byte> CMSG_OID_CAPI1_EXPORT_MAIL_LIST_FUNC => "CryptMsgDllExportMailList\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_CAPI1_EXPORT_MAIL_LIST_FUNC => "CryptMsgDllExportMailList"u8;
 
     [NativeTypeName("#define CMSG_OID_IMPORT_KEY_TRANS_FUNC \"CryptMsgDllImportKeyTrans\"")]
-    public static ReadOnlySpan<byte> CMSG_OID_IMPORT_KEY_TRANS_FUNC => "CryptMsgDllImportKeyTrans\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_IMPORT_KEY_TRANS_FUNC => "CryptMsgDllImportKeyTrans"u8;
 
     [NativeTypeName("#define CMSG_OID_CAPI1_IMPORT_KEY_TRANS_FUNC CMSG_OID_IMPORT_KEY_TRANS_FUNC")]
-    public static ReadOnlySpan<byte> CMSG_OID_CAPI1_IMPORT_KEY_TRANS_FUNC => "CryptMsgDllImportKeyTrans\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_CAPI1_IMPORT_KEY_TRANS_FUNC => "CryptMsgDllImportKeyTrans"u8;
 
     [NativeTypeName("#define CMSG_OID_IMPORT_KEY_AGREE_FUNC \"CryptMsgDllImportKeyAgree\"")]
-    public static ReadOnlySpan<byte> CMSG_OID_IMPORT_KEY_AGREE_FUNC => "CryptMsgDllImportKeyAgree\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_IMPORT_KEY_AGREE_FUNC => "CryptMsgDllImportKeyAgree"u8;
 
     [NativeTypeName("#define CMSG_OID_CAPI1_IMPORT_KEY_AGREE_FUNC CMSG_OID_IMPORT_KEY_AGREE_FUNC")]
-    public static ReadOnlySpan<byte> CMSG_OID_CAPI1_IMPORT_KEY_AGREE_FUNC => "CryptMsgDllImportKeyAgree\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_CAPI1_IMPORT_KEY_AGREE_FUNC => "CryptMsgDllImportKeyAgree"u8;
 
     [NativeTypeName("#define CMSG_OID_IMPORT_MAIL_LIST_FUNC \"CryptMsgDllImportMailList\"")]
-    public static ReadOnlySpan<byte> CMSG_OID_IMPORT_MAIL_LIST_FUNC => "CryptMsgDllImportMailList\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_IMPORT_MAIL_LIST_FUNC => "CryptMsgDllImportMailList"u8;
 
     [NativeTypeName("#define CMSG_OID_CAPI1_IMPORT_MAIL_LIST_FUNC CMSG_OID_IMPORT_MAIL_LIST_FUNC")]
-    public static ReadOnlySpan<byte> CMSG_OID_CAPI1_IMPORT_MAIL_LIST_FUNC => "CryptMsgDllImportMailList\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_CAPI1_IMPORT_MAIL_LIST_FUNC => "CryptMsgDllImportMailList"u8;
 
     [NativeTypeName("#define CMSG_OID_CNG_IMPORT_KEY_TRANS_FUNC \"CryptMsgDllCNGImportKeyTrans\"")]
-    public static ReadOnlySpan<byte> CMSG_OID_CNG_IMPORT_KEY_TRANS_FUNC => "CryptMsgDllCNGImportKeyTrans\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_CNG_IMPORT_KEY_TRANS_FUNC => "CryptMsgDllCNGImportKeyTrans"u8;
 
     [NativeTypeName("#define CMSG_OID_CNG_IMPORT_KEY_AGREE_FUNC \"CryptMsgDllCNGImportKeyAgree\"")]
-    public static ReadOnlySpan<byte> CMSG_OID_CNG_IMPORT_KEY_AGREE_FUNC => "CryptMsgDllCNGImportKeyAgree\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_CNG_IMPORT_KEY_AGREE_FUNC => "CryptMsgDllCNGImportKeyAgree"u8;
 
     [NativeTypeName("#define CMSG_OID_CNG_IMPORT_CONTENT_ENCRYPT_KEY_FUNC \"CryptMsgDllCNGImportContentEncryptKey\"")]
-    public static ReadOnlySpan<byte> CMSG_OID_CNG_IMPORT_CONTENT_ENCRYPT_KEY_FUNC => "CryptMsgDllCNGImportContentEncryptKey\0"u8;
+    public static ReadOnlySpan<byte> CMSG_OID_CNG_IMPORT_CONTENT_ENCRYPT_KEY_FUNC => "CryptMsgDllCNGImportContentEncryptKey"u8;
 
     [NativeTypeName("#define CMSG_TRUSTED_SIGNER_FLAG 0x1")]
     public const int CMSG_TRUSTED_SIGNER_FLAG = 0x1;

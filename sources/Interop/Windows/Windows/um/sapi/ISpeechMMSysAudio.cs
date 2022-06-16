@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3C76AF6D-1FD7-4831-81D1-3B71D5A13C44")]
 [NativeTypeName("struct ISpeechMMSysAudio : ISpeechAudio")]
 [NativeInheritance("ISpeechAudio")]
-public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IHaveNativeGuid
+public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpeechMMSysAudio;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpeechMMSysAudio));
 
     public void** lpVtbl;
 

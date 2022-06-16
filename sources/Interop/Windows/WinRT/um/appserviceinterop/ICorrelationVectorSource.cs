@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("152B8A3B-B9B9-4685-B56E-974847BC7545")]
 [NativeTypeName("struct ICorrelationVectorSource : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ICorrelationVectorSource : ICorrelationVectorSource.Interface, IHaveNativeGuid
+public unsafe partial struct ICorrelationVectorSource : ICorrelationVectorSource.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICorrelationVectorSource;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICorrelationVectorSource));
 
     public void** lpVtbl;
 

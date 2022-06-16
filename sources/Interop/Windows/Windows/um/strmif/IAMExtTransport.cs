@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("A03CD5F0-3045-11CF-8C44-00AA006B6814")]
 [NativeTypeName("struct IAMExtTransport : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, IHaveNativeGuid
+public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMExtTransport;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMExtTransport));
 
     public void** lpVtbl;
 

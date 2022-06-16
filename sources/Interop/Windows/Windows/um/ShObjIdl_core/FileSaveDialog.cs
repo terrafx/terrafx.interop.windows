@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='FileSaveDialog.xml' path='doc/member[@name="FileSaveDialog"]/*' />
 [Guid("C0B4E2F3-BA21-4773-8DBA-335EC946EB8B")]
-public partial struct FileSaveDialog : IHaveNativeGuid
+public unsafe partial struct FileSaveDialog : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_FileSaveDialog;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_FileSaveDialog));
 }

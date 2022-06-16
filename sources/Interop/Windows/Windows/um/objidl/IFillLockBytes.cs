@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("99CAF010-415E-11CF-8814-00AA00B569F5")]
 [NativeTypeName("struct IFillLockBytes : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IFillLockBytes : IFillLockBytes.Interface, IHaveNativeGuid
+public unsafe partial struct IFillLockBytes : IFillLockBytes.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IFillLockBytes;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFillLockBytes));
 
     public void** lpVtbl;
 

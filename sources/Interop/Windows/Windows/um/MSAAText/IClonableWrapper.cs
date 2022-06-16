@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("B33E75FF-E84C-4DCA-A25C-33B8DC003374")]
 [NativeTypeName("struct IClonableWrapper : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IClonableWrapper : IClonableWrapper.Interface, IHaveNativeGuid
+public unsafe partial struct IClonableWrapper : IClonableWrapper.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IClonableWrapper;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IClonableWrapper));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("DC2601D7-059E-42FC-A09D-2AFD21B6D5F7")]
 [NativeTypeName("struct IDynamicHWHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDynamicHWHandler : IDynamicHWHandler.Interface, IHaveNativeGuid
+public unsafe partial struct IDynamicHWHandler : IDynamicHWHandler.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDynamicHWHandler;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDynamicHWHandler));
 
     public void** lpVtbl;
 

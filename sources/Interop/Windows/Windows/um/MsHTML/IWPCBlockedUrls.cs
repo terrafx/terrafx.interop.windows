@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("30510413-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IWPCBlockedUrls : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IWPCBlockedUrls : IWPCBlockedUrls.Interface, IHaveNativeGuid
+public unsafe partial struct IWPCBlockedUrls : IWPCBlockedUrls.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWPCBlockedUrls;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWPCBlockedUrls));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3BDD78E2-C16E-47FD-B883-CE6FACC1A208")]
 [NativeTypeName("struct ITfMouseTrackerACP : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITfMouseTrackerACP : ITfMouseTrackerACP.Interface, IHaveNativeGuid
+public unsafe partial struct ITfMouseTrackerACP : ITfMouseTrackerACP.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfMouseTrackerACP;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfMouseTrackerACP));
 
     public void** lpVtbl;
 

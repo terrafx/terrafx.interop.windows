@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFRelativePanelReport : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0.19041.0")]
-public unsafe partial struct IMFRelativePanelReport : IMFRelativePanelReport.Interface, IHaveNativeGuid
+public unsafe partial struct IMFRelativePanelReport : IMFRelativePanelReport.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFRelativePanelReport;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFRelativePanelReport));
 
     public void** lpVtbl;
 

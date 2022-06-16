@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F51E-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct DispIHTMLInputButtonElement : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct DispIHTMLInputButtonElement : DispIHTMLInputButtonElement.Interface, IHaveNativeGuid
+public unsafe partial struct DispIHTMLInputButtonElement : DispIHTMLInputButtonElement.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_DispIHTMLInputButtonElement;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_DispIHTMLInputButtonElement));
 
     public void** lpVtbl;
 

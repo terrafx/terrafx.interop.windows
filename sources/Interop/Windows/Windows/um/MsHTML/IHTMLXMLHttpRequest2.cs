@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("30510482-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLXMLHttpRequest2 : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IHTMLXMLHttpRequest2 : IHTMLXMLHttpRequest2.Interface, IHaveNativeGuid
+public unsafe partial struct IHTMLXMLHttpRequest2 : IHTMLXMLHttpRequest2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IHTMLXMLHttpRequest2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHTMLXMLHttpRequest2));
 
     public void** lpVtbl;
 

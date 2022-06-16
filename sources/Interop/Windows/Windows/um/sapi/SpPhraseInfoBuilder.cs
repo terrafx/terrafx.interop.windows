@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SpPhraseInfoBuilder.xml' path='doc/member[@name="SpPhraseInfoBuilder"]/*' />
 [Guid("C23FC28D-C55F-4720-8B32-91F73C2BD5D1")]
-public partial struct SpPhraseInfoBuilder : IHaveNativeGuid
+public unsafe partial struct SpPhraseInfoBuilder : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_SpPhraseInfoBuilder;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_SpPhraseInfoBuilder));
 }

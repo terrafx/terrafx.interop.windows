@@ -143,13 +143,13 @@ public static unsafe partial class Windows
     public static extern HRESULT SHAssocEnumHandlersForProtocolByApplication([NativeTypeName("PCWSTR")] ushort* protocol, [NativeTypeName("const IID &")] Guid* riid, void** enumHandlers);
 
     [NativeTypeName("#define CMDSTR_NEWFOLDERA \"NewFolder\"")]
-    public static ReadOnlySpan<byte> CMDSTR_NEWFOLDERA => "NewFolder\0"u8;
+    public static ReadOnlySpan<byte> CMDSTR_NEWFOLDERA => "NewFolder"u8;
 
     [NativeTypeName("#define CMDSTR_VIEWLISTA \"ViewList\"")]
-    public static ReadOnlySpan<byte> CMDSTR_VIEWLISTA => "ViewList\0"u8;
+    public static ReadOnlySpan<byte> CMDSTR_VIEWLISTA => "ViewList"u8;
 
     [NativeTypeName("#define CMDSTR_VIEWDETAILSA \"ViewDetails\"")]
-    public static ReadOnlySpan<byte> CMDSTR_VIEWDETAILSA => "ViewDetails\0"u8;
+    public static ReadOnlySpan<byte> CMDSTR_VIEWDETAILSA => "ViewDetails"u8;
 
     [NativeTypeName("#define CMDSTR_NEWFOLDERW L\"NewFolder\"")]
     public const string CMDSTR_NEWFOLDERW = "NewFolder";

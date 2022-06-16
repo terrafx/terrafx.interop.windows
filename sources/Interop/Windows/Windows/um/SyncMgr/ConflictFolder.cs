@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='ConflictFolder.xml' path='doc/member[@name="ConflictFolder"]/*' />
 [Guid("289978AC-A101-4341-A817-21EBA7FD046D")]
-public partial struct ConflictFolder : IHaveNativeGuid
+public unsafe partial struct ConflictFolder : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ConflictFolder;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ConflictFolder));
 }

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncMPAEnableRedundancyProtection.xml' path='doc/member[@name="CODECAPI_AVEncMPAEnableRedundancyProtection"]/*' />
 [Guid("5E54B09E-B2E7-4973-A89B-0B3650A3BEDA")]
-public partial struct CODECAPI_AVEncMPAEnableRedundancyProtection : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncMPAEnableRedundancyProtection : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncMPAEnableRedundancyProtection;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncMPAEnableRedundancyProtection));
 }

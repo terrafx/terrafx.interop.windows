@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='XMLDSOControl.xml' path='doc/member[@name="XMLDSOControl"]/*' />
 [Guid("550DDA30-0541-11D2-9CA9-0060B0EC3D39")]
-public partial struct XMLDSOControl : IHaveNativeGuid
+public unsafe partial struct XMLDSOControl : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_XMLDSOControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_XMLDSOControl));
 }

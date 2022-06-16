@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("1BB12A62-2AD8-432B-8CCF-0C2C52AFCD5B")]
 [NativeTypeName("struct IPackageExecutionStateChangeNotification : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IPackageExecutionStateChangeNotification : IPackageExecutionStateChangeNotification.Interface, IHaveNativeGuid
+public unsafe partial struct IPackageExecutionStateChangeNotification : IPackageExecutionStateChangeNotification.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPackageExecutionStateChangeNotification;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPackageExecutionStateChangeNotification));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("7FB7B48F-531D-44A2-BCB3-5AD5A134B3DC")]
 [NativeTypeName("struct IAudioVolumeLevel : IPerChannelDbLevel")]
 [NativeInheritance("IPerChannelDbLevel")]
-public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface, IHaveNativeGuid
+public unsafe partial struct IAudioVolumeLevel : IAudioVolumeLevel.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAudioVolumeLevel;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAudioVolumeLevel));
 
     public void** lpVtbl;
 

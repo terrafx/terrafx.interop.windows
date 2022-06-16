@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='DedupBackupSupport.xml' path='doc/member[@name="DedupBackupSupport"]/*' />
 [Guid("73D6B2AD-2984-4715-B2E3-924C149744DD")]
-public partial struct DedupBackupSupport : IHaveNativeGuid
+public unsafe partial struct DedupBackupSupport : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_DedupBackupSupport;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_DedupBackupSupport));
 }

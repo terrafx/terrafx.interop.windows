@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("5AD8CBA7-4C01-4DAC-9074-827894292D63")]
 [NativeTypeName("struct IDragDropManagerInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IDragDropManagerInterop : IDragDropManagerInterop.Interface, IHaveNativeGuid
+public unsafe partial struct IDragDropManagerInterop : IDragDropManagerInterop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDragDropManagerInterop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDragDropManagerInterop));
 
     public void** lpVtbl;
 

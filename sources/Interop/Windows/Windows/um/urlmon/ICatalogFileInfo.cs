@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("711C7600-6B48-11D1-B403-00AA00B92AF1")]
 [NativeTypeName("struct ICatalogFileInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ICatalogFileInfo : ICatalogFileInfo.Interface, IHaveNativeGuid
+public unsafe partial struct ICatalogFileInfo : ICatalogFileInfo.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICatalogFileInfo;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICatalogFileInfo));
 
     public void** lpVtbl;
 

@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("F4B8E804-811E-4436-B69C-44CB67B72084")]
 [NativeTypeName("struct IWebAuthenticationCoreManagerInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IWebAuthenticationCoreManagerInterop : IWebAuthenticationCoreManagerInterop.Interface, IHaveNativeGuid
+public unsafe partial struct IWebAuthenticationCoreManagerInterop : IWebAuthenticationCoreManagerInterop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWebAuthenticationCoreManagerInterop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWebAuthenticationCoreManagerInterop));
 
     public void** lpVtbl;
 

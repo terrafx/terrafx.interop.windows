@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("D25C30F9-4087-4366-9E24-E55BE286424B")]
 [NativeTypeName("struct DFileSystemImageImportEvents : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct DFileSystemImageImportEvents : DFileSystemImageImportEvents.Interface, IHaveNativeGuid
+public unsafe partial struct DFileSystemImageImportEvents : DFileSystemImageImportEvents.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_DFileSystemImageImportEvents;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_DFileSystemImageImportEvents));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("BEF6E002-A874-101A-8BBA-00AA00300CAB")]
 [NativeTypeName("struct IFont : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IFont : IFont.Interface, IHaveNativeGuid
+public unsafe partial struct IFont : IFont.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IFont;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFont));
 
     public void** lpVtbl;
 

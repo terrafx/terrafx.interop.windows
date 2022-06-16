@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVDecVideoProcDeinterlaceCSC.xml' path='doc/member[@name="CODECAPI_AVDecVideoProcDeinterlaceCSC"]/*' />
 [Guid("F7DB8A31-4F48-4EE8-AE31-8B6EBE558AE2")]
-public partial struct CODECAPI_AVDecVideoProcDeinterlaceCSC : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVDecVideoProcDeinterlaceCSC : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVDecVideoProcDeinterlaceCSC;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVDecVideoProcDeinterlaceCSC));
 }

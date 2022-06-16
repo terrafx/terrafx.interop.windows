@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("C46CA590-3C3F-11D2-BEE6-0000F805CA57")]
 [NativeTypeName("struct IQueryAssociations : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IQueryAssociations : IQueryAssociations.Interface, IHaveNativeGuid
+public unsafe partial struct IQueryAssociations : IQueryAssociations.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IQueryAssociations;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IQueryAssociations));
 
     public void** lpVtbl;
 

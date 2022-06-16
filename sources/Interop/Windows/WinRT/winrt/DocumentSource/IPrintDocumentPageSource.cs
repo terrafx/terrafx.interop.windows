@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("A96BB1DB-172E-4667-82B5-AD97A252318F")]
 [NativeTypeName("struct IPrintDocumentPageSource : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IPrintDocumentPageSource : IPrintDocumentPageSource.Interface, IHaveNativeGuid
+public unsafe partial struct IPrintDocumentPageSource : IPrintDocumentPageSource.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPrintDocumentPageSource;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPrintDocumentPageSource));
 
     public void** lpVtbl;
 

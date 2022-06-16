@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8E3F80CA-7517-432A-BA07-285134AAEA8E")]
 [NativeTypeName("struct IDiaReadExeAtRVACallback : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDiaReadExeAtRVACallback : IDiaReadExeAtRVACallback.Interface, IHaveNativeGuid
+public unsafe partial struct IDiaReadExeAtRVACallback : IDiaReadExeAtRVACallback.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDiaReadExeAtRVACallback;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDiaReadExeAtRVACallback));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("01689689-7ACB-4E9B-AB7C-7EA46B12B522")]
 [NativeTypeName("struct ITfCleanupContextSink : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITfCleanupContextSink : ITfCleanupContextSink.Interface, IHaveNativeGuid
+public unsafe partial struct ITfCleanupContextSink : ITfCleanupContextSink.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfCleanupContextSink;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfCleanupContextSink));
 
     public void** lpVtbl;
 

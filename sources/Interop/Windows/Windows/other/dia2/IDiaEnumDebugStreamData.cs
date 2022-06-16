@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("486943E8-D187-4A6B-A3C4-291259FFF60D")]
 [NativeTypeName("struct IDiaEnumDebugStreamData : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.Interface, IHaveNativeGuid
+public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDiaEnumDebugStreamData;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDiaEnumDebugStreamData));
 
     public void** lpVtbl;
 

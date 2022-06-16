@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F3CC-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct HTMLLinkElementEvents : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct HTMLLinkElementEvents : HTMLLinkElementEvents.Interface, IHaveNativeGuid
+public unsafe partial struct HTMLLinkElementEvents : HTMLLinkElementEvents.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_HTMLLinkElementEvents;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_HTMLLinkElementEvents));
 
     public void** lpVtbl;
 

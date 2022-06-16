@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("D8CD007F-D08F-4191-9BFC-236EA7F0E4B5")]
 [NativeTypeName("struct IWICBitmapDecoderInfo : IWICBitmapCodecInfo")]
 [NativeInheritance("IWICBitmapCodecInfo")]
-public unsafe partial struct IWICBitmapDecoderInfo : IWICBitmapDecoderInfo.Interface, IHaveNativeGuid
+public unsafe partial struct IWICBitmapDecoderInfo : IWICBitmapDecoderInfo.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWICBitmapDecoderInfo;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWICBitmapDecoderInfo));
 
     public void** lpVtbl;
 

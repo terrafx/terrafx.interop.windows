@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("6DFC60FB-F2E9-459B-BEB5-288F1A7C7D54")]
 [NativeTypeName("struct ISortColumnArray : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ISortColumnArray : ISortColumnArray.Interface, IHaveNativeGuid
+public unsafe partial struct ISortColumnArray : ISortColumnArray.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISortColumnArray;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISortColumnArray));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("ED79BA56-5294-4250-8D46-F9AECEE23459")]
 [NativeTypeName("struct IFsiNamedStreams : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IFsiNamedStreams : IFsiNamedStreams.Interface, IHaveNativeGuid
+public unsafe partial struct IFsiNamedStreams : IFsiNamedStreams.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IFsiNamedStreams;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFsiNamedStreams));
 
     public void** lpVtbl;
 

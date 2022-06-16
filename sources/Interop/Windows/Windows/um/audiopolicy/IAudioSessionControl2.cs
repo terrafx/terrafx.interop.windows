@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("BFB7FF88-7239-4FC9-8FA2-07C950BE9C6D")]
 [NativeTypeName("struct IAudioSessionControl2 : IAudioSessionControl")]
 [NativeInheritance("IAudioSessionControl")]
-public unsafe partial struct IAudioSessionControl2 : IAudioSessionControl2.Interface, IHaveNativeGuid
+public unsafe partial struct IAudioSessionControl2 : IAudioSessionControl2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAudioSessionControl2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAudioSessionControl2));
 
     public void** lpVtbl;
 

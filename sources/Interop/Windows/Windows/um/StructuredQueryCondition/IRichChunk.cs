@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("4FDEF69C-DBC9-454E-9910-B34F3C64B510")]
 [NativeTypeName("struct IRichChunk : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IRichChunk : IRichChunk.Interface, IHaveNativeGuid
+public unsafe partial struct IRichChunk : IRichChunk.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IRichChunk;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IRichChunk));
 
     public void** lpVtbl;
 

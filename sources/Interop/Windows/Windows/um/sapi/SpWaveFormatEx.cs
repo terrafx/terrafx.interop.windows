@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SpWaveFormatEx.xml' path='doc/member[@name="SpWaveFormatEx"]/*' />
 [Guid("C79A574C-63BE-44B9-801F-283F87F898BE")]
-public partial struct SpWaveFormatEx : IHaveNativeGuid
+public unsafe partial struct SpWaveFormatEx : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_SpWaveFormatEx;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_SpWaveFormatEx));
 }

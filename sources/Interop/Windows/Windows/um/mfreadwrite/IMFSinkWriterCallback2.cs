@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("2456BD58-C067-4513-84FE-8D0C88FFDC61")]
 [NativeTypeName("struct IMFSinkWriterCallback2 : IMFSinkWriterCallback")]
 [NativeInheritance("IMFSinkWriterCallback")]
-public unsafe partial struct IMFSinkWriterCallback2 : IMFSinkWriterCallback2.Interface, IHaveNativeGuid
+public unsafe partial struct IMFSinkWriterCallback2 : IMFSinkWriterCallback2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFSinkWriterCallback2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFSinkWriterCallback2));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("7BE19E73-C9BF-468A-AC5A-A5E8653BEC87")]
 [NativeTypeName("struct IMFNetSchemeHandlerConfig : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFNetSchemeHandlerConfig : IMFNetSchemeHandlerConfig.Interface, IHaveNativeGuid
+public unsafe partial struct IMFNetSchemeHandlerConfig : IMFNetSchemeHandlerConfig.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFNetSchemeHandlerConfig;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFNetSchemeHandlerConfig));
 
     public void** lpVtbl;
 

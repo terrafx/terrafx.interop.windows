@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("26BA702B-314A-4620-AAF6-7A51AA58FA18")]
 [NativeTypeName("struct IVideoFrameNative : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IVideoFrameNative : IVideoFrameNative.Interface, IHaveNativeGuid
+public unsafe partial struct IVideoFrameNative : IVideoFrameNative.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVideoFrameNative;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVideoFrameNative));
 
     public void** lpVtbl;
 

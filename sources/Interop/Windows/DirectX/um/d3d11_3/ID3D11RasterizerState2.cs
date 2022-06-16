@@ -17,9 +17,9 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct ID3D11RasterizerState2 : ID3D11RasterizerState1")]
 [NativeInheritance("ID3D11RasterizerState1")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct ID3D11RasterizerState2 : ID3D11RasterizerState2.Interface, IHaveNativeGuid
+public unsafe partial struct ID3D11RasterizerState2 : ID3D11RasterizerState2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D11RasterizerState2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D11RasterizerState2));
 
     public void** lpVtbl;
 

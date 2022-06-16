@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("B507CA26-2204-11DD-966A-001AA01BBC58")]
 [NativeTypeName("struct IBlockRangeList : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IBlockRangeList : IBlockRangeList.Interface, IHaveNativeGuid
+public unsafe partial struct IBlockRangeList : IBlockRangeList.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IBlockRangeList;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IBlockRangeList));
 
     public void** lpVtbl;
 
