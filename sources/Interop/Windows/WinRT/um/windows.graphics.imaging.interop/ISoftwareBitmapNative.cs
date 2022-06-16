@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("94BC8415-04EA-4B2E-AF13-4DE95AA898EB")]
 [NativeTypeName("struct ISoftwareBitmapNative : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct ISoftwareBitmapNative : ISoftwareBitmapNative.Interface, IHaveNativeGuid
+public unsafe partial struct ISoftwareBitmapNative : ISoftwareBitmapNative.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISoftwareBitmapNative;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISoftwareBitmapNative));
 
     public void** lpVtbl;
 

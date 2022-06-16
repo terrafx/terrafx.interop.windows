@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("40BFE3E3-B75A-4479-AC96-475365749BB8")]
 [NativeTypeName("struct ICoreInputInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ICoreInputInterop : ICoreInputInterop.Interface, IHaveNativeGuid
+public unsafe partial struct ICoreInputInterop : ICoreInputInterop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICoreInputInterop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICoreInputInterop));
 
     public void** lpVtbl;
 

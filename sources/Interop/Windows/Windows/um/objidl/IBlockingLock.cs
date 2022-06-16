@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("30F3D47A-6447-11D1-8E3C-00C04FB9386D")]
 [NativeTypeName("struct IBlockingLock : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IBlockingLock : IBlockingLock.Interface, IHaveNativeGuid
+public unsafe partial struct IBlockingLock : IBlockingLock.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IBlockingLock;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IBlockingLock));
 
     public void** lpVtbl;
 

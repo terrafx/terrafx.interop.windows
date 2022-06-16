@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("BA468C55-9956-4FB1-A59D-52A7DD7CC6AA")]
 [NativeTypeName("struct ITfLangBarItemMgr : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface, IHaveNativeGuid
+public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfLangBarItemMgr;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfLangBarItemMgr));
 
     public void** lpVtbl;
 

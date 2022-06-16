@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("EBEC459C-2ECA-4D42-A8AF-30DF557614B8")]
 [NativeTypeName("struct IReferenceClockTimerControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IReferenceClockTimerControl : IReferenceClockTimerControl.Interface, IHaveNativeGuid
+public unsafe partial struct IReferenceClockTimerControl : IReferenceClockTimerControl.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IReferenceClockTimerControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IReferenceClockTimerControl));
 
     public void** lpVtbl;
 

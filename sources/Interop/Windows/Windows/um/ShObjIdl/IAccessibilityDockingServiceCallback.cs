@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("157733FD-A592-42E5-B594-248468C5A81B")]
 [NativeTypeName("struct IAccessibilityDockingServiceCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAccessibilityDockingServiceCallback : IAccessibilityDockingServiceCallback.Interface, IHaveNativeGuid
+public unsafe partial struct IAccessibilityDockingServiceCallback : IAccessibilityDockingServiceCallback.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAccessibilityDockingServiceCallback;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAccessibilityDockingServiceCallback));
 
     public void** lpVtbl;
 

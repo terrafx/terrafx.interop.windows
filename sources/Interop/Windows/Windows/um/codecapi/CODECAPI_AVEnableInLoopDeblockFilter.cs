@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEnableInLoopDeblockFilter.xml' path='doc/member[@name="CODECAPI_AVEnableInLoopDeblockFilter"]/*' />
 [Guid("D2E8E399-0623-4BF3-92A8-4D1818529DED")]
-public partial struct CODECAPI_AVEnableInLoopDeblockFilter : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEnableInLoopDeblockFilter : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEnableInLoopDeblockFilter;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEnableInLoopDeblockFilter));
 }

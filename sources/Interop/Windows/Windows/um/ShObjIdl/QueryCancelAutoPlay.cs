@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='QueryCancelAutoPlay.xml' path='doc/member[@name="QueryCancelAutoPlay"]/*' />
 [Guid("331F1768-05A9-4DDD-B86E-DAE34DDC998A")]
-public partial struct QueryCancelAutoPlay : IHaveNativeGuid
+public unsafe partial struct QueryCancelAutoPlay : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_QueryCancelAutoPlay;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_QueryCancelAutoPlay));
 }

@@ -1408,22 +1408,22 @@ public static partial class IMAGE
     public const int IMAGE_ARCHIVE_START_SIZE = 8;
 
     [NativeTypeName("#define IMAGE_ARCHIVE_START \"!<arch>\\n\"")]
-    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_START => "!<arch>\n\0"u8;
+    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_START => "!<arch>\n"u8;
 
     [NativeTypeName("#define IMAGE_ARCHIVE_END \"`\\n\"")]
-    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_END => "`\n\0"u8;
+    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_END => "`\n"u8;
 
     [NativeTypeName("#define IMAGE_ARCHIVE_PAD \"\\n\"")]
-    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_PAD => "\n\0"u8;
+    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_PAD => "\n"u8;
 
     [NativeTypeName("#define IMAGE_ARCHIVE_LINKER_MEMBER \"/               \"")]
-    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_LINKER_MEMBER => "/               \0"u8;
+    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_LINKER_MEMBER => "/               "u8;
 
     [NativeTypeName("#define IMAGE_ARCHIVE_LONGNAMES_MEMBER \"//              \"")]
-    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_LONGNAMES_MEMBER => "//              \0"u8;
+    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_LONGNAMES_MEMBER => "//              "u8;
 
     [NativeTypeName("#define IMAGE_ARCHIVE_HYBRIDMAP_MEMBER \"/<HYBRIDMAP>/   \"")]
-    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_HYBRIDMAP_MEMBER => "/<HYBRIDMAP>/   \0"u8;
+    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_HYBRIDMAP_MEMBER => "/<HYBRIDMAP>/   "u8;
 
     [NativeTypeName("#define IMAGE_SIZEOF_ARCHIVE_MEMBER_HDR 60")]
     public const int IMAGE_SIZEOF_ARCHIVE_MEMBER_HDR = 60;
@@ -1684,5 +1684,5 @@ public static partial class IMAGE
     public const int IMAGE_POLICY_METADATA_VERSION = 1;
 
     [NativeTypeName("#define IMAGE_POLICY_SECTION_NAME \".tPolicy\"")]
-    public static ReadOnlySpan<byte> IMAGE_POLICY_SECTION_NAME => ".tPolicy\0"u8;
+    public static ReadOnlySpan<byte> IMAGE_POLICY_SECTION_NAME => ".tPolicy"u8;
 }

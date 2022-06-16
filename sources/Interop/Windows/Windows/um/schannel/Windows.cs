@@ -34,31 +34,31 @@ public static unsafe partial class Windows
     public static extern int SslGetServerIdentity([NativeTypeName("PBYTE")] byte* ClientHello, [NativeTypeName("DWORD")] uint ClientHelloSize, [NativeTypeName("PBYTE *")] byte** ServerIdentity, [NativeTypeName("PDWORD")] uint* ServerIdentitySize, [NativeTypeName("DWORD")] uint Flags);
 
     [NativeTypeName("#define UNISP_NAME_A \"Microsoft Unified Security Protocol Provider\"")]
-    public static ReadOnlySpan<byte> UNISP_NAME_A => "Microsoft Unified Security Protocol Provider\0"u8;
+    public static ReadOnlySpan<byte> UNISP_NAME_A => "Microsoft Unified Security Protocol Provider"u8;
 
     [NativeTypeName("#define UNISP_NAME_W L\"Microsoft Unified Security Protocol Provider\"")]
     public const string UNISP_NAME_W = "Microsoft Unified Security Protocol Provider";
 
     [NativeTypeName("#define SSL2SP_NAME_A \"Microsoft SSL 2.0\"")]
-    public static ReadOnlySpan<byte> SSL2SP_NAME_A => "Microsoft SSL 2.0\0"u8;
+    public static ReadOnlySpan<byte> SSL2SP_NAME_A => "Microsoft SSL 2.0"u8;
 
     [NativeTypeName("#define SSL2SP_NAME_W L\"Microsoft SSL 2.0\"")]
     public const string SSL2SP_NAME_W = "Microsoft SSL 2.0";
 
     [NativeTypeName("#define SSL3SP_NAME_A \"Microsoft SSL 3.0\"")]
-    public static ReadOnlySpan<byte> SSL3SP_NAME_A => "Microsoft SSL 3.0\0"u8;
+    public static ReadOnlySpan<byte> SSL3SP_NAME_A => "Microsoft SSL 3.0"u8;
 
     [NativeTypeName("#define SSL3SP_NAME_W L\"Microsoft SSL 3.0\"")]
     public const string SSL3SP_NAME_W = "Microsoft SSL 3.0";
 
     [NativeTypeName("#define TLS1SP_NAME_A \"Microsoft TLS 1.0\"")]
-    public static ReadOnlySpan<byte> TLS1SP_NAME_A => "Microsoft TLS 1.0\0"u8;
+    public static ReadOnlySpan<byte> TLS1SP_NAME_A => "Microsoft TLS 1.0"u8;
 
     [NativeTypeName("#define TLS1SP_NAME_W L\"Microsoft TLS 1.0\"")]
     public const string TLS1SP_NAME_W = "Microsoft TLS 1.0";
 
     [NativeTypeName("#define PCT1SP_NAME_A \"Microsoft PCT 1.0\"")]
-    public static ReadOnlySpan<byte> PCT1SP_NAME_A => "Microsoft PCT 1.0\0"u8;
+    public static ReadOnlySpan<byte> PCT1SP_NAME_A => "Microsoft PCT 1.0"u8;
 
     [NativeTypeName("#define PCT1SP_NAME_W L\"Microsoft PCT 1.0\"")]
     public const string PCT1SP_NAME_W = "Microsoft PCT 1.0";

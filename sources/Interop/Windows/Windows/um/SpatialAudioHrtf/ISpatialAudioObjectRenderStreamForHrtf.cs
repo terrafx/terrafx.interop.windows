@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct ISpatialAudioObjectRenderStreamForHrtf : ISpatialAudioObjectRenderStreamBase")]
 [NativeInheritance("ISpatialAudioObjectRenderStreamBase")]
 [SupportedOSPlatform("windows10.0.15063.0")]
-public unsafe partial struct ISpatialAudioObjectRenderStreamForHrtf : ISpatialAudioObjectRenderStreamForHrtf.Interface, IHaveNativeGuid
+public unsafe partial struct ISpatialAudioObjectRenderStreamForHrtf : ISpatialAudioObjectRenderStreamForHrtf.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpatialAudioObjectRenderStreamForHrtf;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpatialAudioObjectRenderStreamForHrtf));
 
     public void** lpVtbl;
 

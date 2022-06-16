@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("2FC57384-A068-44D7-A331-30982FCF7177")]
 [NativeTypeName("struct IGraphicsEffectD2D1Interop : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IGraphicsEffectD2D1Interop : IGraphicsEffectD2D1Interop.Interface, IHaveNativeGuid
+public unsafe partial struct IGraphicsEffectD2D1Interop : IGraphicsEffectD2D1Interop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IGraphicsEffectD2D1Interop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IGraphicsEffectD2D1Interop));
 
     public void** lpVtbl;
 

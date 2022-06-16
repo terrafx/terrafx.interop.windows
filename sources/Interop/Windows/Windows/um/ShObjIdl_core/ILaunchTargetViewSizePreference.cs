@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("2F0666C6-12F7-4360-B511-A394A0553725")]
 [NativeTypeName("struct ILaunchTargetViewSizePreference : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ILaunchTargetViewSizePreference : ILaunchTargetViewSizePreference.Interface, IHaveNativeGuid
+public unsafe partial struct ILaunchTargetViewSizePreference : ILaunchTargetViewSizePreference.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ILaunchTargetViewSizePreference;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ILaunchTargetViewSizePreference));
 
     public void** lpVtbl;
 

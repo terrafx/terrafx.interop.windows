@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("4DC583BF-3A10-438A-8722-E9765224F1F1")]
 [NativeTypeName("struct ID2D1SpriteBatch : ID2D1Resource")]
 [NativeInheritance("ID2D1Resource")]
-public unsafe partial struct ID2D1SpriteBatch : ID2D1SpriteBatch.Interface, IHaveNativeGuid
+public unsafe partial struct ID2D1SpriteBatch : ID2D1SpriteBatch.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1SpriteBatch;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1SpriteBatch));
 
     public void** lpVtbl;
 

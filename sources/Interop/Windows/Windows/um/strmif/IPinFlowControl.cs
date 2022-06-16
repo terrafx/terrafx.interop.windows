@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("C56E9858-DBF3-4F6B-8119-384AF2060DEB")]
 [NativeTypeName("struct IPinFlowControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IPinFlowControl : IPinFlowControl.Interface, IHaveNativeGuid
+public unsafe partial struct IPinFlowControl : IPinFlowControl.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPinFlowControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPinFlowControl));
 
     public void** lpVtbl;
 

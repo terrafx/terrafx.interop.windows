@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("9CF0B1B6-FBAA-4B7F-88CF-CF1F130A0DCE")]
 [NativeTypeName("struct IVMRMonitorConfig : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface, IHaveNativeGuid
+public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVMRMonitorConfig;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVMRMonitorConfig));
 
     public void** lpVtbl;
 

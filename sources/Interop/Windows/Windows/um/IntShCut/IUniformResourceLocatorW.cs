@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("CABB0DA0-DA57-11CF-9974-0020AFD79762")]
 [NativeTypeName("struct IUniformResourceLocatorW : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IUniformResourceLocatorW : IUniformResourceLocatorW.Interface, IHaveNativeGuid
+public unsafe partial struct IUniformResourceLocatorW : IUniformResourceLocatorW.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IUniformResourceLocatorW;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUniformResourceLocatorW));
 
     public void** lpVtbl;
 

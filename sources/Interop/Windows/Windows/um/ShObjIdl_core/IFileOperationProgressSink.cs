@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("04B0F1A7-9490-44BC-96E1-4296A31252E2")]
 [NativeTypeName("struct IFileOperationProgressSink : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IFileOperationProgressSink : IFileOperationProgressSink.Interface, IHaveNativeGuid
+public unsafe partial struct IFileOperationProgressSink : IFileOperationProgressSink.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IFileOperationProgressSink;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFileOperationProgressSink));
 
     public void** lpVtbl;
 

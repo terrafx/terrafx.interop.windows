@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct ITfIntegratableCandidateListUIElement : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct ITfIntegratableCandidateListUIElement : ITfIntegratableCandidateListUIElement.Interface, IHaveNativeGuid
+public unsafe partial struct ITfIntegratableCandidateListUIElement : ITfIntegratableCandidateListUIElement.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfIntegratableCandidateListUIElement;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfIntegratableCandidateListUIElement));
 
     public void** lpVtbl;
 

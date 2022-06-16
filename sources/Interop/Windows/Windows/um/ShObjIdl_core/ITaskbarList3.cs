@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("EA1AFB91-9E28-4B86-90E9-9E9F8A5EEFAF")]
 [NativeTypeName("struct ITaskbarList3 : ITaskbarList2")]
 [NativeInheritance("ITaskbarList2")]
-public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface, IHaveNativeGuid
+public unsafe partial struct ITaskbarList3 : ITaskbarList3.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITaskbarList3;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITaskbarList3));
 
     public void** lpVtbl;
 

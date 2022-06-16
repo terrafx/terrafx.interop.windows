@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("DDB0472D-C911-4A1F-86D9-DC3D71A95F5A")]
 [NativeTypeName("struct ISystemMediaTransportControlsInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct ISystemMediaTransportControlsInterop : ISystemMediaTransportControlsInterop.Interface, IHaveNativeGuid
+public unsafe partial struct ISystemMediaTransportControlsInterop : ISystemMediaTransportControlsInterop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISystemMediaTransportControlsInterop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISystemMediaTransportControlsInterop));
 
     public void** lpVtbl;
 

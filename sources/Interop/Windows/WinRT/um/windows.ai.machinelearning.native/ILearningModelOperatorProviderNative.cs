@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("1ADAA23A-EB67-41F3-AAD8-5D984E9BACD4")]
 [NativeTypeName("struct ILearningModelOperatorProviderNative : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ILearningModelOperatorProviderNative : ILearningModelOperatorProviderNative.Interface, IHaveNativeGuid
+public unsafe partial struct ILearningModelOperatorProviderNative : ILearningModelOperatorProviderNative.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ILearningModelOperatorProviderNative;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ILearningModelOperatorProviderNative));
 
     public void** lpVtbl;
 

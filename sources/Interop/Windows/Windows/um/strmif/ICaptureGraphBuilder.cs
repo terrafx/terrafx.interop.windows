@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("BF87B6E0-8C27-11D0-B3F0-00AA003761C5")]
 [NativeTypeName("struct ICaptureGraphBuilder : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ICaptureGraphBuilder : ICaptureGraphBuilder.Interface, IHaveNativeGuid
+public unsafe partial struct ICaptureGraphBuilder : ICaptureGraphBuilder.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICaptureGraphBuilder;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICaptureGraphBuilder));
 
     public void** lpVtbl;
 

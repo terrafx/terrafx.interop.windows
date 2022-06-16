@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFMediaKeySessionNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct IMFMediaKeySessionNotify : IMFMediaKeySessionNotify.Interface, IHaveNativeGuid
+public unsafe partial struct IMFMediaKeySessionNotify : IMFMediaKeySessionNotify.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFMediaKeySessionNotify;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFMediaKeySessionNotify));
 
     public void** lpVtbl;
 

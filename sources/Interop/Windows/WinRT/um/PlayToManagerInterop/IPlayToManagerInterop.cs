@@ -17,9 +17,9 @@ namespace TerraFX.Interop.WinRT;
 [NativeTypeName("struct IPlayToManagerInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IPlayToManagerInterop : IPlayToManagerInterop.Interface, IHaveNativeGuid
+public unsafe partial struct IPlayToManagerInterop : IPlayToManagerInterop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPlayToManagerInterop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPlayToManagerInterop));
 
     public void** lpVtbl;
 

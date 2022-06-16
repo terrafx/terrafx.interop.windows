@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SyncMgrFolder.xml' path='doc/member[@name="SyncMgrFolder"]/*' />
 [Guid("9C73F5E5-7AE7-4E32-A8E8-8D23B85255BF")]
-public partial struct SyncMgrFolder : IHaveNativeGuid
+public unsafe partial struct SyncMgrFolder : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_SyncMgrFolder;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_SyncMgrFolder));
 }

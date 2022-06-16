@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("00000036-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IAsyncInfo : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface, IHaveNativeGuid
+public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAsyncInfo;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAsyncInfo));
 
     public void** lpVtbl;
 

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='DiaSource.xml' path='doc/member[@name="DiaSource"]/*' />
 [Guid("E6756135-1E65-4D17-8576-610761398C3C")]
-public partial struct DiaSource : IHaveNativeGuid
+public unsafe partial struct DiaSource : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_DiaSource;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_DiaSource));
 }

@@ -16,9 +16,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("39D055A4-66F6-4EBC-95D9-7A29EBE7690A")]
 [NativeTypeName("struct ITensorStaticsNative : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITensorStaticsNative : ITensorStaticsNative.Interface, IHaveNativeGuid
+public unsafe partial struct ITensorStaticsNative : ITensorStaticsNative.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITensorStaticsNative;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITensorStaticsNative));
 
     public void** lpVtbl;
 

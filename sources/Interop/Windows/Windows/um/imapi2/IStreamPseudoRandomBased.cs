@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("27354145-7F64-5B0F-8F00-5D77AFBE261E")]
 [NativeTypeName("struct IStreamPseudoRandomBased : IStream")]
 [NativeInheritance("IStream")]
-public unsafe partial struct IStreamPseudoRandomBased : IStreamPseudoRandomBased.Interface, IHaveNativeGuid
+public unsafe partial struct IStreamPseudoRandomBased : IStreamPseudoRandomBased.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IStreamPseudoRandomBased;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IStreamPseudoRandomBased));
 
     public void** lpVtbl;
 

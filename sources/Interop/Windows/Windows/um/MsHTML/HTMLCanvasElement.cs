@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='HTMLCanvasElement.xml' path='doc/member[@name="HTMLCanvasElement"]/*' />
 [Guid("305106E5-98B5-11CF-BB82-00AA00BDCE0B")]
-public partial struct HTMLCanvasElement : IHaveNativeGuid
+public unsafe partial struct HTMLCanvasElement : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_HTMLCanvasElement;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_HTMLCanvasElement));
 }

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("4657278B-411B-11D2-839A-00C04FD918D0")]
 [NativeTypeName("struct IDropTargetHelper : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDropTargetHelper : IDropTargetHelper.Interface, IHaveNativeGuid
+public unsafe partial struct IDropTargetHelper : IDropTargetHelper.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDropTargetHelper;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDropTargetHelper));
 
     public void** lpVtbl;
 

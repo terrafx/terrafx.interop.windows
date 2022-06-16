@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMF2DBuffer2 : IMF2DBuffer")]
 [NativeInheritance("IMF2DBuffer")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IMF2DBuffer2 : IMF2DBuffer2.Interface, IHaveNativeGuid
+public unsafe partial struct IMF2DBuffer2 : IMF2DBuffer2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMF2DBuffer2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMF2DBuffer2));
 
     public void** lpVtbl;
 

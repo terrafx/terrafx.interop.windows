@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IAppxManifestReader2 : IAppxManifestReader")]
 [NativeInheritance("IAppxManifestReader")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct IAppxManifestReader2 : IAppxManifestReader2.Interface, IHaveNativeGuid
+public unsafe partial struct IAppxManifestReader2 : IAppxManifestReader2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAppxManifestReader2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAppxManifestReader2));
 
     public void** lpVtbl;
 

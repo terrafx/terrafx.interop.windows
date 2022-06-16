@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("EAB22AC2-30C1-11CF-A7EB-0000C05BAE0B")]
 [NativeTypeName("struct DWebBrowserEvents : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct DWebBrowserEvents : DWebBrowserEvents.Interface, IHaveNativeGuid
+public unsafe partial struct DWebBrowserEvents : DWebBrowserEvents.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_DWebBrowserEvents;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_DWebBrowserEvents));
 
     public void** lpVtbl;
 

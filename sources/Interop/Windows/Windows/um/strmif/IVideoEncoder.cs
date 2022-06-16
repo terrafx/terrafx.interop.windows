@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("02997C3B-8E1B-460E-9270-545E0DE9563E")]
 [NativeTypeName("struct IVideoEncoder : IEncoderAPI")]
 [NativeInheritance("IEncoderAPI")]
-public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface, IHaveNativeGuid
+public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVideoEncoder;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVideoEncoder));
 
     public void** lpVtbl;
 

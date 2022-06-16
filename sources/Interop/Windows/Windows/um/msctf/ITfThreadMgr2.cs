@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct ITfThreadMgr2 : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, IHaveNativeGuid
+public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfThreadMgr2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfThreadMgr2));
 
     public void** lpVtbl;
 

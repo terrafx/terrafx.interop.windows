@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFCapturePreviewSink : IMFCaptureSink")]
 [NativeInheritance("IMFCaptureSink")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Interface, IHaveNativeGuid
+public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFCapturePreviewSink;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFCapturePreviewSink));
 
     public void** lpVtbl;
 

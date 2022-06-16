@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("7E9FB0D3-919F-4307-AB2E-9B1860310C93")]
 [NativeTypeName("struct IShellItem2 : IShellItem")]
 [NativeInheritance("IShellItem")]
-public unsafe partial struct IShellItem2 : IShellItem2.Interface, IHaveNativeGuid
+public unsafe partial struct IShellItem2 : IShellItem2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IShellItem2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IShellItem2));
 
     public void** lpVtbl;
 

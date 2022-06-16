@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("0B74B9E8-CDD6-492F-BBBC-5ED32157026D")]
 [NativeTypeName("struct IDCompositionAffineTransform2DEffect : IDCompositionFilterEffect")]
 [NativeInheritance("IDCompositionFilterEffect")]
-public unsafe partial struct IDCompositionAffineTransform2DEffect : IDCompositionAffineTransform2DEffect.Interface, IHaveNativeGuid
+public unsafe partial struct IDCompositionAffineTransform2DEffect : IDCompositionAffineTransform2DEffect.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDCompositionAffineTransform2DEffect;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDCompositionAffineTransform2DEffect));
 
     public void** lpVtbl;
 

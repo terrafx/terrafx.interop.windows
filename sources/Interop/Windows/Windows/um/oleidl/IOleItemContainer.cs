@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("0000011C-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IOleItemContainer : IOleContainer")]
 [NativeInheritance("IOleContainer")]
-public unsafe partial struct IOleItemContainer : IOleItemContainer.Interface, IHaveNativeGuid
+public unsafe partial struct IOleItemContainer : IOleItemContainer.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IOleItemContainer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IOleItemContainer));
 
     public void** lpVtbl;
 

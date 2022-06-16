@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IAppxBlockMapBlock : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IAppxBlockMapBlock : IAppxBlockMapBlock.Interface, IHaveNativeGuid
+public unsafe partial struct IAppxBlockMapBlock : IAppxBlockMapBlock.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAppxBlockMapBlock;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAppxBlockMapBlock));
 
     public void** lpVtbl;
 

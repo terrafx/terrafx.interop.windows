@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("EAF3A2DA-ECF4-4D24-B644-B34F6842024B")]
 [NativeTypeName("struct IDWritePixelSnapping : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDWritePixelSnapping : IDWritePixelSnapping.Interface, IHaveNativeGuid
+public unsafe partial struct IDWritePixelSnapping : IDWritePixelSnapping.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDWritePixelSnapping;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWritePixelSnapping));
 
     public void** lpVtbl;
 

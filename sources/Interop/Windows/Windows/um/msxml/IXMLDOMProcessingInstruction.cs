@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("2933BF89-7B36-11D2-B20E-00C04F983E60")]
 [NativeTypeName("struct IXMLDOMProcessingInstruction : IXMLDOMNode")]
 [NativeInheritance("IXMLDOMNode")]
-public unsafe partial struct IXMLDOMProcessingInstruction : IXMLDOMProcessingInstruction.Interface, IHaveNativeGuid
+public unsafe partial struct IXMLDOMProcessingInstruction : IXMLDOMProcessingInstruction.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IXMLDOMProcessingInstruction;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IXMLDOMProcessingInstruction));
 
     public void** lpVtbl;
 

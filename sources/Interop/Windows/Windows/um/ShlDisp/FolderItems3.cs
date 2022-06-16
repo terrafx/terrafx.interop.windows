@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("EAA7C309-BBEC-49D5-821D-64D966CB667F")]
 [NativeTypeName("struct FolderItems3 : FolderItems2")]
 [NativeInheritance("FolderItems2")]
-public unsafe partial struct FolderItems3 : FolderItems3.Interface, IHaveNativeGuid
+public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_FolderItems3;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_FolderItems3));
 
     public void** lpVtbl;
 

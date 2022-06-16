@@ -5,14 +5,19 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IAMFilterGraphCallback.xml' path='doc/member[@name="IAMFilterGraphCallback"]/*' />
+[Guid("56A868FD-0AD4-11CE-B0A3-0020AF0BA770")]
 [NativeTypeName("struct IAMFilterGraphCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMFilterGraphCallback : IAMFilterGraphCallback.Interface
+public unsafe partial struct IAMFilterGraphCallback : IAMFilterGraphCallback.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMFilterGraphCallback));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

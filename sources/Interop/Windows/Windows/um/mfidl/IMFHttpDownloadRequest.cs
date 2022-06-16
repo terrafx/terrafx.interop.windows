@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFHttpDownloadRequest : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0.15063.0")]
-public unsafe partial struct IMFHttpDownloadRequest : IMFHttpDownloadRequest.Interface, IHaveNativeGuid
+public unsafe partial struct IMFHttpDownloadRequest : IMFHttpDownloadRequest.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFHttpDownloadRequest;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFHttpDownloadRequest));
 
     public void** lpVtbl;
 

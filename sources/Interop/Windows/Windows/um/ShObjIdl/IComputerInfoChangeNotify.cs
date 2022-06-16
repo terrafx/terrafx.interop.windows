@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("0DF60D92-6818-46D6-B358-D66170DDE466")]
 [NativeTypeName("struct IComputerInfoChangeNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IComputerInfoChangeNotify : IComputerInfoChangeNotify.Interface, IHaveNativeGuid
+public unsafe partial struct IComputerInfoChangeNotify : IComputerInfoChangeNotify.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IComputerInfoChangeNotify;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IComputerInfoChangeNotify));
 
     public void** lpVtbl;
 

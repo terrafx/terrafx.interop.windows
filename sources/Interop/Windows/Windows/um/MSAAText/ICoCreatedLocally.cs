@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("0A53EB6C-1908-4742-8CFF-2CEE2E93F94C")]
 [NativeTypeName("struct ICoCreatedLocally : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ICoCreatedLocally : ICoCreatedLocally.Interface, IHaveNativeGuid
+public unsafe partial struct ICoCreatedLocally : ICoCreatedLocally.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICoCreatedLocally;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICoCreatedLocally));
 
     public void** lpVtbl;
 

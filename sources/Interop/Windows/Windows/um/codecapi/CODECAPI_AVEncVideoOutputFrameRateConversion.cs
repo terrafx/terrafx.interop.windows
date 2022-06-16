@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncVideoOutputFrameRateConversion.xml' path='doc/member[@name="CODECAPI_AVEncVideoOutputFrameRateConversion"]/*' />
 [Guid("8C068BF4-369A-4BA3-82FD-B2518FB3396E")]
-public partial struct CODECAPI_AVEncVideoOutputFrameRateConversion : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncVideoOutputFrameRateConversion : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncVideoOutputFrameRateConversion;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncVideoOutputFrameRateConversion));
 }

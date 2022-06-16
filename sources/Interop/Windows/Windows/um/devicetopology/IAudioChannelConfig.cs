@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("BB11C46F-EC28-493C-B88A-5DB88062CE98")]
 [NativeTypeName("struct IAudioChannelConfig : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAudioChannelConfig : IAudioChannelConfig.Interface, IHaveNativeGuid
+public unsafe partial struct IAudioChannelConfig : IAudioChannelConfig.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAudioChannelConfig;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAudioChannelConfig));
 
     public void** lpVtbl;
 

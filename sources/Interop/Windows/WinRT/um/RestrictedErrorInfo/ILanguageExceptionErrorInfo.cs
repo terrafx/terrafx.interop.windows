@@ -17,9 +17,9 @@ namespace TerraFX.Interop.WinRT;
 [NativeTypeName("struct ILanguageExceptionErrorInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct ILanguageExceptionErrorInfo : ILanguageExceptionErrorInfo.Interface, IHaveNativeGuid
+public unsafe partial struct ILanguageExceptionErrorInfo : ILanguageExceptionErrorInfo.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ILanguageExceptionErrorInfo;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ILanguageExceptionErrorInfo));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("2C941FE1-975B-59BE-A960-9A2A262853A5")]
 [NativeTypeName("struct IFileSystemImage : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IFileSystemImage : IFileSystemImage.Interface, IHaveNativeGuid
+public unsafe partial struct IFileSystemImage : IFileSystemImage.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IFileSystemImage;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFileSystemImage));
 
     public void** lpVtbl;
 

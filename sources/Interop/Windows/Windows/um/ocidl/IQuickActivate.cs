@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("CF51ED10-62FE-11CF-BF86-00A0C9034836")]
 [NativeTypeName("struct IQuickActivate : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IQuickActivate : IQuickActivate.Interface, IHaveNativeGuid
+public unsafe partial struct IQuickActivate : IQuickActivate.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IQuickActivate;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IQuickActivate));
 
     public void** lpVtbl;
 

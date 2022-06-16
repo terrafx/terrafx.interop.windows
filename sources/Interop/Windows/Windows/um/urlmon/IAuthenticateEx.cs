@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("2AD1EDAF-D83D-48B5-9ADF-03DBE19F53BD")]
 [NativeTypeName("struct IAuthenticateEx : IAuthenticate")]
 [NativeInheritance("IAuthenticate")]
-public unsafe partial struct IAuthenticateEx : IAuthenticateEx.Interface, IHaveNativeGuid
+public unsafe partial struct IAuthenticateEx : IAuthenticateEx.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAuthenticateEx;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAuthenticateEx));
 
     public void** lpVtbl;
 

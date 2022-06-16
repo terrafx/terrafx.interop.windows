@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='ExecuteUnknown.xml' path='doc/member[@name="ExecuteUnknown"]/*' />
 [Guid("E44E9428-BDBC-4987-A099-40DC8FD255E7")]
-public partial struct ExecuteUnknown : IHaveNativeGuid
+public unsafe partial struct ExecuteUnknown : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ExecuteUnknown;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ExecuteUnknown));
 }

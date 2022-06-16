@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SVGTitleElement.xml' path='doc/member[@name="SVGTitleElement"]/*' />
 [Guid("30510573-98B5-11CF-BB82-00AA00BDCE0B")]
-public partial struct SVGTitleElement : IHaveNativeGuid
+public unsafe partial struct SVGTitleElement : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_SVGTitleElement;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_SVGTitleElement));
 }

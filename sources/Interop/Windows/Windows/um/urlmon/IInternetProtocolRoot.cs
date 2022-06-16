@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("79EAC9E3-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IInternetProtocolRoot : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IInternetProtocolRoot : IInternetProtocolRoot.Interface, IHaveNativeGuid
+public unsafe partial struct IInternetProtocolRoot : IInternetProtocolRoot.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IInternetProtocolRoot;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IInternetProtocolRoot));
 
     public void** lpVtbl;
 

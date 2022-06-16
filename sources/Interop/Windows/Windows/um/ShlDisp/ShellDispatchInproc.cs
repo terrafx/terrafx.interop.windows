@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='ShellDispatchInproc.xml' path='doc/member[@name="ShellDispatchInproc"]/*' />
 [Guid("0A89A860-D7B1-11CE-8350-444553540000")]
-public partial struct ShellDispatchInproc : IHaveNativeGuid
+public unsafe partial struct ShellDispatchInproc : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ShellDispatchInproc;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ShellDispatchInproc));
 }

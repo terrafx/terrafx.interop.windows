@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("A792CDBE-C374-4E89-8335-278E7B9956A4")]
 [NativeTypeName("struct IMFVideoSampleAllocatorNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFVideoSampleAllocatorNotify : IMFVideoSampleAllocatorNotify.Interface, IHaveNativeGuid
+public unsafe partial struct IMFVideoSampleAllocatorNotify : IMFVideoSampleAllocatorNotify.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFVideoSampleAllocatorNotify;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFVideoSampleAllocatorNotify));
 
     public void** lpVtbl;
 

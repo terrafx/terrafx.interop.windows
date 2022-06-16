@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='HTMLStyleSheetPage.xml' path='doc/member[@name="HTMLStyleSheetPage"]/*' />
 [Guid("3050F7EF-98B5-11CF-BB82-00AA00BDCE0B")]
-public partial struct HTMLStyleSheetPage : IHaveNativeGuid
+public unsafe partial struct HTMLStyleSheetPage : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_HTMLStyleSheetPage;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_HTMLStyleSheetPage));
 }

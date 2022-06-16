@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncCommonQuality.xml' path='doc/member[@name="CODECAPI_AVEncCommonQuality"]/*' />
 [Guid("FCBF57A3-7EA5-4B0C-9644-69B40C39C391")]
-public partial struct CODECAPI_AVEncCommonQuality : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncCommonQuality : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncCommonQuality;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncCommonQuality));
 }

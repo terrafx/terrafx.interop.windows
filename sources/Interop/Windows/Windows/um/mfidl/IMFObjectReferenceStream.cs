@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("09EF5BE3-C8A7-469E-8B70-73BF25BB193F")]
 [NativeTypeName("struct IMFObjectReferenceStream : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFObjectReferenceStream : IMFObjectReferenceStream.Interface, IHaveNativeGuid
+public unsafe partial struct IMFObjectReferenceStream : IMFObjectReferenceStream.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFObjectReferenceStream;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFObjectReferenceStream));
 
     public void** lpVtbl;
 

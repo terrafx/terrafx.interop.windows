@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("4EA39266-7211-409F-B622-F63DBD16C533")]
 [NativeTypeName("struct IThumbnailCapture : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IThumbnailCapture : IThumbnailCapture.Interface, IHaveNativeGuid
+public unsafe partial struct IThumbnailCapture : IThumbnailCapture.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IThumbnailCapture;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IThumbnailCapture));
 
     public void** lpVtbl;
 

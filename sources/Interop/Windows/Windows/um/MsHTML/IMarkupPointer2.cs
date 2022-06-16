@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F675-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IMarkupPointer2 : IMarkupPointer")]
 [NativeInheritance("IMarkupPointer")]
-public unsafe partial struct IMarkupPointer2 : IMarkupPointer2.Interface, IHaveNativeGuid
+public unsafe partial struct IMarkupPointer2 : IMarkupPointer2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMarkupPointer2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMarkupPointer2));
 
     public void** lpVtbl;
 

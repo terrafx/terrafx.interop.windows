@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='DirectManipulationPrimaryContent.xml' path='doc/member[@name="DirectManipulationPrimaryContent"]/*' />
 [Guid("CAA02661-D59E-41C7-8393-3BA3BACB6B57")]
-public partial struct DirectManipulationPrimaryContent : IHaveNativeGuid
+public unsafe partial struct DirectManipulationPrimaryContent : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_DirectManipulationPrimaryContent;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_DirectManipulationPrimaryContent));
 }

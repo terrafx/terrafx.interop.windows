@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F848-98B5-11CF-BB82-00AA00BDCE0D")]
 [NativeTypeName("struct IHTMLEditHost2 : IHTMLEditHost")]
 [NativeInheritance("IHTMLEditHost")]
-public unsafe partial struct IHTMLEditHost2 : IHTMLEditHost2.Interface, IHaveNativeGuid
+public unsafe partial struct IHTMLEditHost2 : IHTMLEditHost2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IHTMLEditHost2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHTMLEditHost2));
 
     public void** lpVtbl;
 

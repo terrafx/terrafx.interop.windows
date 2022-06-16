@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("D3EE12AD-3865-4362-9746-B75A682DF0E6")]
 [NativeTypeName("struct IAccountsSettingsPaneInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IAccountsSettingsPaneInterop : IAccountsSettingsPaneInterop.Interface, IHaveNativeGuid
+public unsafe partial struct IAccountsSettingsPaneInterop : IAccountsSettingsPaneInterop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAccountsSettingsPaneInterop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAccountsSettingsPaneInterop));
 
     public void** lpVtbl;
 

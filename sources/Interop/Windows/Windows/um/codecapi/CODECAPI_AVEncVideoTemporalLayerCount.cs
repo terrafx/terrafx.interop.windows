@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncVideoTemporalLayerCount.xml' path='doc/member[@name="CODECAPI_AVEncVideoTemporalLayerCount"]/*' />
 [Guid("19CAEBFF-B74D-4CFD-8C27-C2F9D97D5F52")]
-public partial struct CODECAPI_AVEncVideoTemporalLayerCount : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncVideoTemporalLayerCount : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncVideoTemporalLayerCount;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncVideoTemporalLayerCount));
 }

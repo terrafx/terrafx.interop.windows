@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("304FDB32-BEDE-410A-8545-943AC6A46138")]
 [NativeTypeName("struct ID3D12VideoProcessor : ID3D12Pageable")]
 [NativeInheritance("ID3D12Pageable")]
-public unsafe partial struct ID3D12VideoProcessor : ID3D12VideoProcessor.Interface, IHaveNativeGuid
+public unsafe partial struct ID3D12VideoProcessor : ID3D12VideoProcessor.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D12VideoProcessor;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D12VideoProcessor));
 
     public void** lpVtbl;
 

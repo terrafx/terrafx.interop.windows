@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("5C6C44BF-1DB6-435B-9249-E8CD10FDEC96")]
 [NativeTypeName("struct IMFPluginControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFPluginControl : IMFPluginControl.Interface, IHaveNativeGuid
+public unsafe partial struct IMFPluginControl : IMFPluginControl.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFPluginControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFPluginControl));
 
     public void** lpVtbl;
 

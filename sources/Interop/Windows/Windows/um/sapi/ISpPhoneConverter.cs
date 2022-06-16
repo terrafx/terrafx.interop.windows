@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8445C581-0CAC-4A38-ABFE-9B2CE2826455")]
 [NativeTypeName("struct ISpPhoneConverter : ISpObjectWithToken")]
 [NativeInheritance("ISpObjectWithToken")]
-public unsafe partial struct ISpPhoneConverter : ISpPhoneConverter.Interface, IHaveNativeGuid
+public unsafe partial struct ISpPhoneConverter : ISpPhoneConverter.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpPhoneConverter;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpPhoneConverter));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("2AF2D06A-DD5B-4927-A0B4-54F19C91FADE")]
 [NativeTypeName("struct ITfTextLayoutSink : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITfTextLayoutSink : ITfTextLayoutSink.Interface, IHaveNativeGuid
+public unsafe partial struct ITfTextLayoutSink : ITfTextLayoutSink.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfTextLayoutSink;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfTextLayoutSink));
 
     public void** lpVtbl;
 

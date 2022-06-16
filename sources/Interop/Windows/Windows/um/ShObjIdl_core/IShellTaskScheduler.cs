@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("6CCB7BE0-6807-11D0-B810-00C04FD706EC")]
 [NativeTypeName("struct IShellTaskScheduler : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IShellTaskScheduler : IShellTaskScheduler.Interface, IHaveNativeGuid
+public unsafe partial struct IShellTaskScheduler : IShellTaskScheduler.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IShellTaskScheduler;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IShellTaskScheduler));
 
     public void** lpVtbl;
 

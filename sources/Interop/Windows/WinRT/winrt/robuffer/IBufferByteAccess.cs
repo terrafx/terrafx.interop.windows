@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("905A0FEF-BC53-11DF-8C49-001E4FC686DA")]
 [NativeTypeName("struct IBufferByteAccess : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IBufferByteAccess : IBufferByteAccess.Interface, IHaveNativeGuid
+public unsafe partial struct IBufferByteAccess : IBufferByteAccess.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IBufferByteAccess;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IBufferByteAccess));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("C360CE4B-76D1-4214-AD68-52657D5083DA")]
 [NativeTypeName("struct ISpEnginePronunciation : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ISpEnginePronunciation : ISpEnginePronunciation.Interface, IHaveNativeGuid
+public unsafe partial struct ISpEnginePronunciation : ISpEnginePronunciation.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpEnginePronunciation;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpEnginePronunciation));
 
     public void** lpVtbl;
 

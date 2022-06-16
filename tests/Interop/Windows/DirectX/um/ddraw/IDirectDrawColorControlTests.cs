@@ -6,12 +6,20 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX.UnitTests;
 
 /// <summary>Provides validation of the <see cref="IDirectDrawColorControl" /> struct.</summary>
 public static unsafe partial class IDirectDrawColorControlTests
 {
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDirectDrawColorControl" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
+    {
+        Assert.That(typeof(IDirectDrawColorControl).GUID, Is.EqualTo(IID_IDirectDrawColorControl));
+    }
+
     /// <summary>Validates that the <see cref="IDirectDrawColorControl" /> struct is blittable.</summary>
     [Test]
     public static void IsBlittableTest()

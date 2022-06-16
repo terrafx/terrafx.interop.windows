@@ -15,9 +15,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("058D1F11-2A54-4BEF-BD54-DF706626B727")]
 [NativeTypeName("struct IVMRVideoStreamControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Interface, IHaveNativeGuid
+public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVMRVideoStreamControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVMRVideoStreamControl));
 
     public void** lpVtbl;
 

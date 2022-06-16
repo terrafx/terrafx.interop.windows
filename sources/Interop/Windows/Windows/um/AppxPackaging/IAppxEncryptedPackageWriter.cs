@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IAppxEncryptedPackageWriter : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0.14393.0")]
-public unsafe partial struct IAppxEncryptedPackageWriter : IAppxEncryptedPackageWriter.Interface, IHaveNativeGuid
+public unsafe partial struct IAppxEncryptedPackageWriter : IAppxEncryptedPackageWriter.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAppxEncryptedPackageWriter;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAppxEncryptedPackageWriter));
 
     public void** lpVtbl;
 

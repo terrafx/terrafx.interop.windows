@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFSampleAllocatorControl : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0.19041.0")]
-public unsafe partial struct IMFSampleAllocatorControl : IMFSampleAllocatorControl.Interface, IHaveNativeGuid
+public unsafe partial struct IMFSampleAllocatorControl : IMFSampleAllocatorControl.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFSampleAllocatorControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFSampleAllocatorControl));
 
     public void** lpVtbl;
 

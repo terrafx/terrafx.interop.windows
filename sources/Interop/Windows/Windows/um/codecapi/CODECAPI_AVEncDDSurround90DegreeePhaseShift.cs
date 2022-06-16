@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncDDSurround90DegreeePhaseShift.xml' path='doc/member[@name="CODECAPI_AVEncDDSurround90DegreeePhaseShift"]/*' />
 [Guid("25ECEC9D-3553-42C0-BB56-D25792104F80")]
-public partial struct CODECAPI_AVEncDDSurround90DegreeePhaseShift : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncDDSurround90DegreeePhaseShift : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncDDSurround90DegreeePhaseShift;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncDDSurround90DegreeePhaseShift));
 }

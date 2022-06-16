@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("7857AEAC-D31F-49BF-884E-DD46DF36780A")]
 [NativeTypeName("struct IWinInetCacheHints2 : IWinInetCacheHints")]
 [NativeInheritance("IWinInetCacheHints")]
-public unsafe partial struct IWinInetCacheHints2 : IWinInetCacheHints2.Interface, IHaveNativeGuid
+public unsafe partial struct IWinInetCacheHints2 : IWinInetCacheHints2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWinInetCacheHints2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWinInetCacheHints2));
 
     public void** lpVtbl;
 

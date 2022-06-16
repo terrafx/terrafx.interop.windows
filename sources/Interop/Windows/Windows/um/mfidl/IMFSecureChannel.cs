@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("D0AE555D-3B12-4D97-B060-0990BC5AEB67")]
 [NativeTypeName("struct IMFSecureChannel : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFSecureChannel : IMFSecureChannel.Interface, IHaveNativeGuid
+public unsafe partial struct IMFSecureChannel : IMFSecureChannel.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFSecureChannel;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFSecureChannel));
 
     public void** lpVtbl;
 

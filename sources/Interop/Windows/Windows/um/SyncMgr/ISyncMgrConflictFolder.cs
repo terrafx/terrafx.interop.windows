@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("59287F5E-BC81-4FCA-A7F1-E5A8ECDB1D69")]
 [NativeTypeName("struct ISyncMgrConflictFolder : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ISyncMgrConflictFolder : ISyncMgrConflictFolder.Interface, IHaveNativeGuid
+public unsafe partial struct ISyncMgrConflictFolder : ISyncMgrConflictFolder.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISyncMgrConflictFolder;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISyncMgrConflictFolder));
 
     public void** lpVtbl;
 

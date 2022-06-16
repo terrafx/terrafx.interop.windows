@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("C6E13380-30AC-11D0-A18C-00A0C9118956")]
 [NativeTypeName("struct IAMCrossbar : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMCrossbar : IAMCrossbar.Interface, IHaveNativeGuid
+public unsafe partial struct IAMCrossbar : IAMCrossbar.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMCrossbar;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMCrossbar));
 
     public void** lpVtbl;
 

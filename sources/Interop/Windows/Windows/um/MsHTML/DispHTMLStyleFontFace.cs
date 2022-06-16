@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("30590081-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct DispHTMLStyleFontFace : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct DispHTMLStyleFontFace : DispHTMLStyleFontFace.Interface, IHaveNativeGuid
+public unsafe partial struct DispHTMLStyleFontFace : DispHTMLStyleFontFace.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_DispHTMLStyleFontFace;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_DispHTMLStyleFontFace));
 
     public void** lpVtbl;
 

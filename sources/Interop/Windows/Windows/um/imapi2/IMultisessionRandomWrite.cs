@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("B507CA23-2204-11DD-966A-001AA01BBC58")]
 [NativeTypeName("struct IMultisessionRandomWrite : IMultisession")]
 [NativeInheritance("IMultisession")]
-public unsafe partial struct IMultisessionRandomWrite : IMultisessionRandomWrite.Interface, IHaveNativeGuid
+public unsafe partial struct IMultisessionRandomWrite : IMultisessionRandomWrite.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMultisessionRandomWrite;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMultisessionRandomWrite));
 
     public void** lpVtbl;
 

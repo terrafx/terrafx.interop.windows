@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F83F-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ITemplatePrinter2 : ITemplatePrinter")]
 [NativeInheritance("ITemplatePrinter")]
-public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IHaveNativeGuid
+public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITemplatePrinter2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITemplatePrinter2));
 
     public void** lpVtbl;
 

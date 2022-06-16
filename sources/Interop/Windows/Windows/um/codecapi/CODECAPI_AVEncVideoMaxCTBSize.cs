@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncVideoMaxCTBSize.xml' path='doc/member[@name="CODECAPI_AVEncVideoMaxCTBSize"]/*' />
 [Guid("822363FF-CEC8-43E5-92FD-E097488485E9")]
-public partial struct CODECAPI_AVEncVideoMaxCTBSize : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncVideoMaxCTBSize : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncVideoMaxCTBSize;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncVideoMaxCTBSize));
 }

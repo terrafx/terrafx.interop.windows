@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("CE25F8FD-863B-4D13-9651-C1F88DC73FE2")]
 [NativeTypeName("struct IDWriteAsyncResult : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDWriteAsyncResult : IDWriteAsyncResult.Interface, IHaveNativeGuid
+public unsafe partial struct IDWriteAsyncResult : IDWriteAsyncResult.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDWriteAsyncResult;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWriteAsyncResult));
 
     public void** lpVtbl;
 

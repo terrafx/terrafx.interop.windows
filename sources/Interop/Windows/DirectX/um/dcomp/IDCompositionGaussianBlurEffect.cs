@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("45D4D0B7-1BD4-454E-8894-2BFA68443033")]
 [NativeTypeName("struct IDCompositionGaussianBlurEffect : IDCompositionFilterEffect")]
 [NativeInheritance("IDCompositionFilterEffect")]
-public unsafe partial struct IDCompositionGaussianBlurEffect : IDCompositionGaussianBlurEffect.Interface, IHaveNativeGuid
+public unsafe partial struct IDCompositionGaussianBlurEffect : IDCompositionGaussianBlurEffect.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDCompositionGaussianBlurEffect;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDCompositionGaussianBlurEffect));
 
     public void** lpVtbl;
 

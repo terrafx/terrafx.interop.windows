@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("F5B0BF81-8CB5-4B1B-9449-1A159E0C733C")]
 [NativeTypeName("struct IIOCancelInformation : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IIOCancelInformation : IIOCancelInformation.Interface, IHaveNativeGuid
+public unsafe partial struct IIOCancelInformation : IIOCancelInformation.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IIOCancelInformation;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IIOCancelInformation));
 
     public void** lpVtbl;
 

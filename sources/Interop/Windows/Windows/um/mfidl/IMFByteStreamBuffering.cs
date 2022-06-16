@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("6D66D782-1D4F-4DB7-8C63-CB8C77F1EF5E")]
 [NativeTypeName("struct IMFByteStreamBuffering : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFByteStreamBuffering : IMFByteStreamBuffering.Interface, IHaveNativeGuid
+public unsafe partial struct IMFByteStreamBuffering : IMFByteStreamBuffering.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFByteStreamBuffering;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFByteStreamBuffering));
 
     public void** lpVtbl;
 

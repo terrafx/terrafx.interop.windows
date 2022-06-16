@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("53FB8E58-50C0-4003-B4AA-0C8DF28E7F3A")]
 [NativeTypeName("struct IShellImageDataAbort : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IShellImageDataAbort : IShellImageDataAbort.Interface, IHaveNativeGuid
+public unsafe partial struct IShellImageDataAbort : IShellImageDataAbort.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IShellImageDataAbort;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IShellImageDataAbort));
 
     public void** lpVtbl;
 

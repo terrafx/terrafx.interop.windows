@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='MsftDiscFormat2Erase.xml' path='doc/member[@name="MsftDiscFormat2Erase"]/*' />
 [Guid("2735412B-7F64-5B0F-8F00-5D77AFBE261E")]
-public partial struct MsftDiscFormat2Erase : IHaveNativeGuid
+public unsafe partial struct MsftDiscFormat2Erase : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_MsftDiscFormat2Erase;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_MsftDiscFormat2Erase));
 }

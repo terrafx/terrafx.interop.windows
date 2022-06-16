@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8565572F-C094-41CC-B56E-10BD9C3FF044")]
 [NativeTypeName("struct ISpContainerLexicon : ISpLexicon")]
 [NativeInheritance("ISpLexicon")]
-public unsafe partial struct ISpContainerLexicon : ISpContainerLexicon.Interface, IHaveNativeGuid
+public unsafe partial struct ISpContainerLexicon : ISpContainerLexicon.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpContainerLexicon;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpContainerLexicon));
 
     public void** lpVtbl;
 

@@ -5,14 +5,19 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MFASYNCRESULT.xml' path='doc/member[@name="MFASYNCRESULT"]/*' />
+[Guid("00000000-0000-0000-0000-000000000000")]
 [NativeTypeName("struct tagMFASYNCRESULT : IMFAsyncResult")]
 [NativeInheritance("IMFAsyncResult")]
-public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface
+public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_tagMFASYNCRESULT));
+
     public void** lpVtbl;
 
     /// <include file='MFASYNCRESULT.xml' path='doc/member[@name="MFASYNCRESULT.overlapped"]/*' />

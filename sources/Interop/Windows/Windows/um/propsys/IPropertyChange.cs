@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("F917BC8A-1BBA-4478-A245-1BDE03EB9431")]
 [NativeTypeName("struct IPropertyChange : IObjectWithPropertyKey")]
 [NativeInheritance("IObjectWithPropertyKey")]
-public unsafe partial struct IPropertyChange : IPropertyChange.Interface, IHaveNativeGuid
+public unsafe partial struct IPropertyChange : IPropertyChange.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPropertyChange;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPropertyChange));
 
     public void** lpVtbl;
 

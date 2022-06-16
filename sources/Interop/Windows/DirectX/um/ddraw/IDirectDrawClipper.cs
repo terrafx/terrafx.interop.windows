@@ -5,15 +5,20 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='IDirectDrawClipper.xml' path='doc/member[@name="IDirectDrawClipper"]/*' />
+[Guid("6C14DB85-A733-11CE-A521-0020AF0BE560")]
 [NativeTypeName("struct IDirectDrawClipper : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDirectDrawClipper : IDirectDrawClipper.Interface
+public unsafe partial struct IDirectDrawClipper : IDirectDrawClipper.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDirectDrawClipper));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

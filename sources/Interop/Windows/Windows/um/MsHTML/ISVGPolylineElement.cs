@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("30510518-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ISVGPolylineElement : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct ISVGPolylineElement : ISVGPolylineElement.Interface, IHaveNativeGuid
+public unsafe partial struct ISVGPolylineElement : ISVGPolylineElement.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISVGPolylineElement;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISVGPolylineElement));
 
     public void** lpVtbl;
 

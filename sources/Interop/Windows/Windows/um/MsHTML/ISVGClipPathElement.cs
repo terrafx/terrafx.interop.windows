@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3051052D-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ISVGClipPathElement : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct ISVGClipPathElement : ISVGClipPathElement.Interface, IHaveNativeGuid
+public unsafe partial struct ISVGClipPathElement : ISVGClipPathElement.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISVGClipPathElement;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISVGClipPathElement));
 
     public void** lpVtbl;
 

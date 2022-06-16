@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("0E26A181-F40C-4635-8786-976284B52981")]
 [NativeTypeName("struct IAMPluginControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface, IHaveNativeGuid
+public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMPluginControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMPluginControl));
 
     public void** lpVtbl;
 

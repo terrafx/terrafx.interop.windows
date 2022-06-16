@@ -25,11 +25,11 @@ public static partial class SSL
     public const int SSL_KEY_PIN_ERROR_TEXT_LENGTH = 512;
 
     [NativeTypeName("#define SSL_OBJECT_LOCATOR_PFX_FUNC \"SslObjectLocatorInitializePfx\"")]
-    public static ReadOnlySpan<byte> SSL_OBJECT_LOCATOR_PFX_FUNC => "SslObjectLocatorInitializePfx\0"u8;
+    public static ReadOnlySpan<byte> SSL_OBJECT_LOCATOR_PFX_FUNC => "SslObjectLocatorInitializePfx"u8;
 
     [NativeTypeName("#define SSL_OBJECT_LOCATOR_ISSUER_LIST_FUNC \"SslObjectLocatorInitializeIssuerList\"")]
-    public static ReadOnlySpan<byte> SSL_OBJECT_LOCATOR_ISSUER_LIST_FUNC => "SslObjectLocatorInitializeIssuerList\0"u8;
+    public static ReadOnlySpan<byte> SSL_OBJECT_LOCATOR_ISSUER_LIST_FUNC => "SslObjectLocatorInitializeIssuerList"u8;
 
     [NativeTypeName("#define SSL_OBJECT_LOCATOR_CERT_VALIDATION_CONFIG_FUNC \"SslObjectLocatorInitializeCertValidationConfig\"")]
-    public static ReadOnlySpan<byte> SSL_OBJECT_LOCATOR_CERT_VALIDATION_CONFIG_FUNC => "SslObjectLocatorInitializeCertValidationConfig\0"u8;
+    public static ReadOnlySpan<byte> SSL_OBJECT_LOCATOR_CERT_VALIDATION_CONFIG_FUNC => "SslObjectLocatorInitializeCertValidationConfig"u8;
 }

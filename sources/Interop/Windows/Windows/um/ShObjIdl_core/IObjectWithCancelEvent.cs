@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("F279B885-0AE9-4B85-AC06-DDECF9408941")]
 [NativeTypeName("struct IObjectWithCancelEvent : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IObjectWithCancelEvent : IObjectWithCancelEvent.Interface, IHaveNativeGuid
+public unsafe partial struct IObjectWithCancelEvent : IObjectWithCancelEvent.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IObjectWithCancelEvent;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IObjectWithCancelEvent));
 
     public void** lpVtbl;
 

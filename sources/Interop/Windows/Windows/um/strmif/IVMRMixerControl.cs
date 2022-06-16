@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("1C1A17B0-BED0-415D-974B-DC6696131599")]
 [NativeTypeName("struct IVMRMixerControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface, IHaveNativeGuid
+public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVMRMixerControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVMRMixerControl));
 
     public void** lpVtbl;
 

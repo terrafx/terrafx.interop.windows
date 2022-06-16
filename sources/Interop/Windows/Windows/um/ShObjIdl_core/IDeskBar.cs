@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("EB0FE173-1A3A-11D0-89B3-00A0C90A90AC")]
 [NativeTypeName("struct IDeskBar : IOleWindow")]
 [NativeInheritance("IOleWindow")]
-public unsafe partial struct IDeskBar : IDeskBar.Interface, IHaveNativeGuid
+public unsafe partial struct IDeskBar : IDeskBar.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDeskBar;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDeskBar));
 
     public void** lpVtbl;
 

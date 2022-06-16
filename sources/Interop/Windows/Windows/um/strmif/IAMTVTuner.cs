@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("211A8766-03AC-11D1-8D13-00AA00BD8339")]
 [NativeTypeName("struct IAMTVTuner : IAMTuner")]
 [NativeInheritance("IAMTuner")]
-public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, IHaveNativeGuid
+public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMTVTuner;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMTVTuner));
 
     public void** lpVtbl;
 

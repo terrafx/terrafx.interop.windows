@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("05EDDA5C-98A3-4717-8ADB-C5E7DA991EB1")]
 [NativeTypeName("struct IUseToBrowseItem : IRelatedItem")]
 [NativeInheritance("IRelatedItem")]
-public unsafe partial struct IUseToBrowseItem : IUseToBrowseItem.Interface, IHaveNativeGuid
+public unsafe partial struct IUseToBrowseItem : IUseToBrowseItem.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IUseToBrowseItem;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUseToBrowseItem));
 
     public void** lpVtbl;
 

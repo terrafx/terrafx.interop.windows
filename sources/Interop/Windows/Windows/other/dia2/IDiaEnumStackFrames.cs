@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("EC9D461D-CE74-4711-A020-7D8F9A1DD255")]
 [NativeTypeName("struct IDiaEnumStackFrames : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDiaEnumStackFrames : IDiaEnumStackFrames.Interface, IHaveNativeGuid
+public unsafe partial struct IDiaEnumStackFrames : IDiaEnumStackFrames.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDiaEnumStackFrames;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDiaEnumStackFrames));
 
     public void** lpVtbl;
 

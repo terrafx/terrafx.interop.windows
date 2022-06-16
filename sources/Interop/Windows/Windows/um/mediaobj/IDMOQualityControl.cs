@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("65ABEA96-CF36-453F-AF8A-705E98F16260")]
 [NativeTypeName("struct IDMOQualityControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDMOQualityControl : IDMOQualityControl.Interface, IHaveNativeGuid
+public unsafe partial struct IDMOQualityControl : IDMOQualityControl.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDMOQualityControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDMOQualityControl));
 
     public void** lpVtbl;
 

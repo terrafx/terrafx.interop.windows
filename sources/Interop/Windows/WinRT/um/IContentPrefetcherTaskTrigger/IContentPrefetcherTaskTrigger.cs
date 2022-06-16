@@ -17,9 +17,9 @@ namespace TerraFX.Interop.WinRT;
 [NativeTypeName("struct IContentPrefetcherTaskTrigger : IInspectable")]
 [NativeInheritance("IInspectable")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherTaskTrigger.Interface, IHaveNativeGuid
+public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherTaskTrigger.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IContentPrefetcherTaskTrigger;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IContentPrefetcherTaskTrigger));
 
     public void** lpVtbl;
 

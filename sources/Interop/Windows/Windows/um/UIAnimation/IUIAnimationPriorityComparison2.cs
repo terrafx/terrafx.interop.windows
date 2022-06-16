@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("5B6D7A37-4621-467C-8B05-70131DE62DDB")]
 [NativeTypeName("struct IUIAnimationPriorityComparison2 : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IUIAnimationPriorityComparison2 : IUIAnimationPriorityComparison2.Interface, IHaveNativeGuid
+public unsafe partial struct IUIAnimationPriorityComparison2 : IUIAnimationPriorityComparison2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IUIAnimationPriorityComparison2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUIAnimationPriorityComparison2));
 
     public void** lpVtbl;
 

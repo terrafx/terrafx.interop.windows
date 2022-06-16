@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F3ED-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ICSSFilterSite : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ICSSFilterSite : ICSSFilterSite.Interface, IHaveNativeGuid
+public unsafe partial struct ICSSFilterSite : ICSSFilterSite.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICSSFilterSite;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICSSFilterSite));
 
     public void** lpVtbl;
 

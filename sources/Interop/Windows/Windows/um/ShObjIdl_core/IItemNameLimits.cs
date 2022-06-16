@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("1DF0D7F1-B267-4D28-8B10-12E23202A5C4")]
 [NativeTypeName("struct IItemNameLimits : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IItemNameLimits : IItemNameLimits.Interface, IHaveNativeGuid
+public unsafe partial struct IItemNameLimits : IItemNameLimits.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IItemNameLimits;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IItemNameLimits));
 
     public void** lpVtbl;
 

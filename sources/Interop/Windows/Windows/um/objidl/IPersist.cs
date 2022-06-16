@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("0000010C-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IPersist : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IPersist : IPersist.Interface, IHaveNativeGuid
+public unsafe partial struct IPersist : IPersist.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPersist;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPersist));
 
     public void** lpVtbl;
 

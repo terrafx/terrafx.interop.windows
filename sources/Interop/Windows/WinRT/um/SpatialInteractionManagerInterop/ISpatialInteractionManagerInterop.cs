@@ -17,9 +17,9 @@ namespace TerraFX.Interop.WinRT;
 [NativeTypeName("struct ISpatialInteractionManagerInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
 [SupportedOSPlatform("windows10.0.15063.0")]
-public unsafe partial struct ISpatialInteractionManagerInterop : ISpatialInteractionManagerInterop.Interface, IHaveNativeGuid
+public unsafe partial struct ISpatialInteractionManagerInterop : ISpatialInteractionManagerInterop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpatialInteractionManagerInterop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpatialInteractionManagerInterop));
 
     public void** lpVtbl;
 

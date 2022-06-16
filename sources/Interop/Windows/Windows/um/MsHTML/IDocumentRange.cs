@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("305104AF-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IDocumentRange : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IDocumentRange : IDocumentRange.Interface, IHaveNativeGuid
+public unsafe partial struct IDocumentRange : IDocumentRange.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDocumentRange;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDocumentRange));
 
     public void** lpVtbl;
 

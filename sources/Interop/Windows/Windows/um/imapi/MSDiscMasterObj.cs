@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='MSDiscMasterObj.xml' path='doc/member[@name="MSDiscMasterObj"]/*' />
 [Guid("520CCA63-51A5-11D3-9144-00104BA11C5E")]
-public partial struct MSDiscMasterObj : IHaveNativeGuid
+public unsafe partial struct MSDiscMasterObj : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_MSDiscMasterObj;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_MSDiscMasterObj));
 }

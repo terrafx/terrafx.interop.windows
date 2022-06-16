@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("6E5841C7-3889-4019-9035-783FB19B5948")]
 [NativeTypeName("struct IMFCameraOcclusionStateReportCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFCameraOcclusionStateReportCallback : IMFCameraOcclusionStateReportCallback.Interface, IHaveNativeGuid
+public unsafe partial struct IMFCameraOcclusionStateReportCallback : IMFCameraOcclusionStateReportCallback.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFCameraOcclusionStateReportCallback;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFCameraOcclusionStateReportCallback));
 
     public void** lpVtbl;
 

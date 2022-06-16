@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IInkD2DRenderer : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct IInkD2DRenderer : IInkD2DRenderer.Interface, IHaveNativeGuid
+public unsafe partial struct IInkD2DRenderer : IInkD2DRenderer.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IInkD2DRenderer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IInkD2DRenderer));
 
     public void** lpVtbl;
 

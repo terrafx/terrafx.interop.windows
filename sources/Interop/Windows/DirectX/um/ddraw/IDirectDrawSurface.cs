@@ -5,15 +5,20 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='IDirectDrawSurface.xml' path='doc/member[@name="IDirectDrawSurface"]/*' />
+[Guid("6C14DB81-A733-11CE-A521-0020AF0BE560")]
 [NativeTypeName("struct IDirectDrawSurface : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface
+public unsafe partial struct IDirectDrawSurface : IDirectDrawSurface.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDirectDrawSurface));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

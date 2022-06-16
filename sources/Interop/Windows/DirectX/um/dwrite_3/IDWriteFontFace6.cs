@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("C4B1FE1B-6E84-47D5-B54C-A597981B06AD")]
 [NativeTypeName("struct IDWriteFontFace6 : IDWriteFontFace5")]
 [NativeInheritance("IDWriteFontFace5")]
-public unsafe partial struct IDWriteFontFace6 : IDWriteFontFace6.Interface, IHaveNativeGuid
+public unsafe partial struct IDWriteFontFace6 : IDWriteFontFace6.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDWriteFontFace6;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWriteFontFace6));
 
     public void** lpVtbl;
 

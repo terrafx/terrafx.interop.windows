@@ -18,3 +18,5 @@ TerraFX.Interop.Windows
 ../../../../tests/Interop/Windows/Windows/um/strmif
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/strmif.h
+--with-guid
+IAMFilterGraphCallback=56A868FD-0AD4-11CE-B0A3-0020AF0BA770

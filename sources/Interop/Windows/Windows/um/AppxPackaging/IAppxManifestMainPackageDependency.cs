@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IAppxManifestMainPackageDependency : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct IAppxManifestMainPackageDependency : IAppxManifestMainPackageDependency.Interface, IHaveNativeGuid
+public unsafe partial struct IAppxManifestMainPackageDependency : IAppxManifestMainPackageDependency.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAppxManifestMainPackageDependency;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAppxManifestMainPackageDependency));
 
     public void** lpVtbl;
 

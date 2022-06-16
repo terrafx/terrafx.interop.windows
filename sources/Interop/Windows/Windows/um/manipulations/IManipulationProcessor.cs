@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("A22AC519-8300-48A0-BEF4-F1BE8737DBA4")]
 [NativeTypeName("struct IManipulationProcessor : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Interface, IHaveNativeGuid
+public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IManipulationProcessor;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IManipulationProcessor));
 
     public void** lpVtbl;
 

@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("DF0C7CEC-CDEB-4D4A-B91C-721BF22F4E6C")]
 [NativeTypeName("struct IDCompositionInkTrailDevice : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDCompositionInkTrailDevice : IDCompositionInkTrailDevice.Interface, IHaveNativeGuid
+public unsafe partial struct IDCompositionInkTrailDevice : IDCompositionInkTrailDevice.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDCompositionInkTrailDevice;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDCompositionInkTrailDevice));
 
     public void** lpVtbl;
 

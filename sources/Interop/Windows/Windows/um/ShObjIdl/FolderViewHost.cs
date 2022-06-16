@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='FolderViewHost.xml' path='doc/member[@name="FolderViewHost"]/*' />
 [Guid("20B1CB23-6968-4EB9-B7D4-A66D00D07CEE")]
-public partial struct FolderViewHost : IHaveNativeGuid
+public unsafe partial struct FolderViewHost : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_FolderViewHost;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_FolderViewHost));
 }

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("6E0F9881-42A8-4F2A-97F8-8AF4E026D92D")]
 [NativeTypeName("struct IInitializeNetworkFolder : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IInitializeNetworkFolder : IInitializeNetworkFolder.Interface, IHaveNativeGuid
+public unsafe partial struct IInitializeNetworkFolder : IInitializeNetworkFolder.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IInitializeNetworkFolder;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IInitializeNetworkFolder));
 
     public void** lpVtbl;
 

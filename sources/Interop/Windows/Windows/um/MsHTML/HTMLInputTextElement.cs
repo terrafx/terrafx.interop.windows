@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='HTMLInputTextElement.xml' path='doc/member[@name="HTMLInputTextElement"]/*' />
 [Guid("3050F2AB-98B5-11CF-BB82-00AA00BDCE0B")]
-public partial struct HTMLInputTextElement : IHaveNativeGuid
+public unsafe partial struct HTMLInputTextElement : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_HTMLInputTextElement;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_HTMLInputTextElement));
 }

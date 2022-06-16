@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IDataObjectAsyncCapability : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapability.Interface, IHaveNativeGuid
+public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapability.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDataObjectAsyncCapability;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDataObjectAsyncCapability));
 
     public void** lpVtbl;
 

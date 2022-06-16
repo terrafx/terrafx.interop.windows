@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='UserNotification.xml' path='doc/member[@name="UserNotification"]/*' />
 [Guid("0010890E-8789-413C-ADBC-48F5B511B3AF")]
-public partial struct UserNotification : IHaveNativeGuid
+public unsafe partial struct UserNotification : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_UserNotification;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_UserNotification));
 }

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_GUID_AVDecAudioInputDolby.xml' path='doc/member[@name="CODECAPI_GUID_AVDecAudioInputDolby"]/*' />
 [Guid("8E4228A0-F000-4E0B-8F54-AB8D24AD61A2")]
-public partial struct CODECAPI_GUID_AVDecAudioInputDolby : IHaveNativeGuid
+public unsafe partial struct CODECAPI_GUID_AVDecAudioInputDolby : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_GUID_AVDecAudioInputDolby;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_GUID_AVDecAudioInputDolby));
 }

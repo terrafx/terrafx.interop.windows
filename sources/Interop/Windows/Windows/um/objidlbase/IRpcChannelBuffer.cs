@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("D5F56B60-593B-101A-B569-08002B2DBF7A")]
 [NativeTypeName("struct IRpcChannelBuffer : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface, IHaveNativeGuid
+public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IRpcChannelBuffer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IRpcChannelBuffer));
 
     public void** lpVtbl;
 

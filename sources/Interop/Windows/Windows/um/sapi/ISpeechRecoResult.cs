@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("ED2879CF-CED9-4EE6-A534-DE0191D5468D")]
 [NativeTypeName("struct ISpeechRecoResult : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct ISpeechRecoResult : ISpeechRecoResult.Interface, IHaveNativeGuid
+public unsafe partial struct ISpeechRecoResult : ISpeechRecoResult.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpeechRecoResult;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpeechRecoResult));
 
     public void** lpVtbl;
 

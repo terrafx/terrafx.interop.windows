@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("1CDE6309-CAE0-4940-907E-C1EC9C3D1D4A")]
 [NativeTypeName("struct IMFRemoteDesktopPlugin : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFRemoteDesktopPlugin : IMFRemoteDesktopPlugin.Interface, IHaveNativeGuid
+public unsafe partial struct IMFRemoteDesktopPlugin : IMFRemoteDesktopPlugin.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFRemoteDesktopPlugin;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFRemoteDesktopPlugin));
 
     public void** lpVtbl;
 

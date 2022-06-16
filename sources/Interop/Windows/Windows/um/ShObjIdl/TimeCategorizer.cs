@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='TimeCategorizer.xml' path='doc/member[@name="TimeCategorizer"]/*' />
 [Guid("3BB4118F-DDFD-4D30-A348-9FB5D6BF1AFE")]
-public partial struct TimeCategorizer : IHaveNativeGuid
+public unsafe partial struct TimeCategorizer : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_TimeCategorizer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_TimeCategorizer));
 }

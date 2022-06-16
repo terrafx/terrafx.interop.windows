@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("60D32930-13DA-11D3-9EC6-C4FCAEF5C7BE")]
 [NativeTypeName("struct IAMVideoDecimationProperties : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMVideoDecimationProperties : IAMVideoDecimationProperties.Interface, IHaveNativeGuid
+public unsafe partial struct IAMVideoDecimationProperties : IAMVideoDecimationProperties.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMVideoDecimationProperties;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMVideoDecimationProperties));
 
     public void** lpVtbl;
 

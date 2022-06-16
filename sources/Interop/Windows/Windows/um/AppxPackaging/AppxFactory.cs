@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='AppxFactory.xml' path='doc/member[@name="AppxFactory"]/*' />
 [Guid("5842A140-FF9F-4166-8F5C-62F5B7B0C781")]
-public partial struct AppxFactory : IHaveNativeGuid
+public unsafe partial struct AppxFactory : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_AppxFactory;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_AppxFactory));
 }

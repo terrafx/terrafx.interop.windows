@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("0B31CC62-D7EC-4747-9D6E-F2537D870F2B")]
 [NativeTypeName("struct IPrintPreviewPageCollection : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IPrintPreviewPageCollection : IPrintPreviewPageCollection.Interface, IHaveNativeGuid
+public unsafe partial struct IPrintPreviewPageCollection : IPrintPreviewPageCollection.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPrintPreviewPageCollection;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPrintPreviewPageCollection));
 
     public void** lpVtbl;
 

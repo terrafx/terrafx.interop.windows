@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IInkCommitRequestHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct IInkCommitRequestHandler : IInkCommitRequestHandler.Interface, IHaveNativeGuid
+public unsafe partial struct IInkCommitRequestHandler : IInkCommitRequestHandler.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IInkCommitRequestHandler;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IInkCommitRequestHandler));
 
     public void** lpVtbl;
 

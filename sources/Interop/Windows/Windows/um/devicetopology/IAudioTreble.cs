@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("0A717812-694E-4907-B74B-BAFA5CFDCA7B")]
 [NativeTypeName("struct IAudioTreble : IPerChannelDbLevel")]
 [NativeInheritance("IPerChannelDbLevel")]
-public unsafe partial struct IAudioTreble : IAudioTreble.Interface, IHaveNativeGuid
+public unsafe partial struct IAudioTreble : IAudioTreble.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAudioTreble;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAudioTreble));
 
     public void** lpVtbl;
 

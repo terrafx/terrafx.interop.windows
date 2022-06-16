@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("A4C23339-8E06-431E-9BF4-7E711C085648")]
 [NativeTypeName("struct IInternetZoneManagerEx : IInternetZoneManager")]
 [NativeInheritance("IInternetZoneManager")]
-public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Interface, IHaveNativeGuid
+public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IInternetZoneManagerEx;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IInternetZoneManagerEx));
 
     public void** lpVtbl;
 

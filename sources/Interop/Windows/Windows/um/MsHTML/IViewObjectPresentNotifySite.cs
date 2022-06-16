@@ -15,9 +15,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("305107FA-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IViewObjectPresentNotifySite : IViewObjectPresentSite")]
 [NativeInheritance("IViewObjectPresentSite")]
-public unsafe partial struct IViewObjectPresentNotifySite : IViewObjectPresentNotifySite.Interface, IHaveNativeGuid
+public unsafe partial struct IViewObjectPresentNotifySite : IViewObjectPresentNotifySite.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IViewObjectPresentNotifySite;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IViewObjectPresentNotifySite));
 
     public void** lpVtbl;
 

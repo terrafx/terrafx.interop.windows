@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("97EC2EA4-0E42-4937-97AC-9D6D328824E1")]
 [NativeTypeName("struct IMFShutdown : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFShutdown : IMFShutdown.Interface, IHaveNativeGuid
+public unsafe partial struct IMFShutdown : IMFShutdown.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFShutdown;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFShutdown));
 
     public void** lpVtbl;
 

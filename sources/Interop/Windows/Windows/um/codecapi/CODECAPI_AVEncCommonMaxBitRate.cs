@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncCommonMaxBitRate.xml' path='doc/member[@name="CODECAPI_AVEncCommonMaxBitRate"]/*' />
 [Guid("9651EAE4-39B9-4EBF-85EF-D7F444EC7465")]
-public partial struct CODECAPI_AVEncCommonMaxBitRate : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncCommonMaxBitRate : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncCommonMaxBitRate;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncCommonMaxBitRate));
 }

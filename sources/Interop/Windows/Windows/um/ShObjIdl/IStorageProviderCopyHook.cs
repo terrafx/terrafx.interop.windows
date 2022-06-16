@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("7BF992A9-AF7A-4DBA-B2E5-4D080B1ECBC6")]
 [NativeTypeName("struct IStorageProviderCopyHook : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IStorageProviderCopyHook : IStorageProviderCopyHook.Interface, IHaveNativeGuid
+public unsafe partial struct IStorageProviderCopyHook : IStorageProviderCopyHook.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IStorageProviderCopyHook;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IStorageProviderCopyHook));
 
     public void** lpVtbl;
 

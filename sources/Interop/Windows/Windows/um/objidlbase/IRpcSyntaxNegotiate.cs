@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("58A08519-24C8-4935-B482-3FD823333A4F")]
 [NativeTypeName("struct IRpcSyntaxNegotiate : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IRpcSyntaxNegotiate : IRpcSyntaxNegotiate.Interface, IHaveNativeGuid
+public unsafe partial struct IRpcSyntaxNegotiate : IRpcSyntaxNegotiate.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IRpcSyntaxNegotiate;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IRpcSyntaxNegotiate));
 
     public void** lpVtbl;
 

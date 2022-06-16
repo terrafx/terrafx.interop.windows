@@ -10,13 +10,13 @@ namespace TerraFX.Interop.Windows;
 public static partial class SZ
 {
     [NativeTypeName("#define SZ_CONTENTTYPE_HTMLA \"text/html\"")]
-    public static ReadOnlySpan<byte> SZ_CONTENTTYPE_HTMLA => "text/html\0"u8;
+    public static ReadOnlySpan<byte> SZ_CONTENTTYPE_HTMLA => "text/html"u8;
 
     [NativeTypeName("#define SZ_CONTENTTYPE_HTMLW L\"text/html\"")]
     public const string SZ_CONTENTTYPE_HTMLW = "text/html";
 
     [NativeTypeName("#define SZ_CONTENTTYPE_CDFA \"application/x-cdf\"")]
-    public static ReadOnlySpan<byte> SZ_CONTENTTYPE_CDFA => "application/x-cdf\0"u8;
+    public static ReadOnlySpan<byte> SZ_CONTENTTYPE_CDFA => "application/x-cdf"u8;
 
     [NativeTypeName("#define SZ_CONTENTTYPE_CDFW L\"application/x-cdf\"")]
     public const string SZ_CONTENTTYPE_CDFW = "application/x-cdf";

@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("9B7E4E00-342C-4106-A19F-4F2704F689F0")]
 [NativeTypeName("struct ID3D11Multithread : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ID3D11Multithread : ID3D11Multithread.Interface, IHaveNativeGuid
+public unsafe partial struct ID3D11Multithread : ID3D11Multithread.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D11Multithread;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D11Multithread));
 
     public void** lpVtbl;
 

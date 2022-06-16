@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SpCustomStream.xml' path='doc/member[@name="SpCustomStream"]/*' />
 [Guid("8DBEF13F-1948-4AA8-8CF0-048EEBED95D8")]
-public partial struct SpCustomStream : IHaveNativeGuid
+public unsafe partial struct SpCustomStream : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_SpCustomStream;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_SpCustomStream));
 }

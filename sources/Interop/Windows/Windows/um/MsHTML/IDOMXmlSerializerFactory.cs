@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3051077F-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IDOMXmlSerializerFactory : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IDOMXmlSerializerFactory : IDOMXmlSerializerFactory.Interface, IHaveNativeGuid
+public unsafe partial struct IDOMXmlSerializerFactory : IDOMXmlSerializerFactory.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDOMXmlSerializerFactory;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDOMXmlSerializerFactory));
 
     public void** lpVtbl;
 

@@ -18,9 +18,9 @@ namespace TerraFX.Interop.WinRT;
 [NativeTypeName("struct IHolographicQuadLayerUpdateParametersInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
 [SupportedOSPlatform("windows10.0.19041.0")]
-public unsafe partial struct IHolographicQuadLayerUpdateParametersInterop : IHolographicQuadLayerUpdateParametersInterop.Interface, IHaveNativeGuid
+public unsafe partial struct IHolographicQuadLayerUpdateParametersInterop : IHolographicQuadLayerUpdateParametersInterop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IHolographicQuadLayerUpdateParametersInterop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHolographicQuadLayerUpdateParametersInterop));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3D73A659-E5D0-4D42-AFC0-5121BA425C8D")]
 [NativeTypeName("struct ICDBurn : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ICDBurn : ICDBurn.Interface, IHaveNativeGuid
+public unsafe partial struct ICDBurn : ICDBurn.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICDBurn;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICDBurn));
 
     public void** lpVtbl;
 

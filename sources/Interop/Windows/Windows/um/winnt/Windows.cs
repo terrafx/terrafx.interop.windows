@@ -474,7 +474,7 @@ public static partial class Windows
     public const int SHUFFLE_FILE_FLAG_SKIP_INITIALIZING_NEW_CLUSTERS = (0x00000001);
 
     [NativeTypeName("#define SMB_CCF_APP_INSTANCE_EA_NAME \"ClusteredApplicationInstance\"")]
-    public static ReadOnlySpan<byte> SMB_CCF_APP_INSTANCE_EA_NAME => "ClusteredApplicationInstance\0"u8;
+    public static ReadOnlySpan<byte> SMB_CCF_APP_INSTANCE_EA_NAME => "ClusteredApplicationInstance"u8;
 
     [NativeTypeName("#define NETWORK_APP_INSTANCE_CSV_FLAGS_VALID_ONLY_IF_CSV_COORDINATOR 0x00000001")]
     public const int NETWORK_APP_INSTANCE_CSV_FLAGS_VALID_ONLY_IF_CSV_COORDINATOR = 0x00000001;

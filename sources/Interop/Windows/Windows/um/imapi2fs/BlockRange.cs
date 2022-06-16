@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='BlockRange.xml' path='doc/member[@name="BlockRange"]/*' />
 [Guid("B507CA27-2204-11DD-966A-001AA01BBC58")]
-public partial struct BlockRange : IHaveNativeGuid
+public unsafe partial struct BlockRange : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_BlockRange;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_BlockRange));
 }

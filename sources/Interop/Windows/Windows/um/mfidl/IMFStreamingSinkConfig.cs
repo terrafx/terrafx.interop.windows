@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("9DB7AA41-3CC5-40D4-8509-555804AD34CC")]
 [NativeTypeName("struct IMFStreamingSinkConfig : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFStreamingSinkConfig : IMFStreamingSinkConfig.Interface, IHaveNativeGuid
+public unsafe partial struct IMFStreamingSinkConfig : IMFStreamingSinkConfig.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFStreamingSinkConfig;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFStreamingSinkConfig));
 
     public void** lpVtbl;
 

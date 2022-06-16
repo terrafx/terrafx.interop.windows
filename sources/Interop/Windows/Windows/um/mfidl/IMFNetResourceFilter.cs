@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFNetResourceFilter : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IMFNetResourceFilter : IMFNetResourceFilter.Interface, IHaveNativeGuid
+public unsafe partial struct IMFNetResourceFilter : IMFNetResourceFilter.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFNetResourceFilter;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFNetResourceFilter));
 
     public void** lpVtbl;
 

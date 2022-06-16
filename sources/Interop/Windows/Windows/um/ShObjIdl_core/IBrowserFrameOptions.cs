@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("10DF43C8-1DBE-11D3-8B34-006097DF5BD4")]
 [NativeTypeName("struct IBrowserFrameOptions : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IBrowserFrameOptions : IBrowserFrameOptions.Interface, IHaveNativeGuid
+public unsafe partial struct IBrowserFrameOptions : IBrowserFrameOptions.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IBrowserFrameOptions;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IBrowserFrameOptions));
 
     public void** lpVtbl;
 

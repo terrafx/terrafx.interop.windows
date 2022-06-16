@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='PackageDebugSettings.xml' path='doc/member[@name="PackageDebugSettings"]/*' />
 [Guid("B1AEC16F-2383-4852-B0E9-8F0B1DC66B4D")]
-public partial struct PackageDebugSettings : IHaveNativeGuid
+public unsafe partial struct PackageDebugSettings : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_PackageDebugSettings;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_PackageDebugSettings));
 }

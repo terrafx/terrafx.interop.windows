@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("2D3BA758-33EE-42D5-BB7B-5F3431D86C78")]
 [NativeTypeName("struct INameSpaceTreeControlCustomDraw : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeControlCustomDraw.Interface, IHaveNativeGuid
+public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeControlCustomDraw.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_INameSpaceTreeControlCustomDraw;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_INameSpaceTreeControlCustomDraw));
 
     public void** lpVtbl;
 

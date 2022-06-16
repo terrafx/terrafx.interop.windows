@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='HTMLMapElement.xml' path='doc/member[@name="HTMLMapElement"]/*' />
 [Guid("3050F271-98B5-11CF-BB82-00AA00BDCE0B")]
-public partial struct HTMLMapElement : IHaveNativeGuid
+public unsafe partial struct HTMLMapElement : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_HTMLMapElement;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_HTMLMapElement));
 }

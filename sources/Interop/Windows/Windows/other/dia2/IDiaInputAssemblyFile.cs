@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3BFE56B0-390C-4863-9430-1F3D083B7684")]
 [NativeTypeName("struct IDiaInputAssemblyFile : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Interface, IHaveNativeGuid
+public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDiaInputAssemblyFile;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDiaInputAssemblyFile));
 
     public void** lpVtbl;
 

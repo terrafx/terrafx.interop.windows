@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("CF839FE6-8C2A-4DD2-B6EA-C22D6961AF05")]
 [NativeTypeName("struct IMFSourceReaderCallback2 : IMFSourceReaderCallback")]
 [NativeInheritance("IMFSourceReaderCallback")]
-public unsafe partial struct IMFSourceReaderCallback2 : IMFSourceReaderCallback2.Interface, IHaveNativeGuid
+public unsafe partial struct IMFSourceReaderCallback2 : IMFSourceReaderCallback2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFSourceReaderCallback2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFSourceReaderCallback2));
 
     public void** lpVtbl;
 

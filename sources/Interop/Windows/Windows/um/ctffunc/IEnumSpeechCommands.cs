@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8C5DAC4F-083C-4B85-A4C9-71746048ADCA")]
 [NativeTypeName("struct IEnumSpeechCommands : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface, IHaveNativeGuid
+public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IEnumSpeechCommands;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IEnumSpeechCommands));
 
     public void** lpVtbl;
 

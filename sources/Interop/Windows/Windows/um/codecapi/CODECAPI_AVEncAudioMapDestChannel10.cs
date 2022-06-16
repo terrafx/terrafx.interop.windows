@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncAudioMapDestChannel10.xml' path='doc/member[@name="CODECAPI_AVEncAudioMapDestChannel10"]/*' />
 [Guid("BC5D0B6A-DF6A-4E16-9803-B82007A30C8D")]
-public partial struct CODECAPI_AVEncAudioMapDestChannel10 : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncAudioMapDestChannel10 : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncAudioMapDestChannel10;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncAudioMapDestChannel10));
 }

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("A5170870-0CF8-11D1-8B91-0080C744F389")]
 [NativeTypeName("struct IWBScriptControl : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface, IHaveNativeGuid
+public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWBScriptControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWBScriptControl));
 
     public void** lpVtbl;
 

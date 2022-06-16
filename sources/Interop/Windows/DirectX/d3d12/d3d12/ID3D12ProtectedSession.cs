@@ -17,9 +17,9 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct ID3D12ProtectedSession : ID3D12DeviceChild")]
 [NativeInheritance("ID3D12DeviceChild")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct ID3D12ProtectedSession : ID3D12ProtectedSession.Interface, IHaveNativeGuid
+public unsafe partial struct ID3D12ProtectedSession : ID3D12ProtectedSession.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D12ProtectedSession;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D12ProtectedSession));
 
     public void** lpVtbl;
 

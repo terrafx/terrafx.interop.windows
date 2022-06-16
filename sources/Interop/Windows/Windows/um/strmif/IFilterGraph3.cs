@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("AAF38154-B80B-422F-91E6-B66467509A07")]
 [NativeTypeName("struct IFilterGraph3 : IFilterGraph2")]
 [NativeInheritance("IFilterGraph2")]
-public unsafe partial struct IFilterGraph3 : IFilterGraph3.Interface, IHaveNativeGuid
+public unsafe partial struct IFilterGraph3 : IFilterGraph3.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IFilterGraph3;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFilterGraph3));
 
     public void** lpVtbl;
 

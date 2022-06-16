@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("7690AA79-F8FC-4615-A327-36F7D18F5D91")]
 [NativeTypeName("struct IDefaultFolderMenuInitialize : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuInitialize.Interface, IHaveNativeGuid
+public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuInitialize.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDefaultFolderMenuInitialize;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDefaultFolderMenuInitialize));
 
     public void** lpVtbl;
 

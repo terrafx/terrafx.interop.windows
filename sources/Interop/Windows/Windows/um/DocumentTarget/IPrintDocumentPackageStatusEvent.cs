@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IPrintDocumentPackageStatusEvent : IDispatch")]
 [NativeInheritance("IDispatch")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IPrintDocumentPackageStatusEvent : IPrintDocumentPackageStatusEvent.Interface, IHaveNativeGuid
+public unsafe partial struct IPrintDocumentPackageStatusEvent : IPrintDocumentPackageStatusEvent.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPrintDocumentPackageStatusEvent;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPrintDocumentPackageStatusEvent));
 
     public void** lpVtbl;
 

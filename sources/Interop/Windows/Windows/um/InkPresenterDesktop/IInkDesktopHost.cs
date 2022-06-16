@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IInkDesktopHost : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct IInkDesktopHost : IInkDesktopHost.Interface, IHaveNativeGuid
+public unsafe partial struct IInkDesktopHost : IInkDesktopHost.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IInkDesktopHost;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IInkDesktopHost));
 
     public void** lpVtbl;
 

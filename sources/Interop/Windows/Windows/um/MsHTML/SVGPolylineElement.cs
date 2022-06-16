@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SVGPolylineElement.xml' path='doc/member[@name="SVGPolylineElement"]/*' />
 [Guid("3051057C-98B5-11CF-BB82-00AA00BDCE0B")]
-public partial struct SVGPolylineElement : IHaveNativeGuid
+public unsafe partial struct SVGPolylineElement : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_SVGPolylineElement;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_SVGPolylineElement));
 }

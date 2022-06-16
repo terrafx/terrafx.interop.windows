@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("0FAB9BDB-D250-4169-84E5-6BE118FDD7A8")]
 [NativeTypeName("struct ITfQueryEmbedded : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITfQueryEmbedded : ITfQueryEmbedded.Interface, IHaveNativeGuid
+public unsafe partial struct ITfQueryEmbedded : ITfQueryEmbedded.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfQueryEmbedded;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfQueryEmbedded));
 
     public void** lpVtbl;
 

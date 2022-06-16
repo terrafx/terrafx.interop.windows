@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='PublishDropTarget.xml' path='doc/member[@name="PublishDropTarget"]/*' />
 [Guid("CC6EEFFB-43F6-46C5-9619-51D571967F7D")]
-public partial struct PublishDropTarget : IHaveNativeGuid
+public unsafe partial struct PublishDropTarget : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_PublishDropTarget;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_PublishDropTarget));
 }

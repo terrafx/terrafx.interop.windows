@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='ShellBrowserWindow.xml' path='doc/member[@name="ShellBrowserWindow"]/*' />
 [Guid("C08AFD90-F2A1-11D1-8455-00A0C91F3880")]
-public partial struct ShellBrowserWindow : IHaveNativeGuid
+public unsafe partial struct ShellBrowserWindow : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ShellBrowserWindow;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ShellBrowserWindow));
 }

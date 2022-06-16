@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SmartcardReaderSelectionProvider.xml' path='doc/member[@name="SmartcardReaderSelectionProvider"]/*' />
 [Guid("1B283861-754F-4022-AD47-A5EAAA618894")]
-public partial struct SmartcardReaderSelectionProvider : IHaveNativeGuid
+public unsafe partial struct SmartcardReaderSelectionProvider : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_SmartcardReaderSelectionProvider;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_SmartcardReaderSelectionProvider));
 }

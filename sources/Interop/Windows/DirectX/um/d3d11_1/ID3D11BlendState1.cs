@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("CC86FABE-DA55-401D-85E7-E3C9DE2877E9")]
 [NativeTypeName("struct ID3D11BlendState1 : ID3D11BlendState")]
 [NativeInheritance("ID3D11BlendState")]
-public unsafe partial struct ID3D11BlendState1 : ID3D11BlendState1.Interface, IHaveNativeGuid
+public unsafe partial struct ID3D11BlendState1 : ID3D11BlendState1.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D11BlendState1;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D11BlendState1));
 
     public void** lpVtbl;
 

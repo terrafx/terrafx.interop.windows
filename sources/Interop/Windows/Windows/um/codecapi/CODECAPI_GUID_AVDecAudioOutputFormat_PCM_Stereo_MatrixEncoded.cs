@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_MatrixEncoded.xml' path='doc/member[@name="CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_MatrixEncoded"]/*' />
 [Guid("696E1D30-548F-4036-825F-7026C60011BD")]
-public partial struct CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_MatrixEncoded : IHaveNativeGuid
+public unsafe partial struct CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_MatrixEncoded : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_MatrixEncoded;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_MatrixEncoded));
 }

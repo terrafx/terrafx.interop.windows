@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='AudioVolumeMeter.xml' path='doc/member[@name="AudioVolumeMeter"]/*' />
 [Guid("4FC3B166-972A-40CF-BC37-7DB03DB2FBA3")]
-public partial struct AudioVolumeMeter : IHaveNativeGuid
+public unsafe partial struct AudioVolumeMeter : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_AudioVolumeMeter;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_AudioVolumeMeter));
 }

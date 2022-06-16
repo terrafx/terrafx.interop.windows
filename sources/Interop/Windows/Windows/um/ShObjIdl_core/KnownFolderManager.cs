@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='KnownFolderManager.xml' path='doc/member[@name="KnownFolderManager"]/*' />
 [Guid("4DF0C730-DF9D-4AE3-9153-AA6B82E9795A")]
-public partial struct KnownFolderManager : IHaveNativeGuid
+public unsafe partial struct KnownFolderManager : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_KnownFolderManager;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_KnownFolderManager));
 }

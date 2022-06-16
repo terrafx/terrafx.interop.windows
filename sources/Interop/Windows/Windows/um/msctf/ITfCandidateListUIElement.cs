@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("EA1EA138-19DF-11D7-A6D2-00065B84435C")]
 [NativeTypeName("struct ITfCandidateListUIElement : ITfUIElement")]
 [NativeInheritance("ITfUIElement")]
-public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIElement.Interface, IHaveNativeGuid
+public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIElement.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfCandidateListUIElement;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfCandidateListUIElement));
 
     public void** lpVtbl;
 

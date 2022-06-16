@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("27354154-8F64-5B0F-8F00-5D77AFBE261E")]
 [NativeTypeName("struct IDiscFormat2TrackAtOnce : IDiscFormat2")]
 [NativeInheritance("IDiscFormat2")]
-public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.Interface, IHaveNativeGuid
+public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDiscFormat2TrackAtOnce;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDiscFormat2TrackAtOnce));
 
     public void** lpVtbl;
 

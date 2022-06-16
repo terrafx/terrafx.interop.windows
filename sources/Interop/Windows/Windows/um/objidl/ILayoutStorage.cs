@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("0E6D4D90-6738-11CF-9608-00AA00680DB4")]
 [NativeTypeName("struct ILayoutStorage : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface, IHaveNativeGuid
+public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ILayoutStorage;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ILayoutStorage));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("1E673275-0257-40AA-AF20-7C608D4A0428")]
 [NativeTypeName("struct IVMRMixerBitmap : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IVMRMixerBitmap : IVMRMixerBitmap.Interface, IHaveNativeGuid
+public unsafe partial struct IVMRMixerBitmap : IVMRMixerBitmap.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVMRMixerBitmap;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVMRMixerBitmap));
 
     public void** lpVtbl;
 

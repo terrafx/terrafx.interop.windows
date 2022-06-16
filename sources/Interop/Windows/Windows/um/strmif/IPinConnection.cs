@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("4A9A62D3-27D4-403D-91E9-89F540E55534")]
 [NativeTypeName("struct IPinConnection : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IPinConnection : IPinConnection.Interface, IHaveNativeGuid
+public unsafe partial struct IPinConnection : IPinConnection.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPinConnection;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPinConnection));
 
     public void** lpVtbl;
 

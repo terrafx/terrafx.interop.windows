@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IAppxManifestDeviceCapabilitiesEnumerator : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IAppxManifestDeviceCapabilitiesEnumerator : IAppxManifestDeviceCapabilitiesEnumerator.Interface, IHaveNativeGuid
+public unsafe partial struct IAppxManifestDeviceCapabilitiesEnumerator : IAppxManifestDeviceCapabilitiesEnumerator.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAppxManifestDeviceCapabilitiesEnumerator;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAppxManifestDeviceCapabilitiesEnumerator));
 
     public void** lpVtbl;
 

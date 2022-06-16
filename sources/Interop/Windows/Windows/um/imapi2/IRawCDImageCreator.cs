@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("25983550-9D65-49CE-B335-40630D901227")]
 [NativeTypeName("struct IRawCDImageCreator : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, IHaveNativeGuid
+public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IRawCDImageCreator;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IRawCDImageCreator));
 
     public void** lpVtbl;
 

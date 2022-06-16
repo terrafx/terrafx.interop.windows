@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='InMemoryPropertyStoreMarshalByValue.xml' path='doc/member[@name="InMemoryPropertyStoreMarshalByValue"]/*' />
 [Guid("D4CA0E2D-6DA7-4B75-A97C-5F306F0EAEDC")]
-public partial struct InMemoryPropertyStoreMarshalByValue : IHaveNativeGuid
+public unsafe partial struct InMemoryPropertyStoreMarshalByValue : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_InMemoryPropertyStoreMarshalByValue;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_InMemoryPropertyStoreMarshalByValue));
 }

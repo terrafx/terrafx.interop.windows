@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFTimedTextTrackList : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct IMFTimedTextTrackList : IMFTimedTextTrackList.Interface, IHaveNativeGuid
+public unsafe partial struct IMFTimedTextTrackList : IMFTimedTextTrackList.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFTimedTextTrackList;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFTimedTextTrackList));
 
     public void** lpVtbl;
 

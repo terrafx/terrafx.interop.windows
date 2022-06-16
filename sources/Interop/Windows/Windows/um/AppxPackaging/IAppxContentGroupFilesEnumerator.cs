@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IAppxContentGroupFilesEnumerator : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct IAppxContentGroupFilesEnumerator : IAppxContentGroupFilesEnumerator.Interface, IHaveNativeGuid
+public unsafe partial struct IAppxContentGroupFilesEnumerator : IAppxContentGroupFilesEnumerator.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAppxContentGroupFilesEnumerator;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAppxContentGroupFilesEnumerator));
 
     public void** lpVtbl;
 

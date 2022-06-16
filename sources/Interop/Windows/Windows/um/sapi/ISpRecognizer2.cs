@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8FC6D974-C81E-4098-93C5-0147F61ED4D3")]
 [NativeTypeName("struct ISpRecognizer2 : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ISpRecognizer2 : ISpRecognizer2.Interface, IHaveNativeGuid
+public unsafe partial struct ISpRecognizer2 : ISpRecognizer2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpRecognizer2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpRecognizer2));
 
     public void** lpVtbl;
 

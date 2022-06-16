@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("00000025-0000-0000-C000-000000000046")]
 [NativeTypeName("struct ISynchronizeMutex : ISynchronize")]
 [NativeInheritance("ISynchronize")]
-public unsafe partial struct ISynchronizeMutex : ISynchronizeMutex.Interface, IHaveNativeGuid
+public unsafe partial struct ISynchronizeMutex : ISynchronizeMutex.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISynchronizeMutex;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISynchronizeMutex));
 
     public void** lpVtbl;
 

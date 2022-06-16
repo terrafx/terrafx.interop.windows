@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("39E050C3-4E74-441A-8DC0-B81104DF949C")]
 [NativeTypeName("struct IUserConsentVerifierInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IUserConsentVerifierInterop : IUserConsentVerifierInterop.Interface, IHaveNativeGuid
+public unsafe partial struct IUserConsentVerifierInterop : IUserConsentVerifierInterop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IUserConsentVerifierInterop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUserConsentVerifierInterop));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("C0F1DB0C-3A20-405C-A303-96B6010A885F")]
 [NativeTypeName("struct ITfThreadFocusSink : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITfThreadFocusSink : ITfThreadFocusSink.Interface, IHaveNativeGuid
+public unsafe partial struct ITfThreadFocusSink : ITfThreadFocusSink.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfThreadFocusSink;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfThreadFocusSink));
 
     public void** lpVtbl;
 

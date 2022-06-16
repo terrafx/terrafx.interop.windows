@@ -6,12 +6,20 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX.UnitTests;
 
 /// <summary>Provides validation of the <see cref="ID3D10EffectPool" /> struct.</summary>
 public static unsafe partial class ID3D10EffectPoolTests
 {
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ID3D10EffectPool" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
+    {
+        Assert.That(typeof(ID3D10EffectPool).GUID, Is.EqualTo(IID_ID3D10EffectPool));
+    }
+
     /// <summary>Validates that the <see cref="ID3D10EffectPool" /> struct is blittable.</summary>
     [Test]
     public static void IsBlittableTest()

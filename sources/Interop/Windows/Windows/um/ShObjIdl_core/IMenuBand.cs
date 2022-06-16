@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("568804CD-CBD7-11D0-9816-00C04FD91972")]
 [NativeTypeName("struct IMenuBand : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMenuBand : IMenuBand.Interface, IHaveNativeGuid
+public unsafe partial struct IMenuBand : IMenuBand.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMenuBand;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMenuBand));
 
     public void** lpVtbl;
 

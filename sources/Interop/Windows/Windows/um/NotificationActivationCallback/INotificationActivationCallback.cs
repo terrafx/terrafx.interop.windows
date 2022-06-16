@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct INotificationActivationCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct INotificationActivationCallback : INotificationActivationCallback.Interface, IHaveNativeGuid
+public unsafe partial struct INotificationActivationCallback : INotificationActivationCallback.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_INotificationActivationCallback;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_INotificationActivationCallback));
 
     public void** lpVtbl;
 

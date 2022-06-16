@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("508E71D3-EC66-4FC3-8775-B4B9ED6BA847")]
 [NativeTypeName("struct IMFFieldOfUseMFTUnlock : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFFieldOfUseMFTUnlock : IMFFieldOfUseMFTUnlock.Interface, IHaveNativeGuid
+public unsafe partial struct IMFFieldOfUseMFTUnlock : IMFFieldOfUseMFTUnlock.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFFieldOfUseMFTUnlock;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFFieldOfUseMFTUnlock));
 
     public void** lpVtbl;
 

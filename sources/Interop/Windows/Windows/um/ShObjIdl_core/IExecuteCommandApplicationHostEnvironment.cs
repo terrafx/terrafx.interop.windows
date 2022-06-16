@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("18B21AA9-E184-4FF0-9F5E-F882D03771B3")]
 [NativeTypeName("struct IExecuteCommandApplicationHostEnvironment : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IExecuteCommandApplicationHostEnvironment : IExecuteCommandApplicationHostEnvironment.Interface, IHaveNativeGuid
+public unsafe partial struct IExecuteCommandApplicationHostEnvironment : IExecuteCommandApplicationHostEnvironment.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IExecuteCommandApplicationHostEnvironment;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IExecuteCommandApplicationHostEnvironment));
 
     public void** lpVtbl;
 

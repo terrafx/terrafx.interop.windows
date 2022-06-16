@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("62EA93BA-EC62-11D2-B770-00C04FB6BD3D")]
 [NativeTypeName("struct IAMLatency : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMLatency : IAMLatency.Interface, IHaveNativeGuid
+public unsafe partial struct IAMLatency : IAMLatency.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMLatency;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMLatency));
 
     public void** lpVtbl;
 

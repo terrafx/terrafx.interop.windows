@@ -17,9 +17,9 @@ namespace TerraFX.Interop.WinRT;
 [NativeTypeName("struct IVisualTreeServiceCallback2 : IVisualTreeServiceCallback")]
 [NativeInheritance("IVisualTreeServiceCallback")]
 [SupportedOSPlatform("windows10.0.14393.0")]
-public unsafe partial struct IVisualTreeServiceCallback2 : IVisualTreeServiceCallback2.Interface, IHaveNativeGuid
+public unsafe partial struct IVisualTreeServiceCallback2 : IVisualTreeServiceCallback2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVisualTreeServiceCallback2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVisualTreeServiceCallback2));
 
     public void** lpVtbl;
 

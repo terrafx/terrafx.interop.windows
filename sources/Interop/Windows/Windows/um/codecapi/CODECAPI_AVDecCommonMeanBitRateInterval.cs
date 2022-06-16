@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVDecCommonMeanBitRateInterval.xml' path='doc/member[@name="CODECAPI_AVDecCommonMeanBitRateInterval"]/*' />
 [Guid("0EE437C6-38A7-4C5C-944C-68AB42116B85")]
-public partial struct CODECAPI_AVDecCommonMeanBitRateInterval : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVDecCommonMeanBitRateInterval : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVDecCommonMeanBitRateInterval;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVDecCommonMeanBitRateInterval));
 }

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("00000012-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IRootStorage : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IRootStorage : IRootStorage.Interface, IHaveNativeGuid
+public unsafe partial struct IRootStorage : IRootStorage.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IRootStorage;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IRootStorage));
 
     public void** lpVtbl;
 

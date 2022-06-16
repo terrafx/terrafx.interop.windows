@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='FileSystemImageResult.xml' path='doc/member[@name="FileSystemImageResult"]/*' />
 [Guid("2C941FCC-975B-59BE-A960-9A2A262853A5")]
-public partial struct FileSystemImageResult : IHaveNativeGuid
+public unsafe partial struct FileSystemImageResult : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_FileSystemImageResult;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_FileSystemImageResult));
 }

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='XblIdpAuthManager.xml' path='doc/member[@name="XblIdpAuthManager"]/*' />
 [Guid("CE23534B-56D8-4978-86A2-7EE570640468")]
-public partial struct XblIdpAuthManager : IHaveNativeGuid
+public unsafe partial struct XblIdpAuthManager : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_XblIdpAuthManager;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_XblIdpAuthManager));
 }

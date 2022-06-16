@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("7D8B1437-DD53-4350-9C1B-1EE2890BD938")]
 [NativeTypeName("struct IAudioLoudness : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAudioLoudness : IAudioLoudness.Interface, IHaveNativeGuid
+public unsafe partial struct IAudioLoudness : IAudioLoudness.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAudioLoudness;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAudioLoudness));
 
     public void** lpVtbl;
 

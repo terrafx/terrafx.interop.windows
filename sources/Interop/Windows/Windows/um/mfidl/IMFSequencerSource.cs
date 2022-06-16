@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("197CD219-19CB-4DE1-A64C-ACF2EDCBE59E")]
 [NativeTypeName("struct IMFSequencerSource : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFSequencerSource : IMFSequencerSource.Interface, IHaveNativeGuid
+public unsafe partial struct IMFSequencerSource : IMFSequencerSource.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFSequencerSource;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFSequencerSource));
 
     public void** lpVtbl;
 

@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFSensorActivitiesReportCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0.15063.0")]
-public unsafe partial struct IMFSensorActivitiesReportCallback : IMFSensorActivitiesReportCallback.Interface, IHaveNativeGuid
+public unsafe partial struct IMFSensorActivitiesReportCallback : IMFSensorActivitiesReportCallback.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFSensorActivitiesReportCallback;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFSensorActivitiesReportCallback));
 
     public void** lpVtbl;
 

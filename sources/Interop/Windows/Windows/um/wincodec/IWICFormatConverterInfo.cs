@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("9F34FB65-13F4-4F15-BC57-3726B5E53D9F")]
 [NativeTypeName("struct IWICFormatConverterInfo : IWICComponentInfo")]
 [NativeInheritance("IWICComponentInfo")]
-public unsafe partial struct IWICFormatConverterInfo : IWICFormatConverterInfo.Interface, IHaveNativeGuid
+public unsafe partial struct IWICFormatConverterInfo : IWICFormatConverterInfo.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWICFormatConverterInfo;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWICFormatConverterInfo));
 
     public void** lpVtbl;
 

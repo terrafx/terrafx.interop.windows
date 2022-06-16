@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("369648FA-A7EB-4909-A15D-6954A078F18A")]
 [NativeTypeName("struct IAppxPackagingDiagnosticEventSinkManager : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAppxPackagingDiagnosticEventSinkManager : IAppxPackagingDiagnosticEventSinkManager.Interface, IHaveNativeGuid
+public unsafe partial struct IAppxPackagingDiagnosticEventSinkManager : IAppxPackagingDiagnosticEventSinkManager.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAppxPackagingDiagnosticEventSinkManager;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAppxPackagingDiagnosticEventSinkManager));
 
     public void** lpVtbl;
 

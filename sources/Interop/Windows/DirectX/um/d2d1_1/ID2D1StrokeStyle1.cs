@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("10A72A66-E91C-43F4-993F-DDF4B82B0B4A")]
 [NativeTypeName("struct ID2D1StrokeStyle1 : ID2D1StrokeStyle")]
 [NativeInheritance("ID2D1StrokeStyle")]
-public unsafe partial struct ID2D1StrokeStyle1 : ID2D1StrokeStyle1.Interface, IHaveNativeGuid
+public unsafe partial struct ID2D1StrokeStyle1 : ID2D1StrokeStyle1.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1StrokeStyle1;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1StrokeStyle1));
 
     public void** lpVtbl;
 

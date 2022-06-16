@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncVideoMeanAbsoluteDifference.xml' path='doc/member[@name="CODECAPI_AVEncVideoMeanAbsoluteDifference"]/*' />
 [Guid("E5C0C10F-81A4-422D-8C3F-B474A4581336")]
-public partial struct CODECAPI_AVEncVideoMeanAbsoluteDifference : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncVideoMeanAbsoluteDifference : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncVideoMeanAbsoluteDifference;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncVideoMeanAbsoluteDifference));
 }

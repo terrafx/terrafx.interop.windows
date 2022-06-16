@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("1079ACFC-29BD-11D3-8E0D-00C04F6837D5")]
 [NativeTypeName("struct IPersistIDList : IPersist")]
 [NativeInheritance("IPersist")]
-public unsafe partial struct IPersistIDList : IPersistIDList.Interface, IHaveNativeGuid
+public unsafe partial struct IPersistIDList : IPersistIDList.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPersistIDList;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPersistIDList));
 
     public void** lpVtbl;
 

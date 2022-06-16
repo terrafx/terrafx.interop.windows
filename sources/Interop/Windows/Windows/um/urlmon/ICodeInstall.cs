@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("79EAC9D1-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct ICodeInstall : IWindowForBindingUI")]
 [NativeInheritance("IWindowForBindingUI")]
-public unsafe partial struct ICodeInstall : ICodeInstall.Interface, IHaveNativeGuid
+public unsafe partial struct ICodeInstall : ICodeInstall.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICodeInstall;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICodeInstall));
 
     public void** lpVtbl;
 

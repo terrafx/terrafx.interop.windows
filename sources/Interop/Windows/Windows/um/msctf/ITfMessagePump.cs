@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8F1B8AD8-0B6B-4874-90C5-BD76011E8F7C")]
 [NativeTypeName("struct ITfMessagePump : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITfMessagePump : ITfMessagePump.Interface, IHaveNativeGuid
+public unsafe partial struct ITfMessagePump : ITfMessagePump.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfMessagePump;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfMessagePump));
 
     public void** lpVtbl;
 

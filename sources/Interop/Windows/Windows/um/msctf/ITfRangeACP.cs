@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("057A6296-029B-4154-B79A-0D461D4EA94C")]
 [NativeTypeName("struct ITfRangeACP : ITfRange")]
 [NativeInheritance("ITfRange")]
-public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, IHaveNativeGuid
+public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfRangeACP;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfRangeACP));
 
     public void** lpVtbl;
 

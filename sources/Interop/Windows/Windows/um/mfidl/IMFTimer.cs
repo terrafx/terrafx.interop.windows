@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("E56E4CBD-8F70-49D8-A0F8-EDB3D6AB9BF2")]
 [NativeTypeName("struct IMFTimer : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFTimer : IMFTimer.Interface, IHaveNativeGuid
+public unsafe partial struct IMFTimer : IMFTimer.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFTimer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFTimer));
 
     public void** lpVtbl;
 

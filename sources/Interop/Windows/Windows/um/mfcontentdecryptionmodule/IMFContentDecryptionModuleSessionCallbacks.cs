@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFContentDecryptionModuleSessionCallbacks : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0.19041.0")]
-public unsafe partial struct IMFContentDecryptionModuleSessionCallbacks : IMFContentDecryptionModuleSessionCallbacks.Interface, IHaveNativeGuid
+public unsafe partial struct IMFContentDecryptionModuleSessionCallbacks : IMFContentDecryptionModuleSessionCallbacks.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFContentDecryptionModuleSessionCallbacks;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFContentDecryptionModuleSessionCallbacks));
 
     public void** lpVtbl;
 

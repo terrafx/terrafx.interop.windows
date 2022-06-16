@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IWICDdsDecoder : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct IWICDdsDecoder : IWICDdsDecoder.Interface, IHaveNativeGuid
+public unsafe partial struct IWICDdsDecoder : IWICDdsDecoder.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWICDdsDecoder;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWICDdsDecoder));
 
     public void** lpVtbl;
 

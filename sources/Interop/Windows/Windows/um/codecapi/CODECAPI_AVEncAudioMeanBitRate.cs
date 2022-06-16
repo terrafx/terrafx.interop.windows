@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncAudioMeanBitRate.xml' path='doc/member[@name="CODECAPI_AVEncAudioMeanBitRate"]/*' />
 [Guid("921295BB-4FCA-4679-AAB8-9E2A1D753384")]
-public partial struct CODECAPI_AVEncAudioMeanBitRate : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncAudioMeanBitRate : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncAudioMeanBitRate;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncAudioMeanBitRate));
 }

@@ -10,8 +10,8 @@ namespace TerraFX.Interop.Windows;
 public static partial class SCHEME
 {
     [NativeTypeName("#define SCHEME_OID_RETRIEVE_ENCODED_OBJECT_FUNC \"SchemeDllRetrieveEncodedObject\"")]
-    public static ReadOnlySpan<byte> SCHEME_OID_RETRIEVE_ENCODED_OBJECT_FUNC => "SchemeDllRetrieveEncodedObject\0"u8;
+    public static ReadOnlySpan<byte> SCHEME_OID_RETRIEVE_ENCODED_OBJECT_FUNC => "SchemeDllRetrieveEncodedObject"u8;
 
     [NativeTypeName("#define SCHEME_OID_RETRIEVE_ENCODED_OBJECTW_FUNC \"SchemeDllRetrieveEncodedObjectW\"")]
-    public static ReadOnlySpan<byte> SCHEME_OID_RETRIEVE_ENCODED_OBJECTW_FUNC => "SchemeDllRetrieveEncodedObjectW\0"u8;
+    public static ReadOnlySpan<byte> SCHEME_OID_RETRIEVE_ENCODED_OBJECTW_FUNC => "SchemeDllRetrieveEncodedObjectW"u8;
 }

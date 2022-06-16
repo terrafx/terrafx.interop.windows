@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("A7E025DD-5303-4A62-89D6-E747E1EFAC73")]
 [NativeTypeName("struct IMFSAMIStyle : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface, IHaveNativeGuid
+public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFSAMIStyle;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFSAMIStyle));
 
     public void** lpVtbl;
 

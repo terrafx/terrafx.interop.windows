@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("A9DB33A2-AF5F-43C7-B679-74F5984B5AA4")]
 [NativeTypeName("struct IWICPixelFormatInfo2 : IWICPixelFormatInfo")]
 [NativeInheritance("IWICPixelFormatInfo")]
-public unsafe partial struct IWICPixelFormatInfo2 : IWICPixelFormatInfo2.Interface, IHaveNativeGuid
+public unsafe partial struct IWICPixelFormatInfo2 : IWICPixelFormatInfo2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWICPixelFormatInfo2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWICPixelFormatInfo2));
 
     public void** lpVtbl;
 

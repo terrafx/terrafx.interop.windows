@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("E46A9787-2B71-444D-A4B5-1FAB7B708D6A")]
 [NativeTypeName("struct IVideoFrameStep : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface, IHaveNativeGuid
+public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVideoFrameStep;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVideoFrameStep));
 
     public void** lpVtbl;
 

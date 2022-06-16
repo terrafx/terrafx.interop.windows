@@ -5,15 +5,20 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using TerraFX.Interop.DirectX;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IDirectDrawVideo.xml' path='doc/member[@name="IDirectDrawVideo"]/*' />
+[Guid("36D39EB0-DD75-11CE-BF0E-00AA0055595A")]
 [NativeTypeName("struct IDirectDrawVideo : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface
+public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDirectDrawVideo));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

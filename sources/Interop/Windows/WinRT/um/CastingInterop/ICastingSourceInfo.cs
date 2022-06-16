@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("45101AB7-7C3A-4BCE-9500-12C09024B298")]
 [NativeTypeName("struct ICastingSourceInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ICastingSourceInfo : ICastingSourceInfo.Interface, IHaveNativeGuid
+public unsafe partial struct ICastingSourceInfo : ICastingSourceInfo.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICastingSourceInfo;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICastingSourceInfo));
 
     public void** lpVtbl;
 

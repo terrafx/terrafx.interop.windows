@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct ITfFnGetLinguisticAlternates : ITfFunction")]
 [NativeInheritance("ITfFunction")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct ITfFnGetLinguisticAlternates : ITfFnGetLinguisticAlternates.Interface, IHaveNativeGuid
+public unsafe partial struct ITfFnGetLinguisticAlternates : ITfFnGetLinguisticAlternates.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfFnGetLinguisticAlternates;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfFnGetLinguisticAlternates));
 
     public void** lpVtbl;
 

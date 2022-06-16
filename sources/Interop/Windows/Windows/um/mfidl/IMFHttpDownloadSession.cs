@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFHttpDownloadSession : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0.15063.0")]
-public unsafe partial struct IMFHttpDownloadSession : IMFHttpDownloadSession.Interface, IHaveNativeGuid
+public unsafe partial struct IMFHttpDownloadSession : IMFHttpDownloadSession.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFHttpDownloadSession;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFHttpDownloadSession));
 
     public void** lpVtbl;
 

@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("F5F84C8F-CFD0-4CD6-B66B-C5D26FF1689D")]
 [NativeTypeName("struct IMessageDispatcher : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IMessageDispatcher : IMessageDispatcher.Interface, IHaveNativeGuid
+public unsafe partial struct IMessageDispatcher : IMessageDispatcher.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMessageDispatcher;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMessageDispatcher));
 
     public void** lpVtbl;
 

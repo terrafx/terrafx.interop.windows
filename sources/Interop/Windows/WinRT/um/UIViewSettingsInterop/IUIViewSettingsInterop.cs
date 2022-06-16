@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("3694DBF9-8F68-44BE-8FF5-195C98EDE8A6")]
 [NativeTypeName("struct IUIViewSettingsInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IUIViewSettingsInterop : IUIViewSettingsInterop.Interface, IHaveNativeGuid
+public unsafe partial struct IUIViewSettingsInterop : IUIViewSettingsInterop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IUIViewSettingsInterop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUIViewSettingsInterop));
 
     public void** lpVtbl;
 

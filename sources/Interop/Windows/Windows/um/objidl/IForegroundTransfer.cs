@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("00000145-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IForegroundTransfer : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IForegroundTransfer : IForegroundTransfer.Interface, IHaveNativeGuid
+public unsafe partial struct IForegroundTransfer : IForegroundTransfer.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IForegroundTransfer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IForegroundTransfer));
 
     public void** lpVtbl;
 

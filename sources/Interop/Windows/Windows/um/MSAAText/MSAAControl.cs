@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='MSAAControl.xml' path='doc/member[@name="MSAAControl"]/*' />
 [Guid("08CD963F-7A3E-4F5C-9BD8-D692BB043C5B")]
-public partial struct MSAAControl : IHaveNativeGuid
+public unsafe partial struct MSAAControl : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_MSAAControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_MSAAControl));
 }

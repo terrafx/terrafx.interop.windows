@@ -17,9 +17,9 @@ public static partial class Windows
     /// <returns>A <see cref="UuidOfType"/> value wrapping a pointer to the GUID data for the input type. This value can be either converted to a <see cref="Guid"/> pointer, or implicitly assigned to a <see cref="Guid"/> value.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static unsafe UuidOfType __uuidof<T>(T value) // for type inference similar to C++'s __uuidof
-        where T : unmanaged, IHaveNativeGuid
+        where T : unmanaged, INativeGuid
     {
-        return new UuidOfType(in T.GUID);
+        return new UuidOfType(T.NativeGuid);
     }
 
     /// <summary>Retrieves the GUID of of a specified type.</summary>
@@ -28,9 +28,9 @@ public static partial class Windows
     /// <returns>A <see cref="UuidOfType"/> value wrapping a pointer to the GUID data for the input type. This value can be either converted to a <see cref="Guid"/> pointer, or implicitly assigned to a <see cref="Guid"/> value.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static unsafe UuidOfType __uuidof<T>(T* value) // for type inference similar to C++'s __uuidof
-        where T : unmanaged, IHaveNativeGuid
+        where T : unmanaged, INativeGuid
     {
-        return new UuidOfType(in T.GUID);
+        return new UuidOfType(T.NativeGuid);
     }
 
     /// <summary>Retrieves the GUID of of a specified type.</summary>
@@ -38,9 +38,9 @@ public static partial class Windows
     /// <returns>A <see cref="UuidOfType"/> value wrapping a pointer to the GUID data for the input type. This value can be either converted to a <see cref="Guid"/> pointer, or implicitly assigned to a <see cref="Guid"/> value.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static unsafe UuidOfType __uuidof<T>()
-        where T : unmanaged, IHaveNativeGuid
+        where T : unmanaged, INativeGuid
     {
-        return new UuidOfType(in T.GUID);
+        return new UuidOfType(T.NativeGuid);
     }
 
     /// <summary>A proxy type that wraps a pointer to GUID data. Values of this type can be implicitly converted to and assigned to <see cref="Guid"/>* or <see cref="Guid"/> parameters.</summary>
@@ -49,9 +49,9 @@ public static partial class Windows
     {
         private readonly Guid* _value;
 
-        internal UuidOfType(in Guid value)
+        internal UuidOfType(Guid* value)
         {
-            _value = (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in value));
+            _value = value;
         }
 
         /// <summary>Reads a <see cref="Guid"/> value from the GUID buffer for a given <see cref="UuidOfType"/> instance.</summary>

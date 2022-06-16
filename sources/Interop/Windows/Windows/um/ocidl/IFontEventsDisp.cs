@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("4EF6100A-AF88-11D0-9846-00C04FC29993")]
 [NativeTypeName("struct IFontEventsDisp : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IFontEventsDisp : IFontEventsDisp.Interface, IHaveNativeGuid
+public unsafe partial struct IFontEventsDisp : IFontEventsDisp.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IFontEventsDisp;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFontEventsDisp));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("D402B2D1-F600-49E0-95E6-975D8DA13D89")]
 [NativeTypeName("struct IAppxManifestDriverConstraintsEnumerator : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAppxManifestDriverConstraintsEnumerator : IAppxManifestDriverConstraintsEnumerator.Interface, IHaveNativeGuid
+public unsafe partial struct IAppxManifestDriverConstraintsEnumerator : IAppxManifestDriverConstraintsEnumerator.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAppxManifestDriverConstraintsEnumerator;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAppxManifestDriverConstraintsEnumerator));
 
     public void** lpVtbl;
 

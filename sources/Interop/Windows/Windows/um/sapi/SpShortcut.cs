@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SpShortcut.xml' path='doc/member[@name="SpShortcut"]/*' />
 [Guid("0D722F1A-9FCF-4E62-96D8-6DF8F01A26AA")]
-public partial struct SpShortcut : IHaveNativeGuid
+public unsafe partial struct SpShortcut : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_SpShortcut;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_SpShortcut));
 }

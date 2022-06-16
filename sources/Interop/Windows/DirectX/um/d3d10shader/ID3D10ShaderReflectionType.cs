@@ -13,9 +13,9 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='ID3D10ShaderReflectionType.xml' path='doc/member[@name="ID3D10ShaderReflectionType"]/*' />
 [Guid("C530AD7D-9B16-4395-A979-BA2ECFF83ADD")]
-public unsafe partial struct ID3D10ShaderReflectionType : ID3D10ShaderReflectionType.Interface, IHaveNativeGuid
+public unsafe partial struct ID3D10ShaderReflectionType : ID3D10ShaderReflectionType.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D10ShaderReflectionType;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D10ShaderReflectionType));
 
     public void** lpVtbl;
 

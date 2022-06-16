@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("305107C7-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IWebGeocoordinates : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IWebGeocoordinates : IWebGeocoordinates.Interface, IHaveNativeGuid
+public unsafe partial struct IWebGeocoordinates : IWebGeocoordinates.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWebGeocoordinates;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWebGeocoordinates));
 
     public void** lpVtbl;
 

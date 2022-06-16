@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVDecVideoSoftwareDeinterlaceMode.xml' path='doc/member[@name="CODECAPI_AVDecVideoSoftwareDeinterlaceMode"]/*' />
 [Guid("0C08D1CE-9CED-4540-BAE3-CEB380141109")]
-public partial struct CODECAPI_AVDecVideoSoftwareDeinterlaceMode : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVDecVideoSoftwareDeinterlaceMode : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVDecVideoSoftwareDeinterlaceMode;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVDecVideoSoftwareDeinterlaceMode));
 }

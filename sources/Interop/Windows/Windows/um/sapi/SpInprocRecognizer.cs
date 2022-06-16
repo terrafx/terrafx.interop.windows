@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SpInprocRecognizer.xml' path='doc/member[@name="SpInprocRecognizer"]/*' />
 [Guid("41B89B6B-9399-11D2-9623-00C04F8EE628")]
-public partial struct SpInprocRecognizer : IHaveNativeGuid
+public unsafe partial struct SpInprocRecognizer : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_SpInprocRecognizer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_SpInprocRecognizer));
 }

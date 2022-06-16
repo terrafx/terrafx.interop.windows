@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("C49E32C7-BC8B-11D2-85D4-00105A1F8304")]
 [NativeTypeName("struct IWbemBackupRestore : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IWbemBackupRestore : IWbemBackupRestore.Interface, IHaveNativeGuid
+public unsafe partial struct IWbemBackupRestore : IWbemBackupRestore.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWbemBackupRestore;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWbemBackupRestore));
 
     public void** lpVtbl;
 

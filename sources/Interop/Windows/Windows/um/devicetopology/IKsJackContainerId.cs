@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("C99AF463-D629-4EC4-8C00-E54D68154248")]
 [NativeTypeName("struct IKsJackContainerId : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IKsJackContainerId : IKsJackContainerId.Interface, IHaveNativeGuid
+public unsafe partial struct IKsJackContainerId : IKsJackContainerId.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IKsJackContainerId;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IKsJackContainerId));
 
     public void** lpVtbl;
 

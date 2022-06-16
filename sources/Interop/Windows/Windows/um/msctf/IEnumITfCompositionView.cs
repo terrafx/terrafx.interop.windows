@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("5EFD22BA-7838-46CB-88E2-CADB14124F8F")]
 [NativeTypeName("struct IEnumITfCompositionView : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.Interface, IHaveNativeGuid
+public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IEnumITfCompositionView;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IEnumITfCompositionView));
 
     public void** lpVtbl;
 

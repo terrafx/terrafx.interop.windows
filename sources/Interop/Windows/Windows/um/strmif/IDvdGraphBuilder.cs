@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("FCC152B6-F372-11D0-8E00-00C04FD7C08B")]
 [NativeTypeName("struct IDvdGraphBuilder : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface, IHaveNativeGuid
+public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDvdGraphBuilder;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDvdGraphBuilder));
 
     public void** lpVtbl;
 

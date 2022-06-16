@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("5EFB46D7-47C0-4B68-ACDA-DED47C90EC91")]
 [NativeTypeName("struct IStorageProviderBanners : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IStorageProviderBanners : IStorageProviderBanners.Interface, IHaveNativeGuid
+public unsafe partial struct IStorageProviderBanners : IStorageProviderBanners.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IStorageProviderBanners;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IStorageProviderBanners));
 
     public void** lpVtbl;
 

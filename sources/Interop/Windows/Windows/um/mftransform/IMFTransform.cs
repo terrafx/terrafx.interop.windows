@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("BF94C121-5B05-4E6F-8000-BA598961414D")]
 [NativeTypeName("struct IMFTransform : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFTransform : IMFTransform.Interface, IHaveNativeGuid
+public unsafe partial struct IMFTransform : IMFTransform.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFTransform;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFTransform));
 
     public void** lpVtbl;
 

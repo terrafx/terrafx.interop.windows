@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("64961751-0835-43C0-8FFE-D57686530E64")]
 [NativeTypeName("struct IExplorerCommandProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IExplorerCommandProvider : IExplorerCommandProvider.Interface, IHaveNativeGuid
+public unsafe partial struct IExplorerCommandProvider : IExplorerCommandProvider.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IExplorerCommandProvider;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IExplorerCommandProvider));
 
     public void** lpVtbl;
 

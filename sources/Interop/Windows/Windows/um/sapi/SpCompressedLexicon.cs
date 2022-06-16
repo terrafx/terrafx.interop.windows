@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SpCompressedLexicon.xml' path='doc/member[@name="SpCompressedLexicon"]/*' />
 [Guid("90903716-2F42-11D3-9C26-00C04F8EF87C")]
-public partial struct SpCompressedLexicon : IHaveNativeGuid
+public unsafe partial struct SpCompressedLexicon : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_SpCompressedLexicon;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_SpCompressedLexicon));
 }

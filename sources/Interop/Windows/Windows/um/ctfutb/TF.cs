@@ -13,7 +13,7 @@ public static partial class TF
     public const string TF_FLOATINGLANGBAR_WNDTITLEW = "TF_FloatingLangBar_WndTitle";
 
     [NativeTypeName("#define TF_FLOATINGLANGBAR_WNDTITLEA \"TF_FloatingLangBar_WndTitle\"")]
-    public static ReadOnlySpan<byte> TF_FLOATINGLANGBAR_WNDTITLEA => "TF_FloatingLangBar_WndTitle\0"u8;
+    public static ReadOnlySpan<byte> TF_FLOATINGLANGBAR_WNDTITLEA => "TF_FloatingLangBar_WndTitle"u8;
 
     [NativeTypeName("#define TF_FLOATINGLANGBAR_WNDTITLE TF_FLOATINGLANGBAR_WNDTITLEW")]
     public const string TF_FLOATINGLANGBAR_WNDTITLE = "TF_FloatingLangBar_WndTitle";

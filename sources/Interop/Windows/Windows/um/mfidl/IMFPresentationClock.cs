@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("868CE85C-8EA9-4F55-AB82-B009A910A805")]
 [NativeTypeName("struct IMFPresentationClock : IMFClock")]
 [NativeInheritance("IMFClock")]
-public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interface, IHaveNativeGuid
+public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFPresentationClock;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFPresentationClock));
 
     public void** lpVtbl;
 

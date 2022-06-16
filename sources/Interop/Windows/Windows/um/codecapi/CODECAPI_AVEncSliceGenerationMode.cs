@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncSliceGenerationMode.xml' path='doc/member[@name="CODECAPI_AVEncSliceGenerationMode"]/*' />
 [Guid("8A6BC67F-9497-4286-B46B-02DB8D60EDBC")]
-public partial struct CODECAPI_AVEncSliceGenerationMode : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncSliceGenerationMode : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncSliceGenerationMode;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncSliceGenerationMode));
 }

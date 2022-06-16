@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("0ADF7D52-929C-4E61-ADDB-FFED30DE66EF")]
 [NativeTypeName("struct ID3D12SharingContract : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ID3D12SharingContract : ID3D12SharingContract.Interface, IHaveNativeGuid
+public unsafe partial struct ID3D12SharingContract : ID3D12SharingContract.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D12SharingContract;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D12SharingContract));
 
     public void** lpVtbl;
 

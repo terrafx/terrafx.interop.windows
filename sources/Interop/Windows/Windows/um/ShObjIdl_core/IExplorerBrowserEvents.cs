@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("361BBDC7-E6EE-4E13-BE58-58E2240C810F")]
 [NativeTypeName("struct IExplorerBrowserEvents : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Interface, IHaveNativeGuid
+public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IExplorerBrowserEvents;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IExplorerBrowserEvents));
 
     public void** lpVtbl;
 

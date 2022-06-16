@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("A9EDA967-F50E-4A33-B358-206F6EF3086D")]
 [NativeTypeName("struct IBindHttpSecurity : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IBindHttpSecurity : IBindHttpSecurity.Interface, IHaveNativeGuid
+public unsafe partial struct IBindHttpSecurity : IBindHttpSecurity.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IBindHttpSecurity;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IBindHttpSecurity));
 
     public void** lpVtbl;
 

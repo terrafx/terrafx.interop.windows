@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='XMLDocument.xml' path='doc/member[@name="XMLDocument"]/*' />
 [Guid("CFC399AF-D876-11D0-9C10-00C04FC99C8E")]
-public partial struct XMLDocument : IHaveNativeGuid
+public unsafe partial struct XMLDocument : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_XMLDocument;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_XMLDocument));
 }

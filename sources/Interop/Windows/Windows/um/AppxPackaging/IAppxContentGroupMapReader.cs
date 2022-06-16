@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IAppxContentGroupMapReader : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct IAppxContentGroupMapReader : IAppxContentGroupMapReader.Interface, IHaveNativeGuid
+public unsafe partial struct IAppxContentGroupMapReader : IAppxContentGroupMapReader.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAppxContentGroupMapReader;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAppxContentGroupMapReader));
 
     public void** lpVtbl;
 

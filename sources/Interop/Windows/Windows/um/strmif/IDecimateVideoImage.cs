@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("2E5EA3E0-E924-11D2-B6DA-00A0C995E8DF")]
 [NativeTypeName("struct IDecimateVideoImage : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDecimateVideoImage : IDecimateVideoImage.Interface, IHaveNativeGuid
+public unsafe partial struct IDecimateVideoImage : IDecimateVideoImage.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDecimateVideoImage;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDecimateVideoImage));
 
     public void** lpVtbl;
 

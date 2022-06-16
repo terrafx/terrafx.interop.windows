@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("765A30F3-F624-4C6F-A828-ACE948622445")]
 [NativeTypeName("struct ID3D12PipelineState : ID3D12Pageable")]
 [NativeInheritance("ID3D12Pageable")]
-public unsafe partial struct ID3D12PipelineState : ID3D12PipelineState.Interface, IHaveNativeGuid
+public unsafe partial struct ID3D12PipelineState : ID3D12PipelineState.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D12PipelineState;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D12PipelineState));
 
     public void** lpVtbl;
 

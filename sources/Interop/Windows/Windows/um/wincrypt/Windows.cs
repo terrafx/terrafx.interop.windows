@@ -1362,28 +1362,28 @@ public static unsafe partial class Windows
     public const int MAXUIDLEN = 64;
 
     [NativeTypeName("#define EXPO_OFFLOAD_REG_VALUE \"ExpoOffload\"")]
-    public static ReadOnlySpan<byte> EXPO_OFFLOAD_REG_VALUE => "ExpoOffload\0"u8;
+    public static ReadOnlySpan<byte> EXPO_OFFLOAD_REG_VALUE => "ExpoOffload"u8;
 
     [NativeTypeName("#define EXPO_OFFLOAD_FUNC_NAME \"OffloadModExpo\"")]
-    public static ReadOnlySpan<byte> EXPO_OFFLOAD_FUNC_NAME => "OffloadModExpo\0"u8;
+    public static ReadOnlySpan<byte> EXPO_OFFLOAD_FUNC_NAME => "OffloadModExpo"u8;
 
     [NativeTypeName("#define szKEY_CRYPTOAPI_PRIVATE_KEY_OPTIONS \"Software\\\\Policies\\\\Microsoft\\\\Cryptography\"")]
-    public static ReadOnlySpan<byte> szKEY_CRYPTOAPI_PRIVATE_KEY_OPTIONS => "Software\\Policies\\Microsoft\\Cryptography\0"u8;
+    public static ReadOnlySpan<byte> szKEY_CRYPTOAPI_PRIVATE_KEY_OPTIONS => "Software\\Policies\\Microsoft\\Cryptography"u8;
 
     [NativeTypeName("#define szKEY_CACHE_ENABLED \"CachePrivateKeys\"")]
-    public static ReadOnlySpan<byte> szKEY_CACHE_ENABLED => "CachePrivateKeys\0"u8;
+    public static ReadOnlySpan<byte> szKEY_CACHE_ENABLED => "CachePrivateKeys"u8;
 
     [NativeTypeName("#define szKEY_CACHE_SECONDS \"PrivateKeyLifetimeSeconds\"")]
-    public static ReadOnlySpan<byte> szKEY_CACHE_SECONDS => "PrivateKeyLifetimeSeconds\0"u8;
+    public static ReadOnlySpan<byte> szKEY_CACHE_SECONDS => "PrivateKeyLifetimeSeconds"u8;
 
     [NativeTypeName("#define szPRIV_KEY_CACHE_MAX_ITEMS \"PrivKeyCacheMaxItems\"")]
-    public static ReadOnlySpan<byte> szPRIV_KEY_CACHE_MAX_ITEMS => "PrivKeyCacheMaxItems\0"u8;
+    public static ReadOnlySpan<byte> szPRIV_KEY_CACHE_MAX_ITEMS => "PrivKeyCacheMaxItems"u8;
 
     [NativeTypeName("#define cPRIV_KEY_CACHE_MAX_ITEMS_DEFAULT 20")]
     public const int cPRIV_KEY_CACHE_MAX_ITEMS_DEFAULT = 20;
 
     [NativeTypeName("#define szPRIV_KEY_CACHE_PURGE_INTERVAL_SECONDS \"PrivKeyCachePurgeIntervalSeconds\"")]
-    public static ReadOnlySpan<byte> szPRIV_KEY_CACHE_PURGE_INTERVAL_SECONDS => "PrivKeyCachePurgeIntervalSeconds\0"u8;
+    public static ReadOnlySpan<byte> szPRIV_KEY_CACHE_PURGE_INTERVAL_SECONDS => "PrivKeyCachePurgeIntervalSeconds"u8;
 
     [NativeTypeName("#define cPRIV_KEY_CACHE_PURGE_INTERVAL_SECONDS_DEFAULT 86400")]
     public const int cPRIV_KEY_CACHE_PURGE_INTERVAL_SECONDS_DEFAULT = 86400;
@@ -1467,22 +1467,22 @@ public static unsafe partial class Windows
     public const int SORTED_CTL_EXT_HASHED_SUBJECT_IDENTIFIER_FLAG = 0x1;
 
     [NativeTypeName("#define szOIDVerisign_MessageType \"2.16.840.1.113733.1.9.2\"")]
-    public static ReadOnlySpan<byte> szOIDVerisign_MessageType => "2.16.840.1.113733.1.9.2\0"u8;
+    public static ReadOnlySpan<byte> szOIDVerisign_MessageType => "2.16.840.1.113733.1.9.2"u8;
 
     [NativeTypeName("#define szOIDVerisign_PkiStatus \"2.16.840.1.113733.1.9.3\"")]
-    public static ReadOnlySpan<byte> szOIDVerisign_PkiStatus => "2.16.840.1.113733.1.9.3\0"u8;
+    public static ReadOnlySpan<byte> szOIDVerisign_PkiStatus => "2.16.840.1.113733.1.9.3"u8;
 
     [NativeTypeName("#define szOIDVerisign_FailInfo \"2.16.840.1.113733.1.9.4\"")]
-    public static ReadOnlySpan<byte> szOIDVerisign_FailInfo => "2.16.840.1.113733.1.9.4\0"u8;
+    public static ReadOnlySpan<byte> szOIDVerisign_FailInfo => "2.16.840.1.113733.1.9.4"u8;
 
     [NativeTypeName("#define szOIDVerisign_SenderNonce \"2.16.840.1.113733.1.9.5\"")]
-    public static ReadOnlySpan<byte> szOIDVerisign_SenderNonce => "2.16.840.1.113733.1.9.5\0"u8;
+    public static ReadOnlySpan<byte> szOIDVerisign_SenderNonce => "2.16.840.1.113733.1.9.5"u8;
 
     [NativeTypeName("#define szOIDVerisign_RecipientNonce \"2.16.840.1.113733.1.9.6\"")]
-    public static ReadOnlySpan<byte> szOIDVerisign_RecipientNonce => "2.16.840.1.113733.1.9.6\0"u8;
+    public static ReadOnlySpan<byte> szOIDVerisign_RecipientNonce => "2.16.840.1.113733.1.9.6"u8;
 
     [NativeTypeName("#define szOIDVerisign_TransactionID \"2.16.840.1.113733.1.9.7\"")]
-    public static ReadOnlySpan<byte> szOIDVerisign_TransactionID => "2.16.840.1.113733.1.9.7\0"u8;
+    public static ReadOnlySpan<byte> szOIDVerisign_TransactionID => "2.16.840.1.113733.1.9.7"u8;
 
     [NativeTypeName("#define NETSCAPE_SSL_CLIENT_AUTH_CERT_TYPE 0x80")]
     public const int NETSCAPE_SSL_CLIENT_AUTH_CERT_TYPE = 0x80;

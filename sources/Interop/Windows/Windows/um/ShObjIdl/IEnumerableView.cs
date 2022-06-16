@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8C8BF236-1AEC-495F-9894-91D57C3C686F")]
 [NativeTypeName("struct IEnumerableView : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IEnumerableView : IEnumerableView.Interface, IHaveNativeGuid
+public unsafe partial struct IEnumerableView : IEnumerableView.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IEnumerableView;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IEnumerableView));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("88A05C00-F000-11CE-8350-444553540000")]
 [NativeTypeName("struct IShellLinkDual : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IShellLinkDual : IShellLinkDual.Interface, IHaveNativeGuid
+public unsafe partial struct IShellLinkDual : IShellLinkDual.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IShellLinkDual;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IShellLinkDual));
 
     public void** lpVtbl;
 

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='UIAnimationTimer.xml' path='doc/member[@name="UIAnimationTimer"]/*' />
 [Guid("BFCD4A0C-06B6-4384-B768-0DAA792C380E")]
-public partial struct UIAnimationTimer : IHaveNativeGuid
+public unsafe partial struct UIAnimationTimer : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_UIAnimationTimer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_UIAnimationTimer));
 }

@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IAudioClient2 : IAudioClient")]
 [NativeInheritance("IAudioClient")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IAudioClient2 : IAudioClient2.Interface, IHaveNativeGuid
+public unsafe partial struct IAudioClient2 : IAudioClient2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAudioClient2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAudioClient2));
 
     public void** lpVtbl;
 

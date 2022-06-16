@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IAdvancedMediaCaptureInitializationSettings : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IAdvancedMediaCaptureInitializationSettings : IAdvancedMediaCaptureInitializationSettings.Interface, IHaveNativeGuid
+public unsafe partial struct IAdvancedMediaCaptureInitializationSettings : IAdvancedMediaCaptureInitializationSettings.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAdvancedMediaCaptureInitializationSettings;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAdvancedMediaCaptureInitializationSettings));
 
     public void** lpVtbl;
 

@@ -2115,13 +2115,13 @@ public static unsafe partial class Windows
     public const int NEGOTIATE_MAX_PREFIX = 32;
 
     [NativeTypeName("#define SAM_PASSWORD_CHANGE_NOTIFY_ROUTINE \"PasswordChangeNotify\"")]
-    public static ReadOnlySpan<byte> SAM_PASSWORD_CHANGE_NOTIFY_ROUTINE => "PasswordChangeNotify\0"u8;
+    public static ReadOnlySpan<byte> SAM_PASSWORD_CHANGE_NOTIFY_ROUTINE => "PasswordChangeNotify"u8;
 
     [NativeTypeName("#define SAM_INIT_NOTIFICATION_ROUTINE \"InitializeChangeNotify\"")]
-    public static ReadOnlySpan<byte> SAM_INIT_NOTIFICATION_ROUTINE => "InitializeChangeNotify\0"u8;
+    public static ReadOnlySpan<byte> SAM_INIT_NOTIFICATION_ROUTINE => "InitializeChangeNotify"u8;
 
     [NativeTypeName("#define SAM_PASSWORD_FILTER_ROUTINE \"PasswordFilter\"")]
-    public static ReadOnlySpan<byte> SAM_PASSWORD_FILTER_ROUTINE => "PasswordFilter\0"u8;
+    public static ReadOnlySpan<byte> SAM_PASSWORD_FILTER_ROUTINE => "PasswordFilter"u8;
 
     [NativeTypeName("#define RtlGenRandom SystemFunction036")]
     public static delegate*<void*, uint, byte> RtlGenRandom => &SystemFunction036;
@@ -2151,7 +2151,7 @@ public static unsafe partial class Windows
     public const int KERBEROS_REVISION = 6;
 
     [NativeTypeName("#define MICROSOFT_KERBEROS_NAME_A \"Kerberos\"")]
-    public static ReadOnlySpan<byte> MICROSOFT_KERBEROS_NAME_A => "Kerberos\0"u8;
+    public static ReadOnlySpan<byte> MICROSOFT_KERBEROS_NAME_A => "Kerberos"u8;
 
     [NativeTypeName("#define MICROSOFT_KERBEROS_NAME_W L\"Kerberos\"")]
     public const string MICROSOFT_KERBEROS_NAME_W = "Kerberos";
@@ -2205,7 +2205,7 @@ public static unsafe partial class Windows
     public static delegate*<ushort*, ACL**, byte> AuditQueryGlobalSacl => &AuditQueryGlobalSaclW;
 
     [NativeTypeName("#define PKU2U_PACKAGE_NAME_A \"pku2u\"")]
-    public static ReadOnlySpan<byte> PKU2U_PACKAGE_NAME_A => "pku2u\0"u8;
+    public static ReadOnlySpan<byte> PKU2U_PACKAGE_NAME_A => "pku2u"u8;
 
     [NativeTypeName("#define PKU2U_PACKAGE_NAME L\"pku2u\"")]
     public const string PKU2U_PACKAGE_NAME = "pku2u";

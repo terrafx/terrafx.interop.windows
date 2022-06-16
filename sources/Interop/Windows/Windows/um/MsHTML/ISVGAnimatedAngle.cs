@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("305104D4-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ISVGAnimatedAngle : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct ISVGAnimatedAngle : ISVGAnimatedAngle.Interface, IHaveNativeGuid
+public unsafe partial struct ISVGAnimatedAngle : ISVGAnimatedAngle.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISVGAnimatedAngle;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISVGAnimatedAngle));
 
     public void** lpVtbl;
 

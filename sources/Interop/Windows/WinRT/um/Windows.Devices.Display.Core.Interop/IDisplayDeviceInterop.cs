@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("64338358-366A-471B-BD56-DD8EF48E439B")]
 [NativeTypeName("struct IDisplayDeviceInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDisplayDeviceInterop : IDisplayDeviceInterop.Interface, IHaveNativeGuid
+public unsafe partial struct IDisplayDeviceInterop : IDisplayDeviceInterop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDisplayDeviceInterop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDisplayDeviceInterop));
 
     public void** lpVtbl;
 

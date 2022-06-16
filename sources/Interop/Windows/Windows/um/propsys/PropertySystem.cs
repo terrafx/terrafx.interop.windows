@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='PropertySystem.xml' path='doc/member[@name="PropertySystem"]/*' />
 [Guid("B8967F85-58AE-4F46-9FB2-5D7904798F4B")]
-public partial struct PropertySystem : IHaveNativeGuid
+public unsafe partial struct PropertySystem : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_PropertySystem;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_PropertySystem));
 }

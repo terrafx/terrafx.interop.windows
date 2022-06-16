@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='RASProvider.xml' path='doc/member[@name="RASProvider"]/*' />
 [Guid("5537E283-B1E7-4EF8-9C6E-7AB0AFE5056D")]
-public partial struct RASProvider : IHaveNativeGuid
+public unsafe partial struct RASProvider : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_RASProvider;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_RASProvider));
 }

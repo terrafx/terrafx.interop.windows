@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("83C78B3C-D88B-4950-AA6E-22B8D22AABD3")]
 [NativeTypeName("struct ICorrelationVectorInformation : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorInformation.Interface, IHaveNativeGuid
+public unsafe partial struct ICorrelationVectorInformation : ICorrelationVectorInformation.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICorrelationVectorInformation;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICorrelationVectorInformation));
 
     public void** lpVtbl;
 

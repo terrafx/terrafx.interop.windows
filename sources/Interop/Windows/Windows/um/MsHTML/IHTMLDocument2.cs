@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("332C4425-26CB-11D0-B483-00C04FD90119")]
 [NativeTypeName("struct IHTMLDocument2 : IHTMLDocument")]
 [NativeInheritance("IHTMLDocument")]
-public unsafe partial struct IHTMLDocument2 : IHTMLDocument2.Interface, IHaveNativeGuid
+public unsafe partial struct IHTMLDocument2 : IHTMLDocument2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IHTMLDocument2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHTMLDocument2));
 
     public void** lpVtbl;
 

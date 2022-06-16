@@ -18,9 +18,9 @@ namespace TerraFX.Interop.WinRT;
 [NativeTypeName("struct ISwapChainPanelNative2 : ISwapChainPanelNative")]
 [NativeInheritance("ISwapChainPanelNative")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct ISwapChainPanelNative2 : ISwapChainPanelNative2.Interface, IHaveNativeGuid
+public unsafe partial struct ISwapChainPanelNative2 : ISwapChainPanelNative2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISwapChainPanelNative2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISwapChainPanelNative2));
 
     public void** lpVtbl;
 

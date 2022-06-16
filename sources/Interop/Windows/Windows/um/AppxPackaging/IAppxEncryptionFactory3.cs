@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IAppxEncryptionFactory3 : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct IAppxEncryptionFactory3 : IAppxEncryptionFactory3.Interface, IHaveNativeGuid
+public unsafe partial struct IAppxEncryptionFactory3 : IAppxEncryptionFactory3.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAppxEncryptionFactory3;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAppxEncryptionFactory3));
 
     public void** lpVtbl;
 

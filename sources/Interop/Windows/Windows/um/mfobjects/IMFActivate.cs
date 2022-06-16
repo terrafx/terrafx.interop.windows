@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("7FEE9E9A-4A89-47A6-899C-B6A53A70FB67")]
 [NativeTypeName("struct IMFActivate : IMFAttributes")]
 [NativeInheritance("IMFAttributes")]
-public unsafe partial struct IMFActivate : IMFActivate.Interface, IHaveNativeGuid
+public unsafe partial struct IMFActivate : IMFActivate.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFActivate;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFActivate));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("6BA74B98-BB74-4296-80D0-5F4256A99675")]
 [NativeTypeName("struct IAppxBundleManifestPackageInfo3 : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAppxBundleManifestPackageInfo3 : IAppxBundleManifestPackageInfo3.Interface, IHaveNativeGuid
+public unsafe partial struct IAppxBundleManifestPackageInfo3 : IAppxBundleManifestPackageInfo3.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAppxBundleManifestPackageInfo3;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAppxBundleManifestPackageInfo3));
 
     public void** lpVtbl;
 

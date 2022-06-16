@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8222C490-507B-4BEF-B3BD-41DCA7B5934C")]
 [NativeTypeName("struct IDiaStackWalkHelper2 : IDiaStackWalkHelper")]
 [NativeInheritance("IDiaStackWalkHelper")]
-public unsafe partial struct IDiaStackWalkHelper2 : IDiaStackWalkHelper2.Interface, IHaveNativeGuid
+public unsafe partial struct IDiaStackWalkHelper2 : IDiaStackWalkHelper2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDiaStackWalkHelper2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDiaStackWalkHelper2));
 
     public void** lpVtbl;
 

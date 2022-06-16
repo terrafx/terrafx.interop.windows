@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IAppxBundleManifestReader2 : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct IAppxBundleManifestReader2 : IAppxBundleManifestReader2.Interface, IHaveNativeGuid
+public unsafe partial struct IAppxBundleManifestReader2 : IAppxBundleManifestReader2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAppxBundleManifestReader2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAppxBundleManifestReader2));
 
     public void** lpVtbl;
 

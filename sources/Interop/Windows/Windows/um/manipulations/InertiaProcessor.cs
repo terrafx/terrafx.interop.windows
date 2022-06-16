@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='InertiaProcessor.xml' path='doc/member[@name="InertiaProcessor"]/*' />
 [Guid("ABB27087-4CE0-4E58-A0CB-E24DF96814BE")]
-public partial struct InertiaProcessor : IHaveNativeGuid
+public unsafe partial struct InertiaProcessor : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_InertiaProcessor;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_InertiaProcessor));
 }

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("D57C7288-D4AD-4768-BE02-9D969532D960")]
 [NativeTypeName("struct IFileOpenDialog : IFileDialog")]
 [NativeInheritance("IFileDialog")]
-public unsafe partial struct IFileOpenDialog : IFileOpenDialog.Interface, IHaveNativeGuid
+public unsafe partial struct IFileOpenDialog : IFileOpenDialog.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IFileOpenDialog;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFileOpenDialog));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("305104D1-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ISVGLengthList : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct ISVGLengthList : ISVGLengthList.Interface, IHaveNativeGuid
+public unsafe partial struct ISVGLengthList : ISVGLengthList.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISVGLengthList;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISVGLengthList));
 
     public void** lpVtbl;
 

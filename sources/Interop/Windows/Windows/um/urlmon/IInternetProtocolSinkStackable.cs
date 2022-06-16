@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("79EAC9F0-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IInternetProtocolSinkStackable : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolSinkStackable.Interface, IHaveNativeGuid
+public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolSinkStackable.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IInternetProtocolSinkStackable;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IInternetProtocolSinkStackable));
 
     public void** lpVtbl;
 

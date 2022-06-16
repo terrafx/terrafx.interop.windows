@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("0000000C-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IStream : ISequentialStream")]
 [NativeInheritance("ISequentialStream")]
-public unsafe partial struct IStream : IStream.Interface, IHaveNativeGuid
+public unsafe partial struct IStream : IStream.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IStream;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IStream));
 
     public void** lpVtbl;
 

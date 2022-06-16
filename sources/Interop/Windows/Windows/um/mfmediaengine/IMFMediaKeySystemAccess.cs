@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("AEC63FDA-7A97-4944-B35C-6C6DF8085CC3")]
 [NativeTypeName("struct IMFMediaKeySystemAccess : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.Interface, IHaveNativeGuid
+public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFMediaKeySystemAccess;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFMediaKeySystemAccess));
 
     public void** lpVtbl;
 

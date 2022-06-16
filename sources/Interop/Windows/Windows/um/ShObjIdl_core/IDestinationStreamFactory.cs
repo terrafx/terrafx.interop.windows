@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8A87781B-39A7-4A1F-AAB3-A39B9C34A7D9")]
 [NativeTypeName("struct IDestinationStreamFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDestinationStreamFactory : IDestinationStreamFactory.Interface, IHaveNativeGuid
+public unsafe partial struct IDestinationStreamFactory : IDestinationStreamFactory.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDestinationStreamFactory;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDestinationStreamFactory));
 
     public void** lpVtbl;
 

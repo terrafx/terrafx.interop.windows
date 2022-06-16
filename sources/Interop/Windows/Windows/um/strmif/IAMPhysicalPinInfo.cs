@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("F938C991-3029-11CF-8C44-00AA006B6814")]
 [NativeTypeName("struct IAMPhysicalPinInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMPhysicalPinInfo : IAMPhysicalPinInfo.Interface, IHaveNativeGuid
+public unsafe partial struct IAMPhysicalPinInfo : IAMPhysicalPinInfo.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMPhysicalPinInfo;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMPhysicalPinInfo));
 
     public void** lpVtbl;
 

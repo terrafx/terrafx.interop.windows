@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFDeviceTransformCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0.17134.0")]
-public unsafe partial struct IMFDeviceTransformCallback : IMFDeviceTransformCallback.Interface, IHaveNativeGuid
+public unsafe partial struct IMFDeviceTransformCallback : IMFDeviceTransformCallback.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFDeviceTransformCallback;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFDeviceTransformCallback));
 
     public void** lpVtbl;
 

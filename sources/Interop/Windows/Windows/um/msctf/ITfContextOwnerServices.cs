@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("B23EB630-3E1C-11D3-A745-0050040AB407")]
 [NativeTypeName("struct ITfContextOwnerServices : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.Interface, IHaveNativeGuid
+public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfContextOwnerServices;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfContextOwnerServices));
 
     public void** lpVtbl;
 

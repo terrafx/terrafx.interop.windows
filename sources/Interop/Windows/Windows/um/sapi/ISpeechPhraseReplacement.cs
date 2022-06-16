@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("2890A410-53A7-4FB5-94EC-06D4998E3D02")]
 [NativeTypeName("struct ISpeechPhraseReplacement : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct ISpeechPhraseReplacement : ISpeechPhraseReplacement.Interface, IHaveNativeGuid
+public unsafe partial struct ISpeechPhraseReplacement : ISpeechPhraseReplacement.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpeechPhraseReplacement;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpeechPhraseReplacement));
 
     public void** lpVtbl;
 

@@ -17,9 +17,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IPlayToSourceClassFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IPlayToSourceClassFactory : IPlayToSourceClassFactory.Interface, IHaveNativeGuid
+public unsafe partial struct IPlayToSourceClassFactory : IPlayToSourceClassFactory.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPlayToSourceClassFactory;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPlayToSourceClassFactory));
 
     public void** lpVtbl;
 

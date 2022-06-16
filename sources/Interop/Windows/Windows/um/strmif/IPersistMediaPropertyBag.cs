@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("5738E040-B67F-11D0-BD4D-00A0C911CE86")]
 [NativeTypeName("struct IPersistMediaPropertyBag : IPersist")]
 [NativeInheritance("IPersist")]
-public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag.Interface, IHaveNativeGuid
+public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPersistMediaPropertyBag;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPersistMediaPropertyBag));
 
     public void** lpVtbl;
 

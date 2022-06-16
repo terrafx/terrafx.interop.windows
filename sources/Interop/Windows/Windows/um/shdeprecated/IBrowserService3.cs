@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("27D7CE21-762D-48F3-86F3-40E2FD3749C4")]
 [NativeTypeName("struct IBrowserService3 : IBrowserService2")]
 [NativeInheritance("IBrowserService2")]
-public unsafe partial struct IBrowserService3 : IBrowserService3.Interface, IHaveNativeGuid
+public unsafe partial struct IBrowserService3 : IBrowserService3.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IBrowserService3;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IBrowserService3));
 
     public void** lpVtbl;
 

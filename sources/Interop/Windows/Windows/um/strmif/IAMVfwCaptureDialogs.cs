@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("D8D715A0-6E5E-11D0-B3F0-00AA003761C5")]
 [NativeTypeName("struct IAMVfwCaptureDialogs : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMVfwCaptureDialogs : IAMVfwCaptureDialogs.Interface, IHaveNativeGuid
+public unsafe partial struct IAMVfwCaptureDialogs : IAMVfwCaptureDialogs.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMVfwCaptureDialogs;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMVfwCaptureDialogs));
 
     public void** lpVtbl;
 

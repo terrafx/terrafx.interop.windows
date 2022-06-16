@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("FBE5A32D-A497-4B61-BB85-97B1A848A6E3")]
 [NativeTypeName("struct IMFSourceResolver : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFSourceResolver : IMFSourceResolver.Interface, IHaveNativeGuid
+public unsafe partial struct IMFSourceResolver : IMFSourceResolver.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFSourceResolver;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFSourceResolver));
 
     public void** lpVtbl;
 

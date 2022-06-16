@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SpMMAudioIn.xml' path='doc/member[@name="SpMMAudioIn"]/*' />
 [Guid("CF3D2E50-53F2-11D2-960C-00C04F8EE628")]
-public partial struct SpMMAudioIn : IHaveNativeGuid
+public unsafe partial struct SpMMAudioIn : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_SpMMAudioIn;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_SpMMAudioIn));
 }

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("72380D55-8D2B-43A3-8513-2B6EF31434E9")]
 [NativeTypeName("struct IProcessInitControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IProcessInitControl : IProcessInitControl.Interface, IHaveNativeGuid
+public unsafe partial struct IProcessInitControl : IProcessInitControl.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IProcessInitControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IProcessInitControl));
 
     public void** lpVtbl;
 

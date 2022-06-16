@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("41E64AAE-98C0-4239-8E95-A330DD6AA18B")]
 [NativeTypeName("struct ICompositionDrawingSurfaceInterop2 : ICompositionDrawingSurfaceInterop")]
 [NativeInheritance("ICompositionDrawingSurfaceInterop")]
-public unsafe partial struct ICompositionDrawingSurfaceInterop2 : ICompositionDrawingSurfaceInterop2.Interface, IHaveNativeGuid
+public unsafe partial struct ICompositionDrawingSurfaceInterop2 : ICompositionDrawingSurfaceInterop2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICompositionDrawingSurfaceInterop2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICompositionDrawingSurfaceInterop2));
 
     public void** lpVtbl;
 

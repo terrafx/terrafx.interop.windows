@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='DOMProgressEvent.xml' path='doc/member[@name="DOMProgressEvent"]/*' />
 [Guid("3051071F-98B5-11CF-BB82-00AA00BDCE0B")]
-public partial struct DOMProgressEvent : IHaveNativeGuid
+public unsafe partial struct DOMProgressEvent : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_DOMProgressEvent;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_DOMProgressEvent));
 }

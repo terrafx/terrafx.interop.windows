@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='AccDictionary.xml' path='doc/member[@name="AccDictionary"]/*' />
 [Guid("6572EE16-5FE5-4331-BB6D-76A49C56E423")]
-public partial struct AccDictionary : IHaveNativeGuid
+public unsafe partial struct AccDictionary : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_AccDictionary;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_AccDictionary));
 }

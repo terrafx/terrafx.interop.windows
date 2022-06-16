@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("26D709AC-F70B-4421-A96F-D2878FAFB00D")]
 [NativeTypeName("struct IMachineGlobalObjectTable : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMachineGlobalObjectTable : IMachineGlobalObjectTable.Interface, IHaveNativeGuid
+public unsafe partial struct IMachineGlobalObjectTable : IMachineGlobalObjectTable.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMachineGlobalObjectTable;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMachineGlobalObjectTable));
 
     public void** lpVtbl;
 

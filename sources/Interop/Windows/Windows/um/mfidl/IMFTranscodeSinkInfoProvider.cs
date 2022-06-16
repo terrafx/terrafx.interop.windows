@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8CFFCD2E-5A03-4A3A-AFF7-EDCD107C620E")]
 [NativeTypeName("struct IMFTranscodeSinkInfoProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFTranscodeSinkInfoProvider : IMFTranscodeSinkInfoProvider.Interface, IHaveNativeGuid
+public unsafe partial struct IMFTranscodeSinkInfoProvider : IMFTranscodeSinkInfoProvider.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFTranscodeSinkInfoProvider;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFTranscodeSinkInfoProvider));
 
     public void** lpVtbl;
 

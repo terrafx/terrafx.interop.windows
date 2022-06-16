@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("C65C2B0A-1150-4D7A-AFCC-E05BF3DEE81E")]
 [NativeTypeName("struct IDiaEnumTables : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDiaEnumTables : IDiaEnumTables.Interface, IHaveNativeGuid
+public unsafe partial struct IDiaEnumTables : IDiaEnumTables.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDiaEnumTables;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDiaEnumTables));
 
     public void** lpVtbl;
 

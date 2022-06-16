@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("689F1F85-C72E-4E33-8F19-85754EFD5ACE")]
 [NativeTypeName("struct ID2D1DrawingStateBlock1 : ID2D1DrawingStateBlock")]
 [NativeInheritance("ID2D1DrawingStateBlock")]
-public unsafe partial struct ID2D1DrawingStateBlock1 : ID2D1DrawingStateBlock1.Interface, IHaveNativeGuid
+public unsafe partial struct ID2D1DrawingStateBlock1 : ID2D1DrawingStateBlock1.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1DrawingStateBlock1;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1DrawingStateBlock1));
 
     public void** lpVtbl;
 

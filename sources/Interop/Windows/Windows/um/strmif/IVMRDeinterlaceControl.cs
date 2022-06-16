@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("BB057577-0DB8-4E6A-87A7-1A8C9A505A0F")]
 [NativeTypeName("struct IVMRDeinterlaceControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IVMRDeinterlaceControl : IVMRDeinterlaceControl.Interface, IHaveNativeGuid
+public unsafe partial struct IVMRDeinterlaceControl : IVMRDeinterlaceControl.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IVMRDeinterlaceControl;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVMRDeinterlaceControl));
 
     public void** lpVtbl;
 

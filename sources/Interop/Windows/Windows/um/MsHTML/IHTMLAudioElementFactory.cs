@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("305107EB-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLAudioElementFactory : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IHTMLAudioElementFactory : IHTMLAudioElementFactory.Interface, IHaveNativeGuid
+public unsafe partial struct IHTMLAudioElementFactory : IHTMLAudioElementFactory.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IHTMLAudioElementFactory;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHTMLAudioElementFactory));
 
     public void** lpVtbl;
 

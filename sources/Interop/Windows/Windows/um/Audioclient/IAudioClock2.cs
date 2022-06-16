@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("6F49FF73-6727-49AC-A008-D98CF5E70048")]
 [NativeTypeName("struct IAudioClock2 : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAudioClock2 : IAudioClock2.Interface, IHaveNativeGuid
+public unsafe partial struct IAudioClock2 : IAudioClock2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAudioClock2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAudioClock2));
 
     public void** lpVtbl;
 

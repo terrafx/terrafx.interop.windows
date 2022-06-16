@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("00000017-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IActivationFilter : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IActivationFilter : IActivationFilter.Interface, IHaveNativeGuid
+public unsafe partial struct IActivationFilter : IActivationFilter.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IActivationFilter;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IActivationFilter));
 
     public void** lpVtbl;
 

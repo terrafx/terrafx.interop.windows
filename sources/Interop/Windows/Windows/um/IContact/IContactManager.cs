@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("AD553D98-DEB1-474A-8E17-FC0C2075B738")]
 [NativeTypeName("struct IContactManager : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IContactManager : IContactManager.Interface, IHaveNativeGuid
+public unsafe partial struct IContactManager : IContactManager.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IContactManager;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IContactManager));
 
     public void** lpVtbl;
 

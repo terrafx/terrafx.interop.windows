@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("D2FFD834-958B-426D-8470-2A13879C6A91")]
 [NativeTypeName("struct IBurnVerification : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IBurnVerification : IBurnVerification.Interface, IHaveNativeGuid
+public unsafe partial struct IBurnVerification : IBurnVerification.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IBurnVerification;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IBurnVerification));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("274A7DEA-D771-4095-ABBD-8DF7ABD23CE3")]
 [NativeTypeName("struct IUIAnimationTimerEventHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IUIAnimationTimerEventHandler : IUIAnimationTimerEventHandler.Interface, IHaveNativeGuid
+public unsafe partial struct IUIAnimationTimerEventHandler : IUIAnimationTimerEventHandler.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IUIAnimationTimerEventHandler;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUIAnimationTimerEventHandler));
 
     public void** lpVtbl;
 

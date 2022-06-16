@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("67EFED0E-E827-4408-B493-78F3982B685C")]
 [NativeTypeName("struct IParseAndCreateItem : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IParseAndCreateItem : IParseAndCreateItem.Interface, IHaveNativeGuid
+public unsafe partial struct IParseAndCreateItem : IParseAndCreateItem.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IParseAndCreateItem;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IParseAndCreateItem));
 
     public void** lpVtbl;
 

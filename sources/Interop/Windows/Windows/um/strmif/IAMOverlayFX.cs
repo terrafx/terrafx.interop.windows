@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("62FAE250-7E65-4460-BFC9-6398B322073C")]
 [NativeTypeName("struct IAMOverlayFX : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMOverlayFX : IAMOverlayFX.Interface, IHaveNativeGuid
+public unsafe partial struct IAMOverlayFX : IAMOverlayFX.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMOverlayFX;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMOverlayFX));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("30510808-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IDeveloperConsoleMessageReceiver : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDeveloperConsoleMessageReceiver : IDeveloperConsoleMessageReceiver.Interface, IHaveNativeGuid
+public unsafe partial struct IDeveloperConsoleMessageReceiver : IDeveloperConsoleMessageReceiver.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDeveloperConsoleMessageReceiver;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDeveloperConsoleMessageReceiver));
 
     public void** lpVtbl;
 

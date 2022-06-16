@@ -12,9 +12,9 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='IUnknown.xml' path='doc/member[@name="IUnknown"]/*' />
 [Guid("00000000-0000-0000-C000-000000000046")]
-public unsafe partial struct IUnknown : IUnknown.Interface, IHaveNativeGuid
+public unsafe partial struct IUnknown : IUnknown.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IUnknown;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUnknown));
 
     public void** lpVtbl;
 
@@ -44,7 +44,7 @@ public unsafe partial struct IUnknown : IUnknown.Interface, IHaveNativeGuid
         return ((delegate* unmanaged<IUnknown*, uint>)(lpVtbl[2]))((IUnknown*)Unsafe.AsPointer(ref this));
     }
 
-    public interface Interface : IHaveNativeGuid
+    public interface Interface : INativeGuid
     {
         [VtblIndex(0)]
         HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject);

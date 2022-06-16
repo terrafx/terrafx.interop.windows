@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='HTMLEmbed.xml' path='doc/member[@name="HTMLEmbed"]/*' />
 [Guid("3050F25D-98B5-11CF-BB82-00AA00BDCE0B")]
-public partial struct HTMLEmbed : IHaveNativeGuid
+public unsafe partial struct HTMLEmbed : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_HTMLEmbed;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_HTMLEmbed));
 }

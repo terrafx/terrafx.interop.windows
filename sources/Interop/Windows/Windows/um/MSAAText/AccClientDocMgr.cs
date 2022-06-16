@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='AccClientDocMgr.xml' path='doc/member[@name="AccClientDocMgr"]/*' />
 [Guid("FC48CC30-4F3E-4FA1-803B-AD0E196A83B1")]
-public partial struct AccClientDocMgr : IHaveNativeGuid
+public unsafe partial struct AccClientDocMgr : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_AccClientDocMgr;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_AccClientDocMgr));
 }

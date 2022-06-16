@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("26F496A0-7F38-45FB-88F7-FAAABE67DD59")]
 [NativeTypeName("struct ISwapChainInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ISwapChainInterop : ISwapChainInterop.Interface, IHaveNativeGuid
+public unsafe partial struct ISwapChainInterop : ISwapChainInterop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISwapChainInterop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISwapChainInterop));
 
     public void** lpVtbl;
 

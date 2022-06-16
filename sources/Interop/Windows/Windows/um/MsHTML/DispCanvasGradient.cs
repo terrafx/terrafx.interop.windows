@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3059008C-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct DispCanvasGradient : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct DispCanvasGradient : DispCanvasGradient.Interface, IHaveNativeGuid
+public unsafe partial struct DispCanvasGradient : DispCanvasGradient.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_DispCanvasGradient;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_DispCanvasGradient));
 
     public void** lpVtbl;
 

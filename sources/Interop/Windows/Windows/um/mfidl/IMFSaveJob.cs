@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("E9931663-80BF-4C6E-98AF-5DCF58747D1F")]
 [NativeTypeName("struct IMFSaveJob : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface, IHaveNativeGuid
+public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFSaveJob;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFSaveJob));
 
     public void** lpVtbl;
 

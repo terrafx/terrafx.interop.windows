@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("4CD19ADA-25A5-4A32-B3B7-347BEE5BE36B")]
 [NativeTypeName("struct IStartMenuPinnedList : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IStartMenuPinnedList : IStartMenuPinnedList.Interface, IHaveNativeGuid
+public unsafe partial struct IStartMenuPinnedList : IStartMenuPinnedList.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IStartMenuPinnedList;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IStartMenuPinnedList));
 
     public void** lpVtbl;
 

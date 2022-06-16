@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFCdmSuspendNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct IMFCdmSuspendNotify : IMFCdmSuspendNotify.Interface, IHaveNativeGuid
+public unsafe partial struct IMFCdmSuspendNotify : IMFCdmSuspendNotify.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFCdmSuspendNotify;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFCdmSuspendNotify));
 
     public void** lpVtbl;
 

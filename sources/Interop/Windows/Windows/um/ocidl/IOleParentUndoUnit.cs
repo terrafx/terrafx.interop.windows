@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("A1FAF330-EF97-11CE-9BC9-00AA00608E01")]
 [NativeTypeName("struct IOleParentUndoUnit : IOleUndoUnit")]
 [NativeInheritance("IOleUndoUnit")]
-public unsafe partial struct IOleParentUndoUnit : IOleParentUndoUnit.Interface, IHaveNativeGuid
+public unsafe partial struct IOleParentUndoUnit : IOleParentUndoUnit.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IOleParentUndoUnit;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IOleParentUndoUnit));
 
     public void** lpVtbl;
 

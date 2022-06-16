@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 public static partial class XINPUT
 {
     [NativeTypeName("#define XINPUT_DLL_A \"xinput1_4.dll\"")]
-    public static ReadOnlySpan<byte> XINPUT_DLL_A => "xinput1_4.dll\0"u8;
+    public static ReadOnlySpan<byte> XINPUT_DLL_A => "xinput1_4.dll"u8;
 
     [NativeTypeName("#define XINPUT_DLL_W L\"xinput1_4.dll\"")]
     public const string XINPUT_DLL_W = "xinput1_4.dll";

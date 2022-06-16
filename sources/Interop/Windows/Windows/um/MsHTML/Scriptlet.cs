@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='Scriptlet.xml' path='doc/member[@name="Scriptlet"]/*' />
 [Guid("AE24FDAE-03C6-11D1-8B76-0080C744F389")]
-public partial struct Scriptlet : IHaveNativeGuid
+public unsafe partial struct Scriptlet : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_Scriptlet;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_Scriptlet));
 }

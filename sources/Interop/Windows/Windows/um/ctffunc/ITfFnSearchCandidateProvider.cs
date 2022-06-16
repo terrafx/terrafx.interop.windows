@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct ITfFnSearchCandidateProvider : ITfFunction")]
 [NativeInheritance("ITfFunction")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct ITfFnSearchCandidateProvider : ITfFnSearchCandidateProvider.Interface, IHaveNativeGuid
+public unsafe partial struct ITfFnSearchCandidateProvider : ITfFnSearchCandidateProvider.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfFnSearchCandidateProvider;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfFnSearchCandidateProvider));
 
     public void** lpVtbl;
 

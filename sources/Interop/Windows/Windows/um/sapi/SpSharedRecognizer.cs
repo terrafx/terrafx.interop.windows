@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SpSharedRecognizer.xml' path='doc/member[@name="SpSharedRecognizer"]/*' />
 [Guid("3BEE4890-4FE9-4A37-8C1E-5E7E12791C1F")]
-public partial struct SpSharedRecognizer : IHaveNativeGuid
+public unsafe partial struct SpSharedRecognizer : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_SpSharedRecognizer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_SpSharedRecognizer));
 }

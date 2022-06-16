@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncVideoNoOfFieldsToSkip.xml' path='doc/member[@name="CODECAPI_AVEncVideoNoOfFieldsToSkip"]/*' />
 [Guid("A97E1240-1427-4C16-A7F7-3DCFD8BA4CC5")]
-public partial struct CODECAPI_AVEncVideoNoOfFieldsToSkip : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncVideoNoOfFieldsToSkip : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncVideoNoOfFieldsToSkip;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncVideoNoOfFieldsToSkip));
 }

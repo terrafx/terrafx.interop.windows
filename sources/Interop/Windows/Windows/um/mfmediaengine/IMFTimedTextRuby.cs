@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("76C6A6F5-4955-4DE5-B27B-14B734CC14B4")]
 [NativeTypeName("struct IMFTimedTextRuby : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFTimedTextRuby : IMFTimedTextRuby.Interface, IHaveNativeGuid
+public unsafe partial struct IMFTimedTextRuby : IMFTimedTextRuby.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFTimedTextRuby;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFTimedTextRuby));
 
     public void** lpVtbl;
 

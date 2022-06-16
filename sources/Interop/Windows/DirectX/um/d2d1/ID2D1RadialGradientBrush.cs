@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("2CD906AC-12E2-11DC-9FED-001143A055F9")]
 [NativeTypeName("struct ID2D1RadialGradientBrush : ID2D1Brush")]
 [NativeInheritance("ID2D1Brush")]
-public unsafe partial struct ID2D1RadialGradientBrush : ID2D1RadialGradientBrush.Interface, IHaveNativeGuid
+public unsafe partial struct ID2D1RadialGradientBrush : ID2D1RadialGradientBrush.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID2D1RadialGradientBrush;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1RadialGradientBrush));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("00675040-6908-45F8-86A3-49C7DFD6D9AD")]
 [NativeTypeName("struct IWICPersistStream : IPersistStream")]
 [NativeInheritance("IPersistStream")]
-public unsafe partial struct IWICPersistStream : IWICPersistStream.Interface, IHaveNativeGuid
+public unsafe partial struct IWICPersistStream : IWICPersistStream.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWICPersistStream;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWICPersistStream));
 
     public void** lpVtbl;
 

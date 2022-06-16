@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("D5F569D0-593B-101A-B569-08002B2DBF7A")]
 [NativeTypeName("struct IPSFactoryBuffer : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IPSFactoryBuffer : IPSFactoryBuffer.Interface, IHaveNativeGuid
+public unsafe partial struct IPSFactoryBuffer : IPSFactoryBuffer.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPSFactoryBuffer;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPSFactoryBuffer));
 
     public void** lpVtbl;
 

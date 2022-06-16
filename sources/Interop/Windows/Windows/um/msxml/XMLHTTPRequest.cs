@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='XMLHTTPRequest.xml' path='doc/member[@name="XMLHTTPRequest"]/*' />
 [Guid("ED8C108E-4349-11D2-91A4-00C04F7969E8")]
-public partial struct XMLHTTPRequest : IHaveNativeGuid
+public unsafe partial struct XMLHTTPRequest : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref CLSID_XMLHTTPRequest;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_XMLHTTPRequest));
 }

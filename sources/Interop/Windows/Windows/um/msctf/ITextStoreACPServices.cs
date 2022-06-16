@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("AA80E901-2021-11D2-93E0-0060B067B86E")]
 [NativeTypeName("struct ITextStoreACPServices : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITextStoreACPServices : ITextStoreACPServices.Interface, IHaveNativeGuid
+public unsafe partial struct ITextStoreACPServices : ITextStoreACPServices.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITextStoreACPServices;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITextStoreACPServices));
 
     public void** lpVtbl;
 

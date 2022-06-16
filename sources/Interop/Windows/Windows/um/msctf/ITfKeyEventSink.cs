@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("AA80E7F5-2021-11D2-93E0-0060B067B86E")]
 [NativeTypeName("struct ITfKeyEventSink : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface, IHaveNativeGuid
+public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfKeyEventSink;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfKeyEventSink));
 
     public void** lpVtbl;
 

@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("9CA31010-1484-4587-B26B-DDDF9F9CAECD")]
 [NativeTypeName("struct IPrinting3DManagerInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IPrinting3DManagerInterop : IPrinting3DManagerInterop.Interface, IHaveNativeGuid
+public unsafe partial struct IPrinting3DManagerInterop : IPrinting3DManagerInterop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPrinting3DManagerInterop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPrinting3DManagerInterop));
 
     public void** lpVtbl;
 

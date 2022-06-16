@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("C62D9C91-7458-47F6-862D-1EF86FB0B278")]
 [NativeTypeName("struct ISpeechAudioStatus : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct ISpeechAudioStatus : ISpeechAudioStatus.Interface, IHaveNativeGuid
+public unsafe partial struct ISpeechAudioStatus : ISpeechAudioStatus.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISpeechAudioStatus;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpeechAudioStatus));
 
     public void** lpVtbl;
 

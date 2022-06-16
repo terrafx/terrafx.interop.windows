@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("035F3AB4-482E-4E50-B41F-8A7F8BD8960B")]
 [NativeTypeName("struct IDXGIResource : IDXGIDeviceSubObject")]
 [NativeInheritance("IDXGIDeviceSubObject")]
-public unsafe partial struct IDXGIResource : IDXGIResource.Interface, IHaveNativeGuid
+public unsafe partial struct IDXGIResource : IDXGIResource.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDXGIResource;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDXGIResource));
 
     public void** lpVtbl;
 

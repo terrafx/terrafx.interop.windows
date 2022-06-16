@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("151D69F0-86F4-4674-B721-56911E797F47")]
 [NativeTypeName("struct ITfReverseConversionList : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList.Interface, IHaveNativeGuid
+public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ITfReverseConversionList;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfReverseConversionList));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F690-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHighlightSegment : ISegment")]
 [NativeInheritance("ISegment")]
-public unsafe partial struct IHighlightSegment : IHighlightSegment.Interface, IHaveNativeGuid
+public unsafe partial struct IHighlightSegment : IHighlightSegment.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IHighlightSegment;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHighlightSegment));
 
     public void** lpVtbl;
 

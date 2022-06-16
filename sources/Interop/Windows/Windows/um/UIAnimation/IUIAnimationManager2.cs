@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("D8B6F7D4-4109-4D3F-ACEE-879926968CB1")]
 [NativeTypeName("struct IUIAnimationManager2 : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interface, IHaveNativeGuid
+public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IUIAnimationManager2;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUIAnimationManager2));
 
     public void** lpVtbl;
 

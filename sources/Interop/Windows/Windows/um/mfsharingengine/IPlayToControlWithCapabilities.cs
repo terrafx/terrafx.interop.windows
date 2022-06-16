@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IPlayToControlWithCapabilities : IPlayToControl")]
 [NativeInheritance("IPlayToControl")]
 [SupportedOSPlatform("windows8.1")]
-public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWithCapabilities.Interface, IHaveNativeGuid
+public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWithCapabilities.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IPlayToControlWithCapabilities;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPlayToControlWithCapabilities));
 
     public void** lpVtbl;
 

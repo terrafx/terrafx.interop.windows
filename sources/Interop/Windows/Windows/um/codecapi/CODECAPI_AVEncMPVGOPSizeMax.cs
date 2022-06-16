@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncMPVGOPSizeMax.xml' path='doc/member[@name="CODECAPI_AVEncMPVGOPSizeMax"]/*' />
 [Guid("FE7DE4C4-1936-4FE2-BDF7-1F18CA1D001F")]
-public partial struct CODECAPI_AVEncMPVGOPSizeMax : IHaveNativeGuid
+public unsafe partial struct CODECAPI_AVEncMPVGOPSizeMax : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_CODECAPI_AVEncMPVGOPSizeMax;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncMPVGOPSizeMax));
 }

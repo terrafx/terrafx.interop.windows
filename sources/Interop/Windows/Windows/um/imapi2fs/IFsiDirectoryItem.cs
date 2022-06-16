@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("2C941FDC-975B-59BE-A960-9A2A262853A5")]
 [NativeTypeName("struct IFsiDirectoryItem : IFsiItem")]
 [NativeInheritance("IFsiItem")]
-public unsafe partial struct IFsiDirectoryItem : IFsiDirectoryItem.Interface, IHaveNativeGuid
+public unsafe partial struct IFsiDirectoryItem : IFsiDirectoryItem.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IFsiDirectoryItem;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFsiDirectoryItem));
 
     public void** lpVtbl;
 

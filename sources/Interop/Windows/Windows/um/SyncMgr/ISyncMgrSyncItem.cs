@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("B20B24CE-2593-4F04-BD8B-7AD6C45051CD")]
 [NativeTypeName("struct ISyncMgrSyncItem : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface, IHaveNativeGuid
+public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISyncMgrSyncItem;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISyncMgrSyncItem));
 
     public void** lpVtbl;
 

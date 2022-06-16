@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("11C4B4A0-B467-4EAA-A1A6-B961D8D0ED79")]
 [NativeTypeName("struct IMLOperatorKernel : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMLOperatorKernel : IMLOperatorKernel.Interface, IHaveNativeGuid
+public unsafe partial struct IMLOperatorKernel : IMLOperatorKernel.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMLOperatorKernel;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMLOperatorKernel));
 
     public void** lpVtbl;
 

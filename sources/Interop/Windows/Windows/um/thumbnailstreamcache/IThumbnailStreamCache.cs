@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IThumbnailStreamCache : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct IThumbnailStreamCache : IThumbnailStreamCache.Interface, IHaveNativeGuid
+public unsafe partial struct IThumbnailStreamCache : IThumbnailStreamCache.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IThumbnailStreamCache;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IThumbnailStreamCache));
 
     public void** lpVtbl;
 

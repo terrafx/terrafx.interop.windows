@@ -13,7 +13,7 @@ public static partial class D3DCOMPILER
     public const string D3DCOMPILER_DLL_W = "d3dcompiler_47.dll";
 
     [NativeTypeName("#define D3DCOMPILER_DLL_A \"d3dcompiler_47.dll\"")]
-    public static ReadOnlySpan<byte> D3DCOMPILER_DLL_A => "d3dcompiler_47.dll\0"u8;
+    public static ReadOnlySpan<byte> D3DCOMPILER_DLL_A => "d3dcompiler_47.dll"u8;
 
     [NativeTypeName("#define D3DCOMPILER_DLL D3DCOMPILER_DLL_W")]
     public const string D3DCOMPILER_DLL = "d3dcompiler_47.dll";

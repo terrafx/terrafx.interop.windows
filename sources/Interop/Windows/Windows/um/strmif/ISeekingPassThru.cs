@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("36B73883-C2C8-11CF-8B46-00805F6CEF60")]
 [NativeTypeName("struct ISeekingPassThru : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ISeekingPassThru : ISeekingPassThru.Interface, IHaveNativeGuid
+public unsafe partial struct ISeekingPassThru : ISeekingPassThru.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISeekingPassThru;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISeekingPassThru));
 
     public void** lpVtbl;
 

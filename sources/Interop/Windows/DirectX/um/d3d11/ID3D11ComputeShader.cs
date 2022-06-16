@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("4F5B196E-C2BD-495E-BD01-1FDED38E4969")]
 [NativeTypeName("struct ID3D11ComputeShader : ID3D11DeviceChild")]
 [NativeInheritance("ID3D11DeviceChild")]
-public unsafe partial struct ID3D11ComputeShader : ID3D11ComputeShader.Interface, IHaveNativeGuid
+public unsafe partial struct ID3D11ComputeShader : ID3D11ComputeShader.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D11ComputeShader;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D11ComputeShader));
 
     public void** lpVtbl;
 

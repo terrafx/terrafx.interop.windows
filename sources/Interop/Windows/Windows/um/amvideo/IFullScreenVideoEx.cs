@@ -5,14 +5,19 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IFullScreenVideoEx.xml' path='doc/member[@name="IFullScreenVideoEx"]/*' />
+[Guid("53479470-F1DD-11CF-BC42-00AA00AC74F6")]
 [NativeTypeName("struct IFullScreenVideoEx : IFullScreenVideo")]
 [NativeInheritance("IFullScreenVideo")]
-public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
+public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFullScreenVideoEx));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

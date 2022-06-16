@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("C6E13360-30AC-11D0-A18C-00A0C9118956")]
 [NativeTypeName("struct IAMVideoProcAmp : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMVideoProcAmp : IAMVideoProcAmp.Interface, IHaveNativeGuid
+public unsafe partial struct IAMVideoProcAmp : IAMVideoProcAmp.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAMVideoProcAmp;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMVideoProcAmp));
 
     public void** lpVtbl;
 

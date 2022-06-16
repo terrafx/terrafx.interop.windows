@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("8D19C834-8879-11D1-83E9-00C04FC2C6D4")]
 [NativeTypeName("struct IOplockStorage : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IOplockStorage : IOplockStorage.Interface, IHaveNativeGuid
+public unsafe partial struct IOplockStorage : IOplockStorage.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IOplockStorage;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IOplockStorage));
 
     public void** lpVtbl;
 

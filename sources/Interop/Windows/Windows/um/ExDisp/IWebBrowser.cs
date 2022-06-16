@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("EAB22AC1-30C1-11CF-A7EB-0000C05BAE0B")]
 [NativeTypeName("struct IWebBrowser : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IWebBrowser : IWebBrowser.Interface, IHaveNativeGuid
+public unsafe partial struct IWebBrowser : IWebBrowser.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWebBrowser;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWebBrowser));
 
     public void** lpVtbl;
 

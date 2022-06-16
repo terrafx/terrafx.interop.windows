@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3CD141F4-3C6A-11D2-BCAA-00C04FD929DB")]
 [NativeTypeName("struct IAutoCompleteDropDown : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAutoCompleteDropDown : IAutoCompleteDropDown.Interface, IHaveNativeGuid
+public unsafe partial struct IAutoCompleteDropDown : IAutoCompleteDropDown.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAutoCompleteDropDown;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAutoCompleteDropDown));
 
     public void** lpVtbl;
 

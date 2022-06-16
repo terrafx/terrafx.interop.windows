@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("41B68150-904C-4E17-A0BA-A438182E359D")]
 [NativeTypeName("struct IZoomEvents : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IZoomEvents : IZoomEvents.Interface, IHaveNativeGuid
+public unsafe partial struct IZoomEvents : IZoomEvents.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IZoomEvents;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IZoomEvents));
 
     public void** lpVtbl;
 

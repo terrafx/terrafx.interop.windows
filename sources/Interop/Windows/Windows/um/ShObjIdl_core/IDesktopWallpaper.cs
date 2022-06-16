@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("B92B56A9-8B55-4E14-9A89-0199BBB6F93B")]
 [NativeTypeName("struct IDesktopWallpaper : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface, IHaveNativeGuid
+public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IDesktopWallpaper;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDesktopWallpaper));
 
     public void** lpVtbl;
 

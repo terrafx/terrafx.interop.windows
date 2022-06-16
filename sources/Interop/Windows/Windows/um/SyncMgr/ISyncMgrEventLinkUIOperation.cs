@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("64522E52-848B-4015-89CE-5A36F00B94FF")]
 [NativeTypeName("struct ISyncMgrEventLinkUIOperation : ISyncMgrUIOperation")]
 [NativeInheritance("ISyncMgrUIOperation")]
-public unsafe partial struct ISyncMgrEventLinkUIOperation : ISyncMgrEventLinkUIOperation.Interface, IHaveNativeGuid
+public unsafe partial struct ISyncMgrEventLinkUIOperation : ISyncMgrEventLinkUIOperation.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISyncMgrEventLinkUIOperation;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISyncMgrEventLinkUIOperation));
 
     public void** lpVtbl;
 

@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IAccessibilityDockingService : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IAccessibilityDockingService : IAccessibilityDockingService.Interface, IHaveNativeGuid
+public unsafe partial struct IAccessibilityDockingService : IAccessibilityDockingService.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IAccessibilityDockingService;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAccessibilityDockingService));
 
     public void** lpVtbl;
 

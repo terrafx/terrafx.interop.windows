@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("B196B285-BAB4-101A-B69C-00AA00341D07")]
 [NativeTypeName("struct IEnumConnectionPoints : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IEnumConnectionPoints : IEnumConnectionPoints.Interface, IHaveNativeGuid
+public unsafe partial struct IEnumConnectionPoints : IEnumConnectionPoints.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IEnumConnectionPoints;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IEnumConnectionPoints));
 
     public void** lpVtbl;
 

@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("00000037-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IWeakReference : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IWeakReference : IWeakReference.Interface, IHaveNativeGuid
+public unsafe partial struct IWeakReference : IWeakReference.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IWeakReference;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWeakReference));
 
     public void** lpVtbl;
 

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("FA6FA76B-66B7-4B11-95F1-86171118E816")]
 [NativeTypeName("struct ICredentialProviderCredentialEvents : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialProviderCredentialEvents.Interface, IHaveNativeGuid
+public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialProviderCredentialEvents.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ICredentialProviderCredentialEvents;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICredentialProviderCredentialEvents));
 
     public void** lpVtbl;
 

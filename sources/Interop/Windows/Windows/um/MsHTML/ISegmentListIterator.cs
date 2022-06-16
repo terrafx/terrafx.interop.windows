@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F692-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ISegmentListIterator : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ISegmentListIterator : ISegmentListIterator.Interface, IHaveNativeGuid
+public unsafe partial struct ISegmentListIterator : ISegmentListIterator.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ISegmentListIterator;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISegmentListIterator));
 
     public void** lpVtbl;
 

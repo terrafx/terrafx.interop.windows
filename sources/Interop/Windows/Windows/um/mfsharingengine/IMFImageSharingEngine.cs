@@ -16,9 +16,9 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFImageSharingEngine : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows8.0")]
-public unsafe partial struct IMFImageSharingEngine : IMFImageSharingEngine.Interface, IHaveNativeGuid
+public unsafe partial struct IMFImageSharingEngine : IMFImageSharingEngine.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMFImageSharingEngine;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFImageSharingEngine));
 
     public void** lpVtbl;
 

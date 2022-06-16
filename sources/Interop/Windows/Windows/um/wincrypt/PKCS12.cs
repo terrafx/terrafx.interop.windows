@@ -76,16 +76,16 @@ public static partial class PKCS12
     public const uint PKCS12_EXPORT_RESERVED_MASK = 0xffff0000;
 
     [NativeTypeName("#define PKCS12_PBKDF2_ID_HMAC_SHA1 \"1.2.840.113549.2.7\"")]
-    public static ReadOnlySpan<byte> PKCS12_PBKDF2_ID_HMAC_SHA1 => "1.2.840.113549.2.7\0"u8;
+    public static ReadOnlySpan<byte> PKCS12_PBKDF2_ID_HMAC_SHA1 => "1.2.840.113549.2.7"u8;
 
     [NativeTypeName("#define PKCS12_PBKDF2_ID_HMAC_SHA256 \"1.2.840.113549.2.9\"")]
-    public static ReadOnlySpan<byte> PKCS12_PBKDF2_ID_HMAC_SHA256 => "1.2.840.113549.2.9\0"u8;
+    public static ReadOnlySpan<byte> PKCS12_PBKDF2_ID_HMAC_SHA256 => "1.2.840.113549.2.9"u8;
 
     [NativeTypeName("#define PKCS12_PBKDF2_ID_HMAC_SHA384 \"1.2.840.113549.2.10\"")]
-    public static ReadOnlySpan<byte> PKCS12_PBKDF2_ID_HMAC_SHA384 => "1.2.840.113549.2.10\0"u8;
+    public static ReadOnlySpan<byte> PKCS12_PBKDF2_ID_HMAC_SHA384 => "1.2.840.113549.2.10"u8;
 
     [NativeTypeName("#define PKCS12_PBKDF2_ID_HMAC_SHA512 \"1.2.840.113549.2.11\"")]
-    public static ReadOnlySpan<byte> PKCS12_PBKDF2_ID_HMAC_SHA512 => "1.2.840.113549.2.11\0"u8;
+    public static ReadOnlySpan<byte> PKCS12_PBKDF2_ID_HMAC_SHA512 => "1.2.840.113549.2.11"u8;
 
     [NativeTypeName("#define PKCS12_PBES2_ALG_AES256_SHA256 L\"AES256-SHA256\"")]
     public const string PKCS12_PBES2_ALG_AES256_SHA256 = "AES256-SHA256";

@@ -14,9 +14,9 @@ namespace TerraFX.Interop.Windows;
 [Guid("30590076-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct DispDOMTextEvent : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct DispDOMTextEvent : DispDOMTextEvent.Interface, IHaveNativeGuid
+public unsafe partial struct DispDOMTextEvent : DispDOMTextEvent.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_DispDOMTextEvent;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_DispDOMTextEvent));
 
     public void** lpVtbl;
 

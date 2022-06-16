@@ -15,9 +15,9 @@ namespace TerraFX.Interop.DirectX;
 [Guid("AEB2543A-167F-4682-ACC8-D159ED4A6209")]
 [NativeTypeName("struct ID3D12VideoProcessCommandList : ID3D12CommandList")]
 [NativeInheritance("ID3D12CommandList")]
-public unsafe partial struct ID3D12VideoProcessCommandList : ID3D12VideoProcessCommandList.Interface, IHaveNativeGuid
+public unsafe partial struct ID3D12VideoProcessCommandList : ID3D12VideoProcessCommandList.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_ID3D12VideoProcessCommandList;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D12VideoProcessCommandList));
 
     public void** lpVtbl;
 

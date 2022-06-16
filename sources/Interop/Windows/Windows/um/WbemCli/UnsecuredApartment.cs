@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
@@ -11,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='UnsecuredApartment.xml' path='doc/member[@name="UnsecuredApartment"]/*' />
 [Guid("49BD2028-1523-11D1-AD79-00C04FD8FDFF")]
-public partial struct UnsecuredApartment : IHaveNativeGuid
+public unsafe partial struct UnsecuredApartment : INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_UnsecuredApartment;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_UnsecuredApartment));
 }

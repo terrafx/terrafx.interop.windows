@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("EC893BB1-F938-427B-8488-C8DCF775F138")]
 [NativeTypeName("struct IMLOperatorTypeInferenceContext : IMLOperatorAttributes")]
 [NativeInheritance("IMLOperatorAttributes")]
-public unsafe partial struct IMLOperatorTypeInferenceContext : IMLOperatorTypeInferenceContext.Interface, IHaveNativeGuid
+public unsafe partial struct IMLOperatorTypeInferenceContext : IMLOperatorTypeInferenceContext.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IMLOperatorTypeInferenceContext;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMLOperatorTypeInferenceContext));
 
     public void** lpVtbl;
 

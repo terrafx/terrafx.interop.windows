@@ -15,9 +15,9 @@ namespace TerraFX.Interop.WinRT;
 [Guid("C15DF8BC-8844-487A-B85B-7578E0F61419")]
 [NativeTypeName("struct IUserActivitySourceHostInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct IUserActivitySourceHostInterop : IUserActivitySourceHostInterop.Interface, IHaveNativeGuid
+public unsafe partial struct IUserActivitySourceHostInterop : IUserActivitySourceHostInterop.Interface, INativeGuid
 {
-    static ref readonly Guid IHaveNativeGuid.GUID => ref IID_IUserActivitySourceHostInterop;
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUserActivitySourceHostInterop));
 
     public void** lpVtbl;
 
