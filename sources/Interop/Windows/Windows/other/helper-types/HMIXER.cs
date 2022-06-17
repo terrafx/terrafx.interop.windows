@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HMIXER : IComparable, IComparable<HMIXER>, IEquatable<HMIXER>, IFormattable
+public readonly unsafe partial struct HMIXER : IComparable, IComparable<HMIXER>, IEquatable<HMIXER>, IFormattable
 {
     public readonly void* Value;
 

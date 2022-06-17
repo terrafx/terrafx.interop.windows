@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct CO_DEVICE_CATALOG_COOKIE : IComparable, IComparable<CO_DEVICE_CATALOG_COOKIE>, IEquatable<CO_DEVICE_CATALOG_COOKIE>, IFormattable
+public readonly unsafe partial struct CO_DEVICE_CATALOG_COOKIE : IComparable, IComparable<CO_DEVICE_CATALOG_COOKIE>, IEquatable<CO_DEVICE_CATALOG_COOKIE>, IFormattable
 {
     public readonly void* Value;
 

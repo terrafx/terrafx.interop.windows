@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct ROPARAMIIDHANDLE : IComparable, IComparable<ROPARAMIIDHANDLE>, IEquatable<ROPARAMIIDHANDLE>, IFormattable
+public readonly unsafe partial struct ROPARAMIIDHANDLE : IComparable, IComparable<ROPARAMIIDHANDLE>, IEquatable<ROPARAMIIDHANDLE>, IFormattable
 {
     public readonly void* Value;
 

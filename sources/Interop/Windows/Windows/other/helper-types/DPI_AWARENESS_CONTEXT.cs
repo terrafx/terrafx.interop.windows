@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct DPI_AWARENESS_CONTEXT : IComparable, IComparable<DPI_AWARENESS_CONTEXT>, IEquatable<DPI_AWARENESS_CONTEXT>, IFormattable
+public readonly unsafe partial struct DPI_AWARENESS_CONTEXT : IComparable, IComparable<DPI_AWARENESS_CONTEXT>, IEquatable<DPI_AWARENESS_CONTEXT>, IFormattable
 {
     public readonly void* Value;
 

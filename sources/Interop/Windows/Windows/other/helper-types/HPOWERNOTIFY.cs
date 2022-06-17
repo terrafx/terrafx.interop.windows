@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HPOWERNOTIFY : IComparable, IComparable<HPOWERNOTIFY>, IEquatable<HPOWERNOTIFY>, IFormattable
+public readonly unsafe partial struct HPOWERNOTIFY : IComparable, IComparable<HPOWERNOTIFY>, IEquatable<HPOWERNOTIFY>, IFormattable
 {
     public readonly void* Value;
 

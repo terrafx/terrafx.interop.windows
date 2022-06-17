@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HRAWINPUT : IComparable, IComparable<HRAWINPUT>, IEquatable<HRAWINPUT>, IFormattable
+public readonly unsafe partial struct HRAWINPUT : IComparable, IComparable<HRAWINPUT>, IEquatable<HRAWINPUT>, IFormattable
 {
     public readonly void* Value;
 

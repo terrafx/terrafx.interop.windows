@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct COLORREF : IComparable, IComparable<COLORREF>, IEquatable<COLORREF>, IFormattable
+public readonly unsafe partial struct COLORREF : IComparable, IComparable<COLORREF>, IEquatable<COLORREF>, IFormattable
 {
     public readonly uint Value;
 

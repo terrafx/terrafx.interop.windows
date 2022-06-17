@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct PACKAGEDEPENDENCY_CONTEXT : IComparable, IComparable<PACKAGEDEPENDENCY_CONTEXT>, IEquatable<PACKAGEDEPENDENCY_CONTEXT>, IFormattable
+public readonly unsafe partial struct PACKAGEDEPENDENCY_CONTEXT : IComparable, IComparable<PACKAGEDEPENDENCY_CONTEXT>, IEquatable<PACKAGEDEPENDENCY_CONTEXT>, IFormattable
 {
     public readonly void* Value;
 

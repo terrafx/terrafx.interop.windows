@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HPSXA : IComparable, IComparable<HPSXA>, IEquatable<HPSXA>, IFormattable
+public readonly unsafe partial struct HPSXA : IComparable, IComparable<HPSXA>, IEquatable<HPSXA>, IFormattable
 {
     public readonly void* Value;
 

@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct PRJ_DIR_ENTRY_BUFFER_HANDLE : IComparable, IComparable<PRJ_DIR_ENTRY_BUFFER_HANDLE>, IEquatable<PRJ_DIR_ENTRY_BUFFER_HANDLE>, IFormattable
+public readonly unsafe partial struct PRJ_DIR_ENTRY_BUFFER_HANDLE : IComparable, IComparable<PRJ_DIR_ENTRY_BUFFER_HANDLE>, IEquatable<PRJ_DIR_ENTRY_BUFFER_HANDLE>, IFormattable
 {
     public readonly void* Value;
 

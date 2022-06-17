@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HTREEITEM : IComparable, IComparable<HTREEITEM>, IEquatable<HTREEITEM>, IFormattable
+public readonly unsafe partial struct HTREEITEM : IComparable, IComparable<HTREEITEM>, IEquatable<HTREEITEM>, IFormattable
 {
     public readonly void* Value;
 

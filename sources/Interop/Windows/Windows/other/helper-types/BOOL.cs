@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public partial struct BOOL : IComparable, IComparable<BOOL>, IEquatable<BOOL>, IFormattable
+public readonly partial struct BOOL : IComparable, IComparable<BOOL>, IEquatable<BOOL>, IFormattable
 {
     public readonly int Value;
 

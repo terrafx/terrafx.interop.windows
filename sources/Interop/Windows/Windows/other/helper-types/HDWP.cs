@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HDWP : IComparable, IComparable<HDWP>, IEquatable<HDWP>, IFormattable
+public readonly unsafe partial struct HDWP : IComparable, IComparable<HDWP>, IEquatable<HDWP>, IFormattable
 {
     public readonly void* Value;
 

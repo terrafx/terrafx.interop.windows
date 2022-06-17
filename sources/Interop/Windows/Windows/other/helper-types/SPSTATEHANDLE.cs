@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct SPSTATEHANDLE : IComparable, IComparable<SPSTATEHANDLE>, IEquatable<SPSTATEHANDLE>, IFormattable
+public readonly unsafe partial struct SPSTATEHANDLE : IComparable, IComparable<SPSTATEHANDLE>, IEquatable<SPSTATEHANDLE>, IFormattable
 {
     public readonly void* Value;
 

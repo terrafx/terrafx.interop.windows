@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct PAPPSTATE_REGISTRATION : IComparable, IComparable<PAPPSTATE_REGISTRATION>, IEquatable<PAPPSTATE_REGISTRATION>, IFormattable
+public readonly unsafe partial struct PAPPSTATE_REGISTRATION : IComparable, IComparable<PAPPSTATE_REGISTRATION>, IEquatable<PAPPSTATE_REGISTRATION>, IFormattable
 {
     public readonly void* Value;
 

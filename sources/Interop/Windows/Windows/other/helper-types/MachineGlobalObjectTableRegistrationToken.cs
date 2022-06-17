@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct MachineGlobalObjectTableRegistrationToken : IComparable, IComparable<MachineGlobalObjectTableRegistrationToken>, IEquatable<MachineGlobalObjectTableRegistrationToken>, IFormattable
+public readonly unsafe partial struct MachineGlobalObjectTableRegistrationToken : IComparable, IComparable<MachineGlobalObjectTableRegistrationToken>, IEquatable<MachineGlobalObjectTableRegistrationToken>, IFormattable
 {
     public readonly void* Value;
 

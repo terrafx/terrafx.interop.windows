@@ -78,6 +78,7 @@ public unsafe partial struct ID2D1Factory4 : ID2D1Factory4.Interface, INativeGui
     /// <inheritdoc cref="ID2D1Factory.GetDesktopDpi" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
+    [Obsolete("Deprecated. Use DisplayInformation::LogicalDpi for Windows Store Apps or GetDpiForWindow for desktop apps")]
     public void GetDesktopDpi(float* dpiX, float* dpiY)
     {
         ((delegate* unmanaged<ID2D1Factory4*, float*, float*, void>)(lpVtbl[4]))((ID2D1Factory4*)Unsafe.AsPointer(ref this), dpiX, dpiY);
@@ -305,6 +306,7 @@ public unsafe partial struct ID2D1Factory4 : ID2D1Factory4.Interface, INativeGui
         public delegate* unmanaged<TSelf*, int> ReloadSystemMetrics;
 
         [NativeTypeName("void (FLOAT *, FLOAT *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        [Obsolete("Deprecated. Use DisplayInformation::LogicalDpi for Windows Store Apps or GetDpiForWindow for desktop apps")]
         public delegate* unmanaged<TSelf*, float*, float*, void> GetDesktopDpi;
 
         [NativeTypeName("HRESULT (const D2D1_RECT_F *, ID2D1RectangleGeometry **) __attribute__((nothrow)) __attribute__((stdcall))")]

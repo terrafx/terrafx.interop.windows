@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.WinRT;
 
-public unsafe partial struct InstanceHandle : IComparable, IComparable<InstanceHandle>, IEquatable<InstanceHandle>, IFormattable
+public readonly unsafe partial struct InstanceHandle : IComparable, IComparable<InstanceHandle>, IEquatable<InstanceHandle>, IFormattable
 {
     public readonly ulong Value;
 

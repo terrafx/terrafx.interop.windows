@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HCRYPTASYNC : IComparable, IComparable<HCRYPTASYNC>, IEquatable<HCRYPTASYNC>, IFormattable
+public readonly unsafe partial struct HCRYPTASYNC : IComparable, IComparable<HCRYPTASYNC>, IEquatable<HCRYPTASYNC>, IFormattable
 {
     public readonly void* Value;
 

@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HPSSWALK : IComparable, IComparable<HPSSWALK>, IEquatable<HPSSWALK>, IFormattable
+public readonly unsafe partial struct HPSSWALK : IComparable, IComparable<HPSSWALK>, IEquatable<HPSSWALK>, IFormattable
 {
     public readonly void* Value;
 

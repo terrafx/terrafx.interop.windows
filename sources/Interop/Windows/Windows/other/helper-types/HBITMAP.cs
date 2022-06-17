@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HBITMAP : IComparable, IComparable<HBITMAP>, IEquatable<HBITMAP>, IFormattable
+public readonly unsafe partial struct HBITMAP : IComparable, IComparable<HBITMAP>, IEquatable<HBITMAP>, IFormattable
 {
     public readonly void* Value;
 
