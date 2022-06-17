@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HSEMAPHORE : IComparable, IComparable<HSEMAPHORE>, IEquatable<HSEMAPHORE>, IFormattable
+public readonly unsafe partial struct HSEMAPHORE : IComparable, IComparable<HSEMAPHORE>, IEquatable<HSEMAPHORE>, IFormattable
 {
     public readonly void* Value;
 

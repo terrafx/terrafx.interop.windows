@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HTOUCHINPUT : IComparable, IComparable<HTOUCHINPUT>, IEquatable<HTOUCHINPUT>, IFormattable
+public readonly unsafe partial struct HTOUCHINPUT : IComparable, IComparable<HTOUCHINPUT>, IEquatable<HTOUCHINPUT>, IFormattable
 {
     public readonly void* Value;
 

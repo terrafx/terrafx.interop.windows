@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct MSIHANDLE : IComparable, IComparable<MSIHANDLE>, IEquatable<MSIHANDLE>, IFormattable
+public readonly unsafe partial struct MSIHANDLE : IComparable, IComparable<MSIHANDLE>, IEquatable<MSIHANDLE>, IFormattable
 {
     public readonly uint Value;
 

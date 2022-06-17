@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HCOMDB : IComparable, IComparable<HCOMDB>, IEquatable<HCOMDB>, IFormattable
+public readonly unsafe partial struct HCOMDB : IComparable, IComparable<HCOMDB>, IEquatable<HCOMDB>, IFormattable
 {
     public readonly void* Value;
 

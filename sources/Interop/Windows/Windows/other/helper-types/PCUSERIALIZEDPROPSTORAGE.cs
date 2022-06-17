@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct PCUSERIALIZEDPROPSTORAGE : IComparable, IComparable<PCUSERIALIZEDPROPSTORAGE>, IEquatable<PCUSERIALIZEDPROPSTORAGE>, IFormattable
+public readonly unsafe partial struct PCUSERIALIZEDPROPSTORAGE : IComparable, IComparable<PCUSERIALIZEDPROPSTORAGE>, IEquatable<PCUSERIALIZEDPROPSTORAGE>, IFormattable
 {
     public readonly void* Value;
 

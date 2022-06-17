@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct OAHWND : IComparable, IComparable<OAHWND>, IEquatable<OAHWND>, IFormattable
+public readonly unsafe partial struct OAHWND : IComparable, IComparable<OAHWND>, IEquatable<OAHWND>, IFormattable
 {
     public readonly void* Value;
 

@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HWAVEIN : IComparable, IComparable<HWAVEIN>, IEquatable<HWAVEIN>, IFormattable
+public readonly unsafe partial struct HWAVEIN : IComparable, IComparable<HWAVEIN>, IEquatable<HWAVEIN>, IFormattable
 {
     public readonly void* Value;
 

@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct ASYNCCOMPLETIONHANDLE : IComparable, IComparable<ASYNCCOMPLETIONHANDLE>, IEquatable<ASYNCCOMPLETIONHANDLE>, IFormattable
+public readonly unsafe partial struct ASYNCCOMPLETIONHANDLE : IComparable, IComparable<ASYNCCOMPLETIONHANDLE>, IEquatable<ASYNCCOMPLETIONHANDLE>, IFormattable
 {
     public readonly void* Value;
 

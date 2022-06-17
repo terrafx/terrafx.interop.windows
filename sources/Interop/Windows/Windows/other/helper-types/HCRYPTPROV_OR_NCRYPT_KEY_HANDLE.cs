@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HCRYPTPROV_OR_NCRYPT_KEY_HANDLE : IComparable, IComparable<HCRYPTPROV_OR_NCRYPT_KEY_HANDLE>, IEquatable<HCRYPTPROV_OR_NCRYPT_KEY_HANDLE>, IFormattable
+public readonly unsafe partial struct HCRYPTPROV_OR_NCRYPT_KEY_HANDLE : IComparable, IComparable<HCRYPTPROV_OR_NCRYPT_KEY_HANDLE>, IEquatable<HCRYPTPROV_OR_NCRYPT_KEY_HANDLE>, IFormattable
 {
     public readonly void* Value;
 

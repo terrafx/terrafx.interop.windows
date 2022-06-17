@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HWINEVENTHOOK : IComparable, IComparable<HWINEVENTHOOK>, IEquatable<HWINEVENTHOOK>, IFormattable
+public readonly unsafe partial struct HWINEVENTHOOK : IComparable, IComparable<HWINEVENTHOOK>, IEquatable<HWINEVENTHOOK>, IFormattable
 {
     public readonly void* Value;
 

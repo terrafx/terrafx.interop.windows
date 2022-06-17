@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct PTP_CALLBACK_INSTANCE : IComparable, IComparable<PTP_CALLBACK_INSTANCE>, IEquatable<PTP_CALLBACK_INSTANCE>, IFormattable
+public readonly unsafe partial struct PTP_CALLBACK_INSTANCE : IComparable, IComparable<PTP_CALLBACK_INSTANCE>, IEquatable<PTP_CALLBACK_INSTANCE>, IFormattable
 {
     public readonly void* Value;
 

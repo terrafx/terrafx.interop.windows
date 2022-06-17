@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct PTP_POOL : IComparable, IComparable<PTP_POOL>, IEquatable<PTP_POOL>, IFormattable
+public readonly unsafe partial struct PTP_POOL : IComparable, IComparable<PTP_POOL>, IEquatable<PTP_POOL>, IFormattable
 {
     public readonly void* Value;
 

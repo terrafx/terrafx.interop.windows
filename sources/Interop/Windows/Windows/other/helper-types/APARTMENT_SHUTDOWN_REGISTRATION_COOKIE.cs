@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct APARTMENT_SHUTDOWN_REGISTRATION_COOKIE : IComparable, IComparable<APARTMENT_SHUTDOWN_REGISTRATION_COOKIE>, IEquatable<APARTMENT_SHUTDOWN_REGISTRATION_COOKIE>, IFormattable
+public readonly unsafe partial struct APARTMENT_SHUTDOWN_REGISTRATION_COOKIE : IComparable, IComparable<APARTMENT_SHUTDOWN_REGISTRATION_COOKIE>, IEquatable<APARTMENT_SHUTDOWN_REGISTRATION_COOKIE>, IFormattable
 {
     public readonly void* Value;
 

@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HENHMETAFILE : IComparable, IComparable<HENHMETAFILE>, IEquatable<HENHMETAFILE>, IFormattable
+public readonly unsafe partial struct HENHMETAFILE : IComparable, IComparable<HENHMETAFILE>, IEquatable<HENHMETAFILE>, IFormattable
 {
     public readonly void* Value;
 

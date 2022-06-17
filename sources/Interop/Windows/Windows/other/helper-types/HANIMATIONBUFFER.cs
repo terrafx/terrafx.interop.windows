@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HANIMATIONBUFFER : IComparable, IComparable<HANIMATIONBUFFER>, IEquatable<HANIMATIONBUFFER>, IFormattable
+public readonly unsafe partial struct HANIMATIONBUFFER : IComparable, IComparable<HANIMATIONBUFFER>, IEquatable<HANIMATIONBUFFER>, IFormattable
 {
     public readonly void* Value;
 

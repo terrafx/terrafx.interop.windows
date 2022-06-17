@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HDEVINFO : IComparable, IComparable<HDEVINFO>, IEquatable<HDEVINFO>, IFormattable
+public readonly unsafe partial struct HDEVINFO : IComparable, IComparable<HDEVINFO>, IEquatable<HDEVINFO>, IFormattable
 {
     public readonly void* Value;
 

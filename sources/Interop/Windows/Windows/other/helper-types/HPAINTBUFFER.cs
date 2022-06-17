@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HPAINTBUFFER : IComparable, IComparable<HPAINTBUFFER>, IEquatable<HPAINTBUFFER>, IFormattable
+public readonly unsafe partial struct HPAINTBUFFER : IComparable, IComparable<HPAINTBUFFER>, IEquatable<HPAINTBUFFER>, IFormattable
 {
     public readonly void* Value;
 
