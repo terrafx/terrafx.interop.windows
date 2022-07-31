@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-knownfolderpathscom.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/knownfolderpathscom
+--test-output
+../../../../tests/Interop/Windows/Windows/um/knownfolderpathscom
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/knownfolderpathscom.h
