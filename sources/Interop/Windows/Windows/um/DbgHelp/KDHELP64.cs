@@ -73,6 +73,6 @@ public unsafe partial struct KDHELP64
     public uint RetpolineStubSize;
 
     /// <include file='KDHELP64.xml' path='doc/member[@name="KDHELP64.Reserved0"]/*' />
-    [NativeTypeName("DWORD64 [2]")]
+    [NativeTypeName("DWORD64[2]")]
     public fixed ulong Reserved0[2];
 }

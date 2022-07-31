@@ -24,7 +24,7 @@ public unsafe partial struct SCM_PD_FIRMWARE_DOWNLOAD
     public byte Slot;
 
     /// <include file='SCM_PD_FIRMWARE_DOWNLOAD.xml' path='doc/member[@name="SCM_PD_FIRMWARE_DOWNLOAD.Reserved"]/*' />
-    [NativeTypeName("BYTE [3]")]
+    [NativeTypeName("BYTE[3]")]
     public fixed byte Reserved[3];
 
     /// <include file='SCM_PD_FIRMWARE_DOWNLOAD.xml' path='doc/member[@name="SCM_PD_FIRMWARE_DOWNLOAD.Offset"]/*' />
@@ -36,6 +36,6 @@ public unsafe partial struct SCM_PD_FIRMWARE_DOWNLOAD
     public uint FirmwareImageSizeInBytes;
 
     /// <include file='SCM_PD_FIRMWARE_DOWNLOAD.xml' path='doc/member[@name="SCM_PD_FIRMWARE_DOWNLOAD.FirmwareImage"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte FirmwareImage[1];
 }

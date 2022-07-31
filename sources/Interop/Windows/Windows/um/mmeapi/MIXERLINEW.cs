@@ -52,11 +52,11 @@ public unsafe partial struct MIXERLINEW
     public uint cControls;
 
     /// <include file='MIXERLINEW.xml' path='doc/member[@name="MIXERLINEW.szShortName"]/*' />
-    [NativeTypeName("WCHAR [16]")]
+    [NativeTypeName("WCHAR[16]")]
     public fixed ushort szShortName[16];
 
     /// <include file='MIXERLINEW.xml' path='doc/member[@name="MIXERLINEW.szName"]/*' />
-    [NativeTypeName("WCHAR [64]")]
+    [NativeTypeName("WCHAR[64]")]
     public fixed ushort szName[64];
 
     /// <include file='MIXERLINEW.xml' path='doc/member[@name="MIXERLINEW.Target"]/*' />
@@ -88,7 +88,7 @@ public unsafe partial struct MIXERLINEW
         public uint vDriverVersion;
 
         /// <include file='_Target_e__Struct.xml' path='doc/member[@name="_Target_e__Struct.szPname"]/*' />
-        [NativeTypeName("WCHAR [32]")]
+        [NativeTypeName("WCHAR[32]")]
         public fixed ushort szPname[32];
     }
 }

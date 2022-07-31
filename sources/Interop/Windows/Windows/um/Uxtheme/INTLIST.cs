@@ -12,6 +12,6 @@ public unsafe partial struct INTLIST
     public int iValueCount;
 
     /// <include file='INTLIST.xml' path='doc/member[@name="INTLIST.iValues"]/*' />
-    [NativeTypeName("int [402]")]
+    [NativeTypeName("int[402]")]
     public fixed int iValues[402];
 }

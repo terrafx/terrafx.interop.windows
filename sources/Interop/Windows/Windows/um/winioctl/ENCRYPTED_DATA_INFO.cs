@@ -45,6 +45,6 @@ public unsafe partial struct ENCRYPTED_DATA_INFO
     public ushort NumberOfDataBlocks;
 
     /// <include file='ENCRYPTED_DATA_INFO.xml' path='doc/member[@name="ENCRYPTED_DATA_INFO.DataBlockSize"]/*' />
-    [NativeTypeName("DWORD [1]")]
+    [NativeTypeName("DWORD[1]")]
     public fixed uint DataBlockSize[1];
 }

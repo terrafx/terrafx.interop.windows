@@ -16,7 +16,7 @@ public partial struct NRESARRAY
     public uint cItems;
 
     /// <include file='NRESARRAY.xml' path='doc/member[@name="NRESARRAY.nr"]/*' />
-    [NativeTypeName("NETRESOURCE [1]")]
+    [NativeTypeName("NETRESOURCE[1]")]
     public _nr_e__FixedBuffer nr;
 
     /// <include file='_nr_e__FixedBuffer.xml' path='doc/member[@name="_nr_e__FixedBuffer"]/*' />

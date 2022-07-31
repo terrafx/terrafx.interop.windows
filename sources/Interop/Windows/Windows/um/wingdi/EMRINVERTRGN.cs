@@ -19,6 +19,6 @@ public unsafe partial struct EMRINVERTRGN
     public uint cbRgnData;
 
     /// <include file='EMRINVERTRGN.xml' path='doc/member[@name="EMRINVERTRGN.RgnData"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte RgnData[1];
 }

@@ -9,10 +9,10 @@ namespace TerraFX.Interop.DirectX;
 public unsafe partial struct DXGI_DISPLAY_COLOR_SPACE
 {
     /// <include file='DXGI_DISPLAY_COLOR_SPACE.xml' path='doc/member[@name="DXGI_DISPLAY_COLOR_SPACE.PrimaryCoordinates"]/*' />
-    [NativeTypeName("FLOAT [8][2]")]
+    [NativeTypeName("FLOAT[8][2]")]
     public fixed float PrimaryCoordinates[8 * 2];
 
     /// <include file='DXGI_DISPLAY_COLOR_SPACE.xml' path='doc/member[@name="DXGI_DISPLAY_COLOR_SPACE.WhitePoints"]/*' />
-    [NativeTypeName("FLOAT [16][2]")]
+    [NativeTypeName("FLOAT[16][2]")]
     public fixed float WhitePoints[16 * 2];
 }

@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct COMPRESSOR_HANDLE : IComparable, IComparable<COMPRESSOR_HANDLE>, IEquatable<COMPRESSOR_HANDLE>, IFormattable
+public readonly unsafe partial struct COMPRESSOR_HANDLE : IComparable, IComparable<COMPRESSOR_HANDLE>, IEquatable<COMPRESSOR_HANDLE>, IFormattable
 {
     public readonly void* Value;
 

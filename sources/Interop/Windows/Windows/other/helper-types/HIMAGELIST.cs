@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HIMAGELIST : IComparable, IComparable<HIMAGELIST>, IEquatable<HIMAGELIST>, IFormattable
+public readonly unsafe partial struct HIMAGELIST : IComparable, IComparable<HIMAGELIST>, IEquatable<HIMAGELIST>, IFormattable
 {
     public readonly void* Value;
 

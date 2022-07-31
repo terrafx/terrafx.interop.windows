@@ -17,7 +17,7 @@ public unsafe partial struct MIB_IPNETROW_W2K
     public uint dwPhysAddrLen;
 
     /// <include file='MIB_IPNETROW_W2K.xml' path='doc/member[@name="MIB_IPNETROW_W2K.bPhysAddr"]/*' />
-    [NativeTypeName("UCHAR [8]")]
+    [NativeTypeName("UCHAR[8]")]
     public fixed byte bPhysAddr[8];
 
     /// <include file='MIB_IPNETROW_W2K.xml' path='doc/member[@name="MIB_IPNETROW_W2K.dwAddr"]/*' />

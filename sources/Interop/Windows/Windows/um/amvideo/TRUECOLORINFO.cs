@@ -13,11 +13,11 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct TRUECOLORINFO
 {
     /// <include file='TRUECOLORINFO.xml' path='doc/member[@name="TRUECOLORINFO.dwBitMasks"]/*' />
-    [NativeTypeName("DWORD [3]")]
+    [NativeTypeName("DWORD[3]")]
     public fixed uint dwBitMasks[3];
 
     /// <include file='TRUECOLORINFO.xml' path='doc/member[@name="TRUECOLORINFO.bmiColors"]/*' />
-    [NativeTypeName("RGBQUAD [256]")]
+    [NativeTypeName("RGBQUAD[256]")]
     public _bmiColors_e__FixedBuffer bmiColors;
 
     /// <include file='_bmiColors_e__FixedBuffer.xml' path='doc/member[@name="_bmiColors_e__FixedBuffer"]/*' />

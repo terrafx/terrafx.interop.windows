@@ -16,7 +16,7 @@ public partial struct WICRawToneCurve
     public uint cPoints;
 
     /// <include file='WICRawToneCurve.xml' path='doc/member[@name="WICRawToneCurve.aPoints"]/*' />
-    [NativeTypeName("WICRawToneCurvePoint [1]")]
+    [NativeTypeName("WICRawToneCurvePoint[1]")]
     public _aPoints_e__FixedBuffer aPoints;
 
     /// <include file='_aPoints_e__FixedBuffer.xml' path='doc/member[@name="_aPoints_e__FixedBuffer"]/*' />

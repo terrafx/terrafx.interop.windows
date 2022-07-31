@@ -33,7 +33,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
     public ulong Pc;
 
     /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.V"]/*' />
-    [NativeTypeName("ARM64_NT_NEON128 [32]")]
+    [NativeTypeName("ARM64_NT_NEON128[32]")]
     public _V_e__FixedBuffer V;
 
     /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Fpcr"]/*' />
@@ -45,19 +45,19 @@ public unsafe partial struct ARM64_NT_CONTEXT
     public uint Fpsr;
 
     /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Bcr"]/*' />
-    [NativeTypeName("DWORD [8]")]
+    [NativeTypeName("DWORD[8]")]
     public fixed uint Bcr[8];
 
     /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Bvr"]/*' />
-    [NativeTypeName("DWORD64 [8]")]
+    [NativeTypeName("DWORD64[8]")]
     public fixed ulong Bvr[8];
 
     /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Wcr"]/*' />
-    [NativeTypeName("DWORD [2]")]
+    [NativeTypeName("DWORD[2]")]
     public fixed uint Wcr[2];
 
     /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Wvr"]/*' />
-    [NativeTypeName("DWORD64 [2]")]
+    [NativeTypeName("DWORD64[2]")]
     public fixed ulong Wvr[2];
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X0"]/*' />
@@ -391,7 +391,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.X"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("DWORD64 [31]")]
+        [NativeTypeName("DWORD64[31]")]
         public fixed ulong X[31];
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

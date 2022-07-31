@@ -16,7 +16,7 @@ public partial struct BITMAPCOREINFO
     public BITMAPCOREHEADER bmciHeader;
 
     /// <include file='BITMAPCOREINFO.xml' path='doc/member[@name="BITMAPCOREINFO.bmciColors"]/*' />
-    [NativeTypeName("RGBTRIPLE [1]")]
+    [NativeTypeName("RGBTRIPLE[1]")]
     public _bmciColors_e__FixedBuffer bmciColors;
 
     /// <include file='_bmciColors_e__FixedBuffer.xml' path='doc/member[@name="_bmciColors_e__FixedBuffer"]/*' />

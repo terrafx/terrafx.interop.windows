@@ -37,7 +37,7 @@ public unsafe partial struct WOW64_FLOATING_SAVE_AREA
     public uint DataSelector;
 
     /// <include file='WOW64_FLOATING_SAVE_AREA.xml' path='doc/member[@name="WOW64_FLOATING_SAVE_AREA.RegisterArea"]/*' />
-    [NativeTypeName("BYTE [80]")]
+    [NativeTypeName("BYTE[80]")]
     public fixed byte RegisterArea[80];
 
     /// <include file='WOW64_FLOATING_SAVE_AREA.xml' path='doc/member[@name="WOW64_FLOATING_SAVE_AREA.Cr0NpxState"]/*' />

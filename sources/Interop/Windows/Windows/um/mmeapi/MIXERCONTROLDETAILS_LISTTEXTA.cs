@@ -20,6 +20,6 @@ public unsafe partial struct MIXERCONTROLDETAILS_LISTTEXTA
     public uint dwParam2;
 
     /// <include file='MIXERCONTROLDETAILS_LISTTEXTA.xml' path='doc/member[@name="MIXERCONTROLDETAILS_LISTTEXTA.szName"]/*' />
-    [NativeTypeName("CHAR [64]")]
+    [NativeTypeName("CHAR[64]")]
     public fixed sbyte szName[64];
 }

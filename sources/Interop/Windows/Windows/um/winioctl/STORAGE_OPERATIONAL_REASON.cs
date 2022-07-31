@@ -67,7 +67,7 @@ public partial struct STORAGE_OPERATIONAL_REASON
             public byte CriticalHealth;
 
             /// <include file='_NVDIMM_N_e__Struct.xml' path='doc/member[@name="_NVDIMM_N_e__Struct.ModuleHealth"]/*' />
-            [NativeTypeName("BYTE [2]")]
+            [NativeTypeName("BYTE[2]")]
             public fixed byte ModuleHealth[2];
 
             /// <include file='_NVDIMM_N_e__Struct.xml' path='doc/member[@name="_NVDIMM_N_e__Struct.ErrorThresholdStatus"]/*' />

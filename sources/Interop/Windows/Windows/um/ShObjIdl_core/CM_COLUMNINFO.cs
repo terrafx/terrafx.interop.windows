@@ -30,6 +30,6 @@ public unsafe partial struct CM_COLUMNINFO
     public uint uIdealWidth;
 
     /// <include file='CM_COLUMNINFO.xml' path='doc/member[@name="CM_COLUMNINFO.wszName"]/*' />
-    [NativeTypeName("WCHAR [80]")]
+    [NativeTypeName("WCHAR[80]")]
     public fixed ushort wszName[80];
 }

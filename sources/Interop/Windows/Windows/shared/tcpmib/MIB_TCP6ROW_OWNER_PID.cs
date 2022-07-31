@@ -9,7 +9,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct MIB_TCP6ROW_OWNER_PID
 {
     /// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID.ucLocalAddr"]/*' />
-    [NativeTypeName("UCHAR [16]")]
+    [NativeTypeName("UCHAR[16]")]
     public fixed byte ucLocalAddr[16];
 
     /// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID.dwLocalScopeId"]/*' />
@@ -21,7 +21,7 @@ public unsafe partial struct MIB_TCP6ROW_OWNER_PID
     public uint dwLocalPort;
 
     /// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID.ucRemoteAddr"]/*' />
-    [NativeTypeName("UCHAR [16]")]
+    [NativeTypeName("UCHAR[16]")]
     public fixed byte ucRemoteAddr[16];
 
     /// <include file='MIB_TCP6ROW_OWNER_PID.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_PID.dwRemoteScopeId"]/*' />

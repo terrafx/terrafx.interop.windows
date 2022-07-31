@@ -73,12 +73,12 @@ public unsafe partial struct VIDEOINFO
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.bmiColors"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("RGBQUAD [256]")]
+        [NativeTypeName("RGBQUAD[256]")]
         public _bmiColors_e__FixedBuffer bmiColors;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwBitMasks"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("DWORD [3]")]
+        [NativeTypeName("DWORD[3]")]
         public fixed uint dwBitMasks[3];
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.TrueColorInfo"]/*' />

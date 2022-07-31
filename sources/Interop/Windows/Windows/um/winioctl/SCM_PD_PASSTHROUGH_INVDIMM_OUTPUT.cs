@@ -21,6 +21,6 @@ public unsafe partial struct SCM_PD_PASSTHROUGH_INVDIMM_OUTPUT
     public uint OutputDataLength;
 
     /// <include file='SCM_PD_PASSTHROUGH_INVDIMM_OUTPUT.xml' path='doc/member[@name="SCM_PD_PASSTHROUGH_INVDIMM_OUTPUT.OutputData"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte OutputData[1];
 }

@@ -21,6 +21,6 @@ public unsafe partial struct KERNEL_CET_CONTEXT
     public ushort SegCs;
 
     /// <include file='KERNEL_CET_CONTEXT.xml' path='doc/member[@name="KERNEL_CET_CONTEXT.Fill"]/*' />
-    [NativeTypeName("WORD [3]")]
+    [NativeTypeName("WORD[3]")]
     public fixed ushort Fill[3];
 }

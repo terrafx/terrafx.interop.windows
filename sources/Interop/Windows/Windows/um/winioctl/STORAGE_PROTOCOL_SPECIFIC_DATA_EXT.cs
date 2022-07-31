@@ -52,6 +52,6 @@ public unsafe partial struct STORAGE_PROTOCOL_SPECIFIC_DATA_EXT
     public uint ProtocolDataSubValue5;
 
     /// <include file='STORAGE_PROTOCOL_SPECIFIC_DATA_EXT.xml' path='doc/member[@name="STORAGE_PROTOCOL_SPECIFIC_DATA_EXT.Reserved"]/*' />
-    [NativeTypeName("DWORD [5]")]
+    [NativeTypeName("DWORD[5]")]
     public fixed uint Reserved[5];
 }

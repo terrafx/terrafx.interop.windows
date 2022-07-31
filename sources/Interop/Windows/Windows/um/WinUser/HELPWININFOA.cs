@@ -27,6 +27,6 @@ public unsafe partial struct HELPWININFOA
     public int wMax;
 
     /// <include file='HELPWININFOA.xml' path='doc/member[@name="HELPWININFOA.rgchMember"]/*' />
-    [NativeTypeName("CHAR [2]")]
+    [NativeTypeName("CHAR[2]")]
     public fixed sbyte rgchMember[2];
 }

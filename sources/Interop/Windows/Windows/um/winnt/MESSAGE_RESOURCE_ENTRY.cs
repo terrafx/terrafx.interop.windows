@@ -17,6 +17,6 @@ public unsafe partial struct MESSAGE_RESOURCE_ENTRY
     public ushort Flags;
 
     /// <include file='MESSAGE_RESOURCE_ENTRY.xml' path='doc/member[@name="MESSAGE_RESOURCE_ENTRY.Text"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Text[1];
 }

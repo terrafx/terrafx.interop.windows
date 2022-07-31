@@ -48,7 +48,7 @@ public partial struct USN_RECORD_V4
     public ushort ExtentSize;
 
     /// <include file='USN_RECORD_V4.xml' path='doc/member[@name="USN_RECORD_V4.Extents"]/*' />
-    [NativeTypeName("USN_RECORD_EXTENT [1]")]
+    [NativeTypeName("USN_RECORD_EXTENT[1]")]
     public _Extents_e__FixedBuffer Extents;
 
     /// <include file='_Extents_e__FixedBuffer.xml' path='doc/member[@name="_Extents_e__FixedBuffer"]/*' />

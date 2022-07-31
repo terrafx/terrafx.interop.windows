@@ -32,7 +32,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.NtNotifyChangeMultipleKeys"]/*' />
     [DllImport("ntdll", ExactSpelling = true)]
     [return: NativeTypeName("NTSTATUS")]
-    public static extern int NtNotifyChangeMultipleKeys(HANDLE MasterKeyHandle, [NativeTypeName("ULONG")] uint Count, [NativeTypeName("OBJECT_ATTRIBUTES []")] OBJECT_ATTRIBUTES* SubordinateObjects, HANDLE Event, [NativeTypeName("PIO_APC_ROUTINE")] delegate* unmanaged<void*, IO_STATUS_BLOCK*, uint, void> ApcRoutine, [NativeTypeName("PVOID")] void* ApcContext, [NativeTypeName("PIO_STATUS_BLOCK")] IO_STATUS_BLOCK* IoStatusBlock, [NativeTypeName("ULONG")] uint CompletionFilter, [NativeTypeName("BOOLEAN")] byte WatchTree, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferSize, [NativeTypeName("BOOLEAN")] byte Asynchronous);
+    public static extern int NtNotifyChangeMultipleKeys(HANDLE MasterKeyHandle, [NativeTypeName("ULONG")] uint Count, [NativeTypeName("OBJECT_ATTRIBUTES[]")] OBJECT_ATTRIBUTES* SubordinateObjects, HANDLE Event, [NativeTypeName("PIO_APC_ROUTINE")] delegate* unmanaged<void*, IO_STATUS_BLOCK*, uint, void> ApcRoutine, [NativeTypeName("PVOID")] void* ApcContext, [NativeTypeName("PIO_STATUS_BLOCK")] IO_STATUS_BLOCK* IoStatusBlock, [NativeTypeName("ULONG")] uint CompletionFilter, [NativeTypeName("BOOLEAN")] byte WatchTree, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferSize, [NativeTypeName("BOOLEAN")] byte Asynchronous);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.NtQueryMultipleValueKey"]/*' />
     [DllImport("ntdll", ExactSpelling = true)]

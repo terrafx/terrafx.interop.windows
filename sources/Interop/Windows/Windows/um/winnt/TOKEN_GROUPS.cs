@@ -17,7 +17,7 @@ public partial struct TOKEN_GROUPS
     public uint GroupCount;
 
     /// <include file='TOKEN_GROUPS.xml' path='doc/member[@name="TOKEN_GROUPS.Groups"]/*' />
-    [NativeTypeName("SID_AND_ATTRIBUTES [1]")]
+    [NativeTypeName("SID_AND_ATTRIBUTES[1]")]
     public _Groups_e__FixedBuffer Groups;
 
     /// <include file='_Groups_e__FixedBuffer.xml' path='doc/member[@name="_Groups_e__FixedBuffer"]/*' />

@@ -17,7 +17,7 @@ public partial struct MIB_IPDESTTABLE
     public uint dwNumEntries;
 
     /// <include file='MIB_IPDESTTABLE.xml' path='doc/member[@name="MIB_IPDESTTABLE.table"]/*' />
-    [NativeTypeName("MIB_IPDESTROW [1]")]
+    [NativeTypeName("MIB_IPDESTROW[1]")]
     public _table_e__FixedBuffer table;
 
     /// <include file='_table_e__FixedBuffer.xml' path='doc/member[@name="_table_e__FixedBuffer"]/*' />

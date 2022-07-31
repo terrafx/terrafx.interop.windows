@@ -9,7 +9,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct MIB_TCP6ROW_OWNER_MODULE
 {
     /// <include file='MIB_TCP6ROW_OWNER_MODULE.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_MODULE.ucLocalAddr"]/*' />
-    [NativeTypeName("UCHAR [16]")]
+    [NativeTypeName("UCHAR[16]")]
     public fixed byte ucLocalAddr[16];
 
     /// <include file='MIB_TCP6ROW_OWNER_MODULE.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_MODULE.dwLocalScopeId"]/*' />
@@ -21,7 +21,7 @@ public unsafe partial struct MIB_TCP6ROW_OWNER_MODULE
     public uint dwLocalPort;
 
     /// <include file='MIB_TCP6ROW_OWNER_MODULE.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_MODULE.ucRemoteAddr"]/*' />
-    [NativeTypeName("UCHAR [16]")]
+    [NativeTypeName("UCHAR[16]")]
     public fixed byte ucRemoteAddr[16];
 
     /// <include file='MIB_TCP6ROW_OWNER_MODULE.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_MODULE.dwRemoteScopeId"]/*' />
@@ -44,6 +44,6 @@ public unsafe partial struct MIB_TCP6ROW_OWNER_MODULE
     public LARGE_INTEGER liCreateTimestamp;
 
     /// <include file='MIB_TCP6ROW_OWNER_MODULE.xml' path='doc/member[@name="MIB_TCP6ROW_OWNER_MODULE.OwningModuleInfo"]/*' />
-    [NativeTypeName("ULONGLONG [16]")]
+    [NativeTypeName("ULONGLONG[16]")]
     public fixed ulong OwningModuleInfo[16];
 }

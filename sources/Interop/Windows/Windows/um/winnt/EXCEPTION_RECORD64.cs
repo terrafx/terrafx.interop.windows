@@ -33,6 +33,6 @@ public unsafe partial struct EXCEPTION_RECORD64
     public uint __unusedAlignment;
 
     /// <include file='EXCEPTION_RECORD64.xml' path='doc/member[@name="EXCEPTION_RECORD64.ExceptionInformation"]/*' />
-    [NativeTypeName("DWORD64 [15]")]
+    [NativeTypeName("DWORD64[15]")]
     public fixed ulong ExceptionInformation[15];
 }

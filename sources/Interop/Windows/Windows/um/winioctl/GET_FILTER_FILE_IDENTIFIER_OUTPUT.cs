@@ -13,6 +13,6 @@ public unsafe partial struct GET_FILTER_FILE_IDENTIFIER_OUTPUT
     public ushort FilterFileIdentifierLength;
 
     /// <include file='GET_FILTER_FILE_IDENTIFIER_OUTPUT.xml' path='doc/member[@name="GET_FILTER_FILE_IDENTIFIER_OUTPUT.FilterFileIdentifier"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte FilterFileIdentifier[1];
 }

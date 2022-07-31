@@ -32,15 +32,15 @@ public unsafe partial struct STORAGE_PHYSICAL_DEVICE_DATA
     public STORAGE_DEVICE_FORM_FACTOR FormFactor;
 
     /// <include file='STORAGE_PHYSICAL_DEVICE_DATA.xml' path='doc/member[@name="STORAGE_PHYSICAL_DEVICE_DATA.Vendor"]/*' />
-    [NativeTypeName("BYTE [8]")]
+    [NativeTypeName("BYTE[8]")]
     public fixed byte Vendor[8];
 
     /// <include file='STORAGE_PHYSICAL_DEVICE_DATA.xml' path='doc/member[@name="STORAGE_PHYSICAL_DEVICE_DATA.Model"]/*' />
-    [NativeTypeName("BYTE [40]")]
+    [NativeTypeName("BYTE[40]")]
     public fixed byte Model[40];
 
     /// <include file='STORAGE_PHYSICAL_DEVICE_DATA.xml' path='doc/member[@name="STORAGE_PHYSICAL_DEVICE_DATA.FirmwareRevision"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte FirmwareRevision[16];
 
     /// <include file='STORAGE_PHYSICAL_DEVICE_DATA.xml' path='doc/member[@name="STORAGE_PHYSICAL_DEVICE_DATA.Capacity"]/*' />
@@ -48,10 +48,10 @@ public unsafe partial struct STORAGE_PHYSICAL_DEVICE_DATA
     public ulong Capacity;
 
     /// <include file='STORAGE_PHYSICAL_DEVICE_DATA.xml' path='doc/member[@name="STORAGE_PHYSICAL_DEVICE_DATA.PhysicalLocation"]/*' />
-    [NativeTypeName("BYTE [32]")]
+    [NativeTypeName("BYTE[32]")]
     public fixed byte PhysicalLocation[32];
 
     /// <include file='STORAGE_PHYSICAL_DEVICE_DATA.xml' path='doc/member[@name="STORAGE_PHYSICAL_DEVICE_DATA.Reserved"]/*' />
-    [NativeTypeName("DWORD [2]")]
+    [NativeTypeName("DWORD[2]")]
     public fixed uint Reserved[2];
 }

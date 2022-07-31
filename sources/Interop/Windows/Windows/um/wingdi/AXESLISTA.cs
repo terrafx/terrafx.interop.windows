@@ -21,7 +21,7 @@ public partial struct AXESLISTA
     public uint axlNumAxes;
 
     /// <include file='AXESLISTA.xml' path='doc/member[@name="AXESLISTA.axlAxisInfo"]/*' />
-    [NativeTypeName("AXISINFOA [16]")]
+    [NativeTypeName("AXISINFOA[16]")]
     public _axlAxisInfo_e__FixedBuffer axlAxisInfo;
 
     /// <include file='_axlAxisInfo_e__FixedBuffer.xml' path='doc/member[@name="_axlAxisInfo_e__FixedBuffer"]/*' />

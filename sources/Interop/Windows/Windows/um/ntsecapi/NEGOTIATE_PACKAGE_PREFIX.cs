@@ -25,6 +25,6 @@ public unsafe partial struct NEGOTIATE_PACKAGE_PREFIX
     public nuint PrefixLen;
 
     /// <include file='NEGOTIATE_PACKAGE_PREFIX.xml' path='doc/member[@name="NEGOTIATE_PACKAGE_PREFIX.Prefix"]/*' />
-    [NativeTypeName("UCHAR [32]")]
+    [NativeTypeName("UCHAR[32]")]
     public fixed byte Prefix[32];
 }

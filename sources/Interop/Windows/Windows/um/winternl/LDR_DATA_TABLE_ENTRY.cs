@@ -12,14 +12,14 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct LDR_DATA_TABLE_ENTRY
 {
     /// <include file='LDR_DATA_TABLE_ENTRY.xml' path='doc/member[@name="LDR_DATA_TABLE_ENTRY.Reserved1"]/*' />
-    [NativeTypeName("PVOID [2]")]
+    [NativeTypeName("PVOID[2]")]
     public _Reserved1_e__FixedBuffer Reserved1;
 
     /// <include file='LDR_DATA_TABLE_ENTRY.xml' path='doc/member[@name="LDR_DATA_TABLE_ENTRY.InMemoryOrderLinks"]/*' />
     public LIST_ENTRY InMemoryOrderLinks;
 
     /// <include file='LDR_DATA_TABLE_ENTRY.xml' path='doc/member[@name="LDR_DATA_TABLE_ENTRY.Reserved2"]/*' />
-    [NativeTypeName("PVOID [2]")]
+    [NativeTypeName("PVOID[2]")]
     public _Reserved2_e__FixedBuffer Reserved2;
 
     /// <include file='LDR_DATA_TABLE_ENTRY.xml' path='doc/member[@name="LDR_DATA_TABLE_ENTRY.DllBase"]/*' />
@@ -27,18 +27,18 @@ public unsafe partial struct LDR_DATA_TABLE_ENTRY
     public void* DllBase;
 
     /// <include file='LDR_DATA_TABLE_ENTRY.xml' path='doc/member[@name="LDR_DATA_TABLE_ENTRY.Reserved3"]/*' />
-    [NativeTypeName("PVOID [2]")]
+    [NativeTypeName("PVOID[2]")]
     public _Reserved3_e__FixedBuffer Reserved3;
 
     /// <include file='LDR_DATA_TABLE_ENTRY.xml' path='doc/member[@name="LDR_DATA_TABLE_ENTRY.FullDllName"]/*' />
     public UNICODE_STRING FullDllName;
 
     /// <include file='LDR_DATA_TABLE_ENTRY.xml' path='doc/member[@name="LDR_DATA_TABLE_ENTRY.Reserved4"]/*' />
-    [NativeTypeName("BYTE [8]")]
+    [NativeTypeName("BYTE[8]")]
     public fixed byte Reserved4[8];
 
     /// <include file='LDR_DATA_TABLE_ENTRY.xml' path='doc/member[@name="LDR_DATA_TABLE_ENTRY.Reserved5"]/*' />
-    [NativeTypeName("PVOID [3]")]
+    [NativeTypeName("PVOID[3]")]
     public _Reserved5_e__FixedBuffer Reserved5;
 
     /// <include file='LDR_DATA_TABLE_ENTRY.xml' path='doc/member[@name="LDR_DATA_TABLE_ENTRY.Anonymous"]/*' />

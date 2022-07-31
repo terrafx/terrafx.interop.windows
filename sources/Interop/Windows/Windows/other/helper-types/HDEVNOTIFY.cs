@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HDEVNOTIFY : IComparable, IComparable<HDEVNOTIFY>, IEquatable<HDEVNOTIFY>, IFormattable
+public readonly unsafe partial struct HDEVNOTIFY : IComparable, IComparable<HDEVNOTIFY>, IEquatable<HDEVNOTIFY>, IFormattable
 {
     public readonly void* Value;
 

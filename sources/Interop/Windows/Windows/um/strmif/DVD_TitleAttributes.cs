@@ -24,11 +24,11 @@ public partial struct DVD_TitleAttributes
     public uint ulNumberOfAudioStreams;
 
     /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.AudioAttributes"]/*' />
-    [NativeTypeName("DVD_AudioAttributes [8]")]
+    [NativeTypeName("DVD_AudioAttributes[8]")]
     public _AudioAttributes_e__FixedBuffer AudioAttributes;
 
     /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.MultichannelAudioAttributes"]/*' />
-    [NativeTypeName("DVD_MultichannelAudioAttributes [8]")]
+    [NativeTypeName("DVD_MultichannelAudioAttributes[8]")]
     public _MultichannelAudioAttributes_e__FixedBuffer MultichannelAudioAttributes;
 
     /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.ulNumberOfSubpictureStreams"]/*' />
@@ -36,7 +36,7 @@ public partial struct DVD_TitleAttributes
     public uint ulNumberOfSubpictureStreams;
 
     /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.SubpictureAttributes"]/*' />
-    [NativeTypeName("DVD_SubpictureAttributes [32]")]
+    [NativeTypeName("DVD_SubpictureAttributes[32]")]
     public _SubpictureAttributes_e__FixedBuffer SubpictureAttributes;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AppMode"]/*' />

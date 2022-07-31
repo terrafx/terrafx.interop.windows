@@ -29,6 +29,6 @@ public unsafe partial struct D3D10_PASS_DESC
     public uint SampleMask;
 
     /// <include file='D3D10_PASS_DESC.xml' path='doc/member[@name="D3D10_PASS_DESC.BlendFactor"]/*' />
-    [NativeTypeName("FLOAT [4]")]
+    [NativeTypeName("FLOAT[4]")]
     public fixed float BlendFactor[4];
 }

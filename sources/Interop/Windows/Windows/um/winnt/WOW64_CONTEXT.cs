@@ -104,6 +104,6 @@ public unsafe partial struct WOW64_CONTEXT
     public uint SegSs;
 
     /// <include file='WOW64_CONTEXT.xml' path='doc/member[@name="WOW64_CONTEXT.ExtendedRegisters"]/*' />
-    [NativeTypeName("BYTE [512]")]
+    [NativeTypeName("BYTE[512]")]
     public fixed byte ExtendedRegisters[512];
 }

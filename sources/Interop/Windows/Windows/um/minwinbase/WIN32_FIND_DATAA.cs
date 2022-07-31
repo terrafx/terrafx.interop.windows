@@ -38,10 +38,10 @@ public unsafe partial struct WIN32_FIND_DATAA
     public uint dwReserved1;
 
     /// <include file='WIN32_FIND_DATAA.xml' path='doc/member[@name="WIN32_FIND_DATAA.cFileName"]/*' />
-    [NativeTypeName("CHAR [260]")]
+    [NativeTypeName("CHAR[260]")]
     public fixed sbyte cFileName[260];
 
     /// <include file='WIN32_FIND_DATAA.xml' path='doc/member[@name="WIN32_FIND_DATAA.cAlternateFileName"]/*' />
-    [NativeTypeName("CHAR [14]")]
+    [NativeTypeName("CHAR[14]")]
     public fixed sbyte cAlternateFileName[14];
 }

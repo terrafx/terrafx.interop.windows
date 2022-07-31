@@ -5,11 +5,13 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using TerraFX.Interop.DirectX;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IDirectDrawVideo.xml' path='doc/member[@name="IDirectDrawVideo"]/*' />
+[Guid("36D39EB0-DD75-11CE-BF0E-00AA0055595A")]
 [NativeTypeName("struct IDirectDrawVideo : IUnknown")]
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface

@@ -11,18 +11,18 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct PEB
 {
     /// <include file='PEB.xml' path='doc/member[@name="PEB.Reserved1"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte Reserved1[2];
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.BeingDebugged"]/*' />
     public byte BeingDebugged;
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.Reserved2"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Reserved2[1];
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.Reserved3"]/*' />
-    [NativeTypeName("PVOID [2]")]
+    [NativeTypeName("PVOID[2]")]
     public _Reserved3_e__FixedBuffer Reserved3;
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.Ldr"]/*' />
@@ -34,7 +34,7 @@ public unsafe partial struct PEB
     public RTL_USER_PROCESS_PARAMETERS* ProcessParameters;
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.Reserved4"]/*' />
-    [NativeTypeName("PVOID [3]")]
+    [NativeTypeName("PVOID[3]")]
     public _Reserved4_e__FixedBuffer Reserved4;
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.AtlThunkSListPtr"]/*' />
@@ -62,11 +62,11 @@ public unsafe partial struct PEB
     public uint AtlThunkSListPtr32;
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.Reserved9"]/*' />
-    [NativeTypeName("PVOID [45]")]
+    [NativeTypeName("PVOID[45]")]
     public _Reserved9_e__FixedBuffer Reserved9;
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.Reserved10"]/*' />
-    [NativeTypeName("BYTE [96]")]
+    [NativeTypeName("BYTE[96]")]
     public fixed byte Reserved10[96];
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.PostProcessInitRoutine"]/*' />
@@ -74,11 +74,11 @@ public unsafe partial struct PEB
     public delegate* unmanaged<void> PostProcessInitRoutine;
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.Reserved11"]/*' />
-    [NativeTypeName("BYTE [128]")]
+    [NativeTypeName("BYTE[128]")]
     public fixed byte Reserved11[128];
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.Reserved12"]/*' />
-    [NativeTypeName("PVOID [1]")]
+    [NativeTypeName("PVOID[1]")]
     public _Reserved12_e__FixedBuffer Reserved12;
 
     /// <include file='PEB.xml' path='doc/member[@name="PEB.SessionId"]/*' />

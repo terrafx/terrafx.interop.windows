@@ -25,7 +25,7 @@ public partial struct STORAGE_DEVICE_NUMBERS
     public uint NumberOfDevices;
 
     /// <include file='STORAGE_DEVICE_NUMBERS.xml' path='doc/member[@name="STORAGE_DEVICE_NUMBERS.Devices"]/*' />
-    [NativeTypeName("STORAGE_DEVICE_NUMBER [1]")]
+    [NativeTypeName("STORAGE_DEVICE_NUMBER[1]")]
     public _Devices_e__FixedBuffer Devices;
 
     /// <include file='_Devices_e__FixedBuffer.xml' path='doc/member[@name="_Devices_e__FixedBuffer"]/*' />

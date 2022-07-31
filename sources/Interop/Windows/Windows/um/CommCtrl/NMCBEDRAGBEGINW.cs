@@ -15,6 +15,6 @@ public unsafe partial struct NMCBEDRAGBEGINW
     public int iItemid;
 
     /// <include file='NMCBEDRAGBEGINW.xml' path='doc/member[@name="NMCBEDRAGBEGINW.szText"]/*' />
-    [NativeTypeName("WCHAR [260]")]
+    [NativeTypeName("WCHAR[260]")]
     public fixed ushort szText[260];
 }

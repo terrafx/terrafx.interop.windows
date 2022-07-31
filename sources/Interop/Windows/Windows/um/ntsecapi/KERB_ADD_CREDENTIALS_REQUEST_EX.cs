@@ -20,7 +20,7 @@ public partial struct KERB_ADD_CREDENTIALS_REQUEST_EX
     public uint PrincipalNameCount;
 
     /// <include file='KERB_ADD_CREDENTIALS_REQUEST_EX.xml' path='doc/member[@name="KERB_ADD_CREDENTIALS_REQUEST_EX.PrincipalNames"]/*' />
-    [NativeTypeName("UNICODE_STRING [1]")]
+    [NativeTypeName("UNICODE_STRING[1]")]
     public _PrincipalNames_e__FixedBuffer PrincipalNames;
 
     /// <include file='_PrincipalNames_e__FixedBuffer.xml' path='doc/member[@name="_PrincipalNames_e__FixedBuffer"]/*' />

@@ -21,7 +21,7 @@ public partial struct PRIVILEGE_SET
     public uint Control;
 
     /// <include file='PRIVILEGE_SET.xml' path='doc/member[@name="PRIVILEGE_SET.Privilege"]/*' />
-    [NativeTypeName("LUID_AND_ATTRIBUTES [1]")]
+    [NativeTypeName("LUID_AND_ATTRIBUTES[1]")]
     public _Privilege_e__FixedBuffer Privilege;
 
     /// <include file='_Privilege_e__FixedBuffer.xml' path='doc/member[@name="_Privilege_e__FixedBuffer"]/*' />

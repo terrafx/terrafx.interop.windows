@@ -26,6 +26,6 @@ public unsafe partial struct TF_LANGBARITEMINFO
     public uint ulSort;
 
     /// <include file='TF_LANGBARITEMINFO.xml' path='doc/member[@name="TF_LANGBARITEMINFO.szDescription"]/*' />
-    [NativeTypeName("WCHAR [32]")]
+    [NativeTypeName("WCHAR[32]")]
     public fixed ushort szDescription[32];
 }

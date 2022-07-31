@@ -25,7 +25,7 @@ public partial struct SCM_PHYSICAL_DEVICES
     public uint DeviceCount;
 
     /// <include file='SCM_PHYSICAL_DEVICES.xml' path='doc/member[@name="SCM_PHYSICAL_DEVICES.Devices"]/*' />
-    [NativeTypeName("SCM_PHYSICAL_DEVICE_INSTANCE [1]")]
+    [NativeTypeName("SCM_PHYSICAL_DEVICE_INSTANCE[1]")]
     public _Devices_e__FixedBuffer Devices;
 
     /// <include file='_Devices_e__FixedBuffer.xml' path='doc/member[@name="_Devices_e__FixedBuffer"]/*' />

@@ -33,6 +33,6 @@ public unsafe partial struct DVINFO
     public uint dwDVVAuxCtl;
 
     /// <include file='DVINFO.xml' path='doc/member[@name="DVINFO.dwDVReserved"]/*' />
-    [NativeTypeName("DWORD [2]")]
+    [NativeTypeName("DWORD[2]")]
     public fixed uint dwDVReserved[2];
 }

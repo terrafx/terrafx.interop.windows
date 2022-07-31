@@ -13,6 +13,6 @@ public unsafe partial struct RemHBRUSH
     public uint cbData;
 
     /// <include file='RemHBRUSH.xml' path='doc/member[@name="RemHBRUSH.data"]/*' />
-    [NativeTypeName("byte [1]")]
+    [NativeTypeName("byte[1]")]
     public fixed byte data[1];
 }

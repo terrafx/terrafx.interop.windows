@@ -11,7 +11,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct TEB
 {
     /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved1"]/*' />
-    [NativeTypeName("PVOID [12]")]
+    [NativeTypeName("PVOID[12]")]
     public _Reserved1_e__FixedBuffer Reserved1;
 
     /// <include file='TEB.xml' path='doc/member[@name="TEB.ProcessEnvironmentBlock"]/*' />
@@ -19,23 +19,23 @@ public unsafe partial struct TEB
     public PEB* ProcessEnvironmentBlock;
 
     /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved2"]/*' />
-    [NativeTypeName("PVOID [399]")]
+    [NativeTypeName("PVOID[399]")]
     public _Reserved2_e__FixedBuffer Reserved2;
 
     /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved3"]/*' />
-    [NativeTypeName("BYTE [1952]")]
+    [NativeTypeName("BYTE[1952]")]
     public fixed byte Reserved3[1952];
 
     /// <include file='TEB.xml' path='doc/member[@name="TEB.TlsSlots"]/*' />
-    [NativeTypeName("PVOID [64]")]
+    [NativeTypeName("PVOID[64]")]
     public _TlsSlots_e__FixedBuffer TlsSlots;
 
     /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved4"]/*' />
-    [NativeTypeName("BYTE [8]")]
+    [NativeTypeName("BYTE[8]")]
     public fixed byte Reserved4[8];
 
     /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved5"]/*' />
-    [NativeTypeName("PVOID [26]")]
+    [NativeTypeName("PVOID[26]")]
     public _Reserved5_e__FixedBuffer Reserved5;
 
     /// <include file='TEB.xml' path='doc/member[@name="TEB.ReservedForOle"]/*' />
@@ -43,7 +43,7 @@ public unsafe partial struct TEB
     public void* ReservedForOle;
 
     /// <include file='TEB.xml' path='doc/member[@name="TEB.Reserved6"]/*' />
-    [NativeTypeName("PVOID [4]")]
+    [NativeTypeName("PVOID[4]")]
     public _Reserved6_e__FixedBuffer Reserved6;
 
     /// <include file='TEB.xml' path='doc/member[@name="TEB.TlsExpansionSlots"]/*' />

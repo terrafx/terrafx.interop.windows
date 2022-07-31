@@ -13,7 +13,7 @@ public unsafe partial struct DML_SCALAR_UNION
 {
     /// <include file='DML_SCALAR_UNION.xml' path='doc/member[@name="DML_SCALAR_UNION.Bytes"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("BYTE [8]")]
+    [NativeTypeName("BYTE[8]")]
     public fixed byte Bytes[8];
 
     /// <include file='DML_SCALAR_UNION.xml' path='doc/member[@name="DML_SCALAR_UNION.Int8"]/*' />

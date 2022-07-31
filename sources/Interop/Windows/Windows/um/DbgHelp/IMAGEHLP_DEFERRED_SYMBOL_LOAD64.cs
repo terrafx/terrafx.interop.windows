@@ -25,7 +25,7 @@ public unsafe partial struct IMAGEHLP_DEFERRED_SYMBOL_LOAD64
     public uint TimeDateStamp;
 
     /// <include file='IMAGEHLP_DEFERRED_SYMBOL_LOAD64.xml' path='doc/member[@name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.FileName"]/*' />
-    [NativeTypeName("CHAR [260]")]
+    [NativeTypeName("CHAR[260]")]
     public fixed sbyte FileName[260];
 
     /// <include file='IMAGEHLP_DEFERRED_SYMBOL_LOAD64.xml' path='doc/member[@name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.Reparse"]/*' />

@@ -13,6 +13,6 @@ public unsafe partial struct CONTAINER_ROOT_INFO_OUTPUT
     public ushort ContainerRootIdLength;
 
     /// <include file='CONTAINER_ROOT_INFO_OUTPUT.xml' path='doc/member[@name="CONTAINER_ROOT_INFO_OUTPUT.ContainerRootId"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte ContainerRootId[1];
 }

@@ -23,6 +23,6 @@ public unsafe partial struct LOOKUP_STREAM_FROM_CLUSTER_ENTRY
     public LARGE_INTEGER Cluster;
 
     /// <include file='LOOKUP_STREAM_FROM_CLUSTER_ENTRY.xml' path='doc/member[@name="LOOKUP_STREAM_FROM_CLUSTER_ENTRY.FileName"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort FileName[1];
 }

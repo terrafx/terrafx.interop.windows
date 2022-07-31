@@ -13,6 +13,6 @@ public unsafe partial struct DVD_ATR
     public uint ulCAT;
 
     /// <include file='DVD_ATR.xml' path='doc/member[@name="DVD_ATR.pbATRI"]/*' />
-    [NativeTypeName("BYTE [768]")]
+    [NativeTypeName("BYTE[768]")]
     public fixed byte pbATRI[768];
 }

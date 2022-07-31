@@ -12,6 +12,6 @@ public unsafe partial struct RGNDATA
     public RGNDATAHEADER rdh;
 
     /// <include file='RGNDATA.xml' path='doc/member[@name="RGNDATA.Buffer"]/*' />
-    [NativeTypeName("char [1]")]
+    [NativeTypeName("char[1]")]
     public fixed sbyte Buffer[1];
 }

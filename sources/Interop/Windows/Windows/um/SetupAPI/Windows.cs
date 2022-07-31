@@ -860,12 +860,12 @@ public static unsafe partial class Windows
     public static extern void SetupSetThreadLogToken([NativeTypeName("SP_LOG_TOKEN")] ulong LogToken);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupWriteTextLog"]/*' />
-    [DllImport("setupapi", ExactSpelling = true)]
-    public static extern void SetupWriteTextLog([NativeTypeName("SP_LOG_TOKEN")] ulong LogToken, [NativeTypeName("DWORD")] uint Category, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCSTR")] sbyte* MessageStr);
+    [DllImport("setupapi", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    public static extern void SetupWriteTextLog([NativeTypeName("SP_LOG_TOKEN")] ulong LogToken, [NativeTypeName("DWORD")] uint Category, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCSTR")] sbyte* MessageStr, __arglist);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupWriteTextLogError"]/*' />
-    [DllImport("setupapi", ExactSpelling = true)]
-    public static extern void SetupWriteTextLogError([NativeTypeName("SP_LOG_TOKEN")] ulong LogToken, [NativeTypeName("DWORD")] uint Category, [NativeTypeName("DWORD")] uint LogFlags, [NativeTypeName("DWORD")] uint Error, [NativeTypeName("PCSTR")] sbyte* MessageStr);
+    [DllImport("setupapi", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    public static extern void SetupWriteTextLogError([NativeTypeName("SP_LOG_TOKEN")] ulong LogToken, [NativeTypeName("DWORD")] uint Category, [NativeTypeName("DWORD")] uint LogFlags, [NativeTypeName("DWORD")] uint Error, [NativeTypeName("PCSTR")] sbyte* MessageStr, __arglist);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupWriteTextLogInfLine"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]

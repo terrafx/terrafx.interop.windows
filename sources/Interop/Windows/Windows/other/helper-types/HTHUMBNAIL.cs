@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HTHUMBNAIL : IComparable, IComparable<HTHUMBNAIL>, IEquatable<HTHUMBNAIL>, IFormattable
+public readonly unsafe partial struct HTHUMBNAIL : IComparable, IComparable<HTHUMBNAIL>, IEquatable<HTHUMBNAIL>, IFormattable
 {
     public readonly void* Value;
 

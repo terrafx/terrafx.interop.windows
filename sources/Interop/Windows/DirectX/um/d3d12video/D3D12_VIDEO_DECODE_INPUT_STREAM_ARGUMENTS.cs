@@ -16,7 +16,7 @@ public unsafe partial struct D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS
     public uint NumFrameArguments;
 
     /// <include file='D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS.xml' path='doc/member[@name="D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS.FrameArguments"]/*' />
-    [NativeTypeName("D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
+    [NativeTypeName("D3D12_VIDEO_DECODE_FRAME_ARGUMENT[10]")]
     public _FrameArguments_e__FixedBuffer FrameArguments;
 
     /// <include file='D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS.xml' path='doc/member[@name="D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS.ReferenceFrames"]/*' />

@@ -19,7 +19,7 @@ public partial struct KERB_EXTERNAL_NAME
     public ushort NameCount;
 
     /// <include file='KERB_EXTERNAL_NAME.xml' path='doc/member[@name="KERB_EXTERNAL_NAME.Names"]/*' />
-    [NativeTypeName("UNICODE_STRING [1]")]
+    [NativeTypeName("UNICODE_STRING[1]")]
     public _Names_e__FixedBuffer Names;
 
     /// <include file='_Names_e__FixedBuffer.xml' path='doc/member[@name="_Names_e__FixedBuffer"]/*' />

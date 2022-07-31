@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct PHIDP_PREPARSED_DATA : IComparable, IComparable<PHIDP_PREPARSED_DATA>, IEquatable<PHIDP_PREPARSED_DATA>, IFormattable
+public readonly unsafe partial struct PHIDP_PREPARSED_DATA : IComparable, IComparable<PHIDP_PREPARSED_DATA>, IEquatable<PHIDP_PREPARSED_DATA>, IFormattable
 {
     public readonly void* Value;
 

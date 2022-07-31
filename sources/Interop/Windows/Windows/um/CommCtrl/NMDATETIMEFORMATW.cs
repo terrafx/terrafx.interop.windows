@@ -23,6 +23,6 @@ public unsafe partial struct NMDATETIMEFORMATW
     public ushort* pszDisplay;
 
     /// <include file='NMDATETIMEFORMATW.xml' path='doc/member[@name="NMDATETIMEFORMATW.szDisplay"]/*' />
-    [NativeTypeName("WCHAR [64]")]
+    [NativeTypeName("WCHAR[64]")]
     public fixed ushort szDisplay[64];
 }

@@ -20,6 +20,6 @@ public unsafe partial struct DEVICE_DSM_OFFLOAD_READ_PARAMETERS
     public uint TimeToLive;
 
     /// <include file='DEVICE_DSM_OFFLOAD_READ_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_OFFLOAD_READ_PARAMETERS.Reserved"]/*' />
-    [NativeTypeName("DWORD [2]")]
+    [NativeTypeName("DWORD[2]")]
     public fixed uint Reserved[2];
 }

@@ -12,10 +12,10 @@ public unsafe partial struct AASHELLMENUFILENAME
     public short cbTotal;
 
     /// <include file='AASHELLMENUFILENAME.xml' path='doc/member[@name="AASHELLMENUFILENAME.rgbReserved"]/*' />
-    [NativeTypeName("BYTE [12]")]
+    [NativeTypeName("BYTE[12]")]
     public fixed byte rgbReserved[12];
 
     /// <include file='AASHELLMENUFILENAME.xml' path='doc/member[@name="AASHELLMENUFILENAME.szFileName"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort szFileName[1];
 }

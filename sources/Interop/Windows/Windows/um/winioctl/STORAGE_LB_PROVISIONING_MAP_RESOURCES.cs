@@ -72,7 +72,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
     }
 
     /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.Reserved1"]/*' />
-    [NativeTypeName("BYTE [3]")]
+    [NativeTypeName("BYTE[3]")]
     public fixed byte Reserved1[3];
 
     public byte _bitfield2;
@@ -129,7 +129,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
     }
 
     /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.Reserved3"]/*' />
-    [NativeTypeName("BYTE [3]")]
+    [NativeTypeName("BYTE[3]")]
     public fixed byte Reserved3[3];
 
     /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.AvailableMappingResources"]/*' />

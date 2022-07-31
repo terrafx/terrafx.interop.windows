@@ -33,15 +33,15 @@ public unsafe partial struct STORAGE_TEMPERATURE_DATA_DESCRIPTOR
     public ushort InfoCount;
 
     /// <include file='STORAGE_TEMPERATURE_DATA_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.Reserved0"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte Reserved0[2];
 
     /// <include file='STORAGE_TEMPERATURE_DATA_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.Reserved1"]/*' />
-    [NativeTypeName("DWORD [2]")]
+    [NativeTypeName("DWORD[2]")]
     public fixed uint Reserved1[2];
 
     /// <include file='STORAGE_TEMPERATURE_DATA_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.TemperatureInfo"]/*' />
-    [NativeTypeName("STORAGE_TEMPERATURE_INFO [1]")]
+    [NativeTypeName("STORAGE_TEMPERATURE_INFO[1]")]
     public _TemperatureInfo_e__FixedBuffer TemperatureInfo;
 
     /// <include file='_TemperatureInfo_e__FixedBuffer.xml' path='doc/member[@name="_TemperatureInfo_e__FixedBuffer"]/*' />

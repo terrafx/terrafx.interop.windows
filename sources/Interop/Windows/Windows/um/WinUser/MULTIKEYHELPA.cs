@@ -17,6 +17,6 @@ public unsafe partial struct MULTIKEYHELPA
     public sbyte mkKeylist;
 
     /// <include file='MULTIKEYHELPA.xml' path='doc/member[@name="MULTIKEYHELPA.szKeyphrase"]/*' />
-    [NativeTypeName("CHAR [1]")]
+    [NativeTypeName("CHAR[1]")]
     public fixed sbyte szKeyphrase[1];
 }

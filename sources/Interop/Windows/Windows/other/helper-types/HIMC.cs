@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HIMC : IComparable, IComparable<HIMC>, IEquatable<HIMC>, IFormattable
+public readonly unsafe partial struct HIMC : IComparable, IComparable<HIMC>, IEquatable<HIMC>, IFormattable
 {
     public readonly void* Value;
 

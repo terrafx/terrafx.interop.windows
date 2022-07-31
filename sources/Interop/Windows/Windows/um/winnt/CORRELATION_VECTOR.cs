@@ -13,6 +13,6 @@ public unsafe partial struct CORRELATION_VECTOR
     public sbyte Version;
 
     /// <include file='CORRELATION_VECTOR.xml' path='doc/member[@name="CORRELATION_VECTOR.Vector"]/*' />
-    [NativeTypeName("CHAR [129]")]
+    [NativeTypeName("CHAR[129]")]
     public fixed sbyte Vector[129];
 }

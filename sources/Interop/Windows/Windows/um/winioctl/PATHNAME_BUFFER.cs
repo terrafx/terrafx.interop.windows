@@ -13,6 +13,6 @@ public unsafe partial struct PATHNAME_BUFFER
     public uint PathNameLength;
 
     /// <include file='PATHNAME_BUFFER.xml' path='doc/member[@name="PATHNAME_BUFFER.Name"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort Name[1];
 }

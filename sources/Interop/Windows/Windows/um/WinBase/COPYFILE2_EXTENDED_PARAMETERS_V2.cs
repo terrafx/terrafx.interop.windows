@@ -42,7 +42,7 @@ public unsafe partial struct COPYFILE2_EXTENDED_PARAMETERS_V2
     public uint ioDesiredRate;
 
     /// <include file='COPYFILE2_EXTENDED_PARAMETERS_V2.xml' path='doc/member[@name="COPYFILE2_EXTENDED_PARAMETERS_V2.reserved"]/*' />
-    [NativeTypeName("PVOID [8]")]
+    [NativeTypeName("PVOID[8]")]
     public _reserved_e__FixedBuffer reserved;
 
     /// <include file='_reserved_e__FixedBuffer.xml' path='doc/member[@name="_reserved_e__FixedBuffer"]/*' />

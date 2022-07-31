@@ -34,7 +34,7 @@ public unsafe partial struct SPRECOGNIZERSTATUS
     public uint cLangIDs;
 
     /// <include file='SPRECOGNIZERSTATUS.xml' path='doc/member[@name="SPRECOGNIZERSTATUS.aLangID"]/*' />
-    [NativeTypeName("WORD [20]")]
+    [NativeTypeName("WORD[20]")]
     public fixed ushort aLangID[20];
 
     /// <include file='SPRECOGNIZERSTATUS.xml' path='doc/member[@name="SPRECOGNIZERSTATUS.ullRecognitionStreamTime"]/*' />

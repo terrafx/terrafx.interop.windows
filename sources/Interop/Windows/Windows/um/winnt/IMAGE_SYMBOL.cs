@@ -38,7 +38,7 @@ public partial struct IMAGE_SYMBOL
     {
         /// <include file='_N_e__Union.xml' path='doc/member[@name="_N_e__Union.ShortName"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("BYTE [8]")]
+        [NativeTypeName("BYTE[8]")]
         public fixed byte ShortName[8];
 
         /// <include file='_N_e__Union.xml' path='doc/member[@name="_N_e__Union.Name"]/*' />
@@ -48,7 +48,7 @@ public partial struct IMAGE_SYMBOL
 
         /// <include file='_N_e__Union.xml' path='doc/member[@name="_N_e__Union.LongName"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("DWORD [2]")]
+        [NativeTypeName("DWORD[2]")]
         public fixed uint LongName[2];
 
         /// <include file='_Name_e__Struct.xml' path='doc/member[@name="_Name_e__Struct"]/*' />

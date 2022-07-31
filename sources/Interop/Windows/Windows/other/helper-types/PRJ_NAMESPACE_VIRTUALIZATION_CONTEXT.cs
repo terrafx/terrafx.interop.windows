@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT : IComparable, IComparable<PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT>, IEquatable<PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT>, IFormattable
+public readonly unsafe partial struct PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT : IComparable, IComparable<PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT>, IEquatable<PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT>, IFormattable
 {
     public readonly void* Value;
 

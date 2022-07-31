@@ -9,6 +9,6 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct SYSTEM_TIMEOFDAY_INFORMATION
 {
     /// <include file='SYSTEM_TIMEOFDAY_INFORMATION.xml' path='doc/member[@name="SYSTEM_TIMEOFDAY_INFORMATION.Reserved1"]/*' />
-    [NativeTypeName("BYTE [48]")]
+    [NativeTypeName("BYTE[48]")]
     public fixed byte Reserved1[48];
 }

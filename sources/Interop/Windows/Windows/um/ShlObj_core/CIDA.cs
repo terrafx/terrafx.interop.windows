@@ -15,6 +15,6 @@ public unsafe partial struct CIDA
     public uint cidl;
 
     /// <include file='CIDA.xml' path='doc/member[@name="CIDA.aoffset"]/*' />
-    [NativeTypeName("UINT [1]")]
+    [NativeTypeName("UINT[1]")]
     public fixed uint aoffset[1];
 }

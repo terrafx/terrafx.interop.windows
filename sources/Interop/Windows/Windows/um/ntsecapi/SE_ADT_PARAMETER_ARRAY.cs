@@ -39,7 +39,7 @@ public partial struct SE_ADT_PARAMETER_ARRAY
     public uint Flags;
 
     /// <include file='SE_ADT_PARAMETER_ARRAY.xml' path='doc/member[@name="SE_ADT_PARAMETER_ARRAY.Parameters"]/*' />
-    [NativeTypeName("SE_ADT_PARAMETER_ARRAY_ENTRY [32]")]
+    [NativeTypeName("SE_ADT_PARAMETER_ARRAY_ENTRY[32]")]
     public _Parameters_e__FixedBuffer Parameters;
 
     /// <include file='_Parameters_e__FixedBuffer.xml' path='doc/member[@name="_Parameters_e__FixedBuffer"]/*' />

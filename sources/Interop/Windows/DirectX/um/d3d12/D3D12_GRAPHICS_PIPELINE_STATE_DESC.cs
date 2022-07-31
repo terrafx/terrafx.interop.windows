@@ -59,7 +59,7 @@ public unsafe partial struct D3D12_GRAPHICS_PIPELINE_STATE_DESC
     public uint NumRenderTargets;
 
     /// <include file='D3D12_GRAPHICS_PIPELINE_STATE_DESC.xml' path='doc/member[@name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.RTVFormats"]/*' />
-    [NativeTypeName("DXGI_FORMAT [8]")]
+    [NativeTypeName("DXGI_FORMAT[8]")]
     public _RTVFormats_e__FixedBuffer RTVFormats;
 
     /// <include file='D3D12_GRAPHICS_PIPELINE_STATE_DESC.xml' path='doc/member[@name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.DSVFormat"]/*' />

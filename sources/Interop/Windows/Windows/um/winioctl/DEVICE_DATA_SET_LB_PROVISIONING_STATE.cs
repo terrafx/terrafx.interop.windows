@@ -36,6 +36,6 @@ public unsafe partial struct DEVICE_DATA_SET_LB_PROVISIONING_STATE
     public uint SlabAllocationBitMapLength;
 
     /// <include file='DEVICE_DATA_SET_LB_PROVISIONING_STATE.xml' path='doc/member[@name="DEVICE_DATA_SET_LB_PROVISIONING_STATE.SlabAllocationBitMap"]/*' />
-    [NativeTypeName("DWORD [1]")]
+    [NativeTypeName("DWORD[1]")]
     public fixed uint SlabAllocationBitMap[1];
 }

@@ -17,7 +17,7 @@ public partial struct MIB_MFE_TABLE
     public uint dwNumEntries;
 
     /// <include file='MIB_MFE_TABLE.xml' path='doc/member[@name="MIB_MFE_TABLE.table"]/*' />
-    [NativeTypeName("MIB_IPMCAST_MFE [1]")]
+    [NativeTypeName("MIB_IPMCAST_MFE[1]")]
     public _table_e__FixedBuffer table;
 
     /// <include file='_table_e__FixedBuffer.xml' path='doc/member[@name="_table_e__FixedBuffer"]/*' />

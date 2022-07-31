@@ -13,11 +13,11 @@ public unsafe partial struct CRYPT_X942_OTHER_INFO
     public sbyte* pszContentEncryptionObjId;
 
     /// <include file='CRYPT_X942_OTHER_INFO.xml' path='doc/member[@name="CRYPT_X942_OTHER_INFO.rgbCounter"]/*' />
-    [NativeTypeName("BYTE [4]")]
+    [NativeTypeName("BYTE[4]")]
     public fixed byte rgbCounter[4];
 
     /// <include file='CRYPT_X942_OTHER_INFO.xml' path='doc/member[@name="CRYPT_X942_OTHER_INFO.rgbKeyLength"]/*' />
-    [NativeTypeName("BYTE [4]")]
+    [NativeTypeName("BYTE[4]")]
     public fixed byte rgbKeyLength[4];
 
     /// <include file='CRYPT_X942_OTHER_INFO.xml' path='doc/member[@name="CRYPT_X942_OTHER_INFO.PubInfo"]/*' />

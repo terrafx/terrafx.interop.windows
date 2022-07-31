@@ -12,6 +12,6 @@ public unsafe partial struct DISPLAYCONFIG_ADAPTER_NAME
     public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
     /// <include file='DISPLAYCONFIG_ADAPTER_NAME.xml' path='doc/member[@name="DISPLAYCONFIG_ADAPTER_NAME.adapterDevicePath"]/*' />
-    [NativeTypeName("WCHAR [128]")]
+    [NativeTypeName("WCHAR[128]")]
     public fixed ushort adapterDevicePath[128];
 }

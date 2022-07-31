@@ -70,7 +70,7 @@ public unsafe partial struct STORAGE_HW_FIRMWARE_INFO
     public byte FirmwareShared;
 
     /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.Reserved"]/*' />
-    [NativeTypeName("BYTE [3]")]
+    [NativeTypeName("BYTE[3]")]
     public fixed byte Reserved[3];
 
     /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.ImagePayloadAlignment"]/*' />
@@ -82,7 +82,7 @@ public unsafe partial struct STORAGE_HW_FIRMWARE_INFO
     public uint ImagePayloadMaxSize;
 
     /// <include file='STORAGE_HW_FIRMWARE_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_INFO.Slot"]/*' />
-    [NativeTypeName("STORAGE_HW_FIRMWARE_SLOT_INFO [1]")]
+    [NativeTypeName("STORAGE_HW_FIRMWARE_SLOT_INFO[1]")]
     public _Slot_e__FixedBuffer Slot;
 
     /// <include file='_Slot_e__FixedBuffer.xml' path='doc/member[@name="_Slot_e__FixedBuffer"]/*' />

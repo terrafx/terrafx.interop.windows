@@ -13,6 +13,6 @@ public unsafe partial struct HIBERFILE_BUCKET
     public ulong MaxPhysicalMemory;
 
     /// <include file='HIBERFILE_BUCKET.xml' path='doc/member[@name="HIBERFILE_BUCKET.PhysicalMemoryPercent"]/*' />
-    [NativeTypeName("DWORD [3]")]
+    [NativeTypeName("DWORD[3]")]
     public fixed uint PhysicalMemoryPercent[3];
 }

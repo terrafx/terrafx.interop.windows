@@ -52,6 +52,6 @@ public unsafe partial struct DEVICE_COPY_OFFLOAD_DESCRIPTOR
     public ushort OptimalTransferLengthGranularity;
 
     /// <include file='DEVICE_COPY_OFFLOAD_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_COPY_OFFLOAD_DESCRIPTOR.Reserved"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte Reserved[2];
 }

@@ -32,11 +32,11 @@ public partial struct SCM_PD_MANAGEMENT_STATUS
     public uint NumberOfAdditionalReasons;
 
     /// <include file='SCM_PD_MANAGEMENT_STATUS.xml' path='doc/member[@name="SCM_PD_MANAGEMENT_STATUS.OperationalStatus"]/*' />
-    [NativeTypeName("SCM_PD_OPERATIONAL_STATUS [16]")]
+    [NativeTypeName("SCM_PD_OPERATIONAL_STATUS[16]")]
     public _OperationalStatus_e__FixedBuffer OperationalStatus;
 
     /// <include file='SCM_PD_MANAGEMENT_STATUS.xml' path='doc/member[@name="SCM_PD_MANAGEMENT_STATUS.AdditionalReasons"]/*' />
-    [NativeTypeName("SCM_PD_OPERATIONAL_STATUS_REASON [1]")]
+    [NativeTypeName("SCM_PD_OPERATIONAL_STATUS_REASON[1]")]
     public _AdditionalReasons_e__FixedBuffer AdditionalReasons;
 
     /// <include file='_OperationalStatus_e__FixedBuffer.xml' path='doc/member[@name="_OperationalStatus_e__FixedBuffer"]/*' />

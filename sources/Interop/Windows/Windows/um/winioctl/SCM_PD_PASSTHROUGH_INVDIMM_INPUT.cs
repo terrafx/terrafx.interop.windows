@@ -17,6 +17,6 @@ public unsafe partial struct SCM_PD_PASSTHROUGH_INVDIMM_INPUT
     public uint OpcodeParametersLength;
 
     /// <include file='SCM_PD_PASSTHROUGH_INVDIMM_INPUT.xml' path='doc/member[@name="SCM_PD_PASSTHROUGH_INVDIMM_INPUT.OpcodeParameters"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte OpcodeParameters[1];
 }

@@ -17,6 +17,6 @@ public unsafe partial struct METARECORD
     public ushort rdFunction;
 
     /// <include file='METARECORD.xml' path='doc/member[@name="METARECORD.rdParm"]/*' />
-    [NativeTypeName("WORD [1]")]
+    [NativeTypeName("WORD[1]")]
     public fixed ushort rdParm[1];
 }

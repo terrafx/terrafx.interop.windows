@@ -17,6 +17,6 @@ public unsafe partial struct IMAGEHLP_SYMBOL_SRC
     public uint type;
 
     /// <include file='IMAGEHLP_SYMBOL_SRC.xml' path='doc/member[@name="IMAGEHLP_SYMBOL_SRC.file"]/*' />
-    [NativeTypeName("char [260]")]
+    [NativeTypeName("char[260]")]
     public fixed sbyte file[260];
 }

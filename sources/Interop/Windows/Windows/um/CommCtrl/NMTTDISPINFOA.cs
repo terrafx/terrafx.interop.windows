@@ -16,7 +16,7 @@ public unsafe partial struct NMTTDISPINFOA
     public sbyte* lpszText;
 
     /// <include file='NMTTDISPINFOA.xml' path='doc/member[@name="NMTTDISPINFOA.szText"]/*' />
-    [NativeTypeName("char [80]")]
+    [NativeTypeName("char[80]")]
     public fixed sbyte szText[80];
 
     /// <include file='NMTTDISPINFOA.xml' path='doc/member[@name="NMTTDISPINFOA.hinst"]/*' />

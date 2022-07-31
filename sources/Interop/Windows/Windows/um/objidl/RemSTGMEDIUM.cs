@@ -29,6 +29,6 @@ public unsafe partial struct RemSTGMEDIUM
     public uint cbData;
 
     /// <include file='RemSTGMEDIUM.xml' path='doc/member[@name="RemSTGMEDIUM.data"]/*' />
-    [NativeTypeName("byte [1]")]
+    [NativeTypeName("byte[1]")]
     public fixed byte data[1];
 }

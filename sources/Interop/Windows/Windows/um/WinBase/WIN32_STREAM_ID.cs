@@ -24,6 +24,6 @@ public unsafe partial struct WIN32_STREAM_ID
     public uint dwStreamNameSize;
 
     /// <include file='WIN32_STREAM_ID.xml' path='doc/member[@name="WIN32_STREAM_ID.cStreamName"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort cStreamName[1];
 }

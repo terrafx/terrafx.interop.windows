@@ -17,7 +17,7 @@ public partial struct FILEGROUPDESCRIPTORW
     public uint cItems;
 
     /// <include file='FILEGROUPDESCRIPTORW.xml' path='doc/member[@name="FILEGROUPDESCRIPTORW.fgd"]/*' />
-    [NativeTypeName("FILEDESCRIPTORW [1]")]
+    [NativeTypeName("FILEDESCRIPTORW[1]")]
     public _fgd_e__FixedBuffer fgd;
 
     /// <include file='_fgd_e__FixedBuffer.xml' path='doc/member[@name="_fgd_e__FixedBuffer"]/*' />

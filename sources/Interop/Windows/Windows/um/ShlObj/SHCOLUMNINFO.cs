@@ -31,10 +31,10 @@ public unsafe partial struct SHCOLUMNINFO
     public uint csFlags;
 
     /// <include file='SHCOLUMNINFO.xml' path='doc/member[@name="SHCOLUMNINFO.wszTitle"]/*' />
-    [NativeTypeName("WCHAR [80]")]
+    [NativeTypeName("WCHAR[80]")]
     public fixed ushort wszTitle[80];
 
     /// <include file='SHCOLUMNINFO.xml' path='doc/member[@name="SHCOLUMNINFO.wszDescription"]/*' />
-    [NativeTypeName("WCHAR [128]")]
+    [NativeTypeName("WCHAR[128]")]
     public fixed ushort wszDescription[128];
 }

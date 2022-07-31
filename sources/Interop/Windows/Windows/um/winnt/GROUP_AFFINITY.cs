@@ -17,6 +17,6 @@ public unsafe partial struct GROUP_AFFINITY
     public ushort Group;
 
     /// <include file='GROUP_AFFINITY.xml' path='doc/member[@name="GROUP_AFFINITY.Reserved"]/*' />
-    [NativeTypeName("WORD [3]")]
+    [NativeTypeName("WORD[3]")]
     public fixed ushort Reserved[3];
 }

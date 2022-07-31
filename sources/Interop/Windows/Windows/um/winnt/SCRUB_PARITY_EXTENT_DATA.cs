@@ -29,7 +29,7 @@ public partial struct SCRUB_PARITY_EXTENT_DATA
     public ushort MaximumNumberOfParityExtents;
 
     /// <include file='SCRUB_PARITY_EXTENT_DATA.xml' path='doc/member[@name="SCRUB_PARITY_EXTENT_DATA.ParityExtents"]/*' />
-    [NativeTypeName("SCRUB_PARITY_EXTENT [1]")]
+    [NativeTypeName("SCRUB_PARITY_EXTENT[1]")]
     public _ParityExtents_e__FixedBuffer ParityExtents;
 
     /// <include file='_ParityExtents_e__FixedBuffer.xml' path='doc/member[@name="_ParityExtents_e__FixedBuffer"]/*' />

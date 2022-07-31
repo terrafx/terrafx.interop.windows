@@ -21,6 +21,6 @@ public unsafe partial struct FIND_BY_SID_OUTPUT
     public uint FileNameLength;
 
     /// <include file='FIND_BY_SID_OUTPUT.xml' path='doc/member[@name="FIND_BY_SID_OUTPUT.FileName"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort FileName[1];
 }

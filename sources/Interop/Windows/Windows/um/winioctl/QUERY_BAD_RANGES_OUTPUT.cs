@@ -25,7 +25,7 @@ public partial struct QUERY_BAD_RANGES_OUTPUT
     public ulong NextOffsetToLookUp;
 
     /// <include file='QUERY_BAD_RANGES_OUTPUT.xml' path='doc/member[@name="QUERY_BAD_RANGES_OUTPUT.BadRanges"]/*' />
-    [NativeTypeName("QUERY_BAD_RANGES_OUTPUT_RANGE [1]")]
+    [NativeTypeName("QUERY_BAD_RANGES_OUTPUT_RANGE[1]")]
     public _BadRanges_e__FixedBuffer BadRanges;
 
     /// <include file='_BadRanges_e__FixedBuffer.xml' path='doc/member[@name="_BadRanges_e__FixedBuffer"]/*' />

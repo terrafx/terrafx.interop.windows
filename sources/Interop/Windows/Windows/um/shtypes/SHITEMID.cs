@@ -15,6 +15,6 @@ public unsafe partial struct SHITEMID
     public ushort cb;
 
     /// <include file='SHITEMID.xml' path='doc/member[@name="SHITEMID.abID"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte abID[1];
 }

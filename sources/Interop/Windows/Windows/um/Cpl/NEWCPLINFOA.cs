@@ -31,14 +31,14 @@ public unsafe partial struct NEWCPLINFOA
     public HICON hIcon;
 
     /// <include file='NEWCPLINFOA.xml' path='doc/member[@name="NEWCPLINFOA.szName"]/*' />
-    [NativeTypeName("CHAR [32]")]
+    [NativeTypeName("CHAR[32]")]
     public fixed sbyte szName[32];
 
     /// <include file='NEWCPLINFOA.xml' path='doc/member[@name="NEWCPLINFOA.szInfo"]/*' />
-    [NativeTypeName("CHAR [64]")]
+    [NativeTypeName("CHAR[64]")]
     public fixed sbyte szInfo[64];
 
     /// <include file='NEWCPLINFOA.xml' path='doc/member[@name="NEWCPLINFOA.szHelpFile"]/*' />
-    [NativeTypeName("CHAR [128]")]
+    [NativeTypeName("CHAR[128]")]
     public fixed sbyte szHelpFile[128];
 }

@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HCRYPTPROV_LEGACY : IComparable, IComparable<HCRYPTPROV_LEGACY>, IEquatable<HCRYPTPROV_LEGACY>, IFormattable
+public readonly unsafe partial struct HCRYPTPROV_LEGACY : IComparable, IComparable<HCRYPTPROV_LEGACY>, IEquatable<HCRYPTPROV_LEGACY>, IFormattable
 {
     public readonly void* Value;
 

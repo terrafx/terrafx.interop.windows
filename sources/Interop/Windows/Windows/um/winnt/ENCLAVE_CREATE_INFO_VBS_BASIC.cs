@@ -13,6 +13,6 @@ public unsafe partial struct ENCLAVE_CREATE_INFO_VBS_BASIC
     public uint Flags;
 
     /// <include file='ENCLAVE_CREATE_INFO_VBS_BASIC.xml' path='doc/member[@name="ENCLAVE_CREATE_INFO_VBS_BASIC.OwnerID"]/*' />
-    [NativeTypeName("BYTE [32]")]
+    [NativeTypeName("BYTE[32]")]
     public fixed byte OwnerID[32];
 }

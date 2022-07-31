@@ -7,6 +7,6 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
-    [NativeTypeName("const WCHAR [55]")]
+    [NativeTypeName("const WCHAR[55]")]
     public const string InterfaceName_Windows_Foundation_Collections_IVectorChangedEventArgs = "Windows.Foundation.Collections.IVectorChangedEventArgs";
 }

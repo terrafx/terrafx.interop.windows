@@ -24,6 +24,6 @@ public unsafe partial struct RESTOREPOINTINFOW
     public long llSequenceNumber;
 
     /// <include file='RESTOREPOINTINFOW.xml' path='doc/member[@name="RESTOREPOINTINFOW.szDescription"]/*' />
-    [NativeTypeName("WCHAR [256]")]
+    [NativeTypeName("WCHAR[256]")]
     public fixed ushort szDescription[256];
 }

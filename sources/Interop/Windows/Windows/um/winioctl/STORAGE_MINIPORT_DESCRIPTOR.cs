@@ -36,7 +36,7 @@ public unsafe partial struct STORAGE_MINIPORT_DESCRIPTOR
     public byte ExtraIoInfoSupported;
 
     /// <include file='STORAGE_MINIPORT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MINIPORT_DESCRIPTOR.Reserved0"]/*' />
-    [NativeTypeName("BYTE [3]")]
+    [NativeTypeName("BYTE[3]")]
     public fixed byte Reserved0[3];
 
     /// <include file='STORAGE_MINIPORT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MINIPORT_DESCRIPTOR.Reserved1"]/*' />

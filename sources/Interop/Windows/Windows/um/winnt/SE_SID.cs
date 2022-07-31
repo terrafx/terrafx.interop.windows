@@ -17,6 +17,6 @@ public unsafe partial struct SE_SID
 
     /// <include file='SE_SID.xml' path='doc/member[@name="SE_SID.Buffer"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("BYTE [68]")]
+    [NativeTypeName("BYTE[68]")]
     public fixed byte Buffer[68];
 }

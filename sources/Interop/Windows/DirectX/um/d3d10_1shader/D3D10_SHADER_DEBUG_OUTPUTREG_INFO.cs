@@ -22,11 +22,11 @@ public unsafe partial struct D3D10_SHADER_DEBUG_OUTPUTREG_INFO
     public uint TempArrayReg;
 
     /// <include file='D3D10_SHADER_DEBUG_OUTPUTREG_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_OUTPUTREG_INFO.OutputComponents"]/*' />
-    [NativeTypeName("UINT [4]")]
+    [NativeTypeName("UINT[4]")]
     public fixed uint OutputComponents[4];
 
     /// <include file='D3D10_SHADER_DEBUG_OUTPUTREG_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_OUTPUTREG_INFO.OutputVars"]/*' />
-    [NativeTypeName("D3D10_SHADER_DEBUG_OUTPUTVAR [4]")]
+    [NativeTypeName("D3D10_SHADER_DEBUG_OUTPUTVAR[4]")]
     public _OutputVars_e__FixedBuffer OutputVars;
 
     /// <include file='D3D10_SHADER_DEBUG_OUTPUTREG_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_OUTPUTREG_INFO.IndexReg"]/*' />

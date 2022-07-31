@@ -54,7 +54,7 @@ public unsafe partial struct HIDP_BUTTON_CAPS
     public byte IsAbsolute;
 
     /// <include file='HIDP_BUTTON_CAPS.xml' path='doc/member[@name="HIDP_BUTTON_CAPS.Reserved"]/*' />
-    [NativeTypeName("ULONG [10]")]
+    [NativeTypeName("ULONG[10]")]
     public fixed uint Reserved[10];
 
     /// <include file='HIDP_BUTTON_CAPS.xml' path='doc/member[@name="HIDP_BUTTON_CAPS.Anonymous"]/*' />

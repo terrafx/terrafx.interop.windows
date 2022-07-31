@@ -298,12 +298,12 @@ public static unsafe partial class Windows
     public static extern int wvnsprintfW([NativeTypeName("PWSTR")] ushort* pszDest, int cchDest, [NativeTypeName("PCWSTR")] ushort* pszFmt, [NativeTypeName("va_list")] sbyte* arglist);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.wnsprintfA"]/*' />
-    [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int wnsprintfA([NativeTypeName("PSTR")] sbyte* pszDest, int cchDest, [NativeTypeName("PCSTR")] sbyte* pszFmt);
+    [DllImport("shlwapi", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    public static extern int wnsprintfA([NativeTypeName("PSTR")] sbyte* pszDest, int cchDest, [NativeTypeName("PCSTR")] sbyte* pszFmt, __arglist);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.wnsprintfW"]/*' />
-    [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int wnsprintfW([NativeTypeName("PWSTR")] ushort* pszDest, int cchDest, [NativeTypeName("PCWSTR")] ushort* pszFmt);
+    [DllImport("shlwapi", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    public static extern int wnsprintfW([NativeTypeName("PWSTR")] ushort* pszDest, int cchDest, [NativeTypeName("PCWSTR")] ushort* pszFmt, __arglist);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrRetToStrA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1679,9 +1679,6 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define wvnsprintf wvnsprintfW")]
     public static delegate*<ushort*, int, ushort*, sbyte*, int> wvnsprintf => &wvnsprintfW;
-
-    [NativeTypeName("#define wnsprintf wnsprintfW")]
-    public static delegate*<ushort*, int, ushort*, int> wnsprintf => &wnsprintfW;
 
     [NativeTypeName("#define StrIsIntlEqual StrIsIntlEqualW")]
     public static delegate*<BOOL, ushort*, ushort*, int, BOOL> StrIsIntlEqual => &StrIsIntlEqualW;

@@ -17,6 +17,6 @@ public unsafe partial struct ENHMETARECORD
     public uint nSize;
 
     /// <include file='ENHMETARECORD.xml' path='doc/member[@name="ENHMETARECORD.dParm"]/*' />
-    [NativeTypeName("DWORD [1]")]
+    [NativeTypeName("DWORD[1]")]
     public fixed uint dParm[1];
 }

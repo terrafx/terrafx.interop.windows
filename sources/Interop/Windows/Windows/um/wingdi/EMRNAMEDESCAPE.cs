@@ -21,6 +21,6 @@ public unsafe partial struct EMRNAMEDESCAPE
     public int cbEscData;
 
     /// <include file='EMRNAMEDESCAPE.xml' path='doc/member[@name="EMRNAMEDESCAPE.EscData"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte EscData[1];
 }

@@ -89,7 +89,7 @@ public unsafe partial struct PPM_WMI_PERF_STATES_EX
     public ulong Reserved2;
 
     /// <include file='PPM_WMI_PERF_STATES_EX.xml' path='doc/member[@name="PPM_WMI_PERF_STATES_EX.State"]/*' />
-    [NativeTypeName("PPM_WMI_PERF_STATE [1]")]
+    [NativeTypeName("PPM_WMI_PERF_STATE[1]")]
     public _State_e__FixedBuffer State;
 
     /// <include file='_State_e__FixedBuffer.xml' path='doc/member[@name="_State_e__FixedBuffer"]/*' />

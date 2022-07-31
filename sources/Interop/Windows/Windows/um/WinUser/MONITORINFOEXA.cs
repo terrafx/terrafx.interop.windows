@@ -13,6 +13,6 @@ public unsafe partial struct MONITORINFOEXA
     public MONITORINFO Base;
 
     /// <include file='MONITORINFOEXA.xml' path='doc/member[@name="MONITORINFOEXA.szDevice"]/*' />
-    [NativeTypeName("CHAR [32]")]
+    [NativeTypeName("CHAR[32]")]
     public fixed sbyte szDevice[32];
 }

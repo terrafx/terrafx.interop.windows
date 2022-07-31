@@ -15,6 +15,6 @@ public unsafe partial struct DISK_GEOMETRY_EX
     public LARGE_INTEGER DiskSize;
 
     /// <include file='DISK_GEOMETRY_EX.xml' path='doc/member[@name="DISK_GEOMETRY_EX.Data"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Data[1];
 }

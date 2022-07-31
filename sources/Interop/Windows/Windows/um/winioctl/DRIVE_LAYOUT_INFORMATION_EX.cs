@@ -25,7 +25,7 @@ public partial struct DRIVE_LAYOUT_INFORMATION_EX
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='DRIVE_LAYOUT_INFORMATION_EX.xml' path='doc/member[@name="DRIVE_LAYOUT_INFORMATION_EX.PartitionEntry"]/*' />
-    [NativeTypeName("PARTITION_INFORMATION_EX [1]")]
+    [NativeTypeName("PARTITION_INFORMATION_EX[1]")]
     public _PartitionEntry_e__FixedBuffer PartitionEntry;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Mbr"]/*' />

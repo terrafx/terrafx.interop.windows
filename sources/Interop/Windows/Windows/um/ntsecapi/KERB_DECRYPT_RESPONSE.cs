@@ -9,6 +9,6 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct KERB_DECRYPT_RESPONSE
 {
     /// <include file='KERB_DECRYPT_RESPONSE.xml' path='doc/member[@name="KERB_DECRYPT_RESPONSE.DecryptedData"]/*' />
-    [NativeTypeName("UCHAR [1]")]
+    [NativeTypeName("UCHAR[1]")]
     public fixed byte DecryptedData[1];
 }

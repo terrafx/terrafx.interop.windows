@@ -30,7 +30,7 @@ public unsafe partial struct PRJ_PLACEHOLDER_INFO
     public PRJ_PLACEHOLDER_VERSION_INFO VersionInfo;
 
     /// <include file='PRJ_PLACEHOLDER_INFO.xml' path='doc/member[@name="PRJ_PLACEHOLDER_INFO.VariableData"]/*' />
-    [NativeTypeName("UINT8 [1]")]
+    [NativeTypeName("UINT8[1]")]
     public fixed byte VariableData[1];
 
     /// <include file='_EaInformation_e__Struct.xml' path='doc/member[@name="_EaInformation_e__Struct"]/*' />

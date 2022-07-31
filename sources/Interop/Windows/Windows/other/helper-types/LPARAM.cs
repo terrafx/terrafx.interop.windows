@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct LPARAM : IComparable, IComparable<LPARAM>, IEquatable<LPARAM>, IFormattable
+public readonly unsafe partial struct LPARAM : IComparable, IComparable<LPARAM>, IEquatable<LPARAM>, IFormattable
 {
     public readonly nint Value;
 

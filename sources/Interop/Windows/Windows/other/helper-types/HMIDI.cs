@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HMIDI : IComparable, IComparable<HMIDI>, IEquatable<HMIDI>, IFormattable
+public readonly unsafe partial struct HMIDI : IComparable, IComparable<HMIDI>, IEquatable<HMIDI>, IFormattable
 {
     public readonly void* Value;
 

@@ -13,6 +13,6 @@ public unsafe partial struct STYLEBUFA
     public uint dwStyle;
 
     /// <include file='STYLEBUFA.xml' path='doc/member[@name="STYLEBUFA.szDescription"]/*' />
-    [NativeTypeName("CHAR [32]")]
+    [NativeTypeName("CHAR[32]")]
     public fixed sbyte szDescription[32];
 }

@@ -13,14 +13,14 @@ public unsafe partial struct AM_DVDCOPY_TITLEKEY
     public uint KeyFlags;
 
     /// <include file='AM_DVDCOPY_TITLEKEY.xml' path='doc/member[@name="AM_DVDCOPY_TITLEKEY.Reserved1"]/*' />
-    [NativeTypeName("ULONG [2]")]
+    [NativeTypeName("ULONG[2]")]
     public fixed uint Reserved1[2];
 
     /// <include file='AM_DVDCOPY_TITLEKEY.xml' path='doc/member[@name="AM_DVDCOPY_TITLEKEY.TitleKey"]/*' />
-    [NativeTypeName("UCHAR [6]")]
+    [NativeTypeName("UCHAR[6]")]
     public fixed byte TitleKey[6];
 
     /// <include file='AM_DVDCOPY_TITLEKEY.xml' path='doc/member[@name="AM_DVDCOPY_TITLEKEY.Reserved2"]/*' />
-    [NativeTypeName("UCHAR [2]")]
+    [NativeTypeName("UCHAR[2]")]
     public fixed byte Reserved2[2];
 }

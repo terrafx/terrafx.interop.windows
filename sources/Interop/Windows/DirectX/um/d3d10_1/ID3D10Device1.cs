@@ -223,7 +223,7 @@ public unsafe partial struct ID3D10Device1 : ID3D10Device1.Interface
     /// <inheritdoc cref="ID3D10Device.OMSetBlendState" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
-    public void OMSetBlendState(ID3D10BlendState* pBlendState, [NativeTypeName("const FLOAT [4]")] float* BlendFactor, uint SampleMask)
+    public void OMSetBlendState(ID3D10BlendState* pBlendState, [NativeTypeName("const FLOAT[4]")] float* BlendFactor, uint SampleMask)
     {
         ((delegate* unmanaged<ID3D10Device1*, ID3D10BlendState*, float*, uint, void>)(lpVtbl[25]))((ID3D10Device1*)Unsafe.AsPointer(ref this), pBlendState, BlendFactor, SampleMask);
     }
@@ -303,7 +303,7 @@ public unsafe partial struct ID3D10Device1 : ID3D10Device1.Interface
     /// <inheritdoc cref="ID3D10Device.ClearRenderTargetView" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
-    public void ClearRenderTargetView(ID3D10RenderTargetView* pRenderTargetView, [NativeTypeName("const FLOAT [4]")] float* ColorRGBA)
+    public void ClearRenderTargetView(ID3D10RenderTargetView* pRenderTargetView, [NativeTypeName("const FLOAT[4]")] float* ColorRGBA)
     {
         ((delegate* unmanaged<ID3D10Device1*, ID3D10RenderTargetView*, float*, void>)(lpVtbl[35]))((ID3D10Device1*)Unsafe.AsPointer(ref this), pRenderTargetView, ColorRGBA);
     }
@@ -479,7 +479,7 @@ public unsafe partial struct ID3D10Device1 : ID3D10Device1.Interface
     /// <inheritdoc cref="ID3D10Device.OMGetBlendState" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(57)]
-    public void OMGetBlendState(ID3D10BlendState** ppBlendState, [NativeTypeName("FLOAT [4]")] float* BlendFactor, uint* pSampleMask)
+    public void OMGetBlendState(ID3D10BlendState** ppBlendState, [NativeTypeName("FLOAT[4]")] float* BlendFactor, uint* pSampleMask)
     {
         ((delegate* unmanaged<ID3D10Device1*, ID3D10BlendState**, float*, uint*, void>)(lpVtbl[57]))((ID3D10Device1*)Unsafe.AsPointer(ref this), ppBlendState, BlendFactor, pSampleMask);
     }

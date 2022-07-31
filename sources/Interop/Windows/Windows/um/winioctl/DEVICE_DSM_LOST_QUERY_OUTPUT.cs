@@ -25,6 +25,6 @@ public unsafe partial struct DEVICE_DSM_LOST_QUERY_OUTPUT
     public uint NumberOfBits;
 
     /// <include file='DEVICE_DSM_LOST_QUERY_OUTPUT.xml' path='doc/member[@name="DEVICE_DSM_LOST_QUERY_OUTPUT.BitMap"]/*' />
-    [NativeTypeName("DWORD [1]")]
+    [NativeTypeName("DWORD[1]")]
     public fixed uint BitMap[1];
 }

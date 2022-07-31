@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HGESTUREINFO : IComparable, IComparable<HGESTUREINFO>, IEquatable<HGESTUREINFO>, IFormattable
+public readonly unsafe partial struct HGESTUREINFO : IComparable, IComparable<HGESTUREINFO>, IEquatable<HGESTUREINFO>, IFormattable
 {
     public readonly void* Value;
 

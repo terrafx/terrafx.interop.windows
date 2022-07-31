@@ -51,7 +51,7 @@ public unsafe partial struct MIB_OPAQUE_INFO
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.rgbyData"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("BYTE [1]")]
+        [NativeTypeName("BYTE[1]")]
         public fixed byte rgbyData[1];
     }
 }

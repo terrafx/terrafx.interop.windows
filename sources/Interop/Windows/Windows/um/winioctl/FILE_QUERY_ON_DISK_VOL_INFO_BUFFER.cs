@@ -23,7 +23,7 @@ public unsafe partial struct FILE_QUERY_ON_DISK_VOL_INFO_BUFFER
     public ushort FsFormatMinVersion;
 
     /// <include file='FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.xml' path='doc/member[@name="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.FsFormatName"]/*' />
-    [NativeTypeName("WCHAR [12]")]
+    [NativeTypeName("WCHAR[12]")]
     public fixed ushort FsFormatName[12];
 
     /// <include file='FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.xml' path='doc/member[@name="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.FormatTime"]/*' />
@@ -33,18 +33,18 @@ public unsafe partial struct FILE_QUERY_ON_DISK_VOL_INFO_BUFFER
     public LARGE_INTEGER LastUpdateTime;
 
     /// <include file='FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.xml' path='doc/member[@name="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.CopyrightInfo"]/*' />
-    [NativeTypeName("WCHAR [34]")]
+    [NativeTypeName("WCHAR[34]")]
     public fixed ushort CopyrightInfo[34];
 
     /// <include file='FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.xml' path='doc/member[@name="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.AbstractInfo"]/*' />
-    [NativeTypeName("WCHAR [34]")]
+    [NativeTypeName("WCHAR[34]")]
     public fixed ushort AbstractInfo[34];
 
     /// <include file='FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.xml' path='doc/member[@name="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.FormattingImplementationInfo"]/*' />
-    [NativeTypeName("WCHAR [34]")]
+    [NativeTypeName("WCHAR[34]")]
     public fixed ushort FormattingImplementationInfo[34];
 
     /// <include file='FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.xml' path='doc/member[@name="FILE_QUERY_ON_DISK_VOL_INFO_BUFFER.LastModifyingImplementationInfo"]/*' />
-    [NativeTypeName("WCHAR [34]")]
+    [NativeTypeName("WCHAR[34]")]
     public fixed ushort LastModifyingImplementationInfo[34];
 }

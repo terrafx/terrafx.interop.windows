@@ -17,6 +17,6 @@ public unsafe partial struct PctPublicKey
     public uint cbKey;
 
     /// <include file='PctPublicKey.xml' path='doc/member[@name="PctPublicKey.pKey"]/*' />
-    [NativeTypeName("UCHAR [1]")]
+    [NativeTypeName("UCHAR[1]")]
     public fixed byte pKey[1];
 }

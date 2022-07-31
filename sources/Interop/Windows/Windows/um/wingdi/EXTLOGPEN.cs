@@ -31,6 +31,6 @@ public unsafe partial struct EXTLOGPEN
     public uint elpNumEntries;
 
     /// <include file='EXTLOGPEN.xml' path='doc/member[@name="EXTLOGPEN.elpStyleEntry"]/*' />
-    [NativeTypeName("DWORD [1]")]
+    [NativeTypeName("DWORD[1]")]
     public fixed uint elpStyleEntry[1];
 }

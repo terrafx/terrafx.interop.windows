@@ -97,7 +97,7 @@ public partial struct MIB_IPMCAST_MFE_STATS_EX_XP
     public uint ulTotalOutPackets;
 
     /// <include file='MIB_IPMCAST_MFE_STATS_EX_XP.xml' path='doc/member[@name="MIB_IPMCAST_MFE_STATS_EX_XP.rgmiosOutStats"]/*' />
-    [NativeTypeName("MIB_IPMCAST_OIF_STATS [1]")]
+    [NativeTypeName("MIB_IPMCAST_OIF_STATS[1]")]
     public _rgmiosOutStats_e__FixedBuffer rgmiosOutStats;
 
     /// <include file='_rgmiosOutStats_e__FixedBuffer.xml' path='doc/member[@name="_rgmiosOutStats_e__FixedBuffer"]/*' />

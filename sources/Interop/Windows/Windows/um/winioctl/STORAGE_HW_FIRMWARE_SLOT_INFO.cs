@@ -58,10 +58,10 @@ public unsafe partial struct STORAGE_HW_FIRMWARE_SLOT_INFO
     }
 
     /// <include file='STORAGE_HW_FIRMWARE_SLOT_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_SLOT_INFO.Reserved1"]/*' />
-    [NativeTypeName("BYTE [6]")]
+    [NativeTypeName("BYTE[6]")]
     public fixed byte Reserved1[6];
 
     /// <include file='STORAGE_HW_FIRMWARE_SLOT_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_SLOT_INFO.Revision"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte Revision[16];
 }

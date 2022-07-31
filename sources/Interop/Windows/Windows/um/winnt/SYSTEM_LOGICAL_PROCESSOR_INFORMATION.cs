@@ -83,7 +83,7 @@ public unsafe partial struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Reserved"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("ULONGLONG [2]")]
+        [NativeTypeName("ULONGLONG[2]")]
         public fixed ulong Reserved[2];
 
         /// <include file='_ProcessorCore_e__Struct.xml' path='doc/member[@name="_ProcessorCore_e__Struct"]/*' />

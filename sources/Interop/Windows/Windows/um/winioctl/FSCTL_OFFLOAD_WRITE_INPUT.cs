@@ -29,6 +29,6 @@ public unsafe partial struct FSCTL_OFFLOAD_WRITE_INPUT
     public ulong TransferOffset;
 
     /// <include file='FSCTL_OFFLOAD_WRITE_INPUT.xml' path='doc/member[@name="FSCTL_OFFLOAD_WRITE_INPUT.Token"]/*' />
-    [NativeTypeName("BYTE [512]")]
+    [NativeTypeName("BYTE[512]")]
     public fixed byte Token[512];
 }

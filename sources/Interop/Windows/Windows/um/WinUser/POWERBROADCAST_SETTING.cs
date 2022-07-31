@@ -18,6 +18,6 @@ public unsafe partial struct POWERBROADCAST_SETTING
     public uint DataLength;
 
     /// <include file='POWERBROADCAST_SETTING.xml' path='doc/member[@name="POWERBROADCAST_SETTING.Data"]/*' />
-    [NativeTypeName("UCHAR [1]")]
+    [NativeTypeName("UCHAR[1]")]
     public fixed byte Data[1];
 }

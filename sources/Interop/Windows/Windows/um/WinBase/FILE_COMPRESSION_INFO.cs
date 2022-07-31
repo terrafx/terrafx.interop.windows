@@ -28,6 +28,6 @@ public unsafe partial struct FILE_COMPRESSION_INFO
     public byte ClusterShift;
 
     /// <include file='FILE_COMPRESSION_INFO.xml' path='doc/member[@name="FILE_COMPRESSION_INFO.Reserved"]/*' />
-    [NativeTypeName("UCHAR [3]")]
+    [NativeTypeName("UCHAR[3]")]
     public fixed byte Reserved[3];
 }

@@ -25,7 +25,7 @@ public partial struct SCM_REGIONS
     public uint RegionCount;
 
     /// <include file='SCM_REGIONS.xml' path='doc/member[@name="SCM_REGIONS.Regions"]/*' />
-    [NativeTypeName("SCM_REGION [1]")]
+    [NativeTypeName("SCM_REGION[1]")]
     public _Regions_e__FixedBuffer Regions;
 
     /// <include file='_Regions_e__FixedBuffer.xml' path='doc/member[@name="_Regions_e__FixedBuffer"]/*' />

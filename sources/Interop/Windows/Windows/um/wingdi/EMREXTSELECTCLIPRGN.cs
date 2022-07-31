@@ -20,6 +20,6 @@ public unsafe partial struct EMREXTSELECTCLIPRGN
     public uint iMode;
 
     /// <include file='EMREXTSELECTCLIPRGN.xml' path='doc/member[@name="EMREXTSELECTCLIPRGN.RgnData"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte RgnData[1];
 }

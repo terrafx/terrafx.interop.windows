@@ -17,7 +17,7 @@ public partial struct MESSAGE_RESOURCE_DATA
     public uint NumberOfBlocks;
 
     /// <include file='MESSAGE_RESOURCE_DATA.xml' path='doc/member[@name="MESSAGE_RESOURCE_DATA.Blocks"]/*' />
-    [NativeTypeName("MESSAGE_RESOURCE_BLOCK [1]")]
+    [NativeTypeName("MESSAGE_RESOURCE_BLOCK[1]")]
     public _Blocks_e__FixedBuffer Blocks;
 
     /// <include file='_Blocks_e__FixedBuffer.xml' path='doc/member[@name="_Blocks_e__FixedBuffer"]/*' />

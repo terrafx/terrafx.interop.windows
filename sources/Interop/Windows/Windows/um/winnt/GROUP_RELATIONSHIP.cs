@@ -21,11 +21,11 @@ public unsafe partial struct GROUP_RELATIONSHIP
     public ushort ActiveGroupCount;
 
     /// <include file='GROUP_RELATIONSHIP.xml' path='doc/member[@name="GROUP_RELATIONSHIP.Reserved"]/*' />
-    [NativeTypeName("BYTE [20]")]
+    [NativeTypeName("BYTE[20]")]
     public fixed byte Reserved[20];
 
     /// <include file='GROUP_RELATIONSHIP.xml' path='doc/member[@name="GROUP_RELATIONSHIP.GroupInfo"]/*' />
-    [NativeTypeName("PROCESSOR_GROUP_INFO [1]")]
+    [NativeTypeName("PROCESSOR_GROUP_INFO[1]")]
     public _GroupInfo_e__FixedBuffer GroupInfo;
 
     /// <include file='_GroupInfo_e__FixedBuffer.xml' path='doc/member[@name="_GroupInfo_e__FixedBuffer"]/*' />

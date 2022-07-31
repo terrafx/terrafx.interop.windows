@@ -38,6 +38,6 @@ public unsafe partial struct DVD_AudioAttributes
     public byte bNumberOfChannels;
 
     /// <include file='DVD_AudioAttributes.xml' path='doc/member[@name="DVD_AudioAttributes.dwReserved"]/*' />
-    [NativeTypeName("DWORD [2]")]
+    [NativeTypeName("DWORD[2]")]
     public fixed uint dwReserved[2];
 }

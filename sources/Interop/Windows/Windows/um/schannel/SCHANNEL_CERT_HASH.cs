@@ -20,6 +20,6 @@ public unsafe partial struct SCHANNEL_CERT_HASH
     public HCRYPTPROV hProv;
 
     /// <include file='SCHANNEL_CERT_HASH.xml' path='doc/member[@name="SCHANNEL_CERT_HASH.ShaHash"]/*' />
-    [NativeTypeName("BYTE [20]")]
+    [NativeTypeName("BYTE[20]")]
     public fixed byte ShaHash[20];
 }

@@ -37,6 +37,6 @@ public unsafe partial struct userBITMAP
     public uint cbSize;
 
     /// <include file='userBITMAP.xml' path='doc/member[@name="userBITMAP.pBuffer"]/*' />
-    [NativeTypeName("byte [1]")]
+    [NativeTypeName("byte[1]")]
     public fixed byte pBuffer[1];
 }

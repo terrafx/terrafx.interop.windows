@@ -23,7 +23,7 @@ public unsafe partial struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC
     public uint AlphaFillModeSourceStreamIndex;
 
     /// <include file='D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC.BackgroundColor"]/*' />
-    [NativeTypeName("FLOAT [4]")]
+    [NativeTypeName("FLOAT[4]")]
     public fixed float BackgroundColor[4];
 
     /// <include file='D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC.FrameRate"]/*' />

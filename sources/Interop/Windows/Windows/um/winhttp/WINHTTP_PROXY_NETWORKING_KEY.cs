@@ -9,6 +9,6 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct WINHTTP_PROXY_NETWORKING_KEY
 {
     /// <include file='WINHTTP_PROXY_NETWORKING_KEY.xml' path='doc/member[@name="WINHTTP_PROXY_NETWORKING_KEY.pbBuffer"]/*' />
-    [NativeTypeName("unsigned char [128]")]
+    [NativeTypeName("unsigned char[128]")]
     public fixed byte pbBuffer[128];
 }

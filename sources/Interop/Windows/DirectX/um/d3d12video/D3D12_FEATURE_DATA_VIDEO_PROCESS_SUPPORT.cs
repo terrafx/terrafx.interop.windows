@@ -55,7 +55,7 @@ public partial struct D3D12_FEATURE_DATA_VIDEO_PROCESS_SUPPORT
     public D3D12_VIDEO_PROCESS_FILTER_FLAGS FilterSupport;
 
     /// <include file='D3D12_FEATURE_DATA_VIDEO_PROCESS_SUPPORT.xml' path='doc/member[@name="D3D12_FEATURE_DATA_VIDEO_PROCESS_SUPPORT.FilterRangeSupport"]/*' />
-    [NativeTypeName("D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
+    [NativeTypeName("D3D12_VIDEO_PROCESS_FILTER_RANGE[32]")]
     public _FilterRangeSupport_e__FixedBuffer FilterRangeSupport;
 
     /// <include file='_FilterRangeSupport_e__FixedBuffer.xml' path='doc/member[@name="_FilterRangeSupport_e__FixedBuffer"]/*' />

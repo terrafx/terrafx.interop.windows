@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HUSKEY : IComparable, IComparable<HUSKEY>, IEquatable<HUSKEY>, IFormattable
+public readonly unsafe partial struct HUSKEY : IComparable, IComparable<HUSKEY>, IEquatable<HUSKEY>, IFormattable
 {
     public readonly void* Value;
 

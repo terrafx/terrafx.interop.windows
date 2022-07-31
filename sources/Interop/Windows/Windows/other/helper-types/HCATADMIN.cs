@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HCATADMIN : IComparable, IComparable<HCATADMIN>, IEquatable<HCATADMIN>, IFormattable
+public readonly unsafe partial struct HCATADMIN : IComparable, IComparable<HCATADMIN>, IEquatable<HCATADMIN>, IFormattable
 {
     public readonly void* Value;
 

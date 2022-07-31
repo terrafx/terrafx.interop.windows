@@ -9,6 +9,6 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct AMCOPPSignature
 {
     /// <include file='AMCOPPSignature.xml' path='doc/member[@name="AMCOPPSignature.Signature"]/*' />
-    [NativeTypeName("BYTE [256]")]
+    [NativeTypeName("BYTE[256]")]
     public fixed byte Signature[256];
 }

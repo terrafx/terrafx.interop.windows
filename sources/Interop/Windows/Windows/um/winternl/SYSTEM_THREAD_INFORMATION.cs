@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct SYSTEM_THREAD_INFORMATION
 {
     /// <include file='SYSTEM_THREAD_INFORMATION.xml' path='doc/member[@name="SYSTEM_THREAD_INFORMATION.Reserved1"]/*' />
-    [NativeTypeName("LARGE_INTEGER [3]")]
+    [NativeTypeName("LARGE_INTEGER[3]")]
     public _Reserved1_e__FixedBuffer Reserved1;
 
     /// <include file='SYSTEM_THREAD_INFORMATION.xml' path='doc/member[@name="SYSTEM_THREAD_INFORMATION.Reserved2"]/*' />

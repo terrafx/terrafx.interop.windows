@@ -63,15 +63,15 @@ public unsafe partial struct XSAVE_FORMAT
     public uint MxCsr_Mask;
 
     /// <include file='XSAVE_FORMAT.xml' path='doc/member[@name="XSAVE_FORMAT.FloatRegisters"]/*' />
-    [NativeTypeName("M128A [8]")]
+    [NativeTypeName("M128A[8]")]
     public _FloatRegisters_e__FixedBuffer FloatRegisters;
 
     /// <include file='XSAVE_FORMAT.xml' path='doc/member[@name="XSAVE_FORMAT.XmmRegisters"]/*' />
-    [NativeTypeName("M128A [16]")]
+    [NativeTypeName("M128A[16]")]
     public _XmmRegisters_e__FixedBuffer XmmRegisters;
 
     /// <include file='XSAVE_FORMAT.xml' path='doc/member[@name="XSAVE_FORMAT.Reserved4"]/*' />
-    [NativeTypeName("BYTE [96]")]
+    [NativeTypeName("BYTE[96]")]
     public fixed byte Reserved4[96];
 
     /// <include file='_FloatRegisters_e__FixedBuffer.xml' path='doc/member[@name="_FloatRegisters_e__FixedBuffer"]/*' />

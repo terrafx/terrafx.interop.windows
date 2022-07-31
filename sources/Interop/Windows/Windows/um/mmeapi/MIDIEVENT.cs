@@ -24,6 +24,6 @@ public unsafe partial struct MIDIEVENT
     public uint dwEvent;
 
     /// <include file='MIDIEVENT.xml' path='doc/member[@name="MIDIEVENT.dwParms"]/*' />
-    [NativeTypeName("DWORD [1]")]
+    [NativeTypeName("DWORD[1]")]
     public fixed uint dwParms[1];
 }

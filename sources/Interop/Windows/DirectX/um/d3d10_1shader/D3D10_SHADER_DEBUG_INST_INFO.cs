@@ -22,7 +22,7 @@ public partial struct D3D10_SHADER_DEBUG_INST_INFO
     public uint uOutputs;
 
     /// <include file='D3D10_SHADER_DEBUG_INST_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INST_INFO.pOutputs"]/*' />
-    [NativeTypeName("D3D10_SHADER_DEBUG_OUTPUTREG_INFO [2]")]
+    [NativeTypeName("D3D10_SHADER_DEBUG_OUTPUTREG_INFO[2]")]
     public _pOutputs_e__FixedBuffer pOutputs;
 
     /// <include file='D3D10_SHADER_DEBUG_INST_INFO.xml' path='doc/member[@name="D3D10_SHADER_DEBUG_INST_INFO.TokenId"]/*' />

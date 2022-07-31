@@ -13,6 +13,6 @@ public unsafe partial struct STORAGE_PREDICT_FAILURE
     public uint PredictFailure;
 
     /// <include file='STORAGE_PREDICT_FAILURE.xml' path='doc/member[@name="STORAGE_PREDICT_FAILURE.VendorSpecific"]/*' />
-    [NativeTypeName("BYTE [512]")]
+    [NativeTypeName("BYTE[512]")]
     public fixed byte VendorSpecific[512];
 }

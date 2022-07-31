@@ -25,6 +25,6 @@ public unsafe partial struct MFFOLDDOWN_MATRIX
     public uint dwChannelMask;
 
     /// <include file='MFFOLDDOWN_MATRIX.xml' path='doc/member[@name="MFFOLDDOWN_MATRIX.Coeff"]/*' />
-    [NativeTypeName("LONG [64]")]
+    [NativeTypeName("LONG[64]")]
     public fixed int Coeff[64];
 }

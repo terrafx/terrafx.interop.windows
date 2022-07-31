@@ -79,10 +79,10 @@ public unsafe partial struct STORAGE_PROTOCOL_COMMAND
     public uint FixedProtocolReturnData;
 
     /// <include file='STORAGE_PROTOCOL_COMMAND.xml' path='doc/member[@name="STORAGE_PROTOCOL_COMMAND.Reserved1"]/*' />
-    [NativeTypeName("DWORD [3]")]
+    [NativeTypeName("DWORD[3]")]
     public fixed uint Reserved1[3];
 
     /// <include file='STORAGE_PROTOCOL_COMMAND.xml' path='doc/member[@name="STORAGE_PROTOCOL_COMMAND.Command"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Command[1];
 }

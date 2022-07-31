@@ -20,15 +20,15 @@ public unsafe partial struct IMAGE_ENCLAVE_IMPORT
     public uint MinimumSecurityVersion;
 
     /// <include file='IMAGE_ENCLAVE_IMPORT.xml' path='doc/member[@name="IMAGE_ENCLAVE_IMPORT.UniqueOrAuthorID"]/*' />
-    [NativeTypeName("BYTE [32]")]
+    [NativeTypeName("BYTE[32]")]
     public fixed byte UniqueOrAuthorID[32];
 
     /// <include file='IMAGE_ENCLAVE_IMPORT.xml' path='doc/member[@name="IMAGE_ENCLAVE_IMPORT.FamilyID"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte FamilyID[16];
 
     /// <include file='IMAGE_ENCLAVE_IMPORT.xml' path='doc/member[@name="IMAGE_ENCLAVE_IMPORT.ImageID"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte ImageID[16];
 
     /// <include file='IMAGE_ENCLAVE_IMPORT.xml' path='doc/member[@name="IMAGE_ENCLAVE_IMPORT.ImportName"]/*' />

@@ -17,18 +17,18 @@ public unsafe partial struct IP_ADAPTER_INFO
     public uint ComboIndex;
 
     /// <include file='IP_ADAPTER_INFO.xml' path='doc/member[@name="IP_ADAPTER_INFO.AdapterName"]/*' />
-    [NativeTypeName("char [260]")]
+    [NativeTypeName("char[260]")]
     public fixed sbyte AdapterName[260];
 
     /// <include file='IP_ADAPTER_INFO.xml' path='doc/member[@name="IP_ADAPTER_INFO.Description"]/*' />
-    [NativeTypeName("char [132]")]
+    [NativeTypeName("char[132]")]
     public fixed sbyte Description[132];
 
     /// <include file='IP_ADAPTER_INFO.xml' path='doc/member[@name="IP_ADAPTER_INFO.AddressLength"]/*' />
     public uint AddressLength;
 
     /// <include file='IP_ADAPTER_INFO.xml' path='doc/member[@name="IP_ADAPTER_INFO.Address"]/*' />
-    [NativeTypeName("BYTE [8]")]
+    [NativeTypeName("BYTE[8]")]
     public fixed byte Address[8];
 
     /// <include file='IP_ADAPTER_INFO.xml' path='doc/member[@name="IP_ADAPTER_INFO.Index"]/*' />

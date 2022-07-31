@@ -5,11 +5,13 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='ID3D10EffectPool.xml' path='doc/member[@name="ID3D10EffectPool"]/*' />
+[Guid("9537AB04-3250-412E-8213-FCD2F8677933")]
 [NativeTypeName("struct ID3D10EffectPool : IUnknown")]
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ID3D10EffectPool : ID3D10EffectPool.Interface

@@ -12,11 +12,11 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct ENCLAVE_INIT_INFO_VBS_BASIC
 {
     /// <include file='ENCLAVE_INIT_INFO_VBS_BASIC.xml' path='doc/member[@name="ENCLAVE_INIT_INFO_VBS_BASIC.FamilyId"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte FamilyId[16];
 
     /// <include file='ENCLAVE_INIT_INFO_VBS_BASIC.xml' path='doc/member[@name="ENCLAVE_INIT_INFO_VBS_BASIC.ImageId"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte ImageId[16];
 
     /// <include file='ENCLAVE_INIT_INFO_VBS_BASIC.xml' path='doc/member[@name="ENCLAVE_INIT_INFO_VBS_BASIC.EnclaveSize"]/*' />

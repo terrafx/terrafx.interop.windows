@@ -60,7 +60,7 @@ public unsafe partial struct D3D11_TRACE_REGISTER
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Index2D"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("UINT16 [2]")]
+        [NativeTypeName("UINT16[2]")]
         public fixed ushort Index2D[2];
     }
 }

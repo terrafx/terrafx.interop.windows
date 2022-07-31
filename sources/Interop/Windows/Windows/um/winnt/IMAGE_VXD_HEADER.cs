@@ -194,7 +194,7 @@ public unsafe partial struct IMAGE_VXD_HEADER
     public uint e32_heapsize;
 
     /// <include file='IMAGE_VXD_HEADER.xml' path='doc/member[@name="IMAGE_VXD_HEADER.e32_res3"]/*' />
-    [NativeTypeName("BYTE [12]")]
+    [NativeTypeName("BYTE[12]")]
     public fixed byte e32_res3[12];
 
     /// <include file='IMAGE_VXD_HEADER.xml' path='doc/member[@name="IMAGE_VXD_HEADER.e32_winresoff"]/*' />

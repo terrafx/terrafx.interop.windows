@@ -106,7 +106,7 @@ public unsafe partial struct SYSTEM_POWER_CAPABILITIES
     public byte AoAcConnectivitySupported;
 
     /// <include file='SYSTEM_POWER_CAPABILITIES.xml' path='doc/member[@name="SYSTEM_POWER_CAPABILITIES.spare3"]/*' />
-    [NativeTypeName("BYTE [6]")]
+    [NativeTypeName("BYTE[6]")]
     public fixed byte spare3[6];
 
     /// <include file='SYSTEM_POWER_CAPABILITIES.xml' path='doc/member[@name="SYSTEM_POWER_CAPABILITIES.SystemBatteriesPresent"]/*' />
@@ -118,7 +118,7 @@ public unsafe partial struct SYSTEM_POWER_CAPABILITIES
     public byte BatteriesAreShortTerm;
 
     /// <include file='SYSTEM_POWER_CAPABILITIES.xml' path='doc/member[@name="SYSTEM_POWER_CAPABILITIES.BatteryScale"]/*' />
-    [NativeTypeName("BATTERY_REPORTING_SCALE [3]")]
+    [NativeTypeName("BATTERY_REPORTING_SCALE[3]")]
     public _BatteryScale_e__FixedBuffer BatteryScale;
 
     /// <include file='SYSTEM_POWER_CAPABILITIES.xml' path='doc/member[@name="SYSTEM_POWER_CAPABILITIES.AcOnLineWake"]/*' />

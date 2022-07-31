@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HWINSTA : IComparable, IComparable<HWINSTA>, IEquatable<HWINSTA>, IFormattable
+public readonly unsafe partial struct HWINSTA : IComparable, IComparable<HWINSTA>, IEquatable<HWINSTA>, IFormattable
 {
     public readonly void* Value;
 

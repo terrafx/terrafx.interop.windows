@@ -20,7 +20,7 @@ public partial struct KTMOBJECT_CURSOR
     public uint ObjectIdCount;
 
     /// <include file='KTMOBJECT_CURSOR.xml' path='doc/member[@name="KTMOBJECT_CURSOR.ObjectIds"]/*' />
-    [NativeTypeName("GUID [1]")]
+    [NativeTypeName("GUID[1]")]
     public _ObjectIds_e__FixedBuffer ObjectIds;
 
     /// <include file='_ObjectIds_e__FixedBuffer.xml' path='doc/member[@name="_ObjectIds_e__FixedBuffer"]/*' />

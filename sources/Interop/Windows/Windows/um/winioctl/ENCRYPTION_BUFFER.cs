@@ -13,6 +13,6 @@ public unsafe partial struct ENCRYPTION_BUFFER
     public uint EncryptionOperation;
 
     /// <include file='ENCRYPTION_BUFFER.xml' path='doc/member[@name="ENCRYPTION_BUFFER.Private"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Private[1];
 }

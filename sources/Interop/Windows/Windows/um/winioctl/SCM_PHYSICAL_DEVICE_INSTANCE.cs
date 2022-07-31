@@ -21,6 +21,6 @@ public unsafe partial struct SCM_PHYSICAL_DEVICE_INSTANCE
     public uint NfitHandle;
 
     /// <include file='SCM_PHYSICAL_DEVICE_INSTANCE.xml' path='doc/member[@name="SCM_PHYSICAL_DEVICE_INSTANCE.SymbolicLink"]/*' />
-    [NativeTypeName("WCHAR [256]")]
+    [NativeTypeName("WCHAR[256]")]
     public fixed ushort SymbolicLink[256];
 }

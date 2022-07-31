@@ -48,7 +48,7 @@ public partial struct FILE_REMOTE_PROTOCOL_INFO
     public unsafe partial struct _GenericReserved_e__Struct
     {
         /// <include file='_GenericReserved_e__Struct.xml' path='doc/member[@name="_GenericReserved_e__Struct.Reserved"]/*' />
-        [NativeTypeName("ULONG [8]")]
+        [NativeTypeName("ULONG[8]")]
         public fixed uint Reserved[8];
     }
 
@@ -63,7 +63,7 @@ public partial struct FILE_REMOTE_PROTOCOL_INFO
 
         /// <include file='_ProtocolSpecific_e__Union.xml' path='doc/member[@name="_ProtocolSpecific_e__Union.Reserved"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("ULONG [16]")]
+        [NativeTypeName("ULONG[16]")]
         public fixed uint Reserved[16];
 
         /// <include file='_Smb2_e__Struct.xml' path='doc/member[@name="_Smb2_e__Struct"]/*' />

@@ -15,6 +15,6 @@ public unsafe partial struct CRYPT_ECC_CMS_SHARED_INFO
     public CRYPT_DATA_BLOB EntityUInfo;
 
     /// <include file='CRYPT_ECC_CMS_SHARED_INFO.xml' path='doc/member[@name="CRYPT_ECC_CMS_SHARED_INFO.rgbSuppPubInfo"]/*' />
-    [NativeTypeName("BYTE [4]")]
+    [NativeTypeName("BYTE[4]")]
     public fixed byte rgbSuppPubInfo[4];
 }

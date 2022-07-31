@@ -14,7 +14,7 @@ namespace TerraFX.Interop.DirectX;
 public partial struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS
 {
     /// <include file='D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS.OutputStream"]/*' />
-    [NativeTypeName("D3D12_VIDEO_PROCESS_OUTPUT_STREAM [2]")]
+    [NativeTypeName("D3D12_VIDEO_PROCESS_OUTPUT_STREAM[2]")]
     public _OutputStream_e__FixedBuffer OutputStream;
 
     /// <include file='D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS.TargetRectangle"]/*' />

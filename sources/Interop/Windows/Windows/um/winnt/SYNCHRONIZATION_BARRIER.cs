@@ -21,7 +21,7 @@ public partial struct SYNCHRONIZATION_BARRIER
     public uint Reserved2;
 
     /// <include file='SYNCHRONIZATION_BARRIER.xml' path='doc/member[@name="SYNCHRONIZATION_BARRIER.Reserved3"]/*' />
-    [NativeTypeName("ULONG_PTR [2]")]
+    [NativeTypeName("ULONG_PTR[2]")]
     public _Reserved3_e__FixedBuffer Reserved3;
 
     /// <include file='SYNCHRONIZATION_BARRIER.xml' path='doc/member[@name="SYNCHRONIZATION_BARRIER.Reserved4"]/*' />

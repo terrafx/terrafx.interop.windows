@@ -20,6 +20,6 @@ public unsafe partial struct MPEG1VIDEOINFO
     public uint cbSequenceHeader;
 
     /// <include file='MPEG1VIDEOINFO.xml' path='doc/member[@name="MPEG1VIDEOINFO.bSequenceHeader"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte bSequenceHeader[1];
 }

@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HWND : IComparable, IComparable<HWND>, IEquatable<HWND>, IFormattable
+public readonly unsafe partial struct HWND : IComparable, IComparable<HWND>, IEquatable<HWND>, IFormattable
 {
     public readonly void* Value;
 

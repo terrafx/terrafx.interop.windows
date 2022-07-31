@@ -25,6 +25,6 @@ public unsafe partial struct AMCOPPStatusInput
     public uint cbSizeData;
 
     /// <include file='AMCOPPStatusInput.xml' path='doc/member[@name="AMCOPPStatusInput.StatusData"]/*' />
-    [NativeTypeName("BYTE [4056]")]
+    [NativeTypeName("BYTE[4056]")]
     public fixed byte StatusData[4056];
 }

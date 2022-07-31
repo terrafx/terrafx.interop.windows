@@ -13,6 +13,6 @@ public unsafe partial struct DWORD_BLOB
     public uint clSize;
 
     /// <include file='DWORD_BLOB.xml' path='doc/member[@name="DWORD_BLOB.alData"]/*' />
-    [NativeTypeName("ULONG [1]")]
+    [NativeTypeName("ULONG[1]")]
     public fixed uint alData[1];
 }

@@ -237,11 +237,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumPatchesExA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiEnumPatchesExA([NativeTypeName("LPCSTR")] sbyte* szProductCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwFilter, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("CHAR [39]")] sbyte* szPatchCode, [NativeTypeName("CHAR [39]")] sbyte* szTargetProductCode, MSIINSTALLCONTEXT* pdwTargetProductContext, [NativeTypeName("LPSTR")] sbyte* szTargetUserSid, [NativeTypeName("LPDWORD")] uint* pcchTargetUserSid);
+    public static extern uint MsiEnumPatchesExA([NativeTypeName("LPCSTR")] sbyte* szProductCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwFilter, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("CHAR[39]")] sbyte* szPatchCode, [NativeTypeName("CHAR[39]")] sbyte* szTargetProductCode, MSIINSTALLCONTEXT* pdwTargetProductContext, [NativeTypeName("LPSTR")] sbyte* szTargetUserSid, [NativeTypeName("LPDWORD")] uint* pcchTargetUserSid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumPatchesExW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiEnumPatchesExW([NativeTypeName("LPCWSTR")] ushort* szProductCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwFilter, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("WCHAR [39]")] ushort* szPatchCode, [NativeTypeName("WCHAR [39]")] ushort* szTargetProductCode, MSIINSTALLCONTEXT* pdwTargetProductContext, [NativeTypeName("LPWSTR")] ushort* szTargetUserSid, [NativeTypeName("LPDWORD")] uint* pcchTargetUserSid);
+    public static extern uint MsiEnumPatchesExW([NativeTypeName("LPCWSTR")] ushort* szProductCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwFilter, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("WCHAR[39]")] ushort* szPatchCode, [NativeTypeName("WCHAR[39]")] ushort* szTargetProductCode, MSIINSTALLCONTEXT* pdwTargetProductContext, [NativeTypeName("LPWSTR")] ushort* szTargetUserSid, [NativeTypeName("LPDWORD")] uint* pcchTargetUserSid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiQueryFeatureStateA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -365,11 +365,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumProductsExA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiEnumProductsExA([NativeTypeName("LPCSTR")] sbyte* szProductCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("CHAR [39]")] sbyte* szInstalledProductCode, MSIINSTALLCONTEXT* pdwInstalledContext, [NativeTypeName("LPSTR")] sbyte* szSid, [NativeTypeName("LPDWORD")] uint* pcchSid);
+    public static extern uint MsiEnumProductsExA([NativeTypeName("LPCSTR")] sbyte* szProductCode, [NativeTypeName("LPCSTR")] sbyte* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("CHAR[39]")] sbyte* szInstalledProductCode, MSIINSTALLCONTEXT* pdwInstalledContext, [NativeTypeName("LPSTR")] sbyte* szSid, [NativeTypeName("LPDWORD")] uint* pcchSid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumProductsExW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiEnumProductsExW([NativeTypeName("LPCWSTR")] ushort* szProductCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("WCHAR [39]")] ushort* szInstalledProductCode, MSIINSTALLCONTEXT* pdwInstalledContext, [NativeTypeName("LPWSTR")] ushort* szSid, [NativeTypeName("LPDWORD")] uint* pcchSid);
+    public static extern uint MsiEnumProductsExW([NativeTypeName("LPCWSTR")] ushort* szProductCode, [NativeTypeName("LPCWSTR")] ushort* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("WCHAR[39]")] ushort* szInstalledProductCode, MSIINSTALLCONTEXT* pdwInstalledContext, [NativeTypeName("LPWSTR")] ushort* szSid, [NativeTypeName("LPDWORD")] uint* pcchSid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumRelatedProductsA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -397,11 +397,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumComponentsExA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiEnumComponentsExA([NativeTypeName("LPCSTR")] sbyte* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("CHAR [39]")] sbyte* szInstalledComponentCode, MSIINSTALLCONTEXT* pdwInstalledContext, [NativeTypeName("LPSTR")] sbyte* szSid, [NativeTypeName("LPDWORD")] uint* pcchSid);
+    public static extern uint MsiEnumComponentsExA([NativeTypeName("LPCSTR")] sbyte* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("CHAR[39]")] sbyte* szInstalledComponentCode, MSIINSTALLCONTEXT* pdwInstalledContext, [NativeTypeName("LPSTR")] sbyte* szSid, [NativeTypeName("LPDWORD")] uint* pcchSid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumComponentsExW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiEnumComponentsExW([NativeTypeName("LPCWSTR")] ushort* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("WCHAR [39]")] ushort* szInstalledComponentCode, MSIINSTALLCONTEXT* pdwInstalledContext, [NativeTypeName("LPWSTR")] ushort* szSid, [NativeTypeName("LPDWORD")] uint* pcchSid);
+    public static extern uint MsiEnumComponentsExW([NativeTypeName("LPCWSTR")] ushort* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("WCHAR[39]")] ushort* szInstalledComponentCode, MSIINSTALLCONTEXT* pdwInstalledContext, [NativeTypeName("LPWSTR")] ushort* szSid, [NativeTypeName("LPDWORD")] uint* pcchSid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumClientsA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -413,11 +413,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumClientsExA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiEnumClientsExA([NativeTypeName("LPCSTR")] sbyte* szComponent, [NativeTypeName("LPCSTR")] sbyte* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwProductIndex, [NativeTypeName("CHAR [39]")] sbyte* szProductBuf, MSIINSTALLCONTEXT* pdwInstalledContext, [NativeTypeName("LPSTR")] sbyte* szSid, [NativeTypeName("LPDWORD")] uint* pcchSid);
+    public static extern uint MsiEnumClientsExA([NativeTypeName("LPCSTR")] sbyte* szComponent, [NativeTypeName("LPCSTR")] sbyte* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwProductIndex, [NativeTypeName("CHAR[39]")] sbyte* szProductBuf, MSIINSTALLCONTEXT* pdwInstalledContext, [NativeTypeName("LPSTR")] sbyte* szSid, [NativeTypeName("LPDWORD")] uint* pcchSid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumClientsExW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiEnumClientsExW([NativeTypeName("LPCWSTR")] ushort* szComponent, [NativeTypeName("LPCWSTR")] ushort* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwProductIndex, [NativeTypeName("WCHAR [39]")] ushort* szProductBuf, MSIINSTALLCONTEXT* pdwInstalledContext, [NativeTypeName("LPWSTR")] ushort* szSid, [NativeTypeName("LPDWORD")] uint* pcchSid);
+    public static extern uint MsiEnumClientsExW([NativeTypeName("LPCWSTR")] ushort* szComponent, [NativeTypeName("LPCWSTR")] ushort* szUserSid, [NativeTypeName("DWORD")] uint dwContext, [NativeTypeName("DWORD")] uint dwProductIndex, [NativeTypeName("WCHAR[39]")] ushort* szProductBuf, MSIINSTALLCONTEXT* pdwInstalledContext, [NativeTypeName("LPWSTR")] ushort* szSid, [NativeTypeName("LPDWORD")] uint* pcchSid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumComponentQualifiersA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
