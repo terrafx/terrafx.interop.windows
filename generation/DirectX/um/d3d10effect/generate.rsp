@@ -14,6 +14,10 @@ TerraFX.Interop.DirectX
 ../../../../tests/Interop/Windows/DirectX/um/d3d10effect
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/d3d10effect.h
+--with-guid
+ID3D10Effect=51B0CA8B-EC0B-4519-870D-8EE1CB5017C7
+ID3D10EffectPool=9537AB04-3250-412E-8213-FCD2F8677933
+ID3D10StateBlock=0803425A-57F5-4dd6-9465-A87570834A08
 --with-librarypath
 D3D10CompileEffectFromMemory=d3d10
 D3D10CreateEffectFromMemory=d3d10

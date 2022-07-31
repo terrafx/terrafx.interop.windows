@@ -16,6 +16,7 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/sysinfoapi.h
 GetIntegratedDisplaySize=SupportedOSPlatform("windows10.0")
 GetSystemTimeAdjustmentPrecise=SupportedOSPlatform("windows10.0")
 GetSystemTimePreciseAsFileTime=SupportedOSPlatform("windows8.0")
+GetVersionEx=Obsolete
 InstallELAMCertificateInfo=SupportedOSPlatform("windows8.1")
 SetSystemTimeAdjustmentPrecise=SupportedOSPlatform("windows10.0")
 --with-librarypath

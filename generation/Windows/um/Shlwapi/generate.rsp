@@ -34,6 +34,8 @@ UrlEscapeSpaces
 UrlIsFileUrlA
 UrlIsFileUrlW
 UrlUnescapeInPlace
+wnsprintf
+wsprintf
 --file
 um-Shlwapi.h
 --methodClassName

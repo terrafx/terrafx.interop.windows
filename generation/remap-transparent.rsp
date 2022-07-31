@@ -110,6 +110,7 @@ LRESULT=nint;Typedef
 MachineGlobalObjectTableRegistrationToken=void*;Handle
 MSIHANDLE=uint;TypedefHex
 OAHWND=void*;Handle
+PACKAGEDEPENDENCY_CONTEXT=void*;Handle
 PACKAGE_INFO_REFERENCE=void*;Handle
 PAPPCONSTRAIN_REGISTRATION=void*;Handle
 PAPPSTATE_REGISTRATION=void*;Handle
