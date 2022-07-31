@@ -8,24 +8,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".root", ".root", "{2F337CB6
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		build.cmd = build.cmd
-		build.sh = build.sh
 		Directory.Build.props = Directory.Build.props
 		Directory.Build.targets = Directory.Build.targets
+		Directory.Packages.props = Directory.Packages.props
 		LICENSE.md = LICENSE.md
 		pack.cmd = pack.cmd
-		pack.sh = pack.sh
 		restore.cmd = restore.cmd
-		restore.sh = restore.sh
 		TerraFX.snk = TerraFX.snk
 		test.cmd = test.cmd
-		test.sh = test.sh
 		THIRD-PARTY-NOTICES.md = THIRD-PARTY-NOTICES.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{8793898A-6542-4606-AA82-AB14151D2D20}"
 	ProjectSection(SolutionItems) = preProject
-		docs\CODE_OF_CONDUCT.md = docs\CODE_OF_CONDUCT.md
 		docs\CODEOWNERS = docs\CODEOWNERS
+		docs\CODE_OF_CONDUCT.md = docs\CODE_OF_CONDUCT.md
 		docs\CONTRIBUTING.md = docs\CONTRIBUTING.md
 		docs\ISSUE_TEMPLATE.md = docs\ISSUE_TEMPLATE.md
 		docs\PULL_REQUEST_TEMPLATE.md = docs\PULL_REQUEST_TEMPLATE.md
@@ -453,9 +450,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{48E1F49D-7103-4DE6-9F69-915183B85095}"
 	ProjectSection(SolutionItems) = preProject
 		scripts\build.ps1 = scripts\build.ps1
-		scripts\build.sh = scripts\build.sh
 		scripts\cibuild.cmd = scripts\cibuild.cmd
-		scripts\cibuild.sh = scripts\cibuild.sh
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xinput", "Xinput", "{F54C5855-9C8D-4EDF-BFC8-41F2E46DBE3C}"
@@ -2998,6 +2993,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplustypes", "gdiplustype
 		generation\Gdiplus\um\gdiplustypes\um-gdiplustypes.h = generation\Gdiplus\um\gdiplustypes\um-gdiplustypes.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ISSUE_TEMPLATE", "ISSUE_TEMPLATE", "{8891C297-49D7-495C-B66E-2A77C3D5F50D}"
+	ProjectSection(SolutionItems) = preProject
+		.github\ISSUE_TEMPLATE\bug.md = .github\ISSUE_TEMPLATE\bug.md
+		.github\ISSUE_TEMPLATE\proposal.md = .github\ISSUE_TEMPLATE\proposal.md
+		.github\ISSUE_TEMPLATE\regression.md = .github\ISSUE_TEMPLATE\regression.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3459,6 +3461,7 @@ Global
 		{55FB5A64-9A0B-4294-87F0-D8F81BE30692} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
 		{B281558F-E194-4AC3-BE1B-C7C2A748947E} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
 		{9C6E88A3-997E-4F11-AF25-18A54B110404} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{8891C297-49D7-495C-B66E-2A77C3D5F50D} = {3BDDFFAD-B31F-4930-B557-E8486D23C67A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
