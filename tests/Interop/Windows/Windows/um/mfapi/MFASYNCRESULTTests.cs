@@ -13,13 +13,6 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MFASYNCRESULT" /> struct.</summary>
 public static unsafe partial class MFASYNCRESULTTests
 {
-    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MFASYNCRESULT" /> struct is correct.</summary>
-    [Test]
-    public static void GuidOfTest()
-    {
-        Assert.That(typeof(MFASYNCRESULT).GUID, Is.EqualTo(IID_tagMFASYNCRESULT));
-    }
-
     /// <summary>Validates that the <see cref="MFASYNCRESULT" /> struct is blittable.</summary>
     [Test]
     public static void IsBlittableTest()
