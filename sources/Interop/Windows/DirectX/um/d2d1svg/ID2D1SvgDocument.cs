@@ -67,7 +67,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
     public D2D_SIZE_F GetViewportSize()
     {
         D2D_SIZE_F result;
-        return *((delegate* unmanaged[SuppressGCTransition]<ID2D1SvgDocument*, D2D_SIZE_F*, D2D_SIZE_F*>)(lpVtbl[5]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged<ID2D1SvgDocument*, D2D_SIZE_F*, D2D_SIZE_F*>)(lpVtbl[5]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), &result);
     }
 
     /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.SetRoot"]/*' />
@@ -198,7 +198,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
         public delegate* unmanaged<TSelf*, D2D_SIZE_F, int> SetViewportSize;
 
         [NativeTypeName("D2D1_SIZE_F () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D_SIZE_F*, D2D_SIZE_F*> GetViewportSize;
+        public delegate* unmanaged<TSelf*, D2D_SIZE_F*, D2D_SIZE_F*> GetViewportSize;
 
         [NativeTypeName("HRESULT (ID2D1SvgElement *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ID2D1SvgElement*, int> SetRoot;

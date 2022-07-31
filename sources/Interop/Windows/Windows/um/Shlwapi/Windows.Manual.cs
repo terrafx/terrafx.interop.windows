@@ -14,9 +14,4 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.wnsprintfW"]/*' />
     [DllImport("shlwapi", CallingConvention = CallingConvention.Cdecl, EntryPoint = "wnsprintfW", ExactSpelling = true)]
     public static extern int wnsprintf([NativeTypeName("PWSTR")] ushort* pszDest, int cchDest, [NativeTypeName("PCWSTR")] ushort* pszFmt, __arglist);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.wsprintfW"]/*' />
-    [DllImport("user32", CallingConvention = CallingConvention.Cdecl, EntryPoint = "wsprintfW", ExactSpelling = true)]
-    [SetsLastSystemError]
-    public static extern int wsprintf([NativeTypeName("LPWSTR")] ushort* param0, [NativeTypeName("LPCWSTR")] ushort* param1, __arglist);
 }

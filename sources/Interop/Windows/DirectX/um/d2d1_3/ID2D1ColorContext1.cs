@@ -57,7 +57,7 @@ public unsafe partial struct ID2D1ColorContext1 : ID2D1ColorContext1.Interface
     [VtblIndex(4)]
     public D2D1_COLOR_SPACE GetColorSpace()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1ColorContext1*, D2D1_COLOR_SPACE>)(lpVtbl[4]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1ColorContext1*, D2D1_COLOR_SPACE>)(lpVtbl[4]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1ColorContext.GetProfileSize" />
@@ -66,7 +66,7 @@ public unsafe partial struct ID2D1ColorContext1 : ID2D1ColorContext1.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetProfileSize()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1ColorContext1*, uint>)(lpVtbl[5]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1ColorContext1*, uint>)(lpVtbl[5]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1ColorContext.GetProfile" />
@@ -82,7 +82,7 @@ public unsafe partial struct ID2D1ColorContext1 : ID2D1ColorContext1.Interface
     [VtblIndex(7)]
     public D2D1_COLOR_CONTEXT_TYPE GetColorContextType()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1ColorContext1*, D2D1_COLOR_CONTEXT_TYPE>)(lpVtbl[7]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1ColorContext1*, D2D1_COLOR_CONTEXT_TYPE>)(lpVtbl[7]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1ColorContext1.xml' path='doc/member[@name="ID2D1ColorContext1.GetDXGIColorSpace"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct ID2D1ColorContext1 : ID2D1ColorContext1.Interface
     [VtblIndex(8)]
     public DXGI_COLOR_SPACE_TYPE GetDXGIColorSpace()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1ColorContext1*, DXGI_COLOR_SPACE_TYPE>)(lpVtbl[8]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1ColorContext1*, DXGI_COLOR_SPACE_TYPE>)(lpVtbl[8]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1ColorContext1.xml' path='doc/member[@name="ID2D1ColorContext1.GetSimpleColorProfile"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct ID2D1ColorContext1 : ID2D1ColorContext1.Interface
     [VtblIndex(9)]
     public HRESULT GetSimpleColorProfile(D2D1_SIMPLE_COLOR_PROFILE* simpleProfile)
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1ColorContext1*, D2D1_SIMPLE_COLOR_PROFILE*, int>)(lpVtbl[9]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this), simpleProfile);
+        return ((delegate* unmanaged<ID2D1ColorContext1*, D2D1_SIMPLE_COLOR_PROFILE*, int>)(lpVtbl[9]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this), simpleProfile);
     }
 
     public interface Interface : ID2D1ColorContext.Interface
@@ -129,21 +129,21 @@ public unsafe partial struct ID2D1ColorContext1 : ID2D1ColorContext1.Interface
         public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("D2D1_COLOR_SPACE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_COLOR_SPACE> GetColorSpace;
+        public delegate* unmanaged<TSelf*, D2D1_COLOR_SPACE> GetColorSpace;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetProfileSize;
+        public delegate* unmanaged<TSelf*, uint> GetProfileSize;
 
         [NativeTypeName("HRESULT (BYTE *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, byte*, uint, int> GetProfile;
 
         [NativeTypeName("D2D1_COLOR_CONTEXT_TYPE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_COLOR_CONTEXT_TYPE> GetColorContextType;
+        public delegate* unmanaged<TSelf*, D2D1_COLOR_CONTEXT_TYPE> GetColorContextType;
 
         [NativeTypeName("DXGI_COLOR_SPACE_TYPE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXGI_COLOR_SPACE_TYPE> GetDXGIColorSpace;
+        public delegate* unmanaged<TSelf*, DXGI_COLOR_SPACE_TYPE> GetDXGIColorSpace;
 
         [NativeTypeName("HRESULT (D2D1_SIMPLE_COLOR_PROFILE *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_SIMPLE_COLOR_PROFILE*, int> GetSimpleColorProfile;
+        public delegate* unmanaged<TSelf*, D2D1_SIMPLE_COLOR_PROFILE*, int> GetSimpleColorProfile;
     }
 }

@@ -20,7 +20,7 @@ public unsafe partial struct ID3D12FunctionReflection : ID3D12FunctionReflection
     [VtblIndex(0)]
     public HRESULT GetDesc(D3D12_FUNCTION_DESC* pDesc)
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12FunctionReflection*, D3D12_FUNCTION_DESC*, int>)(lpVtbl[0]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged<ID3D12FunctionReflection*, D3D12_FUNCTION_DESC*, int>)(lpVtbl[0]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='ID3D12FunctionReflection.xml' path='doc/member[@name="ID3D12FunctionReflection.GetConstantBufferByIndex"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ID3D12FunctionReflection : ID3D12FunctionReflection
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (D3D12_FUNCTION_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D3D12_FUNCTION_DESC*, int> GetDesc;
+        public delegate* unmanaged<TSelf*, D3D12_FUNCTION_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D12ShaderReflectionConstantBuffer *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, ID3D12ShaderReflectionConstantBuffer*> GetConstantBufferByIndex;

@@ -65,7 +65,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarg
     [VtblIndex(5)]
     public float GetPixelsPerDip()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget*, float>)(lpVtbl[5]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteBitmapRenderTarget*, float>)(lpVtbl[5]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteBitmapRenderTarget.xml' path='doc/member[@name="IDWriteBitmapRenderTarget.SetPixelsPerDip"]/*' />
@@ -81,7 +81,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarg
     [VtblIndex(7)]
     public HRESULT GetCurrentTransform(DWRITE_MATRIX* transform)
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget*, DWRITE_MATRIX*, int>)(lpVtbl[7]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), transform);
+        return ((delegate* unmanaged<IDWriteBitmapRenderTarget*, DWRITE_MATRIX*, int>)(lpVtbl[7]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), transform);
     }
 
     /// <include file='IDWriteBitmapRenderTarget.xml' path='doc/member[@name="IDWriteBitmapRenderTarget.SetCurrentTransform"]/*' />
@@ -97,7 +97,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarg
     [VtblIndex(9)]
     public HRESULT GetSize(SIZE* size)
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget*, SIZE*, int>)(lpVtbl[9]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), size);
+        return ((delegate* unmanaged<IDWriteBitmapRenderTarget*, SIZE*, int>)(lpVtbl[9]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), size);
     }
 
     /// <include file='IDWriteBitmapRenderTarget.xml' path='doc/member[@name="IDWriteBitmapRenderTarget.Resize"]/*' />
@@ -154,19 +154,19 @@ public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarg
         public delegate* unmanaged<TSelf*, void*> GetMemoryDC;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float> GetPixelsPerDip;
+        public delegate* unmanaged<TSelf*, float> GetPixelsPerDip;
 
         [NativeTypeName("HRESULT (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, float, int> SetPixelsPerDip;
 
         [NativeTypeName("HRESULT (DWRITE_MATRIX *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_MATRIX*, int> GetCurrentTransform;
+        public delegate* unmanaged<TSelf*, DWRITE_MATRIX*, int> GetCurrentTransform;
 
         [NativeTypeName("HRESULT (const DWRITE_MATRIX *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, DWRITE_MATRIX*, int> SetCurrentTransform;
 
         [NativeTypeName("HRESULT (SIZE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, SIZE*, int> GetSize;
+        public delegate* unmanaged<TSelf*, SIZE*, int> GetSize;
 
         [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint, int> Resize;

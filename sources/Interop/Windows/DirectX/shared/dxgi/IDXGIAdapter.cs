@@ -89,7 +89,7 @@ public unsafe partial struct IDXGIAdapter : IDXGIAdapter.Interface
     [VtblIndex(8)]
     public HRESULT GetDesc(DXGI_ADAPTER_DESC* pDesc)
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDXGIAdapter*, DXGI_ADAPTER_DESC*, int>)(lpVtbl[8]))((IDXGIAdapter*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged<IDXGIAdapter*, DXGI_ADAPTER_DESC*, int>)(lpVtbl[8]))((IDXGIAdapter*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='IDXGIAdapter.xml' path='doc/member[@name="IDXGIAdapter.CheckInterfaceSupport"]/*' />
@@ -140,7 +140,7 @@ public unsafe partial struct IDXGIAdapter : IDXGIAdapter.Interface
         public delegate* unmanaged<TSelf*, uint, IDXGIOutput**, int> EnumOutputs;
 
         [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXGI_ADAPTER_DESC*, int> GetDesc;
+        public delegate* unmanaged<TSelf*, DXGI_ADAPTER_DESC*, int> GetDesc;
 
         [NativeTypeName("HRESULT (const GUID &, LARGE_INTEGER *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, LARGE_INTEGER*, int> CheckInterfaceSupport;

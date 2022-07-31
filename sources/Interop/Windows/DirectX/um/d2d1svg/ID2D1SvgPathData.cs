@@ -98,7 +98,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetSegmentDataCount()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1SvgPathData*, uint>)(lpVtbl[9]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1SvgPathData*, uint>)(lpVtbl[9]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1SvgPathData.xml' path='doc/member[@name="ID2D1SvgPathData.RemoveCommandsAtEnd"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetCommandsCount()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1SvgPathData*, uint>)(lpVtbl[13]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1SvgPathData*, uint>)(lpVtbl[13]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1SvgPathData.xml' path='doc/member[@name="ID2D1SvgPathData.CreatePathGeometry"]/*' />
@@ -205,7 +205,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface
         public delegate* unmanaged<TSelf*, float*, uint, uint, int> GetSegmentData;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetSegmentDataCount;
+        public delegate* unmanaged<TSelf*, uint> GetSegmentDataCount;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> RemoveCommandsAtEnd;
@@ -217,7 +217,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface
         public delegate* unmanaged<TSelf*, D2D1_SVG_PATH_COMMAND*, uint, uint, int> GetCommands;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetCommandsCount;
+        public delegate* unmanaged<TSelf*, uint> GetCommandsCount;
 
         [NativeTypeName("HRESULT (D2D1_FILL_MODE, ID2D1PathGeometry1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, D2D1_FILL_MODE, ID2D1PathGeometry1**, int> CreatePathGeometry;

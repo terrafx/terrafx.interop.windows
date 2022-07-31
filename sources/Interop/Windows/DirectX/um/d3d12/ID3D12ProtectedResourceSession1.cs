@@ -106,7 +106,7 @@ public unsafe partial struct ID3D12ProtectedResourceSession1 : ID3D12ProtectedRe
     public D3D12_PROTECTED_RESOURCE_SESSION_DESC GetDesc()
     {
         D3D12_PROTECTED_RESOURCE_SESSION_DESC result;
-        return *((delegate* unmanaged[SuppressGCTransition]<ID3D12ProtectedResourceSession1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC*, D3D12_PROTECTED_RESOURCE_SESSION_DESC*>)(lpVtbl[10]))((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged<ID3D12ProtectedResourceSession1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC*, D3D12_PROTECTED_RESOURCE_SESSION_DESC*>)(lpVtbl[10]))((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), &result);
     }
 
     /// <include file='ID3D12ProtectedResourceSession1.xml' path='doc/member[@name="ID3D12ProtectedResourceSession1.GetDesc1"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ID3D12ProtectedResourceSession1 : ID3D12ProtectedRe
     public D3D12_PROTECTED_RESOURCE_SESSION_DESC1 GetDesc1()
     {
         D3D12_PROTECTED_RESOURCE_SESSION_DESC1 result;
-        return *((delegate* unmanaged[SuppressGCTransition]<ID3D12ProtectedResourceSession1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC1*>)(lpVtbl[11]))((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged<ID3D12ProtectedResourceSession1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC1*>)(lpVtbl[11]))((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), &result);
     }
 
     public interface Interface : ID3D12ProtectedResourceSession.Interface
@@ -158,9 +158,9 @@ public unsafe partial struct ID3D12ProtectedResourceSession1 : ID3D12ProtectedRe
         public delegate* unmanaged<TSelf*, D3D12_PROTECTED_SESSION_STATUS> GetSessionStatus;
 
         [NativeTypeName("D3D12_PROTECTED_RESOURCE_SESSION_DESC () __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D3D12_PROTECTED_RESOURCE_SESSION_DESC*, D3D12_PROTECTED_RESOURCE_SESSION_DESC*> GetDesc;
+        public delegate* unmanaged<TSelf*, D3D12_PROTECTED_RESOURCE_SESSION_DESC*, D3D12_PROTECTED_RESOURCE_SESSION_DESC*> GetDesc;
 
         [NativeTypeName("D3D12_PROTECTED_RESOURCE_SESSION_DESC1 () __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D3D12_PROTECTED_RESOURCE_SESSION_DESC1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC1*> GetDesc1;
+        public delegate* unmanaged<TSelf*, D3D12_PROTECTED_RESOURCE_SESSION_DESC1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC1*> GetDesc1;
     }
 }
