@@ -55,11 +55,11 @@ public unsafe partial struct SP_ORIGINAL_FILE_INFO_W
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.OriginalInfName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.OriginalInfName[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.OriginalInfName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.OriginalInfName[0], 260);
             }
         }
     }
@@ -71,11 +71,11 @@ public unsafe partial struct SP_ORIGINAL_FILE_INFO_W
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.OriginalCatalogName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.OriginalCatalogName[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.OriginalCatalogName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.OriginalCatalogName[0], 260);
             }
         }
     }

@@ -55,11 +55,11 @@ public unsafe partial struct SP_INF_SIGNER_INFO_V2_W
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.CatalogFile[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.CatalogFile[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.CatalogFile[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.CatalogFile[0], 260);
             }
         }
     }
@@ -71,11 +71,11 @@ public unsafe partial struct SP_INF_SIGNER_INFO_V2_W
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.DigitalSigner[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.DigitalSigner[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.DigitalSigner[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.DigitalSigner[0], 260);
             }
         }
     }
@@ -87,11 +87,11 @@ public unsafe partial struct SP_INF_SIGNER_INFO_V2_W
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.DigitalSignerVersion[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.DigitalSignerVersion[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.DigitalSignerVersion[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.DigitalSignerVersion[0], 260);
             }
         }
     }

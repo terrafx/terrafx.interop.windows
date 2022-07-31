@@ -100,11 +100,11 @@ public unsafe partial struct SHSTOCKICONINFO
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.szPath[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.szPath[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.szPath[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.szPath[0], 260);
             }
         }
     }

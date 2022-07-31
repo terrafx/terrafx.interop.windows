@@ -85,11 +85,11 @@ public unsafe partial struct SHFILEINFOW
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.szDisplayName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.szDisplayName[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.szDisplayName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.szDisplayName[0], 260);
             }
         }
     }
@@ -101,11 +101,11 @@ public unsafe partial struct SHFILEINFOW
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.szTypeName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.szTypeName[0], 80);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.szTypeName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.szTypeName[0], 80);
             }
         }
     }
