@@ -55,11 +55,11 @@ public unsafe partial struct SP_POWERMESSAGEWAKE_PARAMS_A
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.PowerMessageWake[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.PowerMessageWake[0], 512);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.PowerMessageWake[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.PowerMessageWake[0], 512);
             }
         }
     }

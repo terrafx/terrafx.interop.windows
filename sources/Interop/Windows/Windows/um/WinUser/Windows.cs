@@ -22,14 +22,14 @@ public static unsafe partial class Windows
     public static extern int wvsprintfW([NativeTypeName("LPWSTR")] ushort* param0, [NativeTypeName("LPCWSTR")] ushort* param1, [NativeTypeName("va_list")] sbyte* arglist);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.wsprintfA"]/*' />
-    [DllImport("user32", ExactSpelling = true)]
+    [DllImport("user32", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern int wsprintfA([NativeTypeName("LPSTR")] sbyte* param0, [NativeTypeName("LPCSTR")] sbyte* param1);
+    public static extern int wsprintfA([NativeTypeName("LPSTR")] sbyte* param0, [NativeTypeName("LPCSTR")] sbyte* param1, __arglist);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.wsprintfW"]/*' />
-    [DllImport("user32", ExactSpelling = true)]
+    [DllImport("user32", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern int wsprintfW([NativeTypeName("LPWSTR")] ushort* param0, [NativeTypeName("LPCWSTR")] ushort* param1);
+    public static extern int wsprintfW([NativeTypeName("LPWSTR")] ushort* param0, [NativeTypeName("LPCWSTR")] ushort* param1, __arglist);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadKeyboardLayoutA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -3389,9 +3389,6 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define wvsprintf wvsprintfW")]
     public static delegate*<ushort*, ushort*, sbyte*, int> wvsprintf => &wvsprintfW;
-
-    [NativeTypeName("#define wsprintf wsprintfW")]
-    public static delegate*<ushort*, ushort*, int> wsprintf => &wsprintfW;
 
     [NativeTypeName("#define SETWALLPAPER_DEFAULT ((LPWSTR)-1)")]
     public static ushort* SETWALLPAPER_DEFAULT => unchecked((ushort*)(-1));

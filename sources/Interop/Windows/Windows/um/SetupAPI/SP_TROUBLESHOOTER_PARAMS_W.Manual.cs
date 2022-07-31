@@ -55,11 +55,11 @@ public unsafe partial struct SP_TROUBLESHOOTER_PARAMS_W
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.ChmFile[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.ChmFile[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.ChmFile[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.ChmFile[0], 260);
             }
         }
     }
@@ -71,11 +71,11 @@ public unsafe partial struct SP_TROUBLESHOOTER_PARAMS_W
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.HtmlTroubleShooter[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.HtmlTroubleShooter[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.HtmlTroubleShooter[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.HtmlTroubleShooter[0], 260);
             }
         }
     }

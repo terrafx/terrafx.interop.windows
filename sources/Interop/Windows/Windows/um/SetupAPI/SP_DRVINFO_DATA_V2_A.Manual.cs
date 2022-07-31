@@ -87,11 +87,11 @@ public unsafe partial struct SP_DRVINFO_DATA_V2_A
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.Description[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.Description[0], 256);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.Description[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.Description[0], 256);
             }
         }
     }
@@ -103,11 +103,11 @@ public unsafe partial struct SP_DRVINFO_DATA_V2_A
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.MfgName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.MfgName[0], 256);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.MfgName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.MfgName[0], 256);
             }
         }
     }
@@ -119,11 +119,11 @@ public unsafe partial struct SP_DRVINFO_DATA_V2_A
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.ProviderName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.ProviderName[0], 256);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.ProviderName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.ProviderName[0], 256);
             }
         }
     }

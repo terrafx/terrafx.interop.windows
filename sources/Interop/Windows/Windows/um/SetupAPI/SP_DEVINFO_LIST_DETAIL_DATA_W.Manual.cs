@@ -85,11 +85,11 @@ public unsafe partial struct SP_DEVINFO_LIST_DETAIL_DATA_W
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.RemoteMachineName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.RemoteMachineName[0], 263);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.RemoteMachineName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.RemoteMachineName[0], 263);
             }
         }
     }

@@ -907,7 +907,7 @@ public static unsafe partial class CERT
     public static ReadOnlySpan<byte> CERT_PROT_ROOT_PEER_USAGES_VALUE_NAME_A => "PeerUsages"u8;
 
     [NativeTypeName("#define CERT_PROT_ROOT_PEER_USAGES_DEFAULT_A szOID_PKIX_KP_CLIENT_AUTH \"\\0\"                  \\\r\n    szOID_PKIX_KP_EMAIL_PROTECTION \"\\0\"             \\\r\n    szOID_KP_EFS \"\\0\"")]
-    public static ReadOnlySpan<byte> CERT_PROT_ROOT_PEER_USAGES_DEFAULT_A => "1.3.6.1.5.5.7.3.2 1.3.6.1.5.5.7.3.4 1.3.6.1.4.1.311.10.3.4 "u8;
+    public static ReadOnlySpan<byte> CERT_PROT_ROOT_PEER_USAGES_DEFAULT_A => "1.3.6.1.5.5.7.3.2\\01.3.6.1.5.5.7.3.4\\01.3.6.1.4.1.311.10.3.4\\0"u8;
 
     [NativeTypeName("#define CERT_TRUST_PUB_SAFER_GROUP_POLICY_REGPATH CERT_GROUP_POLICY_SYSTEM_STORE_REGPATH L\"\\\\TrustedPublisher\\\\Safer\"")]
     public const string CERT_TRUST_PUB_SAFER_GROUP_POLICY_REGPATH = "Software\\Policies\\Microsoft\\SystemCertificates\\TrustedPublisher\\Safer";

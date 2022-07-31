@@ -67,6 +67,8 @@ PackSize=SupportedOSPlatform("windows8.0")
 ROI_AREA=SupportedOSPlatform("windows8.1")
 unpackratio=SupportedOSPlatform("windows8.0")
 UnpackSize=SupportedOSPlatform("windows8.0")
+--with-guid
+MFASYNCRESULT=00000000-0000-0000-0000-000000000000
 --with-librarypath
 MFAddPeriodicCallback=mfplat
 MFAllocateSerialWorkQueue=mfplat
@@ -191,8 +193,6 @@ MFUnregisterPlatformFromMMCSS=mfplat
 MFUnwrapMediaType=mfplat
 MFValidateMediaTypeSize=mfplat
 MFWrapMediaType=mfplat
---with-guid
-MFASYNCRESULT=00000000-0000-0000-0000-000000000000
 --with-librarypath
 MFCreateDXSurfaceBuffer=evr
 MFIsFormatYUV=evr

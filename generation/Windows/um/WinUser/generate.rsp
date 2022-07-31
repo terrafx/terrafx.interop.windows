@@ -102,6 +102,7 @@ TOUCH_COORD_TO_PIXEL
 WINSTAENUMPROC
 WINSTAENUMPROCA
 WINSTAENUMPROCW
+wsprintf
 _Inout_grows_updates_bypassable_or_z_
 _In_bypassable_reads_or_z_
 --file

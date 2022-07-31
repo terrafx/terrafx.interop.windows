@@ -55,11 +55,11 @@ public unsafe partial struct SP_BACKUP_QUEUE_PARAMS_V2_W
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.FullInfPath[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.FullInfPath[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.FullInfPath[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.FullInfPath[0], 260);
             }
         }
     }
@@ -86,11 +86,11 @@ public unsafe partial struct SP_BACKUP_QUEUE_PARAMS_V2_W
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.ReinstallInstance[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.ReinstallInstance[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.ReinstallInstance[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.ReinstallInstance[0], 260);
             }
         }
     }
