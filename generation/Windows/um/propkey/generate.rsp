@@ -1,5 +1,7 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+DEFINE_API_PKEY
 --file
 um-propkey.h
 --methodClassName

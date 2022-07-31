@@ -1,2 +1,2 @@
 #include "..\..\..\TerraFX.h"
-#include <propkeydef.h>
+#include <propkey.h>
