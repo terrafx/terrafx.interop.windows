@@ -5,10 +5,12 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IQualProp.xml' path='doc/member[@name="IQualProp"]/*' />
+[Guid("1BD0ECB0-F8E2-11CE-AAC6-0020AF0B99A3")]
 [NativeTypeName("struct IQualProp : IUnknown")]
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IQualProp : IQualProp.Interface

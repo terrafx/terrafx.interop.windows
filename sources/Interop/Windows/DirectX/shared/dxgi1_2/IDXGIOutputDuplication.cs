@@ -83,7 +83,7 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
     [VtblIndex(7)]
     public void GetDesc(DXGI_OUTDUPL_DESC* pDesc)
     {
-        ((delegate* unmanaged[SuppressGCTransition]<IDXGIOutputDuplication*, DXGI_OUTDUPL_DESC*, void>)(lpVtbl[7]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), pDesc);
+        ((delegate* unmanaged<IDXGIOutputDuplication*, DXGI_OUTDUPL_DESC*, void>)(lpVtbl[7]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='IDXGIOutputDuplication.xml' path='doc/member[@name="IDXGIOutputDuplication.AcquireNextFrame"]/*' />
@@ -194,7 +194,7 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
         public delegate* unmanaged<TSelf*, Guid*, void**, int> GetParent;
 
         [NativeTypeName("void (DXGI_OUTDUPL_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXGI_OUTDUPL_DESC*, void> GetDesc;
+        public delegate* unmanaged<TSelf*, DXGI_OUTDUPL_DESC*, void> GetDesc;
 
         [NativeTypeName("HRESULT (UINT, DXGI_OUTDUPL_FRAME_INFO *, IDXGIResource **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, DXGI_OUTDUPL_FRAME_INFO*, IDXGIResource**, int> AcquireNextFrame;

@@ -13,7 +13,7 @@ public unsafe partial struct DYNAMIC_TIME_ZONE_INFORMATION
     public int Bias;
 
     /// <include file='DYNAMIC_TIME_ZONE_INFORMATION.xml' path='doc/member[@name="DYNAMIC_TIME_ZONE_INFORMATION.StandardName"]/*' />
-    [NativeTypeName("WCHAR [32]")]
+    [NativeTypeName("WCHAR[32]")]
     public fixed ushort StandardName[32];
 
     /// <include file='DYNAMIC_TIME_ZONE_INFORMATION.xml' path='doc/member[@name="DYNAMIC_TIME_ZONE_INFORMATION.StandardDate"]/*' />
@@ -24,7 +24,7 @@ public unsafe partial struct DYNAMIC_TIME_ZONE_INFORMATION
     public int StandardBias;
 
     /// <include file='DYNAMIC_TIME_ZONE_INFORMATION.xml' path='doc/member[@name="DYNAMIC_TIME_ZONE_INFORMATION.DaylightName"]/*' />
-    [NativeTypeName("WCHAR [32]")]
+    [NativeTypeName("WCHAR[32]")]
     public fixed ushort DaylightName[32];
 
     /// <include file='DYNAMIC_TIME_ZONE_INFORMATION.xml' path='doc/member[@name="DYNAMIC_TIME_ZONE_INFORMATION.DaylightDate"]/*' />
@@ -35,7 +35,7 @@ public unsafe partial struct DYNAMIC_TIME_ZONE_INFORMATION
     public int DaylightBias;
 
     /// <include file='DYNAMIC_TIME_ZONE_INFORMATION.xml' path='doc/member[@name="DYNAMIC_TIME_ZONE_INFORMATION.TimeZoneKeyName"]/*' />
-    [NativeTypeName("WCHAR [128]")]
+    [NativeTypeName("WCHAR[128]")]
     public fixed ushort TimeZoneKeyName[128];
 
     /// <include file='DYNAMIC_TIME_ZONE_INFORMATION.xml' path='doc/member[@name="DYNAMIC_TIME_ZONE_INFORMATION.DynamicDaylightTimeDisabled"]/*' />

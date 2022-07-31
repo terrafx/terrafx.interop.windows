@@ -36,6 +36,6 @@ public unsafe partial struct MIB_TCPROW_OWNER_MODULE
     public LARGE_INTEGER liCreateTimestamp;
 
     /// <include file='MIB_TCPROW_OWNER_MODULE.xml' path='doc/member[@name="MIB_TCPROW_OWNER_MODULE.OwningModuleInfo"]/*' />
-    [NativeTypeName("ULONGLONG [16]")]
+    [NativeTypeName("ULONGLONG[16]")]
     public fixed ulong OwningModuleInfo[16];
 }

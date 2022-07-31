@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HMETAFILE : IComparable, IComparable<HMETAFILE>, IEquatable<HMETAFILE>, IFormattable
+public readonly unsafe partial struct HMETAFILE : IComparable, IComparable<HMETAFILE>, IEquatable<HMETAFILE>, IFormattable
 {
     public readonly void* Value;
 

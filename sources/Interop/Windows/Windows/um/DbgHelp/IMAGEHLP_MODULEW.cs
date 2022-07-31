@@ -36,14 +36,14 @@ public unsafe partial struct IMAGEHLP_MODULEW
     public SYM_TYPE SymType;
 
     /// <include file='IMAGEHLP_MODULEW.xml' path='doc/member[@name="IMAGEHLP_MODULEW.ModuleName"]/*' />
-    [NativeTypeName("WCHAR [32]")]
+    [NativeTypeName("WCHAR[32]")]
     public fixed ushort ModuleName[32];
 
     /// <include file='IMAGEHLP_MODULEW.xml' path='doc/member[@name="IMAGEHLP_MODULEW.ImageName"]/*' />
-    [NativeTypeName("WCHAR [256]")]
+    [NativeTypeName("WCHAR[256]")]
     public fixed ushort ImageName[256];
 
     /// <include file='IMAGEHLP_MODULEW.xml' path='doc/member[@name="IMAGEHLP_MODULEW.LoadedImageName"]/*' />
-    [NativeTypeName("WCHAR [256]")]
+    [NativeTypeName("WCHAR[256]")]
     public fixed ushort LoadedImageName[256];
 }

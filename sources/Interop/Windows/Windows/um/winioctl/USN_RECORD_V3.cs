@@ -61,6 +61,6 @@ public unsafe partial struct USN_RECORD_V3
     public ushort FileNameOffset;
 
     /// <include file='USN_RECORD_V3.xml' path='doc/member[@name="USN_RECORD_V3.FileName"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort FileName[1];
 }

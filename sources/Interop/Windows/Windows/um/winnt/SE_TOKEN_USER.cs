@@ -83,7 +83,7 @@ public unsafe partial struct SE_TOKEN_USER
 
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Buffer"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("BYTE [68]")]
+        [NativeTypeName("BYTE[68]")]
         public fixed byte Buffer[68];
     }
 }

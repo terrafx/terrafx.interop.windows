@@ -98,6 +98,6 @@ public unsafe partial struct VIDEOPARAMETERS
     public uint bCP_APSTriggerBits;
 
     /// <include file='VIDEOPARAMETERS.xml' path='doc/member[@name="VIDEOPARAMETERS.bOEMCopyProtection"]/*' />
-    [NativeTypeName("UCHAR [256]")]
+    [NativeTypeName("UCHAR[256]")]
     public fixed byte bOEMCopyProtection[256];
 }

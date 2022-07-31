@@ -24,6 +24,6 @@ public unsafe partial struct WAVEFILTER
     public uint fdwFilter;
 
     /// <include file='WAVEFILTER.xml' path='doc/member[@name="WAVEFILTER.dwReserved"]/*' />
-    [NativeTypeName("DWORD [5]")]
+    [NativeTypeName("DWORD[5]")]
     public fixed uint dwReserved[5];
 }

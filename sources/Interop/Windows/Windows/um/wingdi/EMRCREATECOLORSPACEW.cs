@@ -27,6 +27,6 @@ public unsafe partial struct EMRCREATECOLORSPACEW
     public uint cbData;
 
     /// <include file='EMRCREATECOLORSPACEW.xml' path='doc/member[@name="EMRCREATECOLORSPACEW.Data"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Data[1];
 }

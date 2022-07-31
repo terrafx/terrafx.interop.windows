@@ -25,7 +25,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
     public uint PolicyCount;
 
     /// <include file='PROCESSOR_IDLESTATE_POLICY.xml' path='doc/member[@name="PROCESSOR_IDLESTATE_POLICY.Policy"]/*' />
-    [NativeTypeName("PROCESSOR_IDLESTATE_INFO [3]")]
+    [NativeTypeName("PROCESSOR_IDLESTATE_INFO[3]")]
     public _Policy_e__FixedBuffer Policy;
 
     /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union"]/*' />

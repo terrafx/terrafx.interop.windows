@@ -21,6 +21,6 @@ public unsafe partial struct FILE_PREFETCH_EX
     public void* Context;
 
     /// <include file='FILE_PREFETCH_EX.xml' path='doc/member[@name="FILE_PREFETCH_EX.Prefetch"]/*' />
-    [NativeTypeName("DWORDLONG [1]")]
+    [NativeTypeName("DWORDLONG[1]")]
     public fixed ulong Prefetch[1];
 }

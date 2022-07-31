@@ -37,7 +37,7 @@ public partial struct PHYSICAL_ELEMENT_STATUS
     public uint Reserved;
 
     /// <include file='PHYSICAL_ELEMENT_STATUS.xml' path='doc/member[@name="PHYSICAL_ELEMENT_STATUS.Descriptors"]/*' />
-    [NativeTypeName("PHYSICAL_ELEMENT_STATUS_DESCRIPTOR [1]")]
+    [NativeTypeName("PHYSICAL_ELEMENT_STATUS_DESCRIPTOR[1]")]
     public _Descriptors_e__FixedBuffer Descriptors;
 
     /// <include file='_Descriptors_e__FixedBuffer.xml' path='doc/member[@name="_Descriptors_e__FixedBuffer"]/*' />

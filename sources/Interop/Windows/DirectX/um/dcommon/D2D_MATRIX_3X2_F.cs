@@ -162,7 +162,7 @@ public unsafe partial struct D2D_MATRIX_3X2_F
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.m"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("FLOAT [3][2]")]
+        [NativeTypeName("FLOAT[3][2]")]
         public fixed float m[3 * 2];
 
         /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct"]/*' />

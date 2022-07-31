@@ -23,6 +23,6 @@ public unsafe partial struct TRUESPEECHWAVEFORMAT
     public ushort nSamplesPerBlock;
 
     /// <include file='TRUESPEECHWAVEFORMAT.xml' path='doc/member[@name="TRUESPEECHWAVEFORMAT.abReserved"]/*' />
-    [NativeTypeName("BYTE [28]")]
+    [NativeTypeName("BYTE[28]")]
     public fixed byte abReserved[28];
 }

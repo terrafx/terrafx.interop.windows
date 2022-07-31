@@ -23,7 +23,7 @@ public partial struct EMRPOLYLINE
     public uint cptl;
 
     /// <include file='EMRPOLYLINE.xml' path='doc/member[@name="EMRPOLYLINE.aptl"]/*' />
-    [NativeTypeName("POINTL [1]")]
+    [NativeTypeName("POINTL[1]")]
     public _aptl_e__FixedBuffer aptl;
 
     /// <include file='_aptl_e__FixedBuffer.xml' path='doc/member[@name="_aptl_e__FixedBuffer"]/*' />

@@ -28,6 +28,6 @@ public unsafe partial struct SCROLLBARINFO
     public int reserved;
 
     /// <include file='SCROLLBARINFO.xml' path='doc/member[@name="SCROLLBARINFO.rgstate"]/*' />
-    [NativeTypeName("DWORD [6]")]
+    [NativeTypeName("DWORD[6]")]
     public fixed uint rgstate[6];
 }

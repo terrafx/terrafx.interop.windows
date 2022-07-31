@@ -21,10 +21,10 @@ public unsafe partial struct SCHANNEL_CLIENT_SIGNATURE
     public uint cbHash;
 
     /// <include file='SCHANNEL_CLIENT_SIGNATURE.xml' path='doc/member[@name="SCHANNEL_CLIENT_SIGNATURE.HashValue"]/*' />
-    [NativeTypeName("BYTE [36]")]
+    [NativeTypeName("BYTE[36]")]
     public fixed byte HashValue[36];
 
     /// <include file='SCHANNEL_CLIENT_SIGNATURE.xml' path='doc/member[@name="SCHANNEL_CLIENT_SIGNATURE.CertThumbprint"]/*' />
-    [NativeTypeName("BYTE [20]")]
+    [NativeTypeName("BYTE[20]")]
     public fixed byte CertThumbprint[20];
 }

@@ -29,6 +29,6 @@ public unsafe partial struct DVTARGETDEVICE
     public ushort tdExtDevmodeOffset;
 
     /// <include file='DVTARGETDEVICE.xml' path='doc/member[@name="DVTARGETDEVICE.tdData"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte tdData[1];
 }

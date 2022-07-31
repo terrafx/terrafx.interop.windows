@@ -21,7 +21,7 @@ public partial struct LOGPALETTE
     public ushort palNumEntries;
 
     /// <include file='LOGPALETTE.xml' path='doc/member[@name="LOGPALETTE.palPalEntry"]/*' />
-    [NativeTypeName("PALETTEENTRY [1]")]
+    [NativeTypeName("PALETTEENTRY[1]")]
     public _palPalEntry_e__FixedBuffer palPalEntry;
 
     /// <include file='_palPalEntry_e__FixedBuffer.xml' path='doc/member[@name="_palPalEntry_e__FixedBuffer"]/*' />

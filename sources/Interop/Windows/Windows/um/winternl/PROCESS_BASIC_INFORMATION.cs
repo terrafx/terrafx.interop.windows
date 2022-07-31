@@ -19,7 +19,7 @@ public unsafe partial struct PROCESS_BASIC_INFORMATION
     public PEB* PebBaseAddress;
 
     /// <include file='PROCESS_BASIC_INFORMATION.xml' path='doc/member[@name="PROCESS_BASIC_INFORMATION.Reserved2"]/*' />
-    [NativeTypeName("PVOID [2]")]
+    [NativeTypeName("PVOID[2]")]
     public _Reserved2_e__FixedBuffer Reserved2;
 
     /// <include file='PROCESS_BASIC_INFORMATION.xml' path='doc/member[@name="PROCESS_BASIC_INFORMATION.UniqueProcessId"]/*' />

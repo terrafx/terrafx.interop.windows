@@ -103,10 +103,10 @@ public unsafe partial struct GET_CHANGER_PARAMETERS
     public byte PositionCapabilities;
 
     /// <include file='GET_CHANGER_PARAMETERS.xml' path='doc/member[@name="GET_CHANGER_PARAMETERS.Reserved1"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte Reserved1[2];
 
     /// <include file='GET_CHANGER_PARAMETERS.xml' path='doc/member[@name="GET_CHANGER_PARAMETERS.Reserved2"]/*' />
-    [NativeTypeName("DWORD [2]")]
+    [NativeTypeName("DWORD[2]")]
     public fixed uint Reserved2[2];
 }

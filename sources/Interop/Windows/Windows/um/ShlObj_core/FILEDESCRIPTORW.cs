@@ -49,6 +49,6 @@ public unsafe partial struct FILEDESCRIPTORW
     public uint nFileSizeLow;
 
     /// <include file='FILEDESCRIPTORW.xml' path='doc/member[@name="FILEDESCRIPTORW.cFileName"]/*' />
-    [NativeTypeName("WCHAR [260]")]
+    [NativeTypeName("WCHAR[260]")]
     public fixed ushort cFileName[260];
 }

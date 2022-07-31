@@ -27,7 +27,7 @@ public partial struct GROUP_FILTER
     public uint gf_numsrc;
 
     /// <include file='GROUP_FILTER.xml' path='doc/member[@name="GROUP_FILTER.gf_slist"]/*' />
-    [NativeTypeName("SOCKADDR_STORAGE [1]")]
+    [NativeTypeName("SOCKADDR_STORAGE[1]")]
     public _gf_slist_e__FixedBuffer gf_slist;
 
     /// <include file='_gf_slist_e__FixedBuffer.xml' path='doc/member[@name="_gf_slist_e__FixedBuffer"]/*' />

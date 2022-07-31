@@ -47,6 +47,6 @@ public unsafe partial struct STREAM_LAYOUT_ENTRY
     public uint StreamIdentifierLength;
 
     /// <include file='STREAM_LAYOUT_ENTRY.xml' path='doc/member[@name="STREAM_LAYOUT_ENTRY.StreamIdentifier"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort StreamIdentifier[1];
 }

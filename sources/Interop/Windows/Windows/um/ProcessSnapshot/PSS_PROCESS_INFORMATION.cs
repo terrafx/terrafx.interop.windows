@@ -106,6 +106,6 @@ public unsafe partial struct PSS_PROCESS_INFORMATION
     public uint ExecuteFlags;
 
     /// <include file='PSS_PROCESS_INFORMATION.xml' path='doc/member[@name="PSS_PROCESS_INFORMATION.ImageFileName"]/*' />
-    [NativeTypeName("wchar_t [260]")]
+    [NativeTypeName("wchar_t[260]")]
     public fixed ushort ImageFileName[260];
 }

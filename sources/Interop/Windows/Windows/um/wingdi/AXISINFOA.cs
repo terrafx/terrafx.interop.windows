@@ -17,6 +17,6 @@ public unsafe partial struct AXISINFOA
     public int axMaxValue;
 
     /// <include file='AXISINFOA.xml' path='doc/member[@name="AXISINFOA.axAxisName"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte axAxisName[16];
 }

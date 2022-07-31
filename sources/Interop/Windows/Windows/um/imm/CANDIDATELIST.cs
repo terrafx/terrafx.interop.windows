@@ -33,6 +33,6 @@ public unsafe partial struct CANDIDATELIST
     public uint dwPageSize;
 
     /// <include file='CANDIDATELIST.xml' path='doc/member[@name="CANDIDATELIST.dwOffset"]/*' />
-    [NativeTypeName("DWORD [1]")]
+    [NativeTypeName("DWORD[1]")]
     public fixed uint dwOffset[1];
 }

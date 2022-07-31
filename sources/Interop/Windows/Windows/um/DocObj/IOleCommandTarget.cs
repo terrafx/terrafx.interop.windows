@@ -46,7 +46,7 @@ public unsafe partial struct IOleCommandTarget : IOleCommandTarget.Interface
     /// <include file='IOleCommandTarget.xml' path='doc/member[@name="IOleCommandTarget.QueryStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT QueryStatus([NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("ULONG")] uint cCmds, [NativeTypeName("OLECMD []")] OLECMD* prgCmds, OLECMDTEXT* pCmdText)
+    public HRESULT QueryStatus([NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("ULONG")] uint cCmds, [NativeTypeName("OLECMD[]")] OLECMD* prgCmds, OLECMDTEXT* pCmdText)
     {
         return ((delegate* unmanaged<IOleCommandTarget*, Guid*, uint, OLECMD*, OLECMDTEXT*, int>)(lpVtbl[3]))((IOleCommandTarget*)Unsafe.AsPointer(ref this), pguidCmdGroup, cCmds, prgCmds, pCmdText);
     }
@@ -62,7 +62,7 @@ public unsafe partial struct IOleCommandTarget : IOleCommandTarget.Interface
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT QueryStatus([NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("ULONG")] uint cCmds, [NativeTypeName("OLECMD []")] OLECMD* prgCmds, OLECMDTEXT* pCmdText);
+        HRESULT QueryStatus([NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("ULONG")] uint cCmds, [NativeTypeName("OLECMD[]")] OLECMD* prgCmds, OLECMDTEXT* pCmdText);
 
         [VtblIndex(4)]
         HRESULT Exec([NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("DWORD")] uint nCmdID, [NativeTypeName("DWORD")] uint nCmdexecopt, VARIANT* pvaIn, VARIANT* pvaOut);

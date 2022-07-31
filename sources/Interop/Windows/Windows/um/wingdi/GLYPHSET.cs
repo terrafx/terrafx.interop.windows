@@ -29,7 +29,7 @@ public partial struct GLYPHSET
     public uint cRanges;
 
     /// <include file='GLYPHSET.xml' path='doc/member[@name="GLYPHSET.ranges"]/*' />
-    [NativeTypeName("WCRANGE [1]")]
+    [NativeTypeName("WCRANGE[1]")]
     public _ranges_e__FixedBuffer ranges;
 
     /// <include file='_ranges_e__FixedBuffer.xml' path='doc/member[@name="_ranges_e__FixedBuffer"]/*' />

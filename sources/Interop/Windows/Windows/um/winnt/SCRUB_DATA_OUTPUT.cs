@@ -49,7 +49,7 @@ public unsafe partial struct SCRUB_DATA_OUTPUT
     public ushort ParityExtentDataOffset;
 
     /// <include file='SCRUB_DATA_OUTPUT.xml' path='doc/member[@name="SCRUB_DATA_OUTPUT.Reserved"]/*' />
-    [NativeTypeName("DWORD [9]")]
+    [NativeTypeName("DWORD[9]")]
     public fixed uint Reserved[9];
 
     /// <include file='SCRUB_DATA_OUTPUT.xml' path='doc/member[@name="SCRUB_DATA_OUTPUT.NumberOfMetadataBytesProcessed"]/*' />
@@ -101,6 +101,6 @@ public unsafe partial struct SCRUB_DATA_OUTPUT
     public ulong DataBytesScrubbed;
 
     /// <include file='SCRUB_DATA_OUTPUT.xml' path='doc/member[@name="SCRUB_DATA_OUTPUT.ResumeContext"]/*' />
-    [NativeTypeName("BYTE [1040]")]
+    [NativeTypeName("BYTE[1040]")]
     public fixed byte ResumeContext[1040];
 }

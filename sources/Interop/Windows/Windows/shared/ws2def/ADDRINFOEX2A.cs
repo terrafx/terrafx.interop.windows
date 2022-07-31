@@ -10,6 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='ADDRINFOEX2A.xml' path='doc/member[@name="ADDRINFOEX2A"]/*' />
 [SupportedOSPlatform("windows8.0")]
+[Obsolete("ADDRINFOEX2")]
 public unsafe partial struct ADDRINFOEX2A
 {
     /// <include file='ADDRINFOEX2A.xml' path='doc/member[@name="ADDRINFOEX2A.ai_flags"]/*' />

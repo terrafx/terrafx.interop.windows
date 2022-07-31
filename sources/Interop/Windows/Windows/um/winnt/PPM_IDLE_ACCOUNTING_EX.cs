@@ -33,7 +33,7 @@ public partial struct PPM_IDLE_ACCOUNTING_EX
     public ulong StartTime;
 
     /// <include file='PPM_IDLE_ACCOUNTING_EX.xml' path='doc/member[@name="PPM_IDLE_ACCOUNTING_EX.State"]/*' />
-    [NativeTypeName("PPM_IDLE_STATE_ACCOUNTING_EX [1]")]
+    [NativeTypeName("PPM_IDLE_STATE_ACCOUNTING_EX[1]")]
     public _State_e__FixedBuffer State;
 
     /// <include file='_State_e__FixedBuffer.xml' path='doc/member[@name="_State_e__FixedBuffer"]/*' />

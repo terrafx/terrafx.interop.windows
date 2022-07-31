@@ -19,6 +19,6 @@ public unsafe partial struct DEVICEDUMP_PRIVATE_SUBSECTION
     public GP_LOG_PAGE_DESCRIPTOR GPLogId;
 
     /// <include file='DEVICEDUMP_PRIVATE_SUBSECTION.xml' path='doc/member[@name="DEVICEDUMP_PRIVATE_SUBSECTION.bData"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte bData[1];
 }

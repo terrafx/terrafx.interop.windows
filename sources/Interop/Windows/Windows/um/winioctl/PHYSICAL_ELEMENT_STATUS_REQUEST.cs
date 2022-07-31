@@ -27,6 +27,6 @@ public unsafe partial struct PHYSICAL_ELEMENT_STATUS_REQUEST
     public byte ReportType;
 
     /// <include file='PHYSICAL_ELEMENT_STATUS_REQUEST.xml' path='doc/member[@name="PHYSICAL_ELEMENT_STATUS_REQUEST.Reserved"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte Reserved[2];
 }

@@ -5,10 +5,12 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo"]/*' />
+[Guid("DD1D7110-7836-11CF-BF47-00AA0055595A")]
 [NativeTypeName("struct IFullScreenVideo : IUnknown")]
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface

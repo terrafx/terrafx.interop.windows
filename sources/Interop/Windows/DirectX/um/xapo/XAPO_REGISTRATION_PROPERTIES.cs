@@ -17,11 +17,11 @@ public unsafe partial struct XAPO_REGISTRATION_PROPERTIES
     public Guid clsid;
 
     /// <include file='XAPO_REGISTRATION_PROPERTIES.xml' path='doc/member[@name="XAPO_REGISTRATION_PROPERTIES.FriendlyName"]/*' />
-    [NativeTypeName("WCHAR [256]")]
+    [NativeTypeName("WCHAR[256]")]
     public fixed ushort FriendlyName[256];
 
     /// <include file='XAPO_REGISTRATION_PROPERTIES.xml' path='doc/member[@name="XAPO_REGISTRATION_PROPERTIES.CopyrightInfo"]/*' />
-    [NativeTypeName("WCHAR [256]")]
+    [NativeTypeName("WCHAR[256]")]
     public fixed ushort CopyrightInfo[256];
 
     /// <include file='XAPO_REGISTRATION_PROPERTIES.xml' path='doc/member[@name="XAPO_REGISTRATION_PROPERTIES.MajorVersion"]/*' />

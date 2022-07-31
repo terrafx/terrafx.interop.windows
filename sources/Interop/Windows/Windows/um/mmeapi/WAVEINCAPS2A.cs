@@ -25,7 +25,7 @@ public unsafe partial struct WAVEINCAPS2A
     public uint vDriverVersion;
 
     /// <include file='WAVEINCAPS2A.xml' path='doc/member[@name="WAVEINCAPS2A.szPname"]/*' />
-    [NativeTypeName("CHAR [32]")]
+    [NativeTypeName("CHAR[32]")]
     public fixed sbyte szPname[32];
 
     /// <include file='WAVEINCAPS2A.xml' path='doc/member[@name="WAVEINCAPS2A.dwFormats"]/*' />

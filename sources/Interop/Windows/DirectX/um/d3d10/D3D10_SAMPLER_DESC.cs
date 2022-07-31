@@ -30,7 +30,7 @@ public unsafe partial struct D3D10_SAMPLER_DESC
     public D3D10_COMPARISON_FUNC ComparisonFunc;
 
     /// <include file='D3D10_SAMPLER_DESC.xml' path='doc/member[@name="D3D10_SAMPLER_DESC.BorderColor"]/*' />
-    [NativeTypeName("FLOAT [4]")]
+    [NativeTypeName("FLOAT[4]")]
     public fixed float BorderColor[4];
 
     /// <include file='D3D10_SAMPLER_DESC.xml' path='doc/member[@name="D3D10_SAMPLER_DESC.MinLOD"]/*' />

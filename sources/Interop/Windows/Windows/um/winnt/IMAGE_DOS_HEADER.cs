@@ -68,7 +68,7 @@ public unsafe partial struct IMAGE_DOS_HEADER
     public ushort e_ovno;
 
     /// <include file='IMAGE_DOS_HEADER.xml' path='doc/member[@name="IMAGE_DOS_HEADER.e_res"]/*' />
-    [NativeTypeName("WORD [4]")]
+    [NativeTypeName("WORD[4]")]
     public fixed ushort e_res[4];
 
     /// <include file='IMAGE_DOS_HEADER.xml' path='doc/member[@name="IMAGE_DOS_HEADER.e_oemid"]/*' />
@@ -80,7 +80,7 @@ public unsafe partial struct IMAGE_DOS_HEADER
     public ushort e_oeminfo;
 
     /// <include file='IMAGE_DOS_HEADER.xml' path='doc/member[@name="IMAGE_DOS_HEADER.e_res2"]/*' />
-    [NativeTypeName("WORD [10]")]
+    [NativeTypeName("WORD[10]")]
     public fixed ushort e_res2[10];
 
     /// <include file='IMAGE_DOS_HEADER.xml' path='doc/member[@name="IMAGE_DOS_HEADER.e_lfanew"]/*' />

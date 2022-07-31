@@ -25,6 +25,6 @@ public unsafe partial struct SEND_GENERIC_TLS_EXTENSION
     public ushort BufferSize;
 
     /// <include file='SEND_GENERIC_TLS_EXTENSION.xml' path='doc/member[@name="SEND_GENERIC_TLS_EXTENSION.Buffer"]/*' />
-    [NativeTypeName("UCHAR [1]")]
+    [NativeTypeName("UCHAR[1]")]
     public fixed byte Buffer[1];
 }

@@ -14,49 +14,49 @@ public unsafe partial struct D3D10_STATE_BLOCK_MASK
     public byte VS;
 
     /// <include file='D3D10_STATE_BLOCK_MASK.xml' path='doc/member[@name="D3D10_STATE_BLOCK_MASK.VSSamplers"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte VSSamplers[2];
 
     /// <include file='D3D10_STATE_BLOCK_MASK.xml' path='doc/member[@name="D3D10_STATE_BLOCK_MASK.VSShaderResources"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte VSShaderResources[16];
 
     /// <include file='D3D10_STATE_BLOCK_MASK.xml' path='doc/member[@name="D3D10_STATE_BLOCK_MASK.VSConstantBuffers"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte VSConstantBuffers[2];
 
     /// <include file='D3D10_STATE_BLOCK_MASK.xml' path='doc/member[@name="D3D10_STATE_BLOCK_MASK.GS"]/*' />
     public byte GS;
 
     /// <include file='D3D10_STATE_BLOCK_MASK.xml' path='doc/member[@name="D3D10_STATE_BLOCK_MASK.GSSamplers"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte GSSamplers[2];
 
     /// <include file='D3D10_STATE_BLOCK_MASK.xml' path='doc/member[@name="D3D10_STATE_BLOCK_MASK.GSShaderResources"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte GSShaderResources[16];
 
     /// <include file='D3D10_STATE_BLOCK_MASK.xml' path='doc/member[@name="D3D10_STATE_BLOCK_MASK.GSConstantBuffers"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte GSConstantBuffers[2];
 
     /// <include file='D3D10_STATE_BLOCK_MASK.xml' path='doc/member[@name="D3D10_STATE_BLOCK_MASK.PS"]/*' />
     public byte PS;
 
     /// <include file='D3D10_STATE_BLOCK_MASK.xml' path='doc/member[@name="D3D10_STATE_BLOCK_MASK.PSSamplers"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte PSSamplers[2];
 
     /// <include file='D3D10_STATE_BLOCK_MASK.xml' path='doc/member[@name="D3D10_STATE_BLOCK_MASK.PSShaderResources"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte PSShaderResources[16];
 
     /// <include file='D3D10_STATE_BLOCK_MASK.xml' path='doc/member[@name="D3D10_STATE_BLOCK_MASK.PSConstantBuffers"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte PSConstantBuffers[2];
 
     /// <include file='D3D10_STATE_BLOCK_MASK.xml' path='doc/member[@name="D3D10_STATE_BLOCK_MASK.IAVertexBuffers"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte IAVertexBuffers[2];
 
     /// <include file='D3D10_STATE_BLOCK_MASK.xml' path='doc/member[@name="D3D10_STATE_BLOCK_MASK.IAIndexBuffer"]/*' />

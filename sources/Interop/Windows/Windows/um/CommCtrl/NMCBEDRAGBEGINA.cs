@@ -15,6 +15,6 @@ public unsafe partial struct NMCBEDRAGBEGINA
     public int iItemid;
 
     /// <include file='NMCBEDRAGBEGINA.xml' path='doc/member[@name="NMCBEDRAGBEGINA.szText"]/*' />
-    [NativeTypeName("char [260]")]
+    [NativeTypeName("char[260]")]
     public fixed sbyte szText[260];
 }

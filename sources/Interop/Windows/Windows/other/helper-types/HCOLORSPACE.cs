@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HCOLORSPACE : IComparable, IComparable<HCOLORSPACE>, IEquatable<HCOLORSPACE>, IFormattable
+public readonly unsafe partial struct HCOLORSPACE : IComparable, IComparable<HCOLORSPACE>, IEquatable<HCOLORSPACE>, IFormattable
 {
     public readonly void* Value;
 

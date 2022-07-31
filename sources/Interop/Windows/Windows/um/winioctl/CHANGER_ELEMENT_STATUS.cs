@@ -33,10 +33,10 @@ public unsafe partial struct CHANGER_ELEMENT_STATUS
     public ushort Reserved;
 
     /// <include file='CHANGER_ELEMENT_STATUS.xml' path='doc/member[@name="CHANGER_ELEMENT_STATUS.PrimaryVolumeID"]/*' />
-    [NativeTypeName("BYTE [36]")]
+    [NativeTypeName("BYTE[36]")]
     public fixed byte PrimaryVolumeID[36];
 
     /// <include file='CHANGER_ELEMENT_STATUS.xml' path='doc/member[@name="CHANGER_ELEMENT_STATUS.AlternateVolumeID"]/*' />
-    [NativeTypeName("BYTE [36]")]
+    [NativeTypeName("BYTE[36]")]
     public fixed byte AlternateVolumeID[36];
 }

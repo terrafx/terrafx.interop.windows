@@ -51,13 +51,13 @@ public unsafe partial struct FILE_ID_BOTH_DIR_INFO
     public sbyte ShortNameLength;
 
     /// <include file='FILE_ID_BOTH_DIR_INFO.xml' path='doc/member[@name="FILE_ID_BOTH_DIR_INFO.ShortName"]/*' />
-    [NativeTypeName("WCHAR [12]")]
+    [NativeTypeName("WCHAR[12]")]
     public fixed ushort ShortName[12];
 
     /// <include file='FILE_ID_BOTH_DIR_INFO.xml' path='doc/member[@name="FILE_ID_BOTH_DIR_INFO.FileId"]/*' />
     public LARGE_INTEGER FileId;
 
     /// <include file='FILE_ID_BOTH_DIR_INFO.xml' path='doc/member[@name="FILE_ID_BOTH_DIR_INFO.FileName"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort FileName[1];
 }

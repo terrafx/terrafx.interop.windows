@@ -73,7 +73,7 @@ public unsafe partial struct ID2D1BitmapBrush : ID2D1BitmapBrush.Interface
     [VtblIndex(6)]
     public float GetOpacity()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1BitmapBrush*, float>)(lpVtbl[6]))((ID2D1BitmapBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1BitmapBrush*, float>)(lpVtbl[6]))((ID2D1BitmapBrush*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Brush.GetTransform" />
@@ -81,7 +81,7 @@ public unsafe partial struct ID2D1BitmapBrush : ID2D1BitmapBrush.Interface
     [VtblIndex(7)]
     public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
     {
-        ((delegate* unmanaged[SuppressGCTransition]<ID2D1BitmapBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1BitmapBrush*)Unsafe.AsPointer(ref this), transform);
+        ((delegate* unmanaged<ID2D1BitmapBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1BitmapBrush*)Unsafe.AsPointer(ref this), transform);
     }
 
     /// <include file='ID2D1BitmapBrush.xml' path='doc/member[@name="ID2D1BitmapBrush.SetExtendModeX"]/*' />
@@ -121,7 +121,7 @@ public unsafe partial struct ID2D1BitmapBrush : ID2D1BitmapBrush.Interface
     [VtblIndex(12)]
     public D2D1_EXTEND_MODE GetExtendModeX()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1BitmapBrush*, D2D1_EXTEND_MODE>)(lpVtbl[12]))((ID2D1BitmapBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1BitmapBrush*, D2D1_EXTEND_MODE>)(lpVtbl[12]))((ID2D1BitmapBrush*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1BitmapBrush.xml' path='doc/member[@name="ID2D1BitmapBrush.GetExtendModeY"]/*' />
@@ -129,7 +129,7 @@ public unsafe partial struct ID2D1BitmapBrush : ID2D1BitmapBrush.Interface
     [VtblIndex(13)]
     public D2D1_EXTEND_MODE GetExtendModeY()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1BitmapBrush*, D2D1_EXTEND_MODE>)(lpVtbl[13]))((ID2D1BitmapBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1BitmapBrush*, D2D1_EXTEND_MODE>)(lpVtbl[13]))((ID2D1BitmapBrush*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1BitmapBrush.xml' path='doc/member[@name="ID2D1BitmapBrush.GetInterpolationMode"]/*' />
@@ -137,7 +137,7 @@ public unsafe partial struct ID2D1BitmapBrush : ID2D1BitmapBrush.Interface
     [VtblIndex(14)]
     public D2D1_BITMAP_INTERPOLATION_MODE GetInterpolationMode()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1BitmapBrush*, D2D1_BITMAP_INTERPOLATION_MODE>)(lpVtbl[14]))((ID2D1BitmapBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1BitmapBrush*, D2D1_BITMAP_INTERPOLATION_MODE>)(lpVtbl[14]))((ID2D1BitmapBrush*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1BitmapBrush.xml' path='doc/member[@name="ID2D1BitmapBrush.GetBitmap"]/*' />
@@ -197,10 +197,10 @@ public unsafe partial struct ID2D1BitmapBrush : ID2D1BitmapBrush.Interface
         public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, void> SetTransform;
 
         [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float> GetOpacity;
+        public delegate* unmanaged<TSelf*, float> GetOpacity;
 
         [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D_MATRIX_3X2_F*, void> GetTransform;
+        public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, void> GetTransform;
 
         [NativeTypeName("void (D2D1_EXTEND_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, D2D1_EXTEND_MODE, void> SetExtendModeX;
@@ -215,13 +215,13 @@ public unsafe partial struct ID2D1BitmapBrush : ID2D1BitmapBrush.Interface
         public delegate* unmanaged<TSelf*, ID2D1Bitmap*, void> SetBitmap;
 
         [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_EXTEND_MODE> GetExtendModeX;
+        public delegate* unmanaged<TSelf*, D2D1_EXTEND_MODE> GetExtendModeX;
 
         [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_EXTEND_MODE> GetExtendModeY;
+        public delegate* unmanaged<TSelf*, D2D1_EXTEND_MODE> GetExtendModeY;
 
         [NativeTypeName("D2D1_BITMAP_INTERPOLATION_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_BITMAP_INTERPOLATION_MODE> GetInterpolationMode;
+        public delegate* unmanaged<TSelf*, D2D1_BITMAP_INTERPOLATION_MODE> GetInterpolationMode;
 
         [NativeTypeName("void (ID2D1Bitmap **) const __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ID2D1Bitmap**, void> GetBitmap;

@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HDESK : IComparable, IComparable<HDESK>, IEquatable<HDESK>, IFormattable
+public readonly unsafe partial struct HDESK : IComparable, IComparable<HDESK>, IEquatable<HDESK>, IFormattable
 {
     public readonly void* Value;
 

@@ -25,7 +25,7 @@ public partial struct DEVICE_DSM_NOTIFICATION_PARAMETERS
     public uint NumFileTypeIDs;
 
     /// <include file='DEVICE_DSM_NOTIFICATION_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_NOTIFICATION_PARAMETERS.FileTypeID"]/*' />
-    [NativeTypeName("GUID [1]")]
+    [NativeTypeName("GUID[1]")]
     public _FileTypeID_e__FixedBuffer FileTypeID;
 
     /// <include file='_FileTypeID_e__FixedBuffer.xml' path='doc/member[@name="_FileTypeID_e__FixedBuffer"]/*' />

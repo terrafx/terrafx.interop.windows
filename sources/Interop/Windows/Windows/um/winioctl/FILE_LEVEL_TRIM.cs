@@ -23,7 +23,7 @@ public partial struct FILE_LEVEL_TRIM
     public uint NumRanges;
 
     /// <include file='FILE_LEVEL_TRIM.xml' path='doc/member[@name="FILE_LEVEL_TRIM.Ranges"]/*' />
-    [NativeTypeName("FILE_LEVEL_TRIM_RANGE [1]")]
+    [NativeTypeName("FILE_LEVEL_TRIM_RANGE[1]")]
     public _Ranges_e__FixedBuffer Ranges;
 
     /// <include file='_Ranges_e__FixedBuffer.xml' path='doc/member[@name="_Ranges_e__FixedBuffer"]/*' />

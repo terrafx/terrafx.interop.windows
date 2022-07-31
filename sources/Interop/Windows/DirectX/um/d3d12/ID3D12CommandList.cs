@@ -89,7 +89,7 @@ public unsafe partial struct ID3D12CommandList : ID3D12CommandList.Interface
     [VtblIndex(8)]
     public new D3D12_COMMAND_LIST_TYPE GetType()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12CommandList*, D3D12_COMMAND_LIST_TYPE>)(lpVtbl[8]))((ID3D12CommandList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID3D12CommandList*, D3D12_COMMAND_LIST_TYPE>)(lpVtbl[8]))((ID3D12CommandList*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : ID3D12DeviceChild.Interface
@@ -126,6 +126,6 @@ public unsafe partial struct ID3D12CommandList : ID3D12CommandList.Interface
         public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDevice;
 
         [NativeTypeName("D3D12_COMMAND_LIST_TYPE () __attribute__((stdcall))")]
-        public new delegate* unmanaged[SuppressGCTransition]<TSelf*, D3D12_COMMAND_LIST_TYPE> GetType;
+        public new delegate* unmanaged<TSelf*, D3D12_COMMAND_LIST_TYPE> GetType;
     }
 }

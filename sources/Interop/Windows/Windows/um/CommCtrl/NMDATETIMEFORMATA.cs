@@ -23,6 +23,6 @@ public unsafe partial struct NMDATETIMEFORMATA
     public sbyte* pszDisplay;
 
     /// <include file='NMDATETIMEFORMATA.xml' path='doc/member[@name="NMDATETIMEFORMATA.szDisplay"]/*' />
-    [NativeTypeName("CHAR [64]")]
+    [NativeTypeName("CHAR[64]")]
     public fixed sbyte szDisplay[64];
 }

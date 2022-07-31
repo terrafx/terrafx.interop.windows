@@ -41,7 +41,7 @@ public partial struct FSCTL_QUERY_REGION_INFO_OUTPUT
     public uint NumberOfRegionsReturned;
 
     /// <include file='FSCTL_QUERY_REGION_INFO_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_REGION_INFO_OUTPUT.Regions"]/*' />
-    [NativeTypeName("FILE_STORAGE_TIER_REGION [1]")]
+    [NativeTypeName("FILE_STORAGE_TIER_REGION[1]")]
     public _Regions_e__FixedBuffer Regions;
 
     /// <include file='_Regions_e__FixedBuffer.xml' path='doc/member[@name="_Regions_e__FixedBuffer"]/*' />

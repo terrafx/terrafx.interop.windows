@@ -21,6 +21,6 @@ public unsafe partial struct STORAGE_FRU_ID_DESCRIPTOR
     public uint IdentifierSize;
 
     /// <include file='STORAGE_FRU_ID_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_FRU_ID_DESCRIPTOR.Identifier"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Identifier[1];
 }

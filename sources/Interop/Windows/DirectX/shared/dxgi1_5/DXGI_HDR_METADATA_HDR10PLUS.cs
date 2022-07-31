@@ -9,6 +9,6 @@ namespace TerraFX.Interop.DirectX;
 public unsafe partial struct DXGI_HDR_METADATA_HDR10PLUS
 {
     /// <include file='DXGI_HDR_METADATA_HDR10PLUS.xml' path='doc/member[@name="DXGI_HDR_METADATA_HDR10PLUS.Data"]/*' />
-    [NativeTypeName("BYTE [72]")]
+    [NativeTypeName("BYTE[72]")]
     public fixed byte Data[72];
 }

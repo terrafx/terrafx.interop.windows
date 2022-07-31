@@ -20,7 +20,7 @@ public partial struct KERB_QUERY_TKT_CACHE_EX2_RESPONSE
     public uint CountOfTickets;
 
     /// <include file='KERB_QUERY_TKT_CACHE_EX2_RESPONSE.xml' path='doc/member[@name="KERB_QUERY_TKT_CACHE_EX2_RESPONSE.Tickets"]/*' />
-    [NativeTypeName("KERB_TICKET_CACHE_INFO_EX2 [1]")]
+    [NativeTypeName("KERB_TICKET_CACHE_INFO_EX2[1]")]
     public _Tickets_e__FixedBuffer Tickets;
 
     /// <include file='_Tickets_e__FixedBuffer.xml' path='doc/member[@name="_Tickets_e__FixedBuffer"]/*' />

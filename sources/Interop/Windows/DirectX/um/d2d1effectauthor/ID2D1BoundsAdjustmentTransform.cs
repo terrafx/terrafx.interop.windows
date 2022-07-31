@@ -66,7 +66,7 @@ public unsafe partial struct ID2D1BoundsAdjustmentTransform : ID2D1BoundsAdjustm
     [VtblIndex(5)]
     public void GetOutputBounds([NativeTypeName("D2D1_RECT_L *")] RECT* outputBounds)
     {
-        ((delegate* unmanaged[SuppressGCTransition]<ID2D1BoundsAdjustmentTransform*, RECT*, void>)(lpVtbl[5]))((ID2D1BoundsAdjustmentTransform*)Unsafe.AsPointer(ref this), outputBounds);
+        ((delegate* unmanaged<ID2D1BoundsAdjustmentTransform*, RECT*, void>)(lpVtbl[5]))((ID2D1BoundsAdjustmentTransform*)Unsafe.AsPointer(ref this), outputBounds);
     }
 
     public interface Interface : ID2D1TransformNode.Interface
@@ -97,6 +97,6 @@ public unsafe partial struct ID2D1BoundsAdjustmentTransform : ID2D1BoundsAdjustm
         public delegate* unmanaged<TSelf*, RECT*, void> SetOutputBounds;
 
         [NativeTypeName("void (D2D1_RECT_L *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, RECT*, void> GetOutputBounds;
+        public delegate* unmanaged<TSelf*, RECT*, void> GetOutputBounds;
     }
 }

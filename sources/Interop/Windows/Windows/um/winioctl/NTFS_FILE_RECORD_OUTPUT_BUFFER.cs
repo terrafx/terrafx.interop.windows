@@ -16,6 +16,6 @@ public unsafe partial struct NTFS_FILE_RECORD_OUTPUT_BUFFER
     public uint FileRecordLength;
 
     /// <include file='NTFS_FILE_RECORD_OUTPUT_BUFFER.xml' path='doc/member[@name="NTFS_FILE_RECORD_OUTPUT_BUFFER.FileRecordBuffer"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte FileRecordBuffer[1];
 }

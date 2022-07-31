@@ -233,7 +233,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptInstallOIDFunctionAddress"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
-    public static extern BOOL CryptInstallOIDFunctionAddress(HMODULE hModule, [NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("DWORD")] uint cFuncEntry, [NativeTypeName("const CRYPT_OID_FUNC_ENTRY []")] CRYPT_OID_FUNC_ENTRY* rgFuncEntry, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern BOOL CryptInstallOIDFunctionAddress(HMODULE hModule, [NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("DWORD")] uint cFuncEntry, [NativeTypeName("const CRYPT_OID_FUNC_ENTRY[]")] CRYPT_OID_FUNC_ENTRY* rgFuncEntry, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptInitOIDFunctionSet"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -753,7 +753,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertVerifyRevocation"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CertVerifyRevocation([NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("DWORD")] uint dwRevType, [NativeTypeName("DWORD")] uint cContext, [NativeTypeName("PVOID []")] void** rgpvContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PCERT_REVOCATION_PARA")] CERT_REVOCATION_PARA* pRevPara, [NativeTypeName("PCERT_REVOCATION_STATUS")] CERT_REVOCATION_STATUS* pRevStatus);
+    public static extern BOOL CertVerifyRevocation([NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("DWORD")] uint dwRevType, [NativeTypeName("DWORD")] uint cContext, [NativeTypeName("PVOID[]")] void** rgpvContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PCERT_REVOCATION_PARA")] CERT_REVOCATION_PARA* pRevPara, [NativeTypeName("PCERT_REVOCATION_STATUS")] CERT_REVOCATION_STATUS* pRevStatus);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertCompareIntegerBlob"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -840,7 +840,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertVerifyCRLRevocation"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
-    public static extern BOOL CertVerifyCRLRevocation([NativeTypeName("DWORD")] uint dwCertEncodingType, [NativeTypeName("PCERT_INFO")] CERT_INFO* pCertId, [NativeTypeName("DWORD")] uint cCrlInfo, [NativeTypeName("PCRL_INFO []")] CRL_INFO** rgpCrlInfo);
+    public static extern BOOL CertVerifyCRLRevocation([NativeTypeName("DWORD")] uint dwCertEncodingType, [NativeTypeName("PCERT_INFO")] CERT_INFO* pCertId, [NativeTypeName("DWORD")] uint cCrlInfo, [NativeTypeName("PCRL_INFO[]")] CRL_INFO** rgpCrlInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertAlgIdToOID"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -855,12 +855,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertFindExtension"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [return: NativeTypeName("PCERT_EXTENSION")]
-    public static extern CERT_EXTENSION* CertFindExtension([NativeTypeName("LPCSTR")] sbyte* pszObjId, [NativeTypeName("DWORD")] uint cExtensions, [NativeTypeName("CERT_EXTENSION []")] CERT_EXTENSION* rgExtensions);
+    public static extern CERT_EXTENSION* CertFindExtension([NativeTypeName("LPCSTR")] sbyte* pszObjId, [NativeTypeName("DWORD")] uint cExtensions, [NativeTypeName("CERT_EXTENSION[]")] CERT_EXTENSION* rgExtensions);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertFindAttribute"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [return: NativeTypeName("PCRYPT_ATTRIBUTE")]
-    public static extern CRYPT_ATTRIBUTE* CertFindAttribute([NativeTypeName("LPCSTR")] sbyte* pszObjId, [NativeTypeName("DWORD")] uint cAttr, [NativeTypeName("CRYPT_ATTRIBUTE []")] CRYPT_ATTRIBUTE* rgAttr);
+    public static extern CRYPT_ATTRIBUTE* CertFindAttribute([NativeTypeName("LPCSTR")] sbyte* pszObjId, [NativeTypeName("DWORD")] uint cAttr, [NativeTypeName("CRYPT_ATTRIBUTE[]")] CRYPT_ATTRIBUTE* rgAttr);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertFindRDNAttr"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -979,7 +979,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSignMessage"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptSignMessage([NativeTypeName("PCRYPT_SIGN_MESSAGE_PARA")] CRYPT_SIGN_MESSAGE_PARA* pSignPara, BOOL fDetachedSignature, [NativeTypeName("DWORD")] uint cToBeSigned, [NativeTypeName("const BYTE *[]")] byte** rgpbToBeSigned, [NativeTypeName("DWORD []")] uint* rgcbToBeSigned, byte* pbSignedBlob, [NativeTypeName("DWORD *")] uint* pcbSignedBlob);
+    public static extern BOOL CryptSignMessage([NativeTypeName("PCRYPT_SIGN_MESSAGE_PARA")] CRYPT_SIGN_MESSAGE_PARA* pSignPara, BOOL fDetachedSignature, [NativeTypeName("DWORD")] uint cToBeSigned, [NativeTypeName("const BYTE *[]")] byte** rgpbToBeSigned, [NativeTypeName("DWORD[]")] uint* rgcbToBeSigned, byte* pbSignedBlob, [NativeTypeName("DWORD *")] uint* pcbSignedBlob);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptVerifyMessageSignature"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -1000,12 +1000,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptVerifyDetachedMessageSignature"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptVerifyDetachedMessageSignature([NativeTypeName("PCRYPT_VERIFY_MESSAGE_PARA")] CRYPT_VERIFY_MESSAGE_PARA* pVerifyPara, [NativeTypeName("DWORD")] uint dwSignerIndex, [NativeTypeName("const BYTE *")] byte* pbDetachedSignBlob, [NativeTypeName("DWORD")] uint cbDetachedSignBlob, [NativeTypeName("DWORD")] uint cToBeSigned, [NativeTypeName("const BYTE *[]")] byte** rgpbToBeSigned, [NativeTypeName("DWORD []")] uint* rgcbToBeSigned, [NativeTypeName("PCCERT_CONTEXT *")] CERT_CONTEXT** ppSignerCert);
+    public static extern BOOL CryptVerifyDetachedMessageSignature([NativeTypeName("PCRYPT_VERIFY_MESSAGE_PARA")] CRYPT_VERIFY_MESSAGE_PARA* pVerifyPara, [NativeTypeName("DWORD")] uint dwSignerIndex, [NativeTypeName("const BYTE *")] byte* pbDetachedSignBlob, [NativeTypeName("DWORD")] uint cbDetachedSignBlob, [NativeTypeName("DWORD")] uint cToBeSigned, [NativeTypeName("const BYTE *[]")] byte** rgpbToBeSigned, [NativeTypeName("DWORD[]")] uint* rgcbToBeSigned, [NativeTypeName("PCCERT_CONTEXT *")] CERT_CONTEXT** ppSignerCert);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptEncryptMessage"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptEncryptMessage([NativeTypeName("PCRYPT_ENCRYPT_MESSAGE_PARA")] CRYPT_ENCRYPT_MESSAGE_PARA* pEncryptPara, [NativeTypeName("DWORD")] uint cRecipientCert, [NativeTypeName("PCCERT_CONTEXT []")] CERT_CONTEXT** rgpRecipientCert, [NativeTypeName("const BYTE *")] byte* pbToBeEncrypted, [NativeTypeName("DWORD")] uint cbToBeEncrypted, byte* pbEncryptedBlob, [NativeTypeName("DWORD *")] uint* pcbEncryptedBlob);
+    public static extern BOOL CryptEncryptMessage([NativeTypeName("PCRYPT_ENCRYPT_MESSAGE_PARA")] CRYPT_ENCRYPT_MESSAGE_PARA* pEncryptPara, [NativeTypeName("DWORD")] uint cRecipientCert, [NativeTypeName("PCCERT_CONTEXT[]")] CERT_CONTEXT** rgpRecipientCert, [NativeTypeName("const BYTE *")] byte* pbToBeEncrypted, [NativeTypeName("DWORD")] uint cbToBeEncrypted, byte* pbEncryptedBlob, [NativeTypeName("DWORD *")] uint* pcbEncryptedBlob);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptDecryptMessage"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -1015,7 +1015,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSignAndEncryptMessage"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptSignAndEncryptMessage([NativeTypeName("PCRYPT_SIGN_MESSAGE_PARA")] CRYPT_SIGN_MESSAGE_PARA* pSignPara, [NativeTypeName("PCRYPT_ENCRYPT_MESSAGE_PARA")] CRYPT_ENCRYPT_MESSAGE_PARA* pEncryptPara, [NativeTypeName("DWORD")] uint cRecipientCert, [NativeTypeName("PCCERT_CONTEXT []")] CERT_CONTEXT** rgpRecipientCert, [NativeTypeName("const BYTE *")] byte* pbToBeSignedAndEncrypted, [NativeTypeName("DWORD")] uint cbToBeSignedAndEncrypted, byte* pbSignedAndEncryptedBlob, [NativeTypeName("DWORD *")] uint* pcbSignedAndEncryptedBlob);
+    public static extern BOOL CryptSignAndEncryptMessage([NativeTypeName("PCRYPT_SIGN_MESSAGE_PARA")] CRYPT_SIGN_MESSAGE_PARA* pSignPara, [NativeTypeName("PCRYPT_ENCRYPT_MESSAGE_PARA")] CRYPT_ENCRYPT_MESSAGE_PARA* pEncryptPara, [NativeTypeName("DWORD")] uint cRecipientCert, [NativeTypeName("PCCERT_CONTEXT[]")] CERT_CONTEXT** rgpRecipientCert, [NativeTypeName("const BYTE *")] byte* pbToBeSignedAndEncrypted, [NativeTypeName("DWORD")] uint cbToBeSignedAndEncrypted, byte* pbSignedAndEncryptedBlob, [NativeTypeName("DWORD *")] uint* pcbSignedAndEncryptedBlob);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptDecryptAndVerifyMessageSignature"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -1030,7 +1030,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptHashMessage"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptHashMessage([NativeTypeName("PCRYPT_HASH_MESSAGE_PARA")] CRYPT_HASH_MESSAGE_PARA* pHashPara, BOOL fDetachedHash, [NativeTypeName("DWORD")] uint cToBeHashed, [NativeTypeName("const BYTE *[]")] byte** rgpbToBeHashed, [NativeTypeName("DWORD []")] uint* rgcbToBeHashed, byte* pbHashedBlob, [NativeTypeName("DWORD *")] uint* pcbHashedBlob, byte* pbComputedHash, [NativeTypeName("DWORD *")] uint* pcbComputedHash);
+    public static extern BOOL CryptHashMessage([NativeTypeName("PCRYPT_HASH_MESSAGE_PARA")] CRYPT_HASH_MESSAGE_PARA* pHashPara, BOOL fDetachedHash, [NativeTypeName("DWORD")] uint cToBeHashed, [NativeTypeName("const BYTE *[]")] byte** rgpbToBeHashed, [NativeTypeName("DWORD[]")] uint* rgcbToBeHashed, byte* pbHashedBlob, [NativeTypeName("DWORD *")] uint* pcbHashedBlob, byte* pbComputedHash, [NativeTypeName("DWORD *")] uint* pcbComputedHash);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptVerifyMessageHash"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -1040,7 +1040,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptVerifyDetachedMessageHash"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptVerifyDetachedMessageHash([NativeTypeName("PCRYPT_HASH_MESSAGE_PARA")] CRYPT_HASH_MESSAGE_PARA* pHashPara, byte* pbDetachedHashBlob, [NativeTypeName("DWORD")] uint cbDetachedHashBlob, [NativeTypeName("DWORD")] uint cToBeHashed, [NativeTypeName("const BYTE *[]")] byte** rgpbToBeHashed, [NativeTypeName("DWORD []")] uint* rgcbToBeHashed, byte* pbComputedHash, [NativeTypeName("DWORD *")] uint* pcbComputedHash);
+    public static extern BOOL CryptVerifyDetachedMessageHash([NativeTypeName("PCRYPT_HASH_MESSAGE_PARA")] CRYPT_HASH_MESSAGE_PARA* pHashPara, byte* pbDetachedHashBlob, [NativeTypeName("DWORD")] uint cbDetachedHashBlob, [NativeTypeName("DWORD")] uint cToBeHashed, [NativeTypeName("const BYTE *[]")] byte** rgpbToBeHashed, [NativeTypeName("DWORD[]")] uint* rgcbToBeHashed, byte* pbComputedHash, [NativeTypeName("DWORD *")] uint* pcbComputedHash);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSignMessageWithKey"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]

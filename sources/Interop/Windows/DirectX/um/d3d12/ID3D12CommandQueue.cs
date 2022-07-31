@@ -170,7 +170,7 @@ public unsafe partial struct ID3D12CommandQueue : ID3D12CommandQueue.Interface
     public D3D12_COMMAND_QUEUE_DESC GetDesc()
     {
         D3D12_COMMAND_QUEUE_DESC result;
-        return *((delegate* unmanaged[SuppressGCTransition]<ID3D12CommandQueue*, D3D12_COMMAND_QUEUE_DESC*, D3D12_COMMAND_QUEUE_DESC*>)(lpVtbl[18]))((ID3D12CommandQueue*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged<ID3D12CommandQueue*, D3D12_COMMAND_QUEUE_DESC*, D3D12_COMMAND_QUEUE_DESC*>)(lpVtbl[18]))((ID3D12CommandQueue*)Unsafe.AsPointer(ref this), &result);
     }
 
     public interface Interface : ID3D12Pageable.Interface
@@ -267,6 +267,6 @@ public unsafe partial struct ID3D12CommandQueue : ID3D12CommandQueue.Interface
         public delegate* unmanaged<TSelf*, ulong*, ulong*, int> GetClockCalibration;
 
         [NativeTypeName("D3D12_COMMAND_QUEUE_DESC () __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D3D12_COMMAND_QUEUE_DESC*, D3D12_COMMAND_QUEUE_DESC*> GetDesc;
+        public delegate* unmanaged<TSelf*, D3D12_COMMAND_QUEUE_DESC*, D3D12_COMMAND_QUEUE_DESC*> GetDesc;
     }
 }

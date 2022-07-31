@@ -13,6 +13,6 @@ public unsafe partial struct BULK_SECURITY_TEST_DATA
     public uint DesiredAccess;
 
     /// <include file='BULK_SECURITY_TEST_DATA.xml' path='doc/member[@name="BULK_SECURITY_TEST_DATA.SecurityIds"]/*' />
-    [NativeTypeName("DWORD [1]")]
+    [NativeTypeName("DWORD[1]")]
     public fixed uint SecurityIds[1];
 }

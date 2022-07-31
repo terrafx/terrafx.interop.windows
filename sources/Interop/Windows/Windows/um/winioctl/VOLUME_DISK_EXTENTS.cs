@@ -17,7 +17,7 @@ public partial struct VOLUME_DISK_EXTENTS
     public uint NumberOfDiskExtents;
 
     /// <include file='VOLUME_DISK_EXTENTS.xml' path='doc/member[@name="VOLUME_DISK_EXTENTS.Extents"]/*' />
-    [NativeTypeName("DISK_EXTENT [1]")]
+    [NativeTypeName("DISK_EXTENT[1]")]
     public _Extents_e__FixedBuffer Extents;
 
     /// <include file='_Extents_e__FixedBuffer.xml' path='doc/member[@name="_Extents_e__FixedBuffer"]/*' />

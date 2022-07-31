@@ -9,38 +9,38 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct STORAGE_RPMB_DATA_FRAME
 {
     /// <include file='STORAGE_RPMB_DATA_FRAME.xml' path='doc/member[@name="STORAGE_RPMB_DATA_FRAME.Stuff"]/*' />
-    [NativeTypeName("BYTE [196]")]
+    [NativeTypeName("BYTE[196]")]
     public fixed byte Stuff[196];
 
     /// <include file='STORAGE_RPMB_DATA_FRAME.xml' path='doc/member[@name="STORAGE_RPMB_DATA_FRAME.KeyOrMAC"]/*' />
-    [NativeTypeName("BYTE [32]")]
+    [NativeTypeName("BYTE[32]")]
     public fixed byte KeyOrMAC[32];
 
     /// <include file='STORAGE_RPMB_DATA_FRAME.xml' path='doc/member[@name="STORAGE_RPMB_DATA_FRAME.Data"]/*' />
-    [NativeTypeName("BYTE [256]")]
+    [NativeTypeName("BYTE[256]")]
     public fixed byte Data[256];
 
     /// <include file='STORAGE_RPMB_DATA_FRAME.xml' path='doc/member[@name="STORAGE_RPMB_DATA_FRAME.Nonce"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte Nonce[16];
 
     /// <include file='STORAGE_RPMB_DATA_FRAME.xml' path='doc/member[@name="STORAGE_RPMB_DATA_FRAME.WriteCounter"]/*' />
-    [NativeTypeName("BYTE [4]")]
+    [NativeTypeName("BYTE[4]")]
     public fixed byte WriteCounter[4];
 
     /// <include file='STORAGE_RPMB_DATA_FRAME.xml' path='doc/member[@name="STORAGE_RPMB_DATA_FRAME.Address"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte Address[2];
 
     /// <include file='STORAGE_RPMB_DATA_FRAME.xml' path='doc/member[@name="STORAGE_RPMB_DATA_FRAME.BlockCount"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte BlockCount[2];
 
     /// <include file='STORAGE_RPMB_DATA_FRAME.xml' path='doc/member[@name="STORAGE_RPMB_DATA_FRAME.OperationResult"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte OperationResult[2];
 
     /// <include file='STORAGE_RPMB_DATA_FRAME.xml' path='doc/member[@name="STORAGE_RPMB_DATA_FRAME.RequestOrResponseType"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte RequestOrResponseType[2];
 }

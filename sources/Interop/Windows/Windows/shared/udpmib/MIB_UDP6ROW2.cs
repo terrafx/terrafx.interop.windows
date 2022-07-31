@@ -12,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct MIB_UDP6ROW2
 {
     /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.ucLocalAddr"]/*' />
-    [NativeTypeName("UCHAR [16]")]
+    [NativeTypeName("UCHAR[16]")]
     public fixed byte ucLocalAddr[16];
 
     /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.dwLocalScopeId"]/*' />
@@ -35,11 +35,11 @@ public unsafe partial struct MIB_UDP6ROW2
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.OwningModuleInfo"]/*' />
-    [NativeTypeName("ULONGLONG [16]")]
+    [NativeTypeName("ULONGLONG[16]")]
     public fixed ulong OwningModuleInfo[16];
 
     /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.ucRemoteAddr"]/*' />
-    [NativeTypeName("UCHAR [16]")]
+    [NativeTypeName("UCHAR[16]")]
     public fixed byte ucRemoteAddr[16];
 
     /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.dwRemoteScopeId"]/*' />

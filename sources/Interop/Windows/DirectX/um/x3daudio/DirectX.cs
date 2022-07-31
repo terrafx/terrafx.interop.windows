@@ -13,7 +13,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
-    [NativeTypeName("const X3DAUDIO_DISTANCE_CURVE_POINT [2]")]
+    [NativeTypeName("const X3DAUDIO_DISTANCE_CURVE_POINT[2]")]
     public static ReadOnlySpan<X3DAUDIO_DISTANCE_CURVE_POINT> X3DAudioDefault_LinearCurvePoints
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

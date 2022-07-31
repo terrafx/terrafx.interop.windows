@@ -5,10 +5,12 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CIE4ConnectionPoint.xml' path='doc/member[@name="CIE4ConnectionPoint"]/*' />
+[Guid("00000000-0000-0000-0000-000000000000")]
 [NativeTypeName("struct CIE4ConnectionPoint : IConnectionPoint")]
 [NativeInheritance("IConnectionPoint")]
 public unsafe partial struct CIE4ConnectionPoint : CIE4ConnectionPoint.Interface

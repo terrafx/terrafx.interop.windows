@@ -5,11 +5,13 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='IDirectDrawColorControl.xml' path='doc/member[@name="IDirectDrawColorControl"]/*' />
+[Guid("4B9F0EE0-0D7E-11D0-9B06-00A0C903A3B8")]
 [NativeTypeName("struct IDirectDrawColorControl : IUnknown")]
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDirectDrawColorControl : IDirectDrawColorControl.Interface

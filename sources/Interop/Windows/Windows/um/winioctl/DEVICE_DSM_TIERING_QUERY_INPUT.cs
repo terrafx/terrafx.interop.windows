@@ -29,7 +29,7 @@ public partial struct DEVICE_DSM_TIERING_QUERY_INPUT
     public uint NumberOfTierIds;
 
     /// <include file='DEVICE_DSM_TIERING_QUERY_INPUT.xml' path='doc/member[@name="DEVICE_DSM_TIERING_QUERY_INPUT.TierIds"]/*' />
-    [NativeTypeName("GUID [1]")]
+    [NativeTypeName("GUID[1]")]
     public _TierIds_e__FixedBuffer TierIds;
 
     /// <include file='_TierIds_e__FixedBuffer.xml' path='doc/member[@name="_TierIds_e__FixedBuffer"]/*' />

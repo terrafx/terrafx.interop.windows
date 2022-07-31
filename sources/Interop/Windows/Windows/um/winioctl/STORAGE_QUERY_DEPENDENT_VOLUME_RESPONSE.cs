@@ -49,12 +49,12 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Lev1Depends"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY []")]
+        [NativeTypeName("STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY[]")]
         public STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY Lev1Depends;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Lev2Depends"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY []")]
+        [NativeTypeName("STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY[]")]
         public STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY Lev2Depends;
     }
 }

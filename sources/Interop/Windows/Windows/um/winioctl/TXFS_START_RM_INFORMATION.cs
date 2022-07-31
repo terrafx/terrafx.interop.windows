@@ -53,6 +53,6 @@ public unsafe partial struct TXFS_START_RM_INFORMATION
     public ushort Reserved;
 
     /// <include file='TXFS_START_RM_INFORMATION.xml' path='doc/member[@name="TXFS_START_RM_INFORMATION.LogPath"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort LogPath[1];
 }

@@ -18,6 +18,6 @@ public unsafe partial struct AMCOPPStatusOutput
     public uint cbSizeData;
 
     /// <include file='AMCOPPStatusOutput.xml' path='doc/member[@name="AMCOPPStatusOutput.COPPStatus"]/*' />
-    [NativeTypeName("BYTE [4076]")]
+    [NativeTypeName("BYTE[4076]")]
     public fixed byte COPPStatus[4076];
 }

@@ -19,7 +19,7 @@ public partial struct DIRTYRECT_INFO
     public uint NumDirtyRects;
 
     /// <include file='DIRTYRECT_INFO.xml' path='doc/member[@name="DIRTYRECT_INFO.DirtyRects"]/*' />
-    [NativeTypeName("RECT [1]")]
+    [NativeTypeName("RECT[1]")]
     public _DirtyRects_e__FixedBuffer DirtyRects;
 
     /// <include file='_DirtyRects_e__FixedBuffer.xml' path='doc/member[@name="_DirtyRects_e__FixedBuffer"]/*' />

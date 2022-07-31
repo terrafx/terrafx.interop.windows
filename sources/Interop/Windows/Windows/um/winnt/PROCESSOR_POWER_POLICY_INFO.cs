@@ -29,7 +29,7 @@ public unsafe partial struct PROCESSOR_POWER_POLICY_INFO
     public byte PromotePercent;
 
     /// <include file='PROCESSOR_POWER_POLICY_INFO.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY_INFO.Spare"]/*' />
-    [NativeTypeName("BYTE [2]")]
+    [NativeTypeName("BYTE[2]")]
     public fixed byte Spare[2];
 
     public uint _bitfield;

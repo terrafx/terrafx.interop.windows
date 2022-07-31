@@ -16,7 +16,7 @@ public unsafe partial struct MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA
     public uint TaskIndex;
 
     /// <include file='MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA.xml' path='doc/member[@name="MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA.ClassName"]/*' />
-    [NativeTypeName("WCHAR [260]")]
+    [NativeTypeName("WCHAR[260]")]
     public fixed ushort ClassName[260];
 
     /// <include file='MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA.xml' path='doc/member[@name="MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA.BasePriority"]/*' />

@@ -15,7 +15,7 @@ public unsafe partial struct DISPATCHER_CONTEXT_NONVOLREG_ARM64
 {
     /// <include file='DISPATCHER_CONTEXT_NONVOLREG_ARM64.xml' path='doc/member[@name="DISPATCHER_CONTEXT_NONVOLREG_ARM64.Buffer"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("BYTE [152]")]
+    [NativeTypeName("BYTE[152]")]
     public fixed byte Buffer[152];
 
     /// <include file='DISPATCHER_CONTEXT_NONVOLREG_ARM64.xml' path='doc/member[@name="DISPATCHER_CONTEXT_NONVOLREG_ARM64.Anonymous"]/*' />
@@ -47,11 +47,11 @@ public unsafe partial struct DISPATCHER_CONTEXT_NONVOLREG_ARM64
     public unsafe partial struct _Anonymous_e__Struct
     {
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.GpNvRegs"]/*' />
-        [NativeTypeName("DWORD64 [11]")]
+        [NativeTypeName("DWORD64[11]")]
         public fixed ulong GpNvRegs[11];
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.FpNvRegs"]/*' />
-        [NativeTypeName("double [8]")]
+        [NativeTypeName("double[8]")]
         public fixed double FpNvRegs[8];
     }
 }

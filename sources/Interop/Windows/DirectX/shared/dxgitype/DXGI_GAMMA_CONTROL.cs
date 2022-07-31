@@ -19,7 +19,7 @@ public partial struct DXGI_GAMMA_CONTROL
     public DXGI_RGB Offset;
 
     /// <include file='DXGI_GAMMA_CONTROL.xml' path='doc/member[@name="DXGI_GAMMA_CONTROL.GammaCurve"]/*' />
-    [NativeTypeName("DXGI_RGB [1025]")]
+    [NativeTypeName("DXGI_RGB[1025]")]
     public _GammaCurve_e__FixedBuffer GammaCurve;
 
     /// <include file='_GammaCurve_e__FixedBuffer.xml' path='doc/member[@name="_GammaCurve_e__FixedBuffer"]/*' />

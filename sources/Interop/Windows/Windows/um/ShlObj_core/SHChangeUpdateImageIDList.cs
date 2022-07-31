@@ -28,7 +28,7 @@ public unsafe partial struct SHChangeUpdateImageIDList
     public uint dwProcessID;
 
     /// <include file='SHChangeUpdateImageIDList.xml' path='doc/member[@name="SHChangeUpdateImageIDList.szName"]/*' />
-    [NativeTypeName("WCHAR [260]")]
+    [NativeTypeName("WCHAR[260]")]
     public fixed ushort szName[260];
 
     /// <include file='SHChangeUpdateImageIDList.xml' path='doc/member[@name="SHChangeUpdateImageIDList.cbZero"]/*' />

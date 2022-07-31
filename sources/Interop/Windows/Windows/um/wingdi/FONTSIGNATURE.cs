@@ -9,10 +9,10 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct FONTSIGNATURE
 {
     /// <include file='FONTSIGNATURE.xml' path='doc/member[@name="FONTSIGNATURE.fsUsb"]/*' />
-    [NativeTypeName("DWORD [4]")]
+    [NativeTypeName("DWORD[4]")]
     public fixed uint fsUsb[4];
 
     /// <include file='FONTSIGNATURE.xml' path='doc/member[@name="FONTSIGNATURE.fsCsb"]/*' />
-    [NativeTypeName("DWORD [2]")]
+    [NativeTypeName("DWORD[2]")]
     public fixed uint fsCsb[2];
 }

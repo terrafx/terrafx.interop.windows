@@ -21,14 +21,14 @@ public unsafe partial struct SCRUB_DATA_INPUT
     public uint MaximumIos;
 
     /// <include file='SCRUB_DATA_INPUT.xml' path='doc/member[@name="SCRUB_DATA_INPUT.ObjectId"]/*' />
-    [NativeTypeName("DWORD [4]")]
+    [NativeTypeName("DWORD[4]")]
     public fixed uint ObjectId[4];
 
     /// <include file='SCRUB_DATA_INPUT.xml' path='doc/member[@name="SCRUB_DATA_INPUT.Reserved"]/*' />
-    [NativeTypeName("DWORD [41]")]
+    [NativeTypeName("DWORD[41]")]
     public fixed uint Reserved[41];
 
     /// <include file='SCRUB_DATA_INPUT.xml' path='doc/member[@name="SCRUB_DATA_INPUT.ResumeContext"]/*' />
-    [NativeTypeName("BYTE [1040]")]
+    [NativeTypeName("BYTE[1040]")]
     public fixed byte ResumeContext[1040];
 }

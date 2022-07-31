@@ -25,7 +25,7 @@ public unsafe partial struct DESKBANDINFO
     public POINTL ptActual;
 
     /// <include file='DESKBANDINFO.xml' path='doc/member[@name="DESKBANDINFO.wszTitle"]/*' />
-    [NativeTypeName("WCHAR [256]")]
+    [NativeTypeName("WCHAR[256]")]
     public fixed ushort wszTitle[256];
 
     /// <include file='DESKBANDINFO.xml' path='doc/member[@name="DESKBANDINFO.dwModeFlags"]/*' />

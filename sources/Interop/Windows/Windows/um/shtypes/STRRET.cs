@@ -64,7 +64,7 @@ public unsafe partial struct STRRET
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cStr"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("char [260]")]
+        [NativeTypeName("char[260]")]
         public fixed sbyte cStr[260];
     }
 }

@@ -13,6 +13,6 @@ public unsafe partial struct STYLEBUFW
     public uint dwStyle;
 
     /// <include file='STYLEBUFW.xml' path='doc/member[@name="STYLEBUFW.szDescription"]/*' />
-    [NativeTypeName("WCHAR [32]")]
+    [NativeTypeName("WCHAR[32]")]
     public fixed ushort szDescription[32];
 }

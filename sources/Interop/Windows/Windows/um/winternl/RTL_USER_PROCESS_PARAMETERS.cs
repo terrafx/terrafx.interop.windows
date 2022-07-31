@@ -11,11 +11,11 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct RTL_USER_PROCESS_PARAMETERS
 {
     /// <include file='RTL_USER_PROCESS_PARAMETERS.xml' path='doc/member[@name="RTL_USER_PROCESS_PARAMETERS.Reserved1"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte Reserved1[16];
 
     /// <include file='RTL_USER_PROCESS_PARAMETERS.xml' path='doc/member[@name="RTL_USER_PROCESS_PARAMETERS.Reserved2"]/*' />
-    [NativeTypeName("PVOID [10]")]
+    [NativeTypeName("PVOID[10]")]
     public _Reserved2_e__FixedBuffer Reserved2;
 
     /// <include file='RTL_USER_PROCESS_PARAMETERS.xml' path='doc/member[@name="RTL_USER_PROCESS_PARAMETERS.ImagePathName"]/*' />

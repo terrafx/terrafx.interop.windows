@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HBRUSH : IComparable, IComparable<HBRUSH>, IEquatable<HBRUSH>, IFormattable
+public readonly unsafe partial struct HBRUSH : IComparable, IComparable<HBRUSH>, IEquatable<HBRUSH>, IFormattable
 {
     public readonly void* Value;
 

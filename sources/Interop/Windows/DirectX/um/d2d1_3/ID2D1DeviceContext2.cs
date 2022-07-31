@@ -434,7 +434,7 @@ public unsafe partial struct ID2D1DeviceContext2 : ID2D1DeviceContext2.Interface
     [VtblIndex(31)]
     public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
     {
-        ((delegate* unmanaged[SuppressGCTransition]<ID2D1DeviceContext2*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[31]))((ID2D1DeviceContext2*)Unsafe.AsPointer(ref this), transform);
+        ((delegate* unmanaged<ID2D1DeviceContext2*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[31]))((ID2D1DeviceContext2*)Unsafe.AsPointer(ref this), transform);
     }
 
     /// <inheritdoc cref="ID2D1RenderTarget.SetAntialiasMode" />
@@ -450,7 +450,7 @@ public unsafe partial struct ID2D1DeviceContext2 : ID2D1DeviceContext2.Interface
     [VtblIndex(33)]
     public D2D1_ANTIALIAS_MODE GetAntialiasMode()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1DeviceContext2*, D2D1_ANTIALIAS_MODE>)(lpVtbl[33]))((ID2D1DeviceContext2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1DeviceContext2*, D2D1_ANTIALIAS_MODE>)(lpVtbl[33]))((ID2D1DeviceContext2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1RenderTarget.SetTextAntialiasMode" />
@@ -466,7 +466,7 @@ public unsafe partial struct ID2D1DeviceContext2 : ID2D1DeviceContext2.Interface
     [VtblIndex(35)]
     public D2D1_TEXT_ANTIALIAS_MODE GetTextAntialiasMode()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1DeviceContext2*, D2D1_TEXT_ANTIALIAS_MODE>)(lpVtbl[35]))((ID2D1DeviceContext2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1DeviceContext2*, D2D1_TEXT_ANTIALIAS_MODE>)(lpVtbl[35]))((ID2D1DeviceContext2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1RenderTarget.SetTextRenderingParams" />
@@ -603,7 +603,7 @@ public unsafe partial struct ID2D1DeviceContext2 : ID2D1DeviceContext2.Interface
     [VtblIndex(52)]
     public void GetDpi(float* dpiX, float* dpiY)
     {
-        ((delegate* unmanaged[SuppressGCTransition]<ID2D1DeviceContext2*, float*, float*, void>)(lpVtbl[52]))((ID2D1DeviceContext2*)Unsafe.AsPointer(ref this), dpiX, dpiY);
+        ((delegate* unmanaged<ID2D1DeviceContext2*, float*, float*, void>)(lpVtbl[52]))((ID2D1DeviceContext2*)Unsafe.AsPointer(ref this), dpiX, dpiY);
     }
 
     /// <inheritdoc cref="ID2D1RenderTarget.GetSize" />
@@ -824,7 +824,7 @@ public unsafe partial struct ID2D1DeviceContext2 : ID2D1DeviceContext2.Interface
     [VtblIndex(79)]
     public D2D1_PRIMITIVE_BLEND GetPrimitiveBlend()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1DeviceContext2*, D2D1_PRIMITIVE_BLEND>)(lpVtbl[79]))((ID2D1DeviceContext2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1DeviceContext2*, D2D1_PRIMITIVE_BLEND>)(lpVtbl[79]))((ID2D1DeviceContext2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1DeviceContext.SetUnitMode" />
@@ -840,7 +840,7 @@ public unsafe partial struct ID2D1DeviceContext2 : ID2D1DeviceContext2.Interface
     [VtblIndex(81)]
     public D2D1_UNIT_MODE GetUnitMode()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1DeviceContext2*, D2D1_UNIT_MODE>)(lpVtbl[81]))((ID2D1DeviceContext2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1DeviceContext2*, D2D1_UNIT_MODE>)(lpVtbl[81]))((ID2D1DeviceContext2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1DeviceContext.DrawGlyphRun" />
@@ -1168,19 +1168,19 @@ public unsafe partial struct ID2D1DeviceContext2 : ID2D1DeviceContext2.Interface
         public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, void> SetTransform;
 
         [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D_MATRIX_3X2_F*, void> GetTransform;
+        public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, void> GetTransform;
 
         [NativeTypeName("void (D2D1_ANTIALIAS_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, D2D1_ANTIALIAS_MODE, void> SetAntialiasMode;
 
         [NativeTypeName("D2D1_ANTIALIAS_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_ANTIALIAS_MODE> GetAntialiasMode;
+        public delegate* unmanaged<TSelf*, D2D1_ANTIALIAS_MODE> GetAntialiasMode;
 
         [NativeTypeName("void (D2D1_TEXT_ANTIALIAS_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, D2D1_TEXT_ANTIALIAS_MODE, void> SetTextAntialiasMode;
 
         [NativeTypeName("D2D1_TEXT_ANTIALIAS_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_TEXT_ANTIALIAS_MODE> GetTextAntialiasMode;
+        public delegate* unmanaged<TSelf*, D2D1_TEXT_ANTIALIAS_MODE> GetTextAntialiasMode;
 
         [NativeTypeName("void (IDWriteRenderingParams *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDWriteRenderingParams*, void> SetTextRenderingParams;
@@ -1231,7 +1231,7 @@ public unsafe partial struct ID2D1DeviceContext2 : ID2D1DeviceContext2.Interface
         public delegate* unmanaged<TSelf*, float, float, void> SetDpi;
 
         [NativeTypeName("void (FLOAT *, FLOAT *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float*, float*, void> GetDpi;
+        public delegate* unmanaged<TSelf*, float*, float*, void> GetDpi;
 
         [NativeTypeName("D2D1_SIZE_F () const __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, D2D_SIZE_F*, D2D_SIZE_F*> GetSize;
@@ -1312,13 +1312,13 @@ public unsafe partial struct ID2D1DeviceContext2 : ID2D1DeviceContext2.Interface
         public delegate* unmanaged<TSelf*, D2D1_PRIMITIVE_BLEND, void> SetPrimitiveBlend;
 
         [NativeTypeName("D2D1_PRIMITIVE_BLEND () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_PRIMITIVE_BLEND> GetPrimitiveBlend;
+        public delegate* unmanaged<TSelf*, D2D1_PRIMITIVE_BLEND> GetPrimitiveBlend;
 
         [NativeTypeName("void (D2D1_UNIT_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, D2D1_UNIT_MODE, void> SetUnitMode;
 
         [NativeTypeName("D2D1_UNIT_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_UNIT_MODE> GetUnitMode;
+        public delegate* unmanaged<TSelf*, D2D1_UNIT_MODE> GetUnitMode;
 
         [NativeTypeName("void (D2D1_POINT_2F, const DWRITE_GLYPH_RUN *, const DWRITE_GLYPH_RUN_DESCRIPTION *, ID2D1Brush *, DWRITE_MEASURING_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, D2D_POINT_2F, DWRITE_GLYPH_RUN*, DWRITE_GLYPH_RUN_DESCRIPTION*, ID2D1Brush*, DWRITE_MEASURING_MODE, void> DrawGlyphRun1;

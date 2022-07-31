@@ -21,7 +21,7 @@ public unsafe partial struct SYSTEM_PROCESS_INFORMATION
     public uint NumberOfThreads;
 
     /// <include file='SYSTEM_PROCESS_INFORMATION.xml' path='doc/member[@name="SYSTEM_PROCESS_INFORMATION.Reserved1"]/*' />
-    [NativeTypeName("BYTE [48]")]
+    [NativeTypeName("BYTE[48]")]
     public fixed byte Reserved1[48];
 
     /// <include file='SYSTEM_PROCESS_INFORMATION.xml' path='doc/member[@name="SYSTEM_PROCESS_INFORMATION.ImageName"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct SYSTEM_PROCESS_INFORMATION
     public nuint PrivatePageCount;
 
     /// <include file='SYSTEM_PROCESS_INFORMATION.xml' path='doc/member[@name="SYSTEM_PROCESS_INFORMATION.Reserved7"]/*' />
-    [NativeTypeName("LARGE_INTEGER [6]")]
+    [NativeTypeName("LARGE_INTEGER[6]")]
     public _Reserved7_e__FixedBuffer Reserved7;
 
     /// <include file='_Reserved7_e__FixedBuffer.xml' path='doc/member[@name="_Reserved7_e__FixedBuffer"]/*' />

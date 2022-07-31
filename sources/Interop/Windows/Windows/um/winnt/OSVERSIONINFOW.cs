@@ -29,6 +29,6 @@ public unsafe partial struct OSVERSIONINFOW
     public uint dwPlatformId;
 
     /// <include file='OSVERSIONINFOW.xml' path='doc/member[@name="OSVERSIONINFOW.szCSDVersion"]/*' />
-    [NativeTypeName("WCHAR [128]")]
+    [NativeTypeName("WCHAR[128]")]
     public fixed ushort szCSDVersion[128];
 }

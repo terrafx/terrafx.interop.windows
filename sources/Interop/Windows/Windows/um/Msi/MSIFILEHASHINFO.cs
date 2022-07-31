@@ -13,6 +13,6 @@ public unsafe partial struct MSIFILEHASHINFO
     public uint dwFileHashInfoSize;
 
     /// <include file='MSIFILEHASHINFO.xml' path='doc/member[@name="MSIFILEHASHINFO.dwData"]/*' />
-    [NativeTypeName("ULONG [4]")]
+    [NativeTypeName("ULONG[4]")]
     public fixed uint dwData[4];
 }

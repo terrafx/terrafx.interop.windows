@@ -20,15 +20,15 @@ public unsafe partial struct PROPPRG
     public ushort flPrgInit;
 
     /// <include file='PROPPRG.xml' path='doc/member[@name="PROPPRG.achTitle"]/*' />
-    [NativeTypeName("CHAR [30]")]
+    [NativeTypeName("CHAR[30]")]
     public fixed sbyte achTitle[30];
 
     /// <include file='PROPPRG.xml' path='doc/member[@name="PROPPRG.achCmdLine"]/*' />
-    [NativeTypeName("CHAR [128]")]
+    [NativeTypeName("CHAR[128]")]
     public fixed sbyte achCmdLine[128];
 
     /// <include file='PROPPRG.xml' path='doc/member[@name="PROPPRG.achWorkDir"]/*' />
-    [NativeTypeName("CHAR [64]")]
+    [NativeTypeName("CHAR[64]")]
     public fixed sbyte achWorkDir[64];
 
     /// <include file='PROPPRG.xml' path='doc/member[@name="PROPPRG.wHotKey"]/*' />
@@ -36,7 +36,7 @@ public unsafe partial struct PROPPRG
     public ushort wHotKey;
 
     /// <include file='PROPPRG.xml' path='doc/member[@name="PROPPRG.achIconFile"]/*' />
-    [NativeTypeName("CHAR [80]")]
+    [NativeTypeName("CHAR[80]")]
     public fixed sbyte achIconFile[80];
 
     /// <include file='PROPPRG.xml' path='doc/member[@name="PROPPRG.wIconIndex"]/*' />
@@ -52,10 +52,10 @@ public unsafe partial struct PROPPRG
     public uint dwRealModeFlags;
 
     /// <include file='PROPPRG.xml' path='doc/member[@name="PROPPRG.achOtherFile"]/*' />
-    [NativeTypeName("CHAR [80]")]
+    [NativeTypeName("CHAR[80]")]
     public fixed sbyte achOtherFile[80];
 
     /// <include file='PROPPRG.xml' path='doc/member[@name="PROPPRG.achPIFFile"]/*' />
-    [NativeTypeName("CHAR [260]")]
+    [NativeTypeName("CHAR[260]")]
     public fixed sbyte achPIFFile[260];
 }

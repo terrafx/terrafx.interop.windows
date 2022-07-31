@@ -25,6 +25,6 @@ public unsafe partial struct SD_ENUM_SDS_ENTRY
     public uint Length;
 
     /// <include file='SD_ENUM_SDS_ENTRY.xml' path='doc/member[@name="SD_ENUM_SDS_ENTRY.Descriptor"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte Descriptor[1];
 }

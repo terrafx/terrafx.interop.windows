@@ -17,6 +17,6 @@ public unsafe partial struct MIBICMPSTATS_EX_XPSP1
     public uint dwErrors;
 
     /// <include file='MIBICMPSTATS_EX_XPSP1.xml' path='doc/member[@name="MIBICMPSTATS_EX_XPSP1.rgdwTypeCount"]/*' />
-    [NativeTypeName("DWORD [256]")]
+    [NativeTypeName("DWORD[256]")]
     public fixed uint rgdwTypeCount[256];
 }

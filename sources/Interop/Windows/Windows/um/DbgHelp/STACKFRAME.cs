@@ -25,7 +25,7 @@ public unsafe partial struct STACKFRAME
     public void* FuncTableEntry;
 
     /// <include file='STACKFRAME.xml' path='doc/member[@name="STACKFRAME.Params"]/*' />
-    [NativeTypeName("DWORD [4]")]
+    [NativeTypeName("DWORD[4]")]
     public fixed uint Params[4];
 
     /// <include file='STACKFRAME.xml' path='doc/member[@name="STACKFRAME.Far"]/*' />
@@ -35,7 +35,7 @@ public unsafe partial struct STACKFRAME
     public BOOL Virtual;
 
     /// <include file='STACKFRAME.xml' path='doc/member[@name="STACKFRAME.Reserved"]/*' />
-    [NativeTypeName("DWORD [3]")]
+    [NativeTypeName("DWORD[3]")]
     public fixed uint Reserved[3];
 
     /// <include file='STACKFRAME.xml' path='doc/member[@name="STACKFRAME.KdHelp"]/*' />

@@ -18,6 +18,6 @@ public unsafe partial struct EMREXTESCAPE
     public int cbEscData;
 
     /// <include file='EMREXTESCAPE.xml' path='doc/member[@name="EMREXTESCAPE.EscData"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte EscData[1];
 }

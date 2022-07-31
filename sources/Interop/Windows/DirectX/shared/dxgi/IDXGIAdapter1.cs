@@ -89,7 +89,7 @@ public unsafe partial struct IDXGIAdapter1 : IDXGIAdapter1.Interface
     [VtblIndex(8)]
     public HRESULT GetDesc(DXGI_ADAPTER_DESC* pDesc)
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDXGIAdapter1*, DXGI_ADAPTER_DESC*, int>)(lpVtbl[8]))((IDXGIAdapter1*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged<IDXGIAdapter1*, DXGI_ADAPTER_DESC*, int>)(lpVtbl[8]))((IDXGIAdapter1*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <inheritdoc cref="IDXGIAdapter.CheckInterfaceSupport" />
@@ -105,7 +105,7 @@ public unsafe partial struct IDXGIAdapter1 : IDXGIAdapter1.Interface
     [VtblIndex(10)]
     public HRESULT GetDesc1(DXGI_ADAPTER_DESC1* pDesc)
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDXGIAdapter1*, DXGI_ADAPTER_DESC1*, int>)(lpVtbl[10]))((IDXGIAdapter1*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged<IDXGIAdapter1*, DXGI_ADAPTER_DESC1*, int>)(lpVtbl[10]))((IDXGIAdapter1*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     public interface Interface : IDXGIAdapter.Interface
@@ -142,12 +142,12 @@ public unsafe partial struct IDXGIAdapter1 : IDXGIAdapter1.Interface
         public delegate* unmanaged<TSelf*, uint, IDXGIOutput**, int> EnumOutputs;
 
         [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXGI_ADAPTER_DESC*, int> GetDesc;
+        public delegate* unmanaged<TSelf*, DXGI_ADAPTER_DESC*, int> GetDesc;
 
         [NativeTypeName("HRESULT (const GUID &, LARGE_INTEGER *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, LARGE_INTEGER*, int> CheckInterfaceSupport;
 
         [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC1 *) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXGI_ADAPTER_DESC1*, int> GetDesc1;
+        public delegate* unmanaged<TSelf*, DXGI_ADAPTER_DESC1*, int> GetDesc1;
     }
 }

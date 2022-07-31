@@ -17,7 +17,7 @@ public partial struct MIB_TCP6TABLE
     public uint dwNumEntries;
 
     /// <include file='MIB_TCP6TABLE.xml' path='doc/member[@name="MIB_TCP6TABLE.table"]/*' />
-    [NativeTypeName("MIB_TCP6ROW [1]")]
+    [NativeTypeName("MIB_TCP6ROW[1]")]
     public _table_e__FixedBuffer table;
 
     /// <include file='_table_e__FixedBuffer.xml' path='doc/member[@name="_table_e__FixedBuffer"]/*' />

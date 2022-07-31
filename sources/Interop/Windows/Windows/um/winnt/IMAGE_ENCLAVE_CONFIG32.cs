@@ -36,11 +36,11 @@ public unsafe partial struct IMAGE_ENCLAVE_CONFIG32
     public uint ImportEntrySize;
 
     /// <include file='IMAGE_ENCLAVE_CONFIG32.xml' path='doc/member[@name="IMAGE_ENCLAVE_CONFIG32.FamilyID"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte FamilyID[16];
 
     /// <include file='IMAGE_ENCLAVE_CONFIG32.xml' path='doc/member[@name="IMAGE_ENCLAVE_CONFIG32.ImageID"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte ImageID[16];
 
     /// <include file='IMAGE_ENCLAVE_CONFIG32.xml' path='doc/member[@name="IMAGE_ENCLAVE_CONFIG32.ImageVersion"]/*' />

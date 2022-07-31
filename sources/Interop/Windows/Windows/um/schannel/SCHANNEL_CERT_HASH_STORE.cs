@@ -20,10 +20,10 @@ public unsafe partial struct SCHANNEL_CERT_HASH_STORE
     public HCRYPTPROV hProv;
 
     /// <include file='SCHANNEL_CERT_HASH_STORE.xml' path='doc/member[@name="SCHANNEL_CERT_HASH_STORE.ShaHash"]/*' />
-    [NativeTypeName("BYTE [20]")]
+    [NativeTypeName("BYTE[20]")]
     public fixed byte ShaHash[20];
 
     /// <include file='SCHANNEL_CERT_HASH_STORE.xml' path='doc/member[@name="SCHANNEL_CERT_HASH_STORE.pwszStoreName"]/*' />
-    [NativeTypeName("WCHAR [128]")]
+    [NativeTypeName("WCHAR[128]")]
     public fixed ushort pwszStoreName[128];
 }

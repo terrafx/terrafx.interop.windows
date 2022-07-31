@@ -13,11 +13,11 @@ public unsafe partial struct DISPLAY_DEVICEA
     public uint cb;
 
     /// <include file='DISPLAY_DEVICEA.xml' path='doc/member[@name="DISPLAY_DEVICEA.DeviceName"]/*' />
-    [NativeTypeName("CHAR [32]")]
+    [NativeTypeName("CHAR[32]")]
     public fixed sbyte DeviceName[32];
 
     /// <include file='DISPLAY_DEVICEA.xml' path='doc/member[@name="DISPLAY_DEVICEA.DeviceString"]/*' />
-    [NativeTypeName("CHAR [128]")]
+    [NativeTypeName("CHAR[128]")]
     public fixed sbyte DeviceString[128];
 
     /// <include file='DISPLAY_DEVICEA.xml' path='doc/member[@name="DISPLAY_DEVICEA.StateFlags"]/*' />
@@ -25,10 +25,10 @@ public unsafe partial struct DISPLAY_DEVICEA
     public uint StateFlags;
 
     /// <include file='DISPLAY_DEVICEA.xml' path='doc/member[@name="DISPLAY_DEVICEA.DeviceID"]/*' />
-    [NativeTypeName("CHAR [128]")]
+    [NativeTypeName("CHAR[128]")]
     public fixed sbyte DeviceID[128];
 
     /// <include file='DISPLAY_DEVICEA.xml' path='doc/member[@name="DISPLAY_DEVICEA.DeviceKey"]/*' />
-    [NativeTypeName("CHAR [128]")]
+    [NativeTypeName("CHAR[128]")]
     public fixed sbyte DeviceKey[128];
 }

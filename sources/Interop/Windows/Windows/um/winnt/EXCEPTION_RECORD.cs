@@ -33,7 +33,7 @@ public unsafe partial struct EXCEPTION_RECORD
     public uint NumberParameters;
 
     /// <include file='EXCEPTION_RECORD.xml' path='doc/member[@name="EXCEPTION_RECORD.ExceptionInformation"]/*' />
-    [NativeTypeName("ULONG_PTR [15]")]
+    [NativeTypeName("ULONG_PTR[15]")]
     public _ExceptionInformation_e__FixedBuffer ExceptionInformation;
 
     /// <include file='_ExceptionInformation_e__FixedBuffer.xml' path='doc/member[@name="_ExceptionInformation_e__FixedBuffer"]/*' />

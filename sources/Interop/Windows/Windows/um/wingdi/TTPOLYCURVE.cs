@@ -21,7 +21,7 @@ public partial struct TTPOLYCURVE
     public ushort cpfx;
 
     /// <include file='TTPOLYCURVE.xml' path='doc/member[@name="TTPOLYCURVE.apfx"]/*' />
-    [NativeTypeName("POINTFX [1]")]
+    [NativeTypeName("POINTFX[1]")]
     public _apfx_e__FixedBuffer apfx;
 
     /// <include file='_apfx_e__FixedBuffer.xml' path='doc/member[@name="_apfx_e__FixedBuffer"]/*' />

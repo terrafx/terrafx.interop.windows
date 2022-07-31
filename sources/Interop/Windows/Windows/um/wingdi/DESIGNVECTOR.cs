@@ -17,6 +17,6 @@ public unsafe partial struct DESIGNVECTOR
     public uint dvNumAxes;
 
     /// <include file='DESIGNVECTOR.xml' path='doc/member[@name="DESIGNVECTOR.dvValues"]/*' />
-    [NativeTypeName("LONG [16]")]
+    [NativeTypeName("LONG[16]")]
     public fixed int dvValues[16];
 }

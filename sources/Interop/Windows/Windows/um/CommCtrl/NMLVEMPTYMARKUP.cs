@@ -16,6 +16,6 @@ public unsafe partial struct NMLVEMPTYMARKUP
     public uint dwFlags;
 
     /// <include file='NMLVEMPTYMARKUP.xml' path='doc/member[@name="NMLVEMPTYMARKUP.szMarkup"]/*' />
-    [NativeTypeName("WCHAR [2084]")]
+    [NativeTypeName("WCHAR[2084]")]
     public fixed ushort szMarkup[2084];
 }

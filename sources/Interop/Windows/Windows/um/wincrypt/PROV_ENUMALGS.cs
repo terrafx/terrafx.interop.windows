@@ -21,6 +21,6 @@ public unsafe partial struct PROV_ENUMALGS
     public uint dwNameLen;
 
     /// <include file='PROV_ENUMALGS.xml' path='doc/member[@name="PROV_ENUMALGS.szName"]/*' />
-    [NativeTypeName("CHAR [20]")]
+    [NativeTypeName("CHAR[20]")]
     public fixed sbyte szName[20];
 }

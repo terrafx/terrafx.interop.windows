@@ -9,7 +9,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct TOKEN_SOURCE
 {
     /// <include file='TOKEN_SOURCE.xml' path='doc/member[@name="TOKEN_SOURCE.SourceName"]/*' />
-    [NativeTypeName("CHAR [8]")]
+    [NativeTypeName("CHAR[8]")]
     public fixed sbyte SourceName[8];
 
     /// <include file='TOKEN_SOURCE.xml' path='doc/member[@name="TOKEN_SOURCE.SourceIdentifier"]/*' />

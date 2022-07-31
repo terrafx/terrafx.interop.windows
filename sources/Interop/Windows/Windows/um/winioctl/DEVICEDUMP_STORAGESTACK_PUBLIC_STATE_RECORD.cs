@@ -12,11 +12,11 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD
 {
     /// <include file='DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.xml' path='doc/member[@name="DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.Cdb"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte Cdb[16];
 
     /// <include file='DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.xml' path='doc/member[@name="DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.Command"]/*' />
-    [NativeTypeName("BYTE [16]")]
+    [NativeTypeName("BYTE[16]")]
     public fixed byte Command[16];
 
     /// <include file='DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.xml' path='doc/member[@name="DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.StartTime"]/*' />

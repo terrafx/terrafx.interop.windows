@@ -59,7 +59,7 @@ public unsafe partial struct ID2D1Bitmap : ID2D1Bitmap.Interface
     public D2D_SIZE_F GetSize()
     {
         D2D_SIZE_F result;
-        return *((delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap*, D2D_SIZE_F*, D2D_SIZE_F*>)(lpVtbl[4]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged<ID2D1Bitmap*, D2D_SIZE_F*, D2D_SIZE_F*>)(lpVtbl[4]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this), &result);
     }
 
     /// <include file='ID2D1Bitmap.xml' path='doc/member[@name="ID2D1Bitmap.GetPixelSize"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct ID2D1Bitmap : ID2D1Bitmap.Interface
     public D2D_SIZE_U GetPixelSize()
     {
         D2D_SIZE_U result;
-        return *((delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap*, D2D_SIZE_U*, D2D_SIZE_U*>)(lpVtbl[5]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged<ID2D1Bitmap*, D2D_SIZE_U*, D2D_SIZE_U*>)(lpVtbl[5]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this), &result);
     }
 
     /// <include file='ID2D1Bitmap.xml' path='doc/member[@name="ID2D1Bitmap.GetPixelFormat"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct ID2D1Bitmap : ID2D1Bitmap.Interface
     public D2D1_PIXEL_FORMAT GetPixelFormat()
     {
         D2D1_PIXEL_FORMAT result;
-        return *((delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap*, D2D1_PIXEL_FORMAT*, D2D1_PIXEL_FORMAT*>)(lpVtbl[6]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this), &result);
+        return *((delegate* unmanaged<ID2D1Bitmap*, D2D1_PIXEL_FORMAT*, D2D1_PIXEL_FORMAT*>)(lpVtbl[6]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this), &result);
     }
 
     /// <include file='ID2D1Bitmap.xml' path='doc/member[@name="ID2D1Bitmap.GetDpi"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct ID2D1Bitmap : ID2D1Bitmap.Interface
     [VtblIndex(7)]
     public void GetDpi(float* dpiX, float* dpiY)
     {
-        ((delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap*, float*, float*, void>)(lpVtbl[7]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this), dpiX, dpiY);
+        ((delegate* unmanaged<ID2D1Bitmap*, float*, float*, void>)(lpVtbl[7]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this), dpiX, dpiY);
     }
 
     /// <include file='ID2D1Bitmap.xml' path='doc/member[@name="ID2D1Bitmap.CopyFromBitmap"]/*' />
@@ -155,16 +155,16 @@ public unsafe partial struct ID2D1Bitmap : ID2D1Bitmap.Interface
         public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("D2D1_SIZE_F () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D_SIZE_F*, D2D_SIZE_F*> GetSize;
+        public delegate* unmanaged<TSelf*, D2D_SIZE_F*, D2D_SIZE_F*> GetSize;
 
         [NativeTypeName("D2D1_SIZE_U () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D_SIZE_U*, D2D_SIZE_U*> GetPixelSize;
+        public delegate* unmanaged<TSelf*, D2D_SIZE_U*, D2D_SIZE_U*> GetPixelSize;
 
         [NativeTypeName("D2D1_PIXEL_FORMAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_PIXEL_FORMAT*, D2D1_PIXEL_FORMAT*> GetPixelFormat;
+        public delegate* unmanaged<TSelf*, D2D1_PIXEL_FORMAT*, D2D1_PIXEL_FORMAT*> GetPixelFormat;
 
         [NativeTypeName("void (FLOAT *, FLOAT *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float*, float*, void> GetDpi;
+        public delegate* unmanaged<TSelf*, float*, float*, void> GetDpi;
 
         [NativeTypeName("HRESULT (const D2D1_POINT_2U *, ID2D1Bitmap *, const D2D1_RECT_U *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, D2D_POINT_2U*, ID2D1Bitmap*, D2D_RECT_U*, int> CopyFromBitmap;

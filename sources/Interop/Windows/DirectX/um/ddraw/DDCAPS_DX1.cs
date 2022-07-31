@@ -109,7 +109,7 @@ public unsafe partial struct DDCAPS_DX1
     public uint dwAlignStrideAlign;
 
     /// <include file='DDCAPS_DX1.xml' path='doc/member[@name="DDCAPS_DX1.dwRops"]/*' />
-    [NativeTypeName("DWORD [8]")]
+    [NativeTypeName("DWORD[8]")]
     public fixed uint dwRops[8];
 
     /// <include file='DDCAPS_DX1.xml' path='doc/member[@name="DDCAPS_DX1.ddsCaps"]/*' />

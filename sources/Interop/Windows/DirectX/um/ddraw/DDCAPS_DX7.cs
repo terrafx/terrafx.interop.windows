@@ -109,7 +109,7 @@ public unsafe partial struct DDCAPS_DX7
     public uint dwAlignStrideAlign;
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.dwRops"]/*' />
-    [NativeTypeName("DWORD [8]")]
+    [NativeTypeName("DWORD[8]")]
     public fixed uint dwRops[8];
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.ddsOldCaps"]/*' />
@@ -164,7 +164,7 @@ public unsafe partial struct DDCAPS_DX7
     public uint dwSVBFXCaps;
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.dwSVBRops"]/*' />
-    [NativeTypeName("DWORD [8]")]
+    [NativeTypeName("DWORD[8]")]
     public fixed uint dwSVBRops[8];
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.dwVSBCaps"]/*' />
@@ -180,7 +180,7 @@ public unsafe partial struct DDCAPS_DX7
     public uint dwVSBFXCaps;
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.dwVSBRops"]/*' />
-    [NativeTypeName("DWORD [8]")]
+    [NativeTypeName("DWORD[8]")]
     public fixed uint dwVSBRops[8];
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.dwSSBCaps"]/*' />
@@ -196,7 +196,7 @@ public unsafe partial struct DDCAPS_DX7
     public uint dwSSBFXCaps;
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.dwSSBRops"]/*' />
-    [NativeTypeName("DWORD [8]")]
+    [NativeTypeName("DWORD[8]")]
     public fixed uint dwSSBRops[8];
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.dwMaxVideoPorts"]/*' />
@@ -228,7 +228,7 @@ public unsafe partial struct DDCAPS_DX7
     public uint dwNLVBFXCaps;
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.dwNLVBRops"]/*' />
-    [NativeTypeName("DWORD [8]")]
+    [NativeTypeName("DWORD[8]")]
     public fixed uint dwNLVBRops[8];
 
     /// <include file='DDCAPS_DX7.xml' path='doc/member[@name="DDCAPS_DX7.ddsCaps"]/*' />

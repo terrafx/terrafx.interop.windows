@@ -25,7 +25,7 @@ public unsafe partial struct AUXCAPS2A
     public uint vDriverVersion;
 
     /// <include file='AUXCAPS2A.xml' path='doc/member[@name="AUXCAPS2A.szPname"]/*' />
-    [NativeTypeName("CHAR [32]")]
+    [NativeTypeName("CHAR[32]")]
     public fixed sbyte szPname[32];
 
     /// <include file='AUXCAPS2A.xml' path='doc/member[@name="AUXCAPS2A.wTechnology"]/*' />

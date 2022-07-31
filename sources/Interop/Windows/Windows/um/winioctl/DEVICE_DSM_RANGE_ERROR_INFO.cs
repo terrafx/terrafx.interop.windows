@@ -29,7 +29,7 @@ public partial struct DEVICE_DSM_RANGE_ERROR_INFO
     public uint NumberOfRangesReturned;
 
     /// <include file='DEVICE_DSM_RANGE_ERROR_INFO.xml' path='doc/member[@name="DEVICE_DSM_RANGE_ERROR_INFO.Ranges"]/*' />
-    [NativeTypeName("DEVICE_STORAGE_RANGE_ATTRIBUTES [1]")]
+    [NativeTypeName("DEVICE_STORAGE_RANGE_ATTRIBUTES[1]")]
     public _Ranges_e__FixedBuffer Ranges;
 
     /// <include file='_Ranges_e__FixedBuffer.xml' path='doc/member[@name="_Ranges_e__FixedBuffer"]/*' />

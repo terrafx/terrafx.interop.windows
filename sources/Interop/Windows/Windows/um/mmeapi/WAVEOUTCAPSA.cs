@@ -24,7 +24,7 @@ public unsafe partial struct WAVEOUTCAPSA
     public uint vDriverVersion;
 
     /// <include file='WAVEOUTCAPSA.xml' path='doc/member[@name="WAVEOUTCAPSA.szPname"]/*' />
-    [NativeTypeName("CHAR [32]")]
+    [NativeTypeName("CHAR[32]")]
     public fixed sbyte szPname[32];
 
     /// <include file='WAVEOUTCAPSA.xml' path='doc/member[@name="WAVEOUTCAPSA.dwFormats"]/*' />

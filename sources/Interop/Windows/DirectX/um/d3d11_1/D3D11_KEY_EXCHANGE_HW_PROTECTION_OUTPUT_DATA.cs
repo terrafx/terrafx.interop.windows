@@ -29,6 +29,6 @@ public unsafe partial struct D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA
     public ulong ExecutionTime;
 
     /// <include file='D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA.xml' path='doc/member[@name="D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA.pbOutput"]/*' />
-    [NativeTypeName("BYTE [4]")]
+    [NativeTypeName("BYTE[4]")]
     public fixed byte pbOutput[4];
 }

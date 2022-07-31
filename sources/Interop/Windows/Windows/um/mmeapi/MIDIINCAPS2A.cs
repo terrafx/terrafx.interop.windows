@@ -25,7 +25,7 @@ public unsafe partial struct MIDIINCAPS2A
     public uint vDriverVersion;
 
     /// <include file='MIDIINCAPS2A.xml' path='doc/member[@name="MIDIINCAPS2A.szPname"]/*' />
-    [NativeTypeName("CHAR [32]")]
+    [NativeTypeName("CHAR[32]")]
     public fixed sbyte szPname[32];
 
     /// <include file='MIDIINCAPS2A.xml' path='doc/member[@name="MIDIINCAPS2A.dwSupport"]/*' />

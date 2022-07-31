@@ -22,7 +22,7 @@ public unsafe partial struct MSV1_0_LM20_LOGON_PROFILE
     public uint UserFlags;
 
     /// <include file='MSV1_0_LM20_LOGON_PROFILE.xml' path='doc/member[@name="MSV1_0_LM20_LOGON_PROFILE.UserSessionKey"]/*' />
-    [NativeTypeName("UCHAR [16]")]
+    [NativeTypeName("UCHAR[16]")]
     public fixed byte UserSessionKey[16];
 
     /// <include file='MSV1_0_LM20_LOGON_PROFILE.xml' path='doc/member[@name="MSV1_0_LM20_LOGON_PROFILE.LogonDomainName"]/*' />
@@ -30,7 +30,7 @@ public unsafe partial struct MSV1_0_LM20_LOGON_PROFILE
     public LSA_UNICODE_STRING LogonDomainName;
 
     /// <include file='MSV1_0_LM20_LOGON_PROFILE.xml' path='doc/member[@name="MSV1_0_LM20_LOGON_PROFILE.LanmanSessionKey"]/*' />
-    [NativeTypeName("UCHAR [8]")]
+    [NativeTypeName("UCHAR[8]")]
     public fixed byte LanmanSessionKey[8];
 
     /// <include file='MSV1_0_LM20_LOGON_PROFILE.xml' path='doc/member[@name="MSV1_0_LM20_LOGON_PROFILE.LogonServer"]/*' />

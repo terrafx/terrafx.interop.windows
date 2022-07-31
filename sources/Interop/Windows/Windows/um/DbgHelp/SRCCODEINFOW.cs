@@ -21,11 +21,11 @@ public unsafe partial struct SRCCODEINFOW
     public ulong ModBase;
 
     /// <include file='SRCCODEINFOW.xml' path='doc/member[@name="SRCCODEINFOW.Obj"]/*' />
-    [NativeTypeName("WCHAR [261]")]
+    [NativeTypeName("WCHAR[261]")]
     public fixed ushort Obj[261];
 
     /// <include file='SRCCODEINFOW.xml' path='doc/member[@name="SRCCODEINFOW.FileName"]/*' />
-    [NativeTypeName("WCHAR [261]")]
+    [NativeTypeName("WCHAR[261]")]
     public fixed ushort FileName[261];
 
     /// <include file='SRCCODEINFOW.xml' path='doc/member[@name="SRCCODEINFOW.LineNumber"]/*' />

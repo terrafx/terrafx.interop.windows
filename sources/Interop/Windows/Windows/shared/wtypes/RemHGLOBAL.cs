@@ -17,6 +17,6 @@ public unsafe partial struct RemHGLOBAL
     public uint cbData;
 
     /// <include file='RemHGLOBAL.xml' path='doc/member[@name="RemHGLOBAL.data"]/*' />
-    [NativeTypeName("byte [1]")]
+    [NativeTypeName("byte[1]")]
     public fixed byte data[1];
 }

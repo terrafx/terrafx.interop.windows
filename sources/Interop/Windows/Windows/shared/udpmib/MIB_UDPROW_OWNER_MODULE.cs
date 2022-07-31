@@ -31,7 +31,7 @@ public unsafe partial struct MIB_UDPROW_OWNER_MODULE
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='MIB_UDPROW_OWNER_MODULE.xml' path='doc/member[@name="MIB_UDPROW_OWNER_MODULE.OwningModuleInfo"]/*' />
-    [NativeTypeName("ULONGLONG [16]")]
+    [NativeTypeName("ULONGLONG[16]")]
     public fixed ulong OwningModuleInfo[16];
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SpecificPortBind"]/*' />

@@ -130,11 +130,11 @@ public unsafe partial struct NOTIFYICONDATAW
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.szTip[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.szTip[0], 128);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.szTip[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.szTip[0], 128);
             }
         }
     }
@@ -178,11 +178,11 @@ public unsafe partial struct NOTIFYICONDATAW
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.szInfo[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.szInfo[0], 256);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.szInfo[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.szInfo[0], 256);
             }
         }
     }
@@ -194,11 +194,11 @@ public unsafe partial struct NOTIFYICONDATAW
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.szInfoTitle[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.szInfoTitle[0], 64);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.szInfoTitle[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.szInfoTitle[0], 64);
             }
         }
     }

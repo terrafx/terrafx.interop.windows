@@ -174,6 +174,7 @@ public unsafe partial struct IFolderView2 : IFolderView2.Interface
     /// <include file='IFolderView2.xml' path='doc/member[@name="IFolderView2.SetViewProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
+    [Obsolete]
     public HRESULT SetViewProperty([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar)
     {
         return ((delegate* unmanaged<IFolderView2*, ITEMIDLIST*, PROPERTYKEY*, PROPVARIANT*, int>)(lpVtbl[19]))((IFolderView2*)Unsafe.AsPointer(ref this), pidl, propkey, propvar);
@@ -182,6 +183,7 @@ public unsafe partial struct IFolderView2 : IFolderView2.Interface
     /// <include file='IFolderView2.xml' path='doc/member[@name="IFolderView2.GetViewProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
+    [Obsolete]
     public HRESULT GetViewProperty([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, PROPVARIANT* ppropvar)
     {
         return ((delegate* unmanaged<IFolderView2*, ITEMIDLIST*, PROPERTYKEY*, PROPVARIANT*, int>)(lpVtbl[20]))((IFolderView2*)Unsafe.AsPointer(ref this), pidl, propkey, ppropvar);
@@ -190,6 +192,7 @@ public unsafe partial struct IFolderView2 : IFolderView2.Interface
     /// <include file='IFolderView2.xml' path='doc/member[@name="IFolderView2.SetTileViewProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
+    [Obsolete]
     public HRESULT SetTileViewProperties([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] ushort* pszPropList)
     {
         return ((delegate* unmanaged<IFolderView2*, ITEMIDLIST*, ushort*, int>)(lpVtbl[21]))((IFolderView2*)Unsafe.AsPointer(ref this), pidl, pszPropList);
@@ -198,6 +201,7 @@ public unsafe partial struct IFolderView2 : IFolderView2.Interface
     /// <include file='IFolderView2.xml' path='doc/member[@name="IFolderView2.SetExtendedTileViewProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
+    [Obsolete]
     public HRESULT SetExtendedTileViewProperties([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] ushort* pszPropList)
     {
         return ((delegate* unmanaged<IFolderView2*, ITEMIDLIST*, ushort*, int>)(lpVtbl[22]))((IFolderView2*)Unsafe.AsPointer(ref this), pidl, pszPropList);
@@ -364,15 +368,19 @@ public unsafe partial struct IFolderView2 : IFolderView2.Interface
         HRESULT GetGroupBy(PROPERTYKEY* pkey, BOOL* pfAscending);
 
         [VtblIndex(19)]
+        [Obsolete]
         HRESULT SetViewProperty([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar);
 
         [VtblIndex(20)]
+        [Obsolete]
         HRESULT GetViewProperty([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, PROPVARIANT* ppropvar);
 
         [VtblIndex(21)]
+        [Obsolete]
         HRESULT SetTileViewProperties([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] ushort* pszPropList);
 
         [VtblIndex(22)]
+        [Obsolete]
         HRESULT SetExtendedTileViewProperties([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] ushort* pszPropList);
 
         [VtblIndex(23)]
@@ -494,15 +502,19 @@ public unsafe partial struct IFolderView2 : IFolderView2.Interface
         public delegate* unmanaged<TSelf*, PROPERTYKEY*, BOOL*, int> GetGroupBy;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, const PROPERTYKEY &, const PROPVARIANT &) __attribute__((stdcall))")]
+        [Obsolete]
         public delegate* unmanaged<TSelf*, ITEMIDLIST*, PROPERTYKEY*, PROPVARIANT*, int> SetViewProperty;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, const PROPERTYKEY &, PROPVARIANT *) __attribute__((stdcall))")]
+        [Obsolete]
         public delegate* unmanaged<TSelf*, ITEMIDLIST*, PROPERTYKEY*, PROPVARIANT*, int> GetViewProperty;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, LPCWSTR) __attribute__((stdcall))")]
+        [Obsolete]
         public delegate* unmanaged<TSelf*, ITEMIDLIST*, ushort*, int> SetTileViewProperties;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, LPCWSTR) __attribute__((stdcall))")]
+        [Obsolete]
         public delegate* unmanaged<TSelf*, ITEMIDLIST*, ushort*, int> SetExtendedTileViewProperties;
 
         [NativeTypeName("HRESULT (FVTEXTTYPE, LPCWSTR) __attribute__((stdcall))")]

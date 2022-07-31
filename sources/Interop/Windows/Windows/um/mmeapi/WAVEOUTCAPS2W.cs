@@ -25,7 +25,7 @@ public unsafe partial struct WAVEOUTCAPS2W
     public uint vDriverVersion;
 
     /// <include file='WAVEOUTCAPS2W.xml' path='doc/member[@name="WAVEOUTCAPS2W.szPname"]/*' />
-    [NativeTypeName("WCHAR [32]")]
+    [NativeTypeName("WCHAR[32]")]
     public fixed ushort szPname[32];
 
     /// <include file='WAVEOUTCAPS2W.xml' path='doc/member[@name="WAVEOUTCAPS2W.dwFormats"]/*' />

@@ -376,4 +376,9 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define GR_GLOBAL ((HANDLE)-2)")]
     public static HANDLE GR_GLOBAL => ((HANDLE)(-2));
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wsprintfW"]/*' />
+    [DllImport("user32", CallingConvention = CallingConvention.Cdecl, EntryPoint = "wsprintfW", ExactSpelling = true)]
+    [SetsLastSystemError]
+    public static extern int wsprintf([NativeTypeName("LPWSTR")] ushort* param0, [NativeTypeName("LPCWSTR")] ushort* param1, __arglist);
 }

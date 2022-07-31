@@ -113,7 +113,7 @@ public partial struct IMAGE_AUX_SYMBOL
             public unsafe partial struct _Array_e__Struct
             {
                 /// <include file='_Array_e__Struct.xml' path='doc/member[@name="_Array_e__Struct.Dimension"]/*' />
-                [NativeTypeName("WORD [4]")]
+                [NativeTypeName("WORD[4]")]
                 public fixed ushort Dimension[4];
             }
         }
@@ -123,7 +123,7 @@ public partial struct IMAGE_AUX_SYMBOL
     public unsafe partial struct _File_e__Struct
     {
         /// <include file='_File_e__Struct.xml' path='doc/member[@name="_File_e__Struct.Name"]/*' />
-        [NativeTypeName("BYTE [18]")]
+        [NativeTypeName("BYTE[18]")]
         public fixed byte Name[18];
     }
 
@@ -169,7 +169,7 @@ public partial struct IMAGE_AUX_SYMBOL
         public uint crc;
 
         /// <include file='_CRC_e__Struct.xml' path='doc/member[@name="_CRC_e__Struct.rgbReserved"]/*' />
-        [NativeTypeName("BYTE [14]")]
+        [NativeTypeName("BYTE[14]")]
         public fixed byte rgbReserved[14];
     }
 }

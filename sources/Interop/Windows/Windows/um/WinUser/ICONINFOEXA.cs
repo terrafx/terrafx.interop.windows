@@ -34,10 +34,10 @@ public unsafe partial struct ICONINFOEXA
     public ushort wResID;
 
     /// <include file='ICONINFOEXA.xml' path='doc/member[@name="ICONINFOEXA.szModName"]/*' />
-    [NativeTypeName("CHAR [260]")]
+    [NativeTypeName("CHAR[260]")]
     public fixed sbyte szModName[260];
 
     /// <include file='ICONINFOEXA.xml' path='doc/member[@name="ICONINFOEXA.szResName"]/*' />
-    [NativeTypeName("CHAR [260]")]
+    [NativeTypeName("CHAR[260]")]
     public fixed sbyte szResName[260];
 }

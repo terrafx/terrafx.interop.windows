@@ -21,6 +21,6 @@ public unsafe partial struct WIN_CERTIFICATE
     public ushort wCertificateType;
 
     /// <include file='WIN_CERTIFICATE.xml' path='doc/member[@name="WIN_CERTIFICATE.bCertificate"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte bCertificate[1];
 }

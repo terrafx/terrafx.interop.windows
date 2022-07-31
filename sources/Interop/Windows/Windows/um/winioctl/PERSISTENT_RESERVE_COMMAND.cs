@@ -177,7 +177,7 @@ public partial struct PERSISTENT_RESERVE_COMMAND
             }
 
             /// <include file='_PR_OUT_e__Struct.xml' path='doc/member[@name="_PR_OUT_e__Struct.ParameterList"]/*' />
-            [NativeTypeName("BYTE [0]")]
+            [NativeTypeName("BYTE[0]")]
             public fixed byte ParameterList[1];
         }
     }

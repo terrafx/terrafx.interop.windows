@@ -25,6 +25,6 @@ public unsafe partial struct PPM_IDLE_STATE_ACCOUNTING
     public ulong TotalTime;
 
     /// <include file='PPM_IDLE_STATE_ACCOUNTING.xml' path='doc/member[@name="PPM_IDLE_STATE_ACCOUNTING.IdleTimeBuckets"]/*' />
-    [NativeTypeName("DWORD [6]")]
+    [NativeTypeName("DWORD[6]")]
     public fixed uint IdleTimeBuckets[6];
 }

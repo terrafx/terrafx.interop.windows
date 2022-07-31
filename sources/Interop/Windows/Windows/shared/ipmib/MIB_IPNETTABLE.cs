@@ -17,7 +17,7 @@ public partial struct MIB_IPNETTABLE
     public uint dwNumEntries;
 
     /// <include file='MIB_IPNETTABLE.xml' path='doc/member[@name="MIB_IPNETTABLE.table"]/*' />
-    [NativeTypeName("MIB_IPNETROW [1]")]
+    [NativeTypeName("MIB_IPNETROW[1]")]
     public _table_e__FixedBuffer table;
 
     /// <include file='_table_e__FixedBuffer.xml' path='doc/member[@name="_table_e__FixedBuffer"]/*' />

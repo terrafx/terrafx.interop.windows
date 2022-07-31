@@ -57,7 +57,7 @@ public unsafe partial struct ID2D1ColorContext : ID2D1ColorContext.Interface
     [VtblIndex(4)]
     public D2D1_COLOR_SPACE GetColorSpace()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1ColorContext*, D2D1_COLOR_SPACE>)(lpVtbl[4]))((ID2D1ColorContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1ColorContext*, D2D1_COLOR_SPACE>)(lpVtbl[4]))((ID2D1ColorContext*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1ColorContext.xml' path='doc/member[@name="ID2D1ColorContext.GetProfileSize"]/*' />
@@ -66,7 +66,7 @@ public unsafe partial struct ID2D1ColorContext : ID2D1ColorContext.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetProfileSize()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1ColorContext*, uint>)(lpVtbl[5]))((ID2D1ColorContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1ColorContext*, uint>)(lpVtbl[5]))((ID2D1ColorContext*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1ColorContext.xml' path='doc/member[@name="ID2D1ColorContext.GetProfile"]/*' />
@@ -106,10 +106,10 @@ public unsafe partial struct ID2D1ColorContext : ID2D1ColorContext.Interface
         public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("D2D1_COLOR_SPACE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_COLOR_SPACE> GetColorSpace;
+        public delegate* unmanaged<TSelf*, D2D1_COLOR_SPACE> GetColorSpace;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetProfileSize;
+        public delegate* unmanaged<TSelf*, uint> GetProfileSize;
 
         [NativeTypeName("HRESULT (BYTE *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, byte*, uint, int> GetProfile;

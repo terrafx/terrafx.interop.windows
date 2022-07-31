@@ -3,10 +3,9 @@
 using System;
 using TerraFX.Interop.Windows;
 
-namespace 
-TerraFX.Interop.WinRT;
+namespace TerraFX.Interop.WinRT;
 
-public unsafe partial struct HSTRING_BUFFER : IComparable, IComparable<HSTRING_BUFFER>, IEquatable<HSTRING_BUFFER>, IFormattable
+public readonly unsafe partial struct HSTRING_BUFFER : IComparable, IComparable<HSTRING_BUFFER>, IEquatable<HSTRING_BUFFER>, IFormattable
 {
     public readonly void* Value;
 

@@ -5,11 +5,13 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='IDxDiagProvider.xml' path='doc/member[@name="IDxDiagProvider"]/*' />
+[Guid("9C6B4CB0-23F8-49CC-A3ED-45A55000A6D2")]
 [NativeTypeName("struct IDxDiagProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDxDiagProvider : IDxDiagProvider.Interface

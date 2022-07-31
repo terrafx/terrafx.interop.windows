@@ -21,10 +21,10 @@ public unsafe partial struct LITEM
     public uint stateMask;
 
     /// <include file='LITEM.xml' path='doc/member[@name="LITEM.szID"]/*' />
-    [NativeTypeName("WCHAR [48]")]
+    [NativeTypeName("WCHAR[48]")]
     public fixed ushort szID[48];
 
     /// <include file='LITEM.xml' path='doc/member[@name="LITEM.szUrl"]/*' />
-    [NativeTypeName("WCHAR [2084]")]
+    [NativeTypeName("WCHAR[2084]")]
     public fixed ushort szUrl[2084];
 }

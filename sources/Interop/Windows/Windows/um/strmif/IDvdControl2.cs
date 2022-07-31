@@ -246,7 +246,7 @@ public unsafe partial struct IDvdControl2 : IDvdControl2.Interface
     /// <include file='IDvdControl2.xml' path='doc/member[@name="IDvdControl2.SelectParentalCountry"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT SelectParentalCountry([NativeTypeName("BYTE [2]")] byte* bCountry)
+    public HRESULT SelectParentalCountry([NativeTypeName("BYTE[2]")] byte* bCountry)
     {
         return ((delegate* unmanaged<IDvdControl2*, byte*, int>)(lpVtbl[28]))((IDvdControl2*)Unsafe.AsPointer(ref this), bCountry);
     }
@@ -441,7 +441,7 @@ public unsafe partial struct IDvdControl2 : IDvdControl2.Interface
         HRESULT SelectParentalLevel([NativeTypeName("ULONG")] uint ulParentalLevel);
 
         [VtblIndex(28)]
-        HRESULT SelectParentalCountry([NativeTypeName("BYTE [2]")] byte* bCountry);
+        HRESULT SelectParentalCountry([NativeTypeName("BYTE[2]")] byte* bCountry);
 
         [VtblIndex(29)]
         HRESULT SelectKaraokeAudioPresentationMode([NativeTypeName("ULONG")] uint ulMode);

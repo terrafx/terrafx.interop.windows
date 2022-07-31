@@ -27,7 +27,7 @@ public unsafe partial struct STORAGE_HW_FIRMWARE_DOWNLOAD
     public byte Slot;
 
     /// <include file='STORAGE_HW_FIRMWARE_DOWNLOAD.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_DOWNLOAD.Reserved"]/*' />
-    [NativeTypeName("BYTE [3]")]
+    [NativeTypeName("BYTE[3]")]
     public fixed byte Reserved[3];
 
     /// <include file='STORAGE_HW_FIRMWARE_DOWNLOAD.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_DOWNLOAD.Offset"]/*' />
@@ -39,6 +39,6 @@ public unsafe partial struct STORAGE_HW_FIRMWARE_DOWNLOAD
     public ulong BufferSize;
 
     /// <include file='STORAGE_HW_FIRMWARE_DOWNLOAD.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_DOWNLOAD.ImageBuffer"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte ImageBuffer[1];
 }

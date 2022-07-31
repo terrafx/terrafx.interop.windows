@@ -13,7 +13,7 @@ namespace TerraFX.Interop.DirectX;
 public unsafe partial struct D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS
 {
     /// <include file='D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS.InputStream"]/*' />
-    [NativeTypeName("D3D12_VIDEO_PROCESS_INPUT_STREAM [2]")]
+    [NativeTypeName("D3D12_VIDEO_PROCESS_INPUT_STREAM[2]")]
     public _InputStream_e__FixedBuffer InputStream;
 
     /// <include file='D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS.Transform"]/*' />
@@ -26,7 +26,7 @@ public unsafe partial struct D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS
     public D3D12_VIDEO_PROCESS_INPUT_STREAM_RATE RateInfo;
 
     /// <include file='D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS.FilterLevels"]/*' />
-    [NativeTypeName("INT [32]")]
+    [NativeTypeName("INT[32]")]
     public fixed int FilterLevels[32];
 
     /// <include file='D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS.AlphaBlending"]/*' />

@@ -27,6 +27,6 @@ public unsafe partial struct OFSTRUCT
     public ushort Reserved2;
 
     /// <include file='OFSTRUCT.xml' path='doc/member[@name="OFSTRUCT.szPathName"]/*' />
-    [NativeTypeName("CHAR [128]")]
+    [NativeTypeName("CHAR[128]")]
     public fixed sbyte szPathName[128];
 }

@@ -12,6 +12,6 @@ public unsafe partial struct SOFTKBDDATA
     public uint uCount;
 
     /// <include file='SOFTKBDDATA.xml' path='doc/member[@name="SOFTKBDDATA.wCode"]/*' />
-    [NativeTypeName("WORD [1][256]")]
+    [NativeTypeName("WORD[1][256]")]
     public fixed ushort wCode[1 * 256];
 }

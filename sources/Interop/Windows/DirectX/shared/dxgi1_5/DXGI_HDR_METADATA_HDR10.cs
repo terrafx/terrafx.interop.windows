@@ -9,19 +9,19 @@ namespace TerraFX.Interop.DirectX;
 public unsafe partial struct DXGI_HDR_METADATA_HDR10
 {
     /// <include file='DXGI_HDR_METADATA_HDR10.xml' path='doc/member[@name="DXGI_HDR_METADATA_HDR10.RedPrimary"]/*' />
-    [NativeTypeName("UINT16 [2]")]
+    [NativeTypeName("UINT16[2]")]
     public fixed ushort RedPrimary[2];
 
     /// <include file='DXGI_HDR_METADATA_HDR10.xml' path='doc/member[@name="DXGI_HDR_METADATA_HDR10.GreenPrimary"]/*' />
-    [NativeTypeName("UINT16 [2]")]
+    [NativeTypeName("UINT16[2]")]
     public fixed ushort GreenPrimary[2];
 
     /// <include file='DXGI_HDR_METADATA_HDR10.xml' path='doc/member[@name="DXGI_HDR_METADATA_HDR10.BluePrimary"]/*' />
-    [NativeTypeName("UINT16 [2]")]
+    [NativeTypeName("UINT16[2]")]
     public fixed ushort BluePrimary[2];
 
     /// <include file='DXGI_HDR_METADATA_HDR10.xml' path='doc/member[@name="DXGI_HDR_METADATA_HDR10.WhitePoint"]/*' />
-    [NativeTypeName("UINT16 [2]")]
+    [NativeTypeName("UINT16[2]")]
     public fixed ushort WhitePoint[2];
 
     /// <include file='DXGI_HDR_METADATA_HDR10.xml' path='doc/member[@name="DXGI_HDR_METADATA_HDR10.MaxMasteringLuminance"]/*' />

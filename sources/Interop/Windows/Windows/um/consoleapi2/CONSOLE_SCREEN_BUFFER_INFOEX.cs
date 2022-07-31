@@ -40,7 +40,7 @@ public partial struct CONSOLE_SCREEN_BUFFER_INFOEX
     public BOOL bFullscreenSupported;
 
     /// <include file='CONSOLE_SCREEN_BUFFER_INFOEX.xml' path='doc/member[@name="CONSOLE_SCREEN_BUFFER_INFOEX.ColorTable"]/*' />
-    [NativeTypeName("COLORREF [16]")]
+    [NativeTypeName("COLORREF[16]")]
     public _ColorTable_e__FixedBuffer ColorTable;
 
     /// <include file='_ColorTable_e__FixedBuffer.xml' path='doc/member[@name="_ColorTable_e__FixedBuffer"]/*' />

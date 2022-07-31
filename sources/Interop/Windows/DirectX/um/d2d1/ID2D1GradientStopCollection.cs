@@ -58,7 +58,7 @@ public unsafe partial struct ID2D1GradientStopCollection : ID2D1GradientStopColl
     [return: NativeTypeName("UINT32")]
     public uint GetGradientStopCount()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection*, uint>)(lpVtbl[4]))((ID2D1GradientStopCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1GradientStopCollection*, uint>)(lpVtbl[4]))((ID2D1GradientStopCollection*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1GradientStopCollection.xml' path='doc/member[@name="ID2D1GradientStopCollection.GetGradientStops"]/*' />
@@ -74,7 +74,7 @@ public unsafe partial struct ID2D1GradientStopCollection : ID2D1GradientStopColl
     [VtblIndex(6)]
     public D2D1_GAMMA GetColorInterpolationGamma()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection*, D2D1_GAMMA>)(lpVtbl[6]))((ID2D1GradientStopCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1GradientStopCollection*, D2D1_GAMMA>)(lpVtbl[6]))((ID2D1GradientStopCollection*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1GradientStopCollection.xml' path='doc/member[@name="ID2D1GradientStopCollection.GetExtendMode"]/*' />
@@ -82,7 +82,7 @@ public unsafe partial struct ID2D1GradientStopCollection : ID2D1GradientStopColl
     [VtblIndex(7)]
     public D2D1_EXTEND_MODE GetExtendMode()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection*, D2D1_EXTEND_MODE>)(lpVtbl[7]))((ID2D1GradientStopCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID2D1GradientStopCollection*, D2D1_EXTEND_MODE>)(lpVtbl[7]))((ID2D1GradientStopCollection*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : ID2D1Resource.Interface
@@ -117,15 +117,15 @@ public unsafe partial struct ID2D1GradientStopCollection : ID2D1GradientStopColl
         public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetGradientStopCount;
+        public delegate* unmanaged<TSelf*, uint> GetGradientStopCount;
 
         [NativeTypeName("void (D2D1_GRADIENT_STOP *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, D2D1_GRADIENT_STOP*, uint, void> GetGradientStops;
 
         [NativeTypeName("D2D1_GAMMA () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_GAMMA> GetColorInterpolationGamma;
+        public delegate* unmanaged<TSelf*, D2D1_GAMMA> GetColorInterpolationGamma;
 
         [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_EXTEND_MODE> GetExtendMode;
+        public delegate* unmanaged<TSelf*, D2D1_EXTEND_MODE> GetExtendMode;
     }
 }

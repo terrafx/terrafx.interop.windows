@@ -19,6 +19,6 @@ public unsafe partial struct SOCKADDR_IN
     public IN_ADDR sin_addr;
 
     /// <include file='SOCKADDR_IN.xml' path='doc/member[@name="SOCKADDR_IN.sin_zero"]/*' />
-    [NativeTypeName("CHAR [8]")]
+    [NativeTypeName("CHAR[8]")]
     public fixed sbyte sin_zero[8];
 }

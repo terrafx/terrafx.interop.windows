@@ -21,6 +21,6 @@ public unsafe partial struct FSCTL_OFFLOAD_READ_OUTPUT
     public ulong TransferLength;
 
     /// <include file='FSCTL_OFFLOAD_READ_OUTPUT.xml' path='doc/member[@name="FSCTL_OFFLOAD_READ_OUTPUT.Token"]/*' />
-    [NativeTypeName("BYTE [512]")]
+    [NativeTypeName("BYTE[512]")]
     public fixed byte Token[512];
 }

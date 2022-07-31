@@ -23,11 +23,11 @@ public unsafe partial struct EMRPOLYDRAW
     public uint cptl;
 
     /// <include file='EMRPOLYDRAW.xml' path='doc/member[@name="EMRPOLYDRAW.aptl"]/*' />
-    [NativeTypeName("POINTL [1]")]
+    [NativeTypeName("POINTL[1]")]
     public _aptl_e__FixedBuffer aptl;
 
     /// <include file='EMRPOLYDRAW.xml' path='doc/member[@name="EMRPOLYDRAW.abTypes"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte abTypes[1];
 
     /// <include file='_aptl_e__FixedBuffer.xml' path='doc/member[@name="_aptl_e__FixedBuffer"]/*' />

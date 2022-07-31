@@ -54,6 +54,6 @@ public unsafe partial struct STORAGE_DEVICE_DESCRIPTOR
     public uint RawPropertiesLength;
 
     /// <include file='STORAGE_DEVICE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_DESCRIPTOR.RawDeviceProperties"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte RawDeviceProperties[1];
 }

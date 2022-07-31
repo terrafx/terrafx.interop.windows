@@ -33,7 +33,7 @@ public partial struct FSCTL_QUERY_STORAGE_CLASSES_OUTPUT
     public uint NumberOfTiersReturned;
 
     /// <include file='FSCTL_QUERY_STORAGE_CLASSES_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_STORAGE_CLASSES_OUTPUT.Tiers"]/*' />
-    [NativeTypeName("FILE_STORAGE_TIER [1]")]
+    [NativeTypeName("FILE_STORAGE_TIER[1]")]
     public _Tiers_e__FixedBuffer Tiers;
 
     /// <include file='_Tiers_e__FixedBuffer.xml' path='doc/member[@name="_Tiers_e__FixedBuffer"]/*' />

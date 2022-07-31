@@ -11,7 +11,7 @@ namespace TerraFX.Interop.DirectX;
 public unsafe partial struct DXGI_OUTPUT_DESC1
 {
     /// <include file='DXGI_OUTPUT_DESC1.xml' path='doc/member[@name="DXGI_OUTPUT_DESC1.DeviceName"]/*' />
-    [NativeTypeName("WCHAR [32]")]
+    [NativeTypeName("WCHAR[32]")]
     public fixed ushort DeviceName[32];
 
     /// <include file='DXGI_OUTPUT_DESC1.xml' path='doc/member[@name="DXGI_OUTPUT_DESC1.DesktopCoordinates"]/*' />
@@ -33,19 +33,19 @@ public unsafe partial struct DXGI_OUTPUT_DESC1
     public DXGI_COLOR_SPACE_TYPE ColorSpace;
 
     /// <include file='DXGI_OUTPUT_DESC1.xml' path='doc/member[@name="DXGI_OUTPUT_DESC1.RedPrimary"]/*' />
-    [NativeTypeName("FLOAT [2]")]
+    [NativeTypeName("FLOAT[2]")]
     public fixed float RedPrimary[2];
 
     /// <include file='DXGI_OUTPUT_DESC1.xml' path='doc/member[@name="DXGI_OUTPUT_DESC1.GreenPrimary"]/*' />
-    [NativeTypeName("FLOAT [2]")]
+    [NativeTypeName("FLOAT[2]")]
     public fixed float GreenPrimary[2];
 
     /// <include file='DXGI_OUTPUT_DESC1.xml' path='doc/member[@name="DXGI_OUTPUT_DESC1.BluePrimary"]/*' />
-    [NativeTypeName("FLOAT [2]")]
+    [NativeTypeName("FLOAT[2]")]
     public fixed float BluePrimary[2];
 
     /// <include file='DXGI_OUTPUT_DESC1.xml' path='doc/member[@name="DXGI_OUTPUT_DESC1.WhitePoint"]/*' />
-    [NativeTypeName("FLOAT [2]")]
+    [NativeTypeName("FLOAT[2]")]
     public fixed float WhitePoint[2];
 
     /// <include file='DXGI_OUTPUT_DESC1.xml' path='doc/member[@name="DXGI_OUTPUT_DESC1.MinLuminance"]/*' />

@@ -61,7 +61,7 @@ public unsafe partial struct WIN32_MEMORY_PARTITION_INFORMATION
     public ulong StandbyPages;
 
     /// <include file='WIN32_MEMORY_PARTITION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_PARTITION_INFORMATION.Reserved"]/*' />
-    [NativeTypeName("ULONG64 [16]")]
+    [NativeTypeName("ULONG64[16]")]
     public fixed ulong Reserved[16];
 
     /// <include file='WIN32_MEMORY_PARTITION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_PARTITION_INFORMATION.MaximumCommitLimit"]/*' />

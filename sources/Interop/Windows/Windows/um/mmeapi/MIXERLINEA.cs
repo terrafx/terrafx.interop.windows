@@ -52,11 +52,11 @@ public unsafe partial struct MIXERLINEA
     public uint cControls;
 
     /// <include file='MIXERLINEA.xml' path='doc/member[@name="MIXERLINEA.szShortName"]/*' />
-    [NativeTypeName("CHAR [16]")]
+    [NativeTypeName("CHAR[16]")]
     public fixed sbyte szShortName[16];
 
     /// <include file='MIXERLINEA.xml' path='doc/member[@name="MIXERLINEA.szName"]/*' />
-    [NativeTypeName("CHAR [64]")]
+    [NativeTypeName("CHAR[64]")]
     public fixed sbyte szName[64];
 
     /// <include file='MIXERLINEA.xml' path='doc/member[@name="MIXERLINEA.Target"]/*' />
@@ -88,7 +88,7 @@ public unsafe partial struct MIXERLINEA
         public uint vDriverVersion;
 
         /// <include file='_Target_e__Struct.xml' path='doc/member[@name="_Target_e__Struct.szPname"]/*' />
-        [NativeTypeName("CHAR [32]")]
+        [NativeTypeName("CHAR[32]")]
         public fixed sbyte szPname[32];
     }
 }

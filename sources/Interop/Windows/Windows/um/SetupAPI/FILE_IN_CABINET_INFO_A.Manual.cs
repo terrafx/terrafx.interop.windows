@@ -135,11 +135,11 @@ public unsafe partial struct FILE_IN_CABINET_INFO_A
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.FullTargetName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.FullTargetName[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.FullTargetName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.FullTargetName[0], 260);
             }
         }
     }

@@ -20,6 +20,6 @@ public unsafe partial struct EXP_PROPERTYSTORAGE
     public uint dwSignature;
 
     /// <include file='EXP_PROPERTYSTORAGE.xml' path='doc/member[@name="EXP_PROPERTYSTORAGE.abPropertyStorage"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte abPropertyStorage[1];
 }

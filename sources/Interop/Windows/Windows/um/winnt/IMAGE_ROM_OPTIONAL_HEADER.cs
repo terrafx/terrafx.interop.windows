@@ -51,7 +51,7 @@ public unsafe partial struct IMAGE_ROM_OPTIONAL_HEADER
     public uint GprMask;
 
     /// <include file='IMAGE_ROM_OPTIONAL_HEADER.xml' path='doc/member[@name="IMAGE_ROM_OPTIONAL_HEADER.CprMask"]/*' />
-    [NativeTypeName("DWORD [4]")]
+    [NativeTypeName("DWORD[4]")]
     public fixed uint CprMask[4];
 
     /// <include file='IMAGE_ROM_OPTIONAL_HEADER.xml' path='doc/member[@name="IMAGE_ROM_OPTIONAL_HEADER.GpValue"]/*' />

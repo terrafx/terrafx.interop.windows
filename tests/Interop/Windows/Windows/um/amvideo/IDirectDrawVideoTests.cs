@@ -6,12 +6,20 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="IDirectDrawVideo" /> struct.</summary>
 public static unsafe partial class IDirectDrawVideoTests
 {
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDirectDrawVideo" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
+    {
+        Assert.That(typeof(IDirectDrawVideo).GUID, Is.EqualTo(IID_IDirectDrawVideo));
+    }
+
     /// <summary>Validates that the <see cref="IDirectDrawVideo" /> struct is blittable.</summary>
     [Test]
     public static void IsBlittableTest()

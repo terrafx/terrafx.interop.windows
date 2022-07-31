@@ -181,11 +181,11 @@ public unsafe partial struct SP_DEVINSTALL_PARAMS_A
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.DriverPath[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.DriverPath[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.DriverPath[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.DriverPath[0], 260);
             }
         }
     }

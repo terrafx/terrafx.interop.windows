@@ -89,7 +89,7 @@ public unsafe partial struct IDXGIAdapter3 : IDXGIAdapter3.Interface
     [VtblIndex(8)]
     public HRESULT GetDesc(DXGI_ADAPTER_DESC* pDesc)
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDXGIAdapter3*, DXGI_ADAPTER_DESC*, int>)(lpVtbl[8]))((IDXGIAdapter3*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged<IDXGIAdapter3*, DXGI_ADAPTER_DESC*, int>)(lpVtbl[8]))((IDXGIAdapter3*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <inheritdoc cref="IDXGIAdapter.CheckInterfaceSupport" />
@@ -105,7 +105,7 @@ public unsafe partial struct IDXGIAdapter3 : IDXGIAdapter3.Interface
     [VtblIndex(10)]
     public HRESULT GetDesc1(DXGI_ADAPTER_DESC1* pDesc)
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDXGIAdapter3*, DXGI_ADAPTER_DESC1*, int>)(lpVtbl[10]))((IDXGIAdapter3*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged<IDXGIAdapter3*, DXGI_ADAPTER_DESC1*, int>)(lpVtbl[10]))((IDXGIAdapter3*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <inheritdoc cref="IDXGIAdapter2.GetDesc2" />
@@ -113,7 +113,7 @@ public unsafe partial struct IDXGIAdapter3 : IDXGIAdapter3.Interface
     [VtblIndex(11)]
     public HRESULT GetDesc2(DXGI_ADAPTER_DESC2* pDesc)
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDXGIAdapter3*, DXGI_ADAPTER_DESC2*, int>)(lpVtbl[11]))((IDXGIAdapter3*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged<IDXGIAdapter3*, DXGI_ADAPTER_DESC2*, int>)(lpVtbl[11]))((IDXGIAdapter3*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='IDXGIAdapter3.xml' path='doc/member[@name="IDXGIAdapter3.RegisterHardwareContentProtectionTeardownStatusEvent"]/*' />
@@ -213,16 +213,16 @@ public unsafe partial struct IDXGIAdapter3 : IDXGIAdapter3.Interface
         public delegate* unmanaged<TSelf*, uint, IDXGIOutput**, int> EnumOutputs;
 
         [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXGI_ADAPTER_DESC*, int> GetDesc;
+        public delegate* unmanaged<TSelf*, DXGI_ADAPTER_DESC*, int> GetDesc;
 
         [NativeTypeName("HRESULT (const GUID &, LARGE_INTEGER *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, LARGE_INTEGER*, int> CheckInterfaceSupport;
 
         [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC1 *) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXGI_ADAPTER_DESC1*, int> GetDesc1;
+        public delegate* unmanaged<TSelf*, DXGI_ADAPTER_DESC1*, int> GetDesc1;
 
         [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXGI_ADAPTER_DESC2*, int> GetDesc2;
+        public delegate* unmanaged<TSelf*, DXGI_ADAPTER_DESC2*, int> GetDesc2;
 
         [NativeTypeName("HRESULT (HANDLE, DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HANDLE, uint*, int> RegisterHardwareContentProtectionTeardownStatusEvent;

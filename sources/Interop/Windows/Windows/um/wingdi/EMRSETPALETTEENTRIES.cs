@@ -28,7 +28,7 @@ public partial struct EMRSETPALETTEENTRIES
     public uint cEntries;
 
     /// <include file='EMRSETPALETTEENTRIES.xml' path='doc/member[@name="EMRSETPALETTEENTRIES.aPalEntries"]/*' />
-    [NativeTypeName("PALETTEENTRY [1]")]
+    [NativeTypeName("PALETTEENTRY[1]")]
     public _aPalEntries_e__FixedBuffer aPalEntries;
 
     /// <include file='_aPalEntries_e__FixedBuffer.xml' path='doc/member[@name="_aPalEntries_e__FixedBuffer"]/*' />

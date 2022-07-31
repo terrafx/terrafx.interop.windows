@@ -50,7 +50,7 @@ public unsafe partial struct IDWriteFontCollection1 : IDWriteFontCollection1.Int
     [return: NativeTypeName("UINT32")]
     public uint GetFontFamilyCount()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteFontCollection1*, uint>)(lpVtbl[3]))((IDWriteFontCollection1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDWriteFontCollection1*, uint>)(lpVtbl[3]))((IDWriteFontCollection1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteFontCollection.GetFontFamily" />
@@ -115,7 +115,7 @@ public unsafe partial struct IDWriteFontCollection1 : IDWriteFontCollection1.Int
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetFontFamilyCount;
+        public delegate* unmanaged<TSelf*, uint> GetFontFamilyCount;
 
         [NativeTypeName("HRESULT (UINT32, IDWriteFontFamily **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, IDWriteFontFamily**, int> GetFontFamily;

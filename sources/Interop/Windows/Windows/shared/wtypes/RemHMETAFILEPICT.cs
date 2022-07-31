@@ -25,6 +25,6 @@ public unsafe partial struct RemHMETAFILEPICT
     public uint cbData;
 
     /// <include file='RemHMETAFILEPICT.xml' path='doc/member[@name="RemHMETAFILEPICT.data"]/*' />
-    [NativeTypeName("byte [1]")]
+    [NativeTypeName("byte[1]")]
     public fixed byte data[1];
 }

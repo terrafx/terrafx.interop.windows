@@ -13,6 +13,6 @@ public unsafe partial struct IMAGE_IMPORT_BY_NAME
     public ushort Hint;
 
     /// <include file='IMAGE_IMPORT_BY_NAME.xml' path='doc/member[@name="IMAGE_IMPORT_BY_NAME.Name"]/*' />
-    [NativeTypeName("CHAR [1]")]
+    [NativeTypeName("CHAR[1]")]
     public fixed sbyte Name[1];
 }

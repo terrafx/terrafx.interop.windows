@@ -13,6 +13,6 @@ public unsafe partial struct TRANSACTIONMANAGER_LOGPATH_INFORMATION
     public uint LogPathLength;
 
     /// <include file='TRANSACTIONMANAGER_LOGPATH_INFORMATION.xml' path='doc/member[@name="TRANSACTIONMANAGER_LOGPATH_INFORMATION.LogPath"]/*' />
-    [NativeTypeName("WCHAR [1]")]
+    [NativeTypeName("WCHAR[1]")]
     public fixed ushort LogPath[1];
 }

@@ -32,7 +32,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHOpenPropSheetW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern BOOL SHOpenPropSheetW([NativeTypeName("LPCWSTR")] ushort* pszCaption, [NativeTypeName("HKEY []")] HKEY* ahkeys, uint ckeys, [NativeTypeName("const CLSID *")] Guid* pclsidDefault, IDataObject* pdtobj, IShellBrowser* psb, [NativeTypeName("LPCWSTR")] ushort* pStartPage);
+    public static extern BOOL SHOpenPropSheetW([NativeTypeName("LPCWSTR")] ushort* pszCaption, [NativeTypeName("HKEY[]")] HKEY* ahkeys, uint ckeys, [NativeTypeName("const CLSID *")] Guid* pclsidDefault, IDataObject* pdtobj, IShellBrowser* psb, [NativeTypeName("LPCWSTR")] ushort* pStartPage);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SoftwareUpdateMessageBox"]/*' />
     [DllImport("shdocvw", ExactSpelling = true)]

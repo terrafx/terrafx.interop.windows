@@ -3,6 +3,7 @@
 // Ported from um/sysinfoapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -43,6 +44,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetVersion"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
+    [Obsolete]
     public static extern uint GetVersion();
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetLocalTime"]/*' />
@@ -124,11 +126,13 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetVersionExA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
+    [Obsolete]
     public static extern BOOL GetVersionExA([NativeTypeName("LPOSVERSIONINFOA")] OSVERSIONINFOA* lpVersionInformation);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetVersionExW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
+    [Obsolete]
     public static extern BOOL GetVersionExW([NativeTypeName("LPOSVERSIONINFOW")] OSVERSIONINFOW* lpVersionInformation);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetLogicalProcessorInformation"]/*' />
@@ -260,6 +264,7 @@ public static unsafe partial class Windows
     public static delegate*<COMPUTER_NAME_FORMAT, ushort*, BOOL> SetComputerNameEx => &SetComputerNameExW;
 
     [NativeTypeName("#define GetVersionEx GetVersionExW")]
+    [Obsolete]
     public static delegate*<OSVERSIONINFOW*, BOOL> GetVersionEx => &GetVersionExW;
 
     [NativeTypeName("#define SCEX2_ALT_NETBIOS_NAME 0x00000001")]

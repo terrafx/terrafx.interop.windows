@@ -40,11 +40,11 @@ public unsafe partial struct DEVICE_INTERNAL_STATUS_DATA
     public byte StatusDataVersion;
 
     /// <include file='DEVICE_INTERNAL_STATUS_DATA.xml' path='doc/member[@name="DEVICE_INTERNAL_STATUS_DATA.Reserved"]/*' />
-    [NativeTypeName("BYTE [3]")]
+    [NativeTypeName("BYTE[3]")]
     public fixed byte Reserved[3];
 
     /// <include file='DEVICE_INTERNAL_STATUS_DATA.xml' path='doc/member[@name="DEVICE_INTERNAL_STATUS_DATA.ReasonIdentifier"]/*' />
-    [NativeTypeName("BYTE [128]")]
+    [NativeTypeName("BYTE[128]")]
     public fixed byte ReasonIdentifier[128];
 
     /// <include file='DEVICE_INTERNAL_STATUS_DATA.xml' path='doc/member[@name="DEVICE_INTERNAL_STATUS_DATA.StatusDataLength"]/*' />
@@ -52,6 +52,6 @@ public unsafe partial struct DEVICE_INTERNAL_STATUS_DATA
     public uint StatusDataLength;
 
     /// <include file='DEVICE_INTERNAL_STATUS_DATA.xml' path='doc/member[@name="DEVICE_INTERNAL_STATUS_DATA.StatusData"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte StatusData[1];
 }

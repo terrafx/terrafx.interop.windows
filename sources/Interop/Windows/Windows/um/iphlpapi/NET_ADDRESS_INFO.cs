@@ -83,11 +83,11 @@ public partial struct NET_ADDRESS_INFO
         public unsafe partial struct _NamedAddress_e__Struct
         {
             /// <include file='_NamedAddress_e__Struct.xml' path='doc/member[@name="_NamedAddress_e__Struct.Address"]/*' />
-            [NativeTypeName("WCHAR [256]")]
+            [NativeTypeName("WCHAR[256]")]
             public fixed ushort Address[256];
 
             /// <include file='_NamedAddress_e__Struct.xml' path='doc/member[@name="_NamedAddress_e__Struct.Port"]/*' />
-            [NativeTypeName("WCHAR [6]")]
+            [NativeTypeName("WCHAR[6]")]
             public fixed ushort Port[6];
         }
     }

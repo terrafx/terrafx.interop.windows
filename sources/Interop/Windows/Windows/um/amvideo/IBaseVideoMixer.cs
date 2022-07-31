@@ -5,10 +5,12 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IBaseVideoMixer.xml' path='doc/member[@name="IBaseVideoMixer"]/*' />
+[Guid("61DED640-E912-11CE-A099-00AA00479A58")]
 [NativeTypeName("struct IBaseVideoMixer : IUnknown")]
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface

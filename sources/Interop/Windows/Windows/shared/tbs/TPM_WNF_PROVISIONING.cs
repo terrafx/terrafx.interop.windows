@@ -13,6 +13,6 @@ public unsafe partial struct TPM_WNF_PROVISIONING
     public uint status;
 
     /// <include file='TPM_WNF_PROVISIONING.xml' path='doc/member[@name="TPM_WNF_PROVISIONING.message"]/*' />
-    [NativeTypeName("BYTE [28]")]
+    [NativeTypeName("BYTE[28]")]
     public fixed byte message[28];
 }

@@ -29,5 +29,7 @@ TerraFX.Interop.Windows
 ../../../../tests/Interop/Windows/Windows/um/shdeprecated
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/shdeprecated.h
+--with-guid
+CIE4ConnectionPoint=00000000-0000-0000-0000-000000000000
 --with-type
 INTERNET_MAX_URL_LENGTH=uint

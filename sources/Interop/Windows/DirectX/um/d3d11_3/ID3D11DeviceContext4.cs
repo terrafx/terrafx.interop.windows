@@ -303,7 +303,7 @@ public unsafe partial struct ID3D11DeviceContext4 : ID3D11DeviceContext4.Interfa
     /// <inheritdoc cref="ID3D11DeviceContext.OMSetBlendState" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
-    public void OMSetBlendState(ID3D11BlendState* pBlendState, [NativeTypeName("const FLOAT [4]")] float* BlendFactor, uint SampleMask)
+    public void OMSetBlendState(ID3D11BlendState* pBlendState, [NativeTypeName("const FLOAT[4]")] float* BlendFactor, uint SampleMask)
     {
         ((delegate* unmanaged<ID3D11DeviceContext4*, ID3D11BlendState*, float*, uint, void>)(lpVtbl[35]))((ID3D11DeviceContext4*)Unsafe.AsPointer(ref this), pBlendState, BlendFactor, SampleMask);
     }
@@ -423,7 +423,7 @@ public unsafe partial struct ID3D11DeviceContext4 : ID3D11DeviceContext4.Interfa
     /// <inheritdoc cref="ID3D11DeviceContext.ClearRenderTargetView" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(50)]
-    public void ClearRenderTargetView(ID3D11RenderTargetView* pRenderTargetView, [NativeTypeName("const FLOAT [4]")] float* ColorRGBA)
+    public void ClearRenderTargetView(ID3D11RenderTargetView* pRenderTargetView, [NativeTypeName("const FLOAT[4]")] float* ColorRGBA)
     {
         ((delegate* unmanaged<ID3D11DeviceContext4*, ID3D11RenderTargetView*, float*, void>)(lpVtbl[50]))((ID3D11DeviceContext4*)Unsafe.AsPointer(ref this), pRenderTargetView, ColorRGBA);
     }
@@ -431,7 +431,7 @@ public unsafe partial struct ID3D11DeviceContext4 : ID3D11DeviceContext4.Interfa
     /// <inheritdoc cref="ID3D11DeviceContext.ClearUnorderedAccessViewUint" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(51)]
-    public void ClearUnorderedAccessViewUint(ID3D11UnorderedAccessView* pUnorderedAccessView, [NativeTypeName("const UINT [4]")] uint* Values)
+    public void ClearUnorderedAccessViewUint(ID3D11UnorderedAccessView* pUnorderedAccessView, [NativeTypeName("const UINT[4]")] uint* Values)
     {
         ((delegate* unmanaged<ID3D11DeviceContext4*, ID3D11UnorderedAccessView*, uint*, void>)(lpVtbl[51]))((ID3D11DeviceContext4*)Unsafe.AsPointer(ref this), pUnorderedAccessView, Values);
     }
@@ -439,7 +439,7 @@ public unsafe partial struct ID3D11DeviceContext4 : ID3D11DeviceContext4.Interfa
     /// <inheritdoc cref="ID3D11DeviceContext.ClearUnorderedAccessViewFloat" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(52)]
-    public void ClearUnorderedAccessViewFloat(ID3D11UnorderedAccessView* pUnorderedAccessView, [NativeTypeName("const FLOAT [4]")] float* Values)
+    public void ClearUnorderedAccessViewFloat(ID3D11UnorderedAccessView* pUnorderedAccessView, [NativeTypeName("const FLOAT[4]")] float* Values)
     {
         ((delegate* unmanaged<ID3D11DeviceContext4*, ID3D11UnorderedAccessView*, float*, void>)(lpVtbl[52]))((ID3D11DeviceContext4*)Unsafe.AsPointer(ref this), pUnorderedAccessView, Values);
     }
@@ -751,7 +751,7 @@ public unsafe partial struct ID3D11DeviceContext4 : ID3D11DeviceContext4.Interfa
     /// <inheritdoc cref="ID3D11DeviceContext.OMGetBlendState" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(91)]
-    public void OMGetBlendState(ID3D11BlendState** ppBlendState, [NativeTypeName("FLOAT [4]")] float* BlendFactor, uint* pSampleMask)
+    public void OMGetBlendState(ID3D11BlendState** ppBlendState, [NativeTypeName("FLOAT[4]")] float* BlendFactor, uint* pSampleMask)
     {
         ((delegate* unmanaged<ID3D11DeviceContext4*, ID3D11BlendState**, float*, uint*, void>)(lpVtbl[91]))((ID3D11DeviceContext4*)Unsafe.AsPointer(ref this), ppBlendState, BlendFactor, pSampleMask);
     }
@@ -1079,7 +1079,7 @@ public unsafe partial struct ID3D11DeviceContext4 : ID3D11DeviceContext4.Interfa
     /// <inheritdoc cref="ID3D11DeviceContext1.ClearView" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(132)]
-    public void ClearView(ID3D11View* pView, [NativeTypeName("const FLOAT [4]")] float* Color, [NativeTypeName("const D3D11_RECT *")] RECT* pRect, uint NumRects)
+    public void ClearView(ID3D11View* pView, [NativeTypeName("const FLOAT[4]")] float* Color, [NativeTypeName("const D3D11_RECT *")] RECT* pRect, uint NumRects)
     {
         ((delegate* unmanaged<ID3D11DeviceContext4*, ID3D11View*, float*, RECT*, uint, void>)(lpVtbl[132]))((ID3D11DeviceContext4*)Unsafe.AsPointer(ref this), pView, Color, pRect, NumRects);
     }

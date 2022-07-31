@@ -30,6 +30,6 @@ public unsafe partial struct KCRM_TRANSACTION_BLOB
     public uint Timeout;
 
     /// <include file='KCRM_TRANSACTION_BLOB.xml' path='doc/member[@name="KCRM_TRANSACTION_BLOB.Description"]/*' />
-    [NativeTypeName("WCHAR [64]")]
+    [NativeTypeName("WCHAR[64]")]
     public fixed ushort Description[64];
 }

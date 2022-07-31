@@ -9,11 +9,11 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct CRYPT_RC4_KEY_STATE
 {
     /// <include file='CRYPT_RC4_KEY_STATE.xml' path='doc/member[@name="CRYPT_RC4_KEY_STATE.Key"]/*' />
-    [NativeTypeName("unsigned char [16]")]
+    [NativeTypeName("unsigned char[16]")]
     public fixed byte Key[16];
 
     /// <include file='CRYPT_RC4_KEY_STATE.xml' path='doc/member[@name="CRYPT_RC4_KEY_STATE.SBox"]/*' />
-    [NativeTypeName("unsigned char [256]")]
+    [NativeTypeName("unsigned char[256]")]
     public fixed byte SBox[256];
 
     /// <include file='CRYPT_RC4_KEY_STATE.xml' path='doc/member[@name="CRYPT_RC4_KEY_STATE.i"]/*' />

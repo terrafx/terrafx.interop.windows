@@ -9,6 +9,6 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct SYSTEM_INTERRUPT_INFORMATION
 {
     /// <include file='SYSTEM_INTERRUPT_INFORMATION.xml' path='doc/member[@name="SYSTEM_INTERRUPT_INFORMATION.Reserved1"]/*' />
-    [NativeTypeName("BYTE [24]")]
+    [NativeTypeName("BYTE[24]")]
     public fixed byte Reserved1[24];
 }

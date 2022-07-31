@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct EC_OBJECT_ARRAY_PROPERTY_HANDLE : IComparable, IComparable<EC_OBJECT_ARRAY_PROPERTY_HANDLE>, IEquatable<EC_OBJECT_ARRAY_PROPERTY_HANDLE>, IFormattable
+public readonly unsafe partial struct EC_OBJECT_ARRAY_PROPERTY_HANDLE : IComparable, IComparable<EC_OBJECT_ARRAY_PROPERTY_HANDLE>, IEquatable<EC_OBJECT_ARRAY_PROPERTY_HANDLE>, IFormattable
 {
     public readonly void* Value;
 

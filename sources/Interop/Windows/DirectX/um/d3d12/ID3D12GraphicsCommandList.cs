@@ -89,7 +89,7 @@ public unsafe partial struct ID3D12GraphicsCommandList : ID3D12GraphicsCommandLi
     [VtblIndex(8)]
     public new D3D12_COMMAND_LIST_TYPE GetType()
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<ID3D12GraphicsCommandList*, D3D12_COMMAND_LIST_TYPE>)(lpVtbl[8]))((ID3D12GraphicsCommandList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<ID3D12GraphicsCommandList*, D3D12_COMMAND_LIST_TYPE>)(lpVtbl[8]))((ID3D12GraphicsCommandList*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12GraphicsCommandList.xml' path='doc/member[@name="ID3D12GraphicsCommandList.Close"]/*' />
@@ -207,7 +207,7 @@ public unsafe partial struct ID3D12GraphicsCommandList : ID3D12GraphicsCommandLi
     /// <include file='ID3D12GraphicsCommandList.xml' path='doc/member[@name="ID3D12GraphicsCommandList.OMSetBlendFactor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public void OMSetBlendFactor([NativeTypeName("const FLOAT [4]")] float* BlendFactor)
+    public void OMSetBlendFactor([NativeTypeName("const FLOAT[4]")] float* BlendFactor)
     {
         ((delegate* unmanaged<ID3D12GraphicsCommandList*, float*, void>)(lpVtbl[23]))((ID3D12GraphicsCommandList*)Unsafe.AsPointer(ref this), BlendFactor);
     }
@@ -407,7 +407,7 @@ public unsafe partial struct ID3D12GraphicsCommandList : ID3D12GraphicsCommandLi
     /// <include file='ID3D12GraphicsCommandList.xml' path='doc/member[@name="ID3D12GraphicsCommandList.ClearRenderTargetView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(48)]
-    public void ClearRenderTargetView(D3D12_CPU_DESCRIPTOR_HANDLE RenderTargetView, [NativeTypeName("const FLOAT [4]")] float* ColorRGBA, uint NumRects, [NativeTypeName("const D3D12_RECT *")] RECT* pRects)
+    public void ClearRenderTargetView(D3D12_CPU_DESCRIPTOR_HANDLE RenderTargetView, [NativeTypeName("const FLOAT[4]")] float* ColorRGBA, uint NumRects, [NativeTypeName("const D3D12_RECT *")] RECT* pRects)
     {
         ((delegate* unmanaged<ID3D12GraphicsCommandList*, D3D12_CPU_DESCRIPTOR_HANDLE, float*, uint, RECT*, void>)(lpVtbl[48]))((ID3D12GraphicsCommandList*)Unsafe.AsPointer(ref this), RenderTargetView, ColorRGBA, NumRects, pRects);
     }
@@ -415,7 +415,7 @@ public unsafe partial struct ID3D12GraphicsCommandList : ID3D12GraphicsCommandLi
     /// <include file='ID3D12GraphicsCommandList.xml' path='doc/member[@name="ID3D12GraphicsCommandList.ClearUnorderedAccessViewUint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(49)]
-    public void ClearUnorderedAccessViewUint(D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, [NativeTypeName("const UINT [4]")] uint* Values, uint NumRects, [NativeTypeName("const D3D12_RECT *")] RECT* pRects)
+    public void ClearUnorderedAccessViewUint(D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, [NativeTypeName("const UINT[4]")] uint* Values, uint NumRects, [NativeTypeName("const D3D12_RECT *")] RECT* pRects)
     {
         ((delegate* unmanaged<ID3D12GraphicsCommandList*, D3D12_GPU_DESCRIPTOR_HANDLE, D3D12_CPU_DESCRIPTOR_HANDLE, ID3D12Resource*, uint*, uint, RECT*, void>)(lpVtbl[49]))((ID3D12GraphicsCommandList*)Unsafe.AsPointer(ref this), ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
     }
@@ -423,7 +423,7 @@ public unsafe partial struct ID3D12GraphicsCommandList : ID3D12GraphicsCommandLi
     /// <include file='ID3D12GraphicsCommandList.xml' path='doc/member[@name="ID3D12GraphicsCommandList.ClearUnorderedAccessViewFloat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(50)]
-    public void ClearUnorderedAccessViewFloat(D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, [NativeTypeName("const FLOAT [4]")] float* Values, uint NumRects, [NativeTypeName("const D3D12_RECT *")] RECT* pRects)
+    public void ClearUnorderedAccessViewFloat(D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, [NativeTypeName("const FLOAT[4]")] float* Values, uint NumRects, [NativeTypeName("const D3D12_RECT *")] RECT* pRects)
     {
         ((delegate* unmanaged<ID3D12GraphicsCommandList*, D3D12_GPU_DESCRIPTOR_HANDLE, D3D12_CPU_DESCRIPTOR_HANDLE, ID3D12Resource*, float*, uint, RECT*, void>)(lpVtbl[50]))((ID3D12GraphicsCommandList*)Unsafe.AsPointer(ref this), ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
     }
@@ -545,7 +545,7 @@ public unsafe partial struct ID3D12GraphicsCommandList : ID3D12GraphicsCommandLi
         void RSSetScissorRects(uint NumRects, [NativeTypeName("const D3D12_RECT *")] RECT* pRects);
 
         [VtblIndex(23)]
-        void OMSetBlendFactor([NativeTypeName("const FLOAT [4]")] float* BlendFactor);
+        void OMSetBlendFactor([NativeTypeName("const FLOAT[4]")] float* BlendFactor);
 
         [VtblIndex(24)]
         void OMSetStencilRef(uint StencilRef);
@@ -620,13 +620,13 @@ public unsafe partial struct ID3D12GraphicsCommandList : ID3D12GraphicsCommandLi
         void ClearDepthStencilView(D3D12_CPU_DESCRIPTOR_HANDLE DepthStencilView, D3D12_CLEAR_FLAGS ClearFlags, float Depth, [NativeTypeName("UINT8")] byte Stencil, uint NumRects, [NativeTypeName("const D3D12_RECT *")] RECT* pRects);
 
         [VtblIndex(48)]
-        void ClearRenderTargetView(D3D12_CPU_DESCRIPTOR_HANDLE RenderTargetView, [NativeTypeName("const FLOAT [4]")] float* ColorRGBA, uint NumRects, [NativeTypeName("const D3D12_RECT *")] RECT* pRects);
+        void ClearRenderTargetView(D3D12_CPU_DESCRIPTOR_HANDLE RenderTargetView, [NativeTypeName("const FLOAT[4]")] float* ColorRGBA, uint NumRects, [NativeTypeName("const D3D12_RECT *")] RECT* pRects);
 
         [VtblIndex(49)]
-        void ClearUnorderedAccessViewUint(D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, [NativeTypeName("const UINT [4]")] uint* Values, uint NumRects, [NativeTypeName("const D3D12_RECT *")] RECT* pRects);
+        void ClearUnorderedAccessViewUint(D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, [NativeTypeName("const UINT[4]")] uint* Values, uint NumRects, [NativeTypeName("const D3D12_RECT *")] RECT* pRects);
 
         [VtblIndex(50)]
-        void ClearUnorderedAccessViewFloat(D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, [NativeTypeName("const FLOAT [4]")] float* Values, uint NumRects, [NativeTypeName("const D3D12_RECT *")] RECT* pRects);
+        void ClearUnorderedAccessViewFloat(D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, [NativeTypeName("const FLOAT[4]")] float* Values, uint NumRects, [NativeTypeName("const D3D12_RECT *")] RECT* pRects);
 
         [VtblIndex(51)]
         void DiscardResource(ID3D12Resource* pResource, [NativeTypeName("const D3D12_DISCARD_REGION *")] D3D12_DISCARD_REGION* pRegion);
@@ -684,7 +684,7 @@ public unsafe partial struct ID3D12GraphicsCommandList : ID3D12GraphicsCommandLi
         public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDevice;
 
         [NativeTypeName("D3D12_COMMAND_LIST_TYPE () __attribute__((stdcall))")]
-        public new delegate* unmanaged[SuppressGCTransition]<TSelf*, D3D12_COMMAND_LIST_TYPE> GetType;
+        public new delegate* unmanaged<TSelf*, D3D12_COMMAND_LIST_TYPE> GetType;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> Close;

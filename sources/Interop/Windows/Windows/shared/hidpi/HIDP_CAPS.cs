@@ -26,7 +26,7 @@ public unsafe partial struct HIDP_CAPS
     public ushort FeatureReportByteLength;
 
     /// <include file='HIDP_CAPS.xml' path='doc/member[@name="HIDP_CAPS.Reserved"]/*' />
-    [NativeTypeName("USHORT [17]")]
+    [NativeTypeName("USHORT[17]")]
     public fixed ushort Reserved[17];
 
     /// <include file='HIDP_CAPS.xml' path='doc/member[@name="HIDP_CAPS.NumberLinkCollectionNodes"]/*' />

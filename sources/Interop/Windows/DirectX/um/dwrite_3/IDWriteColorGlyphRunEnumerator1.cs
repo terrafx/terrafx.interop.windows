@@ -57,7 +57,7 @@ public unsafe partial struct IDWriteColorGlyphRunEnumerator1 : IDWriteColorGlyph
     [VtblIndex(4)]
     public HRESULT GetCurrentRun([NativeTypeName("const DWRITE_COLOR_GLYPH_RUN **")] DWRITE_COLOR_GLYPH_RUN** colorGlyphRun)
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteColorGlyphRunEnumerator1*, DWRITE_COLOR_GLYPH_RUN**, int>)(lpVtbl[4]))((IDWriteColorGlyphRunEnumerator1*)Unsafe.AsPointer(ref this), colorGlyphRun);
+        return ((delegate* unmanaged<IDWriteColorGlyphRunEnumerator1*, DWRITE_COLOR_GLYPH_RUN**, int>)(lpVtbl[4]))((IDWriteColorGlyphRunEnumerator1*)Unsafe.AsPointer(ref this), colorGlyphRun);
     }
 
     /// <include file='IDWriteColorGlyphRunEnumerator1.xml' path='doc/member[@name="IDWriteColorGlyphRunEnumerator1.GetCurrentRun"]/*' />
@@ -65,7 +65,7 @@ public unsafe partial struct IDWriteColorGlyphRunEnumerator1 : IDWriteColorGlyph
     [VtblIndex(5)]
     public HRESULT GetCurrentRun([NativeTypeName("const DWRITE_COLOR_GLYPH_RUN1 **")] DWRITE_COLOR_GLYPH_RUN1** colorGlyphRun)
     {
-        return ((delegate* unmanaged[SuppressGCTransition]<IDWriteColorGlyphRunEnumerator1*, DWRITE_COLOR_GLYPH_RUN1**, int>)(lpVtbl[5]))((IDWriteColorGlyphRunEnumerator1*)Unsafe.AsPointer(ref this), colorGlyphRun);
+        return ((delegate* unmanaged<IDWriteColorGlyphRunEnumerator1*, DWRITE_COLOR_GLYPH_RUN1**, int>)(lpVtbl[5]))((IDWriteColorGlyphRunEnumerator1*)Unsafe.AsPointer(ref this), colorGlyphRun);
     }
 
     public interface Interface : IDWriteColorGlyphRunEnumerator.Interface
@@ -90,9 +90,9 @@ public unsafe partial struct IDWriteColorGlyphRunEnumerator1 : IDWriteColorGlyph
         public delegate* unmanaged<TSelf*, BOOL*, int> MoveNext;
 
         [NativeTypeName("HRESULT (const DWRITE_COLOR_GLYPH_RUN **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_COLOR_GLYPH_RUN**, int> GetCurrentRun;
+        public delegate* unmanaged<TSelf*, DWRITE_COLOR_GLYPH_RUN**, int> GetCurrentRun;
 
         [NativeTypeName("HRESULT (const DWRITE_COLOR_GLYPH_RUN1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_COLOR_GLYPH_RUN1**, int> GetCurrentRun1;
+        public delegate* unmanaged<TSelf*, DWRITE_COLOR_GLYPH_RUN1**, int> GetCurrentRun1;
     }
 }

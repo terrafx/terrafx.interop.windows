@@ -62,7 +62,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface
     /// <include file='ICatInformation.xml' path='doc/member[@name="ICatInformation.EnumClassesOfCategories"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT EnumClassesOfCategories([NativeTypeName("ULONG")] uint cImplemented, [NativeTypeName("const CATID []")] Guid* rgcatidImpl, [NativeTypeName("ULONG")] uint cRequired, [NativeTypeName("const CATID []")] Guid* rgcatidReq, IEnumGUID** ppenumClsid)
+    public HRESULT EnumClassesOfCategories([NativeTypeName("ULONG")] uint cImplemented, [NativeTypeName("const CATID[]")] Guid* rgcatidImpl, [NativeTypeName("ULONG")] uint cRequired, [NativeTypeName("const CATID[]")] Guid* rgcatidReq, IEnumGUID** ppenumClsid)
     {
         return ((delegate* unmanaged<ICatInformation*, uint, Guid*, uint, Guid*, IEnumGUID**, int>)(lpVtbl[5]))((ICatInformation*)Unsafe.AsPointer(ref this), cImplemented, rgcatidImpl, cRequired, rgcatidReq, ppenumClsid);
     }
@@ -70,7 +70,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface
     /// <include file='ICatInformation.xml' path='doc/member[@name="ICatInformation.IsClassOfCategories"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT IsClassOfCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cImplemented, [NativeTypeName("const CATID []")] Guid* rgcatidImpl, [NativeTypeName("ULONG")] uint cRequired, [NativeTypeName("const CATID []")] Guid* rgcatidReq)
+    public HRESULT IsClassOfCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cImplemented, [NativeTypeName("const CATID[]")] Guid* rgcatidImpl, [NativeTypeName("ULONG")] uint cRequired, [NativeTypeName("const CATID[]")] Guid* rgcatidReq)
     {
         return ((delegate* unmanaged<ICatInformation*, Guid*, uint, Guid*, uint, Guid*, int>)(lpVtbl[6]))((ICatInformation*)Unsafe.AsPointer(ref this), rclsid, cImplemented, rgcatidImpl, cRequired, rgcatidReq);
     }
@@ -100,10 +100,10 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface
         HRESULT GetCategoryDesc([NativeTypeName("REFCATID")] Guid* rcatid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("LPWSTR *")] ushort** pszDesc);
 
         [VtblIndex(5)]
-        HRESULT EnumClassesOfCategories([NativeTypeName("ULONG")] uint cImplemented, [NativeTypeName("const CATID []")] Guid* rgcatidImpl, [NativeTypeName("ULONG")] uint cRequired, [NativeTypeName("const CATID []")] Guid* rgcatidReq, IEnumGUID** ppenumClsid);
+        HRESULT EnumClassesOfCategories([NativeTypeName("ULONG")] uint cImplemented, [NativeTypeName("const CATID[]")] Guid* rgcatidImpl, [NativeTypeName("ULONG")] uint cRequired, [NativeTypeName("const CATID[]")] Guid* rgcatidReq, IEnumGUID** ppenumClsid);
 
         [VtblIndex(6)]
-        HRESULT IsClassOfCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cImplemented, [NativeTypeName("const CATID []")] Guid* rgcatidImpl, [NativeTypeName("ULONG")] uint cRequired, [NativeTypeName("const CATID []")] Guid* rgcatidReq);
+        HRESULT IsClassOfCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cImplemented, [NativeTypeName("const CATID[]")] Guid* rgcatidImpl, [NativeTypeName("ULONG")] uint cRequired, [NativeTypeName("const CATID[]")] Guid* rgcatidReq);
 
         [VtblIndex(7)]
         HRESULT EnumImplCategoriesOfClass([NativeTypeName("const IID &")] Guid* rclsid, IEnumGUID** ppenumCatid);

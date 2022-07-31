@@ -29,6 +29,6 @@ public unsafe partial struct EXCEPTION_RECORD32
     public uint NumberParameters;
 
     /// <include file='EXCEPTION_RECORD32.xml' path='doc/member[@name="EXCEPTION_RECORD32.ExceptionInformation"]/*' />
-    [NativeTypeName("DWORD [15]")]
+    [NativeTypeName("DWORD[15]")]
     public fixed uint ExceptionInformation[15];
 }

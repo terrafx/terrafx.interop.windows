@@ -15,7 +15,7 @@ public unsafe partial struct PROCESSOR_GROUP_INFO
     public byte ActiveProcessorCount;
 
     /// <include file='PROCESSOR_GROUP_INFO.xml' path='doc/member[@name="PROCESSOR_GROUP_INFO.Reserved"]/*' />
-    [NativeTypeName("BYTE [38]")]
+    [NativeTypeName("BYTE[38]")]
     public fixed byte Reserved[38];
 
     /// <include file='PROCESSOR_GROUP_INFO.xml' path='doc/member[@name="PROCESSOR_GROUP_INFO.ActiveProcessorMask"]/*' />

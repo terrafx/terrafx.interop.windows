@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HHOOK : IComparable, IComparable<HHOOK>, IEquatable<HHOOK>, IFormattable
+public readonly unsafe partial struct HHOOK : IComparable, IComparable<HHOOK>, IEquatable<HHOOK>, IFormattable
 {
     public readonly void* Value;
 

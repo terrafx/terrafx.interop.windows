@@ -12,7 +12,7 @@ public unsafe partial struct IMAGE_POLICY_METADATA
     public byte Version;
 
     /// <include file='IMAGE_POLICY_METADATA.xml' path='doc/member[@name="IMAGE_POLICY_METADATA.Reserved0"]/*' />
-    [NativeTypeName("BYTE [7]")]
+    [NativeTypeName("BYTE[7]")]
     public fixed byte Reserved0[7];
 
     /// <include file='IMAGE_POLICY_METADATA.xml' path='doc/member[@name="IMAGE_POLICY_METADATA.ApplicationId"]/*' />
@@ -20,6 +20,6 @@ public unsafe partial struct IMAGE_POLICY_METADATA
     public ulong ApplicationId;
 
     /// <include file='IMAGE_POLICY_METADATA.xml' path='doc/member[@name="IMAGE_POLICY_METADATA.Policies"]/*' />
-    [NativeTypeName("IMAGE_POLICY_ENTRY []")]
+    [NativeTypeName("IMAGE_POLICY_ENTRY[]")]
     public IMAGE_POLICY_ENTRY Policies;
 }

@@ -2,10 +2,9 @@
 
 using System;
 
-namespace 
-TerraFX.Interop.Windows;
+namespace TerraFX.Interop.Windows;
 
-public unsafe partial struct HPCON : IComparable, IComparable<HPCON>, IEquatable<HPCON>, IFormattable
+public readonly unsafe partial struct HPCON : IComparable, IComparable<HPCON>, IEquatable<HPCON>, IFormattable
 {
     public readonly void* Value;
 

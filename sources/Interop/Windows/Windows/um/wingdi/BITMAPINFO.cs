@@ -16,7 +16,7 @@ public partial struct BITMAPINFO
     public BITMAPINFOHEADER bmiHeader;
 
     /// <include file='BITMAPINFO.xml' path='doc/member[@name="BITMAPINFO.bmiColors"]/*' />
-    [NativeTypeName("RGBQUAD [1]")]
+    [NativeTypeName("RGBQUAD[1]")]
     public _bmiColors_e__FixedBuffer bmiColors;
 
     /// <include file='_bmiColors_e__FixedBuffer.xml' path='doc/member[@name="_bmiColors_e__FixedBuffer"]/*' />

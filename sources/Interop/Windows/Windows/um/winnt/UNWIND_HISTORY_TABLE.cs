@@ -37,7 +37,7 @@ public partial struct UNWIND_HISTORY_TABLE
     public nuint HighAddress;
 
     /// <include file='UNWIND_HISTORY_TABLE.xml' path='doc/member[@name="UNWIND_HISTORY_TABLE.Entry"]/*' />
-    [NativeTypeName("UNWIND_HISTORY_TABLE_ENTRY [12]")]
+    [NativeTypeName("UNWIND_HISTORY_TABLE_ENTRY[12]")]
     public _Entry_e__FixedBuffer Entry;
 
     /// <include file='_Entry_e__FixedBuffer.xml' path='doc/member[@name="_Entry_e__FixedBuffer"]/*' />

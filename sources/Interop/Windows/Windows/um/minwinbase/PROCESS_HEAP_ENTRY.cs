@@ -74,7 +74,7 @@ public unsafe partial struct PROCESS_HEAP_ENTRY
             public HANDLE hMem;
 
             /// <include file='_Block_e__Struct.xml' path='doc/member[@name="_Block_e__Struct.dwReserved"]/*' />
-            [NativeTypeName("DWORD [3]")]
+            [NativeTypeName("DWORD[3]")]
             public fixed uint dwReserved[3];
         }
 

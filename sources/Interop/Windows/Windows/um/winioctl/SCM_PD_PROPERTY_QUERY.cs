@@ -23,6 +23,6 @@ public unsafe partial struct SCM_PD_PROPERTY_QUERY
     public SCM_PD_QUERY_TYPE QueryType;
 
     /// <include file='SCM_PD_PROPERTY_QUERY.xml' path='doc/member[@name="SCM_PD_PROPERTY_QUERY.AdditionalParameters"]/*' />
-    [NativeTypeName("BYTE [1]")]
+    [NativeTypeName("BYTE[1]")]
     public fixed byte AdditionalParameters[1];
 }

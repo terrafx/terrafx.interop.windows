@@ -53,6 +53,6 @@ public unsafe partial struct LOGFONTA
     public byte lfPitchAndFamily;
 
     /// <include file='LOGFONTA.xml' path='doc/member[@name="LOGFONTA.lfFaceName"]/*' />
-    [NativeTypeName("CHAR [32]")]
+    [NativeTypeName("CHAR[32]")]
     public fixed sbyte lfFaceName[32];
 }

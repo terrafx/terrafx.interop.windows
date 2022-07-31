@@ -17,6 +17,6 @@ public unsafe partial struct RemSNB
     public uint ulCntChar;
 
     /// <include file='RemSNB.xml' path='doc/member[@name="RemSNB.rgString"]/*' />
-    [NativeTypeName("OLECHAR [1]")]
+    [NativeTypeName("OLECHAR[1]")]
     public fixed ushort rgString[1];
 }
