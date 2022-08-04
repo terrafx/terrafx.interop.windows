@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -25,6 +26,7 @@ public partial struct PSAPI_WORKING_SET_INFORMATION
     {
         public PSAPI_WORKING_SET_BLOCK e0;
 
+        [UnscopedRef]
         public ref PSAPI_WORKING_SET_BLOCK this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -35,6 +37,7 @@ public partial struct PSAPI_WORKING_SET_INFORMATION
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<PSAPI_WORKING_SET_BLOCK> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

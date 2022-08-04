@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -33,49 +35,55 @@ public unsafe partial struct SP_DRVINFO_DATA_V1_W
     public SP_DRVINFO_DATA64_V1_W _value64;
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint cbSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
+                return ref _value32.cbSize;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
+                return ref _value64.cbSize;
             }
         }
     }
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint DriverType
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.DriverType, 1));
+                return ref _value32.DriverType;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.DriverType, 1));
+                return ref _value64.DriverType;
             }
         }
     }
 
     [NativeTypeName("ULONG_PTR")]
+    [UnscopedRef]
     public ref nuint Reserved
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.Reserved, 1));
+                return ref _value32.Reserved;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.Reserved, 1));
+                return ref _value64.Reserved;
             }
         }
     }

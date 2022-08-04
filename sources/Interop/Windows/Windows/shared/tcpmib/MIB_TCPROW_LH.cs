@@ -3,6 +3,7 @@
 // Ported from shared/tcpmib.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -32,22 +33,24 @@ public partial struct MIB_TCPROW_LH
     public uint dwRemotePort;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwState"]/*' />
+    [UnscopedRef]
     public ref uint dwState
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwState, 1));
+            return ref Anonymous.dwState;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.State"]/*' />
+    [UnscopedRef]
     public ref MIB_TCP_STATE State
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.State, 1));
+            return ref Anonymous.State;
         }
     }
 

@@ -3,6 +3,7 @@
 // Ported from d3d12video.h in Microsoft.Direct3D.D3D12 v1.600.10
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -19,42 +20,46 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_RATE_CONTROL_CONFIGURATION_PARA
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pConfiguration_CQP"]/*' />
+    [UnscopedRef]
     public ref D3D12_VIDEO_ENCODER_RATE_CONTROL_CQP* pConfiguration_CQP
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pConfiguration_CQP;
+            return ref Anonymous.pConfiguration_CQP;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pConfiguration_CBR"]/*' />
+    [UnscopedRef]
     public ref D3D12_VIDEO_ENCODER_RATE_CONTROL_CBR* pConfiguration_CBR
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pConfiguration_CBR;
+            return ref Anonymous.pConfiguration_CBR;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pConfiguration_VBR"]/*' />
+    [UnscopedRef]
     public ref D3D12_VIDEO_ENCODER_RATE_CONTROL_VBR* pConfiguration_VBR
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pConfiguration_VBR;
+            return ref Anonymous.pConfiguration_VBR;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pConfiguration_QVBR"]/*' />
+    [UnscopedRef]
     public ref D3D12_VIDEO_ENCODER_RATE_CONTROL_QVBR* pConfiguration_QVBR
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pConfiguration_QVBR;
+            return ref Anonymous.pConfiguration_QVBR;
         }
     }
 

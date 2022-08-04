@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -18,16 +19,18 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
+    [UnscopedRef]
     public ref uint Flags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+            return ref Anonymous.Flags;
         }
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DisallowWin32kSystemCalls"]/*' />
+    [UnscopedRef]
     public uint DisallowWin32kSystemCalls
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -44,6 +47,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditDisallowWin32kSystemCalls"]/*' />
+    [UnscopedRef]
     public uint AuditDisallowWin32kSystemCalls
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,6 +64,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
+    [UnscopedRef]
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

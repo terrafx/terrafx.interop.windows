@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -23,42 +24,46 @@ public partial struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Processor"]/*' />
+    [UnscopedRef]
     public ref PROCESSOR_RELATIONSHIP Processor
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Processor, 1));
+            return ref Anonymous.Processor;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.NumaNode"]/*' />
+    [UnscopedRef]
     public ref NUMA_NODE_RELATIONSHIP NumaNode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NumaNode, 1));
+            return ref Anonymous.NumaNode;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Cache"]/*' />
+    [UnscopedRef]
     public ref CACHE_RELATIONSHIP Cache
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Cache, 1));
+            return ref Anonymous.Cache;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Group"]/*' />
+    [UnscopedRef]
     public ref GROUP_RELATIONSHIP Group
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Group, 1));
+            return ref Anonymous.Group;
         }
     }
 

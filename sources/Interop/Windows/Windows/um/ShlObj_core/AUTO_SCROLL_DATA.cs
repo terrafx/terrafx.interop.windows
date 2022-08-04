@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -39,6 +40,7 @@ public unsafe partial struct AUTO_SCROLL_DATA
         public POINT e1;
         public POINT e2;
 
+        [UnscopedRef]
         public ref POINT this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,6 +51,7 @@ public unsafe partial struct AUTO_SCROLL_DATA
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<POINT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
     }
 }

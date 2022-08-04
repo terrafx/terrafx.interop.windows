@@ -3,6 +3,7 @@
 // Ported from um/PropIdlBase.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -20,22 +21,24 @@ public unsafe partial struct PROPSPEC
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.propid"]/*' />
+    [UnscopedRef]
     public ref uint propid
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.propid, 1));
+            return ref Anonymous.propid;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lpwstr"]/*' />
+    [UnscopedRef]
     public ref ushort* lpwstr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.lpwstr;
+            return ref Anonymous.lpwstr;
         }
     }
 

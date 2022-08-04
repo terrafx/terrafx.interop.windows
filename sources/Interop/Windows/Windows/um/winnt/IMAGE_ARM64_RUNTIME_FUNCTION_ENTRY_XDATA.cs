@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -23,6 +24,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.FunctionLength"]/*' />
+    [UnscopedRef]
     public uint FunctionLength
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,6 +41,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Version"]/*' />
+    [UnscopedRef]
     public uint Version
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -55,6 +58,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ExceptionDataPresent"]/*' />
+    [UnscopedRef]
     public uint ExceptionDataPresent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -71,6 +75,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EpilogInHeader"]/*' />
+    [UnscopedRef]
     public uint EpilogInHeader
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -87,6 +92,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EpilogCount"]/*' />
+    [UnscopedRef]
     public uint EpilogCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -103,6 +109,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CodeWords"]/*' />
+    [UnscopedRef]
     public uint CodeWords
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

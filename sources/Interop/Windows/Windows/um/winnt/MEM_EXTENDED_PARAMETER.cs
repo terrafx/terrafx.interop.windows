@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -22,6 +23,7 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.Type"]/*' />
+    [UnscopedRef]
     public ulong Type
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -38,6 +40,7 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
     }
 
     /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.Reserved"]/*' />
+    [UnscopedRef]
     public ulong Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -54,52 +57,57 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.ULong64"]/*' />
+    [UnscopedRef]
     public ref ulong ULong64
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.ULong64, 1));
+            return ref Anonymous2.ULong64;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Pointer"]/*' />
+    [UnscopedRef]
     public ref void* Pointer
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous2.Pointer;
+            return ref Anonymous2.Pointer;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Size"]/*' />
+    [UnscopedRef]
     public ref nuint Size
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Size, 1));
+            return ref Anonymous2.Size;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Handle"]/*' />
+    [UnscopedRef]
     public ref HANDLE Handle
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous2.Handle;
+            return ref Anonymous2.Handle;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.ULong"]/*' />
+    [UnscopedRef]
     public ref uint ULong
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.ULong, 1));
+            return ref Anonymous2.ULong;
         }
     }
 

@@ -3,6 +3,7 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -24,22 +25,24 @@ public partial struct PERSISTENT_RESERVE_COMMAND
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.PR_IN"]/*' />
+    [UnscopedRef]
     public ref _Anonymous_e__Union._PR_IN_e__Struct PR_IN
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.PR_IN, 1));
+            return ref Anonymous.PR_IN;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.PR_OUT"]/*' />
+    [UnscopedRef]
     public ref _Anonymous_e__Union._PR_OUT_e__Struct PR_OUT
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.PR_OUT, 1));
+            return ref Anonymous.PR_OUT;
         }
     }
 

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -39,6 +40,7 @@ public partial struct STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR
     {
         public STORAGE_PHYSICAL_NODE_DATA e0;
 
+        [UnscopedRef]
         public ref STORAGE_PHYSICAL_NODE_DATA this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,6 +51,7 @@ public partial struct STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<STORAGE_PHYSICAL_NODE_DATA> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

@@ -3,6 +3,7 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -23,6 +24,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
     public uint AsUlong;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RetainAsynEvent"]/*' />
+    [UnscopedRef]
     public uint RetainAsynEvent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,6 +41,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LogSpecificField"]/*' />
+    [UnscopedRef]
     public uint LogSpecificField
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -55,6 +58,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
+    [UnscopedRef]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

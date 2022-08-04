@@ -3,6 +3,7 @@
 // Ported from d3d12.h in Microsoft.Direct3D.D3D12 v1.600.10
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -25,62 +26,68 @@ public partial struct D3D12_DEPTH_STENCIL_VIEW_DESC
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture1D"]/*' />
+    [UnscopedRef]
     public ref D3D12_TEX1D_DSV Texture1D
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture1D, 1));
+            return ref Anonymous.Texture1D;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture1DArray"]/*' />
+    [UnscopedRef]
     public ref D3D12_TEX1D_ARRAY_DSV Texture1DArray
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture1DArray, 1));
+            return ref Anonymous.Texture1DArray;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2D"]/*' />
+    [UnscopedRef]
     public ref D3D12_TEX2D_DSV Texture2D
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture2D, 1));
+            return ref Anonymous.Texture2D;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2DArray"]/*' />
+    [UnscopedRef]
     public ref D3D12_TEX2D_ARRAY_DSV Texture2DArray
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture2DArray, 1));
+            return ref Anonymous.Texture2DArray;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2DMS"]/*' />
+    [UnscopedRef]
     public ref D3D12_TEX2DMS_DSV Texture2DMS
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture2DMS, 1));
+            return ref Anonymous.Texture2DMS;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2DMSArray"]/*' />
+    [UnscopedRef]
     public ref D3D12_TEX2DMS_ARRAY_DSV Texture2DMSArray
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture2DMSArray, 1));
+            return ref Anonymous.Texture2DMSArray;
         }
     }
 

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -29,6 +30,7 @@ public partial struct QUERY_BAD_RANGES_INPUT
     {
         public QUERY_BAD_RANGES_INPUT_RANGE e0;
 
+        [UnscopedRef]
         public ref QUERY_BAD_RANGES_INPUT_RANGE this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,6 +41,7 @@ public partial struct QUERY_BAD_RANGES_INPUT
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<QUERY_BAD_RANGES_INPUT_RANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

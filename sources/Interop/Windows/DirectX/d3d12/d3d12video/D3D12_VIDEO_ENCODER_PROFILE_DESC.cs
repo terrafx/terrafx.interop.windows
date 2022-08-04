@@ -3,6 +3,7 @@
 // Ported from d3d12video.h in Microsoft.Direct3D.D3D12 v1.600.10
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -19,22 +20,24 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_PROFILE_DESC
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pH264Profile"]/*' />
+    [UnscopedRef]
     public ref D3D12_VIDEO_ENCODER_PROFILE_H264* pH264Profile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pH264Profile;
+            return ref Anonymous.pH264Profile;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pHEVCProfile"]/*' />
+    [UnscopedRef]
     public ref D3D12_VIDEO_ENCODER_PROFILE_HEVC* pHEVCProfile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pHEVCProfile;
+            return ref Anonymous.pHEVCProfile;
         }
     }
 

@@ -3,6 +3,7 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -35,32 +36,35 @@ public partial struct RAWMOUSE
     public uint ulExtraInformation;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ulButtons"]/*' />
+    [UnscopedRef]
     public ref uint ulButtons
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ulButtons, 1));
+            return ref Anonymous.ulButtons;
         }
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.usButtonFlags"]/*' />
+    [UnscopedRef]
     public ref ushort usButtonFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.usButtonFlags, 1));
+            return ref Anonymous.Anonymous.usButtonFlags;
         }
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.usButtonData"]/*' />
+    [UnscopedRef]
     public ref ushort usButtonData
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.usButtonData, 1));
+            return ref Anonymous.Anonymous.usButtonData;
         }
     }
 

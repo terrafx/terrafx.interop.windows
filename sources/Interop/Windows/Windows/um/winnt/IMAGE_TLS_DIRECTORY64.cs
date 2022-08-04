@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -37,16 +38,18 @@ public partial struct IMAGE_TLS_DIRECTORY64
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Characteristics"]/*' />
+    [UnscopedRef]
     public ref uint Characteristics
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Characteristics, 1));
+            return ref Anonymous.Characteristics;
         }
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved0"]/*' />
+    [UnscopedRef]
     public uint Reserved0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -63,6 +66,7 @@ public partial struct IMAGE_TLS_DIRECTORY64
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Alignment"]/*' />
+    [UnscopedRef]
     public uint Alignment
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -79,6 +83,7 @@ public partial struct IMAGE_TLS_DIRECTORY64
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved1"]/*' />
+    [UnscopedRef]
     public uint Reserved1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -3,6 +3,7 @@
 // Ported from um/gdiplusmetaheader.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
@@ -60,22 +61,24 @@ public unsafe partial struct MetafileHeader
     public int LogicalDpiY;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.WmfHeader"]/*' />
+    [UnscopedRef]
     public ref METAHEADER WmfHeader
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.WmfHeader, 1));
+            return ref Anonymous.WmfHeader;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.EmfHeader"]/*' />
+    [UnscopedRef]
     public ref ENHMETAHEADER3 EmfHeader
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.EmfHeader, 1));
+            return ref Anonymous.EmfHeader;
         }
     }
 

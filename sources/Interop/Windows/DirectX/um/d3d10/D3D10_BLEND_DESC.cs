@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
@@ -54,6 +55,7 @@ public unsafe partial struct D3D10_BLEND_DESC
         public BOOL e6;
         public BOOL e7;
 
+        [UnscopedRef]
         public ref BOOL this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -64,6 +66,7 @@ public unsafe partial struct D3D10_BLEND_DESC
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<BOOL> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 }

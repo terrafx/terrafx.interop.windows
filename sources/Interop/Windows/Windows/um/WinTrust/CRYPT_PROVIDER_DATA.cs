@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -136,12 +137,13 @@ public unsafe partial struct CRYPT_PROVIDER_DATA
     public WINTRUST_SIGNATURE_SETTINGS* pSigSettings;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pPDSip"]/*' />
+    [UnscopedRef]
     public ref PROVDATA_SIP* pPDSip
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pPDSip;
+            return ref Anonymous.pPDSip;
         }
     }
 

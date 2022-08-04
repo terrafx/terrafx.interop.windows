@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -18,16 +19,18 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
+    [UnscopedRef]
     public ref uint Flags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+            return ref Anonymous.Flags;
         }
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NoRemoteImages"]/*' />
+    [UnscopedRef]
     public uint NoRemoteImages
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -44,6 +47,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NoLowMandatoryLabelImages"]/*' />
+    [UnscopedRef]
     public uint NoLowMandatoryLabelImages
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,6 +64,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.PreferSystem32Images"]/*' />
+    [UnscopedRef]
     public uint PreferSystem32Images
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -76,6 +81,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditNoRemoteImages"]/*' />
+    [UnscopedRef]
     public uint AuditNoRemoteImages
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -92,6 +98,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditNoLowMandatoryLabelImages"]/*' />
+    [UnscopedRef]
     public uint AuditNoLowMandatoryLabelImages
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -108,6 +115,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
+    [UnscopedRef]
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

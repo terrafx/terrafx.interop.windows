@@ -3,6 +3,7 @@
 // Ported from shared/udpmib.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -39,6 +40,7 @@ public unsafe partial struct MIB_UDP6ROW_OWNER_MODULE
     public fixed ulong OwningModuleInfo[16];
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SpecificPortBind"]/*' />
+    [UnscopedRef]
     public int SpecificPortBind
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -55,12 +57,13 @@ public unsafe partial struct MIB_UDP6ROW_OWNER_MODULE
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwFlags"]/*' />
+    [UnscopedRef]
     public ref int dwFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwFlags, 1));
+            return ref Anonymous.dwFlags;
         }
     }
 

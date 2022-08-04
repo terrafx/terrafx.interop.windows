@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -28,6 +29,7 @@ public partial struct KERB_QUERY_TKT_CACHE_EX_RESPONSE
     {
         public KERB_TICKET_CACHE_INFO_EX e0;
 
+        [UnscopedRef]
         public ref KERB_TICKET_CACHE_INFO_EX this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -38,6 +40,7 @@ public partial struct KERB_QUERY_TKT_CACHE_EX_RESPONSE
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<KERB_TICKET_CACHE_INFO_EX> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

@@ -3,6 +3,7 @@
 // Ported from um/memoryapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -34,16 +35,18 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     public nuint CommitSize;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
+    [UnscopedRef]
     public ref uint Flags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+            return ref Anonymous.Flags;
         }
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Private"]/*' />
+    [UnscopedRef]
     public uint Private
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,6 +63,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedDataFile"]/*' />
+    [UnscopedRef]
     public uint MappedDataFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -76,6 +80,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedImage"]/*' />
+    [UnscopedRef]
     public uint MappedImage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -92,6 +97,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedPageFile"]/*' />
+    [UnscopedRef]
     public uint MappedPageFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -108,6 +114,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedPhysical"]/*' />
+    [UnscopedRef]
     public uint MappedPhysical
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -124,6 +131,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DirectMapped"]/*' />
+    [UnscopedRef]
     public uint DirectMapped
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -140,6 +148,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
+    [UnscopedRef]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

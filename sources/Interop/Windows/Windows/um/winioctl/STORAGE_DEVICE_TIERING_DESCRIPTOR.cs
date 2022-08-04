@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -41,6 +42,7 @@ public partial struct STORAGE_DEVICE_TIERING_DESCRIPTOR
     {
         public STORAGE_TIER e0;
 
+        [UnscopedRef]
         public ref STORAGE_TIER this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +53,7 @@ public partial struct STORAGE_DEVICE_TIERING_DESCRIPTOR
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<STORAGE_TIER> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -33,6 +34,7 @@ public partial struct SD_ENUM_SDS_OUTPUT
     {
         public SD_ENUM_SDS_ENTRY e0;
 
+        [UnscopedRef]
         public ref SD_ENUM_SDS_ENTRY this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,6 +45,7 @@ public partial struct SD_ENUM_SDS_OUTPUT
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<SD_ENUM_SDS_ENTRY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

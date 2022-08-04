@@ -3,6 +3,8 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -32,65 +34,73 @@ public unsafe partial struct SP_REGISTER_CONTROL_STATUSW
     public SP_REGISTER_CONTROL_STATUS64W _value64;
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint cbSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
+                return ref _value32.cbSize;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
+                return ref _value64.cbSize;
             }
         }
     }
 
     [NativeTypeName("PCWSTR")]
+    [UnscopedRef]
     public ref ushort* FileName
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).FileName;
+                return ref _value32.FileName;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).FileName;
+                return ref _value64.FileName;
             }
         }
     }
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint Win32Error
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.Win32Error, 1));
+                return ref _value32.Win32Error;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.Win32Error, 1));
+                return ref _value64.Win32Error;
             }
         }
     }
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint FailureCode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.FailureCode, 1));
+                return ref _value32.FailureCode;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.FailureCode, 1));
+                return ref _value64.FailureCode;
             }
         }
     }

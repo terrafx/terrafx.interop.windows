@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -43,6 +44,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AllowScaling"]/*' />
+        [UnscopedRef]
         public ushort AllowScaling
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -59,6 +61,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
         }
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Disabled"]/*' />
+        [UnscopedRef]
         public ushort Disabled
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -75,6 +78,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
         }
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
+        [UnscopedRef]
         public ushort Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -155,6 +159,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
         public PROCESSOR_IDLESTATE_INFO e1;
         public PROCESSOR_IDLESTATE_INFO e2;
 
+        [UnscopedRef]
         public ref PROCESSOR_IDLESTATE_INFO this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -165,6 +170,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<PROCESSOR_IDLESTATE_INFO> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
     }
 }

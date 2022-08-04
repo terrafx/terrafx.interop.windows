@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -66,6 +67,7 @@ public partial struct PERFORMANCE_DATA
         public HARDWARE_COUNTER_DATA e14;
         public HARDWARE_COUNTER_DATA e15;
 
+        [UnscopedRef]
         public ref HARDWARE_COUNTER_DATA this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -76,6 +78,7 @@ public partial struct PERFORMANCE_DATA
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<HARDWARE_COUNTER_DATA> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
     }
 }

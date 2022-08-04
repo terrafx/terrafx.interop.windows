@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -39,16 +40,18 @@ public unsafe partial struct IMAGE_AUX_SYMBOL_EX
     public _CRC_e__Struct CRC;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.TokenDef"]/*' />
+    [UnscopedRef]
     public ref IMAGE_AUX_SYMBOL_TOKEN_DEF TokenDef
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.TokenDef, 1));
+            return ref Anonymous.TokenDef;
         }
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.rgbReserved"]/*' />
+    [UnscopedRef]
     public Span<byte> rgbReserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -36,22 +37,24 @@ public unsafe partial struct ENCLAVE_INIT_INFO_VBS_BASIC
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.SignatureInfoHandle"]/*' />
+    [UnscopedRef]
     public ref HANDLE SignatureInfoHandle
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.SignatureInfoHandle;
+            return ref Anonymous.SignatureInfoHandle;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Unused"]/*' />
+    [UnscopedRef]
     public ref ulong Unused
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Unused, 1));
+            return ref Anonymous.Unused;
         }
     }
 

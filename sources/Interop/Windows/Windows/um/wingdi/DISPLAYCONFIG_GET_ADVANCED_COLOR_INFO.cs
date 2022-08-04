@@ -3,6 +3,7 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -26,6 +27,7 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     public uint bitsPerColorChannel;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.advancedColorSupported"]/*' />
+    [UnscopedRef]
     public uint advancedColorSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +44,7 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.advancedColorEnabled"]/*' />
+    [UnscopedRef]
     public uint advancedColorEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -58,6 +61,7 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.wideColorEnforced"]/*' />
+    [UnscopedRef]
     public uint wideColorEnforced
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -74,6 +78,7 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.advancedColorForceDisabled"]/*' />
+    [UnscopedRef]
     public uint advancedColorForceDisabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -90,6 +95,7 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.reserved"]/*' />
+    [UnscopedRef]
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -106,12 +112,13 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.value"]/*' />
+    [UnscopedRef]
     public ref uint value
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.value, 1));
+            return ref Anonymous.value;
         }
     }
 

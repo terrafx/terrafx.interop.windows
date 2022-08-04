@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -54,6 +55,7 @@ public unsafe partial struct SYSTEM_THREAD_INFORMATION
         public LARGE_INTEGER e1;
         public LARGE_INTEGER e2;
 
+        [UnscopedRef]
         public ref LARGE_INTEGER this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -64,6 +66,7 @@ public unsafe partial struct SYSTEM_THREAD_INFORMATION
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<LARGE_INTEGER> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
     }
 }

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -33,33 +34,37 @@ public unsafe partial struct SP_NEWDEVICEWIZARD_DATA
     [FieldOffset(0)]
     public SP_NEWDEVICEWIZARD_DATA64 _value64;
 
+    [UnscopedRef]
     public ref SP_CLASSINSTALL_HEADER ClassInstallHeader
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Unsafe.As<SP_CLASSINSTALL_HEADER32, SP_CLASSINSTALL_HEADER>(ref _value32.ClassInstallHeader), 1));
+                return ref Unsafe.As<SP_CLASSINSTALL_HEADER32, SP_CLASSINSTALL_HEADER>(ref _value32.ClassInstallHeader);
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Unsafe.As<SP_CLASSINSTALL_HEADER64, SP_CLASSINSTALL_HEADER>(ref _value64.ClassInstallHeader), 1));
+                return ref Unsafe.As<SP_CLASSINSTALL_HEADER64, SP_CLASSINSTALL_HEADER>(ref _value64.ClassInstallHeader);
             }
         }
     }
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint Flags
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.Flags, 1));
+                return ref _value32.Flags;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.Flags, 1));
+                return ref _value64.Flags;
             }
         }
     }
@@ -81,32 +86,36 @@ public unsafe partial struct SP_NEWDEVICEWIZARD_DATA
     }
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint NumDynamicPages
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.NumDynamicPages, 1));
+                return ref _value32.NumDynamicPages;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.NumDynamicPages, 1));
+                return ref _value64.NumDynamicPages;
             }
         }
     }
 
+    [UnscopedRef]
     public ref HWND hwndWizardDlg
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.hwndWizardDlg, 1));
+                return ref _value32.hwndWizardDlg;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.hwndWizardDlg, 1));
+                return ref _value64.hwndWizardDlg;
             }
         }
     }

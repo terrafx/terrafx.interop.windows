@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -43,6 +44,7 @@ public partial struct DVD_MenuAttributes
         public BOOL e6;
         public BOOL e7;
 
+        [UnscopedRef]
         public ref BOOL this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -53,6 +55,7 @@ public partial struct DVD_MenuAttributes
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<BOOL> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 }

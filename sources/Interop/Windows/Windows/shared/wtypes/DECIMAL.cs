@@ -3,6 +3,7 @@
 // Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -27,62 +28,68 @@ public partial struct DECIMAL
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.scale"]/*' />
+    [UnscopedRef]
     public ref byte scale
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous.scale, 1));
+            return ref Anonymous1.Anonymous.scale;
         }
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.sign"]/*' />
+    [UnscopedRef]
     public ref byte sign
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous.sign, 1));
+            return ref Anonymous1.Anonymous.sign;
         }
     }
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.signscale"]/*' />
+    [UnscopedRef]
     public ref ushort signscale
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.signscale, 1));
+            return ref Anonymous1.signscale;
         }
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Lo32"]/*' />
+    [UnscopedRef]
     public ref uint Lo32
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Anonymous.Lo32, 1));
+            return ref Anonymous2.Anonymous.Lo32;
         }
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Mid32"]/*' />
+    [UnscopedRef]
     public ref uint Mid32
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Anonymous.Mid32, 1));
+            return ref Anonymous2.Anonymous.Mid32;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Lo64"]/*' />
+    [UnscopedRef]
     public ref ulong Lo64
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Lo64, 1));
+            return ref Anonymous2.Lo64;
         }
     }
 

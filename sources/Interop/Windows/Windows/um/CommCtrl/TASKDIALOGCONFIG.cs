@@ -3,6 +3,7 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -101,42 +102,46 @@ public unsafe partial struct TASKDIALOGCONFIG
     public uint cxWidth;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.hMainIcon"]/*' />
+    [UnscopedRef]
     public ref HICON hMainIcon
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous1.hMainIcon;
+            return ref Anonymous1.hMainIcon;
         }
     }
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszMainIcon"]/*' />
+    [UnscopedRef]
     public ref ushort* pszMainIcon
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous1.pszMainIcon;
+            return ref Anonymous1.pszMainIcon;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.hFooterIcon"]/*' />
+    [UnscopedRef]
     public ref HICON hFooterIcon
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous2.hFooterIcon;
+            return ref Anonymous2.hFooterIcon;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pszFooterIcon"]/*' />
+    [UnscopedRef]
     public ref ushort* pszFooterIcon
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous2.pszFooterIcon;
+            return ref Anonymous2.pszFooterIcon;
         }
     }
 

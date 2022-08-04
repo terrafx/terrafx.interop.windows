@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -20,6 +21,7 @@ public unsafe partial struct D3D12_CLEAR_VALUE
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Color"]/*' />
+    [UnscopedRef]
     public Span<float> Color
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -30,12 +32,13 @@ public unsafe partial struct D3D12_CLEAR_VALUE
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.DepthStencil"]/*' />
+    [UnscopedRef]
     public ref D3D12_DEPTH_STENCIL_VALUE DepthStencil
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.DepthStencil, 1));
+            return ref Anonymous.DepthStencil;
         }
     }
 

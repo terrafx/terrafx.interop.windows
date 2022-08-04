@@ -3,6 +3,7 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -24,22 +25,24 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Lev1Depends"]/*' />
+    [UnscopedRef]
     public ref STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY Lev1Depends
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Lev1Depends, 1));
+            return ref Anonymous.Lev1Depends;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Lev2Depends"]/*' />
+    [UnscopedRef]
     public ref STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY Lev2Depends
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Lev2Depends, 1));
+            return ref Anonymous.Lev2Depends;
         }
     }
 

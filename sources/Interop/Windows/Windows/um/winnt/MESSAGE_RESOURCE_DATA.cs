@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -25,6 +26,7 @@ public partial struct MESSAGE_RESOURCE_DATA
     {
         public MESSAGE_RESOURCE_BLOCK e0;
 
+        [UnscopedRef]
         public ref MESSAGE_RESOURCE_BLOCK this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -35,6 +37,7 @@ public partial struct MESSAGE_RESOURCE_DATA
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<MESSAGE_RESOURCE_BLOCK> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

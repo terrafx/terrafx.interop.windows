@@ -3,6 +3,8 @@
 // Ported from um/shellapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -31,48 +33,54 @@ public unsafe partial struct ASSOCIATIONELEMENT
     [FieldOffset(0)]
     public ASSOCIATIONELEMENT64 _value64;
 
+    [UnscopedRef]
     public ref ASSOCCLASS ac
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.ac, 1));
+                return ref _value32.ac;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.ac, 1));
+                return ref _value64.ac;
             }
         }
     }
 
+    [UnscopedRef]
     public ref HKEY hkClass
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.hkClass, 1));
+                return ref _value32.hkClass;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.hkClass, 1));
+                return ref _value64.hkClass;
             }
         }
     }
 
     [NativeTypeName("PCWSTR")]
+    [UnscopedRef]
     public ref ushort* pszClass
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).pszClass;
+                return ref _value32.pszClass;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).pszClass;
+                return ref _value64.pszClass;
             }
         }
     }

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -37,6 +38,7 @@ public partial struct DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT
     {
         public DEVICE_STORAGE_ADDRESS_RANGE e0;
 
+        [UnscopedRef]
         public ref DEVICE_STORAGE_ADDRESS_RANGE this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -47,6 +49,7 @@ public partial struct DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<DEVICE_STORAGE_ADDRESS_RANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

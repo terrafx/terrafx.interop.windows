@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -32,22 +33,24 @@ public partial struct QUERY_FILE_LAYOUT_INPUT
     public _Filter_e__Union Filter;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.FilterEntryCount"]/*' />
+    [UnscopedRef]
     public ref uint FilterEntryCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FilterEntryCount, 1));
+            return ref Anonymous.FilterEntryCount;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.NumberOfPairs"]/*' />
+    [UnscopedRef]
     public ref uint NumberOfPairs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NumberOfPairs, 1));
+            return ref Anonymous.NumberOfPairs;
         }
     }
 
@@ -90,6 +93,7 @@ public partial struct QUERY_FILE_LAYOUT_INPUT
         {
             public CLUSTER_RANGE e0;
 
+            [UnscopedRef]
             public ref CLUSTER_RANGE this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -100,6 +104,7 @@ public partial struct QUERY_FILE_LAYOUT_INPUT
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [UnscopedRef]
             public Span<CLUSTER_RANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
 
@@ -108,6 +113,7 @@ public partial struct QUERY_FILE_LAYOUT_INPUT
         {
             public FILE_REFERENCE_RANGE e0;
 
+            [UnscopedRef]
             public ref FILE_REFERENCE_RANGE this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -118,6 +124,7 @@ public partial struct QUERY_FILE_LAYOUT_INPUT
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [UnscopedRef]
             public Span<FILE_REFERENCE_RANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
 
@@ -126,6 +133,7 @@ public partial struct QUERY_FILE_LAYOUT_INPUT
         {
             public STORAGE_RESERVE_ID e0;
 
+            [UnscopedRef]
             public ref STORAGE_RESERVE_ID this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -136,6 +144,7 @@ public partial struct QUERY_FILE_LAYOUT_INPUT
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [UnscopedRef]
             public Span<STORAGE_RESERVE_ID> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }

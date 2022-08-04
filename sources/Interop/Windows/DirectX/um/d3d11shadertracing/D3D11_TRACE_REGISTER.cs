@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -30,16 +31,18 @@ public unsafe partial struct D3D11_TRACE_REGISTER
     public byte Flags;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Index1D"]/*' />
+    [UnscopedRef]
     public ref ushort Index1D
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Index1D, 1));
+            return ref Anonymous.Index1D;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Index2D"]/*' />
+    [UnscopedRef]
     public Span<ushort> Index2D
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

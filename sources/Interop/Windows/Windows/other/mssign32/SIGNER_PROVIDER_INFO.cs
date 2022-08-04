@@ -3,6 +3,7 @@
 // Ported from https://docs.microsoft.com/en-us/windows/win32/appxpkg/how-to-programmatically-sign-a-package
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -36,22 +37,24 @@ public unsafe partial struct SIGNER_PROVIDER_INFO
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszPvkFileName"]/*' />
+    [UnscopedRef]
     public ref ushort* pwszPvkFileName
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszPvkFileName;
+            return ref Anonymous.pwszPvkFileName;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszKeyContainer"]/*' />
+    [UnscopedRef]
     public ref ushort* pwszKeyContainer
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszKeyContainer;
+            return ref Anonymous.pwszKeyContainer;
         }
     }
 

@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -33,47 +35,53 @@ public unsafe partial struct SP_DEVINFO_LIST_DETAIL_DATA_A
     public SP_DEVINFO_LIST_DETAIL_DATA64_A _value64;
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint cbSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
+                return ref _value32.cbSize;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
+                return ref _value64.cbSize;
             }
         }
     }
 
+    [UnscopedRef]
     public ref Guid ClassGuid
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.ClassGuid, 1));
+                return ref _value32.ClassGuid;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.ClassGuid, 1));
+                return ref _value64.ClassGuid;
             }
         }
     }
 
+    [UnscopedRef]
     public ref HANDLE RemoteMachineHandle
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.RemoteMachineHandle, 1));
+                return ref _value32.RemoteMachineHandle;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.RemoteMachineHandle, 1));
+                return ref _value64.RemoteMachineHandle;
             }
         }
     }

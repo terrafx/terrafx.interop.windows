@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -17,16 +18,18 @@ public unsafe partial struct TXFS_READ_BACKUP_INFORMATION_OUT
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BufferLength"]/*' />
+    [UnscopedRef]
     public ref uint BufferLength
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.BufferLength, 1));
+            return ref Anonymous.BufferLength;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Buffer"]/*' />
+    [UnscopedRef]
     public Span<byte> Buffer
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

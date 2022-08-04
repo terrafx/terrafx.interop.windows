@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -35,6 +36,7 @@ public partial struct GROUP_FILTER
     {
         public SOCKADDR_STORAGE e0;
 
+        [UnscopedRef]
         public ref SOCKADDR_STORAGE this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -45,6 +47,7 @@ public partial struct GROUP_FILTER
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<SOCKADDR_STORAGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

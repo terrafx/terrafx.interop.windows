@@ -3,6 +3,7 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -54,22 +55,24 @@ public unsafe partial struct CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO
     public CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO** rgpRecipientEncryptedKeys;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pEphemeralAlgorithm"]/*' />
+    [UnscopedRef]
     public ref CRYPT_ALGORITHM_IDENTIFIER* pEphemeralAlgorithm
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pEphemeralAlgorithm;
+            return ref Anonymous.pEphemeralAlgorithm;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pSenderId"]/*' />
+    [UnscopedRef]
     public ref CERT_ID* pSenderId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pSenderId;
+            return ref Anonymous.pSenderId;
         }
     }
 

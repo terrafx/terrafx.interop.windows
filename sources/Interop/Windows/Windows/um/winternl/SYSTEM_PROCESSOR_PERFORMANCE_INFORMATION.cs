@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -35,6 +36,7 @@ public partial struct SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION
         public LARGE_INTEGER e0;
         public LARGE_INTEGER e1;
 
+        [UnscopedRef]
         public ref LARGE_INTEGER this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -45,6 +47,7 @@ public partial struct SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<LARGE_INTEGER> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
     }
 }

@@ -3,6 +3,7 @@
 // Ported from d3d12.h in Microsoft.Direct3D.D3D12 v1.600.10
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -23,42 +24,46 @@ public unsafe partial struct D3D12_BARRIER_GROUP
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pGlobalBarriers"]/*' />
+    [UnscopedRef]
     public ref D3D12_GLOBAL_BARRIER* pGlobalBarriers
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pGlobalBarriers;
+            return ref Anonymous.pGlobalBarriers;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pTextureBarriers"]/*' />
+    [UnscopedRef]
     public ref D3D12_TEXTURE_BARRIER* pTextureBarriers
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pTextureBarriers;
+            return ref Anonymous.pTextureBarriers;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pBufferBarriers"]/*' />
+    [UnscopedRef]
     public ref D3D12_BUFFER_BARRIER* pBufferBarriers
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pBufferBarriers;
+            return ref Anonymous.pBufferBarriers;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pStateBarriers"]/*' />
+    [UnscopedRef]
     public ref D3D12_RESOURCE_STATE_BARRIER* pStateBarriers
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pStateBarriers;
+            return ref Anonymous.pStateBarriers;
         }
     }
 

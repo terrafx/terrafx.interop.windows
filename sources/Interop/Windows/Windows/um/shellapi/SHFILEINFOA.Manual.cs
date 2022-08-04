@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -32,55 +34,63 @@ public unsafe partial struct SHFILEINFOA
     [FieldOffset(0)]
     public SHFILEINFO64A _value64;
 
+    [UnscopedRef]
     public ref HICON hIcon
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.hIcon, 1));
+                return ref _value32.hIcon;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.hIcon, 1));
+                return ref _value64.hIcon;
             }
         }
     }
 
+    [UnscopedRef]
     public ref int iIcon
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.iIcon, 1));
+                return ref _value32.iIcon;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.iIcon, 1));
+                return ref _value64.iIcon;
             }
         }
     }
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint dwAttributes
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.dwAttributes, 1));
+                return ref _value32.dwAttributes;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.dwAttributes, 1));
+                return ref _value64.dwAttributes;
             }
         }
     }
 
     [NativeTypeName("CHAR [260]")]
+    [UnscopedRef]
     public Span<sbyte> szDisplayName
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
@@ -95,8 +105,10 @@ public unsafe partial struct SHFILEINFOA
     }
 
     [NativeTypeName("CHAR [80]")]
+    [UnscopedRef]
     public Span<sbyte> szTypeName
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)

@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -33,17 +35,19 @@ public unsafe partial struct SP_BACKUP_QUEUE_PARAMS_V1_W
     public SP_BACKUP_QUEUE_PARAMS64_V1_W _value64;
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint cbSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
+                return ref _value32.cbSize;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
+                return ref _value64.cbSize;
             }
         }
     }
@@ -64,17 +68,19 @@ public unsafe partial struct SP_BACKUP_QUEUE_PARAMS_V1_W
         }
     }
 
+    [UnscopedRef]
     public ref int FilenameOffset
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.FilenameOffset, 1));
+                return ref _value32.FilenameOffset;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.FilenameOffset, 1));
+                return ref _value64.FilenameOffset;
             }
         }
     }

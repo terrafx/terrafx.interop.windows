@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -33,6 +34,7 @@ public unsafe partial struct SE_ADT_PARAMETER_ARRAY_ENTRY
         public nuint e0;
         public nuint e1;
 
+        [UnscopedRef]
         public ref nuint this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,6 +45,7 @@ public unsafe partial struct SE_ADT_PARAMETER_ARRAY_ENTRY
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<nuint> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
     }
 }

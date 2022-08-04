@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -33,6 +34,7 @@ public partial struct BOOT_AREA_INFO
         public _Anonymous_e__Struct e0;
         public _Anonymous_e__Struct e1;
 
+        [UnscopedRef]
         public ref _Anonymous_e__Struct this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,6 +45,7 @@ public partial struct BOOT_AREA_INFO
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<_Anonymous_e__Struct> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
     }
 }

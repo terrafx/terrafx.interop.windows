@@ -3,6 +3,7 @@
 // Ported from um/Psapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -23,6 +24,7 @@ public partial struct PSAPI_WORKING_SET_BLOCK
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Protection"]/*' />
+    [UnscopedRef]
     public nuint Protection
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,6 +41,7 @@ public partial struct PSAPI_WORKING_SET_BLOCK
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ShareCount"]/*' />
+    [UnscopedRef]
     public nuint ShareCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -55,6 +58,7 @@ public partial struct PSAPI_WORKING_SET_BLOCK
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Shared"]/*' />
+    [UnscopedRef]
     public nuint Shared
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -71,6 +75,7 @@ public partial struct PSAPI_WORKING_SET_BLOCK
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
+    [UnscopedRef]
     public nuint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -87,6 +92,7 @@ public partial struct PSAPI_WORKING_SET_BLOCK
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.VirtualPage"]/*' />
+    [UnscopedRef]
     public nuint VirtualPage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

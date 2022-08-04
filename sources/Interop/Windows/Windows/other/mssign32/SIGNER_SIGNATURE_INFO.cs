@@ -3,6 +3,7 @@
 // Ported from https://docs.microsoft.com/en-us/windows/win32/appxpkg/how-to-programmatically-sign-a-package
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -36,12 +37,13 @@ public unsafe partial struct SIGNER_SIGNATURE_INFO
     public CRYPT_ATTRIBUTES* psUnauthenticated;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pAttrAuthcode"]/*' />
+    [UnscopedRef]
     public ref SIGNER_ATTR_AUTHCODE* pAttrAuthcode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pAttrAuthcode;
+            return ref Anonymous.pAttrAuthcode;
         }
     }
 

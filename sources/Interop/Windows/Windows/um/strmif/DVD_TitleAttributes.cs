@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -40,22 +41,24 @@ public partial struct DVD_TitleAttributes
     public _SubpictureAttributes_e__FixedBuffer SubpictureAttributes;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AppMode"]/*' />
+    [UnscopedRef]
     public ref DVD_TITLE_APPMODE AppMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.AppMode, 1));
+            return ref Anonymous.AppMode;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.TitleLength"]/*' />
+    [UnscopedRef]
     public ref DVD_HMSF_TIMECODE TitleLength
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.TitleLength, 1));
+            return ref Anonymous.TitleLength;
         }
     }
 
@@ -84,6 +87,7 @@ public partial struct DVD_TitleAttributes
         public DVD_AudioAttributes e6;
         public DVD_AudioAttributes e7;
 
+        [UnscopedRef]
         public ref DVD_AudioAttributes this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -94,6 +98,7 @@ public partial struct DVD_TitleAttributes
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<DVD_AudioAttributes> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 
@@ -109,6 +114,7 @@ public partial struct DVD_TitleAttributes
         public DVD_MultichannelAudioAttributes e6;
         public DVD_MultichannelAudioAttributes e7;
 
+        [UnscopedRef]
         public ref DVD_MultichannelAudioAttributes this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -119,6 +125,7 @@ public partial struct DVD_TitleAttributes
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<DVD_MultichannelAudioAttributes> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 
@@ -158,6 +165,7 @@ public partial struct DVD_TitleAttributes
         public DVD_SubpictureAttributes e30;
         public DVD_SubpictureAttributes e31;
 
+        [UnscopedRef]
         public ref DVD_SubpictureAttributes this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -168,6 +176,7 @@ public partial struct DVD_TitleAttributes
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<DVD_SubpictureAttributes> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 32);
     }
 }

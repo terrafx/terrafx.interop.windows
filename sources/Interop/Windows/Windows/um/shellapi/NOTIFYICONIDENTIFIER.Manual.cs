@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -33,62 +35,70 @@ public unsafe partial struct NOTIFYICONIDENTIFIER
     public NOTIFYICONIDENTIFIER64 _value64;
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint cbSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
+                return ref _value32.cbSize;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
+                return ref _value64.cbSize;
             }
         }
     }
 
+    [UnscopedRef]
     public ref HWND hWnd
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.hWnd, 1));
+                return ref _value32.hWnd;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.hWnd, 1));
+                return ref _value64.hWnd;
             }
         }
     }
 
+    [UnscopedRef]
     public ref uint uID
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.uID, 1));
+                return ref _value32.uID;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.uID, 1));
+                return ref _value64.uID;
             }
         }
     }
 
+    [UnscopedRef]
     public ref Guid guidItem
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.guidItem, 1));
+                return ref _value32.guidItem;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.guidItem, 1));
+                return ref _value64.guidItem;
             }
         }
     }

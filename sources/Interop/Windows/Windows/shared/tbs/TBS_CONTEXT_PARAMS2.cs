@@ -3,6 +3,7 @@
 // Ported from shared/tbs.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -22,6 +23,7 @@ public partial struct TBS_CONTEXT_PARAMS2
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.requestRaw"]/*' />
+    [UnscopedRef]
     public uint requestRaw
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -38,6 +40,7 @@ public partial struct TBS_CONTEXT_PARAMS2
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.includeTpm12"]/*' />
+    [UnscopedRef]
     public uint includeTpm12
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -54,6 +57,7 @@ public partial struct TBS_CONTEXT_PARAMS2
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.includeTpm20"]/*' />
+    [UnscopedRef]
     public uint includeTpm20
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -70,12 +74,13 @@ public partial struct TBS_CONTEXT_PARAMS2
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.asUINT32"]/*' />
+    [UnscopedRef]
     public ref uint asUINT32
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.asUINT32, 1));
+            return ref Anonymous.asUINT32;
         }
     }
 

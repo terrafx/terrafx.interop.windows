@@ -3,6 +3,7 @@
 // Ported from um/ddraw.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -76,112 +77,123 @@ public unsafe partial struct DDSURFACEDESC2
     public uint dwTextureStage;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.lPitch"]/*' />
+    [UnscopedRef]
     public ref int lPitch
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.lPitch, 1));
+            return ref Anonymous1.lPitch;
         }
     }
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.dwLinearSize"]/*' />
+    [UnscopedRef]
     public ref uint dwLinearSize
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.dwLinearSize, 1));
+            return ref Anonymous1.dwLinearSize;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dwBackBufferCount"]/*' />
+    [UnscopedRef]
     public ref uint dwBackBufferCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwBackBufferCount, 1));
+            return ref Anonymous2.dwBackBufferCount;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dwDepth"]/*' />
+    [UnscopedRef]
     public ref uint dwDepth
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwDepth, 1));
+            return ref Anonymous2.dwDepth;
         }
     }
 
     /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union.dwMipMapCount"]/*' />
+    [UnscopedRef]
     public ref uint dwMipMapCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.dwMipMapCount, 1));
+            return ref Anonymous3.dwMipMapCount;
         }
     }
 
     /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union.dwRefreshRate"]/*' />
+    [UnscopedRef]
     public ref uint dwRefreshRate
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.dwRefreshRate, 1));
+            return ref Anonymous3.dwRefreshRate;
         }
     }
 
     /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union.dwSrcVBHandle"]/*' />
+    [UnscopedRef]
     public ref uint dwSrcVBHandle
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.dwSrcVBHandle, 1));
+            return ref Anonymous3.dwSrcVBHandle;
         }
     }
 
     /// <include file='_Anonymous4_e__Union.xml' path='doc/member[@name="_Anonymous4_e__Union.ddckCKDestOverlay"]/*' />
+    [UnscopedRef]
     public ref DDCOLORKEY ddckCKDestOverlay
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous4.ddckCKDestOverlay, 1));
+            return ref Anonymous4.ddckCKDestOverlay;
         }
     }
 
     /// <include file='_Anonymous4_e__Union.xml' path='doc/member[@name="_Anonymous4_e__Union.dwEmptyFaceColor"]/*' />
+    [UnscopedRef]
     public ref uint dwEmptyFaceColor
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous4.dwEmptyFaceColor, 1));
+            return ref Anonymous4.dwEmptyFaceColor;
         }
     }
 
     /// <include file='_Anonymous5_e__Union.xml' path='doc/member[@name="_Anonymous5_e__Union.ddpfPixelFormat"]/*' />
+    [UnscopedRef]
     public ref DDPIXELFORMAT ddpfPixelFormat
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous5.ddpfPixelFormat, 1));
+            return ref Anonymous5.ddpfPixelFormat;
         }
     }
 
     /// <include file='_Anonymous5_e__Union.xml' path='doc/member[@name="_Anonymous5_e__Union.dwFVF"]/*' />
+    [UnscopedRef]
     public ref uint dwFVF
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous5.dwFVF, 1));
+            return ref Anonymous5.dwFVF;
         }
     }
 

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -49,6 +50,7 @@ public partial struct MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS
     {
         public MFINPUTTRUSTAUTHORITY_ACCESS_ACTION e0;
 
+        [UnscopedRef]
         public ref MFINPUTTRUSTAUTHORITY_ACCESS_ACTION this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -59,6 +61,7 @@ public partial struct MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<MFINPUTTRUSTAUTHORITY_ACCESS_ACTION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

@@ -3,6 +3,7 @@
 // Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -16,6 +17,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftControl"]/*' />
+    [UnscopedRef]
     public uint LeftControl
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -32,6 +34,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftShift"]/*' />
+    [UnscopedRef]
     public uint LeftShift
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -48,6 +51,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftAlt"]/*' />
+    [UnscopedRef]
     public uint LeftAlt
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -64,6 +68,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftGUI"]/*' />
+    [UnscopedRef]
     public uint LeftGUI
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -80,6 +85,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RightControl"]/*' />
+    [UnscopedRef]
     public uint RightControl
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -96,6 +102,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RightShift"]/*' />
+    [UnscopedRef]
     public uint RightShift
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -112,6 +119,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RightAlt"]/*' />
+    [UnscopedRef]
     public uint RightAlt
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -128,6 +136,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RigthGUI"]/*' />
+    [UnscopedRef]
     public uint RigthGUI
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -144,6 +153,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CapsLock"]/*' />
+    [UnscopedRef]
     public uint CapsLock
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -160,6 +170,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ScollLock"]/*' />
+    [UnscopedRef]
     public uint ScollLock
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -176,6 +187,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NumLock"]/*' />
+    [UnscopedRef]
     public uint NumLock
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -192,6 +204,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
+    [UnscopedRef]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -208,12 +221,13 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ul"]/*' />
+    [UnscopedRef]
     public ref uint ul
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ul, 1));
+            return ref Anonymous.ul;
         }
     }
 

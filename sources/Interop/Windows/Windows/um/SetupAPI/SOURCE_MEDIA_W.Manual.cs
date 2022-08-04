@@ -3,6 +3,8 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -32,97 +34,109 @@ public unsafe partial struct SOURCE_MEDIA_W
     public SOURCE_MEDIA64_W _value64;
 
     [NativeTypeName("PCWSTR")]
+    [UnscopedRef]
     public ref ushort* Reserved
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).Reserved;
+                return ref _value32.Reserved;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).Reserved;
+                return ref _value64.Reserved;
             }
         }
     }
 
     [NativeTypeName("PCWSTR")]
+    [UnscopedRef]
     public ref ushort* Tagfile
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).Tagfile;
+                return ref _value32.Tagfile;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).Tagfile;
+                return ref _value64.Tagfile;
             }
         }
     }
 
     [NativeTypeName("PCWSTR")]
+    [UnscopedRef]
     public ref ushort* Description
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).Description;
+                return ref _value32.Description;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).Description;
+                return ref _value64.Description;
             }
         }
     }
 
     [NativeTypeName("PCWSTR")]
+    [UnscopedRef]
     public ref ushort* SourcePath
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).SourcePath;
+                return ref _value32.SourcePath;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).SourcePath;
+                return ref _value64.SourcePath;
             }
         }
     }
 
     [NativeTypeName("PCWSTR")]
+    [UnscopedRef]
     public ref ushort* SourceFile
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).SourceFile;
+                return ref _value32.SourceFile;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).SourceFile;
+                return ref _value64.SourceFile;
             }
         }
     }
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint Flags
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.Flags, 1));
+                return ref _value32.Flags;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.Flags, 1));
+                return ref _value64.Flags;
             }
         }
     }

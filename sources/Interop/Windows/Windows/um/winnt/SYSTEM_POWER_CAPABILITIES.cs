@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -143,6 +144,7 @@ public unsafe partial struct SYSTEM_POWER_CAPABILITIES
         public BATTERY_REPORTING_SCALE e1;
         public BATTERY_REPORTING_SCALE e2;
 
+        [UnscopedRef]
         public ref BATTERY_REPORTING_SCALE this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -153,6 +155,7 @@ public unsafe partial struct SYSTEM_POWER_CAPABILITIES
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<BATTERY_REPORTING_SCALE> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
     }
 }

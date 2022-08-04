@@ -3,6 +3,7 @@
 // Ported from shared/ipmib.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -32,22 +33,24 @@ public unsafe partial struct MIB_IPNETROW_LH
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwType"]/*' />
+    [UnscopedRef]
     public ref uint dwType
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwType, 1));
+            return ref Anonymous.dwType;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Type"]/*' />
+    [UnscopedRef]
     public ref MIB_IPNET_TYPE Type
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Type, 1));
+            return ref Anonymous.Type;
         }
     }
 

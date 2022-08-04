@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
@@ -35,6 +36,7 @@ public partial struct D3D11_BLEND_DESC
         public D3D11_RENDER_TARGET_BLEND_DESC e6;
         public D3D11_RENDER_TARGET_BLEND_DESC e7;
 
+        [UnscopedRef]
         public ref D3D11_RENDER_TARGET_BLEND_DESC this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -45,6 +47,7 @@ public partial struct D3D11_BLEND_DESC
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<D3D11_RENDER_TARGET_BLEND_DESC> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 }

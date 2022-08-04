@@ -3,6 +3,7 @@
 // Ported from d3d12video.h in Microsoft.Direct3D.D3D12 v1.600.10
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -19,22 +20,24 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_SUBREGIONS_LAYO
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pSlicesPartition_H264"]/*' />
+    [UnscopedRef]
     public ref D3D12_VIDEO_ENCODER_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA_SLICES* pSlicesPartition_H264
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pSlicesPartition_H264;
+            return ref Anonymous.pSlicesPartition_H264;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pSlicesPartition_HEVC"]/*' />
+    [UnscopedRef]
     public ref D3D12_VIDEO_ENCODER_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA_SLICES* pSlicesPartition_HEVC
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pSlicesPartition_HEVC;
+            return ref Anonymous.pSlicesPartition_HEVC;
         }
     }
 

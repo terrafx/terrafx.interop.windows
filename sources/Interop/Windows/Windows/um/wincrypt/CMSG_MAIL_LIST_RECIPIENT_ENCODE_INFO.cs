@@ -3,6 +3,7 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -43,22 +44,24 @@ public unsafe partial struct CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO
     public CRYPT_ATTRIBUTE_TYPE_VALUE* pOtherAttr;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hKeyEncryptionKey"]/*' />
+    [UnscopedRef]
     public ref HCRYPTKEY hKeyEncryptionKey
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hKeyEncryptionKey, 1));
+            return ref Anonymous.hKeyEncryptionKey;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pvKeyEncryptionKey"]/*' />
+    [UnscopedRef]
     public ref void* pvKeyEncryptionKey
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pvKeyEncryptionKey;
+            return ref Anonymous.pvKeyEncryptionKey;
         }
     }
 

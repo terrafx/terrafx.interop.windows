@@ -3,6 +3,7 @@
 // Ported from um/IPTypes.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -87,32 +88,35 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_XP
     public IP_ADAPTER_PREFIX_XP* FirstPrefix;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Alignment"]/*' />
+    [UnscopedRef]
     public ref ulong Alignment
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Alignment, 1));
+            return ref Anonymous.Alignment;
         }
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Length"]/*' />
+    [UnscopedRef]
     public ref uint Length
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Length, 1));
+            return ref Anonymous.Anonymous.Length;
         }
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IfIndex"]/*' />
+    [UnscopedRef]
     public ref uint IfIndex
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.IfIndex, 1));
+            return ref Anonymous.Anonymous.IfIndex;
         }
     }
 

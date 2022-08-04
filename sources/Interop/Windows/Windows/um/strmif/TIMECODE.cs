@@ -3,6 +3,7 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -23,32 +24,35 @@ public partial struct TIMECODE
     public ulong qw;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.wFrameRate"]/*' />
+    [UnscopedRef]
     public ref ushort wFrameRate
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.wFrameRate, 1));
+            return ref Anonymous.wFrameRate;
         }
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.wFrameFract"]/*' />
+    [UnscopedRef]
     public ref ushort wFrameFract
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.wFrameFract, 1));
+            return ref Anonymous.wFrameFract;
         }
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.dwFrames"]/*' />
+    [UnscopedRef]
     public ref uint dwFrames
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwFrames, 1));
+            return ref Anonymous.dwFrames;
         }
     }
 

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -63,6 +64,7 @@ public partial struct CONSOLE_SCREEN_BUFFER_INFOEX
         public COLORREF e14;
         public COLORREF e15;
 
+        [UnscopedRef]
         public ref COLORREF this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -73,6 +75,7 @@ public partial struct CONSOLE_SCREEN_BUFFER_INFOEX
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<COLORREF> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
     }
 }

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -31,16 +32,18 @@ public unsafe partial struct STORAGE_OFFLOAD_TOKEN
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.StorageOffloadZeroDataToken"]/*' />
+    [UnscopedRef]
     public ref _Anonymous_e__Union._StorageOffloadZeroDataToken_e__Struct StorageOffloadZeroDataToken
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.StorageOffloadZeroDataToken, 1));
+            return ref Anonymous.StorageOffloadZeroDataToken;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Token"]/*' />
+    [UnscopedRef]
     public Span<byte> Token
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

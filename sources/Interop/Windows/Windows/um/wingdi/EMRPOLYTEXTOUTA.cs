@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -41,6 +42,7 @@ public partial struct EMRPOLYTEXTOUTA
     {
         public EMRTEXT e0;
 
+        [UnscopedRef]
         public ref EMRTEXT this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +53,7 @@ public partial struct EMRPOLYTEXTOUTA
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<EMRTEXT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

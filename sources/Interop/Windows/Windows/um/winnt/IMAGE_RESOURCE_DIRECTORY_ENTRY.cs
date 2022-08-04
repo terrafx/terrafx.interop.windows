@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -20,6 +21,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NameOffset"]/*' />
+    [UnscopedRef]
     public uint NameOffset
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -36,6 +38,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NameIsString"]/*' />
+    [UnscopedRef]
     public uint NameIsString
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -52,36 +55,40 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     }
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Name"]/*' />
+    [UnscopedRef]
     public ref uint Name
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Name, 1));
+            return ref Anonymous1.Name;
         }
     }
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Id"]/*' />
+    [UnscopedRef]
     public ref ushort Id
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Id, 1));
+            return ref Anonymous1.Id;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.OffsetToData"]/*' />
+    [UnscopedRef]
     public ref uint OffsetToData
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.OffsetToData, 1));
+            return ref Anonymous2.OffsetToData;
         }
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.OffsetToDirectory"]/*' />
+    [UnscopedRef]
     public uint OffsetToDirectory
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -98,6 +105,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DataIsDirectory"]/*' />
+    [UnscopedRef]
     public uint DataIsDirectory
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
