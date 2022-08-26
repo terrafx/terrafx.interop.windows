@@ -70,8 +70,10 @@ public unsafe partial struct SP_NEWDEVICEWIZARD_DATA
     }
 
     [NativeTypeName("HPROPSHEETPAGE [20]")]
+    [UnscopedRef]
     public Span<HPROPSHEETPAGE> DynamicPages
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
