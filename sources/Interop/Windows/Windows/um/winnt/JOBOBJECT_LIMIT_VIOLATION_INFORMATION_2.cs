@@ -49,15 +49,15 @@ public partial struct JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2
     public ulong JobMemory;
 
     /// <include file='JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.Anonymous1"]/*' />
-    [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:13188:5)")]
+    [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:12898:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.Anonymous2"]/*' />
-    [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:13193:5)")]
+    [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:12903:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.Anonymous3"]/*' />
-    [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:13198:5)")]
+    [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:12908:5)")]
     public _Anonymous3_e__Union Anonymous3;
 
     /// <include file='JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2.JobLowMemoryLimit"]/*' />

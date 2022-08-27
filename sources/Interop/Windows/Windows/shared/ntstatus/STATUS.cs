@@ -3175,6 +3175,9 @@ public static partial class STATUS
     [NativeTypeName("#define STATUS_VOLUME_WRITE_ACCESS_DENIED ((NTSTATUS)0xC00004D3L)")]
     public const int STATUS_VOLUME_WRITE_ACCESS_DENIED = unchecked((int)(0xC00004D3));
 
+    [NativeTypeName("#define STATUS_NOT_SUPPORTED_WITH_CACHED_HANDLE ((NTSTATUS)0xC00004D5L)")]
+    public const int STATUS_NOT_SUPPORTED_WITH_CACHED_HANDLE = unchecked((int)(0xC00004D5));
+
     [NativeTypeName("#define STATUS_INVALID_TASK_NAME ((NTSTATUS)0xC0000500L)")]
     public const int STATUS_INVALID_TASK_NAME = unchecked((int)(0xC0000500));
 
@@ -3240,6 +3243,9 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_SESSION_KEY_TOO_SHORT ((NTSTATUS)0xC0000517L)")]
     public const int STATUS_SESSION_KEY_TOO_SHORT = unchecked((int)(0xC0000517));
+
+    [NativeTypeName("#define STATUS_FS_METADATA_INCONSISTENT ((NTSTATUS)0xC0000518L)")]
+    public const int STATUS_FS_METADATA_INCONSISTENT = unchecked((int)(0xC0000518));
 
     [NativeTypeName("#define STATUS_FAIL_FAST_EXCEPTION ((NTSTATUS)0xC0000602L)")]
     public const int STATUS_FAIL_FAST_EXCEPTION = unchecked((int)(0xC0000602));
@@ -3601,6 +3607,9 @@ public static partial class STATUS
     [NativeTypeName("#define STATUS_INCORRECT_ACCOUNT_TYPE ((NTSTATUS)0xC000A089L)")]
     public const int STATUS_INCORRECT_ACCOUNT_TYPE = unchecked((int)(0xC000A089));
 
+    [NativeTypeName("#define STATUS_LOCAL_POLICY_MODIFICATION_NOT_SUPPORTED ((NTSTATUS)0xC000A08AL)")]
+    public const int STATUS_LOCAL_POLICY_MODIFICATION_NOT_SUPPORTED = unchecked((int)(0xC000A08A));
+
     [NativeTypeName("#define STATUS_HASH_NOT_SUPPORTED ((NTSTATUS)0xC000A100L)")]
     public const int STATUS_HASH_NOT_SUPPORTED = unchecked((int)(0xC000A100));
 
@@ -3813,6 +3822,9 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_CLOUD_FILE_DEHYDRATION_DISALLOWED ((NTSTATUS)0xC000CF20L)")]
     public const int STATUS_CLOUD_FILE_DEHYDRATION_DISALLOWED = unchecked((int)(0xC000CF20));
+
+    [NativeTypeName("#define STATUS_CLOUD_FILE_US_MESSAGE_TIMEOUT ((NTSTATUS)0xC000CF21L)")]
+    public const int STATUS_CLOUD_FILE_US_MESSAGE_TIMEOUT = unchecked((int)(0xC000CF21));
 
     [NativeTypeName("#define STATUS_FILE_SNAP_IN_PROGRESS ((NTSTATUS)0xC000F500L)")]
     public const int STATUS_FILE_SNAP_IN_PROGRESS = unchecked((int)(0xC000F500));

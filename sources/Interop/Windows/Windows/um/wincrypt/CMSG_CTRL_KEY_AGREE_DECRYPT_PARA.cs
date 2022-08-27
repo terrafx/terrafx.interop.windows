@@ -17,7 +17,7 @@ public unsafe partial struct CMSG_CTRL_KEY_AGREE_DECRYPT_PARA
     public uint cbSize;
 
     /// <include file='CMSG_CTRL_KEY_AGREE_DECRYPT_PARA.xml' path='doc/member[@name="CMSG_CTRL_KEY_AGREE_DECRYPT_PARA.Anonymous"]/*' />
-    [NativeTypeName("_CMSG_CTRL_KEY_AGREE_DECRYPT_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:8089:5)")]
+    [NativeTypeName("_CMSG_CTRL_KEY_AGREE_DECRYPT_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:8091:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='CMSG_CTRL_KEY_AGREE_DECRYPT_PARA.xml' path='doc/member[@name="CMSG_CTRL_KEY_AGREE_DECRYPT_PARA.dwKeySpec"]/*' />

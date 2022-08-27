@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
 {
     /// <include file='PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.Anonymous"]/*' />
-    [NativeTypeName("_PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:12998:5)")]
+    [NativeTypeName("_PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:12708:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
@@ -30,7 +30,6 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableUserShadowStack"]/*' />
-    [UnscopedRef]
     public uint EnableUserShadowStack
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -47,7 +46,6 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditUserShadowStack"]/*' />
-    [UnscopedRef]
     public uint AuditUserShadowStack
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -64,7 +62,6 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SetContextIpValidation"]/*' />
-    [UnscopedRef]
     public uint SetContextIpValidation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -81,7 +78,6 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditSetContextIpValidation"]/*' />
-    [UnscopedRef]
     public uint AuditSetContextIpValidation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -98,7 +94,6 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableUserShadowStackStrictMode"]/*' />
-    [UnscopedRef]
     public uint EnableUserShadowStackStrictMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -115,7 +110,6 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BlockNonCetBinaries"]/*' />
-    [UnscopedRef]
     public uint BlockNonCetBinaries
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -132,7 +126,6 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BlockNonCetBinariesNonEhcont"]/*' />
-    [UnscopedRef]
     public uint BlockNonCetBinariesNonEhcont
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -149,7 +142,6 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditBlockNonCetBinaries"]/*' />
-    [UnscopedRef]
     public uint AuditBlockNonCetBinaries
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -166,7 +158,6 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CetDynamicApisOutOfProcOnly"]/*' />
-    [UnscopedRef]
     public uint CetDynamicApisOutOfProcOnly
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -183,7 +174,6 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SetContextIpValidationRelaxedMode"]/*' />
-    [UnscopedRef]
     public uint SetContextIpValidationRelaxedMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -200,7 +190,6 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
-    [UnscopedRef]
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -227,7 +216,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:13000:9)")]
+        [NativeTypeName("_PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:12710:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

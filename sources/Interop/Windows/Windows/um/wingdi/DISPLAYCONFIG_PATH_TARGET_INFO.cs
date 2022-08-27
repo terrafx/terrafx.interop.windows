@@ -57,7 +57,6 @@ public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.desktopModeInfoIdx"]/*' />
-    [UnscopedRef]
     public uint desktopModeInfoIdx
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -74,7 +73,6 @@ public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.targetModeInfoIdx"]/*' />
-    [UnscopedRef]
     public uint targetModeInfoIdx
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

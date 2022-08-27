@@ -360,6 +360,25 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern void UnregisterInterfaceTimestampConfigChange(HIFTIMESTAMPCHANGE NotificationHandle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetInterfaceCurrentTimestampCapabilities"]/*' />
+    [DllImport("iphlpapi", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    public static extern uint GetInterfaceCurrentTimestampCapabilities([NativeTypeName("const NET_LUID *")] NET_LUID_LH* InterfaceLuid, [NativeTypeName("PINTERFACE_TIMESTAMP_CAPABILITIES")] INTERFACE_TIMESTAMP_CAPABILITIES* TimestampCapabilites);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetInterfaceHardwareTimestampCapabilities"]/*' />
+    [DllImport("iphlpapi", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    public static extern uint GetInterfaceHardwareTimestampCapabilities([NativeTypeName("const NET_LUID *")] NET_LUID_LH* InterfaceLuid, [NativeTypeName("PINTERFACE_TIMESTAMP_CAPABILITIES")] INTERFACE_TIMESTAMP_CAPABILITIES* TimestampCapabilites);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NotifyIfTimestampConfigChange"]/*' />
+    [DllImport("iphlpapi", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    public static extern uint NotifyIfTimestampConfigChange([NativeTypeName("PVOID")] void* CallerContext, [NativeTypeName("PINTERFACE_TIMESTAMP_CONFIG_CHANGE_CALLBACK")] delegate* unmanaged<void*, void> Callback, HIFTIMESTAMPCHANGE* NotificationHandle);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CancelIfTimestampConfigChange"]/*' />
+    [DllImport("iphlpapi", ExactSpelling = true)]
+    public static extern void CancelIfTimestampConfigChange(HIFTIMESTAMPCHANGE NotificationHandle);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IpReleaseAddress"]/*' />
     [DllImport("iphlpapi", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]

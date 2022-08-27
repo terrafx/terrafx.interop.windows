@@ -36,7 +36,6 @@ public partial struct DEVICE_STORAGE_RANGE_ATTRIBUTES
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IsRangeBad"]/*' />
-    [UnscopedRef]
     public uint IsRangeBad
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

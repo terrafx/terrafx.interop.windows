@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -25,6 +26,7 @@ public partial struct ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION
     {
         public COMPATIBILITY_CONTEXT_ELEMENT e0;
 
+        [UnscopedRef]
         public ref COMPATIBILITY_CONTEXT_ELEMENT this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -35,6 +37,7 @@ public partial struct ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<COMPATIBILITY_CONTEXT_ELEMENT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

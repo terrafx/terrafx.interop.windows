@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -32,6 +33,7 @@ public unsafe partial struct IMAGE_POLICY_METADATA
     {
         public IMAGE_POLICY_ENTRY e0;
 
+        [UnscopedRef]
         public ref IMAGE_POLICY_ENTRY this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +44,7 @@ public unsafe partial struct IMAGE_POLICY_METADATA
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<IMAGE_POLICY_ENTRY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

@@ -82,7 +82,7 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface, INativeGuid
     /// <include file='IAsyncInfo.xml' path='doc/member[@name="IAsyncInfo.get_Status"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Status(AsyncStatus* status)
+    public HRESULT get_Status([NativeTypeName("ABI::Windows::Foundation::AsyncStatus *")] AsyncStatus* status)
     {
         return ((delegate* unmanaged<IAsyncInfo*, AsyncStatus*, int>)(lpVtbl[7]))((IAsyncInfo*)Unsafe.AsPointer(ref this), status);
     }
@@ -117,7 +117,7 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface, INativeGuid
         HRESULT get_Id([NativeTypeName("unsigned int *")] uint* id);
 
         [VtblIndex(7)]
-        HRESULT get_Status(AsyncStatus* status);
+        HRESULT get_Status([NativeTypeName("ABI::Windows::Foundation::AsyncStatus *")] AsyncStatus* status);
 
         [VtblIndex(8)]
         HRESULT get_ErrorCode(HRESULT* errorCode);
@@ -153,7 +153,7 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface, INativeGuid
         [NativeTypeName("HRESULT (unsigned int *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> get_Id;
 
-        [NativeTypeName("HRESULT (AsyncStatus *) __attribute__((stdcall))")]
+        [NativeTypeName("HRESULT (ABI::Windows::Foundation::AsyncStatus *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, AsyncStatus*, int> get_Status;
 
         [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]

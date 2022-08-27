@@ -981,6 +981,12 @@ public static partial class szOID
     [NativeTypeName("#define szOID_NTDS_REPLICATION \"1.3.6.1.4.1.311.25.1\"")]
     public static ReadOnlySpan<byte> szOID_NTDS_REPLICATION => "1.3.6.1.4.1.311.25.1"u8;
 
+    [NativeTypeName("#define szOID_NTDS_CA_SECURITY_EXT \"1.3.6.1.4.1.311.25.2\"")]
+    public static ReadOnlySpan<byte> szOID_NTDS_CA_SECURITY_EXT => "1.3.6.1.4.1.311.25.2"u8;
+
+    [NativeTypeName("#define szOID_NTDS_OBJECTSID \"1.3.6.1.4.1.311.25.2.1\"")]
+    public static ReadOnlySpan<byte> szOID_NTDS_OBJECTSID => "1.3.6.1.4.1.311.25.2.1"u8;
+
     [NativeTypeName("#define szOID_SUBJECT_DIR_ATTRS \"2.5.29.9\"")]
     public static ReadOnlySpan<byte> szOID_SUBJECT_DIR_ATTRS => "2.5.29.9"u8;
 

@@ -197,7 +197,6 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DdnsEnabled"]/*' />
-    [UnscopedRef]
     public uint DdnsEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -214,7 +213,6 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RegisterAdapterSuffix"]/*' />
-    [UnscopedRef]
     public uint RegisterAdapterSuffix
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -231,7 +229,6 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Dhcpv4Enabled"]/*' />
-    [UnscopedRef]
     public uint Dhcpv4Enabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -248,7 +245,6 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReceiveOnly"]/*' />
-    [UnscopedRef]
     public uint ReceiveOnly
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -265,7 +261,6 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NoMulticast"]/*' />
-    [UnscopedRef]
     public uint NoMulticast
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -282,7 +277,6 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Ipv6OtherStatefulConfig"]/*' />
-    [UnscopedRef]
     public uint Ipv6OtherStatefulConfig
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -299,7 +293,6 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NetbiosOverTcpipEnabled"]/*' />
-    [UnscopedRef]
     public uint NetbiosOverTcpipEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -316,7 +309,6 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Ipv4Enabled"]/*' />
-    [UnscopedRef]
     public uint Ipv4Enabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -333,7 +325,6 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Ipv6Enabled"]/*' />
-    [UnscopedRef]
     public uint Ipv6Enabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -350,7 +341,6 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Ipv6ManagedAddressConfigurationSupported"]/*' />
-    [UnscopedRef]
     public uint Ipv6ManagedAddressConfigurationSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -17,7 +17,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     public uint BeginAddress;
 
     /// <include file='IMAGE_ARM_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_ARM_RUNTIME_FUNCTION_ENTRY.Anonymous"]/*' />
-    [NativeTypeName("_IMAGE_ARM_RUNTIME_FUNCTION_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:20192:5)")]
+    [NativeTypeName("_IMAGE_ARM_RUNTIME_FUNCTION_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19902:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.UnwindData"]/*' />
@@ -32,7 +32,6 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Flag"]/*' />
-    [UnscopedRef]
     public uint Flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,7 +48,6 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.FunctionLength"]/*' />
-    [UnscopedRef]
     public uint FunctionLength
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -66,7 +64,6 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Ret"]/*' />
-    [UnscopedRef]
     public uint Ret
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -83,7 +80,6 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.H"]/*' />
-    [UnscopedRef]
     public uint H
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -100,7 +96,6 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reg"]/*' />
-    [UnscopedRef]
     public uint Reg
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -117,7 +112,6 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.R"]/*' />
-    [UnscopedRef]
     public uint R
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -134,7 +128,6 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.L"]/*' />
-    [UnscopedRef]
     public uint L
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -151,7 +144,6 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.C"]/*' />
-    [UnscopedRef]
     public uint C
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -168,7 +160,6 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.StackAdjust"]/*' />
-    [UnscopedRef]
     public uint StackAdjust
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -195,7 +186,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_IMAGE_ARM_RUNTIME_FUNCTION_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:20194:9)")]
+        [NativeTypeName("_IMAGE_ARM_RUNTIME_FUNCTION_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19904:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

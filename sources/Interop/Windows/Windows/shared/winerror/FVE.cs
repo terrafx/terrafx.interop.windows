@@ -663,4 +663,7 @@ public static partial class FVE
 
     [NativeTypeName("#define FVE_E_TPM_CONTEXT_SETUP_NOT_SUPPORTED _HRESULT_TYPEDEF_(0x803100E7L)")]
     public const int FVE_E_TPM_CONTEXT_SETUP_NOT_SUPPORTED = unchecked((int)(0x803100E7));
+
+    [NativeTypeName("#define FVE_E_UPDATE_INVALID_CONFIG _HRESULT_TYPEDEF_(0x803100E8L)")]
+    public const int FVE_E_UPDATE_INVALID_CONFIG = unchecked((int)(0x803100E8));
 }

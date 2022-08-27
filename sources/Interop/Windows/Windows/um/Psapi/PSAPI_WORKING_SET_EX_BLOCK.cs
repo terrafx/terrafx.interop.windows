@@ -24,7 +24,6 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Valid"]/*' />
-    [UnscopedRef]
     public nuint Valid
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -41,7 +40,6 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ShareCount"]/*' />
-    [UnscopedRef]
     public nuint ShareCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -58,7 +56,6 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Win32Protection"]/*' />
-    [UnscopedRef]
     public nuint Win32Protection
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -75,7 +72,6 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Shared"]/*' />
-    [UnscopedRef]
     public nuint Shared
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -92,7 +88,6 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Node"]/*' />
-    [UnscopedRef]
     public nuint Node
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -109,7 +104,6 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Locked"]/*' />
-    [UnscopedRef]
     public nuint Locked
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -126,7 +120,6 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LargePage"]/*' />
-    [UnscopedRef]
     public nuint LargePage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -143,7 +136,6 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
-    [UnscopedRef]
     public nuint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -160,7 +152,6 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Bad"]/*' />
-    [UnscopedRef]
     public nuint Bad
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -177,7 +168,6 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedUlong"]/*' />
-    [UnscopedRef]
     public nuint ReservedUlong
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

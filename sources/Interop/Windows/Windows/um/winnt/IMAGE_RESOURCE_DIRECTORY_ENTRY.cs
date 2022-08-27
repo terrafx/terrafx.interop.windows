@@ -13,15 +13,14 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
 {
     /// <include file='IMAGE_RESOURCE_DIRECTORY_ENTRY.xml' path='doc/member[@name="IMAGE_RESOURCE_DIRECTORY_ENTRY.Anonymous1"]/*' />
-    [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19796:5)")]
+    [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19506:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='IMAGE_RESOURCE_DIRECTORY_ENTRY.xml' path='doc/member[@name="IMAGE_RESOURCE_DIRECTORY_ENTRY.Anonymous2"]/*' />
-    [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19804:5)")]
+    [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19514:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NameOffset"]/*' />
-    [UnscopedRef]
     public uint NameOffset
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -38,7 +37,6 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NameIsString"]/*' />
-    [UnscopedRef]
     public uint NameIsString
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -88,7 +86,6 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.OffsetToDirectory"]/*' />
-    [UnscopedRef]
     public uint OffsetToDirectory
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -105,7 +102,6 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DataIsDirectory"]/*' />
-    [UnscopedRef]
     public uint DataIsDirectory
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -127,7 +123,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     {
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19797:9)")]
+        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19507:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Name"]/*' />
@@ -192,7 +188,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
 
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19806:9)")]
+        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19516:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

@@ -26,7 +26,7 @@ public unsafe partial struct XSTATE_CONFIGURATION
     public uint Size;
 
     /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Anonymous"]/*' />
-    [NativeTypeName("_XSTATE_CONFIGURATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:14056:5)")]
+    [NativeTypeName("_XSTATE_CONFIGURATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:13766:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Features"]/*' />
@@ -77,7 +77,6 @@ public unsafe partial struct XSTATE_CONFIGURATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.OptimizedSave"]/*' />
-    [UnscopedRef]
     public uint OptimizedSave
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -94,7 +93,6 @@ public unsafe partial struct XSTATE_CONFIGURATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CompactionEnabled"]/*' />
-    [UnscopedRef]
     public uint CompactionEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -111,7 +109,6 @@ public unsafe partial struct XSTATE_CONFIGURATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ExtendedFeatureDisable"]/*' />
-    [UnscopedRef]
     public uint ExtendedFeatureDisable
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -138,7 +135,7 @@ public unsafe partial struct XSTATE_CONFIGURATION
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_XSTATE_CONFIGURATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:14058:9)")]
+        [NativeTypeName("_XSTATE_CONFIGURATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:13768:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

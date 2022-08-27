@@ -31,7 +31,6 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
     public fixed ushort specializationApplicationName[128];
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.isSpecializationEnabled"]/*' />
-    [UnscopedRef]
     public uint isSpecializationEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -48,7 +47,6 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.reserved"]/*' />
-    [UnscopedRef]
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

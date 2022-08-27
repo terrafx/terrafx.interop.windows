@@ -177,4 +177,7 @@ public static partial class CERTSRV
 
     [NativeTypeName("#define CERTSRV_E_PENDING_CLIENT_RESPONSE _HRESULT_TYPEDEF_(0x80094820L)")]
     public const int CERTSRV_E_PENDING_CLIENT_RESPONSE = unchecked((int)(0x80094820));
+
+    [NativeTypeName("#define CERTSRV_E_SEC_EXT_DIRECTORY_SID_REQUIRED _HRESULT_TYPEDEF_(0x80094821L)")]
+    public const int CERTSRV_E_SEC_EXT_DIRECTORY_SID_REQUIRED = unchecked((int)(0x80094821));
 }

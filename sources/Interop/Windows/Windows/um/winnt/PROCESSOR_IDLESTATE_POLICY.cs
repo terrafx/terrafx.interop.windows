@@ -18,7 +18,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
     public ushort Revision;
 
     /// <include file='PROCESSOR_IDLESTATE_POLICY.xml' path='doc/member[@name="PROCESSOR_IDLESTATE_POLICY.Flags"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:18034:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:17744:5)")]
     public _Flags_e__Union Flags;
 
     /// <include file='PROCESSOR_IDLESTATE_POLICY.xml' path='doc/member[@name="PROCESSOR_IDLESTATE_POLICY.PolicyCount"]/*' />
@@ -40,11 +40,10 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
 
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("PROCESSOR_IDLESTATE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:18036:9)")]
+        [NativeTypeName("PROCESSOR_IDLESTATE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:17746:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AllowScaling"]/*' />
-        [UnscopedRef]
         public ushort AllowScaling
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -61,7 +60,6 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
         }
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Disabled"]/*' />
-        [UnscopedRef]
         public ushort Disabled
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -78,7 +76,6 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
         }
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
-        [UnscopedRef]
         public ushort Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

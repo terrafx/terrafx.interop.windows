@@ -17,7 +17,7 @@ public unsafe partial struct CERT_LOGOTYPE_INFO
     public uint dwLogotypeInfoChoice;
 
     /// <include file='CERT_LOGOTYPE_INFO.xml' path='doc/member[@name="CERT_LOGOTYPE_INFO.Anonymous"]/*' />
-    [NativeTypeName("_CERT_LOGOTYPE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:5512:5)")]
+    [NativeTypeName("_CERT_LOGOTYPE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:5514:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pLogotypeDirectInfo"]/*' />

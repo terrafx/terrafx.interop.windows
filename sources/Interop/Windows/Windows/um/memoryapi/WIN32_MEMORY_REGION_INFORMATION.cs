@@ -46,7 +46,6 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Private"]/*' />
-    [UnscopedRef]
     public uint Private
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -63,7 +62,6 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedDataFile"]/*' />
-    [UnscopedRef]
     public uint MappedDataFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -80,7 +78,6 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedImage"]/*' />
-    [UnscopedRef]
     public uint MappedImage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -97,7 +94,6 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedPageFile"]/*' />
-    [UnscopedRef]
     public uint MappedPageFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -114,7 +110,6 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MappedPhysical"]/*' />
-    [UnscopedRef]
     public uint MappedPhysical
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -131,7 +126,6 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DirectMapped"]/*' />
-    [UnscopedRef]
     public uint DirectMapped
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -148,7 +142,6 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
-    [UnscopedRef]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

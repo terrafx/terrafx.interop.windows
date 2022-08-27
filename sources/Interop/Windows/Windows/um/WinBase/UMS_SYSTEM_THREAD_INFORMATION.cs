@@ -21,7 +21,6 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IsUmsSchedulerThread"]/*' />
-    [UnscopedRef]
     public uint IsUmsSchedulerThread
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -38,7 +37,6 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IsUmsWorkerThread"]/*' />
-    [UnscopedRef]
     public uint IsUmsWorkerThread
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

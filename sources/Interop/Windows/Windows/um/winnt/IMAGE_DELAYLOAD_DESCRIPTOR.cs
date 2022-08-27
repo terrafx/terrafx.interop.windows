@@ -3,7 +3,6 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -13,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
 {
     /// <include file='IMAGE_DELAYLOAD_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_DELAYLOAD_DESCRIPTOR.Attributes"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19728:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19438:5)")]
     public _Attributes_e__Union Attributes;
 
     /// <include file='IMAGE_DELAYLOAD_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_DELAYLOAD_DESCRIPTOR.DllNameRVA"]/*' />
@@ -55,11 +54,10 @@ public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
 
         /// <include file='_Attributes_e__Union.xml' path='doc/member[@name="_Attributes_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_IMAGE_DELAYLOAD_DESCRIPTOR::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19730:9)")]
+        [NativeTypeName("_IMAGE_DELAYLOAD_DESCRIPTOR::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19440:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RvaBased"]/*' />
-        [UnscopedRef]
         public uint RvaBased
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -76,7 +74,6 @@ public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
         }
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedAttributes"]/*' />
-        [UnscopedRef]
         public uint ReservedAttributes
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

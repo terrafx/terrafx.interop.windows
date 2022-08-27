@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_RELOCATION
 {
     /// <include file='IMAGE_RELOCATION.xml' path='doc/member[@name="IMAGE_RELOCATION.Anonymous"]/*' />
-    [NativeTypeName("_IMAGE_RELOCATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19070:5)")]
+    [NativeTypeName("_IMAGE_RELOCATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:18780:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='IMAGE_RELOCATION.xml' path='doc/member[@name="IMAGE_RELOCATION.SymbolTableIndex"]/*' />

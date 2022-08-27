@@ -39,7 +39,6 @@ public partial struct DISPLAYCONFIG_PATH_SOURCE_INFO
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.cloneGroupId"]/*' />
-    [UnscopedRef]
     public uint cloneGroupId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -56,7 +55,6 @@ public partial struct DISPLAYCONFIG_PATH_SOURCE_INFO
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.sourceModeInfoIdx"]/*' />
-    [UnscopedRef]
     public uint sourceModeInfoIdx
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -22,7 +22,7 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
     public uint NumberEntries;
 
     /// <include file='STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE.xml' path='doc/member[@name="STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE.Anonymous"]/*' />
-    [NativeTypeName("_STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:14114:5)")]
+    [NativeTypeName("_STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:14118:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Lev1Depends"]/*' />
@@ -66,6 +66,7 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
         {
             public STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY e0;
 
+            [UnscopedRef]
             public ref STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -76,6 +77,7 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [UnscopedRef]
             public Span<STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
 
@@ -84,6 +86,7 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
         {
             public STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY e0;
 
+            [UnscopedRef]
             public ref STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -94,6 +97,7 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [UnscopedRef]
             public Span<STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }

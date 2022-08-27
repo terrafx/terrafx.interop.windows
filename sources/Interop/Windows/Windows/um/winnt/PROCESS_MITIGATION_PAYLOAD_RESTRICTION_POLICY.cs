@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
 {
     /// <include file='PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY.Anonymous"]/*' />
-    [NativeTypeName("_PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:12913:5)")]
+    [NativeTypeName("_PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:12623:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
@@ -28,7 +28,6 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableExportAddressFilter"]/*' />
-    [UnscopedRef]
     public uint EnableExportAddressFilter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -45,7 +44,6 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditExportAddressFilter"]/*' />
-    [UnscopedRef]
     public uint AuditExportAddressFilter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -62,7 +60,6 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableExportAddressFilterPlus"]/*' />
-    [UnscopedRef]
     public uint EnableExportAddressFilterPlus
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -79,7 +76,6 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditExportAddressFilterPlus"]/*' />
-    [UnscopedRef]
     public uint AuditExportAddressFilterPlus
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -96,7 +92,6 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableImportAddressFilter"]/*' />
-    [UnscopedRef]
     public uint EnableImportAddressFilter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -113,7 +108,6 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditImportAddressFilter"]/*' />
-    [UnscopedRef]
     public uint AuditImportAddressFilter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -130,7 +124,6 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableRopStackPivot"]/*' />
-    [UnscopedRef]
     public uint EnableRopStackPivot
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -147,7 +140,6 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditRopStackPivot"]/*' />
-    [UnscopedRef]
     public uint AuditRopStackPivot
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -164,7 +156,6 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableRopCallerCheck"]/*' />
-    [UnscopedRef]
     public uint EnableRopCallerCheck
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -181,7 +172,6 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditRopCallerCheck"]/*' />
-    [UnscopedRef]
     public uint AuditRopCallerCheck
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -198,7 +188,6 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EnableRopSimExec"]/*' />
-    [UnscopedRef]
     public uint EnableRopSimExec
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -215,7 +204,6 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditRopSimExec"]/*' />
-    [UnscopedRef]
     public uint AuditRopSimExec
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -232,7 +220,6 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
-    [UnscopedRef]
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -259,7 +246,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:12915:9)")]
+        [NativeTypeName("_PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:12625:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

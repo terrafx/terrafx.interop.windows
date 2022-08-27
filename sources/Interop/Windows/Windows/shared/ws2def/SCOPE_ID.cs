@@ -17,7 +17,6 @@ public partial struct SCOPE_ID
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Zone"]/*' />
-    [UnscopedRef]
     public uint Zone
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,7 +33,6 @@ public partial struct SCOPE_ID
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Level"]/*' />
-    [UnscopedRef]
     public uint Level
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

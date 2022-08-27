@@ -27,7 +27,6 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     public uint bitsPerColorChannel;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.advancedColorSupported"]/*' />
-    [UnscopedRef]
     public uint advancedColorSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -44,7 +43,6 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.advancedColorEnabled"]/*' />
-    [UnscopedRef]
     public uint advancedColorEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -61,7 +59,6 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.wideColorEnforced"]/*' />
-    [UnscopedRef]
     public uint wideColorEnforced
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -78,7 +75,6 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.advancedColorForceDisabled"]/*' />
-    [UnscopedRef]
     public uint advancedColorForceDisabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -95,7 +91,6 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.reserved"]/*' />
-    [UnscopedRef]
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

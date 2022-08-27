@@ -22,6 +22,9 @@ public static partial class RPI
     [NativeTypeName("#define RPI_FLAG_SMB2_SHARECAP_CLUSTER 0x00000040")]
     public const int RPI_FLAG_SMB2_SHARECAP_CLUSTER = 0x00000040;
 
+    [NativeTypeName("#define RPI_SMB2_SHAREFLAG_ENCRYPT_DATA 0x00000001")]
+    public const int RPI_SMB2_SHAREFLAG_ENCRYPT_DATA = 0x00000001;
+
     [NativeTypeName("#define RPI_SMB2_FLAG_SERVERCAP_DFS 0x00000001")]
     public const int RPI_SMB2_FLAG_SERVERCAP_DFS = 0x00000001;
 

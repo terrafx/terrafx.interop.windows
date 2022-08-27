@@ -17,6 +17,12 @@ public enum LSA_FOREST_TRUST_RECORD_TYPE
     /// <include file='LSA_FOREST_TRUST_RECORD_TYPE.xml' path='doc/member[@name="LSA_FOREST_TRUST_RECORD_TYPE.ForestTrustDomainInfo"]/*' />
     ForestTrustDomainInfo,
 
+    /// <include file='LSA_FOREST_TRUST_RECORD_TYPE.xml' path='doc/member[@name="LSA_FOREST_TRUST_RECORD_TYPE.ForestTrustBinaryInfo"]/*' />
+    ForestTrustBinaryInfo,
+
+    /// <include file='LSA_FOREST_TRUST_RECORD_TYPE.xml' path='doc/member[@name="LSA_FOREST_TRUST_RECORD_TYPE.ForestTrustScannerInfo"]/*' />
+    ForestTrustScannerInfo,
+
     /// <include file='LSA_FOREST_TRUST_RECORD_TYPE.xml' path='doc/member[@name="LSA_FOREST_TRUST_RECORD_TYPE.ForestTrustRecordTypeLast"]/*' />
-    ForestTrustRecordTypeLast = ForestTrustDomainInfo,
+    ForestTrustRecordTypeLast = ForestTrustScannerInfo,
 }

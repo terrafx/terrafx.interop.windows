@@ -34,7 +34,7 @@ public partial struct IMAGE_TLS_DIRECTORY64
     public uint SizeOfZeroFill;
 
     /// <include file='IMAGE_TLS_DIRECTORY64.xml' path='doc/member[@name="IMAGE_TLS_DIRECTORY64.Anonymous"]/*' />
-    [NativeTypeName("_IMAGE_TLS_DIRECTORY64::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19644:5)")]
+    [NativeTypeName("_IMAGE_TLS_DIRECTORY64::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19354:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Characteristics"]/*' />
@@ -49,7 +49,6 @@ public partial struct IMAGE_TLS_DIRECTORY64
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved0"]/*' />
-    [UnscopedRef]
     public uint Reserved0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -66,7 +65,6 @@ public partial struct IMAGE_TLS_DIRECTORY64
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Alignment"]/*' />
-    [UnscopedRef]
     public uint Alignment
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -83,7 +81,6 @@ public partial struct IMAGE_TLS_DIRECTORY64
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved1"]/*' />
-    [UnscopedRef]
     public uint Reserved1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -110,7 +107,7 @@ public partial struct IMAGE_TLS_DIRECTORY64
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_IMAGE_TLS_DIRECTORY64::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19646:9)")]
+        [NativeTypeName("_IMAGE_TLS_DIRECTORY64::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19356:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

@@ -17,7 +17,7 @@ public unsafe partial struct CMSG_RECIPIENT_ENCODE_INFO
     public uint dwRecipientChoice;
 
     /// <include file='CMSG_RECIPIENT_ENCODE_INFO.xml' path='doc/member[@name="CMSG_RECIPIENT_ENCODE_INFO.Anonymous"]/*' />
-    [NativeTypeName("_CMSG_RECIPIENT_ENCODE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:7013:5)")]
+    [NativeTypeName("_CMSG_RECIPIENT_ENCODE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:7015:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pKeyTrans"]/*' />

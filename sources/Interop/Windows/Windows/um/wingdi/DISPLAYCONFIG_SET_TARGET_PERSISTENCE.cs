@@ -20,7 +20,6 @@ public partial struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.bootPersistenceOn"]/*' />
-    [UnscopedRef]
     public uint bootPersistenceOn
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -37,7 +36,6 @@ public partial struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.reserved"]/*' />
-    [UnscopedRef]
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -46,4 +46,10 @@ public enum TRUSTED_INFORMATION_CLASS
 
     /// <include file='TRUSTED_INFORMATION_CLASS.xml' path='doc/member[@name="TRUSTED_INFORMATION_CLASS.TrustedDomainSupportedEncryptionTypes"]/*' />
     TrustedDomainSupportedEncryptionTypes,
+
+    /// <include file='TRUSTED_INFORMATION_CLASS.xml' path='doc/member[@name="TRUSTED_INFORMATION_CLASS.TrustedDomainAuthInformationInternalAes"]/*' />
+    TrustedDomainAuthInformationInternalAes,
+
+    /// <include file='TRUSTED_INFORMATION_CLASS.xml' path='doc/member[@name="TRUSTED_INFORMATION_CLASS.TrustedDomainFullInformationInternalAes"]/*' />
+    TrustedDomainFullInformationInternalAes,
 }

@@ -20,7 +20,6 @@ public partial struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.isSpecializationEnabled"]/*' />
-    [UnscopedRef]
     public uint isSpecializationEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -37,7 +36,6 @@ public partial struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.isSpecializationAvailableForMonitor"]/*' />
-    [UnscopedRef]
     public uint isSpecializationAvailableForMonitor
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -54,7 +52,6 @@ public partial struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.isSpecializationAvailableForSystem"]/*' />
-    [UnscopedRef]
     public uint isSpecializationAvailableForSystem
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -71,7 +68,6 @@ public partial struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.reserved"]/*' />
-    [UnscopedRef]
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

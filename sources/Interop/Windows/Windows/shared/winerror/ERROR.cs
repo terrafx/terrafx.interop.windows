@@ -1096,6 +1096,9 @@ public static partial class ERROR
     [NativeTypeName("#define ERROR_INDEX_OUT_OF_BOUNDS 474L")]
     public const int ERROR_INDEX_OUT_OF_BOUNDS = 474;
 
+    [NativeTypeName("#define ERROR_CLOUD_FILE_US_MESSAGE_TIMEOUT 475L")]
+    public const int ERROR_CLOUD_FILE_US_MESSAGE_TIMEOUT = 475;
+
     [NativeTypeName("#define ERROR_PNP_QUERY_REMOVE_DEVICE_TIMEOUT 480L")]
     public const int ERROR_PNP_QUERY_REMOVE_DEVICE_TIMEOUT = 480;
 
@@ -1173,6 +1176,12 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_VOLUME_WRITE_ACCESS_DENIED 508L")]
     public const int ERROR_VOLUME_WRITE_ACCESS_DENIED = 508;
+
+    [NativeTypeName("#define ERROR_NOT_SUPPORTED_WITH_CACHED_HANDLE 509L")]
+    public const int ERROR_NOT_SUPPORTED_WITH_CACHED_HANDLE = 509;
+
+    [NativeTypeName("#define ERROR_FS_METADATA_INCONSISTENT 510L")]
+    public const int ERROR_FS_METADATA_INCONSISTENT = 510;
 
     [NativeTypeName("#define ERROR_ARITHMETIC_OVERFLOW 534L")]
     public const int ERROR_ARITHMETIC_OVERFLOW = 534;
@@ -6669,6 +6678,12 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_WEAK_WHFBKEY_BLOCKED 8651L")]
     public const int ERROR_WEAK_WHFBKEY_BLOCKED = 8651;
+
+    [NativeTypeName("#define ERROR_DS_PER_ATTRIBUTE_AUTHZ_FAILED_DURING_ADD 8652L")]
+    public const int ERROR_DS_PER_ATTRIBUTE_AUTHZ_FAILED_DURING_ADD = 8652;
+
+    [NativeTypeName("#define ERROR_LOCAL_POLICY_MODIFICATION_NOT_SUPPORTED 8653L")]
+    public const int ERROR_LOCAL_POLICY_MODIFICATION_NOT_SUPPORTED = 8653;
 
     [NativeTypeName("#define ERROR_IPSEC_QM_POLICY_EXISTS 13000L")]
     public const int ERROR_IPSEC_QM_POLICY_EXISTS = 13000;

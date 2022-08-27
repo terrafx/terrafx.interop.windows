@@ -22,7 +22,6 @@ public partial struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.disableMonitorVirtualResolution"]/*' />
-    [UnscopedRef]
     public uint disableMonitorVirtualResolution
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,7 +38,6 @@ public partial struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.reserved"]/*' />
-    [UnscopedRef]
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

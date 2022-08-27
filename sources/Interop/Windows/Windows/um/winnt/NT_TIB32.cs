@@ -29,7 +29,7 @@ public partial struct NT_TIB32
     public uint SubSystemTib;
 
     /// <include file='NT_TIB32.xml' path='doc/member[@name="NT_TIB32.Anonymous"]/*' />
-    [NativeTypeName("_NT_TIB32::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:12538:5)")]
+    [NativeTypeName("_NT_TIB32::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:12248:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='NT_TIB32.xml' path='doc/member[@name="NT_TIB32.ArbitraryUserPointer"]/*' />

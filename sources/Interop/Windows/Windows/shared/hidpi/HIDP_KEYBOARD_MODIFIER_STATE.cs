@@ -17,7 +17,6 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftControl"]/*' />
-    [UnscopedRef]
     public uint LeftControl
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,7 +33,6 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftShift"]/*' />
-    [UnscopedRef]
     public uint LeftShift
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,7 +49,6 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftAlt"]/*' />
-    [UnscopedRef]
     public uint LeftAlt
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -68,7 +65,6 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftGUI"]/*' />
-    [UnscopedRef]
     public uint LeftGUI
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -85,7 +81,6 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RightControl"]/*' />
-    [UnscopedRef]
     public uint RightControl
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -102,7 +97,6 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RightShift"]/*' />
-    [UnscopedRef]
     public uint RightShift
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -119,7 +113,6 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RightAlt"]/*' />
-    [UnscopedRef]
     public uint RightAlt
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -136,7 +129,6 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RigthGUI"]/*' />
-    [UnscopedRef]
     public uint RigthGUI
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -153,7 +145,6 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CapsLock"]/*' />
-    [UnscopedRef]
     public uint CapsLock
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -170,7 +161,6 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ScollLock"]/*' />
-    [UnscopedRef]
     public uint ScollLock
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -187,7 +177,6 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NumLock"]/*' />
-    [UnscopedRef]
     public uint NumLock
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -204,7 +193,6 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
-    [UnscopedRef]
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -23,7 +23,6 @@ public partial struct TBS_CONTEXT_PARAMS2
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.requestRaw"]/*' />
-    [UnscopedRef]
     public uint requestRaw
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -40,7 +39,6 @@ public partial struct TBS_CONTEXT_PARAMS2
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.includeTpm12"]/*' />
-    [UnscopedRef]
     public uint includeTpm12
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -57,7 +55,6 @@ public partial struct TBS_CONTEXT_PARAMS2
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.includeTpm20"]/*' />
-    [UnscopedRef]
     public uint includeTpm20
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

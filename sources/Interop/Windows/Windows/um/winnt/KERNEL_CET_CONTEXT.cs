@@ -44,7 +44,6 @@ public unsafe partial struct KERNEL_CET_CONTEXT
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.UseWrss"]/*' />
-    [UnscopedRef]
     public ushort UseWrss
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -61,7 +60,6 @@ public unsafe partial struct KERNEL_CET_CONTEXT
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.PopShadowStackOne"]/*' />
-    [UnscopedRef]
     public ushort PopShadowStackOne
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -78,7 +76,6 @@ public unsafe partial struct KERNEL_CET_CONTEXT
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Unused"]/*' />
-    [UnscopedRef]
     public ushort Unused
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

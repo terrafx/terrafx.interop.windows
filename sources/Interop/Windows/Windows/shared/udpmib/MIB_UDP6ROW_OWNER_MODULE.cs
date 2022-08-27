@@ -40,7 +40,6 @@ public unsafe partial struct MIB_UDP6ROW_OWNER_MODULE
     public fixed ulong OwningModuleInfo[16];
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SpecificPortBind"]/*' />
-    [UnscopedRef]
     public int SpecificPortBind
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

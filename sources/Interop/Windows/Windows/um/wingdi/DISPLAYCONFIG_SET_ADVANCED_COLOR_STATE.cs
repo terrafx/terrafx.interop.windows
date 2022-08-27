@@ -20,7 +20,6 @@ public partial struct DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.enableAdvancedColor"]/*' />
-    [UnscopedRef]
     public uint enableAdvancedColor
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -37,7 +36,6 @@ public partial struct DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.reserved"]/*' />
-    [UnscopedRef]
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

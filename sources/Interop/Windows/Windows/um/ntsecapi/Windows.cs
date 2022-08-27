@@ -1923,12 +1923,22 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LsaRetrievePrivateData"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("NTSTATUS")]
-    public static extern int LsaRetrievePrivateData([NativeTypeName("LSA_HANDLE")] void* PolicyHandle, [NativeTypeName("PLSA_UNICODE_STRING")] LSA_UNICODE_STRING* KeyName, [NativeTypeName("PLSA_UNICODE_STRING *")] LSA_UNICODE_STRING** PrivateData);
+    public static extern int LsaRetrievePrivateData([NativeTypeName("LSA_HANDLE")] void* PolicyHandle, [NativeTypeName("PLSA_UNICODE_STRING")] LSA_UNICODE_STRING* KeyName, [NativeTypeName("PLSA_UNICODE_STRING *")] LSA_UNICODE_STRING** PrivateDatant);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LsaNtStatusToWinError"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("ULONG")]
     public static extern uint LsaNtStatusToWinError([NativeTypeName("NTSTATUS")] int Status);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LsaQueryForestTrustInformation2"]/*' />
+    [DllImport("advapi32", ExactSpelling = true)]
+    [return: NativeTypeName("NTSTATUS")]
+    public static extern int LsaQueryForestTrustInformation2([NativeTypeName("LSA_HANDLE")] void* PolicyHandle, [NativeTypeName("PLSA_UNICODE_STRING")] LSA_UNICODE_STRING* TrustedDomainName, LSA_FOREST_TRUST_RECORD_TYPE HighestRecordType, [NativeTypeName("PLSA_FOREST_TRUST_INFORMATION2 *")] LSA_FOREST_TRUST_INFORMATION2** ForestTrustInfo);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LsaSetForestTrustInformation2"]/*' />
+    [DllImport("advapi32", ExactSpelling = true)]
+    [return: NativeTypeName("NTSTATUS")]
+    public static extern int LsaSetForestTrustInformation2([NativeTypeName("LSA_HANDLE")] void* PolicyHandle, [NativeTypeName("PLSA_UNICODE_STRING")] LSA_UNICODE_STRING* TrustedDomainName, LSA_FOREST_TRUST_RECORD_TYPE HighestRecordType, [NativeTypeName("PLSA_FOREST_TRUST_INFORMATION2")] LSA_FOREST_TRUST_INFORMATION2* ForestTrustInfo, [NativeTypeName("BOOLEAN")] byte CheckOnly, [NativeTypeName("PLSA_FOREST_TRUST_COLLISION_INFORMATION *")] LSA_FOREST_TRUST_COLLISION_INFORMATION** CollisionInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SystemFunction036"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -2090,6 +2100,18 @@ public static unsafe partial class Windows
     [NativeTypeName("#define VALID_PER_USER_AUDIT_POLICY_FLAG (PER_USER_AUDIT_SUCCESS_INCLUDE | \\\r\n                                          PER_USER_AUDIT_SUCCESS_EXCLUDE | \\\r\n                                          PER_USER_AUDIT_FAILURE_INCLUDE | \\\r\n                                          PER_USER_AUDIT_FAILURE_EXCLUDE | \\\r\n                                          PER_USER_AUDIT_NONE)")]
     public const int VALID_PER_USER_AUDIT_POLICY_FLAG = ((0x01) | (0x02) | (0x04) | (0x08) | (0x10));
 
+    [NativeTypeName("#define LSAD_AES_CRYPT_SHA512_HASH_SIZE 64")]
+    public const int LSAD_AES_CRYPT_SHA512_HASH_SIZE = 64;
+
+    [NativeTypeName("#define LSAD_AES_KEY_SIZE 16")]
+    public const int LSAD_AES_KEY_SIZE = 16;
+
+    [NativeTypeName("#define LSAD_AES_SALT_SIZE 16")]
+    public const int LSAD_AES_SALT_SIZE = 16;
+
+    [NativeTypeName("#define LSAD_AES_BLOCK_SIZE 16")]
+    public const int LSAD_AES_BLOCK_SIZE = 16;
+
     [NativeTypeName("#define LSA_FTRECORD_DISABLED_REASONS ( 0x0000FFFFL )")]
     public const int LSA_FTRECORD_DISABLED_REASONS = (0x0000FFFF);
 
@@ -2104,6 +2126,12 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define LSA_NB_DISABLED_CONFLICT ( 0x00000008L )")]
     public const int LSA_NB_DISABLED_CONFLICT = (0x00000008);
+
+    [NativeTypeName("#define LSA_SCANNER_INFO_DISABLE_AUTH_TARGET_VALIDATION ( 0x00000001L )")]
+    public const int LSA_SCANNER_INFO_DISABLE_AUTH_TARGET_VALIDATION = (0x00000001);
+
+    [NativeTypeName("#define LSA_SCANNER_INFO_ADMIN_ALL_FLAGS (LSA_SCANNER_INFO_DISABLE_AUTH_TARGET_VALIDATION)")]
+    public const int LSA_SCANNER_INFO_ADMIN_ALL_FLAGS = ((0x00000001));
 
     [NativeTypeName("#define LSASETCAPS_RELOAD_FLAG 0x00000001")]
     public const int LSASETCAPS_RELOAD_FLAG = 0x00000001;

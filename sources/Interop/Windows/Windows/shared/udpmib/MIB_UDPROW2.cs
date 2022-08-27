@@ -44,7 +44,6 @@ public unsafe partial struct MIB_UDPROW2
     public uint dwRemotePort;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SpecificPortBind"]/*' />
-    [UnscopedRef]
     public int SpecificPortBind
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
