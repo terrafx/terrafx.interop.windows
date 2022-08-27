@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIRECTMANIPULATION_VIEWPORT_OPTIONS.xml' path='doc/member[@name="DIRECTMANIPULATION_VIEWPORT_OPTIONS"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum DIRECTMANIPULATION_VIEWPORT_OPTIONS
 {
     /// <include file='DIRECTMANIPULATION_VIEWPORT_OPTIONS.xml' path='doc/member[@name="DIRECTMANIPULATION_VIEWPORT_OPTIONS.DIRECTMANIPULATION_VIEWPORT_OPTIONS_DEFAULT"]/*' />

@@ -20,7 +20,7 @@ D2D1_IMAGE_SOURCE_LOADING_OPTIONS=Flags
 D2D1_IMAGE_SOURCE_LOADING_OPTIONS=SupportedOSPlatform("windows10.0")
 D2D1_SPRITE_OPTIONS=Flags
 D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS=Flags
-ID2D1CommandSink2=SupportedOSPlatform("windows8.1")
+ID2D1CommandSink2=SupportedOSPlatform("windows6.3")
 ID2D1DeviceContext2=SupportedOSPlatform("windows10.0")
 ID2D1DeviceContext3=SupportedOSPlatform("windows10.0")
 ID2D1DeviceContext4=SupportedOSPlatform("windows10.0")
@@ -28,7 +28,7 @@ ID2D1DeviceContext5=SupportedOSPlatform("windows10.0")
 ID2D1DeviceContext6=SupportedOSPlatform("windows10.0")
 ID2D1GdiMetafile1=SupportedOSPlatform("windows10.0")
 ID2D1GdiMetafileSink1=SupportedOSPlatform("windows10.0")
-ID2D1GradientMesh=SupportedOSPlatform("windows8.1")
+ID2D1GradientMesh=SupportedOSPlatform("windows6.3")
 ID2D1ImageSource=SupportedOSPlatform("windows10.0")
 --with-librarypath
 D2D1GetGradientMeshInteriorPointsFromCoonsPatch=d2d1

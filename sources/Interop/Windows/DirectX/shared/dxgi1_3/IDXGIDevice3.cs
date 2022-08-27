@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("6007896C-3244-4AFD-BF18-A6D3BEDA5023")]
 [NativeTypeName("struct IDXGIDevice3 : IDXGIDevice2")]
 [NativeInheritance("IDXGIDevice2")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDXGIDevice3 : IDXGIDevice3.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDXGIDevice3));

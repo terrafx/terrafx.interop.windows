@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("26AFEA53-D9ED-42B5-AB80-E64F9EE34779")]
 [NativeTypeName("struct IMFSeekInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFSeekInfo : IMFSeekInfo.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFSeekInfo));

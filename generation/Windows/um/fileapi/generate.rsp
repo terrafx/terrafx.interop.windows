@@ -13,8 +13,8 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/fileapi.h
 --with-attribute
-CreateFile2=SupportedOSPlatform("windows8.0")
-CREATEFILE2_EXTENDED_PARAMETERS=SupportedOSPlatform("windows8.0")
+CreateFile2=SupportedOSPlatform("windows6.2")
+CREATEFILE2_EXTENDED_PARAMETERS=SupportedOSPlatform("windows6.2")
 GetTempPath2=SupportedOSPlatform("windows10.0.19043.0")
 GetTempPath2A=SupportedOSPlatform("windows10.0.19043.0")
 GetTempPath2W=SupportedOSPlatform("windows10.0.19043.0")

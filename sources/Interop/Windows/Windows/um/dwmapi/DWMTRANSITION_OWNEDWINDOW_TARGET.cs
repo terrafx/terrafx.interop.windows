@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DWMTRANSITION_OWNEDWINDOW_TARGET.xml' path='doc/member[@name="DWMTRANSITION_OWNEDWINDOW_TARGET"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum DWMTRANSITION_OWNEDWINDOW_TARGET
 {
     /// <include file='DWMTRANSITION_OWNEDWINDOW_TARGET.xml' path='doc/member[@name="DWMTRANSITION_OWNEDWINDOW_TARGET.DWMTRANSITION_OWNEDWINDOW_NULL"]/*' />

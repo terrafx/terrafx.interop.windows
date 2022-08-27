@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MANDATORY_LEVEL.xml' path='doc/member[@name="MANDATORY_LEVEL"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum MANDATORY_LEVEL
 {
     /// <include file='MANDATORY_LEVEL.xml' path='doc/member[@name="MANDATORY_LEVEL.MandatoryLevelUntrusted"]/*' />

@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MF_MEDIA_ENGINE_FRAME_PROTECTION_FLAGS.xml' path='doc/member[@name="MF_MEDIA_ENGINE_FRAME_PROTECTION_FLAGS"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum MF_MEDIA_ENGINE_FRAME_PROTECTION_FLAGS
 {
     /// <include file='MF_MEDIA_ENGINE_FRAME_PROTECTION_FLAGS.xml' path='doc/member[@name="MF_MEDIA_ENGINE_FRAME_PROTECTION_FLAGS.MF_MEDIA_ENGINE_FRAME_PROTECTION_FLAG_PROTECTED"]/*' />

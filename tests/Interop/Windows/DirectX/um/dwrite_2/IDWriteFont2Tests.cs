@@ -12,7 +12,7 @@ using static TerraFX.Interop.Windows.IID;
 namespace TerraFX.Interop.DirectX.UnitTests;
 
 /// <summary>Provides validation of the <see cref="IDWriteFont2" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class IDWriteFont2Tests
 {
     /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteFont2" /> struct is correct.</summary>

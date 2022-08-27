@@ -13,17 +13,17 @@ TerraFX.Interop.DirectX
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/dxgidebug.h
 --with-attribute
-DXGIGetDebugInterface=SupportedOSPlatform("windows8.0")
+DXGIGetDebugInterface=SupportedOSPlatform("windows6.2")
 DXGI_DEBUG_RLO_FLAGS=Flags
-DXGI_DEBUG_RLO_FLAGS=SupportedOSPlatform("windows8.0")
-DXGI_INFO_QUEUE_FILTER=SupportedOSPlatform("windows8.0")
-DXGI_INFO_QUEUE_FILTER_DESC=SupportedOSPlatform("windows8.0")
-DXGI_INFO_QUEUE_MESSAGE=SupportedOSPlatform("windows8.0")
-DXGI_INFO_QUEUE_MESSAGE_CATEGORY=SupportedOSPlatform("windows8.0")
-DXGI_INFO_QUEUE_MESSAGE_SEVERITY=SupportedOSPlatform("windows8.0")
-IDXGIDebug1=SupportedOSPlatform("windows8.1")
-IDXGIDebug=SupportedOSPlatform("windows8.0")
-IDXGIInfoQueue=SupportedOSPlatform("windows8.0")
+DXGI_DEBUG_RLO_FLAGS=SupportedOSPlatform("windows6.2")
+DXGI_INFO_QUEUE_FILTER=SupportedOSPlatform("windows6.2")
+DXGI_INFO_QUEUE_FILTER_DESC=SupportedOSPlatform("windows6.2")
+DXGI_INFO_QUEUE_MESSAGE=SupportedOSPlatform("windows6.2")
+DXGI_INFO_QUEUE_MESSAGE_CATEGORY=SupportedOSPlatform("windows6.2")
+DXGI_INFO_QUEUE_MESSAGE_SEVERITY=SupportedOSPlatform("windows6.2")
+IDXGIDebug1=SupportedOSPlatform("windows6.3")
+IDXGIDebug=SupportedOSPlatform("windows6.2")
+IDXGIInfoQueue=SupportedOSPlatform("windows6.2")
 
 --with-librarypath
 DXGIGetDebugInterface=dxgidebug

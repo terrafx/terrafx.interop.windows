@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CROSS_SLIDE_FLAGS.xml' path='doc/member[@name="CROSS_SLIDE_FLAGS"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum CROSS_SLIDE_FLAGS
 {
     /// <include file='CROSS_SLIDE_FLAGS.xml' path='doc/member[@name="CROSS_SLIDE_FLAGS.CROSS_SLIDE_FLAGS_NONE"]/*' />

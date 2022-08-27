@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_VIDEO_PROCESSOR_FILTER_RANGE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_FILTER_RANGE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct D3D11_VIDEO_PROCESSOR_FILTER_RANGE
 {
     /// <include file='D3D11_VIDEO_PROCESSOR_FILTER_RANGE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_FILTER_RANGE.Minimum"]/*' />

@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PSS_QUERY_INFORMATION_CLASS.xml' path='doc/member[@name="PSS_QUERY_INFORMATION_CLASS"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum PSS_QUERY_INFORMATION_CLASS
 {
     /// <include file='PSS_QUERY_INFORMATION_CLASS.xml' path='doc/member[@name="PSS_QUERY_INFORMATION_CLASS.PSS_QUERY_PROCESS_INFORMATION"]/*' />

@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='FILE_FULL_DIR_INFO.xml' path='doc/member[@name="FILE_FULL_DIR_INFO"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct FILE_FULL_DIR_INFO
 {
     /// <include file='FILE_FULL_DIR_INFO.xml' path='doc/member[@name="FILE_FULL_DIR_INFO.NextEntryOffset"]/*' />

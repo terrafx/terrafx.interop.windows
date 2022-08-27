@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUTTests
 {
     /// <summary>Validates that the <see cref="DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT" /> struct is blittable.</summary>

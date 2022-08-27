@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("119E7452-DE9E-40FE-8806-88F90C12B441")]
 [NativeTypeName("struct IDXGIDebug : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IDXGIDebug : IDXGIDebug.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDXGIDebug));

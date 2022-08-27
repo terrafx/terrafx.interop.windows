@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("ED90C8AD-5C34-4D05-A1EC-0E8A9B3AD7AF")]
 [NativeTypeName("struct IPrintDocumentPackageStatusEvent : IDispatch")]
 [NativeInheritance("IDispatch")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IPrintDocumentPackageStatusEvent : IPrintDocumentPackageStatusEvent.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPrintDocumentPackageStatusEvent));

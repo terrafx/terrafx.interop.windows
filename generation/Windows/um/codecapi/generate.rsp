@@ -329,7 +329,7 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/codecapi.h
 --with-attribute
-eAVDecDDStereoDownMixMode=SupportedOSPlatform("windows8.0")
-eAVEncAdaptiveMode=SupportedOSPlatform("windows8.0")
-eAVEncH264PictureType=SupportedOSPlatform("windows8.0")
-eAVEncVideoContentType=SupportedOSPlatform("windows8.0")
+eAVDecDDStereoDownMixMode=SupportedOSPlatform("windows6.2")
+eAVEncAdaptiveMode=SupportedOSPlatform("windows6.2")
+eAVEncH264PictureType=SupportedOSPlatform("windows6.2")
+eAVEncVideoContentType=SupportedOSPlatform("windows6.2")

@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DCOMPOSITION_BACKFACE_VISIBILITY.xml' path='doc/member[@name="DCOMPOSITION_BACKFACE_VISIBILITY"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum DCOMPOSITION_BACKFACE_VISIBILITY
 {
     /// <include file='DCOMPOSITION_BACKFACE_VISIBILITY.xml' path='doc/member[@name="DCOMPOSITION_BACKFACE_VISIBILITY.DCOMPOSITION_BACKFACE_VISIBILITY_VISIBLE"]/*' />

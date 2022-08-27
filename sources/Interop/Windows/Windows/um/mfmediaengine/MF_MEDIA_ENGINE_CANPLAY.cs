@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MF_MEDIA_ENGINE_CANPLAY.xml' path='doc/member[@name="MF_MEDIA_ENGINE_CANPLAY"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum MF_MEDIA_ENGINE_CANPLAY
 {
     /// <include file='MF_MEDIA_ENGINE_CANPLAY.xml' path='doc/member[@name="MF_MEDIA_ENGINE_CANPLAY.MF_MEDIA_ENGINE_CANPLAY_NOT_SUPPORTED"]/*' />

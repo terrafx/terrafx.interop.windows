@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='COMPRESS_ALLOCATION_ROUTINES.xml' path='doc/member[@name="COMPRESS_ALLOCATION_ROUTINES"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct COMPRESS_ALLOCATION_ROUTINES
 {
     /// <include file='COMPRESS_ALLOCATION_ROUTINES.xml' path='doc/member[@name="COMPRESS_ALLOCATION_ROUTINES.Allocate"]/*' />

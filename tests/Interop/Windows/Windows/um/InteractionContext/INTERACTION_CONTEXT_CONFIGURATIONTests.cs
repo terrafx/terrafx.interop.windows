@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="INTERACTION_CONTEXT_CONFIGURATION" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class INTERACTION_CONTEXT_CONFIGURATIONTests
 {
     /// <summary>Validates that the <see cref="INTERACTION_CONTEXT_CONFIGURATION" /> struct is blittable.</summary>

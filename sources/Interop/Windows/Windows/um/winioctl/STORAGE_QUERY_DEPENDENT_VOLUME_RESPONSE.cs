@@ -3,6 +3,7 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -26,23 +27,23 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Lev1Depends"]/*' />
     [UnscopedRef]
-    public ref STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY Lev1Depends
+    public Span<STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY> Lev1Depends
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref Anonymous.Lev1Depends;
+            return Anonymous.Lev1Depends.AsSpan(unchecked((int)NumberEntries));
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Lev2Depends"]/*' />
     [UnscopedRef]
-    public ref STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY Lev2Depends
+    public Span<STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY> Lev2Depends
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref Anonymous.Lev2Depends;
+            return Anonymous.Lev2Depends.AsSpan(unchecked((int)NumberEntries));
         }
     }
 
@@ -53,11 +54,47 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Lev1Depends"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY[]")]
-        public STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY Lev1Depends;
+        public _Lev1Depends_e__FixedBuffer Lev1Depends;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Lev2Depends"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY[]")]
-        public STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY Lev2Depends;
+        public _Lev2Depends_e__FixedBuffer Lev2Depends;
+
+        /// <include file='_Lev1Depends_e__FixedBuffer.xml' path='doc/member[@name="_Lev1Depends_e__FixedBuffer"]/*' />
+        public partial struct _Lev1Depends_e__FixedBuffer
+        {
+            public STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY e0;
+
+            public ref STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan(int.MaxValue)[index];
+                }
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public Span<STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+        }
+
+        /// <include file='_Lev2Depends_e__FixedBuffer.xml' path='doc/member[@name="_Lev2Depends_e__FixedBuffer"]/*' />
+        public partial struct _Lev2Depends_e__FixedBuffer
+        {
+            public STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY e0;
+
+            public ref STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan(int.MaxValue)[index];
+                }
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public Span<STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("FBF5D3B4-70C7-4163-9322-5A6F660D6FBC")]
 [NativeTypeName("struct IDirectManipulationManager : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IDirectManipulationManager : IDirectManipulationManager.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDirectManipulationManager));

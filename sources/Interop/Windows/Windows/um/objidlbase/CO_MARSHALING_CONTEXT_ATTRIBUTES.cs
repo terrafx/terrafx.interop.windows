@@ -9,7 +9,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='CO_MARSHALING_CONTEXT_ATTRIBUTES.xml' path='doc/member[@name="CO_MARSHALING_CONTEXT_ATTRIBUTES"]/*' />
 [NativeTypeName("int")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum CO_MARSHALING_CONTEXT_ATTRIBUTES : uint
 {
     /// <include file='CO_MARSHALING_CONTEXT_ATTRIBUTES.xml' path='doc/member[@name="CO_MARSHALING_CONTEXT_ATTRIBUTES.CO_MARSHALING_SOURCE_IS_APP_CONTAINER"]/*' />

@@ -1831,7 +1831,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LsaLookupNames2"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("NTSTATUS")]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern int LsaLookupNames2([NativeTypeName("LSA_HANDLE")] void* PolicyHandle, [NativeTypeName("ULONG")] uint Flags, [NativeTypeName("ULONG")] uint Count, [NativeTypeName("PLSA_UNICODE_STRING")] LSA_UNICODE_STRING* Names, [NativeTypeName("PLSA_REFERENCED_DOMAIN_LIST *")] LSA_REFERENCED_DOMAIN_LIST** ReferencedDomains, [NativeTypeName("PLSA_TRANSLATED_SID2 *")] LSA_TRANSLATED_SID2** Sids);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LsaLookupSids"]/*' />
@@ -1842,7 +1842,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LsaLookupSids2"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("NTSTATUS")]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern int LsaLookupSids2([NativeTypeName("LSA_HANDLE")] void* PolicyHandle, [NativeTypeName("ULONG")] uint LookupOptions, [NativeTypeName("ULONG")] uint Count, [NativeTypeName("PSID *")] void** Sids, [NativeTypeName("PLSA_REFERENCED_DOMAIN_LIST *")] LSA_REFERENCED_DOMAIN_LIST** ReferencedDomains, [NativeTypeName("PLSA_TRANSLATED_NAME *")] LSA_TRANSLATED_NAME** Names);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LsaEnumerateAccountsWithUserRight"]/*' />

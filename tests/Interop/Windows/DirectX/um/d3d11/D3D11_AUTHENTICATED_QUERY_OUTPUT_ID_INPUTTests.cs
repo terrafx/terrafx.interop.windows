@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX.UnitTests;
 
 /// <summary>Provides validation of the <see cref="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_INPUT" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_INPUTTests
 {
     /// <summary>Validates that the <see cref="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_INPUT" /> struct is blittable.</summary>

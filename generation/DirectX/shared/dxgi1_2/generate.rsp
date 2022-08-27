@@ -13,6 +13,6 @@ TerraFX.Interop.DirectX
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/dxgi1_2.h
 --with-attribute
-IDXGIOutputDuplication=SupportedOSPlatform("windows8.0")
+IDXGIOutputDuplication=SupportedOSPlatform("windows6.2")
 --with-type
 DXGI_ALPHA_MODE=uint

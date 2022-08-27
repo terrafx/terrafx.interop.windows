@@ -9,7 +9,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_VIDEO_PROCESSOR_CUSTOM_RATE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_CUSTOM_RATE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct D3D11_VIDEO_PROCESSOR_CUSTOM_RATE
 {
     /// <include file='D3D11_VIDEO_PROCESSOR_CUSTOM_RATE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_CUSTOM_RATE.CustomRate"]/*' />

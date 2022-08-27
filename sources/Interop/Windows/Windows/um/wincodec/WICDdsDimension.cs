@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICDdsDimension.xml' path='doc/member[@name="WICDdsDimension"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum WICDdsDimension
 {
     /// <include file='WICDdsDimension.xml' path='doc/member[@name="WICDdsDimension.WICDdsTexture1D"]/*' />

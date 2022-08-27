@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WCM_MEDIA_TYPE.xml' path='doc/member[@name="WCM_MEDIA_TYPE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum WCM_MEDIA_TYPE
 {
     /// <include file='WCM_MEDIA_TYPE.xml' path='doc/member[@name="WCM_MEDIA_TYPE.wcm_media_unknown"]/*' />

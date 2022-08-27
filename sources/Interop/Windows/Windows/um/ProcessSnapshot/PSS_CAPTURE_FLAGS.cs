@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='PSS_CAPTURE_FLAGS.xml' path='doc/member[@name="PSS_CAPTURE_FLAGS"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum PSS_CAPTURE_FLAGS
 {
     /// <include file='PSS_CAPTURE_FLAGS.xml' path='doc/member[@name="PSS_CAPTURE_FLAGS.PSS_CAPTURE_NONE"]/*' />

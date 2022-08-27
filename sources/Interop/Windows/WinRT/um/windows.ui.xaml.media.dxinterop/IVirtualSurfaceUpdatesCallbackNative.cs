@@ -16,7 +16,7 @@ namespace TerraFX.Interop.WinRT;
 [Guid("DBF2E947-8E6C-4254-9EEE-7738F71386C9")]
 [NativeTypeName("struct IVirtualSurfaceUpdatesCallbackNative : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IVirtualSurfaceUpdatesCallbackNative : IVirtualSurfaceUpdatesCallbackNative.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVirtualSurfaceUpdatesCallbackNative));

@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("553A9FF3-5693-4DF7-B52B-74806F7F2EB9")]
 [NativeTypeName("struct IDWriteTextAnalyzer2 : IDWriteTextAnalyzer1")]
 [NativeInheritance("IDWriteTextAnalyzer1")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDWriteTextAnalyzer2 : IDWriteTextAnalyzer2.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWriteTextAnalyzer2));

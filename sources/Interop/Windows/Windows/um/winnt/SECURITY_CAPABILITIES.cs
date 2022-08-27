@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SECURITY_CAPABILITIES.xml' path='doc/member[@name="SECURITY_CAPABILITIES"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct SECURITY_CAPABILITIES
 {
     /// <include file='SECURITY_CAPABILITIES.xml' path='doc/member[@name="SECURITY_CAPABILITIES.AppContainerSid"]/*' />

@@ -13,4 +13,4 @@ TerraFX.Interop.DirectX
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/dcompanimation.h
 --with-attribute
-IDCompositionAnimation=SupportedOSPlatform("windows8.0")
+IDCompositionAnimation=SupportedOSPlatform("windows6.2")

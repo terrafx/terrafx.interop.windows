@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PACKAGE_VERSION.xml' path='doc/member[@name="PACKAGE_VERSION"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct PACKAGE_VERSION
 {
     /// <include file='PACKAGE_VERSION.xml' path='doc/member[@name="PACKAGE_VERSION.Anonymous"]/*' />

@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='COPYFILE2_COPY_PHASE.xml' path='doc/member[@name="COPYFILE2_COPY_PHASE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum COPYFILE2_COPY_PHASE
 {
     /// <include file='COPYFILE2_COPY_PHASE.xml' path='doc/member[@name="COPYFILE2_COPY_PHASE.COPYFILE2_PHASE_NONE"]/*' />

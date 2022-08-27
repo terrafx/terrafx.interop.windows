@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="DEVICE_DSM_OFFLOAD_READ_PARAMETERS" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class DEVICE_DSM_OFFLOAD_READ_PARAMETERSTests
 {
     /// <summary>Validates that the <see cref="DEVICE_DSM_OFFLOAD_READ_PARAMETERS" /> struct is blittable.</summary>

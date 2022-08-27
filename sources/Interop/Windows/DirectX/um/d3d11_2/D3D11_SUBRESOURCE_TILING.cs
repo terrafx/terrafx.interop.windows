@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_SUBRESOURCE_TILING.xml' path='doc/member[@name="D3D11_SUBRESOURCE_TILING"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public partial struct D3D11_SUBRESOURCE_TILING
 {
     /// <include file='D3D11_SUBRESOURCE_TILING.xml' path='doc/member[@name="D3D11_SUBRESOURCE_TILING.WidthInTiles"]/*' />

@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("94EA2B94-E9CC-49E0-C0FF-EE64CA8F5B90")]
 [NativeTypeName("struct IAgileObject : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IAgileObject : IAgileObject.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAgileObject));

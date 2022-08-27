@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIRECTMANIPULATION_SNAPPOINT_TYPE.xml' path='doc/member[@name="DIRECTMANIPULATION_SNAPPOINT_TYPE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum DIRECTMANIPULATION_SNAPPOINT_TYPE
 {
     /// <include file='DIRECTMANIPULATION_SNAPPOINT_TYPE.xml' path='doc/member[@name="DIRECTMANIPULATION_SNAPPOINT_TYPE.DIRECTMANIPULATION_SNAPPOINT_MANDATORY"]/*' />

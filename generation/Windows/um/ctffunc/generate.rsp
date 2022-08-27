@@ -13,9 +13,9 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ctffunc.h
 --with-attribute
-ITfFnGetLinguisticAlternates=SupportedOSPlatform("windows8.1")
-ITfFnGetPreferredTouchKeyboardLayout=SupportedOSPlatform("windows8.0")
-ITfFnSearchCandidateProvider=SupportedOSPlatform("windows8.0")
-ITfIntegratableCandidateListUIElement=SupportedOSPlatform("windows8.0")
-IUIManagerEventSink=SupportedOSPlatform("windows8.1")
-TKBLayoutType=SupportedOSPlatform("windows8.0")
+ITfFnGetLinguisticAlternates=SupportedOSPlatform("windows6.3")
+ITfFnGetPreferredTouchKeyboardLayout=SupportedOSPlatform("windows6.2")
+ITfFnSearchCandidateProvider=SupportedOSPlatform("windows6.2")
+ITfIntegratableCandidateListUIElement=SupportedOSPlatform("windows6.2")
+IUIManagerEventSink=SupportedOSPlatform("windows6.3")
+TKBLayoutType=SupportedOSPlatform("windows6.2")

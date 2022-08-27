@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MANIPULATION_TRANSFORM.xml' path='doc/member[@name="MANIPULATION_TRANSFORM"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct MANIPULATION_TRANSFORM
 {
     /// <include file='MANIPULATION_TRANSFORM.xml' path='doc/member[@name="MANIPULATION_TRANSFORM.translationX"]/*' />

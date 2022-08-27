@@ -34,7 +34,7 @@
   <!-- Assembly attributes to include for every project -->
   <ItemGroup>
     <AssemblyAttribute Include="System.Runtime.Versioning.SupportedOSPlatformAttribute">
-      <_Parameter1>windows7.0</_Parameter1>
+      <_Parameter1>windows6.1</_Parameter1>
     </AssemblyAttribute>
   </ItemGroup>
 

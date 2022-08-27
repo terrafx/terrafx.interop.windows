@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PSS_AUXILIARY_PAGES_INFORMATION.xml' path='doc/member[@name="PSS_AUXILIARY_PAGES_INFORMATION"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public partial struct PSS_AUXILIARY_PAGES_INFORMATION
 {
     /// <include file='PSS_AUXILIARY_PAGES_INFORMATION.xml' path='doc/member[@name="PSS_AUXILIARY_PAGES_INFORMATION.AuxPagesCaptured"]/*' />

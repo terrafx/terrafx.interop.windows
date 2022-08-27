@@ -13,8 +13,8 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/DocumentTarget.h
 --with-attribute
-IPrintDocumentPackageStatusEvent=SupportedOSPlatform("windows8.0")
-IPrintDocumentPackageTarget=SupportedOSPlatform("windows8.0")
-IPrintDocumentPackageTargetFactory=SupportedOSPlatform("windows8.0")
-PrintDocumentPackageCompletion=SupportedOSPlatform("windows8.0")
-PrintDocumentPackageStatus=SupportedOSPlatform("windows8.0")
+IPrintDocumentPackageStatusEvent=SupportedOSPlatform("windows6.2")
+IPrintDocumentPackageTarget=SupportedOSPlatform("windows6.2")
+IPrintDocumentPackageTargetFactory=SupportedOSPlatform("windows6.2")
+PrintDocumentPackageCompletion=SupportedOSPlatform("windows6.2")
+PrintDocumentPackageStatus=SupportedOSPlatform("windows6.2")

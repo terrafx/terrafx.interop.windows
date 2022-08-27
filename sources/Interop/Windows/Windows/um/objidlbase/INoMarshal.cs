@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("ECC8691B-C1DB-4DC0-855E-65F6C551AF49")]
 [NativeTypeName("struct INoMarshal : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct INoMarshal : INoMarshal.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_INoMarshal));

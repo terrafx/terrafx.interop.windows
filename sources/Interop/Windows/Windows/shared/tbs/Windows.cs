@@ -43,19 +43,19 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.Tbsi_GetDeviceInfo"]/*' />
     [DllImport("tbs", ExactSpelling = true)]
     [return: NativeTypeName("TBS_RESULT")]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern uint Tbsi_GetDeviceInfo([NativeTypeName("UINT32")] uint Size, [NativeTypeName("PVOID")] void* Info);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.Tbsi_Get_OwnerAuth"]/*' />
     [DllImport("tbs", ExactSpelling = true)]
     [return: NativeTypeName("TBS_RESULT")]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern uint Tbsi_Get_OwnerAuth([NativeTypeName("TBS_HCONTEXT")] void* hContext, [NativeTypeName("TBS_OWNERAUTH_TYPE")] uint ownerauthType, [NativeTypeName("PBYTE")] byte* pOutputBuf, [NativeTypeName("PUINT32")] uint* pOutputBufLen);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.Tbsi_Revoke_Attestation"]/*' />
     [DllImport("tbs", ExactSpelling = true)]
     [return: NativeTypeName("TBS_RESULT")]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern uint Tbsi_Revoke_Attestation();
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDeviceID"]/*' />

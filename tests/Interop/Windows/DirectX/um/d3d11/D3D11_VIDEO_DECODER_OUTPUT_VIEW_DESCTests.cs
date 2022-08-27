@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX.UnitTests;
 
 /// <summary>Provides validation of the <see cref="D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESCTests
 {
     /// <summary>Validates that the <see cref="D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC" /> struct is blittable.</summary>

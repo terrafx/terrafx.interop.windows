@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DCOMPOSITION_BORDER_MODE.xml' path='doc/member[@name="DCOMPOSITION_BORDER_MODE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum DCOMPOSITION_BORDER_MODE
 {
     /// <include file='DCOMPOSITION_BORDER_MODE.xml' path='doc/member[@name="DCOMPOSITION_BORDER_MODE.DCOMPOSITION_BORDER_MODE_SOFT"]/*' />

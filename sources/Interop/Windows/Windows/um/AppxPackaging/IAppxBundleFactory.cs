@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("BBA65864-965F-4A5F-855F-F074BDBF3A7B")]
 [NativeTypeName("struct IAppxBundleFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IAppxBundleFactory : IAppxBundleFactory.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAppxBundleFactory));

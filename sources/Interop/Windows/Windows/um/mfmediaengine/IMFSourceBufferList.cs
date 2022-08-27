@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("249981F8-8325-41F3-B80C-3B9E3AAD0CBE")]
 [NativeTypeName("struct IMFSourceBufferList : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IMFSourceBufferList : IMFSourceBufferList.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFSourceBufferList));

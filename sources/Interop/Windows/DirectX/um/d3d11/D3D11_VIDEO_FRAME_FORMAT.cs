@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_VIDEO_FRAME_FORMAT.xml' path='doc/member[@name="D3D11_VIDEO_FRAME_FORMAT"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum D3D11_VIDEO_FRAME_FORMAT
 {
     /// <include file='D3D11_VIDEO_FRAME_FORMAT.xml' path='doc/member[@name="D3D11_VIDEO_FRAME_FORMAT.D3D11_VIDEO_FRAME_FORMAT_PROGRESSIVE"]/*' />

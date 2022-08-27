@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("F928B7B8-2221-40C1-B72E-7E82F1974D1A")]
 [NativeTypeName("struct IWICPlanarBitmapFrameEncode : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IWICPlanarBitmapFrameEncode : IWICPlanarBitmapFrameEncode.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWICPlanarBitmapFrameEncode));

@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION.xml' path='doc/member[@name="DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION
 {
     /// <include file='DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION.xml' path='doc/member[@name="DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION.DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION_STOP"]/*' />

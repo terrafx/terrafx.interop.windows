@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='OPERATION_END_PARAMETERS.xml' path='doc/member[@name="OPERATION_END_PARAMETERS"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct OPERATION_END_PARAMETERS
 {
     /// <include file='OPERATION_END_PARAMETERS.xml' path='doc/member[@name="OPERATION_END_PARAMETERS.Version"]/*' />

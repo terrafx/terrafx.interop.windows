@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='AgileReferenceOptions.xml' path='doc/member[@name="AgileReferenceOptions"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum AgileReferenceOptions
 {
     /// <include file='AgileReferenceOptions.xml' path='doc/member[@name="AgileReferenceOptions.AGILEREFERENCE_DEFAULT"]/*' />

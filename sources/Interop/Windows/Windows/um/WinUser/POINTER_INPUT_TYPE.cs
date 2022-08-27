@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='POINTER_INPUT_TYPE.xml' path='doc/member[@name="POINTER_INPUT_TYPE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum POINTER_INPUT_TYPE
 {
     /// <include file='POINTER_INPUT_TYPE.xml' path='doc/member[@name="POINTER_INPUT_TYPE.PT_POINTER"]/*' />

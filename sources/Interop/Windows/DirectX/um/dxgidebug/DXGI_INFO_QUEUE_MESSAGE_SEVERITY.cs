@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DXGI_INFO_QUEUE_MESSAGE_SEVERITY.xml' path='doc/member[@name="DXGI_INFO_QUEUE_MESSAGE_SEVERITY"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum DXGI_INFO_QUEUE_MESSAGE_SEVERITY
 {
     /// <include file='DXGI_INFO_QUEUE_MESSAGE_SEVERITY.xml' path='doc/member[@name="DXGI_INFO_QUEUE_MESSAGE_SEVERITY.DXGI_INFO_QUEUE_MESSAGE_SEVERITY_CORRUPTION"]/*' />

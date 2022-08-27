@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="SECURITY_CAPABILITIES" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class SECURITY_CAPABILITIESTests
 {
     /// <summary>Validates that the <see cref="SECURITY_CAPABILITIES" /> struct is blittable.</summary>

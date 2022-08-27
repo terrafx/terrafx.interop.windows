@@ -417,7 +417,7 @@ csharp_style_implicit_object_creation_when_type_is_apparent = false:error
 
 csharp_style_inlined_variable_declaration = true:error
 
-csharp_style_namespace_declarations= file_scoped:error
+csharp_style_namespace_declarations = file_scoped:error
 
 csharp_style_pattern_local_over_anonymous_function = true:error
 csharp_style_pattern_matching_over_as_with_null_check = true:error

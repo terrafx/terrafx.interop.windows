@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="SYSTEM_SCOPED_POLICY_ID_ACE" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class SYSTEM_SCOPED_POLICY_ID_ACETests
 {
     /// <summary>Validates that the <see cref="SYSTEM_SCOPED_POLICY_ID_ACE" /> struct is blittable.</summary>

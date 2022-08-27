@@ -1543,12 +1543,12 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetProcessReference"]/*' />
     [DllImport("api-ms-win-shcore-thread-l1-1-0", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern void SetProcessReference(IUnknown* punk);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetProcessReference"]/*' />
     [DllImport("api-ms-win-shcore-thread-l1-1-0", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT GetProcessReference(IUnknown** punk);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHReleaseThreadRef"]/*' />

@@ -9,7 +9,7 @@ using TerraFX.Interop.DirectX;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICImageParameters.xml' path='doc/member[@name="WICImageParameters"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct WICImageParameters
 {
     /// <include file='WICImageParameters.xml' path='doc/member[@name="WICImageParameters.PixelFormat"]/*' />

@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICPlanarOptions.xml' path='doc/member[@name="WICPlanarOptions"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum WICPlanarOptions
 {
     /// <include file='WICPlanarOptions.xml' path='doc/member[@name="WICPlanarOptions.WICPlanarOptionsDefault"]/*' />

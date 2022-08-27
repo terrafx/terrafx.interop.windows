@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("607574EB-F4B6-45C1-B08C-CB715122901D")]
 [NativeTypeName("struct IPlayToControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IPlayToControl : IPlayToControl.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPlayToControl));

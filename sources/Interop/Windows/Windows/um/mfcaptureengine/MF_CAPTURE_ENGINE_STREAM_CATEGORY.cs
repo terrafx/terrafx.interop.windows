@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MF_CAPTURE_ENGINE_STREAM_CATEGORY.xml' path='doc/member[@name="MF_CAPTURE_ENGINE_STREAM_CATEGORY"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum MF_CAPTURE_ENGINE_STREAM_CATEGORY
 {
     /// <include file='MF_CAPTURE_ENGINE_STREAM_CATEGORY.xml' path='doc/member[@name="MF_CAPTURE_ENGINE_STREAM_CATEGORY.MF_CAPTURE_ENGINE_STREAM_CATEGORY_VIDEO_PREVIEW"]/*' />

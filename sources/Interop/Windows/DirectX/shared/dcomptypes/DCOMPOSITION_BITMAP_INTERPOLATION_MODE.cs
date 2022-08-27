@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DCOMPOSITION_BITMAP_INTERPOLATION_MODE.xml' path='doc/member[@name="DCOMPOSITION_BITMAP_INTERPOLATION_MODE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum DCOMPOSITION_BITMAP_INTERPOLATION_MODE
 {
     /// <include file='DCOMPOSITION_BITMAP_INTERPOLATION_MODE.xml' path='doc/member[@name="DCOMPOSITION_BITMAP_INTERPOLATION_MODE.DCOMPOSITION_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR"]/*' />

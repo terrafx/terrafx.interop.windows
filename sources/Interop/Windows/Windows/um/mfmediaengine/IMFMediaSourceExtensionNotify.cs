@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("A7901327-05DD-4469-A7B7-0E01979E361D")]
 [NativeTypeName("struct IMFMediaSourceExtensionNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IMFMediaSourceExtensionNotify : IMFMediaSourceExtensionNotify.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFMediaSourceExtensionNotify));

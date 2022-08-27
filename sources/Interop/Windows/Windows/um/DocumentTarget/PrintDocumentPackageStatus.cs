@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PrintDocumentPackageStatus.xml' path='doc/member[@name="PrintDocumentPackageStatus"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct PrintDocumentPackageStatus
 {
     /// <include file='PrintDocumentPackageStatus.xml' path='doc/member[@name="PrintDocumentPackageStatus.JobId"]/*' />

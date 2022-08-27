@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SCALE_CHANGE_FLAGS.xml' path='doc/member[@name="SCALE_CHANGE_FLAGS"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum SCALE_CHANGE_FLAGS
 {
     /// <include file='SCALE_CHANGE_FLAGS.xml' path='doc/member[@name="SCALE_CHANGE_FLAGS.SCF_VALUE_NONE"]/*' />

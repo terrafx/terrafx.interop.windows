@@ -13,7 +13,7 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ioapiset.h
 --with-attribute
-GetOverlappedResultEx=SupportedOSPlatform("windows8.0")
+GetOverlappedResultEx=SupportedOSPlatform("windows6.2")
 --with-librarypath
 CancelIo=kernel32
 CancelIoEx=kernel32

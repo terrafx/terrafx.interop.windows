@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("FD882D06-8ABA-4FB8-B849-8BE8B73E14DE")]
 [NativeTypeName("struct IDWriteFontFallbackBuilder : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDWriteFontFallbackBuilder : IDWriteFontFallbackBuilder.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWriteFontFallbackBuilder));

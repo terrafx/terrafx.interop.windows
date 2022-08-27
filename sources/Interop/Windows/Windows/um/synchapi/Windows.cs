@@ -248,18 +248,18 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnterSynchronizationBarrier"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL EnterSynchronizationBarrier([NativeTypeName("LPSYNCHRONIZATION_BARRIER")] SYNCHRONIZATION_BARRIER* lpBarrier, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InitializeSynchronizationBarrier"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL InitializeSynchronizationBarrier([NativeTypeName("LPSYNCHRONIZATION_BARRIER")] SYNCHRONIZATION_BARRIER* lpBarrier, [NativeTypeName("LONG")] int lTotalThreads, [NativeTypeName("LONG")] int lSpinCount);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DeleteSynchronizationBarrier"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL DeleteSynchronizationBarrier([NativeTypeName("LPSYNCHRONIZATION_BARRIER")] SYNCHRONIZATION_BARRIER* lpBarrier);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.Sleep"]/*' />
@@ -269,17 +269,17 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WaitOnAddress"]/*' />
     [DllImport("api-ms-win-core-synch-l1-2-0", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL WaitOnAddress([NativeTypeName("volatile void *")] void* Address, [NativeTypeName("PVOID")] void* CompareAddress, [NativeTypeName("SIZE_T")] nuint AddressSize, [NativeTypeName("DWORD")] uint dwMilliseconds);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WakeByAddressSingle"]/*' />
     [DllImport("api-ms-win-core-synch-l1-2-0", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern void WakeByAddressSingle([NativeTypeName("PVOID")] void* Address);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WakeByAddressAll"]/*' />
     [DllImport("api-ms-win-core-synch-l1-2-0", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern void WakeByAddressAll([NativeTypeName("PVOID")] void* Address);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SignalObjectAndWait"]/*' />

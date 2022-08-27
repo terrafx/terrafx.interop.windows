@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="TOKEN_USER_CLAIMS" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class TOKEN_USER_CLAIMSTests
 {
     /// <summary>Validates that the <see cref="TOKEN_USER_CLAIMS" /> struct is blittable.</summary>

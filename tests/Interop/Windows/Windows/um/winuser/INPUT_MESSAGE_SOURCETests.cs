@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="INPUT_MESSAGE_SOURCE" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class INPUT_MESSAGE_SOURCETests
 {
     /// <summary>Validates that the <see cref="INPUT_MESSAGE_SOURCE" /> struct is blittable.</summary>

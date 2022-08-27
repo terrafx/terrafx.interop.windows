@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("545B3A48-3283-4F62-866F-A62D8F598F9F")]
 [NativeTypeName("struct IMFVideoSampleAllocatorEx : IMFVideoSampleAllocator")]
 [NativeInheritance("IMFVideoSampleAllocator")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFVideoSampleAllocatorEx : IMFVideoSampleAllocatorEx.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFVideoSampleAllocatorEx));

@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='STORAGE_OFFLOAD_READ_OUTPUT.xml' path='doc/member[@name="STORAGE_OFFLOAD_READ_OUTPUT"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct STORAGE_OFFLOAD_READ_OUTPUT
 {
     /// <include file='STORAGE_OFFLOAD_READ_OUTPUT.xml' path='doc/member[@name="STORAGE_OFFLOAD_READ_OUTPUT.OffloadReadFlags"]/*' />

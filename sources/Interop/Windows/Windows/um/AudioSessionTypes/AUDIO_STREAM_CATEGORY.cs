@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='AUDIO_STREAM_CATEGORY.xml' path='doc/member[@name="AUDIO_STREAM_CATEGORY"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum AUDIO_STREAM_CATEGORY
 {
     /// <include file='AUDIO_STREAM_CATEGORY.xml' path='doc/member[@name="AUDIO_STREAM_CATEGORY.AudioCategory_Other"]/*' />

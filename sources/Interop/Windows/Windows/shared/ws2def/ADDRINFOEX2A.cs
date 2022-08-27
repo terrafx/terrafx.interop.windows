@@ -9,7 +9,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='ADDRINFOEX2A.xml' path='doc/member[@name="ADDRINFOEX2A"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 [Obsolete("ADDRINFOEX2")]
 public unsafe partial struct ADDRINFOEX2A
 {

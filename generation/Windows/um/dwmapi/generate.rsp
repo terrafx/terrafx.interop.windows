@@ -16,11 +16,11 @@ TerraFX.Interop.Windows
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/dwmapi.h
 --with-attribute
 DwmGetUnmetTabRequirements=SupportedOSPlatform("windows10.0.17134.0")
-DwmRenderGesture=SupportedOSPlatform("windows8.0")
-DwmShowContact=SupportedOSPlatform("windows8.0")
-DwmTetherContact=SupportedOSPlatform("windows8.0")
-DwmTransitionOwnedWindow=SupportedOSPlatform("windows8.0")
-DWMTRANSITION_OWNEDWINDOW_TARGET=SupportedOSPlatform("windows8.0")
+DwmRenderGesture=SupportedOSPlatform("windows6.2")
+DwmShowContact=SupportedOSPlatform("windows6.2")
+DwmTetherContact=SupportedOSPlatform("windows6.2")
+DwmTransitionOwnedWindow=SupportedOSPlatform("windows6.2")
+DWMTRANSITION_OWNEDWINDOW_TARGET=SupportedOSPlatform("windows6.2")
 DWM_SHOWCONTACT=Flags
 DWM_TAB_WINDOW_REQUIREMENTS=Flags
 DWM_TAB_WINDOW_REQUIREMENTS=SupportedOSPlatform("windows10.0.17134.0")

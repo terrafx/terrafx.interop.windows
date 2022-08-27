@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WINHTTP_WEB_SOCKET_BUFFER_TYPE.xml' path='doc/member[@name="WINHTTP_WEB_SOCKET_BUFFER_TYPE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum WINHTTP_WEB_SOCKET_BUFFER_TYPE
 {
     /// <include file='WINHTTP_WEB_SOCKET_BUFFER_TYPE.xml' path='doc/member[@name="WINHTTP_WEB_SOCKET_BUFFER_TYPE.WINHTTP_WEB_SOCKET_BINARY_MESSAGE_BUFFER_TYPE"]/*' />

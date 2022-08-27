@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='SYNC_ENGINE_STATE_FLAGS.xml' path='doc/member[@name="SYNC_ENGINE_STATE_FLAGS"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum SYNC_ENGINE_STATE_FLAGS
 {
     /// <include file='SYNC_ENGINE_STATE_FLAGS.xml' path='doc/member[@name="SYNC_ENGINE_STATE_FLAGS.SESF_NONE"]/*' />

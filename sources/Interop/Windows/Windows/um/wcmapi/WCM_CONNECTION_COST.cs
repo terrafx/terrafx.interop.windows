@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='WCM_CONNECTION_COST.xml' path='doc/member[@name="WCM_CONNECTION_COST"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum WCM_CONNECTION_COST
 {
     /// <include file='WCM_CONNECTION_COST.xml' path='doc/member[@name="WCM_CONNECTION_COST.WCM_CONNECTION_COST_UNKNOWN"]/*' />

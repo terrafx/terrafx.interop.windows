@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("3D4C0C61-18A4-41E4-BD80-481A4FC9F464")]
 [NativeTypeName("struct IWICDdsFrameDecode : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IWICDdsFrameDecode : IWICDdsFrameDecode.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWICDdsFrameDecode));

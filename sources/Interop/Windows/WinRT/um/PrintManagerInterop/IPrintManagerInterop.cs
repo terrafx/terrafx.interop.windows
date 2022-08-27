@@ -16,7 +16,7 @@ namespace TerraFX.Interop.WinRT;
 [Guid("C5435A42-8D43-4E7B-A68A-EF311E392087")]
 [NativeTypeName("struct IPrintManagerInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IPrintManagerInterop : IPrintManagerInterop.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPrintManagerInterop));

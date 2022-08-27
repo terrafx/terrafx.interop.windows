@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("91636D4B-9BA1-4532-AAF7-E3344994D788")]
 [NativeTypeName("struct IDCompositionTranslateTransform3D : IDCompositionTransform3D")]
 [NativeInheritance("IDCompositionTransform3D")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IDCompositionTranslateTransform3D : IDCompositionTranslateTransform3D.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDCompositionTranslateTransform3D));

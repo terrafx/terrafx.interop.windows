@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CRYPT_PROVIDER_SIGSTATE.xml' path='doc/member[@name="CRYPT_PROVIDER_SIGSTATE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct CRYPT_PROVIDER_SIGSTATE
 {
     /// <include file='CRYPT_PROVIDER_SIGSTATE.xml' path='doc/member[@name="CRYPT_PROVIDER_SIGSTATE.cbStruct"]/*' />

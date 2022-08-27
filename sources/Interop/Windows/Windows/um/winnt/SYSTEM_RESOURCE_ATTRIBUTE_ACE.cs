@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SYSTEM_RESOURCE_ATTRIBUTE_ACE.xml' path='doc/member[@name="SYSTEM_RESOURCE_ATTRIBUTE_ACE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct SYSTEM_RESOURCE_ATTRIBUTE_ACE
 {
     /// <include file='SYSTEM_RESOURCE_ATTRIBUTE_ACE.xml' path='doc/member[@name="SYSTEM_RESOURCE_ATTRIBUTE_ACE.Header"]/*' />

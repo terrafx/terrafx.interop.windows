@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WINTRUST_SIGNATURE_SETTINGS.xml' path='doc/member[@name="WINTRUST_SIGNATURE_SETTINGS"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct WINTRUST_SIGNATURE_SETTINGS
 {
     /// <include file='WINTRUST_SIGNATURE_SETTINGS.xml' path='doc/member[@name="WINTRUST_SIGNATURE_SETTINGS.cbStruct"]/*' />

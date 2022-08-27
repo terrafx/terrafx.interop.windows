@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("F86AD89F-5FE4-4B8D-BB9F-EF3797A84F1F")]
 [NativeTypeName("struct ITextStoreACP2 : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ITextStoreACP2 : ITextStoreACP2.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITextStoreACP2));

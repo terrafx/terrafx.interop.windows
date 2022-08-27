@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MOUSE_WHEEL_PARAMETER.xml' path='doc/member[@name="MOUSE_WHEEL_PARAMETER"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum MOUSE_WHEEL_PARAMETER
 {
     /// <include file='MOUSE_WHEEL_PARAMETER.xml' path='doc/member[@name="MOUSE_WHEEL_PARAMETER.MOUSE_WHEEL_PARAMETER_CHAR_TRANSLATION_X"]/*' />
