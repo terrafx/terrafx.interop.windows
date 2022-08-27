@@ -45,7 +45,7 @@
     <PackageOutputPath>$(BaseArtifactsPath)pkg/$(Configuration)/</PackageOutputPath>
     <Product>TerraFX.Interop.Windows</Product>
     <RootNamespace>TerraFX.Interop</RootNamespace>
-    <VersionPrefix>10.0.20348.2</VersionPrefix>
+    <VersionPrefix>10.0.20348.3</VersionPrefix>
     <VersionSuffix Condition="'$(EXCLUDE_SUFFIX_FROM_VERSION)' != 'true'">rc1</VersionSuffix>
     <VersionSuffix Condition="'$(GITHUB_EVENT_NAME)' == 'pull_request'">pr</VersionSuffix>
   </PropertyGroup>
@@ -68,10 +68,7 @@
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <PublicSign>true</PublicSign>
     <RepositoryType>git</RepositoryType>
-    <RestoreSources>
-      https://api.nuget.org/v3/index.json;
-      https://pkgs.terrafx.dev/index.json;
-    </RestoreSources>
+    <RestoreConfigFile>$(MSBuildThisFileDirectory)NuGet.config</RestoreConfigFile>
     <UseSharedCompilation>true</UseSharedCompilation>
   </PropertyGroup>
 
