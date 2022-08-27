@@ -29,23 +29,23 @@ public readonly unsafe partial struct MSIHANDLE : IComparable, IComparable<MSIHA
 
     public static explicit operator byte(MSIHANDLE value) => (byte)(value.Value);
 
-    public static explicit operator MSIHANDLE(short value) => new MSIHANDLE((uint)(value));
+    public static explicit operator MSIHANDLE(short value) => new MSIHANDLE(unchecked((uint)(value)));
 
     public static explicit operator short(MSIHANDLE value) => (short)(value.Value);
 
-    public static explicit operator MSIHANDLE(int value) => new MSIHANDLE((uint)(value));
+    public static explicit operator MSIHANDLE(int value) => new MSIHANDLE(unchecked((uint)(value)));
 
     public static explicit operator int(MSIHANDLE value) => (int)(value.Value);
 
-    public static explicit operator MSIHANDLE(long value) => new MSIHANDLE((uint)(value));
+    public static explicit operator MSIHANDLE(long value) => new MSIHANDLE(unchecked((uint)(value)));
 
     public static implicit operator long(MSIHANDLE value) => value.Value;
 
-    public static explicit operator MSIHANDLE(nint value) => new MSIHANDLE((uint)(value));
+    public static explicit operator MSIHANDLE(nint value) => new MSIHANDLE(unchecked((uint)(value)));
 
     public static explicit operator nint(MSIHANDLE value) => (nint)(value.Value);
 
-    public static explicit operator MSIHANDLE(sbyte value) => new MSIHANDLE((uint)(value));
+    public static explicit operator MSIHANDLE(sbyte value) => new MSIHANDLE(unchecked((uint)(value)));
 
     public static explicit operator sbyte(MSIHANDLE value) => (sbyte)(value.Value);
 
@@ -57,11 +57,11 @@ public readonly unsafe partial struct MSIHANDLE : IComparable, IComparable<MSIHA
 
     public static implicit operator uint(MSIHANDLE value) => value.Value;
 
-    public static explicit operator MSIHANDLE(ulong value) => new MSIHANDLE((uint)(value));
+    public static explicit operator MSIHANDLE(ulong value) => new MSIHANDLE(unchecked((uint)(value)));
 
     public static implicit operator ulong(MSIHANDLE value) => value.Value;
 
-    public static explicit operator MSIHANDLE(nuint value) => new MSIHANDLE((uint)(value));
+    public static explicit operator MSIHANDLE(nuint value) => new MSIHANDLE(unchecked((uint)(value)));
 
     public static implicit operator nuint(MSIHANDLE value) => value.Value;
 

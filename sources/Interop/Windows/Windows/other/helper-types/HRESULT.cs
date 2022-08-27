@@ -37,11 +37,11 @@ public readonly unsafe partial struct HRESULT : IComparable, IComparable<HRESULT
 
     public static implicit operator int(HRESULT value) => value.Value;
 
-    public static explicit operator HRESULT(long value) => new HRESULT((int)(value));
+    public static explicit operator HRESULT(long value) => new HRESULT(unchecked((int)(value)));
 
     public static implicit operator long(HRESULT value) => value.Value;
 
-    public static explicit operator HRESULT(nint value) => new HRESULT((int)(value));
+    public static explicit operator HRESULT(nint value) => new HRESULT(unchecked((int)(value)));
 
     public static implicit operator nint(HRESULT value) => value.Value;
 
@@ -53,15 +53,15 @@ public readonly unsafe partial struct HRESULT : IComparable, IComparable<HRESULT
 
     public static explicit operator ushort(HRESULT value) => (ushort)(value.Value);
 
-    public static explicit operator HRESULT(uint value) => new HRESULT((int)(value));
+    public static explicit operator HRESULT(uint value) => new HRESULT(unchecked((int)(value)));
 
     public static explicit operator uint(HRESULT value) => (uint)(value.Value);
 
-    public static explicit operator HRESULT(ulong value) => new HRESULT((int)(value));
+    public static explicit operator HRESULT(ulong value) => new HRESULT(unchecked((int)(value)));
 
     public static explicit operator ulong(HRESULT value) => (ulong)(value.Value);
 
-    public static explicit operator HRESULT(nuint value) => new HRESULT((int)(value));
+    public static explicit operator HRESULT(nuint value) => new HRESULT(unchecked((int)(value)));
 
     public static explicit operator nuint(HRESULT value) => (nuint)(value.Value);
 

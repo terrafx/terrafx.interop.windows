@@ -37,43 +37,43 @@ public readonly unsafe partial struct APARTMENT_SHUTDOWN_REGISTRATION_COOKIE : I
 
     public static implicit operator HANDLE(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => new HANDLE(value.Value);
 
-    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(byte value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(byte value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator byte(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (byte)(value.Value);
 
-    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(short value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(short value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator short(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (short)(value.Value);
 
-    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(int value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(int value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator int(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (int)(value.Value);
 
-    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(long value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(long value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator long(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (long)(value.Value);
 
-    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(nint value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(nint value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static implicit operator nint(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (nint)(value.Value);
 
-    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(sbyte value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(sbyte value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator sbyte(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (sbyte)(value.Value);
 
-    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(ushort value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(ushort value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator ushort(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (ushort)(value.Value);
 
-    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(uint value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(uint value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator uint(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (uint)(value.Value);
 
-    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(ulong value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(ulong value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator ulong(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (ulong)(value.Value);
 
-    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(nuint value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(nuint value) => new APARTMENT_SHUTDOWN_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static implicit operator nuint(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE value) => (nuint)(value.Value);
 

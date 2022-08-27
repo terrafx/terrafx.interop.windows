@@ -37,43 +37,43 @@ public readonly unsafe partial struct HTHUMBNAIL : IComparable, IComparable<HTHU
 
     public static implicit operator HANDLE(HTHUMBNAIL value) => new HANDLE(value.Value);
 
-    public static explicit operator HTHUMBNAIL(byte value) => new HTHUMBNAIL((void*)(value));
+    public static explicit operator HTHUMBNAIL(byte value) => new HTHUMBNAIL(unchecked((void*)(value)));
 
     public static explicit operator byte(HTHUMBNAIL value) => (byte)(value.Value);
 
-    public static explicit operator HTHUMBNAIL(short value) => new HTHUMBNAIL((void*)(value));
+    public static explicit operator HTHUMBNAIL(short value) => new HTHUMBNAIL(unchecked((void*)(value)));
 
     public static explicit operator short(HTHUMBNAIL value) => (short)(value.Value);
 
-    public static explicit operator HTHUMBNAIL(int value) => new HTHUMBNAIL((void*)(value));
+    public static explicit operator HTHUMBNAIL(int value) => new HTHUMBNAIL(unchecked((void*)(value)));
 
     public static explicit operator int(HTHUMBNAIL value) => (int)(value.Value);
 
-    public static explicit operator HTHUMBNAIL(long value) => new HTHUMBNAIL((void*)(value));
+    public static explicit operator HTHUMBNAIL(long value) => new HTHUMBNAIL(unchecked((void*)(value)));
 
     public static explicit operator long(HTHUMBNAIL value) => (long)(value.Value);
 
-    public static explicit operator HTHUMBNAIL(nint value) => new HTHUMBNAIL((void*)(value));
+    public static explicit operator HTHUMBNAIL(nint value) => new HTHUMBNAIL(unchecked((void*)(value)));
 
     public static implicit operator nint(HTHUMBNAIL value) => (nint)(value.Value);
 
-    public static explicit operator HTHUMBNAIL(sbyte value) => new HTHUMBNAIL((void*)(value));
+    public static explicit operator HTHUMBNAIL(sbyte value) => new HTHUMBNAIL(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HTHUMBNAIL value) => (sbyte)(value.Value);
 
-    public static explicit operator HTHUMBNAIL(ushort value) => new HTHUMBNAIL((void*)(value));
+    public static explicit operator HTHUMBNAIL(ushort value) => new HTHUMBNAIL(unchecked((void*)(value)));
 
     public static explicit operator ushort(HTHUMBNAIL value) => (ushort)(value.Value);
 
-    public static explicit operator HTHUMBNAIL(uint value) => new HTHUMBNAIL((void*)(value));
+    public static explicit operator HTHUMBNAIL(uint value) => new HTHUMBNAIL(unchecked((void*)(value)));
 
     public static explicit operator uint(HTHUMBNAIL value) => (uint)(value.Value);
 
-    public static explicit operator HTHUMBNAIL(ulong value) => new HTHUMBNAIL((void*)(value));
+    public static explicit operator HTHUMBNAIL(ulong value) => new HTHUMBNAIL(unchecked((void*)(value)));
 
     public static explicit operator ulong(HTHUMBNAIL value) => (ulong)(value.Value);
 
-    public static explicit operator HTHUMBNAIL(nuint value) => new HTHUMBNAIL((void*)(value));
+    public static explicit operator HTHUMBNAIL(nuint value) => new HTHUMBNAIL(unchecked((void*)(value)));
 
     public static implicit operator nuint(HTHUMBNAIL value) => (nuint)(value.Value);
 

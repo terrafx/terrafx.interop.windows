@@ -37,43 +37,43 @@ public readonly unsafe partial struct HRSRC : IComparable, IComparable<HRSRC>, I
 
     public static implicit operator HANDLE(HRSRC value) => new HANDLE(value.Value);
 
-    public static explicit operator HRSRC(byte value) => new HRSRC((void*)(value));
+    public static explicit operator HRSRC(byte value) => new HRSRC(unchecked((void*)(value)));
 
     public static explicit operator byte(HRSRC value) => (byte)(value.Value);
 
-    public static explicit operator HRSRC(short value) => new HRSRC((void*)(value));
+    public static explicit operator HRSRC(short value) => new HRSRC(unchecked((void*)(value)));
 
     public static explicit operator short(HRSRC value) => (short)(value.Value);
 
-    public static explicit operator HRSRC(int value) => new HRSRC((void*)(value));
+    public static explicit operator HRSRC(int value) => new HRSRC(unchecked((void*)(value)));
 
     public static explicit operator int(HRSRC value) => (int)(value.Value);
 
-    public static explicit operator HRSRC(long value) => new HRSRC((void*)(value));
+    public static explicit operator HRSRC(long value) => new HRSRC(unchecked((void*)(value)));
 
     public static explicit operator long(HRSRC value) => (long)(value.Value);
 
-    public static explicit operator HRSRC(nint value) => new HRSRC((void*)(value));
+    public static explicit operator HRSRC(nint value) => new HRSRC(unchecked((void*)(value)));
 
     public static implicit operator nint(HRSRC value) => (nint)(value.Value);
 
-    public static explicit operator HRSRC(sbyte value) => new HRSRC((void*)(value));
+    public static explicit operator HRSRC(sbyte value) => new HRSRC(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HRSRC value) => (sbyte)(value.Value);
 
-    public static explicit operator HRSRC(ushort value) => new HRSRC((void*)(value));
+    public static explicit operator HRSRC(ushort value) => new HRSRC(unchecked((void*)(value)));
 
     public static explicit operator ushort(HRSRC value) => (ushort)(value.Value);
 
-    public static explicit operator HRSRC(uint value) => new HRSRC((void*)(value));
+    public static explicit operator HRSRC(uint value) => new HRSRC(unchecked((void*)(value)));
 
     public static explicit operator uint(HRSRC value) => (uint)(value.Value);
 
-    public static explicit operator HRSRC(ulong value) => new HRSRC((void*)(value));
+    public static explicit operator HRSRC(ulong value) => new HRSRC(unchecked((void*)(value)));
 
     public static explicit operator ulong(HRSRC value) => (ulong)(value.Value);
 
-    public static explicit operator HRSRC(nuint value) => new HRSRC((void*)(value));
+    public static explicit operator HRSRC(nuint value) => new HRSRC(unchecked((void*)(value)));
 
     public static implicit operator nuint(HRSRC value) => (nuint)(value.Value);
 

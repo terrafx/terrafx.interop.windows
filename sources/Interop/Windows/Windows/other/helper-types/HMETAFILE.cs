@@ -37,43 +37,43 @@ public readonly unsafe partial struct HMETAFILE : IComparable, IComparable<HMETA
 
     public static implicit operator HANDLE(HMETAFILE value) => new HANDLE(value.Value);
 
-    public static explicit operator HMETAFILE(byte value) => new HMETAFILE((void*)(value));
+    public static explicit operator HMETAFILE(byte value) => new HMETAFILE(unchecked((void*)(value)));
 
     public static explicit operator byte(HMETAFILE value) => (byte)(value.Value);
 
-    public static explicit operator HMETAFILE(short value) => new HMETAFILE((void*)(value));
+    public static explicit operator HMETAFILE(short value) => new HMETAFILE(unchecked((void*)(value)));
 
     public static explicit operator short(HMETAFILE value) => (short)(value.Value);
 
-    public static explicit operator HMETAFILE(int value) => new HMETAFILE((void*)(value));
+    public static explicit operator HMETAFILE(int value) => new HMETAFILE(unchecked((void*)(value)));
 
     public static explicit operator int(HMETAFILE value) => (int)(value.Value);
 
-    public static explicit operator HMETAFILE(long value) => new HMETAFILE((void*)(value));
+    public static explicit operator HMETAFILE(long value) => new HMETAFILE(unchecked((void*)(value)));
 
     public static explicit operator long(HMETAFILE value) => (long)(value.Value);
 
-    public static explicit operator HMETAFILE(nint value) => new HMETAFILE((void*)(value));
+    public static explicit operator HMETAFILE(nint value) => new HMETAFILE(unchecked((void*)(value)));
 
     public static implicit operator nint(HMETAFILE value) => (nint)(value.Value);
 
-    public static explicit operator HMETAFILE(sbyte value) => new HMETAFILE((void*)(value));
+    public static explicit operator HMETAFILE(sbyte value) => new HMETAFILE(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HMETAFILE value) => (sbyte)(value.Value);
 
-    public static explicit operator HMETAFILE(ushort value) => new HMETAFILE((void*)(value));
+    public static explicit operator HMETAFILE(ushort value) => new HMETAFILE(unchecked((void*)(value)));
 
     public static explicit operator ushort(HMETAFILE value) => (ushort)(value.Value);
 
-    public static explicit operator HMETAFILE(uint value) => new HMETAFILE((void*)(value));
+    public static explicit operator HMETAFILE(uint value) => new HMETAFILE(unchecked((void*)(value)));
 
     public static explicit operator uint(HMETAFILE value) => (uint)(value.Value);
 
-    public static explicit operator HMETAFILE(ulong value) => new HMETAFILE((void*)(value));
+    public static explicit operator HMETAFILE(ulong value) => new HMETAFILE(unchecked((void*)(value)));
 
     public static explicit operator ulong(HMETAFILE value) => (ulong)(value.Value);
 
-    public static explicit operator HMETAFILE(nuint value) => new HMETAFILE((void*)(value));
+    public static explicit operator HMETAFILE(nuint value) => new HMETAFILE(unchecked((void*)(value)));
 
     public static implicit operator nuint(HMETAFILE value) => (nuint)(value.Value);
 

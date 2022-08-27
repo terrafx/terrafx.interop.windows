@@ -37,43 +37,43 @@ public readonly unsafe partial struct HDC : IComparable, IComparable<HDC>, IEqua
 
     public static implicit operator HANDLE(HDC value) => new HANDLE(value.Value);
 
-    public static explicit operator HDC(byte value) => new HDC((void*)(value));
+    public static explicit operator HDC(byte value) => new HDC(unchecked((void*)(value)));
 
     public static explicit operator byte(HDC value) => (byte)(value.Value);
 
-    public static explicit operator HDC(short value) => new HDC((void*)(value));
+    public static explicit operator HDC(short value) => new HDC(unchecked((void*)(value)));
 
     public static explicit operator short(HDC value) => (short)(value.Value);
 
-    public static explicit operator HDC(int value) => new HDC((void*)(value));
+    public static explicit operator HDC(int value) => new HDC(unchecked((void*)(value)));
 
     public static explicit operator int(HDC value) => (int)(value.Value);
 
-    public static explicit operator HDC(long value) => new HDC((void*)(value));
+    public static explicit operator HDC(long value) => new HDC(unchecked((void*)(value)));
 
     public static explicit operator long(HDC value) => (long)(value.Value);
 
-    public static explicit operator HDC(nint value) => new HDC((void*)(value));
+    public static explicit operator HDC(nint value) => new HDC(unchecked((void*)(value)));
 
     public static implicit operator nint(HDC value) => (nint)(value.Value);
 
-    public static explicit operator HDC(sbyte value) => new HDC((void*)(value));
+    public static explicit operator HDC(sbyte value) => new HDC(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HDC value) => (sbyte)(value.Value);
 
-    public static explicit operator HDC(ushort value) => new HDC((void*)(value));
+    public static explicit operator HDC(ushort value) => new HDC(unchecked((void*)(value)));
 
     public static explicit operator ushort(HDC value) => (ushort)(value.Value);
 
-    public static explicit operator HDC(uint value) => new HDC((void*)(value));
+    public static explicit operator HDC(uint value) => new HDC(unchecked((void*)(value)));
 
     public static explicit operator uint(HDC value) => (uint)(value.Value);
 
-    public static explicit operator HDC(ulong value) => new HDC((void*)(value));
+    public static explicit operator HDC(ulong value) => new HDC(unchecked((void*)(value)));
 
     public static explicit operator ulong(HDC value) => (ulong)(value.Value);
 
-    public static explicit operator HDC(nuint value) => new HDC((void*)(value));
+    public static explicit operator HDC(nuint value) => new HDC(unchecked((void*)(value)));
 
     public static implicit operator nuint(HDC value) => (nuint)(value.Value);
 

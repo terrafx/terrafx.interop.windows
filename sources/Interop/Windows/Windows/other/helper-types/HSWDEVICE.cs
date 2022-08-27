@@ -37,43 +37,43 @@ public readonly unsafe partial struct HSWDEVICE : IComparable, IComparable<HSWDE
 
     public static implicit operator HANDLE(HSWDEVICE value) => new HANDLE(value.Value);
 
-    public static explicit operator HSWDEVICE(byte value) => new HSWDEVICE((void*)(value));
+    public static explicit operator HSWDEVICE(byte value) => new HSWDEVICE(unchecked((void*)(value)));
 
     public static explicit operator byte(HSWDEVICE value) => (byte)(value.Value);
 
-    public static explicit operator HSWDEVICE(short value) => new HSWDEVICE((void*)(value));
+    public static explicit operator HSWDEVICE(short value) => new HSWDEVICE(unchecked((void*)(value)));
 
     public static explicit operator short(HSWDEVICE value) => (short)(value.Value);
 
-    public static explicit operator HSWDEVICE(int value) => new HSWDEVICE((void*)(value));
+    public static explicit operator HSWDEVICE(int value) => new HSWDEVICE(unchecked((void*)(value)));
 
     public static explicit operator int(HSWDEVICE value) => (int)(value.Value);
 
-    public static explicit operator HSWDEVICE(long value) => new HSWDEVICE((void*)(value));
+    public static explicit operator HSWDEVICE(long value) => new HSWDEVICE(unchecked((void*)(value)));
 
     public static explicit operator long(HSWDEVICE value) => (long)(value.Value);
 
-    public static explicit operator HSWDEVICE(nint value) => new HSWDEVICE((void*)(value));
+    public static explicit operator HSWDEVICE(nint value) => new HSWDEVICE(unchecked((void*)(value)));
 
     public static implicit operator nint(HSWDEVICE value) => (nint)(value.Value);
 
-    public static explicit operator HSWDEVICE(sbyte value) => new HSWDEVICE((void*)(value));
+    public static explicit operator HSWDEVICE(sbyte value) => new HSWDEVICE(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HSWDEVICE value) => (sbyte)(value.Value);
 
-    public static explicit operator HSWDEVICE(ushort value) => new HSWDEVICE((void*)(value));
+    public static explicit operator HSWDEVICE(ushort value) => new HSWDEVICE(unchecked((void*)(value)));
 
     public static explicit operator ushort(HSWDEVICE value) => (ushort)(value.Value);
 
-    public static explicit operator HSWDEVICE(uint value) => new HSWDEVICE((void*)(value));
+    public static explicit operator HSWDEVICE(uint value) => new HSWDEVICE(unchecked((void*)(value)));
 
     public static explicit operator uint(HSWDEVICE value) => (uint)(value.Value);
 
-    public static explicit operator HSWDEVICE(ulong value) => new HSWDEVICE((void*)(value));
+    public static explicit operator HSWDEVICE(ulong value) => new HSWDEVICE(unchecked((void*)(value)));
 
     public static explicit operator ulong(HSWDEVICE value) => (ulong)(value.Value);
 
-    public static explicit operator HSWDEVICE(nuint value) => new HSWDEVICE((void*)(value));
+    public static explicit operator HSWDEVICE(nuint value) => new HSWDEVICE(unchecked((void*)(value)));
 
     public static implicit operator nuint(HSWDEVICE value) => (nuint)(value.Value);
 

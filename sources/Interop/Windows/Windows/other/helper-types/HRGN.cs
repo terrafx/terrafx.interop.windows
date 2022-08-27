@@ -37,43 +37,43 @@ public readonly unsafe partial struct HRGN : IComparable, IComparable<HRGN>, IEq
 
     public static implicit operator HANDLE(HRGN value) => new HANDLE(value.Value);
 
-    public static explicit operator HRGN(byte value) => new HRGN((void*)(value));
+    public static explicit operator HRGN(byte value) => new HRGN(unchecked((void*)(value)));
 
     public static explicit operator byte(HRGN value) => (byte)(value.Value);
 
-    public static explicit operator HRGN(short value) => new HRGN((void*)(value));
+    public static explicit operator HRGN(short value) => new HRGN(unchecked((void*)(value)));
 
     public static explicit operator short(HRGN value) => (short)(value.Value);
 
-    public static explicit operator HRGN(int value) => new HRGN((void*)(value));
+    public static explicit operator HRGN(int value) => new HRGN(unchecked((void*)(value)));
 
     public static explicit operator int(HRGN value) => (int)(value.Value);
 
-    public static explicit operator HRGN(long value) => new HRGN((void*)(value));
+    public static explicit operator HRGN(long value) => new HRGN(unchecked((void*)(value)));
 
     public static explicit operator long(HRGN value) => (long)(value.Value);
 
-    public static explicit operator HRGN(nint value) => new HRGN((void*)(value));
+    public static explicit operator HRGN(nint value) => new HRGN(unchecked((void*)(value)));
 
     public static implicit operator nint(HRGN value) => (nint)(value.Value);
 
-    public static explicit operator HRGN(sbyte value) => new HRGN((void*)(value));
+    public static explicit operator HRGN(sbyte value) => new HRGN(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HRGN value) => (sbyte)(value.Value);
 
-    public static explicit operator HRGN(ushort value) => new HRGN((void*)(value));
+    public static explicit operator HRGN(ushort value) => new HRGN(unchecked((void*)(value)));
 
     public static explicit operator ushort(HRGN value) => (ushort)(value.Value);
 
-    public static explicit operator HRGN(uint value) => new HRGN((void*)(value));
+    public static explicit operator HRGN(uint value) => new HRGN(unchecked((void*)(value)));
 
     public static explicit operator uint(HRGN value) => (uint)(value.Value);
 
-    public static explicit operator HRGN(ulong value) => new HRGN((void*)(value));
+    public static explicit operator HRGN(ulong value) => new HRGN(unchecked((void*)(value)));
 
     public static explicit operator ulong(HRGN value) => (ulong)(value.Value);
 
-    public static explicit operator HRGN(nuint value) => new HRGN((void*)(value));
+    public static explicit operator HRGN(nuint value) => new HRGN(unchecked((void*)(value)));
 
     public static implicit operator nuint(HRGN value) => (nuint)(value.Value);
 

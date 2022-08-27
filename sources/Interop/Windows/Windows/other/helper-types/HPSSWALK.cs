@@ -37,43 +37,43 @@ public readonly unsafe partial struct HPSSWALK : IComparable, IComparable<HPSSWA
 
     public static implicit operator HANDLE(HPSSWALK value) => new HANDLE(value.Value);
 
-    public static explicit operator HPSSWALK(byte value) => new HPSSWALK((void*)(value));
+    public static explicit operator HPSSWALK(byte value) => new HPSSWALK(unchecked((void*)(value)));
 
     public static explicit operator byte(HPSSWALK value) => (byte)(value.Value);
 
-    public static explicit operator HPSSWALK(short value) => new HPSSWALK((void*)(value));
+    public static explicit operator HPSSWALK(short value) => new HPSSWALK(unchecked((void*)(value)));
 
     public static explicit operator short(HPSSWALK value) => (short)(value.Value);
 
-    public static explicit operator HPSSWALK(int value) => new HPSSWALK((void*)(value));
+    public static explicit operator HPSSWALK(int value) => new HPSSWALK(unchecked((void*)(value)));
 
     public static explicit operator int(HPSSWALK value) => (int)(value.Value);
 
-    public static explicit operator HPSSWALK(long value) => new HPSSWALK((void*)(value));
+    public static explicit operator HPSSWALK(long value) => new HPSSWALK(unchecked((void*)(value)));
 
     public static explicit operator long(HPSSWALK value) => (long)(value.Value);
 
-    public static explicit operator HPSSWALK(nint value) => new HPSSWALK((void*)(value));
+    public static explicit operator HPSSWALK(nint value) => new HPSSWALK(unchecked((void*)(value)));
 
     public static implicit operator nint(HPSSWALK value) => (nint)(value.Value);
 
-    public static explicit operator HPSSWALK(sbyte value) => new HPSSWALK((void*)(value));
+    public static explicit operator HPSSWALK(sbyte value) => new HPSSWALK(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HPSSWALK value) => (sbyte)(value.Value);
 
-    public static explicit operator HPSSWALK(ushort value) => new HPSSWALK((void*)(value));
+    public static explicit operator HPSSWALK(ushort value) => new HPSSWALK(unchecked((void*)(value)));
 
     public static explicit operator ushort(HPSSWALK value) => (ushort)(value.Value);
 
-    public static explicit operator HPSSWALK(uint value) => new HPSSWALK((void*)(value));
+    public static explicit operator HPSSWALK(uint value) => new HPSSWALK(unchecked((void*)(value)));
 
     public static explicit operator uint(HPSSWALK value) => (uint)(value.Value);
 
-    public static explicit operator HPSSWALK(ulong value) => new HPSSWALK((void*)(value));
+    public static explicit operator HPSSWALK(ulong value) => new HPSSWALK(unchecked((void*)(value)));
 
     public static explicit operator ulong(HPSSWALK value) => (ulong)(value.Value);
 
-    public static explicit operator HPSSWALK(nuint value) => new HPSSWALK((void*)(value));
+    public static explicit operator HPSSWALK(nuint value) => new HPSSWALK(unchecked((void*)(value)));
 
     public static implicit operator nuint(HPSSWALK value) => (nuint)(value.Value);
 

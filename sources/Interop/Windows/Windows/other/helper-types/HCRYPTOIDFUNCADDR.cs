@@ -37,43 +37,43 @@ public readonly unsafe partial struct HCRYPTOIDFUNCADDR : IComparable, IComparab
 
     public static implicit operator HANDLE(HCRYPTOIDFUNCADDR value) => new HANDLE(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(byte value) => new HCRYPTOIDFUNCADDR((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCADDR(byte value) => new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
 
     public static explicit operator byte(HCRYPTOIDFUNCADDR value) => (byte)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(short value) => new HCRYPTOIDFUNCADDR((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCADDR(short value) => new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
 
     public static explicit operator short(HCRYPTOIDFUNCADDR value) => (short)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(int value) => new HCRYPTOIDFUNCADDR((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCADDR(int value) => new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
 
     public static explicit operator int(HCRYPTOIDFUNCADDR value) => (int)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(long value) => new HCRYPTOIDFUNCADDR((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCADDR(long value) => new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
 
     public static explicit operator long(HCRYPTOIDFUNCADDR value) => (long)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(nint value) => new HCRYPTOIDFUNCADDR((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCADDR(nint value) => new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
 
     public static implicit operator nint(HCRYPTOIDFUNCADDR value) => (nint)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(sbyte value) => new HCRYPTOIDFUNCADDR((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCADDR(sbyte value) => new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HCRYPTOIDFUNCADDR value) => (sbyte)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(ushort value) => new HCRYPTOIDFUNCADDR((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCADDR(ushort value) => new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
 
     public static explicit operator ushort(HCRYPTOIDFUNCADDR value) => (ushort)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(uint value) => new HCRYPTOIDFUNCADDR((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCADDR(uint value) => new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
 
     public static explicit operator uint(HCRYPTOIDFUNCADDR value) => (uint)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(ulong value) => new HCRYPTOIDFUNCADDR((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCADDR(ulong value) => new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
 
     public static explicit operator ulong(HCRYPTOIDFUNCADDR value) => (ulong)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(nuint value) => new HCRYPTOIDFUNCADDR((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCADDR(nuint value) => new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
 
     public static implicit operator nuint(HCRYPTOIDFUNCADDR value) => (nuint)(value.Value);
 

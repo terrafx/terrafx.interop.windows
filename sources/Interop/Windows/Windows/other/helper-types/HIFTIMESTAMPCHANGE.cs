@@ -37,43 +37,43 @@ public readonly unsafe partial struct HIFTIMESTAMPCHANGE : IComparable, ICompara
 
     public static implicit operator HANDLE(HIFTIMESTAMPCHANGE value) => new HANDLE(value.Value);
 
-    public static explicit operator HIFTIMESTAMPCHANGE(byte value) => new HIFTIMESTAMPCHANGE((void*)(value));
+    public static explicit operator HIFTIMESTAMPCHANGE(byte value) => new HIFTIMESTAMPCHANGE(unchecked((void*)(value)));
 
     public static explicit operator byte(HIFTIMESTAMPCHANGE value) => (byte)(value.Value);
 
-    public static explicit operator HIFTIMESTAMPCHANGE(short value) => new HIFTIMESTAMPCHANGE((void*)(value));
+    public static explicit operator HIFTIMESTAMPCHANGE(short value) => new HIFTIMESTAMPCHANGE(unchecked((void*)(value)));
 
     public static explicit operator short(HIFTIMESTAMPCHANGE value) => (short)(value.Value);
 
-    public static explicit operator HIFTIMESTAMPCHANGE(int value) => new HIFTIMESTAMPCHANGE((void*)(value));
+    public static explicit operator HIFTIMESTAMPCHANGE(int value) => new HIFTIMESTAMPCHANGE(unchecked((void*)(value)));
 
     public static explicit operator int(HIFTIMESTAMPCHANGE value) => (int)(value.Value);
 
-    public static explicit operator HIFTIMESTAMPCHANGE(long value) => new HIFTIMESTAMPCHANGE((void*)(value));
+    public static explicit operator HIFTIMESTAMPCHANGE(long value) => new HIFTIMESTAMPCHANGE(unchecked((void*)(value)));
 
     public static explicit operator long(HIFTIMESTAMPCHANGE value) => (long)(value.Value);
 
-    public static explicit operator HIFTIMESTAMPCHANGE(nint value) => new HIFTIMESTAMPCHANGE((void*)(value));
+    public static explicit operator HIFTIMESTAMPCHANGE(nint value) => new HIFTIMESTAMPCHANGE(unchecked((void*)(value)));
 
     public static implicit operator nint(HIFTIMESTAMPCHANGE value) => (nint)(value.Value);
 
-    public static explicit operator HIFTIMESTAMPCHANGE(sbyte value) => new HIFTIMESTAMPCHANGE((void*)(value));
+    public static explicit operator HIFTIMESTAMPCHANGE(sbyte value) => new HIFTIMESTAMPCHANGE(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HIFTIMESTAMPCHANGE value) => (sbyte)(value.Value);
 
-    public static explicit operator HIFTIMESTAMPCHANGE(ushort value) => new HIFTIMESTAMPCHANGE((void*)(value));
+    public static explicit operator HIFTIMESTAMPCHANGE(ushort value) => new HIFTIMESTAMPCHANGE(unchecked((void*)(value)));
 
     public static explicit operator ushort(HIFTIMESTAMPCHANGE value) => (ushort)(value.Value);
 
-    public static explicit operator HIFTIMESTAMPCHANGE(uint value) => new HIFTIMESTAMPCHANGE((void*)(value));
+    public static explicit operator HIFTIMESTAMPCHANGE(uint value) => new HIFTIMESTAMPCHANGE(unchecked((void*)(value)));
 
     public static explicit operator uint(HIFTIMESTAMPCHANGE value) => (uint)(value.Value);
 
-    public static explicit operator HIFTIMESTAMPCHANGE(ulong value) => new HIFTIMESTAMPCHANGE((void*)(value));
+    public static explicit operator HIFTIMESTAMPCHANGE(ulong value) => new HIFTIMESTAMPCHANGE(unchecked((void*)(value)));
 
     public static explicit operator ulong(HIFTIMESTAMPCHANGE value) => (ulong)(value.Value);
 
-    public static explicit operator HIFTIMESTAMPCHANGE(nuint value) => new HIFTIMESTAMPCHANGE((void*)(value));
+    public static explicit operator HIFTIMESTAMPCHANGE(nuint value) => new HIFTIMESTAMPCHANGE(unchecked((void*)(value)));
 
     public static implicit operator nuint(HIFTIMESTAMPCHANGE value) => (nuint)(value.Value);
 

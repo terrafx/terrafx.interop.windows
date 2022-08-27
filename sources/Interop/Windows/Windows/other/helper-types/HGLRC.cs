@@ -37,43 +37,43 @@ public readonly unsafe partial struct HGLRC : IComparable, IComparable<HGLRC>, I
 
     public static implicit operator HANDLE(HGLRC value) => new HANDLE(value.Value);
 
-    public static explicit operator HGLRC(byte value) => new HGLRC((void*)(value));
+    public static explicit operator HGLRC(byte value) => new HGLRC(unchecked((void*)(value)));
 
     public static explicit operator byte(HGLRC value) => (byte)(value.Value);
 
-    public static explicit operator HGLRC(short value) => new HGLRC((void*)(value));
+    public static explicit operator HGLRC(short value) => new HGLRC(unchecked((void*)(value)));
 
     public static explicit operator short(HGLRC value) => (short)(value.Value);
 
-    public static explicit operator HGLRC(int value) => new HGLRC((void*)(value));
+    public static explicit operator HGLRC(int value) => new HGLRC(unchecked((void*)(value)));
 
     public static explicit operator int(HGLRC value) => (int)(value.Value);
 
-    public static explicit operator HGLRC(long value) => new HGLRC((void*)(value));
+    public static explicit operator HGLRC(long value) => new HGLRC(unchecked((void*)(value)));
 
     public static explicit operator long(HGLRC value) => (long)(value.Value);
 
-    public static explicit operator HGLRC(nint value) => new HGLRC((void*)(value));
+    public static explicit operator HGLRC(nint value) => new HGLRC(unchecked((void*)(value)));
 
     public static implicit operator nint(HGLRC value) => (nint)(value.Value);
 
-    public static explicit operator HGLRC(sbyte value) => new HGLRC((void*)(value));
+    public static explicit operator HGLRC(sbyte value) => new HGLRC(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HGLRC value) => (sbyte)(value.Value);
 
-    public static explicit operator HGLRC(ushort value) => new HGLRC((void*)(value));
+    public static explicit operator HGLRC(ushort value) => new HGLRC(unchecked((void*)(value)));
 
     public static explicit operator ushort(HGLRC value) => (ushort)(value.Value);
 
-    public static explicit operator HGLRC(uint value) => new HGLRC((void*)(value));
+    public static explicit operator HGLRC(uint value) => new HGLRC(unchecked((void*)(value)));
 
     public static explicit operator uint(HGLRC value) => (uint)(value.Value);
 
-    public static explicit operator HGLRC(ulong value) => new HGLRC((void*)(value));
+    public static explicit operator HGLRC(ulong value) => new HGLRC(unchecked((void*)(value)));
 
     public static explicit operator ulong(HGLRC value) => (ulong)(value.Value);
 
-    public static explicit operator HGLRC(nuint value) => new HGLRC((void*)(value));
+    public static explicit operator HGLRC(nuint value) => new HGLRC(unchecked((void*)(value)));
 
     public static implicit operator nuint(HGLRC value) => (nuint)(value.Value);
 

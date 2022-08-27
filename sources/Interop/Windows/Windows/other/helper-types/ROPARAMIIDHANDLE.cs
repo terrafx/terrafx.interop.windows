@@ -37,43 +37,43 @@ public readonly unsafe partial struct ROPARAMIIDHANDLE : IComparable, IComparabl
 
     public static implicit operator HANDLE(ROPARAMIIDHANDLE value) => new HANDLE(value.Value);
 
-    public static explicit operator ROPARAMIIDHANDLE(byte value) => new ROPARAMIIDHANDLE((void*)(value));
+    public static explicit operator ROPARAMIIDHANDLE(byte value) => new ROPARAMIIDHANDLE(unchecked((void*)(value)));
 
     public static explicit operator byte(ROPARAMIIDHANDLE value) => (byte)(value.Value);
 
-    public static explicit operator ROPARAMIIDHANDLE(short value) => new ROPARAMIIDHANDLE((void*)(value));
+    public static explicit operator ROPARAMIIDHANDLE(short value) => new ROPARAMIIDHANDLE(unchecked((void*)(value)));
 
     public static explicit operator short(ROPARAMIIDHANDLE value) => (short)(value.Value);
 
-    public static explicit operator ROPARAMIIDHANDLE(int value) => new ROPARAMIIDHANDLE((void*)(value));
+    public static explicit operator ROPARAMIIDHANDLE(int value) => new ROPARAMIIDHANDLE(unchecked((void*)(value)));
 
     public static explicit operator int(ROPARAMIIDHANDLE value) => (int)(value.Value);
 
-    public static explicit operator ROPARAMIIDHANDLE(long value) => new ROPARAMIIDHANDLE((void*)(value));
+    public static explicit operator ROPARAMIIDHANDLE(long value) => new ROPARAMIIDHANDLE(unchecked((void*)(value)));
 
     public static explicit operator long(ROPARAMIIDHANDLE value) => (long)(value.Value);
 
-    public static explicit operator ROPARAMIIDHANDLE(nint value) => new ROPARAMIIDHANDLE((void*)(value));
+    public static explicit operator ROPARAMIIDHANDLE(nint value) => new ROPARAMIIDHANDLE(unchecked((void*)(value)));
 
     public static implicit operator nint(ROPARAMIIDHANDLE value) => (nint)(value.Value);
 
-    public static explicit operator ROPARAMIIDHANDLE(sbyte value) => new ROPARAMIIDHANDLE((void*)(value));
+    public static explicit operator ROPARAMIIDHANDLE(sbyte value) => new ROPARAMIIDHANDLE(unchecked((void*)(value)));
 
     public static explicit operator sbyte(ROPARAMIIDHANDLE value) => (sbyte)(value.Value);
 
-    public static explicit operator ROPARAMIIDHANDLE(ushort value) => new ROPARAMIIDHANDLE((void*)(value));
+    public static explicit operator ROPARAMIIDHANDLE(ushort value) => new ROPARAMIIDHANDLE(unchecked((void*)(value)));
 
     public static explicit operator ushort(ROPARAMIIDHANDLE value) => (ushort)(value.Value);
 
-    public static explicit operator ROPARAMIIDHANDLE(uint value) => new ROPARAMIIDHANDLE((void*)(value));
+    public static explicit operator ROPARAMIIDHANDLE(uint value) => new ROPARAMIIDHANDLE(unchecked((void*)(value)));
 
     public static explicit operator uint(ROPARAMIIDHANDLE value) => (uint)(value.Value);
 
-    public static explicit operator ROPARAMIIDHANDLE(ulong value) => new ROPARAMIIDHANDLE((void*)(value));
+    public static explicit operator ROPARAMIIDHANDLE(ulong value) => new ROPARAMIIDHANDLE(unchecked((void*)(value)));
 
     public static explicit operator ulong(ROPARAMIIDHANDLE value) => (ulong)(value.Value);
 
-    public static explicit operator ROPARAMIIDHANDLE(nuint value) => new ROPARAMIIDHANDLE((void*)(value));
+    public static explicit operator ROPARAMIIDHANDLE(nuint value) => new ROPARAMIIDHANDLE(unchecked((void*)(value)));
 
     public static implicit operator nuint(ROPARAMIIDHANDLE value) => (nuint)(value.Value);
 

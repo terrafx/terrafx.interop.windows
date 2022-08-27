@@ -37,43 +37,43 @@ public readonly unsafe partial struct HCRYPTASYNC : IComparable, IComparable<HCR
 
     public static implicit operator HANDLE(HCRYPTASYNC value) => new HANDLE(value.Value);
 
-    public static explicit operator HCRYPTASYNC(byte value) => new HCRYPTASYNC((void*)(value));
+    public static explicit operator HCRYPTASYNC(byte value) => new HCRYPTASYNC(unchecked((void*)(value)));
 
     public static explicit operator byte(HCRYPTASYNC value) => (byte)(value.Value);
 
-    public static explicit operator HCRYPTASYNC(short value) => new HCRYPTASYNC((void*)(value));
+    public static explicit operator HCRYPTASYNC(short value) => new HCRYPTASYNC(unchecked((void*)(value)));
 
     public static explicit operator short(HCRYPTASYNC value) => (short)(value.Value);
 
-    public static explicit operator HCRYPTASYNC(int value) => new HCRYPTASYNC((void*)(value));
+    public static explicit operator HCRYPTASYNC(int value) => new HCRYPTASYNC(unchecked((void*)(value)));
 
     public static explicit operator int(HCRYPTASYNC value) => (int)(value.Value);
 
-    public static explicit operator HCRYPTASYNC(long value) => new HCRYPTASYNC((void*)(value));
+    public static explicit operator HCRYPTASYNC(long value) => new HCRYPTASYNC(unchecked((void*)(value)));
 
     public static explicit operator long(HCRYPTASYNC value) => (long)(value.Value);
 
-    public static explicit operator HCRYPTASYNC(nint value) => new HCRYPTASYNC((void*)(value));
+    public static explicit operator HCRYPTASYNC(nint value) => new HCRYPTASYNC(unchecked((void*)(value)));
 
     public static implicit operator nint(HCRYPTASYNC value) => (nint)(value.Value);
 
-    public static explicit operator HCRYPTASYNC(sbyte value) => new HCRYPTASYNC((void*)(value));
+    public static explicit operator HCRYPTASYNC(sbyte value) => new HCRYPTASYNC(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HCRYPTASYNC value) => (sbyte)(value.Value);
 
-    public static explicit operator HCRYPTASYNC(ushort value) => new HCRYPTASYNC((void*)(value));
+    public static explicit operator HCRYPTASYNC(ushort value) => new HCRYPTASYNC(unchecked((void*)(value)));
 
     public static explicit operator ushort(HCRYPTASYNC value) => (ushort)(value.Value);
 
-    public static explicit operator HCRYPTASYNC(uint value) => new HCRYPTASYNC((void*)(value));
+    public static explicit operator HCRYPTASYNC(uint value) => new HCRYPTASYNC(unchecked((void*)(value)));
 
     public static explicit operator uint(HCRYPTASYNC value) => (uint)(value.Value);
 
-    public static explicit operator HCRYPTASYNC(ulong value) => new HCRYPTASYNC((void*)(value));
+    public static explicit operator HCRYPTASYNC(ulong value) => new HCRYPTASYNC(unchecked((void*)(value)));
 
     public static explicit operator ulong(HCRYPTASYNC value) => (ulong)(value.Value);
 
-    public static explicit operator HCRYPTASYNC(nuint value) => new HCRYPTASYNC((void*)(value));
+    public static explicit operator HCRYPTASYNC(nuint value) => new HCRYPTASYNC(unchecked((void*)(value)));
 
     public static implicit operator nuint(HCRYPTASYNC value) => (nuint)(value.Value);
 

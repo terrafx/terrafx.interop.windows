@@ -37,43 +37,43 @@ public readonly unsafe partial struct HPCON : IComparable, IComparable<HPCON>, I
 
     public static implicit operator HANDLE(HPCON value) => new HANDLE(value.Value);
 
-    public static explicit operator HPCON(byte value) => new HPCON((void*)(value));
+    public static explicit operator HPCON(byte value) => new HPCON(unchecked((void*)(value)));
 
     public static explicit operator byte(HPCON value) => (byte)(value.Value);
 
-    public static explicit operator HPCON(short value) => new HPCON((void*)(value));
+    public static explicit operator HPCON(short value) => new HPCON(unchecked((void*)(value)));
 
     public static explicit operator short(HPCON value) => (short)(value.Value);
 
-    public static explicit operator HPCON(int value) => new HPCON((void*)(value));
+    public static explicit operator HPCON(int value) => new HPCON(unchecked((void*)(value)));
 
     public static explicit operator int(HPCON value) => (int)(value.Value);
 
-    public static explicit operator HPCON(long value) => new HPCON((void*)(value));
+    public static explicit operator HPCON(long value) => new HPCON(unchecked((void*)(value)));
 
     public static explicit operator long(HPCON value) => (long)(value.Value);
 
-    public static explicit operator HPCON(nint value) => new HPCON((void*)(value));
+    public static explicit operator HPCON(nint value) => new HPCON(unchecked((void*)(value)));
 
     public static implicit operator nint(HPCON value) => (nint)(value.Value);
 
-    public static explicit operator HPCON(sbyte value) => new HPCON((void*)(value));
+    public static explicit operator HPCON(sbyte value) => new HPCON(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HPCON value) => (sbyte)(value.Value);
 
-    public static explicit operator HPCON(ushort value) => new HPCON((void*)(value));
+    public static explicit operator HPCON(ushort value) => new HPCON(unchecked((void*)(value)));
 
     public static explicit operator ushort(HPCON value) => (ushort)(value.Value);
 
-    public static explicit operator HPCON(uint value) => new HPCON((void*)(value));
+    public static explicit operator HPCON(uint value) => new HPCON(unchecked((void*)(value)));
 
     public static explicit operator uint(HPCON value) => (uint)(value.Value);
 
-    public static explicit operator HPCON(ulong value) => new HPCON((void*)(value));
+    public static explicit operator HPCON(ulong value) => new HPCON(unchecked((void*)(value)));
 
     public static explicit operator ulong(HPCON value) => (ulong)(value.Value);
 
-    public static explicit operator HPCON(nuint value) => new HPCON((void*)(value));
+    public static explicit operator HPCON(nuint value) => new HPCON(unchecked((void*)(value)));
 
     public static implicit operator nuint(HPCON value) => (nuint)(value.Value);
 

@@ -37,43 +37,43 @@ public readonly unsafe partial struct HEVENT : IComparable, IComparable<HEVENT>,
 
     public static implicit operator HANDLE(HEVENT value) => new HANDLE(value.Value);
 
-    public static explicit operator HEVENT(byte value) => new HEVENT((void*)(value));
+    public static explicit operator HEVENT(byte value) => new HEVENT(unchecked((void*)(value)));
 
     public static explicit operator byte(HEVENT value) => (byte)(value.Value);
 
-    public static explicit operator HEVENT(short value) => new HEVENT((void*)(value));
+    public static explicit operator HEVENT(short value) => new HEVENT(unchecked((void*)(value)));
 
     public static explicit operator short(HEVENT value) => (short)(value.Value);
 
-    public static explicit operator HEVENT(int value) => new HEVENT((void*)(value));
+    public static explicit operator HEVENT(int value) => new HEVENT(unchecked((void*)(value)));
 
     public static explicit operator int(HEVENT value) => (int)(value.Value);
 
-    public static explicit operator HEVENT(long value) => new HEVENT((void*)(value));
+    public static explicit operator HEVENT(long value) => new HEVENT(unchecked((void*)(value)));
 
     public static explicit operator long(HEVENT value) => (long)(value.Value);
 
-    public static explicit operator HEVENT(nint value) => new HEVENT((void*)(value));
+    public static explicit operator HEVENT(nint value) => new HEVENT(unchecked((void*)(value)));
 
     public static implicit operator nint(HEVENT value) => (nint)(value.Value);
 
-    public static explicit operator HEVENT(sbyte value) => new HEVENT((void*)(value));
+    public static explicit operator HEVENT(sbyte value) => new HEVENT(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HEVENT value) => (sbyte)(value.Value);
 
-    public static explicit operator HEVENT(ushort value) => new HEVENT((void*)(value));
+    public static explicit operator HEVENT(ushort value) => new HEVENT(unchecked((void*)(value)));
 
     public static explicit operator ushort(HEVENT value) => (ushort)(value.Value);
 
-    public static explicit operator HEVENT(uint value) => new HEVENT((void*)(value));
+    public static explicit operator HEVENT(uint value) => new HEVENT(unchecked((void*)(value)));
 
     public static explicit operator uint(HEVENT value) => (uint)(value.Value);
 
-    public static explicit operator HEVENT(ulong value) => new HEVENT((void*)(value));
+    public static explicit operator HEVENT(ulong value) => new HEVENT(unchecked((void*)(value)));
 
     public static explicit operator ulong(HEVENT value) => (ulong)(value.Value);
 
-    public static explicit operator HEVENT(nuint value) => new HEVENT((void*)(value));
+    public static explicit operator HEVENT(nuint value) => new HEVENT(unchecked((void*)(value)));
 
     public static implicit operator nuint(HEVENT value) => (nuint)(value.Value);
 

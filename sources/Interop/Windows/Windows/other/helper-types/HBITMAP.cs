@@ -37,43 +37,43 @@ public readonly unsafe partial struct HBITMAP : IComparable, IComparable<HBITMAP
 
     public static implicit operator HANDLE(HBITMAP value) => new HANDLE(value.Value);
 
-    public static explicit operator HBITMAP(byte value) => new HBITMAP((void*)(value));
+    public static explicit operator HBITMAP(byte value) => new HBITMAP(unchecked((void*)(value)));
 
     public static explicit operator byte(HBITMAP value) => (byte)(value.Value);
 
-    public static explicit operator HBITMAP(short value) => new HBITMAP((void*)(value));
+    public static explicit operator HBITMAP(short value) => new HBITMAP(unchecked((void*)(value)));
 
     public static explicit operator short(HBITMAP value) => (short)(value.Value);
 
-    public static explicit operator HBITMAP(int value) => new HBITMAP((void*)(value));
+    public static explicit operator HBITMAP(int value) => new HBITMAP(unchecked((void*)(value)));
 
     public static explicit operator int(HBITMAP value) => (int)(value.Value);
 
-    public static explicit operator HBITMAP(long value) => new HBITMAP((void*)(value));
+    public static explicit operator HBITMAP(long value) => new HBITMAP(unchecked((void*)(value)));
 
     public static explicit operator long(HBITMAP value) => (long)(value.Value);
 
-    public static explicit operator HBITMAP(nint value) => new HBITMAP((void*)(value));
+    public static explicit operator HBITMAP(nint value) => new HBITMAP(unchecked((void*)(value)));
 
     public static implicit operator nint(HBITMAP value) => (nint)(value.Value);
 
-    public static explicit operator HBITMAP(sbyte value) => new HBITMAP((void*)(value));
+    public static explicit operator HBITMAP(sbyte value) => new HBITMAP(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HBITMAP value) => (sbyte)(value.Value);
 
-    public static explicit operator HBITMAP(ushort value) => new HBITMAP((void*)(value));
+    public static explicit operator HBITMAP(ushort value) => new HBITMAP(unchecked((void*)(value)));
 
     public static explicit operator ushort(HBITMAP value) => (ushort)(value.Value);
 
-    public static explicit operator HBITMAP(uint value) => new HBITMAP((void*)(value));
+    public static explicit operator HBITMAP(uint value) => new HBITMAP(unchecked((void*)(value)));
 
     public static explicit operator uint(HBITMAP value) => (uint)(value.Value);
 
-    public static explicit operator HBITMAP(ulong value) => new HBITMAP((void*)(value));
+    public static explicit operator HBITMAP(ulong value) => new HBITMAP(unchecked((void*)(value)));
 
     public static explicit operator ulong(HBITMAP value) => (ulong)(value.Value);
 
-    public static explicit operator HBITMAP(nuint value) => new HBITMAP((void*)(value));
+    public static explicit operator HBITMAP(nuint value) => new HBITMAP(unchecked((void*)(value)));
 
     public static implicit operator nuint(HBITMAP value) => (nuint)(value.Value);
 

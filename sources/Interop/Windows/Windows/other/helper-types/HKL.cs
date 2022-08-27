@@ -37,43 +37,43 @@ public readonly unsafe partial struct HKL : IComparable, IComparable<HKL>, IEqua
 
     public static implicit operator HANDLE(HKL value) => new HANDLE(value.Value);
 
-    public static explicit operator HKL(byte value) => new HKL((void*)(value));
+    public static explicit operator HKL(byte value) => new HKL(unchecked((void*)(value)));
 
     public static explicit operator byte(HKL value) => (byte)(value.Value);
 
-    public static explicit operator HKL(short value) => new HKL((void*)(value));
+    public static explicit operator HKL(short value) => new HKL(unchecked((void*)(value)));
 
     public static explicit operator short(HKL value) => (short)(value.Value);
 
-    public static explicit operator HKL(int value) => new HKL((void*)(value));
+    public static explicit operator HKL(int value) => new HKL(unchecked((void*)(value)));
 
     public static explicit operator int(HKL value) => (int)(value.Value);
 
-    public static explicit operator HKL(long value) => new HKL((void*)(value));
+    public static explicit operator HKL(long value) => new HKL(unchecked((void*)(value)));
 
     public static explicit operator long(HKL value) => (long)(value.Value);
 
-    public static explicit operator HKL(nint value) => new HKL((void*)(value));
+    public static explicit operator HKL(nint value) => new HKL(unchecked((void*)(value)));
 
     public static implicit operator nint(HKL value) => (nint)(value.Value);
 
-    public static explicit operator HKL(sbyte value) => new HKL((void*)(value));
+    public static explicit operator HKL(sbyte value) => new HKL(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HKL value) => (sbyte)(value.Value);
 
-    public static explicit operator HKL(ushort value) => new HKL((void*)(value));
+    public static explicit operator HKL(ushort value) => new HKL(unchecked((void*)(value)));
 
     public static explicit operator ushort(HKL value) => (ushort)(value.Value);
 
-    public static explicit operator HKL(uint value) => new HKL((void*)(value));
+    public static explicit operator HKL(uint value) => new HKL(unchecked((void*)(value)));
 
     public static explicit operator uint(HKL value) => (uint)(value.Value);
 
-    public static explicit operator HKL(ulong value) => new HKL((void*)(value));
+    public static explicit operator HKL(ulong value) => new HKL(unchecked((void*)(value)));
 
     public static explicit operator ulong(HKL value) => (ulong)(value.Value);
 
-    public static explicit operator HKL(nuint value) => new HKL((void*)(value));
+    public static explicit operator HKL(nuint value) => new HKL(unchecked((void*)(value)));
 
     public static implicit operator nuint(HKL value) => (nuint)(value.Value);
 

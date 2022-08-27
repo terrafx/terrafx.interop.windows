@@ -37,43 +37,43 @@ public readonly unsafe partial struct HUSKEY : IComparable, IComparable<HUSKEY>,
 
     public static implicit operator HANDLE(HUSKEY value) => new HANDLE(value.Value);
 
-    public static explicit operator HUSKEY(byte value) => new HUSKEY((void*)(value));
+    public static explicit operator HUSKEY(byte value) => new HUSKEY(unchecked((void*)(value)));
 
     public static explicit operator byte(HUSKEY value) => (byte)(value.Value);
 
-    public static explicit operator HUSKEY(short value) => new HUSKEY((void*)(value));
+    public static explicit operator HUSKEY(short value) => new HUSKEY(unchecked((void*)(value)));
 
     public static explicit operator short(HUSKEY value) => (short)(value.Value);
 
-    public static explicit operator HUSKEY(int value) => new HUSKEY((void*)(value));
+    public static explicit operator HUSKEY(int value) => new HUSKEY(unchecked((void*)(value)));
 
     public static explicit operator int(HUSKEY value) => (int)(value.Value);
 
-    public static explicit operator HUSKEY(long value) => new HUSKEY((void*)(value));
+    public static explicit operator HUSKEY(long value) => new HUSKEY(unchecked((void*)(value)));
 
     public static explicit operator long(HUSKEY value) => (long)(value.Value);
 
-    public static explicit operator HUSKEY(nint value) => new HUSKEY((void*)(value));
+    public static explicit operator HUSKEY(nint value) => new HUSKEY(unchecked((void*)(value)));
 
     public static implicit operator nint(HUSKEY value) => (nint)(value.Value);
 
-    public static explicit operator HUSKEY(sbyte value) => new HUSKEY((void*)(value));
+    public static explicit operator HUSKEY(sbyte value) => new HUSKEY(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HUSKEY value) => (sbyte)(value.Value);
 
-    public static explicit operator HUSKEY(ushort value) => new HUSKEY((void*)(value));
+    public static explicit operator HUSKEY(ushort value) => new HUSKEY(unchecked((void*)(value)));
 
     public static explicit operator ushort(HUSKEY value) => (ushort)(value.Value);
 
-    public static explicit operator HUSKEY(uint value) => new HUSKEY((void*)(value));
+    public static explicit operator HUSKEY(uint value) => new HUSKEY(unchecked((void*)(value)));
 
     public static explicit operator uint(HUSKEY value) => (uint)(value.Value);
 
-    public static explicit operator HUSKEY(ulong value) => new HUSKEY((void*)(value));
+    public static explicit operator HUSKEY(ulong value) => new HUSKEY(unchecked((void*)(value)));
 
     public static explicit operator ulong(HUSKEY value) => (ulong)(value.Value);
 
-    public static explicit operator HUSKEY(nuint value) => new HUSKEY((void*)(value));
+    public static explicit operator HUSKEY(nuint value) => new HUSKEY(unchecked((void*)(value)));
 
     public static implicit operator nuint(HUSKEY value) => (nuint)(value.Value);
 

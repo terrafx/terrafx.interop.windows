@@ -31,43 +31,43 @@ public readonly unsafe partial struct PHIDP_PREPARSED_DATA : IComparable, ICompa
 
     public static implicit operator void*(PHIDP_PREPARSED_DATA value) => value.Value;
 
-    public static explicit operator PHIDP_PREPARSED_DATA(byte value) => new PHIDP_PREPARSED_DATA((void*)(value));
+    public static explicit operator PHIDP_PREPARSED_DATA(byte value) => new PHIDP_PREPARSED_DATA(unchecked((void*)(value)));
 
     public static explicit operator byte(PHIDP_PREPARSED_DATA value) => (byte)(value.Value);
 
-    public static explicit operator PHIDP_PREPARSED_DATA(short value) => new PHIDP_PREPARSED_DATA((void*)(value));
+    public static explicit operator PHIDP_PREPARSED_DATA(short value) => new PHIDP_PREPARSED_DATA(unchecked((void*)(value)));
 
     public static explicit operator short(PHIDP_PREPARSED_DATA value) => (short)(value.Value);
 
-    public static explicit operator PHIDP_PREPARSED_DATA(int value) => new PHIDP_PREPARSED_DATA((void*)(value));
+    public static explicit operator PHIDP_PREPARSED_DATA(int value) => new PHIDP_PREPARSED_DATA(unchecked((void*)(value)));
 
     public static explicit operator int(PHIDP_PREPARSED_DATA value) => (int)(value.Value);
 
-    public static explicit operator PHIDP_PREPARSED_DATA(long value) => new PHIDP_PREPARSED_DATA((void*)(value));
+    public static explicit operator PHIDP_PREPARSED_DATA(long value) => new PHIDP_PREPARSED_DATA(unchecked((void*)(value)));
 
     public static explicit operator long(PHIDP_PREPARSED_DATA value) => (long)(value.Value);
 
-    public static explicit operator PHIDP_PREPARSED_DATA(nint value) => new PHIDP_PREPARSED_DATA((void*)(value));
+    public static explicit operator PHIDP_PREPARSED_DATA(nint value) => new PHIDP_PREPARSED_DATA(unchecked((void*)(value)));
 
     public static implicit operator nint(PHIDP_PREPARSED_DATA value) => (nint)(value.Value);
 
-    public static explicit operator PHIDP_PREPARSED_DATA(sbyte value) => new PHIDP_PREPARSED_DATA((void*)(value));
+    public static explicit operator PHIDP_PREPARSED_DATA(sbyte value) => new PHIDP_PREPARSED_DATA(unchecked((void*)(value)));
 
     public static explicit operator sbyte(PHIDP_PREPARSED_DATA value) => (sbyte)(value.Value);
 
-    public static explicit operator PHIDP_PREPARSED_DATA(ushort value) => new PHIDP_PREPARSED_DATA((void*)(value));
+    public static explicit operator PHIDP_PREPARSED_DATA(ushort value) => new PHIDP_PREPARSED_DATA(unchecked((void*)(value)));
 
     public static explicit operator ushort(PHIDP_PREPARSED_DATA value) => (ushort)(value.Value);
 
-    public static explicit operator PHIDP_PREPARSED_DATA(uint value) => new PHIDP_PREPARSED_DATA((void*)(value));
+    public static explicit operator PHIDP_PREPARSED_DATA(uint value) => new PHIDP_PREPARSED_DATA(unchecked((void*)(value)));
 
     public static explicit operator uint(PHIDP_PREPARSED_DATA value) => (uint)(value.Value);
 
-    public static explicit operator PHIDP_PREPARSED_DATA(ulong value) => new PHIDP_PREPARSED_DATA((void*)(value));
+    public static explicit operator PHIDP_PREPARSED_DATA(ulong value) => new PHIDP_PREPARSED_DATA(unchecked((void*)(value)));
 
     public static explicit operator ulong(PHIDP_PREPARSED_DATA value) => (ulong)(value.Value);
 
-    public static explicit operator PHIDP_PREPARSED_DATA(nuint value) => new PHIDP_PREPARSED_DATA((void*)(value));
+    public static explicit operator PHIDP_PREPARSED_DATA(nuint value) => new PHIDP_PREPARSED_DATA(unchecked((void*)(value)));
 
     public static implicit operator nuint(PHIDP_PREPARSED_DATA value) => (nuint)(value.Value);
 

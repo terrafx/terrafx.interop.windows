@@ -37,43 +37,43 @@ public readonly unsafe partial struct HINTERACTIONCONTEXT : IComparable, ICompar
 
     public static implicit operator HANDLE(HINTERACTIONCONTEXT value) => new HANDLE(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(byte value) => new HINTERACTIONCONTEXT((void*)(value));
+    public static explicit operator HINTERACTIONCONTEXT(byte value) => new HINTERACTIONCONTEXT(unchecked((void*)(value)));
 
     public static explicit operator byte(HINTERACTIONCONTEXT value) => (byte)(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(short value) => new HINTERACTIONCONTEXT((void*)(value));
+    public static explicit operator HINTERACTIONCONTEXT(short value) => new HINTERACTIONCONTEXT(unchecked((void*)(value)));
 
     public static explicit operator short(HINTERACTIONCONTEXT value) => (short)(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(int value) => new HINTERACTIONCONTEXT((void*)(value));
+    public static explicit operator HINTERACTIONCONTEXT(int value) => new HINTERACTIONCONTEXT(unchecked((void*)(value)));
 
     public static explicit operator int(HINTERACTIONCONTEXT value) => (int)(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(long value) => new HINTERACTIONCONTEXT((void*)(value));
+    public static explicit operator HINTERACTIONCONTEXT(long value) => new HINTERACTIONCONTEXT(unchecked((void*)(value)));
 
     public static explicit operator long(HINTERACTIONCONTEXT value) => (long)(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(nint value) => new HINTERACTIONCONTEXT((void*)(value));
+    public static explicit operator HINTERACTIONCONTEXT(nint value) => new HINTERACTIONCONTEXT(unchecked((void*)(value)));
 
     public static implicit operator nint(HINTERACTIONCONTEXT value) => (nint)(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(sbyte value) => new HINTERACTIONCONTEXT((void*)(value));
+    public static explicit operator HINTERACTIONCONTEXT(sbyte value) => new HINTERACTIONCONTEXT(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HINTERACTIONCONTEXT value) => (sbyte)(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(ushort value) => new HINTERACTIONCONTEXT((void*)(value));
+    public static explicit operator HINTERACTIONCONTEXT(ushort value) => new HINTERACTIONCONTEXT(unchecked((void*)(value)));
 
     public static explicit operator ushort(HINTERACTIONCONTEXT value) => (ushort)(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(uint value) => new HINTERACTIONCONTEXT((void*)(value));
+    public static explicit operator HINTERACTIONCONTEXT(uint value) => new HINTERACTIONCONTEXT(unchecked((void*)(value)));
 
     public static explicit operator uint(HINTERACTIONCONTEXT value) => (uint)(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(ulong value) => new HINTERACTIONCONTEXT((void*)(value));
+    public static explicit operator HINTERACTIONCONTEXT(ulong value) => new HINTERACTIONCONTEXT(unchecked((void*)(value)));
 
     public static explicit operator ulong(HINTERACTIONCONTEXT value) => (ulong)(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(nuint value) => new HINTERACTIONCONTEXT((void*)(value));
+    public static explicit operator HINTERACTIONCONTEXT(nuint value) => new HINTERACTIONCONTEXT(unchecked((void*)(value)));
 
     public static implicit operator nuint(HINTERACTIONCONTEXT value) => (nuint)(value.Value);
 

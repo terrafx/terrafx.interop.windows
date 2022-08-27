@@ -38,43 +38,43 @@ public readonly unsafe partial struct HSTRING : IComparable, IComparable<HSTRING
 
     public static implicit operator HANDLE(HSTRING value) => new HANDLE(value.Value);
 
-    public static explicit operator HSTRING(byte value) => new HSTRING((void*)(value));
+    public static explicit operator HSTRING(byte value) => new HSTRING(unchecked((void*)(value)));
 
     public static explicit operator byte(HSTRING value) => (byte)(value.Value);
 
-    public static explicit operator HSTRING(short value) => new HSTRING((void*)(value));
+    public static explicit operator HSTRING(short value) => new HSTRING(unchecked((void*)(value)));
 
     public static explicit operator short(HSTRING value) => (short)(value.Value);
 
-    public static explicit operator HSTRING(int value) => new HSTRING((void*)(value));
+    public static explicit operator HSTRING(int value) => new HSTRING(unchecked((void*)(value)));
 
     public static explicit operator int(HSTRING value) => (int)(value.Value);
 
-    public static explicit operator HSTRING(long value) => new HSTRING((void*)(value));
+    public static explicit operator HSTRING(long value) => new HSTRING(unchecked((void*)(value)));
 
     public static explicit operator long(HSTRING value) => (long)(value.Value);
 
-    public static explicit operator HSTRING(nint value) => new HSTRING((void*)(value));
+    public static explicit operator HSTRING(nint value) => new HSTRING(unchecked((void*)(value)));
 
     public static implicit operator nint(HSTRING value) => (nint)(value.Value);
 
-    public static explicit operator HSTRING(sbyte value) => new HSTRING((void*)(value));
+    public static explicit operator HSTRING(sbyte value) => new HSTRING(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HSTRING value) => (sbyte)(value.Value);
 
-    public static explicit operator HSTRING(ushort value) => new HSTRING((void*)(value));
+    public static explicit operator HSTRING(ushort value) => new HSTRING(unchecked((void*)(value)));
 
     public static explicit operator ushort(HSTRING value) => (ushort)(value.Value);
 
-    public static explicit operator HSTRING(uint value) => new HSTRING((void*)(value));
+    public static explicit operator HSTRING(uint value) => new HSTRING(unchecked((void*)(value)));
 
     public static explicit operator uint(HSTRING value) => (uint)(value.Value);
 
-    public static explicit operator HSTRING(ulong value) => new HSTRING((void*)(value));
+    public static explicit operator HSTRING(ulong value) => new HSTRING(unchecked((void*)(value)));
 
     public static explicit operator ulong(HSTRING value) => (ulong)(value.Value);
 
-    public static explicit operator HSTRING(nuint value) => new HSTRING((void*)(value));
+    public static explicit operator HSTRING(nuint value) => new HSTRING(unchecked((void*)(value)));
 
     public static implicit operator nuint(HSTRING value) => (nuint)(value.Value);
 

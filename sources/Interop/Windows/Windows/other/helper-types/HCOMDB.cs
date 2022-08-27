@@ -37,43 +37,43 @@ public readonly unsafe partial struct HCOMDB : IComparable, IComparable<HCOMDB>,
 
     public static implicit operator HANDLE(HCOMDB value) => new HANDLE(value.Value);
 
-    public static explicit operator HCOMDB(byte value) => new HCOMDB((void*)(value));
+    public static explicit operator HCOMDB(byte value) => new HCOMDB(unchecked((void*)(value)));
 
     public static explicit operator byte(HCOMDB value) => (byte)(value.Value);
 
-    public static explicit operator HCOMDB(short value) => new HCOMDB((void*)(value));
+    public static explicit operator HCOMDB(short value) => new HCOMDB(unchecked((void*)(value)));
 
     public static explicit operator short(HCOMDB value) => (short)(value.Value);
 
-    public static explicit operator HCOMDB(int value) => new HCOMDB((void*)(value));
+    public static explicit operator HCOMDB(int value) => new HCOMDB(unchecked((void*)(value)));
 
     public static explicit operator int(HCOMDB value) => (int)(value.Value);
 
-    public static explicit operator HCOMDB(long value) => new HCOMDB((void*)(value));
+    public static explicit operator HCOMDB(long value) => new HCOMDB(unchecked((void*)(value)));
 
     public static explicit operator long(HCOMDB value) => (long)(value.Value);
 
-    public static explicit operator HCOMDB(nint value) => new HCOMDB((void*)(value));
+    public static explicit operator HCOMDB(nint value) => new HCOMDB(unchecked((void*)(value)));
 
     public static implicit operator nint(HCOMDB value) => (nint)(value.Value);
 
-    public static explicit operator HCOMDB(sbyte value) => new HCOMDB((void*)(value));
+    public static explicit operator HCOMDB(sbyte value) => new HCOMDB(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HCOMDB value) => (sbyte)(value.Value);
 
-    public static explicit operator HCOMDB(ushort value) => new HCOMDB((void*)(value));
+    public static explicit operator HCOMDB(ushort value) => new HCOMDB(unchecked((void*)(value)));
 
     public static explicit operator ushort(HCOMDB value) => (ushort)(value.Value);
 
-    public static explicit operator HCOMDB(uint value) => new HCOMDB((void*)(value));
+    public static explicit operator HCOMDB(uint value) => new HCOMDB(unchecked((void*)(value)));
 
     public static explicit operator uint(HCOMDB value) => (uint)(value.Value);
 
-    public static explicit operator HCOMDB(ulong value) => new HCOMDB((void*)(value));
+    public static explicit operator HCOMDB(ulong value) => new HCOMDB(unchecked((void*)(value)));
 
     public static explicit operator ulong(HCOMDB value) => (ulong)(value.Value);
 
-    public static explicit operator HCOMDB(nuint value) => new HCOMDB((void*)(value));
+    public static explicit operator HCOMDB(nuint value) => new HCOMDB(unchecked((void*)(value)));
 
     public static implicit operator nuint(HCOMDB value) => (nuint)(value.Value);
 

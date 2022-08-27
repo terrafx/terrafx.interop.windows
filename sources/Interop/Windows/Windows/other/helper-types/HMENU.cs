@@ -37,43 +37,43 @@ public readonly unsafe partial struct HMENU : IComparable, IComparable<HMENU>, I
 
     public static implicit operator HANDLE(HMENU value) => new HANDLE(value.Value);
 
-    public static explicit operator HMENU(byte value) => new HMENU((void*)(value));
+    public static explicit operator HMENU(byte value) => new HMENU(unchecked((void*)(value)));
 
     public static explicit operator byte(HMENU value) => (byte)(value.Value);
 
-    public static explicit operator HMENU(short value) => new HMENU((void*)(value));
+    public static explicit operator HMENU(short value) => new HMENU(unchecked((void*)(value)));
 
     public static explicit operator short(HMENU value) => (short)(value.Value);
 
-    public static explicit operator HMENU(int value) => new HMENU((void*)(value));
+    public static explicit operator HMENU(int value) => new HMENU(unchecked((void*)(value)));
 
     public static explicit operator int(HMENU value) => (int)(value.Value);
 
-    public static explicit operator HMENU(long value) => new HMENU((void*)(value));
+    public static explicit operator HMENU(long value) => new HMENU(unchecked((void*)(value)));
 
     public static explicit operator long(HMENU value) => (long)(value.Value);
 
-    public static explicit operator HMENU(nint value) => new HMENU((void*)(value));
+    public static explicit operator HMENU(nint value) => new HMENU(unchecked((void*)(value)));
 
     public static implicit operator nint(HMENU value) => (nint)(value.Value);
 
-    public static explicit operator HMENU(sbyte value) => new HMENU((void*)(value));
+    public static explicit operator HMENU(sbyte value) => new HMENU(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HMENU value) => (sbyte)(value.Value);
 
-    public static explicit operator HMENU(ushort value) => new HMENU((void*)(value));
+    public static explicit operator HMENU(ushort value) => new HMENU(unchecked((void*)(value)));
 
     public static explicit operator ushort(HMENU value) => (ushort)(value.Value);
 
-    public static explicit operator HMENU(uint value) => new HMENU((void*)(value));
+    public static explicit operator HMENU(uint value) => new HMENU(unchecked((void*)(value)));
 
     public static explicit operator uint(HMENU value) => (uint)(value.Value);
 
-    public static explicit operator HMENU(ulong value) => new HMENU((void*)(value));
+    public static explicit operator HMENU(ulong value) => new HMENU(unchecked((void*)(value)));
 
     public static explicit operator ulong(HMENU value) => (ulong)(value.Value);
 
-    public static explicit operator HMENU(nuint value) => new HMENU((void*)(value));
+    public static explicit operator HMENU(nuint value) => new HMENU(unchecked((void*)(value)));
 
     public static implicit operator nuint(HMENU value) => (nuint)(value.Value);
 

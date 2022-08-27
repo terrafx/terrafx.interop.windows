@@ -37,43 +37,43 @@ public readonly unsafe partial struct HCRYPTDEFAULTCONTEXT : IComparable, ICompa
 
     public static implicit operator HANDLE(HCRYPTDEFAULTCONTEXT value) => new HANDLE(value.Value);
 
-    public static explicit operator HCRYPTDEFAULTCONTEXT(byte value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
+    public static explicit operator HCRYPTDEFAULTCONTEXT(byte value) => new HCRYPTDEFAULTCONTEXT(unchecked((void*)(value)));
 
     public static explicit operator byte(HCRYPTDEFAULTCONTEXT value) => (byte)(value.Value);
 
-    public static explicit operator HCRYPTDEFAULTCONTEXT(short value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
+    public static explicit operator HCRYPTDEFAULTCONTEXT(short value) => new HCRYPTDEFAULTCONTEXT(unchecked((void*)(value)));
 
     public static explicit operator short(HCRYPTDEFAULTCONTEXT value) => (short)(value.Value);
 
-    public static explicit operator HCRYPTDEFAULTCONTEXT(int value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
+    public static explicit operator HCRYPTDEFAULTCONTEXT(int value) => new HCRYPTDEFAULTCONTEXT(unchecked((void*)(value)));
 
     public static explicit operator int(HCRYPTDEFAULTCONTEXT value) => (int)(value.Value);
 
-    public static explicit operator HCRYPTDEFAULTCONTEXT(long value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
+    public static explicit operator HCRYPTDEFAULTCONTEXT(long value) => new HCRYPTDEFAULTCONTEXT(unchecked((void*)(value)));
 
     public static explicit operator long(HCRYPTDEFAULTCONTEXT value) => (long)(value.Value);
 
-    public static explicit operator HCRYPTDEFAULTCONTEXT(nint value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
+    public static explicit operator HCRYPTDEFAULTCONTEXT(nint value) => new HCRYPTDEFAULTCONTEXT(unchecked((void*)(value)));
 
     public static implicit operator nint(HCRYPTDEFAULTCONTEXT value) => (nint)(value.Value);
 
-    public static explicit operator HCRYPTDEFAULTCONTEXT(sbyte value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
+    public static explicit operator HCRYPTDEFAULTCONTEXT(sbyte value) => new HCRYPTDEFAULTCONTEXT(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HCRYPTDEFAULTCONTEXT value) => (sbyte)(value.Value);
 
-    public static explicit operator HCRYPTDEFAULTCONTEXT(ushort value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
+    public static explicit operator HCRYPTDEFAULTCONTEXT(ushort value) => new HCRYPTDEFAULTCONTEXT(unchecked((void*)(value)));
 
     public static explicit operator ushort(HCRYPTDEFAULTCONTEXT value) => (ushort)(value.Value);
 
-    public static explicit operator HCRYPTDEFAULTCONTEXT(uint value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
+    public static explicit operator HCRYPTDEFAULTCONTEXT(uint value) => new HCRYPTDEFAULTCONTEXT(unchecked((void*)(value)));
 
     public static explicit operator uint(HCRYPTDEFAULTCONTEXT value) => (uint)(value.Value);
 
-    public static explicit operator HCRYPTDEFAULTCONTEXT(ulong value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
+    public static explicit operator HCRYPTDEFAULTCONTEXT(ulong value) => new HCRYPTDEFAULTCONTEXT(unchecked((void*)(value)));
 
     public static explicit operator ulong(HCRYPTDEFAULTCONTEXT value) => (ulong)(value.Value);
 
-    public static explicit operator HCRYPTDEFAULTCONTEXT(nuint value) => new HCRYPTDEFAULTCONTEXT((void*)(value));
+    public static explicit operator HCRYPTDEFAULTCONTEXT(nuint value) => new HCRYPTDEFAULTCONTEXT(unchecked((void*)(value)));
 
     public static implicit operator nuint(HCRYPTDEFAULTCONTEXT value) => (nuint)(value.Value);
 

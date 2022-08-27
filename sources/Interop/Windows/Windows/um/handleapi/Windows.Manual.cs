@@ -8,5 +8,5 @@ namespace TerraFX.Interop.Windows;
 public static unsafe partial class Windows
 {
     [NativeTypeName("#define INVALID_HANDLE_VALUE ((HANDLE)(LONG_PTR)-1)")]
-    public static HANDLE INVALID_HANDLE_VALUE => ((HANDLE)((nint)(-1)));
+    public static HANDLE INVALID_HANDLE_VALUE => unchecked((HANDLE)((nint)(-1)));
 }

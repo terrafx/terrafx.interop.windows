@@ -37,43 +37,43 @@ public readonly unsafe partial struct HCERTSTOREPROV : IComparable, IComparable<
 
     public static implicit operator HANDLE(HCERTSTOREPROV value) => new HANDLE(value.Value);
 
-    public static explicit operator HCERTSTOREPROV(byte value) => new HCERTSTOREPROV((void*)(value));
+    public static explicit operator HCERTSTOREPROV(byte value) => new HCERTSTOREPROV(unchecked((void*)(value)));
 
     public static explicit operator byte(HCERTSTOREPROV value) => (byte)(value.Value);
 
-    public static explicit operator HCERTSTOREPROV(short value) => new HCERTSTOREPROV((void*)(value));
+    public static explicit operator HCERTSTOREPROV(short value) => new HCERTSTOREPROV(unchecked((void*)(value)));
 
     public static explicit operator short(HCERTSTOREPROV value) => (short)(value.Value);
 
-    public static explicit operator HCERTSTOREPROV(int value) => new HCERTSTOREPROV((void*)(value));
+    public static explicit operator HCERTSTOREPROV(int value) => new HCERTSTOREPROV(unchecked((void*)(value)));
 
     public static explicit operator int(HCERTSTOREPROV value) => (int)(value.Value);
 
-    public static explicit operator HCERTSTOREPROV(long value) => new HCERTSTOREPROV((void*)(value));
+    public static explicit operator HCERTSTOREPROV(long value) => new HCERTSTOREPROV(unchecked((void*)(value)));
 
     public static explicit operator long(HCERTSTOREPROV value) => (long)(value.Value);
 
-    public static explicit operator HCERTSTOREPROV(nint value) => new HCERTSTOREPROV((void*)(value));
+    public static explicit operator HCERTSTOREPROV(nint value) => new HCERTSTOREPROV(unchecked((void*)(value)));
 
     public static implicit operator nint(HCERTSTOREPROV value) => (nint)(value.Value);
 
-    public static explicit operator HCERTSTOREPROV(sbyte value) => new HCERTSTOREPROV((void*)(value));
+    public static explicit operator HCERTSTOREPROV(sbyte value) => new HCERTSTOREPROV(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HCERTSTOREPROV value) => (sbyte)(value.Value);
 
-    public static explicit operator HCERTSTOREPROV(ushort value) => new HCERTSTOREPROV((void*)(value));
+    public static explicit operator HCERTSTOREPROV(ushort value) => new HCERTSTOREPROV(unchecked((void*)(value)));
 
     public static explicit operator ushort(HCERTSTOREPROV value) => (ushort)(value.Value);
 
-    public static explicit operator HCERTSTOREPROV(uint value) => new HCERTSTOREPROV((void*)(value));
+    public static explicit operator HCERTSTOREPROV(uint value) => new HCERTSTOREPROV(unchecked((void*)(value)));
 
     public static explicit operator uint(HCERTSTOREPROV value) => (uint)(value.Value);
 
-    public static explicit operator HCERTSTOREPROV(ulong value) => new HCERTSTOREPROV((void*)(value));
+    public static explicit operator HCERTSTOREPROV(ulong value) => new HCERTSTOREPROV(unchecked((void*)(value)));
 
     public static explicit operator ulong(HCERTSTOREPROV value) => (ulong)(value.Value);
 
-    public static explicit operator HCERTSTOREPROV(nuint value) => new HCERTSTOREPROV((void*)(value));
+    public static explicit operator HCERTSTOREPROV(nuint value) => new HCERTSTOREPROV(unchecked((void*)(value)));
 
     public static implicit operator nuint(HCERTSTOREPROV value) => (nuint)(value.Value);
 

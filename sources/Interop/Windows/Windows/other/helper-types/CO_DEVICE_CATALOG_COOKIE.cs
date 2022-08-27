@@ -37,43 +37,43 @@ public readonly unsafe partial struct CO_DEVICE_CATALOG_COOKIE : IComparable, IC
 
     public static implicit operator HANDLE(CO_DEVICE_CATALOG_COOKIE value) => new HANDLE(value.Value);
 
-    public static explicit operator CO_DEVICE_CATALOG_COOKIE(byte value) => new CO_DEVICE_CATALOG_COOKIE((void*)(value));
+    public static explicit operator CO_DEVICE_CATALOG_COOKIE(byte value) => new CO_DEVICE_CATALOG_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator byte(CO_DEVICE_CATALOG_COOKIE value) => (byte)(value.Value);
 
-    public static explicit operator CO_DEVICE_CATALOG_COOKIE(short value) => new CO_DEVICE_CATALOG_COOKIE((void*)(value));
+    public static explicit operator CO_DEVICE_CATALOG_COOKIE(short value) => new CO_DEVICE_CATALOG_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator short(CO_DEVICE_CATALOG_COOKIE value) => (short)(value.Value);
 
-    public static explicit operator CO_DEVICE_CATALOG_COOKIE(int value) => new CO_DEVICE_CATALOG_COOKIE((void*)(value));
+    public static explicit operator CO_DEVICE_CATALOG_COOKIE(int value) => new CO_DEVICE_CATALOG_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator int(CO_DEVICE_CATALOG_COOKIE value) => (int)(value.Value);
 
-    public static explicit operator CO_DEVICE_CATALOG_COOKIE(long value) => new CO_DEVICE_CATALOG_COOKIE((void*)(value));
+    public static explicit operator CO_DEVICE_CATALOG_COOKIE(long value) => new CO_DEVICE_CATALOG_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator long(CO_DEVICE_CATALOG_COOKIE value) => (long)(value.Value);
 
-    public static explicit operator CO_DEVICE_CATALOG_COOKIE(nint value) => new CO_DEVICE_CATALOG_COOKIE((void*)(value));
+    public static explicit operator CO_DEVICE_CATALOG_COOKIE(nint value) => new CO_DEVICE_CATALOG_COOKIE(unchecked((void*)(value)));
 
     public static implicit operator nint(CO_DEVICE_CATALOG_COOKIE value) => (nint)(value.Value);
 
-    public static explicit operator CO_DEVICE_CATALOG_COOKIE(sbyte value) => new CO_DEVICE_CATALOG_COOKIE((void*)(value));
+    public static explicit operator CO_DEVICE_CATALOG_COOKIE(sbyte value) => new CO_DEVICE_CATALOG_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator sbyte(CO_DEVICE_CATALOG_COOKIE value) => (sbyte)(value.Value);
 
-    public static explicit operator CO_DEVICE_CATALOG_COOKIE(ushort value) => new CO_DEVICE_CATALOG_COOKIE((void*)(value));
+    public static explicit operator CO_DEVICE_CATALOG_COOKIE(ushort value) => new CO_DEVICE_CATALOG_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator ushort(CO_DEVICE_CATALOG_COOKIE value) => (ushort)(value.Value);
 
-    public static explicit operator CO_DEVICE_CATALOG_COOKIE(uint value) => new CO_DEVICE_CATALOG_COOKIE((void*)(value));
+    public static explicit operator CO_DEVICE_CATALOG_COOKIE(uint value) => new CO_DEVICE_CATALOG_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator uint(CO_DEVICE_CATALOG_COOKIE value) => (uint)(value.Value);
 
-    public static explicit operator CO_DEVICE_CATALOG_COOKIE(ulong value) => new CO_DEVICE_CATALOG_COOKIE((void*)(value));
+    public static explicit operator CO_DEVICE_CATALOG_COOKIE(ulong value) => new CO_DEVICE_CATALOG_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator ulong(CO_DEVICE_CATALOG_COOKIE value) => (ulong)(value.Value);
 
-    public static explicit operator CO_DEVICE_CATALOG_COOKIE(nuint value) => new CO_DEVICE_CATALOG_COOKIE((void*)(value));
+    public static explicit operator CO_DEVICE_CATALOG_COOKIE(nuint value) => new CO_DEVICE_CATALOG_COOKIE(unchecked((void*)(value)));
 
     public static implicit operator nuint(CO_DEVICE_CATALOG_COOKIE value) => (nuint)(value.Value);
 

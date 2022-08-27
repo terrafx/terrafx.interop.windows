@@ -37,43 +37,43 @@ public readonly unsafe partial struct HGESTUREINFO : IComparable, IComparable<HG
 
     public static implicit operator HANDLE(HGESTUREINFO value) => new HANDLE(value.Value);
 
-    public static explicit operator HGESTUREINFO(byte value) => new HGESTUREINFO((void*)(value));
+    public static explicit operator HGESTUREINFO(byte value) => new HGESTUREINFO(unchecked((void*)(value)));
 
     public static explicit operator byte(HGESTUREINFO value) => (byte)(value.Value);
 
-    public static explicit operator HGESTUREINFO(short value) => new HGESTUREINFO((void*)(value));
+    public static explicit operator HGESTUREINFO(short value) => new HGESTUREINFO(unchecked((void*)(value)));
 
     public static explicit operator short(HGESTUREINFO value) => (short)(value.Value);
 
-    public static explicit operator HGESTUREINFO(int value) => new HGESTUREINFO((void*)(value));
+    public static explicit operator HGESTUREINFO(int value) => new HGESTUREINFO(unchecked((void*)(value)));
 
     public static explicit operator int(HGESTUREINFO value) => (int)(value.Value);
 
-    public static explicit operator HGESTUREINFO(long value) => new HGESTUREINFO((void*)(value));
+    public static explicit operator HGESTUREINFO(long value) => new HGESTUREINFO(unchecked((void*)(value)));
 
     public static explicit operator long(HGESTUREINFO value) => (long)(value.Value);
 
-    public static explicit operator HGESTUREINFO(nint value) => new HGESTUREINFO((void*)(value));
+    public static explicit operator HGESTUREINFO(nint value) => new HGESTUREINFO(unchecked((void*)(value)));
 
     public static implicit operator nint(HGESTUREINFO value) => (nint)(value.Value);
 
-    public static explicit operator HGESTUREINFO(sbyte value) => new HGESTUREINFO((void*)(value));
+    public static explicit operator HGESTUREINFO(sbyte value) => new HGESTUREINFO(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HGESTUREINFO value) => (sbyte)(value.Value);
 
-    public static explicit operator HGESTUREINFO(ushort value) => new HGESTUREINFO((void*)(value));
+    public static explicit operator HGESTUREINFO(ushort value) => new HGESTUREINFO(unchecked((void*)(value)));
 
     public static explicit operator ushort(HGESTUREINFO value) => (ushort)(value.Value);
 
-    public static explicit operator HGESTUREINFO(uint value) => new HGESTUREINFO((void*)(value));
+    public static explicit operator HGESTUREINFO(uint value) => new HGESTUREINFO(unchecked((void*)(value)));
 
     public static explicit operator uint(HGESTUREINFO value) => (uint)(value.Value);
 
-    public static explicit operator HGESTUREINFO(ulong value) => new HGESTUREINFO((void*)(value));
+    public static explicit operator HGESTUREINFO(ulong value) => new HGESTUREINFO(unchecked((void*)(value)));
 
     public static explicit operator ulong(HGESTUREINFO value) => (ulong)(value.Value);
 
-    public static explicit operator HGESTUREINFO(nuint value) => new HGESTUREINFO((void*)(value));
+    public static explicit operator HGESTUREINFO(nuint value) => new HGESTUREINFO(unchecked((void*)(value)));
 
     public static implicit operator nuint(HGESTUREINFO value) => (nuint)(value.Value);
 

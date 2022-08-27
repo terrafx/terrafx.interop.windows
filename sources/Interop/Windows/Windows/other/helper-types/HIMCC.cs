@@ -37,43 +37,43 @@ public readonly unsafe partial struct HIMCC : IComparable, IComparable<HIMCC>, I
 
     public static implicit operator HANDLE(HIMCC value) => new HANDLE(value.Value);
 
-    public static explicit operator HIMCC(byte value) => new HIMCC((void*)(value));
+    public static explicit operator HIMCC(byte value) => new HIMCC(unchecked((void*)(value)));
 
     public static explicit operator byte(HIMCC value) => (byte)(value.Value);
 
-    public static explicit operator HIMCC(short value) => new HIMCC((void*)(value));
+    public static explicit operator HIMCC(short value) => new HIMCC(unchecked((void*)(value)));
 
     public static explicit operator short(HIMCC value) => (short)(value.Value);
 
-    public static explicit operator HIMCC(int value) => new HIMCC((void*)(value));
+    public static explicit operator HIMCC(int value) => new HIMCC(unchecked((void*)(value)));
 
     public static explicit operator int(HIMCC value) => (int)(value.Value);
 
-    public static explicit operator HIMCC(long value) => new HIMCC((void*)(value));
+    public static explicit operator HIMCC(long value) => new HIMCC(unchecked((void*)(value)));
 
     public static explicit operator long(HIMCC value) => (long)(value.Value);
 
-    public static explicit operator HIMCC(nint value) => new HIMCC((void*)(value));
+    public static explicit operator HIMCC(nint value) => new HIMCC(unchecked((void*)(value)));
 
     public static implicit operator nint(HIMCC value) => (nint)(value.Value);
 
-    public static explicit operator HIMCC(sbyte value) => new HIMCC((void*)(value));
+    public static explicit operator HIMCC(sbyte value) => new HIMCC(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HIMCC value) => (sbyte)(value.Value);
 
-    public static explicit operator HIMCC(ushort value) => new HIMCC((void*)(value));
+    public static explicit operator HIMCC(ushort value) => new HIMCC(unchecked((void*)(value)));
 
     public static explicit operator ushort(HIMCC value) => (ushort)(value.Value);
 
-    public static explicit operator HIMCC(uint value) => new HIMCC((void*)(value));
+    public static explicit operator HIMCC(uint value) => new HIMCC(unchecked((void*)(value)));
 
     public static explicit operator uint(HIMCC value) => (uint)(value.Value);
 
-    public static explicit operator HIMCC(ulong value) => new HIMCC((void*)(value));
+    public static explicit operator HIMCC(ulong value) => new HIMCC(unchecked((void*)(value)));
 
     public static explicit operator ulong(HIMCC value) => (ulong)(value.Value);
 
-    public static explicit operator HIMCC(nuint value) => new HIMCC((void*)(value));
+    public static explicit operator HIMCC(nuint value) => new HIMCC(unchecked((void*)(value)));
 
     public static implicit operator nuint(HIMCC value) => (nuint)(value.Value);
 

@@ -37,43 +37,43 @@ public readonly unsafe partial struct HGDIOBJ : IComparable, IComparable<HGDIOBJ
 
     public static implicit operator HANDLE(HGDIOBJ value) => new HANDLE(value.Value);
 
-    public static explicit operator HGDIOBJ(byte value) => new HGDIOBJ((void*)(value));
+    public static explicit operator HGDIOBJ(byte value) => new HGDIOBJ(unchecked((void*)(value)));
 
     public static explicit operator byte(HGDIOBJ value) => (byte)(value.Value);
 
-    public static explicit operator HGDIOBJ(short value) => new HGDIOBJ((void*)(value));
+    public static explicit operator HGDIOBJ(short value) => new HGDIOBJ(unchecked((void*)(value)));
 
     public static explicit operator short(HGDIOBJ value) => (short)(value.Value);
 
-    public static explicit operator HGDIOBJ(int value) => new HGDIOBJ((void*)(value));
+    public static explicit operator HGDIOBJ(int value) => new HGDIOBJ(unchecked((void*)(value)));
 
     public static explicit operator int(HGDIOBJ value) => (int)(value.Value);
 
-    public static explicit operator HGDIOBJ(long value) => new HGDIOBJ((void*)(value));
+    public static explicit operator HGDIOBJ(long value) => new HGDIOBJ(unchecked((void*)(value)));
 
     public static explicit operator long(HGDIOBJ value) => (long)(value.Value);
 
-    public static explicit operator HGDIOBJ(nint value) => new HGDIOBJ((void*)(value));
+    public static explicit operator HGDIOBJ(nint value) => new HGDIOBJ(unchecked((void*)(value)));
 
     public static implicit operator nint(HGDIOBJ value) => (nint)(value.Value);
 
-    public static explicit operator HGDIOBJ(sbyte value) => new HGDIOBJ((void*)(value));
+    public static explicit operator HGDIOBJ(sbyte value) => new HGDIOBJ(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HGDIOBJ value) => (sbyte)(value.Value);
 
-    public static explicit operator HGDIOBJ(ushort value) => new HGDIOBJ((void*)(value));
+    public static explicit operator HGDIOBJ(ushort value) => new HGDIOBJ(unchecked((void*)(value)));
 
     public static explicit operator ushort(HGDIOBJ value) => (ushort)(value.Value);
 
-    public static explicit operator HGDIOBJ(uint value) => new HGDIOBJ((void*)(value));
+    public static explicit operator HGDIOBJ(uint value) => new HGDIOBJ(unchecked((void*)(value)));
 
     public static explicit operator uint(HGDIOBJ value) => (uint)(value.Value);
 
-    public static explicit operator HGDIOBJ(ulong value) => new HGDIOBJ((void*)(value));
+    public static explicit operator HGDIOBJ(ulong value) => new HGDIOBJ(unchecked((void*)(value)));
 
     public static explicit operator ulong(HGDIOBJ value) => (ulong)(value.Value);
 
-    public static explicit operator HGDIOBJ(nuint value) => new HGDIOBJ((void*)(value));
+    public static explicit operator HGDIOBJ(nuint value) => new HGDIOBJ(unchecked((void*)(value)));
 
     public static implicit operator nuint(HGDIOBJ value) => (nuint)(value.Value);
 

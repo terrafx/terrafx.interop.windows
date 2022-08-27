@@ -37,43 +37,43 @@ public readonly unsafe partial struct HCOLORSPACE : IComparable, IComparable<HCO
 
     public static implicit operator HANDLE(HCOLORSPACE value) => new HANDLE(value.Value);
 
-    public static explicit operator HCOLORSPACE(byte value) => new HCOLORSPACE((void*)(value));
+    public static explicit operator HCOLORSPACE(byte value) => new HCOLORSPACE(unchecked((void*)(value)));
 
     public static explicit operator byte(HCOLORSPACE value) => (byte)(value.Value);
 
-    public static explicit operator HCOLORSPACE(short value) => new HCOLORSPACE((void*)(value));
+    public static explicit operator HCOLORSPACE(short value) => new HCOLORSPACE(unchecked((void*)(value)));
 
     public static explicit operator short(HCOLORSPACE value) => (short)(value.Value);
 
-    public static explicit operator HCOLORSPACE(int value) => new HCOLORSPACE((void*)(value));
+    public static explicit operator HCOLORSPACE(int value) => new HCOLORSPACE(unchecked((void*)(value)));
 
     public static explicit operator int(HCOLORSPACE value) => (int)(value.Value);
 
-    public static explicit operator HCOLORSPACE(long value) => new HCOLORSPACE((void*)(value));
+    public static explicit operator HCOLORSPACE(long value) => new HCOLORSPACE(unchecked((void*)(value)));
 
     public static explicit operator long(HCOLORSPACE value) => (long)(value.Value);
 
-    public static explicit operator HCOLORSPACE(nint value) => new HCOLORSPACE((void*)(value));
+    public static explicit operator HCOLORSPACE(nint value) => new HCOLORSPACE(unchecked((void*)(value)));
 
     public static implicit operator nint(HCOLORSPACE value) => (nint)(value.Value);
 
-    public static explicit operator HCOLORSPACE(sbyte value) => new HCOLORSPACE((void*)(value));
+    public static explicit operator HCOLORSPACE(sbyte value) => new HCOLORSPACE(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HCOLORSPACE value) => (sbyte)(value.Value);
 
-    public static explicit operator HCOLORSPACE(ushort value) => new HCOLORSPACE((void*)(value));
+    public static explicit operator HCOLORSPACE(ushort value) => new HCOLORSPACE(unchecked((void*)(value)));
 
     public static explicit operator ushort(HCOLORSPACE value) => (ushort)(value.Value);
 
-    public static explicit operator HCOLORSPACE(uint value) => new HCOLORSPACE((void*)(value));
+    public static explicit operator HCOLORSPACE(uint value) => new HCOLORSPACE(unchecked((void*)(value)));
 
     public static explicit operator uint(HCOLORSPACE value) => (uint)(value.Value);
 
-    public static explicit operator HCOLORSPACE(ulong value) => new HCOLORSPACE((void*)(value));
+    public static explicit operator HCOLORSPACE(ulong value) => new HCOLORSPACE(unchecked((void*)(value)));
 
     public static explicit operator ulong(HCOLORSPACE value) => (ulong)(value.Value);
 
-    public static explicit operator HCOLORSPACE(nuint value) => new HCOLORSPACE((void*)(value));
+    public static explicit operator HCOLORSPACE(nuint value) => new HCOLORSPACE(unchecked((void*)(value)));
 
     public static implicit operator nuint(HCOLORSPACE value) => (nuint)(value.Value);
 

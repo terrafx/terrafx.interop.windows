@@ -31,43 +31,43 @@ public readonly unsafe partial struct LPPROC_THREAD_ATTRIBUTE_LIST : IComparable
 
     public static implicit operator void*(LPPROC_THREAD_ATTRIBUTE_LIST value) => value.Value;
 
-    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(byte value) => new LPPROC_THREAD_ATTRIBUTE_LIST((void*)(value));
+    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(byte value) => new LPPROC_THREAD_ATTRIBUTE_LIST(unchecked((void*)(value)));
 
     public static explicit operator byte(LPPROC_THREAD_ATTRIBUTE_LIST value) => (byte)(value.Value);
 
-    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(short value) => new LPPROC_THREAD_ATTRIBUTE_LIST((void*)(value));
+    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(short value) => new LPPROC_THREAD_ATTRIBUTE_LIST(unchecked((void*)(value)));
 
     public static explicit operator short(LPPROC_THREAD_ATTRIBUTE_LIST value) => (short)(value.Value);
 
-    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(int value) => new LPPROC_THREAD_ATTRIBUTE_LIST((void*)(value));
+    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(int value) => new LPPROC_THREAD_ATTRIBUTE_LIST(unchecked((void*)(value)));
 
     public static explicit operator int(LPPROC_THREAD_ATTRIBUTE_LIST value) => (int)(value.Value);
 
-    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(long value) => new LPPROC_THREAD_ATTRIBUTE_LIST((void*)(value));
+    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(long value) => new LPPROC_THREAD_ATTRIBUTE_LIST(unchecked((void*)(value)));
 
     public static explicit operator long(LPPROC_THREAD_ATTRIBUTE_LIST value) => (long)(value.Value);
 
-    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(nint value) => new LPPROC_THREAD_ATTRIBUTE_LIST((void*)(value));
+    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(nint value) => new LPPROC_THREAD_ATTRIBUTE_LIST(unchecked((void*)(value)));
 
     public static implicit operator nint(LPPROC_THREAD_ATTRIBUTE_LIST value) => (nint)(value.Value);
 
-    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(sbyte value) => new LPPROC_THREAD_ATTRIBUTE_LIST((void*)(value));
+    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(sbyte value) => new LPPROC_THREAD_ATTRIBUTE_LIST(unchecked((void*)(value)));
 
     public static explicit operator sbyte(LPPROC_THREAD_ATTRIBUTE_LIST value) => (sbyte)(value.Value);
 
-    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(ushort value) => new LPPROC_THREAD_ATTRIBUTE_LIST((void*)(value));
+    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(ushort value) => new LPPROC_THREAD_ATTRIBUTE_LIST(unchecked((void*)(value)));
 
     public static explicit operator ushort(LPPROC_THREAD_ATTRIBUTE_LIST value) => (ushort)(value.Value);
 
-    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(uint value) => new LPPROC_THREAD_ATTRIBUTE_LIST((void*)(value));
+    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(uint value) => new LPPROC_THREAD_ATTRIBUTE_LIST(unchecked((void*)(value)));
 
     public static explicit operator uint(LPPROC_THREAD_ATTRIBUTE_LIST value) => (uint)(value.Value);
 
-    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(ulong value) => new LPPROC_THREAD_ATTRIBUTE_LIST((void*)(value));
+    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(ulong value) => new LPPROC_THREAD_ATTRIBUTE_LIST(unchecked((void*)(value)));
 
     public static explicit operator ulong(LPPROC_THREAD_ATTRIBUTE_LIST value) => (ulong)(value.Value);
 
-    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(nuint value) => new LPPROC_THREAD_ATTRIBUTE_LIST((void*)(value));
+    public static explicit operator LPPROC_THREAD_ATTRIBUTE_LIST(nuint value) => new LPPROC_THREAD_ATTRIBUTE_LIST(unchecked((void*)(value)));
 
     public static implicit operator nuint(LPPROC_THREAD_ATTRIBUTE_LIST value) => (nuint)(value.Value);
 

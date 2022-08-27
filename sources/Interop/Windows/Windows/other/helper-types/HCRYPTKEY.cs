@@ -37,43 +37,43 @@ public readonly unsafe partial struct HCRYPTKEY : IComparable, IComparable<HCRYP
 
     public static implicit operator HANDLE(HCRYPTKEY value) => new HANDLE(value.Value);
 
-    public static explicit operator HCRYPTKEY(byte value) => new HCRYPTKEY((void*)(value));
+    public static explicit operator HCRYPTKEY(byte value) => new HCRYPTKEY(unchecked((void*)(value)));
 
     public static explicit operator byte(HCRYPTKEY value) => (byte)(value.Value);
 
-    public static explicit operator HCRYPTKEY(short value) => new HCRYPTKEY((void*)(value));
+    public static explicit operator HCRYPTKEY(short value) => new HCRYPTKEY(unchecked((void*)(value)));
 
     public static explicit operator short(HCRYPTKEY value) => (short)(value.Value);
 
-    public static explicit operator HCRYPTKEY(int value) => new HCRYPTKEY((void*)(value));
+    public static explicit operator HCRYPTKEY(int value) => new HCRYPTKEY(unchecked((void*)(value)));
 
     public static explicit operator int(HCRYPTKEY value) => (int)(value.Value);
 
-    public static explicit operator HCRYPTKEY(long value) => new HCRYPTKEY((void*)(value));
+    public static explicit operator HCRYPTKEY(long value) => new HCRYPTKEY(unchecked((void*)(value)));
 
     public static explicit operator long(HCRYPTKEY value) => (long)(value.Value);
 
-    public static explicit operator HCRYPTKEY(nint value) => new HCRYPTKEY((void*)(value));
+    public static explicit operator HCRYPTKEY(nint value) => new HCRYPTKEY(unchecked((void*)(value)));
 
     public static implicit operator nint(HCRYPTKEY value) => (nint)(value.Value);
 
-    public static explicit operator HCRYPTKEY(sbyte value) => new HCRYPTKEY((void*)(value));
+    public static explicit operator HCRYPTKEY(sbyte value) => new HCRYPTKEY(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HCRYPTKEY value) => (sbyte)(value.Value);
 
-    public static explicit operator HCRYPTKEY(ushort value) => new HCRYPTKEY((void*)(value));
+    public static explicit operator HCRYPTKEY(ushort value) => new HCRYPTKEY(unchecked((void*)(value)));
 
     public static explicit operator ushort(HCRYPTKEY value) => (ushort)(value.Value);
 
-    public static explicit operator HCRYPTKEY(uint value) => new HCRYPTKEY((void*)(value));
+    public static explicit operator HCRYPTKEY(uint value) => new HCRYPTKEY(unchecked((void*)(value)));
 
     public static explicit operator uint(HCRYPTKEY value) => (uint)(value.Value);
 
-    public static explicit operator HCRYPTKEY(ulong value) => new HCRYPTKEY((void*)(value));
+    public static explicit operator HCRYPTKEY(ulong value) => new HCRYPTKEY(unchecked((void*)(value)));
 
     public static explicit operator ulong(HCRYPTKEY value) => (ulong)(value.Value);
 
-    public static explicit operator HCRYPTKEY(nuint value) => new HCRYPTKEY((void*)(value));
+    public static explicit operator HCRYPTKEY(nuint value) => new HCRYPTKEY(unchecked((void*)(value)));
 
     public static implicit operator nuint(HCRYPTKEY value) => (nuint)(value.Value);
 

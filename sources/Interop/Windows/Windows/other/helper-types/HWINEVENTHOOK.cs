@@ -37,43 +37,43 @@ public readonly unsafe partial struct HWINEVENTHOOK : IComparable, IComparable<H
 
     public static implicit operator HANDLE(HWINEVENTHOOK value) => new HANDLE(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(byte value) => new HWINEVENTHOOK((void*)(value));
+    public static explicit operator HWINEVENTHOOK(byte value) => new HWINEVENTHOOK(unchecked((void*)(value)));
 
     public static explicit operator byte(HWINEVENTHOOK value) => (byte)(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(short value) => new HWINEVENTHOOK((void*)(value));
+    public static explicit operator HWINEVENTHOOK(short value) => new HWINEVENTHOOK(unchecked((void*)(value)));
 
     public static explicit operator short(HWINEVENTHOOK value) => (short)(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(int value) => new HWINEVENTHOOK((void*)(value));
+    public static explicit operator HWINEVENTHOOK(int value) => new HWINEVENTHOOK(unchecked((void*)(value)));
 
     public static explicit operator int(HWINEVENTHOOK value) => (int)(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(long value) => new HWINEVENTHOOK((void*)(value));
+    public static explicit operator HWINEVENTHOOK(long value) => new HWINEVENTHOOK(unchecked((void*)(value)));
 
     public static explicit operator long(HWINEVENTHOOK value) => (long)(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(nint value) => new HWINEVENTHOOK((void*)(value));
+    public static explicit operator HWINEVENTHOOK(nint value) => new HWINEVENTHOOK(unchecked((void*)(value)));
 
     public static implicit operator nint(HWINEVENTHOOK value) => (nint)(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(sbyte value) => new HWINEVENTHOOK((void*)(value));
+    public static explicit operator HWINEVENTHOOK(sbyte value) => new HWINEVENTHOOK(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HWINEVENTHOOK value) => (sbyte)(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(ushort value) => new HWINEVENTHOOK((void*)(value));
+    public static explicit operator HWINEVENTHOOK(ushort value) => new HWINEVENTHOOK(unchecked((void*)(value)));
 
     public static explicit operator ushort(HWINEVENTHOOK value) => (ushort)(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(uint value) => new HWINEVENTHOOK((void*)(value));
+    public static explicit operator HWINEVENTHOOK(uint value) => new HWINEVENTHOOK(unchecked((void*)(value)));
 
     public static explicit operator uint(HWINEVENTHOOK value) => (uint)(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(ulong value) => new HWINEVENTHOOK((void*)(value));
+    public static explicit operator HWINEVENTHOOK(ulong value) => new HWINEVENTHOOK(unchecked((void*)(value)));
 
     public static explicit operator ulong(HWINEVENTHOOK value) => (ulong)(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(nuint value) => new HWINEVENTHOOK((void*)(value));
+    public static explicit operator HWINEVENTHOOK(nuint value) => new HWINEVENTHOOK(unchecked((void*)(value)));
 
     public static implicit operator nuint(HWINEVENTHOOK value) => (nuint)(value.Value);
 

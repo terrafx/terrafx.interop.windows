@@ -37,43 +37,43 @@ public readonly unsafe partial struct HENHMETAFILE : IComparable, IComparable<HE
 
     public static implicit operator HANDLE(HENHMETAFILE value) => new HANDLE(value.Value);
 
-    public static explicit operator HENHMETAFILE(byte value) => new HENHMETAFILE((void*)(value));
+    public static explicit operator HENHMETAFILE(byte value) => new HENHMETAFILE(unchecked((void*)(value)));
 
     public static explicit operator byte(HENHMETAFILE value) => (byte)(value.Value);
 
-    public static explicit operator HENHMETAFILE(short value) => new HENHMETAFILE((void*)(value));
+    public static explicit operator HENHMETAFILE(short value) => new HENHMETAFILE(unchecked((void*)(value)));
 
     public static explicit operator short(HENHMETAFILE value) => (short)(value.Value);
 
-    public static explicit operator HENHMETAFILE(int value) => new HENHMETAFILE((void*)(value));
+    public static explicit operator HENHMETAFILE(int value) => new HENHMETAFILE(unchecked((void*)(value)));
 
     public static explicit operator int(HENHMETAFILE value) => (int)(value.Value);
 
-    public static explicit operator HENHMETAFILE(long value) => new HENHMETAFILE((void*)(value));
+    public static explicit operator HENHMETAFILE(long value) => new HENHMETAFILE(unchecked((void*)(value)));
 
     public static explicit operator long(HENHMETAFILE value) => (long)(value.Value);
 
-    public static explicit operator HENHMETAFILE(nint value) => new HENHMETAFILE((void*)(value));
+    public static explicit operator HENHMETAFILE(nint value) => new HENHMETAFILE(unchecked((void*)(value)));
 
     public static implicit operator nint(HENHMETAFILE value) => (nint)(value.Value);
 
-    public static explicit operator HENHMETAFILE(sbyte value) => new HENHMETAFILE((void*)(value));
+    public static explicit operator HENHMETAFILE(sbyte value) => new HENHMETAFILE(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HENHMETAFILE value) => (sbyte)(value.Value);
 
-    public static explicit operator HENHMETAFILE(ushort value) => new HENHMETAFILE((void*)(value));
+    public static explicit operator HENHMETAFILE(ushort value) => new HENHMETAFILE(unchecked((void*)(value)));
 
     public static explicit operator ushort(HENHMETAFILE value) => (ushort)(value.Value);
 
-    public static explicit operator HENHMETAFILE(uint value) => new HENHMETAFILE((void*)(value));
+    public static explicit operator HENHMETAFILE(uint value) => new HENHMETAFILE(unchecked((void*)(value)));
 
     public static explicit operator uint(HENHMETAFILE value) => (uint)(value.Value);
 
-    public static explicit operator HENHMETAFILE(ulong value) => new HENHMETAFILE((void*)(value));
+    public static explicit operator HENHMETAFILE(ulong value) => new HENHMETAFILE(unchecked((void*)(value)));
 
     public static explicit operator ulong(HENHMETAFILE value) => (ulong)(value.Value);
 
-    public static explicit operator HENHMETAFILE(nuint value) => new HENHMETAFILE((void*)(value));
+    public static explicit operator HENHMETAFILE(nuint value) => new HENHMETAFILE(unchecked((void*)(value)));
 
     public static implicit operator nuint(HENHMETAFILE value) => (nuint)(value.Value);
 

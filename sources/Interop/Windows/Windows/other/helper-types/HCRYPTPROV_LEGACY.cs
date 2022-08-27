@@ -37,43 +37,43 @@ public readonly unsafe partial struct HCRYPTPROV_LEGACY : IComparable, IComparab
 
     public static implicit operator HANDLE(HCRYPTPROV_LEGACY value) => new HANDLE(value.Value);
 
-    public static explicit operator HCRYPTPROV_LEGACY(byte value) => new HCRYPTPROV_LEGACY((void*)(value));
+    public static explicit operator HCRYPTPROV_LEGACY(byte value) => new HCRYPTPROV_LEGACY(unchecked((void*)(value)));
 
     public static explicit operator byte(HCRYPTPROV_LEGACY value) => (byte)(value.Value);
 
-    public static explicit operator HCRYPTPROV_LEGACY(short value) => new HCRYPTPROV_LEGACY((void*)(value));
+    public static explicit operator HCRYPTPROV_LEGACY(short value) => new HCRYPTPROV_LEGACY(unchecked((void*)(value)));
 
     public static explicit operator short(HCRYPTPROV_LEGACY value) => (short)(value.Value);
 
-    public static explicit operator HCRYPTPROV_LEGACY(int value) => new HCRYPTPROV_LEGACY((void*)(value));
+    public static explicit operator HCRYPTPROV_LEGACY(int value) => new HCRYPTPROV_LEGACY(unchecked((void*)(value)));
 
     public static explicit operator int(HCRYPTPROV_LEGACY value) => (int)(value.Value);
 
-    public static explicit operator HCRYPTPROV_LEGACY(long value) => new HCRYPTPROV_LEGACY((void*)(value));
+    public static explicit operator HCRYPTPROV_LEGACY(long value) => new HCRYPTPROV_LEGACY(unchecked((void*)(value)));
 
     public static explicit operator long(HCRYPTPROV_LEGACY value) => (long)(value.Value);
 
-    public static explicit operator HCRYPTPROV_LEGACY(nint value) => new HCRYPTPROV_LEGACY((void*)(value));
+    public static explicit operator HCRYPTPROV_LEGACY(nint value) => new HCRYPTPROV_LEGACY(unchecked((void*)(value)));
 
     public static implicit operator nint(HCRYPTPROV_LEGACY value) => (nint)(value.Value);
 
-    public static explicit operator HCRYPTPROV_LEGACY(sbyte value) => new HCRYPTPROV_LEGACY((void*)(value));
+    public static explicit operator HCRYPTPROV_LEGACY(sbyte value) => new HCRYPTPROV_LEGACY(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HCRYPTPROV_LEGACY value) => (sbyte)(value.Value);
 
-    public static explicit operator HCRYPTPROV_LEGACY(ushort value) => new HCRYPTPROV_LEGACY((void*)(value));
+    public static explicit operator HCRYPTPROV_LEGACY(ushort value) => new HCRYPTPROV_LEGACY(unchecked((void*)(value)));
 
     public static explicit operator ushort(HCRYPTPROV_LEGACY value) => (ushort)(value.Value);
 
-    public static explicit operator HCRYPTPROV_LEGACY(uint value) => new HCRYPTPROV_LEGACY((void*)(value));
+    public static explicit operator HCRYPTPROV_LEGACY(uint value) => new HCRYPTPROV_LEGACY(unchecked((void*)(value)));
 
     public static explicit operator uint(HCRYPTPROV_LEGACY value) => (uint)(value.Value);
 
-    public static explicit operator HCRYPTPROV_LEGACY(ulong value) => new HCRYPTPROV_LEGACY((void*)(value));
+    public static explicit operator HCRYPTPROV_LEGACY(ulong value) => new HCRYPTPROV_LEGACY(unchecked((void*)(value)));
 
     public static explicit operator ulong(HCRYPTPROV_LEGACY value) => (ulong)(value.Value);
 
-    public static explicit operator HCRYPTPROV_LEGACY(nuint value) => new HCRYPTPROV_LEGACY((void*)(value));
+    public static explicit operator HCRYPTPROV_LEGACY(nuint value) => new HCRYPTPROV_LEGACY(unchecked((void*)(value)));
 
     public static implicit operator nuint(HCRYPTPROV_LEGACY value) => (nuint)(value.Value);
 

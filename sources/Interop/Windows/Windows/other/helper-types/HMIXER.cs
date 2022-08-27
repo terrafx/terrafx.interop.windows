@@ -37,43 +37,43 @@ public readonly unsafe partial struct HMIXER : IComparable, IComparable<HMIXER>,
 
     public static implicit operator HANDLE(HMIXER value) => new HANDLE(value.Value);
 
-    public static explicit operator HMIXER(byte value) => new HMIXER((void*)(value));
+    public static explicit operator HMIXER(byte value) => new HMIXER(unchecked((void*)(value)));
 
     public static explicit operator byte(HMIXER value) => (byte)(value.Value);
 
-    public static explicit operator HMIXER(short value) => new HMIXER((void*)(value));
+    public static explicit operator HMIXER(short value) => new HMIXER(unchecked((void*)(value)));
 
     public static explicit operator short(HMIXER value) => (short)(value.Value);
 
-    public static explicit operator HMIXER(int value) => new HMIXER((void*)(value));
+    public static explicit operator HMIXER(int value) => new HMIXER(unchecked((void*)(value)));
 
     public static explicit operator int(HMIXER value) => (int)(value.Value);
 
-    public static explicit operator HMIXER(long value) => new HMIXER((void*)(value));
+    public static explicit operator HMIXER(long value) => new HMIXER(unchecked((void*)(value)));
 
     public static explicit operator long(HMIXER value) => (long)(value.Value);
 
-    public static explicit operator HMIXER(nint value) => new HMIXER((void*)(value));
+    public static explicit operator HMIXER(nint value) => new HMIXER(unchecked((void*)(value)));
 
     public static implicit operator nint(HMIXER value) => (nint)(value.Value);
 
-    public static explicit operator HMIXER(sbyte value) => new HMIXER((void*)(value));
+    public static explicit operator HMIXER(sbyte value) => new HMIXER(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HMIXER value) => (sbyte)(value.Value);
 
-    public static explicit operator HMIXER(ushort value) => new HMIXER((void*)(value));
+    public static explicit operator HMIXER(ushort value) => new HMIXER(unchecked((void*)(value)));
 
     public static explicit operator ushort(HMIXER value) => (ushort)(value.Value);
 
-    public static explicit operator HMIXER(uint value) => new HMIXER((void*)(value));
+    public static explicit operator HMIXER(uint value) => new HMIXER(unchecked((void*)(value)));
 
     public static explicit operator uint(HMIXER value) => (uint)(value.Value);
 
-    public static explicit operator HMIXER(ulong value) => new HMIXER((void*)(value));
+    public static explicit operator HMIXER(ulong value) => new HMIXER(unchecked((void*)(value)));
 
     public static explicit operator ulong(HMIXER value) => (ulong)(value.Value);
 
-    public static explicit operator HMIXER(nuint value) => new HMIXER((void*)(value));
+    public static explicit operator HMIXER(nuint value) => new HMIXER(unchecked((void*)(value)));
 
     public static implicit operator nuint(HMIXER value) => (nuint)(value.Value);
 

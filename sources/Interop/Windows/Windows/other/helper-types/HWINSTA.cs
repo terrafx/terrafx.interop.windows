@@ -37,43 +37,43 @@ public readonly unsafe partial struct HWINSTA : IComparable, IComparable<HWINSTA
 
     public static implicit operator HANDLE(HWINSTA value) => new HANDLE(value.Value);
 
-    public static explicit operator HWINSTA(byte value) => new HWINSTA((void*)(value));
+    public static explicit operator HWINSTA(byte value) => new HWINSTA(unchecked((void*)(value)));
 
     public static explicit operator byte(HWINSTA value) => (byte)(value.Value);
 
-    public static explicit operator HWINSTA(short value) => new HWINSTA((void*)(value));
+    public static explicit operator HWINSTA(short value) => new HWINSTA(unchecked((void*)(value)));
 
     public static explicit operator short(HWINSTA value) => (short)(value.Value);
 
-    public static explicit operator HWINSTA(int value) => new HWINSTA((void*)(value));
+    public static explicit operator HWINSTA(int value) => new HWINSTA(unchecked((void*)(value)));
 
     public static explicit operator int(HWINSTA value) => (int)(value.Value);
 
-    public static explicit operator HWINSTA(long value) => new HWINSTA((void*)(value));
+    public static explicit operator HWINSTA(long value) => new HWINSTA(unchecked((void*)(value)));
 
     public static explicit operator long(HWINSTA value) => (long)(value.Value);
 
-    public static explicit operator HWINSTA(nint value) => new HWINSTA((void*)(value));
+    public static explicit operator HWINSTA(nint value) => new HWINSTA(unchecked((void*)(value)));
 
     public static implicit operator nint(HWINSTA value) => (nint)(value.Value);
 
-    public static explicit operator HWINSTA(sbyte value) => new HWINSTA((void*)(value));
+    public static explicit operator HWINSTA(sbyte value) => new HWINSTA(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HWINSTA value) => (sbyte)(value.Value);
 
-    public static explicit operator HWINSTA(ushort value) => new HWINSTA((void*)(value));
+    public static explicit operator HWINSTA(ushort value) => new HWINSTA(unchecked((void*)(value)));
 
     public static explicit operator ushort(HWINSTA value) => (ushort)(value.Value);
 
-    public static explicit operator HWINSTA(uint value) => new HWINSTA((void*)(value));
+    public static explicit operator HWINSTA(uint value) => new HWINSTA(unchecked((void*)(value)));
 
     public static explicit operator uint(HWINSTA value) => (uint)(value.Value);
 
-    public static explicit operator HWINSTA(ulong value) => new HWINSTA((void*)(value));
+    public static explicit operator HWINSTA(ulong value) => new HWINSTA(unchecked((void*)(value)));
 
     public static explicit operator ulong(HWINSTA value) => (ulong)(value.Value);
 
-    public static explicit operator HWINSTA(nuint value) => new HWINSTA((void*)(value));
+    public static explicit operator HWINSTA(nuint value) => new HWINSTA(unchecked((void*)(value)));
 
     public static implicit operator nuint(HWINSTA value) => (nuint)(value.Value);
 

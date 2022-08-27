@@ -37,43 +37,43 @@ public readonly unsafe partial struct HPALETTE : IComparable, IComparable<HPALET
 
     public static implicit operator HANDLE(HPALETTE value) => new HANDLE(value.Value);
 
-    public static explicit operator HPALETTE(byte value) => new HPALETTE((void*)(value));
+    public static explicit operator HPALETTE(byte value) => new HPALETTE(unchecked((void*)(value)));
 
     public static explicit operator byte(HPALETTE value) => (byte)(value.Value);
 
-    public static explicit operator HPALETTE(short value) => new HPALETTE((void*)(value));
+    public static explicit operator HPALETTE(short value) => new HPALETTE(unchecked((void*)(value)));
 
     public static explicit operator short(HPALETTE value) => (short)(value.Value);
 
-    public static explicit operator HPALETTE(int value) => new HPALETTE((void*)(value));
+    public static explicit operator HPALETTE(int value) => new HPALETTE(unchecked((void*)(value)));
 
     public static explicit operator int(HPALETTE value) => (int)(value.Value);
 
-    public static explicit operator HPALETTE(long value) => new HPALETTE((void*)(value));
+    public static explicit operator HPALETTE(long value) => new HPALETTE(unchecked((void*)(value)));
 
     public static explicit operator long(HPALETTE value) => (long)(value.Value);
 
-    public static explicit operator HPALETTE(nint value) => new HPALETTE((void*)(value));
+    public static explicit operator HPALETTE(nint value) => new HPALETTE(unchecked((void*)(value)));
 
     public static implicit operator nint(HPALETTE value) => (nint)(value.Value);
 
-    public static explicit operator HPALETTE(sbyte value) => new HPALETTE((void*)(value));
+    public static explicit operator HPALETTE(sbyte value) => new HPALETTE(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HPALETTE value) => (sbyte)(value.Value);
 
-    public static explicit operator HPALETTE(ushort value) => new HPALETTE((void*)(value));
+    public static explicit operator HPALETTE(ushort value) => new HPALETTE(unchecked((void*)(value)));
 
     public static explicit operator ushort(HPALETTE value) => (ushort)(value.Value);
 
-    public static explicit operator HPALETTE(uint value) => new HPALETTE((void*)(value));
+    public static explicit operator HPALETTE(uint value) => new HPALETTE(unchecked((void*)(value)));
 
     public static explicit operator uint(HPALETTE value) => (uint)(value.Value);
 
-    public static explicit operator HPALETTE(ulong value) => new HPALETTE((void*)(value));
+    public static explicit operator HPALETTE(ulong value) => new HPALETTE(unchecked((void*)(value)));
 
     public static explicit operator ulong(HPALETTE value) => (ulong)(value.Value);
 
-    public static explicit operator HPALETTE(nuint value) => new HPALETTE((void*)(value));
+    public static explicit operator HPALETTE(nuint value) => new HPALETTE(unchecked((void*)(value)));
 
     public static implicit operator nuint(HPALETTE value) => (nuint)(value.Value);
 

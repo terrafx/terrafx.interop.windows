@@ -37,43 +37,43 @@ public readonly unsafe partial struct HCATADMIN : IComparable, IComparable<HCATA
 
     public static implicit operator HANDLE(HCATADMIN value) => new HANDLE(value.Value);
 
-    public static explicit operator HCATADMIN(byte value) => new HCATADMIN((void*)(value));
+    public static explicit operator HCATADMIN(byte value) => new HCATADMIN(unchecked((void*)(value)));
 
     public static explicit operator byte(HCATADMIN value) => (byte)(value.Value);
 
-    public static explicit operator HCATADMIN(short value) => new HCATADMIN((void*)(value));
+    public static explicit operator HCATADMIN(short value) => new HCATADMIN(unchecked((void*)(value)));
 
     public static explicit operator short(HCATADMIN value) => (short)(value.Value);
 
-    public static explicit operator HCATADMIN(int value) => new HCATADMIN((void*)(value));
+    public static explicit operator HCATADMIN(int value) => new HCATADMIN(unchecked((void*)(value)));
 
     public static explicit operator int(HCATADMIN value) => (int)(value.Value);
 
-    public static explicit operator HCATADMIN(long value) => new HCATADMIN((void*)(value));
+    public static explicit operator HCATADMIN(long value) => new HCATADMIN(unchecked((void*)(value)));
 
     public static explicit operator long(HCATADMIN value) => (long)(value.Value);
 
-    public static explicit operator HCATADMIN(nint value) => new HCATADMIN((void*)(value));
+    public static explicit operator HCATADMIN(nint value) => new HCATADMIN(unchecked((void*)(value)));
 
     public static implicit operator nint(HCATADMIN value) => (nint)(value.Value);
 
-    public static explicit operator HCATADMIN(sbyte value) => new HCATADMIN((void*)(value));
+    public static explicit operator HCATADMIN(sbyte value) => new HCATADMIN(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HCATADMIN value) => (sbyte)(value.Value);
 
-    public static explicit operator HCATADMIN(ushort value) => new HCATADMIN((void*)(value));
+    public static explicit operator HCATADMIN(ushort value) => new HCATADMIN(unchecked((void*)(value)));
 
     public static explicit operator ushort(HCATADMIN value) => (ushort)(value.Value);
 
-    public static explicit operator HCATADMIN(uint value) => new HCATADMIN((void*)(value));
+    public static explicit operator HCATADMIN(uint value) => new HCATADMIN(unchecked((void*)(value)));
 
     public static explicit operator uint(HCATADMIN value) => (uint)(value.Value);
 
-    public static explicit operator HCATADMIN(ulong value) => new HCATADMIN((void*)(value));
+    public static explicit operator HCATADMIN(ulong value) => new HCATADMIN(unchecked((void*)(value)));
 
     public static explicit operator ulong(HCATADMIN value) => (ulong)(value.Value);
 
-    public static explicit operator HCATADMIN(nuint value) => new HCATADMIN((void*)(value));
+    public static explicit operator HCATADMIN(nuint value) => new HCATADMIN(unchecked((void*)(value)));
 
     public static implicit operator nuint(HCATADMIN value) => (nuint)(value.Value);
 
