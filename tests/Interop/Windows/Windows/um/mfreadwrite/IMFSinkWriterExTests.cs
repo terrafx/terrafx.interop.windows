@@ -12,7 +12,7 @@ using static TerraFX.Interop.Windows.IID;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="IMFSinkWriterEx" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class IMFSinkWriterExTests
 {
     /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFSinkWriterEx" /> struct is correct.</summary>

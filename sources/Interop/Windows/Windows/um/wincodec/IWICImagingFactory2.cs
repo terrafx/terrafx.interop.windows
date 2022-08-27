@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("7B816B45-1996-4476-B132-DE9E247C8AF0")]
 [NativeTypeName("struct IWICImagingFactory2 : IWICImagingFactory")]
 [NativeInheritance("IWICImagingFactory")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IWICImagingFactory2 : IWICImagingFactory2.Interface
 {
     public void** lpVtbl;

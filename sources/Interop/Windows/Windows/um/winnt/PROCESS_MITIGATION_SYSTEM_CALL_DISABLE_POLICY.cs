@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
 {
     /// <include file='PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.Anonymous"]/*' />

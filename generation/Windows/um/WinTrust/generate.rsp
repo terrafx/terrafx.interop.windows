@@ -17,8 +17,8 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinTrust.h
 --with-attribute
-CRYPT_PROVIDER_SIGSTATE=SupportedOSPlatform("windows8.0")
-WINTRUST_SIGNATURE_SETTINGS=SupportedOSPlatform("windows8.0")
+CRYPT_PROVIDER_SIGSTATE=SupportedOSPlatform("windows6.2")
+WINTRUST_SIGNATURE_SETTINGS=SupportedOSPlatform("windows6.2")
 --with-librarypath
 OpenPersonalTrustDBDialog=wintrust
 OpenPersonalTrustDBDialogEx=wintrust

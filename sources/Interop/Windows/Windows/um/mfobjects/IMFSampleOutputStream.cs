@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("8FEED468-6F7E-440D-869A-49BDD283AD0D")]
 [NativeTypeName("struct IMFSampleOutputStream : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFSampleOutputStream : IMFSampleOutputStream.Interface
 {
     public void** lpVtbl;

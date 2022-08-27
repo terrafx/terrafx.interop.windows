@@ -9,7 +9,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICBitmapPlaneDescription.xml' path='doc/member[@name="WICBitmapPlaneDescription"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public partial struct WICBitmapPlaneDescription
 {
     /// <include file='WICBitmapPlaneDescription.xml' path='doc/member[@name="WICBitmapPlaneDescription.Format"]/*' />

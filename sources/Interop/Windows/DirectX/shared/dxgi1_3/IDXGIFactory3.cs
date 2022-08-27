@@ -15,7 +15,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("25483823-CD46-4C7D-86CA-47AA95B837BD")]
 [NativeTypeName("struct IDXGIFactory3 : IDXGIFactory2")]
 [NativeInheritance("IDXGIFactory2")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDXGIFactory3 : IDXGIFactory3.Interface
 {
     public void** lpVtbl;

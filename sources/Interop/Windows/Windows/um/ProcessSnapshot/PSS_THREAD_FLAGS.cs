@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='PSS_THREAD_FLAGS.xml' path='doc/member[@name="PSS_THREAD_FLAGS"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum PSS_THREAD_FLAGS
 {
     /// <include file='PSS_THREAD_FLAGS.xml' path='doc/member[@name="PSS_THREAD_FLAGS.PSS_THREAD_FLAGS_NONE"]/*' />

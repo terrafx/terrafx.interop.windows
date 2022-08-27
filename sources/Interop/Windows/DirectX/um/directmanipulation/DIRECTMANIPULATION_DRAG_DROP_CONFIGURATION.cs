@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION.xml' path='doc/member[@name="DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION
 {
     /// <include file='DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION.xml' path='doc/member[@name="DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION.DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION_VERTICAL"]/*' />

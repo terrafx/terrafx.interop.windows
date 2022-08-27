@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_VIDEO_PROCESSOR_ROTATION.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_ROTATION"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum D3D11_VIDEO_PROCESSOR_ROTATION
 {
     /// <include file='D3D11_VIDEO_PROCESSOR_ROTATION.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_ROTATION.D3D11_VIDEO_PROCESSOR_ROTATION_IDENTITY"]/*' />

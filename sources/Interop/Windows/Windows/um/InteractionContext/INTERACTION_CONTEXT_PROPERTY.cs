@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='INTERACTION_CONTEXT_PROPERTY.xml' path='doc/member[@name="INTERACTION_CONTEXT_PROPERTY"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum INTERACTION_CONTEXT_PROPERTY
 {
     /// <include file='INTERACTION_CONTEXT_PROPERTY.xml' path='doc/member[@name="INTERACTION_CONTEXT_PROPERTY.INTERACTION_CONTEXT_PROPERTY_MEASUREMENT_UNITS"]/*' />

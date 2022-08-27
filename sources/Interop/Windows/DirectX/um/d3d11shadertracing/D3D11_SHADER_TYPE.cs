@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_SHADER_TYPE.xml' path='doc/member[@name="D3D11_SHADER_TYPE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum D3D11_SHADER_TYPE
 {
     /// <include file='D3D11_SHADER_TYPE.xml' path='doc/member[@name="D3D11_SHADER_TYPE.D3D11_VERTEX_SHADER"]/*' />

@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DXGI_INFO_QUEUE_FILTER_DESC.xml' path='doc/member[@name="DXGI_INFO_QUEUE_FILTER_DESC"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct DXGI_INFO_QUEUE_FILTER_DESC
 {
     /// <include file='DXGI_INFO_QUEUE_FILTER_DESC.xml' path='doc/member[@name="DXGI_INFO_QUEUE_FILTER_DESC.NumCategories"]/*' />

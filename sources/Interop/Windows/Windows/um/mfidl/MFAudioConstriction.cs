@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MFAudioConstriction.xml' path='doc/member[@name="MFAudioConstriction"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum MFAudioConstriction
 {
     /// <include file='MFAudioConstriction.xml' path='doc/member[@name="MFAudioConstriction.MFaudioConstrictionOff"]/*' />

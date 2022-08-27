@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_CONTENT_PROTECTION_CAPS.xml' path='doc/member[@name="D3D11_CONTENT_PROTECTION_CAPS"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum D3D11_CONTENT_PROTECTION_CAPS
 {
     /// <include file='D3D11_CONTENT_PROTECTION_CAPS.xml' path='doc/member[@name="D3D11_CONTENT_PROTECTION_CAPS.D3D11_CONTENT_PROTECTION_CAPS_SOFTWARE"]/*' />

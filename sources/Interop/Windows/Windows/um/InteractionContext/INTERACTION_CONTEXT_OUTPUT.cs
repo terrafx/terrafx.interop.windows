@@ -9,7 +9,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='INTERACTION_CONTEXT_OUTPUT.xml' path='doc/member[@name="INTERACTION_CONTEXT_OUTPUT"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct INTERACTION_CONTEXT_OUTPUT
 {
     /// <include file='INTERACTION_CONTEXT_OUTPUT.xml' path='doc/member[@name="INTERACTION_CONTEXT_OUTPUT.interactionId"]/*' />

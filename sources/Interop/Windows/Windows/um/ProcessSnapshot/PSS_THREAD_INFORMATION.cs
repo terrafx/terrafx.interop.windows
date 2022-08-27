@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PSS_THREAD_INFORMATION.xml' path='doc/member[@name="PSS_THREAD_INFORMATION"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public partial struct PSS_THREAD_INFORMATION
 {
     /// <include file='PSS_THREAD_INFORMATION.xml' path='doc/member[@name="PSS_THREAD_INFORMATION.ThreadsCaptured"]/*' />

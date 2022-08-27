@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='INPUT_MESSAGE_DEVICE_TYPE.xml' path='doc/member[@name="INPUT_MESSAGE_DEVICE_TYPE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum INPUT_MESSAGE_DEVICE_TYPE
 {
     /// <include file='INPUT_MESSAGE_DEVICE_TYPE.xml' path='doc/member[@name="INPUT_MESSAGE_DEVICE_TYPE.IMDT_UNAVAILABLE"]/*' />

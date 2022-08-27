@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("24FA67D5-D1D0-4DC5-995C-C0EFDC191FB5")]
 [NativeTypeName("struct IMFMediaKeySession : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IMFMediaKeySession : IMFMediaKeySession.Interface
 {
     public void** lpVtbl;

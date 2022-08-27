@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 /// <include file='DWRITE_TEXT_METRICS1.xml' path='doc/member[@name="DWRITE_TEXT_METRICS1"]/*' />
 [NativeTypeName("struct DWRITE_TEXT_METRICS1 : DWRITE_TEXT_METRICS")]
 [NativeInheritance("DWRITE_TEXT_METRICS")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public partial struct DWRITE_TEXT_METRICS1
 {
     public DWRITE_TEXT_METRICS Base;

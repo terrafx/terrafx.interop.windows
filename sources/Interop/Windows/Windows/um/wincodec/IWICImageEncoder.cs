@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("04C75BF8-3CE1-473B-ACC5-3CC4F5E94999")]
 [NativeTypeName("struct IWICImageEncoder : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IWICImageEncoder : IWICImageEncoder.Interface
 {
     public void** lpVtbl;

@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING.xml' path='doc/member[@name="WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING
 {
     /// <include file='WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING.xml' path='doc/member[@name="WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING.binding"]/*' />

@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='PSS_PROCESS_FLAGS.xml' path='doc/member[@name="PSS_PROCESS_FLAGS"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum PSS_PROCESS_FLAGS
 {
     /// <include file='PSS_PROCESS_FLAGS.xml' path='doc/member[@name="PSS_PROCESS_FLAGS.PSS_PROCESS_FLAGS_NONE"]/*' />

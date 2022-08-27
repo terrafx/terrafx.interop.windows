@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='GLOBALOPT_UNMARSHALING_POLICY_VALUES.xml' path='doc/member[@name="GLOBALOPT_UNMARSHALING_POLICY_VALUES"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum GLOBALOPT_UNMARSHALING_POLICY_VALUES
 {
     /// <include file='GLOBALOPT_UNMARSHALING_POLICY_VALUES.xml' path='doc/member[@name="GLOBALOPT_UNMARSHALING_POLICY_VALUES.COMGLB_UNMARSHALING_POLICY_NORMAL"]/*' />

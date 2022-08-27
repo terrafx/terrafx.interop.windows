@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='eAVEncH264PictureType.xml' path='doc/member[@name="eAVEncH264PictureType"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum eAVEncH264PictureType
 {
     /// <include file='eAVEncH264PictureType.xml' path='doc/member[@name="eAVEncH264PictureType.eAVEncH264PictureType_IDR"]/*' />

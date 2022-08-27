@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_TEX2D_VDOV.xml' path='doc/member[@name="D3D11_TEX2D_VDOV"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct D3D11_TEX2D_VDOV
 {
     /// <include file='D3D11_TEX2D_VDOV.xml' path='doc/member[@name="D3D11_TEX2D_VDOV.ArraySlice"]/*' />

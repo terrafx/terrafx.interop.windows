@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WCM_DATAPLAN_STATUS.xml' path='doc/member[@name="WCM_DATAPLAN_STATUS"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct WCM_DATAPLAN_STATUS
 {
     /// <include file='WCM_DATAPLAN_STATUS.xml' path='doc/member[@name="WCM_DATAPLAN_STATUS.UsageData"]/*' />

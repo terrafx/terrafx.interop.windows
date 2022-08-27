@@ -12,7 +12,7 @@ using static TerraFX.Interop.Windows.IID;
 namespace TerraFX.Interop.DirectX.UnitTests;
 
 /// <summary>Provides validation of the <see cref="IDCompositionVisualDebug" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class IDCompositionVisualDebugTests
 {
     /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionVisualDebug" /> struct is correct.</summary>

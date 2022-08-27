@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CROSS_SLIDE_THRESHOLD.xml' path='doc/member[@name="CROSS_SLIDE_THRESHOLD"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum CROSS_SLIDE_THRESHOLD
 {
     /// <include file='CROSS_SLIDE_THRESHOLD.xml' path='doc/member[@name="CROSS_SLIDE_THRESHOLD.CROSS_SLIDE_THRESHOLD_SELECT_START"]/*' />

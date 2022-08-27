@@ -41,8 +41,8 @@ SystemTimeToTzSpecificLocalTimeEx
 TzSpecificLocalTimeToSystemTime
 TzSpecificLocalTimeToSystemTimeEx
 --with-attribute
-EnumDynamicTimeZoneInformation=SupportedOSPlatform("windows8.0")
-GetDynamicTimeZoneInformationEffectiveYears=SupportedOSPlatform("windows8.0")
+EnumDynamicTimeZoneInformation=SupportedOSPlatform("windows6.2")
+GetDynamicTimeZoneInformationEffectiveYears=SupportedOSPlatform("windows6.2")
 LocalFileTimeToLocalSystemTime=SupportedOSPlatform("windows10.0.17763.0")
 LocalSystemTimeToLocalFileTime=SupportedOSPlatform("windows10.0.17763.0")
 --with-suppressgctransition

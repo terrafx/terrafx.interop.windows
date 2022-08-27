@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("DB71A2FC-078A-414E-9DF9-8C2531B0AA6C")]
 [NativeTypeName("struct IMFMediaTimeRange : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface
 {
     public void** lpVtbl;

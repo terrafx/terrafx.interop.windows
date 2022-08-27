@@ -15,7 +15,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("0439FC60-CA44-4994-8DEE-3A9AF7B732EC")]
 [NativeTypeName("struct IDWriteFactory2 : IDWriteFactory1")]
 [NativeInheritance("IDWriteFactory1")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDWriteFactory2 : IDWriteFactory2.Interface
 {
     public void** lpVtbl;

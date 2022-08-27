@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DISPLAY_DEVICE_TYPE.xml' path='doc/member[@name="DISPLAY_DEVICE_TYPE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum DISPLAY_DEVICE_TYPE
 {
     /// <include file='DISPLAY_DEVICE_TYPE.xml' path='doc/member[@name="DISPLAY_DEVICE_TYPE.DEVICE_PRIMARY"]/*' />

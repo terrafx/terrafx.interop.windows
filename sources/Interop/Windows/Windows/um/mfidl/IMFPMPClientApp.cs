@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("C004F646-BE2C-48F3-93A2-A0983EBA1108")]
 [NativeTypeName("struct IMFPMPClientApp : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFPMPClientApp : IMFPMPClientApp.Interface
 {
     public void** lpVtbl;

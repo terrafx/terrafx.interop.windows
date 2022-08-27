@@ -15,7 +15,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("F292E401-C050-4CDE-83D7-04962D3B23C2")]
 [NativeTypeName("struct ID2D1GradientMesh : ID2D1Resource")]
 [NativeInheritance("ID2D1Resource")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct ID2D1GradientMesh : ID2D1GradientMesh.Interface
 {
     public void** lpVtbl;

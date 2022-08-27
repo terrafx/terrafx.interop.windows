@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="SCHANNEL_CRED" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class SCHANNEL_CREDTests
 {
     /// <summary>Validates that the <see cref="SCHANNEL_CRED" /> struct is blittable.</summary>

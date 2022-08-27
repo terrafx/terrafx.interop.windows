@@ -15,7 +15,7 @@ namespace TerraFX.Interop.WinRT;
 [Guid("54298223-41E1-4A41-9C08-02E8256864A1")]
 [NativeTypeName("struct ISurfaceImageSourceNativeWithD2D : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSourceNativeWithD2D.Interface
 {
     public void** lpVtbl;

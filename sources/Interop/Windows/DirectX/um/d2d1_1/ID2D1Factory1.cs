@@ -15,7 +15,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("BB12D362-DAEE-4B9A-AA1D-14BA401CFA1F")]
 [NativeTypeName("struct ID2D1Factory1 : ID2D1Factory")]
 [NativeInheritance("ID2D1Factory")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ID2D1Factory1 : ID2D1Factory1.Interface
 {
     public void** lpVtbl;

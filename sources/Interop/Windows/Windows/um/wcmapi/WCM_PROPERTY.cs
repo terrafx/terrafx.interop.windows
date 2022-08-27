@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WCM_PROPERTY.xml' path='doc/member[@name="WCM_PROPERTY"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum WCM_PROPERTY
 {
     /// <include file='WCM_PROPERTY.xml' path='doc/member[@name="WCM_PROPERTY.wcm_global_property_domain_policy"]/*' />

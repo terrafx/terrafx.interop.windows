@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX.UnitTests;
 
 /// <summary>Provides validation of the <see cref="DXGI_MATRIX_3X2_F" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class DXGI_MATRIX_3X2_FTests
 {
     /// <summary>Validates that the <see cref="DXGI_MATRIX_3X2_F" /> struct is blittable.</summary>

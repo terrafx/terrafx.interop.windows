@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SHELL_UI_COMPONENT.xml' path='doc/member[@name="SHELL_UI_COMPONENT"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum SHELL_UI_COMPONENT
 {
     /// <include file='SHELL_UI_COMPONENT.xml' path='doc/member[@name="SHELL_UI_COMPONENT.SHELL_UI_COMPONENT_TASKBARS"]/*' />

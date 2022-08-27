@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="ADDRINFOEX2W" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class ADDRINFOEX2WTests
 {
     /// <summary>Validates that the <see cref="ADDRINFOEX2W" /> struct is blittable.</summary>

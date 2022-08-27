@@ -15,7 +15,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("E57AA735-DCDB-4C72-9C61-0591F58889EE")]
 [NativeTypeName("struct IDCompositionSkewTransform : IDCompositionTransform")]
 [NativeInheritance("IDCompositionTransform")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IDCompositionSkewTransform : IDCompositionSkewTransform.Interface
 {
     public void** lpVtbl;

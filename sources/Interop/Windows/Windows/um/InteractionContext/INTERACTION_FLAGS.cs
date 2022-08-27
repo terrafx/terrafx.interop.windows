@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='INTERACTION_FLAGS.xml' path='doc/member[@name="INTERACTION_FLAGS"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum INTERACTION_FLAGS
 {
     /// <include file='INTERACTION_FLAGS.xml' path='doc/member[@name="INTERACTION_FLAGS.INTERACTION_FLAG_NONE"]/*' />

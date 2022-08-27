@@ -15,7 +15,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("D67441C7-672A-476F-9E82-CD55B44949CE")]
 [NativeTypeName("struct IDXGIInfoQueue : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface
 {
     public void** lpVtbl;

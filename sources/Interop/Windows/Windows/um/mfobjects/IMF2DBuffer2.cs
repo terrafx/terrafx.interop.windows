@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("33AE5EA6-4316-436F-8DDD-D73D22F829EC")]
 [NativeTypeName("struct IMF2DBuffer2 : IMF2DBuffer")]
 [NativeInheritance("IMF2DBuffer")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMF2DBuffer2 : IMF2DBuffer2.Interface
 {
     public void** lpVtbl;

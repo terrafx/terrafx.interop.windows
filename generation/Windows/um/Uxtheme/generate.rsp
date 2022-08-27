@@ -17,9 +17,9 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Uxtheme.h
 --with-attribute
-GetThemeAnimationProperty=SupportedOSPlatform("windows8.0")
-GetThemeAnimationTransform=SupportedOSPlatform("windows8.0")
-GetThemeTimingFunction=SupportedOSPlatform("windows8.0")
+GetThemeAnimationProperty=SupportedOSPlatform("windows6.2")
+GetThemeAnimationTransform=SupportedOSPlatform("windows6.2")
+GetThemeTimingFunction=SupportedOSPlatform("windows6.2")
 OpenThemeDataForDpi=SupportedOSPlatform("windows10.0.15063.0")
 TA_TRANSFORM_FLAG=Flags
 --with-librarypath

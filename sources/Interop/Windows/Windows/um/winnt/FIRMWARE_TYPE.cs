@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='FIRMWARE_TYPE.xml' path='doc/member[@name="FIRMWARE_TYPE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum FIRMWARE_TYPE
 {
     /// <include file='FIRMWARE_TYPE.xml' path='doc/member[@name="FIRMWARE_TYPE.FirmwareTypeUnknown"]/*' />

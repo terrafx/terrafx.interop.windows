@@ -10,7 +10,7 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
-    [SupportedOSPlatform("windows8.1")]
+    [SupportedOSPlatform("windows6.3")]
     public static unsafe PDF_RENDER_PARAMS PdfRenderParams([NativeTypeName("const D2D_RECT_F &")] D2D_RECT_F* srcRect, [NativeTypeName("UINT32")] uint destinationWidth, [NativeTypeName("UINT32")] uint destinationHeight, [NativeTypeName("const D2D_COLOR_F &")] DXGI_RGBA* bkColor, [NativeTypeName("BOOLEAN")] byte ignoreHighContrast)
     {
         PDF_RENDER_PARAMS p = new PDF_RENDER_PARAMS {

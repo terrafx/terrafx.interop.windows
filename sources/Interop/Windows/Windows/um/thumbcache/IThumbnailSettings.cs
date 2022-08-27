@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("F4376F00-BEF5-4D45-80F3-1E023BBF1209")]
 [NativeTypeName("struct IThumbnailSettings : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IThumbnailSettings : IThumbnailSettings.Interface
 {
     public void** lpVtbl;

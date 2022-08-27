@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WS_NETPIPE_URL.xml' path='doc/member[@name="WS_NETPIPE_URL"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct WS_NETPIPE_URL
 {
     /// <include file='WS_NETPIPE_URL.xml' path='doc/member[@name="WS_NETPIPE_URL.url"]/*' />

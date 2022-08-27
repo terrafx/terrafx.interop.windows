@@ -15,7 +15,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("595E39D1-2724-4663-99B1-DA969DE28364")]
 [NativeTypeName("struct IDXGIOutput2 : IDXGIOutput1")]
 [NativeInheritance("IDXGIOutput1")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDXGIOutput2 : IDXGIOutput2.Interface
 {
     public void** lpVtbl;

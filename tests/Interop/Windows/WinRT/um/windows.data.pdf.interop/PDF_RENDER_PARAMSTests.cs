@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.WinRT.UnitTests;
 
 /// <summary>Provides validation of the <see cref="PDF_RENDER_PARAMS" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class PDF_RENDER_PARAMSTests
 {
     /// <summary>Validates that the <see cref="PDF_RENDER_PARAMS" /> struct is blittable.</summary>

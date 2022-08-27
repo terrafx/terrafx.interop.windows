@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTORTests
 {
     /// <summary>Validates that the <see cref="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR" /> struct is blittable.</summary>

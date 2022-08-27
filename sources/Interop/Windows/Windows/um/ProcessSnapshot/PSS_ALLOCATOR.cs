@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PSS_ALLOCATOR.xml' path='doc/member[@name="PSS_ALLOCATOR"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct PSS_ALLOCATOR
 {
     /// <include file='PSS_ALLOCATOR.xml' path='doc/member[@name="PSS_ALLOCATOR.Context"]/*' />

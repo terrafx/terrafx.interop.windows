@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("C7A4DCA1-F5F0-47B6-B92B-BF0106D25791")]
 [NativeTypeName("struct IMFAsyncCallbackLogging : IMFAsyncCallback")]
 [NativeInheritance("IMFAsyncCallback")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFAsyncCallbackLogging : IMFAsyncCallbackLogging.Interface
 {
     public void** lpVtbl;

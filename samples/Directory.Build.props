@@ -12,7 +12,7 @@
 
   <PropertyGroup>
     <IsPackable>false</IsPackable>
-    <NoWarn>$(NoWarn);1591</NoWarn>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
     <OutputType>Exe</OutputType>
     <TerraFXProjectCategory>samples</TerraFXProjectCategory>
   </PropertyGroup>

@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MONITOR_DPI_TYPE.xml' path='doc/member[@name="MONITOR_DPI_TYPE"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum MONITOR_DPI_TYPE
 {
     /// <include file='MONITOR_DPI_TYPE.xml' path='doc/member[@name="MONITOR_DPI_TYPE.MDT_EFFECTIVE_DPI"]/*' />

@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WINHTTP_WEB_SOCKET_STATUS.xml' path='doc/member[@name="WINHTTP_WEB_SOCKET_STATUS"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct WINHTTP_WEB_SOCKET_STATUS
 {
     /// <include file='WINHTTP_WEB_SOCKET_STATUS.xml' path='doc/member[@name="WINHTTP_WEB_SOCKET_STATUS.dwBytesTransferred"]/*' />

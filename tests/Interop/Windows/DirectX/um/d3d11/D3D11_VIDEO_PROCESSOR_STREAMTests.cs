@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX.UnitTests;
 
 /// <summary>Provides validation of the <see cref="D3D11_VIDEO_PROCESSOR_STREAM" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class D3D11_VIDEO_PROCESSOR_STREAMTests
 {
     /// <summary>Validates that the <see cref="D3D11_VIDEO_PROCESSOR_STREAM" /> struct is blittable.</summary>

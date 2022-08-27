@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_VIDEO_PROCESSOR_FEATURE_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_FEATURE_CAPS"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum D3D11_VIDEO_PROCESSOR_FEATURE_CAPS
 {
     /// <include file='D3D11_VIDEO_PROCESSOR_FEATURE_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_FEATURE_CAPS.D3D11_VIDEO_PROCESSOR_FEATURE_CAPS_ALPHA_FILL"]/*' />

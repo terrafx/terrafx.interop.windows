@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WCM_CONNECTION_COST_SOURCE.xml' path='doc/member[@name="WCM_CONNECTION_COST_SOURCE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum WCM_CONNECTION_COST_SOURCE
 {
     /// <include file='WCM_CONNECTION_COST_SOURCE.xml' path='doc/member[@name="WCM_CONNECTION_COST_SOURCE.WCM_CONNECTION_COST_SOURCE_DEFAULT"]/*' />

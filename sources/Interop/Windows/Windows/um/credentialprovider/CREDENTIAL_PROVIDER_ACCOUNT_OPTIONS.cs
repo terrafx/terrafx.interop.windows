@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS.xml' path='doc/member[@name="CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS
 {
     /// <include file='CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS.xml' path='doc/member[@name="CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS.CPAO_NONE"]/*' />

@@ -34,13 +34,13 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ws2def.h
 --with-attribute
-ADDRINFOEX2A=SupportedOSPlatform("windows8.0")
-ADDRINFOEX2W=SupportedOSPlatform("windows8.0")
-ADDRINFOEX3A=SupportedOSPlatform("windows8.0")
-ADDRINFOEX3W=SupportedOSPlatform("windows8.0")
+ADDRINFOEX2A=SupportedOSPlatform("windows6.2")
+ADDRINFOEX2W=SupportedOSPlatform("windows6.2")
+ADDRINFOEX3A=SupportedOSPlatform("windows6.2")
+ADDRINFOEX3W=SupportedOSPlatform("windows6.2")
 ADDRINFOEX4A=SupportedOSPlatform("windows10.0")
 ADDRINFOEX4W=SupportedOSPlatform("windows10.0")
-SOCKET_PROCESSOR_AFFINITY=SupportedOSPlatform("windows8.0")
+SOCKET_PROCESSOR_AFFINITY=SupportedOSPlatform("windows6.2")
 --with-type
 _SS_ALIGNSIZE=uint
 _SS_PAD1SIZE=uint

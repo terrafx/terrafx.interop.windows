@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX.UnitTests;
 
 /// <summary>Provides validation of the <see cref="D3D11_TILED_RESOURCE_COORDINATE" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class D3D11_TILED_RESOURCE_COORDINATETests
 {
     /// <summary>Validates that the <see cref="D3D11_TILED_RESOURCE_COORDINATE" /> struct is blittable.</summary>

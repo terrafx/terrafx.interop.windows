@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="MANAGEMENT_SERVICE_INFO" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class MANAGEMENT_SERVICE_INFOTests
 {
     /// <summary>Validates that the <see cref="MANAGEMENT_SERVICE_INFO" /> struct is blittable.</summary>

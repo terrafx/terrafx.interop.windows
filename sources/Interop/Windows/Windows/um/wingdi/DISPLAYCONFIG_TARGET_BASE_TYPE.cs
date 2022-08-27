@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DISPLAYCONFIG_TARGET_BASE_TYPE.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_BASE_TYPE"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public partial struct DISPLAYCONFIG_TARGET_BASE_TYPE
 {
     /// <include file='DISPLAYCONFIG_TARGET_BASE_TYPE.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_BASE_TYPE.header"]/*' />

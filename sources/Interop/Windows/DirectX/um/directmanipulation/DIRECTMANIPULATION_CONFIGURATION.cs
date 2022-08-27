@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIRECTMANIPULATION_CONFIGURATION.xml' path='doc/member[@name="DIRECTMANIPULATION_CONFIGURATION"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum DIRECTMANIPULATION_CONFIGURATION
 {
     /// <include file='DIRECTMANIPULATION_CONFIGURATION.xml' path='doc/member[@name="DIRECTMANIPULATION_CONFIGURATION.DIRECTMANIPULATION_CONFIGURATION_NONE"]/*' />

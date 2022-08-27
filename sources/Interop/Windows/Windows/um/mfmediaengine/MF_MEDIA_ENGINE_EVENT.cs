@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum MF_MEDIA_ENGINE_EVENT
 {
     /// <include file='MF_MEDIA_ENGINE_EVENT.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_LOADSTART"]/*' />

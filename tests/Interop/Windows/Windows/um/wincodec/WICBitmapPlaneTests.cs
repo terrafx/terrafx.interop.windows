@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="WICBitmapPlane" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class WICBitmapPlaneTests
 {
     /// <summary>Validates that the <see cref="WICBitmapPlane" /> struct is blittable.</summary>

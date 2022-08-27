@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("A2F05A09-27A2-42B5-BC0E-AC163EF49D9B")]
 [NativeTypeName("struct IApartmentShutdown : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IApartmentShutdown : IApartmentShutdown.Interface
 {
     public void** lpVtbl;

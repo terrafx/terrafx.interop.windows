@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WCM_BILLING_CYCLE_INFO.xml' path='doc/member[@name="WCM_BILLING_CYCLE_INFO"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct WCM_BILLING_CYCLE_INFO
 {
     /// <include file='WCM_BILLING_CYCLE_INFO.xml' path='doc/member[@name="WCM_BILLING_CYCLE_INFO.StartDate"]/*' />

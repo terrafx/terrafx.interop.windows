@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="PSS_PERFORMANCE_COUNTERS" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class PSS_PERFORMANCE_COUNTERSTests
 {
     /// <summary>Validates that the <see cref="PSS_PERFORMANCE_COUNTERS" /> struct is blittable.</summary>

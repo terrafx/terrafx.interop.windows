@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIRECTMANIPULATION_HITTEST_TYPE.xml' path='doc/member[@name="DIRECTMANIPULATION_HITTEST_TYPE"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum DIRECTMANIPULATION_HITTEST_TYPE
 {
     /// <include file='DIRECTMANIPULATION_HITTEST_TYPE.xml' path='doc/member[@name="DIRECTMANIPULATION_HITTEST_TYPE.DIRECTMANIPULATION_HITTEST_TYPE_ASYNCHRONOUS"]/*' />

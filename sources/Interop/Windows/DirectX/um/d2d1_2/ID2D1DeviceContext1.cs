@@ -23,7 +23,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("D37F57E4-6908-459F-A199-E72F24F79987")]
 [NativeTypeName("struct ID2D1DeviceContext1 : ID2D1DeviceContext")]
 [NativeInheritance("ID2D1DeviceContext")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct ID2D1DeviceContext1 : ID2D1DeviceContext1.Interface
 {
     public void** lpVtbl;

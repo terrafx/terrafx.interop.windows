@@ -15,9 +15,9 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mssip.h
 --with-attribute
-CryptSIPGetCaps=SupportedOSPlatform("windows8.0")
-pCryptSIPGetCaps=SupportedOSPlatform("windows8.0")
-SIP_CAP_SET=SupportedOSPlatform("windows8.0")
+CryptSIPGetCaps=SupportedOSPlatform("windows6.2")
+pCryptSIPGetCaps=SupportedOSPlatform("windows6.2")
+SIP_CAP_SET=SupportedOSPlatform("windows6.2")
 --with-librarypath
 CryptSIPAddProvider=crypt32
 CryptSIPCreateIndirectData=crypt32

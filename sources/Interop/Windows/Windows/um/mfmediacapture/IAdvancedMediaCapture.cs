@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("D0751585-D216-4344-B5BF-463B68F977BB")]
 [NativeTypeName("struct IAdvancedMediaCapture : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IAdvancedMediaCapture : IAdvancedMediaCapture.Interface
 {
     public void** lpVtbl;

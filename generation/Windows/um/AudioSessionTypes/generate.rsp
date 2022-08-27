@@ -15,4 +15,4 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/AudioSessionTypes.h
 --with-attribute
-AUDIO_STREAM_CATEGORY=SupportedOSPlatform("windows8.0")
+AUDIO_STREAM_CATEGORY=SupportedOSPlatform("windows6.2")

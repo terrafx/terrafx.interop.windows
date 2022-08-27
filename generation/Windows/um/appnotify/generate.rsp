@@ -13,7 +13,7 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/appnotify.h
 --with-attribute
-PAPPSTATE_CHANGE_ROUTINE=SupportedOSPlatform("windows8.1")
+PAPPSTATE_CHANGE_ROUTINE=SupportedOSPlatform("windows6.3")
 --with-librarypath
 RegisterAppConstrainedChangeNotification=twinapi.appcore.dll
 RegisterAppStateChangeNotification=twinapi.appcore.dll

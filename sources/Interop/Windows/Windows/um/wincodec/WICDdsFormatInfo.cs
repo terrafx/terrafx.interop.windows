@@ -9,7 +9,7 @@ using TerraFX.Interop.DirectX;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICDdsFormatInfo.xml' path='doc/member[@name="WICDdsFormatInfo"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public partial struct WICDdsFormatInfo
 {
     /// <include file='WICDdsFormatInfo.xml' path='doc/member[@name="WICDdsFormatInfo.DxgiFormat"]/*' />

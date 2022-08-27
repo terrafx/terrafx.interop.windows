@@ -13,6 +13,6 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mfmediacapture.h
 --with-attribute
-IAdvancedMediaCapture=SupportedOSPlatform("windows8.0")
-IAdvancedMediaCaptureInitializationSettings=SupportedOSPlatform("windows8.0")
-IAdvancedMediaCaptureSettings=SupportedOSPlatform("windows8.0")
+IAdvancedMediaCapture=SupportedOSPlatform("windows6.2")
+IAdvancedMediaCaptureInitializationSettings=SupportedOSPlatform("windows6.2")
+IAdvancedMediaCaptureSettings=SupportedOSPlatform("windows6.2")

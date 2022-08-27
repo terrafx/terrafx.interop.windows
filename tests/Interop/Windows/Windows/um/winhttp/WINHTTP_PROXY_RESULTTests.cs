@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="WINHTTP_PROXY_RESULT" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class WINHTTP_PROXY_RESULTTests
 {
     /// <summary>Validates that the <see cref="WINHTTP_PROXY_RESULT" /> struct is blittable.</summary>

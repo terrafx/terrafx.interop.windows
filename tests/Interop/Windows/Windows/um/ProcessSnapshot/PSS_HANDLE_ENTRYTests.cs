@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="PSS_HANDLE_ENTRY" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class PSS_HANDLE_ENTRYTests
 {
     /// <summary>Validates that the <see cref="PSS_HANDLE_ENTRY" /> struct is blittable.</summary>

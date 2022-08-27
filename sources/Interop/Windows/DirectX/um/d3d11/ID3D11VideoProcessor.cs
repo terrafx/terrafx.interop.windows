@@ -15,7 +15,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("1D7B0652-185F-41C6-85CE-0C5BE3D4AE6C")]
 [NativeTypeName("struct ID3D11VideoProcessor : ID3D11DeviceChild")]
 [NativeInheritance("ID3D11DeviceChild")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ID3D11VideoProcessor : ID3D11VideoProcessor.Interface
 {
     public void** lpVtbl;

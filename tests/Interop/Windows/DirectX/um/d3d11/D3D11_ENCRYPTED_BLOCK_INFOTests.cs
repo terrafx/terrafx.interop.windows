@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX.UnitTests;
 
 /// <summary>Provides validation of the <see cref="D3D11_ENCRYPTED_BLOCK_INFO" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class D3D11_ENCRYPTED_BLOCK_INFOTests
 {
     /// <summary>Validates that the <see cref="D3D11_ENCRYPTED_BLOCK_INFO" /> struct is blittable.</summary>

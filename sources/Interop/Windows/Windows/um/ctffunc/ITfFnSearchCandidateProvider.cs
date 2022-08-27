@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("87A2AD8F-F27B-4920-8501-67602280175D")]
 [NativeTypeName("struct ITfFnSearchCandidateProvider : ITfFunction")]
 [NativeInheritance("ITfFunction")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ITfFnSearchCandidateProvider : ITfFnSearchCandidateProvider.Interface
 {
     public void** lpVtbl;

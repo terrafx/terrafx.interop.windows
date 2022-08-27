@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="COPYFILE2_MESSAGE" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class COPYFILE2_MESSAGETests
 {
     /// <summary>Validates that the <see cref="COPYFILE2_MESSAGE" /> struct is blittable.</summary>

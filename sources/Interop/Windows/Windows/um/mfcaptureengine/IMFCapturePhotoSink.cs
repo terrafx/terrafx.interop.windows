@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("D2D43CC8-48BB-4AA7-95DB-10C06977E777")]
 [NativeTypeName("struct IMFCapturePhotoSink : IMFCaptureSink")]
 [NativeInheritance("IMFCaptureSink")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFCapturePhotoSink : IMFCapturePhotoSink.Interface
 {
     public void** lpVtbl;

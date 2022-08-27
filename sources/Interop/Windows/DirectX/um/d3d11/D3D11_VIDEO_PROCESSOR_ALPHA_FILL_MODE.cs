@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE
 {
     /// <include file='D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE.D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE_OPAQUE"]/*' />

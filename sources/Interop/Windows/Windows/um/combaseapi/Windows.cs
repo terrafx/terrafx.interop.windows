@@ -71,7 +71,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoAllowUnmarshalerCLSID"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT CoAllowUnmarshalerCLSID([NativeTypeName("const IID &")] Guid* clsid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoGetObjectContext"]/*' />
@@ -238,7 +238,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoCreateInstanceFromApp"]/*' />
     [DllImport("combase", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT CoCreateInstanceFromApp([NativeTypeName("const IID &")] Guid* Clsid, IUnknown* punkOuter, [NativeTypeName("DWORD")] uint dwClsCtx, [NativeTypeName("PVOID")] void* reserved, [NativeTypeName("DWORD")] uint dwCount, MULTI_QI* pResults);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoRegisterActivationFilter"]/*' />
@@ -331,7 +331,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RoGetAgileReference"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.1")]
+    [SupportedOSPlatform("windows6.3")]
     public static extern HRESULT RoGetAgileReference([NativeTypeName("enum AgileReferenceOptions")] AgileReferenceOptions options, [NativeTypeName("const IID &")] Guid* riid, IUnknown* pUnk, IAgileReference** ppAgileReference);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoTaskMemAlloc"]/*' />

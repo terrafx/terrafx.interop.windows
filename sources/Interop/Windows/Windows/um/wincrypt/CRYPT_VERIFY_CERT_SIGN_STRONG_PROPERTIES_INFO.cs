@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO.xml' path='doc/member[@name="CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO
 {
     /// <include file='CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO.xml' path='doc/member[@name="CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO.CertSignHashCNGAlgPropData"]/*' />
