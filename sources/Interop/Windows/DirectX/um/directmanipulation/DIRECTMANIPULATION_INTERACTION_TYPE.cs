@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIRECTMANIPULATION_INTERACTION_TYPE.xml' path='doc/member[@name="DIRECTMANIPULATION_INTERACTION_TYPE"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum DIRECTMANIPULATION_INTERACTION_TYPE
 {
     /// <include file='DIRECTMANIPULATION_INTERACTION_TYPE.xml' path='doc/member[@name="DIRECTMANIPULATION_INTERACTION_TYPE.DIRECTMANIPULATION_INTERACTION_BEGIN"]/*' />

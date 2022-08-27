@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="USN_JOURNAL_DATA_V2" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class USN_JOURNAL_DATA_V2Tests
 {
     /// <summary>Validates that the <see cref="USN_JOURNAL_DATA_V2" /> struct is blittable.</summary>

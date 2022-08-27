@@ -9,7 +9,7 @@ using TerraFX.Interop.DirectX;
 namespace TerraFX.Interop.WinRT;
 
 /// <include file='PDF_RENDER_PARAMS.xml' path='doc/member[@name="PDF_RENDER_PARAMS"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public partial struct PDF_RENDER_PARAMS
 {
     /// <include file='PDF_RENDER_PARAMS.xml' path='doc/member[@name="PDF_RENDER_PARAMS.SourceRect"]/*' />

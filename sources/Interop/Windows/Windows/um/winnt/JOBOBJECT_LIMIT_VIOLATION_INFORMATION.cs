@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='JOBOBJECT_LIMIT_VIOLATION_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_LIMIT_VIOLATION_INFORMATION"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct JOBOBJECT_LIMIT_VIOLATION_INFORMATION
 {
     /// <include file='JOBOBJECT_LIMIT_VIOLATION_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_LIMIT_VIOLATION_INFORMATION.LimitFlags"]/*' />

@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="PSS_PROCESS_INFORMATION" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class PSS_PROCESS_INFORMATIONTests
 {
     /// <summary>Validates that the <see cref="PSS_PROCESS_INFORMATION" /> struct is blittable.</summary>

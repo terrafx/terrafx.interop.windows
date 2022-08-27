@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct STORAGE_OFFLOAD_TOKEN
 {
     /// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN.TokenType"]/*' />

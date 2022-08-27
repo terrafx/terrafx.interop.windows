@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='INERTIA_PARAMETER.xml' path='doc/member[@name="INERTIA_PARAMETER"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum INERTIA_PARAMETER
 {
     /// <include file='INERTIA_PARAMETER.xml' path='doc/member[@name="INERTIA_PARAMETER.INERTIA_PARAMETER_TRANSLATION_DECELERATION"]/*' />

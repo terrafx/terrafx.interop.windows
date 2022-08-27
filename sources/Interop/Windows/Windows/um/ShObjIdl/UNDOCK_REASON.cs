@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='UNDOCK_REASON.xml' path='doc/member[@name="UNDOCK_REASON"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum UNDOCK_REASON
 {
     /// <include file='UNDOCK_REASON.xml' path='doc/member[@name="UNDOCK_REASON.UR_RESOLUTION_CHANGE"]/*' />

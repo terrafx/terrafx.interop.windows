@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public partial struct STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR
 {
     /// <include file='STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR.Version"]/*' />

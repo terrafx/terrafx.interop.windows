@@ -126,22 +126,22 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DwmTransitionOwnedWindow"]/*' />
     [DllImport("dwmapi", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT DwmTransitionOwnedWindow(HWND hwnd, [NativeTypeName("enum DWMTRANSITION_OWNEDWINDOW_TARGET")] DWMTRANSITION_OWNEDWINDOW_TARGET target);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DwmRenderGesture"]/*' />
     [DllImport("dwmapi", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT DwmRenderGesture([NativeTypeName("enum GESTURE_TYPE")] GESTURE_TYPE gt, uint cContacts, [NativeTypeName("const DWORD *")] uint* pdwPointerID, [NativeTypeName("const POINT *")] POINT* pPoints);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DwmTetherContact"]/*' />
     [DllImport("dwmapi", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT DwmTetherContact([NativeTypeName("DWORD")] uint dwPointerID, BOOL fEnable, POINT ptTether);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DwmShowContact"]/*' />
     [DllImport("dwmapi", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT DwmShowContact([NativeTypeName("DWORD")] uint dwPointerID, [NativeTypeName("enum DWM_SHOWCONTACT")] DWM_SHOWCONTACT eShowContact);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DwmGetUnmetTabRequirements"]/*' />

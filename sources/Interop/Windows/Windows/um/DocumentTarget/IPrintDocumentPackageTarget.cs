@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("1B8EFEC4-3019-4C27-964E-367202156906")]
 [NativeTypeName("struct IPrintDocumentPackageTarget : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IPrintDocumentPackageTarget : IPrintDocumentPackageTarget.Interface
 {
     public void** lpVtbl;

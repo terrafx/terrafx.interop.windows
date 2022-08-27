@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='USN_RECORD_V3.xml' path='doc/member[@name="USN_RECORD_V3"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct USN_RECORD_V3
 {
     /// <include file='USN_RECORD_V3.xml' path='doc/member[@name="USN_RECORD_V3.RecordLength"]/*' />

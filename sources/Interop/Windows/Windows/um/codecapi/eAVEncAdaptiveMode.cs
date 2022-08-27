@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='eAVEncAdaptiveMode.xml' path='doc/member[@name="eAVEncAdaptiveMode"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum eAVEncAdaptiveMode
 {
     /// <include file='eAVEncAdaptiveMode.xml' path='doc/member[@name="eAVEncAdaptiveMode.eAVEncAdaptiveMode_None"]/*' />

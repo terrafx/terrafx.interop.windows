@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='GLOBALOPT_PROPERTIES.xml' path='doc/member[@name="GLOBALOPT_PROPERTIES"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum GLOBALOPT_PROPERTIES
 {
     /// <include file='GLOBALOPT_PROPERTIES.xml' path='doc/member[@name="GLOBALOPT_PROPERTIES.COMGLB_EXCEPTION_HANDLING"]/*' />

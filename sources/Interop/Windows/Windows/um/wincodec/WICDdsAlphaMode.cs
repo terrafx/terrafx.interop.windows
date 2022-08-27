@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICDdsAlphaMode.xml' path='doc/member[@name="WICDdsAlphaMode"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum WICDdsAlphaMode
 {
     /// <include file='WICDdsAlphaMode.xml' path='doc/member[@name="WICDdsAlphaMode.WICDdsAlphaModeUnknown"]/*' />

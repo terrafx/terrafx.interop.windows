@@ -14,11 +14,11 @@ public static unsafe partial class DirectX
 {
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.CreateDXGIFactory2"]/*' />
     [DllImport("dxgi", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.1")]
+    [SupportedOSPlatform("windows6.3")]
     public static extern HRESULT CreateDXGIFactory2(uint Flags, [NativeTypeName("const IID &")] Guid* riid, void** ppFactory);
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DXGIGetDebugInterface1"]/*' />
     [DllImport("dxgi", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.1")]
+    [SupportedOSPlatform("windows6.3")]
     public static extern HRESULT DXGIGetDebugInterface1(uint Flags, [NativeTypeName("const IID &")] Guid* riid, void** pDebug);
 }

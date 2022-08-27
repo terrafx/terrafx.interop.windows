@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DWRITE_GRID_FIT_MODE.xml' path='doc/member[@name="DWRITE_GRID_FIT_MODE"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum DWRITE_GRID_FIT_MODE
 {
     /// <include file='DWRITE_GRID_FIT_MODE.xml' path='doc/member[@name="DWRITE_GRID_FIT_MODE.DWRITE_GRID_FIT_MODE_DEFAULT"]/*' />

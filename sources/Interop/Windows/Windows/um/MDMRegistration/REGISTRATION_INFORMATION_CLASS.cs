@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='REGISTRATION_INFORMATION_CLASS.xml' path='doc/member[@name="REGISTRATION_INFORMATION_CLASS"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum REGISTRATION_INFORMATION_CLASS
 {
     /// <include file='REGISTRATION_INFORMATION_CLASS.xml' path='doc/member[@name="REGISTRATION_INFORMATION_CLASS.DeviceRegistrationBasicInfo"]/*' />

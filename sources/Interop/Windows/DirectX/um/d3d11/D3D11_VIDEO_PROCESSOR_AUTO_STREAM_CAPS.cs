@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS
 {
     /// <include file='D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS.D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS_DENOISE"]/*' />

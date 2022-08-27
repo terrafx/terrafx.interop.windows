@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFOTests
 {
     /// <summary>Validates that the <see cref="CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO" /> struct is blittable.</summary>

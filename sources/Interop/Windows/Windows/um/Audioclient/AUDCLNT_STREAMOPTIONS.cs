@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='AUDCLNT_STREAMOPTIONS.xml' path='doc/member[@name="AUDCLNT_STREAMOPTIONS"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum AUDCLNT_STREAMOPTIONS
 {
     /// <include file='AUDCLNT_STREAMOPTIONS.xml' path='doc/member[@name="AUDCLNT_STREAMOPTIONS.AUDCLNT_STREAMOPTIONS_NONE"]/*' />

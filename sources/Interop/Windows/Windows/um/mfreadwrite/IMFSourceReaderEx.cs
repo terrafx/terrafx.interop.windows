@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("7B981CF0-560E-4116-9875-B099895F23D7")]
 [NativeTypeName("struct IMFSourceReaderEx : IMFSourceReader")]
 [NativeInheritance("IMFSourceReader")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface
 {
     public void** lpVtbl;

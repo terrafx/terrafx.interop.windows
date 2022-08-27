@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MFVideo3DFormat.xml' path='doc/member[@name="MFVideo3DFormat"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum MFVideo3DFormat
 {
     /// <include file='MFVideo3DFormat.xml' path='doc/member[@name="MFVideo3DFormat.MFVideo3DSampleFormat_BaseView"]/*' />

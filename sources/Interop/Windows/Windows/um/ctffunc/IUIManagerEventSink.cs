@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("CD91D690-A7E8-4265-9B38-8BB3BBABA7DE")]
 [NativeTypeName("struct IUIManagerEventSink : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
 {
     public void** lpVtbl;

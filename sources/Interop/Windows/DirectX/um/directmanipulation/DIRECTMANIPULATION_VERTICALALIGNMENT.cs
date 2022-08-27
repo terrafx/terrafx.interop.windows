@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIRECTMANIPULATION_VERTICALALIGNMENT.xml' path='doc/member[@name="DIRECTMANIPULATION_VERTICALALIGNMENT"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum DIRECTMANIPULATION_VERTICALALIGNMENT
 {
     /// <include file='DIRECTMANIPULATION_VERTICALALIGNMENT.xml' path='doc/member[@name="DIRECTMANIPULATION_VERTICALALIGNMENT.DIRECTMANIPULATION_VERTICALALIGNMENT_NONE"]/*' />

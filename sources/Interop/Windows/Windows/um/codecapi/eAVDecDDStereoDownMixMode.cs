@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='eAVDecDDStereoDownMixMode.xml' path='doc/member[@name="eAVDecDDStereoDownMixMode"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum eAVDecDDStereoDownMixMode
 {
     /// <include file='eAVDecDDStereoDownMixMode.xml' path='doc/member[@name="eAVDecDDStereoDownMixMode.eAVDecDDStereoDownMixMode_Auto"]/*' />

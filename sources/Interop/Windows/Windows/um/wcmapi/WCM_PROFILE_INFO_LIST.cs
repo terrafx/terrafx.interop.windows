@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WCM_PROFILE_INFO_LIST.xml' path='doc/member[@name="WCM_PROFILE_INFO_LIST"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct WCM_PROFILE_INFO_LIST
 {
     /// <include file='WCM_PROFILE_INFO_LIST.xml' path='doc/member[@name="WCM_PROFILE_INFO_LIST.dwNumberOfItems"]/*' />

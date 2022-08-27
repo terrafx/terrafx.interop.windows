@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='DXGI_OVERLAY_SUPPORT_FLAG.xml' path='doc/member[@name="DXGI_OVERLAY_SUPPORT_FLAG"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum DXGI_OVERLAY_SUPPORT_FLAG
 {
     /// <include file='DXGI_OVERLAY_SUPPORT_FLAG.xml' path='doc/member[@name="DXGI_OVERLAY_SUPPORT_FLAG.DXGI_OVERLAY_SUPPORT_FLAG_DIRECT"]/*' />

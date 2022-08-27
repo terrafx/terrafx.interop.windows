@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='PSS_DUPLICATE_FLAGS.xml' path='doc/member[@name="PSS_DUPLICATE_FLAGS"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum PSS_DUPLICATE_FLAGS
 {
     /// <include file='PSS_DUPLICATE_FLAGS.xml' path='doc/member[@name="PSS_DUPLICATE_FLAGS.PSS_DUPLICATE_NONE"]/*' />

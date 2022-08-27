@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("E2CD3A4B-AF25-4D3D-9110-DA0E6F8EE877")]
 [NativeTypeName("struct IMFSourceBuffer : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface
 {
     public void** lpVtbl;

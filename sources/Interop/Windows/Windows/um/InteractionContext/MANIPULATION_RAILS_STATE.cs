@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MANIPULATION_RAILS_STATE.xml' path='doc/member[@name="MANIPULATION_RAILS_STATE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum MANIPULATION_RAILS_STATE
 {
     /// <include file='MANIPULATION_RAILS_STATE.xml' path='doc/member[@name="MANIPULATION_RAILS_STATE.MANIPULATION_RAILS_STATE_UNDECIDED"]/*' />

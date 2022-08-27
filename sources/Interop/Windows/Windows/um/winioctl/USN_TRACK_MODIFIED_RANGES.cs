@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='USN_TRACK_MODIFIED_RANGES.xml' path='doc/member[@name="USN_TRACK_MODIFIED_RANGES"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public partial struct USN_TRACK_MODIFIED_RANGES
 {
     /// <include file='USN_TRACK_MODIFIED_RANGES.xml' path='doc/member[@name="USN_TRACK_MODIFIED_RANGES.Flags"]/*' />

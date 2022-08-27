@@ -104,13 +104,13 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AddResourceAttributeAce"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL AddResourceAttributeAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid, [NativeTypeName("PCLAIM_SECURITY_ATTRIBUTES_INFORMATION")] CLAIM_SECURITY_ATTRIBUTES_INFORMATION* pAttributeInfo, [NativeTypeName("PDWORD")] uint* pReturnLength);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AddScopedPolicyIDAce"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL AddScopedPolicyIDAce([NativeTypeName("PACL")] ACL* pAcl, [NativeTypeName("DWORD")] uint dwAceRevision, [NativeTypeName("DWORD")] uint AceFlags, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("PSID")] void* pSid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AdjustTokenGroups"]/*' />
@@ -149,13 +149,13 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CheckTokenCapability"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL CheckTokenCapability(HANDLE TokenHandle, [NativeTypeName("PSID")] void* CapabilitySidToCheck, [NativeTypeName("PBOOL")] BOOL* HasCapability);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CheckTokenMembershipEx"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL CheckTokenMembershipEx(HANDLE TokenHandle, [NativeTypeName("PSID")] void* SidToCheck, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PBOOL")] BOOL* IsMember);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ConvertToAutoInheritPrivateObjectSecurity"]/*' />

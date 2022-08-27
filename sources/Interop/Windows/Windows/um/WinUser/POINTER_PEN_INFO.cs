@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='POINTER_PEN_INFO.xml' path='doc/member[@name="POINTER_PEN_INFO"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct POINTER_PEN_INFO
 {
     /// <include file='POINTER_PEN_INFO.xml' path='doc/member[@name="POINTER_PEN_INFO.pointerInfo"]/*' />

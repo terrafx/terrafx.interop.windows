@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='USN_RECORD_EXTENT.xml' path='doc/member[@name="USN_RECORD_EXTENT"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public partial struct USN_RECORD_EXTENT
 {
     /// <include file='USN_RECORD_EXTENT.xml' path='doc/member[@name="USN_RECORD_EXTENT.Offset"]/*' />

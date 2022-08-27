@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("FD672C54-40EA-4D6E-9B49-CFB1A7507BD7")]
 [NativeTypeName("struct ICredentialProviderCredential2 : ICredentialProviderCredential")]
 [NativeInheritance("ICredentialProviderCredential")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ICredentialProviderCredential2 : ICredentialProviderCredential2.Interface
 {
     public void** lpVtbl;

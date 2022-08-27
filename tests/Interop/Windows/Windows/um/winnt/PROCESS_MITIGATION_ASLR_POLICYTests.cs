@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="PROCESS_MITIGATION_ASLR_POLICY" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class PROCESS_MITIGATION_ASLR_POLICYTests
 {
     /// <summary>Validates that the <see cref="PROCESS_MITIGATION_ASLR_POLICY" /> struct is blittable.</summary>

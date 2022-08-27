@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MFVideoRotationFormat.xml' path='doc/member[@name="MFVideoRotationFormat"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum MFVideoRotationFormat
 {
     /// <include file='MFVideoRotationFormat.xml' path='doc/member[@name="MFVideoRotationFormat.MFVideoRotationFormat_0"]/*' />

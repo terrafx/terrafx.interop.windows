@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='APPX_BUNDLE_FOOTPRINT_FILE_TYPE.xml' path='doc/member[@name="APPX_BUNDLE_FOOTPRINT_FILE_TYPE"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum APPX_BUNDLE_FOOTPRINT_FILE_TYPE
 {
     /// <include file='APPX_BUNDLE_FOOTPRINT_FILE_TYPE.xml' path='doc/member[@name="APPX_BUNDLE_FOOTPRINT_FILE_TYPE.APPX_BUNDLE_FOOTPRINT_FILE_TYPE_FIRST"]/*' />

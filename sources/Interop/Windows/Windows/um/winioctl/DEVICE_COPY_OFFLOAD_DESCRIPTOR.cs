@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DEVICE_COPY_OFFLOAD_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_COPY_OFFLOAD_DESCRIPTOR"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct DEVICE_COPY_OFFLOAD_DESCRIPTOR
 {
     /// <include file='DEVICE_COPY_OFFLOAD_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_COPY_OFFLOAD_DESCRIPTOR.Version"]/*' />

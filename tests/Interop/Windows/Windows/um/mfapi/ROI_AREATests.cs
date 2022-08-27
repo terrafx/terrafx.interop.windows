@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="ROI_AREA" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class ROI_AREATests
 {
     /// <summary>Validates that the <see cref="ROI_AREA" /> struct is blittable.</summary>

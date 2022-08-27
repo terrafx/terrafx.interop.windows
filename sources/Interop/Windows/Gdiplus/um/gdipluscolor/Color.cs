@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using TerraFX.Interop.Windows;
-using static TerraFX.Interop.Gdiplus.Gdiplus;
 
 namespace TerraFX.Interop.Gdiplus;
 

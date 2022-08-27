@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='INTERACTION_ID.xml' path='doc/member[@name="INTERACTION_ID"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum INTERACTION_ID
 {
     /// <include file='INTERACTION_ID.xml' path='doc/member[@name="INTERACTION_ID.INTERACTION_ID_NONE"]/*' />

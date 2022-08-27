@@ -15,7 +15,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("30C421D5-8CB2-4E9F-B133-37BE270D4AC2")]
 [NativeTypeName("struct IDCompositionFilterEffect : IDCompositionEffect")]
 [NativeInheritance("IDCompositionEffect")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IDCompositionFilterEffect : IDCompositionFilterEffect.Interface
 {
     public void** lpVtbl;

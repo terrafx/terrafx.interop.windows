@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MF_MEDIA_ENGINE_KEYERR.xml' path='doc/member[@name="MF_MEDIA_ENGINE_KEYERR"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum MF_MEDIA_ENGINE_KEYERR
 {
     /// <include file='MF_MEDIA_ENGINE_KEYERR.xml' path='doc/member[@name="MF_MEDIA_ENGINE_KEYERR.MF_MEDIAENGINE_KEYERR_UNKNOWN"]/*' />

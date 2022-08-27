@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("0AB198EF-6477-4EE8-8812-6780EDB82D5E")]
 [NativeTypeName("struct ITfThreadMgr2 : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
 {
     public void** lpVtbl;

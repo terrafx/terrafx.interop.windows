@@ -15,7 +15,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("EFA008F9-F7A1-48BF-B05C-F224713CC0FF")]
 [NativeTypeName("struct IDWriteFontFallback : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDWriteFontFallback : IDWriteFontFallback.Interface
 {
     public void** lpVtbl;

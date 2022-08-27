@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WINHTTP_WEB_SOCKET_CLOSE_STATUS.xml' path='doc/member[@name="WINHTTP_WEB_SOCKET_CLOSE_STATUS"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum WINHTTP_WEB_SOCKET_CLOSE_STATUS
 {
     /// <include file='WINHTTP_WEB_SOCKET_CLOSE_STATUS.xml' path='doc/member[@name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_SUCCESS_CLOSE_STATUS"]/*' />

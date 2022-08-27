@@ -9,7 +9,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SCHANNEL_CRED.xml' path='doc/member[@name="SCHANNEL_CRED"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct SCHANNEL_CRED
 {
     /// <include file='SCHANNEL_CRED.xml' path='doc/member[@name="SCHANNEL_CRED.dwVersion"]/*' />

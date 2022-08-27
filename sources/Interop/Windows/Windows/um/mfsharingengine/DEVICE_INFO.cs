@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DEVICE_INFO.xml' path='doc/member[@name="DEVICE_INFO"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct DEVICE_INFO
 {
     /// <include file='DEVICE_INFO.xml' path='doc/member[@name="DEVICE_INFO.pFriendlyDeviceName"]/*' />

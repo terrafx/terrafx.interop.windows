@@ -15,7 +15,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("814B5AF5-C2C8-4270-A9B7-A198CE8D02FA")]
 [NativeTypeName("struct IDirectManipulationDragDropBehavior : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDirectManipulationDragDropBehavior : IDirectManipulationDragDropBehavior.Interface
 {
     public void** lpVtbl;

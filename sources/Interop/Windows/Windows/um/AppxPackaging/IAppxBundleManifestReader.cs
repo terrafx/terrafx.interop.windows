@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("CF0EBBC1-CC99-4106-91EB-E67462E04FB0")]
 [NativeTypeName("struct IAppxBundleManifestReader : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IAppxBundleManifestReader : IAppxBundleManifestReader.Interface
 {
     public void** lpVtbl;

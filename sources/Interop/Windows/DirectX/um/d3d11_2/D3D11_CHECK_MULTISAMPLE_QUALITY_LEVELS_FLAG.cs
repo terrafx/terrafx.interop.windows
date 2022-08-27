@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG.xml' path='doc/member[@name="D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG
 {
     /// <include file='D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG.xml' path='doc/member[@name="D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG.D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_TILED_RESOURCE"]/*' />

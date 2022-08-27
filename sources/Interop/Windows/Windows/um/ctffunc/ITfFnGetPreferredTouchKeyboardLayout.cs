@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("5F309A41-590A-4ACC-A97F-D8EFFF13FDFC")]
 [NativeTypeName("struct ITfFnGetPreferredTouchKeyboardLayout : ITfFunction")]
 [NativeInheritance("ITfFunction")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ITfFnGetPreferredTouchKeyboardLayout : ITfFnGetPreferredTouchKeyboardLayout.Interface
 {
     public void** lpVtbl;

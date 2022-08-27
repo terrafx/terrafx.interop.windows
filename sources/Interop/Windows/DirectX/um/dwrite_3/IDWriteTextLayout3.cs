@@ -15,7 +15,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("07DDCD52-020E-4DE8-AC33-6C953D83F92D")]
 [NativeTypeName("struct IDWriteTextLayout3 : IDWriteTextLayout2")]
 [NativeInheritance("IDWriteTextLayout2")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface
 {
     public void** lpVtbl;

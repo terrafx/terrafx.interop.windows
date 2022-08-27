@@ -3,6 +3,8 @@
 // Ported from shared/mmreg.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -24,5 +26,24 @@ public partial struct ADPCMWAVEFORMAT
 
     /// <include file='ADPCMWAVEFORMAT.xml' path='doc/member[@name="ADPCMWAVEFORMAT.aCoef"]/*' />
     [NativeTypeName("ADPCMCOEFSET[]")]
-    public ADPCMCOEFSET aCoef;
+    public _aCoef_e__FixedBuffer aCoef;
+
+    /// <include file='_aCoef_e__FixedBuffer.xml' path='doc/member[@name="_aCoef_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public partial struct _aCoef_e__FixedBuffer
+    {
+        public ADPCMCOEFSET e0;
+
+        public ref ADPCMCOEFSET this[int index]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<ADPCMCOEFSET> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+    }
 }

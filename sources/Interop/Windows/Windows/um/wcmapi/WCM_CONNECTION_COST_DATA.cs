@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WCM_CONNECTION_COST_DATA.xml' path='doc/member[@name="WCM_CONNECTION_COST_DATA"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct WCM_CONNECTION_COST_DATA
 {
     /// <include file='WCM_CONNECTION_COST_DATA.xml' path='doc/member[@name="WCM_CONNECTION_COST_DATA.ConnectionCost"]/*' />

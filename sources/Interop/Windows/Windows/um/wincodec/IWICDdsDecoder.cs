@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("409CD537-8532-40CB-9774-E2FEB2DF4E9C")]
 [NativeTypeName("struct IWICDdsDecoder : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IWICDdsDecoder : IWICDdsDecoder.Interface
 {
     public void** lpVtbl;

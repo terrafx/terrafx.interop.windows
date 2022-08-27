@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='FILE_LEVEL_TRIM_RANGE.xml' path='doc/member[@name="FILE_LEVEL_TRIM_RANGE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct FILE_LEVEL_TRIM_RANGE
 {
     /// <include file='FILE_LEVEL_TRIM_RANGE.xml' path='doc/member[@name="FILE_LEVEL_TRIM_RANGE.Offset"]/*' />

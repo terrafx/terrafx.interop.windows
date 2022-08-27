@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("7A5645D2-43BD-47FD-87B7-DCD24CC7D692")]
 [NativeTypeName("struct IMFCdmSuspendNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IMFCdmSuspendNotify : IMFCdmSuspendNotify.Interface
 {
     public void** lpVtbl;

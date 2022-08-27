@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MF_MEDIA_ENGINE_OPM_STATUS.xml' path='doc/member[@name="MF_MEDIA_ENGINE_OPM_STATUS"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum MF_MEDIA_ENGINE_OPM_STATUS
 {
     /// <include file='MF_MEDIA_ENGINE_OPM_STATUS.xml' path='doc/member[@name="MF_MEDIA_ENGINE_OPM_STATUS.MF_MEDIA_ENGINE_OPM_NOT_REQUESTED"]/*' />

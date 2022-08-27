@@ -10,7 +10,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DXGI_INFO_QUEUE_MESSAGE.xml' path='doc/member[@name="DXGI_INFO_QUEUE_MESSAGE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct DXGI_INFO_QUEUE_MESSAGE
 {
     /// <include file='DXGI_INFO_QUEUE_MESSAGE.xml' path='doc/member[@name="DXGI_INFO_QUEUE_MESSAGE.Producer"]/*' />

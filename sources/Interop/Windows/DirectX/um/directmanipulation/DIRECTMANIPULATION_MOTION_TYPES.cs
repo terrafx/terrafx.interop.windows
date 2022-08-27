@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIRECTMANIPULATION_MOTION_TYPES.xml' path='doc/member[@name="DIRECTMANIPULATION_MOTION_TYPES"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum DIRECTMANIPULATION_MOTION_TYPES
 {
     /// <include file='DIRECTMANIPULATION_MOTION_TYPES.xml' path='doc/member[@name="DIRECTMANIPULATION_MOTION_TYPES.DIRECTMANIPULATION_MOTION_NONE"]/*' />

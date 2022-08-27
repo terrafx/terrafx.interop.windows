@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='TOUCH_HIT_TESTING_INPUT.xml' path='doc/member[@name="TOUCH_HIT_TESTING_INPUT"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct TOUCH_HIT_TESTING_INPUT
 {
     /// <include file='TOUCH_HIT_TESTING_INPUT.xml' path='doc/member[@name="TOUCH_HIT_TESTING_INPUT.pointerId"]/*' />

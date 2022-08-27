@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="DEVICE_DATA_SET_REPAIR_PARAMETERS" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class DEVICE_DATA_SET_REPAIR_PARAMETERSTests
 {
     /// <summary>Validates that the <see cref="DEVICE_DATA_SET_REPAIR_PARAMETERS" /> struct is blittable.</summary>

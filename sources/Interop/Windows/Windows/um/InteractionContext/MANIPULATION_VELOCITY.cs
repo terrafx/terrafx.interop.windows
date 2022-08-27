@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MANIPULATION_VELOCITY.xml' path='doc/member[@name="MANIPULATION_VELOCITY"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct MANIPULATION_VELOCITY
 {
     /// <include file='MANIPULATION_VELOCITY.xml' path='doc/member[@name="MANIPULATION_VELOCITY.velocityX"]/*' />

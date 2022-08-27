@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIRECTMANIPULATION_SNAPPOINT_COORDINATE.xml' path='doc/member[@name="DIRECTMANIPULATION_SNAPPOINT_COORDINATE"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum DIRECTMANIPULATION_SNAPPOINT_COORDINATE
 {
     /// <include file='DIRECTMANIPULATION_SNAPPOINT_COORDINATE.xml' path='doc/member[@name="DIRECTMANIPULATION_SNAPPOINT_COORDINATE.DIRECTMANIPULATION_COORDINATE_BOUNDARY"]/*' />

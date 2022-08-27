@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("EB533D5D-2DB6-40F8-97A9-494692014F07")]
 [NativeTypeName("struct IMFDXGIDeviceManager : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interface
 {
     public void** lpVtbl;

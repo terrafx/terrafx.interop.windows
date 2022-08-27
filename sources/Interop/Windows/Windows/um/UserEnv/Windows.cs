@@ -198,22 +198,22 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateAppContainerProfile"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT CreateAppContainerProfile([NativeTypeName("PCWSTR")] ushort* pszAppContainerName, [NativeTypeName("PCWSTR")] ushort* pszDisplayName, [NativeTypeName("PCWSTR")] ushort* pszDescription, [NativeTypeName("PSID_AND_ATTRIBUTES")] SID_AND_ATTRIBUTES* pCapabilities, [NativeTypeName("DWORD")] uint dwCapabilityCount, [NativeTypeName("PSID *")] void** ppSidAppContainerSid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DeleteAppContainerProfile"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT DeleteAppContainerProfile([NativeTypeName("PCWSTR")] ushort* pszAppContainerName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAppContainerRegistryLocation"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT GetAppContainerRegistryLocation([NativeTypeName("REGSAM")] uint desiredAccess, [NativeTypeName("PHKEY")] HKEY* phAppContainerKey);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAppContainerFolderPath"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT GetAppContainerFolderPath([NativeTypeName("PCWSTR")] ushort* pszAppContainerSid, [NativeTypeName("PWSTR *")] ushort** ppszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DeriveRestrictedAppContainerSidFromAppContainerSidAndRestrictedName"]/*' />
@@ -223,7 +223,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DeriveAppContainerSidFromAppContainerName"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT DeriveAppContainerSidFromAppContainerName([NativeTypeName("PCWSTR")] ushort* pszAppContainerName, [NativeTypeName("PSID *")] void** ppsidAppContainerSid);
 
     [NativeTypeName("#define PI_NOUI 0x00000001")]

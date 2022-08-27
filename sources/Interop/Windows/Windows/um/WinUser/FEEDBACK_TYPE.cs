@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='FEEDBACK_TYPE.xml' path='doc/member[@name="FEEDBACK_TYPE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum FEEDBACK_TYPE
 {
     /// <include file='FEEDBACK_TYPE.xml' path='doc/member[@name="FEEDBACK_TYPE.FEEDBACK_TOUCH_CONTACTVISUALIZATION"]/*' />

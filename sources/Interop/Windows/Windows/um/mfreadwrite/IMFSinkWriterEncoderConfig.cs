@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("17C3779E-3CDE-4EDE-8C60-3899F5F53AD6")]
 [NativeTypeName("struct IMFSinkWriterEncoderConfig : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IMFSinkWriterEncoderConfig : IMFSinkWriterEncoderConfig.Interface
 {
     public void** lpVtbl;

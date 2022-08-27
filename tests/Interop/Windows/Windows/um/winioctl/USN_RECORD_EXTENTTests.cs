@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="USN_RECORD_EXTENT" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class USN_RECORD_EXTENTTests
 {
     /// <summary>Validates that the <see cref="USN_RECORD_EXTENT" /> struct is blittable.</summary>

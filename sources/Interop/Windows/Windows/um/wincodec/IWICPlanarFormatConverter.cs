@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("BEBEE9CB-83B0-4DCC-8132-B0AAA55EAC96")]
 [NativeTypeName("struct IWICPlanarFormatConverter : IWICBitmapSource")]
 [NativeInheritance("IWICBitmapSource")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IWICPlanarFormatConverter : IWICPlanarFormatConverter.Interface
 {
     public void** lpVtbl;

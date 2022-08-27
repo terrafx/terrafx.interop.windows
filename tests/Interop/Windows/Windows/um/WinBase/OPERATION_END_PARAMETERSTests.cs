@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="OPERATION_END_PARAMETERS" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class OPERATION_END_PARAMETERSTests
 {
     /// <summary>Validates that the <see cref="OPERATION_END_PARAMETERS" /> struct is blittable.</summary>

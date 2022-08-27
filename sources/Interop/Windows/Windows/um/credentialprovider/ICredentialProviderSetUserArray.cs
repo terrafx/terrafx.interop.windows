@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("095C1484-1C0C-4388-9C6D-500E61BF84BD")]
 [NativeTypeName("struct ICredentialProviderSetUserArray : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ICredentialProviderSetUserArray : ICredentialProviderSetUserArray.Interface
 {
     public void** lpVtbl;

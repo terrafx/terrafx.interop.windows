@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="SYSTEM_RESOURCE_ATTRIBUTE_ACE" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class SYSTEM_RESOURCE_ATTRIBUTE_ACETests
 {
     /// <summary>Validates that the <see cref="SYSTEM_RESOURCE_ATTRIBUTE_ACE" /> struct is blittable.</summary>

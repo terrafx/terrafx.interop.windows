@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PSS_VA_SPACE_ENTRY.xml' path='doc/member[@name="PSS_VA_SPACE_ENTRY"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct PSS_VA_SPACE_ENTRY
 {
     /// <include file='PSS_VA_SPACE_ENTRY.xml' path='doc/member[@name="PSS_VA_SPACE_ENTRY.BaseAddress"]/*' />

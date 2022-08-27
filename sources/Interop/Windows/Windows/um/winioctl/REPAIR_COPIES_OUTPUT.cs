@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='REPAIR_COPIES_OUTPUT.xml' path='doc/member[@name="REPAIR_COPIES_OUTPUT"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct REPAIR_COPIES_OUTPUT
 {
     /// <include file='REPAIR_COPIES_OUTPUT.xml' path='doc/member[@name="REPAIR_COPIES_OUTPUT.Size"]/*' />

@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="MARK_HANDLE_INFO32" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class MARK_HANDLE_INFO32Tests
 {
     /// <summary>Validates that the <see cref="MARK_HANDLE_INFO32" /> struct is blittable.</summary>

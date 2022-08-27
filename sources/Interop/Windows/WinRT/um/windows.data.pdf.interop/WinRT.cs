@@ -17,7 +17,7 @@ public static unsafe partial class WinRT
 {
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.PdfCreateRenderer"]/*' />
     [DllImport("windows.data.pdf.dll", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.1")]
+    [SupportedOSPlatform("windows6.3")]
     public static extern HRESULT PdfCreateRenderer(IDXGIDevice* pDevice, IPdfRendererNative** ppRenderer);
 
     [NativeTypeName("const D2D_RECT_F")]

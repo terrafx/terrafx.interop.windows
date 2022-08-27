@@ -15,7 +15,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("E334BC12-3937-4E02-85EB-FCF4EB30D2C8")]
 [NativeTypeName("struct IDCompositionSurfaceFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDCompositionSurfaceFactory : IDCompositionSurfaceFactory.Interface
 {
     public void** lpVtbl;

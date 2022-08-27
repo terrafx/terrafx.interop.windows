@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_SHADER_TRACKING_OPTIONS.xml' path='doc/member[@name="D3D11_SHADER_TRACKING_OPTIONS"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum D3D11_SHADER_TRACKING_OPTIONS
 {
     /// <include file='D3D11_SHADER_TRACKING_OPTIONS.xml' path='doc/member[@name="D3D11_SHADER_TRACKING_OPTIONS.D3D11_SHADER_TRACKING_OPTION_IGNORE"]/*' />

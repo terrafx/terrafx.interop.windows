@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='DIRECTMANIPULATION_HORIZONTALALIGNMENT.xml' path='doc/member[@name="DIRECTMANIPULATION_HORIZONTALALIGNMENT"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum DIRECTMANIPULATION_HORIZONTALALIGNMENT
 {
     /// <include file='DIRECTMANIPULATION_HORIZONTALALIGNMENT.xml' path='doc/member[@name="DIRECTMANIPULATION_HORIZONTALALIGNMENT.DIRECTMANIPULATION_HORIZONTALALIGNMENT_NONE"]/*' />
