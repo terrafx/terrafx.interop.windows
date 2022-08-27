@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='DXGI_DEBUG_RLO_FLAGS.xml' path='doc/member[@name="DXGI_DEBUG_RLO_FLAGS"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum DXGI_DEBUG_RLO_FLAGS
 {
     /// <include file='DXGI_DEBUG_RLO_FLAGS.xml' path='doc/member[@name="DXGI_DEBUG_RLO_FLAGS.DXGI_DEBUG_RLO_SUMMARY"]/*' />

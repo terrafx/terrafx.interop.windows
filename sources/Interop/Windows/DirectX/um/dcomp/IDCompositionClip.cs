@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("64AC3703-9D3F-45EC-A109-7CAC0E7A13A7")]
 [NativeTypeName("struct IDCompositionClip : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IDCompositionClip : IDCompositionClip.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDCompositionClip));

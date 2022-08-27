@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_VDOV_DIMENSION.xml' path='doc/member[@name="D3D11_VDOV_DIMENSION"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum D3D11_VDOV_DIMENSION
 {
     /// <include file='D3D11_VDOV_DIMENSION.xml' path='doc/member[@name="D3D11_VDOV_DIMENSION.D3D11_VDOV_DIMENSION_UNKNOWN"]/*' />

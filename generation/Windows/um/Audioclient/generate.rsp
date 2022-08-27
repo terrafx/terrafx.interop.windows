@@ -17,13 +17,13 @@ TerraFX.Interop.Windows
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/Audioclient.h
 --with-attribute
 AUDCLNT_STREAMOPTIONS=Flags
-AUDCLNT_STREAMOPTIONS=SupportedOSPlatform("windows8.1")
+AUDCLNT_STREAMOPTIONS=SupportedOSPlatform("windows6.3")
 AudioClientProperties=SupportedOSPlatform("windows10.0.22000.0")
 AUDIO_DUCKING_OPTIONS=Flags
 AUDIO_DUCKING_OPTIONS=SupportedOSPlatform("windows10.0.19043.0")
 AUDIO_EFFECT=SupportedOSPlatform("windows10.0.22000.0")
 AUDIO_EFFECT_STATE=SupportedOSPlatform("windows10.0.22000.0")
-IAudioClient2=SupportedOSPlatform("windows8.0")
+IAudioClient2=SupportedOSPlatform("windows6.2")
 IAudioClient3=SupportedOSPlatform("windows10.0")
 IAudioClientDuckingControl=SupportedOSPlatform("windows10.0.19043.0")
 IAudioEffectsChangedNotificationClient=SupportedOSPlatform("windows10.0.22000.0")

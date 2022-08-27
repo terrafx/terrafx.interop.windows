@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("2633066B-4514-4C7A-8FD8-12EA98059D18")]
 [NativeTypeName("struct IDXGIDecodeSwapChain : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDXGIDecodeSwapChain));

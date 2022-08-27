@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='eAVEncVideoContentType.xml' path='doc/member[@name="eAVEncVideoContentType"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum eAVEncVideoContentType
 {
     /// <include file='eAVEncVideoContentType.xml' path='doc/member[@name="eAVEncVideoContentType.eAVEncVideoContentType_Unknown"]/*' />

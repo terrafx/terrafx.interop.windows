@@ -3,6 +3,7 @@
 // Ported from um/d3d11shadertracing.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -10,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_SHADER_TRACE_DESC.xml' path='doc/member[@name="D3D11_SHADER_TRACE_DESC"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct D3D11_SHADER_TRACE_DESC
 {
     /// <include file='D3D11_SHADER_TRACE_DESC.xml' path='doc/member[@name="D3D11_SHADER_TRACE_DESC.Type"]/*' />
@@ -24,62 +25,68 @@ public partial struct D3D11_SHADER_TRACE_DESC
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.VertexShaderTraceDesc"]/*' />
+    [UnscopedRef]
     public ref D3D11_VERTEX_SHADER_TRACE_DESC VertexShaderTraceDesc
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.VertexShaderTraceDesc, 1));
+            return ref Anonymous.VertexShaderTraceDesc;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.HullShaderTraceDesc"]/*' />
+    [UnscopedRef]
     public ref D3D11_HULL_SHADER_TRACE_DESC HullShaderTraceDesc
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.HullShaderTraceDesc, 1));
+            return ref Anonymous.HullShaderTraceDesc;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.DomainShaderTraceDesc"]/*' />
+    [UnscopedRef]
     public ref D3D11_DOMAIN_SHADER_TRACE_DESC DomainShaderTraceDesc
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.DomainShaderTraceDesc, 1));
+            return ref Anonymous.DomainShaderTraceDesc;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.GeometryShaderTraceDesc"]/*' />
+    [UnscopedRef]
     public ref D3D11_GEOMETRY_SHADER_TRACE_DESC GeometryShaderTraceDesc
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.GeometryShaderTraceDesc, 1));
+            return ref Anonymous.GeometryShaderTraceDesc;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.PixelShaderTraceDesc"]/*' />
+    [UnscopedRef]
     public ref D3D11_PIXEL_SHADER_TRACE_DESC PixelShaderTraceDesc
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.PixelShaderTraceDesc, 1));
+            return ref Anonymous.PixelShaderTraceDesc;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ComputeShaderTraceDesc"]/*' />
+    [UnscopedRef]
     public ref D3D11_COMPUTE_SHADER_TRACE_DESC ComputeShaderTraceDesc
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ComputeShaderTraceDesc, 1));
+            return ref Anonymous.ComputeShaderTraceDesc;
         }
     }
 

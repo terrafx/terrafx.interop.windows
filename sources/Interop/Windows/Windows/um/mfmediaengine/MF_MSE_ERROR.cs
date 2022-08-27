@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MF_MSE_ERROR.xml' path='doc/member[@name="MF_MSE_ERROR"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum MF_MSE_ERROR
 {
     /// <include file='MF_MSE_ERROR.xml' path='doc/member[@name="MF_MSE_ERROR.MF_MSE_ERROR_NOERROR"]/*' />

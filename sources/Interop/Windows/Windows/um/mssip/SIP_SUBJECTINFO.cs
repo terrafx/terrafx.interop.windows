@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -81,32 +82,35 @@ public unsafe partial struct SIP_SUBJECTINFO
     public void* pClientData;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.psFlat"]/*' />
+    [UnscopedRef]
     public ref MS_ADDINFO_FLAT* psFlat
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.psFlat;
+            return ref Anonymous.psFlat;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.psCatMember"]/*' />
+    [UnscopedRef]
     public ref MS_ADDINFO_CATALOGMEMBER* psCatMember
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.psCatMember;
+            return ref Anonymous.psCatMember;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.psBlob"]/*' />
+    [UnscopedRef]
     public ref MS_ADDINFO_BLOB* psBlob
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.psBlob;
+            return ref Anonymous.psBlob;
         }
     }
 

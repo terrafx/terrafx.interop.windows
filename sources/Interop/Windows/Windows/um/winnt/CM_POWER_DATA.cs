@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -53,6 +54,7 @@ public partial struct CM_POWER_DATA
         public DEVICE_POWER_STATE e5;
         public DEVICE_POWER_STATE e6;
 
+        [UnscopedRef]
         public ref DEVICE_POWER_STATE this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -63,6 +65,7 @@ public partial struct CM_POWER_DATA
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<DEVICE_POWER_STATE> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 7);
     }
 }

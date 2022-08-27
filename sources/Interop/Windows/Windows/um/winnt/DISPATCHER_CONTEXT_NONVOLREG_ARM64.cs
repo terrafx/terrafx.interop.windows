@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -20,10 +21,11 @@ public unsafe partial struct DISPATCHER_CONTEXT_NONVOLREG_ARM64
 
     /// <include file='DISPATCHER_CONTEXT_NONVOLREG_ARM64.xml' path='doc/member[@name="DISPATCHER_CONTEXT_NONVOLREG_ARM64.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("_DISPATCHER_CONTEXT_NONVOLREG_ARM64::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:7115:5)")]
+    [NativeTypeName("_DISPATCHER_CONTEXT_NONVOLREG_ARM64::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:6825:5)")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.GpNvRegs"]/*' />
+    [UnscopedRef]
     public Span<ulong> GpNvRegs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,6 +36,7 @@ public unsafe partial struct DISPATCHER_CONTEXT_NONVOLREG_ARM64
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.FpNvRegs"]/*' />
+    [UnscopedRef]
     public Span<double> FpNvRegs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

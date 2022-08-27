@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+DEFINE_KNOWN_FOLDER
+--file
+um-knownfolders.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/knownfolders
+--test-output
+../../../../tests/Interop/Windows/Windows/um/knownfolders
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/knownfolders.h

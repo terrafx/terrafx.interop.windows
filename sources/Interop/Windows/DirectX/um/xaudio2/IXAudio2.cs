@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("2B02E3CF-2E0B-4EC3-BE45-1B2A3FE7210D")]
 [NativeTypeName("struct IXAudio2 : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IXAudio2 : IXAudio2.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IXAudio2));

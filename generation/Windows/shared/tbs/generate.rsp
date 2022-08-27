@@ -13,12 +13,12 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/tbs.h
 --with-attribute
-Tbsi_GetDeviceInfo=SupportedOSPlatform("windows8.0")
-Tbsi_Get_OwnerAuth=SupportedOSPlatform("windows8.0")
+Tbsi_GetDeviceInfo=SupportedOSPlatform("windows6.2")
+Tbsi_Get_OwnerAuth=SupportedOSPlatform("windows6.2")
 Tbsi_Get_TCG_Log_Ex=SupportedOSPlatform("windows10.0.17134.0")
-Tbsi_Revoke_Attestation=SupportedOSPlatform("windows8.0")
-TBS_CONTEXT_PARAMS2=SupportedOSPlatform("windows8.0")
-TPM_DEVICE_INFO=SupportedOSPlatform("windows8.0")
+Tbsi_Revoke_Attestation=SupportedOSPlatform("windows6.2")
+TBS_CONTEXT_PARAMS2=SupportedOSPlatform("windows6.2")
+TPM_DEVICE_INFO=SupportedOSPlatform("windows6.2")
 --with-librarypath
 Tbsip_Cancel_Commands=tbs
 Tbsip_Context_Close=tbs

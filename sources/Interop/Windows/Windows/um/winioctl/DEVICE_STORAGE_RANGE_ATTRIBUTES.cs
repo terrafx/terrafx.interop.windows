@@ -3,6 +3,7 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -24,12 +25,13 @@ public partial struct DEVICE_STORAGE_RANGE_ATTRIBUTES
     public uint Reserved;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AllFlags"]/*' />
+    [UnscopedRef]
     public ref uint AllFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.AllFlags, 1));
+            return ref Anonymous.AllFlags;
         }
     }
 

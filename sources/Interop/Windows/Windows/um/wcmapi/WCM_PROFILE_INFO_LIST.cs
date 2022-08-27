@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -11,7 +12,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WCM_PROFILE_INFO_LIST.xml' path='doc/member[@name="WCM_PROFILE_INFO_LIST"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct WCM_PROFILE_INFO_LIST
 {
     /// <include file='WCM_PROFILE_INFO_LIST.xml' path='doc/member[@name="WCM_PROFILE_INFO_LIST.dwNumberOfItems"]/*' />
@@ -27,6 +28,7 @@ public partial struct WCM_PROFILE_INFO_LIST
     {
         public WCM_PROFILE_INFO e0;
 
+        [UnscopedRef]
         public ref WCM_PROFILE_INFO this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -37,6 +39,7 @@ public partial struct WCM_PROFILE_INFO_LIST
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<WCM_PROFILE_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

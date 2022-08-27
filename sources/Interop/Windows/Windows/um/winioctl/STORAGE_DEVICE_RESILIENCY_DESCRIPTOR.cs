@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_RESILIENCY_DESCRIPTOR"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct STORAGE_DEVICE_RESILIENCY_DESCRIPTOR
 {
     /// <include file='STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.Version"]/*' />

@@ -30,7 +30,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SslGetServerIdentity"]/*' />
     [DllImport("schannel", ExactSpelling = true)]
     [return: NativeTypeName("SECURITY_STATUS")]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern int SslGetServerIdentity([NativeTypeName("PBYTE")] byte* ClientHello, [NativeTypeName("DWORD")] uint ClientHelloSize, [NativeTypeName("PBYTE *")] byte** ServerIdentity, [NativeTypeName("PDWORD")] uint* ServerIdentitySize, [NativeTypeName("DWORD")] uint Flags);
 
     [NativeTypeName("#define UNISP_NAME_A \"Microsoft Unified Security Protocol Provider\"")]

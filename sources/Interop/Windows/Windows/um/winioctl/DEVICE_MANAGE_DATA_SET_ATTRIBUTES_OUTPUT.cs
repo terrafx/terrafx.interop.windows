@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT.xml' path='doc/member[@name="DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT
 {
     /// <include file='DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT.xml' path='doc/member[@name="DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT.Size"]/*' />

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -14,753 +15,837 @@ public unsafe partial struct ARM64EC_NT_CONTEXT
     [NativeTypeName("_ARM64EC_NT_CONTEXT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:7016:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    [UnscopedRef]
     public ref ulong AMD64_P1Home
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_P1Home, 1));
+            return ref Anonymous.Anonymous.AMD64_P1Home;
         }
     }
 
+    [UnscopedRef]
     public ref ulong AMD64_P2Home
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_P2Home, 1));
+            return ref Anonymous.Anonymous.AMD64_P2Home;
         }
     }
 
+    [UnscopedRef]
     public ref ulong AMD64_P3Home
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_P3Home, 1));
+            return ref Anonymous.Anonymous.AMD64_P3Home;
         }
     }
 
+    [UnscopedRef]
     public ref ulong AMD64_P4Home
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_P4Home, 1));
+            return ref Anonymous.Anonymous.AMD64_P4Home;
         }
     }
 
+    [UnscopedRef]
     public ref ulong AMD64_P5Home
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_P5Home, 1));
+            return ref Anonymous.Anonymous.AMD64_P5Home;
         }
     }
 
+    [UnscopedRef]
     public ref ulong AMD64_P6Home
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_P6Home, 1));
+            return ref Anonymous.Anonymous.AMD64_P6Home;
         }
     }
 
+    [UnscopedRef]
     public ref uint ContextFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.ContextFlags, 1));
+            return ref Anonymous.Anonymous.ContextFlags;
         }
     }
 
+    [UnscopedRef]
     public ref uint AMD64_MxCsr_copy
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_MxCsr_copy, 1));
+            return ref Anonymous.Anonymous.AMD64_MxCsr_copy;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_SegCs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_SegCs, 1));
+            return ref Anonymous.Anonymous.AMD64_SegCs;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_SegDs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_SegDs, 1));
+            return ref Anonymous.Anonymous.AMD64_SegDs;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_SegEs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_SegEs, 1));
+            return ref Anonymous.Anonymous.AMD64_SegEs;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_SegFs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_SegFs, 1));
+            return ref Anonymous.Anonymous.AMD64_SegFs;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_SegGs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_SegGs, 1));
+            return ref Anonymous.Anonymous.AMD64_SegGs;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_SegSs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_SegSs, 1));
+            return ref Anonymous.Anonymous.AMD64_SegSs;
         }
     }
 
+    [UnscopedRef]
     public ref uint AMD64_EFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_EFlags, 1));
+            return ref Anonymous.Anonymous.AMD64_EFlags;
         }
     }
 
+    [UnscopedRef]
     public ref ulong AMD64_Dr0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_Dr0, 1));
+            return ref Anonymous.Anonymous.AMD64_Dr0;
         }
     }
 
+    [UnscopedRef]
     public ref ulong AMD64_Dr1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_Dr1, 1));
+            return ref Anonymous.Anonymous.AMD64_Dr1;
         }
     }
 
+    [UnscopedRef]
     public ref ulong AMD64_Dr2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_Dr2, 1));
+            return ref Anonymous.Anonymous.AMD64_Dr2;
         }
     }
 
+    [UnscopedRef]
     public ref ulong AMD64_Dr3
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_Dr3, 1));
+            return ref Anonymous.Anonymous.AMD64_Dr3;
         }
     }
 
+    [UnscopedRef]
     public ref ulong AMD64_Dr6
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_Dr6, 1));
+            return ref Anonymous.Anonymous.AMD64_Dr6;
         }
     }
 
+    [UnscopedRef]
     public ref ulong AMD64_Dr7
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_Dr7, 1));
+            return ref Anonymous.Anonymous.AMD64_Dr7;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X8
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.X8, 1));
+            return ref Anonymous.Anonymous.X8;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.X0, 1));
+            return ref Anonymous.Anonymous.X0;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.X1, 1));
+            return ref Anonymous.Anonymous.X1;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X27
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.X27, 1));
+            return ref Anonymous.Anonymous.X27;
         }
     }
 
+    [UnscopedRef]
     public ref ulong Sp
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Sp, 1));
+            return ref Anonymous.Anonymous.Sp;
         }
     }
 
+    [UnscopedRef]
     public ref ulong Fp
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Fp, 1));
+            return ref Anonymous.Anonymous.Fp;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X25
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.X25, 1));
+            return ref Anonymous.Anonymous.X25;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X26
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.X26, 1));
+            return ref Anonymous.Anonymous.X26;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.X2, 1));
+            return ref Anonymous.Anonymous.X2;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X3
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.X3, 1));
+            return ref Anonymous.Anonymous.X3;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X4
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.X4, 1));
+            return ref Anonymous.Anonymous.X4;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X5
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.X5, 1));
+            return ref Anonymous.Anonymous.X5;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X19
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.X19, 1));
+            return ref Anonymous.Anonymous.X19;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X20
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.X20, 1));
+            return ref Anonymous.Anonymous.X20;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X21
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.X21, 1));
+            return ref Anonymous.Anonymous.X21;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X22
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.X22, 1));
+            return ref Anonymous.Anonymous.X22;
         }
     }
 
+    [UnscopedRef]
     public ref ulong Pc
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Pc, 1));
+            return ref Anonymous.Anonymous.Pc;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_ControlWord
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_ControlWord, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_ControlWord;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_StatusWord
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_StatusWord, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_StatusWord;
         }
     }
 
+    [UnscopedRef]
     public ref byte AMD64_TagWord
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_TagWord, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_TagWord;
         }
     }
 
+    [UnscopedRef]
     public ref byte AMD64_Reserved1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_Reserved1, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_Reserved1;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_ErrorOpcode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_ErrorOpcode, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_ErrorOpcode;
         }
     }
 
+    [UnscopedRef]
     public ref uint AMD64_ErrorOffset
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_ErrorOffset, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_ErrorOffset;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_ErrorSelector
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_ErrorSelector, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_ErrorSelector;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_Reserved2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_Reserved2, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_Reserved2;
         }
     }
 
+    [UnscopedRef]
     public ref uint AMD64_DataOffset
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_DataOffset, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_DataOffset;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_DataSelector
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_DataSelector, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_DataSelector;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_Reserved3
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_Reserved3, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_Reserved3;
         }
     }
 
+    [UnscopedRef]
     public ref uint AMD64_MxCsr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_MxCsr, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_MxCsr;
         }
     }
 
+    [UnscopedRef]
     public ref uint AMD64_MxCsr_Mask
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_MxCsr_Mask, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_MxCsr_Mask;
         }
     }
 
+    [UnscopedRef]
     public ref ulong Lr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.Lr, 1));
+            return ref Anonymous.Anonymous.Anonymous.Lr;
         }
     }
 
+    [UnscopedRef]
     public ref ushort X16_0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.X16_0, 1));
+            return ref Anonymous.Anonymous.Anonymous.X16_0;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_St0_Reserved1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_St0_Reserved1, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_St0_Reserved1;
         }
     }
 
+    [UnscopedRef]
     public ref uint AMD64_St0_Reserved2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_St0_Reserved2, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_St0_Reserved2;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X6
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.X6, 1));
+            return ref Anonymous.Anonymous.Anonymous.X6;
         }
     }
 
+    [UnscopedRef]
     public ref ushort X16_1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.X16_1, 1));
+            return ref Anonymous.Anonymous.Anonymous.X16_1;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_St1_Reserved1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_St1_Reserved1, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_St1_Reserved1;
         }
     }
 
+    [UnscopedRef]
     public ref uint AMD64_St1_Reserved2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_St1_Reserved2, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_St1_Reserved2;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X7
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.X7, 1));
+            return ref Anonymous.Anonymous.Anonymous.X7;
         }
     }
 
+    [UnscopedRef]
     public ref ushort X16_2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.X16_2, 1));
+            return ref Anonymous.Anonymous.Anonymous.X16_2;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_St2_Reserved1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_St2_Reserved1, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_St2_Reserved1;
         }
     }
 
+    [UnscopedRef]
     public ref uint AMD64_St2_Reserved2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_St2_Reserved2, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_St2_Reserved2;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X9
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.X9, 1));
+            return ref Anonymous.Anonymous.Anonymous.X9;
         }
     }
 
+    [UnscopedRef]
     public ref ushort X16_3
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.X16_3, 1));
+            return ref Anonymous.Anonymous.Anonymous.X16_3;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_St3_Reserved1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_St3_Reserved1, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_St3_Reserved1;
         }
     }
 
+    [UnscopedRef]
     public ref uint AMD64_St3_Reserved2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_St3_Reserved2, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_St3_Reserved2;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X10
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.X10, 1));
+            return ref Anonymous.Anonymous.Anonymous.X10;
         }
     }
 
+    [UnscopedRef]
     public ref ushort X17_0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.X17_0, 1));
+            return ref Anonymous.Anonymous.Anonymous.X17_0;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_St4_Reserved1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_St4_Reserved1, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_St4_Reserved1;
         }
     }
 
+    [UnscopedRef]
     public ref uint AMD64_St4_Reserved2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_St4_Reserved2, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_St4_Reserved2;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X11
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.X11, 1));
+            return ref Anonymous.Anonymous.Anonymous.X11;
         }
     }
 
+    [UnscopedRef]
     public ref ushort X17_1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.X17_1, 1));
+            return ref Anonymous.Anonymous.Anonymous.X17_1;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_St5_Reserved1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_St5_Reserved1, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_St5_Reserved1;
         }
     }
 
+    [UnscopedRef]
     public ref uint AMD64_St5_Reserved2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_St5_Reserved2, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_St5_Reserved2;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X12
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.X12, 1));
+            return ref Anonymous.Anonymous.Anonymous.X12;
         }
     }
 
+    [UnscopedRef]
     public ref ushort X17_2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.X17_2, 1));
+            return ref Anonymous.Anonymous.Anonymous.X17_2;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_St6_Reserved1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_St6_Reserved1, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_St6_Reserved1;
         }
     }
 
+    [UnscopedRef]
     public ref uint AMD64_St6_Reserved2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_St6_Reserved2, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_St6_Reserved2;
         }
     }
 
+    [UnscopedRef]
     public ref ulong X15
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.X15, 1));
+            return ref Anonymous.Anonymous.Anonymous.X15;
         }
     }
 
+    [UnscopedRef]
     public ref ushort X17_3
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.X17_3, 1));
+            return ref Anonymous.Anonymous.Anonymous.X17_3;
         }
     }
 
+    [UnscopedRef]
     public ref ushort AMD64_St7_Reserved1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_St7_Reserved1, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_St7_Reserved1;
         }
     }
 
+    [UnscopedRef]
     public ref uint AMD64_St7_Reserved2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.AMD64_St7_Reserved2, 1));
+            return ref Anonymous.Anonymous.Anonymous.AMD64_St7_Reserved2;
         }
     }
 
+    [UnscopedRef]
     public Span<ARM64_NT_NEON128> V
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -770,6 +855,7 @@ public unsafe partial struct ARM64EC_NT_CONTEXT
         }
     }
 
+    [UnscopedRef]
     public Span<byte> AMD64_XSAVE_FORMAT_Reserved4
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -779,6 +865,7 @@ public unsafe partial struct ARM64EC_NT_CONTEXT
         }
     }
 
+    [UnscopedRef]
     public Span<ARM64_NT_NEON128> AMD64_VectorRegister
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -788,57 +875,63 @@ public unsafe partial struct ARM64EC_NT_CONTEXT
         }
     }
 
+    [UnscopedRef]
     public ref ulong AMD64_VectorControl
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_VectorControl, 1));
+            return ref Anonymous.Anonymous.AMD64_VectorControl;
         }
     }
 
+    [UnscopedRef]
     public ref ulong AMD64_DebugControl
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_DebugControl, 1));
+            return ref Anonymous.Anonymous.AMD64_DebugControl;
         }
     }
 
+    [UnscopedRef]
     public ref ulong AMD64_LastBranchToRip
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_LastBranchToRip, 1));
+            return ref Anonymous.Anonymous.AMD64_LastBranchToRip;
         }
     }
 
+    [UnscopedRef]
     public ref ulong AMD64_LastBranchFromRip
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_LastBranchFromRip, 1));
+            return ref Anonymous.Anonymous.AMD64_LastBranchFromRip;
         }
     }
 
+    [UnscopedRef]
     public ref ulong AMD64_LastExceptionToRip
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_LastExceptionToRip, 1));
+            return ref Anonymous.Anonymous.AMD64_LastExceptionToRip;
         }
     }
 
+    [UnscopedRef]
     public ref ulong AMD64_LastExceptionFromRip
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.AMD64_LastExceptionFromRip, 1));
+            return ref Anonymous.Anonymous.AMD64_LastExceptionFromRip;
         }
     }
 
@@ -1149,6 +1242,7 @@ public unsafe partial struct ARM64EC_NT_CONTEXT
                     public ARM64_NT_NEON128 e14;
                     public ARM64_NT_NEON128 e15;
 
+                    [UnscopedRef]
                     public ref ARM64_NT_NEON128 this[int index]
                     {
                         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1159,6 +1253,7 @@ public unsafe partial struct ARM64EC_NT_CONTEXT
                     }
 
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    [UnscopedRef]
                     public Span<ARM64_NT_NEON128> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
                 }
             }
@@ -1192,6 +1287,7 @@ public unsafe partial struct ARM64EC_NT_CONTEXT
                 public ARM64_NT_NEON128 e24;
                 public ARM64_NT_NEON128 e25;
 
+                [UnscopedRef]
                 public ref ARM64_NT_NEON128 this[int index]
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1202,6 +1298,7 @@ public unsafe partial struct ARM64EC_NT_CONTEXT
                 }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                [UnscopedRef]
                 public Span<ARM64_NT_NEON128> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 26);
             }
         }

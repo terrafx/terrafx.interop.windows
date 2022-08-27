@@ -4,12 +4,14 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct CACHE_RELATIONSHIP
 {
+    [UnscopedRef]
     public Span<GROUP_AFFINITY> GroupMasks
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

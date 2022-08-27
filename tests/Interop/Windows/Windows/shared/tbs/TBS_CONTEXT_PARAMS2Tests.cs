@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="TBS_CONTEXT_PARAMS2" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class TBS_CONTEXT_PARAMS2Tests
 {
     /// <summary>Validates that the <see cref="TBS_CONTEXT_PARAMS2" /> struct is blittable.</summary>

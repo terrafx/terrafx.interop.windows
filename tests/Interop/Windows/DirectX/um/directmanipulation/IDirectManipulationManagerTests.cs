@@ -12,7 +12,7 @@ using static TerraFX.Interop.Windows.IID;
 namespace TerraFX.Interop.DirectX.UnitTests;
 
 /// <summary>Provides validation of the <see cref="IDirectManipulationManager" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class IDirectManipulationManagerTests
 {
     /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDirectManipulationManager" /> struct is correct.</summary>

@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="POINTER_DEVICE_INFO" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class POINTER_DEVICE_INFOTests
 {
     /// <summary>Validates that the <see cref="POINTER_DEVICE_INFO" /> struct is blittable.</summary>

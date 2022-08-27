@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX.UnitTests;
 
 /// <summary>Provides validation of the <see cref="DCOMPOSITION_FRAME_STATISTICS" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class DCOMPOSITION_FRAME_STATISTICSTests
 {
     /// <summary>Validates that the <see cref="DCOMPOSITION_FRAME_STATISTICS" /> struct is blittable.</summary>

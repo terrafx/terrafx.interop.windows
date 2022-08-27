@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -33,97 +35,109 @@ public unsafe partial struct FILE_IN_CABINET_INFO_A
     public FILE_IN_CABINET_INFO64_A _value64;
 
     [NativeTypeName("PCSTR")]
+    [UnscopedRef]
     public ref sbyte* NameInCabinet
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).NameInCabinet;
+                return ref _value32.NameInCabinet;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).NameInCabinet;
+                return ref _value64.NameInCabinet;
             }
         }
     }
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint FileSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.FileSize, 1));
+                return ref _value32.FileSize;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.FileSize, 1));
+                return ref _value64.FileSize;
             }
         }
     }
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint Win32Error
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.Win32Error, 1));
+                return ref _value32.Win32Error;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.Win32Error, 1));
+                return ref _value64.Win32Error;
             }
         }
     }
 
     [NativeTypeName("WORD")]
+    [UnscopedRef]
     public ref ushort DosDate
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.DosDate, 1));
+                return ref _value32.DosDate;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.DosDate, 1));
+                return ref _value64.DosDate;
             }
         }
     }
 
     [NativeTypeName("WORD")]
+    [UnscopedRef]
     public ref ushort DosTime
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.DosTime, 1));
+                return ref _value32.DosTime;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.DosTime, 1));
+                return ref _value64.DosTime;
             }
         }
     }
 
     [NativeTypeName("WORD")]
+    [UnscopedRef]
     public ref ushort DosAttribs
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.DosAttribs, 1));
+                return ref _value32.DosAttribs;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.DosAttribs, 1));
+                return ref _value64.DosAttribs;
             }
         }
     }
@@ -135,11 +149,11 @@ public unsafe partial struct FILE_IN_CABINET_INFO_A
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.FullTargetName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.FullTargetName[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.FullTargetName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.FullTargetName[0], 260);
             }
         }
     }

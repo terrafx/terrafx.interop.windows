@@ -3,6 +3,7 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -20,7 +21,7 @@ public unsafe partial struct OCSP_BASIC_RESPONSE_INFO
     public uint dwResponderIdChoice;
 
     /// <include file='OCSP_BASIC_RESPONSE_INFO.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_INFO.Anonymous"]/*' />
-    [NativeTypeName("_OCSP_BASIC_RESPONSE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:5706:5)")]
+    [NativeTypeName("_OCSP_BASIC_RESPONSE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:5708:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='OCSP_BASIC_RESPONSE_INFO.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_INFO.ProducedAt"]/*' />
@@ -43,22 +44,24 @@ public unsafe partial struct OCSP_BASIC_RESPONSE_INFO
     public CERT_EXTENSION* rgExtension;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ByNameResponderId"]/*' />
+    [UnscopedRef]
     public ref CRYPT_DATA_BLOB ByNameResponderId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ByNameResponderId, 1));
+            return ref Anonymous.ByNameResponderId;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ByKeyResponderId"]/*' />
+    [UnscopedRef]
     public ref CRYPT_DATA_BLOB ByKeyResponderId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ByKeyResponderId, 1));
+            return ref Anonymous.ByKeyResponderId;
         }
     }
 

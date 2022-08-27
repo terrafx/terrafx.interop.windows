@@ -3,6 +3,7 @@
 // Ported from d3d12.h in Microsoft.Direct3D.D3D12 v1.600.10
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -22,32 +23,35 @@ public partial struct D3D12_ROOT_PARAMETER1
     public D3D12_SHADER_VISIBILITY ShaderVisibility;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.DescriptorTable"]/*' />
+    [UnscopedRef]
     public ref D3D12_ROOT_DESCRIPTOR_TABLE1 DescriptorTable
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.DescriptorTable, 1));
+            return ref Anonymous.DescriptorTable;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Constants"]/*' />
+    [UnscopedRef]
     public ref D3D12_ROOT_CONSTANTS Constants
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Constants, 1));
+            return ref Anonymous.Constants;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Descriptor"]/*' />
+    [UnscopedRef]
     public ref D3D12_ROOT_DESCRIPTOR1 Descriptor
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Descriptor, 1));
+            return ref Anonymous.Descriptor;
         }
     }
 

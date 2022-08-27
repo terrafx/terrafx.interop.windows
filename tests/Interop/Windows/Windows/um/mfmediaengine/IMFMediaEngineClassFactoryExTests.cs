@@ -12,7 +12,7 @@ using static TerraFX.Interop.Windows.IID;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="IMFMediaEngineClassFactoryEx" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class IMFMediaEngineClassFactoryExTests
 {
     /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaEngineClassFactoryEx" /> struct is correct.</summary>

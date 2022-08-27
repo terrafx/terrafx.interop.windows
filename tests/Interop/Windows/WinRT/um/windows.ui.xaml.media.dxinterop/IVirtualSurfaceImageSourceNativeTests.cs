@@ -12,7 +12,7 @@ using static TerraFX.Interop.Windows.IID;
 namespace TerraFX.Interop.WinRT.UnitTests;
 
 /// <summary>Provides validation of the <see cref="IVirtualSurfaceImageSourceNative" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class IVirtualSurfaceImageSourceNativeTests
 {
     /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IVirtualSurfaceImageSourceNative" /> struct is correct.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='ROI_AREA.xml' path='doc/member[@name="ROI_AREA"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public partial struct ROI_AREA
 {
     /// <include file='ROI_AREA.xml' path='doc/member[@name="ROI_AREA.rect"]/*' />

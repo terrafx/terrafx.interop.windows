@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("3BAB440E-417E-47DF-A2E2-BC0BE6A00916")]
 [NativeTypeName("struct ID2D1CommandSink2 : ID2D1CommandSink1")]
 [NativeInheritance("ID2D1CommandSink1")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct ID2D1CommandSink2 : ID2D1CommandSink2.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1CommandSink2));

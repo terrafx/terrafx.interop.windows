@@ -23,8 +23,8 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ntsecapi.h
 --with-attribute
-LsaLookupSids2=SupportedOSPlatform("windows8.0")
-LsaLookupNames2=SupportedOSPlatform("windows8.0")
+LsaLookupSids2=SupportedOSPlatform("windows6.2")
+LsaLookupNames2=SupportedOSPlatform("windows6.2")
 --with-librarypath
 AuditComputeEffectivePolicyBySid=advapi32
 AuditComputeEffectivePolicyByToken=advapi32
@@ -76,6 +76,7 @@ LsaOpenTrustedDomainByName=advapi32
 LsaQueryCAPs=advapi32
 LsaQueryDomainInformationPolicy=advapi32
 LsaQueryForestTrustInformation=advapi32
+LsaQueryForestTrustInformation2=advapi32
 LsaQueryInformationPolicy=advapi32
 LsaQueryTrustedDomainInfo=advapi32
 LsaQueryTrustedDomainInfoByName=advapi32
@@ -86,6 +87,7 @@ LsaRetrievePrivateData=advapi32
 LsaSetCAPs=advapi32
 LsaSetDomainInformationPolicy=advapi32
 LsaSetForestTrustInformation=advapi32
+LsaSetForestTrustInformation2=advapi32
 LsaSetInformationPolicy=advapi32
 LsaSetTrustedDomainInfoByName=advapi32
 LsaSetTrustedDomainInformation=advapi32

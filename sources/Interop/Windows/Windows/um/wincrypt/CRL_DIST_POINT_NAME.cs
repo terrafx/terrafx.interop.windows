@@ -3,6 +3,7 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -16,16 +17,17 @@ public partial struct CRL_DIST_POINT_NAME
     public uint dwDistPointNameChoice;
 
     /// <include file='CRL_DIST_POINT_NAME.xml' path='doc/member[@name="CRL_DIST_POINT_NAME.Anonymous"]/*' />
-    [NativeTypeName("_CRL_DIST_POINT_NAME::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:4429:5)")]
+    [NativeTypeName("_CRL_DIST_POINT_NAME::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:4431:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.FullName"]/*' />
+    [UnscopedRef]
     public ref CERT_ALT_NAME_INFO FullName
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FullName, 1));
+            return ref Anonymous.FullName;
         }
     }
 

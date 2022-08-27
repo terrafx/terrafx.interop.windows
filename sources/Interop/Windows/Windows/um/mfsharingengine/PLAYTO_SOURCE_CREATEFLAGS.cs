@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='PLAYTO_SOURCE_CREATEFLAGS.xml' path='doc/member[@name="PLAYTO_SOURCE_CREATEFLAGS"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum PLAYTO_SOURCE_CREATEFLAGS
 {
     /// <include file='PLAYTO_SOURCE_CREATEFLAGS.xml' path='doc/member[@name="PLAYTO_SOURCE_CREATEFLAGS.PLAYTO_SOURCE_NONE"]/*' />

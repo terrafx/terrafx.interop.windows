@@ -3,6 +3,7 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -22,22 +23,24 @@ public partial struct POINTER_TYPE_INFO
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.touchInfo"]/*' />
+    [UnscopedRef]
     public ref POINTER_TOUCH_INFO touchInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.touchInfo, 1));
+            return ref Anonymous.touchInfo;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.penInfo"]/*' />
+    [UnscopedRef]
     public ref POINTER_PEN_INFO penInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.penInfo, 1));
+            return ref Anonymous.penInfo;
         }
     }
 

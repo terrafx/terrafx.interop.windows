@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("9B32F9AD-BDCC-40A6-A39D-D5C865845720")]
 [NativeTypeName("struct ID3D11CryptoSession : ID3D11DeviceChild")]
 [NativeInheritance("ID3D11DeviceChild")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ID3D11CryptoSession : ID3D11CryptoSession.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D11CryptoSession));

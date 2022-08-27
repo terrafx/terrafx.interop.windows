@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -33,6 +34,7 @@ public partial struct SCM_PHYSICAL_DEVICES
     {
         public SCM_PHYSICAL_DEVICE_INSTANCE e0;
 
+        [UnscopedRef]
         public ref SCM_PHYSICAL_DEVICE_INSTANCE this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,6 +45,7 @@ public partial struct SCM_PHYSICAL_DEVICES
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<SCM_PHYSICAL_DEVICE_INSTANCE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

@@ -3,6 +3,8 @@
 // Ported from um/shellapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -32,79 +34,89 @@ public unsafe partial struct OPEN_PRINTER_PROPS_INFOW
     public OPEN_PRINTER_PROPS_INFO64W _value64;
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint dwSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.dwSize, 1));
+                return ref _value32.dwSize;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.dwSize, 1));
+                return ref _value64.dwSize;
             }
         }
     }
 
     [NativeTypeName("LPWSTR")]
+    [UnscopedRef]
     public ref ushort* pszSheetName
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).pszSheetName;
+                return ref _value32.pszSheetName;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).pszSheetName;
+                return ref _value64.pszSheetName;
             }
         }
     }
 
+    [UnscopedRef]
     public ref uint uSheetIndex
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.uSheetIndex, 1));
+                return ref _value32.uSheetIndex;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.uSheetIndex, 1));
+                return ref _value64.uSheetIndex;
             }
         }
     }
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint dwFlags
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.dwFlags, 1));
+                return ref _value32.dwFlags;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.dwFlags, 1));
+                return ref _value64.dwFlags;
             }
         }
     }
 
+    [UnscopedRef]
     public ref BOOL bModal
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.bModal, 1));
+                return ref _value32.bModal;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.bModal, 1));
+                return ref _value64.bModal;
             }
         }
     }

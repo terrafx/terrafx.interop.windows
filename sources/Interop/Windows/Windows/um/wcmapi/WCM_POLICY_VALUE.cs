@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WCM_POLICY_VALUE.xml' path='doc/member[@name="WCM_POLICY_VALUE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct WCM_POLICY_VALUE
 {
     /// <include file='WCM_POLICY_VALUE.xml' path='doc/member[@name="WCM_POLICY_VALUE.fValue"]/*' />

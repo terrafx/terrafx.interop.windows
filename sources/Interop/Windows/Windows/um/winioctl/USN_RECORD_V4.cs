@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -11,7 +12,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='USN_RECORD_V4.xml' path='doc/member[@name="USN_RECORD_V4"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public partial struct USN_RECORD_V4
 {
     /// <include file='USN_RECORD_V4.xml' path='doc/member[@name="USN_RECORD_V4.Header"]/*' />
@@ -56,6 +57,7 @@ public partial struct USN_RECORD_V4
     {
         public USN_RECORD_EXTENT e0;
 
+        [UnscopedRef]
         public ref USN_RECORD_EXTENT this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -66,6 +68,7 @@ public partial struct USN_RECORD_V4
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<USN_RECORD_EXTENT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

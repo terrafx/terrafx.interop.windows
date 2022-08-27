@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='APPX_PACKAGE_ARCHITECTURE.xml' path='doc/member[@name="APPX_PACKAGE_ARCHITECTURE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum APPX_PACKAGE_ARCHITECTURE
 {
     /// <include file='APPX_PACKAGE_ARCHITECTURE.xml' path='doc/member[@name="APPX_PACKAGE_ARCHITECTURE.APPX_PACKAGE_ARCHITECTURE_X86"]/*' />

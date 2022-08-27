@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='POINTER_DEVICE_TYPE.xml' path='doc/member[@name="POINTER_DEVICE_TYPE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum POINTER_DEVICE_TYPE
 {
     /// <include file='POINTER_DEVICE_TYPE.xml' path='doc/member[@name="POINTER_DEVICE_TYPE.POINTER_DEVICE_TYPE_INTEGRATED_PEN"]/*' />

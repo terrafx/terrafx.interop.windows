@@ -13,12 +13,12 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/synchapi.h
 --with-attribute
-DeleteSynchronizationBarrier=SupportedOSPlatform("windows8.0")
-EnterSynchronizationBarrier=SupportedOSPlatform("windows8.0")
-InitializeSynchronizationBarrier=SupportedOSPlatform("windows8.0")
-WaitOnAddress=SupportedOSPlatform("windows8.0")
-WakeByAddressAll=SupportedOSPlatform("windows8.0")
-WakeByAddressSingle=SupportedOSPlatform("windows8.0")
+DeleteSynchronizationBarrier=SupportedOSPlatform("windows6.2")
+EnterSynchronizationBarrier=SupportedOSPlatform("windows6.2")
+InitializeSynchronizationBarrier=SupportedOSPlatform("windows6.2")
+WaitOnAddress=SupportedOSPlatform("windows6.2")
+WakeByAddressAll=SupportedOSPlatform("windows6.2")
+WakeByAddressSingle=SupportedOSPlatform("windows6.2")
 --with-librarypath
 AcquireSRWLockExclusive=kernel32
 AcquireSRWLockShared=kernel32

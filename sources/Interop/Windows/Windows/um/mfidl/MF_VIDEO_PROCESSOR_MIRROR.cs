@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MF_VIDEO_PROCESSOR_MIRROR.xml' path='doc/member[@name="MF_VIDEO_PROCESSOR_MIRROR"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum MF_VIDEO_PROCESSOR_MIRROR
 {
     /// <include file='MF_VIDEO_PROCESSOR_MIRROR.xml' path='doc/member[@name="MF_VIDEO_PROCESSOR_MIRROR.MIRROR_NONE"]/*' />

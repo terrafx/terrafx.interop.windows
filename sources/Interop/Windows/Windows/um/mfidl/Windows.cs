@@ -120,32 +120,32 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateAC3MediaSink"]/*' />
     [DllImport("mf", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFCreateAC3MediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateADTSMediaSink"]/*' />
     [DllImport("mf", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFCreateADTSMediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMuxSink"]/*' />
     [DllImport("mf", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFCreateMuxSink(Guid guidOutputSubType, IMFAttributes* pOutputAttributes, IMFByteStream* pOutputByteStream, IMFMediaSink** ppMuxSink);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateFMPEG4MediaSink"]/*' />
     [DllImport("mf", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFCreateFMPEG4MediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateAVIMediaSink"]/*' />
     [DllImport("mfsrcsnk", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.1")]
+    [SupportedOSPlatform("windows6.3")]
     public static extern HRESULT MFCreateAVIMediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateWAVEMediaSink"]/*' />
     [DllImport("mfsrcsnk", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.1")]
+    [SupportedOSPlatform("windows6.3")]
     public static extern HRESULT MFCreateWAVEMediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateTopoLoader"]/*' />
@@ -585,7 +585,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateTranscodeTopologyFromByteStream"]/*' />
     [DllImport("mf", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFCreateTranscodeTopologyFromByteStream(IMFMediaSource* pSrc, IMFByteStream* pOutputStream, IMFTranscodeProfile* pProfile, IMFTopology** ppTranscodeTopo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTranscodeGetAudioOutputAvailableTypes"]/*' />
@@ -598,7 +598,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateTrackedSample"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFCreateTrackedSample(IMFTrackedSample** ppMFSample);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMFByteStreamOnStream"]/*' />
@@ -607,27 +607,27 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateStreamOnMFByteStream"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFCreateStreamOnMFByteStream(IMFByteStream* pByteStream, IStream** ppStream);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMFByteStreamOnStreamEx"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFCreateMFByteStreamOnStreamEx(IUnknown* punkStream, IMFByteStream** ppByteStream);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateStreamOnMFByteStreamEx"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFCreateStreamOnMFByteStreamEx(IMFByteStream* pByteStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMediaTypeFromProperties"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFCreateMediaTypeFromProperties(IUnknown* punkStream, IMFMediaType** ppMediaType);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreatePropertiesFromMediaType"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFCreatePropertiesFromMediaType(IMFMediaType* pMediaType, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFEnumDeviceSources"]/*' />
@@ -744,22 +744,22 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateProtectedEnvironmentAccess"]/*' />
     [DllImport("mf", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFCreateProtectedEnvironmentAccess(IMFProtectedEnvironmentAccess** ppAccess);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFLoadSignedLibrary"]/*' />
     [DllImport("mf", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFLoadSignedLibrary([NativeTypeName("LPCWSTR")] ushort* pszName, IMFSignedLibrary** ppLib);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetSystemId"]/*' />
     [DllImport("mf", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFGetSystemId(IMFSystemId** ppId);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetLocalId"]/*' />
     [DllImport("mf", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFGetLocalId([NativeTypeName("const BYTE *")] byte* verifier, [NativeTypeName("UINT32")] uint size, [NativeTypeName("LPWSTR *")] ushort** id);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateContentProtectionDevice"]/*' />

@@ -3,6 +3,7 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -16,36 +17,39 @@ public unsafe partial struct CMSG_CMS_RECIPIENT_INFO
     public uint dwRecipientChoice;
 
     /// <include file='CMSG_CMS_RECIPIENT_INFO.xml' path='doc/member[@name="CMSG_CMS_RECIPIENT_INFO.Anonymous"]/*' />
-    [NativeTypeName("_CMSG_CMS_RECIPIENT_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:7829:5)")]
+    [NativeTypeName("_CMSG_CMS_RECIPIENT_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:7831:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pKeyTrans"]/*' />
+    [UnscopedRef]
     public ref CMSG_KEY_TRANS_RECIPIENT_INFO* pKeyTrans
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pKeyTrans;
+            return ref Anonymous.pKeyTrans;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pKeyAgree"]/*' />
+    [UnscopedRef]
     public ref CMSG_KEY_AGREE_RECIPIENT_INFO* pKeyAgree
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pKeyAgree;
+            return ref Anonymous.pKeyAgree;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pMailList"]/*' />
+    [UnscopedRef]
     public ref CMSG_MAIL_LIST_RECIPIENT_INFO* pMailList
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pMailList;
+            return ref Anonymous.pMailList;
         }
     }
 

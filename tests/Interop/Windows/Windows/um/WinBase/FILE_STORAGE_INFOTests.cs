@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="FILE_STORAGE_INFO" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class FILE_STORAGE_INFOTests
 {
     /// <summary>Validates that the <see cref="FILE_STORAGE_INFO" /> struct is blittable.</summary>

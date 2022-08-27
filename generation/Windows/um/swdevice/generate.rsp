@@ -13,16 +13,16 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/swdevice.h
 --with-attribute
-SwDeviceClose=SupportedOSPlatform("windows8.0")
-SwDeviceCreate=SupportedOSPlatform("windows8.0")
-SwDeviceGetLifetime=SupportedOSPlatform("windows8.1")
-SwDeviceInterfacePropertySet=SupportedOSPlatform("windows8.0")
-SwDeviceInterfaceRegister=SupportedOSPlatform("windows8.0")
-SwDeviceInterfaceSetState=SupportedOSPlatform("windows8.0")
-SwDevicePropertySet=SupportedOSPlatform("windows8.0")
-SwDeviceSetLifetime=SupportedOSPlatform("windows8.1")
-SwMemFree=SupportedOSPlatform("windows8.0")
-SW_DEVICE_CREATE_CALLBACK=SupportedOSPlatform("windows8.0")
+SwDeviceClose=SupportedOSPlatform("windows6.2")
+SwDeviceCreate=SupportedOSPlatform("windows6.2")
+SwDeviceGetLifetime=SupportedOSPlatform("windows6.3")
+SwDeviceInterfacePropertySet=SupportedOSPlatform("windows6.2")
+SwDeviceInterfaceRegister=SupportedOSPlatform("windows6.2")
+SwDeviceInterfaceSetState=SupportedOSPlatform("windows6.2")
+SwDevicePropertySet=SupportedOSPlatform("windows6.2")
+SwDeviceSetLifetime=SupportedOSPlatform("windows6.3")
+SwMemFree=SupportedOSPlatform("windows6.2")
+SW_DEVICE_CREATE_CALLBACK=SupportedOSPlatform("windows6.2")
 --with-librarypath
 SwDeviceClose=cfgmgr32
 SwDeviceCreate=cfgmgr32

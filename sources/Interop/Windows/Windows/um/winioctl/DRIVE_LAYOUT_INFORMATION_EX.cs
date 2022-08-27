@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -29,22 +30,24 @@ public partial struct DRIVE_LAYOUT_INFORMATION_EX
     public _PartitionEntry_e__FixedBuffer PartitionEntry;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Mbr"]/*' />
+    [UnscopedRef]
     public ref DRIVE_LAYOUT_INFORMATION_MBR Mbr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Mbr, 1));
+            return ref Anonymous.Mbr;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Gpt"]/*' />
+    [UnscopedRef]
     public ref DRIVE_LAYOUT_INFORMATION_GPT Gpt
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Gpt, 1));
+            return ref Anonymous.Gpt;
         }
     }
 
@@ -66,6 +69,7 @@ public partial struct DRIVE_LAYOUT_INFORMATION_EX
     {
         public PARTITION_INFORMATION_EX e0;
 
+        [UnscopedRef]
         public ref PARTITION_INFORMATION_EX this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -76,6 +80,7 @@ public partial struct DRIVE_LAYOUT_INFORMATION_EX
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<PARTITION_INFORMATION_EX> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

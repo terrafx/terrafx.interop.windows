@@ -13,4 +13,4 @@ TerraFX.Interop.WinRT
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/PrintManagerInterop.h
 --with-attribute
-IPrintManagerInterop=SupportedOSPlatform("windows8.0")
+IPrintManagerInterop=SupportedOSPlatform("windows6.2")

@@ -3,6 +3,7 @@
 // Ported from https://docs.microsoft.com/en-us/windows/win32/appxpkg/how-to-programmatically-sign-a-package
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -27,32 +28,35 @@ public unsafe partial struct SIGNER_CERT
     public HWND hwnd;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszSpcFile"]/*' />
+    [UnscopedRef]
     public ref ushort* pwszSpcFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszSpcFile;
+            return ref Anonymous.pwszSpcFile;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pCertStoreInfo"]/*' />
+    [UnscopedRef]
     public ref SIGNER_CERT_STORE_INFO* pCertStoreInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pCertStoreInfo;
+            return ref Anonymous.pCertStoreInfo;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pSpcChainInfo"]/*' />
+    [UnscopedRef]
     public ref SIGNER_SPC_CHAIN_INFO* pSpcChainInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pSpcChainInfo;
+            return ref Anonymous.pSpcChainInfo;
         }
     }
 

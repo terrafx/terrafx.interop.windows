@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -42,6 +43,7 @@ public unsafe partial struct D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS
         public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e8;
         public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e9;
 
+        [UnscopedRef]
         public ref D3D12_VIDEO_DECODE_FRAME_ARGUMENT this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -52,6 +54,7 @@ public unsafe partial struct D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<D3D12_VIDEO_DECODE_FRAME_ARGUMENT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 10);
     }
 }

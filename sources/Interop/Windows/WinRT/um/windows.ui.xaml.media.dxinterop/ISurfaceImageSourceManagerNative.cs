@@ -16,7 +16,7 @@ namespace TerraFX.Interop.WinRT;
 [Guid("4C8798B7-1D88-4A0F-B59B-B93F600DE8C8")]
 [NativeTypeName("struct ISurfaceImageSourceManagerNative : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct ISurfaceImageSourceManagerNative : ISurfaceImageSourceManagerNative.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISurfaceImageSourceManagerNative));

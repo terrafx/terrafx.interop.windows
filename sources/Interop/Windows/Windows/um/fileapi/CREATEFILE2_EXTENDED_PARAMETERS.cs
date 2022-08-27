@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CREATEFILE2_EXTENDED_PARAMETERS.xml' path='doc/member[@name="CREATEFILE2_EXTENDED_PARAMETERS"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct CREATEFILE2_EXTENDED_PARAMETERS
 {
     /// <include file='CREATEFILE2_EXTENDED_PARAMETERS.xml' path='doc/member[@name="CREATEFILE2_EXTENDED_PARAMETERS.dwSize"]/*' />

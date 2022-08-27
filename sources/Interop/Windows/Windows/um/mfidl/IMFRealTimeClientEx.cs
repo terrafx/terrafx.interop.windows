@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("03910848-AB16-4611-B100-17B88AE2F248")]
 [NativeTypeName("struct IMFRealTimeClientEx : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFRealTimeClientEx : IMFRealTimeClientEx.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFRealTimeClientEx));

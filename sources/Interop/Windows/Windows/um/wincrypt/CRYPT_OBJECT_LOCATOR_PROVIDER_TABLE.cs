@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.xml' path='doc/member[@name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE
 {
     /// <include file='CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.xml' path='doc/member[@name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.cbSize"]/*' />

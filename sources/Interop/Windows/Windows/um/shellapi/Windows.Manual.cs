@@ -113,4 +113,9 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define NOTIFYICONDATA_V3_SIZE NOTIFYICONDATAW_V3_SIZE")]
     public static int NOTIFYICONDATA_V3_SIZE => NOTIFYICONDATAW_V3_SIZE;
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellMessageBoxW"]/*' />
+    [DllImport("shlwapi", CallingConvention = CallingConvention.Cdecl, EntryPoint = "ShellMessageBoxW", ExactSpelling = true)]
+    [SetsLastSystemError]
+    public static extern int ShellMessageBox(HINSTANCE hAppInst, HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpcText, [NativeTypeName("LPCWSTR")] ushort* lpcTitle, uint fuStyle, __arglist);
 }

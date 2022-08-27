@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -118,6 +119,7 @@ public unsafe partial struct SYSTEM_POWER_POLICY
         public SYSTEM_POWER_LEVEL e2;
         public SYSTEM_POWER_LEVEL e3;
 
+        [UnscopedRef]
         public ref SYSTEM_POWER_LEVEL this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -128,6 +130,7 @@ public unsafe partial struct SYSTEM_POWER_POLICY
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<SYSTEM_POWER_LEVEL> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 4);
     }
 }

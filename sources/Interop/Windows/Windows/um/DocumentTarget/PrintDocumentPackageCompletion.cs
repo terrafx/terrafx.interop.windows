@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PrintDocumentPackageCompletion.xml' path='doc/member[@name="PrintDocumentPackageCompletion"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum PrintDocumentPackageCompletion
 {
     /// <include file='PrintDocumentPackageCompletion.xml' path='doc/member[@name="PrintDocumentPackageCompletion.PrintDocumentPackageCompletion_InProgress"]/*' />

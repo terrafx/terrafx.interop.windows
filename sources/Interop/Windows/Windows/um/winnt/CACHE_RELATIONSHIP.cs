@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -38,16 +39,17 @@ public unsafe partial struct CACHE_RELATIONSHIP
     public ushort GroupCount;
 
     /// <include file='CACHE_RELATIONSHIP.xml' path='doc/member[@name="CACHE_RELATIONSHIP.Anonymous"]/*' />
-    [NativeTypeName("_CACHE_RELATIONSHIP::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:13709:5)")]
+    [NativeTypeName("_CACHE_RELATIONSHIP::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:13419:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.GroupMask"]/*' />
+    [UnscopedRef]
     public ref GROUP_AFFINITY GroupMask
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.GroupMask, 1));
+            return ref Anonymous.GroupMask;
         }
     }
 
@@ -69,6 +71,7 @@ public unsafe partial struct CACHE_RELATIONSHIP
         {
             public GROUP_AFFINITY e0;
 
+            [UnscopedRef]
             public ref GROUP_AFFINITY this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -79,6 +82,7 @@ public unsafe partial struct CACHE_RELATIONSHIP
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [UnscopedRef]
             public Span<GROUP_AFFINITY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }

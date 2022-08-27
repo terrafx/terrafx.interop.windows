@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="JOBOBJECT_CPU_RATE_CONTROL_INFORMATION" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class JOBOBJECT_CPU_RATE_CONTROL_INFORMATIONTests
 {
     /// <summary>Validates that the <see cref="JOBOBJECT_CPU_RATE_CONTROL_INFORMATION" /> struct is blittable.</summary>

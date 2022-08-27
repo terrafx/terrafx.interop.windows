@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -29,6 +30,7 @@ public partial struct GET_MEDIA_TYPES
     {
         public DEVICE_MEDIA_INFO e0;
 
+        [UnscopedRef]
         public ref DEVICE_MEDIA_INFO this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,6 +41,7 @@ public partial struct GET_MEDIA_TYPES
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<DEVICE_MEDIA_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

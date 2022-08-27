@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -17,7 +18,7 @@ public partial struct BOOT_AREA_INFO
     public uint BootSectorCount;
 
     /// <include file='BOOT_AREA_INFO.xml' path='doc/member[@name="BOOT_AREA_INFO.BootSectors"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:13821:5)[2]")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:13825:5)[2]")]
     public _BootSectors_e__FixedBuffer BootSectors;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
@@ -33,6 +34,7 @@ public partial struct BOOT_AREA_INFO
         public _Anonymous_e__Struct e0;
         public _Anonymous_e__Struct e1;
 
+        [UnscopedRef]
         public ref _Anonymous_e__Struct this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,6 +45,7 @@ public partial struct BOOT_AREA_INFO
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<_Anonymous_e__Struct> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
     }
 }

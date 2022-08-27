@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='INTERACTION_ARGUMENTS_MANIPULATION.xml' path='doc/member[@name="INTERACTION_ARGUMENTS_MANIPULATION"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct INTERACTION_ARGUMENTS_MANIPULATION
 {
     /// <include file='INTERACTION_ARGUMENTS_MANIPULATION.xml' path='doc/member[@name="INTERACTION_ARGUMENTS_MANIPULATION.delta"]/*' />

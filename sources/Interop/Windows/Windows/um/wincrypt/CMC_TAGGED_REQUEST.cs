@@ -3,6 +3,7 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -16,16 +17,17 @@ public unsafe partial struct CMC_TAGGED_REQUEST
     public uint dwTaggedRequestChoice;
 
     /// <include file='CMC_TAGGED_REQUEST.xml' path='doc/member[@name="CMC_TAGGED_REQUEST.Anonymous"]/*' />
-    [NativeTypeName("_CMC_TAGGED_REQUEST::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:5231:5)")]
+    [NativeTypeName("_CMC_TAGGED_REQUEST::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:5233:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pTaggedCertRequest"]/*' />
+    [UnscopedRef]
     public ref CMC_TAGGED_CERT_REQUEST* pTaggedCertRequest
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pTaggedCertRequest;
+            return ref Anonymous.pTaggedCertRequest;
         }
     }
 

@@ -3,6 +3,7 @@
 // Ported from um/objidl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -16,79 +17,86 @@ public unsafe partial struct STGMEDIUM
     public uint tymed;
 
     /// <include file='STGMEDIUM.xml' path='doc/member[@name="STGMEDIUM.Anonymous"]/*' />
-    [NativeTypeName("tagSTGMEDIUM::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/objidl.h:11954:36)")]
+    [NativeTypeName("tagSTGMEDIUM::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/objidl.h:12046:36)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='STGMEDIUM.xml' path='doc/member[@name="STGMEDIUM.pUnkForRelease"]/*' />
     public IUnknown* pUnkForRelease;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hBitmap"]/*' />
+    [UnscopedRef]
     public ref HBITMAP hBitmap
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.hBitmap;
+            return ref Anonymous.hBitmap;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hMetaFilePict"]/*' />
+    [UnscopedRef]
     public ref HMETAFILEPICT hMetaFilePict
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.hMetaFilePict;
+            return ref Anonymous.hMetaFilePict;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hEnhMetaFile"]/*' />
+    [UnscopedRef]
     public ref HENHMETAFILE hEnhMetaFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.hEnhMetaFile;
+            return ref Anonymous.hEnhMetaFile;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hGlobal"]/*' />
+    [UnscopedRef]
     public ref HGLOBAL hGlobal
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.hGlobal;
+            return ref Anonymous.hGlobal;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lpszFileName"]/*' />
+    [UnscopedRef]
     public ref ushort* lpszFileName
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.lpszFileName;
+            return ref Anonymous.lpszFileName;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pstm"]/*' />
+    [UnscopedRef]
     public ref IStream* pstm
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pstm;
+            return ref Anonymous.pstm;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pstg"]/*' />
+    [UnscopedRef]
     public ref IStorage* pstg
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pstg;
+            return ref Anonymous.pstg;
         }
     }
 

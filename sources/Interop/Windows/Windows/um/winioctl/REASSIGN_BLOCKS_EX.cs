@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -31,6 +32,7 @@ public partial struct REASSIGN_BLOCKS_EX
     {
         public LARGE_INTEGER e0;
 
+        [UnscopedRef]
         public ref LARGE_INTEGER this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -41,6 +43,7 @@ public partial struct REASSIGN_BLOCKS_EX
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<LARGE_INTEGER> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

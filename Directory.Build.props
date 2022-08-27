@@ -68,11 +68,12 @@
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <PublicSign>true</PublicSign>
     <RepositoryType>git</RepositoryType>
-    <RestoreSources>
-      https://api.nuget.org/v3/index.json;
-      https://pkgs.terrafx.dev/index.json;
-    </RestoreSources>
+    <RestoreConfigFile>$(MSBuildThisFileDirectory)NuGet.config</RestoreConfigFile>
     <UseSharedCompilation>true</UseSharedCompilation>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Net.Compilers.Toolset" PrivateAssets="all" />
+  </ItemGroup>
 
 </Project>

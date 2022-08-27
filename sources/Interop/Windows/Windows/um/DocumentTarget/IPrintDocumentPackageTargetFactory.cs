@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("D2959BF7-B31B-4A3D-9600-712EB1335BA4")]
 [NativeTypeName("struct IPrintDocumentPackageTargetFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IPrintDocumentPackageTargetFactory : IPrintDocumentPackageTargetFactory.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPrintDocumentPackageTargetFactory));

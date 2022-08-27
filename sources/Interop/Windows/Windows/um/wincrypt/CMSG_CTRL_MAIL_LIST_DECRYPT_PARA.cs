@@ -3,6 +3,7 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -31,26 +32,28 @@ public unsafe partial struct CMSG_CTRL_MAIL_LIST_DECRYPT_PARA
     public uint dwKeyChoice;
 
     /// <include file='CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.xml' path='doc/member[@name="CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.Anonymous"]/*' />
-    [NativeTypeName("_CMSG_CTRL_MAIL_LIST_DECRYPT_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:8135:5)")]
+    [NativeTypeName("_CMSG_CTRL_MAIL_LIST_DECRYPT_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:8137:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hKeyEncryptionKey"]/*' />
+    [UnscopedRef]
     public ref HCRYPTKEY hKeyEncryptionKey
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hKeyEncryptionKey, 1));
+            return ref Anonymous.hKeyEncryptionKey;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pvKeyEncryptionKey"]/*' />
+    [UnscopedRef]
     public ref void* pvKeyEncryptionKey
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pvKeyEncryptionKey;
+            return ref Anonymous.pvKeyEncryptionKey;
         }
     }
 

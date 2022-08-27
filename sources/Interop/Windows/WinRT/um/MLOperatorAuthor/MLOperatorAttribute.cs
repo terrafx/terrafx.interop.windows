@@ -16,5 +16,6 @@ public unsafe partial struct MLOperatorAttribute
     public MLOperatorAttributeType type;
 
     /// <include file='MLOperatorAttribute.xml' path='doc/member[@name="MLOperatorAttribute.required"]/*' />
-    public bool required;
+    [NativeTypeName("bool")]
+    public byte required;
 }

@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PackageOrigin.xml' path='doc/member[@name="PackageOrigin"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum PackageOrigin
 {
     /// <include file='PackageOrigin.xml' path='doc/member[@name="PackageOrigin.PackageOrigin_Unknown"]/*' />

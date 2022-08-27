@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION
 {
     /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.IoReadBytesLimit"]/*' />

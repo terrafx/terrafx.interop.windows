@@ -12,7 +12,7 @@ using static TerraFX.Interop.Windows.IID;
 namespace TerraFX.Interop.DirectX.UnitTests;
 
 /// <summary>Provides validation of the <see cref="ID3D11VideoDecoder" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class ID3D11VideoDecoderTests
 {
     /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ID3D11VideoDecoder" /> struct is correct.</summary>

@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("75CF3930-3244-4FE0-A8C8-E0BCB270B889")]
 [NativeTypeName("struct IAppxBlockMapBlock : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IAppxBlockMapBlock : IAppxBlockMapBlock.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAppxBlockMapBlock));

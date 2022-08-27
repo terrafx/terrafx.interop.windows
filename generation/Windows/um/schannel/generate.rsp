@@ -21,7 +21,7 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/schannel.h
 --with-attribute
 CRYPTO_SETTINGS=SupportedOSPlatform("windows10.0.17763.0")
 eTlsAlgorithmUsage=SupportedOSPlatform("windows10.0.17763.0")
-SCHANNEL_CRED=SupportedOSPlatform("windows8.1")
+SCHANNEL_CRED=SupportedOSPlatform("windows6.3")
 SchGetExtensionsOptions=Flags
 SCH_CREDENTIALS=SupportedOSPlatform("windows10.0.17763.0")
 SecPkgContext_EarlyStart=SupportedOSPlatform("windows10.0")
@@ -33,7 +33,7 @@ SecPkgContext_KeyingMaterialInfo=SupportedOSPlatform("windows10.0")
 SecPkgContext_KeyingMaterialInfoA=SupportedOSPlatform("windows10.0")
 SecPkgContext_KeyingMaterialInfoW=SupportedOSPlatform("windows10.0")
 SecPkgContext_KeyingMaterialW=SupportedOSPlatform("windows10.0")
-SslGetServerIdentity=SupportedOSPlatform("windows8.0")
+SslGetServerIdentity=SupportedOSPlatform("windows6.2")
 TLS_PARAMETERS=SupportedOSPlatform("windows10.0.17763.0")
 --with-librarypath
 SslCrackCertificate=schannel

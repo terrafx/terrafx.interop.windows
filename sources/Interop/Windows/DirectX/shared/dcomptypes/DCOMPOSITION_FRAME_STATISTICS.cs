@@ -9,7 +9,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DCOMPOSITION_FRAME_STATISTICS.xml' path='doc/member[@name="DCOMPOSITION_FRAME_STATISTICS"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct DCOMPOSITION_FRAME_STATISTICS
 {
     /// <include file='DCOMPOSITION_FRAME_STATISTICS.xml' path='doc/member[@name="DCOMPOSITION_FRAME_STATISTICS.lastFrameTime"]/*' />

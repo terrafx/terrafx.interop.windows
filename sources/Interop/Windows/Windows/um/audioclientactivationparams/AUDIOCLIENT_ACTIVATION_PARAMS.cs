@@ -3,6 +3,7 @@
 // Ported from um/audioclientactivationparams.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -21,12 +22,13 @@ public partial struct AUDIOCLIENT_ACTIVATION_PARAMS
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ProcessLoopbackParams"]/*' />
+    [UnscopedRef]
     public ref AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS ProcessLoopbackParams
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ProcessLoopbackParams, 1));
+            return ref Anonymous.ProcessLoopbackParams;
         }
     }
 

@@ -3,6 +3,7 @@
 // Ported from um/ddraw.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -58,42 +59,46 @@ public unsafe partial struct DDOVERLAYFX
     public uint dwFlags;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.dwAlphaDestConst"]/*' />
+    [UnscopedRef]
     public ref uint dwAlphaDestConst
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.dwAlphaDestConst, 1));
+            return ref Anonymous1.dwAlphaDestConst;
         }
     }
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.lpDDSAlphaDest"]/*' />
+    [UnscopedRef]
     public ref IDirectDrawSurface* lpDDSAlphaDest
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous1.lpDDSAlphaDest;
+            return ref Anonymous1.lpDDSAlphaDest;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dwAlphaSrcConst"]/*' />
+    [UnscopedRef]
     public ref uint dwAlphaSrcConst
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwAlphaSrcConst, 1));
+            return ref Anonymous2.dwAlphaSrcConst;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.lpDDSAlphaSrc"]/*' />
+    [UnscopedRef]
     public ref IDirectDrawSurface* lpDDSAlphaSrc
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous2.lpDDSAlphaSrc;
+            return ref Anonymous2.lpDDSAlphaSrc;
         }
     }
 

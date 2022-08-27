@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -36,6 +37,7 @@ public partial struct DEVICE_DSM_REPORT_ZONES_DATA
     {
         public STORAGE_ZONE_DESCRIPTOR e0;
 
+        [UnscopedRef]
         public ref STORAGE_ZONE_DESCRIPTOR this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -46,6 +48,7 @@ public partial struct DEVICE_DSM_REPORT_ZONES_DATA
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<STORAGE_ZONE_DESCRIPTOR> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

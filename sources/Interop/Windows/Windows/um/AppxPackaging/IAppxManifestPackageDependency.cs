@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("E4946B59-733E-43F0-A724-3BDE4C1285A0")]
 [NativeTypeName("struct IAppxManifestPackageDependency : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IAppxManifestPackageDependency : IAppxManifestPackageDependency.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAppxManifestPackageDependency));

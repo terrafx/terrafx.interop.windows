@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("10EC4D5B-975A-4689-B9E4-D0AAC30FE333")]
 [NativeTypeName("struct ID3D11VideoDevice : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ID3D11VideoDevice : ID3D11VideoDevice.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D11VideoDevice));

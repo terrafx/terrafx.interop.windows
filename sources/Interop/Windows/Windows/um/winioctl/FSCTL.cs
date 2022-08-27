@@ -307,7 +307,7 @@ public static partial class FSCTL
     public const int FSCTL_FILE_TYPE_NOTIFICATION = (((0x00000009) << 16) | ((0) << 14) | ((129) << 2) | (0));
 
     [NativeTypeName("#define FSCTL_FILE_LEVEL_TRIM CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 130, METHOD_BUFFERED, FILE_WRITE_DATA)")]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public const int FSCTL_FILE_LEVEL_TRIM = (((0x00000009) << 16) | (((0x0002)) << 14) | ((130) << 2) | (0));
 
     [NativeTypeName("#define FSCTL_GET_BOOT_AREA_INFO CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 140, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
@@ -422,7 +422,7 @@ public static partial class FSCTL
     public const int FSCTL_QUERY_REGION_INFO = (((0x00000009) << 16) | ((0) << 14) | ((188) << 2) | (0));
 
     [NativeTypeName("#define FSCTL_USN_TRACK_MODIFIED_RANGES CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 189, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
-    [SupportedOSPlatform("windows8.1")]
+    [SupportedOSPlatform("windows6.3")]
     public const int FSCTL_USN_TRACK_MODIFIED_RANGES = (((0x00000009) << 16) | ((0) << 14) | ((189) << 2) | (0));
 
     [NativeTypeName("#define FSCTL_QUERY_SHARED_VIRTUAL_DISK_SUPPORT CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 192, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
@@ -626,6 +626,9 @@ public static partial class FSCTL
 
     [NativeTypeName("#define FSCTL_MANAGE_BYPASS_IO CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 274, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
     public const int FSCTL_MANAGE_BYPASS_IO = (((0x00000009) << 16) | ((0) << 14) | ((274) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_LMR_QUERY_INFO CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 286, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_LMR_QUERY_INFO = (((0x00000009) << 16) | ((0) << 14) | ((286) << 2) | (0));
 
     [NativeTypeName("#define FSCTL_INTEGRITY_FLAG_CHECKSUM_ENFORCEMENT_OFF (1)")]
     public const int FSCTL_INTEGRITY_FLAG_CHECKSUM_ENFORCEMENT_OFF = (1);

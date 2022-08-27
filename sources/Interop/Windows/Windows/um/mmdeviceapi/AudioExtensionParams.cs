@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='AudioExtensionParams.xml' path='doc/member[@name="AudioExtensionParams"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct AudioExtensionParams
 {
     /// <include file='AudioExtensionParams.xml' path='doc/member[@name="AudioExtensionParams.AddPageParam"]/*' />

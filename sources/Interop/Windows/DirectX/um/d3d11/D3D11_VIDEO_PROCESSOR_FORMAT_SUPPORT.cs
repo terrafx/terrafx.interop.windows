@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT
 {
     /// <include file='D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT.D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT_INPUT"]/*' />

@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("1FA11B10-701B-41AE-B5F2-49E36BD595AA")]
 [NativeTypeName("struct IDirectManipulationDragDropEventHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDirectManipulationDragDropEventHandler : IDirectManipulationDragDropEventHandler.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDirectManipulationDragDropEventHandler));

@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".root", ".root", "{2F337CB6
 		Directory.Build.targets = Directory.Build.targets
 		Directory.Packages.props = Directory.Packages.props
 		LICENSE.md = LICENSE.md
+		NuGet.config = NuGet.config
 		pack.cmd = pack.cmd
 		restore.cmd = restore.cmd
 		TerraFX.snk = TerraFX.snk
@@ -2950,6 +2951,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gdiplustypes", "gdiplustype
 		generation\Gdiplus\um\gdiplustypes\um-gdiplustypes.h = generation\Gdiplus\um\gdiplustypes\um-gdiplustypes.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ISSUE_TEMPLATE", "ISSUE_TEMPLATE", "{8891C297-49D7-495C-B66E-2A77C3D5F50D}"
+	ProjectSection(SolutionItems) = preProject
+		.github\ISSUE_TEMPLATE\bug.md = .github\ISSUE_TEMPLATE\bug.md
+		.github\ISSUE_TEMPLATE\proposal.md = .github\ISSUE_TEMPLATE\proposal.md
+		.github\ISSUE_TEMPLATE\regression.md = .github\ISSUE_TEMPLATE\regression.md
+	EndProjectSection
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "evntprov", "evntprov", "{ECCEAECE-9019-4EB6-A44A-244BCC77A624}"
 	ProjectSection(SolutionItems) = preProject
 		generation\Windows\shared\evntprov\generate.rsp = generation\Windows\shared\evntprov\generate.rsp
@@ -3005,6 +3013,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxgiformat", "dxgiformat", 
 		generation\DirectX\d3d12\dxgiformat\generate.rsp = generation\DirectX\d3d12\dxgiformat\generate.rsp
 		generation\DirectX\d3d12\dxgiformat\header.txt = generation\DirectX\d3d12\dxgiformat\header.txt
 		generation\DirectX\d3d12\dxgiformat\shared-dxgiformat.h = generation\DirectX\d3d12\dxgiformat\shared-dxgiformat.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "propkey", "propkey", "{21B748B3-53EF-42AD-B5F3-A5215C5AE574}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\propkey\generate.rsp = generation\Windows\um\propkey\generate.rsp
+		generation\Windows\um\propkey\header.txt = generation\Windows\um\propkey\header.txt
+		generation\Windows\um\propkey\um-propkey.h = generation\Windows\um\propkey\um-propkey.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "knownfolders", "knownfolders", "{DBA8B1B8-BE4B-4C8F-BD75-EAD47581AE39}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\knownfolders\generate.rsp = generation\Windows\um\knownfolders\generate.rsp
+		generation\Windows\um\knownfolders\header.txt = generation\Windows\um\knownfolders\header.txt
+		generation\Windows\um\knownfolders\um-knownfolders.h = generation\Windows\um\knownfolders\um-knownfolders.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "knownfolderpathscom", "knownfolderpathscom", "{EA5B695A-5F25-401E-9FD9-23BFDEFBA01B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\knownfolderpathscom\generate.rsp = generation\Windows\um\knownfolderpathscom\generate.rsp
+		generation\Windows\um\knownfolderpathscom\header.txt = generation\Windows\um\knownfolderpathscom\header.txt
+		generation\Windows\um\knownfolderpathscom\um-knownfolderpathscom.h = generation\Windows\um\knownfolderpathscom\um-knownfolderpathscom.h
 	EndProjectSection
 EndProject
 Global
@@ -3462,6 +3491,7 @@ Global
 		{55FB5A64-9A0B-4294-87F0-D8F81BE30692} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
 		{B281558F-E194-4AC3-BE1B-C7C2A748947E} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
 		{9C6E88A3-997E-4F11-AF25-18A54B110404} = {7C1DE5D1-1575-4443-8415-E7F70A687F4F}
+		{8891C297-49D7-495C-B66E-2A77C3D5F50D} = {3BDDFFAD-B31F-4930-B557-E8486D23C67A}
 		{ECCEAECE-9019-4EB6-A44A-244BCC77A624} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{65954CB3-F28F-4CF0-BC77-0FFD6E858BCE} = {93FF551D-EF97-4703-810F-13299940A464}
 		{F0F69CE3-AA7D-4673-AC07-F54578A75A91} = {65954CB3-F28F-4CF0-BC77-0FFD6E858BCE}
@@ -3470,6 +3500,9 @@ Global
 		{5911A131-AE94-40E8-B501-3C088C5252CE} = {65954CB3-F28F-4CF0-BC77-0FFD6E858BCE}
 		{19D7C317-C032-44BE-BBF7-D1D912585FE0} = {65954CB3-F28F-4CF0-BC77-0FFD6E858BCE}
 		{2BE4B04C-FB90-4A79-9161-3D1CA5E34825} = {65954CB3-F28F-4CF0-BC77-0FFD6E858BCE}
+		{21B748B3-53EF-42AD-B5F3-A5215C5AE574} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{DBA8B1B8-BE4B-4C8F-BD75-EAD47581AE39} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{EA5B695A-5F25-401E-9FD9-23BFDEFBA01B} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

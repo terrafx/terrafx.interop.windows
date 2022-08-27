@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -22,6 +23,7 @@ public partial struct LM_OWF_PASSWORD
         public CYPHER_BLOCK e0;
         public CYPHER_BLOCK e1;
 
+        [UnscopedRef]
         public ref CYPHER_BLOCK this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -32,6 +34,7 @@ public partial struct LM_OWF_PASSWORD
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<CYPHER_BLOCK> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
     }
 }

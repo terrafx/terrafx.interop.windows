@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="WICDdsParameters" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class WICDdsParametersTests
 {
     /// <summary>Validates that the <see cref="WICDdsParameters" /> struct is blittable.</summary>

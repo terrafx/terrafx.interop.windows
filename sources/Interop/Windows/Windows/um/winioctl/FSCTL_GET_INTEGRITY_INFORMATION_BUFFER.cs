@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.xml' path='doc/member[@name="FSCTL_GET_INTEGRITY_INFORMATION_BUFFER"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct FSCTL_GET_INTEGRITY_INFORMATION_BUFFER
 {
     /// <include file='FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.xml' path='doc/member[@name="FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.ChecksumAlgorithm"]/*' />

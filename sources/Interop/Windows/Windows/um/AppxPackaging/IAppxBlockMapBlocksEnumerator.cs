@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("6B429B5B-36EF-479E-B9EB-0C1482B49E16")]
 [NativeTypeName("struct IAppxBlockMapBlocksEnumerator : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IAppxBlockMapBlocksEnumerator : IAppxBlockMapBlocksEnumerator.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAppxBlockMapBlocksEnumerator));

@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CERT_STRONG_SIGN_SERIALIZED_INFO.xml' path='doc/member[@name="CERT_STRONG_SIGN_SERIALIZED_INFO"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct CERT_STRONG_SIGN_SERIALIZED_INFO
 {
     /// <include file='CERT_STRONG_SIGN_SERIALIZED_INFO.xml' path='doc/member[@name="CERT_STRONG_SIGN_SERIALIZED_INFO.dwFlags"]/*' />

@@ -3,6 +3,8 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -31,49 +33,55 @@ public unsafe partial struct COINSTALLER_CONTEXT_DATA
     [FieldOffset(0)]
     public COINSTALLER_CONTEXT_DATA64 _value64;
 
+    [UnscopedRef]
     public ref BOOL PostProcessing
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.PostProcessing, 1));
+                return ref _value32.PostProcessing;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.PostProcessing, 1));
+                return ref _value64.PostProcessing;
             }
         }
     }
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint InstallResult
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.InstallResult, 1));
+                return ref _value32.InstallResult;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.InstallResult, 1));
+                return ref _value64.InstallResult;
             }
         }
     }
 
     [NativeTypeName("PVOID")]
+    [UnscopedRef]
     public ref void* PrivateData
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).PrivateData;
+                return ref _value32.PrivateData;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).PrivateData;
+                return ref _value64.PrivateData;
             }
         }
     }

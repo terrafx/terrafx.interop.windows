@@ -62,13 +62,13 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDynamicTimeZoneInformation"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern uint EnumDynamicTimeZoneInformation([NativeTypeName("const DWORD")] uint dwIndex, [NativeTypeName("PDYNAMIC_TIME_ZONE_INFORMATION")] DYNAMIC_TIME_ZONE_INFORMATION* lpTimeZoneInformation);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDynamicTimeZoneInformationEffectiveYears"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern uint GetDynamicTimeZoneInformationEffectiveYears([NativeTypeName("const PDYNAMIC_TIME_ZONE_INFORMATION")] DYNAMIC_TIME_ZONE_INFORMATION* lpTimeZoneInformation, [NativeTypeName("LPDWORD")] uint* FirstYear, [NativeTypeName("LPDWORD")] uint* LastYear);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SystemTimeToTzSpecificLocalTimeEx"]/*' />

@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [Guid("7D9DCD91-D277-4947-8527-07A0DAEDA94A")]
 [NativeTypeName("struct IPdfRendererNative : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IPdfRendererNative : IPdfRendererNative.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPdfRendererNative));

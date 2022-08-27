@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("71CE469C-F34B-49EA-A56B-2D2A10E51149")]
 [NativeTypeName("struct IMFByteStreamCacheControl2 : IMFByteStreamCacheControl")]
 [NativeInheritance("IMFByteStreamCacheControl")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFByteStreamCacheControl2 : IMFByteStreamCacheControl2.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFByteStreamCacheControl2));

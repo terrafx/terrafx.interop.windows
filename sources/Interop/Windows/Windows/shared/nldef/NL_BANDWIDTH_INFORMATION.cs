@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='NL_BANDWIDTH_INFORMATION.xml' path='doc/member[@name="NL_BANDWIDTH_INFORMATION"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct NL_BANDWIDTH_INFORMATION
 {
     /// <include file='NL_BANDWIDTH_INFORMATION.xml' path='doc/member[@name="NL_BANDWIDTH_INFORMATION.Bandwidth"]/*' />

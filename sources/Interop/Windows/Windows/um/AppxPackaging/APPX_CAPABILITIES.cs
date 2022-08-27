@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='APPX_CAPABILITIES.xml' path='doc/member[@name="APPX_CAPABILITIES"]/*' />
 [Flags]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum APPX_CAPABILITIES
 {
     /// <include file='APPX_CAPABILITIES.xml' path='doc/member[@name="APPX_CAPABILITIES.APPX_CAPABILITY_INTERNET_CLIENT"]/*' />

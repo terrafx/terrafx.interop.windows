@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("00000040-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IFastRundown : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IFastRundown : IFastRundown.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFastRundown));

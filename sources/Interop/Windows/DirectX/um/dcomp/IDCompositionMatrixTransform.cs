@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("16CDFF07-C503-419C-83F2-0965C7AF1FA6")]
 [NativeTypeName("struct IDCompositionMatrixTransform : IDCompositionTransform")]
 [NativeInheritance("IDCompositionTransform")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IDCompositionMatrixTransform : IDCompositionMatrixTransform.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDCompositionMatrixTransform));

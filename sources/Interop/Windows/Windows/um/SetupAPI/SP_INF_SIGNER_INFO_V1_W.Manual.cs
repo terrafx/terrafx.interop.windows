@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -33,17 +35,19 @@ public unsafe partial struct SP_INF_SIGNER_INFO_V1_W
     public SP_INF_SIGNER_INFO64_V1_W _value64;
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint cbSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
+                return ref _value32.cbSize;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
+                return ref _value64.cbSize;
             }
         }
     }
@@ -55,11 +59,11 @@ public unsafe partial struct SP_INF_SIGNER_INFO_V1_W
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.CatalogFile[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.CatalogFile[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.CatalogFile[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.CatalogFile[0], 260);
             }
         }
     }
@@ -71,11 +75,11 @@ public unsafe partial struct SP_INF_SIGNER_INFO_V1_W
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.DigitalSigner[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.DigitalSigner[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.DigitalSigner[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.DigitalSigner[0], 260);
             }
         }
     }
@@ -87,11 +91,11 @@ public unsafe partial struct SP_INF_SIGNER_INFO_V1_W
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.DigitalSignerVersion[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.DigitalSignerVersion[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.DigitalSignerVersion[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.DigitalSignerVersion[0], 260);
             }
         }
     }

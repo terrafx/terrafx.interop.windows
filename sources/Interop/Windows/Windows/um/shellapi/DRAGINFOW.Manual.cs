@@ -3,6 +3,8 @@
 // Ported from um/shellapi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -31,79 +33,89 @@ public unsafe partial struct DRAGINFOW
     [FieldOffset(0)]
     public DRAGINFO64W _value64;
 
+    [UnscopedRef]
     public ref uint uSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.uSize, 1));
+                return ref _value32.uSize;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.uSize, 1));
+                return ref _value64.uSize;
             }
         }
     }
 
+    [UnscopedRef]
     public ref POINT pt
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.pt, 1));
+                return ref _value32.pt;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.pt, 1));
+                return ref _value64.pt;
             }
         }
     }
 
+    [UnscopedRef]
     public ref BOOL fNC
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.fNC, 1));
+                return ref _value32.fNC;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.fNC, 1));
+                return ref _value64.fNC;
             }
         }
     }
 
     [NativeTypeName("PZZWSTR")]
+    [UnscopedRef]
     public ref ushort* lpFileList
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).lpFileList;
+                return ref _value32.lpFileList;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).lpFileList;
+                return ref _value64.lpFileList;
             }
         }
     }
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint grfKeyState
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.grfKeyState, 1));
+                return ref _value32.grfKeyState;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.grfKeyState, 1));
+                return ref _value64.grfKeyState;
             }
         }
     }

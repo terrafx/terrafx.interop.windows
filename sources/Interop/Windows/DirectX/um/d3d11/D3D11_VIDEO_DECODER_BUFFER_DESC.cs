@@ -9,7 +9,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_VIDEO_DECODER_BUFFER_DESC.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_BUFFER_DESC"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct D3D11_VIDEO_DECODER_BUFFER_DESC
 {
     /// <include file='D3D11_VIDEO_DECODER_BUFFER_DESC.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_BUFFER_DESC.BufferType"]/*' />

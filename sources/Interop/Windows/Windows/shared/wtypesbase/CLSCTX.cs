@@ -86,6 +86,9 @@ public enum CLSCTX
     /// <include file='CLSCTX.xml' path='doc/member[@name="CLSCTX.CLSCTX_ACTIVATE_ARM32_SERVER"]/*' />
     CLSCTX_ACTIVATE_ARM32_SERVER = 0x2000000,
 
+    /// <include file='CLSCTX.xml' path='doc/member[@name="CLSCTX.CLSCTX_ALLOW_LOWER_TRUST_REGISTRATION"]/*' />
+    CLSCTX_ALLOW_LOWER_TRUST_REGISTRATION = 0x4000000,
+
     /// <include file='CLSCTX.xml' path='doc/member[@name="CLSCTX.CLSCTX_PS_DLL"]/*' />
     CLSCTX_PS_DLL = unchecked((int)(0x80000000)),
 }

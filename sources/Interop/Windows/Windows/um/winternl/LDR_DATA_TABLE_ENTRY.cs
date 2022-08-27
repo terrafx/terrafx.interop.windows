@@ -3,6 +3,7 @@
 // Ported from um/winternl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -50,22 +51,24 @@ public unsafe partial struct LDR_DATA_TABLE_ENTRY
     public uint TimeDateStamp;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.CheckSum"]/*' />
+    [UnscopedRef]
     public ref uint CheckSum
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.CheckSum, 1));
+            return ref Anonymous.CheckSum;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Reserved6"]/*' />
+    [UnscopedRef]
     public ref void* Reserved6
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.Reserved6;
+            return ref Anonymous.Reserved6;
         }
     }
 

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -94,6 +95,7 @@ public partial struct D3D12_FEATURE_DATA_VIDEO_PROCESS_SUPPORT
         public D3D12_VIDEO_PROCESS_FILTER_RANGE e30;
         public D3D12_VIDEO_PROCESS_FILTER_RANGE e31;
 
+        [UnscopedRef]
         public ref D3D12_VIDEO_PROCESS_FILTER_RANGE this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -104,6 +106,7 @@ public partial struct D3D12_FEATURE_DATA_VIDEO_PROCESS_SUPPORT
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<D3D12_VIDEO_PROCESS_FILTER_RANGE> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 32);
     }
 }

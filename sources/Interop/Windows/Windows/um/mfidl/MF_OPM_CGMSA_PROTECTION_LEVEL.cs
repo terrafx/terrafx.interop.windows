@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MF_OPM_CGMSA_PROTECTION_LEVEL.xml' path='doc/member[@name="MF_OPM_CGMSA_PROTECTION_LEVEL"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum MF_OPM_CGMSA_PROTECTION_LEVEL
 {
     /// <include file='MF_OPM_CGMSA_PROTECTION_LEVEL.xml' path='doc/member[@name="MF_OPM_CGMSA_PROTECTION_LEVEL.MF_OPM_CGMSA_OFF"]/*' />

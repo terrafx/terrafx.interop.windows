@@ -151,7 +151,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSystemTimePreciseAsFileTime"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern void GetSystemTimePreciseAsFileTime([NativeTypeName("LPFILETIME")] FILETIME* lpSystemTimeAsFileTime);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetProductInfo"]/*' />
@@ -204,7 +204,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InstallELAMCertificateInfo"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.1")]
+    [SupportedOSPlatform("windows6.3")]
     public static extern BOOL InstallELAMCertificateInfo(HANDLE ELAMFile);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetProcessorSystemCycleTime"]/*' />

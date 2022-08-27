@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_TRACE_GS_INPUT_PRIMITIVE.xml' path='doc/member[@name="D3D11_TRACE_GS_INPUT_PRIMITIVE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum D3D11_TRACE_GS_INPUT_PRIMITIVE
 {
     /// <include file='D3D11_TRACE_GS_INPUT_PRIMITIVE.xml' path='doc/member[@name="D3D11_TRACE_GS_INPUT_PRIMITIVE.D3D11_TRACE_GS_INPUT_PRIMITIVE_UNDEFINED"]/*' />

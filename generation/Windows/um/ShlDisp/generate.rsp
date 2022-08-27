@@ -13,4 +13,4 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ShlDisp.h
 --with-attribute
-IDataObjectAsyncCapability=SupportedOSPlatform("windows8.0")
+IDataObjectAsyncCapability=SupportedOSPlatform("windows6.2")

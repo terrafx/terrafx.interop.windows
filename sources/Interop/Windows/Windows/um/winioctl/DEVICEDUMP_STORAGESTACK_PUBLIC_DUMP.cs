@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -38,6 +39,7 @@ public unsafe partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP
     {
         public DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD e0;
 
+        [UnscopedRef]
         public ref DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -48,6 +50,7 @@ public unsafe partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -33,6 +34,7 @@ public partial struct SCM_PD_DEVICE_SPECIFIC_INFO
     {
         public SCM_PD_DEVICE_SPECIFIC_PROPERTY e0;
 
+        [UnscopedRef]
         public ref SCM_PD_DEVICE_SPECIFIC_PROPERTY this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,6 +45,7 @@ public partial struct SCM_PD_DEVICE_SPECIFIC_INFO
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<SCM_PD_DEVICE_SPECIFIC_PROPERTY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

@@ -3,6 +3,7 @@
 // Ported from d3d12.h in Microsoft.Direct3D.D3D12 v1.600.10
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -19,52 +20,57 @@ public partial struct D3D12_INDIRECT_ARGUMENT_DESC
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.VertexBuffer"]/*' />
+    [UnscopedRef]
     public ref _Anonymous_e__Union._VertexBuffer_e__Struct VertexBuffer
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.VertexBuffer, 1));
+            return ref Anonymous.VertexBuffer;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Constant"]/*' />
+    [UnscopedRef]
     public ref _Anonymous_e__Union._Constant_e__Struct Constant
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Constant, 1));
+            return ref Anonymous.Constant;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ConstantBufferView"]/*' />
+    [UnscopedRef]
     public ref _Anonymous_e__Union._ConstantBufferView_e__Struct ConstantBufferView
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ConstantBufferView, 1));
+            return ref Anonymous.ConstantBufferView;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ShaderResourceView"]/*' />
+    [UnscopedRef]
     public ref _Anonymous_e__Union._ShaderResourceView_e__Struct ShaderResourceView
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ShaderResourceView, 1));
+            return ref Anonymous.ShaderResourceView;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.UnorderedAccessView"]/*' />
+    [UnscopedRef]
     public ref _Anonymous_e__Union._UnorderedAccessView_e__Struct UnorderedAccessView
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.UnorderedAccessView, 1));
+            return ref Anonymous.UnorderedAccessView;
         }
     }
 

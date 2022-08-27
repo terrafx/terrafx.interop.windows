@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MF_PLUGIN_CONTROL_POLICY.xml' path='doc/member[@name="MF_PLUGIN_CONTROL_POLICY"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum MF_PLUGIN_CONTROL_POLICY
 {
     /// <include file='MF_PLUGIN_CONTROL_POLICY.xml' path='doc/member[@name="MF_PLUGIN_CONTROL_POLICY.MF_PLUGIN_CONTROL_POLICY_USE_ALL_PLUGINS"]/*' />

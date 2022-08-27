@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -11,7 +12,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='FILE_LEVEL_TRIM.xml' path='doc/member[@name="FILE_LEVEL_TRIM"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct FILE_LEVEL_TRIM
 {
     /// <include file='FILE_LEVEL_TRIM.xml' path='doc/member[@name="FILE_LEVEL_TRIM.Key"]/*' />
@@ -31,6 +32,7 @@ public partial struct FILE_LEVEL_TRIM
     {
         public FILE_LEVEL_TRIM_RANGE e0;
 
+        [UnscopedRef]
         public ref FILE_LEVEL_TRIM_RANGE this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -41,6 +43,7 @@ public partial struct FILE_LEVEL_TRIM
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<FILE_LEVEL_TRIM_RANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

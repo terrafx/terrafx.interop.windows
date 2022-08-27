@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PSS_OBJECT_TYPE.xml' path='doc/member[@name="PSS_OBJECT_TYPE"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum PSS_OBJECT_TYPE
 {
     /// <include file='PSS_OBJECT_TYPE.xml' path='doc/member[@name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_UNKNOWN"]/*' />

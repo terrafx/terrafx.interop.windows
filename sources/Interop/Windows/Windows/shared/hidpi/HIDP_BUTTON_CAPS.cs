@@ -3,6 +3,7 @@
 // Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -68,22 +69,24 @@ public unsafe partial struct HIDP_BUTTON_CAPS
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Range"]/*' />
+    [UnscopedRef]
     public ref _Anonymous_e__Union._Range_e__Struct Range
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Range, 1));
+            return ref Anonymous.Range;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.NotRange"]/*' />
+    [UnscopedRef]
     public ref _Anonymous_e__Union._NotRange_e__Struct NotRange
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NotRange, 1));
+            return ref Anonymous.NotRange;
         }
     }
 

@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("82237326-8111-4F7C-BCF4-B5C1175564FE")]
 [NativeTypeName("struct ID2D1GdiMetafileSink : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ID2D1GdiMetafileSink : ID2D1GdiMetafileSink.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1GdiMetafileSink));

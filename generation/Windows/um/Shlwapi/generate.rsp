@@ -34,6 +34,7 @@ UrlEscapeSpaces
 UrlIsFileUrlA
 UrlIsFileUrlW
 UrlUnescapeInPlace
+wnsprintf
 --file
 um-Shlwapi.h
 --methodClassName
@@ -47,9 +48,9 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/Shlwapi.h
 --with-attribute
-GetProcessReference=SupportedOSPlatform("windows8.0")
-SetProcessReference=SupportedOSPlatform("windows8.0")
-SHGetAssocKeys=SupportedOSPlatform("windows8.0")
+GetProcessReference=SupportedOSPlatform("windows6.2")
+SetProcessReference=SupportedOSPlatform("windows6.2")
+SHGetAssocKeys=SupportedOSPlatform("windows6.2")
 --with-librarypath
 AssocCreate=shlwapi
 AssocQueryKey=shlwapi

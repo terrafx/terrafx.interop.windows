@@ -3,6 +3,7 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -10,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CERT_STRONG_SIGN_PARA.xml' path='doc/member[@name="CERT_STRONG_SIGN_PARA"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct CERT_STRONG_SIGN_PARA
 {
     /// <include file='CERT_STRONG_SIGN_PARA.xml' path='doc/member[@name="CERT_STRONG_SIGN_PARA.cbSize"]/*' />
@@ -22,36 +23,39 @@ public unsafe partial struct CERT_STRONG_SIGN_PARA
     public uint dwInfoChoice;
 
     /// <include file='CERT_STRONG_SIGN_PARA.xml' path='doc/member[@name="CERT_STRONG_SIGN_PARA.Anonymous"]/*' />
-    [NativeTypeName("_CERT_STRONG_SIGN_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:6533:5)")]
+    [NativeTypeName("_CERT_STRONG_SIGN_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:6535:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pvInfo"]/*' />
+    [UnscopedRef]
     public ref void* pvInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pvInfo;
+            return ref Anonymous.pvInfo;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pSerializedInfo"]/*' />
+    [UnscopedRef]
     public ref CERT_STRONG_SIGN_SERIALIZED_INFO* pSerializedInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pSerializedInfo;
+            return ref Anonymous.pSerializedInfo;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pszOID"]/*' />
+    [UnscopedRef]
     public ref sbyte* pszOID
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pszOID;
+            return ref Anonymous.pszOID;
         }
     }
 

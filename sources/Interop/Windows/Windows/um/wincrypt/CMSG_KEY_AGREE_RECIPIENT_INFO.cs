@@ -3,6 +3,7 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -20,7 +21,7 @@ public unsafe partial struct CMSG_KEY_AGREE_RECIPIENT_INFO
     public uint dwOriginatorChoice;
 
     /// <include file='CMSG_KEY_AGREE_RECIPIENT_INFO.xml' path='doc/member[@name="CMSG_KEY_AGREE_RECIPIENT_INFO.Anonymous"]/*' />
-    [NativeTypeName("_CMSG_KEY_AGREE_RECIPIENT_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:7799:5)")]
+    [NativeTypeName("_CMSG_KEY_AGREE_RECIPIENT_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:7801:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='CMSG_KEY_AGREE_RECIPIENT_INFO.xml' path='doc/member[@name="CMSG_KEY_AGREE_RECIPIENT_INFO.UserKeyingMaterial"]/*' />
@@ -38,22 +39,24 @@ public unsafe partial struct CMSG_KEY_AGREE_RECIPIENT_INFO
     public CMSG_RECIPIENT_ENCRYPTED_KEY_INFO** rgpRecipientEncryptedKeys;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.OriginatorCertId"]/*' />
+    [UnscopedRef]
     public ref CERT_ID OriginatorCertId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.OriginatorCertId, 1));
+            return ref Anonymous.OriginatorCertId;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.OriginatorPublicKeyInfo"]/*' />
+    [UnscopedRef]
     public ref CERT_PUBLIC_KEY_INFO OriginatorPublicKeyInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.OriginatorPublicKeyInfo, 1));
+            return ref Anonymous.OriginatorPublicKeyInfo;
         }
     }
 

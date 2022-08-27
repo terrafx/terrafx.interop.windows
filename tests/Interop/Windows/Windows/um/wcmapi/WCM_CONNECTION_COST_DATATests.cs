@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="WCM_CONNECTION_COST_DATA" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class WCM_CONNECTION_COST_DATATests
 {
     /// <summary>Validates that the <see cref="WCM_CONNECTION_COST_DATA" /> struct is blittable.</summary>

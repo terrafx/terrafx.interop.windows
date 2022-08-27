@@ -9,7 +9,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct D3D11_TRACE_STATS
 {
     /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS.TraceDesc"]/*' />

@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("AE471C51-5F53-4A24-8D3E-D0C39C30B3F0")]
 [NativeTypeName("struct IDCompositionVirtualSurface : IDCompositionSurface")]
 [NativeInheritance("IDCompositionSurface")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IDCompositionVirtualSurface : IDCompositionVirtualSurface.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDCompositionVirtualSurface));

@@ -3,6 +3,7 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -35,22 +36,24 @@ public partial struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
     public DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AdditionalSignalInfo"]/*' />
+    [UnscopedRef]
     public ref _Anonymous_e__Union._AdditionalSignalInfo_e__Struct AdditionalSignalInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.AdditionalSignalInfo, 1));
+            return ref Anonymous.AdditionalSignalInfo;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.videoStandard"]/*' />
+    [UnscopedRef]
     public ref uint videoStandard
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.videoStandard, 1));
+            return ref Anonymous.videoStandard;
         }
     }
 

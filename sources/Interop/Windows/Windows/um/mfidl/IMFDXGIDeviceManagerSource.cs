@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("20BC074B-7A8D-4609-8C3B-64A0A3B5D7CE")]
 [NativeTypeName("struct IMFDXGIDeviceManagerSource : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IMFDXGIDeviceManagerSource : IMFDXGIDeviceManagerSource.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFDXGIDeviceManagerSource));

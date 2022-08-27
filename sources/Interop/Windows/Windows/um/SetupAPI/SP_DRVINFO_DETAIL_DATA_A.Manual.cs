@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -33,80 +35,90 @@ public unsafe partial struct SP_DRVINFO_DETAIL_DATA_A
     public SP_DRVINFO_DETAIL_DATA64_A _value64;
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint cbSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
+                return ref _value32.cbSize;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
+                return ref _value64.cbSize;
             }
         }
     }
 
+    [UnscopedRef]
     public ref FILETIME InfDate
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.InfDate, 1));
+                return ref _value32.InfDate;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.InfDate, 1));
+                return ref _value64.InfDate;
             }
         }
     }
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint CompatIDsOffset
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.CompatIDsOffset, 1));
+                return ref _value32.CompatIDsOffset;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.CompatIDsOffset, 1));
+                return ref _value64.CompatIDsOffset;
             }
         }
     }
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint CompatIDsLength
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.CompatIDsLength, 1));
+                return ref _value32.CompatIDsLength;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.CompatIDsLength, 1));
+                return ref _value64.CompatIDsLength;
             }
         }
     }
 
     [NativeTypeName("ULONG_PTR")]
+    [UnscopedRef]
     public ref nuint Reserved
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.Reserved, 1));
+                return ref _value32.Reserved;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.Reserved, 1));
+                return ref _value64.Reserved;
             }
         }
     }
@@ -118,11 +130,11 @@ public unsafe partial struct SP_DRVINFO_DETAIL_DATA_A
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.SectionName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.SectionName[0], 256);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.SectionName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.SectionName[0], 256);
             }
         }
     }
@@ -134,11 +146,11 @@ public unsafe partial struct SP_DRVINFO_DETAIL_DATA_A
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.InfFileName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.InfFileName[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.InfFileName[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.InfFileName[0], 260);
             }
         }
     }
@@ -150,11 +162,11 @@ public unsafe partial struct SP_DRVINFO_DETAIL_DATA_A
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.DrvDescription[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.DrvDescription[0], 256);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.DrvDescription[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.DrvDescription[0], 256);
             }
         }
     }

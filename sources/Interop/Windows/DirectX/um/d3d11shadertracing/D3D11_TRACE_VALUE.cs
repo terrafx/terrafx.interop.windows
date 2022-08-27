@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_TRACE_VALUE.xml' path='doc/member[@name="D3D11_TRACE_VALUE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct D3D11_TRACE_VALUE
 {
     /// <include file='D3D11_TRACE_VALUE.xml' path='doc/member[@name="D3D11_TRACE_VALUE.Bits"]/*' />

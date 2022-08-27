@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MF2DBuffer_LockFlags.xml' path='doc/member[@name="MF2DBuffer_LockFlags"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum MF2DBuffer_LockFlags
 {
     /// <include file='MF2DBuffer_LockFlags.xml' path='doc/member[@name="MF2DBuffer_LockFlags.MF2DBuffer_LockFlags_LockTypeMask"]/*' />

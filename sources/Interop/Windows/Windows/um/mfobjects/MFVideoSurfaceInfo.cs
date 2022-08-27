@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -29,6 +30,7 @@ public partial struct MFVideoSurfaceInfo
     {
         public MFPaletteEntry e0;
 
+        [UnscopedRef]
         public ref MFPaletteEntry this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,6 +41,7 @@ public partial struct MFVideoSurfaceInfo
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<MFPaletteEntry> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

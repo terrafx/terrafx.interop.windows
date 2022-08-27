@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WCM_TIME_INTERVAL.xml' path='doc/member[@name="WCM_TIME_INTERVAL"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct WCM_TIME_INTERVAL
 {
     /// <include file='WCM_TIME_INTERVAL.xml' path='doc/member[@name="WCM_TIME_INTERVAL.wYear"]/*' />

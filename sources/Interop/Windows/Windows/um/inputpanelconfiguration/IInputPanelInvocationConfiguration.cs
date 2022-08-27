@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("A213F136-3B45-4362-A332-EFB6547CD432")]
 [NativeTypeName("struct IInputPanelInvocationConfiguration : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IInputPanelInvocationConfiguration : IInputPanelInvocationConfiguration.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IInputPanelInvocationConfiguration));

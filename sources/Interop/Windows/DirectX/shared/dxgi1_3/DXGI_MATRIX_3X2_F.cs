@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DXGI_MATRIX_3X2_F.xml' path='doc/member[@name="DXGI_MATRIX_3X2_F"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public partial struct DXGI_MATRIX_3X2_F
 {
     /// <include file='DXGI_MATRIX_3X2_F.xml' path='doc/member[@name="DXGI_MATRIX_3X2_F._11"]/*' />

@@ -3,6 +3,7 @@
 // Ported from um/oaidl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -20,32 +21,35 @@ public unsafe partial struct TYPEDESC
     public ushort vt;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lptdesc"]/*' />
+    [UnscopedRef]
     public ref TYPEDESC* lptdesc
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.lptdesc;
+            return ref Anonymous.lptdesc;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lpadesc"]/*' />
+    [UnscopedRef]
     public ref ARRAYDESC* lpadesc
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.lpadesc;
+            return ref Anonymous.lpadesc;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hreftype"]/*' />
+    [UnscopedRef]
     public ref uint hreftype
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hreftype, 1));
+            return ref Anonymous.hreftype;
         }
     }
 

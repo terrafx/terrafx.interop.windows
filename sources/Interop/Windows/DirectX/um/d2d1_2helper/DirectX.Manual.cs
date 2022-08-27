@@ -10,7 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
-    [SupportedOSPlatform("windows8.1")]
+    [SupportedOSPlatform("windows6.3")]
     public static float ComputeFlatteningTolerance([NativeTypeName("const D2D1_MATRIX_3X2_F &")] in D2D_MATRIX_3X2_F matrix, float dpiX = 96.0f, float dpiY = 96.0f, float maxZoomFactor = 1.0f)
     {
         D2D_MATRIX_3X2_F dpiDependentTransform = matrix * D2D_MATRIX_3X2_F.Scale(dpiX / 96.0f, dpiY / 96.0f);

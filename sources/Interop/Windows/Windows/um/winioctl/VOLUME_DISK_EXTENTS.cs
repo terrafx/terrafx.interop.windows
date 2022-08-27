@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -25,6 +26,7 @@ public partial struct VOLUME_DISK_EXTENTS
     {
         public DISK_EXTENT e0;
 
+        [UnscopedRef]
         public ref DISK_EXTENT this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -35,6 +37,7 @@ public partial struct VOLUME_DISK_EXTENTS
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<DISK_EXTENT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

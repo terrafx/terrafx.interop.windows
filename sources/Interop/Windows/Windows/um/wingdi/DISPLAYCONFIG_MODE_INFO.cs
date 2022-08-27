@@ -3,6 +3,7 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -27,33 +28,36 @@ public partial struct DISPLAYCONFIG_MODE_INFO
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.targetMode"]/*' />
+    [UnscopedRef]
     public ref DISPLAYCONFIG_TARGET_MODE targetMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.targetMode, 1));
+            return ref Anonymous.targetMode;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.sourceMode"]/*' />
+    [UnscopedRef]
     public ref DISPLAYCONFIG_SOURCE_MODE sourceMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.sourceMode, 1));
+            return ref Anonymous.sourceMode;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.desktopImageInfo"]/*' />
     [SupportedOSPlatform("windows10.0.17763.0")]
+    [UnscopedRef]
     public ref DISPLAYCONFIG_DESKTOP_IMAGE_INFO desktopImageInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.desktopImageInfo, 1));
+            return ref Anonymous.desktopImageInfo;
         }
     }
 

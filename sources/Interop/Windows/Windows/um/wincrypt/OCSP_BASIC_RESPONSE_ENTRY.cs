@@ -3,6 +3,7 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -19,7 +20,7 @@ public unsafe partial struct OCSP_BASIC_RESPONSE_ENTRY
     public uint dwCertStatus;
 
     /// <include file='OCSP_BASIC_RESPONSE_ENTRY.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_ENTRY.Anonymous"]/*' />
-    [NativeTypeName("_OCSP_BASIC_RESPONSE_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:5682:5)")]
+    [NativeTypeName("_OCSP_BASIC_RESPONSE_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:5684:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='OCSP_BASIC_RESPONSE_ENTRY.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_ENTRY.ThisUpdate"]/*' />
@@ -37,12 +38,13 @@ public unsafe partial struct OCSP_BASIC_RESPONSE_ENTRY
     public CERT_EXTENSION* rgExtension;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pRevokedInfo"]/*' />
+    [UnscopedRef]
     public ref OCSP_BASIC_REVOKED_INFO* pRevokedInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pRevokedInfo;
+            return ref Anonymous.pRevokedInfo;
         }
     }
 

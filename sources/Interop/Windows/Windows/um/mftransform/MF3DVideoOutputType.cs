@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MF3DVideoOutputType.xml' path='doc/member[@name="MF3DVideoOutputType"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum MF3DVideoOutputType
 {
     /// <include file='MF3DVideoOutputType.xml' path='doc/member[@name="MF3DVideoOutputType.MF3DVideoOutputType_BaseView"]/*' />

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -25,6 +26,7 @@ public partial struct MIB_UDP6TABLE_OWNER_MODULE
     {
         public MIB_UDP6ROW_OWNER_MODULE e0;
 
+        [UnscopedRef]
         public ref MIB_UDP6ROW_OWNER_MODULE this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -35,6 +37,7 @@ public partial struct MIB_UDP6TABLE_OWNER_MODULE
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<MIB_UDP6ROW_OWNER_MODULE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

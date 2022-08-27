@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="PSS_AUXILIARY_PAGES_INFORMATION" /> struct.</summary>
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public static unsafe partial class PSS_AUXILIARY_PAGES_INFORMATIONTests
 {
     /// <summary>Validates that the <see cref="PSS_AUXILIARY_PAGES_INFORMATION" /> struct is blittable.</summary>

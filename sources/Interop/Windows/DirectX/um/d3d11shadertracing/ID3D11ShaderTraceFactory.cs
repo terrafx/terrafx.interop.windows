@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("1FBAD429-66AB-41CC-9617-667AC10E4459")]
 [NativeTypeName("struct ID3D11ShaderTraceFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ID3D11ShaderTraceFactory : ID3D11ShaderTraceFactory.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D11ShaderTraceFactory));

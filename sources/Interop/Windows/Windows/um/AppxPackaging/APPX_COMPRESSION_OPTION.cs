@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='APPX_COMPRESSION_OPTION.xml' path='doc/member[@name="APPX_COMPRESSION_OPTION"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum APPX_COMPRESSION_OPTION
 {
     /// <include file='APPX_COMPRESSION_OPTION.xml' path='doc/member[@name="APPX_COMPRESSION_OPTION.APPX_COMPRESSION_OPTION_NONE"]/*' />

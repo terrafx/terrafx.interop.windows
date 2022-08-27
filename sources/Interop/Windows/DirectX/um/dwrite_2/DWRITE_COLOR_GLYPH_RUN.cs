@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DWRITE_COLOR_GLYPH_RUN.xml' path='doc/member[@name="DWRITE_COLOR_GLYPH_RUN"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct DWRITE_COLOR_GLYPH_RUN
 {
     /// <include file='DWRITE_COLOR_GLYPH_RUN.xml' path='doc/member[@name="DWRITE_COLOR_GLYPH_RUN.glyphRun"]/*' />

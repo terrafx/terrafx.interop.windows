@@ -245,14 +245,14 @@ public static unsafe partial class Windows
     public static extern HRESULT SHGetLocalizedName([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PWSTR")] ushort* pszResModule, uint cch, int* pidsRes);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellMessageBoxA"]/*' />
-    [DllImport("shlwapi", ExactSpelling = true)]
+    [DllImport("shlwapi", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern int ShellMessageBoxA(HINSTANCE hAppInst, HWND hWnd, [NativeTypeName("LPCSTR")] sbyte* lpcText, [NativeTypeName("LPCSTR")] sbyte* lpcTitle, uint fuStyle);
+    public static extern int ShellMessageBoxA(HINSTANCE hAppInst, HWND hWnd, [NativeTypeName("LPCSTR")] sbyte* lpcText, [NativeTypeName("LPCSTR")] sbyte* lpcTitle, uint fuStyle, __arglist);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellMessageBoxW"]/*' />
-    [DllImport("shlwapi", ExactSpelling = true)]
+    [DllImport("shlwapi", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern int ShellMessageBoxW(HINSTANCE hAppInst, HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpcText, [NativeTypeName("LPCWSTR")] ushort* lpcTitle, uint fuStyle);
+    public static extern int ShellMessageBoxW(HINSTANCE hAppInst, HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpcText, [NativeTypeName("LPCWSTR")] ushort* lpcTitle, uint fuStyle, __arglist);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsLFNDriveA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -544,9 +544,6 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define OFFLINE_STATUS_INCOMPLETE 0x0004")]
     public const int OFFLINE_STATUS_INCOMPLETE = 0x0004;
-
-    [NativeTypeName("#define ShellMessageBox ShellMessageBoxW")]
-    public static delegate*<HINSTANCE, HWND, ushort*, ushort*, uint, int> ShellMessageBox => &ShellMessageBoxW;
 
     [NativeTypeName("#define IsLFNDrive IsLFNDriveW")]
     public static delegate*<ushort*, BOOL> IsLFNDrive => &IsLFNDriveW;

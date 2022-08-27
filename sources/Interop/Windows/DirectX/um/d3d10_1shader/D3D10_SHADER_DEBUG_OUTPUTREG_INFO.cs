@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -43,6 +44,7 @@ public unsafe partial struct D3D10_SHADER_DEBUG_OUTPUTREG_INFO
         public D3D10_SHADER_DEBUG_OUTPUTVAR e2;
         public D3D10_SHADER_DEBUG_OUTPUTVAR e3;
 
+        [UnscopedRef]
         public ref D3D10_SHADER_DEBUG_OUTPUTVAR this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -53,6 +55,7 @@ public unsafe partial struct D3D10_SHADER_DEBUG_OUTPUTREG_INFO
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<D3D10_SHADER_DEBUG_OUTPUTVAR> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 4);
     }
 }

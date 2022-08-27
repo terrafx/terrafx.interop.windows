@@ -13,12 +13,12 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/UserEnv.h
 --with-attribute
-CreateAppContainerProfile=SupportedOSPlatform("windows8.0")
-DeleteAppContainerProfile=SupportedOSPlatform("windows8.0")
-DeriveAppContainerSidFromAppContainerName=SupportedOSPlatform("windows8.0")
+CreateAppContainerProfile=SupportedOSPlatform("windows6.2")
+DeleteAppContainerProfile=SupportedOSPlatform("windows6.2")
+DeriveAppContainerSidFromAppContainerName=SupportedOSPlatform("windows6.2")
 DeriveRestrictedAppContainerSidFromAppContainerSidAndRestrictedName=SupportedOSPlatform("windows10.0")
-GetAppContainerFolderPath=SupportedOSPlatform("windows8.0")
-GetAppContainerRegistryLocation=SupportedOSPlatform("windows8.0")
+GetAppContainerFolderPath=SupportedOSPlatform("windows6.2")
+GetAppContainerRegistryLocation=SupportedOSPlatform("windows6.2")
 --with-librarypath
 CreateAppContainerProfile=userenv
 CreateEnvironmentBlock=userenv

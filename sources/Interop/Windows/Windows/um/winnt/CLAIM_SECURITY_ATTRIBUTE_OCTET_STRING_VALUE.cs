@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE.xml' path='doc/member[@name="CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE
 {
     /// <include file='CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE.xml' path='doc/member[@name="CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE.pValue"]/*' />

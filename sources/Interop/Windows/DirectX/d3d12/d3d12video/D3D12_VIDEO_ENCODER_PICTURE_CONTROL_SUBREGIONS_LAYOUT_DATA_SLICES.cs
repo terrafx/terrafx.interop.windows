@@ -3,6 +3,7 @@
 // Ported from d3d12video.h in Microsoft.Direct3D.D3D12 v1.600.10
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -16,42 +17,46 @@ public partial struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.MaxBytesPerSlice"]/*' />
+    [UnscopedRef]
     public ref uint MaxBytesPerSlice
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.MaxBytesPerSlice, 1));
+            return ref Anonymous.MaxBytesPerSlice;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.NumberOfCodingUnitsPerSlice"]/*' />
+    [UnscopedRef]
     public ref uint NumberOfCodingUnitsPerSlice
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NumberOfCodingUnitsPerSlice, 1));
+            return ref Anonymous.NumberOfCodingUnitsPerSlice;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.NumberOfRowsPerSlice"]/*' />
+    [UnscopedRef]
     public ref uint NumberOfRowsPerSlice
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NumberOfRowsPerSlice, 1));
+            return ref Anonymous.NumberOfRowsPerSlice;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.NumberOfSlicesPerFrame"]/*' />
+    [UnscopedRef]
     public ref uint NumberOfSlicesPerFrame
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NumberOfSlicesPerFrame, 1));
+            return ref Anonymous.NumberOfSlicesPerFrame;
         }
     }
 

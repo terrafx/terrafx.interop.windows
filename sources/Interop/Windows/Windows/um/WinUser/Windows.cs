@@ -22,14 +22,14 @@ public static unsafe partial class Windows
     public static extern int wvsprintfW([NativeTypeName("LPWSTR")] ushort* param0, [NativeTypeName("LPCWSTR")] ushort* param1, [NativeTypeName("va_list")] sbyte* arglist);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.wsprintfA"]/*' />
-    [DllImport("user32", ExactSpelling = true)]
+    [DllImport("user32", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern int wsprintfA([NativeTypeName("LPSTR")] sbyte* param0, [NativeTypeName("LPCSTR")] sbyte* param1);
+    public static extern int wsprintfA([NativeTypeName("LPSTR")] sbyte* param0, [NativeTypeName("LPCSTR")] sbyte* param1, __arglist);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.wsprintfW"]/*' />
-    [DllImport("user32", ExactSpelling = true)]
+    [DllImport("user32", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern int wsprintfW([NativeTypeName("LPWSTR")] ushort* param0, [NativeTypeName("LPCWSTR")] ushort* param1);
+    public static extern int wsprintfW([NativeTypeName("LPWSTR")] ushort* param0, [NativeTypeName("LPCWSTR")] ushort* param1, __arglist);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadKeyboardLayoutA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -332,7 +332,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetUnpredictedMessagePos"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern uint GetUnpredictedMessagePos();
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsWow64Message"]/*' />
@@ -433,13 +433,13 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterSuspendResumeNotification"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HPOWERNOTIFY RegisterSuspendResumeNotification(HANDLE hRecipient, [NativeTypeName("DWORD")] uint Flags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterSuspendResumeNotification"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL UnregisterSuspendResumeNotification(HPOWERNOTIFY Handle);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PostMessageA"]/*' />
@@ -1274,115 +1274,115 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InitializeTouchInjection"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL InitializeTouchInjection([NativeTypeName("UINT32")] uint maxCount, [NativeTypeName("DWORD")] uint dwMode);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InjectTouchInput"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL InjectTouchInput([NativeTypeName("UINT32")] uint count, [NativeTypeName("const POINTER_TOUCH_INFO *")] POINTER_TOUCH_INFO* contacts);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerType"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerType([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("POINTER_INPUT_TYPE *")] uint* pointerType);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerCursorId"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerCursorId([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* cursorId);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerInfo([NativeTypeName("UINT32")] uint pointerId, POINTER_INFO* pointerInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerInfoHistory"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, POINTER_INFO* pointerInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerFrameInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerFrameInfo([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_INFO* pointerInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerFrameInfoHistory"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerFrameInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_INFO* pointerInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerTouchInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerTouchInfo([NativeTypeName("UINT32")] uint pointerId, POINTER_TOUCH_INFO* touchInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerTouchInfoHistory"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerTouchInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, POINTER_TOUCH_INFO* touchInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerFrameTouchInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerFrameTouchInfo([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_TOUCH_INFO* touchInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerFrameTouchInfoHistory"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerFrameTouchInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_TOUCH_INFO* touchInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerPenInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerPenInfo([NativeTypeName("UINT32")] uint pointerId, POINTER_PEN_INFO* penInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerPenInfoHistory"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerPenInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, POINTER_PEN_INFO* penInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerFramePenInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerFramePenInfo([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_PEN_INFO* penInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerFramePenInfoHistory"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerFramePenInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_PEN_INFO* penInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SkipPointerFrameMessages"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL SkipPointerFrameMessages([NativeTypeName("UINT32")] uint pointerId);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterPointerInputTarget"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL RegisterPointerInputTarget(HWND hwnd, [NativeTypeName("POINTER_INPUT_TYPE")] uint pointerType);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterPointerInputTarget"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL UnregisterPointerInputTarget(HWND hwnd, [NativeTypeName("POINTER_INPUT_TYPE")] uint pointerType);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterPointerInputTargetEx"]/*' />
@@ -1415,52 +1415,52 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnableMouseInPointer"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL EnableMouseInPointer(BOOL fEnable);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsMouseInPointerEnabled"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL IsMouseInPointerEnabled();
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterTouchHitTestingWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL RegisterTouchHitTestingWindow(HWND hwnd, [NativeTypeName("ULONG")] uint value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EvaluateProximityToRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL EvaluateProximityToRect([NativeTypeName("const RECT *")] RECT* controlBoundingBox, [NativeTypeName("const TOUCH_HIT_TESTING_INPUT *")] TOUCH_HIT_TESTING_INPUT* pHitTestingInput, TOUCH_HIT_TESTING_PROXIMITY_EVALUATION* pProximityEval);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EvaluateProximityToPolygon"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL EvaluateProximityToPolygon([NativeTypeName("UINT32")] uint numVertices, [NativeTypeName("const POINT *")] POINT* controlPolygon, [NativeTypeName("const TOUCH_HIT_TESTING_INPUT *")] TOUCH_HIT_TESTING_INPUT* pHitTestingInput, TOUCH_HIT_TESTING_PROXIMITY_EVALUATION* pProximityEval);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PackTouchHitTestingProximityEvaluation"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern LRESULT PackTouchHitTestingProximityEvaluation([NativeTypeName("const TOUCH_HIT_TESTING_INPUT *")] TOUCH_HIT_TESTING_INPUT* pHitTestingInput, [NativeTypeName("const TOUCH_HIT_TESTING_PROXIMITY_EVALUATION *")] TOUCH_HIT_TESTING_PROXIMITY_EVALUATION* pProximityEval);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowFeedbackSetting"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetWindowFeedbackSetting(HWND hwnd, FEEDBACK_TYPE feedback, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("UINT32 *")] uint* pSize, void* config);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowFeedbackSetting"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL SetWindowFeedbackSetting(HWND hwnd, FEEDBACK_TYPE feedback, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("UINT32")] uint size, [NativeTypeName("const void *")] void* configuration);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerInputTransform"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.1")]
+    [SupportedOSPlatform("windows6.3")]
     public static extern BOOL GetPointerInputTransform([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32")] uint historyCount, INPUT_TRANSFORM* inputTransform);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetLastInputInfo"]/*' />
@@ -1525,7 +1525,7 @@ public static unsafe partial class Windows
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("UINT_PTR")]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern nuint SetCoalescableTimer(HWND hWnd, [NativeTypeName("UINT_PTR")] nuint nIDEvent, uint uElapse, [NativeTypeName("TIMERPROC")] delegate* unmanaged<HWND, uint, nuint, uint, void> lpTimerFunc, [NativeTypeName("ULONG")] uint uToleranceDelay);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.KillTimer"]/*' />
@@ -2293,12 +2293,12 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LogicalToPhysicalPointForPerMonitorDPI"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.1")]
+    [SupportedOSPlatform("windows6.3")]
     public static extern BOOL LogicalToPhysicalPointForPerMonitorDPI(HWND hWnd, [NativeTypeName("LPPOINT")] POINT* lpPoint);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PhysicalToLogicalPointForPerMonitorDPI"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.1")]
+    [SupportedOSPlatform("windows6.3")]
     public static extern BOOL PhysicalToLogicalPointForPerMonitorDPI(HWND hWnd, [NativeTypeName("LPPOINT")] POINT* lpPoint);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MapWindowPoints"]/*' />
@@ -3241,43 +3241,43 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerDevices"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerDevices([NativeTypeName("UINT32 *")] uint* deviceCount, POINTER_DEVICE_INFO* pointerDevices);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerDevice"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerDevice(HANDLE device, POINTER_DEVICE_INFO* pointerDevice);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerDeviceProperties"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerDeviceProperties(HANDLE device, [NativeTypeName("UINT32 *")] uint* propertyCount, POINTER_DEVICE_PROPERTY* pointerProperties);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterPointerDeviceNotifications"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL RegisterPointerDeviceNotifications(HWND window, BOOL notifyRange);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerDeviceRects"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerDeviceRects(HANDLE device, RECT* pointerDeviceRect, RECT* displayRect);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerDeviceCursors"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerDeviceCursors(HANDLE device, [NativeTypeName("UINT32 *")] uint* cursorCount, POINTER_DEVICE_CURSOR_INFO* deviceCursors);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetRawPointerDeviceData"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetRawPointerDeviceData([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32")] uint historyCount, [NativeTypeName("UINT32")] uint propertiesCount, POINTER_DEVICE_PROPERTY* pProperties, [NativeTypeName("LONG *")] int* pValues);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ChangeWindowMessageFilter"]/*' />
@@ -3333,12 +3333,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCurrentInputMessageSource"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetCurrentInputMessageSource(INPUT_MESSAGE_SOURCE* inputMessageSource);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCIMSSM"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetCIMSSM(INPUT_MESSAGE_SOURCE* inputMessageSource);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAutoRotationState"]/*' />
@@ -3347,7 +3347,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDisplayAutoRotationPreferences"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetDisplayAutoRotationPreferences(ORIENTATION_PREFERENCE* pOrientation);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDisplayAutoRotationPreferences"]/*' />
@@ -3357,13 +3357,13 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsImmersiveProcess"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL IsImmersiveProcess(HANDLE hProcess);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetProcessRestrictionExemption"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL SetProcessRestrictionExemption(BOOL fEnableExemption);
 
     [NativeTypeName("#define DIFFERENCE 11")]
@@ -3389,9 +3389,6 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define wvsprintf wvsprintfW")]
     public static delegate*<ushort*, ushort*, sbyte*, int> wvsprintf => &wvsprintfW;
-
-    [NativeTypeName("#define wsprintf wsprintfW")]
-    public static delegate*<ushort*, ushort*, int> wsprintf => &wsprintfW;
 
     [NativeTypeName("#define SETWALLPAPER_DEFAULT ((LPWSTR)-1)")]
     public static ushort* SETWALLPAPER_DEFAULT => unchecked((ushort*)(-1));

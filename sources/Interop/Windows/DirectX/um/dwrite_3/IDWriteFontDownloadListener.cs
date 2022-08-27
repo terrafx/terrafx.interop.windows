@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("B06FE5B9-43EC-4393-881B-DBE4DC72FDA7")]
 [NativeTypeName("struct IDWriteFontDownloadListener : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDWriteFontDownloadListener : IDWriteFontDownloadListener.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWriteFontDownloadListener));

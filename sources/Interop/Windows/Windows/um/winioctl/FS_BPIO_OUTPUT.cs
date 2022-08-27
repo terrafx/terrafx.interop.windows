@@ -3,6 +3,7 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -26,56 +27,61 @@ public partial struct FS_BPIO_OUTPUT
     public ulong Reserved2;
 
     /// <include file='FS_BPIO_OUTPUT.xml' path='doc/member[@name="FS_BPIO_OUTPUT.Anonymous"]/*' />
-    [NativeTypeName("_FS_BPIO_OUTPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:17039:5)")]
+    [NativeTypeName("_FS_BPIO_OUTPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:17062:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Enable"]/*' />
+    [UnscopedRef]
     public ref FS_BPIO_RESULTS Enable
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Enable, 1));
+            return ref Anonymous.Enable;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Query"]/*' />
+    [UnscopedRef]
     public ref FS_BPIO_RESULTS Query
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Query, 1));
+            return ref Anonymous.Query;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.VolumeStackResume"]/*' />
+    [UnscopedRef]
     public ref FS_BPIO_RESULTS VolumeStackResume
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.VolumeStackResume, 1));
+            return ref Anonymous.VolumeStackResume;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.StreamResume"]/*' />
+    [UnscopedRef]
     public ref FS_BPIO_RESULTS StreamResume
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.StreamResume, 1));
+            return ref Anonymous.StreamResume;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.GetInfo"]/*' />
+    [UnscopedRef]
     public ref FS_BPIO_INFO GetInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.GetInfo, 1));
+            return ref Anonymous.GetInfo;
         }
     }
 

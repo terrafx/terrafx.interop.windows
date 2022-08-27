@@ -10,7 +10,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class FSCTL_SET_INTEGRITY_INFORMATION_BUFFERTests
 {
     /// <summary>Validates that the <see cref="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER" /> struct is blittable.</summary>

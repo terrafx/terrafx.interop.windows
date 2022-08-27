@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DCOMPOSITION_COMPOSITE_MODE.xml' path='doc/member[@name="DCOMPOSITION_COMPOSITE_MODE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum DCOMPOSITION_COMPOSITE_MODE
 {
     /// <include file='DCOMPOSITION_COMPOSITE_MODE.xml' path='doc/member[@name="DCOMPOSITION_COMPOSITE_MODE.DCOMPOSITION_COMPOSITE_MODE_SOURCE_OVER"]/*' />

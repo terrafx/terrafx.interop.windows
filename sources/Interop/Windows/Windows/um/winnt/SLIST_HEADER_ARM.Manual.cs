@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -19,30 +20,33 @@ public partial struct SLIST_HEADER_ARM
     [NativeTypeName("_SLIST_HEADER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:21266:5)")]
     public _Anonymous_e__Struct Anonymous;
 
+    [UnscopedRef]
     public ref SLIST_ENTRY Next
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Next, 1));
+            return ref Anonymous.Next;
         }
     }
 
+    [UnscopedRef]
     public ref ushort Depth
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Depth, 1));
+            return ref Anonymous.Depth;
         }
     }
 
+    [UnscopedRef]
     public ref ushort Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Reserved, 1));
+            return ref Anonymous.Reserved;
         }
     }
 

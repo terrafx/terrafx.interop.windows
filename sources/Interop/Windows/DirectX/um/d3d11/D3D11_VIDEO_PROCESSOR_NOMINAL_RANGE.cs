@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public enum D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE
 {
     /// <include file='D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE.xml' path='doc/member[@name="D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE.D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE_UNDEFINED"]/*' />

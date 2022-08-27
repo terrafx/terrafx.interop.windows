@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='APPX_PACKAGE_SETTINGS.xml' path='doc/member[@name="APPX_PACKAGE_SETTINGS"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct APPX_PACKAGE_SETTINGS
 {
     /// <include file='APPX_PACKAGE_SETTINGS.xml' path='doc/member[@name="APPX_PACKAGE_SETTINGS.forceZip32"]/*' />

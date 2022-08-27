@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='USN_JOURNAL_DATA_V2.xml' path='doc/member[@name="USN_JOURNAL_DATA_V2"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public partial struct USN_JOURNAL_DATA_V2
 {
     /// <include file='USN_JOURNAL_DATA_V2.xml' path='doc/member[@name="USN_JOURNAL_DATA_V2.UsnJournalID"]/*' />

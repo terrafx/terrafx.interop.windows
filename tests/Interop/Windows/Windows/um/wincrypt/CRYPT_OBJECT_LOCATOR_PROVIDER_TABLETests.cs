@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE" /> struct.</summary>
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class CRYPT_OBJECT_LOCATOR_PROVIDER_TABLETests
 {
     /// <summary>Validates that the <see cref="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE" /> struct is blittable.</summary>

@@ -3,6 +3,7 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -20,36 +21,39 @@ public partial struct SD_GLOBAL_CHANGE_INPUT
     public uint ChangeType;
 
     /// <include file='SD_GLOBAL_CHANGE_INPUT.xml' path='doc/member[@name="SD_GLOBAL_CHANGE_INPUT.Anonymous"]/*' />
-    [NativeTypeName("_SD_GLOBAL_CHANGE_INPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:14392:5)")]
+    [NativeTypeName("_SD_GLOBAL_CHANGE_INPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:14396:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.SdChange"]/*' />
+    [UnscopedRef]
     public ref SD_CHANGE_MACHINE_SID_INPUT SdChange
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SdChange, 1));
+            return ref Anonymous.SdChange;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.SdQueryStats"]/*' />
+    [UnscopedRef]
     public ref SD_QUERY_STATS_INPUT SdQueryStats
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SdQueryStats, 1));
+            return ref Anonymous.SdQueryStats;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.SdEnumSds"]/*' />
+    [UnscopedRef]
     public ref SD_ENUM_SDS_INPUT SdEnumSds
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SdEnumSds, 1));
+            return ref Anonymous.SdEnumSds;
         }
     }
 

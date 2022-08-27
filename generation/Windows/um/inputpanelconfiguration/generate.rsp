@@ -13,5 +13,5 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/inputpanelconfiguration.h
 --with-attribute
-IInputPanelConfiguration=SupportedOSPlatform("windows8.0")
-IInputPanelInvocationConfiguration=SupportedOSPlatform("windows8.0")
+IInputPanelConfiguration=SupportedOSPlatform("windows6.2")
+IInputPanelInvocationConfiguration=SupportedOSPlatform("windows6.2")

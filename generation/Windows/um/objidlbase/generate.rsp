@@ -15,15 +15,15 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/objidlbase.h
 --with-attribute
-CO_MARSHALING_CONTEXT_ATTRIBUTES=SupportedOSPlatform("windows8.0")
+CO_MARSHALING_CONTEXT_ATTRIBUTES=SupportedOSPlatform("windows6.2")
 EOLE_AUTHENTICATION_CAPABILITIES=Flags
 EXTCONN=Flags
-GLOBALOPT_PROPERTIES=SupportedOSPlatform("windows8.0")
+GLOBALOPT_PROPERTIES=SupportedOSPlatform("windows6.2")
 GLOBALOPT_RO_FLAGS=Flags
-GLOBALOPT_UNMARSHALING_POLICY_VALUES=SupportedOSPlatform("windows8.0")
-IAgileObject=SupportedOSPlatform("windows8.0")
-IFastRundown=SupportedOSPlatform("windows8.0")
-IMarshalingStream=SupportedOSPlatform("windows8.0")
-INoMarshal=SupportedOSPlatform("windows8.0")
+GLOBALOPT_UNMARSHALING_POLICY_VALUES=SupportedOSPlatform("windows6.2")
+IAgileObject=SupportedOSPlatform("windows6.2")
+IFastRundown=SupportedOSPlatform("windows6.2")
+IMarshalingStream=SupportedOSPlatform("windows6.2")
+INoMarshal=SupportedOSPlatform("windows6.2")
 --with-type
 CO_MARSHALING_CONTEXT_ATTRIBUTES=uint

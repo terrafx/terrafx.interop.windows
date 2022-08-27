@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -33,64 +35,72 @@ public unsafe partial struct SP_BACKUP_QUEUE_PARAMS_V2_W
     public SP_BACKUP_QUEUE_PARAMS64_V2_W _value64;
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint cbSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
+                return ref _value32.cbSize;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
+                return ref _value64.cbSize;
             }
         }
     }
 
     [NativeTypeName("WCHAR [260]")]
+    [UnscopedRef]
     public Span<ushort> FullInfPath
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.FullInfPath[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.FullInfPath[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.FullInfPath[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.FullInfPath[0], 260);
             }
         }
     }
 
+    [UnscopedRef]
     public ref int FilenameOffset
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.FilenameOffset, 1));
+                return ref _value32.FilenameOffset;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.FilenameOffset, 1));
+                return ref _value64.FilenameOffset;
             }
         }
     }
 
     [NativeTypeName("WCHAR [260]")]
+    [UnscopedRef]
     public Span<ushort> ReinstallInstance
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return MemoryMarshal.CreateSpan(ref _value32.ReinstallInstance[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value32.ReinstallInstance[0], 260);
             }
             else
             {
-                return MemoryMarshal.CreateSpan(ref _value64.ReinstallInstance[0], 1);
+                return MemoryMarshal.CreateSpan(ref _value64.ReinstallInstance[0], 260);
             }
         }
     }

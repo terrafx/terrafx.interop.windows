@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WTS_CONTEXTFLAGS.xml' path='doc/member[@name="WTS_CONTEXTFLAGS"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum WTS_CONTEXTFLAGS
 {
     /// <include file='WTS_CONTEXTFLAGS.xml' path='doc/member[@name="WTS_CONTEXTFLAGS.WTSCF_DEFAULT"]/*' />

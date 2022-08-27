@@ -166,26 +166,26 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PrefetchVirtualMemory"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL PrefetchVirtualMemory(HANDLE hProcess, [NativeTypeName("ULONG_PTR")] nuint NumberOfEntries, [NativeTypeName("PWIN32_MEMORY_RANGE_ENTRY")] WIN32_MEMORY_RANGE_ENTRY* VirtualAddresses, [NativeTypeName("ULONG")] uint Flags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFileMappingFromApp"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern HANDLE CreateFileMappingFromApp(HANDLE hFile, [NativeTypeName("PSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* SecurityAttributes, [NativeTypeName("ULONG")] uint PageProtection, [NativeTypeName("ULONG64")] ulong MaximumSize, [NativeTypeName("PCWSTR")] ushort* Name);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MapViewOfFileFromApp"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PVOID")]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern void* MapViewOfFileFromApp(HANDLE hFileMappingObject, [NativeTypeName("ULONG")] uint DesiredAccess, [NativeTypeName("ULONG64")] ulong FileOffset, [NativeTypeName("SIZE_T")] nuint NumberOfBytesToMap);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UnmapViewOfFileEx"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL UnmapViewOfFileEx([NativeTypeName("PVOID")] void* BaseAddress, [NativeTypeName("ULONG")] uint UnmapFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AllocateUserPhysicalPages"]/*' />
@@ -217,37 +217,37 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMemoryErrorHandlingCapabilities"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetMemoryErrorHandlingCapabilities([NativeTypeName("PULONG")] uint* Capabilities);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterBadMemoryNotification"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [return: NativeTypeName("PVOID")]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern void* RegisterBadMemoryNotification([NativeTypeName("PBAD_MEMORY_CALLBACK_ROUTINE")] delegate* unmanaged<void> Callback);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterBadMemoryNotification"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    [SupportedOSPlatform("windows8.0")]
+    [SupportedOSPlatform("windows6.2")]
     public static extern BOOL UnregisterBadMemoryNotification([NativeTypeName("PVOID")] void* RegistrationHandle);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OfferVirtualMemory"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    [SupportedOSPlatform("windows8.1")]
+    [SupportedOSPlatform("windows6.3")]
     public static extern uint OfferVirtualMemory([NativeTypeName("PVOID")] void* VirtualAddress, [NativeTypeName("SIZE_T")] nuint Size, OFFER_PRIORITY Priority);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ReclaimVirtualMemory"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    [SupportedOSPlatform("windows8.1")]
+    [SupportedOSPlatform("windows6.3")]
     public static extern uint ReclaimVirtualMemory([NativeTypeName("const void *")] void* VirtualAddress, [NativeTypeName("SIZE_T")] nuint Size);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DiscardVirtualMemory"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    [SupportedOSPlatform("windows8.1")]
+    [SupportedOSPlatform("windows6.3")]
     public static extern uint DiscardVirtualMemory([NativeTypeName("PVOID")] void* VirtualAddress, [NativeTypeName("SIZE_T")] nuint Size);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetProcessValidCallTargets"]/*' />

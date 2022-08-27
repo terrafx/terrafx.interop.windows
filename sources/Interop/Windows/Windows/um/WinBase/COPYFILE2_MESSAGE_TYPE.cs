@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='COPYFILE2_MESSAGE_TYPE.xml' path='doc/member[@name="COPYFILE2_MESSAGE_TYPE"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public enum COPYFILE2_MESSAGE_TYPE
 {
     /// <include file='COPYFILE2_MESSAGE_TYPE.xml' path='doc/member[@name="COPYFILE2_MESSAGE_TYPE.COPYFILE2_CALLBACK_NONE"]/*' />

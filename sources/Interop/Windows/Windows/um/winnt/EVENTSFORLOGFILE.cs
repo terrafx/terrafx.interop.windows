@@ -3,6 +3,11 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE"]/*' />
@@ -22,5 +27,25 @@ public unsafe partial struct EVENTSFORLOGFILE
 
     /// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE.pEventLogRecords"]/*' />
     [NativeTypeName("EVENTLOGRECORD[]")]
-    public EVENTLOGRECORD pEventLogRecords;
+    public _pEventLogRecords_e__FixedBuffer pEventLogRecords;
+
+    /// <include file='_pEventLogRecords_e__FixedBuffer.xml' path='doc/member[@name="_pEventLogRecords_e__FixedBuffer"]/*' />
+    public partial struct _pEventLogRecords_e__FixedBuffer
+    {
+        public EVENTLOGRECORD e0;
+
+        [UnscopedRef]
+        public ref EVENTLOGRECORD this[int index]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
+        public Span<EVENTLOGRECORD> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+    }
 }

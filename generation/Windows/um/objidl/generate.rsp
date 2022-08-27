@@ -13,13 +13,13 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/objidl.h
 --with-attribute
-ActivationType=SupportedOSPlatform("windows8.1")
-CO_MARSHALING_CONTEXT_ATTRIBUTES=SupportedOSPlatform("windows8.0")
-GLOBALOPT_PROPERTIES=SupportedOSPlatform("windows8.0")
-GLOBALOPT_UNMARSHALING_POLICY_VALUES=SupportedOSPlatform("windows8.0")
-IAgileObject=SupportedOSPlatform("windows8.0")
-IAgileReference=SupportedOSPlatform("windows8.1")
-IApartmentShutdown=SupportedOSPlatform("windows8.0")
-IFastRundown=SupportedOSPlatform("windows8.0")
-IMarshalingStream=SupportedOSPlatform("windows8.0")
-INoMarshal=SupportedOSPlatform("windows8.0")
+ActivationType=SupportedOSPlatform("windows6.3")
+CO_MARSHALING_CONTEXT_ATTRIBUTES=SupportedOSPlatform("windows6.2")
+GLOBALOPT_PROPERTIES=SupportedOSPlatform("windows6.2")
+GLOBALOPT_UNMARSHALING_POLICY_VALUES=SupportedOSPlatform("windows6.2")
+IAgileObject=SupportedOSPlatform("windows6.2")
+IAgileReference=SupportedOSPlatform("windows6.3")
+IApartmentShutdown=SupportedOSPlatform("windows6.2")
+IFastRundown=SupportedOSPlatform("windows6.2")
+IMarshalingStream=SupportedOSPlatform("windows6.2")
+INoMarshal=SupportedOSPlatform("windows6.2")

@@ -3,6 +3,7 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -45,7 +46,7 @@ public unsafe partial struct CMSG_CONTENT_ENCRYPT_INFO
     public uint dwEncryptFlags;
 
     /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.Anonymous"]/*' />
-    [NativeTypeName("_CMSG_CONTENT_ENCRYPT_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:8442:5)")]
+    [NativeTypeName("_CMSG_CONTENT_ENCRYPT_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:8444:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.dwFlags"]/*' />
@@ -66,22 +67,24 @@ public unsafe partial struct CMSG_CONTENT_ENCRYPT_INFO
     public uint cbContentEncryptKey;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hContentEncryptKey"]/*' />
+    [UnscopedRef]
     public ref HCRYPTKEY hContentEncryptKey
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hContentEncryptKey, 1));
+            return ref Anonymous.hContentEncryptKey;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hCNGContentEncryptKey"]/*' />
+    [UnscopedRef]
     public ref void* hCNGContentEncryptKey
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.hCNGContentEncryptKey;
+            return ref Anonymous.hCNGContentEncryptKey;
         }
     }
 

@@ -35,6 +35,29 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IXblIdpAuthManager2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x50, 0x09, 0x8C, 0xBF,
+                0x89, 0x83,
+                0xDD, 0x43,
+                0x9A,
+                0x76,
+                0xA1,
+                0x97,
+                0x28,
+                0xEC,
+                0x5D,
+                0xC5
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IXblIdpAuthTokenResult
     {
         get

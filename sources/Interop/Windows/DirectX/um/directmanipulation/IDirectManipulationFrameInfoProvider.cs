@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("FB759DBA-6F4C-4C01-874E-19C8A05907F9")]
 [NativeTypeName("struct IDirectManipulationFrameInfoProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IDirectManipulationFrameInfoProvider : IDirectManipulationFrameInfoProvider.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDirectManipulationFrameInfoProvider));

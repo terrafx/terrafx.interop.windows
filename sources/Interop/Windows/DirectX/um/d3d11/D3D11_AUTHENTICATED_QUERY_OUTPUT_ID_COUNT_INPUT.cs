@@ -9,7 +9,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_INPUT"]/*' />
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public partial struct D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_INPUT
 {
     /// <include file='D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_INPUT.xml' path='doc/member[@name="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_INPUT.Input"]/*' />

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -154,6 +155,7 @@ public partial struct IMAGE_OPTIONAL_HEADER32
         public IMAGE_DATA_DIRECTORY e14;
         public IMAGE_DATA_DIRECTORY e15;
 
+        [UnscopedRef]
         public ref IMAGE_DATA_DIRECTORY this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -164,6 +166,7 @@ public partial struct IMAGE_OPTIONAL_HEADER32
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<IMAGE_DATA_DIRECTORY> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
     }
 }

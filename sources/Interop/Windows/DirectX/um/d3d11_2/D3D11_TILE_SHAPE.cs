@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_TILE_SHAPE.xml' path='doc/member[@name="D3D11_TILE_SHAPE"]/*' />
-[SupportedOSPlatform("windows8.1")]
+[SupportedOSPlatform("windows6.3")]
 public partial struct D3D11_TILE_SHAPE
 {
     /// <include file='D3D11_TILE_SHAPE.xml' path='doc/member[@name="D3D11_TILE_SHAPE.WidthInTexels"]/*' />

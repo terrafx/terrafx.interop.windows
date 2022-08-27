@@ -16,7 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("193DACDF-0DB2-4C05-A55C-EF06CAC56FD9")]
 [NativeTypeName("struct ID3D11RefTrackingOptions : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows8.0")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ID3D11RefTrackingOptions : ID3D11RefTrackingOptions.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D11RefTrackingOptions));
