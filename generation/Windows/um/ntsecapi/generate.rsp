@@ -23,8 +23,8 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ntsecapi.h
 --with-attribute
-LsaLookupSids2=SupportedOSPlatform("windows8.0")
-LsaLookupNames2=SupportedOSPlatform("windows8.0")
+LsaLookupSids2=SupportedOSPlatform("windows6.2")
+LsaLookupNames2=SupportedOSPlatform("windows6.2")
 --with-librarypath
 AuditComputeEffectivePolicyBySid=advapi32
 AuditComputeEffectivePolicyByToken=advapi32

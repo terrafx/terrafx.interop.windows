@@ -38,11 +38,11 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ShObjIdl.h
 --with-attribute
 DSH_FLAGS=Flags
 FOLDERVIEWOPTIONS=Flags
-IAccessibilityDockingService=SupportedOSPlatform("windows8.0")
+IAccessibilityDockingService=SupportedOSPlatform("windows6.2")
 SV3CVW3_FLAGS=Flags
 SYNC_ENGINE_STATE_FLAGS=Flags
-SYNC_ENGINE_STATE_FLAGS=SupportedOSPlatform("windows8.1")
-UNDOCK_REASON=SupportedOSPlatform("windows8.0")
+SYNC_ENGINE_STATE_FLAGS=SupportedOSPlatform("windows6.3")
+UNDOCK_REASON=SupportedOSPlatform("windows6.2")
 VPCOLORFLAGS=Flags
 VPWATERMARKFLAGS=Flags
 --with-librarypath

@@ -40,10 +40,10 @@ STDMSHLFLAGS=Flags
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/combaseapi.h
 --with-attribute
-AgileReferenceOptions=SupportedOSPlatform("windows8.1")
-CoAllowUnmarshalerCLSID=SupportedOSPlatform("windows8.0")
-CoCreateInstanceFromApp=SupportedOSPlatform("windows8.0")
-RoGetAgileReference=SupportedOSPlatform("windows8.1")
+AgileReferenceOptions=SupportedOSPlatform("windows6.3")
+CoAllowUnmarshalerCLSID=SupportedOSPlatform("windows6.2")
+CoCreateInstanceFromApp=SupportedOSPlatform("windows6.2")
+RoGetAgileReference=SupportedOSPlatform("windows6.3")
 --with-librarypath
 CLSIDFromProgID=ole32
 CLSIDFromProgIDEx=ole32

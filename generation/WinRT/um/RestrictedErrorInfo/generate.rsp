@@ -14,7 +14,7 @@ TerraFX.Interop.WinRT
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/RestrictedErrorInfo.h
 --with-attribute
 ILanguageExceptionErrorInfo2=SupportedOSPlatform("windows10.0.15063.0")
-ILanguageExceptionErrorInfo=SupportedOSPlatform("windows8.1")
+ILanguageExceptionErrorInfo=SupportedOSPlatform("windows6.3")
 ILanguageExceptionStackBackTrace=SupportedOSPlatform("windows10.0.15063.0")
 ILanguageExceptionTransform=SupportedOSPlatform("windows10.0.15063.0")
-IRestrictedErrorInfo=SupportedOSPlatform("windows8.0")
+IRestrictedErrorInfo=SupportedOSPlatform("windows6.2")

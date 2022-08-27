@@ -13,15 +13,15 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mfsharingengine.h
 --with-attribute
-DEVICE_INFO=SupportedOSPlatform("windows8.0")
-IMFImageSharingEngine=SupportedOSPlatform("windows8.0")
-IMFImageSharingEngineClassFactory=SupportedOSPlatform("windows8.0")
-IMFMediaSharingEngine=SupportedOSPlatform("windows8.0")
-IMFMediaSharingEngineClassFactory=SupportedOSPlatform("windows8.0")
-IMFSharingEngineClassFactory=SupportedOSPlatform("windows8.0")
-IPlayToControl=SupportedOSPlatform("windows8.0")
-IPlayToControlWithCapabilities=SupportedOSPlatform("windows8.1")
-IPlayToSourceClassFactory=SupportedOSPlatform("windows8.0")
-MF_SHARING_ENGINE_EVENT=SupportedOSPlatform("windows8.0")
+DEVICE_INFO=SupportedOSPlatform("windows6.2")
+IMFImageSharingEngine=SupportedOSPlatform("windows6.2")
+IMFImageSharingEngineClassFactory=SupportedOSPlatform("windows6.2")
+IMFMediaSharingEngine=SupportedOSPlatform("windows6.2")
+IMFMediaSharingEngineClassFactory=SupportedOSPlatform("windows6.2")
+IMFSharingEngineClassFactory=SupportedOSPlatform("windows6.2")
+IPlayToControl=SupportedOSPlatform("windows6.2")
+IPlayToControlWithCapabilities=SupportedOSPlatform("windows6.3")
+IPlayToSourceClassFactory=SupportedOSPlatform("windows6.2")
+MF_SHARING_ENGINE_EVENT=SupportedOSPlatform("windows6.2")
 PLAYTO_SOURCE_CREATEFLAGS=Flags
-PLAYTO_SOURCE_CREATEFLAGS=SupportedOSPlatform("windows8.0")
+PLAYTO_SOURCE_CREATEFLAGS=SupportedOSPlatform("windows6.2")
