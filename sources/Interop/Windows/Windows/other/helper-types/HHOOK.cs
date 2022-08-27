@@ -37,43 +37,43 @@ public readonly unsafe partial struct HHOOK : IComparable, IComparable<HHOOK>, I
 
     public static implicit operator HANDLE(HHOOK value) => new HANDLE(value.Value);
 
-    public static explicit operator HHOOK(byte value) => new HHOOK((void*)(value));
+    public static explicit operator HHOOK(byte value) => new HHOOK(unchecked((void*)(value)));
 
     public static explicit operator byte(HHOOK value) => (byte)(value.Value);
 
-    public static explicit operator HHOOK(short value) => new HHOOK((void*)(value));
+    public static explicit operator HHOOK(short value) => new HHOOK(unchecked((void*)(value)));
 
     public static explicit operator short(HHOOK value) => (short)(value.Value);
 
-    public static explicit operator HHOOK(int value) => new HHOOK((void*)(value));
+    public static explicit operator HHOOK(int value) => new HHOOK(unchecked((void*)(value)));
 
     public static explicit operator int(HHOOK value) => (int)(value.Value);
 
-    public static explicit operator HHOOK(long value) => new HHOOK((void*)(value));
+    public static explicit operator HHOOK(long value) => new HHOOK(unchecked((void*)(value)));
 
     public static explicit operator long(HHOOK value) => (long)(value.Value);
 
-    public static explicit operator HHOOK(nint value) => new HHOOK((void*)(value));
+    public static explicit operator HHOOK(nint value) => new HHOOK(unchecked((void*)(value)));
 
     public static implicit operator nint(HHOOK value) => (nint)(value.Value);
 
-    public static explicit operator HHOOK(sbyte value) => new HHOOK((void*)(value));
+    public static explicit operator HHOOK(sbyte value) => new HHOOK(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HHOOK value) => (sbyte)(value.Value);
 
-    public static explicit operator HHOOK(ushort value) => new HHOOK((void*)(value));
+    public static explicit operator HHOOK(ushort value) => new HHOOK(unchecked((void*)(value)));
 
     public static explicit operator ushort(HHOOK value) => (ushort)(value.Value);
 
-    public static explicit operator HHOOK(uint value) => new HHOOK((void*)(value));
+    public static explicit operator HHOOK(uint value) => new HHOOK(unchecked((void*)(value)));
 
     public static explicit operator uint(HHOOK value) => (uint)(value.Value);
 
-    public static explicit operator HHOOK(ulong value) => new HHOOK((void*)(value));
+    public static explicit operator HHOOK(ulong value) => new HHOOK(unchecked((void*)(value)));
 
     public static explicit operator ulong(HHOOK value) => (ulong)(value.Value);
 
-    public static explicit operator HHOOK(nuint value) => new HHOOK((void*)(value));
+    public static explicit operator HHOOK(nuint value) => new HHOOK(unchecked((void*)(value)));
 
     public static implicit operator nuint(HHOOK value) => (nuint)(value.Value);
 

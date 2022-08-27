@@ -31,43 +31,43 @@ public readonly unsafe partial struct PACKAGEDEPENDENCY_CONTEXT : IComparable, I
 
     public static implicit operator void*(PACKAGEDEPENDENCY_CONTEXT value) => value.Value;
 
-    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(byte value) => new PACKAGEDEPENDENCY_CONTEXT((void*)(value));
+    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(byte value) => new PACKAGEDEPENDENCY_CONTEXT(unchecked((void*)(value)));
 
     public static explicit operator byte(PACKAGEDEPENDENCY_CONTEXT value) => (byte)(value.Value);
 
-    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(short value) => new PACKAGEDEPENDENCY_CONTEXT((void*)(value));
+    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(short value) => new PACKAGEDEPENDENCY_CONTEXT(unchecked((void*)(value)));
 
     public static explicit operator short(PACKAGEDEPENDENCY_CONTEXT value) => (short)(value.Value);
 
-    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(int value) => new PACKAGEDEPENDENCY_CONTEXT((void*)(value));
+    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(int value) => new PACKAGEDEPENDENCY_CONTEXT(unchecked((void*)(value)));
 
     public static explicit operator int(PACKAGEDEPENDENCY_CONTEXT value) => (int)(value.Value);
 
-    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(long value) => new PACKAGEDEPENDENCY_CONTEXT((void*)(value));
+    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(long value) => new PACKAGEDEPENDENCY_CONTEXT(unchecked((void*)(value)));
 
     public static explicit operator long(PACKAGEDEPENDENCY_CONTEXT value) => (long)(value.Value);
 
-    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(nint value) => new PACKAGEDEPENDENCY_CONTEXT((void*)(value));
+    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(nint value) => new PACKAGEDEPENDENCY_CONTEXT(unchecked((void*)(value)));
 
     public static implicit operator nint(PACKAGEDEPENDENCY_CONTEXT value) => (nint)(value.Value);
 
-    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(sbyte value) => new PACKAGEDEPENDENCY_CONTEXT((void*)(value));
+    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(sbyte value) => new PACKAGEDEPENDENCY_CONTEXT(unchecked((void*)(value)));
 
     public static explicit operator sbyte(PACKAGEDEPENDENCY_CONTEXT value) => (sbyte)(value.Value);
 
-    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(ushort value) => new PACKAGEDEPENDENCY_CONTEXT((void*)(value));
+    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(ushort value) => new PACKAGEDEPENDENCY_CONTEXT(unchecked((void*)(value)));
 
     public static explicit operator ushort(PACKAGEDEPENDENCY_CONTEXT value) => (ushort)(value.Value);
 
-    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(uint value) => new PACKAGEDEPENDENCY_CONTEXT((void*)(value));
+    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(uint value) => new PACKAGEDEPENDENCY_CONTEXT(unchecked((void*)(value)));
 
     public static explicit operator uint(PACKAGEDEPENDENCY_CONTEXT value) => (uint)(value.Value);
 
-    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(ulong value) => new PACKAGEDEPENDENCY_CONTEXT((void*)(value));
+    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(ulong value) => new PACKAGEDEPENDENCY_CONTEXT(unchecked((void*)(value)));
 
     public static explicit operator ulong(PACKAGEDEPENDENCY_CONTEXT value) => (ulong)(value.Value);
 
-    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(nuint value) => new PACKAGEDEPENDENCY_CONTEXT((void*)(value));
+    public static explicit operator PACKAGEDEPENDENCY_CONTEXT(nuint value) => new PACKAGEDEPENDENCY_CONTEXT(unchecked((void*)(value)));
 
     public static implicit operator nuint(PACKAGEDEPENDENCY_CONTEXT value) => (nuint)(value.Value);
 

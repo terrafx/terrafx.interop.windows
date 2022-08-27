@@ -37,43 +37,43 @@ public readonly unsafe partial struct HMIDISTRM : IComparable, IComparable<HMIDI
 
     public static implicit operator HANDLE(HMIDISTRM value) => new HANDLE(value.Value);
 
-    public static explicit operator HMIDISTRM(byte value) => new HMIDISTRM((void*)(value));
+    public static explicit operator HMIDISTRM(byte value) => new HMIDISTRM(unchecked((void*)(value)));
 
     public static explicit operator byte(HMIDISTRM value) => (byte)(value.Value);
 
-    public static explicit operator HMIDISTRM(short value) => new HMIDISTRM((void*)(value));
+    public static explicit operator HMIDISTRM(short value) => new HMIDISTRM(unchecked((void*)(value)));
 
     public static explicit operator short(HMIDISTRM value) => (short)(value.Value);
 
-    public static explicit operator HMIDISTRM(int value) => new HMIDISTRM((void*)(value));
+    public static explicit operator HMIDISTRM(int value) => new HMIDISTRM(unchecked((void*)(value)));
 
     public static explicit operator int(HMIDISTRM value) => (int)(value.Value);
 
-    public static explicit operator HMIDISTRM(long value) => new HMIDISTRM((void*)(value));
+    public static explicit operator HMIDISTRM(long value) => new HMIDISTRM(unchecked((void*)(value)));
 
     public static explicit operator long(HMIDISTRM value) => (long)(value.Value);
 
-    public static explicit operator HMIDISTRM(nint value) => new HMIDISTRM((void*)(value));
+    public static explicit operator HMIDISTRM(nint value) => new HMIDISTRM(unchecked((void*)(value)));
 
     public static implicit operator nint(HMIDISTRM value) => (nint)(value.Value);
 
-    public static explicit operator HMIDISTRM(sbyte value) => new HMIDISTRM((void*)(value));
+    public static explicit operator HMIDISTRM(sbyte value) => new HMIDISTRM(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HMIDISTRM value) => (sbyte)(value.Value);
 
-    public static explicit operator HMIDISTRM(ushort value) => new HMIDISTRM((void*)(value));
+    public static explicit operator HMIDISTRM(ushort value) => new HMIDISTRM(unchecked((void*)(value)));
 
     public static explicit operator ushort(HMIDISTRM value) => (ushort)(value.Value);
 
-    public static explicit operator HMIDISTRM(uint value) => new HMIDISTRM((void*)(value));
+    public static explicit operator HMIDISTRM(uint value) => new HMIDISTRM(unchecked((void*)(value)));
 
     public static explicit operator uint(HMIDISTRM value) => (uint)(value.Value);
 
-    public static explicit operator HMIDISTRM(ulong value) => new HMIDISTRM((void*)(value));
+    public static explicit operator HMIDISTRM(ulong value) => new HMIDISTRM(unchecked((void*)(value)));
 
     public static explicit operator ulong(HMIDISTRM value) => (ulong)(value.Value);
 
-    public static explicit operator HMIDISTRM(nuint value) => new HMIDISTRM((void*)(value));
+    public static explicit operator HMIDISTRM(nuint value) => new HMIDISTRM(unchecked((void*)(value)));
 
     public static implicit operator nuint(HMIDISTRM value) => (nuint)(value.Value);
 

@@ -31,43 +31,43 @@ public readonly unsafe partial struct RO_REGISTRATION_COOKIE : IComparable, ICom
 
     public static implicit operator void*(RO_REGISTRATION_COOKIE value) => value.Value;
 
-    public static explicit operator RO_REGISTRATION_COOKIE(byte value) => new RO_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator RO_REGISTRATION_COOKIE(byte value) => new RO_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator byte(RO_REGISTRATION_COOKIE value) => (byte)(value.Value);
 
-    public static explicit operator RO_REGISTRATION_COOKIE(short value) => new RO_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator RO_REGISTRATION_COOKIE(short value) => new RO_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator short(RO_REGISTRATION_COOKIE value) => (short)(value.Value);
 
-    public static explicit operator RO_REGISTRATION_COOKIE(int value) => new RO_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator RO_REGISTRATION_COOKIE(int value) => new RO_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator int(RO_REGISTRATION_COOKIE value) => (int)(value.Value);
 
-    public static explicit operator RO_REGISTRATION_COOKIE(long value) => new RO_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator RO_REGISTRATION_COOKIE(long value) => new RO_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator long(RO_REGISTRATION_COOKIE value) => (long)(value.Value);
 
-    public static explicit operator RO_REGISTRATION_COOKIE(nint value) => new RO_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator RO_REGISTRATION_COOKIE(nint value) => new RO_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static implicit operator nint(RO_REGISTRATION_COOKIE value) => (nint)(value.Value);
 
-    public static explicit operator RO_REGISTRATION_COOKIE(sbyte value) => new RO_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator RO_REGISTRATION_COOKIE(sbyte value) => new RO_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator sbyte(RO_REGISTRATION_COOKIE value) => (sbyte)(value.Value);
 
-    public static explicit operator RO_REGISTRATION_COOKIE(ushort value) => new RO_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator RO_REGISTRATION_COOKIE(ushort value) => new RO_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator ushort(RO_REGISTRATION_COOKIE value) => (ushort)(value.Value);
 
-    public static explicit operator RO_REGISTRATION_COOKIE(uint value) => new RO_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator RO_REGISTRATION_COOKIE(uint value) => new RO_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator uint(RO_REGISTRATION_COOKIE value) => (uint)(value.Value);
 
-    public static explicit operator RO_REGISTRATION_COOKIE(ulong value) => new RO_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator RO_REGISTRATION_COOKIE(ulong value) => new RO_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static explicit operator ulong(RO_REGISTRATION_COOKIE value) => (ulong)(value.Value);
 
-    public static explicit operator RO_REGISTRATION_COOKIE(nuint value) => new RO_REGISTRATION_COOKIE((void*)(value));
+    public static explicit operator RO_REGISTRATION_COOKIE(nuint value) => new RO_REGISTRATION_COOKIE(unchecked((void*)(value)));
 
     public static implicit operator nuint(RO_REGISTRATION_COOKIE value) => (nuint)(value.Value);
 

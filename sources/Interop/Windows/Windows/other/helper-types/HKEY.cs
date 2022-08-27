@@ -37,43 +37,43 @@ public readonly unsafe partial struct HKEY : IComparable, IComparable<HKEY>, IEq
 
     public static implicit operator HANDLE(HKEY value) => new HANDLE(value.Value);
 
-    public static explicit operator HKEY(byte value) => new HKEY((void*)(value));
+    public static explicit operator HKEY(byte value) => new HKEY(unchecked((void*)(value)));
 
     public static explicit operator byte(HKEY value) => (byte)(value.Value);
 
-    public static explicit operator HKEY(short value) => new HKEY((void*)(value));
+    public static explicit operator HKEY(short value) => new HKEY(unchecked((void*)(value)));
 
     public static explicit operator short(HKEY value) => (short)(value.Value);
 
-    public static explicit operator HKEY(int value) => new HKEY((void*)(value));
+    public static explicit operator HKEY(int value) => new HKEY(unchecked((void*)(value)));
 
     public static explicit operator int(HKEY value) => (int)(value.Value);
 
-    public static explicit operator HKEY(long value) => new HKEY((void*)(value));
+    public static explicit operator HKEY(long value) => new HKEY(unchecked((void*)(value)));
 
     public static explicit operator long(HKEY value) => (long)(value.Value);
 
-    public static explicit operator HKEY(nint value) => new HKEY((void*)(value));
+    public static explicit operator HKEY(nint value) => new HKEY(unchecked((void*)(value)));
 
     public static implicit operator nint(HKEY value) => (nint)(value.Value);
 
-    public static explicit operator HKEY(sbyte value) => new HKEY((void*)(value));
+    public static explicit operator HKEY(sbyte value) => new HKEY(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HKEY value) => (sbyte)(value.Value);
 
-    public static explicit operator HKEY(ushort value) => new HKEY((void*)(value));
+    public static explicit operator HKEY(ushort value) => new HKEY(unchecked((void*)(value)));
 
     public static explicit operator ushort(HKEY value) => (ushort)(value.Value);
 
-    public static explicit operator HKEY(uint value) => new HKEY((void*)(value));
+    public static explicit operator HKEY(uint value) => new HKEY(unchecked((void*)(value)));
 
     public static explicit operator uint(HKEY value) => (uint)(value.Value);
 
-    public static explicit operator HKEY(ulong value) => new HKEY((void*)(value));
+    public static explicit operator HKEY(ulong value) => new HKEY(unchecked((void*)(value)));
 
     public static explicit operator ulong(HKEY value) => (ulong)(value.Value);
 
-    public static explicit operator HKEY(nuint value) => new HKEY((void*)(value));
+    public static explicit operator HKEY(nuint value) => new HKEY(unchecked((void*)(value)));
 
     public static implicit operator nuint(HKEY value) => (nuint)(value.Value);
 

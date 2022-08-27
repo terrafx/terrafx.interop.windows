@@ -37,43 +37,43 @@ public readonly unsafe partial struct HPEN : IComparable, IComparable<HPEN>, IEq
 
     public static implicit operator HANDLE(HPEN value) => new HANDLE(value.Value);
 
-    public static explicit operator HPEN(byte value) => new HPEN((void*)(value));
+    public static explicit operator HPEN(byte value) => new HPEN(unchecked((void*)(value)));
 
     public static explicit operator byte(HPEN value) => (byte)(value.Value);
 
-    public static explicit operator HPEN(short value) => new HPEN((void*)(value));
+    public static explicit operator HPEN(short value) => new HPEN(unchecked((void*)(value)));
 
     public static explicit operator short(HPEN value) => (short)(value.Value);
 
-    public static explicit operator HPEN(int value) => new HPEN((void*)(value));
+    public static explicit operator HPEN(int value) => new HPEN(unchecked((void*)(value)));
 
     public static explicit operator int(HPEN value) => (int)(value.Value);
 
-    public static explicit operator HPEN(long value) => new HPEN((void*)(value));
+    public static explicit operator HPEN(long value) => new HPEN(unchecked((void*)(value)));
 
     public static explicit operator long(HPEN value) => (long)(value.Value);
 
-    public static explicit operator HPEN(nint value) => new HPEN((void*)(value));
+    public static explicit operator HPEN(nint value) => new HPEN(unchecked((void*)(value)));
 
     public static implicit operator nint(HPEN value) => (nint)(value.Value);
 
-    public static explicit operator HPEN(sbyte value) => new HPEN((void*)(value));
+    public static explicit operator HPEN(sbyte value) => new HPEN(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HPEN value) => (sbyte)(value.Value);
 
-    public static explicit operator HPEN(ushort value) => new HPEN((void*)(value));
+    public static explicit operator HPEN(ushort value) => new HPEN(unchecked((void*)(value)));
 
     public static explicit operator ushort(HPEN value) => (ushort)(value.Value);
 
-    public static explicit operator HPEN(uint value) => new HPEN((void*)(value));
+    public static explicit operator HPEN(uint value) => new HPEN(unchecked((void*)(value)));
 
     public static explicit operator uint(HPEN value) => (uint)(value.Value);
 
-    public static explicit operator HPEN(ulong value) => new HPEN((void*)(value));
+    public static explicit operator HPEN(ulong value) => new HPEN(unchecked((void*)(value)));
 
     public static explicit operator ulong(HPEN value) => (ulong)(value.Value);
 
-    public static explicit operator HPEN(nuint value) => new HPEN((void*)(value));
+    public static explicit operator HPEN(nuint value) => new HPEN(unchecked((void*)(value)));
 
     public static implicit operator nuint(HPEN value) => (nuint)(value.Value);
 

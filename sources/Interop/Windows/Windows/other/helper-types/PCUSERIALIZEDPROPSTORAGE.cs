@@ -31,43 +31,43 @@ public readonly unsafe partial struct PCUSERIALIZEDPROPSTORAGE : IComparable, IC
 
     public static implicit operator void*(PCUSERIALIZEDPROPSTORAGE value) => value.Value;
 
-    public static explicit operator PCUSERIALIZEDPROPSTORAGE(byte value) => new PCUSERIALIZEDPROPSTORAGE((void*)(value));
+    public static explicit operator PCUSERIALIZEDPROPSTORAGE(byte value) => new PCUSERIALIZEDPROPSTORAGE(unchecked((void*)(value)));
 
     public static explicit operator byte(PCUSERIALIZEDPROPSTORAGE value) => (byte)(value.Value);
 
-    public static explicit operator PCUSERIALIZEDPROPSTORAGE(short value) => new PCUSERIALIZEDPROPSTORAGE((void*)(value));
+    public static explicit operator PCUSERIALIZEDPROPSTORAGE(short value) => new PCUSERIALIZEDPROPSTORAGE(unchecked((void*)(value)));
 
     public static explicit operator short(PCUSERIALIZEDPROPSTORAGE value) => (short)(value.Value);
 
-    public static explicit operator PCUSERIALIZEDPROPSTORAGE(int value) => new PCUSERIALIZEDPROPSTORAGE((void*)(value));
+    public static explicit operator PCUSERIALIZEDPROPSTORAGE(int value) => new PCUSERIALIZEDPROPSTORAGE(unchecked((void*)(value)));
 
     public static explicit operator int(PCUSERIALIZEDPROPSTORAGE value) => (int)(value.Value);
 
-    public static explicit operator PCUSERIALIZEDPROPSTORAGE(long value) => new PCUSERIALIZEDPROPSTORAGE((void*)(value));
+    public static explicit operator PCUSERIALIZEDPROPSTORAGE(long value) => new PCUSERIALIZEDPROPSTORAGE(unchecked((void*)(value)));
 
     public static explicit operator long(PCUSERIALIZEDPROPSTORAGE value) => (long)(value.Value);
 
-    public static explicit operator PCUSERIALIZEDPROPSTORAGE(nint value) => new PCUSERIALIZEDPROPSTORAGE((void*)(value));
+    public static explicit operator PCUSERIALIZEDPROPSTORAGE(nint value) => new PCUSERIALIZEDPROPSTORAGE(unchecked((void*)(value)));
 
     public static implicit operator nint(PCUSERIALIZEDPROPSTORAGE value) => (nint)(value.Value);
 
-    public static explicit operator PCUSERIALIZEDPROPSTORAGE(sbyte value) => new PCUSERIALIZEDPROPSTORAGE((void*)(value));
+    public static explicit operator PCUSERIALIZEDPROPSTORAGE(sbyte value) => new PCUSERIALIZEDPROPSTORAGE(unchecked((void*)(value)));
 
     public static explicit operator sbyte(PCUSERIALIZEDPROPSTORAGE value) => (sbyte)(value.Value);
 
-    public static explicit operator PCUSERIALIZEDPROPSTORAGE(ushort value) => new PCUSERIALIZEDPROPSTORAGE((void*)(value));
+    public static explicit operator PCUSERIALIZEDPROPSTORAGE(ushort value) => new PCUSERIALIZEDPROPSTORAGE(unchecked((void*)(value)));
 
     public static explicit operator ushort(PCUSERIALIZEDPROPSTORAGE value) => (ushort)(value.Value);
 
-    public static explicit operator PCUSERIALIZEDPROPSTORAGE(uint value) => new PCUSERIALIZEDPROPSTORAGE((void*)(value));
+    public static explicit operator PCUSERIALIZEDPROPSTORAGE(uint value) => new PCUSERIALIZEDPROPSTORAGE(unchecked((void*)(value)));
 
     public static explicit operator uint(PCUSERIALIZEDPROPSTORAGE value) => (uint)(value.Value);
 
-    public static explicit operator PCUSERIALIZEDPROPSTORAGE(ulong value) => new PCUSERIALIZEDPROPSTORAGE((void*)(value));
+    public static explicit operator PCUSERIALIZEDPROPSTORAGE(ulong value) => new PCUSERIALIZEDPROPSTORAGE(unchecked((void*)(value)));
 
     public static explicit operator ulong(PCUSERIALIZEDPROPSTORAGE value) => (ulong)(value.Value);
 
-    public static explicit operator PCUSERIALIZEDPROPSTORAGE(nuint value) => new PCUSERIALIZEDPROPSTORAGE((void*)(value));
+    public static explicit operator PCUSERIALIZEDPROPSTORAGE(nuint value) => new PCUSERIALIZEDPROPSTORAGE(unchecked((void*)(value)));
 
     public static implicit operator nuint(PCUSERIALIZEDPROPSTORAGE value) => (nuint)(value.Value);
 

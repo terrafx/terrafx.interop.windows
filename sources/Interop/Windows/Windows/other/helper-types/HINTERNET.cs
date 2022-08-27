@@ -37,43 +37,43 @@ public readonly unsafe partial struct HINTERNET : IComparable, IComparable<HINTE
 
     public static implicit operator HANDLE(HINTERNET value) => new HANDLE(value.Value);
 
-    public static explicit operator HINTERNET(byte value) => new HINTERNET((void*)(value));
+    public static explicit operator HINTERNET(byte value) => new HINTERNET(unchecked((void*)(value)));
 
     public static explicit operator byte(HINTERNET value) => (byte)(value.Value);
 
-    public static explicit operator HINTERNET(short value) => new HINTERNET((void*)(value));
+    public static explicit operator HINTERNET(short value) => new HINTERNET(unchecked((void*)(value)));
 
     public static explicit operator short(HINTERNET value) => (short)(value.Value);
 
-    public static explicit operator HINTERNET(int value) => new HINTERNET((void*)(value));
+    public static explicit operator HINTERNET(int value) => new HINTERNET(unchecked((void*)(value)));
 
     public static explicit operator int(HINTERNET value) => (int)(value.Value);
 
-    public static explicit operator HINTERNET(long value) => new HINTERNET((void*)(value));
+    public static explicit operator HINTERNET(long value) => new HINTERNET(unchecked((void*)(value)));
 
     public static explicit operator long(HINTERNET value) => (long)(value.Value);
 
-    public static explicit operator HINTERNET(nint value) => new HINTERNET((void*)(value));
+    public static explicit operator HINTERNET(nint value) => new HINTERNET(unchecked((void*)(value)));
 
     public static implicit operator nint(HINTERNET value) => (nint)(value.Value);
 
-    public static explicit operator HINTERNET(sbyte value) => new HINTERNET((void*)(value));
+    public static explicit operator HINTERNET(sbyte value) => new HINTERNET(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HINTERNET value) => (sbyte)(value.Value);
 
-    public static explicit operator HINTERNET(ushort value) => new HINTERNET((void*)(value));
+    public static explicit operator HINTERNET(ushort value) => new HINTERNET(unchecked((void*)(value)));
 
     public static explicit operator ushort(HINTERNET value) => (ushort)(value.Value);
 
-    public static explicit operator HINTERNET(uint value) => new HINTERNET((void*)(value));
+    public static explicit operator HINTERNET(uint value) => new HINTERNET(unchecked((void*)(value)));
 
     public static explicit operator uint(HINTERNET value) => (uint)(value.Value);
 
-    public static explicit operator HINTERNET(ulong value) => new HINTERNET((void*)(value));
+    public static explicit operator HINTERNET(ulong value) => new HINTERNET(unchecked((void*)(value)));
 
     public static explicit operator ulong(HINTERNET value) => (ulong)(value.Value);
 
-    public static explicit operator HINTERNET(nuint value) => new HINTERNET((void*)(value));
+    public static explicit operator HINTERNET(nuint value) => new HINTERNET(unchecked((void*)(value)));
 
     public static implicit operator nuint(HINTERNET value) => (nuint)(value.Value);
 

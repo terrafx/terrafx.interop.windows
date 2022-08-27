@@ -37,43 +37,43 @@ public readonly unsafe partial struct HINSTANCE : IComparable, IComparable<HINST
 
     public static implicit operator HANDLE(HINSTANCE value) => new HANDLE(value.Value);
 
-    public static explicit operator HINSTANCE(byte value) => new HINSTANCE((void*)(value));
+    public static explicit operator HINSTANCE(byte value) => new HINSTANCE(unchecked((void*)(value)));
 
     public static explicit operator byte(HINSTANCE value) => (byte)(value.Value);
 
-    public static explicit operator HINSTANCE(short value) => new HINSTANCE((void*)(value));
+    public static explicit operator HINSTANCE(short value) => new HINSTANCE(unchecked((void*)(value)));
 
     public static explicit operator short(HINSTANCE value) => (short)(value.Value);
 
-    public static explicit operator HINSTANCE(int value) => new HINSTANCE((void*)(value));
+    public static explicit operator HINSTANCE(int value) => new HINSTANCE(unchecked((void*)(value)));
 
     public static explicit operator int(HINSTANCE value) => (int)(value.Value);
 
-    public static explicit operator HINSTANCE(long value) => new HINSTANCE((void*)(value));
+    public static explicit operator HINSTANCE(long value) => new HINSTANCE(unchecked((void*)(value)));
 
     public static explicit operator long(HINSTANCE value) => (long)(value.Value);
 
-    public static explicit operator HINSTANCE(nint value) => new HINSTANCE((void*)(value));
+    public static explicit operator HINSTANCE(nint value) => new HINSTANCE(unchecked((void*)(value)));
 
     public static implicit operator nint(HINSTANCE value) => (nint)(value.Value);
 
-    public static explicit operator HINSTANCE(sbyte value) => new HINSTANCE((void*)(value));
+    public static explicit operator HINSTANCE(sbyte value) => new HINSTANCE(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HINSTANCE value) => (sbyte)(value.Value);
 
-    public static explicit operator HINSTANCE(ushort value) => new HINSTANCE((void*)(value));
+    public static explicit operator HINSTANCE(ushort value) => new HINSTANCE(unchecked((void*)(value)));
 
     public static explicit operator ushort(HINSTANCE value) => (ushort)(value.Value);
 
-    public static explicit operator HINSTANCE(uint value) => new HINSTANCE((void*)(value));
+    public static explicit operator HINSTANCE(uint value) => new HINSTANCE(unchecked((void*)(value)));
 
     public static explicit operator uint(HINSTANCE value) => (uint)(value.Value);
 
-    public static explicit operator HINSTANCE(ulong value) => new HINSTANCE((void*)(value));
+    public static explicit operator HINSTANCE(ulong value) => new HINSTANCE(unchecked((void*)(value)));
 
     public static explicit operator ulong(HINSTANCE value) => (ulong)(value.Value);
 
-    public static explicit operator HINSTANCE(nuint value) => new HINSTANCE((void*)(value));
+    public static explicit operator HINSTANCE(nuint value) => new HINSTANCE(unchecked((void*)(value)));
 
     public static implicit operator nuint(HINSTANCE value) => (nuint)(value.Value);
 

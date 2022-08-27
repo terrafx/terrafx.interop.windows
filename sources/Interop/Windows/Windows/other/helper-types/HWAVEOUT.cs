@@ -37,43 +37,43 @@ public readonly unsafe partial struct HWAVEOUT : IComparable, IComparable<HWAVEO
 
     public static implicit operator HANDLE(HWAVEOUT value) => new HANDLE(value.Value);
 
-    public static explicit operator HWAVEOUT(byte value) => new HWAVEOUT((void*)(value));
+    public static explicit operator HWAVEOUT(byte value) => new HWAVEOUT(unchecked((void*)(value)));
 
     public static explicit operator byte(HWAVEOUT value) => (byte)(value.Value);
 
-    public static explicit operator HWAVEOUT(short value) => new HWAVEOUT((void*)(value));
+    public static explicit operator HWAVEOUT(short value) => new HWAVEOUT(unchecked((void*)(value)));
 
     public static explicit operator short(HWAVEOUT value) => (short)(value.Value);
 
-    public static explicit operator HWAVEOUT(int value) => new HWAVEOUT((void*)(value));
+    public static explicit operator HWAVEOUT(int value) => new HWAVEOUT(unchecked((void*)(value)));
 
     public static explicit operator int(HWAVEOUT value) => (int)(value.Value);
 
-    public static explicit operator HWAVEOUT(long value) => new HWAVEOUT((void*)(value));
+    public static explicit operator HWAVEOUT(long value) => new HWAVEOUT(unchecked((void*)(value)));
 
     public static explicit operator long(HWAVEOUT value) => (long)(value.Value);
 
-    public static explicit operator HWAVEOUT(nint value) => new HWAVEOUT((void*)(value));
+    public static explicit operator HWAVEOUT(nint value) => new HWAVEOUT(unchecked((void*)(value)));
 
     public static implicit operator nint(HWAVEOUT value) => (nint)(value.Value);
 
-    public static explicit operator HWAVEOUT(sbyte value) => new HWAVEOUT((void*)(value));
+    public static explicit operator HWAVEOUT(sbyte value) => new HWAVEOUT(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HWAVEOUT value) => (sbyte)(value.Value);
 
-    public static explicit operator HWAVEOUT(ushort value) => new HWAVEOUT((void*)(value));
+    public static explicit operator HWAVEOUT(ushort value) => new HWAVEOUT(unchecked((void*)(value)));
 
     public static explicit operator ushort(HWAVEOUT value) => (ushort)(value.Value);
 
-    public static explicit operator HWAVEOUT(uint value) => new HWAVEOUT((void*)(value));
+    public static explicit operator HWAVEOUT(uint value) => new HWAVEOUT(unchecked((void*)(value)));
 
     public static explicit operator uint(HWAVEOUT value) => (uint)(value.Value);
 
-    public static explicit operator HWAVEOUT(ulong value) => new HWAVEOUT((void*)(value));
+    public static explicit operator HWAVEOUT(ulong value) => new HWAVEOUT(unchecked((void*)(value)));
 
     public static explicit operator ulong(HWAVEOUT value) => (ulong)(value.Value);
 
-    public static explicit operator HWAVEOUT(nuint value) => new HWAVEOUT((void*)(value));
+    public static explicit operator HWAVEOUT(nuint value) => new HWAVEOUT(unchecked((void*)(value)));
 
     public static implicit operator nuint(HWAVEOUT value) => (nuint)(value.Value);
 

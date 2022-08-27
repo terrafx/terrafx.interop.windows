@@ -29,23 +29,23 @@ public readonly unsafe partial struct InstanceHandle : IComparable, IComparable<
 
     public static explicit operator byte(InstanceHandle value) => (byte)(value.Value);
 
-    public static explicit operator InstanceHandle(short value) => new InstanceHandle((ulong)(value));
+    public static explicit operator InstanceHandle(short value) => new InstanceHandle(unchecked((ulong)(value)));
 
     public static explicit operator short(InstanceHandle value) => (short)(value.Value);
 
-    public static explicit operator InstanceHandle(int value) => new InstanceHandle((ulong)(value));
+    public static explicit operator InstanceHandle(int value) => new InstanceHandle(unchecked((ulong)(value)));
 
     public static explicit operator int(InstanceHandle value) => (int)(value.Value);
 
-    public static explicit operator InstanceHandle(long value) => new InstanceHandle((ulong)(value));
+    public static explicit operator InstanceHandle(long value) => new InstanceHandle(unchecked((ulong)(value)));
 
     public static explicit operator long(InstanceHandle value) => (long)(value.Value);
 
-    public static explicit operator InstanceHandle(nint value) => new InstanceHandle((ulong)(value));
+    public static explicit operator InstanceHandle(nint value) => new InstanceHandle(unchecked((ulong)(value)));
 
     public static explicit operator nint(InstanceHandle value) => (nint)(value.Value);
 
-    public static explicit operator InstanceHandle(sbyte value) => new InstanceHandle((ulong)(value));
+    public static explicit operator InstanceHandle(sbyte value) => new InstanceHandle(unchecked((ulong)(value)));
 
     public static explicit operator sbyte(InstanceHandle value) => (sbyte)(value.Value);
 

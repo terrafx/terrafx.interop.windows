@@ -37,43 +37,43 @@ public readonly unsafe partial struct HSEMAPHORE : IComparable, IComparable<HSEM
 
     public static implicit operator HANDLE(HSEMAPHORE value) => new HANDLE(value.Value);
 
-    public static explicit operator HSEMAPHORE(byte value) => new HSEMAPHORE((void*)(value));
+    public static explicit operator HSEMAPHORE(byte value) => new HSEMAPHORE(unchecked((void*)(value)));
 
     public static explicit operator byte(HSEMAPHORE value) => (byte)(value.Value);
 
-    public static explicit operator HSEMAPHORE(short value) => new HSEMAPHORE((void*)(value));
+    public static explicit operator HSEMAPHORE(short value) => new HSEMAPHORE(unchecked((void*)(value)));
 
     public static explicit operator short(HSEMAPHORE value) => (short)(value.Value);
 
-    public static explicit operator HSEMAPHORE(int value) => new HSEMAPHORE((void*)(value));
+    public static explicit operator HSEMAPHORE(int value) => new HSEMAPHORE(unchecked((void*)(value)));
 
     public static explicit operator int(HSEMAPHORE value) => (int)(value.Value);
 
-    public static explicit operator HSEMAPHORE(long value) => new HSEMAPHORE((void*)(value));
+    public static explicit operator HSEMAPHORE(long value) => new HSEMAPHORE(unchecked((void*)(value)));
 
     public static explicit operator long(HSEMAPHORE value) => (long)(value.Value);
 
-    public static explicit operator HSEMAPHORE(nint value) => new HSEMAPHORE((void*)(value));
+    public static explicit operator HSEMAPHORE(nint value) => new HSEMAPHORE(unchecked((void*)(value)));
 
     public static implicit operator nint(HSEMAPHORE value) => (nint)(value.Value);
 
-    public static explicit operator HSEMAPHORE(sbyte value) => new HSEMAPHORE((void*)(value));
+    public static explicit operator HSEMAPHORE(sbyte value) => new HSEMAPHORE(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HSEMAPHORE value) => (sbyte)(value.Value);
 
-    public static explicit operator HSEMAPHORE(ushort value) => new HSEMAPHORE((void*)(value));
+    public static explicit operator HSEMAPHORE(ushort value) => new HSEMAPHORE(unchecked((void*)(value)));
 
     public static explicit operator ushort(HSEMAPHORE value) => (ushort)(value.Value);
 
-    public static explicit operator HSEMAPHORE(uint value) => new HSEMAPHORE((void*)(value));
+    public static explicit operator HSEMAPHORE(uint value) => new HSEMAPHORE(unchecked((void*)(value)));
 
     public static explicit operator uint(HSEMAPHORE value) => (uint)(value.Value);
 
-    public static explicit operator HSEMAPHORE(ulong value) => new HSEMAPHORE((void*)(value));
+    public static explicit operator HSEMAPHORE(ulong value) => new HSEMAPHORE(unchecked((void*)(value)));
 
     public static explicit operator ulong(HSEMAPHORE value) => (ulong)(value.Value);
 
-    public static explicit operator HSEMAPHORE(nuint value) => new HSEMAPHORE((void*)(value));
+    public static explicit operator HSEMAPHORE(nuint value) => new HSEMAPHORE(unchecked((void*)(value)));
 
     public static implicit operator nuint(HSEMAPHORE value) => (nuint)(value.Value);
 

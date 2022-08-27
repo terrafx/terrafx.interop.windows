@@ -37,7 +37,7 @@ public readonly partial struct LRESULT : IComparable, IComparable<LRESULT>, IEqu
 
     public static explicit operator int(LRESULT value) => (int)(value.Value);
 
-    public static explicit operator LRESULT(long value) => new LRESULT((nint)(value));
+    public static explicit operator LRESULT(long value) => new LRESULT(unchecked((nint)(value)));
 
     public static implicit operator long(LRESULT value) => value.Value;
 
@@ -53,15 +53,15 @@ public readonly partial struct LRESULT : IComparable, IComparable<LRESULT>, IEqu
 
     public static explicit operator ushort(LRESULT value) => (ushort)(value.Value);
 
-    public static explicit operator LRESULT(uint value) => new LRESULT((nint)(value));
+    public static explicit operator LRESULT(uint value) => new LRESULT(unchecked((nint)(value)));
 
     public static explicit operator uint(LRESULT value) => (uint)(value.Value);
 
-    public static explicit operator LRESULT(ulong value) => new LRESULT((nint)(value));
+    public static explicit operator LRESULT(ulong value) => new LRESULT(unchecked((nint)(value)));
 
     public static explicit operator ulong(LRESULT value) => (ulong)(value.Value);
 
-    public static explicit operator LRESULT(nuint value) => new LRESULT((nint)(value));
+    public static explicit operator LRESULT(nuint value) => new LRESULT(unchecked((nint)(value)));
 
     public static explicit operator nuint(LRESULT value) => (nuint)(value.Value);
 

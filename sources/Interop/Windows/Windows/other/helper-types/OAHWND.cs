@@ -31,43 +31,43 @@ public readonly unsafe partial struct OAHWND : IComparable, IComparable<OAHWND>,
 
     public static implicit operator void*(OAHWND value) => value.Value;
 
-    public static explicit operator OAHWND(byte value) => new OAHWND((void*)(value));
+    public static explicit operator OAHWND(byte value) => new OAHWND(unchecked((void*)(value)));
 
     public static explicit operator byte(OAHWND value) => (byte)(value.Value);
 
-    public static explicit operator OAHWND(short value) => new OAHWND((void*)(value));
+    public static explicit operator OAHWND(short value) => new OAHWND(unchecked((void*)(value)));
 
     public static explicit operator short(OAHWND value) => (short)(value.Value);
 
-    public static explicit operator OAHWND(int value) => new OAHWND((void*)(value));
+    public static explicit operator OAHWND(int value) => new OAHWND(unchecked((void*)(value)));
 
     public static explicit operator int(OAHWND value) => (int)(value.Value);
 
-    public static explicit operator OAHWND(long value) => new OAHWND((void*)(value));
+    public static explicit operator OAHWND(long value) => new OAHWND(unchecked((void*)(value)));
 
     public static explicit operator long(OAHWND value) => (long)(value.Value);
 
-    public static explicit operator OAHWND(nint value) => new OAHWND((void*)(value));
+    public static explicit operator OAHWND(nint value) => new OAHWND(unchecked((void*)(value)));
 
     public static implicit operator nint(OAHWND value) => (nint)(value.Value);
 
-    public static explicit operator OAHWND(sbyte value) => new OAHWND((void*)(value));
+    public static explicit operator OAHWND(sbyte value) => new OAHWND(unchecked((void*)(value)));
 
     public static explicit operator sbyte(OAHWND value) => (sbyte)(value.Value);
 
-    public static explicit operator OAHWND(ushort value) => new OAHWND((void*)(value));
+    public static explicit operator OAHWND(ushort value) => new OAHWND(unchecked((void*)(value)));
 
     public static explicit operator ushort(OAHWND value) => (ushort)(value.Value);
 
-    public static explicit operator OAHWND(uint value) => new OAHWND((void*)(value));
+    public static explicit operator OAHWND(uint value) => new OAHWND(unchecked((void*)(value)));
 
     public static explicit operator uint(OAHWND value) => (uint)(value.Value);
 
-    public static explicit operator OAHWND(ulong value) => new OAHWND((void*)(value));
+    public static explicit operator OAHWND(ulong value) => new OAHWND(unchecked((void*)(value)));
 
     public static explicit operator ulong(OAHWND value) => (ulong)(value.Value);
 
-    public static explicit operator OAHWND(nuint value) => new OAHWND((void*)(value));
+    public static explicit operator OAHWND(nuint value) => new OAHWND(unchecked((void*)(value)));
 
     public static implicit operator nuint(OAHWND value) => (nuint)(value.Value);
 

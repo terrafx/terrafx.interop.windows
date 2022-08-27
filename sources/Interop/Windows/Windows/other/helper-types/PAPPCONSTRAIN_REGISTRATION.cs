@@ -31,43 +31,43 @@ public readonly unsafe partial struct PAPPCONSTRAIN_REGISTRATION : IComparable, 
 
     public static implicit operator void*(PAPPCONSTRAIN_REGISTRATION value) => value.Value;
 
-    public static explicit operator PAPPCONSTRAIN_REGISTRATION(byte value) => new PAPPCONSTRAIN_REGISTRATION((void*)(value));
+    public static explicit operator PAPPCONSTRAIN_REGISTRATION(byte value) => new PAPPCONSTRAIN_REGISTRATION(unchecked((void*)(value)));
 
     public static explicit operator byte(PAPPCONSTRAIN_REGISTRATION value) => (byte)(value.Value);
 
-    public static explicit operator PAPPCONSTRAIN_REGISTRATION(short value) => new PAPPCONSTRAIN_REGISTRATION((void*)(value));
+    public static explicit operator PAPPCONSTRAIN_REGISTRATION(short value) => new PAPPCONSTRAIN_REGISTRATION(unchecked((void*)(value)));
 
     public static explicit operator short(PAPPCONSTRAIN_REGISTRATION value) => (short)(value.Value);
 
-    public static explicit operator PAPPCONSTRAIN_REGISTRATION(int value) => new PAPPCONSTRAIN_REGISTRATION((void*)(value));
+    public static explicit operator PAPPCONSTRAIN_REGISTRATION(int value) => new PAPPCONSTRAIN_REGISTRATION(unchecked((void*)(value)));
 
     public static explicit operator int(PAPPCONSTRAIN_REGISTRATION value) => (int)(value.Value);
 
-    public static explicit operator PAPPCONSTRAIN_REGISTRATION(long value) => new PAPPCONSTRAIN_REGISTRATION((void*)(value));
+    public static explicit operator PAPPCONSTRAIN_REGISTRATION(long value) => new PAPPCONSTRAIN_REGISTRATION(unchecked((void*)(value)));
 
     public static explicit operator long(PAPPCONSTRAIN_REGISTRATION value) => (long)(value.Value);
 
-    public static explicit operator PAPPCONSTRAIN_REGISTRATION(nint value) => new PAPPCONSTRAIN_REGISTRATION((void*)(value));
+    public static explicit operator PAPPCONSTRAIN_REGISTRATION(nint value) => new PAPPCONSTRAIN_REGISTRATION(unchecked((void*)(value)));
 
     public static implicit operator nint(PAPPCONSTRAIN_REGISTRATION value) => (nint)(value.Value);
 
-    public static explicit operator PAPPCONSTRAIN_REGISTRATION(sbyte value) => new PAPPCONSTRAIN_REGISTRATION((void*)(value));
+    public static explicit operator PAPPCONSTRAIN_REGISTRATION(sbyte value) => new PAPPCONSTRAIN_REGISTRATION(unchecked((void*)(value)));
 
     public static explicit operator sbyte(PAPPCONSTRAIN_REGISTRATION value) => (sbyte)(value.Value);
 
-    public static explicit operator PAPPCONSTRAIN_REGISTRATION(ushort value) => new PAPPCONSTRAIN_REGISTRATION((void*)(value));
+    public static explicit operator PAPPCONSTRAIN_REGISTRATION(ushort value) => new PAPPCONSTRAIN_REGISTRATION(unchecked((void*)(value)));
 
     public static explicit operator ushort(PAPPCONSTRAIN_REGISTRATION value) => (ushort)(value.Value);
 
-    public static explicit operator PAPPCONSTRAIN_REGISTRATION(uint value) => new PAPPCONSTRAIN_REGISTRATION((void*)(value));
+    public static explicit operator PAPPCONSTRAIN_REGISTRATION(uint value) => new PAPPCONSTRAIN_REGISTRATION(unchecked((void*)(value)));
 
     public static explicit operator uint(PAPPCONSTRAIN_REGISTRATION value) => (uint)(value.Value);
 
-    public static explicit operator PAPPCONSTRAIN_REGISTRATION(ulong value) => new PAPPCONSTRAIN_REGISTRATION((void*)(value));
+    public static explicit operator PAPPCONSTRAIN_REGISTRATION(ulong value) => new PAPPCONSTRAIN_REGISTRATION(unchecked((void*)(value)));
 
     public static explicit operator ulong(PAPPCONSTRAIN_REGISTRATION value) => (ulong)(value.Value);
 
-    public static explicit operator PAPPCONSTRAIN_REGISTRATION(nuint value) => new PAPPCONSTRAIN_REGISTRATION((void*)(value));
+    public static explicit operator PAPPCONSTRAIN_REGISTRATION(nuint value) => new PAPPCONSTRAIN_REGISTRATION(unchecked((void*)(value)));
 
     public static implicit operator nuint(PAPPCONSTRAIN_REGISTRATION value) => (nuint)(value.Value);
 

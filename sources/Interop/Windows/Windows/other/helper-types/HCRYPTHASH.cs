@@ -37,43 +37,43 @@ public readonly unsafe partial struct HCRYPTHASH : IComparable, IComparable<HCRY
 
     public static implicit operator HANDLE(HCRYPTHASH value) => new HANDLE(value.Value);
 
-    public static explicit operator HCRYPTHASH(byte value) => new HCRYPTHASH((void*)(value));
+    public static explicit operator HCRYPTHASH(byte value) => new HCRYPTHASH(unchecked((void*)(value)));
 
     public static explicit operator byte(HCRYPTHASH value) => (byte)(value.Value);
 
-    public static explicit operator HCRYPTHASH(short value) => new HCRYPTHASH((void*)(value));
+    public static explicit operator HCRYPTHASH(short value) => new HCRYPTHASH(unchecked((void*)(value)));
 
     public static explicit operator short(HCRYPTHASH value) => (short)(value.Value);
 
-    public static explicit operator HCRYPTHASH(int value) => new HCRYPTHASH((void*)(value));
+    public static explicit operator HCRYPTHASH(int value) => new HCRYPTHASH(unchecked((void*)(value)));
 
     public static explicit operator int(HCRYPTHASH value) => (int)(value.Value);
 
-    public static explicit operator HCRYPTHASH(long value) => new HCRYPTHASH((void*)(value));
+    public static explicit operator HCRYPTHASH(long value) => new HCRYPTHASH(unchecked((void*)(value)));
 
     public static explicit operator long(HCRYPTHASH value) => (long)(value.Value);
 
-    public static explicit operator HCRYPTHASH(nint value) => new HCRYPTHASH((void*)(value));
+    public static explicit operator HCRYPTHASH(nint value) => new HCRYPTHASH(unchecked((void*)(value)));
 
     public static implicit operator nint(HCRYPTHASH value) => (nint)(value.Value);
 
-    public static explicit operator HCRYPTHASH(sbyte value) => new HCRYPTHASH((void*)(value));
+    public static explicit operator HCRYPTHASH(sbyte value) => new HCRYPTHASH(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HCRYPTHASH value) => (sbyte)(value.Value);
 
-    public static explicit operator HCRYPTHASH(ushort value) => new HCRYPTHASH((void*)(value));
+    public static explicit operator HCRYPTHASH(ushort value) => new HCRYPTHASH(unchecked((void*)(value)));
 
     public static explicit operator ushort(HCRYPTHASH value) => (ushort)(value.Value);
 
-    public static explicit operator HCRYPTHASH(uint value) => new HCRYPTHASH((void*)(value));
+    public static explicit operator HCRYPTHASH(uint value) => new HCRYPTHASH(unchecked((void*)(value)));
 
     public static explicit operator uint(HCRYPTHASH value) => (uint)(value.Value);
 
-    public static explicit operator HCRYPTHASH(ulong value) => new HCRYPTHASH((void*)(value));
+    public static explicit operator HCRYPTHASH(ulong value) => new HCRYPTHASH(unchecked((void*)(value)));
 
     public static explicit operator ulong(HCRYPTHASH value) => (ulong)(value.Value);
 
-    public static explicit operator HCRYPTHASH(nuint value) => new HCRYPTHASH((void*)(value));
+    public static explicit operator HCRYPTHASH(nuint value) => new HCRYPTHASH(unchecked((void*)(value)));
 
     public static implicit operator nuint(HCRYPTHASH value) => (nuint)(value.Value);
 

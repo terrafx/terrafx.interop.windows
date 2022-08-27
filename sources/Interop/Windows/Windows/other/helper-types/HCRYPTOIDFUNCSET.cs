@@ -37,43 +37,43 @@ public readonly unsafe partial struct HCRYPTOIDFUNCSET : IComparable, IComparabl
 
     public static implicit operator HANDLE(HCRYPTOIDFUNCSET value) => new HANDLE(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCSET(byte value) => new HCRYPTOIDFUNCSET((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCSET(byte value) => new HCRYPTOIDFUNCSET(unchecked((void*)(value)));
 
     public static explicit operator byte(HCRYPTOIDFUNCSET value) => (byte)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCSET(short value) => new HCRYPTOIDFUNCSET((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCSET(short value) => new HCRYPTOIDFUNCSET(unchecked((void*)(value)));
 
     public static explicit operator short(HCRYPTOIDFUNCSET value) => (short)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCSET(int value) => new HCRYPTOIDFUNCSET((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCSET(int value) => new HCRYPTOIDFUNCSET(unchecked((void*)(value)));
 
     public static explicit operator int(HCRYPTOIDFUNCSET value) => (int)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCSET(long value) => new HCRYPTOIDFUNCSET((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCSET(long value) => new HCRYPTOIDFUNCSET(unchecked((void*)(value)));
 
     public static explicit operator long(HCRYPTOIDFUNCSET value) => (long)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCSET(nint value) => new HCRYPTOIDFUNCSET((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCSET(nint value) => new HCRYPTOIDFUNCSET(unchecked((void*)(value)));
 
     public static implicit operator nint(HCRYPTOIDFUNCSET value) => (nint)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCSET(sbyte value) => new HCRYPTOIDFUNCSET((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCSET(sbyte value) => new HCRYPTOIDFUNCSET(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HCRYPTOIDFUNCSET value) => (sbyte)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCSET(ushort value) => new HCRYPTOIDFUNCSET((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCSET(ushort value) => new HCRYPTOIDFUNCSET(unchecked((void*)(value)));
 
     public static explicit operator ushort(HCRYPTOIDFUNCSET value) => (ushort)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCSET(uint value) => new HCRYPTOIDFUNCSET((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCSET(uint value) => new HCRYPTOIDFUNCSET(unchecked((void*)(value)));
 
     public static explicit operator uint(HCRYPTOIDFUNCSET value) => (uint)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCSET(ulong value) => new HCRYPTOIDFUNCSET((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCSET(ulong value) => new HCRYPTOIDFUNCSET(unchecked((void*)(value)));
 
     public static explicit operator ulong(HCRYPTOIDFUNCSET value) => (ulong)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCSET(nuint value) => new HCRYPTOIDFUNCSET((void*)(value));
+    public static explicit operator HCRYPTOIDFUNCSET(nuint value) => new HCRYPTOIDFUNCSET(unchecked((void*)(value)));
 
     public static implicit operator nuint(HCRYPTOIDFUNCSET value) => (nuint)(value.Value);
 

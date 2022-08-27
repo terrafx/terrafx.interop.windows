@@ -37,43 +37,43 @@ public readonly unsafe partial struct DPI_AWARENESS_CONTEXT : IComparable, IComp
 
     public static implicit operator HANDLE(DPI_AWARENESS_CONTEXT value) => new HANDLE(value.Value);
 
-    public static explicit operator DPI_AWARENESS_CONTEXT(byte value) => new DPI_AWARENESS_CONTEXT((void*)(value));
+    public static explicit operator DPI_AWARENESS_CONTEXT(byte value) => new DPI_AWARENESS_CONTEXT(unchecked((void*)(value)));
 
     public static explicit operator byte(DPI_AWARENESS_CONTEXT value) => (byte)(value.Value);
 
-    public static explicit operator DPI_AWARENESS_CONTEXT(short value) => new DPI_AWARENESS_CONTEXT((void*)(value));
+    public static explicit operator DPI_AWARENESS_CONTEXT(short value) => new DPI_AWARENESS_CONTEXT(unchecked((void*)(value)));
 
     public static explicit operator short(DPI_AWARENESS_CONTEXT value) => (short)(value.Value);
 
-    public static explicit operator DPI_AWARENESS_CONTEXT(int value) => new DPI_AWARENESS_CONTEXT((void*)(value));
+    public static explicit operator DPI_AWARENESS_CONTEXT(int value) => new DPI_AWARENESS_CONTEXT(unchecked((void*)(value)));
 
     public static explicit operator int(DPI_AWARENESS_CONTEXT value) => (int)(value.Value);
 
-    public static explicit operator DPI_AWARENESS_CONTEXT(long value) => new DPI_AWARENESS_CONTEXT((void*)(value));
+    public static explicit operator DPI_AWARENESS_CONTEXT(long value) => new DPI_AWARENESS_CONTEXT(unchecked((void*)(value)));
 
     public static explicit operator long(DPI_AWARENESS_CONTEXT value) => (long)(value.Value);
 
-    public static explicit operator DPI_AWARENESS_CONTEXT(nint value) => new DPI_AWARENESS_CONTEXT((void*)(value));
+    public static explicit operator DPI_AWARENESS_CONTEXT(nint value) => new DPI_AWARENESS_CONTEXT(unchecked((void*)(value)));
 
     public static implicit operator nint(DPI_AWARENESS_CONTEXT value) => (nint)(value.Value);
 
-    public static explicit operator DPI_AWARENESS_CONTEXT(sbyte value) => new DPI_AWARENESS_CONTEXT((void*)(value));
+    public static explicit operator DPI_AWARENESS_CONTEXT(sbyte value) => new DPI_AWARENESS_CONTEXT(unchecked((void*)(value)));
 
     public static explicit operator sbyte(DPI_AWARENESS_CONTEXT value) => (sbyte)(value.Value);
 
-    public static explicit operator DPI_AWARENESS_CONTEXT(ushort value) => new DPI_AWARENESS_CONTEXT((void*)(value));
+    public static explicit operator DPI_AWARENESS_CONTEXT(ushort value) => new DPI_AWARENESS_CONTEXT(unchecked((void*)(value)));
 
     public static explicit operator ushort(DPI_AWARENESS_CONTEXT value) => (ushort)(value.Value);
 
-    public static explicit operator DPI_AWARENESS_CONTEXT(uint value) => new DPI_AWARENESS_CONTEXT((void*)(value));
+    public static explicit operator DPI_AWARENESS_CONTEXT(uint value) => new DPI_AWARENESS_CONTEXT(unchecked((void*)(value)));
 
     public static explicit operator uint(DPI_AWARENESS_CONTEXT value) => (uint)(value.Value);
 
-    public static explicit operator DPI_AWARENESS_CONTEXT(ulong value) => new DPI_AWARENESS_CONTEXT((void*)(value));
+    public static explicit operator DPI_AWARENESS_CONTEXT(ulong value) => new DPI_AWARENESS_CONTEXT(unchecked((void*)(value)));
 
     public static explicit operator ulong(DPI_AWARENESS_CONTEXT value) => (ulong)(value.Value);
 
-    public static explicit operator DPI_AWARENESS_CONTEXT(nuint value) => new DPI_AWARENESS_CONTEXT((void*)(value));
+    public static explicit operator DPI_AWARENESS_CONTEXT(nuint value) => new DPI_AWARENESS_CONTEXT(unchecked((void*)(value)));
 
     public static implicit operator nuint(DPI_AWARENESS_CONTEXT value) => (nuint)(value.Value);
 

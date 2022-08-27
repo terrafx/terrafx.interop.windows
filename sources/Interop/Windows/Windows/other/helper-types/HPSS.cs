@@ -37,43 +37,43 @@ public readonly unsafe partial struct HPSS : IComparable, IComparable<HPSS>, IEq
 
     public static implicit operator HANDLE(HPSS value) => new HANDLE(value.Value);
 
-    public static explicit operator HPSS(byte value) => new HPSS((void*)(value));
+    public static explicit operator HPSS(byte value) => new HPSS(unchecked((void*)(value)));
 
     public static explicit operator byte(HPSS value) => (byte)(value.Value);
 
-    public static explicit operator HPSS(short value) => new HPSS((void*)(value));
+    public static explicit operator HPSS(short value) => new HPSS(unchecked((void*)(value)));
 
     public static explicit operator short(HPSS value) => (short)(value.Value);
 
-    public static explicit operator HPSS(int value) => new HPSS((void*)(value));
+    public static explicit operator HPSS(int value) => new HPSS(unchecked((void*)(value)));
 
     public static explicit operator int(HPSS value) => (int)(value.Value);
 
-    public static explicit operator HPSS(long value) => new HPSS((void*)(value));
+    public static explicit operator HPSS(long value) => new HPSS(unchecked((void*)(value)));
 
     public static explicit operator long(HPSS value) => (long)(value.Value);
 
-    public static explicit operator HPSS(nint value) => new HPSS((void*)(value));
+    public static explicit operator HPSS(nint value) => new HPSS(unchecked((void*)(value)));
 
     public static implicit operator nint(HPSS value) => (nint)(value.Value);
 
-    public static explicit operator HPSS(sbyte value) => new HPSS((void*)(value));
+    public static explicit operator HPSS(sbyte value) => new HPSS(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HPSS value) => (sbyte)(value.Value);
 
-    public static explicit operator HPSS(ushort value) => new HPSS((void*)(value));
+    public static explicit operator HPSS(ushort value) => new HPSS(unchecked((void*)(value)));
 
     public static explicit operator ushort(HPSS value) => (ushort)(value.Value);
 
-    public static explicit operator HPSS(uint value) => new HPSS((void*)(value));
+    public static explicit operator HPSS(uint value) => new HPSS(unchecked((void*)(value)));
 
     public static explicit operator uint(HPSS value) => (uint)(value.Value);
 
-    public static explicit operator HPSS(ulong value) => new HPSS((void*)(value));
+    public static explicit operator HPSS(ulong value) => new HPSS(unchecked((void*)(value)));
 
     public static explicit operator ulong(HPSS value) => (ulong)(value.Value);
 
-    public static explicit operator HPSS(nuint value) => new HPSS((void*)(value));
+    public static explicit operator HPSS(nuint value) => new HPSS(unchecked((void*)(value)));
 
     public static implicit operator nuint(HPSS value) => (nuint)(value.Value);
 

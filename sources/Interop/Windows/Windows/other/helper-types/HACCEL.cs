@@ -37,43 +37,43 @@ public readonly unsafe partial struct HACCEL : IComparable, IComparable<HACCEL>,
 
     public static implicit operator HANDLE(HACCEL value) => new HANDLE(value.Value);
 
-    public static explicit operator HACCEL(byte value) => new HACCEL((void*)(value));
+    public static explicit operator HACCEL(byte value) => new HACCEL(unchecked((void*)(value)));
 
     public static explicit operator byte(HACCEL value) => (byte)(value.Value);
 
-    public static explicit operator HACCEL(short value) => new HACCEL((void*)(value));
+    public static explicit operator HACCEL(short value) => new HACCEL(unchecked((void*)(value)));
 
     public static explicit operator short(HACCEL value) => (short)(value.Value);
 
-    public static explicit operator HACCEL(int value) => new HACCEL((void*)(value));
+    public static explicit operator HACCEL(int value) => new HACCEL(unchecked((void*)(value)));
 
     public static explicit operator int(HACCEL value) => (int)(value.Value);
 
-    public static explicit operator HACCEL(long value) => new HACCEL((void*)(value));
+    public static explicit operator HACCEL(long value) => new HACCEL(unchecked((void*)(value)));
 
     public static explicit operator long(HACCEL value) => (long)(value.Value);
 
-    public static explicit operator HACCEL(nint value) => new HACCEL((void*)(value));
+    public static explicit operator HACCEL(nint value) => new HACCEL(unchecked((void*)(value)));
 
     public static implicit operator nint(HACCEL value) => (nint)(value.Value);
 
-    public static explicit operator HACCEL(sbyte value) => new HACCEL((void*)(value));
+    public static explicit operator HACCEL(sbyte value) => new HACCEL(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HACCEL value) => (sbyte)(value.Value);
 
-    public static explicit operator HACCEL(ushort value) => new HACCEL((void*)(value));
+    public static explicit operator HACCEL(ushort value) => new HACCEL(unchecked((void*)(value)));
 
     public static explicit operator ushort(HACCEL value) => (ushort)(value.Value);
 
-    public static explicit operator HACCEL(uint value) => new HACCEL((void*)(value));
+    public static explicit operator HACCEL(uint value) => new HACCEL(unchecked((void*)(value)));
 
     public static explicit operator uint(HACCEL value) => (uint)(value.Value);
 
-    public static explicit operator HACCEL(ulong value) => new HACCEL((void*)(value));
+    public static explicit operator HACCEL(ulong value) => new HACCEL(unchecked((void*)(value)));
 
     public static explicit operator ulong(HACCEL value) => (ulong)(value.Value);
 
-    public static explicit operator HACCEL(nuint value) => new HACCEL((void*)(value));
+    public static explicit operator HACCEL(nuint value) => new HACCEL(unchecked((void*)(value)));
 
     public static implicit operator nuint(HACCEL value) => (nuint)(value.Value);
 

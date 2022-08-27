@@ -31,43 +31,43 @@ public readonly unsafe partial struct ASYNCCOMPLETIONHANDLE : IComparable, IComp
 
     public static implicit operator void*(ASYNCCOMPLETIONHANDLE value) => value.Value;
 
-    public static explicit operator ASYNCCOMPLETIONHANDLE(byte value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
+    public static explicit operator ASYNCCOMPLETIONHANDLE(byte value) => new ASYNCCOMPLETIONHANDLE(unchecked((void*)(value)));
 
     public static explicit operator byte(ASYNCCOMPLETIONHANDLE value) => (byte)(value.Value);
 
-    public static explicit operator ASYNCCOMPLETIONHANDLE(short value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
+    public static explicit operator ASYNCCOMPLETIONHANDLE(short value) => new ASYNCCOMPLETIONHANDLE(unchecked((void*)(value)));
 
     public static explicit operator short(ASYNCCOMPLETIONHANDLE value) => (short)(value.Value);
 
-    public static explicit operator ASYNCCOMPLETIONHANDLE(int value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
+    public static explicit operator ASYNCCOMPLETIONHANDLE(int value) => new ASYNCCOMPLETIONHANDLE(unchecked((void*)(value)));
 
     public static explicit operator int(ASYNCCOMPLETIONHANDLE value) => (int)(value.Value);
 
-    public static explicit operator ASYNCCOMPLETIONHANDLE(long value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
+    public static explicit operator ASYNCCOMPLETIONHANDLE(long value) => new ASYNCCOMPLETIONHANDLE(unchecked((void*)(value)));
 
     public static explicit operator long(ASYNCCOMPLETIONHANDLE value) => (long)(value.Value);
 
-    public static explicit operator ASYNCCOMPLETIONHANDLE(nint value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
+    public static explicit operator ASYNCCOMPLETIONHANDLE(nint value) => new ASYNCCOMPLETIONHANDLE(unchecked((void*)(value)));
 
     public static implicit operator nint(ASYNCCOMPLETIONHANDLE value) => (nint)(value.Value);
 
-    public static explicit operator ASYNCCOMPLETIONHANDLE(sbyte value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
+    public static explicit operator ASYNCCOMPLETIONHANDLE(sbyte value) => new ASYNCCOMPLETIONHANDLE(unchecked((void*)(value)));
 
     public static explicit operator sbyte(ASYNCCOMPLETIONHANDLE value) => (sbyte)(value.Value);
 
-    public static explicit operator ASYNCCOMPLETIONHANDLE(ushort value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
+    public static explicit operator ASYNCCOMPLETIONHANDLE(ushort value) => new ASYNCCOMPLETIONHANDLE(unchecked((void*)(value)));
 
     public static explicit operator ushort(ASYNCCOMPLETIONHANDLE value) => (ushort)(value.Value);
 
-    public static explicit operator ASYNCCOMPLETIONHANDLE(uint value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
+    public static explicit operator ASYNCCOMPLETIONHANDLE(uint value) => new ASYNCCOMPLETIONHANDLE(unchecked((void*)(value)));
 
     public static explicit operator uint(ASYNCCOMPLETIONHANDLE value) => (uint)(value.Value);
 
-    public static explicit operator ASYNCCOMPLETIONHANDLE(ulong value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
+    public static explicit operator ASYNCCOMPLETIONHANDLE(ulong value) => new ASYNCCOMPLETIONHANDLE(unchecked((void*)(value)));
 
     public static explicit operator ulong(ASYNCCOMPLETIONHANDLE value) => (ulong)(value.Value);
 
-    public static explicit operator ASYNCCOMPLETIONHANDLE(nuint value) => new ASYNCCOMPLETIONHANDLE((void*)(value));
+    public static explicit operator ASYNCCOMPLETIONHANDLE(nuint value) => new ASYNCCOMPLETIONHANDLE(unchecked((void*)(value)));
 
     public static implicit operator nuint(ASYNCCOMPLETIONHANDLE value) => (nuint)(value.Value);
 

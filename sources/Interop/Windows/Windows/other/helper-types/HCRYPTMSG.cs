@@ -37,43 +37,43 @@ public readonly unsafe partial struct HCRYPTMSG : IComparable, IComparable<HCRYP
 
     public static implicit operator HANDLE(HCRYPTMSG value) => new HANDLE(value.Value);
 
-    public static explicit operator HCRYPTMSG(byte value) => new HCRYPTMSG((void*)(value));
+    public static explicit operator HCRYPTMSG(byte value) => new HCRYPTMSG(unchecked((void*)(value)));
 
     public static explicit operator byte(HCRYPTMSG value) => (byte)(value.Value);
 
-    public static explicit operator HCRYPTMSG(short value) => new HCRYPTMSG((void*)(value));
+    public static explicit operator HCRYPTMSG(short value) => new HCRYPTMSG(unchecked((void*)(value)));
 
     public static explicit operator short(HCRYPTMSG value) => (short)(value.Value);
 
-    public static explicit operator HCRYPTMSG(int value) => new HCRYPTMSG((void*)(value));
+    public static explicit operator HCRYPTMSG(int value) => new HCRYPTMSG(unchecked((void*)(value)));
 
     public static explicit operator int(HCRYPTMSG value) => (int)(value.Value);
 
-    public static explicit operator HCRYPTMSG(long value) => new HCRYPTMSG((void*)(value));
+    public static explicit operator HCRYPTMSG(long value) => new HCRYPTMSG(unchecked((void*)(value)));
 
     public static explicit operator long(HCRYPTMSG value) => (long)(value.Value);
 
-    public static explicit operator HCRYPTMSG(nint value) => new HCRYPTMSG((void*)(value));
+    public static explicit operator HCRYPTMSG(nint value) => new HCRYPTMSG(unchecked((void*)(value)));
 
     public static implicit operator nint(HCRYPTMSG value) => (nint)(value.Value);
 
-    public static explicit operator HCRYPTMSG(sbyte value) => new HCRYPTMSG((void*)(value));
+    public static explicit operator HCRYPTMSG(sbyte value) => new HCRYPTMSG(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HCRYPTMSG value) => (sbyte)(value.Value);
 
-    public static explicit operator HCRYPTMSG(ushort value) => new HCRYPTMSG((void*)(value));
+    public static explicit operator HCRYPTMSG(ushort value) => new HCRYPTMSG(unchecked((void*)(value)));
 
     public static explicit operator ushort(HCRYPTMSG value) => (ushort)(value.Value);
 
-    public static explicit operator HCRYPTMSG(uint value) => new HCRYPTMSG((void*)(value));
+    public static explicit operator HCRYPTMSG(uint value) => new HCRYPTMSG(unchecked((void*)(value)));
 
     public static explicit operator uint(HCRYPTMSG value) => (uint)(value.Value);
 
-    public static explicit operator HCRYPTMSG(ulong value) => new HCRYPTMSG((void*)(value));
+    public static explicit operator HCRYPTMSG(ulong value) => new HCRYPTMSG(unchecked((void*)(value)));
 
     public static explicit operator ulong(HCRYPTMSG value) => (ulong)(value.Value);
 
-    public static explicit operator HCRYPTMSG(nuint value) => new HCRYPTMSG((void*)(value));
+    public static explicit operator HCRYPTMSG(nuint value) => new HCRYPTMSG(unchecked((void*)(value)));
 
     public static implicit operator nuint(HCRYPTMSG value) => (nuint)(value.Value);
 

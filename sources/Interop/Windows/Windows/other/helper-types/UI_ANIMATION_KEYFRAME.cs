@@ -31,43 +31,43 @@ public readonly unsafe partial struct UI_ANIMATION_KEYFRAME : IComparable, IComp
 
     public static implicit operator void*(UI_ANIMATION_KEYFRAME value) => value.Value;
 
-    public static explicit operator UI_ANIMATION_KEYFRAME(byte value) => new UI_ANIMATION_KEYFRAME((int*)(value));
+    public static explicit operator UI_ANIMATION_KEYFRAME(byte value) => new UI_ANIMATION_KEYFRAME(unchecked((int*)(value)));
 
     public static explicit operator byte(UI_ANIMATION_KEYFRAME value) => (byte)(value.Value);
 
-    public static explicit operator UI_ANIMATION_KEYFRAME(short value) => new UI_ANIMATION_KEYFRAME((int*)(value));
+    public static explicit operator UI_ANIMATION_KEYFRAME(short value) => new UI_ANIMATION_KEYFRAME(unchecked((int*)(value)));
 
     public static explicit operator short(UI_ANIMATION_KEYFRAME value) => (short)(value.Value);
 
-    public static explicit operator UI_ANIMATION_KEYFRAME(int value) => new UI_ANIMATION_KEYFRAME((int*)(value));
+    public static explicit operator UI_ANIMATION_KEYFRAME(int value) => new UI_ANIMATION_KEYFRAME(unchecked((int*)(value)));
 
     public static explicit operator int(UI_ANIMATION_KEYFRAME value) => (int)(value.Value);
 
-    public static explicit operator UI_ANIMATION_KEYFRAME(long value) => new UI_ANIMATION_KEYFRAME((int*)(value));
+    public static explicit operator UI_ANIMATION_KEYFRAME(long value) => new UI_ANIMATION_KEYFRAME(unchecked((int*)(value)));
 
     public static explicit operator long(UI_ANIMATION_KEYFRAME value) => (long)(value.Value);
 
-    public static explicit operator UI_ANIMATION_KEYFRAME(nint value) => new UI_ANIMATION_KEYFRAME((int*)(value));
+    public static explicit operator UI_ANIMATION_KEYFRAME(nint value) => new UI_ANIMATION_KEYFRAME(unchecked((int*)(value)));
 
     public static implicit operator nint(UI_ANIMATION_KEYFRAME value) => (nint)(value.Value);
 
-    public static explicit operator UI_ANIMATION_KEYFRAME(sbyte value) => new UI_ANIMATION_KEYFRAME((int*)(value));
+    public static explicit operator UI_ANIMATION_KEYFRAME(sbyte value) => new UI_ANIMATION_KEYFRAME(unchecked((int*)(value)));
 
     public static explicit operator sbyte(UI_ANIMATION_KEYFRAME value) => (sbyte)(value.Value);
 
-    public static explicit operator UI_ANIMATION_KEYFRAME(ushort value) => new UI_ANIMATION_KEYFRAME((int*)(value));
+    public static explicit operator UI_ANIMATION_KEYFRAME(ushort value) => new UI_ANIMATION_KEYFRAME(unchecked((int*)(value)));
 
     public static explicit operator ushort(UI_ANIMATION_KEYFRAME value) => (ushort)(value.Value);
 
-    public static explicit operator UI_ANIMATION_KEYFRAME(uint value) => new UI_ANIMATION_KEYFRAME((int*)(value));
+    public static explicit operator UI_ANIMATION_KEYFRAME(uint value) => new UI_ANIMATION_KEYFRAME(unchecked((int*)(value)));
 
     public static explicit operator uint(UI_ANIMATION_KEYFRAME value) => (uint)(value.Value);
 
-    public static explicit operator UI_ANIMATION_KEYFRAME(ulong value) => new UI_ANIMATION_KEYFRAME((int*)(value));
+    public static explicit operator UI_ANIMATION_KEYFRAME(ulong value) => new UI_ANIMATION_KEYFRAME(unchecked((int*)(value)));
 
     public static explicit operator ulong(UI_ANIMATION_KEYFRAME value) => (ulong)(value.Value);
 
-    public static explicit operator UI_ANIMATION_KEYFRAME(nuint value) => new UI_ANIMATION_KEYFRAME((int*)(value));
+    public static explicit operator UI_ANIMATION_KEYFRAME(nuint value) => new UI_ANIMATION_KEYFRAME(unchecked((int*)(value)));
 
     public static implicit operator nuint(UI_ANIMATION_KEYFRAME value) => (nuint)(value.Value);
 

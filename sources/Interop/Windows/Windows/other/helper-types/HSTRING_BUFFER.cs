@@ -38,43 +38,43 @@ public readonly unsafe partial struct HSTRING_BUFFER : IComparable, IComparable<
 
     public static implicit operator HANDLE(HSTRING_BUFFER value) => new HANDLE(value.Value);
 
-    public static explicit operator HSTRING_BUFFER(byte value) => new HSTRING_BUFFER((void*)(value));
+    public static explicit operator HSTRING_BUFFER(byte value) => new HSTRING_BUFFER(unchecked((void*)(value)));
 
     public static explicit operator byte(HSTRING_BUFFER value) => (byte)(value.Value);
 
-    public static explicit operator HSTRING_BUFFER(short value) => new HSTRING_BUFFER((void*)(value));
+    public static explicit operator HSTRING_BUFFER(short value) => new HSTRING_BUFFER(unchecked((void*)(value)));
 
     public static explicit operator short(HSTRING_BUFFER value) => (short)(value.Value);
 
-    public static explicit operator HSTRING_BUFFER(int value) => new HSTRING_BUFFER((void*)(value));
+    public static explicit operator HSTRING_BUFFER(int value) => new HSTRING_BUFFER(unchecked((void*)(value)));
 
     public static explicit operator int(HSTRING_BUFFER value) => (int)(value.Value);
 
-    public static explicit operator HSTRING_BUFFER(long value) => new HSTRING_BUFFER((void*)(value));
+    public static explicit operator HSTRING_BUFFER(long value) => new HSTRING_BUFFER(unchecked((void*)(value)));
 
     public static explicit operator long(HSTRING_BUFFER value) => (long)(value.Value);
 
-    public static explicit operator HSTRING_BUFFER(nint value) => new HSTRING_BUFFER((void*)(value));
+    public static explicit operator HSTRING_BUFFER(nint value) => new HSTRING_BUFFER(unchecked((void*)(value)));
 
     public static implicit operator nint(HSTRING_BUFFER value) => (nint)(value.Value);
 
-    public static explicit operator HSTRING_BUFFER(sbyte value) => new HSTRING_BUFFER((void*)(value));
+    public static explicit operator HSTRING_BUFFER(sbyte value) => new HSTRING_BUFFER(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HSTRING_BUFFER value) => (sbyte)(value.Value);
 
-    public static explicit operator HSTRING_BUFFER(ushort value) => new HSTRING_BUFFER((void*)(value));
+    public static explicit operator HSTRING_BUFFER(ushort value) => new HSTRING_BUFFER(unchecked((void*)(value)));
 
     public static explicit operator ushort(HSTRING_BUFFER value) => (ushort)(value.Value);
 
-    public static explicit operator HSTRING_BUFFER(uint value) => new HSTRING_BUFFER((void*)(value));
+    public static explicit operator HSTRING_BUFFER(uint value) => new HSTRING_BUFFER(unchecked((void*)(value)));
 
     public static explicit operator uint(HSTRING_BUFFER value) => (uint)(value.Value);
 
-    public static explicit operator HSTRING_BUFFER(ulong value) => new HSTRING_BUFFER((void*)(value));
+    public static explicit operator HSTRING_BUFFER(ulong value) => new HSTRING_BUFFER(unchecked((void*)(value)));
 
     public static explicit operator ulong(HSTRING_BUFFER value) => (ulong)(value.Value);
 
-    public static explicit operator HSTRING_BUFFER(nuint value) => new HSTRING_BUFFER((void*)(value));
+    public static explicit operator HSTRING_BUFFER(nuint value) => new HSTRING_BUFFER(unchecked((void*)(value)));
 
     public static implicit operator nuint(HSTRING_BUFFER value) => (nuint)(value.Value);
 

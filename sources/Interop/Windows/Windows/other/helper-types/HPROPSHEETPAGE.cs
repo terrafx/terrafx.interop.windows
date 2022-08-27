@@ -37,43 +37,43 @@ public readonly unsafe partial struct HPROPSHEETPAGE : IComparable, IComparable<
 
     public static implicit operator HANDLE(HPROPSHEETPAGE value) => new HANDLE(value.Value);
 
-    public static explicit operator HPROPSHEETPAGE(byte value) => new HPROPSHEETPAGE((void*)(value));
+    public static explicit operator HPROPSHEETPAGE(byte value) => new HPROPSHEETPAGE(unchecked((void*)(value)));
 
     public static explicit operator byte(HPROPSHEETPAGE value) => (byte)(value.Value);
 
-    public static explicit operator HPROPSHEETPAGE(short value) => new HPROPSHEETPAGE((void*)(value));
+    public static explicit operator HPROPSHEETPAGE(short value) => new HPROPSHEETPAGE(unchecked((void*)(value)));
 
     public static explicit operator short(HPROPSHEETPAGE value) => (short)(value.Value);
 
-    public static explicit operator HPROPSHEETPAGE(int value) => new HPROPSHEETPAGE((void*)(value));
+    public static explicit operator HPROPSHEETPAGE(int value) => new HPROPSHEETPAGE(unchecked((void*)(value)));
 
     public static explicit operator int(HPROPSHEETPAGE value) => (int)(value.Value);
 
-    public static explicit operator HPROPSHEETPAGE(long value) => new HPROPSHEETPAGE((void*)(value));
+    public static explicit operator HPROPSHEETPAGE(long value) => new HPROPSHEETPAGE(unchecked((void*)(value)));
 
     public static explicit operator long(HPROPSHEETPAGE value) => (long)(value.Value);
 
-    public static explicit operator HPROPSHEETPAGE(nint value) => new HPROPSHEETPAGE((void*)(value));
+    public static explicit operator HPROPSHEETPAGE(nint value) => new HPROPSHEETPAGE(unchecked((void*)(value)));
 
     public static implicit operator nint(HPROPSHEETPAGE value) => (nint)(value.Value);
 
-    public static explicit operator HPROPSHEETPAGE(sbyte value) => new HPROPSHEETPAGE((void*)(value));
+    public static explicit operator HPROPSHEETPAGE(sbyte value) => new HPROPSHEETPAGE(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HPROPSHEETPAGE value) => (sbyte)(value.Value);
 
-    public static explicit operator HPROPSHEETPAGE(ushort value) => new HPROPSHEETPAGE((void*)(value));
+    public static explicit operator HPROPSHEETPAGE(ushort value) => new HPROPSHEETPAGE(unchecked((void*)(value)));
 
     public static explicit operator ushort(HPROPSHEETPAGE value) => (ushort)(value.Value);
 
-    public static explicit operator HPROPSHEETPAGE(uint value) => new HPROPSHEETPAGE((void*)(value));
+    public static explicit operator HPROPSHEETPAGE(uint value) => new HPROPSHEETPAGE(unchecked((void*)(value)));
 
     public static explicit operator uint(HPROPSHEETPAGE value) => (uint)(value.Value);
 
-    public static explicit operator HPROPSHEETPAGE(ulong value) => new HPROPSHEETPAGE((void*)(value));
+    public static explicit operator HPROPSHEETPAGE(ulong value) => new HPROPSHEETPAGE(unchecked((void*)(value)));
 
     public static explicit operator ulong(HPROPSHEETPAGE value) => (ulong)(value.Value);
 
-    public static explicit operator HPROPSHEETPAGE(nuint value) => new HPROPSHEETPAGE((void*)(value));
+    public static explicit operator HPROPSHEETPAGE(nuint value) => new HPROPSHEETPAGE(unchecked((void*)(value)));
 
     public static implicit operator nuint(HPROPSHEETPAGE value) => (nuint)(value.Value);
 

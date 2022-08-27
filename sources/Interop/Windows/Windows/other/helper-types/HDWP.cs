@@ -37,43 +37,43 @@ public readonly unsafe partial struct HDWP : IComparable, IComparable<HDWP>, IEq
 
     public static implicit operator HANDLE(HDWP value) => new HANDLE(value.Value);
 
-    public static explicit operator HDWP(byte value) => new HDWP((void*)(value));
+    public static explicit operator HDWP(byte value) => new HDWP(unchecked((void*)(value)));
 
     public static explicit operator byte(HDWP value) => (byte)(value.Value);
 
-    public static explicit operator HDWP(short value) => new HDWP((void*)(value));
+    public static explicit operator HDWP(short value) => new HDWP(unchecked((void*)(value)));
 
     public static explicit operator short(HDWP value) => (short)(value.Value);
 
-    public static explicit operator HDWP(int value) => new HDWP((void*)(value));
+    public static explicit operator HDWP(int value) => new HDWP(unchecked((void*)(value)));
 
     public static explicit operator int(HDWP value) => (int)(value.Value);
 
-    public static explicit operator HDWP(long value) => new HDWP((void*)(value));
+    public static explicit operator HDWP(long value) => new HDWP(unchecked((void*)(value)));
 
     public static explicit operator long(HDWP value) => (long)(value.Value);
 
-    public static explicit operator HDWP(nint value) => new HDWP((void*)(value));
+    public static explicit operator HDWP(nint value) => new HDWP(unchecked((void*)(value)));
 
     public static implicit operator nint(HDWP value) => (nint)(value.Value);
 
-    public static explicit operator HDWP(sbyte value) => new HDWP((void*)(value));
+    public static explicit operator HDWP(sbyte value) => new HDWP(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HDWP value) => (sbyte)(value.Value);
 
-    public static explicit operator HDWP(ushort value) => new HDWP((void*)(value));
+    public static explicit operator HDWP(ushort value) => new HDWP(unchecked((void*)(value)));
 
     public static explicit operator ushort(HDWP value) => (ushort)(value.Value);
 
-    public static explicit operator HDWP(uint value) => new HDWP((void*)(value));
+    public static explicit operator HDWP(uint value) => new HDWP(unchecked((void*)(value)));
 
     public static explicit operator uint(HDWP value) => (uint)(value.Value);
 
-    public static explicit operator HDWP(ulong value) => new HDWP((void*)(value));
+    public static explicit operator HDWP(ulong value) => new HDWP(unchecked((void*)(value)));
 
     public static explicit operator ulong(HDWP value) => (ulong)(value.Value);
 
-    public static explicit operator HDWP(nuint value) => new HDWP((void*)(value));
+    public static explicit operator HDWP(nuint value) => new HDWP(unchecked((void*)(value)));
 
     public static implicit operator nuint(HDWP value) => (nuint)(value.Value);
 

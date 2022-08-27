@@ -37,43 +37,43 @@ public readonly unsafe partial struct HBRUSH : IComparable, IComparable<HBRUSH>,
 
     public static implicit operator HANDLE(HBRUSH value) => new HANDLE(value.Value);
 
-    public static explicit operator HBRUSH(byte value) => new HBRUSH((void*)(value));
+    public static explicit operator HBRUSH(byte value) => new HBRUSH(unchecked((void*)(value)));
 
     public static explicit operator byte(HBRUSH value) => (byte)(value.Value);
 
-    public static explicit operator HBRUSH(short value) => new HBRUSH((void*)(value));
+    public static explicit operator HBRUSH(short value) => new HBRUSH(unchecked((void*)(value)));
 
     public static explicit operator short(HBRUSH value) => (short)(value.Value);
 
-    public static explicit operator HBRUSH(int value) => new HBRUSH((void*)(value));
+    public static explicit operator HBRUSH(int value) => new HBRUSH(unchecked((void*)(value)));
 
     public static explicit operator int(HBRUSH value) => (int)(value.Value);
 
-    public static explicit operator HBRUSH(long value) => new HBRUSH((void*)(value));
+    public static explicit operator HBRUSH(long value) => new HBRUSH(unchecked((void*)(value)));
 
     public static explicit operator long(HBRUSH value) => (long)(value.Value);
 
-    public static explicit operator HBRUSH(nint value) => new HBRUSH((void*)(value));
+    public static explicit operator HBRUSH(nint value) => new HBRUSH(unchecked((void*)(value)));
 
     public static implicit operator nint(HBRUSH value) => (nint)(value.Value);
 
-    public static explicit operator HBRUSH(sbyte value) => new HBRUSH((void*)(value));
+    public static explicit operator HBRUSH(sbyte value) => new HBRUSH(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HBRUSH value) => (sbyte)(value.Value);
 
-    public static explicit operator HBRUSH(ushort value) => new HBRUSH((void*)(value));
+    public static explicit operator HBRUSH(ushort value) => new HBRUSH(unchecked((void*)(value)));
 
     public static explicit operator ushort(HBRUSH value) => (ushort)(value.Value);
 
-    public static explicit operator HBRUSH(uint value) => new HBRUSH((void*)(value));
+    public static explicit operator HBRUSH(uint value) => new HBRUSH(unchecked((void*)(value)));
 
     public static explicit operator uint(HBRUSH value) => (uint)(value.Value);
 
-    public static explicit operator HBRUSH(ulong value) => new HBRUSH((void*)(value));
+    public static explicit operator HBRUSH(ulong value) => new HBRUSH(unchecked((void*)(value)));
 
     public static explicit operator ulong(HBRUSH value) => (ulong)(value.Value);
 
-    public static explicit operator HBRUSH(nuint value) => new HBRUSH((void*)(value));
+    public static explicit operator HBRUSH(nuint value) => new HBRUSH(unchecked((void*)(value)));
 
     public static implicit operator nuint(HBRUSH value) => (nuint)(value.Value);
 

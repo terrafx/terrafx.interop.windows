@@ -37,43 +37,43 @@ public readonly unsafe partial struct HICON : IComparable, IComparable<HICON>, I
 
     public static implicit operator HANDLE(HICON value) => new HANDLE(value.Value);
 
-    public static explicit operator HICON(byte value) => new HICON((void*)(value));
+    public static explicit operator HICON(byte value) => new HICON(unchecked((void*)(value)));
 
     public static explicit operator byte(HICON value) => (byte)(value.Value);
 
-    public static explicit operator HICON(short value) => new HICON((void*)(value));
+    public static explicit operator HICON(short value) => new HICON(unchecked((void*)(value)));
 
     public static explicit operator short(HICON value) => (short)(value.Value);
 
-    public static explicit operator HICON(int value) => new HICON((void*)(value));
+    public static explicit operator HICON(int value) => new HICON(unchecked((void*)(value)));
 
     public static explicit operator int(HICON value) => (int)(value.Value);
 
-    public static explicit operator HICON(long value) => new HICON((void*)(value));
+    public static explicit operator HICON(long value) => new HICON(unchecked((void*)(value)));
 
     public static explicit operator long(HICON value) => (long)(value.Value);
 
-    public static explicit operator HICON(nint value) => new HICON((void*)(value));
+    public static explicit operator HICON(nint value) => new HICON(unchecked((void*)(value)));
 
     public static implicit operator nint(HICON value) => (nint)(value.Value);
 
-    public static explicit operator HICON(sbyte value) => new HICON((void*)(value));
+    public static explicit operator HICON(sbyte value) => new HICON(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HICON value) => (sbyte)(value.Value);
 
-    public static explicit operator HICON(ushort value) => new HICON((void*)(value));
+    public static explicit operator HICON(ushort value) => new HICON(unchecked((void*)(value)));
 
     public static explicit operator ushort(HICON value) => (ushort)(value.Value);
 
-    public static explicit operator HICON(uint value) => new HICON((void*)(value));
+    public static explicit operator HICON(uint value) => new HICON(unchecked((void*)(value)));
 
     public static explicit operator uint(HICON value) => (uint)(value.Value);
 
-    public static explicit operator HICON(ulong value) => new HICON((void*)(value));
+    public static explicit operator HICON(ulong value) => new HICON(unchecked((void*)(value)));
 
     public static explicit operator ulong(HICON value) => (ulong)(value.Value);
 
-    public static explicit operator HICON(nuint value) => new HICON((void*)(value));
+    public static explicit operator HICON(nuint value) => new HICON(unchecked((void*)(value)));
 
     public static implicit operator nuint(HICON value) => (nuint)(value.Value);
 

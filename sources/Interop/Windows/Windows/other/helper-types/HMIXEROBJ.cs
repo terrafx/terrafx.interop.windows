@@ -37,43 +37,43 @@ public readonly unsafe partial struct HMIXEROBJ : IComparable, IComparable<HMIXE
 
     public static implicit operator HANDLE(HMIXEROBJ value) => new HANDLE(value.Value);
 
-    public static explicit operator HMIXEROBJ(byte value) => new HMIXEROBJ((void*)(value));
+    public static explicit operator HMIXEROBJ(byte value) => new HMIXEROBJ(unchecked((void*)(value)));
 
     public static explicit operator byte(HMIXEROBJ value) => (byte)(value.Value);
 
-    public static explicit operator HMIXEROBJ(short value) => new HMIXEROBJ((void*)(value));
+    public static explicit operator HMIXEROBJ(short value) => new HMIXEROBJ(unchecked((void*)(value)));
 
     public static explicit operator short(HMIXEROBJ value) => (short)(value.Value);
 
-    public static explicit operator HMIXEROBJ(int value) => new HMIXEROBJ((void*)(value));
+    public static explicit operator HMIXEROBJ(int value) => new HMIXEROBJ(unchecked((void*)(value)));
 
     public static explicit operator int(HMIXEROBJ value) => (int)(value.Value);
 
-    public static explicit operator HMIXEROBJ(long value) => new HMIXEROBJ((void*)(value));
+    public static explicit operator HMIXEROBJ(long value) => new HMIXEROBJ(unchecked((void*)(value)));
 
     public static explicit operator long(HMIXEROBJ value) => (long)(value.Value);
 
-    public static explicit operator HMIXEROBJ(nint value) => new HMIXEROBJ((void*)(value));
+    public static explicit operator HMIXEROBJ(nint value) => new HMIXEROBJ(unchecked((void*)(value)));
 
     public static implicit operator nint(HMIXEROBJ value) => (nint)(value.Value);
 
-    public static explicit operator HMIXEROBJ(sbyte value) => new HMIXEROBJ((void*)(value));
+    public static explicit operator HMIXEROBJ(sbyte value) => new HMIXEROBJ(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HMIXEROBJ value) => (sbyte)(value.Value);
 
-    public static explicit operator HMIXEROBJ(ushort value) => new HMIXEROBJ((void*)(value));
+    public static explicit operator HMIXEROBJ(ushort value) => new HMIXEROBJ(unchecked((void*)(value)));
 
     public static explicit operator ushort(HMIXEROBJ value) => (ushort)(value.Value);
 
-    public static explicit operator HMIXEROBJ(uint value) => new HMIXEROBJ((void*)(value));
+    public static explicit operator HMIXEROBJ(uint value) => new HMIXEROBJ(unchecked((void*)(value)));
 
     public static explicit operator uint(HMIXEROBJ value) => (uint)(value.Value);
 
-    public static explicit operator HMIXEROBJ(ulong value) => new HMIXEROBJ((void*)(value));
+    public static explicit operator HMIXEROBJ(ulong value) => new HMIXEROBJ(unchecked((void*)(value)));
 
     public static explicit operator ulong(HMIXEROBJ value) => (ulong)(value.Value);
 
-    public static explicit operator HMIXEROBJ(nuint value) => new HMIXEROBJ((void*)(value));
+    public static explicit operator HMIXEROBJ(nuint value) => new HMIXEROBJ(unchecked((void*)(value)));
 
     public static implicit operator nuint(HMIXEROBJ value) => (nuint)(value.Value);
 

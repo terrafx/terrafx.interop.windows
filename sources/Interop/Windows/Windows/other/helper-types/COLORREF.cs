@@ -29,23 +29,23 @@ public readonly unsafe partial struct COLORREF : IComparable, IComparable<COLORR
 
     public static explicit operator byte(COLORREF value) => (byte)(value.Value);
 
-    public static explicit operator COLORREF(short value) => new COLORREF((uint)(value));
+    public static explicit operator COLORREF(short value) => new COLORREF(unchecked((uint)(value)));
 
     public static explicit operator short(COLORREF value) => (short)(value.Value);
 
-    public static explicit operator COLORREF(int value) => new COLORREF((uint)(value));
+    public static explicit operator COLORREF(int value) => new COLORREF(unchecked((uint)(value)));
 
     public static explicit operator int(COLORREF value) => (int)(value.Value);
 
-    public static explicit operator COLORREF(long value) => new COLORREF((uint)(value));
+    public static explicit operator COLORREF(long value) => new COLORREF(unchecked((uint)(value)));
 
     public static implicit operator long(COLORREF value) => value.Value;
 
-    public static explicit operator COLORREF(nint value) => new COLORREF((uint)(value));
+    public static explicit operator COLORREF(nint value) => new COLORREF(unchecked((uint)(value)));
 
     public static explicit operator nint(COLORREF value) => (nint)(value.Value);
 
-    public static explicit operator COLORREF(sbyte value) => new COLORREF((uint)(value));
+    public static explicit operator COLORREF(sbyte value) => new COLORREF(unchecked((uint)(value)));
 
     public static explicit operator sbyte(COLORREF value) => (sbyte)(value.Value);
 
@@ -57,11 +57,11 @@ public readonly unsafe partial struct COLORREF : IComparable, IComparable<COLORR
 
     public static implicit operator uint(COLORREF value) => value.Value;
 
-    public static explicit operator COLORREF(ulong value) => new COLORREF((uint)(value));
+    public static explicit operator COLORREF(ulong value) => new COLORREF(unchecked((uint)(value)));
 
     public static implicit operator ulong(COLORREF value) => value.Value;
 
-    public static explicit operator COLORREF(nuint value) => new COLORREF((uint)(value));
+    public static explicit operator COLORREF(nuint value) => new COLORREF(unchecked((uint)(value)));
 
     public static implicit operator nuint(COLORREF value) => value.Value;
 

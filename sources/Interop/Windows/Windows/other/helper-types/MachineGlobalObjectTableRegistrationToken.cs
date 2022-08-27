@@ -31,43 +31,43 @@ public readonly unsafe partial struct MachineGlobalObjectTableRegistrationToken 
 
     public static implicit operator void*(MachineGlobalObjectTableRegistrationToken value) => value.Value;
 
-    public static explicit operator MachineGlobalObjectTableRegistrationToken(byte value) => new MachineGlobalObjectTableRegistrationToken((void*)(value));
+    public static explicit operator MachineGlobalObjectTableRegistrationToken(byte value) => new MachineGlobalObjectTableRegistrationToken(unchecked((void*)(value)));
 
     public static explicit operator byte(MachineGlobalObjectTableRegistrationToken value) => (byte)(value.Value);
 
-    public static explicit operator MachineGlobalObjectTableRegistrationToken(short value) => new MachineGlobalObjectTableRegistrationToken((void*)(value));
+    public static explicit operator MachineGlobalObjectTableRegistrationToken(short value) => new MachineGlobalObjectTableRegistrationToken(unchecked((void*)(value)));
 
     public static explicit operator short(MachineGlobalObjectTableRegistrationToken value) => (short)(value.Value);
 
-    public static explicit operator MachineGlobalObjectTableRegistrationToken(int value) => new MachineGlobalObjectTableRegistrationToken((void*)(value));
+    public static explicit operator MachineGlobalObjectTableRegistrationToken(int value) => new MachineGlobalObjectTableRegistrationToken(unchecked((void*)(value)));
 
     public static explicit operator int(MachineGlobalObjectTableRegistrationToken value) => (int)(value.Value);
 
-    public static explicit operator MachineGlobalObjectTableRegistrationToken(long value) => new MachineGlobalObjectTableRegistrationToken((void*)(value));
+    public static explicit operator MachineGlobalObjectTableRegistrationToken(long value) => new MachineGlobalObjectTableRegistrationToken(unchecked((void*)(value)));
 
     public static explicit operator long(MachineGlobalObjectTableRegistrationToken value) => (long)(value.Value);
 
-    public static explicit operator MachineGlobalObjectTableRegistrationToken(nint value) => new MachineGlobalObjectTableRegistrationToken((void*)(value));
+    public static explicit operator MachineGlobalObjectTableRegistrationToken(nint value) => new MachineGlobalObjectTableRegistrationToken(unchecked((void*)(value)));
 
     public static implicit operator nint(MachineGlobalObjectTableRegistrationToken value) => (nint)(value.Value);
 
-    public static explicit operator MachineGlobalObjectTableRegistrationToken(sbyte value) => new MachineGlobalObjectTableRegistrationToken((void*)(value));
+    public static explicit operator MachineGlobalObjectTableRegistrationToken(sbyte value) => new MachineGlobalObjectTableRegistrationToken(unchecked((void*)(value)));
 
     public static explicit operator sbyte(MachineGlobalObjectTableRegistrationToken value) => (sbyte)(value.Value);
 
-    public static explicit operator MachineGlobalObjectTableRegistrationToken(ushort value) => new MachineGlobalObjectTableRegistrationToken((void*)(value));
+    public static explicit operator MachineGlobalObjectTableRegistrationToken(ushort value) => new MachineGlobalObjectTableRegistrationToken(unchecked((void*)(value)));
 
     public static explicit operator ushort(MachineGlobalObjectTableRegistrationToken value) => (ushort)(value.Value);
 
-    public static explicit operator MachineGlobalObjectTableRegistrationToken(uint value) => new MachineGlobalObjectTableRegistrationToken((void*)(value));
+    public static explicit operator MachineGlobalObjectTableRegistrationToken(uint value) => new MachineGlobalObjectTableRegistrationToken(unchecked((void*)(value)));
 
     public static explicit operator uint(MachineGlobalObjectTableRegistrationToken value) => (uint)(value.Value);
 
-    public static explicit operator MachineGlobalObjectTableRegistrationToken(ulong value) => new MachineGlobalObjectTableRegistrationToken((void*)(value));
+    public static explicit operator MachineGlobalObjectTableRegistrationToken(ulong value) => new MachineGlobalObjectTableRegistrationToken(unchecked((void*)(value)));
 
     public static explicit operator ulong(MachineGlobalObjectTableRegistrationToken value) => (ulong)(value.Value);
 
-    public static explicit operator MachineGlobalObjectTableRegistrationToken(nuint value) => new MachineGlobalObjectTableRegistrationToken((void*)(value));
+    public static explicit operator MachineGlobalObjectTableRegistrationToken(nuint value) => new MachineGlobalObjectTableRegistrationToken(unchecked((void*)(value)));
 
     public static implicit operator nuint(MachineGlobalObjectTableRegistrationToken value) => (nuint)(value.Value);
 

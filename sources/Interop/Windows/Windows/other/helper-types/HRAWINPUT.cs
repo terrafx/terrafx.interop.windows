@@ -37,43 +37,43 @@ public readonly unsafe partial struct HRAWINPUT : IComparable, IComparable<HRAWI
 
     public static implicit operator HANDLE(HRAWINPUT value) => new HANDLE(value.Value);
 
-    public static explicit operator HRAWINPUT(byte value) => new HRAWINPUT((void*)(value));
+    public static explicit operator HRAWINPUT(byte value) => new HRAWINPUT(unchecked((void*)(value)));
 
     public static explicit operator byte(HRAWINPUT value) => (byte)(value.Value);
 
-    public static explicit operator HRAWINPUT(short value) => new HRAWINPUT((void*)(value));
+    public static explicit operator HRAWINPUT(short value) => new HRAWINPUT(unchecked((void*)(value)));
 
     public static explicit operator short(HRAWINPUT value) => (short)(value.Value);
 
-    public static explicit operator HRAWINPUT(int value) => new HRAWINPUT((void*)(value));
+    public static explicit operator HRAWINPUT(int value) => new HRAWINPUT(unchecked((void*)(value)));
 
     public static explicit operator int(HRAWINPUT value) => (int)(value.Value);
 
-    public static explicit operator HRAWINPUT(long value) => new HRAWINPUT((void*)(value));
+    public static explicit operator HRAWINPUT(long value) => new HRAWINPUT(unchecked((void*)(value)));
 
     public static explicit operator long(HRAWINPUT value) => (long)(value.Value);
 
-    public static explicit operator HRAWINPUT(nint value) => new HRAWINPUT((void*)(value));
+    public static explicit operator HRAWINPUT(nint value) => new HRAWINPUT(unchecked((void*)(value)));
 
     public static implicit operator nint(HRAWINPUT value) => (nint)(value.Value);
 
-    public static explicit operator HRAWINPUT(sbyte value) => new HRAWINPUT((void*)(value));
+    public static explicit operator HRAWINPUT(sbyte value) => new HRAWINPUT(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HRAWINPUT value) => (sbyte)(value.Value);
 
-    public static explicit operator HRAWINPUT(ushort value) => new HRAWINPUT((void*)(value));
+    public static explicit operator HRAWINPUT(ushort value) => new HRAWINPUT(unchecked((void*)(value)));
 
     public static explicit operator ushort(HRAWINPUT value) => (ushort)(value.Value);
 
-    public static explicit operator HRAWINPUT(uint value) => new HRAWINPUT((void*)(value));
+    public static explicit operator HRAWINPUT(uint value) => new HRAWINPUT(unchecked((void*)(value)));
 
     public static explicit operator uint(HRAWINPUT value) => (uint)(value.Value);
 
-    public static explicit operator HRAWINPUT(ulong value) => new HRAWINPUT((void*)(value));
+    public static explicit operator HRAWINPUT(ulong value) => new HRAWINPUT(unchecked((void*)(value)));
 
     public static explicit operator ulong(HRAWINPUT value) => (ulong)(value.Value);
 
-    public static explicit operator HRAWINPUT(nuint value) => new HRAWINPUT((void*)(value));
+    public static explicit operator HRAWINPUT(nuint value) => new HRAWINPUT(unchecked((void*)(value)));
 
     public static implicit operator nuint(HRAWINPUT value) => (nuint)(value.Value);
 

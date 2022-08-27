@@ -37,43 +37,43 @@ public readonly unsafe partial struct HINF : IComparable, IComparable<HINF>, IEq
 
     public static implicit operator HANDLE(HINF value) => new HANDLE(value.Value);
 
-    public static explicit operator HINF(byte value) => new HINF((void*)(value));
+    public static explicit operator HINF(byte value) => new HINF(unchecked((void*)(value)));
 
     public static explicit operator byte(HINF value) => (byte)(value.Value);
 
-    public static explicit operator HINF(short value) => new HINF((void*)(value));
+    public static explicit operator HINF(short value) => new HINF(unchecked((void*)(value)));
 
     public static explicit operator short(HINF value) => (short)(value.Value);
 
-    public static explicit operator HINF(int value) => new HINF((void*)(value));
+    public static explicit operator HINF(int value) => new HINF(unchecked((void*)(value)));
 
     public static explicit operator int(HINF value) => (int)(value.Value);
 
-    public static explicit operator HINF(long value) => new HINF((void*)(value));
+    public static explicit operator HINF(long value) => new HINF(unchecked((void*)(value)));
 
     public static explicit operator long(HINF value) => (long)(value.Value);
 
-    public static explicit operator HINF(nint value) => new HINF((void*)(value));
+    public static explicit operator HINF(nint value) => new HINF(unchecked((void*)(value)));
 
     public static implicit operator nint(HINF value) => (nint)(value.Value);
 
-    public static explicit operator HINF(sbyte value) => new HINF((void*)(value));
+    public static explicit operator HINF(sbyte value) => new HINF(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HINF value) => (sbyte)(value.Value);
 
-    public static explicit operator HINF(ushort value) => new HINF((void*)(value));
+    public static explicit operator HINF(ushort value) => new HINF(unchecked((void*)(value)));
 
     public static explicit operator ushort(HINF value) => (ushort)(value.Value);
 
-    public static explicit operator HINF(uint value) => new HINF((void*)(value));
+    public static explicit operator HINF(uint value) => new HINF(unchecked((void*)(value)));
 
     public static explicit operator uint(HINF value) => (uint)(value.Value);
 
-    public static explicit operator HINF(ulong value) => new HINF((void*)(value));
+    public static explicit operator HINF(ulong value) => new HINF(unchecked((void*)(value)));
 
     public static explicit operator ulong(HINF value) => (ulong)(value.Value);
 
-    public static explicit operator HINF(nuint value) => new HINF((void*)(value));
+    public static explicit operator HINF(nuint value) => new HINF(unchecked((void*)(value)));
 
     public static implicit operator nuint(HINF value) => (nuint)(value.Value);
 

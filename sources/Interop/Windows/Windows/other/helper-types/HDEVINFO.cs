@@ -37,43 +37,43 @@ public readonly unsafe partial struct HDEVINFO : IComparable, IComparable<HDEVIN
 
     public static implicit operator HANDLE(HDEVINFO value) => new HANDLE(value.Value);
 
-    public static explicit operator HDEVINFO(byte value) => new HDEVINFO((void*)(value));
+    public static explicit operator HDEVINFO(byte value) => new HDEVINFO(unchecked((void*)(value)));
 
     public static explicit operator byte(HDEVINFO value) => (byte)(value.Value);
 
-    public static explicit operator HDEVINFO(short value) => new HDEVINFO((void*)(value));
+    public static explicit operator HDEVINFO(short value) => new HDEVINFO(unchecked((void*)(value)));
 
     public static explicit operator short(HDEVINFO value) => (short)(value.Value);
 
-    public static explicit operator HDEVINFO(int value) => new HDEVINFO((void*)(value));
+    public static explicit operator HDEVINFO(int value) => new HDEVINFO(unchecked((void*)(value)));
 
     public static explicit operator int(HDEVINFO value) => (int)(value.Value);
 
-    public static explicit operator HDEVINFO(long value) => new HDEVINFO((void*)(value));
+    public static explicit operator HDEVINFO(long value) => new HDEVINFO(unchecked((void*)(value)));
 
     public static explicit operator long(HDEVINFO value) => (long)(value.Value);
 
-    public static explicit operator HDEVINFO(nint value) => new HDEVINFO((void*)(value));
+    public static explicit operator HDEVINFO(nint value) => new HDEVINFO(unchecked((void*)(value)));
 
     public static implicit operator nint(HDEVINFO value) => (nint)(value.Value);
 
-    public static explicit operator HDEVINFO(sbyte value) => new HDEVINFO((void*)(value));
+    public static explicit operator HDEVINFO(sbyte value) => new HDEVINFO(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HDEVINFO value) => (sbyte)(value.Value);
 
-    public static explicit operator HDEVINFO(ushort value) => new HDEVINFO((void*)(value));
+    public static explicit operator HDEVINFO(ushort value) => new HDEVINFO(unchecked((void*)(value)));
 
     public static explicit operator ushort(HDEVINFO value) => (ushort)(value.Value);
 
-    public static explicit operator HDEVINFO(uint value) => new HDEVINFO((void*)(value));
+    public static explicit operator HDEVINFO(uint value) => new HDEVINFO(unchecked((void*)(value)));
 
     public static explicit operator uint(HDEVINFO value) => (uint)(value.Value);
 
-    public static explicit operator HDEVINFO(ulong value) => new HDEVINFO((void*)(value));
+    public static explicit operator HDEVINFO(ulong value) => new HDEVINFO(unchecked((void*)(value)));
 
     public static explicit operator ulong(HDEVINFO value) => (ulong)(value.Value);
 
-    public static explicit operator HDEVINFO(nuint value) => new HDEVINFO((void*)(value));
+    public static explicit operator HDEVINFO(nuint value) => new HDEVINFO(unchecked((void*)(value)));
 
     public static implicit operator nuint(HDEVINFO value) => (nuint)(value.Value);
 

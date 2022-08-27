@@ -37,43 +37,43 @@ public readonly unsafe partial struct HMODULE : IComparable, IComparable<HMODULE
 
     public static implicit operator HANDLE(HMODULE value) => new HANDLE(value.Value);
 
-    public static explicit operator HMODULE(byte value) => new HMODULE((void*)(value));
+    public static explicit operator HMODULE(byte value) => new HMODULE(unchecked((void*)(value)));
 
     public static explicit operator byte(HMODULE value) => (byte)(value.Value);
 
-    public static explicit operator HMODULE(short value) => new HMODULE((void*)(value));
+    public static explicit operator HMODULE(short value) => new HMODULE(unchecked((void*)(value)));
 
     public static explicit operator short(HMODULE value) => (short)(value.Value);
 
-    public static explicit operator HMODULE(int value) => new HMODULE((void*)(value));
+    public static explicit operator HMODULE(int value) => new HMODULE(unchecked((void*)(value)));
 
     public static explicit operator int(HMODULE value) => (int)(value.Value);
 
-    public static explicit operator HMODULE(long value) => new HMODULE((void*)(value));
+    public static explicit operator HMODULE(long value) => new HMODULE(unchecked((void*)(value)));
 
     public static explicit operator long(HMODULE value) => (long)(value.Value);
 
-    public static explicit operator HMODULE(nint value) => new HMODULE((void*)(value));
+    public static explicit operator HMODULE(nint value) => new HMODULE(unchecked((void*)(value)));
 
     public static implicit operator nint(HMODULE value) => (nint)(value.Value);
 
-    public static explicit operator HMODULE(sbyte value) => new HMODULE((void*)(value));
+    public static explicit operator HMODULE(sbyte value) => new HMODULE(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HMODULE value) => (sbyte)(value.Value);
 
-    public static explicit operator HMODULE(ushort value) => new HMODULE((void*)(value));
+    public static explicit operator HMODULE(ushort value) => new HMODULE(unchecked((void*)(value)));
 
     public static explicit operator ushort(HMODULE value) => (ushort)(value.Value);
 
-    public static explicit operator HMODULE(uint value) => new HMODULE((void*)(value));
+    public static explicit operator HMODULE(uint value) => new HMODULE(unchecked((void*)(value)));
 
     public static explicit operator uint(HMODULE value) => (uint)(value.Value);
 
-    public static explicit operator HMODULE(ulong value) => new HMODULE((void*)(value));
+    public static explicit operator HMODULE(ulong value) => new HMODULE(unchecked((void*)(value)));
 
     public static explicit operator ulong(HMODULE value) => (ulong)(value.Value);
 
-    public static explicit operator HMODULE(nuint value) => new HMODULE((void*)(value));
+    public static explicit operator HMODULE(nuint value) => new HMODULE(unchecked((void*)(value)));
 
     public static implicit operator nuint(HMODULE value) => (nuint)(value.Value);
 

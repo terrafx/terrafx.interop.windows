@@ -37,7 +37,7 @@ public readonly unsafe partial struct LPARAM : IComparable, IComparable<LPARAM>,
 
     public static explicit operator int(LPARAM value) => (int)(value.Value);
 
-    public static explicit operator LPARAM(long value) => new LPARAM((nint)(value));
+    public static explicit operator LPARAM(long value) => new LPARAM(unchecked((nint)(value)));
 
     public static implicit operator long(LPARAM value) => value.Value;
 
@@ -53,15 +53,15 @@ public readonly unsafe partial struct LPARAM : IComparable, IComparable<LPARAM>,
 
     public static explicit operator ushort(LPARAM value) => (ushort)(value.Value);
 
-    public static explicit operator LPARAM(uint value) => new LPARAM((nint)(value));
+    public static explicit operator LPARAM(uint value) => new LPARAM(unchecked((nint)(value)));
 
     public static explicit operator uint(LPARAM value) => (uint)(value.Value);
 
-    public static explicit operator LPARAM(ulong value) => new LPARAM((nint)(value));
+    public static explicit operator LPARAM(ulong value) => new LPARAM(unchecked((nint)(value)));
 
     public static explicit operator ulong(LPARAM value) => (ulong)(value.Value);
 
-    public static explicit operator LPARAM(nuint value) => new LPARAM((nint)(value));
+    public static explicit operator LPARAM(nuint value) => new LPARAM(unchecked((nint)(value)));
 
     public static explicit operator nuint(LPARAM value) => (nuint)(value.Value);
 

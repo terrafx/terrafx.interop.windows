@@ -37,43 +37,43 @@ public readonly unsafe partial struct HDROP : IComparable, IComparable<HDROP>, I
 
     public static implicit operator HANDLE(HDROP value) => new HANDLE(value.Value);
 
-    public static explicit operator HDROP(byte value) => new HDROP((void*)(value));
+    public static explicit operator HDROP(byte value) => new HDROP(unchecked((void*)(value)));
 
     public static explicit operator byte(HDROP value) => (byte)(value.Value);
 
-    public static explicit operator HDROP(short value) => new HDROP((void*)(value));
+    public static explicit operator HDROP(short value) => new HDROP(unchecked((void*)(value)));
 
     public static explicit operator short(HDROP value) => (short)(value.Value);
 
-    public static explicit operator HDROP(int value) => new HDROP((void*)(value));
+    public static explicit operator HDROP(int value) => new HDROP(unchecked((void*)(value)));
 
     public static explicit operator int(HDROP value) => (int)(value.Value);
 
-    public static explicit operator HDROP(long value) => new HDROP((void*)(value));
+    public static explicit operator HDROP(long value) => new HDROP(unchecked((void*)(value)));
 
     public static explicit operator long(HDROP value) => (long)(value.Value);
 
-    public static explicit operator HDROP(nint value) => new HDROP((void*)(value));
+    public static explicit operator HDROP(nint value) => new HDROP(unchecked((void*)(value)));
 
     public static implicit operator nint(HDROP value) => (nint)(value.Value);
 
-    public static explicit operator HDROP(sbyte value) => new HDROP((void*)(value));
+    public static explicit operator HDROP(sbyte value) => new HDROP(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HDROP value) => (sbyte)(value.Value);
 
-    public static explicit operator HDROP(ushort value) => new HDROP((void*)(value));
+    public static explicit operator HDROP(ushort value) => new HDROP(unchecked((void*)(value)));
 
     public static explicit operator ushort(HDROP value) => (ushort)(value.Value);
 
-    public static explicit operator HDROP(uint value) => new HDROP((void*)(value));
+    public static explicit operator HDROP(uint value) => new HDROP(unchecked((void*)(value)));
 
     public static explicit operator uint(HDROP value) => (uint)(value.Value);
 
-    public static explicit operator HDROP(ulong value) => new HDROP((void*)(value));
+    public static explicit operator HDROP(ulong value) => new HDROP(unchecked((void*)(value)));
 
     public static explicit operator ulong(HDROP value) => (ulong)(value.Value);
 
-    public static explicit operator HDROP(nuint value) => new HDROP((void*)(value));
+    public static explicit operator HDROP(nuint value) => new HDROP(unchecked((void*)(value)));
 
     public static implicit operator nuint(HDROP value) => (nuint)(value.Value);
 

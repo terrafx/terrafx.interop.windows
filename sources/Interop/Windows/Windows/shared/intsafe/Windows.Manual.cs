@@ -7,13 +7,13 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
-    public static nint INT_PTR_MIN => (-nint.MaxValue - 1);
+    public static nint INT_PTR_MIN => nint.MinValue;
 
-    public static nint LONG_PTR_MIN => (-nint.MaxValue - 1);
+    public static nint LONG_PTR_MIN => nint.MinValue;
 
-    public static nint PTRDIFF_T_MIN => (-nint.MaxValue - 1);
+    public static nint PTRDIFF_T_MIN => nint.MinValue;
 
-    public static nint SSIZE_T_MIN => (-nint.MaxValue - 1);
+    public static nint SSIZE_T_MIN => nint.MinValue;
 
     public static nint INT_PTR_MAX => nint.MaxValue;
 

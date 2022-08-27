@@ -37,43 +37,43 @@ public readonly unsafe partial struct HCERTSTORE : IComparable, IComparable<HCER
 
     public static implicit operator HANDLE(HCERTSTORE value) => new HANDLE(value.Value);
 
-    public static explicit operator HCERTSTORE(byte value) => new HCERTSTORE((void*)(value));
+    public static explicit operator HCERTSTORE(byte value) => new HCERTSTORE(unchecked((void*)(value)));
 
     public static explicit operator byte(HCERTSTORE value) => (byte)(value.Value);
 
-    public static explicit operator HCERTSTORE(short value) => new HCERTSTORE((void*)(value));
+    public static explicit operator HCERTSTORE(short value) => new HCERTSTORE(unchecked((void*)(value)));
 
     public static explicit operator short(HCERTSTORE value) => (short)(value.Value);
 
-    public static explicit operator HCERTSTORE(int value) => new HCERTSTORE((void*)(value));
+    public static explicit operator HCERTSTORE(int value) => new HCERTSTORE(unchecked((void*)(value)));
 
     public static explicit operator int(HCERTSTORE value) => (int)(value.Value);
 
-    public static explicit operator HCERTSTORE(long value) => new HCERTSTORE((void*)(value));
+    public static explicit operator HCERTSTORE(long value) => new HCERTSTORE(unchecked((void*)(value)));
 
     public static explicit operator long(HCERTSTORE value) => (long)(value.Value);
 
-    public static explicit operator HCERTSTORE(nint value) => new HCERTSTORE((void*)(value));
+    public static explicit operator HCERTSTORE(nint value) => new HCERTSTORE(unchecked((void*)(value)));
 
     public static implicit operator nint(HCERTSTORE value) => (nint)(value.Value);
 
-    public static explicit operator HCERTSTORE(sbyte value) => new HCERTSTORE((void*)(value));
+    public static explicit operator HCERTSTORE(sbyte value) => new HCERTSTORE(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HCERTSTORE value) => (sbyte)(value.Value);
 
-    public static explicit operator HCERTSTORE(ushort value) => new HCERTSTORE((void*)(value));
+    public static explicit operator HCERTSTORE(ushort value) => new HCERTSTORE(unchecked((void*)(value)));
 
     public static explicit operator ushort(HCERTSTORE value) => (ushort)(value.Value);
 
-    public static explicit operator HCERTSTORE(uint value) => new HCERTSTORE((void*)(value));
+    public static explicit operator HCERTSTORE(uint value) => new HCERTSTORE(unchecked((void*)(value)));
 
     public static explicit operator uint(HCERTSTORE value) => (uint)(value.Value);
 
-    public static explicit operator HCERTSTORE(ulong value) => new HCERTSTORE((void*)(value));
+    public static explicit operator HCERTSTORE(ulong value) => new HCERTSTORE(unchecked((void*)(value)));
 
     public static explicit operator ulong(HCERTSTORE value) => (ulong)(value.Value);
 
-    public static explicit operator HCERTSTORE(nuint value) => new HCERTSTORE((void*)(value));
+    public static explicit operator HCERTSTORE(nuint value) => new HCERTSTORE(unchecked((void*)(value)));
 
     public static implicit operator nuint(HCERTSTORE value) => (nuint)(value.Value);
 

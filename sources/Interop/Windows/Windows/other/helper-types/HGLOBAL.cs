@@ -37,43 +37,43 @@ public readonly unsafe partial struct HGLOBAL : IComparable, IComparable<HGLOBAL
 
     public static implicit operator HANDLE(HGLOBAL value) => new HANDLE(value.Value);
 
-    public static explicit operator HGLOBAL(byte value) => new HGLOBAL((void*)(value));
+    public static explicit operator HGLOBAL(byte value) => new HGLOBAL(unchecked((void*)(value)));
 
     public static explicit operator byte(HGLOBAL value) => (byte)(value.Value);
 
-    public static explicit operator HGLOBAL(short value) => new HGLOBAL((void*)(value));
+    public static explicit operator HGLOBAL(short value) => new HGLOBAL(unchecked((void*)(value)));
 
     public static explicit operator short(HGLOBAL value) => (short)(value.Value);
 
-    public static explicit operator HGLOBAL(int value) => new HGLOBAL((void*)(value));
+    public static explicit operator HGLOBAL(int value) => new HGLOBAL(unchecked((void*)(value)));
 
     public static explicit operator int(HGLOBAL value) => (int)(value.Value);
 
-    public static explicit operator HGLOBAL(long value) => new HGLOBAL((void*)(value));
+    public static explicit operator HGLOBAL(long value) => new HGLOBAL(unchecked((void*)(value)));
 
     public static explicit operator long(HGLOBAL value) => (long)(value.Value);
 
-    public static explicit operator HGLOBAL(nint value) => new HGLOBAL((void*)(value));
+    public static explicit operator HGLOBAL(nint value) => new HGLOBAL(unchecked((void*)(value)));
 
     public static implicit operator nint(HGLOBAL value) => (nint)(value.Value);
 
-    public static explicit operator HGLOBAL(sbyte value) => new HGLOBAL((void*)(value));
+    public static explicit operator HGLOBAL(sbyte value) => new HGLOBAL(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HGLOBAL value) => (sbyte)(value.Value);
 
-    public static explicit operator HGLOBAL(ushort value) => new HGLOBAL((void*)(value));
+    public static explicit operator HGLOBAL(ushort value) => new HGLOBAL(unchecked((void*)(value)));
 
     public static explicit operator ushort(HGLOBAL value) => (ushort)(value.Value);
 
-    public static explicit operator HGLOBAL(uint value) => new HGLOBAL((void*)(value));
+    public static explicit operator HGLOBAL(uint value) => new HGLOBAL(unchecked((void*)(value)));
 
     public static explicit operator uint(HGLOBAL value) => (uint)(value.Value);
 
-    public static explicit operator HGLOBAL(ulong value) => new HGLOBAL((void*)(value));
+    public static explicit operator HGLOBAL(ulong value) => new HGLOBAL(unchecked((void*)(value)));
 
     public static explicit operator ulong(HGLOBAL value) => (ulong)(value.Value);
 
-    public static explicit operator HGLOBAL(nuint value) => new HGLOBAL((void*)(value));
+    public static explicit operator HGLOBAL(nuint value) => new HGLOBAL(unchecked((void*)(value)));
 
     public static implicit operator nuint(HGLOBAL value) => (nuint)(value.Value);
 

@@ -37,43 +37,43 @@ public readonly unsafe partial struct HTASK : IComparable, IComparable<HTASK>, I
 
     public static implicit operator HANDLE(HTASK value) => new HANDLE(value.Value);
 
-    public static explicit operator HTASK(byte value) => new HTASK((void*)(value));
+    public static explicit operator HTASK(byte value) => new HTASK(unchecked((void*)(value)));
 
     public static explicit operator byte(HTASK value) => (byte)(value.Value);
 
-    public static explicit operator HTASK(short value) => new HTASK((void*)(value));
+    public static explicit operator HTASK(short value) => new HTASK(unchecked((void*)(value)));
 
     public static explicit operator short(HTASK value) => (short)(value.Value);
 
-    public static explicit operator HTASK(int value) => new HTASK((void*)(value));
+    public static explicit operator HTASK(int value) => new HTASK(unchecked((void*)(value)));
 
     public static explicit operator int(HTASK value) => (int)(value.Value);
 
-    public static explicit operator HTASK(long value) => new HTASK((void*)(value));
+    public static explicit operator HTASK(long value) => new HTASK(unchecked((void*)(value)));
 
     public static explicit operator long(HTASK value) => (long)(value.Value);
 
-    public static explicit operator HTASK(nint value) => new HTASK((void*)(value));
+    public static explicit operator HTASK(nint value) => new HTASK(unchecked((void*)(value)));
 
     public static implicit operator nint(HTASK value) => (nint)(value.Value);
 
-    public static explicit operator HTASK(sbyte value) => new HTASK((void*)(value));
+    public static explicit operator HTASK(sbyte value) => new HTASK(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HTASK value) => (sbyte)(value.Value);
 
-    public static explicit operator HTASK(ushort value) => new HTASK((void*)(value));
+    public static explicit operator HTASK(ushort value) => new HTASK(unchecked((void*)(value)));
 
     public static explicit operator ushort(HTASK value) => (ushort)(value.Value);
 
-    public static explicit operator HTASK(uint value) => new HTASK((void*)(value));
+    public static explicit operator HTASK(uint value) => new HTASK(unchecked((void*)(value)));
 
     public static explicit operator uint(HTASK value) => (uint)(value.Value);
 
-    public static explicit operator HTASK(ulong value) => new HTASK((void*)(value));
+    public static explicit operator HTASK(ulong value) => new HTASK(unchecked((void*)(value)));
 
     public static explicit operator ulong(HTASK value) => (ulong)(value.Value);
 
-    public static explicit operator HTASK(nuint value) => new HTASK((void*)(value));
+    public static explicit operator HTASK(nuint value) => new HTASK(unchecked((void*)(value)));
 
     public static implicit operator nuint(HTASK value) => (nuint)(value.Value);
 

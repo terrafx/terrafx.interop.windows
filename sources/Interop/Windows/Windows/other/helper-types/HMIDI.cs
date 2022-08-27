@@ -37,43 +37,43 @@ public readonly unsafe partial struct HMIDI : IComparable, IComparable<HMIDI>, I
 
     public static implicit operator HANDLE(HMIDI value) => new HANDLE(value.Value);
 
-    public static explicit operator HMIDI(byte value) => new HMIDI((void*)(value));
+    public static explicit operator HMIDI(byte value) => new HMIDI(unchecked((void*)(value)));
 
     public static explicit operator byte(HMIDI value) => (byte)(value.Value);
 
-    public static explicit operator HMIDI(short value) => new HMIDI((void*)(value));
+    public static explicit operator HMIDI(short value) => new HMIDI(unchecked((void*)(value)));
 
     public static explicit operator short(HMIDI value) => (short)(value.Value);
 
-    public static explicit operator HMIDI(int value) => new HMIDI((void*)(value));
+    public static explicit operator HMIDI(int value) => new HMIDI(unchecked((void*)(value)));
 
     public static explicit operator int(HMIDI value) => (int)(value.Value);
 
-    public static explicit operator HMIDI(long value) => new HMIDI((void*)(value));
+    public static explicit operator HMIDI(long value) => new HMIDI(unchecked((void*)(value)));
 
     public static explicit operator long(HMIDI value) => (long)(value.Value);
 
-    public static explicit operator HMIDI(nint value) => new HMIDI((void*)(value));
+    public static explicit operator HMIDI(nint value) => new HMIDI(unchecked((void*)(value)));
 
     public static implicit operator nint(HMIDI value) => (nint)(value.Value);
 
-    public static explicit operator HMIDI(sbyte value) => new HMIDI((void*)(value));
+    public static explicit operator HMIDI(sbyte value) => new HMIDI(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HMIDI value) => (sbyte)(value.Value);
 
-    public static explicit operator HMIDI(ushort value) => new HMIDI((void*)(value));
+    public static explicit operator HMIDI(ushort value) => new HMIDI(unchecked((void*)(value)));
 
     public static explicit operator ushort(HMIDI value) => (ushort)(value.Value);
 
-    public static explicit operator HMIDI(uint value) => new HMIDI((void*)(value));
+    public static explicit operator HMIDI(uint value) => new HMIDI(unchecked((void*)(value)));
 
     public static explicit operator uint(HMIDI value) => (uint)(value.Value);
 
-    public static explicit operator HMIDI(ulong value) => new HMIDI((void*)(value));
+    public static explicit operator HMIDI(ulong value) => new HMIDI(unchecked((void*)(value)));
 
     public static explicit operator ulong(HMIDI value) => (ulong)(value.Value);
 
-    public static explicit operator HMIDI(nuint value) => new HMIDI((void*)(value));
+    public static explicit operator HMIDI(nuint value) => new HMIDI(unchecked((void*)(value)));
 
     public static implicit operator nuint(HMIDI value) => (nuint)(value.Value);
 

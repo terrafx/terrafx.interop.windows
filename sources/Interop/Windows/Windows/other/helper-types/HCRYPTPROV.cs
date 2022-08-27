@@ -37,43 +37,43 @@ public readonly unsafe partial struct HCRYPTPROV : IComparable, IComparable<HCRY
 
     public static implicit operator HANDLE(HCRYPTPROV value) => new HANDLE(value.Value);
 
-    public static explicit operator HCRYPTPROV(byte value) => new HCRYPTPROV((void*)(value));
+    public static explicit operator HCRYPTPROV(byte value) => new HCRYPTPROV(unchecked((void*)(value)));
 
     public static explicit operator byte(HCRYPTPROV value) => (byte)(value.Value);
 
-    public static explicit operator HCRYPTPROV(short value) => new HCRYPTPROV((void*)(value));
+    public static explicit operator HCRYPTPROV(short value) => new HCRYPTPROV(unchecked((void*)(value)));
 
     public static explicit operator short(HCRYPTPROV value) => (short)(value.Value);
 
-    public static explicit operator HCRYPTPROV(int value) => new HCRYPTPROV((void*)(value));
+    public static explicit operator HCRYPTPROV(int value) => new HCRYPTPROV(unchecked((void*)(value)));
 
     public static explicit operator int(HCRYPTPROV value) => (int)(value.Value);
 
-    public static explicit operator HCRYPTPROV(long value) => new HCRYPTPROV((void*)(value));
+    public static explicit operator HCRYPTPROV(long value) => new HCRYPTPROV(unchecked((void*)(value)));
 
     public static explicit operator long(HCRYPTPROV value) => (long)(value.Value);
 
-    public static explicit operator HCRYPTPROV(nint value) => new HCRYPTPROV((void*)(value));
+    public static explicit operator HCRYPTPROV(nint value) => new HCRYPTPROV(unchecked((void*)(value)));
 
     public static implicit operator nint(HCRYPTPROV value) => (nint)(value.Value);
 
-    public static explicit operator HCRYPTPROV(sbyte value) => new HCRYPTPROV((void*)(value));
+    public static explicit operator HCRYPTPROV(sbyte value) => new HCRYPTPROV(unchecked((void*)(value)));
 
     public static explicit operator sbyte(HCRYPTPROV value) => (sbyte)(value.Value);
 
-    public static explicit operator HCRYPTPROV(ushort value) => new HCRYPTPROV((void*)(value));
+    public static explicit operator HCRYPTPROV(ushort value) => new HCRYPTPROV(unchecked((void*)(value)));
 
     public static explicit operator ushort(HCRYPTPROV value) => (ushort)(value.Value);
 
-    public static explicit operator HCRYPTPROV(uint value) => new HCRYPTPROV((void*)(value));
+    public static explicit operator HCRYPTPROV(uint value) => new HCRYPTPROV(unchecked((void*)(value)));
 
     public static explicit operator uint(HCRYPTPROV value) => (uint)(value.Value);
 
-    public static explicit operator HCRYPTPROV(ulong value) => new HCRYPTPROV((void*)(value));
+    public static explicit operator HCRYPTPROV(ulong value) => new HCRYPTPROV(unchecked((void*)(value)));
 
     public static explicit operator ulong(HCRYPTPROV value) => (ulong)(value.Value);
 
-    public static explicit operator HCRYPTPROV(nuint value) => new HCRYPTPROV((void*)(value));
+    public static explicit operator HCRYPTPROV(nuint value) => new HCRYPTPROV(unchecked((void*)(value)));
 
     public static implicit operator nuint(HCRYPTPROV value) => (nuint)(value.Value);
 
