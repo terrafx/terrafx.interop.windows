@@ -29,6 +29,6 @@ public static unsafe partial class IMAGE_LOAD_CONFIG_DIRECTORY32Tests
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(IMAGE_LOAD_CONFIG_DIRECTORY32), Is.EqualTo(188));
+        Assert.That(sizeof(IMAGE_LOAD_CONFIG_DIRECTORY32), Is.EqualTo(192));
     }
 }

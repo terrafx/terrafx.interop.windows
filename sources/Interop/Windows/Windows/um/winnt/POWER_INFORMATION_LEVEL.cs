@@ -299,6 +299,9 @@ public enum POWER_INFORMATION_LEVEL
     /// <include file='POWER_INFORMATION_LEVEL.xml' path='doc/member[@name="POWER_INFORMATION_LEVEL.SendSuspendResumeNotification"]/*' />
     SendSuspendResumeNotification,
 
+    /// <include file='POWER_INFORMATION_LEVEL.xml' path='doc/member[@name="POWER_INFORMATION_LEVEL.BlackBoxRecorderDirectAccessBuffer"]/*' />
+    BlackBoxRecorderDirectAccessBuffer,
+
     /// <include file='POWER_INFORMATION_LEVEL.xml' path='doc/member[@name="POWER_INFORMATION_LEVEL.PowerInformationLevelMaximum"]/*' />
     PowerInformationLevelMaximum,
 }

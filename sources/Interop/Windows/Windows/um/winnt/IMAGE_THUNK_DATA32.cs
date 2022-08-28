@@ -11,7 +11,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_THUNK_DATA32
 {
     /// <include file='IMAGE_THUNK_DATA32.xml' path='doc/member[@name="IMAGE_THUNK_DATA32.u1"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:19321:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:19535:5)")]
     public _u1_e__Union u1;
 
     /// <include file='_u1_e__Union.xml' path='doc/member[@name="_u1_e__Union"]/*' />

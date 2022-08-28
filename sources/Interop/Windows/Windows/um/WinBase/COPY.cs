@@ -60,4 +60,13 @@ public static partial class COPY
 
     [NativeTypeName("#define COPY_FILE_ENABLE_LOW_FREE_SPACE_MODE 0x08000000")]
     public const int COPY_FILE_ENABLE_LOW_FREE_SPACE_MODE = 0x08000000;
+
+    [NativeTypeName("#define COPY_FILE_ENABLE_SPARSE_COPY 0x20000000")]
+    public const int COPY_FILE_ENABLE_SPARSE_COPY = 0x20000000;
+
+    [NativeTypeName("#define COPY_FILE2_V2_DONT_COPY_JUNCTIONS 0x00000001")]
+    public const int COPY_FILE2_V2_DONT_COPY_JUNCTIONS = 0x00000001;
+
+    [NativeTypeName("#define COPY_FILE2_V2_VALID_FLAGS (COPY_FILE2_V2_DONT_COPY_JUNCTIONS)")]
+    public const int COPY_FILE2_V2_VALID_FLAGS = (0x00000001);
 }

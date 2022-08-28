@@ -235,8 +235,23 @@ public static partial class SE
     [NativeTypeName("#define SE_DEVELOPMENT_MODE_NETWORK_CAPABILITY L\"developmentModeNetwork\"")]
     public const string SE_DEVELOPMENT_MODE_NETWORK_CAPABILITY = "developmentModeNetwork";
 
+    [NativeTypeName("#define SE_LEARNING_MODE_LOGGING_CAPABILITY L\"learningModeLogging\"")]
+    public const string SE_LEARNING_MODE_LOGGING_CAPABILITY = "learningModeLogging";
+
     [NativeTypeName("#define SE_PERMISSIVE_LEARNING_MODE_CAPABILITY L\"permissiveLearningMode\"")]
     public const string SE_PERMISSIVE_LEARNING_MODE_CAPABILITY = "permissiveLearningMode";
+
+    [NativeTypeName("#define SE_APP_SILO_VOLUME_ROOT_MINIMAL_CAPABILITY L\"isolatedWin32-volumeRootMinimal\"")]
+    public const string SE_APP_SILO_VOLUME_ROOT_MINIMAL_CAPABILITY = "isolatedWin32-volumeRootMinimal";
+
+    [NativeTypeName("#define SE_APP_SILO_PROFILES_ROOT_MINIMAL_CAPABILITY L\"isolatedWin32-profilesRootMinimal\"")]
+    public const string SE_APP_SILO_PROFILES_ROOT_MINIMAL_CAPABILITY = "isolatedWin32-profilesRootMinimal";
+
+    [NativeTypeName("#define SE_APP_SILO_USER_PROFILE_MINIMAL_CAPABILITY L\"isolatedWin32-userProfileMinimal\"")]
+    public const string SE_APP_SILO_USER_PROFILE_MINIMAL_CAPABILITY = "isolatedWin32-userProfileMinimal";
+
+    [NativeTypeName("#define SE_APP_SILO_PRINT_CAPABILITY L\"isolatedWin32-print\"")]
+    public const string SE_APP_SILO_PRINT_CAPABILITY = "isolatedWin32-print";
 
     [NativeTypeName("#define SE_SIGNING_LEVEL_UNCHECKED 0x00000000")]
     public const int SE_SIGNING_LEVEL_UNCHECKED = 0x00000000;
@@ -291,7 +306,4 @@ public static partial class SE
 
     [NativeTypeName("#define SE_SIGNING_LEVEL_CUSTOM_6 0x0000000F")]
     public const int SE_SIGNING_LEVEL_CUSTOM_6 = 0x0000000F;
-
-    [NativeTypeName("#define SE_LEARNING_MODE_FLAG_PERMISSIVE 0x00000001")]
-    public const int SE_LEARNING_MODE_FLAG_PERMISSIVE = 0x00000001;
 }

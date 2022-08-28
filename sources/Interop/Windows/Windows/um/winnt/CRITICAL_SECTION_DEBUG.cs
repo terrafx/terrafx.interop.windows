@@ -39,7 +39,7 @@ public unsafe partial struct CRITICAL_SECTION_DEBUG
     [NativeTypeName("WORD")]
     public ushort CreatorBackTraceIndexHigh;
 
-    /// <include file='CRITICAL_SECTION_DEBUG.xml' path='doc/member[@name="CRITICAL_SECTION_DEBUG.SpareWORD"]/*' />
+    /// <include file='CRITICAL_SECTION_DEBUG.xml' path='doc/member[@name="CRITICAL_SECTION_DEBUG.Identifier"]/*' />
     [NativeTypeName("WORD")]
-    public ushort SpareWORD;
+    public ushort Identifier;
 }

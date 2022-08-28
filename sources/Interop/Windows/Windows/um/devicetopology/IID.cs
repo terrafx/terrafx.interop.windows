@@ -403,6 +403,29 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IKsJackDescription3
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x8B, 0x77, 0xF6, 0xE3,
+                0x60, 0x66,
+                0xC8, 0x4C,
+                0xA2,
+                0x91,
+                0xEC,
+                0xC4,
+                0x19,
+                0x2D,
+                0x99,
+                0x67
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IKsJackSinkInformation
     {
         get

@@ -201,4 +201,8 @@ public partial struct IMAGE_LOAD_CONFIG_DIRECTORY64
     /// <include file='IMAGE_LOAD_CONFIG_DIRECTORY64.xml' path='doc/member[@name="IMAGE_LOAD_CONFIG_DIRECTORY64.CastGuardOsDeterminedFailureMode"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong CastGuardOsDeterminedFailureMode;
+
+    /// <include file='IMAGE_LOAD_CONFIG_DIRECTORY64.xml' path='doc/member[@name="IMAGE_LOAD_CONFIG_DIRECTORY64.GuardMemcpyFunctionPointer"]/*' />
+    [NativeTypeName("ULONGLONG")]
+    public ulong GuardMemcpyFunctionPointer;
 }

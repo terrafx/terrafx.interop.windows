@@ -171,6 +171,5 @@ ID3D11VideoProcessorInputView=SupportedOSPlatform("windows6.2")
 ID3D11VideoProcessorOutputView=SupportedOSPlatform("windows6.2")
 --with-librarypath
 D3D11CalcSubresource=d3d11
---with-librarypath
 D3D11CreateDevice=d3d11
 D3D11CreateDeviceAndSwapChain=d3d11

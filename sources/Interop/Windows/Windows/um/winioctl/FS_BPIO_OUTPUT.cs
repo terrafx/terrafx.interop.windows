@@ -27,7 +27,7 @@ public partial struct FS_BPIO_OUTPUT
     public ulong Reserved2;
 
     /// <include file='FS_BPIO_OUTPUT.xml' path='doc/member[@name="FS_BPIO_OUTPUT.Anonymous"]/*' />
-    [NativeTypeName("_FS_BPIO_OUTPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:17062:5)")]
+    [NativeTypeName("_FS_BPIO_OUTPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:16905:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Enable"]/*' />

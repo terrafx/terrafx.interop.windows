@@ -135,6 +135,9 @@ public static partial class DXGI
     [NativeTypeName("#define DXGI_ERROR_ALREADY_EXISTS _HRESULT_TYPEDEF_(0x887A0036L)")]
     public const int DXGI_ERROR_ALREADY_EXISTS = unchecked((int)(0x887A0036));
 
+    [NativeTypeName("#define DXGI_ERROR_MPO_UNPINNED _HRESULT_TYPEDEF_(0x887A0064L)")]
+    public const int DXGI_ERROR_MPO_UNPINNED = unchecked((int)(0x887A0064));
+
     [NativeTypeName("#define DXGI_DDI_ERR_WASSTILLDRAWING _HRESULT_TYPEDEF_(0x887B0001L)")]
     public const int DXGI_DDI_ERR_WASSTILLDRAWING = unchecked((int)(0x887B0001));
 

@@ -147,4 +147,7 @@ public static partial class PP
 
     [NativeTypeName("#define PP_DISMISS_PIN_UI_SEC 49")]
     public const int PP_DISMISS_PIN_UI_SEC = 49;
+
+    [NativeTypeName("#define PP_IS_PFX_EPHEMERAL 50")]
+    public const int PP_IS_PFX_EPHEMERAL = 50;
 }

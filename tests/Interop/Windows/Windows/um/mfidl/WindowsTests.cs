@@ -158,4 +158,11 @@ public static unsafe partial class WindowsTests
     {
         Assert.That(MFSampleExtension_ExtendedCameraIntrinsics, Is.EqualTo(new Guid(0x560bc4a5, 0x4de0, 0x4113, 0x9c, 0xdc, 0x83, 0x2d, 0xb9, 0x74, 0xf, 0x3d)));
     }
+
+    /// <summary>Validates that the value of the <see cref="KSPROPERTYSETID_ANYCAMERACONTROL" /> property is correct.</summary>
+    [Test]
+    public static void KSPROPERTYSETID_ANYCAMERACONTROLTest()
+    {
+        Assert.That(KSPROPERTYSETID_ANYCAMERACONTROL, Is.EqualTo(new Guid(0x94dd0c30, 0x28c7, 0x4efb, 0x9d, 0x6b, 0x81, 0x23, 0x0, 0xfb, 0xc, 0x7f)));
+    }
 }

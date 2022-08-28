@@ -76,4 +76,9 @@ public static unsafe partial class Windows
     [return: NativeTypeName("TBS_RESULT")]
     [SupportedOSPlatform("windows10.0.17134.0")]
     public static extern uint Tbsi_Get_TCG_Log_Ex([NativeTypeName("UINT32")] uint logType, [NativeTypeName("PBYTE")] byte* pbOutput, [NativeTypeName("PUINT32")] uint* pcbOutput);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Tbsi_Is_Tpm_Present"]/*' />
+    [DllImport("tbs", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22621.0")]
+    public static extern BOOL Tbsi_Is_Tpm_Present();
 }

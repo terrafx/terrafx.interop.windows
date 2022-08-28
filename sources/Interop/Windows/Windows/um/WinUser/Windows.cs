@@ -932,6 +932,12 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern HANDLE GetClipboardData(uint uFormat);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClipboardMetadata"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.22621.0")]
+    public static extern BOOL GetClipboardMetadata(uint format, [NativeTypeName("PGETCLIPBMETADATA")] GETCLIPBMETADATA* metadata);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterClipboardFormatA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
@@ -3365,6 +3371,18 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     [SupportedOSPlatform("windows6.2")]
     public static extern BOOL SetProcessRestrictionExemption(BOOL fEnableExemption);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetAdditionalForegroundBoostProcesses"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.22621.0")]
+    public static extern BOOL SetAdditionalForegroundBoostProcesses(HWND topLevelWindow, [NativeTypeName("DWORD")] uint processHandleCount, HANDLE* processHandleArray);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterForTooltipDismissNotification"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.22621.0")]
+    public static extern BOOL RegisterForTooltipDismissNotification(HWND hWnd, TOOLTIP_DISMISS_FLAGS tdFlags);
 
     [NativeTypeName("#define DIFFERENCE 11")]
     public const int DIFFERENCE = 11;

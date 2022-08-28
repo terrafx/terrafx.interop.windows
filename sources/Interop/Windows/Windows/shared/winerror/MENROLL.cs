@@ -55,8 +55,8 @@ public static partial class MENROLL
     [NativeTypeName("#define MENROLL_E_INVALIDSSLCERT _HRESULT_TYPEDEF_(0x80180012L)")]
     public const int MENROLL_E_INVALIDSSLCERT = unchecked((int)(0x80180012));
 
-    [NativeTypeName("#define MENROLL_E_DEVICEAPREACHED _HRESULT_TYPEDEF_(0x80180013L)")]
-    public const int MENROLL_E_DEVICEAPREACHED = unchecked((int)(0x80180013));
+    [NativeTypeName("#define MENROLL_E_DEVICECAPREACHED _HRESULT_TYPEDEF_(0x80180013L)")]
+    public const int MENROLL_E_DEVICECAPREACHED = unchecked((int)(0x80180013));
 
     [NativeTypeName("#define MENROLL_E_DEVICENOTSUPPORTED _HRESULT_TYPEDEF_(0x80180014L)")]
     public const int MENROLL_E_DEVICENOTSUPPORTED = unchecked((int)(0x80180014));

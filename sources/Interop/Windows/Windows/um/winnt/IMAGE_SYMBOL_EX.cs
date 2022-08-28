@@ -12,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_SYMBOL_EX
 {
     /// <include file='IMAGE_SYMBOL_EX.xml' path='doc/member[@name="IMAGE_SYMBOL_EX.N"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:18527:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:18741:5)")]
     public _N_e__Union N;
 
     /// <include file='IMAGE_SYMBOL_EX.xml' path='doc/member[@name="IMAGE_SYMBOL_EX.Value"]/*' />
@@ -44,7 +44,7 @@ public partial struct IMAGE_SYMBOL_EX
 
         /// <include file='_N_e__Union.xml' path='doc/member[@name="_N_e__Union.Name"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:18529:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:18743:9)")]
         public _Name_e__Struct Name;
 
         /// <include file='_N_e__Union.xml' path='doc/member[@name="_N_e__Union.LongName"]/*' />

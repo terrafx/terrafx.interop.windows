@@ -242,6 +242,29 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IAudioViewManagerService
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x10, 0xEF, 0xA7, 0xA7,
+                0x49, 0x1F,
+                0xE0, 0x45,
+                0xAD,
+                0x35,
+                0x61,
+                0x20,
+                0x57,
+                0xCC,
+                0x8F,
+                0x74
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IAudioEffectsChangedNotificationClient
     {
         get
@@ -350,6 +373,29 @@ public static partial class IID
                 0x1C,
                 0x59,
                 0xB8
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IAcousticEchoCancellationControl
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xB5, 0x25, 0xAE, 0xF4,
+                0xA3, 0xAA,
+                0x7D, 0x43,
+                0xB6,
+                0xB3,
+                0xDB,
+                0xBE,
+                0x2D,
+                0x0E,
+                0x95,
+                0x49
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

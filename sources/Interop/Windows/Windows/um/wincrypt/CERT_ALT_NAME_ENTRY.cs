@@ -17,7 +17,7 @@ public unsafe partial struct CERT_ALT_NAME_ENTRY
     public uint dwAltNameChoice;
 
     /// <include file='CERT_ALT_NAME_ENTRY.xml' path='doc/member[@name="CERT_ALT_NAME_ENTRY.Anonymous"]/*' />
-    [NativeTypeName("_CERT_ALT_NAME_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wincrypt.h:3959:5)")]
+    [NativeTypeName("_CERT_ALT_NAME_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wincrypt.h:3968:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pOtherName"]/*' />

@@ -774,4 +774,7 @@ public static partial class WM
 
     [NativeTypeName("#define WM_USER 0x0400")]
     public const int WM_USER = 0x0400;
+
+    [NativeTypeName("#define WM_TOOLTIPDISMISS 0x0345")]
+    public const int WM_TOOLTIPDISMISS = 0x0345;
 }

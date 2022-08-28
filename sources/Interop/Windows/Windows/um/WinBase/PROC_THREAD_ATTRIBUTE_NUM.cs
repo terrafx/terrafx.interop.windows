@@ -67,4 +67,7 @@ public enum PROC_THREAD_ATTRIBUTE_NUM
 
     /// <include file='PROC_THREAD_ATTRIBUTE_NUM.xml' path='doc/member[@name="PROC_THREAD_ATTRIBUTE_NUM.ProcThreadAttributeEnableOptionalXStateFeatures"]/*' />
     ProcThreadAttributeEnableOptionalXStateFeatures = 27,
+
+    /// <include file='PROC_THREAD_ATTRIBUTE_NUM.xml' path='doc/member[@name="PROC_THREAD_ATTRIBUTE_NUM.ProcThreadAttributeTrustedApp"]/*' />
+    ProcThreadAttributeTrustedApp = 29,
 }

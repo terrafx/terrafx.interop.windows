@@ -1313,6 +1313,31 @@ public static partial class GUID
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_HUPR_ADAPTIVE_DIM_TIMEOUT
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x97, 0x60, 0x8C, 0xCF,
+                0xB8, 0x12,
+                0x79, 0x42,
+                0xBB,
+                0xDD,
+                0x44,
+                0x60,
+                0x1E,
+                0xE5,
+                0x20,
+                0x9D
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ALLOW_STANDBY_STATES
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -3788,6 +3813,81 @@ public static partial class GUID
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_PROCESSOR_MODULE_PARKING_POLICY
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x6B, 0xAF, 0xDE, 0xB0,
+                0xC0, 0x59,
+                0x23, 0x45,
+                0x8A,
+                0x45,
+                0xCA,
+                0x7F,
+                0x40,
+                0x24,
+                0x41,
+                0x14
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_PROCESSOR_COMPLEX_PARKING_POLICY
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xE9, 0xA5, 0x69, 0xB6,
+                0x1D, 0x7B,
+                0x32, 0x41,
+                0xBA,
+                0xAA,
+                0x49,
+                0x19,
+                0x0A,
+                0xBC,
+                0xFE,
+                0xB6
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_PROCESSOR_SMT_UNPARKING_POLICY
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x29, 0x68, 0x8A, 0xB2,
+                0xF7, 0xC5,
+                0x4E, 0x44,
+                0x8F,
+                0x61,
+                0x10,
+                0xE2,
+                0x4E,
+                0x85,
+                0xC5,
+                0x32
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_DISTRIBUTE_UTILITY
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -3913,6 +4013,31 @@ public static partial class GUID
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_PROCESSOR_HETERO_DECREASE_THRESHOLD_1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x27, 0x1C, 0x86, 0xF8,
+                0xE7, 0x95,
+                0x5C, 0x47,
+                0x86,
+                0x5B,
+                0x13,
+                0xC0,
+                0xCB,
+                0x3F,
+                0x9D,
+                0x6C
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_HETERO_INCREASE_THRESHOLD
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -3930,6 +4055,31 @@ public static partial class GUID
                 0x60,
                 0xCF,
                 0xBF
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_PROCESSOR_HETERO_INCREASE_THRESHOLD_1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x7D, 0x39, 0x00, 0xB0,
+                0x0B, 0x9B,
+                0x3D, 0x48,
+                0x98,
+                0xC9,
+                0x69,
+                0x2A,
+                0x60,
+                0x60,
+                0xCF,
+                0xC0
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -4055,6 +4205,106 @@ public static partial class GUID
                 0x29,
                 0x45,
                 0x70
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_PROCESSOR_SHORT_THREAD_ARCH_CLASS_UPPER_THRESHOLD
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xEB, 0x23, 0x84, 0x82,
+                0x62, 0x86,
+                0x44, 0x43,
+                0x90,
+                0xF7,
+                0x52,
+                0xBF,
+                0x15,
+                0x87,
+                0x0F,
+                0x5A
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_PROCESSOR_SHORT_THREAD_ARCH_CLASS_LOWER_THRESHOLD
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x46, 0x4D, 0x82, 0x53,
+                0xBD, 0x87,
+                0x39, 0x47,
+                0xAA,
+                0x1B,
+                0xAA,
+                0x79,
+                0x3F,
+                0xAC,
+                0x36,
+                0xD6
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_PROCESSOR_LONG_THREAD_ARCH_CLASS_UPPER_THRESHOLD
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x33, 0x3D, 0x90, 0xBF,
+                0x24, 0x9D,
+                0xD3, 0x49,
+                0xA4,
+                0x68,
+                0xE6,
+                0x5E,
+                0x03,
+                0x25,
+                0x04,
+                0x6A
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_PROCESSOR_LONG_THREAD_ARCH_CLASS_LOWER_THRESHOLD
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xBC, 0x78, 0xF2, 0x43,
+                0x8A, 0x0F,
+                0xD0, 0x46,
+                0x8B,
+                0x31,
+                0x9A,
+                0x23,
+                0xE6,
+                0x15,
+                0xD7,
+                0x13
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

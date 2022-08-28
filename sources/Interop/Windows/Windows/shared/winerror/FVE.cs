@@ -666,4 +666,16 @@ public static partial class FVE
 
     [NativeTypeName("#define FVE_E_UPDATE_INVALID_CONFIG _HRESULT_TYPEDEF_(0x803100E8L)")]
     public const int FVE_E_UPDATE_INVALID_CONFIG = unchecked((int)(0x803100E8));
+
+    [NativeTypeName("#define FVE_E_AAD_SERVER_FAIL_RETRY_AFTER _HRESULT_TYPEDEF_(0x803100E9L)")]
+    public const int FVE_E_AAD_SERVER_FAIL_RETRY_AFTER = unchecked((int)(0x803100E9));
+
+    [NativeTypeName("#define FVE_E_AAD_SERVER_FAIL_BACKOFF _HRESULT_TYPEDEF_(0x803100EAL)")]
+    public const int FVE_E_AAD_SERVER_FAIL_BACKOFF = unchecked((int)(0x803100EA));
+
+    [NativeTypeName("#define FVE_E_DATASET_FULL _HRESULT_TYPEDEF_(0x803100EBL)")]
+    public const int FVE_E_DATASET_FULL = unchecked((int)(0x803100EB));
+
+    [NativeTypeName("#define FVE_E_METADATA_FULL _HRESULT_TYPEDEF_(0x803100ECL)")]
+    public const int FVE_E_METADATA_FULL = unchecked((int)(0x803100EC));
 }

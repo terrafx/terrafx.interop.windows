@@ -149,6 +149,9 @@ public enum TOKEN_INFORMATION_CLASS
     /// <include file='TOKEN_INFORMATION_CLASS.xml' path='doc/member[@name="TOKEN_INFORMATION_CLASS.TokenIsSandboxed"]/*' />
     TokenIsSandboxed,
 
+    /// <include file='TOKEN_INFORMATION_CLASS.xml' path='doc/member[@name="TOKEN_INFORMATION_CLASS.TokenIsAppSilo"]/*' />
+    TokenIsAppSilo,
+
     /// <include file='TOKEN_INFORMATION_CLASS.xml' path='doc/member[@name="TOKEN_INFORMATION_CLASS.MaxTokenInfoClass"]/*' />
     MaxTokenInfoClass,
 }

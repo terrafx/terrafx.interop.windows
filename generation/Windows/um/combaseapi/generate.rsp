@@ -129,8 +129,6 @@ StringFromIID=ole32
 CoCreateInstanceFromApp=combase
 CoDecodeProxy=combase
 CoFreeUnusedLibrariesEx=combase
---with-librarypath
-CoWaitForMultipleObjects=combase
---with-librarypath
 CoRegisterDeviceCatalog=combase
 CoRevokeDeviceCatalog=combase
+CoWaitForMultipleObjects=combase

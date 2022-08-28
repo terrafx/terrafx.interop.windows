@@ -376,6 +376,13 @@ public static partial class GUIDTests
         Assert.That(GUID_HUPR_ADAPTIVE_DISPLAY_TIMEOUT, Is.EqualTo(new Guid(0x0A7D6AB6, 0xAC83, 0x4AD1, 0x82, 0x82, 0xEC, 0xA5, 0xB5, 0x83, 0x08, 0xF3)));
     }
 
+    /// <summary>Validates that the value of the <see cref="GUID_HUPR_ADAPTIVE_DIM_TIMEOUT" /> property is correct.</summary>
+    [Test]
+    public static void GUID_HUPR_ADAPTIVE_DIM_TIMEOUTTest()
+    {
+        Assert.That(GUID_HUPR_ADAPTIVE_DIM_TIMEOUT, Is.EqualTo(new Guid(0xCF8C6097, 0x12B8, 0x4279, 0xBB, 0xDD, 0x44, 0x60, 0x1E, 0xE5, 0x20, 0x9D)));
+    }
+
     /// <summary>Validates that the value of the <see cref="GUID_ALLOW_STANDBY_STATES" /> property is correct.</summary>
     [Test]
     public static void GUID_ALLOW_STANDBY_STATESTest()
@@ -1069,6 +1076,27 @@ public static partial class GUIDTests
         Assert.That(GUID_PROCESSOR_LATENCY_HINT_MIN_UNPARK_1, Is.EqualTo(new Guid(0x616cdaa5, 0x695e, 0x4545, 0x97, 0xad, 0x97, 0xdc, 0x2d, 0x1b, 0xdd, 0x89)));
     }
 
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_MODULE_PARKING_POLICY" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_MODULE_PARKING_POLICYTest()
+    {
+        Assert.That(GUID_PROCESSOR_MODULE_PARKING_POLICY, Is.EqualTo(new Guid(0xb0deaf6b, 0x59c0, 0x4523, 0x8a, 0x45, 0xca, 0x7f, 0x40, 0x24, 0x41, 0x14)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_COMPLEX_PARKING_POLICY" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_COMPLEX_PARKING_POLICYTest()
+    {
+        Assert.That(GUID_PROCESSOR_COMPLEX_PARKING_POLICY, Is.EqualTo(new Guid(0xb669a5e9, 0x7b1d, 0x4132, 0xba, 0xaa, 0x49, 0x19, 0xa, 0xbc, 0xfe, 0xb6)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_SMT_UNPARKING_POLICY" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_SMT_UNPARKING_POLICYTest()
+    {
+        Assert.That(GUID_PROCESSOR_SMT_UNPARKING_POLICY, Is.EqualTo(new Guid(0xb28a6829, 0xc5f7, 0x444e, 0x8f, 0x61, 0x10, 0xe2, 0x4e, 0x85, 0xc5, 0x32)));
+    }
+
     /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_DISTRIBUTE_UTILITY" /> property is correct.</summary>
     [Test]
     public static void GUID_PROCESSOR_DISTRIBUTE_UTILITYTest()
@@ -1104,11 +1132,25 @@ public static partial class GUIDTests
         Assert.That(GUID_PROCESSOR_HETERO_DECREASE_THRESHOLD, Is.EqualTo(new Guid(0xf8861c27, 0x95e7, 0x475c, 0x86, 0x5b, 0x13, 0xc0, 0xcb, 0x3f, 0x9d, 0x6b)));
     }
 
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_HETERO_DECREASE_THRESHOLD_1" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_HETERO_DECREASE_THRESHOLD_1Test()
+    {
+        Assert.That(GUID_PROCESSOR_HETERO_DECREASE_THRESHOLD_1, Is.EqualTo(new Guid(0xf8861c27, 0x95e7, 0x475c, 0x86, 0x5b, 0x13, 0xc0, 0xcb, 0x3f, 0x9d, 0x6c)));
+    }
+
     /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_HETERO_INCREASE_THRESHOLD" /> property is correct.</summary>
     [Test]
     public static void GUID_PROCESSOR_HETERO_INCREASE_THRESHOLDTest()
     {
         Assert.That(GUID_PROCESSOR_HETERO_INCREASE_THRESHOLD, Is.EqualTo(new Guid(0xb000397d, 0x9b0b, 0x483d, 0x98, 0xc9, 0x69, 0x2a, 0x60, 0x60, 0xcf, 0xbf)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_HETERO_INCREASE_THRESHOLD_1" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_HETERO_INCREASE_THRESHOLD_1Test()
+    {
+        Assert.That(GUID_PROCESSOR_HETERO_INCREASE_THRESHOLD_1, Is.EqualTo(new Guid(0xb000397d, 0x9b0b, 0x483d, 0x98, 0xc9, 0x69, 0x2a, 0x60, 0x60, 0xcf, 0xc0)));
     }
 
     /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_CLASS0_FLOOR_PERF" /> property is correct.</summary>
@@ -1144,6 +1186,34 @@ public static partial class GUIDTests
     public static void GUID_PROCESSOR_SHORT_THREAD_RUNTIME_THRESHOLDTest()
     {
         Assert.That(GUID_PROCESSOR_SHORT_THREAD_RUNTIME_THRESHOLD, Is.EqualTo(new Guid(0xd92998c2, 0x6a48, 0x49ca, 0x85, 0xd4, 0x8c, 0xce, 0xec, 0x29, 0x45, 0x70)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_SHORT_THREAD_ARCH_CLASS_UPPER_THRESHOLD" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_SHORT_THREAD_ARCH_CLASS_UPPER_THRESHOLDTest()
+    {
+        Assert.That(GUID_PROCESSOR_SHORT_THREAD_ARCH_CLASS_UPPER_THRESHOLD, Is.EqualTo(new Guid(0x828423eb, 0x8662, 0x4344, 0x90, 0xf7, 0x52, 0xbf, 0x15, 0x87, 0x0f, 0x5a)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_SHORT_THREAD_ARCH_CLASS_LOWER_THRESHOLD" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_SHORT_THREAD_ARCH_CLASS_LOWER_THRESHOLDTest()
+    {
+        Assert.That(GUID_PROCESSOR_SHORT_THREAD_ARCH_CLASS_LOWER_THRESHOLD, Is.EqualTo(new Guid(0x53824d46, 0x87bd, 0x4739, 0xaa, 0x1b, 0xaa, 0x79, 0x3f, 0xac, 0x36, 0xd6)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_LONG_THREAD_ARCH_CLASS_UPPER_THRESHOLD" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_LONG_THREAD_ARCH_CLASS_UPPER_THRESHOLDTest()
+    {
+        Assert.That(GUID_PROCESSOR_LONG_THREAD_ARCH_CLASS_UPPER_THRESHOLD, Is.EqualTo(new Guid(0xbf903d33, 0x9d24, 0x49d3, 0xa4, 0x68, 0xe6, 0x5e, 0x03, 0x25, 0x04, 0x6a)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_LONG_THREAD_ARCH_CLASS_LOWER_THRESHOLD" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_LONG_THREAD_ARCH_CLASS_LOWER_THRESHOLDTest()
+    {
+        Assert.That(GUID_PROCESSOR_LONG_THREAD_ARCH_CLASS_LOWER_THRESHOLD, Is.EqualTo(new Guid(0x43f278bc, 0x0f8a, 0x46d0, 0x8b, 0x31, 0x9a, 0x23, 0xe6, 0x15, 0xd7, 0x13)));
     }
 
     /// <summary>Validates that the value of the <see cref="GUID_SYSTEM_COOLING_POLICY" /> property is correct.</summary>

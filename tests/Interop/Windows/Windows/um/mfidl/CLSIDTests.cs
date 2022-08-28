@@ -151,4 +151,11 @@ public static partial class CLSIDTests
     {
         Assert.That(CLSID_VideoProcessorMFT, Is.EqualTo(new Guid(0x88753b26, 0x5b24, 0x49bd, 0xb2, 0xe7, 0xc, 0x44, 0x5c, 0x78, 0xc9, 0x82)));
     }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_CameraConfigurationManager" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_CameraConfigurationManagerTest()
+    {
+        Assert.That(CLSID_CameraConfigurationManager, Is.EqualTo(new Guid(0x6C92B540, 0x5854, 0x4A17, 0x92, 0xB6, 0xAC, 0x89, 0xC9, 0x6E, 0x96, 0x83)));
+    }
 }

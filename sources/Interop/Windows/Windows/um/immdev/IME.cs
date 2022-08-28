@@ -10,9 +10,6 @@ public static partial class IME
     [NativeTypeName("#define IME_SYSINFO_WINLOGON 0x0001")]
     public const int IME_SYSINFO_WINLOGON = 0x0001;
 
-    [NativeTypeName("#define IME_SYSINFO_WOW16 0x0002")]
-    public const int IME_SYSINFO_WOW16 = 0x0002;
-
     [NativeTypeName("#define IME_PROP_END_UNLOAD 0x00000001")]
     public const int IME_PROP_END_UNLOAD = 0x00000001;
 

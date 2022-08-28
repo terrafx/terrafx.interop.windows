@@ -33,10 +33,12 @@ SecPkgContext_KeyingMaterialInfo=SupportedOSPlatform("windows10.0")
 SecPkgContext_KeyingMaterialInfoA=SupportedOSPlatform("windows10.0")
 SecPkgContext_KeyingMaterialInfoW=SupportedOSPlatform("windows10.0")
 SecPkgContext_KeyingMaterialW=SupportedOSPlatform("windows10.0")
+SslDeserializeCertificateStore=SupportedOSPlatform("windows10.0.22621.0")
 SslGetServerIdentity=SupportedOSPlatform("windows6.2")
 TLS_PARAMETERS=SupportedOSPlatform("windows10.0.17763.0")
 --with-librarypath
 SslCrackCertificate=schannel
+SslDeserializeCertificateStore=schannel
 SslEmptyCache=schannel
 SslEmptyCacheA=schannel
 SslEmptyCacheW=schannel

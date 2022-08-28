@@ -10,17 +10,17 @@ public static partial class SECURITY
     [NativeTypeName("#define SECURITY_FLAG_IGNORE_UNKNOWN_CA 0x00000100")]
     public const int SECURITY_FLAG_IGNORE_UNKNOWN_CA = 0x00000100;
 
-    [NativeTypeName("#define SECURITY_FLAG_IGNORE_CERT_DATE_INVALID 0x00002000")]
-    public const int SECURITY_FLAG_IGNORE_CERT_DATE_INVALID = 0x00002000;
+    [NativeTypeName("#define SECURITY_FLAG_IGNORE_CERT_WRONG_USAGE 0x00000200")]
+    public const int SECURITY_FLAG_IGNORE_CERT_WRONG_USAGE = 0x00000200;
 
     [NativeTypeName("#define SECURITY_FLAG_IGNORE_CERT_CN_INVALID 0x00001000")]
     public const int SECURITY_FLAG_IGNORE_CERT_CN_INVALID = 0x00001000;
 
-    [NativeTypeName("#define SECURITY_FLAG_IGNORE_CERT_WRONG_USAGE 0x00000200")]
-    public const int SECURITY_FLAG_IGNORE_CERT_WRONG_USAGE = 0x00000200;
+    [NativeTypeName("#define SECURITY_FLAG_IGNORE_CERT_DATE_INVALID 0x00002000")]
+    public const int SECURITY_FLAG_IGNORE_CERT_DATE_INVALID = 0x00002000;
 
-    [NativeTypeName("#define SECURITY_FLAG_IGNORE_ALL_CERT_ERRORS (SECURITY_FLAG_IGNORE_UNKNOWN_CA        | \\\r\n                                                 SECURITY_FLAG_IGNORE_CERT_DATE_INVALID | \\\r\n                                                 SECURITY_FLAG_IGNORE_CERT_CN_INVALID   | \\\r\n                                                 SECURITY_FLAG_IGNORE_CERT_WRONG_USAGE)")]
-    public const int SECURITY_FLAG_IGNORE_ALL_CERT_ERRORS = (0x00000100 | 0x00002000 | 0x00001000 | 0x00000200);
+    [NativeTypeName("#define SECURITY_FLAG_IGNORE_ALL_CERT_ERRORS (SECURITY_FLAG_IGNORE_UNKNOWN_CA        | \\\r\n                                                 SECURITY_FLAG_IGNORE_CERT_WRONG_USAGE  | \\\r\n                                                 SECURITY_FLAG_IGNORE_CERT_CN_INVALID   | \\\r\n                                                 SECURITY_FLAG_IGNORE_CERT_DATE_INVALID)")]
+    public const int SECURITY_FLAG_IGNORE_ALL_CERT_ERRORS = (0x00000100 | 0x00000200 | 0x00001000 | 0x00002000);
 
     [NativeTypeName("#define SECURITY_FLAG_SECURE 0x00000001")]
     public const int SECURITY_FLAG_SECURE = 0x00000001;

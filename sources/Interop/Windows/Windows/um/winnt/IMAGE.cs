@@ -1455,6 +1455,21 @@ public static partial class IMAGE
     [NativeTypeName("#define IMAGE_DYNAMIC_RELOCATION_GUARD_SWITCHTABLE_BRANCH 0x00000005")]
     public const int IMAGE_DYNAMIC_RELOCATION_GUARD_SWITCHTABLE_BRANCH = 0x00000005;
 
+    [NativeTypeName("#define IMAGE_DYNAMIC_RELOCATION_FUNCTION_OVERRIDE 0x00000007")]
+    public const int IMAGE_DYNAMIC_RELOCATION_FUNCTION_OVERRIDE = 0x00000007;
+
+    [NativeTypeName("#define IMAGE_FUNCTION_OVERRIDE_INVALID 0")]
+    public const int IMAGE_FUNCTION_OVERRIDE_INVALID = 0;
+
+    [NativeTypeName("#define IMAGE_FUNCTION_OVERRIDE_X64_REL32 1")]
+    public const int IMAGE_FUNCTION_OVERRIDE_X64_REL32 = 1;
+
+    [NativeTypeName("#define IMAGE_FUNCTION_OVERRIDE_ARM64_BRANCH26 2")]
+    public const int IMAGE_FUNCTION_OVERRIDE_ARM64_BRANCH26 = 2;
+
+    [NativeTypeName("#define IMAGE_FUNCTION_OVERRIDE_ARM64_THUNK 3")]
+    public const int IMAGE_FUNCTION_OVERRIDE_ARM64_THUNK = 3;
+
     [NativeTypeName("#define IMAGE_HOT_PATCH_BASE_OBLIGATORY 0x00000001")]
     public const int IMAGE_HOT_PATCH_BASE_OBLIGATORY = 0x00000001;
 
@@ -1551,6 +1566,12 @@ public static partial class IMAGE
     [NativeTypeName("#define IMAGE_GUARD_XFG_ENABLED 0x00800000")]
     public const int IMAGE_GUARD_XFG_ENABLED = 0x00800000;
 
+    [NativeTypeName("#define IMAGE_GUARD_CASTGUARD_PRESENT 0x01000000")]
+    public const int IMAGE_GUARD_CASTGUARD_PRESENT = 0x01000000;
+
+    [NativeTypeName("#define IMAGE_GUARD_MEMCPY_PRESENT 0x02000000")]
+    public const int IMAGE_GUARD_MEMCPY_PRESENT = 0x02000000;
+
     [NativeTypeName("#define IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK 0xF0000000")]
     public const uint IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK = 0xF0000000;
 
@@ -1629,6 +1650,9 @@ public static partial class IMAGE
     [NativeTypeName("#define IMAGE_DEBUG_TYPE_RESERVED10 10")]
     public const int IMAGE_DEBUG_TYPE_RESERVED10 = 10;
 
+    [NativeTypeName("#define IMAGE_DEBUG_TYPE_BBT IMAGE_DEBUG_TYPE_RESERVED10")]
+    public const int IMAGE_DEBUG_TYPE_BBT = 10;
+
     [NativeTypeName("#define IMAGE_DEBUG_TYPE_CLSID 11")]
     public const int IMAGE_DEBUG_TYPE_CLSID = 11;
 
@@ -1646,6 +1670,9 @@ public static partial class IMAGE
 
     [NativeTypeName("#define IMAGE_DEBUG_TYPE_REPRO 16")]
     public const int IMAGE_DEBUG_TYPE_REPRO = 16;
+
+    [NativeTypeName("#define IMAGE_DEBUG_TYPE_SPGO 18")]
+    public const int IMAGE_DEBUG_TYPE_SPGO = 18;
 
     [NativeTypeName("#define IMAGE_DEBUG_TYPE_EX_DLLCHARACTERISTICS 20")]
     public const int IMAGE_DEBUG_TYPE_EX_DLLCHARACTERISTICS = 20;

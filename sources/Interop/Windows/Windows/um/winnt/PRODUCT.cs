@@ -475,9 +475,6 @@ public static partial class PRODUCT
     [NativeTypeName("#define PRODUCT_XBOX_SYSTEMOS 0x000000C0")]
     public const int PRODUCT_XBOX_SYSTEMOS = 0x000000C0;
 
-    [NativeTypeName("#define PRODUCT_XBOX_NATIVEOS 0x000000C1")]
-    public const int PRODUCT_XBOX_NATIVEOS = 0x000000C1;
-
     [NativeTypeName("#define PRODUCT_XBOX_GAMEOS 0x000000C2")]
     public const int PRODUCT_XBOX_GAMEOS = 0x000000C2;
 
@@ -489,6 +486,9 @@ public static partial class PRODUCT
 
     [NativeTypeName("#define PRODUCT_XBOX_SCARLETTHOSTOS 0x000000C5")]
     public const int PRODUCT_XBOX_SCARLETTHOSTOS = 0x000000C5;
+
+    [NativeTypeName("#define PRODUCT_XBOX_KEYSTONE 0x000000C6")]
+    public const int PRODUCT_XBOX_KEYSTONE = 0x000000C6;
 
     [NativeTypeName("#define PRODUCT_AZURE_SERVER_CLOUDHOST 0x000000C7")]
     public const int PRODUCT_AZURE_SERVER_CLOUDHOST = 0x000000C7;

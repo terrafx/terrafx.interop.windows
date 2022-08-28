@@ -1450,6 +1450,9 @@ public static partial class HID
     [NativeTypeName("#define HID_USAGE_DIGITIZER_HEAT_MAP_FRAME_DATA ((USAGE) 0x6C)")]
     public const ushort HID_USAGE_DIGITIZER_HEAT_MAP_FRAME_DATA = ((ushort)(0x6C));
 
+    [NativeTypeName("#define HID_USAGE_DIGITIZER_TRANSDUCER_SERIAL_PART2 ((USAGE) 0x6E)")]
+    public const ushort HID_USAGE_DIGITIZER_TRANSDUCER_SERIAL_PART2 = ((ushort)(0x6E));
+
     [NativeTypeName("#define HID_USAGE_DIGITIZER_TRANSDUCER_VENDOR ((USAGE) 0x91)")]
     public const ushort HID_USAGE_DIGITIZER_TRANSDUCER_VENDOR = ((ushort)(0x91));
 

@@ -25,4 +25,10 @@ public enum DML_FEATURE_LEVEL
 
     /// <include file='DML_FEATURE_LEVEL.xml' path='doc/member[@name="DML_FEATURE_LEVEL.DML_FEATURE_LEVEL_4_0"]/*' />
     DML_FEATURE_LEVEL_4_0 = 0x4000,
+
+    /// <include file='DML_FEATURE_LEVEL.xml' path='doc/member[@name="DML_FEATURE_LEVEL.DML_FEATURE_LEVEL_4_1"]/*' />
+    DML_FEATURE_LEVEL_4_1 = 0x4100,
+
+    /// <include file='DML_FEATURE_LEVEL.xml' path='doc/member[@name="DML_FEATURE_LEVEL.DML_FEATURE_LEVEL_5_0"]/*' />
+    DML_FEATURE_LEVEL_5_0 = 0x5000,
 }

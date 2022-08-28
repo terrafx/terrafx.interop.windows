@@ -104,29 +104,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_ISwapChainInterop
-    {
-        get
-        {
-            ReadOnlySpan<byte> data = new byte[] {
-                0xA0, 0x96, 0xF4, 0x26,
-                0x38, 0x7F,
-                0xFB, 0x45,
-                0x88,
-                0xF7,
-                0xFA,
-                0xAA,
-                0xBE,
-                0x67,
-                0xDD,
-                0x59
-            };
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IVisualInteractionSourceInterop
     {
         get

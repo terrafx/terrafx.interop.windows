@@ -62,6 +62,12 @@ public enum PROCESS_MITIGATION_POLICY
     /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessRedirectionTrustPolicy"]/*' />
     ProcessRedirectionTrustPolicy,
 
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessUserPointerAuthPolicy"]/*' />
+    ProcessUserPointerAuthPolicy,
+
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessSEHOPPolicy"]/*' />
+    ProcessSEHOPPolicy,
+
     /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.MaxProcessMitigationPolicy"]/*' />
     MaxProcessMitigationPolicy,
 }

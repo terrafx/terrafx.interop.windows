@@ -24,8 +24,6 @@ PropVariantToWinRTPropertyValue=SupportedOSPlatform("windows6.2")
 WinRTPropertyValueToPropVariant=SupportedOSPlatform("windows6.2")
 --with-librarypath
 PropVariantToWinRTPropertyValue=propsys
-WinRTPropertyValueToPropVariant=propsys
---with-librarypath
 PSCoerceToCanonicalValue=propsys
 PSCreateAdapterFromPropertyStore=propsys
 PSCreateDelayedMultiplexPropertyStore=propsys
@@ -45,6 +43,8 @@ PSGetItemPropertyHandlerWithCreateObject=propsys
 PSGetNamedPropertyFromPropertyStorage=propsys
 PSGetNameFromPropertyKey=propsys
 PSGetPropertyDescription=propsys
+PSGetPropertyDescriptionByName=propsys
+PSGetPropertyDescriptionListFromString=propsys
 PSGetPropertyFromPropertyStorage=propsys
 PSGetPropertyKeyFromName=propsys
 PSGetPropertySystem=propsys
@@ -84,11 +84,9 @@ PSPropertyBag_WriteStream=propsys
 PSPropertyBag_WriteULONGLONG=propsys
 PSPropertyBag_WriteUnknown=propsys
 PSPropertyKeyFromString=propsys
-PSSetPropertyValue=propsys
-PSStringFromPropertyKey=propsys
---with-librarypath
-PSGetPropertyDescriptionByName=propsys
-PSGetPropertyDescriptionListFromString=propsys
 PSRefreshPropertySchema=propsys
 PSRegisterPropertySchema=propsys
+PSSetPropertyValue=propsys
+PSStringFromPropertyKey=propsys
 PSUnregisterPropertySchema=propsys
+WinRTPropertyValueToPropVariant=propsys

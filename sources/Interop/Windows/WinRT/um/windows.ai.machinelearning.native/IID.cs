@@ -126,4 +126,27 @@ public static partial class IID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    public static ref readonly Guid IID_ILearningModelSessionOptionsNative1
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x26, 0x7A, 0xA3, 0x5D,
+                0x26, 0x05,
+                0x4B, 0x41,
+                0x91,
+                0xE4,
+                0x2A,
+                0x0F,
+                0xA3,
+                0xDD,
+                0xBA,
+                0x40
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

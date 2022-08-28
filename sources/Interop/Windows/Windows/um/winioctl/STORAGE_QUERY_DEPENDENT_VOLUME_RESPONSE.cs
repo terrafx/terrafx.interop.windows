@@ -22,7 +22,7 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
     public uint NumberEntries;
 
     /// <include file='STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE.xml' path='doc/member[@name="STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE.Anonymous"]/*' />
-    [NativeTypeName("_STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:14118:5)")]
+    [NativeTypeName("_STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:13980:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Lev1Depends"]/*' />
@@ -32,7 +32,7 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return Anonymous.Lev1Depends.AsSpan(unchecked((int)NumberEntries));
+            return Anonymous.Lev1Depends.AsSpan(unchecked((int)(NumberEntries)));
         }
     }
 
@@ -43,7 +43,7 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return Anonymous.Lev2Depends.AsSpan(unchecked((int)NumberEntries));
+            return Anonymous.Lev2Depends.AsSpan(unchecked((int)(NumberEntries)));
         }
     }
 

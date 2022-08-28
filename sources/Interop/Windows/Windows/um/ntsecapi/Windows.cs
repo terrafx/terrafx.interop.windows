@@ -1923,7 +1923,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LsaRetrievePrivateData"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("NTSTATUS")]
-    public static extern int LsaRetrievePrivateData([NativeTypeName("LSA_HANDLE")] void* PolicyHandle, [NativeTypeName("PLSA_UNICODE_STRING")] LSA_UNICODE_STRING* KeyName, [NativeTypeName("PLSA_UNICODE_STRING *")] LSA_UNICODE_STRING** PrivateDatant);
+    public static extern int LsaRetrievePrivateData([NativeTypeName("LSA_HANDLE")] void* PolicyHandle, [NativeTypeName("PLSA_UNICODE_STRING")] LSA_UNICODE_STRING* KeyName, [NativeTypeName("PLSA_UNICODE_STRING *")] LSA_UNICODE_STRING** PrivateData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LsaNtStatusToWinError"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]

@@ -273,6 +273,36 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows6.2")]
     public static extern uint WinHttpWebSocketQueryCloseStatus(HINTERNET hWebSocket, ushort* pusStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength, [NativeTypeName("DWORD *")] uint* pdwReasonLengthConsumed);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpRegisterProxyChangeNotification"]/*' />
+    [DllImport("winhttp", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows10.0.22621.0")]
+    public static extern uint WinHttpRegisterProxyChangeNotification([NativeTypeName("ULONGLONG")] ulong ullFlags, [NativeTypeName("WINHTTP_PROXY_CHANGE_CALLBACK")] delegate* unmanaged<ulong, void*, void> pfnCallback, [NativeTypeName("PVOID")] void* pvContext, [NativeTypeName("WINHTTP_PROXY_CHANGE_REGISTRATION_HANDLE *")] void** hRegistration);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpUnregisterProxyChangeNotification"]/*' />
+    [DllImport("winhttp", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows10.0.22621.0")]
+    public static extern uint WinHttpUnregisterProxyChangeNotification([NativeTypeName("WINHTTP_PROXY_CHANGE_REGISTRATION_HANDLE")] void* hRegistration);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpGetProxySettingsEx"]/*' />
+    [DllImport("winhttp", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows10.0.22621.0")]
+    public static extern uint WinHttpGetProxySettingsEx(HINTERNET hResolver, WINHTTP_PROXY_SETTINGS_TYPE ProxySettingsType, [NativeTypeName("PWINHTTP_PROXY_SETTINGS_PARAM")] WINHTTP_PROXY_SETTINGS_PARAM* pProxySettingsParam, [NativeTypeName("DWORD_PTR")] nuint pContext);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpGetProxySettingsResultEx"]/*' />
+    [DllImport("winhttp", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows10.0.22621.0")]
+    public static extern uint WinHttpGetProxySettingsResultEx(HINTERNET hResolver, [NativeTypeName("PVOID")] void* pProxySettingsEx);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpFreeProxySettingsEx"]/*' />
+    [DllImport("winhttp", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows10.0.22621.0")]
+    public static extern uint WinHttpFreeProxySettingsEx(WINHTTP_PROXY_SETTINGS_TYPE ProxySettingsType, [NativeTypeName("PVOID")] void* pProxySettingsEx);
+
     [NativeTypeName("#define NETWORKING_KEY_BUFSIZE 128")]
     public const int NETWORKING_KEY_BUFSIZE = 128;
 
@@ -293,6 +323,9 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define API_GET_PROXY_FOR_URL (6)")]
     public const int API_GET_PROXY_FOR_URL = (6);
+
+    [NativeTypeName("#define API_GET_PROXY_SETTINGS (7)")]
+    public const int API_GET_PROXY_SETTINGS = (7);
 
     [NativeTypeName("#define ICU_NO_ENCODE 0x20000000")]
     public const int ICU_NO_ENCODE = 0x20000000;

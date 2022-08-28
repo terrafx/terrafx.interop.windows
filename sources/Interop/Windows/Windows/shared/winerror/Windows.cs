@@ -720,4 +720,7 @@ public static partial class Windows
 
     [NativeTypeName("#define IORING_E_CORRUPT _HRESULT_TYPEDEF_(0x80460007L)")]
     public const int IORING_E_CORRUPT = unchecked((int)(0x80460007));
+
+    [NativeTypeName("#define IORING_E_COMPLETION_QUEUE_TOO_FULL _HRESULT_TYPEDEF_(0x80460008L)")]
+    public const int IORING_E_COMPLETION_QUEUE_TOO_FULL = unchecked((int)(0x80460008));
 }

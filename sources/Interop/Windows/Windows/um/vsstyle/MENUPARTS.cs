@@ -67,4 +67,25 @@ public enum MENUPARTS
 
     /// <include file='MENUPARTS.xml' path='doc/member[@name="MENUPARTS.MENU_SYSTEMRESTORE"]/*' />
     MENU_SYSTEMRESTORE = 20,
+
+    /// <include file='MENUPARTS.xml' path='doc/member[@name="MENUPARTS.MENU_POPUPSUBMENU_HCHOT"]/*' />
+    MENU_POPUPSUBMENU_HCHOT = 21,
+
+    /// <include file='MENUPARTS.xml' path='doc/member[@name="MENUPARTS.MENU_SYSTEMCLOSE_HCHOT"]/*' />
+    MENU_SYSTEMCLOSE_HCHOT = 22,
+
+    /// <include file='MENUPARTS.xml' path='doc/member[@name="MENUPARTS.MENU_SYSTEMMAXIMIZE_HCHOT"]/*' />
+    MENU_SYSTEMMAXIMIZE_HCHOT = 23,
+
+    /// <include file='MENUPARTS.xml' path='doc/member[@name="MENUPARTS.MENU_SYSTEMMINIMIZE_HCHOT"]/*' />
+    MENU_SYSTEMMINIMIZE_HCHOT = 24,
+
+    /// <include file='MENUPARTS.xml' path='doc/member[@name="MENUPARTS.MENU_SYSTEMRESTORE_HCHOT"]/*' />
+    MENU_SYSTEMRESTORE_HCHOT = 25,
+
+    /// <include file='MENUPARTS.xml' path='doc/member[@name="MENUPARTS.MENU_POPUPITEMKBFOCUS"]/*' />
+    MENU_POPUPITEMKBFOCUS = 26,
+
+    /// <include file='MENUPARTS.xml' path='doc/member[@name="MENUPARTS.MENU_POPUPITEM_FOCUSABLE"]/*' />
+    MENU_POPUPITEM_FOCUSABLE = 27,
 }

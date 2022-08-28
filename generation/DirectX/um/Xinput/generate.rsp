@@ -16,11 +16,9 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/Xinput.h
 XInputEnable=xinput1_4
 XInputGetAudioDeviceIds=xinput1_4
 XInputGetBatteryInformation=xinput1_4
-XInputGetKeystroke=xinput1_4
---with-librarypath
 XInputGetCapabilities=xinput1_4
+XInputGetKeystroke=xinput1_4
+XInputGetState=xinput1_4
 XInputSetState=xinput1_4
 --with-librarypath
 XInputGetDSoundAudioDeviceGuids=xinput9_1_0
---with-librarypath
-XInputGetState=xinput1_4

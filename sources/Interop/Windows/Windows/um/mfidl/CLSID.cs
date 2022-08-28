@@ -511,4 +511,29 @@ public static partial class CLSID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid CLSID_CameraConfigurationManager
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x40, 0xB5, 0x92, 0x6C,
+                0x54, 0x58,
+                0x17, 0x4A,
+                0x92,
+                0xB6,
+                0xAC,
+                0x89,
+                0xC9,
+                0x6E,
+                0x96,
+                0x83
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

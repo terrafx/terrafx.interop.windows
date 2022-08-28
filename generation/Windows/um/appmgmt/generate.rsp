@@ -13,11 +13,10 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/appmgmt.h
 --with-librarypath
+CommandLineFromMsiDescriptor=advapi32
+GetLocalManagedApplicationData=advapi32
 GetLocalManagedApplications=advapi32
 GetManagedApplicationCategories=advapi32
 GetManagedApplications=advapi32
 InstallApplication=advapi32
 UninstallApplication=advapi32
---with-librarypath
-CommandLineFromMsiDescriptor=advapi32
-GetLocalManagedApplicationData=advapi32

@@ -217,6 +217,12 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.22621.0")]
     public static extern HRESULT GetIdForPackageDependencyContext(PACKAGEDEPENDENCY_CONTEXT packageDependencyContext, [NativeTypeName("PWSTR *")] ushort** packageDependencyId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPackageGraphRevisionId"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22621.0")]
+    [return: NativeTypeName("UINT32")]
+    public static extern uint GetPackageGraphRevisionId();
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AppPolicyGetLifecycleManagement"]/*' />
     [DllImport("api-ms-win-appmodel-runtime-l1-1-2", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]

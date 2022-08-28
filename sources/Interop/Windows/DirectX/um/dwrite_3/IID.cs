@@ -977,4 +977,27 @@ public static partial class IID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    public static ref readonly Guid IID_IDWriteFontSet4
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xFC, 0x75, 0xC1, 0xEE,
+                0xA9, 0xBE,
+                0x86, 0x4C,
+                0x8B,
+                0x53,
+                0xCC,
+                0xBD,
+                0xD7,
+                0xDF,
+                0x0C,
+                0x82
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

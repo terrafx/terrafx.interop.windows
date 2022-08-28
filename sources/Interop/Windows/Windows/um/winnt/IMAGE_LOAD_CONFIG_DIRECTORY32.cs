@@ -198,4 +198,8 @@ public partial struct IMAGE_LOAD_CONFIG_DIRECTORY32
     /// <include file='IMAGE_LOAD_CONFIG_DIRECTORY32.xml' path='doc/member[@name="IMAGE_LOAD_CONFIG_DIRECTORY32.CastGuardOsDeterminedFailureMode"]/*' />
     [NativeTypeName("DWORD")]
     public uint CastGuardOsDeterminedFailureMode;
+
+    /// <include file='IMAGE_LOAD_CONFIG_DIRECTORY32.xml' path='doc/member[@name="IMAGE_LOAD_CONFIG_DIRECTORY32.GuardMemcpyFunctionPointer"]/*' />
+    [NativeTypeName("DWORD")]
+    public uint GuardMemcpyFunctionPointer;
 }

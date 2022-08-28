@@ -270,8 +270,11 @@ public static unsafe partial class SECURITY
     [NativeTypeName("#define SECURITY_CAPABILITY_BASE_RID (0x00000003L)")]
     public const int SECURITY_CAPABILITY_BASE_RID = (0x00000003);
 
-    [NativeTypeName("#define SECURITY_CAPABILITY_APP_RID (0x000000400)")]
-    public const int SECURITY_CAPABILITY_APP_RID = (0x000000400);
+    [NativeTypeName("#define SECURITY_CAPABILITY_APP_RID (0x00000400L)")]
+    public const int SECURITY_CAPABILITY_APP_RID = (0x00000400);
+
+    [NativeTypeName("#define SECURITY_CAPABILITY_APP_SILO_RID (0x00010000L)")]
+    public const int SECURITY_CAPABILITY_APP_SILO_RID = (0x00010000);
 
     [NativeTypeName("#define SECURITY_BUILTIN_CAPABILITY_RID_COUNT (2L)")]
     public const int SECURITY_BUILTIN_CAPABILITY_RID_COUNT = (2);

@@ -7187,4 +7187,119 @@ public static partial class IID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    public static ref readonly Guid IID_CODECAPI_AVEncAACEnableVBR
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x98, 0xBB, 0x36, 0xE8,
+                0xA3, 0xFC,
+                0xB6, 0x44,
+                0x9A,
+                0x39,
+                0x24,
+                0x78,
+                0x6B,
+                0xE4,
+                0x1B,
+                0xE1
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_CODECAPI_AVEncVideoConsecutiveFramesForLayer
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x22, 0x55, 0xF3, 0x0A,
+                0x84, 0xD9,
+                0xAE, 0x45,
+                0xBB,
+                0xB8,
+                0x53,
+                0x93,
+                0x3E,
+                0x0A,
+                0xB1,
+                0xB5
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_CODECAPI_AVEncVideoMaxNumRefFrameForLayer
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x39, 0xC6, 0x41, 0x31,
+                0x29, 0x63,
+                0xD1, 0x40,
+                0xB7,
+                0xE7,
+                0x2F,
+                0x0E,
+                0x3A,
+                0xC1,
+                0x8E,
+                0x02
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_CODECAPI_AVEncTileRows
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xFC, 0x50, 0xC6, 0xFB,
+                0xAB, 0x41,
+                0x9B, 0x4F,
+                0x84,
+                0xB5,
+                0x06,
+                0x5B,
+                0xE9,
+                0xCD,
+                0x99,
+                0xEE
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_CODECAPI_AVEncTileColumns
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x05, 0x12, 0xB3, 0xB4,
+                0xE8, 0x01,
+                0x2C, 0x45,
+                0xB8,
+                0x76,
+                0x8C,
+                0x65,
+                0x06,
+                0x54,
+                0x59,
+                0x25
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

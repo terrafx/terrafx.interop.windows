@@ -99,4 +99,7 @@ public static partial class HCS
 
     [NativeTypeName("#define HCS_E_SYSTEM_NOT_CONFIGURED_FOR_OPERATION _HRESULT_TYPEDEF_(0x80370120L)")]
     public const int HCS_E_SYSTEM_NOT_CONFIGURED_FOR_OPERATION = unchecked((int)(0x80370120));
+
+    [NativeTypeName("#define HCS_E_OPERATION_ALREADY_CANCELLED _HRESULT_TYPEDEF_(0x80370121L)")]
+    public const int HCS_E_OPERATION_ALREADY_CANCELLED = unchecked((int)(0x80370121));
 }

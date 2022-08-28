@@ -717,4 +717,7 @@ public static partial class TPM
 
     [NativeTypeName("#define TPM_E_TOO_MUCH_DATA _HRESULT_TYPEDEF_(0x80290602L)")]
     public const int TPM_E_TOO_MUCH_DATA = unchecked((int)(0x80290602));
+
+    [NativeTypeName("#define TPM_E_TPM_GENERATED_EPS _HRESULT_TYPEDEF_(0x80290603L)")]
+    public const int TPM_E_TPM_GENERATED_EPS = unchecked((int)(0x80290603));
 }

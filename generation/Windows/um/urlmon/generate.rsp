@@ -29,9 +29,6 @@ PUAFOUT=Flags
 SZM_FLAGS=Flags
 ZAFLAGS=Flags
 --with-librarypath
-CreateAsyncBindCtx=urlmon
-CreateFormatEnumerator=urlmon
---with-librarypath
 AsyncInstallDistributionUnit=urlmon
 CoGetClassObjectFromURL=urlmon
 CoInternetCombineIUri=urlmon
@@ -56,14 +53,16 @@ CompareSecurityIds=urlmon
 CompatFlagsFromClsid=urlmon
 CopyBindInfo=urlmon
 CopyStgMedium=urlmon
+CreateAsyncBindCtx=urlmon
 CreateAsyncBindCtxEx=urlmon
+CreateFormatEnumerator=urlmon
 CreateIUriBuilder=urlmon
 CreateUri=urlmon
 CreateUriFromMultiByteString=urlmon
 CreateUriWithFragment=urlmon
 CreateURLMoniker=urlmon
-CreateURLMonikerEx=urlmon
 CreateURLMonikerEx2=urlmon
+CreateURLMonikerEx=urlmon
 FaultInIEFeature=urlmon
 FindMediaType=urlmon
 FindMediaTypeClass=urlmon

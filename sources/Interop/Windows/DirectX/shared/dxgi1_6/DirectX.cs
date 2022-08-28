@@ -15,4 +15,9 @@ public static partial class DirectX
     [DllImport("dxgi", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.17134.0")]
     public static extern HRESULT DXGIDeclareAdapterRemovalSupport();
+
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DXGIDisableVBlankVirtualization"]/*' />
+    [DllImport("dxgi", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22621.0")]
+    public static extern HRESULT DXGIDisableVBlankVirtualization();
 }

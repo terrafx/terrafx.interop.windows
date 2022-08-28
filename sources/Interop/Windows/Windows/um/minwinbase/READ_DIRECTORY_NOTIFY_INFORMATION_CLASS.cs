@@ -16,4 +16,10 @@ public enum READ_DIRECTORY_NOTIFY_INFORMATION_CLASS
 
     /// <include file='READ_DIRECTORY_NOTIFY_INFORMATION_CLASS.xml' path='doc/member[@name="READ_DIRECTORY_NOTIFY_INFORMATION_CLASS.ReadDirectoryNotifyExtendedInformation"]/*' />
     ReadDirectoryNotifyExtendedInformation,
+
+    /// <include file='READ_DIRECTORY_NOTIFY_INFORMATION_CLASS.xml' path='doc/member[@name="READ_DIRECTORY_NOTIFY_INFORMATION_CLASS.ReadDirectoryNotifyFullInformation"]/*' />
+    ReadDirectoryNotifyFullInformation,
+
+    /// <include file='READ_DIRECTORY_NOTIFY_INFORMATION_CLASS.xml' path='doc/member[@name="READ_DIRECTORY_NOTIFY_INFORMATION_CLASS.ReadDirectoryNotifyMaximumInformation"]/*' />
+    ReadDirectoryNotifyMaximumInformation,
 }

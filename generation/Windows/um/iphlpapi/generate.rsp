@@ -73,6 +73,7 @@ GetIpStatistics=iphlpapi
 GetIpStatisticsEx=iphlpapi
 GetNetworkParams=iphlpapi
 GetNumberOfInterfaces=iphlpapi
+GetOwnerModuleFromPidAndInfo=iphlpapi
 GetOwnerModuleFromTcp6Entry=iphlpapi
 GetOwnerModuleFromTcpEntry=iphlpapi
 GetOwnerModuleFromUdp6Entry=iphlpapi
@@ -81,17 +82,17 @@ GetPerAdapterInfo=iphlpapi
 GetPerTcp6ConnectionEStats=iphlpapi
 GetPerTcpConnectionEStats=iphlpapi
 GetRTTAndHopCount=iphlpapi
-GetTcp6Table=iphlpapi
 GetTcp6Table2=iphlpapi
+GetTcp6Table=iphlpapi
 GetTcpStatistics=iphlpapi
-GetTcpStatisticsEx=iphlpapi
 GetTcpStatisticsEx2=iphlpapi
-GetTcpTable=iphlpapi
+GetTcpStatisticsEx=iphlpapi
 GetTcpTable2=iphlpapi
+GetTcpTable=iphlpapi
 GetUdp6Table=iphlpapi
 GetUdpStatistics=iphlpapi
-GetUdpStatisticsEx=iphlpapi
 GetUdpStatisticsEx2=iphlpapi
+GetUdpStatisticsEx=iphlpapi
 GetUdpTable=iphlpapi
 GetUniDirectionalAdapterInfo=iphlpapi
 IpReleaseAddress=iphlpapi
@@ -118,7 +119,5 @@ SetPerTcpConnectionEStats=iphlpapi
 SetTcpEntry=iphlpapi
 UnenableRouter=iphlpapi
 UnregisterInterfaceTimestampConfigChange=iphlpapi
---with-librarypath
-GetOwnerModuleFromPidAndInfo=iphlpapi
 --with-setlasterror
 GetRTTAndHopCount

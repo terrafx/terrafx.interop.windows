@@ -16,7 +16,7 @@ public partial struct INPUT
     public uint type;
 
     /// <include file='INPUT.xml' path='doc/member[@name="INPUT.Anonymous"]/*' />
-    [NativeTypeName("tagINPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/WinUser.h:6123:5)")]
+    [NativeTypeName("tagINPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/WinUser.h:6138:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.mi"]/*' />

@@ -77,4 +77,7 @@ public static partial class PROC
 
     [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_COMPONENT_FILTER ProcThreadAttributeValue (ProcThreadAttributeComponentFilter, FALSE, TRUE, FALSE)")]
     public const int PROC_THREAD_ATTRIBUTE_COMPONENT_FILTER = (((int)(ProcThreadAttributeComponentFilter) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
+
+    [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_TRUSTED_APP ProcThreadAttributeValue (ProcThreadAttributeTrustedApp, FALSE, TRUE, FALSE)")]
+    public const int PROC_THREAD_ATTRIBUTE_TRUSTED_APP = (((int)(ProcThreadAttributeTrustedApp) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
 }

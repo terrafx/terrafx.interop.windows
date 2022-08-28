@@ -21,7 +21,7 @@ public unsafe partial struct OCSP_BASIC_RESPONSE_INFO
     public uint dwResponderIdChoice;
 
     /// <include file='OCSP_BASIC_RESPONSE_INFO.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_INFO.Anonymous"]/*' />
-    [NativeTypeName("_OCSP_BASIC_RESPONSE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wincrypt.h:5708:5)")]
+    [NativeTypeName("_OCSP_BASIC_RESPONSE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wincrypt.h:5717:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='OCSP_BASIC_RESPONSE_INFO.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_INFO.ProducedAt"]/*' />

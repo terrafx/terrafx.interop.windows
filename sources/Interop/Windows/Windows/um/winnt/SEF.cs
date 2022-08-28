@@ -46,6 +46,9 @@ public static partial class SEF
     [NativeTypeName("#define SEF_FORCE_USER_MODE 0x2000")]
     public const int SEF_FORCE_USER_MODE = 0x2000;
 
+    [NativeTypeName("#define SEF_NORMALIZE_OUTPUT_DESCRIPTOR 0x4000")]
+    public const int SEF_NORMALIZE_OUTPUT_DESCRIPTOR = 0x4000;
+
     [NativeTypeName("#define SEF_MACL_VALID_FLAGS (SEF_MACL_NO_WRITE_UP   | \\\r\n                                           SEF_MACL_NO_READ_UP    | \\\r\n                                           SEF_MACL_NO_EXECUTE_UP)")]
     public const int SEF_MACL_VALID_FLAGS = (0x100 | 0x200 | 0x400);
 }

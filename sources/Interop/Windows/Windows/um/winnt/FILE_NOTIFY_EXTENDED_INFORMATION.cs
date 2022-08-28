@@ -3,6 +3,9 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
@@ -41,9 +44,9 @@ public unsafe partial struct FILE_NOTIFY_EXTENDED_INFORMATION
     [NativeTypeName("DWORD")]
     public uint FileAttributes;
 
-    /// <include file='FILE_NOTIFY_EXTENDED_INFORMATION.xml' path='doc/member[@name="FILE_NOTIFY_EXTENDED_INFORMATION.ReparsePointTag"]/*' />
-    [NativeTypeName("DWORD")]
-    public uint ReparsePointTag;
+    /// <include file='FILE_NOTIFY_EXTENDED_INFORMATION.xml' path='doc/member[@name="FILE_NOTIFY_EXTENDED_INFORMATION.Anonymous"]/*' />
+    [NativeTypeName("_FILE_NOTIFY_EXTENDED_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:14440:5)")]
+    public _Anonymous_e__Union Anonymous;
 
     /// <include file='FILE_NOTIFY_EXTENDED_INFORMATION.xml' path='doc/member[@name="FILE_NOTIFY_EXTENDED_INFORMATION.FileId"]/*' />
     public LARGE_INTEGER FileId;
@@ -58,4 +61,41 @@ public unsafe partial struct FILE_NOTIFY_EXTENDED_INFORMATION
     /// <include file='FILE_NOTIFY_EXTENDED_INFORMATION.xml' path='doc/member[@name="FILE_NOTIFY_EXTENDED_INFORMATION.FileName"]/*' />
     [NativeTypeName("WCHAR[1]")]
     public fixed ushort FileName[1];
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ReparsePointTag"]/*' />
+    [UnscopedRef]
+    public ref uint ReparsePointTag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.ReparsePointTag;
+        }
+    }
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.EaSize"]/*' />
+    [UnscopedRef]
+    public ref uint EaSize
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.EaSize;
+        }
+    }
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ReparsePointTag"]/*' />
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint ReparsePointTag;
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.EaSize"]/*' />
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint EaSize;
+    }
 }
