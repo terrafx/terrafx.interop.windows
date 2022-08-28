@@ -11,7 +11,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/Xinput
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/Xinput.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/Xinput.h
 --with-librarypath
 XInputEnable=xinput1_4
 XInputGetAudioDeviceIds=xinput1_4

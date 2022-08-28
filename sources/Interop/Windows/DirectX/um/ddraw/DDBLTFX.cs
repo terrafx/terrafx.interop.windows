@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ddraw.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/ddraw.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -52,7 +52,7 @@ public unsafe partial struct DDBLTFX
     public uint dwZDestConstBitDepth;
 
     /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.Anonymous1"]/*' />
-    [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ddraw.h:287:5)")]
+    [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ddraw.h:287:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.dwZSrcConstBitDepth"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct DDBLTFX
     public uint dwZSrcConstBitDepth;
 
     /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.Anonymous2"]/*' />
-    [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ddraw.h:293:5)")]
+    [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ddraw.h:293:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.dwAlphaEdgeBlendBitDepth"]/*' />
@@ -80,7 +80,7 @@ public unsafe partial struct DDBLTFX
     public uint dwAlphaDestConstBitDepth;
 
     /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.Anonymous3"]/*' />
-    [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ddraw.h:302:5)")]
+    [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ddraw.h:302:5)")]
     public _Anonymous3_e__Union Anonymous3;
 
     /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.dwAlphaSrcConstBitDepth"]/*' />
@@ -88,11 +88,11 @@ public unsafe partial struct DDBLTFX
     public uint dwAlphaSrcConstBitDepth;
 
     /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.Anonymous4"]/*' />
-    [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ddraw.h:308:5)")]
+    [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ddraw.h:308:5)")]
     public _Anonymous4_e__Union Anonymous4;
 
     /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.Anonymous5"]/*' />
-    [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ddraw.h:313:5)")]
+    [NativeTypeName("_DDBLTFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ddraw.h:313:5)")]
     public _Anonymous5_e__Union Anonymous5;
 
     /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.ddckDestColorkey"]/*' />

@@ -562,7 +562,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/winnt
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h
 --with-attribute
 ACCESS_REASON_TYPE=Flags
 CLAIM_SECURITY_ATTRIBUTES_INFORMATION=SupportedOSPlatform("windows6.2")

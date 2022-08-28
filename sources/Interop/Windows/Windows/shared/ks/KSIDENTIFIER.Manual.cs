@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/ks.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from shared/ks.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -12,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public partial struct KSIDENTIFIER
 {
-    [NativeTypeName("KSIDENTIFIER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/ks.h:107:5)")]
+    [NativeTypeName("KSIDENTIFIER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/ks.h:107:5)")]
     internal _Anonymous_e__Union Anonymous;
 
     [UnscopedRef]
@@ -59,7 +59,7 @@ public partial struct KSIDENTIFIER
     public partial struct _Anonymous_e__Union
     {
         [FieldOffset(0)]
-        [NativeTypeName("KSIDENTIFIER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/ks.h:111:9)")]
+        [NativeTypeName("KSIDENTIFIER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/ks.h:111:9)")]
         internal _Anonymous_e__Struct Anonymous;
 
         [FieldOffset(0)]

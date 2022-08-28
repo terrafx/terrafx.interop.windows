@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/udpmib.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from shared/udpmib.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -28,7 +28,7 @@ public unsafe partial struct MIB_UDPROW_OWNER_MODULE
     public LARGE_INTEGER liCreateTimestamp;
 
     /// <include file='MIB_UDPROW_OWNER_MODULE.xml' path='doc/member[@name="MIB_UDPROW_OWNER_MODULE.Anonymous"]/*' />
-    [NativeTypeName("_MIB_UDPROW_OWNER_MODULE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/udpmib.h:69:5)")]
+    [NativeTypeName("_MIB_UDPROW_OWNER_MODULE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/udpmib.h:69:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='MIB_UDPROW_OWNER_MODULE.xml' path='doc/member[@name="MIB_UDPROW_OWNER_MODULE.OwningModuleInfo"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct MIB_UDPROW_OWNER_MODULE
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_MIB_UDPROW_OWNER_MODULE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/udpmib.h:70:9)")]
+        [NativeTypeName("_MIB_UDPROW_OWNER_MODULE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/udpmib.h:70:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwFlags"]/*' />

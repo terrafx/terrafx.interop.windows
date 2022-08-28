@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -18,7 +18,7 @@ public partial struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
     public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
     /// <include file='DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION.xml' path='doc/member[@name="DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION.Anonymous"]/*' />
-    [NativeTypeName("DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wingdi.h:3141:5)")]
+    [NativeTypeName("DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wingdi.h:3141:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.disableMonitorVirtualResolution"]/*' />
@@ -70,7 +70,7 @@ public partial struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wingdi.h:3143:9)")]
+        [NativeTypeName("DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wingdi.h:3143:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.value"]/*' />

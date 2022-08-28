@@ -11,7 +11,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/AppxPackaging
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/AppxPackaging.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/AppxPackaging.h
 --with-attribute
 APPX_BUNDLE_FOOTPRINT_FILE_TYPE=SupportedOSPlatform("windows6.3")
 APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE=SupportedOSPlatform("windows6.3")

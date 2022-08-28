@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/dwrite_1.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/dwrite_1.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -23,22 +23,22 @@ public unsafe partial struct DWRITE_PANOSE
 
     /// <include file='DWRITE_PANOSE.xml' path='doc/member[@name="DWRITE_PANOSE.text"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/dwrite_1.h:758:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/dwrite_1.h:758:5)")]
     public _text_e__Struct text;
 
     /// <include file='DWRITE_PANOSE.xml' path='doc/member[@name="DWRITE_PANOSE.script"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/dwrite_1.h:772:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/dwrite_1.h:772:5)")]
     public _script_e__Struct script;
 
     /// <include file='DWRITE_PANOSE.xml' path='doc/member[@name="DWRITE_PANOSE.decorative"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/dwrite_1.h:786:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/dwrite_1.h:786:5)")]
     public _decorative_e__Struct decorative;
 
     /// <include file='DWRITE_PANOSE.xml' path='doc/member[@name="DWRITE_PANOSE.symbol"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/dwrite_1.h:800:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/dwrite_1.h:800:5)")]
     public _symbol_e__Struct symbol;
 
     /// <include file='_text_e__Struct.xml' path='doc/member[@name="_text_e__Struct"]/*' />

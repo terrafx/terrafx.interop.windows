@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/memoryapi.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/memoryapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -23,7 +23,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     public uint AllocationProtect;
 
     /// <include file='WIN32_MEMORY_REGION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_REGION_INFORMATION.Anonymous"]/*' />
-    [NativeTypeName("WIN32_MEMORY_REGION_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/memoryapi.h:876:5)")]
+    [NativeTypeName("WIN32_MEMORY_REGION_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/memoryapi.h:876:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='WIN32_MEMORY_REGION_INFORMATION.xml' path='doc/member[@name="WIN32_MEMORY_REGION_INFORMATION.RegionSize"]/*' />
@@ -168,7 +168,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("WIN32_MEMORY_REGION_INFORMATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/memoryapi.h:879:9)")]
+        [NativeTypeName("WIN32_MEMORY_REGION_INFORMATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/memoryapi.h:879:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

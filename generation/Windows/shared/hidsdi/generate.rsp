@@ -13,6 +13,6 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/shared/hidsdi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/hidsdi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/hidsdi.h
 --with-librarypath
 *=hid

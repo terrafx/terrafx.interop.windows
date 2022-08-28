@@ -14,6 +14,6 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/xapo
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/xapo.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/xapo.h
 --with-attribute
 XAPO_BUFFER_FLAGS=Flags

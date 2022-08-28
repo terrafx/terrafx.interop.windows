@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/EvColl.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/EvColl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct EC_VARIANT
 {
     /// <include file='EC_VARIANT.xml' path='doc/member[@name="EC_VARIANT.Anonymous"]/*' />
-    [NativeTypeName("_EC_VARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/EvColl.h:121:5)")]
+    [NativeTypeName("_EC_VARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/EvColl.h:121:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='EC_VARIANT.xml' path='doc/member[@name="EC_VARIANT.Count"]/*' />

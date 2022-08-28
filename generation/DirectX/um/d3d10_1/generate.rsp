@@ -11,7 +11,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/d3d10_1
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3d10_1.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/d3d10_1.h
 --with-librarypath
 D3D10CreateDevice1=d3d10_1
 D3D10CreateDeviceAndSwapChain1=d3d10_1

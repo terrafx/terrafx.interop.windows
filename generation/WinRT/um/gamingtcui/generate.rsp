@@ -11,7 +11,7 @@ TerraFX.Interop.WinRT
 --test-output
 ../../../../tests/Interop/Windows/WinRT/um/gamingtcui
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/gamingtcui.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/gamingtcui.h
 --with-librarypath
 CheckGamingPrivilegeWithUI=gamingtcui
 ProcessPendingGameUI=gamingtcui

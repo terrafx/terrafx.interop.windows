@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/inaddr.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from shared/inaddr.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -11,7 +11,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IN_ADDR
 {
     /// <include file='IN_ADDR.xml' path='doc/member[@name="IN_ADDR.S_un"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/inaddr.h:26:9)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/inaddr.h:26:9)")]
     public _S_un_e__Union S_un;
 
     /// <include file='_S_un_e__Union.xml' path='doc/member[@name="_S_un_e__Union"]/*' />
@@ -20,12 +20,12 @@ public partial struct IN_ADDR
     {
         /// <include file='_S_un_e__Union.xml' path='doc/member[@name="_S_un_e__Union.S_un_b"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/inaddr.h:27:17)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/inaddr.h:27:17)")]
         public _S_un_b_e__Struct S_un_b;
 
         /// <include file='_S_un_e__Union.xml' path='doc/member[@name="_S_un_e__Union.S_un_w"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/inaddr.h:28:17)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/inaddr.h:28:17)")]
         public _S_un_w_e__Struct S_un_w;
 
         /// <include file='_S_un_e__Union.xml' path='doc/member[@name="_S_un_e__Union.S_addr"]/*' />

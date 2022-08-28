@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -39,7 +39,7 @@ public unsafe partial struct STORAGE_MINIPORT_DESCRIPTOR
     public byte ExtraIoInfoSupported;
 
     /// <include file='STORAGE_MINIPORT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MINIPORT_DESCRIPTOR.Flags"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:1538:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:1538:5)")]
     public _Flags_e__Union Flags;
 
     /// <include file='STORAGE_MINIPORT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MINIPORT_DESCRIPTOR.Reserved0"]/*' />
@@ -56,7 +56,7 @@ public unsafe partial struct STORAGE_MINIPORT_DESCRIPTOR
     {
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_STORAGE_MINIPORT_DESCRIPTOR::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:1539:9)")]
+        [NativeTypeName("_STORAGE_MINIPORT_DESCRIPTOR::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:1539:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.AsBYTE"]/*' />

@@ -15,7 +15,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/mfreadwrite
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/mfreadwrite.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/mfreadwrite.h
 --with-attribute
 IMFSinkWriterEncoderConfig=SupportedOSPlatform("windows6.3")
 IMFSinkWriterEx=SupportedOSPlatform("windows6.2")

@@ -13,7 +13,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/DirectML
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/DirectML.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/DirectML.h
 --with-attribute
 DMLCreateDevice=SupportedOSPlatform("windows10.0")
 DML_ACTIVATION_SHRINK_OPERATOR_DESC=SupportedOSPlatform("windows10.0.19041.0")

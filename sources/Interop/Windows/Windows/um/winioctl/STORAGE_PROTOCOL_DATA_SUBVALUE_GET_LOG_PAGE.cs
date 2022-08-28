@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -14,7 +14,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
 {
     /// <include file='STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.xml' path='doc/member[@name="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("_STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:2288:5)")]
+    [NativeTypeName("_STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:2288:5)")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.xml' path='doc/member[@name="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.AsUlong"]/*' />

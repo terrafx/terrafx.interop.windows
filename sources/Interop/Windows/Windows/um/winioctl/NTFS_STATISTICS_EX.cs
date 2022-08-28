@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.Versioning;
@@ -36,7 +36,7 @@ public partial struct NTFS_STATISTICS_EX
     public ulong MftWriteBytes;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.MftWritesUserLevel"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:12223:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:12223:5)")]
     public _MftWritesUserLevel_e__Struct MftWritesUserLevel;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.MftWritesFlushForLogFileFull"]/*' />
@@ -60,7 +60,7 @@ public partial struct NTFS_STATISTICS_EX
     public ulong Mft2WriteBytes;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.Mft2WritesUserLevel"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:12236:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:12236:5)")]
     public _Mft2WritesUserLevel_e__Struct Mft2WritesUserLevel;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.Mft2WritesFlushForLogFileFull"]/*' />
@@ -120,7 +120,7 @@ public partial struct NTFS_STATISTICS_EX
     public uint BitmapWritesUserRequest;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.BitmapWritesUserLevel"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:12261:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:12261:5)")]
     public _BitmapWritesUserLevel_e__Struct BitmapWritesUserLevel;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.MftBitmapReads"]/*' />
@@ -152,7 +152,7 @@ public partial struct NTFS_STATISTICS_EX
     public uint MftBitmapWritesUserRequest;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.MftBitmapWritesUserLevel"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:12277:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:12277:5)")]
     public _MftBitmapWritesUserLevel_e__Struct MftBitmapWritesUserLevel;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.UserIndexReads"]/*' />
@@ -188,7 +188,7 @@ public partial struct NTFS_STATISTICS_EX
     public ulong LogFileWriteBytes;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.Allocate"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:12298:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:12298:5)")]
     public _Allocate_e__Struct Allocate;
 
     /// <include file='NTFS_STATISTICS_EX.xml' path='doc/member[@name="NTFS_STATISTICS_EX.DiskResourcesExhausted"]/*' />

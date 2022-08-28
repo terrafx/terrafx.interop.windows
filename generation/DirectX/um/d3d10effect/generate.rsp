@@ -13,7 +13,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/d3d10effect
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3d10effect.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/d3d10effect.h
 --with-guid
 ID3D10Effect=51B0CA8B-EC0B-4519-870D-8EE1CB5017C7
 ID3D10EffectPool=9537AB04-3250-412E-8213-FCD2F8677933

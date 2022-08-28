@@ -11,4 +11,4 @@ TerraFX.Interop.WinRT
 --test-output
 ../../../../tests/Interop/Windows/WinRT/um/appserviceinterop
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/appserviceinterop.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/appserviceinterop.h

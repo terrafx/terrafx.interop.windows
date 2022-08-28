@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/in6addr.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from shared/in6addr.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -11,7 +11,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IN6_ADDR
 {
     /// <include file='IN6_ADDR.xml' path='doc/member[@name="IN6_ADDR.u"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/in6addr.h:26:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/in6addr.h:26:5)")]
     public _u_e__Union u;
 
     /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union"]/*' />

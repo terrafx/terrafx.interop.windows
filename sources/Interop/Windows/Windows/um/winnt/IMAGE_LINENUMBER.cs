@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -11,7 +11,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_LINENUMBER
 {
     /// <include file='IMAGE_LINENUMBER.xml' path='doc/member[@name="IMAGE_LINENUMBER.Type"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:19193:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:19193:5)")]
     public _Type_e__Union Type;
 
     /// <include file='IMAGE_LINENUMBER.xml' path='doc/member[@name="IMAGE_LINENUMBER.Linenumber"]/*' />

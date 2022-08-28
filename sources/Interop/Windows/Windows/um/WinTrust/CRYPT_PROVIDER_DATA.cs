@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -91,7 +91,7 @@ public unsafe partial struct CRYPT_PROVIDER_DATA
     public uint dwSubjectChoice;
 
     /// <include file='CRYPT_PROVIDER_DATA.xml' path='doc/member[@name="CRYPT_PROVIDER_DATA.Anonymous"]/*' />
-    [NativeTypeName("_CRYPT_PROVIDER_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/WinTrust.h:681:5)")]
+    [NativeTypeName("_CRYPT_PROVIDER_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/WinTrust.h:681:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='CRYPT_PROVIDER_DATA.xml' path='doc/member[@name="CRYPT_PROVIDER_DATA.pszUsageOID"]/*' />

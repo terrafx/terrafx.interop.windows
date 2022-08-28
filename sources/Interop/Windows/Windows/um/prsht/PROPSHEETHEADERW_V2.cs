@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/prsht.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/prsht.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -27,7 +27,7 @@ public unsafe partial struct PROPSHEETHEADERW_V2
     public HINSTANCE hInstance;
 
     /// <include file='PROPSHEETHEADERW_V2.xml' path='doc/member[@name="PROPSHEETHEADERW_V2.Anonymous1"]/*' />
-    [NativeTypeName("_PROPSHEETHEADERW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/prsht.h:526:5)")]
+    [NativeTypeName("_PROPSHEETHEADERW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/prsht.h:526:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='PROPSHEETHEADERW_V2.xml' path='doc/member[@name="PROPSHEETHEADERW_V2.pszCaption"]/*' />
@@ -38,11 +38,11 @@ public unsafe partial struct PROPSHEETHEADERW_V2
     public uint nPages;
 
     /// <include file='PROPSHEETHEADERW_V2.xml' path='doc/member[@name="PROPSHEETHEADERW_V2.Anonymous2"]/*' />
-    [NativeTypeName("_PROPSHEETHEADERW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/prsht.h:526:5)")]
+    [NativeTypeName("_PROPSHEETHEADERW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/prsht.h:526:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='PROPSHEETHEADERW_V2.xml' path='doc/member[@name="PROPSHEETHEADERW_V2.Anonymous3"]/*' />
-    [NativeTypeName("_PROPSHEETHEADERW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/prsht.h:526:5)")]
+    [NativeTypeName("_PROPSHEETHEADERW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/prsht.h:526:5)")]
     public _Anonymous3_e__Union Anonymous3;
 
     /// <include file='PROPSHEETHEADERW_V2.xml' path='doc/member[@name="PROPSHEETHEADERW_V2.pfnCallback"]/*' />
@@ -50,14 +50,14 @@ public unsafe partial struct PROPSHEETHEADERW_V2
     public delegate* unmanaged<HWND, uint, LPARAM, int> pfnCallback;
 
     /// <include file='PROPSHEETHEADERW_V2.xml' path='doc/member[@name="PROPSHEETHEADERW_V2.Anonymous4"]/*' />
-    [NativeTypeName("_PROPSHEETHEADERW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/prsht.h:527:5)")]
+    [NativeTypeName("_PROPSHEETHEADERW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/prsht.h:527:5)")]
     public _Anonymous4_e__Union Anonymous4;
 
     /// <include file='PROPSHEETHEADERW_V2.xml' path='doc/member[@name="PROPSHEETHEADERW_V2.hplWatermark"]/*' />
     public HPALETTE hplWatermark;
 
     /// <include file='PROPSHEETHEADERW_V2.xml' path='doc/member[@name="PROPSHEETHEADERW_V2.Anonymous5"]/*' />
-    [NativeTypeName("_PROPSHEETHEADERW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/prsht.h:533:5)")]
+    [NativeTypeName("_PROPSHEETHEADERW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/prsht.h:533:5)")]
     public _Anonymous5_e__Union Anonymous5;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.hIcon"]/*' />

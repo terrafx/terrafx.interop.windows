@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -13,11 +13,11 @@ namespace TerraFX.Interop.DirectX;
 public partial struct D3D11_BUFFER_SRV
 {
     /// <include file='D3D11_BUFFER_SRV.xml' path='doc/member[@name="D3D11_BUFFER_SRV.Anonymous1"]/*' />
-    [NativeTypeName("D3D11_BUFFER_SRV::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3d11.h:3396:5)")]
+    [NativeTypeName("D3D11_BUFFER_SRV::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/d3d11.h:3396:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='D3D11_BUFFER_SRV.xml' path='doc/member[@name="D3D11_BUFFER_SRV.Anonymous2"]/*' />
-    [NativeTypeName("D3D11_BUFFER_SRV::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3d11.h:3401:5)")]
+    [NativeTypeName("D3D11_BUFFER_SRV::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/d3d11.h:3401:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.FirstElement"]/*' />

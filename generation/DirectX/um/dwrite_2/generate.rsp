@@ -13,7 +13,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/dwrite_2
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/dwrite_2.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/dwrite_2.h
 --with-attribute
 DWRITE_COLOR_GLYPH_RUN=SupportedOSPlatform("windows6.3")
 DWRITE_GRID_FIT_MODE=SupportedOSPlatform("windows6.3")

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/PropIdlBase.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/PropIdlBase.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -17,7 +17,7 @@ public unsafe partial struct PROPSPEC
     public uint ulKind;
 
     /// <include file='PROPSPEC.xml' path='doc/member[@name="PROPSPEC.Anonymous"]/*' />
-    [NativeTypeName("tagPROPSPEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/PropIdlBase.h:452:43)")]
+    [NativeTypeName("tagPROPSPEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/PropIdlBase.h:452:43)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.propid"]/*' />

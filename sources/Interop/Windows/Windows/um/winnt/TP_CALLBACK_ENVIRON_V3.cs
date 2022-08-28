@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -39,7 +39,7 @@ public unsafe partial struct TP_CALLBACK_ENVIRON_V3
     public delegate* unmanaged<PTP_CALLBACK_INSTANCE, void*, void> FinalizationCallback;
 
     /// <include file='TP_CALLBACK_ENVIRON_V3.xml' path='doc/member[@name="TP_CALLBACK_ENVIRON_V3.u"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:23896:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:23896:5)")]
     public _u_e__Union u;
 
     /// <include file='TP_CALLBACK_ENVIRON_V3.xml' path='doc/member[@name="TP_CALLBACK_ENVIRON_V3.CallbackPriority"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct TP_CALLBACK_ENVIRON_V3
 
         /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union.s"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:23898:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:23898:9)")]
         public _s_e__Struct s;
 
         /// <include file='_s_e__Struct.xml' path='doc/member[@name="_s_e__Struct"]/*' />

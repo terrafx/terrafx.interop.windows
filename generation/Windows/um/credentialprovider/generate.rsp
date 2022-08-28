@@ -11,7 +11,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/credentialprovider
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/credentialprovider.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/credentialprovider.h
 --with-attribute
 CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS=SupportedOSPlatform("windows6.2")
 CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS=SupportedOSPlatform("windows6.2")

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -29,7 +29,7 @@ public partial struct NT_TIB32
     public uint SubSystemTib;
 
     /// <include file='NT_TIB32.xml' path='doc/member[@name="NT_TIB32.Anonymous"]/*' />
-    [NativeTypeName("_NT_TIB32::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h:12248:5)")]
+    [NativeTypeName("_NT_TIB32::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:12248:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='NT_TIB32.xml' path='doc/member[@name="NT_TIB32.ArbitraryUserPointer"]/*' />

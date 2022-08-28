@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -13,11 +13,11 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct CERT_SYSTEM_STORE_RELOCATE_PARA
 {
     /// <include file='CERT_SYSTEM_STORE_RELOCATE_PARA.xml' path='doc/member[@name="CERT_SYSTEM_STORE_RELOCATE_PARA.Anonymous1"]/*' />
-    [NativeTypeName("_CERT_SYSTEM_STORE_RELOCATE_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:9485:5)")]
+    [NativeTypeName("_CERT_SYSTEM_STORE_RELOCATE_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wincrypt.h:9485:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='CERT_SYSTEM_STORE_RELOCATE_PARA.xml' path='doc/member[@name="CERT_SYSTEM_STORE_RELOCATE_PARA.Anonymous2"]/*' />
-    [NativeTypeName("_CERT_SYSTEM_STORE_RELOCATE_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h:9489:5)")]
+    [NativeTypeName("_CERT_SYSTEM_STORE_RELOCATE_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wincrypt.h:9489:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.hKeyBase"]/*' />

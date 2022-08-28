@@ -2083,6 +2083,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EvColl", "EvColl", "{C7DE84
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XblIdpAuthManager", "XblIdpAuthManager", "{EAAB8DAC-A628-425F-ACC2-E3DBC2130C4B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\XblIdpAuthManager\generate.rsp = generation\Windows\um\XblIdpAuthManager\generate.rsp
+		generation\Windows\um\XblIdpAuthManager\header.txt = generation\Windows\um\XblIdpAuthManager\header.txt
+		generation\Windows\um\XblIdpAuthManager\um-XblIdpAuthManager.h = generation\Windows\um\XblIdpAuthManager\um-XblIdpAuthManager.h
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shlwapi", "shlwapi", "{9842510D-DBF2-4327-9720-B1408A1B0383}"
 	ProjectSection(SolutionItems) = preProject
