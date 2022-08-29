@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -55,8 +55,8 @@ public static partial class MENROLL
     [NativeTypeName("#define MENROLL_E_INVALIDSSLCERT _HRESULT_TYPEDEF_(0x80180012L)")]
     public const int MENROLL_E_INVALIDSSLCERT = unchecked((int)(0x80180012));
 
-    [NativeTypeName("#define MENROLL_E_DEVICEAPREACHED _HRESULT_TYPEDEF_(0x80180013L)")]
-    public const int MENROLL_E_DEVICEAPREACHED = unchecked((int)(0x80180013));
+    [NativeTypeName("#define MENROLL_E_DEVICECAPREACHED _HRESULT_TYPEDEF_(0x80180013L)")]
+    public const int MENROLL_E_DEVICECAPREACHED = unchecked((int)(0x80180013));
 
     [NativeTypeName("#define MENROLL_E_DEVICENOTSUPPORTED _HRESULT_TYPEDEF_(0x80180014L)")]
     public const int MENROLL_E_DEVICENOTSUPPORTED = unchecked((int)(0x80180014));

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using static TerraFX.Interop.Windows.SECURITY_IMPERSONATION_LEVEL;
@@ -270,8 +270,11 @@ public static unsafe partial class SECURITY
     [NativeTypeName("#define SECURITY_CAPABILITY_BASE_RID (0x00000003L)")]
     public const int SECURITY_CAPABILITY_BASE_RID = (0x00000003);
 
-    [NativeTypeName("#define SECURITY_CAPABILITY_APP_RID (0x000000400)")]
-    public const int SECURITY_CAPABILITY_APP_RID = (0x000000400);
+    [NativeTypeName("#define SECURITY_CAPABILITY_APP_RID (0x00000400L)")]
+    public const int SECURITY_CAPABILITY_APP_RID = (0x00000400);
+
+    [NativeTypeName("#define SECURITY_CAPABILITY_APP_SILO_RID (0x00010000L)")]
+    public const int SECURITY_CAPABILITY_APP_SILO_RID = (0x00010000);
 
     [NativeTypeName("#define SECURITY_BUILTIN_CAPABILITY_RID_COUNT (2L)")]
     public const int SECURITY_BUILTIN_CAPABILITY_RID_COUNT = (2);

@@ -11,7 +11,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/oaidl
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/oaidl.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/oaidl.h
 --with-librarypath
 BSTR_UserFree=oleaut32
 BSTR_UserFree64=oleaut32

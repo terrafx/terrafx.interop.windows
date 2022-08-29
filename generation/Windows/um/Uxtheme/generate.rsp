@@ -15,7 +15,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/Uxtheme
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/Uxtheme.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/Uxtheme.h
 --with-attribute
 GetThemeAnimationProperty=SupportedOSPlatform("windows6.2")
 GetThemeAnimationTransform=SupportedOSPlatform("windows6.2")
@@ -50,8 +50,10 @@ GetBufferedPaintBits=uxtheme
 GetBufferedPaintDC=uxtheme
 GetBufferedPaintTargetDC=uxtheme
 GetBufferedPaintTargetRect=uxtheme
+GetCurrentThemeName=uxtheme
 GetThemeAnimationProperty=uxtheme
 GetThemeAnimationTransform=uxtheme
+GetThemeAppProperties=uxtheme
 GetThemeBackgroundContentRect=uxtheme
 GetThemeBackgroundExtent=uxtheme
 GetThemeBackgroundRegion=uxtheme
@@ -63,6 +65,7 @@ GetThemeEnumValue=uxtheme
 GetThemeFilename=uxtheme
 GetThemeFont=uxtheme
 GetThemeInt=uxtheme
+GetThemeIntList=uxtheme
 GetThemeMargins=uxtheme
 GetThemeMetric=uxtheme
 GetThemePartSize=uxtheme
@@ -82,26 +85,21 @@ GetThemeTextExtent=uxtheme
 GetThemeTextMetrics=uxtheme
 GetThemeTimingFunction=uxtheme
 GetThemeTransitionDuration=uxtheme
+GetWindowTheme=uxtheme
 HitTestThemeBackground=uxtheme
+IsAppThemed=uxtheme
 IsCompositionActive=uxtheme
 IsThemeActive=uxtheme
 IsThemeBackgroundPartiallyTransparent=uxtheme
+IsThemeDialogTextureEnabled=uxtheme
 IsThemePartDefined=uxtheme
 OpenThemeData=uxtheme
 OpenThemeDataEx=uxtheme
+OpenThemeDataForDpi=uxtheme
+SetThemeAppProperties=uxtheme
 SetWindowTheme=uxtheme
 SetWindowThemeAttribute=uxtheme
 SetWindowThemeNonClientAttributes=uxtheme
 UpdatePanningFeedback=uxtheme
---with-librarypath
-GetCurrentThemeName=uxtheme
-GetThemeAppProperties=uxtheme
-GetThemeIntList=uxtheme
-GetWindowTheme=uxtheme
-IsAppThemed=uxtheme
-IsThemeDialogTextureEnabled=uxtheme
-SetThemeAppProperties=uxtheme
---with-librarypath
-OpenThemeDataForDpi=uxtheme
 --with-setlasterror
 BeginBufferedPaint

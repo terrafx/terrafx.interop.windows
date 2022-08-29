@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.Versioning;
@@ -227,6 +227,9 @@ public static partial class IOCTL
 
     [NativeTypeName("#define IOCTL_SCM_BUS_RUNTIME_FW_ACTIVATE CTL_CODE(IOCTL_SCMBUS_BASE, SCMBUS_FUNCTION(0x04), METHOD_BUFFERED, FILE_WRITE_ACCESS)")]
     public const int IOCTL_SCM_BUS_RUNTIME_FW_ACTIVATE = (((0x00000059) << 16) | (((0x0002)) << 14) | (((0x0 + 0x04)) << 2) | (0));
+
+    [NativeTypeName("#define IOCTL_SCM_BUS_REFRESH_NAMESPACE CTL_CODE(IOCTL_SCMBUS_BASE, SCMBUS_FUNCTION(0x06), METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int IOCTL_SCM_BUS_REFRESH_NAMESPACE = (((0x00000059) << 16) | ((0) << 14) | (((0x0 + 0x06)) << 2) | (0));
 
     [NativeTypeName("#define IOCTL_SCM_LD_GET_INTERLEAVE_SET CTL_CODE(IOCTL_SCMBUS_BASE, SCM_LOGICAL_DEVICE_FUNCTION(0x00), METHOD_BUFFERED, FILE_ANY_ACCESS)")]
     public const int IOCTL_SCM_LD_GET_INTERLEAVE_SET = (((0x00000059) << 16) | ((0) << 14) | (((0x300 + 0x00)) << 2) | (0));

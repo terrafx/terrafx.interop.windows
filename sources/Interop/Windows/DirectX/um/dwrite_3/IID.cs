@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/dwrite_3.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/dwrite_3.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -971,6 +971,29 @@ public static partial class IID
                 0x1B,
                 0x06,
                 0xAD
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IDWriteFontSet4
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xFC, 0x75, 0xC1, 0xEE,
+                0xA9, 0xBE,
+                0x86, 0x4C,
+                0x8B,
+                0x53,
+                0xCC,
+                0xBD,
+                0xD7,
+                0xDF,
+                0x0C,
+                0x82
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

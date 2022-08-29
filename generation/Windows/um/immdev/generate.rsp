@@ -27,7 +27,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/immdev
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/immdev.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/immdev.h
 --with-librarypath
 ImmAssociateContext=imm32
 ImmAssociateContextEx=imm32
@@ -35,7 +35,11 @@ ImmConfigureIME=imm32
 ImmConfigureIMEA=imm32
 ImmConfigureIMEW=imm32
 ImmCreateContext=imm32
+ImmCreateIMCC=imm32
+ImmCreateSoftKeyboard=imm32
 ImmDestroyContext=imm32
+ImmDestroyIMCC=imm32
+ImmDestroySoftKeyboard=imm32
 ImmDisableIME=imm32
 IMMDisableLegacyIME=imm32
 ImmDisableTextFrameService=imm32
@@ -46,12 +50,13 @@ ImmEnumRegisterWordW=imm32
 ImmEscape=imm32
 ImmEscapeA=imm32
 ImmEscapeW=imm32
+ImmGenerateMessage=imm32
 ImmGetCandidateList=imm32
 ImmGetCandidateListA=imm32
-ImmGetCandidateListW=imm32
 ImmGetCandidateListCount=imm32
 ImmGetCandidateListCountA=imm32
 ImmGetCandidateListCountW=imm32
+ImmGetCandidateListW=imm32
 ImmGetCandidateWindow=imm32
 ImmGetCompositionFont=imm32
 ImmGetCompositionFontA=imm32
@@ -72,6 +77,10 @@ ImmGetDescriptionW=imm32
 ImmGetGuideLine=imm32
 ImmGetGuideLineA=imm32
 ImmGetGuideLineW=imm32
+ImmGetHotKey=imm32
+ImmGetIMCCLockCount=imm32
+ImmGetIMCCSize=imm32
+ImmGetIMCLockCount=imm32
 ImmGetIMEFileName=imm32
 ImmGetIMEFileNameA=imm32
 ImmGetIMEFileNameW=imm32
@@ -92,6 +101,8 @@ ImmIsIME=imm32
 ImmIsUIMessage=imm32
 ImmIsUIMessageA=imm32
 ImmIsUIMessageW=imm32
+ImmLockIMC=imm32
+ImmLockIMCC=imm32
 ImmNotifyIME=imm32
 ImmRegisterWord=imm32
 ImmRegisterWordA=imm32
@@ -100,6 +111,7 @@ ImmReleaseContext=imm32
 ImmRequestMessage=imm32
 ImmRequestMessageA=imm32
 ImmRequestMessageW=imm32
+ImmReSizeIMCC=imm32
 ImmSetCandidateWindow=imm32
 ImmSetCompositionFont=imm32
 ImmSetCompositionFontA=imm32
@@ -109,29 +121,16 @@ ImmSetCompositionStringA=imm32
 ImmSetCompositionStringW=imm32
 ImmSetCompositionWindow=imm32
 ImmSetConversionStatus=imm32
+ImmSetHotKey=imm32
 ImmSetOpenStatus=imm32
 ImmSetStatusWindowPos=imm32
+ImmShowSoftKeyboard=imm32
 ImmSimulateHotKey=imm32
+ImmUnlockIMC=imm32
+ImmUnlockIMCC=imm32
 ImmUnregisterWord=imm32
 ImmUnregisterWordA=imm32
 ImmUnregisterWordW=imm32
---with-librarypath
-ImmCreateIMCC=imm32
-ImmCreateSoftKeyboard=imm32
-ImmDestroyIMCC=imm32
-ImmDestroySoftKeyboard=imm32
-ImmGenerateMessage=imm32
-ImmGetHotKey=imm32
-ImmGetIMCCLockCount=imm32
-ImmGetIMCCSize=imm32
-ImmGetIMCLockCount=imm32
-ImmLockIMC=imm32
-ImmLockIMCC=imm32
-ImmReSizeIMCC=imm32
-ImmSetHotKey=imm32
-ImmShowSoftKeyboard=imm32
-ImmUnlockIMC=imm32
-ImmUnlockIMCC=imm32
 --with-type
 IMMGWL_PRIVATE=uint
 IMMGWLP_PRIVATE=uint

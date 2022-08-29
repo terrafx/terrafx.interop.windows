@@ -108,6 +108,35 @@ public static unsafe partial class ResolveDllImportTests
                     break;
                 }
 
+                case "DXGIDisableVBlankVirtualization":
+                case "GetClipboardMetadata":
+                case "GetPackageGraphRevisionId":
+                case "MFCreateCameraControlMonitor":
+                case "RegisterDeviceDualEnrollMmpcUsingAADDeviceCredentials":
+                case "RegisterForTooltipDismissNotification":
+                case "SetAdditionalForegroundBoostProcesses":
+                case "SslDeserializeCertificateStore":
+                case "StackWalk2":
+                case "Tbsi_Is_Tpm_Present":
+                case "WinHttpFreeProxySettingsEx":
+                case "WinHttpGetProxySettingsEx":
+                case "WinHttpGetProxySettingsResultEx":
+                case "WinHttpRegisterProxyChangeNotification":
+                case "WinHttpUnregisterProxyChangeNotification":
+                {
+                    if (!OperatingSystem.IsWindowsVersionAtLeast(10, 0, 22621, 0))
+                    {
+                        // This isn't good practice, but current CI runs Windows Server and these APIs aren't available
+                        // due to only being in a newer version of Windows.
+                        Assert.Warn($"Warn: {exception.Message}");
+                    }
+                    else
+                    {
+                        goto default;
+                    }
+                    break;
+                }
+
                 case "DrawShadowText":
                 case "GetWindowSubclass":
                 case "HIMAGELIST_QueryInterface":

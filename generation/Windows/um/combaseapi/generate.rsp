@@ -38,7 +38,7 @@ CWMO_FLAGS=Flags
 REGCLS=Flags
 STDMSHLFLAGS=Flags
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/combaseapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/combaseapi.h
 --with-attribute
 AgileReferenceOptions=SupportedOSPlatform("windows6.3")
 CoAllowUnmarshalerCLSID=SupportedOSPlatform("windows6.2")
@@ -129,8 +129,6 @@ StringFromIID=ole32
 CoCreateInstanceFromApp=combase
 CoDecodeProxy=combase
 CoFreeUnusedLibrariesEx=combase
---with-librarypath
-CoWaitForMultipleObjects=combase
---with-librarypath
 CoRegisterDeviceCatalog=combase
 CoRevokeDeviceCatalog=combase
+CoWaitForMultipleObjects=combase

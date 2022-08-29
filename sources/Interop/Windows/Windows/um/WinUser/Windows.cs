@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -931,6 +931,12 @@ public static unsafe partial class Windows
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HANDLE GetClipboardData(uint uFormat);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClipboardMetadata"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.22621.0")]
+    public static extern BOOL GetClipboardMetadata(uint format, [NativeTypeName("PGETCLIPBMETADATA")] GETCLIPBMETADATA* metadata);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterClipboardFormatA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -3365,6 +3371,18 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     [SupportedOSPlatform("windows6.2")]
     public static extern BOOL SetProcessRestrictionExemption(BOOL fEnableExemption);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetAdditionalForegroundBoostProcesses"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.22621.0")]
+    public static extern BOOL SetAdditionalForegroundBoostProcesses(HWND topLevelWindow, [NativeTypeName("DWORD")] uint processHandleCount, HANDLE* processHandleArray);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterForTooltipDismissNotification"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.22621.0")]
+    public static extern BOOL RegisterForTooltipDismissNotification(HWND hWnd, TOOLTIP_DISMISS_FLAGS tdFlags);
 
     [NativeTypeName("#define DIFFERENCE 11")]
     public const int DIFFERENCE = 11;

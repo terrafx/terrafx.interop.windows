@@ -11,26 +11,27 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/shared/tbs
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/tbs.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/tbs.h
 --with-attribute
 Tbsi_GetDeviceInfo=SupportedOSPlatform("windows6.2")
 Tbsi_Get_OwnerAuth=SupportedOSPlatform("windows6.2")
 Tbsi_Get_TCG_Log_Ex=SupportedOSPlatform("windows10.0.17134.0")
+Tbsi_Is_Tpm_Present=SupportedOSPlatform("windows10.0.22621.0")
 Tbsi_Revoke_Attestation=SupportedOSPlatform("windows6.2")
 TBS_CONTEXT_PARAMS2=SupportedOSPlatform("windows6.2")
 TPM_DEVICE_INFO=SupportedOSPlatform("windows6.2")
 --with-librarypath
+GetDeviceID=tbs
+GetDeviceIDString=tbs
 Tbsip_Cancel_Commands=tbs
 Tbsip_Context_Close=tbs
 Tbsip_Submit_Command=tbs
 Tbsi_Context_Create=tbs
+Tbsi_Create_Windows_Key=tbs
 Tbsi_GetDeviceInfo=tbs
 Tbsi_Get_OwnerAuth=tbs
 Tbsi_Get_TCG_Log=tbs
 Tbsi_Get_TCG_Log_Ex=tbs
+Tbsi_Is_Tpm_Present=tbs
 Tbsi_Physical_Presence_Command=tbs
 Tbsi_Revoke_Attestation=tbs
---with-librarypath
-GetDeviceID=tbs
-GetDeviceIDString=tbs
-Tbsi_Create_Windows_Key=tbs

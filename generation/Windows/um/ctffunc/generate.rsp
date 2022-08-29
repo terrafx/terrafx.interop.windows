@@ -11,7 +11,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/ctffunc
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ctffunc.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ctffunc.h
 --with-attribute
 ITfFnGetLinguisticAlternates=SupportedOSPlatform("windows6.3")
 ITfFnGetPreferredTouchKeyboardLayout=SupportedOSPlatform("windows6.2")

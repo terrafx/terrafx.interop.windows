@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/prsht.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/prsht.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -24,11 +24,11 @@ public unsafe partial struct PROPSHEETPAGEW_V3
     public HINSTANCE hInstance;
 
     /// <include file='PROPSHEETPAGEW_V3.xml' path='doc/member[@name="PROPSHEETPAGEW_V3.Anonymous1"]/*' />
-    [NativeTypeName("_PROPSHEETPAGEW_V3::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/prsht.h:259:5)")]
+    [NativeTypeName("_PROPSHEETPAGEW_V3::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/prsht.h:259:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='PROPSHEETPAGEW_V3.xml' path='doc/member[@name="PROPSHEETPAGEW_V3.Anonymous2"]/*' />
-    [NativeTypeName("_PROPSHEETPAGEW_V3::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/prsht.h:259:5)")]
+    [NativeTypeName("_PROPSHEETPAGEW_V3::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/prsht.h:259:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='PROPSHEETPAGEW_V3.xml' path='doc/member[@name="PROPSHEETPAGEW_V3.pszTitle"]/*' />

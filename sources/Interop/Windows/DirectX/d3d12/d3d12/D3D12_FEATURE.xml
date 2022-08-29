@@ -123,7 +123,7 @@
   </member>
   <member name="D3D12_FEATURE.D3D12_FEATURE_DISPLAYABLE">
     <summary>
-      <para>Starting with Windows 11 (Build 10.0.22000.194). The corresponding data structure for this value is <see cref="D3D12_FEATURE_DATA_DISPLAYABLE" />.</para>
+      <para>Starting with Windows 11 (Build 10.0.22621.194). The corresponding data structure for this value is <see cref="D3D12_FEATURE_DATA_DISPLAYABLE" />.</para>
     </summary>
   </member>
   <member name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS6">
@@ -155,22 +155,22 @@
   </member>
   <member name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS8">
     <summary>
-      <para>Starting with Windows 11 (Build 10.0.22000.194), indicates whether or not unaligned block-compressed textures are supported. The corresponding data structure for this value is <see cref="D3D12_FEATURE_DATA_D3D12_OPTIONS8" />.</para>
+      <para>Starting with Windows 11 (Build 10.0.22621.194), indicates whether or not unaligned block-compressed textures are supported. The corresponding data structure for this value is <see cref="D3D12_FEATURE_DATA_D3D12_OPTIONS8" />.</para>
     </summary>
   </member>
   <member name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS9">
     <summary>
-      <para>Starting with Windows 11 (Build 10.0.22000.194), indicates whether or not support exists for mesh shaders, values of <i>SV_RenderTargetArrayIndex</i> that are 8 or greater, typed resource 64-bit integer atomics, derivative and derivative-dependent texture sample operations, and the level of support for WaveMMA (wave_matrix) operations. The corresponding data structure for this value is <see cref="D3D12_FEATURE_DATA_D3D12_OPTIONS9" />.</para>
+      <para>Starting with Windows 11 (Build 10.0.22621.194), indicates whether or not support exists for mesh shaders, values of <i>SV_RenderTargetArrayIndex</i> that are 8 or greater, typed resource 64-bit integer atomics, derivative and derivative-dependent texture sample operations, and the level of support for WaveMMA (wave_matrix) operations. The corresponding data structure for this value is <see cref="D3D12_FEATURE_DATA_D3D12_OPTIONS9" />.</para>
     </summary>
   </member>
   <member name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS10">
     <summary>
-      <para>Starting with Windows 11 (Build 10.0.22000.194), indicates whether or not the SUM combiner can be used, and whether or not <i>SV_ShadingRate</i> can be set from a mesh shader. The corresponding data structure for this value is <see cref="D3D12_FEATURE_DATA_D3D12_OPTIONS10" />.</para>
+      <para>Starting with Windows 11 (Build 10.0.22621.194), indicates whether or not the SUM combiner can be used, and whether or not <i>SV_ShadingRate</i> can be set from a mesh shader. The corresponding data structure for this value is <see cref="D3D12_FEATURE_DATA_D3D12_OPTIONS10" />.</para>
     </summary>
   </member>
   <member name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS11">
     <summary>
-      <para>Starting with Windows 11 (Build 10.0.22000.194), indicates whether or not 64-bit integer atomics on resources in descriptor heaps are supported. The corresponding data structure for this value is <see cref="D3D12_FEATURE_DATA_D3D12_OPTIONS11" />.</para>
+      <para>Starting with Windows 11 (Build 10.0.22621.194), indicates whether or not 64-bit integer atomics on resources in descriptor heaps are supported. The corresponding data structure for this value is <see cref="D3D12_FEATURE_DATA_D3D12_OPTIONS11" />.</para>
     </summary>
   </member>
 </doc>

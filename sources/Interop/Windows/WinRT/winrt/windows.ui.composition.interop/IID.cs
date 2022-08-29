@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/windows.ui.composition.interop.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from winrt/windows.ui.composition.interop.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -97,29 +97,6 @@ public static partial class IID
                 0x51,
                 0x23,
                 0x30
-            };
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_ISwapChainInterop
-    {
-        get
-        {
-            ReadOnlySpan<byte> data = new byte[] {
-                0xA0, 0x96, 0xF4, 0x26,
-                0x38, 0x7F,
-                0xFB, 0x45,
-                0x88,
-                0xF7,
-                0xFA,
-                0xAA,
-                0xBE,
-                0x67,
-                0xDD,
-                0x59
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

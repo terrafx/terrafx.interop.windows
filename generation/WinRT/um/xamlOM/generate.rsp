@@ -14,7 +14,7 @@ TerraFX.Interop.WinRT
 --test-output
 ../../../../tests/Interop/Windows/WinRT/um/xamlOM
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/xamlOM.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/xamlOM.h
 --with-attribute
 BaseValueSource=SupportedOSPlatform("windows10.0")
 BitmapDescription=SupportedOSPlatform("windows10.0.14393.0")

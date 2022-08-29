@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -717,4 +717,7 @@ public static partial class TPM
 
     [NativeTypeName("#define TPM_E_TOO_MUCH_DATA _HRESULT_TYPEDEF_(0x80290602L)")]
     public const int TPM_E_TOO_MUCH_DATA = unchecked((int)(0x80290602));
+
+    [NativeTypeName("#define TPM_E_TPM_GENERATED_EPS _HRESULT_TYPEDEF_(0x80290603L)")]
+    public const int TPM_E_TPM_GENERATED_EPS = unchecked((int)(0x80290603));
 }

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using TerraFX.Interop.Windows;
@@ -134,6 +134,9 @@ public static partial class DXGI
 
     [NativeTypeName("#define DXGI_ERROR_ALREADY_EXISTS _HRESULT_TYPEDEF_(0x887A0036L)")]
     public const int DXGI_ERROR_ALREADY_EXISTS = unchecked((int)(0x887A0036));
+
+    [NativeTypeName("#define DXGI_ERROR_MPO_UNPINNED _HRESULT_TYPEDEF_(0x887A0064L)")]
+    public const int DXGI_ERROR_MPO_UNPINNED = unchecked((int)(0x887A0064));
 
     [NativeTypeName("#define DXGI_DDI_ERR_WASSTILLDRAWING _HRESULT_TYPEDEF_(0x887B0001L)")]
     public const int DXGI_DDI_ERR_WASSTILLDRAWING = unchecked((int)(0x887B0001));

@@ -357,7 +357,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/ddraw
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ddraw.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ddraw.h
 --with-guid
 IDirectDraw=6C14DB80-A733-11CE-A521-0020AF0BE560
 IDirectDraw2=B3A6F3E0-2B43-11CF-A2DE-00AA00B93356

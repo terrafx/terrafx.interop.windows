@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -35,7 +35,7 @@ public unsafe partial struct TASKDIALOGCONFIG
     public ushort* pszWindowTitle;
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.Anonymous1"]/*' />
-    [NativeTypeName("_TASKDIALOGCONFIG::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/CommCtrl.h:7735:5)")]
+    [NativeTypeName("_TASKDIALOGCONFIG::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/CommCtrl.h:7735:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.pszMainInstruction"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct TASKDIALOGCONFIG
     public ushort* pszCollapsedControlText;
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.Anonymous2"]/*' />
-    [NativeTypeName("_TASKDIALOGCONFIG::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/CommCtrl.h:7752:5)")]
+    [NativeTypeName("_TASKDIALOGCONFIG::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/CommCtrl.h:7752:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.pszFooter"]/*' />

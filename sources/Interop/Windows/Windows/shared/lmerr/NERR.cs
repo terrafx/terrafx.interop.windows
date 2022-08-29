@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/intsafe.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from shared/intsafe.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -1005,4 +1005,16 @@ public static partial class NERR
 
     [NativeTypeName("#define NERR_CannotUnjoinAadDomain (NERR_BASE + 627)")]
     public const int NERR_CannotUnjoinAadDomain = (2100 + 627);
+
+    [NativeTypeName("#define NERR_CannotUpdateAadHostName (NERR_BASE + 628)")]
+    public const int NERR_CannotUpdateAadHostName = (2100 + 628);
+
+    [NativeTypeName("#define NERR_DuplicateHostName (NERR_BASE + 629)")]
+    public const int NERR_DuplicateHostName = (2100 + 629);
+
+    [NativeTypeName("#define NERR_HostNameTooLong (NERR_BASE + 630)")]
+    public const int NERR_HostNameTooLong = (2100 + 630);
+
+    [NativeTypeName("#define NERR_TooManyHostNames (NERR_BASE + 631)")]
+    public const int NERR_TooManyHostNames = (2100 + 631);
 }

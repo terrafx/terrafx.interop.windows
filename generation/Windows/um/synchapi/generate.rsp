@@ -11,7 +11,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/synchapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/synchapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/synchapi.h
 --with-attribute
 DeleteSynchronizationBarrier=SupportedOSPlatform("windows6.2")
 EnterSynchronizationBarrier=SupportedOSPlatform("windows6.2")
@@ -25,25 +25,25 @@ AcquireSRWLockShared=kernel32
 CancelWaitableTimer=kernel32
 CreateEvent=kernel32
 CreateEventA=kernel32
-CreateEventW=kernel32
 CreateEventEx=kernel32
 CreateEventExA=kernel32
 CreateEventExW=kernel32
+CreateEventW=kernel32
 CreateMutex=kernel32
 CreateMutexA=kernel32
-CreateMutexW=kernel32
 CreateMutexEx=kernel32
 CreateMutexExA=kernel32
 CreateMutexExW=kernel32
-CreateSemaphoreExW=kernel32
-CreateSemaphoreExA=kernel32
-CreateSemaphoreW=kernel32
+CreateMutexW=kernel32
 CreateSemaphoreA=kernel32
+CreateSemaphoreExA=kernel32
+CreateSemaphoreExW=kernel32
+CreateSemaphoreW=kernel32
+CreateWaitableTimer=kernel32
+CreateWaitableTimerA=kernel32
 CreateWaitableTimerEx=kernel32
 CreateWaitableTimerExA=kernel32
 CreateWaitableTimerExW=kernel32
-CreateWaitableTimer=kernel32
-CreateWaitableTimerA=kernel32
 CreateWaitableTimerW=kernel32
 DeleteCriticalSection=kernel32
 DeleteSynchronizationBarrier=kernel32
@@ -82,6 +82,7 @@ SetEvent=kernel32
 SetWaitableTimer=kernel32
 SetWaitableTimerEx=kernel32
 SignalObjectAndWait=kernel32
+Sleep=kernel32
 SleepConditionVariableCS=kernel32
 SleepConditionVariableSRW=kernel32
 TryAcquireSRWLockExclusive=kernel32
@@ -93,8 +94,6 @@ WaitForSingleObject=kernel32
 WaitForSingleObjectEx=kernel32
 WakeAllConditionVariable=kernel32
 WakeConditionVariable=kernel32
---with-librarypath
-Sleep=kernel32
 --with-librarypath
 SleepEx=kernelbase
 --with-librarypath

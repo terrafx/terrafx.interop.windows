@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfidl.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/mfidl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -505,6 +505,31 @@ public static partial class CLSID
                 0x78,
                 0xC9,
                 0x82
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid CLSID_CameraConfigurationManager
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x40, 0xB5, 0x92, 0x6C,
+                0x54, 0x58,
+                0x17, 0x4A,
+                0x92,
+                0xB6,
+                0xAC,
+                0x89,
+                0xC9,
+                0x6E,
+                0x96,
+                0x83
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

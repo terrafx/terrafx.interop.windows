@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -147,4 +147,7 @@ public static partial class PP
 
     [NativeTypeName("#define PP_DISMISS_PIN_UI_SEC 49")]
     public const int PP_DISMISS_PIN_UI_SEC = 49;
+
+    [NativeTypeName("#define PP_IS_PFX_EPHEMERAL 50")]
+    public const int PP_IS_PFX_EPHEMERAL = 50;
 }

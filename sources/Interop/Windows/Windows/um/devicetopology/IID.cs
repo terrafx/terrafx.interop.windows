@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/devicetopology.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/devicetopology.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -396,6 +396,29 @@ public static partial class IID
                 0xFF,
                 0xE7,
                 0x6A
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IKsJackDescription3
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x8B, 0x77, 0xF6, 0xE3,
+                0x60, 0x66,
+                0xC8, 0x4C,
+                0xA2,
+                0x91,
+                0xEC,
+                0xC4,
+                0x19,
+                0x2D,
+                0x99,
+                0x67
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winhttp.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/winhttp.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -22,17 +22,20 @@ public static partial class WINHTTP
     [NativeTypeName("#define WINHTTP_FLAG_NULL_CODEPAGE 0x00000008")]
     public const int WINHTTP_FLAG_NULL_CODEPAGE = 0x00000008;
 
+    [NativeTypeName("#define WINHTTP_FLAG_ESCAPE_DISABLE 0x00000040")]
+    public const int WINHTTP_FLAG_ESCAPE_DISABLE = 0x00000040;
+
+    [NativeTypeName("#define WINHTTP_FLAG_ESCAPE_DISABLE_QUERY 0x00000080")]
+    public const int WINHTTP_FLAG_ESCAPE_DISABLE_QUERY = 0x00000080;
+
     [NativeTypeName("#define WINHTTP_FLAG_BYPASS_PROXY_CACHE 0x00000100")]
     public const int WINHTTP_FLAG_BYPASS_PROXY_CACHE = 0x00000100;
 
     [NativeTypeName("#define WINHTTP_FLAG_REFRESH WINHTTP_FLAG_BYPASS_PROXY_CACHE")]
     public const int WINHTTP_FLAG_REFRESH = 0x00000100;
 
-    [NativeTypeName("#define WINHTTP_FLAG_ESCAPE_DISABLE 0x00000040")]
-    public const int WINHTTP_FLAG_ESCAPE_DISABLE = 0x00000040;
-
-    [NativeTypeName("#define WINHTTP_FLAG_ESCAPE_DISABLE_QUERY 0x00000080")]
-    public const int WINHTTP_FLAG_ESCAPE_DISABLE_QUERY = 0x00000080;
+    [NativeTypeName("#define WINHTTP_FLAG_AUTOMATIC_CHUNKING 0x00000200")]
+    public const int WINHTTP_FLAG_AUTOMATIC_CHUNKING = 0x00000200;
 
     [NativeTypeName("#define WINHTTP_AUTOPROXY_AUTO_DETECT 0x00000001")]
     public const int WINHTTP_AUTOPROXY_AUTO_DETECT = 0x00000001;
@@ -54,6 +57,9 @@ public static partial class WINHTTP
 
     [NativeTypeName("#define WINHTTP_AUTOPROXY_ALLOW_CM 0x00000400")]
     public const int WINHTTP_AUTOPROXY_ALLOW_CM = 0x00000400;
+
+    [NativeTypeName("#define WINHTTP_AUTOPROXY_USE_INTERFACE_CONFIG 0x00000800")]
+    public const int WINHTTP_AUTOPROXY_USE_INTERFACE_CONFIG = 0x00000800;
 
     [NativeTypeName("#define WINHTTP_AUTOPROXY_RUN_INPROCESS 0x00010000")]
     public const int WINHTTP_AUTOPROXY_RUN_INPROCESS = 0x00010000;
@@ -295,6 +301,9 @@ public static partial class WINHTTP
     [NativeTypeName("#define WINHTTP_OPTION_IS_PROXY_CONNECT_RESPONSE 104")]
     public const int WINHTTP_OPTION_IS_PROXY_CONNECT_RESPONSE = 104;
 
+    [NativeTypeName("#define WINHTTP_OPTION_NETWORK_INTERFACE_AFFINITY 105")]
+    public const int WINHTTP_OPTION_NETWORK_INTERFACE_AFFINITY = 105;
+
     [NativeTypeName("#define WINHTTP_OPTION_SERVER_SPN_USED 106")]
     public const int WINHTTP_OPTION_SERVER_SPN_USED = 106;
 
@@ -394,12 +403,6 @@ public static partial class WINHTTP
     [NativeTypeName("#define WINHTTP_OPTION_IGNORE_CERT_REVOCATION_OFFLINE 155")]
     public const int WINHTTP_OPTION_IGNORE_CERT_REVOCATION_OFFLINE = 155;
 
-    [NativeTypeName("#define WINHTTP_OPTION_SOURCE_ADDRESS 156")]
-    public const int WINHTTP_OPTION_SOURCE_ADDRESS = 156;
-
-    [NativeTypeName("#define WINHTTP_OPTION_HEAP_EXTENSION 157")]
-    public const int WINHTTP_OPTION_HEAP_EXTENSION = 157;
-
     [NativeTypeName("#define WINHTTP_OPTION_TLS_PROTOCOL_INSECURE_FALLBACK 158")]
     public const int WINHTTP_OPTION_TLS_PROTOCOL_INSECURE_FALLBACK = 158;
 
@@ -414,9 +417,6 @@ public static partial class WINHTTP
 
     [NativeTypeName("#define WINHTTP_OPTION_FAILED_CONNECTION_RETRIES 162")]
     public const int WINHTTP_OPTION_FAILED_CONNECTION_RETRIES = 162;
-
-    [NativeTypeName("#define WINHTTP_OPTION_SET_GLOBAL_CALLBACK 163")]
-    public const int WINHTTP_OPTION_SET_GLOBAL_CALLBACK = 163;
 
     [NativeTypeName("#define WINHTTP_OPTION_HTTP2_KEEPALIVE 164")]
     public const int WINHTTP_OPTION_HTTP2_KEEPALIVE = 164;
@@ -448,15 +448,6 @@ public static partial class WINHTTP
     [NativeTypeName("#define WINHTTP_OPTION_FIRST_AVAILABLE_CONNECTION 173")]
     public const int WINHTTP_OPTION_FIRST_AVAILABLE_CONNECTION = 173;
 
-    [NativeTypeName("#define WINHTTP_OPTION_ENABLE_TEST_SIGNING 174")]
-    public const int WINHTTP_OPTION_ENABLE_TEST_SIGNING = 174;
-
-    [NativeTypeName("#define WINHTTP_OPTION_NTSERVICE_FLAG_TEST 175")]
-    public const int WINHTTP_OPTION_NTSERVICE_FLAG_TEST = 175;
-
-    [NativeTypeName("#define WINHTTP_OPTION_DISABLE_PROXY_LINK_LOCAL_NAME_RESOLUTION 176")]
-    public const int WINHTTP_OPTION_DISABLE_PROXY_LINK_LOCAL_NAME_RESOLUTION = 176;
-
     [NativeTypeName("#define WINHTTP_OPTION_TCP_PRIORITY_STATUS 177")]
     public const int WINHTTP_OPTION_TCP_PRIORITY_STATUS = 177;
 
@@ -466,20 +457,44 @@ public static partial class WINHTTP
     [NativeTypeName("#define WINHTTP_OPTION_MATCH_CONNECTION_GUID 179")]
     public const int WINHTTP_OPTION_MATCH_CONNECTION_GUID = 179;
 
-    [NativeTypeName("#define WINHTTP_OPTION_PROXY_CONFIG_INFO 180")]
-    public const int WINHTTP_OPTION_PROXY_CONFIG_INFO = 180;
-
-    [NativeTypeName("#define WINHTTP_OPTION_AGGREGATE_PROXY_CONFIG 181")]
-    public const int WINHTTP_OPTION_AGGREGATE_PROXY_CONFIG = 181;
-
-    [NativeTypeName("#define WINHTTP_OPTION_SELECTED_PROXY_CONFIG_INFO 182")]
-    public const int WINHTTP_OPTION_SELECTED_PROXY_CONFIG_INFO = 182;
-
     [NativeTypeName("#define WINHTTP_OPTION_HTTP2_RECEIVE_WINDOW 183")]
     public const int WINHTTP_OPTION_HTTP2_RECEIVE_WINDOW = 183;
 
-    [NativeTypeName("#define WINHTTP_LAST_OPTION WINHTTP_OPTION_HTTP2_RECEIVE_WINDOW")]
-    public const int WINHTTP_LAST_OPTION = 183;
+    [NativeTypeName("#define WINHTTP_OPTION_FEATURE_SUPPORTED 184")]
+    public const int WINHTTP_OPTION_FEATURE_SUPPORTED = 184;
+
+    [NativeTypeName("#define WINHTTP_OPTION_QUIC_STATS 185")]
+    public const int WINHTTP_OPTION_QUIC_STATS = 185;
+
+    [NativeTypeName("#define WINHTTP_OPTION_HTTP3_KEEPALIVE 188")]
+    public const int WINHTTP_OPTION_HTTP3_KEEPALIVE = 188;
+
+    [NativeTypeName("#define WINHTTP_OPTION_HTTP3_HANDSHAKE_TIMEOUT 189")]
+    public const int WINHTTP_OPTION_HTTP3_HANDSHAKE_TIMEOUT = 189;
+
+    [NativeTypeName("#define WINHTTP_OPTION_HTTP3_INITIAL_RTT 190")]
+    public const int WINHTTP_OPTION_HTTP3_INITIAL_RTT = 190;
+
+    [NativeTypeName("#define WINHTTP_OPTION_HTTP3_STREAM_ERROR_CODE 191")]
+    public const int WINHTTP_OPTION_HTTP3_STREAM_ERROR_CODE = 191;
+
+    [NativeTypeName("#define WINHTTP_OPTION_REQUEST_ANNOTATION 192")]
+    public const int WINHTTP_OPTION_REQUEST_ANNOTATION = 192;
+
+    [NativeTypeName("#define WINHTTP_OPTION_DISABLE_PROXY_AUTH_SCHEMES 193")]
+    public const int WINHTTP_OPTION_DISABLE_PROXY_AUTH_SCHEMES = 193;
+
+    [NativeTypeName("#define WINHTTP_OPTION_REVERT_IMPERSONATION_SERVER_CERT 194")]
+    public const int WINHTTP_OPTION_REVERT_IMPERSONATION_SERVER_CERT = 194;
+
+    [NativeTypeName("#define WINHTTP_OPTION_DISABLE_GLOBAL_POOLING 195")]
+    public const int WINHTTP_OPTION_DISABLE_GLOBAL_POOLING = 195;
+
+    [NativeTypeName("#define WINHTTP_OPTION_USE_SESSION_SCH_CRED 196")]
+    public const int WINHTTP_OPTION_USE_SESSION_SCH_CRED = 196;
+
+    [NativeTypeName("#define WINHTTP_LAST_OPTION WINHTTP_OPTION_USE_SESSION_SCH_CRED")]
+    public const int WINHTTP_LAST_OPTION = 196;
 
     [NativeTypeName("#define WINHTTP_OPTION_USERNAME 0x1000")]
     public const int WINHTTP_OPTION_USERNAME = 0x1000;
@@ -526,6 +541,9 @@ public static partial class WINHTTP
     [NativeTypeName("#define WINHTTP_PROTOCOL_MASK (WINHTTP_PROTOCOL_FLAG_HTTP2 | WINHTTP_PROTOCOL_FLAG_HTTP3)")]
     public const int WINHTTP_PROTOCOL_MASK = (0x1 | 0x2);
 
+    [NativeTypeName("#define WINHTTP_OPTION_REQUEST_ANNOTATION_MAX_LENGTH 0xFA00")]
+    public const int WINHTTP_OPTION_REQUEST_ANNOTATION_MAX_LENGTH = 0xFA00;
+
     [NativeTypeName("#define WINHTTP_AUTOLOGON_SECURITY_LEVEL_MEDIUM 0")]
     public const int WINHTTP_AUTOLOGON_SECURITY_LEVEL_MEDIUM = 0;
 
@@ -535,8 +553,14 @@ public static partial class WINHTTP
     [NativeTypeName("#define WINHTTP_AUTOLOGON_SECURITY_LEVEL_HIGH 2")]
     public const int WINHTTP_AUTOLOGON_SECURITY_LEVEL_HIGH = 2;
 
+    [NativeTypeName("#define WINHTTP_AUTOLOGON_SECURITY_LEVEL_PROXY_ONLY 3")]
+    public const int WINHTTP_AUTOLOGON_SECURITY_LEVEL_PROXY_ONLY = 3;
+
     [NativeTypeName("#define WINHTTP_AUTOLOGON_SECURITY_LEVEL_DEFAULT WINHTTP_AUTOLOGON_SECURITY_LEVEL_MEDIUM")]
     public const int WINHTTP_AUTOLOGON_SECURITY_LEVEL_DEFAULT = 0;
+
+    [NativeTypeName("#define WINHTTP_AUTOLOGON_SECURITY_LEVEL_MAX WINHTTP_AUTOLOGON_SECURITY_LEVEL_PROXY_ONLY")]
+    public const int WINHTTP_AUTOLOGON_SECURITY_LEVEL_MAX = 3;
 
     [NativeTypeName("#define WINHTTP_OPTION_REDIRECT_POLICY_NEVER 0")]
     public const int WINHTTP_OPTION_REDIRECT_POLICY_NEVER = 0;
@@ -564,6 +588,24 @@ public static partial class WINHTTP
 
     [NativeTypeName("#define WINHTTP_ENABLE_PASSPORT_KEYRING 0x40000000")]
     public const int WINHTTP_ENABLE_PASSPORT_KEYRING = 0x40000000;
+
+    [NativeTypeName("#define WINHTTP_PROXY_DISABLE_SCHEME_BASIC 0x00000001")]
+    public const int WINHTTP_PROXY_DISABLE_SCHEME_BASIC = 0x00000001;
+
+    [NativeTypeName("#define WINHTTP_PROXY_DISABLE_SCHEME_DIGEST 0x00000002")]
+    public const int WINHTTP_PROXY_DISABLE_SCHEME_DIGEST = 0x00000002;
+
+    [NativeTypeName("#define WINHTTP_PROXY_DISABLE_SCHEME_NTLM 0x00000004")]
+    public const int WINHTTP_PROXY_DISABLE_SCHEME_NTLM = 0x00000004;
+
+    [NativeTypeName("#define WINHTTP_PROXY_DISABLE_SCHEME_KERBEROS 0x00000008")]
+    public const int WINHTTP_PROXY_DISABLE_SCHEME_KERBEROS = 0x00000008;
+
+    [NativeTypeName("#define WINHTTP_PROXY_DISABLE_SCHEME_NEGOTIATE 0x00000010")]
+    public const int WINHTTP_PROXY_DISABLE_SCHEME_NEGOTIATE = 0x00000010;
+
+    [NativeTypeName("#define WINHTTP_PROXY_DISABLE_AUTH_LOCAL_SERVICE 0x00000100")]
+    public const int WINHTTP_PROXY_DISABLE_AUTH_LOCAL_SERVICE = 0x00000100;
 
     [NativeTypeName("#define WINHTTP_DISABLE_COOKIES 0x00000001")]
     public const int WINHTTP_DISABLE_COOKIES = 0x00000001;
@@ -600,6 +642,12 @@ public static partial class WINHTTP
 
     [NativeTypeName("#define WINHTTP_HANDLE_TYPE_REQUEST 3")]
     public const int WINHTTP_HANDLE_TYPE_REQUEST = 3;
+
+    [NativeTypeName("#define WINHTTP_HANDLE_TYPE_PROXY_RESOLVER 4")]
+    public const int WINHTTP_HANDLE_TYPE_PROXY_RESOLVER = 4;
+
+    [NativeTypeName("#define WINHTTP_HANDLE_TYPE_WEBSOCKET 5")]
+    public const int WINHTTP_HANDLE_TYPE_WEBSOCKET = 5;
 
     [NativeTypeName("#define WINHTTP_AUTH_SCHEME_BASIC 0x00000001")]
     public const int WINHTTP_AUTH_SCHEME_BASIC = 0x00000001;
@@ -742,6 +790,9 @@ public static partial class WINHTTP
     [NativeTypeName("#define WINHTTP_CALLBACK_STATUS_SHUTDOWN_COMPLETE 0x04000000")]
     public const int WINHTTP_CALLBACK_STATUS_SHUTDOWN_COMPLETE = 0x04000000;
 
+    [NativeTypeName("#define WINHTTP_CALLBACK_STATUS_GETPROXYSETTINGS_COMPLETE 0x08000000")]
+    public const int WINHTTP_CALLBACK_STATUS_GETPROXYSETTINGS_COMPLETE = 0x08000000;
+
     [NativeTypeName("#define WINHTTP_CALLBACK_STATUS_SETTINGS_WRITE_COMPLETE 0x10000000")]
     public const int WINHTTP_CALLBACK_STATUS_SETTINGS_WRITE_COMPLETE = 0x10000000;
 
@@ -799,8 +850,11 @@ public static partial class WINHTTP
     [NativeTypeName("#define WINHTTP_CALLBACK_FLAG_GETPROXYFORURL_COMPLETE WINHTTP_CALLBACK_STATUS_GETPROXYFORURL_COMPLETE")]
     public const int WINHTTP_CALLBACK_FLAG_GETPROXYFORURL_COMPLETE = 0x01000000;
 
-    [NativeTypeName("#define WINHTTP_CALLBACK_FLAG_ALL_COMPLETIONS (WINHTTP_CALLBACK_STATUS_SENDREQUEST_COMPLETE   \\\r\n                                                        | WINHTTP_CALLBACK_STATUS_HEADERS_AVAILABLE     \\\r\n                                                        | WINHTTP_CALLBACK_STATUS_DATA_AVAILABLE        \\\r\n                                                        | WINHTTP_CALLBACK_STATUS_READ_COMPLETE         \\\r\n                                                        | WINHTTP_CALLBACK_STATUS_WRITE_COMPLETE        \\\r\n                                                        | WINHTTP_CALLBACK_STATUS_REQUEST_ERROR         \\\r\n                                                        | WINHTTP_CALLBACK_STATUS_GETPROXYFORURL_COMPLETE)")]
-    public const int WINHTTP_CALLBACK_FLAG_ALL_COMPLETIONS = (0x00400000 | 0x00020000 | 0x00040000 | 0x00080000 | 0x00100000 | 0x00200000 | 0x01000000);
+    [NativeTypeName("#define WINHTTP_CALLBACK_FLAG_GETPROXYSETTINGS_COMPLETE WINHTTP_CALLBACK_STATUS_GETPROXYSETTINGS_COMPLETE")]
+    public const int WINHTTP_CALLBACK_FLAG_GETPROXYSETTINGS_COMPLETE = 0x08000000;
+
+    [NativeTypeName("#define WINHTTP_CALLBACK_FLAG_ALL_COMPLETIONS (WINHTTP_CALLBACK_STATUS_SENDREQUEST_COMPLETE       \\\r\n                                                        | WINHTTP_CALLBACK_STATUS_HEADERS_AVAILABLE         \\\r\n                                                        | WINHTTP_CALLBACK_STATUS_DATA_AVAILABLE            \\\r\n                                                        | WINHTTP_CALLBACK_STATUS_READ_COMPLETE             \\\r\n                                                        | WINHTTP_CALLBACK_STATUS_WRITE_COMPLETE            \\\r\n                                                        | WINHTTP_CALLBACK_STATUS_REQUEST_ERROR             \\\r\n                                                        | WINHTTP_CALLBACK_STATUS_GETPROXYFORURL_COMPLETE   \\\r\n                                                        | WINHTTP_CALLBACK_STATUS_GETPROXYSETTINGS_COMPLETE)")]
+    public const int WINHTTP_CALLBACK_FLAG_ALL_COMPLETIONS = (0x00400000 | 0x00020000 | 0x00040000 | 0x00080000 | 0x00100000 | 0x00200000 | 0x01000000 | 0x08000000);
 
     [NativeTypeName("#define WINHTTP_CALLBACK_FLAG_ALL_NOTIFICATIONS 0xffffffff")]
     public const uint WINHTTP_CALLBACK_FLAG_ALL_NOTIFICATIONS = 0xffffffff;
@@ -1167,4 +1221,196 @@ public static partial class WINHTTP
 
     [NativeTypeName("#define WINHTTP_WEB_SOCKET_MIN_KEEPALIVE_VALUE 15000")]
     public const int WINHTTP_WEB_SOCKET_MIN_KEEPALIVE_VALUE = 15000;
+
+    [NativeTypeName("#define WINHTTP_PROXY_NOTIFY_CHANGE 0x0001")]
+    public const int WINHTTP_PROXY_NOTIFY_CHANGE = 0x0001;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_DISABLE_STREAM_QUEUE 1")]
+    public const int WINHTTP_FEATURE_DISABLE_STREAM_QUEUE = 1;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_IPV6_FAST_FALLBACK 2")]
+    public const int WINHTTP_FEATURE_IPV6_FAST_FALLBACK = 2;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_CONNECTION_STATS_V0 3")]
+    public const int WINHTTP_FEATURE_CONNECTION_STATS_V0 = 3;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_REQUEST_TIMES 4")]
+    public const int WINHTTP_FEATURE_REQUEST_TIMES = 4;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_EXPIRE_CONNECTION 5")]
+    public const int WINHTTP_FEATURE_EXPIRE_CONNECTION = 5;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_DISABLE_SECURE_PROTOCOL_FALLBACK 6")]
+    public const int WINHTTP_FEATURE_DISABLE_SECURE_PROTOCOL_FALLBACK = 6;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_HTTP_PROTOCOL_REQUIRED 7")]
+    public const int WINHTTP_FEATURE_HTTP_PROTOCOL_REQUIRED = 7;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_REQUEST_STATS 8")]
+    public const int WINHTTP_FEATURE_REQUEST_STATS = 8;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_SERVER_CERT_CHAIN_CONTEXT 9")]
+    public const int WINHTTP_FEATURE_SERVER_CERT_CHAIN_CONTEXT = 9;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_CONNECTION_STATS_V1 12")]
+    public const int WINHTTP_FEATURE_CONNECTION_STATS_V1 = 12;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_SECURITY_INFO 13")]
+    public const int WINHTTP_FEATURE_SECURITY_INFO = 13;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_TCP_KEEPALIVE 14")]
+    public const int WINHTTP_FEATURE_TCP_KEEPALIVE = 14;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_TCP_FAST_OPEN 15")]
+    public const int WINHTTP_FEATURE_TCP_FAST_OPEN = 15;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_TLS_FALSE_START 16")]
+    public const int WINHTTP_FEATURE_TLS_FALSE_START = 16;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_IGNORE_CERT_REVOCATION_OFFLINE 17")]
+    public const int WINHTTP_FEATURE_IGNORE_CERT_REVOCATION_OFFLINE = 17;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_TLS_PROTOCOL_INSECURE_FALLBACK 20")]
+    public const int WINHTTP_FEATURE_TLS_PROTOCOL_INSECURE_FALLBACK = 20;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_STREAM_ERROR_CODE 21")]
+    public const int WINHTTP_FEATURE_STREAM_ERROR_CODE = 21;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_REQUIRE_STREAM_END 22")]
+    public const int WINHTTP_FEATURE_REQUIRE_STREAM_END = 22;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_ENABLE_HTTP2_PLUS_CLIENT_CERT 23")]
+    public const int WINHTTP_FEATURE_ENABLE_HTTP2_PLUS_CLIENT_CERT = 23;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_FAILED_CONNECTION_RETRIES 24")]
+    public const int WINHTTP_FEATURE_FAILED_CONNECTION_RETRIES = 24;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_HTTP2_KEEPALIVE 26")]
+    public const int WINHTTP_FEATURE_HTTP2_KEEPALIVE = 26;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_RESOLUTION_HOSTNAME 27")]
+    public const int WINHTTP_FEATURE_RESOLUTION_HOSTNAME = 27;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_SET_TOKEN_BINDING 28")]
+    public const int WINHTTP_FEATURE_SET_TOKEN_BINDING = 28;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_TOKEN_BINDING_PUBLIC_KEY 29")]
+    public const int WINHTTP_FEATURE_TOKEN_BINDING_PUBLIC_KEY = 29;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_REFERER_TOKEN_BINDING_HOSTNAME 30")]
+    public const int WINHTTP_FEATURE_REFERER_TOKEN_BINDING_HOSTNAME = 30;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_HTTP2_PLUS_TRANSFER_ENCODING 31")]
+    public const int WINHTTP_FEATURE_HTTP2_PLUS_TRANSFER_ENCODING = 31;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_RESOLVER_CACHE_CONFIG 32")]
+    public const int WINHTTP_FEATURE_RESOLVER_CACHE_CONFIG = 32;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_DISABLE_CERT_CHAIN_BUILDING 33")]
+    public const int WINHTTP_FEATURE_DISABLE_CERT_CHAIN_BUILDING = 33;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_BACKGROUND_CONNECTIONS 34")]
+    public const int WINHTTP_FEATURE_BACKGROUND_CONNECTIONS = 34;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_FIRST_AVAILABLE_CONNECTION 35")]
+    public const int WINHTTP_FEATURE_FIRST_AVAILABLE_CONNECTION = 35;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_TCP_PRIORITY_STATUS 37")]
+    public const int WINHTTP_FEATURE_TCP_PRIORITY_STATUS = 37;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_CONNECTION_GUID 38")]
+    public const int WINHTTP_FEATURE_CONNECTION_GUID = 38;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_MATCH_CONNECTION_GUID 39")]
+    public const int WINHTTP_FEATURE_MATCH_CONNECTION_GUID = 39;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_HTTP2_RECEIVE_WINDOW 43")]
+    public const int WINHTTP_FEATURE_HTTP2_RECEIVE_WINDOW = 43;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_IS_FEATURE_SUPPORTED 44")]
+    public const int WINHTTP_FEATURE_IS_FEATURE_SUPPORTED = 44;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_ADD_REQUEST_HEADERS_EX 46")]
+    public const int WINHTTP_FEATURE_ADD_REQUEST_HEADERS_EX = 46;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_SET_PROXY_SETINGS_PER_USER 47")]
+    public const int WINHTTP_FEATURE_SET_PROXY_SETINGS_PER_USER = 47;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_READ_DATA_EX 48")]
+    public const int WINHTTP_FEATURE_READ_DATA_EX = 48;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_QUERY_HEADERS_EX 49")]
+    public const int WINHTTP_FEATURE_QUERY_HEADERS_EX = 49;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_QUERY_CONNECTION_GROUP 50")]
+    public const int WINHTTP_FEATURE_QUERY_CONNECTION_GROUP = 50;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_FREE_QUERY_CONNECTION_GROUP_RESULT 51")]
+    public const int WINHTTP_FEATURE_FREE_QUERY_CONNECTION_GROUP_RESULT = 51;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_SECURITY_FLAG_IGNORE_ALL_CERT_ERRORS 52")]
+    public const int WINHTTP_FEATURE_SECURITY_FLAG_IGNORE_ALL_CERT_ERRORS = 52;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_FLAG_SECURE_DEFAULTS 53")]
+    public const int WINHTTP_FEATURE_FLAG_SECURE_DEFAULTS = 53;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_EXTENDED_HEADER_FLAG_UNICODE 54")]
+    public const int WINHTTP_FEATURE_EXTENDED_HEADER_FLAG_UNICODE = 54;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_QUERY_FLAG_TRAILERS 55")]
+    public const int WINHTTP_FEATURE_QUERY_FLAG_TRAILERS = 55;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_QUERY_FLAG_WIRE_ENCODING 56")]
+    public const int WINHTTP_FEATURE_QUERY_FLAG_WIRE_ENCODING = 56;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_RESOLVER_CACHE_CONFIG_FLAG_SOFT_LIMIT 57")]
+    public const int WINHTTP_FEATURE_RESOLVER_CACHE_CONFIG_FLAG_SOFT_LIMIT = 57;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_RESOLVER_CACHE_CONFIG_FLAG_BYPASS_CACHE 58")]
+    public const int WINHTTP_FEATURE_RESOLVER_CACHE_CONFIG_FLAG_BYPASS_CACHE = 58;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_FLAG_AUTOMATIC_CHUNKING 59")]
+    public const int WINHTTP_FEATURE_FLAG_AUTOMATIC_CHUNKING = 59;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_QUERY_CONNECTION_GROUP_FLAG_INSECURE 60")]
+    public const int WINHTTP_FEATURE_QUERY_CONNECTION_GROUP_FLAG_INSECURE = 60;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_MATCH_CONNECTION_GUID_FLAG_REQUIRE_MARKED_CONNECTION 61")]
+    public const int WINHTTP_FEATURE_MATCH_CONNECTION_GUID_FLAG_REQUIRE_MARKED_CONNECTION = 61;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_QUERY_EX_ALL_HEADERS 62")]
+    public const int WINHTTP_FEATURE_QUERY_EX_ALL_HEADERS = 62;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_READ_DATA_EX_FLAG_FILL_BUFFER 63")]
+    public const int WINHTTP_FEATURE_READ_DATA_EX_FLAG_FILL_BUFFER = 63;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_RESOLVER_CACHE_CONFIG_FLAG_USE_DNS_TTL 64")]
+    public const int WINHTTP_FEATURE_RESOLVER_CACHE_CONFIG_FLAG_USE_DNS_TTL = 64;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_RESOLVER_CACHE_CONFIG_FLAG_CONN_USE_TTL 65")]
+    public const int WINHTTP_FEATURE_RESOLVER_CACHE_CONFIG_FLAG_CONN_USE_TTL = 65;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_QUIC_STATS 66")]
+    public const int WINHTTP_FEATURE_QUIC_STATS = 66;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_HTTP3_KEEPALIVE 69")]
+    public const int WINHTTP_FEATURE_HTTP3_KEEPALIVE = 69;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_HTTP3_HANDSHAKE_TIMEOUT 70")]
+    public const int WINHTTP_FEATURE_HTTP3_HANDSHAKE_TIMEOUT = 70;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_HTTP3_INITIAL_RTT 71")]
+    public const int WINHTTP_FEATURE_HTTP3_INITIAL_RTT = 71;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_HTTP3_STREAM_ERROR_CODE 72")]
+    public const int WINHTTP_FEATURE_HTTP3_STREAM_ERROR_CODE = 72;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_REQUEST_ANNOTATION 73")]
+    public const int WINHTTP_FEATURE_REQUEST_ANNOTATION = 73;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_DISABLE_PROXY_AUTH_SCHEMES 74")]
+    public const int WINHTTP_FEATURE_DISABLE_PROXY_AUTH_SCHEMES = 74;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_REVERT_IMPERSONATION_SERVER_CERT 75")]
+    public const int WINHTTP_FEATURE_REVERT_IMPERSONATION_SERVER_CERT = 75;
 }

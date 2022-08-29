@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -176,6 +176,11 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StackWalkEx"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL StackWalkEx([NativeTypeName("DWORD")] uint MachineType, HANDLE hProcess, HANDLE hThread, [NativeTypeName("LPSTACKFRAME_EX")] STACKFRAME_EX* StackFrame, [NativeTypeName("PVOID")] void* ContextRecord, [NativeTypeName("PREAD_PROCESS_MEMORY_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, void*, uint, uint*, BOOL> ReadMemoryRoutine, [NativeTypeName("PFUNCTION_TABLE_ACCESS_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, void*> FunctionTableAccessRoutine, [NativeTypeName("PGET_MODULE_BASE_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, ulong> GetModuleBaseRoutine, [NativeTypeName("PTRANSLATE_ADDRESS_ROUTINE64")] delegate* unmanaged<HANDLE, HANDLE, ADDRESS64*, ulong> TranslateAddress, [NativeTypeName("DWORD")] uint Flags);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StackWalk2"]/*' />
+    [DllImport("DbgHelp", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22621.0")]
+    public static extern BOOL StackWalk2([NativeTypeName("DWORD")] uint MachineType, HANDLE hProcess, HANDLE hThread, [NativeTypeName("LPSTACKFRAME_EX")] STACKFRAME_EX* StackFrame, [NativeTypeName("PVOID")] void* ContextRecord, [NativeTypeName("PREAD_PROCESS_MEMORY_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, void*, uint, uint*, BOOL> ReadMemoryRoutine, [NativeTypeName("PFUNCTION_TABLE_ACCESS_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, void*> FunctionTableAccessRoutine, [NativeTypeName("PGET_MODULE_BASE_ROUTINE64")] delegate* unmanaged<HANDLE, ulong, ulong> GetModuleBaseRoutine, [NativeTypeName("PTRANSLATE_ADDRESS_ROUTINE64")] delegate* unmanaged<HANDLE, HANDLE, ADDRESS64*, ulong> TranslateAddress, [NativeTypeName("PGET_TARGET_ATTRIBUTE_VALUE64")] delegate* unmanaged<HANDLE, uint, ulong, ulong*, BOOL> GetTargetAttributeValue, [NativeTypeName("DWORD")] uint Flags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StackWalk"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
@@ -1186,6 +1191,12 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define INLINE_FRAME_CONTEXT_IGNORE 0xFFFFFFFF")]
     public const uint INLINE_FRAME_CONTEXT_IGNORE = 0xFFFFFFFF;
+
+    [NativeTypeName("#define TARGET_ATTRIBUTE_PACMASK 0x00000001")]
+    public const int TARGET_ATTRIBUTE_PACMASK = 0x00000001;
+
+    [NativeTypeName("#define TARGET_ATTRIBUTE_PACMASK_LIVETARGET 0xFFFFFFFFFFFFFFFFull")]
+    public const ulong TARGET_ATTRIBUTE_PACMASK_LIVETARGET = 0xFFFFFFFFFFFFFFFFUL;
 
     [NativeTypeName("#define SYM_STKWALK_DEFAULT 0x00000000")]
     public const int SYM_STKWALK_DEFAULT = 0x00000000;

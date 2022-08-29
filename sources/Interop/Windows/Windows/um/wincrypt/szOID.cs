@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -158,6 +158,12 @@ public static partial class szOID
 
     [NativeTypeName("#define szOID_RFC3161_counterSign \"1.3.6.1.4.1.311.3.3.1\"")]
     public static ReadOnlySpan<byte> szOID_RFC3161_counterSign => "1.3.6.1.4.1.311.3.3.1"u8;
+
+    [NativeTypeName("#define szOID_RFC3161v21_counterSign \"1.3.6.1.4.1.311.3.3.2\"")]
+    public static ReadOnlySpan<byte> szOID_RFC3161v21_counterSign => "1.3.6.1.4.1.311.3.3.2"u8;
+
+    [NativeTypeName("#define szOID_RFC3161v21_thumbprints \"1.3.6.1.4.1.311.3.3.3\"")]
+    public static ReadOnlySpan<byte> szOID_RFC3161v21_thumbprints => "1.3.6.1.4.1.311.3.3.3"u8;
 
     [NativeTypeName("#define szOID_RSA_SMIMEalg \"1.2.840.113549.1.9.16.3\"")]
     public static ReadOnlySpan<byte> szOID_RSA_SMIMEalg => "1.2.840.113549.1.9.16.3"u8;
@@ -1532,6 +1538,9 @@ public static partial class szOID
 
     [NativeTypeName("#define szOID_CERT_DISALLOWED_FILETIME_PROP_ID \"1.3.6.1.4.1.311.10.11.104\"")]
     public static ReadOnlySpan<byte> szOID_CERT_DISALLOWED_FILETIME_PROP_ID => "1.3.6.1.4.1.311.10.11.104"u8;
+
+    [NativeTypeName("#define szOID_CERT_DISALLOWED_CA_FILETIME_PROP_ID \"1.3.6.1.4.1.311.10.11.128\"")]
+    public static ReadOnlySpan<byte> szOID_CERT_DISALLOWED_CA_FILETIME_PROP_ID => "1.3.6.1.4.1.311.10.11.128"u8;
 
     [NativeTypeName("#define szOID_ROOT_PROGRAM_AUTO_UPDATE_CA_REVOCATION \"1.3.6.1.4.1.311.60.3.1\"")]
     public static ReadOnlySpan<byte> szOID_ROOT_PROGRAM_AUTO_UPDATE_CA_REVOCATION => "1.3.6.1.4.1.311.60.3.1"u8;

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d11shadertracing.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/d3d11shadertracing.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -19,7 +19,7 @@ public unsafe partial struct D3D11_TRACE_REGISTER
     public D3D11_TRACE_REGISTER_TYPE RegType;
 
     /// <include file='D3D11_TRACE_REGISTER.xml' path='doc/member[@name="D3D11_TRACE_REGISTER.Anonymous"]/*' />
-    [NativeTypeName("D3D11_TRACE_REGISTER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3d11shadertracing.h:234:5)")]
+    [NativeTypeName("D3D11_TRACE_REGISTER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/d3d11shadertracing.h:234:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='D3D11_TRACE_REGISTER.xml' path='doc/member[@name="D3D11_TRACE_REGISTER.OperandIndex"]/*' />

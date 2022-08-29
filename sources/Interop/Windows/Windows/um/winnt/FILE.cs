@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -214,6 +214,12 @@ public static partial class FILE
     [NativeTypeName("#define FILE_SUPPORTS_BYPASS_IO 0x00000800")]
     public const int FILE_SUPPORTS_BYPASS_IO = 0x00000800;
 
+    [NativeTypeName("#define FILE_SUPPORTS_STREAM_SNAPSHOTS 0x00001000")]
+    public const int FILE_SUPPORTS_STREAM_SNAPSHOTS = 0x00001000;
+
+    [NativeTypeName("#define FILE_SUPPORTS_CASE_SENSITIVE_DIRS 0x00002000")]
+    public const int FILE_SUPPORTS_CASE_SENSITIVE_DIRS = 0x00002000;
+
     [NativeTypeName("#define FILE_VOLUME_IS_COMPRESSED 0x00008000")]
     public const int FILE_VOLUME_IS_COMPRESSED = 0x00008000;
 
@@ -264,6 +270,21 @@ public static partial class FILE
 
     [NativeTypeName("#define FILE_INVALID_FILE_ID ((LONGLONG)-1LL)")]
     public const long FILE_INVALID_FILE_ID = ((long)(-1L));
+
+    [NativeTypeName("#define FILE_NAME_FLAG_HARDLINK 0")]
+    public const int FILE_NAME_FLAG_HARDLINK = 0;
+
+    [NativeTypeName("#define FILE_NAME_FLAG_NTFS 0x01")]
+    public const int FILE_NAME_FLAG_NTFS = 0x01;
+
+    [NativeTypeName("#define FILE_NAME_FLAG_DOS 0x02")]
+    public const int FILE_NAME_FLAG_DOS = 0x02;
+
+    [NativeTypeName("#define FILE_NAME_FLAG_BOTH 0x03")]
+    public const int FILE_NAME_FLAG_BOTH = 0x03;
+
+    [NativeTypeName("#define FILE_NAME_FLAGS_UNSPECIFIED 0x80")]
+    public const int FILE_NAME_FLAGS_UNSPECIFIED = 0x80;
 
     [NativeTypeName("#define FILE_CS_FLAG_CASE_SENSITIVE_DIR 0x00000001")]
     public const int FILE_CS_FLAG_CASE_SENSITIVE_DIR = 0x00000001;

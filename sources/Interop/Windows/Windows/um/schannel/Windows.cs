@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/schannel.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/schannel.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -32,6 +32,12 @@ public static unsafe partial class Windows
     [return: NativeTypeName("SECURITY_STATUS")]
     [SupportedOSPlatform("windows6.2")]
     public static extern int SslGetServerIdentity([NativeTypeName("PBYTE")] byte* ClientHello, [NativeTypeName("DWORD")] uint ClientHelloSize, [NativeTypeName("PBYTE *")] byte** ServerIdentity, [NativeTypeName("PDWORD")] uint* ServerIdentitySize, [NativeTypeName("DWORD")] uint Flags);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SslDeserializeCertificateStore"]/*' />
+    [DllImport("schannel", ExactSpelling = true)]
+    [return: NativeTypeName("SECURITY_STATUS")]
+    [SupportedOSPlatform("windows10.0.22621.0")]
+    public static extern int SslDeserializeCertificateStore([NativeTypeName("CERT_BLOB")] CRYPT_DATA_BLOB SerializedCertificateStore, [NativeTypeName("PCCERT_CONTEXT *")] CERT_CONTEXT** ppCertContext);
 
     [NativeTypeName("#define UNISP_NAME_A \"Microsoft Unified Security Protocol Provider\"")]
     public static ReadOnlySpan<byte> UNISP_NAME_A => "Microsoft Unified Security Protocol Provider"u8;

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -618,8 +618,11 @@ public static unsafe partial class CERT
     [NativeTypeName("#define CERT_NOT_BEFORE_ENHKEY_USAGE_PROP_ID 127")]
     public const int CERT_NOT_BEFORE_ENHKEY_USAGE_PROP_ID = 127;
 
-    [NativeTypeName("#define CERT_FIRST_RESERVED_PROP_ID 128")]
-    public const int CERT_FIRST_RESERVED_PROP_ID = 128;
+    [NativeTypeName("#define CERT_DISALLOWED_CA_FILETIME_PROP_ID 128")]
+    public const int CERT_DISALLOWED_CA_FILETIME_PROP_ID = 128;
+
+    [NativeTypeName("#define CERT_FIRST_RESERVED_PROP_ID 129")]
+    public const int CERT_FIRST_RESERVED_PROP_ID = 129;
 
     [NativeTypeName("#define CERT_LAST_RESERVED_PROP_ID 0x00007FFF")]
     public const int CERT_LAST_RESERVED_PROP_ID = 0x00007FFF;
@@ -2325,6 +2328,9 @@ public static unsafe partial class CERT
     [NativeTypeName("#define CERT_TRUST_HAS_ALLOW_WEAK_SIGNATURE 0x00020000")]
     public const int CERT_TRUST_HAS_ALLOW_WEAK_SIGNATURE = 0x00020000;
 
+    [NativeTypeName("#define CERT_TRUST_BEFORE_DISALLOWED_CA_FILETIME 0x00200000")]
+    public const int CERT_TRUST_BEFORE_DISALLOWED_CA_FILETIME = 0x00200000;
+
     [NativeTypeName("#define CERT_TRUST_IS_COMPLEX_CHAIN 0x00010000")]
     public const int CERT_TRUST_IS_COMPLEX_CHAIN = 0x00010000;
 
@@ -2387,6 +2393,9 @@ public static unsafe partial class CERT
 
     [NativeTypeName("#define CERT_CHAIN_OPT_IN_WEAK_SIGNATURE 0x00010000")]
     public const int CERT_CHAIN_OPT_IN_WEAK_SIGNATURE = 0x00010000;
+
+    [NativeTypeName("#define CERT_CHAIN_ENABLE_DISALLOWED_CA 0x00020000")]
+    public const int CERT_CHAIN_ENABLE_DISALLOWED_CA = 0x00020000;
 
     [NativeTypeName("#define CERT_CHAIN_FIND_BY_ISSUER 1")]
     public const int CERT_CHAIN_FIND_BY_ISSUER = 1;

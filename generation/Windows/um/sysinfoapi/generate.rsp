@@ -11,7 +11,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/sysinfoapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/sysinfoapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/sysinfoapi.h
 --with-attribute
 GetIntegratedDisplaySize=SupportedOSPlatform("windows10.0")
 GetSystemTimeAdjustmentPrecise=SupportedOSPlatform("windows10.0")
@@ -20,6 +20,7 @@ GetVersionEx=Obsolete
 InstallELAMCertificateInfo=SupportedOSPlatform("windows6.3")
 SetSystemTimeAdjustmentPrecise=SupportedOSPlatform("windows10.0")
 --with-librarypath
+DnsHostnameToComputerNameExW=kernel32
 EnumSystemFirmwareTables=kernel32
 GetComputerNameEx=kernel32
 GetComputerNameExA=kernel32
@@ -43,8 +44,8 @@ GetSystemTimePreciseAsFileTime=kernel32
 GetSystemWindowsDirectory=kernel32
 GetSystemWindowsDirectoryA=kernel32
 GetSystemWindowsDirectoryW=kernel32
-GetTickCount=kernel32
 GetTickCount64=kernel32
+GetTickCount=kernel32
 GetVersion=kernel32
 GetVersionEx=kernel32
 GetVersionExA=kernel32
@@ -54,29 +55,25 @@ GetWindowsDirectoryA=kernel32
 GetWindowsDirectoryW=kernel32
 GlobalMemoryStatusEx=kernel32
 InstallELAMCertificateInfo=kernel32
+IsUserCetAvailableInEnvironment=kernel32
 SetComputerName=kernel32
 SetComputerNameA=kernel32
-SetComputerNameW=kernel32
+SetComputerNameEx2W=kernel32
 SetComputerNameEx=kernel32
 SetComputerNameExA=kernel32
 SetComputerNameExW=kernel32
+SetComputerNameW=kernel32
 SetLocalTime=kernel32
 SetSystemTime=kernel32
 SetSystemTimeAdjustment=kernel32
---with-librarypath
-GetIntegratedDisplaySize=kernelbase
---with-librarypath
-GetSystemTimeAdjustmentPrecise=kernelbase
-SetSystemTimeAdjustmentPrecise=kernelbase
---with-librarypath
-DnsHostnameToComputerNameExW=kernel32
-IsUserCetAvailableInEnvironment=kernel32
-SetComputerNameEx2W=kernel32
 VerSetConditionMask=kernel32
 --with-librarypath
+GetIntegratedDisplaySize=kernelbase
 GetOsManufacturingMode=kernelbase
 GetOsSafeBootMode=kernelbase
 GetSystemLeapSecondInformation=kernelbase
+GetSystemTimeAdjustmentPrecise=kernelbase
+SetSystemTimeAdjustmentPrecise=kernelbase
 --with-setlasterror
 EnumSystemFirmwareTables
 GetComputerNameEx

@@ -17,7 +17,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/schannel
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/schannel.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/schannel.h
 --with-attribute
 CRYPTO_SETTINGS=SupportedOSPlatform("windows10.0.17763.0")
 eTlsAlgorithmUsage=SupportedOSPlatform("windows10.0.17763.0")
@@ -33,10 +33,12 @@ SecPkgContext_KeyingMaterialInfo=SupportedOSPlatform("windows10.0")
 SecPkgContext_KeyingMaterialInfoA=SupportedOSPlatform("windows10.0")
 SecPkgContext_KeyingMaterialInfoW=SupportedOSPlatform("windows10.0")
 SecPkgContext_KeyingMaterialW=SupportedOSPlatform("windows10.0")
+SslDeserializeCertificateStore=SupportedOSPlatform("windows10.0.22621.0")
 SslGetServerIdentity=SupportedOSPlatform("windows6.2")
 TLS_PARAMETERS=SupportedOSPlatform("windows10.0.17763.0")
 --with-librarypath
 SslCrackCertificate=schannel
+SslDeserializeCertificateStore=schannel
 SslEmptyCache=schannel
 SslEmptyCacheA=schannel
 SslEmptyCacheW=schannel

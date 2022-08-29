@@ -4,6 +4,7 @@
 ARM64_MAX_BREAKPOINTS
 ARM64_MAX_WATCHPOINTS
 ARRAYSIZE
+BarrierAfterRead
 BitScanForward64
 BitScanReverse64
 BTYPE
@@ -182,6 +183,7 @@ ReadAcquire16
 ReadAcquire64
 ReadBooleanAcquire
 ReadBooleanNoFence
+ReadBooleanRaw
 ReadInt32Acquire
 ReadInt32NoFence
 ReadInt32Raw
@@ -230,6 +232,7 @@ RtlCaptureContext
 RtlCaptureContext2
 RtlCaptureStackBackTrace
 RtlCompareMemory
+RtlConstantTimeEqualMemory
 RtlConvertDeviceFamilyInfoToString
 RtlCopyMemory
 RtlCrc32
@@ -562,7 +565,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/winnt
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h
 --with-attribute
 ACCESS_REASON_TYPE=Flags
 CLAIM_SECURITY_ATTRIBUTES_INFORMATION=SupportedOSPlatform("windows6.2")

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/dcommon.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/dcommon.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -14,7 +14,7 @@ namespace TerraFX.Interop.DirectX;
 public unsafe partial struct D2D_MATRIX_5X4_F
 {
     /// <include file='D2D_MATRIX_5X4_F.xml' path='doc/member[@name="D2D_MATRIX_5X4_F.Anonymous"]/*' />
-    [NativeTypeName("D2D_MATRIX_5X4_F::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/dcommon.h:373:5)")]
+    [NativeTypeName("D2D_MATRIX_5X4_F::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/dcommon.h:373:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct._11"]/*' />
@@ -254,7 +254,7 @@ public unsafe partial struct D2D_MATRIX_5X4_F
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("D2D_MATRIX_5X4_F::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/dcommon.h:375:9)")]
+        [NativeTypeName("D2D_MATRIX_5X4_F::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/dcommon.h:375:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.m"]/*' />

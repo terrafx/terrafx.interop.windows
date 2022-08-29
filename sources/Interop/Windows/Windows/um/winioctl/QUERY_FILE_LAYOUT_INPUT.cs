@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct QUERY_FILE_LAYOUT_INPUT
 {
     /// <include file='QUERY_FILE_LAYOUT_INPUT.xml' path='doc/member[@name="QUERY_FILE_LAYOUT_INPUT.Anonymous"]/*' />
-    [NativeTypeName("_QUERY_FILE_LAYOUT_INPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:15093:5)")]
+    [NativeTypeName("_QUERY_FILE_LAYOUT_INPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:14936:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='QUERY_FILE_LAYOUT_INPUT.xml' path='doc/member[@name="QUERY_FILE_LAYOUT_INPUT.Flags"]/*' />
@@ -29,7 +29,7 @@ public partial struct QUERY_FILE_LAYOUT_INPUT
     public uint Reserved;
 
     /// <include file='QUERY_FILE_LAYOUT_INPUT.xml' path='doc/member[@name="QUERY_FILE_LAYOUT_INPUT.Filter"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winioctl.h:15120:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:14963:5)")]
     public _Filter_e__Union Filter;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.FilterEntryCount"]/*' />

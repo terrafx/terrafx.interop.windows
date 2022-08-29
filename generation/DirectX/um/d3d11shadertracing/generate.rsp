@@ -11,7 +11,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/d3d11shadertracing
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3d11shadertracing.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/d3d11shadertracing.h
 --with-attribute
 D3D11_COMPUTE_SHADER_TRACE_DESC=SupportedOSPlatform("windows6.2")
 D3D11_DOMAIN_SHADER_TRACE_DESC=SupportedOSPlatform("windows6.2")

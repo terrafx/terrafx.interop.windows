@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfidl.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/mfidl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -854,6 +854,36 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateCameraOcclusionStateMonitor"]/*' />
     [DllImport("mfsensorgroup", ExactSpelling = true)]
     public static extern HRESULT MFCreateCameraOcclusionStateMonitor([NativeTypeName("LPCWSTR")] ushort* symbolicLink, IMFCameraOcclusionStateReportCallback* callback, IMFCameraOcclusionStateMonitor** occlusionStateMonitor);
+
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid KSPROPERTYSETID_ANYCAMERACONTROL
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x30, 0x0C, 0xDD, 0x94,
+                0xC7, 0x28,
+                0xFB, 0x4E,
+                0x9D,
+                0x6B,
+                0x81,
+                0x23,
+                0x00,
+                0xFB,
+                0x0C,
+                0x7F
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateCameraControlMonitor"]/*' />
+    [DllImport("mfsensorgroup", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22621.0")]
+    public static extern HRESULT MFCreateCameraControlMonitor([NativeTypeName("LPCWSTR")] ushort* symbolicLink, IMFCameraControlNotify* callback, IMFCameraControlMonitor** ppCameraControlMonitor);
 
     [NativeTypeName("#define MEDIASINK_FIXED_STREAMS 0x00000001")]
     public const int MEDIASINK_FIXED_STREAMS = 0x00000001;

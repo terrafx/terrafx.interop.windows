@@ -18,7 +18,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/mmeapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/mmeapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/mmeapi.h
 --with-librarypath
 auxGetDevCaps=winmm
 auxGetDevCapsA=winmm
@@ -95,7 +95,11 @@ mixerSetControlDetails=winmm
 waveInAddBuffer=winmm
 waveInClose=winmm
 waveInGetDevCaps=winmm
+waveInGetDevCapsA=winmm
+waveInGetDevCapsW=winmm
 waveInGetErrorText=winmm
+waveInGetErrorTextA=winmm
+waveInGetErrorTextW=winmm
 waveInGetID=winmm
 waveInGetNumDevs=winmm
 waveInGetPosition=winmm
@@ -109,7 +113,11 @@ waveInUnprepareHeader=winmm
 waveOutBreakLoop=winmm
 waveOutClose=winmm
 waveOutGetDevCaps=winmm
+waveOutGetDevCapsA=winmm
+waveOutGetDevCapsW=winmm
 waveOutGetErrorText=winmm
+waveOutGetErrorTextA=winmm
+waveOutGetErrorTextW=winmm
 waveOutGetID=winmm
 waveOutGetNumDevs=winmm
 waveOutGetPitch=winmm
@@ -127,12 +135,3 @@ waveOutSetPlaybackRate=winmm
 waveOutSetVolume=winmm
 waveOutUnprepareHeader=winmm
 waveOutWrite=winmm
---with-librarypath
-waveInGetDevCapsA=winmm
-waveInGetDevCapsW=winmm
-waveInGetErrorTextA=winmm
-waveInGetErrorTextW=winmm
-waveOutGetDevCapsA=winmm
-waveOutGetDevCapsW=winmm
-waveOutGetErrorTextA=winmm
-waveOutGetErrorTextW=winmm

@@ -11,7 +11,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/UserEnv
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/UserEnv.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/UserEnv.h
 --with-attribute
 CreateAppContainerProfile=SupportedOSPlatform("windows6.2")
 DeleteAppContainerProfile=SupportedOSPlatform("windows6.2")
@@ -37,6 +37,7 @@ ExpandEnvironmentStringsForUserW=userenv
 FreeGPOList=userenv
 FreeGPOListA=userenv
 FreeGPOListW=userenv
+GenerateGPNotification=userenv
 GetAllUsersProfileDirectory=userenv
 GetAllUsersProfileDirectoryA=userenv
 GetAllUsersProfileDirectoryW=userenv
@@ -68,17 +69,15 @@ RefreshPolicy=userenv
 RefreshPolicyEx=userenv
 RegisterGPNotification=userenv
 RSoPAccessCheckByType=userenv
+RsopAccessCheckByType=userenv
 RSoPFileAccessCheck=userenv
+RsopFileAccessCheck=userenv
 RSoPResetPolicySettingStatus=userenv
+RsopResetPolicySettingStatus=userenv
 RSoPSetPolicySettingStatus=userenv
+RsopSetPolicySettingStatus=userenv
 UnloadUserProfile=userenv
 UnregisterGPNotification=userenv
---with-librarypath
-GenerateGPNotification=userenv
-RsopAccessCheckByType=userenv
-RsopFileAccessCheck=userenv
-RsopSetPolicySettingStatus=userenv
-RsopResetPolicySettingStatus=userenv
 --with-setlasterror
 CreateEnvironmentBlock
 DeleteProfile

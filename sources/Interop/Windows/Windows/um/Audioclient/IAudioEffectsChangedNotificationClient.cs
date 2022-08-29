@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/Audioclient.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/Audioclient.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("A5DED44F-3C5D-4B2B-BD1E-5DC1EE20BBF6")]
 [NativeTypeName("struct IAudioEffectsChangedNotificationClient : IUnknown")]
 [NativeInheritance("IUnknown")]
-[SupportedOSPlatform("windows10.0.22000.0")]
+[SupportedOSPlatform("windows10.0.22621.0")]
 public unsafe partial struct IAudioEffectsChangedNotificationClient : IAudioEffectsChangedNotificationClient.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAudioEffectsChangedNotificationClient));

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/MDMRegistration.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/MDMRegistration.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -52,6 +52,11 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterDeviceWithManagementUsingAADDeviceCredentials2"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]
     public static extern HRESULT RegisterDeviceWithManagementUsingAADDeviceCredentials2([NativeTypeName("PCWSTR")] ushort* MDMApplicationID);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterDeviceDualEnrollMmpcUsingAADDeviceCredentials"]/*' />
+    [DllImport("mdmregistration", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22621.0")]
+    public static extern HRESULT RegisterDeviceDualEnrollMmpcUsingAADDeviceCredentials([NativeTypeName("DWORD")] uint cchEnrollmentId, [NativeTypeName("LPWSTR")] ushort* pszEnrollmentId);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterDeviceWithManagement"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]

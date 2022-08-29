@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.Versioning;
@@ -627,8 +627,38 @@ public static partial class FSCTL
     [NativeTypeName("#define FSCTL_MANAGE_BYPASS_IO CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 274, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
     public const int FSCTL_MANAGE_BYPASS_IO = (((0x00000009) << 16) | ((0) << 14) | ((274) << 2) | (0));
 
-    [NativeTypeName("#define FSCTL_LMR_QUERY_INFO CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 286, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
-    public const int FSCTL_LMR_QUERY_INFO = (((0x00000009) << 16) | ((0) << 14) | ((286) << 2) | (0));
+    [NativeTypeName("#define FSCTL_REFS_DEALLOCATE_RANGES_EX CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 275, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_REFS_DEALLOCATE_RANGES_EX = (((0x00000009) << 16) | ((0) << 14) | ((275) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_SET_CACHED_RUNS_STATE CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 276, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_SET_CACHED_RUNS_STATE = (((0x00000009) << 16) | ((0) << 14) | ((276) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_REFS_SET_VOLUME_COMPRESSION_INFO CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 277, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_REFS_SET_VOLUME_COMPRESSION_INFO = (((0x00000009) << 16) | ((0) << 14) | ((277) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_REFS_QUERY_VOLUME_COMPRESSION_INFO CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 278, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_REFS_QUERY_VOLUME_COMPRESSION_INFO = (((0x00000009) << 16) | ((0) << 14) | ((278) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_DUPLICATE_CLUSTER CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 279, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_DUPLICATE_CLUSTER = (((0x00000009) << 16) | ((0) << 14) | ((279) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_CREATE_LCN_WEAK_REFERENCE CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 280, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_CREATE_LCN_WEAK_REFERENCE = (((0x00000009) << 16) | ((0) << 14) | ((280) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_DELETE_LCN_WEAK_REFERENCE CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 281, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_DELETE_LCN_WEAK_REFERENCE = (((0x00000009) << 16) | ((0) << 14) | ((281) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_QUERY_LCN_WEAK_REFERENCE CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 282, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_QUERY_LCN_WEAK_REFERENCE = (((0x00000009) << 16) | ((0) << 14) | ((282) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_DELETE_LCN_WEAK_REFERENCES CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 283, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_DELETE_LCN_WEAK_REFERENCES = (((0x00000009) << 16) | ((0) << 14) | ((283) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_REFS_SET_VOLUME_DEDUP_INFO CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 284, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_REFS_SET_VOLUME_DEDUP_INFO = (((0x00000009) << 16) | ((0) << 14) | ((284) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_REFS_QUERY_VOLUME_DEDUP_INFO CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 285, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_REFS_QUERY_VOLUME_DEDUP_INFO = (((0x00000009) << 16) | ((0) << 14) | ((285) << 2) | (0));
 
     [NativeTypeName("#define FSCTL_INTEGRITY_FLAG_CHECKSUM_ENFORCEMENT_OFF (1)")]
     public const int FSCTL_INTEGRITY_FLAG_CHECKSUM_ENFORCEMENT_OFF = (1);

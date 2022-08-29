@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/ntstatus.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from shared/ntstatus.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -192,6 +192,9 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_REPARSE_GLOBAL ((NTSTATUS)0x00000368L)")]
     public const int STATUS_REPARSE_GLOBAL = ((int)(0x00000368));
+
+    [NativeTypeName("#define STATUS_PAGE_FAULT_RETRY ((NTSTATUS)0x00000369L)")]
+    public const int STATUS_PAGE_FAULT_RETRY = ((int)(0x00000369));
 
     [NativeTypeName("#define STATUS_FLT_IO_COMPLETE ((NTSTATUS)0x001C0001L)")]
     public const int STATUS_FLT_IO_COMPLETE = ((int)(0x001C0001));
@@ -513,6 +516,9 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_FLT_BUFFER_TOO_SMALL ((NTSTATUS)0x801C0001L)")]
     public const int STATUS_FLT_BUFFER_TOO_SMALL = unchecked((int)(0x801C0001));
+
+    [NativeTypeName("#define STATUS_GRAPHICS_LINK_CONFIGURATION_IN_PROGRESS ((NTSTATUS)0x801E0000L)")]
+    public const int STATUS_GRAPHICS_LINK_CONFIGURATION_IN_PROGRESS = unchecked((int)(0x801E0000));
 
     [NativeTypeName("#define STATUS_FVE_PARTIAL_METADATA ((NTSTATUS)0x80210001L)")]
     public const int STATUS_FVE_PARTIAL_METADATA = unchecked((int)(0x80210001));
@@ -3175,6 +3181,9 @@ public static partial class STATUS
     [NativeTypeName("#define STATUS_VOLUME_WRITE_ACCESS_DENIED ((NTSTATUS)0xC00004D3L)")]
     public const int STATUS_VOLUME_WRITE_ACCESS_DENIED = unchecked((int)(0xC00004D3));
 
+    [NativeTypeName("#define STATUS_PATCH_NOT_REGISTERED ((NTSTATUS)0xC00004D4L)")]
+    public const int STATUS_PATCH_NOT_REGISTERED = unchecked((int)(0xC00004D4));
+
     [NativeTypeName("#define STATUS_NOT_SUPPORTED_WITH_CACHED_HANDLE ((NTSTATUS)0xC00004D5L)")]
     public const int STATUS_NOT_SUPPORTED_WITH_CACHED_HANDLE = unchecked((int)(0xC00004D5));
 
@@ -3477,6 +3486,18 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_SECTION_DIRECT_MAP_ONLY ((NTSTATUS)0xC0000911L)")]
     public const int STATUS_SECTION_DIRECT_MAP_ONLY = unchecked((int)(0xC0000911));
+
+    [NativeTypeName("#define STATUS_BLOCK_WEAK_REFERENCE_INVALID ((NTSTATUS)0xC0000912L)")]
+    public const int STATUS_BLOCK_WEAK_REFERENCE_INVALID = unchecked((int)(0xC0000912));
+
+    [NativeTypeName("#define STATUS_BLOCK_SOURCE_WEAK_REFERENCE_INVALID ((NTSTATUS)0xC0000913L)")]
+    public const int STATUS_BLOCK_SOURCE_WEAK_REFERENCE_INVALID = unchecked((int)(0xC0000913));
+
+    [NativeTypeName("#define STATUS_BLOCK_TARGET_WEAK_REFERENCE_INVALID ((NTSTATUS)0xC0000914L)")]
+    public const int STATUS_BLOCK_TARGET_WEAK_REFERENCE_INVALID = unchecked((int)(0xC0000914));
+
+    [NativeTypeName("#define STATUS_BLOCK_SHARED ((NTSTATUS)0xC0000915L)")]
+    public const int STATUS_BLOCK_SHARED = unchecked((int)(0xC0000915));
 
     [NativeTypeName("#define STATUS_VRF_VOLATILE_CFG_AND_IO_ENABLED ((NTSTATUS)0xC0000C08L)")]
     public const int STATUS_VRF_VOLATILE_CFG_AND_IO_ENABLED = unchecked((int)(0xC0000C08));
@@ -4894,6 +4915,9 @@ public static partial class STATUS
     [NativeTypeName("#define STATUS_GRAPHICS_INDIRECT_DISPLAY_DEVICE_STOPPED ((NTSTATUS)0xC01E0013L)")]
     public const int STATUS_GRAPHICS_INDIRECT_DISPLAY_DEVICE_STOPPED = unchecked((int)(0xC01E0013));
 
+    [NativeTypeName("#define STATUS_GRAPHICS_MPO_ALLOCATION_UNPINNED ((NTSTATUS)0xC01E0018L)")]
+    public const int STATUS_GRAPHICS_MPO_ALLOCATION_UNPINNED = unchecked((int)(0xC01E0018));
+
     [NativeTypeName("#define STATUS_GRAPHICS_NO_VIDEO_MEMORY ((NTSTATUS)0xC01E0100L)")]
     public const int STATUS_GRAPHICS_NO_VIDEO_MEMORY = unchecked((int)(0xC01E0100));
 
@@ -5595,6 +5619,15 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_FVE_EDRIVE_BAND_ENUMERATION_FAILED ((NTSTATUS)0xC0210041L)")]
     public const int STATUS_FVE_EDRIVE_BAND_ENUMERATION_FAILED = unchecked((int)(0xC0210041));
+
+    [NativeTypeName("#define STATUS_FVE_POLICY_ON_RDV_EXCLUSION_LIST ((NTSTATUS)0xC0210042L)")]
+    public const int STATUS_FVE_POLICY_ON_RDV_EXCLUSION_LIST = unchecked((int)(0xC0210042));
+
+    [NativeTypeName("#define STATUS_FVE_DATASET_FULL ((NTSTATUS)0xC0210043L)")]
+    public const int STATUS_FVE_DATASET_FULL = unchecked((int)(0xC0210043));
+
+    [NativeTypeName("#define STATUS_FVE_METADATA_FULL ((NTSTATUS)0xC0210044L)")]
+    public const int STATUS_FVE_METADATA_FULL = unchecked((int)(0xC0210044));
 
     [NativeTypeName("#define STATUS_FWP_CALLOUT_NOT_FOUND ((NTSTATUS)0xC0220001L)")]
     public const int STATUS_FWP_CALLOUT_NOT_FOUND = unchecked((int)(0xC0220001));
@@ -6793,6 +6826,21 @@ public static partial class STATUS
     [NativeTypeName("#define STATUS_HV_MSR_ACCESS_FAILED ((NTSTATUS)0xC0350080L)")]
     public const int STATUS_HV_MSR_ACCESS_FAILED = unchecked((int)(0xC0350080));
 
+    [NativeTypeName("#define STATUS_HV_INSUFFICIENT_MEMORY_MIRRORING ((NTSTATUS)0xC0350081L)")]
+    public const int STATUS_HV_INSUFFICIENT_MEMORY_MIRRORING = unchecked((int)(0xC0350081));
+
+    [NativeTypeName("#define STATUS_HV_INSUFFICIENT_CONTIGUOUS_MEMORY_MIRRORING ((NTSTATUS)0xC0350082L)")]
+    public const int STATUS_HV_INSUFFICIENT_CONTIGUOUS_MEMORY_MIRRORING = unchecked((int)(0xC0350082));
+
+    [NativeTypeName("#define STATUS_HV_INSUFFICIENT_CONTIGUOUS_ROOT_MEMORY ((NTSTATUS)0xC0350083L)")]
+    public const int STATUS_HV_INSUFFICIENT_CONTIGUOUS_ROOT_MEMORY = unchecked((int)(0xC0350083));
+
+    [NativeTypeName("#define STATUS_HV_INSUFFICIENT_ROOT_MEMORY_MIRRORING ((NTSTATUS)0xC0350084L)")]
+    public const int STATUS_HV_INSUFFICIENT_ROOT_MEMORY_MIRRORING = unchecked((int)(0xC0350084));
+
+    [NativeTypeName("#define STATUS_HV_INSUFFICIENT_CONTIGUOUS_ROOT_MEMORY_MIRRORING ((NTSTATUS)0xC0350085L)")]
+    public const int STATUS_HV_INSUFFICIENT_CONTIGUOUS_ROOT_MEMORY_MIRRORING = unchecked((int)(0xC0350085));
+
     [NativeTypeName("#define STATUS_HV_NOT_PRESENT ((NTSTATUS)0xC0351000L)")]
     public const int STATUS_HV_NOT_PRESENT = unchecked((int)(0xC0351000));
 
@@ -6921,6 +6969,27 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_VID_VTL_ACCESS_DENIED ((NTSTATUS)0xC037002AL)")]
     public const int STATUS_VID_VTL_ACCESS_DENIED = unchecked((int)(0xC037002A));
+
+    [NativeTypeName("#define STATUS_VID_INSUFFICIENT_RESOURCES_RESERVE ((NTSTATUS)0xC037002BL)")]
+    public const int STATUS_VID_INSUFFICIENT_RESOURCES_RESERVE = unchecked((int)(0xC037002B));
+
+    [NativeTypeName("#define STATUS_VID_INSUFFICIENT_RESOURCES_PHYSICAL_BUFFER ((NTSTATUS)0xC037002CL)")]
+    public const int STATUS_VID_INSUFFICIENT_RESOURCES_PHYSICAL_BUFFER = unchecked((int)(0xC037002C));
+
+    [NativeTypeName("#define STATUS_VID_INSUFFICIENT_RESOURCES_HV_DEPOSIT ((NTSTATUS)0xC037002DL)")]
+    public const int STATUS_VID_INSUFFICIENT_RESOURCES_HV_DEPOSIT = unchecked((int)(0xC037002D));
+
+    [NativeTypeName("#define STATUS_VID_MEMORY_TYPE_NOT_SUPPORTED ((NTSTATUS)0xC037002EL)")]
+    public const int STATUS_VID_MEMORY_TYPE_NOT_SUPPORTED = unchecked((int)(0xC037002E));
+
+    [NativeTypeName("#define STATUS_VID_INSUFFICIENT_RESOURCES_WITHDRAW ((NTSTATUS)0xC037002FL)")]
+    public const int STATUS_VID_INSUFFICIENT_RESOURCES_WITHDRAW = unchecked((int)(0xC037002F));
+
+    [NativeTypeName("#define STATUS_VID_PROCESS_ALREADY_SET ((NTSTATUS)0xC0370030L)")]
+    public const int STATUS_VID_PROCESS_ALREADY_SET = unchecked((int)(0xC0370030));
+
+    [NativeTypeName("#define STATUS_DM_OPERATION_LIMIT_EXCEEDED ((NTSTATUS)0xC0370600L)")]
+    public const int STATUS_DM_OPERATION_LIMIT_EXCEEDED = unchecked((int)(0xC0370600));
 
     [NativeTypeName("#define STATUS_VID_REMOTE_NODE_PARENT_GPA_PAGES_USED ((NTSTATUS)0x80370001L)")]
     public const int STATUS_VID_REMOTE_NODE_PARENT_GPA_PAGES_USED = unchecked((int)(0x80370001));
@@ -7582,6 +7651,12 @@ public static partial class STATUS
     [NativeTypeName("#define STATUS_SYSTEM_INTEGRITY_REPUTATION_OFFLINE ((NTSTATUS)0xC0E9000AL)")]
     public const int STATUS_SYSTEM_INTEGRITY_REPUTATION_OFFLINE = unchecked((int)(0xC0E9000A));
 
+    [NativeTypeName("#define STATUS_SYSTEM_INTEGRITY_REPUTATION_UNFRIENDLY_FILE ((NTSTATUS)0xC0E9000BL)")]
+    public const int STATUS_SYSTEM_INTEGRITY_REPUTATION_UNFRIENDLY_FILE = unchecked((int)(0xC0E9000B));
+
+    [NativeTypeName("#define STATUS_SYSTEM_INTEGRITY_REPUTATION_UNATTAINABLE ((NTSTATUS)0xC0E9000CL)")]
+    public const int STATUS_SYSTEM_INTEGRITY_REPUTATION_UNATTAINABLE = unchecked((int)(0xC0E9000C));
+
     [NativeTypeName("#define STATUS_NO_APPLICABLE_APP_LICENSES_FOUND ((NTSTATUS)0xC0EA0001L)")]
     public const int STATUS_NO_APPLICABLE_APP_LICENSES_FOUND = unchecked((int)(0xC0EA0001));
 
@@ -7744,6 +7819,9 @@ public static partial class STATUS
     [NativeTypeName("#define STATUS_SPACES_CACHE_FULL ((NTSTATUS)0xC0E70026L)")]
     public const int STATUS_SPACES_CACHE_FULL = unchecked((int)(0xC0E70026));
 
+    [NativeTypeName("#define STATUS_SPACES_REPAIR_IN_PROGRESS ((NTSTATUS)0xC0E70027L)")]
+    public const int STATUS_SPACES_REPAIR_IN_PROGRESS = unchecked((int)(0xC0E70027));
+
     [NativeTypeName("#define STATUS_VOLSNAP_BOOTFILE_NOT_VALID ((NTSTATUS)0xC0500003L)")]
     public const int STATUS_VOLSNAP_BOOTFILE_NOT_VALID = unchecked((int)(0xC0500003));
 
@@ -7809,6 +7887,9 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_SMB_NO_SIGNING_ALGORITHM_OVERLAP ((NTSTATUS)0xC05D0003L)")]
     public const int STATUS_SMB_NO_SIGNING_ALGORITHM_OVERLAP = unchecked((int)(0xC05D0003));
+
+    [NativeTypeName("#define STATUS_NETWORK_AUTHENTICATION_PROMPT_CANCELED ((NTSTATUS)0xC05D0004L)")]
+    public const int STATUS_NETWORK_AUTHENTICATION_PROMPT_CANCELED = unchecked((int)(0xC05D0004));
 
     [NativeTypeName("#define STATUS_SECCORE_INVALID_COMMAND ((NTSTATUS)0xC0E80000L)")]
     public const int STATUS_SECCORE_INVALID_COMMAND = unchecked((int)(0xC0E80000));
@@ -7902,4 +7983,7 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_IORING_CORRUPT ((NTSTATUS)0xC0460007L)")]
     public const int STATUS_IORING_CORRUPT = unchecked((int)(0xC0460007));
+
+    [NativeTypeName("#define STATUS_IORING_COMPLETION_QUEUE_TOO_FULL ((NTSTATUS)0xC0460008L)")]
+    public const int STATUS_IORING_COMPLETION_QUEUE_TOO_FULL = unchecked((int)(0xC0460008));
 }

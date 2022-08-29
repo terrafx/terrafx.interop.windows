@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/RestartManager.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/RestartManager.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -23,7 +23,7 @@ public unsafe partial struct RM_FILTER_INFO
     public uint cbNextOffset;
 
     /// <include file='RM_FILTER_INFO.xml' path='doc/member[@name="RM_FILTER_INFO.Anonymous"]/*' />
-    [NativeTypeName("_RM_FILTER_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/RestartManager.h:124:5)")]
+    [NativeTypeName("_RM_FILTER_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/RestartManager.h:124:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.strFilename"]/*' />

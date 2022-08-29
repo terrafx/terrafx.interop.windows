@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winhttp.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/winhttp.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -13,11 +13,11 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct WINHTTP_EXTENDED_HEADER
 {
     /// <include file='WINHTTP_EXTENDED_HEADER.xml' path='doc/member[@name="WINHTTP_EXTENDED_HEADER.Anonymous1"]/*' />
-    [NativeTypeName("_WINHTTP_EXTENDED_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winhttp.h:495:5)")]
+    [NativeTypeName("_WINHTTP_EXTENDED_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winhttp.h:514:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='WINHTTP_EXTENDED_HEADER.xml' path='doc/member[@name="WINHTTP_EXTENDED_HEADER.Anonymous2"]/*' />
-    [NativeTypeName("_WINHTTP_EXTENDED_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winhttp.h:500:5)")]
+    [NativeTypeName("_WINHTTP_EXTENDED_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winhttp.h:519:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pwszName"]/*' />

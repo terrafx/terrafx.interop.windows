@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -198,4 +198,8 @@ public partial struct IMAGE_LOAD_CONFIG_DIRECTORY32
     /// <include file='IMAGE_LOAD_CONFIG_DIRECTORY32.xml' path='doc/member[@name="IMAGE_LOAD_CONFIG_DIRECTORY32.CastGuardOsDeterminedFailureMode"]/*' />
     [NativeTypeName("DWORD")]
     public uint CastGuardOsDeterminedFailureMode;
+
+    /// <include file='IMAGE_LOAD_CONFIG_DIRECTORY32.xml' path='doc/member[@name="IMAGE_LOAD_CONFIG_DIRECTORY32.GuardMemcpyFunctionPointer"]/*' />
+    [NativeTypeName("DWORD")]
+    public uint GuardMemcpyFunctionPointer;
 }

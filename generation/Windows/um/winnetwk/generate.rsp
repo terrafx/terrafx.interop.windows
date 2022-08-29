@@ -11,7 +11,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/winnetwk
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnetwk.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnetwk.h
 --with-librarypath
 MultinetGetConnectionPerformance=mpr
 MultinetGetConnectionPerformanceA=mpr
@@ -22,6 +22,8 @@ WNetAddConnection2W=mpr
 WNetAddConnection3=mpr
 WNetAddConnection3A=mpr
 WNetAddConnection3W=mpr
+WNetAddConnection4A=mpr
+WNetAddConnection4W=mpr
 WNetAddConnection=mpr
 WNetAddConnectionA=mpr
 WNetAddConnectionW=mpr
@@ -32,14 +34,14 @@ WNetCancelConnection=mpr
 WNetCancelConnectionA=mpr
 WNetCancelConnectionW=mpr
 WNetCloseEnum=mpr
-WNetConnectionDialog=mpr
 WNetConnectionDialog1=mpr
 WNetConnectionDialog1A=mpr
 WNetConnectionDialog1W=mpr
-WNetDisconnectDialog=mpr
+WNetConnectionDialog=mpr
 WNetDisconnectDialog1=mpr
 WNetDisconnectDialog1A=mpr
 WNetDisconnectDialog1W=mpr
+WNetDisconnectDialog=mpr
 WNetEnumResource=mpr
 WNetEnumResourceA=mpr
 WNetEnumResourceW=mpr
@@ -71,12 +73,9 @@ WNetOpenEnum=mpr
 WNetOpenEnumA=mpr
 WNetOpenEnumW=mpr
 WNetRestoreConnectionW=mpr
-WNetUseConnection=mpr
-WNetUseConnectionA=mpr
-WNetUseConnectionW=mpr
---with-librarypath
-WNetAddConnection4A=mpr
-WNetAddConnection4W=mpr
 WNetRestoreSingleConnectionW=mpr
 WNetUseConnection4A=mpr
 WNetUseConnection4W=mpr
+WNetUseConnection=mpr
+WNetUseConnectionA=mpr
+WNetUseConnectionW=mpr

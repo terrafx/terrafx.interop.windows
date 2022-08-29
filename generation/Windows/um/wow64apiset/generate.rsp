@@ -13,7 +13,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/wow64apiset
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wow64apiset.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wow64apiset.h
 --with-attribute
 GetSystemWow64Directory2=SupportedOSPlatform("windows10.0.10586.0")
 GetSystemWow64Directory2A=SupportedOSPlatform("windows10.0.10586.0")
@@ -24,20 +24,19 @@ IsWow64Process2=SupportedOSPlatform("windows10.0.10586.0")
 GetSystemWow64Directory2=kernelbase
 GetSystemWow64Directory2A=kernelbase
 GetSystemWow64Directory2W=kernelbase
-IsWow64GuestMachineSupported=kernel32
 --with-librarypath
 GetSystemWow64Directory=kernel32
 GetSystemWow64DirectoryA=kernel32
 GetSystemWow64DirectoryW=kernel32
-IsWow64Process=kernel32
+IsWow64GuestMachineSupported=kernel32
 IsWow64Process2=kernel32
+IsWow64Process=kernel32
 Wow64DisableWow64FsRedirection=kernel32
-Wow64RevertWow64FsRedirection=kernel32
-Wow64SuspendThread=kernel32
---with-librarypath
 Wow64EnableWow64FsRedirection=kernel32
 Wow64GetThreadContext=kernel32
+Wow64RevertWow64FsRedirection=kernel32
 Wow64SetThreadContext=kernel32
+Wow64SuspendThread=kernel32
 --with-setlasterror
 GetSystemWow64Directory
 GetSystemWow64Directory2

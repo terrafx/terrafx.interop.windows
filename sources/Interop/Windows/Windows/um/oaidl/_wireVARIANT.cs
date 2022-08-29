@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/oaidl.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/oaidl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -33,7 +33,7 @@ public unsafe partial struct _wireVARIANT
     public ushort wReserved3;
 
     /// <include file='_wireVARIANT.xml' path='doc/member[@name="_wireVARIANT.Anonymous"]/*' />
-    [NativeTypeName("_wireVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/oaidl.h:581:36)")]
+    [NativeTypeName("_wireVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/oaidl.h:581:36)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.llVal"]/*' />

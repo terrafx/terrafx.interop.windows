@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ntsecapi.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/ntsecapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -61,11 +61,11 @@ public static partial class TRUST
     [NativeTypeName("#define TRUST_ATTRIBUTE_PIM_TRUST 0x00000400")]
     public const int TRUST_ATTRIBUTE_PIM_TRUST = 0x00000400;
 
-    [NativeTypeName("#define TRUST_ATTRIBUTE_DISABLE_AUTH_TARGET_VALIDATION 0x00001000")]
-    public const int TRUST_ATTRIBUTE_DISABLE_AUTH_TARGET_VALIDATION = 0x00001000;
-
     [NativeTypeName("#define TRUST_ATTRIBUTE_CROSS_ORGANIZATION_ENABLE_TGT_DELEGATION 0x00000800")]
     public const int TRUST_ATTRIBUTE_CROSS_ORGANIZATION_ENABLE_TGT_DELEGATION = 0x00000800;
+
+    [NativeTypeName("#define TRUST_ATTRIBUTE_DISABLE_AUTH_TARGET_VALIDATION 0x00001000")]
+    public const int TRUST_ATTRIBUTE_DISABLE_AUTH_TARGET_VALIDATION = 0x00001000;
 
     [NativeTypeName("#define TRUST_AUTH_TYPE_NONE 0")]
     public const int TRUST_AUTH_TYPE_NONE = 0;

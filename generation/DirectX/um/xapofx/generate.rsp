@@ -14,6 +14,6 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/xapofx
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/xapofx.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/xapofx.h
 --with-librarypath
 CreateFX=xaudio2_9

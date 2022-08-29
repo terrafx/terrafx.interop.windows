@@ -18,6 +18,6 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/ScrnSave
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ScrnSave.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ScrnSave.h
 --with-setlasterror
 RegisterDialogClasses

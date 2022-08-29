@@ -11,7 +11,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/InteractionContext
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/InteractionContext.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/InteractionContext.h
 --with-attribute
 AddPointerInteractionContext=SupportedOSPlatform("windows6.2")
 BufferPointerPacketsInteractionContext=SupportedOSPlatform("windows6.2")
@@ -64,30 +64,28 @@ BufferPointerPacketsInteractionContext=ninput
 CreateInteractionContext=ninput
 DestroyInteractionContext=ninput
 GetCrossSlideParameterInteractionContext=ninput
+GetHoldParameterInteractionContext=ninput
 GetInertiaParameterInteractionContext=ninput
 GetInteractionConfigurationInteractionContext=ninput
 GetMouseWheelParameterInteractionContext=ninput
 GetPropertyInteractionContext=ninput
 GetStateInteractionContext=ninput
+GetTapParameterInteractionContext=ninput
+GetTranslationParameterInteractionContext=ninput
 ProcessBufferedPacketsInteractionContext=ninput
 ProcessInertiaInteractionContext=ninput
 ProcessPointerFramesInteractionContext=ninput
+RegisterOutputCallbackInteractionContext2=ninput
 RegisterOutputCallbackInteractionContext=ninput
 RemovePointerInteractionContext=ninput
 ResetInteractionContext=ninput
 SetCrossSlideParametersInteractionContext=ninput
+SetHoldParameterInteractionContext=ninput
 SetInertiaParameterInteractionContext=ninput
+SetInteractionConfigurationInteractionContext=ninput
 SetMouseWheelParameterInteractionContext=ninput
 SetPivotInteractionContext=ninput
 SetPropertyInteractionContext=ninput
-StopInteractionContext=ninput
---with-librarypath
-SetInteractionConfigurationInteractionContext=ninput
---with-librarypath
-GetHoldParameterInteractionContext=ninput
-GetTapParameterInteractionContext=ninput
-GetTranslationParameterInteractionContext=ninput
-RegisterOutputCallbackInteractionContext2=ninput
-SetHoldParameterInteractionContext=ninput
 SetTapParameterInteractionContext=ninput
 SetTranslationParameterInteractionContext=ninput
+StopInteractionContext=ninput

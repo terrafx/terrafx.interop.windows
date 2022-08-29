@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -27,6 +27,9 @@ public static partial class CPD
 
     [NativeTypeName("#define CPD_RETURN_LOWER_QUALITY_CHAINS 0x00100000")]
     public const int CPD_RETURN_LOWER_QUALITY_CHAINS = 0x00100000;
+
+    [NativeTypeName("#define CPD_RFC3161v21 0x00200000")]
+    public const int CPD_RFC3161v21 = 0x00200000;
 
     [NativeTypeName("#define CPD_UISTATE_MODE_PROMPT 0x00000000")]
     public const int CPD_UISTATE_MODE_PROMPT = 0x00000000;

@@ -89,7 +89,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/ShObjIdl_core
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ShObjIdl_core.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ShObjIdl_core.h
 --with-attribute
 ACTIVATEOPTIONS=Flags
 BROWSERFRAMEOPTIONS=Flags
@@ -137,10 +137,8 @@ TRANSFER_SOURCE_FLAGS=Flags
 --with-librarypath
 GetCurrentProcessExplicitAppUserModelID=shell32
 SetCurrentProcessExplicitAppUserModelID=shell32
-SHAssocEnumHandlersForProtocolByApplication=shell32
-SHGetItemFromDataObject=shell32
---with-librarypath
 SHAssocEnumHandlers=shell32
+SHAssocEnumHandlersForProtocolByApplication=shell32
 SHCreateAssociationRegistration=shell32
 SHCreateDefaultExtractIcon=shell32
 SHCreateItemFromIDList=shell32
@@ -153,6 +151,7 @@ SHCreateShellItemArrayFromDataObject=shell32
 SHCreateShellItemArrayFromIDLists=shell32
 SHCreateShellItemArrayFromShellItem=shell32
 SHGetIDListFromObject=shell32
+SHGetItemFromDataObject=shell32
 SHGetItemFromObject=shell32
 SHGetNameFromIDList=shell32
 SHGetPropertyStoreFromIDList=shell32
@@ -161,5 +160,4 @@ SHGetTemporaryPropertyForItem=shell32
 SHResolveLibrary=shell32
 SHSetTemporaryPropertyForItem=shell32
 SHShowManageLibraryUI=shell32
---with-librarypath
 SHSimpleIDListFromPath=shell32

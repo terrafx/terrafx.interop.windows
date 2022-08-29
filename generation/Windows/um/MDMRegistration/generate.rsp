@@ -11,7 +11,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/MDMRegistration
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/MDMRegistration.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/MDMRegistration.h
 --with-attribute
 DiscoverManagementService=SupportedOSPlatform("windows6.3")
 DiscoverManagementServiceEx=SupportedOSPlatform("windows6.3")
@@ -20,6 +20,7 @@ GetManagementAppHyperlink=SupportedOSPlatform("windows6.3")
 IsDeviceRegisteredWithManagement=SupportedOSPlatform("windows6.3")
 IsManagementRegistrationAllowed=SupportedOSPlatform("windows6.3")
 MANAGEMENT_SERVICE_INFO=SupportedOSPlatform("windows6.3")
+RegisterDeviceDualEnrollMmpcUsingAADDeviceCredentials=SupportedOSPlatform("windows10.0.22621.0")
 RegisterDeviceWithManagement=SupportedOSPlatform("windows6.3")
 RegisterDeviceWithManagementUsingAADCredentials=SupportedOSPlatform("windows6.3")
 RegisterDeviceWithManagementUsingAADDeviceCredentials=SupportedOSPlatform("windows6.3")
@@ -34,12 +35,12 @@ GetDeviceRegistrationInfo=mdmregistration
 GetManagementAppHyperlink=mdmregistration
 IsDeviceRegisteredWithManagement=mdmregistration
 IsManagementRegistrationAllowed=mdmregistration
+IsMdmUxWithoutAadAllowed=mdmregistration
+RegisterDeviceDualEnrollMmpcUsingAADDeviceCredentials=mdmregistration
 RegisterDeviceWithManagement=mdmregistration
 RegisterDeviceWithManagementUsingAADCredentials=mdmregistration
+RegisterDeviceWithManagementUsingAADDeviceCredentials2=mdmregistration
 RegisterDeviceWithManagementUsingAADDeviceCredentials=mdmregistration
 SetDeviceManagementConfigInfo=mdmregistration
 SetManagedExternally=mdmregistration
 UnregisterDeviceWithManagement=mdmregistration
---with-librarypath
-IsMdmUxWithoutAadAllowed=mdmregistration
-RegisterDeviceWithManagementUsingAADDeviceCredentials2=mdmregistration

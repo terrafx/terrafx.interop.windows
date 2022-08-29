@@ -42,7 +42,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/ShlObj
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/ShlObj.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ShlObj.h
 --with-librarypath
 DriveType=shell32
 GetFileNameFromBrowse=shell32
@@ -50,18 +50,15 @@ PathIsSlow=shell32
 PathIsSlowA=shell32
 PathIsSlowW=shell32
 PathProcessCommand=shell32
+PathQualify=shell32
+SHChangeNotifyRegisterThread=shell32
 SHCreatePropSheetExtArray=shell32
+SHCreateQueryCancelAutoPlayMoniker=shell32
 SHLoadOLE=shell32
 SHMultiFileProperties=shell32
 SHOpenPropSheet=shell32
 SHOpenPropSheetW=shell32
 --with-librarypath
 PerUserInit=mydocs
---with-librarypath
-SHChangeNotifyRegisterThread=shell32
---with-librarypath
-PathQualify=shell32
---with-librarypath
-SHCreateQueryCancelAutoPlayMoniker=shell32
 --with-librarypath
 SoftwareUpdateMessageBox=shdocvw

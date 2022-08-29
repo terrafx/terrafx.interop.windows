@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
@@ -29,6 +29,6 @@ public static unsafe partial class IMAGE_LOAD_CONFIG_DIRECTORY64Tests
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(IMAGE_LOAD_CONFIG_DIRECTORY64), Is.EqualTo(312));
+        Assert.That(sizeof(IMAGE_LOAD_CONFIG_DIRECTORY64), Is.EqualTo(320));
     }
 }

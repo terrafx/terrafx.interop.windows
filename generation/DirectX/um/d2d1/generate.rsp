@@ -14,7 +14,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/d2d1
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d2d1.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/d2d1.h
 --with-attribute
 D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS=Flags
 D2D1_DRAW_TEXT_OPTIONS=Flags

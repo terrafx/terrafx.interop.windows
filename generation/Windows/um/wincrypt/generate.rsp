@@ -2,7 +2,6 @@
 @../../../remap.rsp
 --exclude
 CryptExportPKCS8Ex
-CryptSetAsyncParam(HCRYPTASYNC, LPSTR, LPVOID, PFN_CRYPT_ASYNC_PARAM_FREE_FUNC):BOOL
 GET_ALG_CLASS
 GET_ALG_SID
 GET_ALG_TYPE
@@ -45,12 +44,13 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/wincrypt
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/wincrypt.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wincrypt.h
 --with-attribute
 CertIsStrongHashToSign=SupportedOSPlatform("windows6.2")
 CertResyncCertificateChainEngine=SupportedOSPlatform("windows10.0")
 CERT_STRONG_SIGN_PARA=SupportedOSPlatform("windows6.2")
 CERT_STRONG_SIGN_SERIALIZED_INFO=SupportedOSPlatform("windows6.2")
+CryptSetAsyncParam=SupportedOSPlatform("windows10.0.20348.0")
 CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE=SupportedOSPlatform("windows6.2")
 CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO=SupportedOSPlatform("windows6.2")
 PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FLUSH=SupportedOSPlatform("windows6.2")
@@ -148,6 +148,7 @@ CertGetValidUsages=crypt32
 CertIsRDNAttrsInCertificateName=crypt32
 CertIsStrongHashToSign=crypt32
 CertIsValidCRLForCertificate=crypt32
+CertIsWeakHash=crypt32
 CertNameToStr=crypt32
 CertNameToStrA=crypt32
 CertNameToStrW=crypt32
@@ -194,6 +195,8 @@ CryptAcquireCertificatePrivateKey=crypt32
 CryptBinaryToString=crypt32
 CryptBinaryToStringA=crypt32
 CryptBinaryToStringW=crypt32
+CryptCloseAsyncHandle=crypt32
+CryptCreateAsyncHandle=crypt32
 CryptCreateKeyIdentifierFromCSP=crypt32
 CryptDecodeMessage=crypt32
 CryptDecodeObject=crypt32
@@ -215,6 +218,7 @@ CryptFindLocalizedName=crypt32
 CryptFindOIDInfo=crypt32
 CryptFormatObject=crypt32
 CryptFreeOIDFunctionAddress=crypt32
+CryptGetAsyncParam=crypt32
 CryptGetDefaultOIDDllList=crypt32
 CryptGetDefaultOIDFunctionAddress=crypt32
 CryptGetKeyIdentifierProperty=crypt32
@@ -222,15 +226,15 @@ CryptGetMessageCertificates=crypt32
 CryptGetMessageSignerCount=crypt32
 CryptGetOIDFunctionAddress=crypt32
 CryptGetOIDFunctionValue=crypt32
-CryptHashCertificate=crypt32
 CryptHashCertificate2=crypt32
+CryptHashCertificate=crypt32
 CryptHashMessage=crypt32
 CryptHashPublicKeyInfo=crypt32
 CryptHashToBeSigned=crypt32
 CryptImportPKCS8=crypt32
 CryptImportPublicKeyInfo=crypt32
-CryptImportPublicKeyInfoEx=crypt32
 CryptImportPublicKeyInfoEx2=crypt32
+CryptImportPublicKeyInfoEx=crypt32
 CryptInitOIDFunctionSet=crypt32
 CryptInstallDefaultContext=crypt32
 CryptInstallOIDFunctionAddress=crypt32
@@ -333,21 +337,14 @@ CryptVerifySignature=advapi32
 CryptVerifySignatureA=advapi32
 CryptVerifySignatureW=advapi32
 --with-librarypath
-CryptCloseAsyncHandle=crypt32
-CryptCreateAsyncHandle=crypt32
-CryptGetAsyncParam=crypt32
---with-librarypath
+CryptCancelAsyncRetrieval=cryptnet
+CryptFlushTimeValidObject=cryptnet
 CryptGetObjectUrl=cryptnet
 CryptGetTimeValidObject=cryptnet
+CryptInstallCancelRetrieval=cryptnet
 CryptRetrieveObjectByUrl=cryptnet
 CryptRetrieveObjectByUrlA=cryptnet
 CryptRetrieveObjectByUrlW=cryptnet
---with-librarypath
-CertIsWeakHash=crypt32
---with-librarypath
-CryptCancelAsyncRetrieval=cryptnet
-CryptFlushTimeValidObject=cryptnet
-CryptInstallCancelRetrieval=cryptnet
 CryptUninstallCancelRetrieval=cryptnet
 --with-librarypath
 FindCertsByIssuer=wintrust

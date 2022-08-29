@@ -13,7 +13,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/dwmapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/dwmapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/dwmapi.h
 --with-attribute
 DwmGetUnmetTabRequirements=SupportedOSPlatform("windows10.0.17134.0")
 DwmRenderGesture=SupportedOSPlatform("windows6.2")
@@ -40,20 +40,19 @@ DwmGetGraphicsStreamTransformHint=dwmapi
 DwmGetTransportAttributes=dwmapi
 DwmGetUnmetTabRequirements=dwmapi
 DwmGetWindowAttribute=dwmapi
+DwmInvalidateIconicBitmaps=dwmapi
 DwmIsCompositionEnabled=dwmapi
 DwmModifyPreviousDxFrameDuration=dwmapi
 DwmQueryThumbnailSourceSize=dwmapi
 DwmRegisterThumbnail=dwmapi
 DwmRenderGesture=dwmapi
 DwmSetDxFrameDuration=dwmapi
+DwmSetIconicLivePreviewBitmap=dwmapi
+DwmSetIconicThumbnail=dwmapi
 DwmSetPresentParameters=dwmapi
+DwmSetWindowAttribute=dwmapi
 DwmShowContact=dwmapi
 DwmTetherContact=dwmapi
 DwmTransitionOwnedWindow=dwmapi
 DwmUnregisterThumbnail=dwmapi
 DwmUpdateThumbnailProperties=dwmapi
---with-librarypath
-DwmInvalidateIconicBitmaps=dwmapi
-DwmSetIconicLivePreviewBitmap=dwmapi
-DwmSetIconicThumbnail=dwmapi
-DwmSetWindowAttribute=dwmapi

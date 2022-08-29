@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ntsecapi.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/ntsecapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -177,6 +177,15 @@ public static partial class KERB
 
     [NativeTypeName("#define KERB_CHECKSUM_HMAC_MD5 -138")]
     public const int KERB_CHECKSUM_HMAC_MD5 = -138;
+
+    [NativeTypeName("#define KERB_CHECKSUM_SHA256 -139")]
+    public const int KERB_CHECKSUM_SHA256 = -139;
+
+    [NativeTypeName("#define KERB_CHECKSUM_SHA384 -140")]
+    public const int KERB_CHECKSUM_SHA384 = -140;
+
+    [NativeTypeName("#define KERB_CHECKSUM_SHA512 -141")]
+    public const int KERB_CHECKSUM_SHA512 = -141;
 
     [NativeTypeName("#define KERB_CHECKSUM_HMAC_SHA1_96_AES128_Ki -150")]
     public const int KERB_CHECKSUM_HMAC_SHA1_96_AES128_Ki = -150;

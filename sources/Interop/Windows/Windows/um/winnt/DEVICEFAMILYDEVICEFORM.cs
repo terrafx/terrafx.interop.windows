@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -121,8 +121,8 @@ public static partial class DEVICEFAMILYDEVICEFORM
     [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_XBOX_SERIES_X_DEVKIT 0x00000023")]
     public const int DEVICEFAMILYDEVICEFORM_XBOX_SERIES_X_DEVKIT = 0x00000023;
 
-    [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_00 0x00000024")]
-    public const int DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_00 = 0x00000024;
+    [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_XBOX_SERIES_S 0x00000024")]
+    public const int DEVICEFAMILYDEVICEFORM_XBOX_SERIES_S = 0x00000024;
 
     [NativeTypeName("#define DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_01 0x00000025")]
     public const int DEVICEFAMILYDEVICEFORM_XBOX_RESERVED_01 = 0x00000025;

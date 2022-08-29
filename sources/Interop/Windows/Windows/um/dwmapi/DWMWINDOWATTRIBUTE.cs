@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/dwmapi.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/dwmapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -76,6 +76,9 @@ public enum DWMWINDOWATTRIBUTE
 
     /// <include file='DWMWINDOWATTRIBUTE.xml' path='doc/member[@name="DWMWINDOWATTRIBUTE.DWMWA_VISIBLE_FRAME_BORDER_THICKNESS"]/*' />
     DWMWA_VISIBLE_FRAME_BORDER_THICKNESS,
+
+    /// <include file='DWMWINDOWATTRIBUTE.xml' path='doc/member[@name="DWMWINDOWATTRIBUTE.DWMWA_SYSTEMBACKDROP_TYPE"]/*' />
+    DWMWA_SYSTEMBACKDROP_TYPE,
 
     /// <include file='DWMWINDOWATTRIBUTE.xml' path='doc/member[@name="DWMWINDOWATTRIBUTE.DWMWA_LAST"]/*' />
     DWMWA_LAST,

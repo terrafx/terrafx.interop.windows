@@ -22,9 +22,11 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/DbgHelp
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/DbgHelp.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/DbgHelp.h
 --exclude
 NONGAMESPARTITIONS
+--with-attribute
+StackWalk2=SupportedOSPlatform("windows10.0.22621.0")
 --with-librarypath
 DbgHelpCreateUserDump=DbgHelp
 DbgHelpCreateUserDumpW=DbgHelp
@@ -66,6 +68,7 @@ SearchTreeForFile=DbgHelp
 SearchTreeForFileW=DbgHelp
 SetCheckUserInterruptShared=DbgHelp
 SetSymLoadError=DbgHelp
+StackWalk2=DbgHelp
 StackWalk64=DbgHelp
 StackWalk=DbgHelp
 StackWalkEx=DbgHelp

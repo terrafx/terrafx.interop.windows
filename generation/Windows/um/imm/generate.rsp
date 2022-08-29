@@ -15,7 +15,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/imm
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/imm.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/imm.h
 --with-librarypath
 ImmAssociateContext=imm32
 ImmAssociateContextEx=imm32
@@ -25,6 +25,7 @@ ImmConfigureIMEW=imm32
 ImmCreateContext=imm32
 ImmDestroyContext=imm32
 ImmDisableIME=imm32
+ImmDisableLegacyIME=imm32
 IMMDisableLegacyIME=imm32
 ImmDisableTextFrameService=imm32
 ImmEnumInputContext=imm32
@@ -36,10 +37,10 @@ ImmEscapeA=imm32
 ImmEscapeW=imm32
 ImmGetCandidateList=imm32
 ImmGetCandidateListA=imm32
-ImmGetCandidateListW=imm32
 ImmGetCandidateListCount=imm32
 ImmGetCandidateListCountA=imm32
 ImmGetCandidateListCountW=imm32
+ImmGetCandidateListW=imm32
 ImmGetCandidateWindow=imm32
 ImmGetCompositionFont=imm32
 ImmGetCompositionFontA=imm32
@@ -100,5 +101,3 @@ ImmSimulateHotKey=imm32
 ImmUnregisterWord=imm32
 ImmUnregisterWordA=imm32
 ImmUnregisterWordW=imm32
---with-librarypath
-ImmDisableLegacyIME=imm32

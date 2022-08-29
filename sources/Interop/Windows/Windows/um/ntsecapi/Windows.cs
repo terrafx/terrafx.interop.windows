@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ntsecapi.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from um/ntsecapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -1923,7 +1923,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LsaRetrievePrivateData"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("NTSTATUS")]
-    public static extern int LsaRetrievePrivateData([NativeTypeName("LSA_HANDLE")] void* PolicyHandle, [NativeTypeName("PLSA_UNICODE_STRING")] LSA_UNICODE_STRING* KeyName, [NativeTypeName("PLSA_UNICODE_STRING *")] LSA_UNICODE_STRING** PrivateDatant);
+    public static extern int LsaRetrievePrivateData([NativeTypeName("LSA_HANDLE")] void* PolicyHandle, [NativeTypeName("PLSA_UNICODE_STRING")] LSA_UNICODE_STRING* KeyName, [NativeTypeName("PLSA_UNICODE_STRING *")] LSA_UNICODE_STRING** PrivateData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LsaNtStatusToWinError"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]

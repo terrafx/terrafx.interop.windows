@@ -47,7 +47,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/d3d11
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/d3d11.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/d3d11.h
 --with-attribute
 D3D11_AES_CTR_IV=SupportedOSPlatform("windows6.2")
 D3D11_ASYNC_GETDATA_FLAG=Flags
@@ -171,6 +171,5 @@ ID3D11VideoProcessorInputView=SupportedOSPlatform("windows6.2")
 ID3D11VideoProcessorOutputView=SupportedOSPlatform("windows6.2")
 --with-librarypath
 D3D11CalcSubresource=d3d11
---with-librarypath
 D3D11CreateDevice=d3d11
 D3D11CreateDeviceAndSwapChain=d3d11

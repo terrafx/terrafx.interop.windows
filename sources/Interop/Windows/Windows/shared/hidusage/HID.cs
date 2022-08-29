@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/hidusage.h in the Windows SDK for Windows 10.0.22000.0
+// Ported from shared/hidusage.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -1449,6 +1449,9 @@ public static partial class HID
 
     [NativeTypeName("#define HID_USAGE_DIGITIZER_HEAT_MAP_FRAME_DATA ((USAGE) 0x6C)")]
     public const ushort HID_USAGE_DIGITIZER_HEAT_MAP_FRAME_DATA = ((ushort)(0x6C));
+
+    [NativeTypeName("#define HID_USAGE_DIGITIZER_TRANSDUCER_SERIAL_PART2 ((USAGE) 0x6E)")]
+    public const ushort HID_USAGE_DIGITIZER_TRANSDUCER_SERIAL_PART2 = ((ushort)(0x6E));
 
     [NativeTypeName("#define HID_USAGE_DIGITIZER_TRANSDUCER_VENDOR ((USAGE) 0x91)")]
     public const ushort HID_USAGE_DIGITIZER_TRANSDUCER_VENDOR = ((ushort)(0x91));
