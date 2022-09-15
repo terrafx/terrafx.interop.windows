@@ -12,4 +12,8 @@
     <None Include="**/*.xml" DependentUpon="%(RecursiveDir)%(Filename).cs" />
   </ItemGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
+    <Compile Remove="Shims/UnscopedRefAttribute.cs" />
+  </ItemGroup>
+  
 </Project>
