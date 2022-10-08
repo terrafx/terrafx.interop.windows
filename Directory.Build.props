@@ -72,8 +72,4 @@
     <UseSharedCompilation>true</UseSharedCompilation>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Net.Compilers.Toolset" PrivateAssets="all" />
-  </ItemGroup>
-
 </Project>
