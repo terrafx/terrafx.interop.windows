@@ -3,7 +3,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <NoWarn>0419;1571;1572;1573;1574;1580;1584;1589;1591;1658;CA2252;IDE0017;$(NoWarn)</NoWarn>
+    <NoWarn>$(NoWarn);CA2252;CS0419;CS1571;CS1572;CS1573;CS1574;CS1580;CS1584;CS1589;CS1591;CS1658;IDE0017</NoWarn>
     <RootNamespace>TerraFX.Interop</RootNamespace>
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
   </PropertyGroup>
@@ -15,5 +15,5 @@
   <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
     <Compile Remove="Shims/UnscopedRefAttribute.cs" />
   </ItemGroup>
-  
+
 </Project>
