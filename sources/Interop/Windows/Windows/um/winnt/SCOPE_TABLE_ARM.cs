@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -45,6 +46,7 @@ public partial struct SCOPE_TABLE_ARM
     {
         public _Anonymous_e__Struct e0;
 
+        [UnscopedRef]
         public ref _Anonymous_e__Struct this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -55,6 +57,7 @@ public partial struct SCOPE_TABLE_ARM
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<_Anonymous_e__Struct> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

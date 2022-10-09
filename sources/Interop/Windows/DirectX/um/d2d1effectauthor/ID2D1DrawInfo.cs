@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.DirectX.D2D1_PIXEL_OPTIONS;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -15,8 +16,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("693CE632-7F2F-45DE-93FE-18D88B37AA21")]
 [NativeTypeName("struct ID2D1DrawInfo : ID2D1RenderInfo")]
 [NativeInheritance("ID2D1RenderInfo")]
-public unsafe partial struct ID2D1DrawInfo : ID2D1DrawInfo.Interface
+public unsafe partial struct ID2D1DrawInfo : ID2D1DrawInfo.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1DrawInfo));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

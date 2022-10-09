@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("61DED640-E912-11CE-A099-00AA00479A58")]
 [NativeTypeName("struct IBaseVideoMixer : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface
+public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IBaseVideoMixer));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

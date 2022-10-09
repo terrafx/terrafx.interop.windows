@@ -3,12 +3,16 @@
 // Ported from um/propsys.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PropertySystem.xml' path='doc/member[@name="PropertySystem"]/*' />
 [Guid("B8967F85-58AE-4F46-9FB2-5D7904798F4B")]
-public partial struct PropertySystem
+public unsafe partial struct PropertySystem : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_PropertySystem));
 }

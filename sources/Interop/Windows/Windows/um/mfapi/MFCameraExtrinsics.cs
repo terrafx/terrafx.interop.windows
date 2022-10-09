@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -27,6 +28,7 @@ public partial struct MFCameraExtrinsics
     {
         public MFCameraExtrinsic_CalibratedTransform e0;
 
+        [UnscopedRef]
         public ref MFCameraExtrinsic_CalibratedTransform this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -37,6 +39,7 @@ public partial struct MFCameraExtrinsics
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<MFCameraExtrinsic_CalibratedTransform> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

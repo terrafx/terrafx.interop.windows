@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("5485216B-A54C-469F-9670-52B24D5229BB")]
 [NativeTypeName("struct IDiaStackWalker : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDiaStackWalker : IDiaStackWalker.Interface
+public unsafe partial struct IDiaStackWalker : IDiaStackWalker.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDiaStackWalker));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

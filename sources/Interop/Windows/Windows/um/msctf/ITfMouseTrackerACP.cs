@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("3BDD78E2-C16E-47FD-B883-CE6FACC1A208")]
 [NativeTypeName("struct ITfMouseTrackerACP : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITfMouseTrackerACP : ITfMouseTrackerACP.Interface
+public unsafe partial struct ITfMouseTrackerACP : ITfMouseTrackerACP.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfMouseTrackerACP));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

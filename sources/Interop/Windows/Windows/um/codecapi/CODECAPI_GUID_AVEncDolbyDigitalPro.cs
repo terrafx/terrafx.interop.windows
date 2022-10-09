@@ -3,12 +3,16 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_GUID_AVEncDolbyDigitalPro.xml' path='doc/member[@name="CODECAPI_GUID_AVEncDolbyDigitalPro"]/*' />
 [Guid("F5BE76CC-0FF8-40EB-9CB1-BBA94004D44F")]
-public partial struct CODECAPI_GUID_AVEncDolbyDigitalPro
+public unsafe partial struct CODECAPI_GUID_AVEncDolbyDigitalPro : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_GUID_AVEncDolbyDigitalPro));
 }

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -56,6 +57,7 @@ public partial struct UNWIND_HISTORY_TABLE
         public UNWIND_HISTORY_TABLE_ENTRY e10;
         public UNWIND_HISTORY_TABLE_ENTRY e11;
 
+        [UnscopedRef]
         public ref UNWIND_HISTORY_TABLE_ENTRY this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -66,6 +68,7 @@ public partial struct UNWIND_HISTORY_TABLE
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<UNWIND_HISTORY_TABLE_ENTRY> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 12);
     }
 }

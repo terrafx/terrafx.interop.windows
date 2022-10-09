@@ -3,12 +3,16 @@
 // Ported from um/UIAnimation.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='UIAnimationManager.xml' path='doc/member[@name="UIAnimationManager"]/*' />
 [Guid("4C1FC63A-695C-47E8-A339-1A194BE3D0B8")]
-public partial struct UIAnimationManager
+public unsafe partial struct UIAnimationManager : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_UIAnimationManager));
 }

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("A561E69A-B4B8-4113-91A5-64C6BCCA3430")]
 [NativeTypeName("struct IUserAccountChangeCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IUserAccountChangeCallback : IUserAccountChangeCallback.Interface
+public unsafe partial struct IUserAccountChangeCallback : IUserAccountChangeCallback.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUserAccountChangeCallback));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

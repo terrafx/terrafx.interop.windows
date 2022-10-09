@@ -3,6 +3,7 @@
 // Ported from um/accctrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -23,22 +24,24 @@ public unsafe partial struct ACTRL_OVERLAPPED
     public HANDLE hEvent;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Provider"]/*' />
+    [UnscopedRef]
     public ref void* Provider
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.Provider;
+            return ref Anonymous.Provider;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Reserved1"]/*' />
+    [UnscopedRef]
     public ref uint Reserved1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Reserved1, 1));
+            return ref Anonymous.Reserved1;
         }
     }
 

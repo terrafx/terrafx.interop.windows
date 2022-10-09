@@ -3,6 +3,7 @@
 // Ported from um/sysinfoapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -52,32 +53,35 @@ public unsafe partial struct SYSTEM_INFO
     public ushort wProcessorRevision;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwOemId"]/*' />
+    [UnscopedRef]
     public ref uint dwOemId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwOemId, 1));
+            return ref Anonymous.dwOemId;
         }
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.wProcessorArchitecture"]/*' />
+    [UnscopedRef]
     public ref ushort wProcessorArchitecture
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.wProcessorArchitecture, 1));
+            return ref Anonymous.Anonymous.wProcessorArchitecture;
         }
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.wReserved"]/*' />
+    [UnscopedRef]
     public ref ushort wReserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.wReserved, 1));
+            return ref Anonymous.Anonymous.wReserved;
         }
     }
 

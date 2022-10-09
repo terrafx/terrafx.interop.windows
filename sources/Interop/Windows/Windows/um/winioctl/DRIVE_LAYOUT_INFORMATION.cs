@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -29,6 +30,7 @@ public partial struct DRIVE_LAYOUT_INFORMATION
     {
         public PARTITION_INFORMATION e0;
 
+        [UnscopedRef]
         public ref PARTITION_INFORMATION this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,6 +41,7 @@ public partial struct DRIVE_LAYOUT_INFORMATION
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<PARTITION_INFORMATION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

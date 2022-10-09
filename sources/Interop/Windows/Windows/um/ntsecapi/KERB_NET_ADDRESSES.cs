@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -25,6 +26,7 @@ public partial struct KERB_NET_ADDRESSES
     {
         public KERB_NET_ADDRESS e0;
 
+        [UnscopedRef]
         public ref KERB_NET_ADDRESS this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -35,6 +37,7 @@ public partial struct KERB_NET_ADDRESSES
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<KERB_NET_ADDRESS> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

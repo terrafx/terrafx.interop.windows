@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -49,6 +50,7 @@ public partial struct FSCTL_QUERY_REGION_INFO_OUTPUT
     {
         public FILE_STORAGE_TIER_REGION e0;
 
+        [UnscopedRef]
         public ref FILE_STORAGE_TIER_REGION this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -59,6 +61,7 @@ public partial struct FSCTL_QUERY_REGION_INFO_OUTPUT
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<FILE_STORAGE_TIER_REGION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("00000038-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IWeakReferenceSource : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IWeakReferenceSource : IWeakReferenceSource.Interface
+public unsafe partial struct IWeakReferenceSource : IWeakReferenceSource.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWeakReferenceSource));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("DDB0472D-C911-4A1F-86D9-DC3D71A95F5A")]
 [NativeTypeName("struct ISystemMediaTransportControlsInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
-public unsafe partial struct ISystemMediaTransportControlsInterop : ISystemMediaTransportControlsInterop.Interface
+public unsafe partial struct ISystemMediaTransportControlsInterop : ISystemMediaTransportControlsInterop.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISystemMediaTransportControlsInterop));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

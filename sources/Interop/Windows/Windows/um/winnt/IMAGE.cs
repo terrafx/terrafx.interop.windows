@@ -1408,22 +1408,22 @@ public static partial class IMAGE
     public const int IMAGE_ARCHIVE_START_SIZE = 8;
 
     [NativeTypeName("#define IMAGE_ARCHIVE_START \"!<arch>\\n\"")]
-    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_START => new byte[] { 0x21, 0x3C, 0x61, 0x72, 0x63, 0x68, 0x3E, 0x0A, 0x00 };
+    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_START => "!<arch>\n"u8;
 
     [NativeTypeName("#define IMAGE_ARCHIVE_END \"`\\n\"")]
-    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_END => new byte[] { 0x60, 0x0A, 0x00 };
+    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_END => "`\n"u8;
 
     [NativeTypeName("#define IMAGE_ARCHIVE_PAD \"\\n\"")]
-    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_PAD => new byte[] { 0x0A, 0x00 };
+    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_PAD => "\n"u8;
 
     [NativeTypeName("#define IMAGE_ARCHIVE_LINKER_MEMBER \"/               \"")]
-    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_LINKER_MEMBER => new byte[] { 0x2F, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x00 };
+    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_LINKER_MEMBER => "/               "u8;
 
     [NativeTypeName("#define IMAGE_ARCHIVE_LONGNAMES_MEMBER \"//              \"")]
-    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_LONGNAMES_MEMBER => new byte[] { 0x2F, 0x2F, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x00 };
+    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_LONGNAMES_MEMBER => "//              "u8;
 
     [NativeTypeName("#define IMAGE_ARCHIVE_HYBRIDMAP_MEMBER \"/<HYBRIDMAP>/   \"")]
-    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_HYBRIDMAP_MEMBER => new byte[] { 0x2F, 0x3C, 0x48, 0x59, 0x42, 0x52, 0x49, 0x44, 0x4D, 0x41, 0x50, 0x3E, 0x2F, 0x20, 0x20, 0x20, 0x00 };
+    public static ReadOnlySpan<byte> IMAGE_ARCHIVE_HYBRIDMAP_MEMBER => "/<HYBRIDMAP>/   "u8;
 
     [NativeTypeName("#define IMAGE_SIZEOF_ARCHIVE_MEMBER_HDR 60")]
     public const int IMAGE_SIZEOF_ARCHIVE_MEMBER_HDR = 60;
@@ -1684,5 +1684,5 @@ public static partial class IMAGE
     public const int IMAGE_POLICY_METADATA_VERSION = 1;
 
     [NativeTypeName("#define IMAGE_POLICY_SECTION_NAME \".tPolicy\"")]
-    public static ReadOnlySpan<byte> IMAGE_POLICY_SECTION_NAME => new byte[] { 0x2E, 0x74, 0x50, 0x6F, 0x6C, 0x69, 0x63, 0x79, 0x00 };
+    public static ReadOnlySpan<byte> IMAGE_POLICY_SECTION_NAME => ".tPolicy"u8;
 }

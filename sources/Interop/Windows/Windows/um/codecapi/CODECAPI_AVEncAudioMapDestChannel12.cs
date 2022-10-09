@@ -3,12 +3,16 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncAudioMapDestChannel12.xml' path='doc/member[@name="CODECAPI_AVEncAudioMapDestChannel12"]/*' />
 [Guid("BC5D0B6C-DF6A-4E16-9803-B82007A30C8D")]
-public partial struct CODECAPI_AVEncAudioMapDestChannel12
+public unsafe partial struct CODECAPI_AVEncAudioMapDestChannel12 : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncAudioMapDestChannel12));
 }

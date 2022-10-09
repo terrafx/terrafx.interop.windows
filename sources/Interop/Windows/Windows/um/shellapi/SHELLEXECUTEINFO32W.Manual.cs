@@ -3,6 +3,7 @@
 // Ported from um/shellapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -50,21 +51,23 @@ public unsafe partial struct SHELLEXECUTEINFO32W
 
     public HANDLE hProcess;
 
+    [UnscopedRef]
     public ref HANDLE hIcon
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hIcon, 1));
+            return ref Anonymous.hIcon;
         }
     }
 
+    [UnscopedRef]
     public ref HANDLE hMonitor
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hMonitor, 1));
+            return ref Anonymous.hMonitor;
         }
     }
 

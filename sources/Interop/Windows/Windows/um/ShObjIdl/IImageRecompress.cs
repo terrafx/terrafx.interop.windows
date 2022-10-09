@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("505F1513-6B3E-4892-A272-59F8889A4D3E")]
 [NativeTypeName("struct IImageRecompress : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IImageRecompress : IImageRecompress.Interface
+public unsafe partial struct IImageRecompress : IImageRecompress.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IImageRecompress));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

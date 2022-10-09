@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("77EFFA68-4F98-4366-BA72-573B3D880571")]
 [NativeTypeName("struct IPersistSerializedPropStorage2 : IPersistSerializedPropStorage")]
 [NativeInheritance("IPersistSerializedPropStorage")]
-public unsafe partial struct IPersistSerializedPropStorage2 : IPersistSerializedPropStorage2.Interface
+public unsafe partial struct IPersistSerializedPropStorage2 : IPersistSerializedPropStorage2.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPersistSerializedPropStorage2));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

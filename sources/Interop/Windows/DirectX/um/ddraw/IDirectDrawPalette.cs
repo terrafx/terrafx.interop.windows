@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("6C14DB84-A733-11CE-A521-0020AF0BE560")]
 [NativeTypeName("struct IDirectDrawPalette : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDirectDrawPalette : IDirectDrawPalette.Interface
+public unsafe partial struct IDirectDrawPalette : IDirectDrawPalette.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDirectDrawPalette));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -90,6 +91,7 @@ public unsafe partial struct STORAGE_HW_FIRMWARE_INFO
     {
         public STORAGE_HW_FIRMWARE_SLOT_INFO e0;
 
+        [UnscopedRef]
         public ref STORAGE_HW_FIRMWARE_SLOT_INFO this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -100,6 +102,7 @@ public unsafe partial struct STORAGE_HW_FIRMWARE_INFO
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<STORAGE_HW_FIRMWARE_SLOT_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("3ACF075F-71DB-4AFA-81F0-3FC4FDF2A5B8")]
 [NativeTypeName("struct IFileSystemBindData2 : IFileSystemBindData")]
 [NativeInheritance("IFileSystemBindData")]
-public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interface
+public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFileSystemBindData2));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

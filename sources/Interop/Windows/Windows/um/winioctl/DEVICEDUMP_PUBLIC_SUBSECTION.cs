@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -50,6 +51,7 @@ public unsafe partial struct DEVICEDUMP_PUBLIC_SUBSECTION
         public GP_LOG_PAGE_DESCRIPTOR e14;
         public GP_LOG_PAGE_DESCRIPTOR e15;
 
+        [UnscopedRef]
         public ref GP_LOG_PAGE_DESCRIPTOR this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,6 +62,7 @@ public unsafe partial struct DEVICEDUMP_PUBLIC_SUBSECTION
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<GP_LOG_PAGE_DESCRIPTOR> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
     }
 }

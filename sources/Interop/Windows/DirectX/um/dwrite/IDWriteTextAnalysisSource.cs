@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("688E1A58-5094-47C8-ADC8-FBCEA60AE92B")]
 [NativeTypeName("struct IDWriteTextAnalysisSource : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDWriteTextAnalysisSource : IDWriteTextAnalysisSource.Interface
+public unsafe partial struct IDWriteTextAnalysisSource : IDWriteTextAnalysisSource.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWriteTextAnalysisSource));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

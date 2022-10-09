@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("85AC9776-CA88-4CF2-894E-09598C078A41")]
 [NativeTypeName("struct IDiscRecorder : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDiscRecorder : IDiscRecorder.Interface
+public unsafe partial struct IDiscRecorder : IDiscRecorder.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDiscRecorder));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

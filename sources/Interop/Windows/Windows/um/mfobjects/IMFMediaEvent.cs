@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("DF598932-F10C-4E39-BBA2-C308F101DAA3")]
 [NativeTypeName("struct IMFMediaEvent : IMFAttributes")]
 [NativeInheritance("IMFAttributes")]
-public unsafe partial struct IMFMediaEvent : IMFMediaEvent.Interface
+public unsafe partial struct IMFMediaEvent : IMFMediaEvent.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFMediaEvent));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

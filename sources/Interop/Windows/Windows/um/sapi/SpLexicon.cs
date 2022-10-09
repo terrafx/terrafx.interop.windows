@@ -3,12 +3,16 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SpLexicon.xml' path='doc/member[@name="SpLexicon"]/*' />
 [Guid("0655E396-25D0-11D3-9C26-00C04F8EF87C")]
-public partial struct SpLexicon
+public unsafe partial struct SpLexicon : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_SpLexicon));
 }

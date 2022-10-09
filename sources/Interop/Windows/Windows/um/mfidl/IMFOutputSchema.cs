@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("7BE0FC5B-ABD9-44FB-A5C8-F50136E71599")]
 [NativeTypeName("struct IMFOutputSchema : IMFAttributes")]
 [NativeInheritance("IMFAttributes")]
-public unsafe partial struct IMFOutputSchema : IMFOutputSchema.Interface
+public unsafe partial struct IMFOutputSchema : IMFOutputSchema.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFOutputSchema));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

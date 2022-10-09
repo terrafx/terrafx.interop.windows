@@ -3,16 +3,20 @@
 // Ported from um/d3d11shader.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='ID3D11ShaderReflectionType.xml' path='doc/member[@name="ID3D11ShaderReflectionType"]/*' />
 [Guid("6E6FFA6A-9BAE-4613-A51E-91652D508C21")]
-public unsafe partial struct ID3D11ShaderReflectionType : ID3D11ShaderReflectionType.Interface
+public unsafe partial struct ID3D11ShaderReflectionType : ID3D11ShaderReflectionType.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D11ShaderReflectionType));
+
     public void** lpVtbl;
 
     /// <include file='ID3D11ShaderReflectionType.xml' path='doc/member[@name="ID3D11ShaderReflectionType.GetDesc"]/*' />

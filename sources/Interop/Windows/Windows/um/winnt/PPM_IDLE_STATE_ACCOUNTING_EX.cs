@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -64,6 +65,7 @@ public partial struct PPM_IDLE_STATE_ACCOUNTING_EX
         public PPM_IDLE_STATE_BUCKET_EX e14;
         public PPM_IDLE_STATE_BUCKET_EX e15;
 
+        [UnscopedRef]
         public ref PPM_IDLE_STATE_BUCKET_EX this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -74,6 +76,7 @@ public partial struct PPM_IDLE_STATE_ACCOUNTING_EX
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<PPM_IDLE_STATE_BUCKET_EX> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
     }
 }

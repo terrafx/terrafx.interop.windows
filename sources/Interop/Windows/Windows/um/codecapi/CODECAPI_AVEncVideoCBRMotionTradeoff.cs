@@ -3,12 +3,16 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncVideoCBRMotionTradeoff.xml' path='doc/member[@name="CODECAPI_AVEncVideoCBRMotionTradeoff"]/*' />
 [Guid("0D49451E-18D5-4367-A4EF-3240DF1693C4")]
-public partial struct CODECAPI_AVEncVideoCBRMotionTradeoff
+public unsafe partial struct CODECAPI_AVEncVideoCBRMotionTradeoff : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncVideoCBRMotionTradeoff));
 }

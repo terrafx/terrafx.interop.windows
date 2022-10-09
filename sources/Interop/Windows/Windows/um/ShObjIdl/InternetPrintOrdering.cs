@@ -3,12 +3,16 @@
 // Ported from um/ShObjIdl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='InternetPrintOrdering.xml' path='doc/member[@name="InternetPrintOrdering"]/*' />
 [Guid("ADD36AA8-751A-4579-A266-D66F5202CCBB")]
-public partial struct InternetPrintOrdering
+public unsafe partial struct InternetPrintOrdering : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_InternetPrintOrdering));
 }

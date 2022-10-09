@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("8C210BF3-011F-4422-8D70-6F9ACB8DB617")]
 [NativeTypeName("struct IDxcCompiler : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDxcCompiler : IDxcCompiler.Interface
+public unsafe partial struct IDxcCompiler : IDxcCompiler.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDxcCompiler));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

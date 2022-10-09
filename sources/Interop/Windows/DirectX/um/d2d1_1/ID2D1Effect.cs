@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.DirectX.D2D1_PROPERTY_TYPE;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -15,8 +16,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("28211A43-7D89-476F-8181-2D6159B220AD")]
 [NativeTypeName("struct ID2D1Effect : ID2D1Properties")]
 [NativeInheritance("ID2D1Properties")]
-public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
+public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1Effect));
+
     public void** lpVtbl;
 
     public HRESULT SetValueByName([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize)

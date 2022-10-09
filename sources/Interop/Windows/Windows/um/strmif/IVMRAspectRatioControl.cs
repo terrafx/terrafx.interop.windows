@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("EDE80B5C-BAD6-4623-B537-65586C9F8DFD")]
 [NativeTypeName("struct IVMRAspectRatioControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IVMRAspectRatioControl : IVMRAspectRatioControl.Interface
+public unsafe partial struct IVMRAspectRatioControl : IVMRAspectRatioControl.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVMRAspectRatioControl));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

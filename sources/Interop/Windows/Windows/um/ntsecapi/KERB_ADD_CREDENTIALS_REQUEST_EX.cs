@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -28,6 +29,7 @@ public partial struct KERB_ADD_CREDENTIALS_REQUEST_EX
     {
         public LSA_UNICODE_STRING e0;
 
+        [UnscopedRef]
         public ref LSA_UNICODE_STRING this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -38,6 +40,7 @@ public partial struct KERB_ADD_CREDENTIALS_REQUEST_EX
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<LSA_UNICODE_STRING> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

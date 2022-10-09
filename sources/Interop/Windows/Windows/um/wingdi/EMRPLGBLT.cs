@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -99,6 +100,7 @@ public partial struct EMRPLGBLT
         public POINTL e1;
         public POINTL e2;
 
+        [UnscopedRef]
         public ref POINTL this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -109,6 +111,7 @@ public partial struct EMRPLGBLT
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<POINTL> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
     }
 }

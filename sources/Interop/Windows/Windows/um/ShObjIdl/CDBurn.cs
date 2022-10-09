@@ -3,12 +3,16 @@
 // Ported from um/ShObjIdl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CDBurn.xml' path='doc/member[@name="CDBurn"]/*' />
 [Guid("FBEB8A05-BEEE-4442-804E-409D6C4515E9")]
-public partial struct CDBurn
+public unsafe partial struct CDBurn : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CDBurn));
 }

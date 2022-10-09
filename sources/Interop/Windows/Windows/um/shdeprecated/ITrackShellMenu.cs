@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("8278F932-2A3E-11D2-838F-00C04FD918D0")]
 [NativeTypeName("struct ITrackShellMenu : IShellMenu")]
 [NativeInheritance("IShellMenu")]
-public unsafe partial struct ITrackShellMenu : ITrackShellMenu.Interface
+public unsafe partial struct ITrackShellMenu : ITrackShellMenu.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITrackShellMenu));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -91,6 +92,7 @@ public unsafe partial struct INPUTCONTEXT
         public CANDIDATEFORM e2;
         public CANDIDATEFORM e3;
 
+        [UnscopedRef]
         public ref CANDIDATEFORM this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -101,6 +103,7 @@ public unsafe partial struct INPUTCONTEXT
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<CANDIDATEFORM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 4);
     }
 }

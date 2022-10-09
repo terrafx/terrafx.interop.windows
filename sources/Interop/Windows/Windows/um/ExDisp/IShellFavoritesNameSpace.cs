@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("55136804-B2DE-11D1-B9F2-00A0C98BC547")]
 [NativeTypeName("struct IShellFavoritesNameSpace : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace.Interface
+public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IShellFavoritesNameSpace));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

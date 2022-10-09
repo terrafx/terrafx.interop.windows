@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("9090BE5B-502B-41FB-BCCC-0049A6C7254B")]
 [NativeTypeName("struct IQueryContinueWithStatus : IQueryContinue")]
 [NativeInheritance("IQueryContinue")]
-public unsafe partial struct IQueryContinueWithStatus : IQueryContinueWithStatus.Interface
+public unsafe partial struct IQueryContinueWithStatus : IQueryContinueWithStatus.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IQueryContinueWithStatus));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

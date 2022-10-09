@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("19F68549-CA8A-4706-A4EF-481DBC95E12C")]
 [NativeTypeName("struct IMFCapturePhotoConfirmation : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFCapturePhotoConfirmation : IMFCapturePhotoConfirmation.Interface
+public unsafe partial struct IMFCapturePhotoConfirmation : IMFCapturePhotoConfirmation.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFCapturePhotoConfirmation));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("2F0666C6-12F7-4360-B511-A394A0553725")]
 [NativeTypeName("struct ILaunchTargetViewSizePreference : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ILaunchTargetViewSizePreference : ILaunchTargetViewSizePreference.Interface
+public unsafe partial struct ILaunchTargetViewSizePreference : ILaunchTargetViewSizePreference.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ILaunchTargetViewSizePreference));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

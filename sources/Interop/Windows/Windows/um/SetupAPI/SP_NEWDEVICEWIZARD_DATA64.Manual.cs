@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -47,6 +48,7 @@ public partial struct SP_NEWDEVICEWIZARD_DATA64
         public HPROPSHEETPAGE e18;
         public HPROPSHEETPAGE e19;
 
+        [UnscopedRef]
         public ref HPROPSHEETPAGE this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -57,6 +59,7 @@ public partial struct SP_NEWDEVICEWIZARD_DATA64
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<HPROPSHEETPAGE> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 20);
     }
 }

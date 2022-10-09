@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -32,6 +33,7 @@ public partial struct DVD_MultichannelAudioAttributes
         public DVD_MUA_MixingInfo e6;
         public DVD_MUA_MixingInfo e7;
 
+        [UnscopedRef]
         public ref DVD_MUA_MixingInfo this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +44,7 @@ public partial struct DVD_MultichannelAudioAttributes
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<DVD_MUA_MixingInfo> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 
@@ -57,6 +60,7 @@ public partial struct DVD_MultichannelAudioAttributes
         public DVD_MUA_Coeff e6;
         public DVD_MUA_Coeff e7;
 
+        [UnscopedRef]
         public ref DVD_MUA_Coeff this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -67,6 +71,7 @@ public partial struct DVD_MultichannelAudioAttributes
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<DVD_MUA_Coeff> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 }

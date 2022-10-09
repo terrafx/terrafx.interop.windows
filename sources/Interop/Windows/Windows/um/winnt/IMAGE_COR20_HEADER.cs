@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -53,22 +54,24 @@ public partial struct IMAGE_COR20_HEADER
     public IMAGE_DATA_DIRECTORY ManagedNativeHeader;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.EntryPointToken"]/*' />
+    [UnscopedRef]
     public ref uint EntryPointToken
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.EntryPointToken, 1));
+            return ref Anonymous.EntryPointToken;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.EntryPointRVA"]/*' />
+    [UnscopedRef]
     public ref uint EntryPointRVA
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.EntryPointRVA, 1));
+            return ref Anonymous.EntryPointRVA;
         }
     }
 

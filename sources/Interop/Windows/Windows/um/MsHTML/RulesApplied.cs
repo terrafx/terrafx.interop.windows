@@ -3,12 +3,16 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='RulesApplied.xml' path='doc/member[@name="RulesApplied"]/*' />
 [Guid("7C803920-7A53-4D26-98AC-FDD23E6B9E01")]
-public partial struct RulesApplied
+public unsafe partial struct RulesApplied : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_RulesApplied));
 }

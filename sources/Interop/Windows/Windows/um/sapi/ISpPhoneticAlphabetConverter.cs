@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("133ADCD4-19B4-4020-9FDC-842E78253B17")]
 [NativeTypeName("struct ISpPhoneticAlphabetConverter : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetConverter.Interface
+public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetConverter.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpPhoneticAlphabetConverter));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

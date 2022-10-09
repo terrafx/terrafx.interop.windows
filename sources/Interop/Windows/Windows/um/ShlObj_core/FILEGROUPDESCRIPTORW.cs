@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -26,6 +27,7 @@ public partial struct FILEGROUPDESCRIPTORW
     {
         public FILEDESCRIPTORW e0;
 
+        [UnscopedRef]
         public ref FILEDESCRIPTORW this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -36,6 +38,7 @@ public partial struct FILEGROUPDESCRIPTORW
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<FILEDESCRIPTORW> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

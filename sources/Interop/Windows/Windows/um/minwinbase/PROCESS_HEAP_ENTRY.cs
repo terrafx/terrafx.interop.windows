@@ -3,6 +3,7 @@
 // Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -34,22 +35,24 @@ public unsafe partial struct PROCESS_HEAP_ENTRY
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Block"]/*' />
+    [UnscopedRef]
     public ref _Anonymous_e__Union._Block_e__Struct Block
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Block, 1));
+            return ref Anonymous.Block;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Region"]/*' />
+    [UnscopedRef]
     public ref _Anonymous_e__Union._Region_e__Struct Region
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Region, 1));
+            return ref Anonymous.Region;
         }
     }
 

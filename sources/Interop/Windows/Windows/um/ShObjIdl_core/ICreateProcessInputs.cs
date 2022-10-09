@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("F6EF6140-E26F-4D82-BAC4-E9BA5FD239A8")]
 [NativeTypeName("struct ICreateProcessInputs : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interface
+public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICreateProcessInputs));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

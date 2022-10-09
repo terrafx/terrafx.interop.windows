@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("C3B284D4-6D39-4359-B3CF-B56DDB3BB39C")]
 [NativeTypeName("struct IAudioVolumeDuckNotification : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAudioVolumeDuckNotification : IAudioVolumeDuckNotification.Interface
+public unsafe partial struct IAudioVolumeDuckNotification : IAudioVolumeDuckNotification.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAudioVolumeDuckNotification));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

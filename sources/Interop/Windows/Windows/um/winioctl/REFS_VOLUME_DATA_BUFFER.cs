@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -83,6 +84,7 @@ public partial struct REFS_VOLUME_DATA_BUFFER
         public LARGE_INTEGER e7;
         public LARGE_INTEGER e8;
 
+        [UnscopedRef]
         public ref LARGE_INTEGER this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -93,6 +95,7 @@ public partial struct REFS_VOLUME_DATA_BUFFER
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<LARGE_INTEGER> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 9);
     }
 }

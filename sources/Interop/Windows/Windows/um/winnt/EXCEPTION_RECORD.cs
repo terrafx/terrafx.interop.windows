@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -55,6 +56,7 @@ public unsafe partial struct EXCEPTION_RECORD
         public nuint e13;
         public nuint e14;
 
+        [UnscopedRef]
         public ref nuint this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -65,6 +67,7 @@ public unsafe partial struct EXCEPTION_RECORD
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<nuint> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 15);
     }
 }

@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -15,19 +17,75 @@ public partial struct KSDATAFORMAT
     [NativeTypeName("KSDATAFORMAT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ks.h:1096:5)")]
     internal _Anonymous_e__Struct Anonymous;
 
-    public ref uint FormatSize => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FormatSize, 1));
+    [UnscopedRef]
+    public ref uint FormatSize
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.FormatSize;
+        }
+    }
 
-    public ref uint Flags => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+    [UnscopedRef]
+    public ref uint Flags
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.Flags;
+        }
+    }
 
-    public ref uint SampleSize => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SampleSize, 1));
+    [UnscopedRef]
+    public ref uint SampleSize
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.SampleSize;
+        }
+    }
 
-    public ref uint Reserved => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Reserved, 1));
+    [UnscopedRef]
+    public ref uint Reserved
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.Reserved;
+        }
+    }
 
-    public ref Guid MajorFormat => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.MajorFormat, 1));
+    [UnscopedRef]
+    public ref Guid MajorFormat
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.MajorFormat;
+        }
+    }
 
-    public ref Guid SubFormat => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SubFormat, 1));
+    [UnscopedRef]
+    public ref Guid SubFormat
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.SubFormat;
+        }
+    }
 
-    public ref Guid Specifier => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Specifier, 1));
+    [UnscopedRef]
+    public ref Guid Specifier
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.Specifier;
+        }
+    }
 
     [FieldOffset(0)]
     [NativeTypeName("LONGLONG")]

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -33,6 +34,7 @@ public partial struct STORAGE_COUNTERS
     {
         public STORAGE_COUNTER e0;
 
+        [UnscopedRef]
         public ref STORAGE_COUNTER this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,6 +45,7 @@ public partial struct STORAGE_COUNTERS
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<STORAGE_COUNTER> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

@@ -3,12 +3,16 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVDSPSpeakerFill.xml' path='doc/member[@name="CODECAPI_AVDSPSpeakerFill"]/*' />
 [Guid("5612BCA1-56DA-4582-8DA1-CA8090F92768")]
-public partial struct CODECAPI_AVDSPSpeakerFill
+public unsafe partial struct CODECAPI_AVDSPSpeakerFill : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVDSPSpeakerFill));
 }

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("2E5EA3E0-E924-11D2-B6DA-00A0C995E8DF")]
 [NativeTypeName("struct IDecimateVideoImage : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDecimateVideoImage : IDecimateVideoImage.Interface
+public unsafe partial struct IDecimateVideoImage : IDecimateVideoImage.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDecimateVideoImage));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

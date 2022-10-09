@@ -3,12 +3,16 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVDecCommonInputFormat.xml' path='doc/member[@name="CODECAPI_AVDecCommonInputFormat"]/*' />
 [Guid("E5005239-BD89-4BE3-9C0F-5DDE317988CC")]
-public partial struct CODECAPI_AVDecCommonInputFormat
+public unsafe partial struct CODECAPI_AVDecCommonInputFormat : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVDecCommonInputFormat));
 }

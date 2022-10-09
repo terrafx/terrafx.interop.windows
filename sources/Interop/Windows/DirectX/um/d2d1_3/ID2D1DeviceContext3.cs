@@ -19,6 +19,7 @@ using static TerraFX.Interop.DirectX.D2D1_IMAGE_SOURCE_LOADING_OPTIONS;
 using static TerraFX.Interop.DirectX.D2D1_INTERPOLATION_MODE;
 using static TerraFX.Interop.DirectX.D2D1_SPRITE_OPTIONS;
 using static TerraFX.Interop.DirectX.DWRITE_MEASURING_MODE;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -27,8 +28,10 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct ID2D1DeviceContext3 : ID2D1DeviceContext2")]
 [NativeInheritance("ID2D1DeviceContext2")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct ID2D1DeviceContext3 : ID2D1DeviceContext3.Interface
+public unsafe partial struct ID2D1DeviceContext3 : ID2D1DeviceContext3.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1DeviceContext3));
+
     public void** lpVtbl;
 
     public HRESULT CreateBitmap([NativeTypeName("D2D1_SIZE_U")] D2D_SIZE_U size, [NativeTypeName("const D2D1_BITMAP_PROPERTIES &")] D2D1_BITMAP_PROPERTIES* bitmapProperties, ID2D1Bitmap** bitmap)

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -25,22 +26,24 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Lev1Depends"]/*' />
+    [UnscopedRef]
     public Span<STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY> Lev1Depends
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return Anonymous.Lev1Depends.AsSpan(unchecked((int)NumberEntries));
+            return Anonymous.Lev1Depends.AsSpan(unchecked((int)(NumberEntries)));
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Lev2Depends"]/*' />
+    [UnscopedRef]
     public Span<STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY> Lev2Depends
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return Anonymous.Lev2Depends.AsSpan(unchecked((int)NumberEntries));
+            return Anonymous.Lev2Depends.AsSpan(unchecked((int)(NumberEntries)));
         }
     }
 
@@ -63,6 +66,7 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
         {
             public STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY e0;
 
+            [UnscopedRef]
             public ref STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -73,6 +77,7 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [UnscopedRef]
             public Span<STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
 
@@ -81,6 +86,7 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
         {
             public STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY e0;
 
+            [UnscopedRef]
             public ref STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -91,6 +97,7 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [UnscopedRef]
             public Span<STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }

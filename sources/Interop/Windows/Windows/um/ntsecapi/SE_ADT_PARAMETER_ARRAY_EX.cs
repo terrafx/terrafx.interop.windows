@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -82,6 +83,7 @@ public partial struct SE_ADT_PARAMETER_ARRAY_EX
         public SE_ADT_PARAMETER_ARRAY_ENTRY e30;
         public SE_ADT_PARAMETER_ARRAY_ENTRY e31;
 
+        [UnscopedRef]
         public ref SE_ADT_PARAMETER_ARRAY_ENTRY this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -92,6 +94,7 @@ public partial struct SE_ADT_PARAMETER_ARRAY_EX
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<SE_ADT_PARAMETER_ARRAY_ENTRY> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 32);
     }
 }

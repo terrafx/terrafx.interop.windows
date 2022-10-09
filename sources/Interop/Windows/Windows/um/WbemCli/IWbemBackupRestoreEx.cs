@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("A359DEC5-E813-4834-8A2A-BA7F1D777D76")]
 [NativeTypeName("struct IWbemBackupRestoreEx : IWbemBackupRestore")]
 [NativeInheritance("IWbemBackupRestore")]
-public unsafe partial struct IWbemBackupRestoreEx : IWbemBackupRestoreEx.Interface
+public unsafe partial struct IWbemBackupRestoreEx : IWbemBackupRestoreEx.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWbemBackupRestoreEx));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

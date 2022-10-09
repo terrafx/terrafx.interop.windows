@@ -3,12 +3,16 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncDDHeadphoneMode.xml' path='doc/member[@name="CODECAPI_AVEncDDHeadphoneMode"]/*' />
 [Guid("4052DBEC-52F5-42F5-9B00-D134B1341B9D")]
-public partial struct CODECAPI_AVEncDDHeadphoneMode
+public unsafe partial struct CODECAPI_AVEncDDHeadphoneMode : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncDDHeadphoneMode));
 }

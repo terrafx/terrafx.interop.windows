@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -24,6 +25,7 @@ public partial struct SOCKET_ADDRESS_LIST
     {
         public SOCKET_ADDRESS e0;
 
+        [UnscopedRef]
         public ref SOCKET_ADDRESS this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,6 +36,7 @@ public partial struct SOCKET_ADDRESS_LIST
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<SOCKET_ADDRESS> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

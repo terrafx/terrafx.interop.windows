@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -38,6 +39,7 @@ public partial struct SCM_PD_FIRMWARE_INFO
     {
         public SCM_PD_FIRMWARE_SLOT_INFO e0;
 
+        [UnscopedRef]
         public ref SCM_PD_FIRMWARE_SLOT_INFO this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -48,6 +50,7 @@ public partial struct SCM_PD_FIRMWARE_INFO
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<SCM_PD_FIRMWARE_SLOT_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

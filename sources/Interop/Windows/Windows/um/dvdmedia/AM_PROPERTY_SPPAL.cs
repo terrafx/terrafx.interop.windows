@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -36,6 +37,7 @@ public partial struct AM_PROPERTY_SPPAL
         public AM_DVD_YUV e14;
         public AM_DVD_YUV e15;
 
+        [UnscopedRef]
         public ref AM_DVD_YUV this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -46,6 +48,7 @@ public partial struct AM_PROPERTY_SPPAL
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<AM_DVD_YUV> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
     }
 }

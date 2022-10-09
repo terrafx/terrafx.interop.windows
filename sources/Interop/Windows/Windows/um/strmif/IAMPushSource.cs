@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("F185FE76-E64E-11D2-B76E-00C04FB6BD3D")]
 [NativeTypeName("struct IAMPushSource : IAMLatency")]
 [NativeInheritance("IAMLatency")]
-public unsafe partial struct IAMPushSource : IAMPushSource.Interface
+public unsafe partial struct IAMPushSource : IAMPushSource.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMPushSource));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

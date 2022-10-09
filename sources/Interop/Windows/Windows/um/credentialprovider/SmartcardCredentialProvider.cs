@@ -3,12 +3,16 @@
 // Ported from um/credentialprovider.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SmartcardCredentialProvider.xml' path='doc/member[@name="SmartcardCredentialProvider"]/*' />
 [Guid("8FD7E19C-3BF7-489B-A72C-846AB3678C96")]
-public partial struct SmartcardCredentialProvider
+public unsafe partial struct SmartcardCredentialProvider : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_SmartcardCredentialProvider));
 }

@@ -2115,13 +2115,13 @@ public static unsafe partial class Windows
     public const int NEGOTIATE_MAX_PREFIX = 32;
 
     [NativeTypeName("#define SAM_PASSWORD_CHANGE_NOTIFY_ROUTINE \"PasswordChangeNotify\"")]
-    public static ReadOnlySpan<byte> SAM_PASSWORD_CHANGE_NOTIFY_ROUTINE => new byte[] { 0x50, 0x61, 0x73, 0x73, 0x77, 0x6F, 0x72, 0x64, 0x43, 0x68, 0x61, 0x6E, 0x67, 0x65, 0x4E, 0x6F, 0x74, 0x69, 0x66, 0x79, 0x00 };
+    public static ReadOnlySpan<byte> SAM_PASSWORD_CHANGE_NOTIFY_ROUTINE => "PasswordChangeNotify"u8;
 
     [NativeTypeName("#define SAM_INIT_NOTIFICATION_ROUTINE \"InitializeChangeNotify\"")]
-    public static ReadOnlySpan<byte> SAM_INIT_NOTIFICATION_ROUTINE => new byte[] { 0x49, 0x6E, 0x69, 0x74, 0x69, 0x61, 0x6C, 0x69, 0x7A, 0x65, 0x43, 0x68, 0x61, 0x6E, 0x67, 0x65, 0x4E, 0x6F, 0x74, 0x69, 0x66, 0x79, 0x00 };
+    public static ReadOnlySpan<byte> SAM_INIT_NOTIFICATION_ROUTINE => "InitializeChangeNotify"u8;
 
     [NativeTypeName("#define SAM_PASSWORD_FILTER_ROUTINE \"PasswordFilter\"")]
-    public static ReadOnlySpan<byte> SAM_PASSWORD_FILTER_ROUTINE => new byte[] { 0x50, 0x61, 0x73, 0x73, 0x77, 0x6F, 0x72, 0x64, 0x46, 0x69, 0x6C, 0x74, 0x65, 0x72, 0x00 };
+    public static ReadOnlySpan<byte> SAM_PASSWORD_FILTER_ROUTINE => "PasswordFilter"u8;
 
     [NativeTypeName("#define RtlGenRandom SystemFunction036")]
     public static delegate*<void*, uint, byte> RtlGenRandom => &SystemFunction036;
@@ -2151,7 +2151,7 @@ public static unsafe partial class Windows
     public const int KERBEROS_REVISION = 6;
 
     [NativeTypeName("#define MICROSOFT_KERBEROS_NAME_A \"Kerberos\"")]
-    public static ReadOnlySpan<byte> MICROSOFT_KERBEROS_NAME_A => new byte[] { 0x4B, 0x65, 0x72, 0x62, 0x65, 0x72, 0x6F, 0x73, 0x00 };
+    public static ReadOnlySpan<byte> MICROSOFT_KERBEROS_NAME_A => "Kerberos"u8;
 
     [NativeTypeName("#define MICROSOFT_KERBEROS_NAME_W L\"Kerberos\"")]
     public const string MICROSOFT_KERBEROS_NAME_W = "Kerberos";
@@ -2205,7 +2205,7 @@ public static unsafe partial class Windows
     public static delegate*<ushort*, ACL**, byte> AuditQueryGlobalSacl => &AuditQueryGlobalSaclW;
 
     [NativeTypeName("#define PKU2U_PACKAGE_NAME_A \"pku2u\"")]
-    public static ReadOnlySpan<byte> PKU2U_PACKAGE_NAME_A => new byte[] { 0x70, 0x6B, 0x75, 0x32, 0x75, 0x00 };
+    public static ReadOnlySpan<byte> PKU2U_PACKAGE_NAME_A => "pku2u"u8;
 
     [NativeTypeName("#define PKU2U_PACKAGE_NAME L\"pku2u\"")]
     public const string PKU2U_PACKAGE_NAME = "pku2u";

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -24,6 +25,7 @@ public unsafe partial struct DISPATCHER_CONTEXT_NONVOLREG_ARM64
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.GpNvRegs"]/*' />
+    [UnscopedRef]
     public Span<ulong> GpNvRegs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,6 +36,7 @@ public unsafe partial struct DISPATCHER_CONTEXT_NONVOLREG_ARM64
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.FpNvRegs"]/*' />
+    [UnscopedRef]
     public Span<double> FpNvRegs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

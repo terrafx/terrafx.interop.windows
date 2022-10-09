@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("B92B56A9-8B55-4E14-9A89-0199BBB6F93B")]
 [NativeTypeName("struct IDesktopWallpaper : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
+public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDesktopWallpaper));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

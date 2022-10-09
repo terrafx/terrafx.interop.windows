@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("86CBC910-E533-4751-8E3B-F19B5B806A03")]
 [NativeTypeName("struct IMFVideoSampleAllocator : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFVideoSampleAllocator : IMFVideoSampleAllocator.Interface
+public unsafe partial struct IMFVideoSampleAllocator : IMFVideoSampleAllocator.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFVideoSampleAllocator));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

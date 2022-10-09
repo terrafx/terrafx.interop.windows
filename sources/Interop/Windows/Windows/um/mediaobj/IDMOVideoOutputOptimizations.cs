@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("BE8F4F4E-5B16-4D29-B350-7F6B5D9298AC")]
 [NativeTypeName("struct IDMOVideoOutputOptimizations : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptimizations.Interface
+public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptimizations.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDMOVideoOutputOptimizations));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

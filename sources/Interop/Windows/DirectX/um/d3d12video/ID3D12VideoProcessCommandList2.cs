@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -16,8 +17,10 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct ID3D12VideoProcessCommandList2 : ID3D12VideoProcessCommandList1")]
 [NativeInheritance("ID3D12VideoProcessCommandList1")]
 [SupportedOSPlatform("windows10.0.19041.0")]
-public unsafe partial struct ID3D12VideoProcessCommandList2 : ID3D12VideoProcessCommandList2.Interface
+public unsafe partial struct ID3D12VideoProcessCommandList2 : ID3D12VideoProcessCommandList2.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D12VideoProcessCommandList2));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

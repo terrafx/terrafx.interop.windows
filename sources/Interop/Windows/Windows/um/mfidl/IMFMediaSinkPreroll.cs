@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("5DFD4B2A-7674-4110-A4E6-8A68FD5F3688")]
 [NativeTypeName("struct IMFMediaSinkPreroll : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFMediaSinkPreroll : IMFMediaSinkPreroll.Interface
+public unsafe partial struct IMFMediaSinkPreroll : IMFMediaSinkPreroll.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFMediaSinkPreroll));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

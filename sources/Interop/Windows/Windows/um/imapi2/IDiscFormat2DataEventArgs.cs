@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("2735413D-7F64-5B0F-8F00-5D77AFBE261E")]
 [NativeTypeName("struct IDiscFormat2DataEventArgs : IWriteEngine2EventArgs")]
 [NativeInheritance("IWriteEngine2EventArgs")]
-public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventArgs.Interface
+public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventArgs.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDiscFormat2DataEventArgs));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

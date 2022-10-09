@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("A96BB1DB-172E-4667-82B5-AD97A252318F")]
 [NativeTypeName("struct IPrintDocumentPageSource : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IPrintDocumentPageSource : IPrintDocumentPageSource.Interface
+public unsafe partial struct IPrintDocumentPageSource : IPrintDocumentPageSource.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPrintDocumentPageSource));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

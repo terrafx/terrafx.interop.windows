@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -33,6 +34,7 @@ public partial struct STORAGE_DEVICE_FAULT_DOMAIN_DESCRIPTOR
     {
         public Guid e0;
 
+        [UnscopedRef]
         public ref Guid this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,6 +45,7 @@ public partial struct STORAGE_DEVICE_FAULT_DOMAIN_DESCRIPTOR
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<Guid> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

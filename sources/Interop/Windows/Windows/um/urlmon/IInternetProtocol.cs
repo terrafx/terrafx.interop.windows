@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("79EAC9E4-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IInternetProtocol : IInternetProtocolRoot")]
 [NativeInheritance("IInternetProtocolRoot")]
-public unsafe partial struct IInternetProtocol : IInternetProtocol.Interface
+public unsafe partial struct IInternetProtocol : IInternetProtocol.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IInternetProtocol));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

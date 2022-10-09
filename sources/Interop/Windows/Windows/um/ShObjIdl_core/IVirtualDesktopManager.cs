@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("A5CD92FF-29BE-454C-8D04-D82879FB3F1B")]
 [NativeTypeName("struct IVirtualDesktopManager : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IVirtualDesktopManager : IVirtualDesktopManager.Interface
+public unsafe partial struct IVirtualDesktopManager : IVirtualDesktopManager.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVirtualDesktopManager));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("676AA6DD-238A-410D-BB99-65668D01605A")]
 [NativeTypeName("struct IMFTopologyNodeAttributeEditor : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFTopologyNodeAttributeEditor : IMFTopologyNodeAttributeEditor.Interface
+public unsafe partial struct IMFTopologyNodeAttributeEditor : IMFTopologyNodeAttributeEditor.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFTopologyNodeAttributeEditor));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

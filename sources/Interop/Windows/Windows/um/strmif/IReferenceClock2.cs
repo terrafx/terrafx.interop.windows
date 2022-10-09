@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("36B73885-C2C8-11CF-8B46-00805F6CEF60")]
 [NativeTypeName("struct IReferenceClock2 : IReferenceClock")]
 [NativeInheritance("IReferenceClock")]
-public unsafe partial struct IReferenceClock2 : IReferenceClock2.Interface
+public unsafe partial struct IReferenceClock2 : IReferenceClock2.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IReferenceClock2));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

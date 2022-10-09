@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -33,6 +34,7 @@ public unsafe partial struct EVENTSFORLOGFILE
     {
         public EVENTLOGRECORD e0;
 
+        [UnscopedRef]
         public ref EVENTLOGRECORD this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,6 +45,7 @@ public unsafe partial struct EVENTSFORLOGFILE
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<EVENTLOGRECORD> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

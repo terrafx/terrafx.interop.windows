@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("7A1EF0D5-1581-4741-88E4-209A49F11A10")]
 [NativeTypeName("struct ISpeechWaveFormatEx : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct ISpeechWaveFormatEx : ISpeechWaveFormatEx.Interface
+public unsafe partial struct ISpeechWaveFormatEx : ISpeechWaveFormatEx.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpeechWaveFormatEx));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

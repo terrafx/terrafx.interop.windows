@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 public static unsafe partial class URL
 {
     [NativeTypeName("#define URL_OID_GET_OBJECT_URL_FUNC \"UrlDllGetObjectUrl\"")]
-    public static ReadOnlySpan<byte> URL_OID_GET_OBJECT_URL_FUNC => new byte[] { 0x55, 0x72, 0x6C, 0x44, 0x6C, 0x6C, 0x47, 0x65, 0x74, 0x4F, 0x62, 0x6A, 0x65, 0x63, 0x74, 0x55, 0x72, 0x6C, 0x00 };
+    public static ReadOnlySpan<byte> URL_OID_GET_OBJECT_URL_FUNC => "UrlDllGetObjectUrl"u8;
 
     [NativeTypeName("#define URL_OID_CERTIFICATE_ISSUER ((LPCSTR)1)")]
     public static sbyte* URL_OID_CERTIFICATE_ISSUER => ((sbyte*)(1));

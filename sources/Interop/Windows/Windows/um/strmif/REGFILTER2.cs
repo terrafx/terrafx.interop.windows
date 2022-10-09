@@ -3,6 +3,7 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -24,42 +25,46 @@ public unsafe partial struct REGFILTER2
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.cPins"]/*' />
+    [UnscopedRef]
     public ref uint cPins
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous1.cPins, 1));
+            return ref Anonymous.Anonymous1.cPins;
         }
     }
 
     /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.rgPins"]/*' />
+    [UnscopedRef]
     public ref REGFILTERPINS* rgPins
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.Anonymous1.rgPins;
+            return ref Anonymous.Anonymous1.rgPins;
         }
     }
 
     /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.cPins2"]/*' />
+    [UnscopedRef]
     public ref uint cPins2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous2.cPins2, 1));
+            return ref Anonymous.Anonymous2.cPins2;
         }
     }
 
     /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.rgPins2"]/*' />
+    [UnscopedRef]
     public ref REGFILTERPINS2* rgPins2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.Anonymous2.rgPins2;
+            return ref Anonymous.Anonymous2.rgPins2;
         }
     }
 

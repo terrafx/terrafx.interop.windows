@@ -3,12 +3,16 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncVideoLTRBufferControl.xml' path='doc/member[@name="CODECAPI_AVEncVideoLTRBufferControl"]/*' />
 [Guid("A4A0E93D-4CBC-444C-89F4-826D310E92A7")]
-public partial struct CODECAPI_AVEncVideoLTRBufferControl
+public unsafe partial struct CODECAPI_AVEncVideoLTRBufferControl : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncVideoLTRBufferControl));
 }

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -29,6 +30,7 @@ public partial struct TTPOLYCURVE
     {
         public POINTFX e0;
 
+        [UnscopedRef]
         public ref POINTFX this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,6 +41,7 @@ public partial struct TTPOLYCURVE
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<POINTFX> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

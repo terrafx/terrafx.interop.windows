@@ -3,6 +3,8 @@
 // Ported from um/shellapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -32,225 +34,255 @@ public unsafe partial struct SHELLEXECUTEINFOA
     public SHELLEXECUTEINFO64A _value64;
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint cbSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
+                return ref _value32.cbSize;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
+                return ref _value64.cbSize;
             }
         }
     }
 
     [NativeTypeName("ULONG")]
+    [UnscopedRef]
     public ref uint fMask
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.fMask, 1));
+                return ref _value32.fMask;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.fMask, 1));
+                return ref _value64.fMask;
             }
         }
     }
 
+    [UnscopedRef]
     public ref HWND hwnd
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.hwnd, 1));
+                return ref _value32.hwnd;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.hwnd, 1));
+                return ref _value64.hwnd;
             }
         }
     }
 
     [NativeTypeName("LPCSTR")]
+    [UnscopedRef]
     public ref sbyte* lpVerb
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).lpVerb;
+                return ref _value32.lpVerb;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).lpVerb;
+                return ref _value64.lpVerb;
             }
         }
     }
 
     [NativeTypeName("LPCSTR")]
+    [UnscopedRef]
     public ref sbyte* lpFile
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).lpFile;
+                return ref _value32.lpFile;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).lpFile;
+                return ref _value64.lpFile;
             }
         }
     }
 
     [NativeTypeName("LPCSTR")]
+    [UnscopedRef]
     public ref sbyte* lpParameters
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).lpParameters;
+                return ref _value32.lpParameters;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).lpParameters;
+                return ref _value64.lpParameters;
             }
         }
     }
 
     [NativeTypeName("LPCSTR")]
+    [UnscopedRef]
     public ref sbyte* lpDirectory
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).lpDirectory;
+                return ref _value32.lpDirectory;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).lpDirectory;
+                return ref _value64.lpDirectory;
             }
         }
     }
 
+    [UnscopedRef]
     public ref int nShow
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.nShow, 1));
+                return ref _value32.nShow;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.nShow, 1));
+                return ref _value64.nShow;
             }
         }
     }
 
+    [UnscopedRef]
     public ref HINSTANCE hInstApp
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.hInstApp, 1));
+                return ref _value32.hInstApp;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.hInstApp, 1));
+                return ref _value64.hInstApp;
             }
         }
     }
 
+    [UnscopedRef]
     public ref void* lpIDList
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).lpIDList;
+                return ref _value32.lpIDList;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).lpIDList;
+                return ref _value64.lpIDList;
             }
         }
     }
 
     [NativeTypeName("LPCSTR")]
+    [UnscopedRef]
     public ref sbyte* lpClass
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).lpClass;
+                return ref _value32.lpClass;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).lpClass;
+                return ref _value64.lpClass;
             }
         }
     }
 
+    [UnscopedRef]
     public ref HKEY hkeyClass
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.hkeyClass, 1));
+                return ref _value32.hkeyClass;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.hkeyClass, 1));
+                return ref _value64.hkeyClass;
             }
         }
     }
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint dwHotKey
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.dwHotKey, 1));
+                return ref _value32.dwHotKey;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.dwHotKey, 1));
+                return ref _value64.dwHotKey;
             }
         }
     }
 
+    [UnscopedRef]
     public ref HANDLE hProcess
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.hProcess, 1));
+                return ref _value32.hProcess;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.hProcess, 1));
+                return ref _value64.hProcess;
             }
         }
     }
 
+    [UnscopedRef]
     public ref HANDLE hIcon
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
@@ -264,8 +296,10 @@ public unsafe partial struct SHELLEXECUTEINFOA
         }
     }
 
+    [UnscopedRef]
     public ref HANDLE hMonitor
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
@@ -278,5 +312,4 @@ public unsafe partial struct SHELLEXECUTEINFOA
             }
         }
     }
-
 }

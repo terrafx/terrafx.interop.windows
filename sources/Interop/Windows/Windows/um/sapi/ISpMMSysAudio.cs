@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("15806F6E-1D70-4B48-98E6-3B1A007509AB")]
 [NativeTypeName("struct ISpMMSysAudio : ISpAudio")]
 [NativeInheritance("ISpAudio")]
-public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface
+public unsafe partial struct ISpMMSysAudio : ISpMMSysAudio.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpMMSysAudio));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

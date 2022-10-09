@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("2456BD58-C067-4513-84FE-8D0C88FFDC61")]
 [NativeTypeName("struct IMFSinkWriterCallback2 : IMFSinkWriterCallback")]
 [NativeInheritance("IMFSinkWriterCallback")]
-public unsafe partial struct IMFSinkWriterCallback2 : IMFSinkWriterCallback2.Interface
+public unsafe partial struct IMFSinkWriterCallback2 : IMFSinkWriterCallback2.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFSinkWriterCallback2));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

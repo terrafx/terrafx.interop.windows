@@ -3,6 +3,7 @@
 // Ported from shared/ws2ipdef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -30,22 +31,24 @@ public partial struct SOCKADDR_IN6
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.sin6_scope_id"]/*' />
+    [UnscopedRef]
     public ref uint sin6_scope_id
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.sin6_scope_id, 1));
+            return ref Anonymous.sin6_scope_id;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.sin6_scope_struct"]/*' />
+    [UnscopedRef]
     public ref SCOPE_ID sin6_scope_struct
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.sin6_scope_struct, 1));
+            return ref Anonymous.sin6_scope_struct;
         }
     }
 
