@@ -45,7 +45,7 @@ public unsafe partial struct FILE_NOTIFY_EXTENDED_INFORMATION
     public uint FileAttributes;
 
     /// <include file='FILE_NOTIFY_EXTENDED_INFORMATION.xml' path='doc/member[@name="FILE_NOTIFY_EXTENDED_INFORMATION.Anonymous"]/*' />
-    [NativeTypeName("_FILE_NOTIFY_EXTENDED_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:14440:5)")]
+    [NativeTypeName("_FILE_NOTIFY_EXTENDED_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:14440:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='FILE_NOTIFY_EXTENDED_INFORMATION.xml' path='doc/member[@name="FILE_NOTIFY_EXTENDED_INFORMATION.FileId"]/*' />

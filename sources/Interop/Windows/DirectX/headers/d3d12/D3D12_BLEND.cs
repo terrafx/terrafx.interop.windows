@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -58,4 +58,10 @@ public enum D3D12_BLEND
 
     /// <include file='D3D12_BLEND.xml' path='doc/member[@name="D3D12_BLEND.D3D12_BLEND_INV_SRC1_ALPHA"]/*' />
     D3D12_BLEND_INV_SRC1_ALPHA = 19,
+
+    /// <include file='D3D12_BLEND.xml' path='doc/member[@name="D3D12_BLEND.D3D12_BLEND_ALPHA_FACTOR"]/*' />
+    D3D12_BLEND_ALPHA_FACTOR = 20,
+
+    /// <include file='D3D12_BLEND.xml' path='doc/member[@name="D3D12_BLEND.D3D12_BLEND_INV_ALPHA_FACTOR"]/*' />
+    D3D12_BLEND_INV_ALPHA_FACTOR = 21,
 }

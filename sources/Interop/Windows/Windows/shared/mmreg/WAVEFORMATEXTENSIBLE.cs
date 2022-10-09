@@ -16,7 +16,7 @@ public partial struct WAVEFORMATEXTENSIBLE
     public WAVEFORMATEX Format;
 
     /// <include file='WAVEFORMATEXTENSIBLE.xml' path='doc/member[@name="WAVEFORMATEXTENSIBLE.Samples"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/mmreg.h:2525:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/mmreg.h:2525:5)")]
     public _Samples_e__Union Samples;
 
     /// <include file='WAVEFORMATEXTENSIBLE.xml' path='doc/member[@name="WAVEFORMATEXTENSIBLE.dwChannelMask"]/*' />

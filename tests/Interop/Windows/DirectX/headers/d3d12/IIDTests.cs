@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
@@ -271,6 +271,13 @@ public static partial class IIDTests
         Assert.That(IID_ID3D12DeviceRemovedExtendedDataSettings1, Is.EqualTo(new Guid(0xDBD5AE51, 0x3317, 0x4F0A, 0xAD, 0xF9, 0x1D, 0x7C, 0xED, 0xCA, 0xAE, 0x0B)));
     }
 
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12DeviceRemovedExtendedDataSettings2" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12DeviceRemovedExtendedDataSettings2Test()
+    {
+        Assert.That(IID_ID3D12DeviceRemovedExtendedDataSettings2, Is.EqualTo(new Guid(0x61552388, 0x01ab, 0x4008, 0xa4, 0x36, 0x83, 0xdb, 0x18, 0x95, 0x66, 0xea)));
+    }
+
     /// <summary>Validates that the value of the <see cref="IID_ID3D12DeviceRemovedExtendedData" /> property is correct.</summary>
     [Test]
     public static void IID_ID3D12DeviceRemovedExtendedDataTest()
@@ -383,6 +390,13 @@ public static partial class IIDTests
         Assert.That(IID_ID3D12Device10, Is.EqualTo(new Guid(0x517f8718, 0xaa66, 0x49f9, 0xb0, 0x2b, 0xa7, 0xab, 0x89, 0xc0, 0x60, 0x31)));
     }
 
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12Device11" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12Device11Test()
+    {
+        Assert.That(IID_ID3D12Device11, Is.EqualTo(new Guid(0x5405c344, 0xd457, 0x444e, 0xb4, 0xdd, 0x23, 0x66, 0xe4, 0x5a, 0xee, 0x39)));
+    }
+
     /// <summary>Validates that the value of the <see cref="IID_ID3D12VirtualizationGuestDevice" /> property is correct.</summary>
     [Test]
     public static void IID_ID3D12VirtualizationGuestDeviceTest()
@@ -404,6 +418,27 @@ public static partial class IIDTests
         Assert.That(IID_ID3D12SDKConfiguration, Is.EqualTo(new Guid(0xe9eb5314, 0x33aa, 0x42b2, 0xa7, 0x18, 0xd7, 0x7f, 0x58, 0xb1, 0xf1, 0xc7)));
     }
 
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12SDKConfiguration1" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12SDKConfiguration1Test()
+    {
+        Assert.That(IID_ID3D12SDKConfiguration1, Is.EqualTo(new Guid(0x8aaf9303, 0xad25, 0x48b9, 0x9a, 0x57, 0xd9, 0xc3, 0x7e, 0x00, 0x9d, 0x9f)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12DeviceFactory" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12DeviceFactoryTest()
+    {
+        Assert.That(IID_ID3D12DeviceFactory, Is.EqualTo(new Guid(0x61f307d3, 0xd34e, 0x4e7c, 0x83, 0x74, 0x3b, 0xa4, 0xde, 0x23, 0xcc, 0xcb)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12DeviceConfiguration" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12DeviceConfigurationTest()
+    {
+        Assert.That(IID_ID3D12DeviceConfiguration, Is.EqualTo(new Guid(0x78dbf87b, 0xf766, 0x422b, 0xa6, 0x1c, 0xc8, 0xc4, 0x46, 0xbd, 0xb9, 0xad)));
+    }
+
     /// <summary>Validates that the value of the <see cref="IID_ID3D12GraphicsCommandList5" /> property is correct.</summary>
     [Test]
     public static void IID_ID3D12GraphicsCommandList5Test()
@@ -423,5 +458,12 @@ public static partial class IIDTests
     public static void IID_ID3D12GraphicsCommandList7Test()
     {
         Assert.That(IID_ID3D12GraphicsCommandList7, Is.EqualTo(new Guid(0xdd171223, 0x8b61, 0x4769, 0x90, 0xe3, 0x16, 0x0c, 0xcd, 0xe4, 0xe2, 0xc1)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12GraphicsCommandList8" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12GraphicsCommandList8Test()
+    {
+        Assert.That(IID_ID3D12GraphicsCommandList8, Is.EqualTo(new Guid(0xee936ef9, 0x599d, 0x4d28, 0x93, 0x8e, 0x23, 0xc4, 0xad, 0x05, 0xce, 0x51)));
     }
 }

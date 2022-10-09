@@ -33,7 +33,7 @@ public unsafe partial struct CERT_LOGOTYPE_IMAGE_INFO
     public uint dwLogotypeImageResolutionChoice;
 
     /// <include file='CERT_LOGOTYPE_IMAGE_INFO.xml' path='doc/member[@name="CERT_LOGOTYPE_IMAGE_INFO.Anonymous"]/*' />
-    [NativeTypeName("_CERT_LOGOTYPE_IMAGE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wincrypt.h:5467:5)")]
+    [NativeTypeName("_CERT_LOGOTYPE_IMAGE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wincrypt.h:5467:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='CERT_LOGOTYPE_IMAGE_INFO.xml' path='doc/member[@name="CERT_LOGOTYPE_IMAGE_INFO.pwszLanguage"]/*' />

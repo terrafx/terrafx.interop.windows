@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3dcommon.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Ported from d3dcommon.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -193,6 +193,12 @@ public static partial class D3D
 
     [NativeTypeName("#define D3D_SHADER_FEATURE_ATOMIC_INT64_ON_DESCRIPTOR_HEAP_RESOURCE 0x10000000")]
     public const int D3D_SHADER_FEATURE_ATOMIC_INT64_ON_DESCRIPTOR_HEAP_RESOURCE = 0x10000000;
+
+    [NativeTypeName("#define D3D_SHADER_FEATURE_ADVANCED_TEXTURE_OPS 0x20000000")]
+    public const int D3D_SHADER_FEATURE_ADVANCED_TEXTURE_OPS = 0x20000000;
+
+    [NativeTypeName("#define D3D_SHADER_FEATURE_WRITEABLE_MSAA_TEXTURES 0x40000000")]
+    public const int D3D_SHADER_FEATURE_WRITEABLE_MSAA_TEXTURES = 0x40000000;
 
     [NativeTypeName("#define D3D_COMPONENT_MASK_X 1")]
     public const int D3D_COMPONENT_MASK_X = 1;

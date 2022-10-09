@@ -15,7 +15,7 @@ public partial struct CY
 {
     /// <include file='CY.xml' path='doc/member[@name="CY.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("tagCY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/wtypes.h:679:5)")]
+    [NativeTypeName("tagCY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/wtypes.h:679:5)")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='CY.xml' path='doc/member[@name="CY.int64"]/*' />

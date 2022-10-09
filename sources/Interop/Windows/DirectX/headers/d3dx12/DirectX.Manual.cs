@@ -27,9 +27,9 @@ public static unsafe partial class DirectX
         get
         {
             ReadOnlySpan<byte> data = new byte[] {
-                    0x01, 0x00, 0x00, 0x00,
-                    0x00, 0x00, 0x00, 0x00
-                };
+                0x01, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00
+            };
 
             return ref Unsafe.As<byte, DXGI_SAMPLE_DESC>(ref MemoryMarshal.GetReference(data));
         }

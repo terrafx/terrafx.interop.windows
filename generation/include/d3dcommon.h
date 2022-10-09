@@ -9,7 +9,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0627 */
+ /* File created by MIDL compiler version 8.01.0628 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -51,7 +51,7 @@
 #endif
 #endif
 
-/* Forward Declarations */ 
+/* Forward Declarations */
 
 #ifndef __ID3D10Blob_FWD_DEFINED__
 #define __ID3D10Blob_FWD_DEFINED__
@@ -68,18 +68,18 @@ typedef interface ID3DDestructionNotifier ID3DDestructionNotifier;
 
 
 /* header files for imported files */
-#include "OAIdl.h"
-#include "OCIdl.h"
+#include "oaidl.h"
+#include "ocidl.h"
 
 #ifdef __cplusplus
 extern "C"{
-#endif 
+#endif
 
 
 /* interface __MIDL_itf_d3dcommon_0000_0000 */
-/* [local] */ 
+/* [local] */
 
-typedef 
+typedef
 enum D3D_DRIVER_TYPE
     {
         D3D_DRIVER_TYPE_UNKNOWN	= 0,
@@ -87,10 +87,10 @@ enum D3D_DRIVER_TYPE
         D3D_DRIVER_TYPE_REFERENCE	= ( D3D_DRIVER_TYPE_HARDWARE + 1 ) ,
         D3D_DRIVER_TYPE_NULL	= ( D3D_DRIVER_TYPE_REFERENCE + 1 ) ,
         D3D_DRIVER_TYPE_SOFTWARE	= ( D3D_DRIVER_TYPE_NULL + 1 ) ,
-        D3D_DRIVER_TYPE_WARP	= ( D3D_DRIVER_TYPE_SOFTWARE + 1 ) 
+        D3D_DRIVER_TYPE_WARP	= ( D3D_DRIVER_TYPE_SOFTWARE + 1 )
     } 	D3D_DRIVER_TYPE;
 
-typedef 
+typedef
 enum D3D_FEATURE_LEVEL
     {
         D3D_FEATURE_LEVEL_1_0_CORE	= 0x1000,
@@ -121,7 +121,7 @@ enum D3D_FEATURE_LEVEL
 #define D3D_FL9_1_MAX_TEXTURE_REPEAT                 128
 #define D3D_FL9_2_MAX_TEXTURE_REPEAT                 2048
 #define D3D_FL9_3_MAX_TEXTURE_REPEAT                 8192
-typedef 
+typedef
 enum D3D_PRIMITIVE_TOPOLOGY
     {
         D3D_PRIMITIVE_TOPOLOGY_UNDEFINED	= 0,
@@ -130,6 +130,7 @@ enum D3D_PRIMITIVE_TOPOLOGY
         D3D_PRIMITIVE_TOPOLOGY_LINESTRIP	= 3,
         D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST	= 4,
         D3D_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP	= 5,
+        D3D_PRIMITIVE_TOPOLOGY_TRIANGLEFAN	= 6,
         D3D_PRIMITIVE_TOPOLOGY_LINELIST_ADJ	= 10,
         D3D_PRIMITIVE_TOPOLOGY_LINESTRIP_ADJ	= 11,
         D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST_ADJ	= 12,
@@ -220,7 +221,7 @@ enum D3D_PRIMITIVE_TOPOLOGY
         D3D11_PRIMITIVE_TOPOLOGY_32_CONTROL_POINT_PATCHLIST	= D3D_PRIMITIVE_TOPOLOGY_32_CONTROL_POINT_PATCHLIST
     } 	D3D_PRIMITIVE_TOPOLOGY;
 
-typedef 
+typedef
 enum D3D_PRIMITIVE
     {
         D3D_PRIMITIVE_UNDEFINED	= 0,
@@ -307,7 +308,7 @@ enum D3D_PRIMITIVE
         D3D11_PRIMITIVE_32_CONTROL_POINT_PATCH	= D3D_PRIMITIVE_32_CONTROL_POINT_PATCH
     } 	D3D_PRIMITIVE;
 
-typedef 
+typedef
 enum D3D_SRV_DIMENSION
     {
         D3D_SRV_DIMENSION_UNKNOWN	= 0,
@@ -386,6 +387,8 @@ enum D3D_SRV_DIMENSION
 #define D3D_SHADER_FEATURE_SAMPLER_DESCRIPTOR_HEAP_INDEXING                               0x4000000
 #define D3D_SHADER_FEATURE_WAVE_MMA                                                       0x8000000
 #define D3D_SHADER_FEATURE_ATOMIC_INT64_ON_DESCRIPTOR_HEAP_RESOURCE                       0x10000000
+#define D3D_SHADER_FEATURE_ADVANCED_TEXTURE_OPS                                           0x20000000
+#define D3D_SHADER_FEATURE_WRITEABLE_MSAA_TEXTURES                                        0x40000000
 typedef struct _D3D_SHADER_MACRO
     {
     LPCSTR Name;
@@ -404,53 +407,53 @@ extern RPC_IF_HANDLE __MIDL_itf_d3dcommon_0000_0000_v0_0_s_ifspec;
 #define __ID3D10Blob_INTERFACE_DEFINED__
 
 /* interface ID3D10Blob */
-/* [unique][local][object][uuid] */ 
+/* [unique][local][object][uuid] */
 
 
 EXTERN_C const IID IID_ID3D10Blob;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("8BA5FB08-5195-40e2-AC58-0D989C3A0102")
     ID3D10Blob : public IUnknown
     {
     public:
         virtual LPVOID STDMETHODCALLTYPE GetBufferPointer( void) = 0;
-        
+
         virtual SIZE_T STDMETHODCALLTYPE GetBufferSize( void) = 0;
-        
+
     };
-    
-    
+
+
 #else 	/* C style interface */
 
     typedef struct ID3D10BlobVtbl
     {
         BEGIN_INTERFACE
-        
+
         DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ID3D10Blob * This,
             /* [in] */ REFIID riid,
-            /* [annotation][iid_is][out] */ 
+            /* [annotation][iid_is][out] */
             _COM_Outptr_  void **ppvObject);
-        
+
         DECLSPEC_XFGVIRT(IUnknown, AddRef)
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ID3D10Blob * This);
-        
+
         DECLSPEC_XFGVIRT(IUnknown, Release)
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ID3D10Blob * This);
-        
+
         DECLSPEC_XFGVIRT(ID3D10Blob, GetBufferPointer)
-        LPVOID ( STDMETHODCALLTYPE *GetBufferPointer )( 
+        LPVOID ( STDMETHODCALLTYPE *GetBufferPointer )(
             ID3D10Blob * This);
-        
+
         DECLSPEC_XFGVIRT(ID3D10Blob, GetBufferSize)
-        SIZE_T ( STDMETHODCALLTYPE *GetBufferSize )( 
+        SIZE_T ( STDMETHODCALLTYPE *GetBufferSize )(
             ID3D10Blob * This);
-        
+
         END_INTERFACE
     } ID3D10BlobVtbl;
 
@@ -459,26 +462,26 @@ EXTERN_C const IID IID_ID3D10Blob;
         CONST_VTBL struct ID3D10BlobVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ID3D10Blob_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ID3D10Blob_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ID3D10Blob_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ID3D10Blob_GetBufferPointer(This)	\
-    ( (This)->lpVtbl -> GetBufferPointer(This) ) 
+    ( (This)->lpVtbl -> GetBufferPointer(This) )
 
 #define ID3D10Blob_GetBufferSize(This)	\
-    ( (This)->lpVtbl -> GetBufferSize(This) ) 
+    ( (This)->lpVtbl -> GetBufferSize(This) )
 
 #endif /* COBJMACROS */
 
@@ -492,14 +495,14 @@ EXTERN_C const IID IID_ID3D10Blob;
 
 
 /* interface __MIDL_itf_d3dcommon_0000_0001 */
-/* [local] */ 
+/* [local] */
 
 typedef interface ID3D10Blob* LPD3D10BLOB;
 typedef ID3D10Blob ID3DBlob;
 
 typedef ID3DBlob* LPD3DBLOB;
 #define IID_ID3DBlob IID_ID3D10Blob
-typedef void ( __stdcall *PFN_DESTRUCTION_CALLBACK )( 
+typedef void ( __stdcall *PFN_DESTRUCTION_CALLBACK )(
     void *pData);
 
 
@@ -511,69 +514,69 @@ extern RPC_IF_HANDLE __MIDL_itf_d3dcommon_0000_0001_v0_0_s_ifspec;
 #define __ID3DDestructionNotifier_INTERFACE_DEFINED__
 
 /* interface ID3DDestructionNotifier */
-/* [unique][local][object][uuid] */ 
+/* [unique][local][object][uuid] */
 
 
 EXTERN_C const IID IID_ID3DDestructionNotifier;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
-    
+
     MIDL_INTERFACE("a06eb39a-50da-425b-8c31-4eecd6c270f3")
     ID3DDestructionNotifier : public IUnknown
     {
     public:
-        virtual HRESULT STDMETHODCALLTYPE RegisterDestructionCallback( 
-            /* [annotation] */ 
+        virtual HRESULT STDMETHODCALLTYPE RegisterDestructionCallback(
+            /* [annotation] */
             _In_  PFN_DESTRUCTION_CALLBACK callbackFn,
-            /* [annotation] */ 
+            /* [annotation] */
             _In_  void *pData,
-            /* [annotation] */ 
+            /* [annotation] */
             _Out_  UINT *pCallbackID) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE UnregisterDestructionCallback( 
-            /* [annotation] */ 
+
+        virtual HRESULT STDMETHODCALLTYPE UnregisterDestructionCallback(
+            /* [annotation] */
             _In_  UINT callbackID) = 0;
-        
+
     };
-    
-    
+
+
 #else 	/* C style interface */
 
     typedef struct ID3DDestructionNotifierVtbl
     {
         BEGIN_INTERFACE
-        
+
         DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
             ID3DDestructionNotifier * This,
             /* [in] */ REFIID riid,
-            /* [annotation][iid_is][out] */ 
+            /* [annotation][iid_is][out] */
             _COM_Outptr_  void **ppvObject);
-        
+
         DECLSPEC_XFGVIRT(IUnknown, AddRef)
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+        ULONG ( STDMETHODCALLTYPE *AddRef )(
             ID3DDestructionNotifier * This);
-        
+
         DECLSPEC_XFGVIRT(IUnknown, Release)
-        ULONG ( STDMETHODCALLTYPE *Release )( 
+        ULONG ( STDMETHODCALLTYPE *Release )(
             ID3DDestructionNotifier * This);
-        
+
         DECLSPEC_XFGVIRT(ID3DDestructionNotifier, RegisterDestructionCallback)
-        HRESULT ( STDMETHODCALLTYPE *RegisterDestructionCallback )( 
+        HRESULT ( STDMETHODCALLTYPE *RegisterDestructionCallback )(
             ID3DDestructionNotifier * This,
-            /* [annotation] */ 
+            /* [annotation] */
             _In_  PFN_DESTRUCTION_CALLBACK callbackFn,
-            /* [annotation] */ 
+            /* [annotation] */
             _In_  void *pData,
-            /* [annotation] */ 
+            /* [annotation] */
             _Out_  UINT *pCallbackID);
-        
+
         DECLSPEC_XFGVIRT(ID3DDestructionNotifier, UnregisterDestructionCallback)
-        HRESULT ( STDMETHODCALLTYPE *UnregisterDestructionCallback )( 
+        HRESULT ( STDMETHODCALLTYPE *UnregisterDestructionCallback )(
             ID3DDestructionNotifier * This,
-            /* [annotation] */ 
+            /* [annotation] */
             _In_  UINT callbackID);
-        
+
         END_INTERFACE
     } ID3DDestructionNotifierVtbl;
 
@@ -582,26 +585,26 @@ EXTERN_C const IID IID_ID3DDestructionNotifier;
         CONST_VTBL struct ID3DDestructionNotifierVtbl *lpVtbl;
     };
 
-    
+
 
 #ifdef COBJMACROS
 
 
 #define ID3DDestructionNotifier_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) )
 
 #define ID3DDestructionNotifier_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    ( (This)->lpVtbl -> AddRef(This) )
 
 #define ID3DDestructionNotifier_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    ( (This)->lpVtbl -> Release(This) )
 
 
 #define ID3DDestructionNotifier_RegisterDestructionCallback(This,callbackFn,pData,pCallbackID)	\
-    ( (This)->lpVtbl -> RegisterDestructionCallback(This,callbackFn,pData,pCallbackID) ) 
+    ( (This)->lpVtbl -> RegisterDestructionCallback(This,callbackFn,pData,pCallbackID) )
 
 #define ID3DDestructionNotifier_UnregisterDestructionCallback(This,callbackID)	\
-    ( (This)->lpVtbl -> UnregisterDestructionCallback(This,callbackID) ) 
+    ( (This)->lpVtbl -> UnregisterDestructionCallback(This,callbackID) )
 
 #endif /* COBJMACROS */
 
@@ -615,9 +618,9 @@ EXTERN_C const IID IID_ID3DDestructionNotifier;
 
 
 /* interface __MIDL_itf_d3dcommon_0000_0002 */
-/* [local] */ 
+/* [local] */
 
-typedef 
+typedef
 enum _D3D_INCLUDE_TYPE
     {
         D3D_INCLUDE_LOCAL	= 0,
@@ -636,7 +639,7 @@ DECLARE_INTERFACE(ID3DInclude)
     STDMETHOD(Close)(THIS_ LPCVOID pData) PURE;
 };
 typedef ID3DInclude* LPD3DINCLUDE;
-typedef 
+typedef
 enum _D3D_SHADER_VARIABLE_CLASS
     {
         D3D_SVC_SCALAR	= 0,
@@ -658,7 +661,7 @@ enum _D3D_SHADER_VARIABLE_CLASS
         D3D_SVC_FORCE_DWORD	= 0x7fffffff
     } 	D3D_SHADER_VARIABLE_CLASS;
 
-typedef 
+typedef
 enum _D3D_SHADER_VARIABLE_FLAGS
     {
         D3D_SVF_USERPACKED	= 1,
@@ -672,7 +675,7 @@ enum _D3D_SHADER_VARIABLE_FLAGS
         D3D_SVF_FORCE_DWORD	= 0x7fffffff
     } 	D3D_SHADER_VARIABLE_FLAGS;
 
-typedef 
+typedef
 enum _D3D_SHADER_VARIABLE_TYPE
     {
         D3D_SVT_VOID	= 0,
@@ -793,7 +796,7 @@ enum _D3D_SHADER_VARIABLE_TYPE
         D3D_SVT_FORCE_DWORD	= 0x7fffffff
     } 	D3D_SHADER_VARIABLE_TYPE;
 
-typedef 
+typedef
 enum _D3D_SHADER_INPUT_FLAGS
     {
         D3D_SIF_USERPACKED	= 0x1,
@@ -810,7 +813,7 @@ enum _D3D_SHADER_INPUT_FLAGS
         D3D_SIF_FORCE_DWORD	= 0x7fffffff
     } 	D3D_SHADER_INPUT_FLAGS;
 
-typedef 
+typedef
 enum _D3D_SHADER_INPUT_TYPE
     {
         D3D_SIT_CBUFFER	= 0,
@@ -841,7 +844,7 @@ enum _D3D_SHADER_INPUT_TYPE
         D3D11_SIT_UAV_RWSTRUCTURED_WITH_COUNTER	= D3D_SIT_UAV_RWSTRUCTURED_WITH_COUNTER
     } 	D3D_SHADER_INPUT_TYPE;
 
-typedef 
+typedef
 enum _D3D_SHADER_CBUFFER_FLAGS
     {
         D3D_CBF_USERPACKED	= 1,
@@ -849,7 +852,7 @@ enum _D3D_SHADER_CBUFFER_FLAGS
         D3D_CBF_FORCE_DWORD	= 0x7fffffff
     } 	D3D_SHADER_CBUFFER_FLAGS;
 
-typedef 
+typedef
 enum _D3D_CBUFFER_TYPE
     {
         D3D_CT_CBUFFER	= 0,
@@ -864,7 +867,7 @@ enum _D3D_CBUFFER_TYPE
         D3D11_CT_RESOURCE_BIND_INFO	= D3D_CT_RESOURCE_BIND_INFO
     } 	D3D_CBUFFER_TYPE;
 
-typedef 
+typedef
 enum D3D_NAME
     {
         D3D_NAME_UNDEFINED	= 0,
@@ -923,7 +926,7 @@ enum D3D_NAME
         D3D12_NAME_CULLPRIMITIVE	= D3D_NAME_CULLPRIMITIVE
     } 	D3D_NAME;
 
-typedef 
+typedef
 enum D3D_RESOURCE_RETURN_TYPE
     {
         D3D_RETURN_TYPE_UNORM	= 1,
@@ -950,7 +953,7 @@ enum D3D_RESOURCE_RETURN_TYPE
         D3D11_RETURN_TYPE_CONTINUED	= D3D_RETURN_TYPE_CONTINUED
     } 	D3D_RESOURCE_RETURN_TYPE;
 
-typedef 
+typedef
 enum D3D_REGISTER_COMPONENT_TYPE
     {
         D3D_REGISTER_COMPONENT_UNKNOWN	= 0,
@@ -963,7 +966,7 @@ enum D3D_REGISTER_COMPONENT_TYPE
         D3D10_REGISTER_COMPONENT_FLOAT32	= D3D_REGISTER_COMPONENT_FLOAT32
     } 	D3D_REGISTER_COMPONENT_TYPE;
 
-typedef 
+typedef
 enum D3D_TESSELLATOR_DOMAIN
     {
         D3D_TESSELLATOR_DOMAIN_UNDEFINED	= 0,
@@ -976,7 +979,7 @@ enum D3D_TESSELLATOR_DOMAIN
         D3D11_TESSELLATOR_DOMAIN_QUAD	= D3D_TESSELLATOR_DOMAIN_QUAD
     } 	D3D_TESSELLATOR_DOMAIN;
 
-typedef 
+typedef
 enum D3D_TESSELLATOR_PARTITIONING
     {
         D3D_TESSELLATOR_PARTITIONING_UNDEFINED	= 0,
@@ -991,7 +994,7 @@ enum D3D_TESSELLATOR_PARTITIONING
         D3D11_TESSELLATOR_PARTITIONING_FRACTIONAL_EVEN	= D3D_TESSELLATOR_PARTITIONING_FRACTIONAL_EVEN
     } 	D3D_TESSELLATOR_PARTITIONING;
 
-typedef 
+typedef
 enum D3D_TESSELLATOR_OUTPUT_PRIMITIVE
     {
         D3D_TESSELLATOR_OUTPUT_UNDEFINED	= 0,
@@ -1006,7 +1009,7 @@ enum D3D_TESSELLATOR_OUTPUT_PRIMITIVE
         D3D11_TESSELLATOR_OUTPUT_TRIANGLE_CCW	= D3D_TESSELLATOR_OUTPUT_TRIANGLE_CCW
     } 	D3D_TESSELLATOR_OUTPUT_PRIMITIVE;
 
-typedef 
+typedef
 enum D3D_MIN_PRECISION
     {
         D3D_MIN_PRECISION_DEFAULT	= 0,
@@ -1019,7 +1022,7 @@ enum D3D_MIN_PRECISION
         D3D_MIN_PRECISION_ANY_10	= 0xf1
     } 	D3D_MIN_PRECISION;
 
-typedef 
+typedef
 enum D3D_INTERPOLATION_MODE
     {
         D3D_INTERPOLATION_UNDEFINED	= 0,
@@ -1032,7 +1035,7 @@ enum D3D_INTERPOLATION_MODE
         D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE_SAMPLE	= 7
     } 	D3D_INTERPOLATION_MODE;
 
-typedef 
+typedef
 enum _D3D_PARAMETER_FLAGS
     {
         D3D_PF_NONE	= 0,
@@ -1040,6 +1043,46 @@ enum _D3D_PARAMETER_FLAGS
         D3D_PF_OUT	= 0x2,
         D3D_PF_FORCE_DWORD	= 0x7fffffff
     } 	D3D_PARAMETER_FLAGS;
+
+typedef
+enum D3D_FORMAT_LAYOUT
+    {
+        D3DFL_STANDARD	= 0,
+        D3DFL_CUSTOM	= -1
+    } 	D3D_FORMAT_LAYOUT;
+
+typedef
+enum D3D_FORMAT_TYPE_LEVEL
+    {
+        D3DFTL_NO_TYPE	= 0,
+        D3DFTL_PARTIAL_TYPE	= -2,
+        D3DFTL_FULL_TYPE	= -1
+    } 	D3D_FORMAT_TYPE_LEVEL;
+
+typedef
+enum D3D_FORMAT_COMPONENT_NAME
+    {
+        D3DFCN_R	= -4,
+        D3DFCN_G	= -3,
+        D3DFCN_B	= -2,
+        D3DFCN_A	= -1,
+        D3DFCN_D	= 0,
+        D3DFCN_S	= 1,
+        D3DFCN_X	= 2
+    } 	D3D_FORMAT_COMPONENT_NAME;
+
+typedef
+enum D3D_FORMAT_COMPONENT_INTERPRETATION
+    {
+        D3DFCI_TYPELESS	= 0,
+        D3DFCI_FLOAT	= -4,
+        D3DFCI_SNORM	= -3,
+        D3DFCI_UNORM	= -2,
+        D3DFCI_SINT	= -1,
+        D3DFCI_UINT	= 1,
+        D3DFCI_UNORM_SRGB	= 2,
+        D3DFCI_BIASED_FIXED_2_8	= 3
+    } 	D3D_FORMAT_COMPONENT_INTERPRETATION;
 
 DEFINE_GUID(WKPDID_D3DDebugObjectName,0x429b8c22,0x9188,0x4b0c,0x87,0x42,0xac,0xb0,0xbf,0x85,0xc2,0x00);
 DEFINE_GUID(WKPDID_D3DDebugObjectNameW,0x4cca5fd8,0x921f,0x42c8,0x85,0x66,0x70,0xca,0xf2,0xa9,0xb7,0x41);
@@ -1069,5 +1112,4 @@ extern RPC_IF_HANDLE __MIDL_itf_d3dcommon_0000_0002_v0_0_s_ifspec;
 #endif
 
 #endif
-
 

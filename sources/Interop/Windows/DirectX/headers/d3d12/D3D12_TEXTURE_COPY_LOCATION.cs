@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Diagnostics.CodeAnalysis;
@@ -19,7 +19,7 @@ public unsafe partial struct D3D12_TEXTURE_COPY_LOCATION
     public D3D12_TEXTURE_COPY_TYPE Type;
 
     /// <include file='D3D12_TEXTURE_COPY_LOCATION.xml' path='doc/member[@name="D3D12_TEXTURE_COPY_LOCATION.Anonymous"]/*' />
-    [NativeTypeName("D3D12_TEXTURE_COPY_LOCATION::(anonymous union at ./d3d12.h:2941:5)")]
+    [NativeTypeName("D3D12_TEXTURE_COPY_LOCATION::(anonymous union at ../../../include/d3d12.h:3036:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.PlacedFootprint"]/*' />

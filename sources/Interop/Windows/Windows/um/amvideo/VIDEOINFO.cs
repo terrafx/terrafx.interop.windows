@@ -35,7 +35,7 @@ public unsafe partial struct VIDEOINFO
     public BITMAPINFOHEADER bmiHeader;
 
     /// <include file='VIDEOINFO.xml' path='doc/member[@name="VIDEOINFO.Anonymous"]/*' />
-    [NativeTypeName("tagVIDEOINFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/amvideo.h:319:5)")]
+    [NativeTypeName("tagVIDEOINFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/amvideo.h:319:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.bmiColors"]/*' />

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12sdklayers.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Ported from d3d12sdklayers.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -289,6 +289,31 @@ public static partial class IID
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12DebugCommandQueue1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xA2, 0x35, 0xBE, 0x16,
+                0xD6, 0xBF,
+                0xF2, 0x49,
+                0xBC,
+                0xAE,
+                0xEA,
+                0xAE,
+                0x4A,
+                0xFF,
+                0x86,
+                0x2D
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12DebugCommandList1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -356,6 +381,31 @@ public static partial class IID
                 0x96,
                 0x65,
                 0x2E
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12DebugCommandList3
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x15, 0x5E, 0x7D, 0x19,
+                0x37, 0x4D,
+                0x34, 0x4D,
+                0xAF,
+                0x78,
+                0x72,
+                0x4C,
+                0xD7,
+                0x0F,
+                0xDB,
+                0x1F
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

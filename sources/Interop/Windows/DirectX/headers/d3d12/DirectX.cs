@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -84,31 +84,6 @@ public static unsafe partial class DirectX
                 0xD6,
                 0x94,
                 0xFB
-            };
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    [NativeTypeName("const UUID")]
-    public static ref readonly Guid D3D12MetaCommand
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = new byte[] {
-                0x7E, 0xC9, 0x34, 0xC7,
-                0x77, 0x80,
-                0xC8, 0x48,
-                0x9F,
-                0xDC,
-                0xD9,
-                0xD1,
-                0xDD,
-                0x31,
-                0xDD,
-                0x77
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

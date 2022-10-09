@@ -20,7 +20,7 @@ public partial struct D3D11_SHADER_RESOURCE_VIEW_DESC1
     public D3D_SRV_DIMENSION ViewDimension;
 
     /// <include file='D3D11_SHADER_RESOURCE_VIEW_DESC1.xml' path='doc/member[@name="D3D11_SHADER_RESOURCE_VIEW_DESC1.Anonymous"]/*' />
-    [NativeTypeName("D3D11_SHADER_RESOURCE_VIEW_DESC1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/d3d11_3.h:928:5)")]
+    [NativeTypeName("D3D11_SHADER_RESOURCE_VIEW_DESC1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/d3d11_3.h:928:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Buffer"]/*' />

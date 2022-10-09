@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -83,6 +83,9 @@ public enum D3D12_PIPELINE_STATE_SUBOBJECT_TYPE
     /// <include file='D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.xml' path='doc/member[@name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MS"]/*' />
     D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MS = 25,
 
+    /// <include file='D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.xml' path='doc/member[@name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_DEPTH_STENCIL2"]/*' />
+    D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_DEPTH_STENCIL2 = 26,
+
     /// <include file='D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.xml' path='doc/member[@name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MAX_VALID"]/*' />
-    D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MAX_VALID = (D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MS + 1),
+    D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MAX_VALID = (D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_DEPTH_STENCIL2 + 1),
 }

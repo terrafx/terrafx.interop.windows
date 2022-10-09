@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Diagnostics.CodeAnalysis;
@@ -19,7 +19,7 @@ public partial struct D3D12_UNORDERED_ACCESS_VIEW_DESC
     public D3D12_UAV_DIMENSION ViewDimension;
 
     /// <include file='D3D12_UNORDERED_ACCESS_VIEW_DESC.xml' path='doc/member[@name="D3D12_UNORDERED_ACCESS_VIEW_DESC.Anonymous"]/*' />
-    [NativeTypeName("D3D12_UNORDERED_ACCESS_VIEW_DESC::(anonymous union at ./d3d12.h:3333:5)")]
+    [NativeTypeName("D3D12_UNORDERED_ACCESS_VIEW_DESC::(anonymous union at ../../../include/d3d12.h:3468:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Buffer"]/*' />
@@ -77,6 +77,28 @@ public partial struct D3D12_UNORDERED_ACCESS_VIEW_DESC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2DMS"]/*' />
+    [UnscopedRef]
+    public ref D3D12_TEX2DMS_UAV Texture2DMS
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.Texture2DMS;
+        }
+    }
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2DMSArray"]/*' />
+    [UnscopedRef]
+    public ref D3D12_TEX2DMS_ARRAY_UAV Texture2DMSArray
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.Texture2DMSArray;
+        }
+    }
+
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture3D"]/*' />
     [UnscopedRef]
     public ref D3D12_TEX3D_UAV Texture3D
@@ -111,6 +133,14 @@ public partial struct D3D12_UNORDERED_ACCESS_VIEW_DESC
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2DArray"]/*' />
         [FieldOffset(0)]
         public D3D12_TEX2D_ARRAY_UAV Texture2DArray;
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2DMS"]/*' />
+        [FieldOffset(0)]
+        public D3D12_TEX2DMS_UAV Texture2DMS;
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2DMSArray"]/*' />
+        [FieldOffset(0)]
+        public D3D12_TEX2DMS_ARRAY_UAV Texture2DMSArray;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture3D"]/*' />
         [FieldOffset(0)]

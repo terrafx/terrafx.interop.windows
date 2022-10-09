@@ -20,7 +20,7 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
 
     /// <include file='PSAPI_WORKING_SET_EX_BLOCK.xml' path='doc/member[@name="PSAPI_WORKING_SET_EX_BLOCK.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("_PSAPI_WORKING_SET_EX_BLOCK::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/Psapi.h:406:5)")]
+    [NativeTypeName("_PSAPI_WORKING_SET_EX_BLOCK::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/Psapi.h:406:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Valid"]/*' />
@@ -200,12 +200,12 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_PSAPI_WORKING_SET_EX_BLOCK::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/Psapi.h:407:9)")]
+        [NativeTypeName("_PSAPI_WORKING_SET_EX_BLOCK::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/Psapi.h:407:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Invalid"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/Psapi.h:422:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/Psapi.h:422:9)")]
         public _Invalid_e__Struct Invalid;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

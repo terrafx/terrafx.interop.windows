@@ -18,7 +18,7 @@ public partial struct PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS
     public PRJ_COMPLETE_COMMAND_TYPE CommandType;
 
     /// <include file='PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS.xml' path='doc/member[@name="PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS.Anonymous"]/*' />
-    [NativeTypeName("PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/projectedfslib.h:460:5)")]
+    [NativeTypeName("PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/projectedfslib.h:460:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Notification"]/*' />
@@ -49,12 +49,12 @@ public partial struct PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Notification"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/projectedfslib.h:461:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/projectedfslib.h:461:9)")]
         public _Notification_e__Struct Notification;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Enumeration"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/projectedfslib.h:465:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/projectedfslib.h:465:9)")]
         public _Enumeration_e__Struct Enumeration;
 
         /// <include file='_Notification_e__Struct.xml' path='doc/member[@name="_Notification_e__Struct"]/*' />

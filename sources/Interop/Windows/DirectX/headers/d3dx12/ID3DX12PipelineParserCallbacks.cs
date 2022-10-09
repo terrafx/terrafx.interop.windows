@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3dx12.h in the microsoft/DirectX-Graphics-Samples tag v10.0.19041.0
-// Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
+// Ported from d3dx12.h in microsoft/DirectX-Headers tag v1.606.4
+// Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Runtime.CompilerServices;
 
@@ -156,92 +156,100 @@ public unsafe partial struct ID3DX12PipelineParserCallbacks : ID3DX12PipelinePar
         ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_DEPTH_STENCIL_DESC1*, void>)(lpVtbl[17]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
     }
 
-    /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks.DSVFormatCb"]/*' />
+    /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks.DepthStencilState2Cb"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
+    public void DepthStencilState2Cb([NativeTypeName("const D3D12_DEPTH_STENCIL_DESC2 &")] D3D12_DEPTH_STENCIL_DESC2* param0)
+    {
+        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_DEPTH_STENCIL_DESC2*, void>)(lpVtbl[18]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
+    }
+
+    /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks.DSVFormatCb"]/*' />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
     public void DSVFormatCb(DXGI_FORMAT param0)
     {
-        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, DXGI_FORMAT, void>)(lpVtbl[18]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
+        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, DXGI_FORMAT, void>)(lpVtbl[19]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks.RasterizerStateCb"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(19)]
+    [VtblIndex(20)]
     public void RasterizerStateCb([NativeTypeName("const D3D12_RASTERIZER_DESC &")] D3D12_RASTERIZER_DESC* param0)
     {
-        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_RASTERIZER_DESC*, void>)(lpVtbl[19]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
+        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_RASTERIZER_DESC*, void>)(lpVtbl[20]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks.RTVFormatsCb"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(20)]
+    [VtblIndex(21)]
     public void RTVFormatsCb([NativeTypeName("const D3D12_RT_FORMAT_ARRAY &")] D3D12_RT_FORMAT_ARRAY* param0)
     {
-        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_RT_FORMAT_ARRAY*, void>)(lpVtbl[20]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
+        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_RT_FORMAT_ARRAY*, void>)(lpVtbl[21]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks.SampleDescCb"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(21)]
+    [VtblIndex(22)]
     public void SampleDescCb([NativeTypeName("const DXGI_SAMPLE_DESC &")] DXGI_SAMPLE_DESC* param0)
     {
-        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, DXGI_SAMPLE_DESC*, void>)(lpVtbl[21]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
+        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, DXGI_SAMPLE_DESC*, void>)(lpVtbl[22]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks.SampleMaskCb"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(22)]
+    [VtblIndex(23)]
     public void SampleMaskCb(uint param0)
     {
-        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, uint, void>)(lpVtbl[22]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
+        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, uint, void>)(lpVtbl[23]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks.ViewInstancingCb"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(23)]
+    [VtblIndex(24)]
     public void ViewInstancingCb([NativeTypeName("const D3D12_VIEW_INSTANCING_DESC &")] D3D12_VIEW_INSTANCING_DESC* param0)
     {
-        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_VIEW_INSTANCING_DESC*, void>)(lpVtbl[23]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
+        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_VIEW_INSTANCING_DESC*, void>)(lpVtbl[24]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks.CachedPSOCb"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(24)]
+    [VtblIndex(25)]
     public void CachedPSOCb([NativeTypeName("const D3D12_CACHED_PIPELINE_STATE &")] D3D12_CACHED_PIPELINE_STATE* param0)
     {
-        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_CACHED_PIPELINE_STATE*, void>)(lpVtbl[24]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
+        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_CACHED_PIPELINE_STATE*, void>)(lpVtbl[25]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks.ErrorBadInputParameter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(25)]
+    [VtblIndex(26)]
     public void ErrorBadInputParameter(uint param0)
     {
-        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, uint, void>)(lpVtbl[25]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
+        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, uint, void>)(lpVtbl[26]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks.ErrorDuplicateSubobject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(26)]
+    [VtblIndex(27)]
     public void ErrorDuplicateSubobject(D3D12_PIPELINE_STATE_SUBOBJECT_TYPE param0)
     {
-        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_PIPELINE_STATE_SUBOBJECT_TYPE, void>)(lpVtbl[26]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
+        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, D3D12_PIPELINE_STATE_SUBOBJECT_TYPE, void>)(lpVtbl[27]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks.ErrorUnknownSubobject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(27)]
+    [VtblIndex(28)]
     public void ErrorUnknownSubobject(uint param0)
     {
-        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, uint, void>)(lpVtbl[27]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
+        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, uint, void>)(lpVtbl[28]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks.Dispose"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(28)]
+    [VtblIndex(29)]
     public void Dispose()
     {
-        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, void>)(lpVtbl[28]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged<ID3DX12PipelineParserCallbacks*, void>)(lpVtbl[29]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface
@@ -301,36 +309,39 @@ public unsafe partial struct ID3DX12PipelineParserCallbacks : ID3DX12PipelinePar
         void DepthStencilState1Cb([NativeTypeName("const D3D12_DEPTH_STENCIL_DESC1 &")] D3D12_DEPTH_STENCIL_DESC1* param0);
 
         [VtblIndex(18)]
-        void DSVFormatCb(DXGI_FORMAT param0);
+        void DepthStencilState2Cb([NativeTypeName("const D3D12_DEPTH_STENCIL_DESC2 &")] D3D12_DEPTH_STENCIL_DESC2* param0);
 
         [VtblIndex(19)]
-        void RasterizerStateCb([NativeTypeName("const D3D12_RASTERIZER_DESC &")] D3D12_RASTERIZER_DESC* param0);
+        void DSVFormatCb(DXGI_FORMAT param0);
 
         [VtblIndex(20)]
-        void RTVFormatsCb([NativeTypeName("const D3D12_RT_FORMAT_ARRAY &")] D3D12_RT_FORMAT_ARRAY* param0);
+        void RasterizerStateCb([NativeTypeName("const D3D12_RASTERIZER_DESC &")] D3D12_RASTERIZER_DESC* param0);
 
         [VtblIndex(21)]
-        void SampleDescCb([NativeTypeName("const DXGI_SAMPLE_DESC &")] DXGI_SAMPLE_DESC* param0);
+        void RTVFormatsCb([NativeTypeName("const D3D12_RT_FORMAT_ARRAY &")] D3D12_RT_FORMAT_ARRAY* param0);
 
         [VtblIndex(22)]
-        void SampleMaskCb(uint param0);
+        void SampleDescCb([NativeTypeName("const DXGI_SAMPLE_DESC &")] DXGI_SAMPLE_DESC* param0);
 
         [VtblIndex(23)]
-        void ViewInstancingCb([NativeTypeName("const D3D12_VIEW_INSTANCING_DESC &")] D3D12_VIEW_INSTANCING_DESC* param0);
+        void SampleMaskCb(uint param0);
 
         [VtblIndex(24)]
-        void CachedPSOCb([NativeTypeName("const D3D12_CACHED_PIPELINE_STATE &")] D3D12_CACHED_PIPELINE_STATE* param0);
+        void ViewInstancingCb([NativeTypeName("const D3D12_VIEW_INSTANCING_DESC &")] D3D12_VIEW_INSTANCING_DESC* param0);
 
         [VtblIndex(25)]
-        void ErrorBadInputParameter(uint param0);
+        void CachedPSOCb([NativeTypeName("const D3D12_CACHED_PIPELINE_STATE &")] D3D12_CACHED_PIPELINE_STATE* param0);
 
         [VtblIndex(26)]
-        void ErrorDuplicateSubobject(D3D12_PIPELINE_STATE_SUBOBJECT_TYPE param0);
+        void ErrorBadInputParameter(uint param0);
 
         [VtblIndex(27)]
-        void ErrorUnknownSubobject(uint param0);
+        void ErrorDuplicateSubobject(D3D12_PIPELINE_STATE_SUBOBJECT_TYPE param0);
 
         [VtblIndex(28)]
+        void ErrorUnknownSubobject(uint param0);
+
+        [VtblIndex(29)]
         void Dispose();
     }
 
@@ -390,6 +401,9 @@ public unsafe partial struct ID3DX12PipelineParserCallbacks : ID3DX12PipelinePar
 
         [NativeTypeName("void (const D3D12_DEPTH_STENCIL_DESC1 &)")]
         public delegate* unmanaged<TSelf*, D3D12_DEPTH_STENCIL_DESC1*, void> DepthStencilState1Cb;
+
+        [NativeTypeName("void (const D3D12_DEPTH_STENCIL_DESC2 &)")]
+        public delegate* unmanaged<TSelf*, D3D12_DEPTH_STENCIL_DESC2*, void> DepthStencilState2Cb;
 
         [NativeTypeName("void (DXGI_FORMAT)")]
         public delegate* unmanaged<TSelf*, DXGI_FORMAT, void> DSVFormatCb;

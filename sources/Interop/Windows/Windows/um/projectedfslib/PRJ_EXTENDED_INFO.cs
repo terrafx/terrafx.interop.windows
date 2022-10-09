@@ -22,7 +22,7 @@ public partial struct PRJ_EXTENDED_INFO
     public uint NextInfoOffset;
 
     /// <include file='PRJ_EXTENDED_INFO.xml' path='doc/member[@name="PRJ_EXTENDED_INFO.Anonymous"]/*' />
-    [NativeTypeName("PRJ_EXTENDED_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/projectedfslib.h:102:5)")]
+    [NativeTypeName("PRJ_EXTENDED_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/projectedfslib.h:102:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Symlink"]/*' />
@@ -42,7 +42,7 @@ public partial struct PRJ_EXTENDED_INFO
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Symlink"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/projectedfslib.h:103:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/projectedfslib.h:103:9)")]
         public _Symlink_e__Struct Symlink;
 
         /// <include file='_Symlink_e__Struct.xml' path='doc/member[@name="_Symlink_e__Struct"]/*' />

@@ -24,11 +24,11 @@ public unsafe partial struct PROPSHEETPAGEW
     public HINSTANCE hInstance;
 
     /// <include file='PROPSHEETPAGEW.xml' path='doc/member[@name="PROPSHEETPAGEW.Anonymous1"]/*' />
-    [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/prsht.h:271:5)")]
+    [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/prsht.h:271:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='PROPSHEETPAGEW.xml' path='doc/member[@name="PROPSHEETPAGEW.Anonymous2"]/*' />
-    [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/prsht.h:271:5)")]
+    [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/prsht.h:271:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='PROPSHEETPAGEW.xml' path='doc/member[@name="PROPSHEETPAGEW.pszTitle"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct PROPSHEETPAGEW
     public HANDLE hActCtx;
 
     /// <include file='PROPSHEETPAGEW.xml' path='doc/member[@name="PROPSHEETPAGEW.Anonymous3"]/*' />
-    [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/prsht.h:278:5)")]
+    [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/prsht.h:278:5)")]
     public _Anonymous3_e__Union Anonymous3;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszTemplate"]/*' />

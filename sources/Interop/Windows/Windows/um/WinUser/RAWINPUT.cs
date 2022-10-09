@@ -14,7 +14,7 @@ public partial struct RAWINPUT
     public RAWINPUTHEADER header;
 
     /// <include file='RAWINPUT.xml' path='doc/member[@name="RAWINPUT.data"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/WinUser.h:15106:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinUser.h:15106:5)")]
     public _data_e__Union data;
 
     /// <include file='_data_e__Union.xml' path='doc/member[@name="_data_e__Union"]/*' />

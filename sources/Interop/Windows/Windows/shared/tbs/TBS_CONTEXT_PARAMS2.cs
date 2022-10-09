@@ -19,7 +19,7 @@ public partial struct TBS_CONTEXT_PARAMS2
     public uint version;
 
     /// <include file='TBS_CONTEXT_PARAMS2.xml' path='doc/member[@name="TBS_CONTEXT_PARAMS2.Anonymous"]/*' />
-    [NativeTypeName("tdTBS_CONTEXT_PARAMS2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/tbs.h:156:5)")]
+    [NativeTypeName("tdTBS_CONTEXT_PARAMS2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/tbs.h:156:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.requestRaw"]/*' />
@@ -87,7 +87,7 @@ public partial struct TBS_CONTEXT_PARAMS2
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("tdTBS_CONTEXT_PARAMS2::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/tbs.h:158:9)")]
+        [NativeTypeName("tdTBS_CONTEXT_PARAMS2::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/tbs.h:158:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.asUINT32"]/*' />

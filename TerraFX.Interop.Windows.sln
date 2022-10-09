@@ -94,7 +94,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxgicommon", "dxgicommon", 
 	ProjectSection(SolutionItems) = preProject
 		generation\DirectX\headers\dxgicommon\generate.rsp = generation\DirectX\headers\dxgicommon\generate.rsp
 		generation\DirectX\headers\dxgicommon\header.txt = generation\DirectX\headers\dxgicommon\header.txt
-		generation\DirectX\headers\dxgicommon\shared-dxgicommon.h = generation\DirectX\headers\dxgicommon\shared-dxgicommon.h
+		generation\DirectX\headers\dxgicommon\headers-dxgicommon.h = generation\DirectX\headers\dxgicommon\headers-dxgicommon.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxgitype", "dxgitype", "{133D4A58-8AD4-4D46-9847-3C12F24A775E}"
@@ -709,14 +709,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxcore", "dxcore", "{4F134A
 	ProjectSection(SolutionItems) = preProject
 		generation\DirectX\headers\dxcore\generate.rsp = generation\DirectX\headers\dxcore\generate.rsp
 		generation\DirectX\headers\dxcore\header.txt = generation\DirectX\headers\dxcore\header.txt
-		generation\DirectX\headers\dxcore\um-dxcore.h = generation\DirectX\headers\dxcore\um-dxcore.h
+		generation\DirectX\headers\dxcore\headers-dxcore.h = generation\DirectX\headers\dxcore\headers-dxcore.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxcore_interface", "dxcore_interface", "{B5B39F76-5BDC-400C-94B9-73DE33D8E3CF}"
 	ProjectSection(SolutionItems) = preProject
 		generation\DirectX\headers\dxcore_interface\generate.rsp = generation\DirectX\headers\dxcore_interface\generate.rsp
 		generation\DirectX\headers\dxcore_interface\header.txt = generation\DirectX\headers\dxcore_interface\header.txt
-		generation\DirectX\headers\dxcore_interface\um-dxcore_interface.h = generation\DirectX\headers\dxcore_interface\um-dxcore_interface.h
+		generation\DirectX\headers\dxcore_interface\headers-dxcore_interface.h = generation\DirectX\headers\dxcore_interface\headers-dxcore_interface.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dcomptypes", "dcomptypes", "{A91EFD53-A552-4410-9549-19F57E02E95A}"
@@ -998,7 +998,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3dx12", "d3dx12", "{241555
 	ProjectSection(SolutionItems) = preProject
 		generation\DirectX\headers\d3dx12\generate.rsp = generation\DirectX\headers\d3dx12\generate.rsp
 		generation\DirectX\headers\d3dx12\header.txt = generation\DirectX\headers\d3dx12\header.txt
-		generation\DirectX\headers\d3dx12\other-d3dx12.h = generation\DirectX\headers\d3dx12\other-d3dx12.h
+		generation\DirectX\headers\d3dx12\headers-d3dx12.h = generation\DirectX\headers\d3dx12\headers-d3dx12.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1_1helper", "d2d1_1helper", "{2113E8BA-43E5-42AF-95AC-8E780EAF8923}"
@@ -2975,42 +2975,42 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12", "d3d12", "{F0F69CE3
 	ProjectSection(SolutionItems) = preProject
 		generation\DirectX\headers\d3d12\generate.rsp = generation\DirectX\headers\d3d12\generate.rsp
 		generation\DirectX\headers\d3d12\header.txt = generation\DirectX\headers\d3d12\header.txt
-		generation\DirectX\headers\d3d12\um-d3d12.h = generation\DirectX\headers\d3d12\um-d3d12.h
+		generation\DirectX\headers\d3d12\headers-d3d12.h = generation\DirectX\headers\d3d12\headers-d3d12.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12sdklayers", "d3d12sdklayers", "{7B7A7155-59EC-410E-850A-C089E604F2E4}"
 	ProjectSection(SolutionItems) = preProject
 		generation\DirectX\headers\d3d12sdklayers\generate.rsp = generation\DirectX\headers\d3d12sdklayers\generate.rsp
 		generation\DirectX\headers\d3d12sdklayers\header.txt = generation\DirectX\headers\d3d12sdklayers\header.txt
-		generation\DirectX\headers\d3d12sdklayers\um-d3d12sdklayers.h = generation\DirectX\headers\d3d12sdklayers\um-d3d12sdklayers.h
+		generation\DirectX\headers\d3d12sdklayers\headers-d3d12sdklayers.h = generation\DirectX\headers\d3d12sdklayers\headers-d3d12sdklayers.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12shader", "d3d12shader", "{4291B3E3-68E4-4254-947F-5A8A3523C991}"
 	ProjectSection(SolutionItems) = preProject
 		generation\DirectX\headers\d3d12shader\generate.rsp = generation\DirectX\headers\d3d12shader\generate.rsp
 		generation\DirectX\headers\d3d12shader\header.txt = generation\DirectX\headers\d3d12shader\header.txt
-		generation\DirectX\headers\d3d12shader\um-d3d12shader.h = generation\DirectX\headers\d3d12shader\um-d3d12shader.h
+		generation\DirectX\headers\d3d12shader\headers-d3d12shader.h = generation\DirectX\headers\d3d12shader\headers-d3d12shader.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12video", "d3d12video", "{5911A131-AE94-40E8-B501-3C088C5252CE}"
 	ProjectSection(SolutionItems) = preProject
 		generation\DirectX\headers\d3d12video\generate.rsp = generation\DirectX\headers\d3d12video\generate.rsp
 		generation\DirectX\headers\d3d12video\header.txt = generation\DirectX\headers\d3d12video\header.txt
-		generation\DirectX\headers\d3d12video\um-d3d12video.h = generation\DirectX\headers\d3d12video\um-d3d12video.h
+		generation\DirectX\headers\d3d12video\headers-d3d12video.h = generation\DirectX\headers\d3d12video\headers-d3d12video.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3dcommon", "d3dcommon", "{19D7C317-C032-44BE-BBF7-D1D912585FE0}"
 	ProjectSection(SolutionItems) = preProject
 		generation\DirectX\headers\d3dcommon\generate.rsp = generation\DirectX\headers\d3dcommon\generate.rsp
 		generation\DirectX\headers\d3dcommon\header.txt = generation\DirectX\headers\d3dcommon\header.txt
-		generation\DirectX\headers\d3dcommon\um-d3dcommon.h = generation\DirectX\headers\d3dcommon\um-d3dcommon.h
+		generation\DirectX\headers\d3dcommon\headers-d3dcommon.h = generation\DirectX\headers\d3dcommon\headers-d3dcommon.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxgiformat", "dxgiformat", "{2BE4B04C-FB90-4A79-9161-3D1CA5E34825}"
 	ProjectSection(SolutionItems) = preProject
 		generation\DirectX\headers\dxgiformat\generate.rsp = generation\DirectX\headers\dxgiformat\generate.rsp
 		generation\DirectX\headers\dxgiformat\header.txt = generation\DirectX\headers\dxgiformat\header.txt
-		generation\DirectX\headers\dxgiformat\shared-dxgiformat.h = generation\DirectX\headers\dxgiformat\shared-dxgiformat.h
+		generation\DirectX\headers\dxgiformat\headers-dxgiformat.h = generation\DirectX\headers\dxgiformat\headers-dxgiformat.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "propkey", "propkey", "{21B748B3-53EF-42AD-B5F3-A5215C5AE574}"
@@ -3038,13 +3038,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "include", "include", "{5E5D
 	ProjectSection(SolutionItems) = preProject
 		generation\include\D3D11On12On7.h = generation\include\D3D11On12On7.h
 		generation\include\d3d12.h = generation\include\d3d12.h
+		generation\include\d3d12compatibility.h = generation\include\d3d12compatibility.h
 		generation\include\D3D12Downlevel.h = generation\include\D3D12Downlevel.h
 		generation\include\d3d12sdklayers.h = generation\include\d3d12sdklayers.h
 		generation\include\d3d12shader.h = generation\include\d3d12shader.h
 		generation\include\d3d12video.h = generation\include\d3d12video.h
 		generation\include\d3dcommon.h = generation\include\d3dcommon.h
 		generation\include\d3dx12.h = generation\include\d3dx12.h
+		generation\include\DirectXHelpers.h = generation\include\DirectXHelpers.h
+		generation\include\dxcore.h = generation\include\dxcore.h
+		generation\include\dxcore_interface.h = generation\include\dxcore_interface.h
+		generation\include\dxgicommon.h = generation\include\dxgicommon.h
 		generation\include\dxgiformat.h = generation\include\dxgiformat.h
+		generation\include\mssign32.h = generation\include\mssign32.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12compatibility", "d3d12compatibility", "{566C5B1B-E5DC-420D-8740-A991751A5D09}"
+	ProjectSection(SolutionItems) = preProject
+		generation\DirectX\headers\d3d12compatibility\generate.rsp = generation\DirectX\headers\d3d12compatibility\generate.rsp
+		generation\DirectX\headers\d3d12compatibility\header.txt = generation\DirectX\headers\d3d12compatibility\header.txt
+		generation\DirectX\headers\d3d12compatibility\headers-d3d12compatibility.h = generation\DirectX\headers\d3d12compatibility\headers-d3d12compatibility.h
 	EndProjectSection
 EndProject
 Global
@@ -3515,6 +3528,7 @@ Global
 		{DBA8B1B8-BE4B-4C8F-BD75-EAD47581AE39} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{EA5B695A-5F25-401E-9FD9-23BFDEFBA01B} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{5E5D7257-3F63-45F9-899B-CE0DFEFCC2D1} = {D9638FEE-50A4-44FF-B1F6-72E59548490B}
+		{566C5B1B-E5DC-420D-8740-A991751A5D09} = {65954CB3-F28F-4CF0-BC77-0FFD6E858BCE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

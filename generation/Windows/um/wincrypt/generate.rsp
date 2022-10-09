@@ -261,6 +261,7 @@ CryptRegisterDefaultOIDFunction=crypt32
 CryptRegisterOIDFunction=crypt32
 CryptRegisterOIDInfo=crypt32
 CryptRetrieveTimeStamp=crypt32
+CryptSetAsyncParam=crypt32
 CryptSetKeyIdentifierProperty=crypt32
 CryptSetOIDFunctionValue=crypt32
 CryptSignAndEncodeCertificate=crypt32

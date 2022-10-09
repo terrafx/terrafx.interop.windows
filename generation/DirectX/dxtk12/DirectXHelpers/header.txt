@@ -1,4 +1,4 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from DirectXHelpers.h in the microsoft/DirectXTK12 tag jan2021
+// Ported from DirectXHelpers.h in the microsoft/DirectXTK12 tag jul2022
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the University of Illinois Open Source License.

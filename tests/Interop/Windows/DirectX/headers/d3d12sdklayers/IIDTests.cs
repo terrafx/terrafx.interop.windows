@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12sdklayers.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Ported from d3d12sdklayers.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
@@ -89,6 +89,13 @@ public static partial class IIDTests
         Assert.That(IID_ID3D12DebugCommandQueue, Is.EqualTo(new Guid(0x09e0bf36, 0x54ac, 0x484f, 0x88, 0x47, 0x4b, 0xae, 0xea, 0xb6, 0x05, 0x3a)));
     }
 
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12DebugCommandQueue1" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12DebugCommandQueue1Test()
+    {
+        Assert.That(IID_ID3D12DebugCommandQueue1, Is.EqualTo(new Guid(0x16be35a2, 0xbfd6, 0x49f2, 0xbc, 0xae, 0xea, 0xae, 0x4a, 0xff, 0x86, 0x2d)));
+    }
+
     /// <summary>Validates that the value of the <see cref="IID_ID3D12DebugCommandList1" /> property is correct.</summary>
     [Test]
     public static void IID_ID3D12DebugCommandList1Test()
@@ -108,6 +115,13 @@ public static partial class IIDTests
     public static void IID_ID3D12DebugCommandList2Test()
     {
         Assert.That(IID_ID3D12DebugCommandList2, Is.EqualTo(new Guid(0xaeb575cf, 0x4e06, 0x48be, 0xba, 0x3b, 0xc4, 0x50, 0xfc, 0x96, 0x65, 0x2e)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12DebugCommandList3" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12DebugCommandList3Test()
+    {
+        Assert.That(IID_ID3D12DebugCommandList3, Is.EqualTo(new Guid(0x197d5e15, 0x4d37, 0x4d34, 0xaf, 0x78, 0x72, 0x4c, 0xd7, 0x0f, 0xdb, 0x1f)));
     }
 
     /// <summary>Validates that the value of the <see cref="IID_ID3D12SharingContract" /> property is correct.</summary>

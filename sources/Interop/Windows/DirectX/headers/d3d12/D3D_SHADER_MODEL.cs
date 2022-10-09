@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -35,6 +35,9 @@ public enum D3D_SHADER_MODEL
     /// <include file='D3D_SHADER_MODEL.xml' path='doc/member[@name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_6_7"]/*' />
     D3D_SHADER_MODEL_6_7 = 0x67,
 
+    /// <include file='D3D_SHADER_MODEL.xml' path='doc/member[@name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_6_8"]/*' />
+    D3D_SHADER_MODEL_6_8 = 0x68,
+
     /// <include file='D3D_SHADER_MODEL.xml' path='doc/member[@name="D3D_SHADER_MODEL.D3D_HIGHEST_SHADER_MODEL"]/*' />
-    D3D_HIGHEST_SHADER_MODEL = D3D_SHADER_MODEL_6_7,
+    D3D_HIGHEST_SHADER_MODEL = D3D_SHADER_MODEL_6_8,
 }

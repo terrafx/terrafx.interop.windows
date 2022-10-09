@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -856,8 +856,8 @@ public static partial class D3D12
     [NativeTypeName("#define D3D12_PIXEL_ADDRESS_RANGE_BIT_COUNT ( 15 )")]
     public const int D3D12_PIXEL_ADDRESS_RANGE_BIT_COUNT = (15);
 
-    [NativeTypeName("#define D3D12_PREVIEW_SDK_VERSION ( 700 )")]
-    public const int D3D12_PREVIEW_SDK_VERSION = (700);
+    [NativeTypeName("#define D3D12_PREVIEW_SDK_VERSION ( 706 )")]
+    public const int D3D12_PREVIEW_SDK_VERSION = (706);
 
     [NativeTypeName("#define D3D12_PRE_SCISSOR_PIXEL_ADDRESS_RANGE_BIT_COUNT ( 16 )")]
     public const int D3D12_PRE_SCISSOR_PIXEL_ADDRESS_RANGE_BIT_COUNT = (16);
@@ -1060,8 +1060,8 @@ public static partial class D3D12
     [NativeTypeName("#define D3D12_RS_SET_SHADING_RATE_COMBINER_COUNT ( 2 )")]
     public const int D3D12_RS_SET_SHADING_RATE_COMBINER_COUNT = (2);
 
-    [NativeTypeName("#define D3D12_SDK_VERSION ( 600 )")]
-    public const int D3D12_SDK_VERSION = (600);
+    [NativeTypeName("#define D3D12_SDK_VERSION ( 606 )")]
+    public const int D3D12_SDK_VERSION = (606);
 
     [NativeTypeName("#define D3D12_SHADER_IDENTIFIER_SIZE_IN_BYTES ( 32 )")]
     public const int D3D12_SHADER_IDENTIFIER_SIZE_IN_BYTES = (32);

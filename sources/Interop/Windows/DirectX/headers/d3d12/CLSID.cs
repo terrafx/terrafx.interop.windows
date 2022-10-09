@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -106,6 +106,31 @@ public static partial class CLSID
                 0x0E,
                 0x07,
                 0xCE
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_D3D12DeviceFactory
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xBF, 0x63, 0x48, 0x11,
+                0x86, 0xC3,
+                0xEE, 0x4A,
+                0xB3,
+                0x9D,
+                0x8F,
+                0x0B,
+                0xBB,
+                0x06,
+                0x29,
+                0x55
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

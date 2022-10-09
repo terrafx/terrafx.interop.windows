@@ -31,7 +31,7 @@ public unsafe partial struct WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT
     public uint requestSecurityTokenPropertyConstraintCount;
 
     /// <include file='WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.@out"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/WebServices.h:6262:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WebServices.h:6262:5)")]
     public _out_e__Struct @out;
 
     /// <include file='_out_e__Struct.xml' path='doc/member[@name="_out_e__Struct"]/*' />

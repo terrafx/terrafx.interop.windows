@@ -35,7 +35,7 @@ public partial struct INTERACTION_CONTEXT_OUTPUT2
     public float y;
 
     /// <include file='INTERACTION_CONTEXT_OUTPUT2.xml' path='doc/member[@name="INTERACTION_CONTEXT_OUTPUT2.arguments"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/InteractionContext.h:252:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/InteractionContext.h:252:5)")]
     public _arguments_e__Union arguments;
 
     /// <include file='_arguments_e__Union.xml' path='doc/member[@name="_arguments_e__Union"]/*' />

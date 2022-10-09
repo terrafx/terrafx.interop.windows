@@ -33,7 +33,7 @@ public unsafe partial struct _wireVARIANT
     public ushort wReserved3;
 
     /// <include file='_wireVARIANT.xml' path='doc/member[@name="_wireVARIANT.Anonymous"]/*' />
-    [NativeTypeName("_wireVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/oaidl.h:581:36)")]
+    [NativeTypeName("_wireVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/oaidl.h:581:36)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.llVal"]/*' />

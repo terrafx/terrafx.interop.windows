@@ -219,8 +219,8 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPackageGraphRevisionId"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
-    [SupportedOSPlatform("windows10.0.22621.0")]
     [return: NativeTypeName("UINT32")]
+    [SupportedOSPlatform("windows10.0.22621.0")]
     public static extern uint GetPackageGraphRevisionId();
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AppPolicyGetLifecycleManagement"]/*' />

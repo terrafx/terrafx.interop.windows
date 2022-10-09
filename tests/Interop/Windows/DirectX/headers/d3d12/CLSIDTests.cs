@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
@@ -38,5 +38,12 @@ public static partial class CLSIDTests
     public static void CLSID_D3D12SDKConfigurationTest()
     {
         Assert.That(CLSID_D3D12SDKConfiguration, Is.EqualTo(new Guid(0x7cda6aca, 0xa03e, 0x49c8, 0x94, 0x58, 0x03, 0x34, 0xd2, 0x0e, 0x07, 0xce)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_D3D12DeviceFactory" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_D3D12DeviceFactoryTest()
+    {
+        Assert.That(CLSID_D3D12DeviceFactory, Is.EqualTo(new Guid(0x114863bf, 0xc386, 0x4aee, 0xb3, 0x9d, 0x8f, 0x0b, 0xbb, 0x06, 0x29, 0x55)));
     }
 }

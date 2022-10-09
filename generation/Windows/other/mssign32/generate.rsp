@@ -11,6 +11,6 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/other/mssign32
 --traverse
-.\mssign32.h
+../../../include/mssign32.h
 --with-librarypath
 *=mssign32

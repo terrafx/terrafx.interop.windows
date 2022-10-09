@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in Microsoft.Direct3D.D3D12 v1.600.10
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Diagnostics.CodeAnalysis;
@@ -19,7 +19,7 @@ public partial struct D3D12_RAYTRACING_GEOMETRY_DESC
     public D3D12_RAYTRACING_GEOMETRY_FLAGS Flags;
 
     /// <include file='D3D12_RAYTRACING_GEOMETRY_DESC.xml' path='doc/member[@name="D3D12_RAYTRACING_GEOMETRY_DESC.Anonymous"]/*' />
-    [NativeTypeName("D3D12_RAYTRACING_GEOMETRY_DESC::(anonymous union at ./d3d12.h:13295:5)")]
+    [NativeTypeName("D3D12_RAYTRACING_GEOMETRY_DESC::(anonymous union at ../../../include/d3d12.h:13820:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Triangles"]/*' />

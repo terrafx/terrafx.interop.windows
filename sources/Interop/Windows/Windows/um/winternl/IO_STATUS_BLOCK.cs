@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct IO_STATUS_BLOCK
 {
     /// <include file='IO_STATUS_BLOCK.xml' path='doc/member[@name="IO_STATUS_BLOCK.Anonymous"]/*' />
-    [NativeTypeName("_IO_STATUS_BLOCK::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winternl.h:226:5)")]
+    [NativeTypeName("_IO_STATUS_BLOCK::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winternl.h:226:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='IO_STATUS_BLOCK.xml' path='doc/member[@name="IO_STATUS_BLOCK.Information"]/*' />

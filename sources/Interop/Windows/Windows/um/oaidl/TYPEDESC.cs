@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct TYPEDESC
 {
     /// <include file='TYPEDESC.xml' path='doc/member[@name="TYPEDESC.Anonymous"]/*' />
-    [NativeTypeName("tagTYPEDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/oaidl.h:653:36)")]
+    [NativeTypeName("tagTYPEDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/oaidl.h:653:36)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='TYPEDESC.xml' path='doc/member[@name="TYPEDESC.vt"]/*' />
