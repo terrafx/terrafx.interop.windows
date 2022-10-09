@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -38,6 +39,7 @@ public unsafe partial struct VIDEOINFO
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.bmiColors"]/*' />
+    [UnscopedRef]
     public Span<RGBQUAD> bmiColors
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -48,6 +50,7 @@ public unsafe partial struct VIDEOINFO
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwBitMasks"]/*' />
+    [UnscopedRef]
     public Span<uint> dwBitMasks
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -58,12 +61,13 @@ public unsafe partial struct VIDEOINFO
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.TrueColorInfo"]/*' />
+    [UnscopedRef]
     public ref TRUECOLORINFO TrueColorInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.TrueColorInfo, 1));
+            return ref Anonymous.TrueColorInfo;
         }
     }
 
@@ -345,6 +349,7 @@ public unsafe partial struct VIDEOINFO
             public RGBQUAD e254;
             public RGBQUAD e255;
 
+            [UnscopedRef]
             public ref RGBQUAD this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -355,6 +360,7 @@ public unsafe partial struct VIDEOINFO
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [UnscopedRef]
             public Span<RGBQUAD> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 256);
         }
     }

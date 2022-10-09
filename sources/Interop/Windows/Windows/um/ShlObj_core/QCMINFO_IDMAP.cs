@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -24,6 +25,7 @@ public partial struct QCMINFO_IDMAP
     {
         public QCMINFO_IDMAP_PLACEMENT e0;
 
+        [UnscopedRef]
         public ref QCMINFO_IDMAP_PLACEMENT this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,6 +36,7 @@ public partial struct QCMINFO_IDMAP
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<QCMINFO_IDMAP_PLACEMENT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

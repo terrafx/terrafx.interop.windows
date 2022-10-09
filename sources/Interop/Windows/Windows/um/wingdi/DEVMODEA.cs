@@ -3,6 +3,7 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -115,132 +116,145 @@ public unsafe partial struct DEVMODEA
     public uint dmPanningHeight;
 
     /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.dmOrientation"]/*' />
+    [UnscopedRef]
     public ref short dmOrientation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous1.dmOrientation, 1));
+            return ref Anonymous1.Anonymous1.dmOrientation;
         }
     }
 
     /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.dmPaperSize"]/*' />
+    [UnscopedRef]
     public ref short dmPaperSize
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous1.dmPaperSize, 1));
+            return ref Anonymous1.Anonymous1.dmPaperSize;
         }
     }
 
     /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.dmPaperLength"]/*' />
+    [UnscopedRef]
     public ref short dmPaperLength
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous1.dmPaperLength, 1));
+            return ref Anonymous1.Anonymous1.dmPaperLength;
         }
     }
 
     /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.dmPaperWidth"]/*' />
+    [UnscopedRef]
     public ref short dmPaperWidth
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous1.dmPaperWidth, 1));
+            return ref Anonymous1.Anonymous1.dmPaperWidth;
         }
     }
 
     /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.dmScale"]/*' />
+    [UnscopedRef]
     public ref short dmScale
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous1.dmScale, 1));
+            return ref Anonymous1.Anonymous1.dmScale;
         }
     }
 
     /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.dmCopies"]/*' />
+    [UnscopedRef]
     public ref short dmCopies
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous1.dmCopies, 1));
+            return ref Anonymous1.Anonymous1.dmCopies;
         }
     }
 
     /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.dmDefaultSource"]/*' />
+    [UnscopedRef]
     public ref short dmDefaultSource
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous1.dmDefaultSource, 1));
+            return ref Anonymous1.Anonymous1.dmDefaultSource;
         }
     }
 
     /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.dmPrintQuality"]/*' />
+    [UnscopedRef]
     public ref short dmPrintQuality
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous1.dmPrintQuality, 1));
+            return ref Anonymous1.Anonymous1.dmPrintQuality;
         }
     }
 
     /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.dmPosition"]/*' />
+    [UnscopedRef]
     public ref POINTL dmPosition
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous2.dmPosition, 1));
+            return ref Anonymous1.Anonymous2.dmPosition;
         }
     }
 
     /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.dmDisplayOrientation"]/*' />
+    [UnscopedRef]
     public ref uint dmDisplayOrientation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous2.dmDisplayOrientation, 1));
+            return ref Anonymous1.Anonymous2.dmDisplayOrientation;
         }
     }
 
     /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.dmDisplayFixedOutput"]/*' />
+    [UnscopedRef]
     public ref uint dmDisplayFixedOutput
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous2.dmDisplayFixedOutput, 1));
+            return ref Anonymous1.Anonymous2.dmDisplayFixedOutput;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dmDisplayFlags"]/*' />
+    [UnscopedRef]
     public ref uint dmDisplayFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dmDisplayFlags, 1));
+            return ref Anonymous2.dmDisplayFlags;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dmNup"]/*' />
+    [UnscopedRef]
     public ref uint dmNup
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dmNup, 1));
+            return ref Anonymous2.dmNup;
         }
     }
 

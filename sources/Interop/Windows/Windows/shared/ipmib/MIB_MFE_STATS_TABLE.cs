@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -25,6 +26,7 @@ public partial struct MIB_MFE_STATS_TABLE
     {
         public MIB_IPMCAST_MFE_STATS e0;
 
+        [UnscopedRef]
         public ref MIB_IPMCAST_MFE_STATS this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -35,6 +37,7 @@ public partial struct MIB_MFE_STATS_TABLE
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<MIB_IPMCAST_MFE_STATS> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

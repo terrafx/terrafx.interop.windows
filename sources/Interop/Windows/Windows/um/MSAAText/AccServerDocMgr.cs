@@ -3,12 +3,16 @@
 // Ported from um/MSAAText.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='AccServerDocMgr.xml' path='doc/member[@name="AccServerDocMgr"]/*' />
 [Guid("6089A37E-EB8A-482D-BD6F-F9F46904D16D")]
-public partial struct AccServerDocMgr
+public unsafe partial struct AccServerDocMgr : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_AccServerDocMgr));
 }

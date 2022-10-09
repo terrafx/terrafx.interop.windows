@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("AA80E905-2021-11D2-93E0-0060B067B86E")]
 [NativeTypeName("struct ITextStoreAnchorSink : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interface
+public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITextStoreAnchorSink));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

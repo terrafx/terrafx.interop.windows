@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -21,6 +22,7 @@ public unsafe partial struct FILE_OBJECTID_BUFFER
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BirthVolumeId"]/*' />
+    [UnscopedRef]
     public Span<byte> BirthVolumeId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -31,6 +33,7 @@ public unsafe partial struct FILE_OBJECTID_BUFFER
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BirthObjectId"]/*' />
+    [UnscopedRef]
     public Span<byte> BirthObjectId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -41,6 +44,7 @@ public unsafe partial struct FILE_OBJECTID_BUFFER
     }
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DomainId"]/*' />
+    [UnscopedRef]
     public Span<byte> DomainId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +55,7 @@ public unsafe partial struct FILE_OBJECTID_BUFFER
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ExtendedInfo"]/*' />
+    [UnscopedRef]
     public Span<byte> ExtendedInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("B22E3FBA-3925-4323-B5C1-9EBFC430F236")]
 [NativeTypeName("struct IWICMetadataWriterInfo : IWICMetadataHandlerInfo")]
 [NativeInheritance("IWICMetadataHandlerInfo")]
-public unsafe partial struct IWICMetadataWriterInfo : IWICMetadataWriterInfo.Interface
+public unsafe partial struct IWICMetadataWriterInfo : IWICMetadataWriterInfo.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWICMetadataWriterInfo));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

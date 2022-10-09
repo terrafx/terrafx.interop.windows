@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
@@ -74,6 +75,7 @@ public unsafe partial struct D3DX12_MESH_SHADER_PIPELINE_STATE_DESC
         public DXGI_FORMAT e6;
         public DXGI_FORMAT e7;
 
+        [UnscopedRef]
         public ref DXGI_FORMAT this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -84,6 +86,7 @@ public unsafe partial struct D3DX12_MESH_SHADER_PIPELINE_STATE_DESC
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<DXGI_FORMAT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 }

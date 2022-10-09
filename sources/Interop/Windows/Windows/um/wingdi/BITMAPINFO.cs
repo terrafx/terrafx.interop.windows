@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -24,6 +25,7 @@ public partial struct BITMAPINFO
     {
         public RGBQUAD e0;
 
+        [UnscopedRef]
         public ref RGBQUAD this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,6 +36,7 @@ public partial struct BITMAPINFO
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<RGBQUAD> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -29,6 +30,7 @@ public partial struct SUBSCRIBE_GENERIC_TLS_EXTENSION
     {
         public TLS_EXTENSION_SUBSCRIPTION e0;
 
+        [UnscopedRef]
         public ref TLS_EXTENSION_SUBSCRIPTION this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,6 +41,7 @@ public partial struct SUBSCRIBE_GENERIC_TLS_EXTENSION
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<TLS_EXTENSION_SUBSCRIPTION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

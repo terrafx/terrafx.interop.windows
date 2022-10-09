@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -44,6 +45,7 @@ public partial struct AXESLISTA
         public AXISINFOA e14;
         public AXISINFOA e15;
 
+        [UnscopedRef]
         public ref AXISINFOA this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -54,6 +56,7 @@ public partial struct AXESLISTA
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<AXISINFOA> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
     }
 }

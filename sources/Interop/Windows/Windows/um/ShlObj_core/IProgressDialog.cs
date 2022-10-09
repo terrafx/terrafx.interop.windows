@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("EBBC7C04-315E-11D2-B62F-006097DF5BD4")]
 [NativeTypeName("struct IProgressDialog : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IProgressDialog : IProgressDialog.Interface
+public unsafe partial struct IProgressDialog : IProgressDialog.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IProgressDialog));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

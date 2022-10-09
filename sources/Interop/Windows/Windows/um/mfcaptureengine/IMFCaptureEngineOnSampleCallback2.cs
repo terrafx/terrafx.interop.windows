@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -15,8 +16,10 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFCaptureEngineOnSampleCallback2 : IMFCaptureEngineOnSampleCallback")]
 [NativeInheritance("IMFCaptureEngineOnSampleCallback")]
 [SupportedOSPlatform("windows6.3")]
-public unsafe partial struct IMFCaptureEngineOnSampleCallback2 : IMFCaptureEngineOnSampleCallback2.Interface
+public unsafe partial struct IMFCaptureEngineOnSampleCallback2 : IMFCaptureEngineOnSampleCallback2.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFCaptureEngineOnSampleCallback2));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

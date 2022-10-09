@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -16,8 +17,10 @@ namespace TerraFX.Interop.DirectX;
 [NativeTypeName("struct IDWriteFontDownloadQueue : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows6.3")]
-public unsafe partial struct IDWriteFontDownloadQueue : IDWriteFontDownloadQueue.Interface
+public unsafe partial struct IDWriteFontDownloadQueue : IDWriteFontDownloadQueue.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWriteFontDownloadQueue));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -59,6 +60,7 @@ public partial struct SCM_PD_MANAGEMENT_STATUS
         public SCM_PD_OPERATIONAL_STATUS e14;
         public SCM_PD_OPERATIONAL_STATUS e15;
 
+        [UnscopedRef]
         public ref SCM_PD_OPERATIONAL_STATUS this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -69,6 +71,7 @@ public partial struct SCM_PD_MANAGEMENT_STATUS
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<SCM_PD_OPERATIONAL_STATUS> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
     }
 
@@ -77,6 +80,7 @@ public partial struct SCM_PD_MANAGEMENT_STATUS
     {
         public SCM_PD_OPERATIONAL_STATUS_REASON e0;
 
+        [UnscopedRef]
         public ref SCM_PD_OPERATIONAL_STATUS_REASON this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -87,6 +91,7 @@ public partial struct SCM_PD_MANAGEMENT_STATUS
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<SCM_PD_OPERATIONAL_STATUS_REASON> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

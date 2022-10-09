@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -29,6 +30,7 @@ public partial struct JOBOBJECT_BASIC_PROCESS_ID_LIST
     {
         public nuint e0;
 
+        [UnscopedRef]
         public ref nuint this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,6 +41,7 @@ public partial struct JOBOBJECT_BASIC_PROCESS_ID_LIST
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<nuint> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

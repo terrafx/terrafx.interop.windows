@@ -3,6 +3,8 @@
 // Ported from um/shellapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -32,63 +34,71 @@ public unsafe partial struct SHNAMEMAPPINGW
     public SHNAMEMAPPING64W _value64;
 
     [NativeTypeName("LPWSTR")]
+    [UnscopedRef]
     public ref ushort* pszOldPath
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).pszOldPath;
+                return ref _value32.pszOldPath;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).pszOldPath;
+                return ref _value64.pszOldPath;
             }
         }
     }
 
     [NativeTypeName("LPWSTR")]
+    [UnscopedRef]
     public ref ushort* pszNewPath
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).pszNewPath;
+                return ref _value32.pszNewPath;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).pszNewPath;
+                return ref _value64.pszNewPath;
             }
         }
     }
 
+    [UnscopedRef]
     public ref int cchOldPath
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cchOldPath, 1));
+                return ref _value32.cchOldPath;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cchOldPath, 1));
+                return ref _value64.cchOldPath;
             }
         }
     }
 
+    [UnscopedRef]
     public ref int cchNewPath
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cchNewPath, 1));
+                return ref _value32.cchNewPath;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cchNewPath, 1));
+                return ref _value64.cchNewPath;
             }
         }
     }

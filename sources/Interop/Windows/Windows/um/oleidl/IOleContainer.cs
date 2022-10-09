@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("0000011B-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IOleContainer : IParseDisplayName")]
 [NativeInheritance("IParseDisplayName")]
-public unsafe partial struct IOleContainer : IOleContainer.Interface
+public unsafe partial struct IOleContainer : IOleContainer.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IOleContainer));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

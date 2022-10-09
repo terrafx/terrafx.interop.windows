@@ -3,12 +3,16 @@
 // Ported from um/ShObjIdl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='ApplicationAssociationRegistrationUI.xml' path='doc/member[@name="ApplicationAssociationRegistrationUI"]/*' />
 [Guid("1968106D-F3B5-44CF-890E-116FCB9ECEF1")]
-public partial struct ApplicationAssociationRegistrationUI
+public unsafe partial struct ApplicationAssociationRegistrationUI : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ApplicationAssociationRegistrationUI));
 }

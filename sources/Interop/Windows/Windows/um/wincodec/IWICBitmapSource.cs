@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("00000120-A8F2-4877-BA0A-FD2B6645FB94")]
 [NativeTypeName("struct IWICBitmapSource : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface
+public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWICBitmapSource));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

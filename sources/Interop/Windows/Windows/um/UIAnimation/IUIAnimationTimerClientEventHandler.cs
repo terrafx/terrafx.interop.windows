@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("BEDB4DB6-94FA-4BFB-A47F-EF2D9E408C25")]
 [NativeTypeName("struct IUIAnimationTimerClientEventHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IUIAnimationTimerClientEventHandler : IUIAnimationTimerClientEventHandler.Interface
+public unsafe partial struct IUIAnimationTimerClientEventHandler : IUIAnimationTimerClientEventHandler.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUIAnimationTimerClientEventHandler));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

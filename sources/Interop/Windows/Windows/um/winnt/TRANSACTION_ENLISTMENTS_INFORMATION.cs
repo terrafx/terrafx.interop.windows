@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -25,6 +26,7 @@ public partial struct TRANSACTION_ENLISTMENTS_INFORMATION
     {
         public TRANSACTION_ENLISTMENT_PAIR e0;
 
+        [UnscopedRef]
         public ref TRANSACTION_ENLISTMENT_PAIR this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -35,6 +37,7 @@ public partial struct TRANSACTION_ENLISTMENTS_INFORMATION
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<TRANSACTION_ENLISTMENT_PAIR> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

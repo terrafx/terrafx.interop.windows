@@ -3,16 +3,20 @@
 // Ported from um/d3d12shader.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='ID3D12FunctionReflection.xml' path='doc/member[@name="ID3D12FunctionReflection"]/*' />
 [Guid("1108795C-2772-4BA9-B2A8-D464DC7E2799")]
-public unsafe partial struct ID3D12FunctionReflection : ID3D12FunctionReflection.Interface
+public unsafe partial struct ID3D12FunctionReflection : ID3D12FunctionReflection.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D12FunctionReflection));
+
     public void** lpVtbl;
 
     /// <include file='ID3D12FunctionReflection.xml' path='doc/member[@name="ID3D12FunctionReflection.GetDesc"]/*' />

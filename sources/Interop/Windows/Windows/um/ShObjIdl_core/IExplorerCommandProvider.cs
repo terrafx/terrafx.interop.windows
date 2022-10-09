@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("64961751-0835-43C0-8FFE-D57686530E64")]
 [NativeTypeName("struct IExplorerCommandProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IExplorerCommandProvider : IExplorerCommandProvider.Interface
+public unsafe partial struct IExplorerCommandProvider : IExplorerCommandProvider.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IExplorerCommandProvider));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("5E54B6D7-B44B-40D9-9A9E-E691D9CE6EDF")]
 [NativeTypeName("struct IAudioMidrange : IPerChannelDbLevel")]
 [NativeInheritance("IPerChannelDbLevel")]
-public unsafe partial struct IAudioMidrange : IAudioMidrange.Interface
+public unsafe partial struct IAudioMidrange : IAudioMidrange.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAudioMidrange));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

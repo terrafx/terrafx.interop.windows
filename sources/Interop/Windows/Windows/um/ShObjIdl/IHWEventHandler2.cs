@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("CFCC809F-295D-42E8-9FFC-424B33C487E6")]
 [NativeTypeName("struct IHWEventHandler2 : IHWEventHandler")]
 [NativeInheritance("IHWEventHandler")]
-public unsafe partial struct IHWEventHandler2 : IHWEventHandler2.Interface
+public unsafe partial struct IHWEventHandler2 : IHWEventHandler2.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHWEventHandler2));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

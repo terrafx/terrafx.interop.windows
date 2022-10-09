@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("31C147B6-0ADE-4A3C-B514-DDF932EF6D17")]
 [NativeTypeName("struct IShellFolderViewDual2 : IShellFolderViewDual")]
 [NativeInheritance("IShellFolderViewDual")]
-public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Interface
+public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IShellFolderViewDual2));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

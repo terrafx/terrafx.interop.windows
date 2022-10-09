@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -280,6 +281,7 @@ public unsafe partial struct TRUECOLORINFO
         public RGBQUAD e254;
         public RGBQUAD e255;
 
+        [UnscopedRef]
         public ref RGBQUAD this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -290,6 +292,7 @@ public unsafe partial struct TRUECOLORINFO
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<RGBQUAD> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 256);
     }
 }

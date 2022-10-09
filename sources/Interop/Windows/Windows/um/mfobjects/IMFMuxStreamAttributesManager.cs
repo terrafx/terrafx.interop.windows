@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -15,8 +16,10 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IMFMuxStreamAttributesManager : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows10.0.15063.0")]
-public unsafe partial struct IMFMuxStreamAttributesManager : IMFMuxStreamAttributesManager.Interface
+public unsafe partial struct IMFMuxStreamAttributesManager : IMFMuxStreamAttributesManager.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFMuxStreamAttributesManager));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

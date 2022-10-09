@@ -3,6 +3,8 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -32,63 +34,71 @@ public unsafe partial struct INFCONTEXT
     public INFCONTEXT64 _value64;
 
     [NativeTypeName("PVOID")]
+    [UnscopedRef]
     public ref void* Inf
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).Inf;
+                return ref _value32.Inf;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).Inf;
+                return ref _value64.Inf;
             }
         }
     }
 
     [NativeTypeName("PVOID")]
+    [UnscopedRef]
     public ref void* CurrentInf
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).CurrentInf;
+                return ref _value32.CurrentInf;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).CurrentInf;
+                return ref _value64.CurrentInf;
             }
         }
     }
 
+    [UnscopedRef]
     public ref uint Section
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.Section, 1));
+                return ref _value32.Section;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.Section, 1));
+                return ref _value64.Section;
             }
         }
     }
 
+    [UnscopedRef]
     public ref uint Line
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.Line, 1));
+                return ref _value32.Line;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.Line, 1));
+                return ref _value64.Line;
             }
         }
     }

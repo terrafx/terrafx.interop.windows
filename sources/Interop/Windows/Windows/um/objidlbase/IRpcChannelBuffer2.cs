@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("594F31D0-7F19-11D0-B194-00A0C90DC8BF")]
 [NativeTypeName("struct IRpcChannelBuffer2 : IRpcChannelBuffer")]
 [NativeInheritance("IRpcChannelBuffer")]
-public unsafe partial struct IRpcChannelBuffer2 : IRpcChannelBuffer2.Interface
+public unsafe partial struct IRpcChannelBuffer2 : IRpcChannelBuffer2.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IRpcChannelBuffer2));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("211A8765-03AC-11D1-8D13-00AA00BD8339")]
 [NativeTypeName("struct IBPCSatelliteTuner : IAMTuner")]
 [NativeInheritance("IAMTuner")]
-public unsafe partial struct IBPCSatelliteTuner : IBPCSatelliteTuner.Interface
+public unsafe partial struct IBPCSatelliteTuner : IBPCSatelliteTuner.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IBPCSatelliteTuner));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

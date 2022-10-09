@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("9387928B-AC75-4BF9-8AB2-2B93C4A55290")]
 [NativeTypeName("struct IConnectableCredentialProviderCredential : ICredentialProviderCredential")]
 [NativeInheritance("ICredentialProviderCredential")]
-public unsafe partial struct IConnectableCredentialProviderCredential : IConnectableCredentialProviderCredential.Interface
+public unsafe partial struct IConnectableCredentialProviderCredential : IConnectableCredentialProviderCredential.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IConnectableCredentialProviderCredential));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

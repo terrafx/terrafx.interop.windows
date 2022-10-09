@@ -3,6 +3,7 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -42,22 +43,24 @@ public partial struct DISK_CACHE_INFORMATION
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ScalarPrefetch"]/*' />
+    [UnscopedRef]
     public ref _Anonymous_e__Union._ScalarPrefetch_e__Struct ScalarPrefetch
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ScalarPrefetch, 1));
+            return ref Anonymous.ScalarPrefetch;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BlockPrefetch"]/*' />
+    [UnscopedRef]
     public ref _Anonymous_e__Union._BlockPrefetch_e__Struct BlockPrefetch
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.BlockPrefetch, 1));
+            return ref Anonymous.BlockPrefetch;
         }
     }
 

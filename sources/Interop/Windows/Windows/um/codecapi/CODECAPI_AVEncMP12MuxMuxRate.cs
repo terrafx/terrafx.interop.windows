@@ -3,12 +3,16 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncMP12MuxMuxRate.xml' path='doc/member[@name="CODECAPI_AVEncMP12MuxMuxRate"]/*' />
 [Guid("EE047C72-4BDB-4A9D-8E21-41926C823DA7")]
-public partial struct CODECAPI_AVEncMP12MuxMuxRate
+public unsafe partial struct CODECAPI_AVEncMP12MuxMuxRate : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncMP12MuxMuxRate));
 }

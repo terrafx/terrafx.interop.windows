@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("5EFB46D7-47C0-4B68-ACDA-DED47C90EC91")]
 [NativeTypeName("struct IStorageProviderBanners : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IStorageProviderBanners : IStorageProviderBanners.Interface
+public unsafe partial struct IStorageProviderBanners : IStorageProviderBanners.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IStorageProviderBanners));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

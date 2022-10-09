@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -1051,6 +1052,7 @@ public partial struct DXGI_GAMMA_CONTROL
         public DXGI_RGB e1023;
         public DXGI_RGB e1024;
 
+        [UnscopedRef]
         public ref DXGI_RGB this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1061,6 +1063,7 @@ public partial struct DXGI_GAMMA_CONTROL
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<DXGI_RGB> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 1025);
     }
 }

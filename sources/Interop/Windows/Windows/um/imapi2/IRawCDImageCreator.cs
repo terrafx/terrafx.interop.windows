@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("25983550-9D65-49CE-B335-40630D901227")]
 [NativeTypeName("struct IRawCDImageCreator : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface
+public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IRawCDImageCreator));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

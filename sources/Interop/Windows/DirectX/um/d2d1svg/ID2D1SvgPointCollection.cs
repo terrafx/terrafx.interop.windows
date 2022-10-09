@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("9DBE4C0D-3572-4DD9-9825-5530813BB712")]
 [NativeTypeName("struct ID2D1SvgPointCollection : ID2D1SvgAttribute")]
 [NativeInheritance("ID2D1SvgAttribute")]
-public unsafe partial struct ID2D1SvgPointCollection : ID2D1SvgPointCollection.Interface
+public unsafe partial struct ID2D1SvgPointCollection : ID2D1SvgPointCollection.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1SvgPointCollection));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

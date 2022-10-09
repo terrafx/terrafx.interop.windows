@@ -3,12 +3,16 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='OldHTMLDocument.xml' path='doc/member[@name="OldHTMLDocument"]/*' />
 [Guid("D48A6EC9-6A4A-11CF-94A7-444553540000")]
-public partial struct OldHTMLDocument
+public unsafe partial struct OldHTMLDocument : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_OldHTMLDocument));
 }

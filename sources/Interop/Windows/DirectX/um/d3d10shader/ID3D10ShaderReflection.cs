@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("D40E20B6-F8F7-42AD-AB20-4BAF8F15DFAA")]
 [NativeTypeName("struct ID3D10ShaderReflection : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ID3D10ShaderReflection : ID3D10ShaderReflection.Interface
+public unsafe partial struct ID3D10ShaderReflection : ID3D10ShaderReflection.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D10ShaderReflection));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

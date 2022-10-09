@@ -3,6 +3,7 @@
 // Ported from um/ddraw.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -70,52 +71,57 @@ public unsafe partial struct DDSURFACEDESC
     public DDSCAPS ddsCaps;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.lPitch"]/*' />
+    [UnscopedRef]
     public ref int lPitch
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.lPitch, 1));
+            return ref Anonymous1.lPitch;
         }
     }
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.dwLinearSize"]/*' />
+    [UnscopedRef]
     public ref uint dwLinearSize
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.dwLinearSize, 1));
+            return ref Anonymous1.dwLinearSize;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dwMipMapCount"]/*' />
+    [UnscopedRef]
     public ref uint dwMipMapCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwMipMapCount, 1));
+            return ref Anonymous2.dwMipMapCount;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dwZBufferBitDepth"]/*' />
+    [UnscopedRef]
     public ref uint dwZBufferBitDepth
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwZBufferBitDepth, 1));
+            return ref Anonymous2.dwZBufferBitDepth;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dwRefreshRate"]/*' />
+    [UnscopedRef]
     public ref uint dwRefreshRate
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwRefreshRate, 1));
+            return ref Anonymous2.dwRefreshRate;
         }
     }
 

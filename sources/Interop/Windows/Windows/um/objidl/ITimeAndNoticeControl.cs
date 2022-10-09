@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("BC0BF6AE-8878-11D1-83E9-00C04FC2C6D4")]
 [NativeTypeName("struct ITimeAndNoticeControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITimeAndNoticeControl : ITimeAndNoticeControl.Interface
+public unsafe partial struct ITimeAndNoticeControl : ITimeAndNoticeControl.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITimeAndNoticeControl));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -56,6 +57,7 @@ public partial struct USN_RECORD_V4
     {
         public USN_RECORD_EXTENT e0;
 
+        [UnscopedRef]
         public ref USN_RECORD_EXTENT this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -66,6 +68,7 @@ public partial struct USN_RECORD_V4
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<USN_RECORD_EXTENT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

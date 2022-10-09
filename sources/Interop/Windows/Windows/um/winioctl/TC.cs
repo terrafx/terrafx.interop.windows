@@ -22,8 +22,8 @@ public static partial class TC
     public const int TC_DEVICEDUMP_SUBSECTION_DESC_LENGTH = 16;
 
     [NativeTypeName("#define TC_PUBLIC_DATA_TYPE_ATAGP \"ATAGPLogPages\"")]
-    public static ReadOnlySpan<byte> TC_PUBLIC_DATA_TYPE_ATAGP => new byte[] { 0x41, 0x54, 0x41, 0x47, 0x50, 0x4C, 0x6F, 0x67, 0x50, 0x61, 0x67, 0x65, 0x73, 0x00 };
+    public static ReadOnlySpan<byte> TC_PUBLIC_DATA_TYPE_ATAGP => "ATAGPLogPages"u8;
 
     [NativeTypeName("#define TC_PUBLIC_DATA_TYPE_ATASMART \"ATASMARTPages\"")]
-    public static ReadOnlySpan<byte> TC_PUBLIC_DATA_TYPE_ATASMART => new byte[] { 0x41, 0x54, 0x41, 0x53, 0x4D, 0x41, 0x52, 0x54, 0x50, 0x61, 0x67, 0x65, 0x73, 0x00 };
+    public static ReadOnlySpan<byte> TC_PUBLIC_DATA_TYPE_ATASMART => "ATASMARTPages"u8;
 }

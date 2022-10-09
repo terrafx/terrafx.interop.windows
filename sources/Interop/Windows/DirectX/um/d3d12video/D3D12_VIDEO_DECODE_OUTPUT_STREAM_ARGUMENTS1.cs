@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -33,6 +34,7 @@ public unsafe partial struct D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1
         public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e2;
         public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e3;
 
+        [UnscopedRef]
         public ref D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,6 +45,7 @@ public unsafe partial struct D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 4);
     }
 }

@@ -3,6 +3,7 @@
 // Ported from shared/ipmib.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -68,42 +69,46 @@ public partial struct MIB_IPFORWARDROW
     public uint dwForwardMetric5;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.dwForwardType"]/*' />
+    [UnscopedRef]
     public ref uint dwForwardType
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.dwForwardType, 1));
+            return ref Anonymous1.dwForwardType;
         }
     }
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.ForwardType"]/*' />
+    [UnscopedRef]
     public ref MIB_IPFORWARD_TYPE ForwardType
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.ForwardType, 1));
+            return ref Anonymous1.ForwardType;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.dwForwardProto"]/*' />
+    [UnscopedRef]
     public ref uint dwForwardProto
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwForwardProto, 1));
+            return ref Anonymous2.dwForwardProto;
         }
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.ForwardProto"]/*' />
+    [UnscopedRef]
     public ref MIB_IPFORWARD_PROTO ForwardProto
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.ForwardProto, 1));
+            return ref Anonymous2.ForwardProto;
         }
     }
 

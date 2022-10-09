@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -37,6 +38,7 @@ public partial struct PPM_IDLE_ACCOUNTING
     {
         public PPM_IDLE_STATE_ACCOUNTING e0;
 
+        [UnscopedRef]
         public ref PPM_IDLE_STATE_ACCOUNTING this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -47,6 +49,7 @@ public partial struct PPM_IDLE_ACCOUNTING
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<PPM_IDLE_STATE_ACCOUNTING> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

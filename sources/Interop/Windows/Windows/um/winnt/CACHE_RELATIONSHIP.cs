@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -42,12 +43,13 @@ public unsafe partial struct CACHE_RELATIONSHIP
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.GroupMask"]/*' />
+    [UnscopedRef]
     public ref GROUP_AFFINITY GroupMask
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.GroupMask, 1));
+            return ref Anonymous.GroupMask;
         }
     }
 
@@ -69,6 +71,7 @@ public unsafe partial struct CACHE_RELATIONSHIP
         {
             public GROUP_AFFINITY e0;
 
+            [UnscopedRef]
             public ref GROUP_AFFINITY this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -79,6 +82,7 @@ public unsafe partial struct CACHE_RELATIONSHIP
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [UnscopedRef]
             public Span<GROUP_AFFINITY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }

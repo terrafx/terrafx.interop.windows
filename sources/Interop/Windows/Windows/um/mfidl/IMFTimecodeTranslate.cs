@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("AB9D8661-F7E8-4EF4-9861-89F334F94E74")]
 [NativeTypeName("struct IMFTimecodeTranslate : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interface
+public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFTimecodeTranslate));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

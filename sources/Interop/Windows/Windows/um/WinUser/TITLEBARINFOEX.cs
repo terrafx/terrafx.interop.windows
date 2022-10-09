@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -37,6 +38,7 @@ public unsafe partial struct TITLEBARINFOEX
         public RECT e4;
         public RECT e5;
 
+        [UnscopedRef]
         public ref RECT this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -47,6 +49,7 @@ public unsafe partial struct TITLEBARINFOEX
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<RECT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 6);
     }
 }

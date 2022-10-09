@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("DD1D7110-7836-11CF-BF47-00AA0055595A")]
 [NativeTypeName("struct IFullScreenVideo : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface
+public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFullScreenVideo));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

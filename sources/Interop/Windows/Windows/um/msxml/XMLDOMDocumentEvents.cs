@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.Windows;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("3EFAA427-272F-11D2-836F-0000F87A7782")]
 [NativeTypeName("struct XMLDOMDocumentEvents : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct XMLDOMDocumentEvents : XMLDOMDocumentEvents.Interface
+public unsafe partial struct XMLDOMDocumentEvents : XMLDOMDocumentEvents.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in DIID_XMLDOMDocumentEvents));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -16,8 +17,10 @@ namespace TerraFX.Interop.WinRT;
 [NativeTypeName("struct IProtectionPolicyManagerInterop2 : IInspectable")]
 [NativeInheritance("IInspectable")]
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolicyManagerInterop2.Interface
+public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolicyManagerInterop2.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IProtectionPolicyManagerInterop2));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

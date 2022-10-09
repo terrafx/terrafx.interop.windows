@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.DirectX;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -17,8 +18,10 @@ namespace TerraFX.Interop.WinRT;
 [NativeTypeName("struct IVirtualSurfaceImageSourceNative : ISurfaceImageSourceNative")]
 [NativeInheritance("ISurfaceImageSourceNative")]
 [SupportedOSPlatform("windows6.3")]
-public unsafe partial struct IVirtualSurfaceImageSourceNative : IVirtualSurfaceImageSourceNative.Interface
+public unsafe partial struct IVirtualSurfaceImageSourceNative : IVirtualSurfaceImageSourceNative.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVirtualSurfaceImageSourceNative));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

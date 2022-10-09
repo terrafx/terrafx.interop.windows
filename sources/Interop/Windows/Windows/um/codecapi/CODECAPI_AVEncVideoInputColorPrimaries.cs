@@ -3,12 +3,16 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncVideoInputColorPrimaries.xml' path='doc/member[@name="CODECAPI_AVEncVideoInputColorPrimaries"]/*' />
 [Guid("C24D783F-7CE6-4278-90AB-28A4F1E5F86C")]
-public partial struct CODECAPI_AVEncVideoInputColorPrimaries
+public unsafe partial struct CODECAPI_AVEncVideoInputColorPrimaries : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncVideoInputColorPrimaries));
 }

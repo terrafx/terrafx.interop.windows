@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("F10B5E34-DD3B-42A7-AA7D-2F4EC54BB09B")]
 [NativeTypeName("struct IShellIconOverlayManager : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager.Interface
+public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IShellIconOverlayManager));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("436EEE9C-264F-4242-90E1-4E330C107512")]
 [NativeTypeName("struct IMpeg2Demultiplexer : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMpeg2Demultiplexer : IMpeg2Demultiplexer.Interface
+public unsafe partial struct IMpeg2Demultiplexer : IMpeg2Demultiplexer.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMpeg2Demultiplexer));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

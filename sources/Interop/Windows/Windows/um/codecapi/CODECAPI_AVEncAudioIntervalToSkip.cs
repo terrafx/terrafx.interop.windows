@@ -3,12 +3,16 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CODECAPI_AVEncAudioIntervalToSkip.xml' path='doc/member[@name="CODECAPI_AVEncAudioIntervalToSkip"]/*' />
 [Guid("88C15F94-C38C-4796-A9E8-96E967983F26")]
-public partial struct CODECAPI_AVEncAudioIntervalToSkip
+public unsafe partial struct CODECAPI_AVEncAudioIntervalToSkip : INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncAudioIntervalToSkip));
 }

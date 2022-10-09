@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("FBEC5E44-F7BE-4B65-B7F8-C0C81FEF026D")]
 [NativeTypeName("struct IWICDevelopRaw : IWICBitmapFrameDecode")]
 [NativeInheritance("IWICBitmapFrameDecode")]
-public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
+public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWICDevelopRaw));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

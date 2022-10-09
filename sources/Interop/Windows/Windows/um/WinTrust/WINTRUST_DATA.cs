@@ -3,6 +3,7 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -63,52 +64,57 @@ public unsafe partial struct WINTRUST_DATA
     public WINTRUST_SIGNATURE_SETTINGS* pSignatureSettings;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pFile"]/*' />
+    [UnscopedRef]
     public ref WINTRUST_FILE_INFO* pFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pFile;
+            return ref Anonymous.pFile;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pCatalog"]/*' />
+    [UnscopedRef]
     public ref WINTRUST_CATALOG_INFO* pCatalog
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pCatalog;
+            return ref Anonymous.pCatalog;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pBlob"]/*' />
+    [UnscopedRef]
     public ref WINTRUST_BLOB_INFO* pBlob
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pBlob;
+            return ref Anonymous.pBlob;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pSgnr"]/*' />
+    [UnscopedRef]
     public ref WINTRUST_SGNR_INFO* pSgnr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pSgnr;
+            return ref Anonymous.pSgnr;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pCert"]/*' />
+    [UnscopedRef]
     public ref WINTRUST_CERT_INFO* pCert
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pCert;
+            return ref Anonymous.pCert;
         }
     }
 

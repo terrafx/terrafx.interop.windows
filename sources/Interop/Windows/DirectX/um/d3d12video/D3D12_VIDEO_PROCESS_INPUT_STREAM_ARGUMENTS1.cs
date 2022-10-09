@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -41,6 +42,7 @@ public unsafe partial struct D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS1
         public D3D12_VIDEO_PROCESS_INPUT_STREAM e0;
         public D3D12_VIDEO_PROCESS_INPUT_STREAM e1;
 
+        [UnscopedRef]
         public ref D3D12_VIDEO_PROCESS_INPUT_STREAM this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +53,7 @@ public unsafe partial struct D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS1
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<D3D12_VIDEO_PROCESS_INPUT_STREAM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
     }
 }

@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
@@ -25,12 +26,13 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.CpuSet"]/*' />
+    [UnscopedRef]
     public ref _Anonymous_e__Union._CpuSet_e__Struct CpuSet
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.CpuSet, 1));
+            return ref Anonymous.CpuSet;
         }
     }
 
@@ -82,12 +84,13 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
             public ulong AllocationTag;
 
             /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.AllFlags"]/*' />
+            [UnscopedRef]
             public ref byte AllFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.AllFlags, 1));
+                    return ref Anonymous1.AllFlags;
                 }
             }
 
@@ -172,22 +175,24 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
             }
 
             /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Reserved"]/*' />
+            [UnscopedRef]
             public ref uint Reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Reserved, 1));
+                    return ref Anonymous2.Reserved;
                 }
             }
 
             /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.SchedulingClass"]/*' />
+            [UnscopedRef]
             public ref byte SchedulingClass
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.SchedulingClass, 1));
+                    return ref Anonymous2.SchedulingClass;
                 }
             }
 

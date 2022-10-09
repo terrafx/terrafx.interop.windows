@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("DDDF83E6-68D7-4C70-883F-A1836AFB4A50")]
 [NativeTypeName("struct ISpatialAudioObjectRenderStreamNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ISpatialAudioObjectRenderStreamNotify : ISpatialAudioObjectRenderStreamNotify.Interface
+public unsafe partial struct ISpatialAudioObjectRenderStreamNotify : ISpatialAudioObjectRenderStreamNotify.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpatialAudioObjectRenderStreamNotify));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

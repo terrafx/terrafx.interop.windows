@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.WinRT;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -16,8 +17,10 @@ namespace TerraFX.Interop.Windows;
 [NativeTypeName("struct IPlayToSourceClassFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows6.2")]
-public unsafe partial struct IPlayToSourceClassFactory : IPlayToSourceClassFactory.Interface
+public unsafe partial struct IPlayToSourceClassFactory : IPlayToSourceClassFactory.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPlayToSourceClassFactory));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

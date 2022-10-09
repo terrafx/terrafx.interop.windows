@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("B33E75FF-E84C-4DCA-A25C-33B8DC003374")]
 [NativeTypeName("struct IClonableWrapper : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IClonableWrapper : IClonableWrapper.Interface
+public unsafe partial struct IClonableWrapper : IClonableWrapper.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IClonableWrapper));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

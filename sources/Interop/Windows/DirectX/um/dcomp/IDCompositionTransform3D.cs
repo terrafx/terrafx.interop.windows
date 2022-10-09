@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("71185722-246B-41F2-AAD1-0443F7F4BFC2")]
 [NativeTypeName("struct IDCompositionTransform3D : IDCompositionEffect")]
 [NativeInheritance("IDCompositionEffect")]
-public unsafe partial struct IDCompositionTransform3D : IDCompositionTransform3D.Interface
+public unsafe partial struct IDCompositionTransform3D : IDCompositionTransform3D.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDCompositionTransform3D));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

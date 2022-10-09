@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("1C1A17B0-BED0-415D-974B-DC6696131599")]
 [NativeTypeName("struct IVMRMixerControl : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface
+public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVMRMixerControl));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

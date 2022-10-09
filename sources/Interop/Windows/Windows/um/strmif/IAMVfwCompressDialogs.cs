@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("D8D715A3-6E5E-11D0-B3F0-00AA003761C5")]
 [NativeTypeName("struct IAMVfwCompressDialogs : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Interface
+public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAMVfwCompressDialogs));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

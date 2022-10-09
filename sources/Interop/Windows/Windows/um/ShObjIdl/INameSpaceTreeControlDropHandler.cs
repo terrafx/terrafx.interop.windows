@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("F9C665D6-C2F2-4C19-BF33-8322D7352F51")]
 [NativeTypeName("struct INameSpaceTreeControlDropHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeControlDropHandler.Interface
+public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeControlDropHandler.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_INameSpaceTreeControlDropHandler));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

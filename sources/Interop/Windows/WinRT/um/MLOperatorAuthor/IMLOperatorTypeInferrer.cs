@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.WinRT;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.WinRT;
 [Guid("781AEB48-9BCB-4797-BF77-8BF455217BEB")]
 [NativeTypeName("struct IMLOperatorTypeInferrer : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IMLOperatorTypeInferrer : IMLOperatorTypeInferrer.Interface
+public unsafe partial struct IMLOperatorTypeInferrer : IMLOperatorTypeInferrer.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMLOperatorTypeInferrer));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

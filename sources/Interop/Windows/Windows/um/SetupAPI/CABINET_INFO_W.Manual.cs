@@ -3,6 +3,8 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -32,81 +34,91 @@ public unsafe partial struct CABINET_INFO_W
     public CABINET_INFO64_W _value64;
 
     [NativeTypeName("PCWSTR")]
+    [UnscopedRef]
     public ref ushort* CabinetPath
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).CabinetPath;
+                return ref _value32.CabinetPath;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).CabinetPath;
+                return ref _value64.CabinetPath;
             }
         }
     }
 
     [NativeTypeName("PCWSTR")]
+    [UnscopedRef]
     public ref ushort* CabinetFile
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).CabinetFile;
+                return ref _value32.CabinetFile;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).CabinetFile;
+                return ref _value64.CabinetFile;
             }
         }
     }
 
     [NativeTypeName("PCWSTR")]
+    [UnscopedRef]
     public ref ushort* DiskName
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).DiskName;
+                return ref _value32.DiskName;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).DiskName;
+                return ref _value64.DiskName;
             }
         }
     }
 
     [NativeTypeName("USHORT")]
+    [UnscopedRef]
     public ref ushort SetId
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.SetId, 1));
+                return ref _value32.SetId;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.SetId, 1));
+                return ref _value64.SetId;
             }
         }
     }
 
     [NativeTypeName("USHORT")]
+    [UnscopedRef]
     public ref ushort CabinetNumber
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.CabinetNumber, 1));
+                return ref _value32.CabinetNumber;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.CabinetNumber, 1));
+                return ref _value64.CabinetNumber;
             }
         }
     }

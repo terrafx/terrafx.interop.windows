@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -65,12 +66,13 @@ public unsafe partial struct XSTATE_CONFIGURATION
     public uint Spare;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ControlFlags"]/*' />
+    [UnscopedRef]
     public ref uint ControlFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ControlFlags, 1));
+            return ref Anonymous.ControlFlags;
         }
     }
 
@@ -262,6 +264,7 @@ public unsafe partial struct XSTATE_CONFIGURATION
         public XSTATE_FEATURE e62;
         public XSTATE_FEATURE e63;
 
+        [UnscopedRef]
         public ref XSTATE_FEATURE this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -272,6 +275,7 @@ public unsafe partial struct XSTATE_CONFIGURATION
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<XSTATE_FEATURE> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 64);
     }
 }

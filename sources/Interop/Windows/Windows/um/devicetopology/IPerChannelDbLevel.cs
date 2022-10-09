@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("C2F8E001-F205-4BC9-99BC-C13B1E048CCB")]
 [NativeTypeName("struct IPerChannelDbLevel : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IPerChannelDbLevel : IPerChannelDbLevel.Interface
+public unsafe partial struct IPerChannelDbLevel : IPerChannelDbLevel.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPerChannelDbLevel));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

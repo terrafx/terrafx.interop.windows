@@ -3,6 +3,7 @@
 // Ported from um/Psapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -183,12 +184,13 @@ public partial struct PSAPI_WORKING_SET_EX_BLOCK
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Invalid"]/*' />
+    [UnscopedRef]
     public ref _Anonymous_e__Union._Invalid_e__Struct Invalid
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Invalid, 1));
+            return ref Anonymous.Invalid;
         }
     }
 

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("F633BE14-9EFF-4C4D-929E-05717B21B3E6")]
 [NativeTypeName("struct IPrintManagerTemplatePrinter : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IPrintManagerTemplatePrinter : IPrintManagerTemplatePrinter.Interface
+public unsafe partial struct IPrintManagerTemplatePrinter : IPrintManagerTemplatePrinter.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPrintManagerTemplatePrinter));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

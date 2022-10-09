@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("31E6E7BC-E0FF-4D46-8C64-A0A8C41C15D3")]
 [NativeTypeName("struct ID2D1Multithread : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface
+public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1Multithread));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

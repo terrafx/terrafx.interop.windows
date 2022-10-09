@@ -3,6 +3,7 @@
 // Ported from um/mmeapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -37,22 +38,24 @@ public unsafe partial struct MIXERLINECONTROLSA
     public MIXERCONTROLA* pamxctrl;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwControlID"]/*' />
+    [UnscopedRef]
     public ref uint dwControlID
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwControlID, 1));
+            return ref Anonymous.dwControlID;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwControlType"]/*' />
+    [UnscopedRef]
     public ref uint dwControlType
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwControlType, 1));
+            return ref Anonymous.dwControlType;
         }
     }
 

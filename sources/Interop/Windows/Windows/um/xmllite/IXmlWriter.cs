@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("7279FC88-709D-4095-B63D-69FE4B0D9030")]
 [NativeTypeName("struct IXmlWriter : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IXmlWriter : IXmlWriter.Interface
+public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IXmlWriter));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

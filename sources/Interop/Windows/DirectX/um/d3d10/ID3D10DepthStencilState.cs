@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("2B4B1CC8-A4AD-41F8-8322-CA86FC3EC675")]
 [NativeTypeName("struct ID3D10DepthStencilState : ID3D10DeviceChild")]
 [NativeInheritance("ID3D10DeviceChild")]
-public unsafe partial struct ID3D10DepthStencilState : ID3D10DepthStencilState.Interface
+public unsafe partial struct ID3D10DepthStencilState : ID3D10DepthStencilState.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D10DepthStencilState));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

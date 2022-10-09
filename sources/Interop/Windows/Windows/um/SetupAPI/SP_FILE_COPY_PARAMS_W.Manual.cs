@@ -3,6 +3,8 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -32,191 +34,215 @@ public unsafe partial struct SP_FILE_COPY_PARAMS_W
     public SP_FILE_COPY_PARAMS64_W _value64;
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint cbSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
+                return ref _value32.cbSize;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
+                return ref _value64.cbSize;
             }
         }
     }
 
+    [UnscopedRef]
     public ref HSPFILEQ QueueHandle
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.QueueHandle, 1));
+                return ref _value32.QueueHandle;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.QueueHandle, 1));
+                return ref _value64.QueueHandle;
             }
         }
     }
 
     [NativeTypeName("PCWSTR")]
+    [UnscopedRef]
     public ref ushort* SourceRootPath
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).SourceRootPath;
+                return ref _value32.SourceRootPath;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).SourceRootPath;
+                return ref _value64.SourceRootPath;
             }
         }
     }
 
     [NativeTypeName("PCWSTR")]
+    [UnscopedRef]
     public ref ushort* SourcePath
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).SourcePath;
+                return ref _value32.SourcePath;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).SourcePath;
+                return ref _value64.SourcePath;
             }
         }
     }
 
     [NativeTypeName("PCWSTR")]
+    [UnscopedRef]
     public ref ushort* SourceFilename
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).SourceFilename;
+                return ref _value32.SourceFilename;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).SourceFilename;
+                return ref _value64.SourceFilename;
             }
         }
     }
 
     [NativeTypeName("PCWSTR")]
+    [UnscopedRef]
     public ref ushort* SourceDescription
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).SourceDescription;
+                return ref _value32.SourceDescription;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).SourceDescription;
+                return ref _value64.SourceDescription;
             }
         }
     }
 
     [NativeTypeName("PCWSTR")]
+    [UnscopedRef]
     public ref ushort* SourceTagfile
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).SourceTagfile;
+                return ref _value32.SourceTagfile;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).SourceTagfile;
+                return ref _value64.SourceTagfile;
             }
         }
     }
 
     [NativeTypeName("PCWSTR")]
+    [UnscopedRef]
     public ref ushort* TargetDirectory
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).TargetDirectory;
+                return ref _value32.TargetDirectory;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).TargetDirectory;
+                return ref _value64.TargetDirectory;
             }
         }
     }
 
     [NativeTypeName("PCWSTR")]
+    [UnscopedRef]
     public ref ushort* TargetFilename
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).TargetFilename;
+                return ref _value32.TargetFilename;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).TargetFilename;
+                return ref _value64.TargetFilename;
             }
         }
     }
 
     [NativeTypeName("DWORD")]
+    [UnscopedRef]
     public ref uint CopyStyle
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.CopyStyle, 1));
+                return ref _value32.CopyStyle;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.CopyStyle, 1));
+                return ref _value64.CopyStyle;
             }
         }
     }
 
+    [UnscopedRef]
     public ref HINF LayoutInf
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.LayoutInf, 1));
+                return ref _value32.LayoutInf;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.LayoutInf, 1));
+                return ref _value64.LayoutInf;
             }
         }
     }
 
     [NativeTypeName("PCWSTR")]
+    [UnscopedRef]
     public ref ushort* SecurityDescriptor
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             if (sizeof(nint) == 4)
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).SecurityDescriptor;
+                return ref _value32.SecurityDescriptor;
             }
             else
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).SecurityDescriptor;
+                return ref _value64.SecurityDescriptor;
             }
         }
     }

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("B6AFA338-D779-11D9-8BDE-F66BAD1E3F3A")]
 [NativeTypeName("struct IContactCollection : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IContactCollection : IContactCollection.Interface
+public unsafe partial struct IContactCollection : IContactCollection.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IContactCollection));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

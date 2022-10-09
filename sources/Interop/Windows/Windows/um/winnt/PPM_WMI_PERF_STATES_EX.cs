@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -97,6 +98,7 @@ public unsafe partial struct PPM_WMI_PERF_STATES_EX
     {
         public PPM_WMI_PERF_STATE e0;
 
+        [UnscopedRef]
         public ref PPM_WMI_PERF_STATE this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -107,6 +109,7 @@ public unsafe partial struct PPM_WMI_PERF_STATES_EX
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<PPM_WMI_PERF_STATE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("0E6D4D92-6738-11CF-9608-00AA00680DB4")]
 [NativeTypeName("struct IDirectWriterLock : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IDirectWriterLock : IDirectWriterLock.Interface
+public unsafe partial struct IDirectWriterLock : IDirectWriterLock.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDirectWriterLock));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

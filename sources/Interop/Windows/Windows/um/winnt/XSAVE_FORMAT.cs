@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -86,6 +87,7 @@ public unsafe partial struct XSAVE_FORMAT
         public M128A e6;
         public M128A e7;
 
+        [UnscopedRef]
         public ref M128A this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -96,6 +98,7 @@ public unsafe partial struct XSAVE_FORMAT
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<M128A> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 
@@ -119,6 +122,7 @@ public unsafe partial struct XSAVE_FORMAT
         public M128A e14;
         public M128A e15;
 
+        [UnscopedRef]
         public ref M128A this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -129,6 +133,7 @@ public unsafe partial struct XSAVE_FORMAT
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<M128A> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
     }
 }

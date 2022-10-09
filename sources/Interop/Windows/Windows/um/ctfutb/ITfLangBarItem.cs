@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("73540D69-EDEB-4EE9-96C9-23AA30B25916")]
 [NativeTypeName("struct ITfLangBarItem : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITfLangBarItem : ITfLangBarItem.Interface
+public unsafe partial struct ITfLangBarItem : ITfLangBarItem.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfLangBarItem));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

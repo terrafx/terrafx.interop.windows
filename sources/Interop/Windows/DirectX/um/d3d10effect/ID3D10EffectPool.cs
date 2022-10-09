@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -14,8 +15,10 @@ namespace TerraFX.Interop.DirectX;
 [Guid("9537AB04-3250-412E-8213-FCD2F8677933")]
 [NativeTypeName("struct ID3D10EffectPool : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ID3D10EffectPool : ID3D10EffectPool.Interface
+public unsafe partial struct ID3D10EffectPool : ID3D10EffectPool.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D10EffectPool));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -3,6 +3,7 @@
 // Ported from um/mmeapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -68,42 +69,46 @@ public unsafe partial struct MIXERCONTROLA
         public fixed uint dwReserved[6];
 
         /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.lMinimum"]/*' />
+        [UnscopedRef]
         public ref int lMinimum
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.lMinimum, 1));
+                return ref Anonymous1.lMinimum;
             }
         }
 
         /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.lMaximum"]/*' />
+        [UnscopedRef]
         public ref int lMaximum
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.lMaximum, 1));
+                return ref Anonymous1.lMaximum;
             }
         }
 
         /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.dwMinimum"]/*' />
+        [UnscopedRef]
         public ref uint dwMinimum
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwMinimum, 1));
+                return ref Anonymous2.dwMinimum;
             }
         }
 
         /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.dwMaximum"]/*' />
+        [UnscopedRef]
         public ref uint dwMaximum
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwMaximum, 1));
+                return ref Anonymous2.dwMaximum;
             }
         }
 

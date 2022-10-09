@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("F286FA56-C1FD-4270-8E67-B3EB790A81E8")]
 [NativeTypeName("struct IWinInetHttpTimeouts : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IWinInetHttpTimeouts : IWinInetHttpTimeouts.Interface
+public unsafe partial struct IWinInetHttpTimeouts : IWinInetHttpTimeouts.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWinInetHttpTimeouts));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("82705914-DDA3-4893-BA99-49DE6C8C8036")]
 [NativeTypeName("struct IEnumSyncMgrConflict : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IEnumSyncMgrConflict : IEnumSyncMgrConflict.Interface
+public unsafe partial struct IEnumSyncMgrConflict : IEnumSyncMgrConflict.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IEnumSyncMgrConflict));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

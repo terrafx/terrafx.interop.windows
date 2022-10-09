@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("B643C236-C493-41B6-ABB3-692412775CC4")]
 [NativeTypeName("struct ITfReverseConversionMgr : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITfReverseConversionMgr : ITfReverseConversionMgr.Interface
+public unsafe partial struct ITfReverseConversionMgr : ITfReverseConversionMgr.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfReverseConversionMgr));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

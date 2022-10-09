@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("F67104FC-2AF9-46FD-B32D-243C1404F3D1")]
 [NativeTypeName("struct IPropertyDescriptionAliasInfo : IPropertyDescription")]
 [NativeInheritance("IPropertyDescription")]
-public unsafe partial struct IPropertyDescriptionAliasInfo : IPropertyDescriptionAliasInfo.Interface
+public unsafe partial struct IPropertyDescriptionAliasInfo : IPropertyDescriptionAliasInfo.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPropertyDescriptionAliasInfo));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

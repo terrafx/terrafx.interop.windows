@@ -3,6 +3,7 @@
 // Ported from um/EvColl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -24,92 +25,101 @@ public unsafe partial struct EC_VARIANT
     public uint Type;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BooleanVal"]/*' />
+    [UnscopedRef]
     public ref BOOL BooleanVal
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.BooleanVal, 1));
+            return ref Anonymous.BooleanVal;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.UInt32Val"]/*' />
+    [UnscopedRef]
     public ref uint UInt32Val
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.UInt32Val, 1));
+            return ref Anonymous.UInt32Val;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.DateTimeVal"]/*' />
+    [UnscopedRef]
     public ref ulong DateTimeVal
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.DateTimeVal, 1));
+            return ref Anonymous.DateTimeVal;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.StringVal"]/*' />
+    [UnscopedRef]
     public ref ushort* StringVal
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.StringVal;
+            return ref Anonymous.StringVal;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BinaryVal"]/*' />
+    [UnscopedRef]
     public ref byte* BinaryVal
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.BinaryVal;
+            return ref Anonymous.BinaryVal;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BooleanArr"]/*' />
+    [UnscopedRef]
     public ref BOOL* BooleanArr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.BooleanArr;
+            return ref Anonymous.BooleanArr;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Int32Arr"]/*' />
+    [UnscopedRef]
     public ref int* Int32Arr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.Int32Arr;
+            return ref Anonymous.Int32Arr;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.StringArr"]/*' />
+    [UnscopedRef]
     public ref ushort** StringArr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.StringArr;
+            return ref Anonymous.StringArr;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.PropertyHandleVal"]/*' />
+    [UnscopedRef]
     public ref EC_OBJECT_ARRAY_PROPERTY_HANDLE PropertyHandleVal
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.PropertyHandleVal;
+            return ref Anonymous.PropertyHandleVal;
         }
     }
 

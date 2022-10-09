@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("1E673275-0257-40AA-AF20-7C608D4A0428")]
 [NativeTypeName("struct IVMRMixerBitmap : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IVMRMixerBitmap : IVMRMixerBitmap.Interface
+public unsafe partial struct IVMRMixerBitmap : IVMRMixerBitmap.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IVMRMixerBitmap));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

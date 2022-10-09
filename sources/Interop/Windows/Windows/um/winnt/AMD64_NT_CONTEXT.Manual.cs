@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -149,15 +150,17 @@ public partial struct AMD64_NT_CONTEXT
     [NativeTypeName("DWORD64")]
     public ulong LastExceptionFromRip;
 
+    [UnscopedRef]
     public ref XSAVE_FORMAT FltSave
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FltSave, 1));
+            return ref Anonymous.FltSave;
         }
     }
 
+    [UnscopedRef]
     public Span<M128A> Header
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -167,6 +170,7 @@ public partial struct AMD64_NT_CONTEXT
         }
     }
 
+    [UnscopedRef]
     public Span<M128A> Legacy
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -176,147 +180,163 @@ public partial struct AMD64_NT_CONTEXT
         }
     }
 
+    [UnscopedRef]
     public ref M128A Xmm0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Xmm0, 1));
+            return ref Anonymous.Anonymous.Xmm0;
         }
     }
 
+    [UnscopedRef]
     public ref M128A Xmm1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Xmm1, 1));
+            return ref Anonymous.Anonymous.Xmm1;
         }
     }
 
+    [UnscopedRef]
     public ref M128A Xmm2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Xmm2, 1));
+            return ref Anonymous.Anonymous.Xmm2;
         }
     }
 
+    [UnscopedRef]
     public ref M128A Xmm3
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Xmm3, 1));
+            return ref Anonymous.Anonymous.Xmm3;
         }
     }
 
+    [UnscopedRef]
     public ref M128A Xmm4
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Xmm4, 1));
+            return ref Anonymous.Anonymous.Xmm4;
         }
     }
 
+    [UnscopedRef]
     public ref M128A Xmm5
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Xmm5, 1));
+            return ref Anonymous.Anonymous.Xmm5;
         }
     }
 
+    [UnscopedRef]
     public ref M128A Xmm6
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Xmm6, 1));
+            return ref Anonymous.Anonymous.Xmm6;
         }
     }
 
+    [UnscopedRef]
     public ref M128A Xmm7
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Xmm7, 1));
+            return ref Anonymous.Anonymous.Xmm7;
         }
     }
 
+    [UnscopedRef]
     public ref M128A Xmm8
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Xmm8, 1));
+            return ref Anonymous.Anonymous.Xmm8;
         }
     }
 
+    [UnscopedRef]
     public ref M128A Xmm9
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Xmm9, 1));
+            return ref Anonymous.Anonymous.Xmm9;
         }
     }
 
+    [UnscopedRef]
     public ref M128A Xmm10
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Xmm10, 1));
+            return ref Anonymous.Anonymous.Xmm10;
         }
     }
 
+    [UnscopedRef]
     public ref M128A Xmm11
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Xmm11, 1));
+            return ref Anonymous.Anonymous.Xmm11;
         }
     }
 
+    [UnscopedRef]
     public ref M128A Xmm12
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Xmm12, 1));
+            return ref Anonymous.Anonymous.Xmm12;
         }
     }
 
+    [UnscopedRef]
     public ref M128A Xmm13
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Xmm13, 1));
+            return ref Anonymous.Anonymous.Xmm13;
         }
     }
 
+    [UnscopedRef]
     public ref M128A Xmm14
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Xmm14, 1));
+            return ref Anonymous.Anonymous.Xmm14;
         }
     }
 
+    [UnscopedRef]
     public ref M128A Xmm15
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Xmm15, 1));
+            return ref Anonymous.Anonymous.Xmm15;
         }
     }
 
@@ -376,6 +396,7 @@ public partial struct AMD64_NT_CONTEXT
                 public M128A e0;
                 public M128A e1;
 
+                [UnscopedRef]
                 public ref M128A this[int index]
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -386,6 +407,7 @@ public partial struct AMD64_NT_CONTEXT
                 }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                [UnscopedRef]
                 public Span<M128A> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
             }
 
@@ -400,6 +422,7 @@ public partial struct AMD64_NT_CONTEXT
                 public M128A e6;
                 public M128A e7;
 
+                [UnscopedRef]
                 public ref M128A this[int index]
                 {
                     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -410,6 +433,7 @@ public partial struct AMD64_NT_CONTEXT
                 }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                [UnscopedRef]
                 public Span<M128A> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
             }
         }
@@ -444,6 +468,7 @@ public partial struct AMD64_NT_CONTEXT
         public M128A e24;
         public M128A e25;
 
+        [UnscopedRef]
         public ref M128A this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -454,6 +479,7 @@ public partial struct AMD64_NT_CONTEXT
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<M128A> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 26);
     }
 }

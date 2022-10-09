@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("0D2C969A-BC9C-437C-84EE-951C49B1A764")]
 [NativeTypeName("struct ITfConfigureSystemKeystrokeFeed : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct ITfConfigureSystemKeystrokeFeed : ITfConfigureSystemKeystrokeFeed.Interface
+public unsafe partial struct ITfConfigureSystemKeystrokeFeed : ITfConfigureSystemKeystrokeFeed.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfConfigureSystemKeystrokeFeed));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

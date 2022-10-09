@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("D82BE2B1-5764-11D0-A96E-00C04FD705A2")]
 [NativeTypeName("struct IShellChangeNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IShellChangeNotify : IShellChangeNotify.Interface
+public unsafe partial struct IShellChangeNotify : IShellChangeNotify.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IShellChangeNotify));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

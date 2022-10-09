@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("922EADA0-3424-11CF-B670-00AA004CD6D8")]
 [NativeTypeName("struct IOleInPlaceSiteWindowless : IOleInPlaceSiteEx")]
 [NativeInheritance("IOleInPlaceSiteEx")]
-public unsafe partial struct IOleInPlaceSiteWindowless : IOleInPlaceSiteWindowless.Interface
+public unsafe partial struct IOleInPlaceSiteWindowless : IOleInPlaceSiteWindowless.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IOleInPlaceSiteWindowless));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

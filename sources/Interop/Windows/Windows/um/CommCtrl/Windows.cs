@@ -506,7 +506,7 @@ public static unsafe partial class Windows
     public const string TOOLBARCLASSNAMEW = "ToolbarWindow32";
 
     [NativeTypeName("#define TOOLBARCLASSNAMEA \"ToolbarWindow32\"")]
-    public static ReadOnlySpan<byte> TOOLBARCLASSNAMEA => new byte[] { 0x54, 0x6F, 0x6F, 0x6C, 0x62, 0x61, 0x72, 0x57, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x33, 0x32, 0x00 };
+    public static ReadOnlySpan<byte> TOOLBARCLASSNAMEA => "ToolbarWindow32"u8;
 
     [NativeTypeName("#define TOOLBARCLASSNAME TOOLBARCLASSNAMEW")]
     public const string TOOLBARCLASSNAME = "ToolbarWindow32";
@@ -623,7 +623,7 @@ public static unsafe partial class Windows
     public const string REBARCLASSNAMEW = "ReBarWindow32";
 
     [NativeTypeName("#define REBARCLASSNAMEA \"ReBarWindow32\"")]
-    public static ReadOnlySpan<byte> REBARCLASSNAMEA => new byte[] { 0x52, 0x65, 0x42, 0x61, 0x72, 0x57, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x33, 0x32, 0x00 };
+    public static ReadOnlySpan<byte> REBARCLASSNAMEA => "ReBarWindow32"u8;
 
     [NativeTypeName("#define REBARCLASSNAME REBARCLASSNAMEW")]
     public const string REBARCLASSNAME = "ReBarWindow32";
@@ -695,7 +695,7 @@ public static unsafe partial class Windows
     public const string TOOLTIPS_CLASSW = "tooltips_class32";
 
     [NativeTypeName("#define TOOLTIPS_CLASSA \"tooltips_class32\"")]
-    public static ReadOnlySpan<byte> TOOLTIPS_CLASSA => new byte[] { 0x74, 0x6F, 0x6F, 0x6C, 0x74, 0x69, 0x70, 0x73, 0x5F, 0x63, 0x6C, 0x61, 0x73, 0x73, 0x33, 0x32, 0x00 };
+    public static ReadOnlySpan<byte> TOOLTIPS_CLASSA => "tooltips_class32"u8;
 
     [NativeTypeName("#define TOOLTIPS_CLASS TOOLTIPS_CLASSW")]
     public const string TOOLTIPS_CLASS = "tooltips_class32";
@@ -800,7 +800,7 @@ public static unsafe partial class Windows
     public const string STATUSCLASSNAMEW = "msctls_statusbar32";
 
     [NativeTypeName("#define STATUSCLASSNAMEA \"msctls_statusbar32\"")]
-    public static ReadOnlySpan<byte> STATUSCLASSNAMEA => new byte[] { 0x6D, 0x73, 0x63, 0x74, 0x6C, 0x73, 0x5F, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x62, 0x61, 0x72, 0x33, 0x32, 0x00 };
+    public static ReadOnlySpan<byte> STATUSCLASSNAMEA => "msctls_statusbar32"u8;
 
     [NativeTypeName("#define STATUSCLASSNAME STATUSCLASSNAMEW")]
     public const string STATUSCLASSNAME = "msctls_statusbar32";
@@ -827,7 +827,7 @@ public static unsafe partial class Windows
     public const int MINSYSCOMMAND = 0xF000;
 
     [NativeTypeName("#define TRACKBAR_CLASSA \"msctls_trackbar32\"")]
-    public static ReadOnlySpan<byte> TRACKBAR_CLASSA => new byte[] { 0x6D, 0x73, 0x63, 0x74, 0x6C, 0x73, 0x5F, 0x74, 0x72, 0x61, 0x63, 0x6B, 0x62, 0x61, 0x72, 0x33, 0x32, 0x00 };
+    public static ReadOnlySpan<byte> TRACKBAR_CLASSA => "msctls_trackbar32"u8;
 
     [NativeTypeName("#define TRACKBAR_CLASSW L\"msctls_trackbar32\"")]
     public const string TRACKBAR_CLASSW = "msctls_trackbar32";
@@ -887,7 +887,7 @@ public static unsafe partial class Windows
     public const string DRAGLISTMSGSTRING = "commctrl_DragListMsg";
 
     [NativeTypeName("#define UPDOWN_CLASSA \"msctls_updown32\"")]
-    public static ReadOnlySpan<byte> UPDOWN_CLASSA => new byte[] { 0x6D, 0x73, 0x63, 0x74, 0x6C, 0x73, 0x5F, 0x75, 0x70, 0x64, 0x6F, 0x77, 0x6E, 0x33, 0x32, 0x00 };
+    public static ReadOnlySpan<byte> UPDOWN_CLASSA => "msctls_updown32"u8;
 
     [NativeTypeName("#define UPDOWN_CLASSW L\"msctls_updown32\"")]
     public const string UPDOWN_CLASSW = "msctls_updown32";
@@ -932,7 +932,7 @@ public static unsafe partial class Windows
     public const uint UDN_DELTAPOS = unchecked((0U - 721U) - 1);
 
     [NativeTypeName("#define PROGRESS_CLASSA \"msctls_progress32\"")]
-    public static ReadOnlySpan<byte> PROGRESS_CLASSA => new byte[] { 0x6D, 0x73, 0x63, 0x74, 0x6C, 0x73, 0x5F, 0x70, 0x72, 0x6F, 0x67, 0x72, 0x65, 0x73, 0x73, 0x33, 0x32, 0x00 };
+    public static ReadOnlySpan<byte> PROGRESS_CLASSA => "msctls_progress32"u8;
 
     [NativeTypeName("#define PROGRESS_CLASSW L\"msctls_progress32\"")]
     public const string PROGRESS_CLASSW = "msctls_progress32";
@@ -1007,7 +1007,7 @@ public static unsafe partial class Windows
     public const int HKM_SETRULES = (0x0400 + 3);
 
     [NativeTypeName("#define HOTKEY_CLASSA \"msctls_hotkey32\"")]
-    public static ReadOnlySpan<byte> HOTKEY_CLASSA => new byte[] { 0x6D, 0x73, 0x63, 0x74, 0x6C, 0x73, 0x5F, 0x68, 0x6F, 0x74, 0x6B, 0x65, 0x79, 0x33, 0x32, 0x00 };
+    public static ReadOnlySpan<byte> HOTKEY_CLASSA => "msctls_hotkey32"u8;
 
     [NativeTypeName("#define HOTKEY_CLASSW L\"msctls_hotkey32\"")]
     public const string HOTKEY_CLASSW = "msctls_hotkey32";
@@ -1556,7 +1556,7 @@ public static unsafe partial class Windows
     public const string ANIMATE_CLASSW = "SysAnimate32";
 
     [NativeTypeName("#define ANIMATE_CLASSA \"SysAnimate32\"")]
-    public static ReadOnlySpan<byte> ANIMATE_CLASSA => new byte[] { 0x53, 0x79, 0x73, 0x41, 0x6E, 0x69, 0x6D, 0x61, 0x74, 0x65, 0x33, 0x32, 0x00 };
+    public static ReadOnlySpan<byte> ANIMATE_CLASSA => "SysAnimate32"u8;
 
     [NativeTypeName("#define ANIMATE_CLASS ANIMATE_CLASSW")]
     public const string ANIMATE_CLASS = "SysAnimate32";
@@ -1583,7 +1583,7 @@ public static unsafe partial class Windows
     public const string MONTHCAL_CLASSW = "SysMonthCal32";
 
     [NativeTypeName("#define MONTHCAL_CLASSA \"SysMonthCal32\"")]
-    public static ReadOnlySpan<byte> MONTHCAL_CLASSA => new byte[] { 0x53, 0x79, 0x73, 0x4D, 0x6F, 0x6E, 0x74, 0x68, 0x43, 0x61, 0x6C, 0x33, 0x32, 0x00 };
+    public static ReadOnlySpan<byte> MONTHCAL_CLASSA => "SysMonthCal32"u8;
 
     [NativeTypeName("#define MONTHCAL_CLASS MONTHCAL_CLASSW")]
     public const string MONTHCAL_CLASS = "SysMonthCal32";
@@ -1703,7 +1703,7 @@ public static unsafe partial class Windows
     public const string DATETIMEPICK_CLASSW = "SysDateTimePick32";
 
     [NativeTypeName("#define DATETIMEPICK_CLASSA \"SysDateTimePick32\"")]
-    public static ReadOnlySpan<byte> DATETIMEPICK_CLASSA => new byte[] { 0x53, 0x79, 0x73, 0x44, 0x61, 0x74, 0x65, 0x54, 0x69, 0x6D, 0x65, 0x50, 0x69, 0x63, 0x6B, 0x33, 0x32, 0x00 };
+    public static ReadOnlySpan<byte> DATETIMEPICK_CLASSA => "SysDateTimePick32"u8;
 
     [NativeTypeName("#define DATETIMEPICK_CLASS DATETIMEPICK_CLASSW")]
     public const string DATETIMEPICK_CLASS = "SysDateTimePick32";

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("0A717812-694E-4907-B74B-BAFA5CFDCA7B")]
 [NativeTypeName("struct IAudioTreble : IPerChannelDbLevel")]
 [NativeInheritance("IPerChannelDbLevel")]
-public unsafe partial struct IAudioTreble : IAudioTreble.Interface
+public unsafe partial struct IAudioTreble : IAudioTreble.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAudioTreble));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />

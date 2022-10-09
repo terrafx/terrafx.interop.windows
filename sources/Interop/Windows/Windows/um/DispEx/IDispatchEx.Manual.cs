@@ -6,14 +6,17 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
 [Guid("A6EF9860-C720-11D0-9337-00A0C90DCAA9")]
 [NativeTypeName("struct IDispatchEx : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IDispatchEx : IDispatch.Interface
+public unsafe partial struct IDispatchEx : IDispatch.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDispatchEx));
+
     public void** lpVtbl;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]

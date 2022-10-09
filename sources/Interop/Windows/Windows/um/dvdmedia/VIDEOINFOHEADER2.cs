@@ -3,6 +3,7 @@
 // Ported from um/dvdmedia.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -57,22 +58,24 @@ public partial struct VIDEOINFOHEADER2
     public BITMAPINFOHEADER bmiHeader;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwControlFlags"]/*' />
+    [UnscopedRef]
     public ref uint dwControlFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwControlFlags, 1));
+            return ref Anonymous.dwControlFlags;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwReserved1"]/*' />
+    [UnscopedRef]
     public ref uint dwReserved1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwReserved1, 1));
+            return ref Anonymous.dwReserved1;
         }
     }
 

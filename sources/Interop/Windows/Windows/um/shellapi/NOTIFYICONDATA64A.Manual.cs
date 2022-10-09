@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -49,21 +50,23 @@ public unsafe partial struct NOTIFYICONDATA64A
 
     public HICON hBalloonIcon;
 
+    [UnscopedRef]
     public ref uint uTimeout
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.uTimeout, 1));
+            return ref Anonymous.uTimeout;
         }
     }
 
+    [UnscopedRef]
     public ref uint uVersion
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.uVersion, 1));
+            return ref Anonymous.uVersion;
         }
     }
 

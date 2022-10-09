@@ -4,6 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -13,13 +15,45 @@ public partial struct KSIDENTIFIER
     [NativeTypeName("KSIDENTIFIER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ks.h:107:5)")]
     internal _Anonymous_e__Union Anonymous;
 
-    public ref Guid Set => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Set, 1));
+    [UnscopedRef]
+    public ref Guid Set
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.Anonymous.Set;
+        }
+    }
 
-    public ref uint Id => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Id, 1));
+    [UnscopedRef]
+    public ref uint Id
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.Anonymous.Id;
+        }
+    }
 
-    public ref uint Flags => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Flags, 1));
+    [UnscopedRef]
+    public ref uint Flags
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.Anonymous.Flags;
+        }
+    }
 
-    public ref long Alignment => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Alignment, 1));
+    [UnscopedRef]
+    public ref long Alignment
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.Alignment;
+        }
+    }
 
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union

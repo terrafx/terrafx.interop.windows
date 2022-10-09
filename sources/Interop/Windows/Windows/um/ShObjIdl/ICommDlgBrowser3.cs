@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -13,8 +14,10 @@ namespace TerraFX.Interop.Windows;
 [Guid("C8AD25A1-3294-41EE-8165-71174BD01C57")]
 [NativeTypeName("struct ICommDlgBrowser3 : ICommDlgBrowser2")]
 [NativeInheritance("ICommDlgBrowser2")]
-public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface
+public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface, INativeGuid
 {
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICommDlgBrowser3));
+
     public void** lpVtbl;
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />
