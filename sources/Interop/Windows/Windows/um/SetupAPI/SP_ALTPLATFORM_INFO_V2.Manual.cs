@@ -192,5 +192,4 @@ public unsafe partial struct SP_ALTPLATFORM_INFO_V2
             }
         }
     }
-
 }

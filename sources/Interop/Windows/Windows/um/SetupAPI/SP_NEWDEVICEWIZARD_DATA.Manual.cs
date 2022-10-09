@@ -121,5 +121,4 @@ public unsafe partial struct SP_NEWDEVICEWIZARD_DATA
             }
         }
     }
-
 }

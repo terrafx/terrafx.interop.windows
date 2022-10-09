@@ -174,5 +174,4 @@ public unsafe partial struct SP_INSTALLWIZARD_DATA
             }
         }
     }
-
 }
