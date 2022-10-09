@@ -29,7 +29,7 @@ public partial struct DEVICE_LOCATION
     public uint Port;
 
     /// <include file='DEVICE_LOCATION.xml' path='doc/member[@name="DEVICE_LOCATION.Anonymous"]/*' />
-    [NativeTypeName("_DEVICE_LOCATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:2870:5)")]
+    [NativeTypeName("_DEVICE_LOCATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:2870:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.Channel"]/*' />
@@ -82,12 +82,12 @@ public partial struct DEVICE_LOCATION
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous1"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_DEVICE_LOCATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:2872:9)")]
+        [NativeTypeName("_DEVICE_LOCATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:2872:9)")]
         public _Anonymous1_e__Struct Anonymous1;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous2"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_DEVICE_LOCATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:2880:9)")]
+        [NativeTypeName("_DEVICE_LOCATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:2880:9)")]
         public _Anonymous2_e__Struct Anonymous2;
 
         /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct"]/*' />

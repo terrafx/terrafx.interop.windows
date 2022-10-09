@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct MARK_HANDLE_INFO32
 {
     /// <include file='MARK_HANDLE_INFO32.xml' path='doc/member[@name="MARK_HANDLE_INFO32.Anonymous"]/*' />
-    [NativeTypeName("_MARK_HANDLE_INFO32::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:11632:5)")]
+    [NativeTypeName("_MARK_HANDLE_INFO32::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:11632:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='MARK_HANDLE_INFO32.xml' path='doc/member[@name="MARK_HANDLE_INFO32.VolumeHandle"]/*' />

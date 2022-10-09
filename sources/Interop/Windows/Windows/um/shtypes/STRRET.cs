@@ -17,7 +17,7 @@ public unsafe partial struct STRRET
     public uint uType;
 
     /// <include file='STRRET.xml' path='doc/member[@name="STRRET.Anonymous"]/*' />
-    [NativeTypeName("_STRRET::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/shtypes.h:285:36)")]
+    [NativeTypeName("_STRRET::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/shtypes.h:285:36)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pOleStr"]/*' />

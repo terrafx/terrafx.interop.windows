@@ -34,7 +34,7 @@ public unsafe partial struct INPUTCONTEXT
     public uint fdwSentence;
 
     /// <include file='INPUTCONTEXT.xml' path='doc/member[@name="INPUTCONTEXT.lfFont"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/immdev.h:873:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/immdev.h:873:5)")]
     public _lfFont_e__Union lfFont;
 
     /// <include file='INPUTCONTEXT.xml' path='doc/member[@name="INPUTCONTEXT.cfCompForm"]/*' />

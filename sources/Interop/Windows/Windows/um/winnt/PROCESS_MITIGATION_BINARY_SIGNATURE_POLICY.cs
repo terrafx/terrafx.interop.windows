@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY
 {
     /// <include file='PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY.Anonymous"]/*' />
-    [NativeTypeName("_PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:12641:5)")]
+    [NativeTypeName("_PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:12641:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
@@ -136,7 +136,7 @@ public partial struct PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:12643:9)")]
+        [NativeTypeName("_PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:12643:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

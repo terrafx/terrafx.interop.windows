@@ -18,7 +18,7 @@ public unsafe partial struct MIB_OPAQUE_INFO
     public uint dwId;
 
     /// <include file='MIB_OPAQUE_INFO.xml' path='doc/member[@name="MIB_OPAQUE_INFO.Anonymous"]/*' />
-    [NativeTypeName("_MIB_OPAQUE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/Iprtrmib.h:306:5)")]
+    [NativeTypeName("_MIB_OPAQUE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/Iprtrmib.h:306:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ullAlign"]/*' />

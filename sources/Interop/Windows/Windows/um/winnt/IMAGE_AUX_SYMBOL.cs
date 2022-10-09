@@ -13,17 +13,17 @@ public partial struct IMAGE_AUX_SYMBOL
 {
     /// <include file='IMAGE_AUX_SYMBOL.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL.Sym"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:18895:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18895:5)")]
     public _Sym_e__Struct Sym;
 
     /// <include file='IMAGE_AUX_SYMBOL.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL.File"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:18915:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18915:5)")]
     public _File_e__Struct File;
 
     /// <include file='IMAGE_AUX_SYMBOL.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL.Section"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:18918:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18918:5)")]
     public _Section_e__Struct Section;
 
     /// <include file='IMAGE_AUX_SYMBOL.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL.TokenDef"]/*' />
@@ -32,7 +32,7 @@ public partial struct IMAGE_AUX_SYMBOL
 
     /// <include file='IMAGE_AUX_SYMBOL.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL.CRC"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:18929:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18929:5)")]
     public _CRC_e__Struct CRC;
 
     /// <include file='_Sym_e__Struct.xml' path='doc/member[@name="_Sym_e__Struct"]/*' />
@@ -44,11 +44,11 @@ public partial struct IMAGE_AUX_SYMBOL
         public uint TagIndex;
 
         /// <include file='_Sym_e__Struct.xml' path='doc/member[@name="_Sym_e__Struct.Misc"]/*' />
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:18897:9)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18897:9)")]
         public _Misc_e__Union Misc;
 
         /// <include file='_Sym_e__Struct.xml' path='doc/member[@name="_Sym_e__Struct.FcnAry"]/*' />
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:18904:9)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18904:9)")]
         public _FcnAry_e__Union FcnAry;
 
         /// <include file='_Sym_e__Struct.xml' path='doc/member[@name="_Sym_e__Struct.TvIndex"]/*' />
@@ -61,7 +61,7 @@ public partial struct IMAGE_AUX_SYMBOL
         {
             /// <include file='_Misc_e__Union.xml' path='doc/member[@name="_Misc_e__Union.LnSz"]/*' />
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:18898:13)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18898:13)")]
             public _LnSz_e__Struct LnSz;
 
             /// <include file='_Misc_e__Union.xml' path='doc/member[@name="_Misc_e__Union.TotalSize"]/*' />
@@ -88,12 +88,12 @@ public partial struct IMAGE_AUX_SYMBOL
         {
             /// <include file='_FcnAry_e__Union.xml' path='doc/member[@name="_FcnAry_e__Union.Function"]/*' />
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:18905:13)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18905:13)")]
             public _Function_e__Struct Function;
 
             /// <include file='_FcnAry_e__Union.xml' path='doc/member[@name="_FcnAry_e__Union.Array"]/*' />
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:18909:13)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18909:13)")]
             public _Array_e__Struct Array;
 
             /// <include file='_Function_e__Struct.xml' path='doc/member[@name="_Function_e__Struct"]/*' />

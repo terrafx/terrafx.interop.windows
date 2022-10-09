@@ -306,5 +306,4 @@ public unsafe partial struct NOTIFYICONDATAA
             }
         }
     }
-
 }

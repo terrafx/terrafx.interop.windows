@@ -74,7 +74,7 @@ public unsafe partial struct SIP_SUBJECTINFO
     public uint dwUnionChoice;
 
     /// <include file='SIP_SUBJECTINFO.xml' path='doc/member[@name="SIP_SUBJECTINFO.Anonymous"]/*' />
-    [NativeTypeName("SIP_SUBJECTINFO_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/mssip.h:114:5)")]
+    [NativeTypeName("SIP_SUBJECTINFO_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/mssip.h:114:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='SIP_SUBJECTINFO.xml' path='doc/member[@name="SIP_SUBJECTINFO.pClientData"]/*' />

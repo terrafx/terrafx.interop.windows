@@ -22,7 +22,7 @@ public unsafe partial struct MIXERLINECONTROLSA
     public uint dwLineID;
 
     /// <include file='MIXERLINECONTROLSA.xml' path='doc/member[@name="MIXERLINECONTROLSA.Anonymous"]/*' />
-    [NativeTypeName("tagMIXERLINECONTROLSA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/mmeapi.h:2223:5)")]
+    [NativeTypeName("tagMIXERLINECONTROLSA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/mmeapi.h:2223:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='MIXERLINECONTROLSA.xml' path='doc/member[@name="MIXERLINECONTROLSA.cControls"]/*' />

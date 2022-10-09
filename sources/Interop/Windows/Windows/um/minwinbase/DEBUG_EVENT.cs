@@ -23,7 +23,7 @@ public partial struct DEBUG_EVENT
     public uint dwThreadId;
 
     /// <include file='DEBUG_EVENT.xml' path='doc/member[@name="DEBUG_EVENT.u"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/minwinbase.h:370:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/minwinbase.h:370:5)")]
     public _u_e__Union u;
 
     /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union"]/*' />

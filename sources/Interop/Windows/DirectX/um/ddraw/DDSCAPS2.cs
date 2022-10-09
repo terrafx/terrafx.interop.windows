@@ -24,7 +24,7 @@ public partial struct DDSCAPS2
     public uint dwCaps3;
 
     /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.Anonymous"]/*' />
-    [NativeTypeName("_DDSCAPS2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ddraw.h:371:5)")]
+    [NativeTypeName("_DDSCAPS2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ddraw.h:371:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwCaps4"]/*' />

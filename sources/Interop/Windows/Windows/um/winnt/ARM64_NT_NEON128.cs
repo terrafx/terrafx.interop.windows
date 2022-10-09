@@ -15,7 +15,7 @@ public unsafe partial struct ARM64_NT_NEON128
 {
     /// <include file='ARM64_NT_NEON128.xml' path='doc/member[@name="ARM64_NT_NEON128.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("_ARM64_NT_NEON128::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:6518:5)")]
+    [NativeTypeName("_ARM64_NT_NEON128::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:6518:5)")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='ARM64_NT_NEON128.xml' path='doc/member[@name="ARM64_NT_NEON128.D"]/*' />

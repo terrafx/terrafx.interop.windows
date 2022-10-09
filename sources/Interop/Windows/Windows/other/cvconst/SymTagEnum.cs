@@ -137,6 +137,9 @@ public enum SymTagEnum
     /// <include file='SymTagEnum.xml' path='doc/member[@name="SymTagEnum.SymTagInlinee"]/*' />
     SymTagInlinee,
 
+    /// <include file='SymTagEnum.xml' path='doc/member[@name="SymTagEnum.SymTagTaggedUnionCase"]/*' />
+    SymTagTaggedUnionCase,
+
     /// <include file='SymTagEnum.xml' path='doc/member[@name="SymTagEnum.SymTagMax"]/*' />
     SymTagMax,
 }

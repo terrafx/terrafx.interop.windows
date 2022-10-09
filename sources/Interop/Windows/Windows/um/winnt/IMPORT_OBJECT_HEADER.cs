@@ -37,7 +37,7 @@ public partial struct IMPORT_OBJECT_HEADER
     public uint SizeOfData;
 
     /// <include file='IMPORT_OBJECT_HEADER.xml' path='doc/member[@name="IMPORT_OBJECT_HEADER.Anonymous"]/*' />
-    [NativeTypeName("IMPORT_OBJECT_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:20562:5)")]
+    [NativeTypeName("IMPORT_OBJECT_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:20562:5)")]
     public _Anonymous_e__Union Anonymous;
 
     public ushort _bitfield;

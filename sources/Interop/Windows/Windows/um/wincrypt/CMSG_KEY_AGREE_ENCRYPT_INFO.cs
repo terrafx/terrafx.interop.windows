@@ -31,7 +31,7 @@ public unsafe partial struct CMSG_KEY_AGREE_ENCRYPT_INFO
     public uint dwOriginatorChoice;
 
     /// <include file='CMSG_KEY_AGREE_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_KEY_AGREE_ENCRYPT_INFO.Anonymous"]/*' />
-    [NativeTypeName("_CMSG_KEY_AGREE_ENCRYPT_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wincrypt.h:8626:5)")]
+    [NativeTypeName("_CMSG_KEY_AGREE_ENCRYPT_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wincrypt.h:8626:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='CMSG_KEY_AGREE_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_KEY_AGREE_ENCRYPT_INFO.cKeyAgreeKeyEncryptInfo"]/*' />

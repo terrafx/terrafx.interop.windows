@@ -18,7 +18,7 @@ public partial struct SCOPE_TABLE_ARM
     public uint Count;
 
     /// <include file='SCOPE_TABLE_ARM.xml' path='doc/member[@name="SCOPE_TABLE_ARM.ScopeRecord"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:4496:5)[1]")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:4496:5)[1]")]
     public _ScopeRecord_e__FixedBuffer ScopeRecord;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

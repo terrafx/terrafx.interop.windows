@@ -32,7 +32,7 @@ public partial struct IMAGE_COR20_HEADER
     public uint Flags;
 
     /// <include file='IMAGE_COR20_HEADER.xml' path='doc/member[@name="IMAGE_COR20_HEADER.Anonymous"]/*' />
-    [NativeTypeName("IMAGE_COR20_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:20650:5)")]
+    [NativeTypeName("IMAGE_COR20_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:20650:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='IMAGE_COR20_HEADER.xml' path='doc/member[@name="IMAGE_COR20_HEADER.Resources"]/*' />

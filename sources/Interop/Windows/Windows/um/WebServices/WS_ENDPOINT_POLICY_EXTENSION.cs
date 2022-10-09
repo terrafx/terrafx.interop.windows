@@ -20,7 +20,7 @@ public unsafe partial struct WS_ENDPOINT_POLICY_EXTENSION
     public WS_XML_STRING* assertionNs;
 
     /// <include file='WS_ENDPOINT_POLICY_EXTENSION.xml' path='doc/member[@name="WS_ENDPOINT_POLICY_EXTENSION.@out"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/WebServices.h:6349:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WebServices.h:6349:5)")]
     public _out_e__Struct @out;
 
     /// <include file='_out_e__Struct.xml' path='doc/member[@name="_out_e__Struct"]/*' />

@@ -16,7 +16,7 @@ public partial struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
     public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
     /// <include file='DISPLAYCONFIG_SET_TARGET_PERSISTENCE.xml' path='doc/member[@name="DISPLAYCONFIG_SET_TARGET_PERSISTENCE.Anonymous"]/*' />
-    [NativeTypeName("DISPLAYCONFIG_SET_TARGET_PERSISTENCE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wingdi.h:3127:5)")]
+    [NativeTypeName("DISPLAYCONFIG_SET_TARGET_PERSISTENCE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:3127:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.bootPersistenceOn"]/*' />
@@ -68,7 +68,7 @@ public partial struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("DISPLAYCONFIG_SET_TARGET_PERSISTENCE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wingdi.h:3129:9)")]
+        [NativeTypeName("DISPLAYCONFIG_SET_TARGET_PERSISTENCE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:3129:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.value"]/*' />

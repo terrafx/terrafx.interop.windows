@@ -29,15 +29,15 @@ public unsafe partial struct DDSURFACEDESC2
     public uint dwWidth;
 
     /// <include file='DDSURFACEDESC2.xml' path='doc/member[@name="DDSURFACEDESC2.Anonymous1"]/*' />
-    [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ddraw.h:2268:5)")]
+    [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ddraw.h:2268:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='DDSURFACEDESC2.xml' path='doc/member[@name="DDSURFACEDESC2.Anonymous2"]/*' />
-    [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ddraw.h:2273:5)")]
+    [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ddraw.h:2273:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='DDSURFACEDESC2.xml' path='doc/member[@name="DDSURFACEDESC2.Anonymous3"]/*' />
-    [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ddraw.h:2278:5)")]
+    [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ddraw.h:2278:5)")]
     public _Anonymous3_e__Union Anonymous3;
 
     /// <include file='DDSURFACEDESC2.xml' path='doc/member[@name="DDSURFACEDESC2.dwAlphaBitDepth"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct DDSURFACEDESC2
     public void* lpSurface;
 
     /// <include file='DDSURFACEDESC2.xml' path='doc/member[@name="DDSURFACEDESC2.Anonymous4"]/*' />
-    [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ddraw.h:2288:5)")]
+    [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ddraw.h:2288:5)")]
     public _Anonymous4_e__Union Anonymous4;
 
     /// <include file='DDSURFACEDESC2.xml' path='doc/member[@name="DDSURFACEDESC2.ddckCKDestBlt"]/*' />
@@ -66,7 +66,7 @@ public unsafe partial struct DDSURFACEDESC2
     public DDCOLORKEY ddckCKSrcBlt;
 
     /// <include file='DDSURFACEDESC2.xml' path='doc/member[@name="DDSURFACEDESC2.Anonymous5"]/*' />
-    [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ddraw.h:2296:5)")]
+    [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ddraw.h:2296:5)")]
     public _Anonymous5_e__Union Anonymous5;
 
     /// <include file='DDSURFACEDESC2.xml' path='doc/member[@name="DDSURFACEDESC2.ddsCaps"]/*' />

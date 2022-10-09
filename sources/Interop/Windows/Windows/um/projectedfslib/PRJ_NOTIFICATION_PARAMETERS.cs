@@ -15,17 +15,17 @@ public partial struct PRJ_NOTIFICATION_PARAMETERS
 {
     /// <include file='PRJ_NOTIFICATION_PARAMETERS.xml' path='doc/member[@name="PRJ_NOTIFICATION_PARAMETERS.PostCreate"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/projectedfslib.h:407:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/projectedfslib.h:407:5)")]
     public _PostCreate_e__Struct PostCreate;
 
     /// <include file='PRJ_NOTIFICATION_PARAMETERS.xml' path='doc/member[@name="PRJ_NOTIFICATION_PARAMETERS.FileRenamed"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/projectedfslib.h:411:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/projectedfslib.h:411:5)")]
     public _FileRenamed_e__Struct FileRenamed;
 
     /// <include file='PRJ_NOTIFICATION_PARAMETERS.xml' path='doc/member[@name="PRJ_NOTIFICATION_PARAMETERS.FileDeletedOnHandleClose"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/projectedfslib.h:415:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/projectedfslib.h:415:5)")]
     public _FileDeletedOnHandleClose_e__Struct FileDeletedOnHandleClose;
 
     /// <include file='_PostCreate_e__Struct.xml' path='doc/member[@name="_PostCreate_e__Struct"]/*' />

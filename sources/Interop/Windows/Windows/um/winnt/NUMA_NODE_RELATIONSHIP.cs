@@ -26,7 +26,7 @@ public unsafe partial struct NUMA_NODE_RELATIONSHIP
     public ushort GroupCount;
 
     /// <include file='NUMA_NODE_RELATIONSHIP.xml' path='doc/member[@name="NUMA_NODE_RELATIONSHIP.Anonymous"]/*' />
-    [NativeTypeName("_NUMA_NODE_RELATIONSHIP::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:13491:5)")]
+    [NativeTypeName("_NUMA_NODE_RELATIONSHIP::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:13491:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.GroupMask"]/*' />

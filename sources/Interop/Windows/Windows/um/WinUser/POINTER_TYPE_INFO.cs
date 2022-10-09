@@ -19,7 +19,7 @@ public partial struct POINTER_TYPE_INFO
     public uint type;
 
     /// <include file='POINTER_TYPE_INFO.xml' path='doc/member[@name="POINTER_TYPE_INFO.Anonymous"]/*' />
-    [NativeTypeName("tagPOINTER_TYPE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/WinUser.h:6489:5)")]
+    [NativeTypeName("tagPOINTER_TYPE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinUser.h:6489:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.touchInfo"]/*' />

@@ -19,4 +19,7 @@ public enum UdtKind
 
     /// <include file='UdtKind.xml' path='doc/member[@name="UdtKind.UdtInterface"]/*' />
     UdtInterface,
+
+    /// <include file='UdtKind.xml' path='doc/member[@name="UdtKind.UdtTaggedUnion"]/*' />
+    UdtTaggedUnion,
 }

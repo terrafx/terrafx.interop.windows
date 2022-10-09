@@ -679,6 +679,29 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IDiaSymbol11
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xCD, 0x4F, 0xF5, 0xB6,
+                0xE3, 0x05,
+                0x3D, 0x43,
+                0xB3,
+                0x05,
+                0xB0,
+                0xC1,
+                0x43,
+                0x7D,
+                0x2D,
+                0x16
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IDiaSourceFile
     {
         get

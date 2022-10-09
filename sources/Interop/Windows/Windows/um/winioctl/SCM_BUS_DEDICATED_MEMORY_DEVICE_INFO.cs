@@ -19,7 +19,7 @@ public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO
     public uint DeviceNumber;
 
     /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.Flags"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:7273:5)")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:7273:5)")]
     public _Flags_e__Struct Flags;
 
     /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.DeviceSize"]/*' />

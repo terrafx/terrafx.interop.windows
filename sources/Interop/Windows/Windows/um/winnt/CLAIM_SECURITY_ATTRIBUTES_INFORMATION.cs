@@ -25,7 +25,7 @@ public partial struct CLAIM_SECURITY_ATTRIBUTES_INFORMATION
     public uint AttributeCount;
 
     /// <include file='CLAIM_SECURITY_ATTRIBUTES_INFORMATION.xml' path='doc/member[@name="CLAIM_SECURITY_ATTRIBUTES_INFORMATION.Attribute"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:12072:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:12072:5)")]
     public _Attribute_e__Union Attribute;
 
     /// <include file='_Attribute_e__Union.xml' path='doc/member[@name="_Attribute_e__Union"]/*' />

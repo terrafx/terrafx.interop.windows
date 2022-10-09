@@ -22,7 +22,7 @@ public partial struct STORAGE_OPERATIONAL_REASON
     public STORAGE_OPERATIONAL_STATUS_REASON Reason;
 
     /// <include file='STORAGE_OPERATIONAL_REASON.xml' path='doc/member[@name="STORAGE_OPERATIONAL_REASON.RawBytes"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:2649:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:2649:5)")]
     public _RawBytes_e__Union RawBytes;
 
     /// <include file='_RawBytes_e__Union.xml' path='doc/member[@name="_RawBytes_e__Union"]/*' />
@@ -31,12 +31,12 @@ public partial struct STORAGE_OPERATIONAL_REASON
     {
         /// <include file='_RawBytes_e__Union.xml' path='doc/member[@name="_RawBytes_e__Union.ScsiSenseKey"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:2654:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:2654:9)")]
         public _ScsiSenseKey_e__Struct ScsiSenseKey;
 
         /// <include file='_RawBytes_e__Union.xml' path='doc/member[@name="_RawBytes_e__Union.NVDIMM_N"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winioctl.h:2664:9)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:2664:9)")]
         public _NVDIMM_N_e__Struct NVDIMM_N;
 
         /// <include file='_RawBytes_e__Union.xml' path='doc/member[@name="_RawBytes_e__Union.AsUlong"]/*' />

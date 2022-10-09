@@ -79,9 +79,9 @@ public unsafe partial struct CABINET_INFO_W
             if (sizeof(nint) == 4)
             {
                 return ref _value32.DiskName;
-            }                      
-            else                   
-            {                      
+            }
+            else
+            {
                 return ref _value64.DiskName;
             }
         }

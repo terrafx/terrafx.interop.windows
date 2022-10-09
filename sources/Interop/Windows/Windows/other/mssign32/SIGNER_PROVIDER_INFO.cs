@@ -33,7 +33,7 @@ public unsafe partial struct SIGNER_PROVIDER_INFO
     public uint dwPvkChoice;
 
     /// <include file='SIGNER_PROVIDER_INFO.xml' path='doc/member[@name="SIGNER_PROVIDER_INFO.Anonymous"]/*' />
-    [NativeTypeName("_SIGNER_PROVIDER_INFO::(anonymous union at ./mssign32.h:74:9)")]
+    [NativeTypeName("_SIGNER_PROVIDER_INFO::(anonymous union at ../../../include/mssign32.h:74:9)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszPvkFileName"]/*' />

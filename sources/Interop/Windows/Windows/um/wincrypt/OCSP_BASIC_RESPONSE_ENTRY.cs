@@ -20,7 +20,7 @@ public unsafe partial struct OCSP_BASIC_RESPONSE_ENTRY
     public uint dwCertStatus;
 
     /// <include file='OCSP_BASIC_RESPONSE_ENTRY.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_ENTRY.Anonymous"]/*' />
-    [NativeTypeName("_OCSP_BASIC_RESPONSE_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wincrypt.h:5693:5)")]
+    [NativeTypeName("_OCSP_BASIC_RESPONSE_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wincrypt.h:5693:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='OCSP_BASIC_RESPONSE_ENTRY.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_ENTRY.ThisUpdate"]/*' />

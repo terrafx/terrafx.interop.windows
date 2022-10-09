@@ -11,7 +11,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/other/D3D12Downlevel
 --traverse
-./D3D12Downlevel.h
+../../../include/D3D12Downlevel.h
 --with-librarypath
 *=d3d12
 --with-attribute

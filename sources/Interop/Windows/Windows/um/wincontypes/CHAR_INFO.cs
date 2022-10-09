@@ -11,7 +11,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct CHAR_INFO
 {
     /// <include file='CHAR_INFO.xml' path='doc/member[@name="CHAR_INFO.Char"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wincontypes.h:144:5)")]
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wincontypes.h:144:5)")]
     public _Char_e__Union Char;
 
     /// <include file='CHAR_INFO.xml' path='doc/member[@name="CHAR_INFO.Attributes"]/*' />

@@ -20,7 +20,7 @@ public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
     public uint id;
 
     /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.Anonymous"]/*' />
-    [NativeTypeName("DISPLAYCONFIG_PATH_TARGET_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wingdi.h:2977:5)")]
+    [NativeTypeName("DISPLAYCONFIG_PATH_TARGET_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:2977:5)")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='DISPLAYCONFIG_PATH_TARGET_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_TARGET_INFO.outputTechnology"]/*' />
@@ -99,7 +99,7 @@ public partial struct DISPLAYCONFIG_PATH_TARGET_INFO
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("DISPLAYCONFIG_PATH_TARGET_INFO::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/wingdi.h:2980:9)")]
+        [NativeTypeName("DISPLAYCONFIG_PATH_TARGET_INFO::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:2980:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

@@ -4,7 +4,7 @@
 NoRegCoCreate
 NoOleCoCreate
 --include-directory
-C:/Program Files/Microsoft Visual Studio/2022/Community/DIA SDK/include/
+C:/Program Files/Microsoft Visual Studio/2022/Preview/DIA SDK/include/
 --file
 other-diacreate.h
 --methodClassName
@@ -16,4 +16,4 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/other/diacreate
 --traverse
-C:/Program Files/Microsoft Visual Studio/2022/Community/DIA SDK/include/diacreate.h
+C:/Program Files/Microsoft Visual Studio/2022/Preview/DIA SDK/include/diacreate.h
