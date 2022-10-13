@@ -3074,6 +3074,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.foundation.metadata
 		generation\WinRT\winrt\windows.foundation.metadata\winrt-windows.foundation.metadata.h = generation\WinRT\winrt\windows.foundation.metadata\winrt-windows.foundation.metadata.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowsContracts", "WindowsContracts", "{65B229A2-8DDE-40CB-B600-7A4EE052DD60}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\WindowsContracts\generate.rsp = generation\WinRT\winrt\WindowsContracts\generate.rsp
+		generation\WinRT\winrt\WindowsContracts\header.txt = generation\WinRT\winrt\WindowsContracts\header.txt
+		generation\WinRT\winrt\WindowsContracts\winrt-WindowsContracts.h = generation\WinRT\winrt\WindowsContracts\winrt-WindowsContracts.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3545,6 +3552,7 @@ Global
 		{566C5B1B-E5DC-420D-8740-A991751A5D09} = {65954CB3-F28F-4CF0-BC77-0FFD6E858BCE}
 		{0A6C98CF-2561-439D-A78D-C8C1E7F19B75} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{BBCA5500-FE50-4970-A019-830C912D9ABE} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{65B229A2-8DDE-40CB-B600-7A4EE052DD60} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
