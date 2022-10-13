@@ -3060,6 +3060,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d12compatibility", "d3d12
 		generation\DirectX\headers\d3d12compatibility\headers-d3d12compatibility.h = generation\DirectX\headers\d3d12compatibility\headers-d3d12compatibility.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.foundation", "windows.foundation", "{0A6C98CF-2561-439D-A78D-C8C1E7F19B75}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.foundation\generate.rsp = generation\WinRT\winrt\windows.foundation\generate.rsp
+		generation\WinRT\winrt\windows.foundation\header.txt = generation\WinRT\winrt\windows.foundation\header.txt
+		generation\WinRT\winrt\windows.foundation\winrt-windows.foundation.h = generation\WinRT\winrt\windows.foundation\winrt-windows.foundation.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3529,6 +3536,7 @@ Global
 		{EA5B695A-5F25-401E-9FD9-23BFDEFBA01B} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{5E5D7257-3F63-45F9-899B-CE0DFEFCC2D1} = {D9638FEE-50A4-44FF-B1F6-72E59548490B}
 		{566C5B1B-E5DC-420D-8740-A991751A5D09} = {65954CB3-F28F-4CF0-BC77-0FFD6E858BCE}
+		{0A6C98CF-2561-439D-A78D-C8C1E7F19B75} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
