@@ -9,7 +9,7 @@ on:
 
 jobs:
   windows-x64:
-    runs-on: ${{ matrix.os }}-2022
+    runs-on: ${{ matrix.os }}-latest
     strategy:
       matrix:
         architecture: [ x64 ]
@@ -29,7 +29,7 @@ jobs:
           ./artifacts/tst/**/*
         if-no-files-found: error
   build-nuget-preview:
-    runs-on: windows-2022
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
     - run: ./scripts/cibuild.cmd -configuration release -architecture x64
@@ -47,7 +47,7 @@ jobs:
           ./artifacts/tst/**/*
         if-no-files-found: error
   build-nuget-release:
-    runs-on: windows-2022
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
     - run: ./scripts/cibuild.cmd -configuration release -architecture x64
