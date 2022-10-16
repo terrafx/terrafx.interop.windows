@@ -3123,6 +3123,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.haptics", "
 		generation\WinRT\winrt\windows.devices.haptics\winrt-windows.devices.haptics.h = generation\WinRT\winrt\windows.devices.haptics\winrt-windows.devices.haptics.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.power", "windows.devices.power", "{B9B6668A-10CD-451A-8B5B-0C0DC12213AD}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.power\generate.rsp = generation\WinRT\winrt\windows.devices.power\generate.rsp
+		generation\WinRT\winrt\windows.devices.power\header.txt = generation\WinRT\winrt\windows.devices.power\header.txt
+		generation\WinRT\winrt\windows.devices.power\winrt-windows.devices.power.h = generation\WinRT\winrt\windows.devices.power\winrt-windows.devices.power.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.system.power", "windows.system.power", "{5C9AEBD7-5857-4641-9F8C-D16680230BD9}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.system.power\generate.rsp = generation\WinRT\winrt\windows.system.power\generate.rsp
+		generation\WinRT\winrt\windows.system.power\header.txt = generation\WinRT\winrt\windows.system.power\header.txt
+		generation\WinRT\winrt\windows.system.power\winrt-windows.system.power.h = generation\WinRT\winrt\windows.system.power\winrt-windows.system.power.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3601,6 +3615,8 @@ Global
 		{E1CE167B-DD40-4955-84F0-64D55CAACA00} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{7523C542-E0CD-42F9-93C4-B593179B378C} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{48C596B5-7E3C-46A8-A0B1-ACC1960234F3} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{B9B6668A-10CD-451A-8B5B-0C0DC12213AD} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{5C9AEBD7-5857-4641-9F8C-D16680230BD9} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
