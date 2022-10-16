@@ -3088,6 +3088,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.foundation.numerics
 		generation\WinRT\winrt\windows.foundation.numerics\winrt-windows.foundation.numerics.h = generation\WinRT\winrt\windows.foundation.numerics\winrt-windows.foundation.numerics.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.graphics", "windows.graphics", "{32CFDE8C-7D38-4549-B08E-7271102D6503}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.graphics\generate.rsp = generation\WinRT\winrt\windows.graphics\generate.rsp
+		generation\WinRT\winrt\windows.graphics\header.txt = generation\WinRT\winrt\windows.graphics\header.txt
+		generation\WinRT\winrt\windows.graphics\winrt-windows.graphics.h = generation\WinRT\winrt\windows.graphics\winrt-windows.graphics.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3561,6 +3568,7 @@ Global
 		{BBCA5500-FE50-4970-A019-830C912D9ABE} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{65B229A2-8DDE-40CB-B600-7A4EE052DD60} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{11D48099-EDE0-4F6F-884E-45B0DC0AA6AD} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{32CFDE8C-7D38-4549-B08E-7271102D6503} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
