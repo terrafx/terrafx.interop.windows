@@ -3116,6 +3116,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui", "windows.ui", 
 		generation\WinRT\winrt\windows.ui\winrt-windows.ui.h = generation\WinRT\winrt\windows.ui\winrt-windows.ui.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.haptics", "windows.devices.haptics", "{48C596B5-7E3C-46A8-A0B1-ACC1960234F3}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.haptics\generate.rsp = generation\WinRT\winrt\windows.devices.haptics\generate.rsp
+		generation\WinRT\winrt\windows.devices.haptics\header.txt = generation\WinRT\winrt\windows.devices.haptics\header.txt
+		generation\WinRT\winrt\windows.devices.haptics\winrt-windows.devices.haptics.h = generation\WinRT\winrt\windows.devices.haptics\winrt-windows.devices.haptics.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3593,6 +3600,7 @@ Global
 		{D9631DB3-5394-4D28-B687-C0524ABC80FC} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{E1CE167B-DD40-4955-84F0-64D55CAACA00} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{7523C542-E0CD-42F9-93C4-B593179B378C} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{48C596B5-7E3C-46A8-A0B1-ACC1960234F3} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
