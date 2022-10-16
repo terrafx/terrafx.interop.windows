@@ -3109,6 +3109,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.graphics.effects", 
 		generation\WinRT\winrt\windows.graphics.effects\winrt-windows.graphics.effects.h = generation\WinRT\winrt\windows.graphics.effects\winrt-windows.graphics.effects.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui", "windows.ui", "{7523C542-E0CD-42F9-93C4-B593179B378C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.ui\generate.rsp = generation\WinRT\winrt\windows.ui\generate.rsp
+		generation\WinRT\winrt\windows.ui\header.txt = generation\WinRT\winrt\windows.ui\header.txt
+		generation\WinRT\winrt\windows.ui\winrt-windows.ui.h = generation\WinRT\winrt\windows.ui\winrt-windows.ui.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3585,6 +3592,7 @@ Global
 		{32CFDE8C-7D38-4549-B08E-7271102D6503} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{D9631DB3-5394-4D28-B687-C0524ABC80FC} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{E1CE167B-DD40-4955-84F0-64D55CAACA00} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{7523C542-E0CD-42F9-93C4-B593179B378C} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
