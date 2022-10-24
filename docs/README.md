@@ -48,3 +48,7 @@ based applications.
 
 TerraFX uses C# as its primary development language and .NET Core as our primary
 target framework.
+
+### .NET Foundation
+
+This project is supported by the [.NET Foundation](https://dotnetfoundation.org).
