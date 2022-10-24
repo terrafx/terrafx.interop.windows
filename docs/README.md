@@ -17,10 +17,12 @@ Packages are available at: https://github.com/orgs/terrafx/packages or via the N
 
 ### Code of Conduct
 
-TerraFX and everyone contributing (this includes issues, pull requests, the
-wiki, etc) must abide by the [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md).
+ClangSharp and everyone contributing (this includes issues, pull requests, the
+wiki, etc) must abide by the .NET Foundation Code of Conduct:
+https://dotnetfoundation.org/about/code-of-conduct.
+
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at admin@terrafx.dev.
+reported by contacting the project team at conduct@dotnetfoundation.org.
 
 ### License
 
