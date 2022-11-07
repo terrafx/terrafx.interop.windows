@@ -12,7 +12,7 @@ namespace TerraFX.Interop.WinRT;
 public static unsafe partial class WinRT
 {
     public static HRESULT ActivateInstance<T>(HSTRING activatableClassId, T** instance)
-        where T : unmanaged
+        where T : unmanaged, INativeGuid
     {
         *instance = null;
 
@@ -36,7 +36,7 @@ public static unsafe partial class WinRT
     }
 
     public static HRESULT GetActivationFactory<T>(HSTRING activatableClassId, T** factory)
-        where T : unmanaged
+        where T : unmanaged, INativeGuid
     {
         return RoGetActivationFactory(activatableClassId, __uuidof<T>(), (void**)factory);
     }
