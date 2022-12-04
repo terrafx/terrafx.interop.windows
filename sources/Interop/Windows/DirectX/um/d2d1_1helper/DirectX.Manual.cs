@@ -256,7 +256,7 @@ public static unsafe partial class DirectX
         HRESULT hr = S_OK;
         ID2D1Effect* dpiCompensationEffect = null;
 
-        if (inputBitmap != null)
+        if (inputBitmap == null)
         {
             effect->SetInput(inputIndex, null);
             return hr;
