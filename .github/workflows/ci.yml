@@ -37,21 +37,6 @@ jobs:
       env:
         EXCLUDE_RUN_ID_FROM_PACKAGE: true
         EXCLUDE_SUFFIX_FROM_VERSION: false
-    - uses: actions/setup-dotnet@v3
-      if: ${{ github.event_name == 'push' }}
-      with:
-        dotnet-version: '6.0.x'
-    - run: dotnet tool install --tool-path ./artifacts/tools sign --version 0.9.0-beta.23063.3
-      if: ${{ github.event_name == 'push' }}
-    - uses: azure/login@v1
-      if: ${{ github.event_name == 'push' }}
-      with:
-        allow-no-subscriptions: true
-        client-id: ${{ secrets.SC_AZURE_CLIENT_ID }}
-        tenant-id: ${{ secrets.SC_AZURE_TENANT_ID }}
-        subscription-id: ${{ secrets.SC_AZURE_SUBSCRIPTION_ID }}
-    - run: ./artifacts/tools/sign code azure-key-vault "**/*.nupkg" --timestamp-url "http://timestamp.digicert.com" --base-directory "${{ github.workspace }}/artifacts/pkg" --file-list "${{ github.workspace }}/scripts/SignClientFileList.txt" --publisher-name "TerraFX" --description "TerraFX.Interop.Windows" --description-url "https://github.com/terrafx/terrafx.interop.windows" --azure-key-vault-managed-identity true --azure-key-vault-url "${{ secrets.SC_KEY_VAULT_URL }}" --azure-key-vault-certificate "${{ secrets.SC_KEY_VAULT_CERTIFICATE_ID }}"
-      if: ${{ github.event_name == 'push' }}
     - uses: actions/upload-artifact@v3
       with:
         name: nuget_preview
@@ -60,6 +45,35 @@ jobs:
           ./artifacts/log/**/*
           ./artifacts/pkg/**/*
           ./artifacts/tst/**/*
+        if-no-files-found: error
+  sign-nuget-preview:
+    runs-on: windows-latest
+    if: ${{ github.event_name == 'push' }}
+    needs: [ build-nuget-preview ]
+    permissions:
+      id-token: write
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/download-artifact@v2
+      with:
+        name: nuget_preview
+        path: ./artifacts
+    - uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6.0.x'
+    - run: dotnet tool install --tool-path ./artifacts/tools sign --version 0.9.0-beta.23063.3
+    - uses: azure/login@v1
+      with:
+        allow-no-subscriptions: true
+        client-id: ${{ secrets.SC_AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.SC_AZURE_TENANT_ID }}
+        subscription-id: ${{ secrets.SC_AZURE_SUBSCRIPTION_ID }}
+    - run: ./artifacts/tools/sign code azure-key-vault "**/*.nupkg" --timestamp-url "http://timestamp.digicert.com" --base-directory "${{ github.workspace }}/artifacts/pkg" --file-list "${{ github.workspace }}/scripts/SignClientFileList.txt" --publisher-name "TerraFX" --description "TerraFX.Interop.Windows" --description-url "https://github.com/terrafx/terrafx.interop.windows" --azure-key-vault-managed-identity true --azure-key-vault-url "${{ secrets.SC_KEY_VAULT_URL }}" --azure-key-vault-certificate "${{ secrets.SC_KEY_VAULT_CERTIFICATE_ID }}"
+    - uses: actions/upload-artifact@v3
+      with:
+        name: sign_nuget_preview
+        path: |
+          ./artifacts/pkg/**/*
         if-no-files-found: error
   build-nuget-release:
     runs-on: windows-latest
@@ -70,21 +84,6 @@ jobs:
       env:
         EXCLUDE_RUN_ID_FROM_PACKAGE: true
         EXCLUDE_SUFFIX_FROM_VERSION: true
-    - uses: actions/setup-dotnet@v3
-      if: ${{ github.event_name == 'push' }}
-      with:
-        dotnet-version: '6.0.x'
-    - run: dotnet tool install --tool-path ./artifacts/tools sign --version 0.9.0-beta.23063.3
-      if: ${{ github.event_name == 'push' }}
-    - uses: azure/login@v1
-      if: ${{ github.event_name == 'push' }}
-      with:
-        allow-no-subscriptions: true
-        client-id: ${{ secrets.SC_AZURE_CLIENT_ID }}
-        tenant-id: ${{ secrets.SC_AZURE_TENANT_ID }}
-        subscription-id: ${{ secrets.SC_AZURE_SUBSCRIPTION_ID }}
-    - run: ./artifacts/tools/sign code azure-key-vault "**/*.nupkg" --timestamp-url "http://timestamp.digicert.com" --base-directory "${{ github.workspace }}/artifacts/pkg" --file-list "${{ github.workspace }}/scripts/SignClientFileList.txt" --publisher-name "TerraFX" --description "TerraFX.Interop.Windows" --description-url "https://github.com/terrafx/terrafx.interop.windows" --azure-key-vault-managed-identity true --azure-key-vault-url "${{ secrets.SC_KEY_VAULT_URL }}" --azure-key-vault-certificate "${{ secrets.SC_KEY_VAULT_CERTIFICATE_ID }}"
-      if: ${{ github.event_name == 'push' }}
     - uses: actions/upload-artifact@v3
       with:
         name: nuget_release
@@ -94,10 +93,39 @@ jobs:
           ./artifacts/pkg/**/*
           ./artifacts/tst/**/*
         if-no-files-found: error
+  sign-nuget-release:
+    runs-on: windows-latest
+    if: ${{ github.event_name == 'push' }}
+    needs: [ build-nuget-release ]
+    permissions:
+      id-token: write
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/download-artifact@v2
+      with:
+        name: nuget_release
+        path: ./artifacts
+    - uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6.0.x'
+    - run: dotnet tool install --tool-path ./artifacts/tools sign --version 0.9.0-beta.23063.3
+    - uses: azure/login@v1
+      with:
+        allow-no-subscriptions: true
+        client-id: ${{ secrets.SC_AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.SC_AZURE_TENANT_ID }}
+        subscription-id: ${{ secrets.SC_AZURE_SUBSCRIPTION_ID }}
+    - run: ./artifacts/tools/sign code azure-key-vault "**/*.nupkg" --timestamp-url "http://timestamp.digicert.com" --base-directory "${{ github.workspace }}/artifacts/pkg" --file-list "${{ github.workspace }}/scripts/SignClientFileList.txt" --publisher-name "TerraFX" --description "TerraFX.Interop.Windows" --description-url "https://github.com/terrafx/terrafx.interop.windows" --azure-key-vault-managed-identity true --azure-key-vault-url "${{ secrets.SC_KEY_VAULT_URL }}" --azure-key-vault-certificate "${{ secrets.SC_KEY_VAULT_CERTIFICATE_ID }}"
+    - uses: actions/upload-artifact@v3
+      with:
+        name: sign_nuget_release
+        path: |
+          ./artifacts/pkg/**/*
+        if-no-files-found: error
   publish-nightlies-azure:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' }}
-    needs: [ windows-x64, build-nuget-preview, build-nuget-release ]
+    needs: [ windows-x64, sign-nuget-preview, sign-nuget-release ]
     steps:
     - uses: actions/download-artifact@v2
       with:
@@ -113,7 +141,7 @@ jobs:
   publish-nightlies-github:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' }}
-    needs: [ windows-x64, build-nuget-preview, build-nuget-release ]
+    needs: [ windows-x64, sign-nuget-preview, sign-nuget-release ]
     steps:
     - uses: actions/download-artifact@v2
       with:
