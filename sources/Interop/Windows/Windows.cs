@@ -13,7 +13,10 @@ public static unsafe partial class Windows
 
     static Windows()
     {
-        NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), OnDllImport);
+        if (!Configuration.DisableResolveLibraryHook)
+        {
+            NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), OnDllImport);
+        }
     }
 
     /// <summary>The default <see cref="DllImportResolver"/> for TerraFX.Interop.Windows.</summary>
