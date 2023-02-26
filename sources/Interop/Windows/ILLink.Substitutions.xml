@@ -1,10 +1,10 @@
 <linker>
     <assembly fullname="TerraFX.Interop.Windows">
         <type fullname="TerraFX.Interop.Windows.Configuration" feature="TerraFX.Interop.Windows.DisableResolveLibraryHook" featurevalue="true">
-            <field name="s_disableResolveLibraryHook" value="true" initialize="true" />
+            <field name="s_disableResolveLibraryHook" value="true" />
         </type>
         <type fullname="TerraFX.Interop.Windows.Configuration" feature="TerraFX.Interop.Windows.DisableResolveLibraryHook" featurevalue="false">
-            <field name="s_disableResolveLibraryHook" value="false" initialize="true" />
+            <field name="s_disableResolveLibraryHook" value="false" />
         </type>
     </assembly>
 </linker>
