@@ -9,51 +9,61 @@ namespace TerraFX.Interop.Windows;
 public static unsafe partial class Windows
 {
     /// <summary>Raised whenever a native library is loaded by TerraFX.Interop.Windows. Handlers can be added to this event to customize how libraries are loaded, and they will be used first whenever a new native library is being resolved.</summary>
-    public static event DllImportResolver? ResolveLibrary;
-
-    static Windows()
+    public static event DllImportResolver? ResolveLibrary
     {
-        NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), OnDllImport);
+        add => Impl.ResolveLibrary += value;
+        remove => Impl.ResolveLibrary -= value;
     }
 
-    /// <summary>The default <see cref="DllImportResolver"/> for TerraFX.Interop.Windows.</summary>
-    /// <inheritdoc cref="DllImportResolver"/>
-    private static IntPtr OnDllImport(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
+    /// <summary>Separate implementation class for pay-for-play. Enables trimming of the implementation when the event is not used.</summary>
+    private static class Impl
     {
-        if (TryResolveLibrary(libraryName, assembly, searchPath, out IntPtr nativeLibrary))
+        static Impl()
         {
-            return nativeLibrary;
+            NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), OnDllImport);
         }
 
-        return NativeLibrary.Load(libraryName, assembly, searchPath);
-    }
+        internal static event DllImportResolver? ResolveLibrary;
 
-    /// <summary>Tries to resolve a native library using the handlers for the <see cref="ResolveLibrary"/> event.</summary>
-    /// <param name="libraryName">The native library to resolve.</param>
-    /// <param name="assembly">The assembly requesting the resolution.</param>
-    /// <param name="searchPath">The <see cref="DllImportSearchPath"/> value on the P/Invoke or assembly, or <see langword="null"/>.</param>
-    /// <param name="nativeLibrary">The loaded library, if one was resolved.</param>
-    /// <returns>Whether or not the requested library was successfully loaded.</returns>
-    private static bool TryResolveLibrary(string libraryName, Assembly assembly, DllImportSearchPath? searchPath, out IntPtr nativeLibrary)
-    {
-        var resolveLibrary = ResolveLibrary;
-
-        if (resolveLibrary != null)
+        /// <summary>The default <see cref="DllImportResolver"/> for TerraFX.Interop.Windows.</summary>
+        /// <inheritdoc cref="DllImportResolver"/>
+        private static IntPtr OnDllImport(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
         {
-            var resolvers = resolveLibrary.GetInvocationList();
-
-            foreach (DllImportResolver resolver in resolvers)
+            if (TryResolveLibrary(libraryName, assembly, searchPath, out IntPtr nativeLibrary))
             {
-                nativeLibrary = resolver(libraryName, assembly, searchPath);
+                return nativeLibrary;
+            }
 
-                if (nativeLibrary != IntPtr.Zero)
+            return NativeLibrary.Load(libraryName, assembly, searchPath);
+        }
+
+        /// <summary>Tries to resolve a native library using the handlers for the <see cref="ResolveLibrary"/> event.</summary>
+        /// <param name="libraryName">The native library to resolve.</param>
+        /// <param name="assembly">The assembly requesting the resolution.</param>
+        /// <param name="searchPath">The <see cref="DllImportSearchPath"/> value on the P/Invoke or assembly, or <see langword="null"/>.</param>
+        /// <param name="nativeLibrary">The loaded library, if one was resolved.</param>
+        /// <returns>Whether or not the requested library was successfully loaded.</returns>
+        private static bool TryResolveLibrary(string libraryName, Assembly assembly, DllImportSearchPath? searchPath, out IntPtr nativeLibrary)
+        {
+            var resolveLibrary = ResolveLibrary;
+
+            if (resolveLibrary != null)
+            {
+                var resolvers = resolveLibrary.GetInvocationList();
+
+                foreach (DllImportResolver resolver in resolvers)
                 {
-                    return true;
+                    nativeLibrary = resolver(libraryName, assembly, searchPath);
+
+                    if (nativeLibrary != IntPtr.Zero)
+                    {
+                        return true;
+                    }
                 }
             }
-        }
 
-        nativeLibrary = IntPtr.Zero;
-        return false;
+            nativeLibrary = IntPtr.Zero;
+            return false;
+        }
     }
 }
