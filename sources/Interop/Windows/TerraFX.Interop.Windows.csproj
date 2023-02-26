@@ -8,6 +8,10 @@
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
   </PropertyGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="ILLink.Substitutions.xml" LogicalName="ILLink.Substitutions.xml" />
+  </ItemGroup>
+
   <PropertyGroup>
     <!-- Additional NoWarns for the *.xml files -->
     <NoWarn>$(NoWarn);CS0419;CS1571;CS1572;CS1573;CS1574;CS1580;CS1584;CS1589;CS1658</NoWarn>

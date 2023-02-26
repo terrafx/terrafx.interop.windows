@@ -3,6 +3,7 @@
 // Ported from DXSampleHelper.h in https://github.com/Microsoft/DirectX-Graphics-Samples
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -17,8 +18,7 @@ public static unsafe class DXSampleHelper
 {
     public static string GetAssetsPath()
     {
-        var entryAssembly = Assembly.GetEntryAssembly()!;
-        return Path.GetDirectoryName(entryAssembly.Location)!;
+        return Path.GetDirectoryName(AppContext.BaseDirectory)!;
     }
 
     public static byte[] ReadDataFromFile(string filename)
