@@ -5,7 +5,6 @@
   <PropertyGroup>
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
   </PropertyGroup>
-  
   <ItemGroup>
     <ProjectReference Include="..\..\sources\Interop\Windows\TerraFX.Interop.Windows.csproj" />
   </ItemGroup>
