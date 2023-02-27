@@ -15,7 +15,7 @@ public static unsafe partial class Windows
     {
         if (!Configuration.DisableResolveLibraryHook)
         {
-            NativeLibrary.SetDllImportResolver(typeof(Windows).Assembly, OnDllImport);
+            NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), OnDllImport);
         }
     }
 
