@@ -15,7 +15,7 @@ public static unsafe partial class Windows
     {
         if (!Configuration.DisableResolveLibraryHook)
         {
-            NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), OnDllImport);
+            NativeLibrary.SetDllImportResolver(typeof(Windows).Assembly, OnDllImport);
         }
     }
 
@@ -28,7 +28,7 @@ public static unsafe partial class Windows
             return nativeLibrary;
         }
 
-        return NativeLibrary.Load(libraryName, assembly, searchPath);
+        return IntPtr.Zero;
     }
 
     /// <summary>Tries to resolve a native library using the handlers for the <see cref="ResolveLibrary"/> event.</summary>
