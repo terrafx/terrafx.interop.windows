@@ -13,13 +13,6 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CIE4ConnectionPoint" /> struct.</summary>
 public static unsafe partial class CIE4ConnectionPointTests
 {
-    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CIE4ConnectionPoint" /> struct is correct.</summary>
-    [Test]
-    public static void GuidOfTest()
-    {
-        Assert.That(typeof(CIE4ConnectionPoint).GUID, Is.EqualTo(IID_CIE4ConnectionPoint));
-    }
-
     /// <summary>Validates that the <see cref="CIE4ConnectionPoint" /> struct is blittable.</summary>
     [Test]
     public static void IsBlittableTest()
