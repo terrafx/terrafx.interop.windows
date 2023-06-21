@@ -15,6 +15,6 @@ public unsafe partial struct ColorPalette
     public uint Count;
 
     /// <include file='ColorPalette.xml' path='doc/member[@name="ColorPalette.Entries"]/*' />
-    [NativeTypeName("Gdiplus::ARGB[1]")]
+    [NativeTypeName("ARGB[1]")]
     public fixed uint Entries[1];
 }

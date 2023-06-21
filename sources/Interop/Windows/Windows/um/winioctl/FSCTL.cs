@@ -660,6 +660,9 @@ public static partial class FSCTL
     [NativeTypeName("#define FSCTL_REFS_QUERY_VOLUME_DEDUP_INFO CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 285, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
     public const int FSCTL_REFS_QUERY_VOLUME_DEDUP_INFO = (((0x00000009) << 16) | ((0) << 14) | ((285) << 2) | (0));
 
+    [NativeTypeName("#define FSCTL_LMR_QUERY_INFO CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 286, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_LMR_QUERY_INFO = (((0x00000009) << 16) | ((0) << 14) | ((286) << 2) | (0));
+
     [NativeTypeName("#define FSCTL_INTEGRITY_FLAG_CHECKSUM_ENFORCEMENT_OFF (1)")]
     public const int FSCTL_INTEGRITY_FLAG_CHECKSUM_ENFORCEMENT_OFF = (1);
 

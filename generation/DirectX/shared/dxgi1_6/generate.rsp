@@ -23,5 +23,3 @@ DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS=Flags
 --with-librarypath
 DXGIDeclareAdapterRemovalSupport=dxgi
 DXGIDisableVBlankVirtualization=dxgi
---with-type
-DXGI_ADAPTER_FLAG3=uint

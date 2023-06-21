@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICPngSrgbProperties.xml' path='doc/member[@name="WICPngSrgbProperties"]/*' />
-public enum WICPngSrgbProperties : uint
+public enum WICPngSrgbProperties
 {
     /// <include file='WICPngSrgbProperties.xml' path='doc/member[@name="WICPngSrgbProperties.WICPngSrgbRenderingIntent"]/*' />
     WICPngSrgbRenderingIntent = 0x1,

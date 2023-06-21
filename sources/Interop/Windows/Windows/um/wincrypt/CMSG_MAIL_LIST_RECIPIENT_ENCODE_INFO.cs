@@ -30,7 +30,7 @@ public unsafe partial struct CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO
     public uint dwKeyChoice;
 
     /// <include file='CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO.xml' path='doc/member[@name="CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO.Anonymous"]/*' />
-    [NativeTypeName("_CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wincrypt.h:7002:5)")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L7002_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO.xml' path='doc/member[@name="CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO.KeyId"]/*' />

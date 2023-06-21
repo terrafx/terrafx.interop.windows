@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct HIDP_KEYBOARD_MODIFIER_STATE
 {
     /// <include file='HIDP_KEYBOARD_MODIFIER_STATE.xml' path='doc/member[@name="HIDP_KEYBOARD_MODIFIER_STATE.Anonymous"]/*' />
-    [NativeTypeName("_HIDP_KEYBOARD_MODIFIER_STATE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/hidpi.h:1937:4)")]
+    [NativeTypeName("__AnonymousRecord_hidpi_L1937_C4")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftControl"]/*' />
@@ -225,7 +225,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_HIDP_KEYBOARD_MODIFIER_STATE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/hidpi.h:1938:7)")]
+        [NativeTypeName("__AnonymousRecord_hidpi_L1938_C7")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ul"]/*' />

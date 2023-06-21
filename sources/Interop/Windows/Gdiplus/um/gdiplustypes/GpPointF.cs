@@ -23,13 +23,13 @@ public unsafe partial struct GpPointF
         X = Y = 0.0f;
     }
 
-    public GpPointF([NativeTypeName("const Gdiplus::PointF &")] GpPointF* point)
+    public GpPointF([NativeTypeName("const PointF &")] GpPointF* point)
     {
         X = point->X;
         Y = point->Y;
     }
 
-    public GpPointF([NativeTypeName("const Gdiplus::SizeF &")] GpSizeF* size)
+    public GpPointF([NativeTypeName("const SizeF &")] GpSizeF* size)
     {
         X = size->Width;
         Y = size->Height;
@@ -41,7 +41,7 @@ public unsafe partial struct GpPointF
         Y = y;
     }
 
-    public BOOL Equals([NativeTypeName("const Gdiplus::PointF &")] GpPointF* point)
+    public BOOL Equals([NativeTypeName("const PointF &")] GpPointF* point)
     {
         return ((X == point->X) && (Y == point->Y)) ? 1 : 0;
     }

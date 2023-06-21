@@ -8,7 +8,7 @@ using static TerraFX.Interop.DirectX.D2D1_CAP_STYLE;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_SVG_LINE_CAP.xml' path='doc/member[@name="D2D1_SVG_LINE_CAP"]/*' />
-public enum D2D1_SVG_LINE_CAP : uint
+public enum D2D1_SVG_LINE_CAP
 {
     /// <include file='D2D1_SVG_LINE_CAP.xml' path='doc/member[@name="D2D1_SVG_LINE_CAP.D2D1_SVG_LINE_CAP_BUTT"]/*' />
     D2D1_SVG_LINE_CAP_BUTT = D2D1_CAP_STYLE_FLAT,
@@ -20,5 +20,5 @@ public enum D2D1_SVG_LINE_CAP : uint
     D2D1_SVG_LINE_CAP_ROUND = D2D1_CAP_STYLE_ROUND,
 
     /// <include file='D2D1_SVG_LINE_CAP.xml' path='doc/member[@name="D2D1_SVG_LINE_CAP.D2D1_SVG_LINE_CAP_FORCE_DWORD"]/*' />
-    D2D1_SVG_LINE_CAP_FORCE_DWORD = 0xffffffff,
+    D2D1_SVG_LINE_CAP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

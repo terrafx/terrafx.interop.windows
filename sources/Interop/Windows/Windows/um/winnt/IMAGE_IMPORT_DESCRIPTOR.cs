@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_IMPORT_DESCRIPTOR
 {
     /// <include file='IMAGE_IMPORT_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_IMPORT_DESCRIPTOR.Anonymous"]/*' />
-    [NativeTypeName("_IMAGE_IMPORT_DESCRIPTOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:19619:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L19638_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='IMAGE_IMPORT_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_IMPORT_DESCRIPTOR.TimeDateStamp"]/*' />

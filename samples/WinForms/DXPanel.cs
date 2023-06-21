@@ -33,10 +33,7 @@ public partial class DXPanel : Panel
                 return;
             }
 
-            if (_dxSample is not null)
-            {
-                _dxSample.OnDestroy();
-            }
+            _dxSample?.OnDestroy();
 
             if (value is not null)
             {

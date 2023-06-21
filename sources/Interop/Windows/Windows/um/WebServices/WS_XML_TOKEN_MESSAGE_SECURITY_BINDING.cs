@@ -17,5 +17,6 @@ public partial struct WS_XML_TOKEN_MESSAGE_SECURITY_BINDING
     public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 
     /// <include file='WS_XML_TOKEN_MESSAGE_SECURITY_BINDING.xml' path='doc/member[@name="WS_XML_TOKEN_MESSAGE_SECURITY_BINDING.xmlToken"]/*' />
+    [NativeTypeName("WS_SECURITY_TOKEN*")]
     public IntPtr xmlToken;
 }

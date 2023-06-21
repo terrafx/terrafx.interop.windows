@@ -25,7 +25,7 @@ public unsafe partial struct TF_LMLATTELEMENT
     public uint dwFlags;
 
     /// <include file='TF_LMLATTELEMENT.xml' path='doc/member[@name="TF_LMLATTELEMENT.Anonymous"]/*' />
-    [NativeTypeName("TF_LMLATTELEMENT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ctffunc.h:2394:36)")]
+    [NativeTypeName("__AnonymousRecord_ctffunc_L2394_C36")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='TF_LMLATTELEMENT.xml' path='doc/member[@name="TF_LMLATTELEMENT.bstrText"]/*' />

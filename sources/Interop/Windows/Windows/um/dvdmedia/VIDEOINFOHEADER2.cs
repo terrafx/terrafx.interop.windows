@@ -47,7 +47,7 @@ public partial struct VIDEOINFOHEADER2
     public uint dwPictAspectRatioY;
 
     /// <include file='VIDEOINFOHEADER2.xml' path='doc/member[@name="VIDEOINFOHEADER2.Anonymous"]/*' />
-    [NativeTypeName("tagVIDEOINFOHEADER2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/dvdmedia.h:317:5)")]
+    [NativeTypeName("__AnonymousRecord_dvdmedia_L317_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='VIDEOINFOHEADER2.xml' path='doc/member[@name="VIDEOINFOHEADER2.dwReserved2"]/*' />

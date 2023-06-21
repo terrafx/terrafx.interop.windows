@@ -48,7 +48,7 @@ public unsafe partial struct MetafileHeader
     public int Height;
 
     /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.Anonymous"]/*' />
-    [NativeTypeName("Gdiplus::MetafileHeader::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/GdiplusMetaHeader.h:129:5)")]
+    [NativeTypeName("__AnonymousRecord_GdiplusMetaHeader_L129_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.EmfPlusHeaderSize"]/*' />
@@ -151,6 +151,18 @@ public unsafe partial struct MetafileHeader
     public BOOL IsDisplay()
     {
         return ((IsEmfPlus()) != 0 && ((EmfPlusFlags & 0x00000001) != 0)) ? 1 : 0;
+    }
+
+    [UnscopedRef]
+    [return: NativeTypeName("const ENHMETAHEADER3 *")]
+    public ref readonly ENHMETAHEADER3 GetEmfHeader()
+    {
+        if ((_ = IsEmfOrEmfPlus()) != 0)
+        {
+            return ref Anonymous.EmfHeader;
+        }
+
+        return ref Unsafe.NullRef<ENHMETAHEADER3>();
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />

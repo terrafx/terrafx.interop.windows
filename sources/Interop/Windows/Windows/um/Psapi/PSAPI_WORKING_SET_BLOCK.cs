@@ -19,7 +19,7 @@ public partial struct PSAPI_WORKING_SET_BLOCK
 
     /// <include file='PSAPI_WORKING_SET_BLOCK.xml' path='doc/member[@name="PSAPI_WORKING_SET_BLOCK.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("_PSAPI_WORKING_SET_BLOCK::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/Psapi.h:386:5)")]
+    [NativeTypeName("__AnonymousRecord_Psapi_L386_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Protection"]/*' />

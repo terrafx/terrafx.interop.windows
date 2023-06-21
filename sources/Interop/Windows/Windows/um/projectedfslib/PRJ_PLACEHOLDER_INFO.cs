@@ -15,15 +15,15 @@ public unsafe partial struct PRJ_PLACEHOLDER_INFO
     public PRJ_FILE_BASIC_INFO FileBasicInfo;
 
     /// <include file='PRJ_PLACEHOLDER_INFO.xml' path='doc/member[@name="PRJ_PLACEHOLDER_INFO.EaInformation"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/projectedfslib.h:212:5)")]
+    [NativeTypeName("__AnonymousRecord_projectedfslib_L212_C5")]
     public _EaInformation_e__Struct EaInformation;
 
     /// <include file='PRJ_PLACEHOLDER_INFO.xml' path='doc/member[@name="PRJ_PLACEHOLDER_INFO.SecurityInformation"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/projectedfslib.h:218:5)")]
+    [NativeTypeName("__AnonymousRecord_projectedfslib_L218_C5")]
     public _SecurityInformation_e__Struct SecurityInformation;
 
     /// <include file='PRJ_PLACEHOLDER_INFO.xml' path='doc/member[@name="PRJ_PLACEHOLDER_INFO.StreamsInformation"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/projectedfslib.h:224:5)")]
+    [NativeTypeName("__AnonymousRecord_projectedfslib_L224_C5")]
     public _StreamsInformation_e__Struct StreamsInformation;
 
     /// <include file='PRJ_PLACEHOLDER_INFO.xml' path='doc/member[@name="PRJ_PLACEHOLDER_INFO.VersionInfo"]/*' />

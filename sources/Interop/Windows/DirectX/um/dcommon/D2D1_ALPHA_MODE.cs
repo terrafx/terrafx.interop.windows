@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_ALPHA_MODE.xml' path='doc/member[@name="D2D1_ALPHA_MODE"]/*' />
-public enum D2D1_ALPHA_MODE : uint
+public enum D2D1_ALPHA_MODE
 {
     /// <include file='D2D1_ALPHA_MODE.xml' path='doc/member[@name="D2D1_ALPHA_MODE.D2D1_ALPHA_MODE_UNKNOWN"]/*' />
     D2D1_ALPHA_MODE_UNKNOWN = 0,
@@ -21,5 +21,5 @@ public enum D2D1_ALPHA_MODE : uint
     D2D1_ALPHA_MODE_IGNORE = 3,
 
     /// <include file='D2D1_ALPHA_MODE.xml' path='doc/member[@name="D2D1_ALPHA_MODE.D2D1_ALPHA_MODE_FORCE_DWORD"]/*' />
-    D2D1_ALPHA_MODE_FORCE_DWORD = 0xffffffff,
+    D2D1_ALPHA_MODE_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

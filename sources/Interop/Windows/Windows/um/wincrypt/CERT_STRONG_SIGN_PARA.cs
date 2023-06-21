@@ -23,7 +23,7 @@ public unsafe partial struct CERT_STRONG_SIGN_PARA
     public uint dwInfoChoice;
 
     /// <include file='CERT_STRONG_SIGN_PARA.xml' path='doc/member[@name="CERT_STRONG_SIGN_PARA.Anonymous"]/*' />
-    [NativeTypeName("_CERT_STRONG_SIGN_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wincrypt.h:6544:5)")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L6544_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pvInfo"]/*' />

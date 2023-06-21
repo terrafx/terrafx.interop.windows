@@ -8,9 +8,8 @@ using System.Runtime.Versioning;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DXGI_COLOR_SPACE_TYPE.xml' path='doc/member[@name="DXGI_COLOR_SPACE_TYPE"]/*' />
-[NativeTypeName("int")]
 [SupportedOSPlatform("windows10.0")]
-public enum DXGI_COLOR_SPACE_TYPE : uint
+public enum DXGI_COLOR_SPACE_TYPE
 {
     /// <include file='DXGI_COLOR_SPACE_TYPE.xml' path='doc/member[@name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_RGB_FULL_G22_NONE_P709"]/*' />
     DXGI_COLOR_SPACE_RGB_FULL_G22_NONE_P709 = 0,
@@ -88,5 +87,5 @@ public enum DXGI_COLOR_SPACE_TYPE : uint
     DXGI_COLOR_SPACE_YCBCR_STUDIO_G24_TOPLEFT_P2020 = 24,
 
     /// <include file='DXGI_COLOR_SPACE_TYPE.xml' path='doc/member[@name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_CUSTOM"]/*' />
-    DXGI_COLOR_SPACE_CUSTOM = 0xFFFFFFFF,
+    DXGI_COLOR_SPACE_CUSTOM = unchecked((int)(0xFFFFFFFF)),
 }

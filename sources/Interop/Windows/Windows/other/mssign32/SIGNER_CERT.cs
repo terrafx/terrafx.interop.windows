@@ -21,7 +21,7 @@ public unsafe partial struct SIGNER_CERT
     public uint dwCertChoice;
 
     /// <include file='SIGNER_CERT.xml' path='doc/member[@name="SIGNER_CERT.Anonymous"]/*' />
-    [NativeTypeName("_SIGNER_CERT::(anonymous union at ../../../include/mssign32.h:111:9)")]
+    [NativeTypeName("__AnonymousRecord_mssign32_L111_C9")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='SIGNER_CERT.xml' path='doc/member[@name="SIGNER_CERT.hwnd"]/*' />

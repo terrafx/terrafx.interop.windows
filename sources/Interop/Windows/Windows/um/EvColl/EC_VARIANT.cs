@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct EC_VARIANT
 {
     /// <include file='EC_VARIANT.xml' path='doc/member[@name="EC_VARIANT.Anonymous"]/*' />
-    [NativeTypeName("_EC_VARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/EvColl.h:121:5)")]
+    [NativeTypeName("__AnonymousRecord_EvColl_L121_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='EC_VARIANT.xml' path='doc/member[@name="EC_VARIANT.Count"]/*' />

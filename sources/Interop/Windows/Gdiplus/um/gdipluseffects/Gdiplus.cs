@@ -290,7 +290,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateEffect"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::Status")]
-    public static extern GpStatus GdipCreateEffect([NativeTypeName("const GUID")] Guid guid, [NativeTypeName("Gdiplus::CGpEffect **")] CGpEffect** effect);
+    public static extern GpStatus GdipCreateEffect([NativeTypeName("const GUID")] Guid guid, CGpEffect** effect);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDeleteEffect"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]

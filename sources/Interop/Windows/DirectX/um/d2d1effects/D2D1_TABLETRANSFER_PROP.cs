@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_TABLETRANSFER_PROP.xml' path='doc/member[@name="D2D1_TABLETRANSFER_PROP"]/*' />
-public enum D2D1_TABLETRANSFER_PROP : uint
+public enum D2D1_TABLETRANSFER_PROP
 {
     /// <include file='D2D1_TABLETRANSFER_PROP.xml' path='doc/member[@name="D2D1_TABLETRANSFER_PROP.D2D1_TABLETRANSFER_PROP_RED_TABLE"]/*' />
     D2D1_TABLETRANSFER_PROP_RED_TABLE = 0,
@@ -36,5 +36,5 @@ public enum D2D1_TABLETRANSFER_PROP : uint
     D2D1_TABLETRANSFER_PROP_CLAMP_OUTPUT = 8,
 
     /// <include file='D2D1_TABLETRANSFER_PROP.xml' path='doc/member[@name="D2D1_TABLETRANSFER_PROP.D2D1_TABLETRANSFER_PROP_FORCE_DWORD"]/*' />
-    D2D1_TABLETRANSFER_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_TABLETRANSFER_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

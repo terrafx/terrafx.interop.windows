@@ -32,11 +32,11 @@ public static unsafe partial class CONFIG_CI_PROV_INFOTests
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(CONFIG_CI_PROV_INFO), Is.EqualTo(40));
+            Assert.That(sizeof(CONFIG_CI_PROV_INFO), Is.EqualTo(56));
         }
         else
         {
-            Assert.That(sizeof(CONFIG_CI_PROV_INFO), Is.EqualTo(32));
+            Assert.That(sizeof(CONFIG_CI_PROV_INFO), Is.EqualTo(40));
         }
     }
 }

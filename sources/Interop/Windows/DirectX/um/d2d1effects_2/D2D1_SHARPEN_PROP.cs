@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_SHARPEN_PROP.xml' path='doc/member[@name="D2D1_SHARPEN_PROP"]/*' />
-public enum D2D1_SHARPEN_PROP : uint
+public enum D2D1_SHARPEN_PROP
 {
     /// <include file='D2D1_SHARPEN_PROP.xml' path='doc/member[@name="D2D1_SHARPEN_PROP.D2D1_SHARPEN_PROP_SHARPNESS"]/*' />
     D2D1_SHARPEN_PROP_SHARPNESS = 0,
@@ -15,5 +15,5 @@ public enum D2D1_SHARPEN_PROP : uint
     D2D1_SHARPEN_PROP_THRESHOLD = 1,
 
     /// <include file='D2D1_SHARPEN_PROP.xml' path='doc/member[@name="D2D1_SHARPEN_PROP.D2D1_SHARPEN_PROP_FORCE_DWORD"]/*' />
-    D2D1_SHARPEN_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_SHARPEN_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

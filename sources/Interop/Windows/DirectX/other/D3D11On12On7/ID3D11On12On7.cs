@@ -74,6 +74,7 @@ public unsafe partial struct ID3D11On12On7 : ID3D11On12On7.Interface, INativeGui
     /// <include file='ID3D11On12On7.xml' path='doc/member[@name="ID3D11On12On7.GetThreadLastCreatedResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
+    [return: NativeTypeName("ID3D11On12On7Resource*")]
     public void* GetThreadLastCreatedResource()
     {
         return ((delegate* unmanaged<ID3D11On12On7*, void*>)(lpVtbl[6]))((ID3D11On12On7*)Unsafe.AsPointer(ref this));
@@ -91,6 +92,7 @@ public unsafe partial struct ID3D11On12On7 : ID3D11On12On7.Interface, INativeGui
         ID3D11On12On7Device* GetThreadLastCreatedDevice();
 
         [VtblIndex(6)]
+        [return: NativeTypeName("ID3D11On12On7Resource*")]
         void* GetThreadLastCreatedResource();
     }
 

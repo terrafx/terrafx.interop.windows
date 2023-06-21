@@ -26,7 +26,7 @@ public unsafe partial struct MIXERCONTROLDETAILS
     public uint cChannels;
 
     /// <include file='MIXERCONTROLDETAILS.xml' path='doc/member[@name="MIXERCONTROLDETAILS.Anonymous"]/*' />
-    [NativeTypeName("tMIXERCONTROLDETAILS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/mmeapi.h:2308:5)")]
+    [NativeTypeName("__AnonymousRecord_mmeapi_L2308_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='MIXERCONTROLDETAILS.xml' path='doc/member[@name="MIXERCONTROLDETAILS.cbDetails"]/*' />

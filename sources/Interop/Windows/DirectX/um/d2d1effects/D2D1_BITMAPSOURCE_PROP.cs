@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_BITMAPSOURCE_PROP.xml' path='doc/member[@name="D2D1_BITMAPSOURCE_PROP"]/*' />
-public enum D2D1_BITMAPSOURCE_PROP : uint
+public enum D2D1_BITMAPSOURCE_PROP
 {
     /// <include file='D2D1_BITMAPSOURCE_PROP.xml' path='doc/member[@name="D2D1_BITMAPSOURCE_PROP.D2D1_BITMAPSOURCE_PROP_WIC_BITMAP_SOURCE"]/*' />
     D2D1_BITMAPSOURCE_PROP_WIC_BITMAP_SOURCE = 0,
@@ -27,5 +27,5 @@ public enum D2D1_BITMAPSOURCE_PROP : uint
     D2D1_BITMAPSOURCE_PROP_ORIENTATION = 5,
 
     /// <include file='D2D1_BITMAPSOURCE_PROP.xml' path='doc/member[@name="D2D1_BITMAPSOURCE_PROP.D2D1_BITMAPSOURCE_PROP_FORCE_DWORD"]/*' />
-    D2D1_BITMAPSOURCE_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_BITMAPSOURCE_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

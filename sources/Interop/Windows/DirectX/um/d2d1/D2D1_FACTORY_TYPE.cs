@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_FACTORY_TYPE.xml' path='doc/member[@name="D2D1_FACTORY_TYPE"]/*' />
-public enum D2D1_FACTORY_TYPE : uint
+public enum D2D1_FACTORY_TYPE
 {
     /// <include file='D2D1_FACTORY_TYPE.xml' path='doc/member[@name="D2D1_FACTORY_TYPE.D2D1_FACTORY_TYPE_SINGLE_THREADED"]/*' />
     D2D1_FACTORY_TYPE_SINGLE_THREADED = 0,
@@ -15,5 +15,5 @@ public enum D2D1_FACTORY_TYPE : uint
     D2D1_FACTORY_TYPE_MULTI_THREADED = 1,
 
     /// <include file='D2D1_FACTORY_TYPE.xml' path='doc/member[@name="D2D1_FACTORY_TYPE.D2D1_FACTORY_TYPE_FORCE_DWORD"]/*' />
-    D2D1_FACTORY_TYPE_FORCE_DWORD = 0xffffffff,
+    D2D1_FACTORY_TYPE_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

@@ -17,7 +17,7 @@ public partial struct DEVICE_STORAGE_RANGE_ATTRIBUTES
     public ulong LengthInBytes;
 
     /// <include file='DEVICE_STORAGE_RANGE_ATTRIBUTES.xml' path='doc/member[@name="DEVICE_STORAGE_RANGE_ATTRIBUTES.Anonymous"]/*' />
-    [NativeTypeName("_DEVICE_STORAGE_RANGE_ATTRIBUTES::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:4357:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L4357_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='DEVICE_STORAGE_RANGE_ATTRIBUTES.xml' path='doc/member[@name="DEVICE_STORAGE_RANGE_ATTRIBUTES.Reserved"]/*' />
@@ -62,7 +62,7 @@ public partial struct DEVICE_STORAGE_RANGE_ATTRIBUTES
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_DEVICE_STORAGE_RANGE_ATTRIBUTES::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:4361:9)")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L4361_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

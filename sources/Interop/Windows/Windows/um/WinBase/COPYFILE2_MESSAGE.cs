@@ -20,7 +20,7 @@ public partial struct COPYFILE2_MESSAGE
     public uint dwPadding;
 
     /// <include file='COPYFILE2_MESSAGE.xml' path='doc/member[@name="COPYFILE2_MESSAGE.Info"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinBase.h:5793:5)")]
+    [NativeTypeName("__AnonymousRecord_WinBase_L5797_C5")]
     public _Info_e__Union Info;
 
     /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union"]/*' />
@@ -29,32 +29,32 @@ public partial struct COPYFILE2_MESSAGE
     {
         /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.ChunkStarted"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinBase.h:5795:9)")]
+        [NativeTypeName("__AnonymousRecord_WinBase_L5799_C9")]
         public _ChunkStarted_e__Struct ChunkStarted;
 
         /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.ChunkFinished"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinBase.h:5806:9)")]
+        [NativeTypeName("__AnonymousRecord_WinBase_L5810_C9")]
         public _ChunkFinished_e__Struct ChunkFinished;
 
         /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.StreamStarted"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinBase.h:5819:9)")]
+        [NativeTypeName("__AnonymousRecord_WinBase_L5823_C9")]
         public _StreamStarted_e__Struct StreamStarted;
 
         /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.StreamFinished"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinBase.h:5828:9)")]
+        [NativeTypeName("__AnonymousRecord_WinBase_L5832_C9")]
         public _StreamFinished_e__Struct StreamFinished;
 
         /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.PollContinue"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinBase.h:5839:9)")]
+        [NativeTypeName("__AnonymousRecord_WinBase_L5843_C9")]
         public _PollContinue_e__Struct PollContinue;
 
         /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.Error"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinBase.h:5843:9)")]
+        [NativeTypeName("__AnonymousRecord_WinBase_L5847_C9")]
         public _Error_e__Struct Error;
 
         /// <include file='_ChunkStarted_e__Struct.xml' path='doc/member[@name="_ChunkStarted_e__Struct"]/*' />

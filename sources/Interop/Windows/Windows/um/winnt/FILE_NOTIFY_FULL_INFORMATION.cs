@@ -43,7 +43,7 @@ public unsafe partial struct FILE_NOTIFY_FULL_INFORMATION
     public uint FileAttributes;
 
     /// <include file='FILE_NOTIFY_FULL_INFORMATION.xml' path='doc/member[@name="FILE_NOTIFY_FULL_INFORMATION.Anonymous"]/*' />
-    [NativeTypeName("_FILE_NOTIFY_FULL_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:14468:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L14487_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='FILE_NOTIFY_FULL_INFORMATION.xml' path='doc/member[@name="FILE_NOTIFY_FULL_INFORMATION.FileId"]/*' />

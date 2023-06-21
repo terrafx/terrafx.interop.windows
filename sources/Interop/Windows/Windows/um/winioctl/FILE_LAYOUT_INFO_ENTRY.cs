@@ -9,7 +9,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct FILE_LAYOUT_INFO_ENTRY
 {
     /// <include file='FILE_LAYOUT_INFO_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_INFO_ENTRY.BasicInformation"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:15165:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L15187_C5")]
     public _BasicInformation_e__Struct BasicInformation;
 
     /// <include file='FILE_LAYOUT_INFO_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_INFO_ENTRY.OwnerId"]/*' />

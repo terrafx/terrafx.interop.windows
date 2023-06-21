@@ -58,6 +58,29 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IAppxFactory3
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x05, 0x2C, 0x6B, 0x77,
+                0x1D, 0xE2,
+                0x24, 0x4E,
+                0xBA,
+                0x1A,
+                0xCD,
+                0x52,
+                0x9A,
+                0x8B,
+                0xFD,
+                0xBB
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IAppxPackageReader
     {
         get
@@ -1139,6 +1162,29 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IAppxBundleFactory2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x3D, 0xB8, 0x25, 0x73,
+                0x85, 0x01,
+                0xC4, 0x42,
+                0x82,
+                0xAC,
+                0xBE,
+                0x34,
+                0xAB,
+                0x1A,
+                0x2A,
+                0x8A
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IAppxBundleWriter
     {
         get
@@ -1645,6 +1691,52 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IAppxAppInstallerReader
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x8C, 0xC3, 0x5B, 0xF3,
+                0x2F, 0x1D,
+                0xDB, 0x43,
+                0xA1,
+                0xF4,
+                0x58,
+                0x64,
+                0x30,
+                0xD1,
+                0xFE,
+                0xD2
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IAppxDigestProvider
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x2B, 0x70, 0xE2, 0x9F,
+                0x40, 0x76,
+                0x59, 0x46,
+                0x8E,
+                0x6C,
+                0x34,
+                0x9E,
+                0x43,
+                0xC4,
+                0xCD,
+                0xBD
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IAppxEncryptionFactory
     {
         get
@@ -1730,6 +1822,29 @@ public static partial class IID
                 0x9B,
                 0xBA,
                 0xF5
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IAppxEncryptionFactory5
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x7A, 0xE7, 0xD6, 0x68,
+                0x46, 0xF4,
+                0x0F, 0x48,
+                0xB0,
+                0xF0,
+                0xD9,
+                0x1A,
+                0x24,
+                0xC6,
+                0x07,
+                0x46
             };
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

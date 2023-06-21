@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_SVG_VISIBILITY.xml' path='doc/member[@name="D2D1_SVG_VISIBILITY"]/*' />
-public enum D2D1_SVG_VISIBILITY : uint
+public enum D2D1_SVG_VISIBILITY
 {
     /// <include file='D2D1_SVG_VISIBILITY.xml' path='doc/member[@name="D2D1_SVG_VISIBILITY.D2D1_SVG_VISIBILITY_VISIBLE"]/*' />
     D2D1_SVG_VISIBILITY_VISIBLE = 0,
@@ -15,5 +15,5 @@ public enum D2D1_SVG_VISIBILITY : uint
     D2D1_SVG_VISIBILITY_HIDDEN = 1,
 
     /// <include file='D2D1_SVG_VISIBILITY.xml' path='doc/member[@name="D2D1_SVG_VISIBILITY.D2D1_SVG_VISIBILITY_FORCE_DWORD"]/*' />
-    D2D1_SVG_VISIBILITY_FORCE_DWORD = 0xffffffff,
+    D2D1_SVG_VISIBILITY_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

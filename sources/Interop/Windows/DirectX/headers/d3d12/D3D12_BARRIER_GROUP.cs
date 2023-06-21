@@ -20,7 +20,7 @@ public unsafe partial struct D3D12_BARRIER_GROUP
     public uint NumBarriers;
 
     /// <include file='D3D12_BARRIER_GROUP.xml' path='doc/member[@name="D3D12_BARRIER_GROUP.Anonymous"]/*' />
-    [NativeTypeName("D3D12_BARRIER_GROUP::(anonymous union at ../../../include/d3d12.h:21089:5)")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L21089_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pGlobalBarriers"]/*' />

@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICJpegScanType.xml' path='doc/member[@name="WICJpegScanType"]/*' />
-public enum WICJpegScanType : uint
+public enum WICJpegScanType
 {
     /// <include file='WICJpegScanType.xml' path='doc/member[@name="WICJpegScanType.WICJpegScanTypeInterleaved"]/*' />
     WICJpegScanTypeInterleaved = 0,

@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICPngHistProperties.xml' path='doc/member[@name="WICPngHistProperties"]/*' />
-public enum WICPngHistProperties : uint
+public enum WICPngHistProperties
 {
     /// <include file='WICPngHistProperties.xml' path='doc/member[@name="WICPngHistProperties.WICPngHistFrequencies"]/*' />
     WICPngHistFrequencies = 0x1,

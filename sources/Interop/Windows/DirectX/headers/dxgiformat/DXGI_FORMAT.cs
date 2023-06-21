@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DXGI_FORMAT.xml' path='doc/member[@name="DXGI_FORMAT"]/*' />
-public enum DXGI_FORMAT : uint
+public enum DXGI_FORMAT
 {
     /// <include file='DXGI_FORMAT.xml' path='doc/member[@name="DXGI_FORMAT.DXGI_FORMAT_UNKNOWN"]/*' />
     DXGI_FORMAT_UNKNOWN = 0,
@@ -372,5 +372,5 @@ public enum DXGI_FORMAT : uint
     DXGI_FORMAT_SAMPLER_FEEDBACK_MIP_REGION_USED_OPAQUE = 190,
 
     /// <include file='DXGI_FORMAT.xml' path='doc/member[@name="DXGI_FORMAT.DXGI_FORMAT_FORCE_UINT"]/*' />
-    DXGI_FORMAT_FORCE_UINT = 0xffffffff,
+    DXGI_FORMAT_FORCE_UINT = unchecked((int)(0xffffffff)),
 }

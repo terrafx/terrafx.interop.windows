@@ -19,7 +19,7 @@ public unsafe partial struct STORAGE_HW_ENDURANCE_INFO
     public uint GroupId;
 
     /// <include file='STORAGE_HW_ENDURANCE_INFO.xml' path='doc/member[@name="STORAGE_HW_ENDURANCE_INFO.Flags"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:2959:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L2959_C5")]
     public _Flags_e__Struct Flags;
 
     /// <include file='STORAGE_HW_ENDURANCE_INFO.xml' path='doc/member[@name="STORAGE_HW_ENDURANCE_INFO.LifePercentage"]/*' />

@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_ANTIALIAS_MODE.xml' path='doc/member[@name="D2D1_ANTIALIAS_MODE"]/*' />
-public enum D2D1_ANTIALIAS_MODE : uint
+public enum D2D1_ANTIALIAS_MODE
 {
     /// <include file='D2D1_ANTIALIAS_MODE.xml' path='doc/member[@name="D2D1_ANTIALIAS_MODE.D2D1_ANTIALIAS_MODE_PER_PRIMITIVE"]/*' />
     D2D1_ANTIALIAS_MODE_PER_PRIMITIVE = 0,
@@ -15,5 +15,5 @@ public enum D2D1_ANTIALIAS_MODE : uint
     D2D1_ANTIALIAS_MODE_ALIASED = 1,
 
     /// <include file='D2D1_ANTIALIAS_MODE.xml' path='doc/member[@name="D2D1_ANTIALIAS_MODE.D2D1_ANTIALIAS_MODE_FORCE_DWORD"]/*' />
-    D2D1_ANTIALIAS_MODE_FORCE_DWORD = 0xffffffff,
+    D2D1_ANTIALIAS_MODE_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

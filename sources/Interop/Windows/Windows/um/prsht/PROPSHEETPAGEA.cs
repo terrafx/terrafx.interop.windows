@@ -24,11 +24,11 @@ public unsafe partial struct PROPSHEETPAGEA
     public HINSTANCE hInstance;
 
     /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.Anonymous1"]/*' />
-    [NativeTypeName("_PROPSHEETPAGEA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/prsht.h:225:5)")]
+    [NativeTypeName("__AnonymousRecord_prsht_L225_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.Anonymous2"]/*' />
-    [NativeTypeName("_PROPSHEETPAGEA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/prsht.h:225:5)")]
+    [NativeTypeName("__AnonymousRecord_prsht_L225_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.pszTitle"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct PROPSHEETPAGEA
     public HANDLE hActCtx;
 
     /// <include file='PROPSHEETPAGEA.xml' path='doc/member[@name="PROPSHEETPAGEA.Anonymous3"]/*' />
-    [NativeTypeName("_PROPSHEETPAGEA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/prsht.h:232:5)")]
+    [NativeTypeName("__AnonymousRecord_prsht_L232_C5")]
     public _Anonymous3_e__Union Anonymous3;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszTemplate"]/*' />

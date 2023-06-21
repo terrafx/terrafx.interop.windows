@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICGifLogicalScreenDescriptorProperties.xml' path='doc/member[@name="WICGifLogicalScreenDescriptorProperties"]/*' />
-public enum WICGifLogicalScreenDescriptorProperties : uint
+public enum WICGifLogicalScreenDescriptorProperties
 {
     /// <include file='WICGifLogicalScreenDescriptorProperties.xml' path='doc/member[@name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenSignature"]/*' />
     WICGifLogicalScreenSignature = 0x1,

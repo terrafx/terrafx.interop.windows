@@ -55,6 +55,9 @@ public static partial class FILE
     [NativeTypeName("#define FILE_FLAG_OPEN_REQUIRING_OPLOCK 0x00040000")]
     public const int FILE_FLAG_OPEN_REQUIRING_OPLOCK = 0x00040000;
 
+    [NativeTypeName("#define FILE_FLAG_IGNORE_IMPERSONATED_DEVICEMAP 0x00020000")]
+    public const int FILE_FLAG_IGNORE_IMPERSONATED_DEVICEMAP = 0x00020000;
+
     [NativeTypeName("#define FILE_NAME_NORMALIZED 0x0")]
     public const int FILE_NAME_NORMALIZED = 0x0;
 

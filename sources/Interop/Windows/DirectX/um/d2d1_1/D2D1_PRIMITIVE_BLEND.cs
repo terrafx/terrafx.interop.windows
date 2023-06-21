@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_PRIMITIVE_BLEND.xml' path='doc/member[@name="D2D1_PRIMITIVE_BLEND"]/*' />
-public enum D2D1_PRIMITIVE_BLEND : uint
+public enum D2D1_PRIMITIVE_BLEND
 {
     /// <include file='D2D1_PRIMITIVE_BLEND.xml' path='doc/member[@name="D2D1_PRIMITIVE_BLEND.D2D1_PRIMITIVE_BLEND_SOURCE_OVER"]/*' />
     D2D1_PRIMITIVE_BLEND_SOURCE_OVER = 0,
@@ -24,5 +24,5 @@ public enum D2D1_PRIMITIVE_BLEND : uint
     D2D1_PRIMITIVE_BLEND_MAX = 4,
 
     /// <include file='D2D1_PRIMITIVE_BLEND.xml' path='doc/member[@name="D2D1_PRIMITIVE_BLEND.D2D1_PRIMITIVE_BLEND_FORCE_DWORD"]/*' />
-    D2D1_PRIMITIVE_BLEND_FORCE_DWORD = 0xffffffff,
+    D2D1_PRIMITIVE_BLEND_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

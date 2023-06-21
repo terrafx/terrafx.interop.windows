@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICPngBkgdProperties.xml' path='doc/member[@name="WICPngBkgdProperties"]/*' />
-public enum WICPngBkgdProperties : uint
+public enum WICPngBkgdProperties
 {
     /// <include file='WICPngBkgdProperties.xml' path='doc/member[@name="WICPngBkgdProperties.WICPngBkgdBackgroundColor"]/*' />
     WICPngBkgdBackgroundColor = 0x1,

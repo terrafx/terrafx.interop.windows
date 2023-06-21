@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_HDRTONEMAP_PROP.xml' path='doc/member[@name="D2D1_HDRTONEMAP_PROP"]/*' />
-public enum D2D1_HDRTONEMAP_PROP : uint
+public enum D2D1_HDRTONEMAP_PROP
 {
     /// <include file='D2D1_HDRTONEMAP_PROP.xml' path='doc/member[@name="D2D1_HDRTONEMAP_PROP.D2D1_HDRTONEMAP_PROP_INPUT_MAX_LUMINANCE"]/*' />
     D2D1_HDRTONEMAP_PROP_INPUT_MAX_LUMINANCE = 0,
@@ -18,5 +18,5 @@ public enum D2D1_HDRTONEMAP_PROP : uint
     D2D1_HDRTONEMAP_PROP_DISPLAY_MODE = 2,
 
     /// <include file='D2D1_HDRTONEMAP_PROP.xml' path='doc/member[@name="D2D1_HDRTONEMAP_PROP.D2D1_HDRTONEMAP_PROP_FORCE_DWORD"]/*' />
-    D2D1_HDRTONEMAP_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_HDRTONEMAP_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

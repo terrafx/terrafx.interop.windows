@@ -20,7 +20,7 @@ public partial struct LDT_ENTRY
     public ushort BaseLow;
 
     /// <include file='LDT_ENTRY.xml' path='doc/member[@name="LDT_ENTRY.HighWord"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:8334:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L8337_C5")]
     public _HighWord_e__Union HighWord;
 
     /// <include file='_HighWord_e__Union.xml' path='doc/member[@name="_HighWord_e__Union"]/*' />
@@ -29,12 +29,12 @@ public partial struct LDT_ENTRY
     {
         /// <include file='_HighWord_e__Union.xml' path='doc/member[@name="_HighWord_e__Union.Bytes"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:8335:9)")]
+        [NativeTypeName("__AnonymousRecord_winnt_L8338_C9")]
         public _Bytes_e__Struct Bytes;
 
         /// <include file='_HighWord_e__Union.xml' path='doc/member[@name="_HighWord_e__Union.Bits"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:8341:9)")]
+        [NativeTypeName("__AnonymousRecord_winnt_L8344_C9")]
         public _Bits_e__Struct Bits;
 
         /// <include file='_Bytes_e__Struct.xml' path='doc/member[@name="_Bytes_e__Struct"]/*' />

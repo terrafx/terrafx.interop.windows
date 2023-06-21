@@ -15,12 +15,12 @@ public partial struct LARGE_INTEGER
 {
     /// <include file='LARGE_INTEGER.xml' path='doc/member[@name="LARGE_INTEGER.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("_LARGE_INTEGER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:875:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L875_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='LARGE_INTEGER.xml' path='doc/member[@name="LARGE_INTEGER.u"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:879:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L879_C5")]
     public _u_e__Struct u;
 
     /// <include file='LARGE_INTEGER.xml' path='doc/member[@name="LARGE_INTEGER.QuadPart"]/*' />

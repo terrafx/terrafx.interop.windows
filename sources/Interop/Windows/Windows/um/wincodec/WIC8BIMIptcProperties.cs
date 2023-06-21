@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WIC8BIMIptcProperties.xml' path='doc/member[@name="WIC8BIMIptcProperties"]/*' />
-public enum WIC8BIMIptcProperties : uint
+public enum WIC8BIMIptcProperties
 {
     /// <include file='WIC8BIMIptcProperties.xml' path='doc/member[@name="WIC8BIMIptcProperties.WIC8BIMIptcPString"]/*' />
     WIC8BIMIptcPString = 0,

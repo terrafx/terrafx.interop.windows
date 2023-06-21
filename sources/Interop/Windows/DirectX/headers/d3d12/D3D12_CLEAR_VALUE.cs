@@ -17,7 +17,7 @@ public unsafe partial struct D3D12_CLEAR_VALUE
     public DXGI_FORMAT Format;
 
     /// <include file='D3D12_CLEAR_VALUE.xml' path='doc/member[@name="D3D12_CLEAR_VALUE.Anonymous"]/*' />
-    [NativeTypeName("D3D12_CLEAR_VALUE::(anonymous union at ../../../include/d3d12.h:2829:5)")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L2829_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Color"]/*' />

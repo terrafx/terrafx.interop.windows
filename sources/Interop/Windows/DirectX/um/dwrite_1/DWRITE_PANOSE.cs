@@ -23,22 +23,22 @@ public unsafe partial struct DWRITE_PANOSE
 
     /// <include file='DWRITE_PANOSE.xml' path='doc/member[@name="DWRITE_PANOSE.text"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/dwrite_1.h:758:5)")]
+    [NativeTypeName("__AnonymousRecord_dwrite_1_L758_C5")]
     public _text_e__Struct text;
 
     /// <include file='DWRITE_PANOSE.xml' path='doc/member[@name="DWRITE_PANOSE.script"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/dwrite_1.h:772:5)")]
+    [NativeTypeName("__AnonymousRecord_dwrite_1_L772_C5")]
     public _script_e__Struct script;
 
     /// <include file='DWRITE_PANOSE.xml' path='doc/member[@name="DWRITE_PANOSE.decorative"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/dwrite_1.h:786:5)")]
+    [NativeTypeName("__AnonymousRecord_dwrite_1_L786_C5")]
     public _decorative_e__Struct decorative;
 
     /// <include file='DWRITE_PANOSE.xml' path='doc/member[@name="DWRITE_PANOSE.symbol"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/dwrite_1.h:800:5)")]
+    [NativeTypeName("__AnonymousRecord_dwrite_1_L800_C5")]
     public _symbol_e__Struct symbol;
 
     /// <include file='_text_e__Struct.xml' path='doc/member[@name="_text_e__Struct"]/*' />

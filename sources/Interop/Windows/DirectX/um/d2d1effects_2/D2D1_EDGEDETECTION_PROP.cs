@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_EDGEDETECTION_PROP.xml' path='doc/member[@name="D2D1_EDGEDETECTION_PROP"]/*' />
-public enum D2D1_EDGEDETECTION_PROP : uint
+public enum D2D1_EDGEDETECTION_PROP
 {
     /// <include file='D2D1_EDGEDETECTION_PROP.xml' path='doc/member[@name="D2D1_EDGEDETECTION_PROP.D2D1_EDGEDETECTION_PROP_STRENGTH"]/*' />
     D2D1_EDGEDETECTION_PROP_STRENGTH = 0,
@@ -24,5 +24,5 @@ public enum D2D1_EDGEDETECTION_PROP : uint
     D2D1_EDGEDETECTION_PROP_ALPHA_MODE = 4,
 
     /// <include file='D2D1_EDGEDETECTION_PROP.xml' path='doc/member[@name="D2D1_EDGEDETECTION_PROP.D2D1_EDGEDETECTION_PROP_FORCE_DWORD"]/*' />
-    D2D1_EDGEDETECTION_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_EDGEDETECTION_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

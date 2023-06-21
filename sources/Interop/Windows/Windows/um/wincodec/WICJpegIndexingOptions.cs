@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICJpegIndexingOptions.xml' path='doc/member[@name="WICJpegIndexingOptions"]/*' />
-public enum WICJpegIndexingOptions : uint
+public enum WICJpegIndexingOptions
 {
     /// <include file='WICJpegIndexingOptions.xml' path='doc/member[@name="WICJpegIndexingOptions.WICJpegIndexingOptionsGenerateOnDemand"]/*' />
     WICJpegIndexingOptionsGenerateOnDemand = 0,

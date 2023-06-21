@@ -33,7 +33,7 @@ public unsafe partial struct CMC_STATUS_INFO
     public uint dwOtherInfoChoice;
 
     /// <include file='CMC_STATUS_INFO.xml' path='doc/member[@name="CMC_STATUS_INFO.Anonymous"]/*' />
-    [NativeTypeName("_CMC_STATUS_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wincrypt.h:5304:5)")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L5304_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwFailInfo"]/*' />

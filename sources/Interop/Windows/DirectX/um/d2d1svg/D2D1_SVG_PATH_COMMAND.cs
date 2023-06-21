@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_SVG_PATH_COMMAND.xml' path='doc/member[@name="D2D1_SVG_PATH_COMMAND"]/*' />
-public enum D2D1_SVG_PATH_COMMAND : uint
+public enum D2D1_SVG_PATH_COMMAND
 {
     /// <include file='D2D1_SVG_PATH_COMMAND.xml' path='doc/member[@name="D2D1_SVG_PATH_COMMAND.D2D1_SVG_PATH_COMMAND_CLOSE_PATH"]/*' />
     D2D1_SVG_PATH_COMMAND_CLOSE_PATH = 0,
@@ -66,5 +66,5 @@ public enum D2D1_SVG_PATH_COMMAND : uint
     D2D1_SVG_PATH_COMMAND_QUADRADIC_SMOOTH_RELATIVE = 18,
 
     /// <include file='D2D1_SVG_PATH_COMMAND.xml' path='doc/member[@name="D2D1_SVG_PATH_COMMAND.D2D1_SVG_PATH_COMMAND_FORCE_DWORD"]/*' />
-    D2D1_SVG_PATH_COMMAND_FORCE_DWORD = 0xffffffff,
+    D2D1_SVG_PATH_COMMAND_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

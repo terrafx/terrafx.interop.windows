@@ -35,7 +35,7 @@ public unsafe partial struct D3D12_SAMPLER_DESC2
     public D3D12_COMPARISON_FUNC ComparisonFunc;
 
     /// <include file='D3D12_SAMPLER_DESC2.xml' path='doc/member[@name="D3D12_SAMPLER_DESC2.Anonymous"]/*' />
-    [NativeTypeName("D3D12_SAMPLER_DESC2::(anonymous union at ../../../include/d3d12.h:3379:5)")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L3379_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='D3D12_SAMPLER_DESC2.xml' path='doc/member[@name="D3D12_SAMPLER_DESC2.MinLOD"]/*' />

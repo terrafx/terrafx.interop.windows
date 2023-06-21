@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_POINTSPECULAR_PROP.xml' path='doc/member[@name="D2D1_POINTSPECULAR_PROP"]/*' />
-public enum D2D1_POINTSPECULAR_PROP : uint
+public enum D2D1_POINTSPECULAR_PROP
 {
     /// <include file='D2D1_POINTSPECULAR_PROP.xml' path='doc/member[@name="D2D1_POINTSPECULAR_PROP.D2D1_POINTSPECULAR_PROP_LIGHT_POSITION"]/*' />
     D2D1_POINTSPECULAR_PROP_LIGHT_POSITION = 0,
@@ -30,5 +30,5 @@ public enum D2D1_POINTSPECULAR_PROP : uint
     D2D1_POINTSPECULAR_PROP_SCALE_MODE = 6,
 
     /// <include file='D2D1_POINTSPECULAR_PROP.xml' path='doc/member[@name="D2D1_POINTSPECULAR_PROP.D2D1_POINTSPECULAR_PROP_FORCE_DWORD"]/*' />
-    D2D1_POINTSPECULAR_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_POINTSPECULAR_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

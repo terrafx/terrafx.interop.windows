@@ -35,7 +35,7 @@ public unsafe partial struct TASKDIALOGCONFIG
     public ushort* pszWindowTitle;
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.Anonymous1"]/*' />
-    [NativeTypeName("_TASKDIALOGCONFIG::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/CommCtrl.h:7735:5)")]
+    [NativeTypeName("__AnonymousRecord_CommCtrl_L7735_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.pszMainInstruction"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct TASKDIALOGCONFIG
     public ushort* pszCollapsedControlText;
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.Anonymous2"]/*' />
-    [NativeTypeName("_TASKDIALOGCONFIG::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/CommCtrl.h:7752:5)")]
+    [NativeTypeName("__AnonymousRecord_CommCtrl_L7752_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.pszFooter"]/*' />

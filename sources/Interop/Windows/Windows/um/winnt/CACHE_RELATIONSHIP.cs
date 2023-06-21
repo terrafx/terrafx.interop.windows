@@ -39,7 +39,7 @@ public unsafe partial struct CACHE_RELATIONSHIP
     public ushort GroupCount;
 
     /// <include file='CACHE_RELATIONSHIP.xml' path='doc/member[@name="CACHE_RELATIONSHIP.Anonymous"]/*' />
-    [NativeTypeName("_CACHE_RELATIONSHIP::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:13506:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L13524_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.GroupMask"]/*' />

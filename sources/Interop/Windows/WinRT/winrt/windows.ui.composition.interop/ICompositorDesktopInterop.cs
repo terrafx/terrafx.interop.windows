@@ -50,7 +50,7 @@ public unsafe partial struct ICompositorDesktopInterop : ICompositorDesktopInter
     /// <include file='ICompositorDesktopInterop.xml' path='doc/member[@name="ICompositorDesktopInterop.CreateDesktopWindowTarget"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateDesktopWindowTarget(HWND hwndTarget, BOOL isTopmost, [NativeTypeName("ABI::Windows::UI::Composition::Desktop::IDesktopWindowTarget **")] void** result)
+    public HRESULT CreateDesktopWindowTarget(HWND hwndTarget, BOOL isTopmost, [NativeTypeName("IDesktopWindowTarget **")] void** result)
     {
         return ((delegate* unmanaged<ICompositorDesktopInterop*, HWND, BOOL, void**, int>)(lpVtbl[3]))((ICompositorDesktopInterop*)Unsafe.AsPointer(ref this), hwndTarget, isTopmost, result);
     }
@@ -66,7 +66,7 @@ public unsafe partial struct ICompositorDesktopInterop : ICompositorDesktopInter
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateDesktopWindowTarget(HWND hwndTarget, BOOL isTopmost, [NativeTypeName("ABI::Windows::UI::Composition::Desktop::IDesktopWindowTarget **")] void** result);
+        HRESULT CreateDesktopWindowTarget(HWND hwndTarget, BOOL isTopmost, [NativeTypeName("IDesktopWindowTarget **")] void** result);
 
         [VtblIndex(4)]
         HRESULT EnsureOnThread([NativeTypeName("DWORD")] uint threadId);
@@ -84,7 +84,7 @@ public unsafe partial struct ICompositorDesktopInterop : ICompositorDesktopInter
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint> Release;
 
-        [NativeTypeName("HRESULT (HWND, BOOL, ABI::Windows::UI::Composition::Desktop::IDesktopWindowTarget **) __attribute__((nothrow)) __attribute__((stdcall))")]
+        [NativeTypeName("HRESULT (HWND, BOOL, IDesktopWindowTarget **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HWND, BOOL, void**, int> CreateDesktopWindowTarget;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]

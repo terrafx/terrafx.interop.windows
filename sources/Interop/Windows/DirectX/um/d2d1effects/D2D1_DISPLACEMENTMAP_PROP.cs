@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_DISPLACEMENTMAP_PROP.xml' path='doc/member[@name="D2D1_DISPLACEMENTMAP_PROP"]/*' />
-public enum D2D1_DISPLACEMENTMAP_PROP : uint
+public enum D2D1_DISPLACEMENTMAP_PROP
 {
     /// <include file='D2D1_DISPLACEMENTMAP_PROP.xml' path='doc/member[@name="D2D1_DISPLACEMENTMAP_PROP.D2D1_DISPLACEMENTMAP_PROP_SCALE"]/*' />
     D2D1_DISPLACEMENTMAP_PROP_SCALE = 0,
@@ -18,5 +18,5 @@ public enum D2D1_DISPLACEMENTMAP_PROP : uint
     D2D1_DISPLACEMENTMAP_PROP_Y_CHANNEL_SELECT = 2,
 
     /// <include file='D2D1_DISPLACEMENTMAP_PROP.xml' path='doc/member[@name="D2D1_DISPLACEMENTMAP_PROP.D2D1_DISPLACEMENTMAP_PROP_FORCE_DWORD"]/*' />
-    D2D1_DISPLACEMENTMAP_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_DISPLACEMENTMAP_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

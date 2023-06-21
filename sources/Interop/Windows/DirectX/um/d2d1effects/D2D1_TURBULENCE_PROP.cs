@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_TURBULENCE_PROP.xml' path='doc/member[@name="D2D1_TURBULENCE_PROP"]/*' />
-public enum D2D1_TURBULENCE_PROP : uint
+public enum D2D1_TURBULENCE_PROP
 {
     /// <include file='D2D1_TURBULENCE_PROP.xml' path='doc/member[@name="D2D1_TURBULENCE_PROP.D2D1_TURBULENCE_PROP_OFFSET"]/*' />
     D2D1_TURBULENCE_PROP_OFFSET = 0,
@@ -30,5 +30,5 @@ public enum D2D1_TURBULENCE_PROP : uint
     D2D1_TURBULENCE_PROP_STITCHABLE = 6,
 
     /// <include file='D2D1_TURBULENCE_PROP.xml' path='doc/member[@name="D2D1_TURBULENCE_PROP.D2D1_TURBULENCE_PROP_FORCE_DWORD"]/*' />
-    D2D1_TURBULENCE_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_TURBULENCE_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICJpegCommentProperties.xml' path='doc/member[@name="WICJpegCommentProperties"]/*' />
-public enum WICJpegCommentProperties : uint
+public enum WICJpegCommentProperties
 {
     /// <include file='WICJpegCommentProperties.xml' path='doc/member[@name="WICJpegCommentProperties.WICJpegCommentText"]/*' />
     WICJpegCommentText = 0x1,

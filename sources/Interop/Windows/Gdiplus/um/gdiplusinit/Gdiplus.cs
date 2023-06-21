@@ -12,7 +12,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdiplusStartup"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::Status")]
-    public static extern GpStatus GdiplusStartup([NativeTypeName("ULONG_PTR *")] nuint* token, [NativeTypeName("const Gdiplus::GdiplusStartupInput *")] GdiplusStartupInput* input, [NativeTypeName("Gdiplus::GdiplusStartupOutput *")] GdiplusStartupOutput* output);
+    public static extern GpStatus GdiplusStartup([NativeTypeName("ULONG_PTR *")] nuint* token, [NativeTypeName("const GdiplusStartupInput *")] GdiplusStartupInput* input, [NativeTypeName("Gdiplus::GdiplusStartupOutput *")] GdiplusStartupOutput* output);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdiplusShutdown"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]

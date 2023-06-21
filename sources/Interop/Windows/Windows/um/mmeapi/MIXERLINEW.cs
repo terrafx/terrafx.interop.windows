@@ -60,7 +60,7 @@ public unsafe partial struct MIXERLINEW
     public fixed ushort szName[64];
 
     /// <include file='MIXERLINEW.xml' path='doc/member[@name="MIXERLINEW.Target"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/mmeapi.h:1901:5)")]
+    [NativeTypeName("__AnonymousRecord_mmeapi_L1901_C5")]
     public _Target_e__Struct Target;
 
     /// <include file='_Target_e__Struct.xml' path='doc/member[@name="_Target_e__Struct"]/*' />

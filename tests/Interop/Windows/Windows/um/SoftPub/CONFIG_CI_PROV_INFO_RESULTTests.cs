@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
+using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -29,6 +30,13 @@ public static unsafe partial class CONFIG_CI_PROV_INFO_RESULTTests
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(CONFIG_CI_PROV_INFO_RESULT), Is.EqualTo(16));
+        if (Environment.Is64BitProcess)
+        {
+            Assert.That(sizeof(CONFIG_CI_PROV_INFO_RESULT), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(CONFIG_CI_PROV_INFO_RESULT), Is.EqualTo(24));
+        }
     }
 }

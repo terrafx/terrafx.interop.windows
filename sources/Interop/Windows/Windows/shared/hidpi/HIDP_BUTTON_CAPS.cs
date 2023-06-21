@@ -65,7 +65,7 @@ public unsafe partial struct HIDP_BUTTON_CAPS
     public fixed uint Reserved[9];
 
     /// <include file='HIDP_BUTTON_CAPS.xml' path='doc/member[@name="HIDP_BUTTON_CAPS.Anonymous"]/*' />
-    [NativeTypeName("_HIDP_BUTTON_CAPS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/hidpi.h:90:5)")]
+    [NativeTypeName("__AnonymousRecord_hidpi_L90_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Range"]/*' />
@@ -96,12 +96,12 @@ public unsafe partial struct HIDP_BUTTON_CAPS
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Range"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/hidpi.h:91:9)")]
+        [NativeTypeName("__AnonymousRecord_hidpi_L91_C9")]
         public _Range_e__Struct Range;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.NotRange"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/hidpi.h:97:9)")]
+        [NativeTypeName("__AnonymousRecord_hidpi_L97_C9")]
         public _NotRange_e__Struct NotRange;
 
         /// <include file='_Range_e__Struct.xml' path='doc/member[@name="_Range_e__Struct"]/*' />

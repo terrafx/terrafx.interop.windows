@@ -16,7 +16,7 @@ public partial struct ELEMDESC
     public TYPEDESC tdesc;
 
     /// <include file='ELEMDESC.xml' path='doc/member[@name="ELEMDESC.Anonymous"]/*' />
-    [NativeTypeName("tagELEMDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/oaidl.h:733:5)")]
+    [NativeTypeName("__AnonymousRecord_oaidl_L733_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.idldesc"]/*' />

@@ -42,11 +42,11 @@ public unsafe partial struct MIXERCONTROLW
     public fixed ushort szName[64];
 
     /// <include file='MIXERCONTROLW.xml' path='doc/member[@name="MIXERCONTROLW.Bounds"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/mmeapi.h:2081:5)")]
+    [NativeTypeName("__AnonymousRecord_mmeapi_L2081_C5")]
     public _Bounds_e__Union Bounds;
 
     /// <include file='MIXERCONTROLW.xml' path='doc/member[@name="MIXERCONTROLW.Metrics"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/mmeapi.h:2092:5)")]
+    [NativeTypeName("__AnonymousRecord_mmeapi_L2092_C5")]
     public _Metrics_e__Union Metrics;
 
     /// <include file='_Bounds_e__Union.xml' path='doc/member[@name="_Bounds_e__Union"]/*' />
@@ -55,12 +55,12 @@ public unsafe partial struct MIXERCONTROLW
     {
         /// <include file='_Bounds_e__Union.xml' path='doc/member[@name="_Bounds_e__Union.Anonymous1"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("tagMIXERCONTROLW::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/mmeapi.h:2082:9)")]
+        [NativeTypeName("__AnonymousRecord_mmeapi_L2082_C9")]
         public _Anonymous1_e__Struct Anonymous1;
 
         /// <include file='_Bounds_e__Union.xml' path='doc/member[@name="_Bounds_e__Union.Anonymous2"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("tagMIXERCONTROLW::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/mmeapi.h:2086:9)")]
+        [NativeTypeName("__AnonymousRecord_mmeapi_L2086_C9")]
         public _Anonymous2_e__Struct Anonymous2;
 
         /// <include file='_Bounds_e__Union.xml' path='doc/member[@name="_Bounds_e__Union.dwReserved"]/*' />

@@ -19,7 +19,7 @@ public partial struct SCM_PD_REINITIALIZE_MEDIA_INPUT
     public uint Size;
 
     /// <include file='SCM_PD_REINITIALIZE_MEDIA_INPUT.xml' path='doc/member[@name="SCM_PD_REINITIALIZE_MEDIA_INPUT.Options"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:8344:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L8344_C5")]
     public _Options_e__Struct Options;
 
     /// <include file='_Options_e__Struct.xml' path='doc/member[@name="_Options_e__Struct"]/*' />

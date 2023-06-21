@@ -14,9 +14,11 @@ public unsafe partial struct WS_ENDPOINT_ADDRESS
     public WS_STRING url;
 
     /// <include file='WS_ENDPOINT_ADDRESS.xml' path='doc/member[@name="WS_ENDPOINT_ADDRESS.headers"]/*' />
+    [NativeTypeName("WS_XML_BUFFER*")]
     public IntPtr headers;
 
     /// <include file='WS_ENDPOINT_ADDRESS.xml' path='doc/member[@name="WS_ENDPOINT_ADDRESS.extensions"]/*' />
+    [NativeTypeName("WS_XML_BUFFER*")]
     public IntPtr extensions;
 
     /// <include file='WS_ENDPOINT_ADDRESS.xml' path='doc/member[@name="WS_ENDPOINT_ADDRESS.identity"]/*' />

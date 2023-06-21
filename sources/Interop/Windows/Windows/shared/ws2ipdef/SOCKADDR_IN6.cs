@@ -27,7 +27,7 @@ public partial struct SOCKADDR_IN6
     public IN6_ADDR sin6_addr;
 
     /// <include file='SOCKADDR_IN6.xml' path='doc/member[@name="SOCKADDR_IN6.Anonymous"]/*' />
-    [NativeTypeName("sockaddr_in6::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/ws2ipdef.h:196:5)")]
+    [NativeTypeName("__AnonymousRecord_ws2ipdef_L196_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.sin6_scope_id"]/*' />

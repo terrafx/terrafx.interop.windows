@@ -9,7 +9,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='WICWebpAnimProperties.xml' path='doc/member[@name="WICWebpAnimProperties"]/*' />
 [SupportedOSPlatform("windows10.0.17763.0")]
-public enum WICWebpAnimProperties : uint
+public enum WICWebpAnimProperties
 {
     /// <include file='WICWebpAnimProperties.xml' path='doc/member[@name="WICWebpAnimProperties.WICWebpAnimLoopCount"]/*' />
     WICWebpAnimLoopCount = 0x1,

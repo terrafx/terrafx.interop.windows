@@ -36,7 +36,7 @@ public unsafe partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD
     public uint OperationError;
 
     /// <include file='DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.xml' path='doc/member[@name="DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.StackSpecific"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:6033:9)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L6033_C9")]
     public _StackSpecific_e__Union StackSpecific;
 
     /// <include file='_StackSpecific_e__Union.xml' path='doc/member[@name="_StackSpecific_e__Union"]/*' />
@@ -45,17 +45,17 @@ public unsafe partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD
     {
         /// <include file='_StackSpecific_e__Union.xml' path='doc/member[@name="_StackSpecific_e__Union.ExternalStack"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:6034:10)")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L6034_C10")]
         public _ExternalStack_e__Struct ExternalStack;
 
         /// <include file='_StackSpecific_e__Union.xml' path='doc/member[@name="_StackSpecific_e__Union.AtaPort"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:6038:10)")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L6038_C10")]
         public _AtaPort_e__Struct AtaPort;
 
         /// <include file='_StackSpecific_e__Union.xml' path='doc/member[@name="_StackSpecific_e__Union.StorPort"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:6042:10)")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L6042_C10")]
         public _StorPort_e__Struct StorPort;
 
         /// <include file='_ExternalStack_e__Struct.xml' path='doc/member[@name="_ExternalStack_e__Struct"]/*' />

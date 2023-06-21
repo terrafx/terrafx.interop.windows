@@ -6,11 +6,11 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_RGBTOHUE_PROP.xml' path='doc/member[@name="D2D1_RGBTOHUE_PROP"]/*' />
-public enum D2D1_RGBTOHUE_PROP : uint
+public enum D2D1_RGBTOHUE_PROP
 {
     /// <include file='D2D1_RGBTOHUE_PROP.xml' path='doc/member[@name="D2D1_RGBTOHUE_PROP.D2D1_RGBTOHUE_PROP_OUTPUT_COLOR_SPACE"]/*' />
     D2D1_RGBTOHUE_PROP_OUTPUT_COLOR_SPACE = 0,
 
     /// <include file='D2D1_RGBTOHUE_PROP.xml' path='doc/member[@name="D2D1_RGBTOHUE_PROP.D2D1_RGBTOHUE_PROP_FORCE_DWORD"]/*' />
-    D2D1_RGBTOHUE_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_RGBTOHUE_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

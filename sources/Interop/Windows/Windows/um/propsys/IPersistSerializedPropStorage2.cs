@@ -81,7 +81,7 @@ public unsafe partial struct IPersistSerializedPropStorage2 : IPersistSerialized
     /// <include file='IPersistSerializedPropStorage2.xml' path='doc/member[@name="IPersistSerializedPropStorage2.GetPropertyStorageBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetPropertyStorageBuffer(PCUSERIALIZEDPROPSTORAGE psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcbWritten)
+    public HRESULT GetPropertyStorageBuffer([NativeTypeName("SERIALIZEDPROPSTORAGE*")] PCUSERIALIZEDPROPSTORAGE psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcbWritten)
     {
         return ((delegate* unmanaged<IPersistSerializedPropStorage2*, PCUSERIALIZEDPROPSTORAGE, uint, uint*, int>)(lpVtbl[7]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), psps, cb, pcbWritten);
     }
@@ -92,7 +92,7 @@ public unsafe partial struct IPersistSerializedPropStorage2 : IPersistSerialized
         HRESULT GetPropertyStorageSize([NativeTypeName("DWORD *")] uint* pcb);
 
         [VtblIndex(7)]
-        HRESULT GetPropertyStorageBuffer(PCUSERIALIZEDPROPSTORAGE psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcbWritten);
+        HRESULT GetPropertyStorageBuffer([NativeTypeName("SERIALIZEDPROPSTORAGE*")] PCUSERIALIZEDPROPSTORAGE psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcbWritten);
     }
 
     public partial struct Vtbl<TSelf>

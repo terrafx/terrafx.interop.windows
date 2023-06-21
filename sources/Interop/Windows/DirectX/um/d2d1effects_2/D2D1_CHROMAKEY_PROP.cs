@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_CHROMAKEY_PROP.xml' path='doc/member[@name="D2D1_CHROMAKEY_PROP"]/*' />
-public enum D2D1_CHROMAKEY_PROP : uint
+public enum D2D1_CHROMAKEY_PROP
 {
     /// <include file='D2D1_CHROMAKEY_PROP.xml' path='doc/member[@name="D2D1_CHROMAKEY_PROP.D2D1_CHROMAKEY_PROP_COLOR"]/*' />
     D2D1_CHROMAKEY_PROP_COLOR = 0,
@@ -21,5 +21,5 @@ public enum D2D1_CHROMAKEY_PROP : uint
     D2D1_CHROMAKEY_PROP_FEATHER = 3,
 
     /// <include file='D2D1_CHROMAKEY_PROP.xml' path='doc/member[@name="D2D1_CHROMAKEY_PROP.D2D1_CHROMAKEY_PROP_FORCE_DWORD"]/*' />
-    D2D1_CHROMAKEY_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_CHROMAKEY_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

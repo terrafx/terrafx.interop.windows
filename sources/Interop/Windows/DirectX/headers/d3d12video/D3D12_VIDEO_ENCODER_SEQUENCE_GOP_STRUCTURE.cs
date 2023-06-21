@@ -16,7 +16,7 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE
     public uint DataSize;
 
     /// <include file='D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE.Anonymous"]/*' />
-    [NativeTypeName("D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE::(anonymous union at ../../../include/d3d12video.h:6919:5)")]
+    [NativeTypeName("__AnonymousRecord_d3d12video_L6919_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pH264GroupOfPictures"]/*' />

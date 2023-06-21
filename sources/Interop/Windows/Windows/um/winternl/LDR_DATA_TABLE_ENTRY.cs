@@ -43,7 +43,7 @@ public unsafe partial struct LDR_DATA_TABLE_ENTRY
     public _Reserved5_e__FixedBuffer Reserved5;
 
     /// <include file='LDR_DATA_TABLE_ENTRY.xml' path='doc/member[@name="LDR_DATA_TABLE_ENTRY.Anonymous"]/*' />
-    [NativeTypeName("_LDR_DATA_TABLE_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winternl.h:157:5)")]
+    [NativeTypeName("__AnonymousRecord_winternl_L157_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='LDR_DATA_TABLE_ENTRY.xml' path='doc/member[@name="LDR_DATA_TABLE_ENTRY.TimeDateStamp"]/*' />

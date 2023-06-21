@@ -8,7 +8,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='Tint.xml' path='doc/member[@name="Tint"]/*' />
-[NativeTypeName("struct Tint : Effect")]
+[NativeTypeName("struct Tint : Gdiplus::Effect")]
 [NativeInheritance("Effect")]
 public unsafe partial struct Tint
 {
@@ -48,7 +48,7 @@ public unsafe partial struct Tint
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus SetParameters([NativeTypeName("const Gdiplus::TintParams *")] TintParams* parameters)
+    public GpStatus SetParameters([NativeTypeName("const TintParams *")] TintParams* parameters)
     {
         uint size = 8;
 

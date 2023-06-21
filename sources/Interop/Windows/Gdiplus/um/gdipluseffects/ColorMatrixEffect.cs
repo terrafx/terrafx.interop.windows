@@ -8,7 +8,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='ColorMatrixEffect.xml' path='doc/member[@name="ColorMatrixEffect"]/*' />
-[NativeTypeName("struct ColorMatrixEffect : Effect")]
+[NativeTypeName("struct ColorMatrixEffect : Gdiplus::Effect")]
 [NativeInheritance("Effect")]
 public unsafe partial struct ColorMatrixEffect
 {
@@ -48,7 +48,7 @@ public unsafe partial struct ColorMatrixEffect
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus SetParameters([NativeTypeName("const Gdiplus::ColorMatrix *")] ColorMatrix* matrix)
+    public GpStatus SetParameters([NativeTypeName("const ColorMatrix *")] ColorMatrix* matrix)
     {
         uint size = 100;
 

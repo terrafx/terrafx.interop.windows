@@ -8,7 +8,7 @@ using System;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='ADDRINFOEXA.xml' path='doc/member[@name="ADDRINFOEXA"]/*' />
-[Obsolete("ADDRINFOEX")]
+[Obsolete("ADDRINFOEXW")]
 public unsafe partial struct ADDRINFOEXA
 {
     /// <include file='ADDRINFOEXA.xml' path='doc/member[@name="ADDRINFOEXA.ai_flags"]/*' />

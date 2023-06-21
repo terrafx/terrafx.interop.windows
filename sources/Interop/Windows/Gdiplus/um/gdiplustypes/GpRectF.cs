@@ -39,7 +39,7 @@ public unsafe partial struct GpRectF
         Height = height;
     }
 
-    public GpRectF([NativeTypeName("const Gdiplus::PointF &")] GpPointF* location, [NativeTypeName("const Gdiplus::SizeF &")] GpSizeF* size)
+    public GpRectF([NativeTypeName("const PointF &")] GpPointF* location, [NativeTypeName("const SizeF &")] GpSizeF* size)
     {
         X = location->X;
         Y = location->Y;
@@ -96,7 +96,7 @@ public unsafe partial struct GpRectF
         return ((Width <= 1.192092896e-07F) || (Height <= 1.192092896e-07F)) ? 1 : 0;
     }
 
-    public BOOL Equals([NativeTypeName("const Gdiplus::RectF &")] GpRectF* rect)
+    public BOOL Equals([NativeTypeName("const RectF &")] GpRectF* rect)
     {
         return (X == rect->X && Y == rect->Y && Width == rect->Width && Height == rect->Height) ? 1 : 0;
     }
@@ -106,12 +106,12 @@ public unsafe partial struct GpRectF
         return (x >= X && x < X + Width && y >= Y && y < Y + Height) ? 1 : 0;
     }
 
-    public BOOL Contains([NativeTypeName("const Gdiplus::PointF &")] GpPointF* pt)
+    public BOOL Contains([NativeTypeName("const PointF &")] GpPointF* pt)
     {
         return Contains(pt->X, pt->Y);
     }
 
-    public BOOL Contains([NativeTypeName("const Gdiplus::RectF &")] GpRectF* rect)
+    public BOOL Contains([NativeTypeName("const RectF &")] GpRectF* rect)
     {
         return ((X <= rect->X) && (rect->GetRight() <= GetRight()) && (Y <= rect->Y) && (rect->GetBottom() <= GetBottom())) ? 1 : 0;
     }
@@ -124,12 +124,20 @@ public unsafe partial struct GpRectF
         Height += 2 * dy;
     }
 
-    public void Inflate([NativeTypeName("const Gdiplus::PointF &")] GpPointF* point)
+    public void Inflate([NativeTypeName("const PointF &")] GpPointF* point)
     {
         Inflate(point->X, point->Y);
     }
 
-    public static BOOL Intersect([NativeTypeName("Gdiplus::RectF &")] GpRectF* c, [NativeTypeName("const Gdiplus::RectF &")] GpRectF* a, [NativeTypeName("const Gdiplus::RectF &")] GpRectF* b)
+    public BOOL Intersect([NativeTypeName("const RectF &")] GpRectF* rect)
+    {
+        fixed (GpRectF* pThis = &this)
+        {
+            return Intersect(pThis, pThis, rect);
+        }
+    }
+
+    public static BOOL Intersect([NativeTypeName("Gdiplus::RectF &")] GpRectF* c, [NativeTypeName("const RectF &")] GpRectF* a, [NativeTypeName("const RectF &")] GpRectF* b)
     {
         float right = (((a->GetRight()) < (b->GetRight())) ? (a->GetRight()) : (b->GetRight()));
         float bottom = (((a->GetBottom()) < (b->GetBottom())) ? (a->GetBottom()) : (b->GetBottom()));
@@ -143,12 +151,12 @@ public unsafe partial struct GpRectF
         return (c->IsEmptyArea() == 0) ? 1 : 0;
     }
 
-    public BOOL IntersectsWith([NativeTypeName("const Gdiplus::RectF &")] GpRectF* rect)
+    public BOOL IntersectsWith([NativeTypeName("const RectF &")] GpRectF* rect)
     {
         return (GetLeft() < rect->GetRight() && GetTop() < rect->GetBottom() && GetRight() > rect->GetLeft() && GetBottom() > rect->GetTop()) ? 1 : 0;
     }
 
-    public static BOOL Union([NativeTypeName("Gdiplus::RectF &")] GpRectF* c, [NativeTypeName("const Gdiplus::RectF &")] GpRectF* a, [NativeTypeName("const Gdiplus::RectF &")] GpRectF* b)
+    public static BOOL Union([NativeTypeName("Gdiplus::RectF &")] GpRectF* c, [NativeTypeName("const RectF &")] GpRectF* a, [NativeTypeName("const RectF &")] GpRectF* b)
     {
         float right = (((a->GetRight()) > (b->GetRight())) ? (a->GetRight()) : (b->GetRight()));
         float bottom = (((a->GetBottom()) > (b->GetBottom())) ? (a->GetBottom()) : (b->GetBottom()));
@@ -162,7 +170,7 @@ public unsafe partial struct GpRectF
         return (c->IsEmptyArea() == 0) ? 1 : 0;
     }
 
-    public void Offset([NativeTypeName("const Gdiplus::PointF &")] GpPointF* point)
+    public void Offset([NativeTypeName("const PointF &")] GpPointF* point)
     {
         Offset(point->X, point->Y);
     }

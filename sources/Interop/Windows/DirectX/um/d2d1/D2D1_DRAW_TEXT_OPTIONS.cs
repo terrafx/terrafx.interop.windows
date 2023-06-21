@@ -9,7 +9,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_DRAW_TEXT_OPTIONS.xml' path='doc/member[@name="D2D1_DRAW_TEXT_OPTIONS"]/*' />
 [Flags]
-public enum D2D1_DRAW_TEXT_OPTIONS : uint
+public enum D2D1_DRAW_TEXT_OPTIONS
 {
     /// <include file='D2D1_DRAW_TEXT_OPTIONS.xml' path='doc/member[@name="D2D1_DRAW_TEXT_OPTIONS.D2D1_DRAW_TEXT_OPTIONS_NO_SNAP"]/*' />
     D2D1_DRAW_TEXT_OPTIONS_NO_SNAP = 0x00000001,
@@ -27,5 +27,5 @@ public enum D2D1_DRAW_TEXT_OPTIONS : uint
     D2D1_DRAW_TEXT_OPTIONS_NONE = 0x00000000,
 
     /// <include file='D2D1_DRAW_TEXT_OPTIONS.xml' path='doc/member[@name="D2D1_DRAW_TEXT_OPTIONS.D2D1_DRAW_TEXT_OPTIONS_FORCE_DWORD"]/*' />
-    D2D1_DRAW_TEXT_OPTIONS_FORCE_DWORD = 0xffffffff,
+    D2D1_DRAW_TEXT_OPTIONS_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

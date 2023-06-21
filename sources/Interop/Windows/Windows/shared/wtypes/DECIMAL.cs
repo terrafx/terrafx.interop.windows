@@ -16,7 +16,7 @@ public partial struct DECIMAL
     public ushort wReserved;
 
     /// <include file='DECIMAL.xml' path='doc/member[@name="DECIMAL.Anonymous1"]/*' />
-    [NativeTypeName("tagDEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/wtypes.h:705:5)")]
+    [NativeTypeName("__AnonymousRecord_wtypes_L705_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='DECIMAL.xml' path='doc/member[@name="DECIMAL.Hi32"]/*' />
@@ -24,7 +24,7 @@ public partial struct DECIMAL
     public uint Hi32;
 
     /// <include file='DECIMAL.xml' path='doc/member[@name="DECIMAL.Anonymous2"]/*' />
-    [NativeTypeName("tagDEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/wtypes.h:713:5)")]
+    [NativeTypeName("__AnonymousRecord_wtypes_L713_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.scale"]/*' />
@@ -99,7 +99,7 @@ public partial struct DECIMAL
     {
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("tagDEC::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/wtypes.h:706:9)")]
+        [NativeTypeName("__AnonymousRecord_wtypes_L706_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.signscale"]/*' />
@@ -123,7 +123,7 @@ public partial struct DECIMAL
     {
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("tagDEC::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/wtypes.h:714:9)")]
+        [NativeTypeName("__AnonymousRecord_wtypes_L714_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Lo64"]/*' />

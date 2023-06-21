@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct TXFS_READ_BACKUP_INFORMATION_OUT
 {
     /// <include file='TXFS_READ_BACKUP_INFORMATION_OUT.xml' path='doc/member[@name="TXFS_READ_BACKUP_INFORMATION_OUT.Anonymous"]/*' />
-    [NativeTypeName("_TXFS_READ_BACKUP_INFORMATION_OUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:13467:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L13470_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BufferLength"]/*' />

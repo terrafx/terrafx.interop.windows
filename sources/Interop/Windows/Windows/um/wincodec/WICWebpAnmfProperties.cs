@@ -9,7 +9,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='WICWebpAnmfProperties.xml' path='doc/member[@name="WICWebpAnmfProperties"]/*' />
 [SupportedOSPlatform("windows10.0.17763.0")]
-public enum WICWebpAnmfProperties : uint
+public enum WICWebpAnmfProperties
 {
     /// <include file='WICWebpAnmfProperties.xml' path='doc/member[@name="WICWebpAnmfProperties.WICWebpAnmfFrameDuration"]/*' />
     WICWebpAnmfFrameDuration = 0x1,

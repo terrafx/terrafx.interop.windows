@@ -15,7 +15,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.TranslateURLW"]/*' />
     [DllImport("url", ExactSpelling = true)]
-    public static extern HRESULT TranslateURLW([NativeTypeName("PCWSTR")] ushort* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("__unaligned PWSTR *")] ushort** ppszTranslatedURL);
+    public static extern HRESULT TranslateURLW([NativeTypeName("PCWSTR")] ushort* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PWSTR *")] ushort** ppszTranslatedURL);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.URLAssociationDialogA"]/*' />
     [DllImport("url", ExactSpelling = true)]

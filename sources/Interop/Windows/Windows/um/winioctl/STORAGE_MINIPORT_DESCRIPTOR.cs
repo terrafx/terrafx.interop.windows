@@ -39,7 +39,7 @@ public unsafe partial struct STORAGE_MINIPORT_DESCRIPTOR
     public byte ExtraIoInfoSupported;
 
     /// <include file='STORAGE_MINIPORT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MINIPORT_DESCRIPTOR.Flags"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:1474:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L1474_C5")]
     public _Flags_e__Union Flags;
 
     /// <include file='STORAGE_MINIPORT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MINIPORT_DESCRIPTOR.Reserved0"]/*' />
@@ -56,7 +56,7 @@ public unsafe partial struct STORAGE_MINIPORT_DESCRIPTOR
     {
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_STORAGE_MINIPORT_DESCRIPTOR::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:1475:9)")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L1475_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.AsBYTE"]/*' />

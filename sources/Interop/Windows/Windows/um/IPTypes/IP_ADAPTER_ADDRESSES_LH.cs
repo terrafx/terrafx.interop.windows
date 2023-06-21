@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
 {
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.Anonymous1"]/*' />
-    [NativeTypeName("_IP_ADAPTER_ADDRESSES_LH::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/IPTypes.h:287:5)")]
+    [NativeTypeName("__AnonymousRecord_IPTypes_L287_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.Next"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint PhysicalAddressLength;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.Anonymous2"]/*' />
-    [NativeTypeName("_IP_ADAPTER_ADDRESSES_LH::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/IPTypes.h:305:5)")]
+    [NativeTypeName("__AnonymousRecord_IPTypes_L305_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.Mtu"]/*' />
@@ -367,7 +367,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
 
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_IP_ADAPTER_ADDRESSES_LH::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/IPTypes.h:289:9)")]
+        [NativeTypeName("__AnonymousRecord_IPTypes_L289_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
@@ -394,7 +394,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
 
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_IP_ADAPTER_ADDRESSES_LH::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/IPTypes.h:307:9)")]
+        [NativeTypeName("__AnonymousRecord_IPTypes_L307_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

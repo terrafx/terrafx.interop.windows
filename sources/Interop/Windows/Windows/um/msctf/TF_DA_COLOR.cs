@@ -16,7 +16,7 @@ public partial struct TF_DA_COLOR
     public TF_DA_COLORTYPE type;
 
     /// <include file='TF_DA_COLOR.xml' path='doc/member[@name="TF_DA_COLOR.Anonymous"]/*' />
-    [NativeTypeName("TF_DA_COLOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/msctf.h:10803:36)")]
+    [NativeTypeName("__AnonymousRecord_msctf_L10803_C36")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.nIndex"]/*' />

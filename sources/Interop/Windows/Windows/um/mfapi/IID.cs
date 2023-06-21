@@ -12,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
-    public static ref readonly Guid IID_MFASYNCRESULT
+    public static ref readonly Guid IID_tagMFASYNCRESULT
     {
         get
         {

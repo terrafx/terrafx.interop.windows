@@ -17,7 +17,7 @@ public partial struct CERT_ID
     public uint dwIdChoice;
 
     /// <include file='CERT_ID.xml' path='doc/member[@name="CERT_ID.Anonymous"]/*' />
-    [NativeTypeName("_CERT_ID::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wincrypt.h:6676:5)")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L6676_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.IssuerSerialNumber"]/*' />

@@ -22,7 +22,7 @@ public partial struct D3D12_SHADER_RESOURCE_VIEW_DESC
     public uint Shader4ComponentMapping;
 
     /// <include file='D3D12_SHADER_RESOURCE_VIEW_DESC.xml' path='doc/member[@name="D3D12_SHADER_RESOURCE_VIEW_DESC.Anonymous"]/*' />
-    [NativeTypeName("D3D12_SHADER_RESOURCE_VIEW_DESC::(anonymous union at ../../../include/d3d12.h:3213:5)")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L3213_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Buffer"]/*' />

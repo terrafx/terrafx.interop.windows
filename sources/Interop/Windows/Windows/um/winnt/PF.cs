@@ -153,4 +153,7 @@ public static partial class PF
 
     [NativeTypeName("#define PF_ARM_V83_JSCVT_INSTRUCTIONS_AVAILABLE 44")]
     public const int PF_ARM_V83_JSCVT_INSTRUCTIONS_AVAILABLE = 44;
+
+    [NativeTypeName("#define PF_ARM_V83_LRCPC_INSTRUCTIONS_AVAILABLE 45")]
+    public const int PF_ARM_V83_LRCPC_INSTRUCTIONS_AVAILABLE = 45;
 }

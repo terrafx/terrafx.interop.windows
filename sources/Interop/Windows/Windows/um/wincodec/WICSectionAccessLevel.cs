@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICSectionAccessLevel.xml' path='doc/member[@name="WICSectionAccessLevel"]/*' />
-public enum WICSectionAccessLevel : uint
+public enum WICSectionAccessLevel
 {
     /// <include file='WICSectionAccessLevel.xml' path='doc/member[@name="WICSectionAccessLevel.WICSectionAccessLevelRead"]/*' />
     WICSectionAccessLevelRead = 0x1,

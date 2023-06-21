@@ -21,7 +21,7 @@ public partial struct EVENT_DATA_DESCRIPTOR
     public uint Size;
 
     /// <include file='EVENT_DATA_DESCRIPTOR.xml' path='doc/member[@name="EVENT_DATA_DESCRIPTOR.Anonymous"]/*' />
-    [NativeTypeName("_EVENT_DATA_DESCRIPTOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/evntprov.h:182:5)")]
+    [NativeTypeName("__AnonymousRecord_evntprov_L182_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Reserved"]/*' />
@@ -79,7 +79,7 @@ public partial struct EVENT_DATA_DESCRIPTOR
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_EVENT_DATA_DESCRIPTOR::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/evntprov.h:184:9)")]
+        [NativeTypeName("__AnonymousRecord_evntprov_L184_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

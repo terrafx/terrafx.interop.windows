@@ -3631,6 +3631,18 @@ public static partial class STATUS
     [NativeTypeName("#define STATUS_LOCAL_POLICY_MODIFICATION_NOT_SUPPORTED ((NTSTATUS)0xC000A08AL)")]
     public const int STATUS_LOCAL_POLICY_MODIFICATION_NOT_SUPPORTED = unchecked((int)(0xC000A08A));
 
+    [NativeTypeName("#define STATUS_POLICY_CONTROLLED_ACCOUNT ((NTSTATUS)0xC000A08BL)")]
+    public const int STATUS_POLICY_CONTROLLED_ACCOUNT = unchecked((int)(0xC000A08B));
+
+    [NativeTypeName("#define STATUS_LAPS_LEGACY_SCHEMA_MISSING ((NTSTATUS)0xC000A08CL)")]
+    public const int STATUS_LAPS_LEGACY_SCHEMA_MISSING = unchecked((int)(0xC000A08C));
+
+    [NativeTypeName("#define STATUS_LAPS_SCHEMA_MISSING ((NTSTATUS)0xC000A08DL)")]
+    public const int STATUS_LAPS_SCHEMA_MISSING = unchecked((int)(0xC000A08D));
+
+    [NativeTypeName("#define STATUS_LAPS_ENCRYPTION_REQUIRES_2016_DFL ((NTSTATUS)0xC000A08EL)")]
+    public const int STATUS_LAPS_ENCRYPTION_REQUIRES_2016_DFL = unchecked((int)(0xC000A08E));
+
     [NativeTypeName("#define STATUS_HASH_NOT_SUPPORTED ((NTSTATUS)0xC000A100L)")]
     public const int STATUS_HASH_NOT_SUPPORTED = unchecked((int)(0xC000A100));
 
@@ -7656,6 +7668,9 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_SYSTEM_INTEGRITY_REPUTATION_UNATTAINABLE ((NTSTATUS)0xC0E9000CL)")]
     public const int STATUS_SYSTEM_INTEGRITY_REPUTATION_UNATTAINABLE = unchecked((int)(0xC0E9000C));
+
+    [NativeTypeName("#define STATUS_SYSTEM_INTEGRITY_REPUTATION_EXPLICIT_DENY_FILE ((NTSTATUS)0xC0E9000DL)")]
+    public const int STATUS_SYSTEM_INTEGRITY_REPUTATION_EXPLICIT_DENY_FILE = unchecked((int)(0xC0E9000D));
 
     [NativeTypeName("#define STATUS_NO_APPLICABLE_APP_LICENSES_FOUND ((NTSTATUS)0xC0EA0001L)")]
     public const int STATUS_NO_APPLICABLE_APP_LICENSES_FOUND = unchecked((int)(0xC0EA0001));

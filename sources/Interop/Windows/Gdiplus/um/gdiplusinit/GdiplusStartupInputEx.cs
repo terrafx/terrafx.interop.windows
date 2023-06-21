@@ -9,7 +9,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='GdiplusStartupInputEx.xml' path='doc/member[@name="GdiplusStartupInputEx"]/*' />
-[NativeTypeName("struct GdiplusStartupInputEx : GdiplusStartupInput")]
+[NativeTypeName("struct GdiplusStartupInputEx : Gdiplus::GdiplusStartupInput")]
 [NativeInheritance("GdiplusStartupInput")]
 public unsafe partial struct GdiplusStartupInputEx
 {

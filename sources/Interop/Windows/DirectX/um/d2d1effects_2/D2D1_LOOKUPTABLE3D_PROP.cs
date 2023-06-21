@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_LOOKUPTABLE3D_PROP.xml' path='doc/member[@name="D2D1_LOOKUPTABLE3D_PROP"]/*' />
-public enum D2D1_LOOKUPTABLE3D_PROP : uint
+public enum D2D1_LOOKUPTABLE3D_PROP
 {
     /// <include file='D2D1_LOOKUPTABLE3D_PROP.xml' path='doc/member[@name="D2D1_LOOKUPTABLE3D_PROP.D2D1_LOOKUPTABLE3D_PROP_LUT"]/*' />
     D2D1_LOOKUPTABLE3D_PROP_LUT = 0,
@@ -15,5 +15,5 @@ public enum D2D1_LOOKUPTABLE3D_PROP : uint
     D2D1_LOOKUPTABLE3D_PROP_ALPHA_MODE = 1,
 
     /// <include file='D2D1_LOOKUPTABLE3D_PROP.xml' path='doc/member[@name="D2D1_LOOKUPTABLE3D_PROP.D2D1_LOOKUPTABLE3D_PROP_FORCE_DWORD"]/*' />
-    D2D1_LOOKUPTABLE3D_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_LOOKUPTABLE3D_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

@@ -25,7 +25,7 @@ public unsafe partial struct KERNEL_CET_CONTEXT
     public ushort SegCs;
 
     /// <include file='KERNEL_CET_CONTEXT.xml' path='doc/member[@name="KERNEL_CET_CONTEXT.Anonymous"]/*' />
-    [NativeTypeName("_KERNEL_CET_CONTEXT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:2715:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L2715_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='KERNEL_CET_CONTEXT.xml' path='doc/member[@name="KERNEL_CET_CONTEXT.Fill"]/*' />
@@ -102,7 +102,7 @@ public unsafe partial struct KERNEL_CET_CONTEXT
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_KERNEL_CET_CONTEXT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:2717:9)")]
+        [NativeTypeName("__AnonymousRecord_winnt_L2717_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

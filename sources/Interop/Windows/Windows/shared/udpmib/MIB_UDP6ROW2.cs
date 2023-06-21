@@ -32,7 +32,7 @@ public unsafe partial struct MIB_UDP6ROW2
     public LARGE_INTEGER liCreateTimestamp;
 
     /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.Anonymous"]/*' />
-    [NativeTypeName("_MIB_UDP6ROW2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/udpmib.h:177:5)")]
+    [NativeTypeName("__AnonymousRecord_udpmib_L177_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.OwningModuleInfo"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct MIB_UDP6ROW2
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_MIB_UDP6ROW2::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/udpmib.h:178:9)")]
+        [NativeTypeName("__AnonymousRecord_udpmib_L178_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwFlags"]/*' />

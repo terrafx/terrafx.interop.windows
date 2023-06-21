@@ -15,7 +15,7 @@ public partial struct MMTIME
     public uint wType;
 
     /// <include file='MMTIME.xml' path='doc/member[@name="MMTIME.u"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/mmsyscom.h:110:5)")]
+    [NativeTypeName("__AnonymousRecord_mmsyscom_L110_C5")]
     public _u_e__Union u;
 
     /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union"]/*' />
@@ -44,12 +44,12 @@ public partial struct MMTIME
 
         /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union.smpte"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/mmsyscom.h:118:9)")]
+        [NativeTypeName("__AnonymousRecord_mmsyscom_L118_C9")]
         public _smpte_e__Struct smpte;
 
         /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union.midi"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/mmsyscom.h:132:9)")]
+        [NativeTypeName("__AnonymousRecord_mmsyscom_L132_C9")]
         public _midi_e__Struct midi;
 
         /// <include file='_smpte_e__Struct.xml' path='doc/member[@name="_smpte_e__Struct"]/*' />

@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_HDRTONEMAP_DISPLAY_MODE.xml' path='doc/member[@name="D2D1_HDRTONEMAP_DISPLAY_MODE"]/*' />
-public enum D2D1_HDRTONEMAP_DISPLAY_MODE : uint
+public enum D2D1_HDRTONEMAP_DISPLAY_MODE
 {
     /// <include file='D2D1_HDRTONEMAP_DISPLAY_MODE.xml' path='doc/member[@name="D2D1_HDRTONEMAP_DISPLAY_MODE.D2D1_HDRTONEMAP_DISPLAY_MODE_SDR"]/*' />
     D2D1_HDRTONEMAP_DISPLAY_MODE_SDR = 0,
@@ -15,5 +15,5 @@ public enum D2D1_HDRTONEMAP_DISPLAY_MODE : uint
     D2D1_HDRTONEMAP_DISPLAY_MODE_HDR = 1,
 
     /// <include file='D2D1_HDRTONEMAP_DISPLAY_MODE.xml' path='doc/member[@name="D2D1_HDRTONEMAP_DISPLAY_MODE.D2D1_HDRTONEMAP_DISPLAY_MODE_FORCE_DWORD"]/*' />
-    D2D1_HDRTONEMAP_DISPLAY_MODE_FORCE_DWORD = 0xffffffff,
+    D2D1_HDRTONEMAP_DISPLAY_MODE_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

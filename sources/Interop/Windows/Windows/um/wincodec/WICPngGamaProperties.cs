@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICPngGamaProperties.xml' path='doc/member[@name="WICPngGamaProperties"]/*' />
-public enum WICPngGamaProperties : uint
+public enum WICPngGamaProperties
 {
     /// <include file='WICPngGamaProperties.xml' path='doc/member[@name="WICPngGamaProperties.WICPngGamaGamma"]/*' />
     WICPngGamaGamma = 0x1,

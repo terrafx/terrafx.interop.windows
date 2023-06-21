@@ -12,5 +12,3 @@ TerraFX.Interop.DirectX
 ../../../../tests/Interop/Windows/DirectX/headers/dxgiformat
 --traverse
 ../../../include/dxgiformat.h
---with-type
-DXGI_FORMAT=uint

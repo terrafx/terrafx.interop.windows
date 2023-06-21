@@ -13,11 +13,11 @@ namespace TerraFX.Interop.DirectX;
 public partial struct D3D11_BUFFER_RTV
 {
     /// <include file='D3D11_BUFFER_RTV.xml' path='doc/member[@name="D3D11_BUFFER_RTV.Anonymous1"]/*' />
-    [NativeTypeName("D3D11_BUFFER_RTV::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/d3d11.h:3857:5)")]
+    [NativeTypeName("__AnonymousRecord_d3d11_L3857_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='D3D11_BUFFER_RTV.xml' path='doc/member[@name="D3D11_BUFFER_RTV.Anonymous2"]/*' />
-    [NativeTypeName("D3D11_BUFFER_RTV::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/d3d11.h:3862:5)")]
+    [NativeTypeName("__AnonymousRecord_d3d11_L3862_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.FirstElement"]/*' />

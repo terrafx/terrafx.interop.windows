@@ -16,7 +16,7 @@ public partial struct D3D12_RENDER_PASS_BEGINNING_ACCESS
     public D3D12_RENDER_PASS_BEGINNING_ACCESS_TYPE Type;
 
     /// <include file='D3D12_RENDER_PASS_BEGINNING_ACCESS.xml' path='doc/member[@name="D3D12_RENDER_PASS_BEGINNING_ACCESS.Anonymous"]/*' />
-    [NativeTypeName("D3D12_RENDER_PASS_BEGINNING_ACCESS::(anonymous union at ../../../include/d3d12.h:19822:5)")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L19822_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Clear"]/*' />

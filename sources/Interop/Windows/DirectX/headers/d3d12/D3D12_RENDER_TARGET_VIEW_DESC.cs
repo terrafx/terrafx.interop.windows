@@ -19,7 +19,7 @@ public partial struct D3D12_RENDER_TARGET_VIEW_DESC
     public D3D12_RTV_DIMENSION ViewDimension;
 
     /// <include file='D3D12_RENDER_TARGET_VIEW_DESC.xml' path='doc/member[@name="D3D12_RENDER_TARGET_VIEW_DESC.Anonymous"]/*' />
-    [NativeTypeName("D3D12_RENDER_TARGET_VIEW_DESC::(anonymous union at ../../../include/d3d12.h:3549:5)")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L3549_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Buffer"]/*' />

@@ -21,7 +21,7 @@ public unsafe partial struct OVERLAPPED
     public nuint InternalHigh;
 
     /// <include file='OVERLAPPED.xml' path='doc/member[@name="OVERLAPPED.Anonymous"]/*' />
-    [NativeTypeName("_OVERLAPPED::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/minwinbase.h:55:5)")]
+    [NativeTypeName("__AnonymousRecord_minwinbase_L55_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='OVERLAPPED.xml' path='doc/member[@name="OVERLAPPED.hEvent"]/*' />
@@ -66,7 +66,7 @@ public unsafe partial struct OVERLAPPED
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_OVERLAPPED::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/minwinbase.h:56:9)")]
+        [NativeTypeName("__AnonymousRecord_minwinbase_L56_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Pointer"]/*' />

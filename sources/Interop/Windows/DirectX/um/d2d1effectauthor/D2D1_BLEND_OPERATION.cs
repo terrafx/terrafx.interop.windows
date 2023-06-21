@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_BLEND_OPERATION.xml' path='doc/member[@name="D2D1_BLEND_OPERATION"]/*' />
-public enum D2D1_BLEND_OPERATION : uint
+public enum D2D1_BLEND_OPERATION
 {
     /// <include file='D2D1_BLEND_OPERATION.xml' path='doc/member[@name="D2D1_BLEND_OPERATION.D2D1_BLEND_OPERATION_ADD"]/*' />
     D2D1_BLEND_OPERATION_ADD = 1,
@@ -24,5 +24,5 @@ public enum D2D1_BLEND_OPERATION : uint
     D2D1_BLEND_OPERATION_MAX = 5,
 
     /// <include file='D2D1_BLEND_OPERATION.xml' path='doc/member[@name="D2D1_BLEND_OPERATION.D2D1_BLEND_OPERATION_FORCE_DWORD"]/*' />
-    D2D1_BLEND_OPERATION_FORCE_DWORD = 0xffffffff,
+    D2D1_BLEND_OPERATION_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

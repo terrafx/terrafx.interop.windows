@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct INPUT_TRANSFORM
 {
     /// <include file='INPUT_TRANSFORM.xml' path='doc/member[@name="INPUT_TRANSFORM.Anonymous"]/*' />
-    [NativeTypeName("tagINPUT_TRANSFORM::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinUser.h:6810:5)")]
+    [NativeTypeName("__AnonymousRecord_WinUser_L6814_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct._11"]/*' />
@@ -210,7 +210,7 @@ public unsafe partial struct INPUT_TRANSFORM
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("tagINPUT_TRANSFORM::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinUser.h:6811:9)")]
+        [NativeTypeName("__AnonymousRecord_WinUser_L6815_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.m"]/*' />

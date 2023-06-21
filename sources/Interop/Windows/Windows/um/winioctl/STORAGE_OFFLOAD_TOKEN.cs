@@ -28,7 +28,7 @@ public unsafe partial struct STORAGE_OFFLOAD_TOKEN
     public fixed byte TokenIdLength[2];
 
     /// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN.Anonymous"]/*' />
-    [NativeTypeName("_STORAGE_OFFLOAD_TOKEN::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:3359:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L3359_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.StorageOffloadZeroDataToken"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct STORAGE_OFFLOAD_TOKEN
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.StorageOffloadZeroDataToken"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:3360:9)")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L3360_C9")]
         public _StorageOffloadZeroDataToken_e__Struct StorageOffloadZeroDataToken;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Token"]/*' />

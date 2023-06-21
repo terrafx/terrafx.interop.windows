@@ -68,7 +68,7 @@ public unsafe partial struct PSS_HANDLE_ENTRY
     public ushort* ObjectName;
 
     /// <include file='PSS_HANDLE_ENTRY.xml' path='doc/member[@name="PSS_HANDLE_ENTRY.TypeSpecificInformation"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ProcessSnapshot.h:258:5)")]
+    [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L258_C5")]
     public _TypeSpecificInformation_e__Union TypeSpecificInformation;
 
     /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union"]/*' />
@@ -77,32 +77,32 @@ public unsafe partial struct PSS_HANDLE_ENTRY
     {
         /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union.Process"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ProcessSnapshot.h:261:9)")]
+        [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L261_C9")]
         public _Process_e__Struct Process;
 
         /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union.Thread"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ProcessSnapshot.h:272:9)")]
+        [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L272_C9")]
         public _Thread_e__Struct Thread;
 
         /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union.Mutant"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ProcessSnapshot.h:284:9)")]
+        [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L284_C9")]
         public _Mutant_e__Struct Mutant;
 
         /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union.Event"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ProcessSnapshot.h:292:9)")]
+        [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L292_C9")]
         public _Event_e__Struct Event;
 
         /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union.Section"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ProcessSnapshot.h:298:9)")]
+        [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L298_C9")]
         public _Section_e__Struct Section;
 
         /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union.Semaphore"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ProcessSnapshot.h:306:9)")]
+        [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L306_C9")]
         public _Semaphore_e__Struct Semaphore;
 
         /// <include file='_Process_e__Struct.xml' path='doc/member[@name="_Process_e__Struct"]/*' />

@@ -14,5 +14,6 @@ public partial struct WS_UNKNOWN_ENDPOINT_IDENTITY
     public WS_ENDPOINT_IDENTITY identity;
 
     /// <include file='WS_UNKNOWN_ENDPOINT_IDENTITY.xml' path='doc/member[@name="WS_UNKNOWN_ENDPOINT_IDENTITY.element"]/*' />
+    [NativeTypeName("WS_XML_BUFFER*")]
     public IntPtr element;
 }

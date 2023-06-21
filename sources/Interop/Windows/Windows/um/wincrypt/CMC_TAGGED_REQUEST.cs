@@ -17,7 +17,7 @@ public unsafe partial struct CMC_TAGGED_REQUEST
     public uint dwTaggedRequestChoice;
 
     /// <include file='CMC_TAGGED_REQUEST.xml' path='doc/member[@name="CMC_TAGGED_REQUEST.Anonymous"]/*' />
-    [NativeTypeName("_CMC_TAGGED_REQUEST::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wincrypt.h:5242:5)")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L5242_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pTaggedCertRequest"]/*' />

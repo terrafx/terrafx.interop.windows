@@ -25,7 +25,7 @@ public unsafe partial struct SIGNER_SUBJECT_INFO
     public uint dwSubjectChoice;
 
     /// <include file='SIGNER_SUBJECT_INFO.xml' path='doc/member[@name="SIGNER_SUBJECT_INFO.Anonymous"]/*' />
-    [NativeTypeName("_SIGNER_SUBJECT_INFO::(anonymous union at ../../../include/mssign32.h:30:9)")]
+    [NativeTypeName("__AnonymousRecord_mssign32_L30_C9")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pSignerFileInfo"]/*' />

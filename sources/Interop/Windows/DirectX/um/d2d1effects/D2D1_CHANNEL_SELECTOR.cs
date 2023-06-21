@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_CHANNEL_SELECTOR.xml' path='doc/member[@name="D2D1_CHANNEL_SELECTOR"]/*' />
-public enum D2D1_CHANNEL_SELECTOR : uint
+public enum D2D1_CHANNEL_SELECTOR
 {
     /// <include file='D2D1_CHANNEL_SELECTOR.xml' path='doc/member[@name="D2D1_CHANNEL_SELECTOR.D2D1_CHANNEL_SELECTOR_R"]/*' />
     D2D1_CHANNEL_SELECTOR_R = 0,
@@ -21,5 +21,5 @@ public enum D2D1_CHANNEL_SELECTOR : uint
     D2D1_CHANNEL_SELECTOR_A = 3,
 
     /// <include file='D2D1_CHANNEL_SELECTOR.xml' path='doc/member[@name="D2D1_CHANNEL_SELECTOR.D2D1_CHANNEL_SELECTOR_FORCE_DWORD"]/*' />
-    D2D1_CHANNEL_SELECTOR_FORCE_DWORD = 0xffffffff,
+    D2D1_CHANNEL_SELECTOR_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

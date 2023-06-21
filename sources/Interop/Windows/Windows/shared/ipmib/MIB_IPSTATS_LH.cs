@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct MIB_IPSTATS_LH
 {
     /// <include file='MIB_IPSTATS_LH.xml' path='doc/member[@name="MIB_IPSTATS_LH.Anonymous"]/*' />
-    [NativeTypeName("_MIB_IPSTATS_LH::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/ipmib.h:202:5)")]
+    [NativeTypeName("__AnonymousRecord_ipmib_L202_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='MIB_IPSTATS_LH.xml' path='doc/member[@name="MIB_IPSTATS_LH.dwDefaultTTL"]/*' />

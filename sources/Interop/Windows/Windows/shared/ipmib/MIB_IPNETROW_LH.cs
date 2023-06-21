@@ -29,7 +29,7 @@ public unsafe partial struct MIB_IPNETROW_LH
     public uint dwAddr;
 
     /// <include file='MIB_IPNETROW_LH.xml' path='doc/member[@name="MIB_IPNETROW_LH.Anonymous"]/*' />
-    [NativeTypeName("_MIB_IPNETROW_LH::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/ipmib.h:159:5)")]
+    [NativeTypeName("__AnonymousRecord_ipmib_L159_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwType"]/*' />

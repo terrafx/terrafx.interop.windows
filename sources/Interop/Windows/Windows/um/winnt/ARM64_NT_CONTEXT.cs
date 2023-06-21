@@ -22,7 +22,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
     public uint Cpsr;
 
     /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Anonymous"]/*' />
-    [NativeTypeName("_ARM64_NT_CONTEXT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:6559:18)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L6562_C18")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Sp"]/*' />
@@ -419,7 +419,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_ARM64_NT_CONTEXT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:6560:21)")]
+        [NativeTypeName("__AnonymousRecord_winnt_L6563_C21")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.X"]/*' />

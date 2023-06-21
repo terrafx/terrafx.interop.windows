@@ -13,7 +13,7 @@ namespace TerraFX.Interop.WinRT;
 
 /// <include file='ICompositionDrawingSurfaceInterop2.xml' path='doc/member[@name="ICompositionDrawingSurfaceInterop2"]/*' />
 [Guid("41E64AAE-98C0-4239-8E95-A330DD6AA18B")]
-[NativeTypeName("struct ICompositionDrawingSurfaceInterop2 : ICompositionDrawingSurfaceInterop")]
+[NativeTypeName("struct ICompositionDrawingSurfaceInterop2 : ABI::Windows::UI::Composition::ICompositionDrawingSurfaceInterop")]
 [NativeInheritance("ICompositionDrawingSurfaceInterop")]
 public unsafe partial struct ICompositionDrawingSurfaceInterop2 : ICompositionDrawingSurfaceInterop2.Interface, INativeGuid
 {

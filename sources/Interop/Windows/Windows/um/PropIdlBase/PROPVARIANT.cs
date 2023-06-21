@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct PROPVARIANT
 {
     /// <include file='PROPVARIANT.xml' path='doc/member[@name="PROPVARIANT.Anonymous"]/*' />
-    [NativeTypeName("tagPROPVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/PropIdlBase.h:303:3)")]
+    [NativeTypeName("__AnonymousRecord_PropIdlBase_L303_C3")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.vt"]/*' />
@@ -881,7 +881,7 @@ public unsafe partial struct PROPVARIANT
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("tagPROPVARIANT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/PropIdlBase.h:305:1)")]
+        [NativeTypeName("__AnonymousRecord_PropIdlBase_L305_C1")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.decVal"]/*' />
@@ -908,7 +908,7 @@ public unsafe partial struct PROPVARIANT
             public ushort wReserved3;
 
             /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Anonymous"]/*' />
-            [NativeTypeName("tagPROPVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/PropIdlBase.h:311:43)")]
+            [NativeTypeName("__AnonymousRecord_PropIdlBase_L311_C43")]
             public _Anonymous_e__Union Anonymous;
 
             /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />

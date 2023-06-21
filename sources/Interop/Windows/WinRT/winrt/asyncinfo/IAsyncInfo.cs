@@ -153,7 +153,7 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface, INativeGuid
         [NativeTypeName("HRESULT (unsigned int *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> get_Id;
 
-        [NativeTypeName("HRESULT (ABI::Windows::Foundation::AsyncStatus *) __attribute__((stdcall))")]
+        [NativeTypeName("HRESULT (AsyncStatus *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, AsyncStatus*, int> get_Status;
 
         [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]

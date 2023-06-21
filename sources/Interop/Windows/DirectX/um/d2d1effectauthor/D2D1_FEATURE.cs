@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_FEATURE.xml' path='doc/member[@name="D2D1_FEATURE"]/*' />
-public enum D2D1_FEATURE : uint
+public enum D2D1_FEATURE
 {
     /// <include file='D2D1_FEATURE.xml' path='doc/member[@name="D2D1_FEATURE.D2D1_FEATURE_DOUBLES"]/*' />
     D2D1_FEATURE_DOUBLES = 0,
@@ -15,5 +15,5 @@ public enum D2D1_FEATURE : uint
     D2D1_FEATURE_D3D10_X_HARDWARE_OPTIONS = 1,
 
     /// <include file='D2D1_FEATURE.xml' path='doc/member[@name="D2D1_FEATURE.D2D1_FEATURE_FORCE_DWORD"]/*' />
-    D2D1_FEATURE_FORCE_DWORD = 0xffffffff,
+    D2D1_FEATURE_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

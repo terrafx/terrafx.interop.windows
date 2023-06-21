@@ -12,7 +12,7 @@ public partial struct WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT
     public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
 
     /// <include file='WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT.@out"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WebServices.h:6172:5)")]
+    [NativeTypeName("__AnonymousRecord_WebServices_L6172_C5")]
     public _out_e__Struct @out;
 
     /// <include file='_out_e__Struct.xml' path='doc/member[@name="_out_e__Struct"]/*' />

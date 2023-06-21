@@ -9,7 +9,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_MAP_OPTIONS.xml' path='doc/member[@name="D2D1_MAP_OPTIONS"]/*' />
 [Flags]
-public enum D2D1_MAP_OPTIONS : uint
+public enum D2D1_MAP_OPTIONS
 {
     /// <include file='D2D1_MAP_OPTIONS.xml' path='doc/member[@name="D2D1_MAP_OPTIONS.D2D1_MAP_OPTIONS_NONE"]/*' />
     D2D1_MAP_OPTIONS_NONE = 0,
@@ -24,5 +24,5 @@ public enum D2D1_MAP_OPTIONS : uint
     D2D1_MAP_OPTIONS_DISCARD = 4,
 
     /// <include file='D2D1_MAP_OPTIONS.xml' path='doc/member[@name="D2D1_MAP_OPTIONS.D2D1_MAP_OPTIONS_FORCE_DWORD"]/*' />
-    D2D1_MAP_OPTIONS_FORCE_DWORD = 0xffffffff,
+    D2D1_MAP_OPTIONS_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

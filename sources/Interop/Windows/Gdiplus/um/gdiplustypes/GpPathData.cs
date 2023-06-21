@@ -3,6 +3,8 @@
 // Ported from um/gdiplustypes.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.InteropServices;
+
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='GpPathData.xml' path='doc/member[@name="GpPathData"]/*' />

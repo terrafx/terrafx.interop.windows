@@ -8,7 +8,7 @@ using static TerraFX.Interop.DirectX.D3D_FEATURE_LEVEL;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_FEATURE_LEVEL.xml' path='doc/member[@name="D2D1_FEATURE_LEVEL"]/*' />
-public enum D2D1_FEATURE_LEVEL : uint
+public enum D2D1_FEATURE_LEVEL
 {
     /// <include file='D2D1_FEATURE_LEVEL.xml' path='doc/member[@name="D2D1_FEATURE_LEVEL.D2D1_FEATURE_LEVEL_DEFAULT"]/*' />
     D2D1_FEATURE_LEVEL_DEFAULT = 0,
@@ -20,5 +20,5 @@ public enum D2D1_FEATURE_LEVEL : uint
     D2D1_FEATURE_LEVEL_10 = D3D_FEATURE_LEVEL_10_0,
 
     /// <include file='D2D1_FEATURE_LEVEL.xml' path='doc/member[@name="D2D1_FEATURE_LEVEL.D2D1_FEATURE_LEVEL_FORCE_DWORD"]/*' />
-    D2D1_FEATURE_LEVEL_FORCE_DWORD = 0xffffffff,
+    D2D1_FEATURE_LEVEL_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

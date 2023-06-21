@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_SHADOW_OPTIMIZATION.xml' path='doc/member[@name="D2D1_SHADOW_OPTIMIZATION"]/*' />
-public enum D2D1_SHADOW_OPTIMIZATION : uint
+public enum D2D1_SHADOW_OPTIMIZATION
 {
     /// <include file='D2D1_SHADOW_OPTIMIZATION.xml' path='doc/member[@name="D2D1_SHADOW_OPTIMIZATION.D2D1_SHADOW_OPTIMIZATION_SPEED"]/*' />
     D2D1_SHADOW_OPTIMIZATION_SPEED = 0,
@@ -18,5 +18,5 @@ public enum D2D1_SHADOW_OPTIMIZATION : uint
     D2D1_SHADOW_OPTIMIZATION_QUALITY = 2,
 
     /// <include file='D2D1_SHADOW_OPTIMIZATION.xml' path='doc/member[@name="D2D1_SHADOW_OPTIMIZATION.D2D1_SHADOW_OPTIMIZATION_FORCE_DWORD"]/*' />
-    D2D1_SHADOW_OPTIMIZATION_FORCE_DWORD = 0xffffffff,
+    D2D1_SHADOW_OPTIMIZATION_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

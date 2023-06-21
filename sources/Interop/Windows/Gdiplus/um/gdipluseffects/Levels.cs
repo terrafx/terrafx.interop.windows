@@ -8,7 +8,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='Levels.xml' path='doc/member[@name="Levels"]/*' />
-[NativeTypeName("struct Levels : Effect")]
+[NativeTypeName("struct Levels : Gdiplus::Effect")]
 [NativeInheritance("Effect")]
 public unsafe partial struct Levels
 {
@@ -48,7 +48,7 @@ public unsafe partial struct Levels
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus SetParameters([NativeTypeName("const Gdiplus::LevelsParams *")] LevelsParams* parameters)
+    public GpStatus SetParameters([NativeTypeName("const LevelsParams *")] LevelsParams* parameters)
     {
         uint size = 12;
 

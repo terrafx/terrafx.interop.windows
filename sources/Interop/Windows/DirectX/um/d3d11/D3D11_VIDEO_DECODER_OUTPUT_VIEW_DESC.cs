@@ -22,7 +22,7 @@ public partial struct D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC
     public D3D11_VDOV_DIMENSION ViewDimension;
 
     /// <include file='D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC.xml' path='doc/member[@name="D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC.Anonymous"]/*' />
-    [NativeTypeName("D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/d3d11.h:11649:5)")]
+    [NativeTypeName("__AnonymousRecord_d3d11_L11649_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture2D"]/*' />

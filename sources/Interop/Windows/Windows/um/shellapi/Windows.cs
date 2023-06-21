@@ -130,12 +130,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellExecuteExA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL ShellExecuteExA(void* pExecInfo);
+    public static extern BOOL ShellExecuteExA([NativeTypeName("SHELLEXECUTEINFOA*")] void* pExecInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellExecuteExW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL ShellExecuteExW(void* pExecInfo);
+    public static extern BOOL ShellExecuteExW([NativeTypeName("SHELLEXECUTEINFOW*")] void* pExecInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateProcessAsUserW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -189,16 +189,16 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetFileInfoA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD_PTR")]
-    public static extern nuint SHGetFileInfoA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("DWORD")] uint dwFileAttributes, void* psfi, uint cbFileInfo, uint uFlags);
+    public static extern nuint SHGetFileInfoA([NativeTypeName("LPCSTR")] sbyte* pszPath, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("SHFILEINFOA*")] void* psfi, uint cbFileInfo, uint uFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetFileInfoW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD_PTR")]
-    public static extern nuint SHGetFileInfoW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwFileAttributes, void* psfi, uint cbFileInfo, uint uFlags);
+    public static extern nuint SHGetFileInfoW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("SHFILEINFOW*")] void* psfi, uint cbFileInfo, uint uFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetStockIconInfo"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHGetStockIconInfo(SHSTOCKICONID siid, uint uFlags, void* psii);
+    public static extern HRESULT SHGetStockIconInfo(SHSTOCKICONID siid, uint uFlags, [NativeTypeName("SHSTOCKICONINFO*")] void* psii);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetDiskFreeSpaceExA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]

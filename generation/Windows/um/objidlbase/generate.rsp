@@ -25,5 +25,3 @@ IAgileObject=SupportedOSPlatform("windows6.2")
 IFastRundown=SupportedOSPlatform("windows6.2")
 IMarshalingStream=SupportedOSPlatform("windows6.2")
 INoMarshal=SupportedOSPlatform("windows6.2")
---with-type
-CO_MARSHALING_CONTEXT_ATTRIBUTES=uint

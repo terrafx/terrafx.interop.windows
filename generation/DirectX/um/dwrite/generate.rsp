@@ -21,7 +21,7 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/dwrite.h
 --with-attribute
 DWRITE_FONT_SIMULATIONS=Flags
 DWRITE_SCRIPT_SHAPES=Flags
---with-type
-DWRITE_FONT_FEATURE_TAG=uint
 --with-librarypath
 DWriteCreateFactory=dwrite
+--with-type
+DWRITE_FONT_FEATURE_TAG=uint

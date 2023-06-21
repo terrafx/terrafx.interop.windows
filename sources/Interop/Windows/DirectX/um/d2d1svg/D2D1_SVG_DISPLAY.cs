@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_SVG_DISPLAY.xml' path='doc/member[@name="D2D1_SVG_DISPLAY"]/*' />
-public enum D2D1_SVG_DISPLAY : uint
+public enum D2D1_SVG_DISPLAY
 {
     /// <include file='D2D1_SVG_DISPLAY.xml' path='doc/member[@name="D2D1_SVG_DISPLAY.D2D1_SVG_DISPLAY_INLINE"]/*' />
     D2D1_SVG_DISPLAY_INLINE = 0,
@@ -15,5 +15,5 @@ public enum D2D1_SVG_DISPLAY : uint
     D2D1_SVG_DISPLAY_NONE = 1,
 
     /// <include file='D2D1_SVG_DISPLAY.xml' path='doc/member[@name="D2D1_SVG_DISPLAY.D2D1_SVG_DISPLAY_FORCE_DWORD"]/*' />
-    D2D1_SVG_DISPLAY_FORCE_DWORD = 0xffffffff,
+    D2D1_SVG_DISPLAY_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

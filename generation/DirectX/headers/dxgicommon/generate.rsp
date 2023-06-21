@@ -14,5 +14,3 @@ TerraFX.Interop.DirectX
 ../../../include/dxgicommon.h
 --with-attribute
 DXGI_COLOR_SPACE_TYPE=SupportedOSPlatform("windows10.0")
---with-type
-DXGI_COLOR_SPACE_TYPE=uint

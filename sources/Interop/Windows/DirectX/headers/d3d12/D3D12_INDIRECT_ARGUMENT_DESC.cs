@@ -16,7 +16,7 @@ public partial struct D3D12_INDIRECT_ARGUMENT_DESC
     public D3D12_INDIRECT_ARGUMENT_TYPE Type;
 
     /// <include file='D3D12_INDIRECT_ARGUMENT_DESC.xml' path='doc/member[@name="D3D12_INDIRECT_ARGUMENT_DESC.Anonymous"]/*' />
-    [NativeTypeName("D3D12_INDIRECT_ARGUMENT_DESC::(anonymous union at ../../../include/d3d12.h:4274:5)")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L4274_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.VertexBuffer"]/*' />
@@ -80,27 +80,27 @@ public partial struct D3D12_INDIRECT_ARGUMENT_DESC
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.VertexBuffer"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at ../../../include/d3d12.h:4276:9)")]
+        [NativeTypeName("__AnonymousRecord_d3d12_L4276_C9")]
         public _VertexBuffer_e__Struct VertexBuffer;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Constant"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at ../../../include/d3d12.h:4280:9)")]
+        [NativeTypeName("__AnonymousRecord_d3d12_L4280_C9")]
         public _Constant_e__Struct Constant;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ConstantBufferView"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at ../../../include/d3d12.h:4286:9)")]
+        [NativeTypeName("__AnonymousRecord_d3d12_L4286_C9")]
         public _ConstantBufferView_e__Struct ConstantBufferView;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ShaderResourceView"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at ../../../include/d3d12.h:4290:9)")]
+        [NativeTypeName("__AnonymousRecord_d3d12_L4290_C9")]
         public _ShaderResourceView_e__Struct ShaderResourceView;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.UnorderedAccessView"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at ../../../include/d3d12.h:4294:9)")]
+        [NativeTypeName("__AnonymousRecord_d3d12_L4294_C9")]
         public _UnorderedAccessView_e__Struct UnorderedAccessView;
 
         /// <include file='_VertexBuffer_e__Struct.xml' path='doc/member[@name="_VertexBuffer_e__Struct"]/*' />

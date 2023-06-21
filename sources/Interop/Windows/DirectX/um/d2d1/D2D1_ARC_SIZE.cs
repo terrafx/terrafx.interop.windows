@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_ARC_SIZE.xml' path='doc/member[@name="D2D1_ARC_SIZE"]/*' />
-public enum D2D1_ARC_SIZE : uint
+public enum D2D1_ARC_SIZE
 {
     /// <include file='D2D1_ARC_SIZE.xml' path='doc/member[@name="D2D1_ARC_SIZE.D2D1_ARC_SIZE_SMALL"]/*' />
     D2D1_ARC_SIZE_SMALL = 0,
@@ -15,5 +15,5 @@ public enum D2D1_ARC_SIZE : uint
     D2D1_ARC_SIZE_LARGE = 1,
 
     /// <include file='D2D1_ARC_SIZE.xml' path='doc/member[@name="D2D1_ARC_SIZE.D2D1_ARC_SIZE_FORCE_DWORD"]/*' />
-    D2D1_ARC_SIZE_FORCE_DWORD = 0xffffffff,
+    D2D1_ARC_SIZE_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }
