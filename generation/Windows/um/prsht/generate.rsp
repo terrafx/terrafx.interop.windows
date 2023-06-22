@@ -46,6 +46,7 @@ TerraFX.Interop.Windows
 ../../../../tests/Interop/Windows/Windows/um/prsht
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/prsht.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/prsht.inl
 --with-librarypath
 CreatePropertySheetPage=comctl32
 CreatePropertySheetPageA=comctl32

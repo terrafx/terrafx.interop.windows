@@ -450,6 +450,7 @@ TerraFX.Interop.Windows
 ../../../../tests/Interop/Windows/Windows/um/CommCtrl
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/CommCtrl.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/CommCtrl.inl
 --with-attribute
 EC_ENDOFLINE=SupportedOSPlatform("windows10.0.17763.0")
 Edit_EnableSearchWeb=SupportedOSPlatform("windows10.0.17763.0")

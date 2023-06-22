@@ -84,7 +84,14 @@ public static unsafe partial class DirectX
 
     public static uint D3D12_GET_COARSE_SHADING_RATE_Y_AXIS(uint y) => y & D3D12_SHADING_RATE_VALID_MASK;
 
-    public static HRESULT D3D12ReflectLibrary(void* pSrcData, nuint SrcDataSize, ID3D12LibraryReflection** ppReflector)
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12Reflect"]/*' />
+    public static HRESULT D3D12Reflect([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSize, ID3D11ShaderReflection** ppReflector)
+    {
+        return D3DReflect(pSrcData, SrcDataSize, __uuidof<ID3D12ShaderReflection>(), unchecked((void**)(ppReflector)));
+    }
+
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12ReflectLibrary"]/*' />
+    public static HRESULT D3D12ReflectLibrary([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSize, ID3D12LibraryReflection** ppReflector)
     {
         return D3DReflectLibrary(pSrcData, SrcDataSize, __uuidof<ID3D12LibraryReflection>(), (void**)ppReflector);
     }
